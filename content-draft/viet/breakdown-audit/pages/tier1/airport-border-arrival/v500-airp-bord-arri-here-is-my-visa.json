@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+  "phraseText": "Đây là thị thực của tôi",
+  "englishTitle": "Here is my visa",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-airp-bord-arri-here-is-my-visa",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thị thực",
+      "english": "visa",
+      "keepTogetherReason": "compound document term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là thị thực của tôi",
+      "english": "Here is my visa",
+      "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+    }
+  ]
+}

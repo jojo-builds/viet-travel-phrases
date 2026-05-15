@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-vpe-pronoun-help-anh-giup-toi-chi-duong-duoc-khong",
+  "phraseText": "Anh giúp tôi chỉ đường được không?",
+  "englishTitle": "Can you show me the way?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.463Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-pronoun-help-anh-giup-toi-chi-duong-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh",
+      "english": "older man / respectful male address"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "vietnamese": "chỉ đường",
+      "english": "give directions",
+      "keepTogetherReason": "compound directions verb"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh giúp tôi chỉ đường được không?",
+      "english": "Can you show me the way?",
+      "audioKey": "audio-authored-anh-giup-toi-chi-duong-duoc-khong-f1481379cb"
+    }
+  ]
+}

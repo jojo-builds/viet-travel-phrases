@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-repair-translate-this",
+  "phraseText": "Dịch giúp tôi cái này được không?",
+  "englishTitle": "Can you translate this for me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.355Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-translate-this",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dịch",
+      "english": "translate / service"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dịch giúp tôi cái này được không?",
+      "english": "Can you translate this for me?",
+      "audioKey": "repair-translate-this"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-chia-khoa-phong",
+  "phraseText": "Tôi muốn mua chìa khóa phòng",
+  "englishTitle": "I want to buy the room key.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.394Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-chia-khoa-phong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chìa khóa phòng",
+      "english": "room key",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua chìa khóa phòng",
+      "english": "I want to buy the room key.",
+      "audioKey": "audio-authored-toi-muon-mua-chia-khoa-phong-4978041578"
+    }
+  ]
+}

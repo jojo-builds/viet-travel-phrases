@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-tao-dan-park",
+  "phraseText": "Công viên Tao Đàn",
+  "englishTitle": "Tao Dan Park",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.375Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-tao-dan-park",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Công viên Tao Đàn",
+      "english": "Tao Dan Park",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

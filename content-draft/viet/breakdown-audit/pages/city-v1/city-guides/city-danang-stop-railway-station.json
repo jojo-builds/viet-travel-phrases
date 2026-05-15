@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-danang-stop-railway-station",
+  "phraseText": "Dừng ở Ga Đà Nẵng",
+  "englishTitle": "Stop at Da Nang Railway Station",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.363Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-stop-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Ga Đà Nẵng",
+      "english": "Da Nang Railway Station",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Ga Đà Nẵng",
+      "english": "Stop at Da Nang Railway Station",
+      "audioKey": "audio-authored-dung-o-ga-da-nang-e93d73ac2e"
+    }
+  ]
+}

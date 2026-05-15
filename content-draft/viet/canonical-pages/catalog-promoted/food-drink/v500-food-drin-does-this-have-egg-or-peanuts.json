@@ -52,27 +52,39 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có trứng hay",
-          "english": "egg or peanuts",
-          "audioKey": null
+          "vietnamese": "có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đậu phộng",
-          "english": "room",
-          "audioKey": null
+          "vietnamese": "trứng",
+          "english": "egg",
+          "audioKey": "breakdown-authored-trung-7e4461a3f9"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "hay",
+          "english": "or",
+          "audioKey": "breakdown-authored-hay-ebddd6b268"
         },
         {
           "id": "chunk-5",
+          "vietnamese": "đậu phộng",
+          "english": "peanuts",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "chunk-7",
           "vietnamese": "Cái này có trứng hay đậu phộng không?",
           "english": "Does this have egg or peanuts",
-          "audioKey": null
+          "audioKey": "v500-food-drin-does-this-have-egg-or-peanuts"
         }
       ]
     },

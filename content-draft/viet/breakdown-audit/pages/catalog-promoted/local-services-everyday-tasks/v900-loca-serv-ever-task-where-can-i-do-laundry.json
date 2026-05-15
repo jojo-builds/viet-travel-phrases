@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-where-can-i-do-laundry",
+  "phraseText": "Tôi có thể giặt đồ ở đâu?",
+  "englishTitle": "Where can I do laundry?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-where-can-i-do-laundry",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "giặt đồ",
+      "english": "laundry / wash clothes",
+      "keepTogetherReason": "compound laundry phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể giặt đồ ở đâu?",
+      "english": "Where can I do laundry?",
+      "audioKey": "v900-loca-serv-ever-task-where-can-i-do-laundry"
+    }
+  ]
+}

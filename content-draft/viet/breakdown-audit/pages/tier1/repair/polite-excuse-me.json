@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-excuse-sorry",
+  "phraseText": "Xin lỗi",
+  "englishTitle": "Excuse me / sorry",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.275Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-excuse-sorry",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin lỗi",
+      "english": "sorry",
+      "keepTogetherReason": "fixed polite phrase"
+    }
+  ]
+}

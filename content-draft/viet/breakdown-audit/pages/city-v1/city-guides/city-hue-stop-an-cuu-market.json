@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-stop-an-cuu-market",
+  "phraseText": "Dừng ở Chợ An Cựu",
+  "englishTitle": "Stop at An Cuu Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.388Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-stop-an-cuu-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ An Cựu",
+      "english": "An Cuu Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Chợ An Cựu",
+      "english": "Stop at An Cuu Market",
+      "audioKey": "audio-authored-dung-o-cho-an-cuu-3fd42d45ea"
+    }
+  ]
+}

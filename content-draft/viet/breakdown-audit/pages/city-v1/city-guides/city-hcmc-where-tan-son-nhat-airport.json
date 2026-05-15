@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hcmc-where-tan-son-nhat-airport",
+  "phraseText": "Sân bay Tân Sơn Nhất ở đâu?",
+  "englishTitle": "Where is Tan Son Nhat Airport?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.377Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-where-tan-son-nhat-airport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sân bay Tân Sơn Nhất",
+      "english": "Tan Son Nhat Airport",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Sân bay Tân Sơn Nhất ở đâu?",
+      "english": "Where is Tan Son Nhat Airport?",
+      "audioKey": "audio-authored-san-bay-tan-son-nhat-o-dau-4821b02591"
+    }
+  ]
+}

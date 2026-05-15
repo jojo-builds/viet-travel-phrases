@@ -1,0 +1,67 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-when-should-i-seek-emergency-help",
+  "phraseText": "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+  "englishTitle": "When should I seek emergency help?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.315Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-when-should-i-seek-emergency-help",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khi nào",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nên",
+      "english": "should"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tìm kiếm",
+      "english": "look for",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sự",
+      "english": "matter / event"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "giúp đỡ",
+      "english": "help",
+      "keepTogetherReason": "compound help verb"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "khẩn cấp?",
+      "english": "urgent / emergency",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
+      "english": "When should I seek emergency help?",
+      "audioKey": "v900-heal-phar-when-should-i-seek-emergency-help"
+    }
+  ]
+}

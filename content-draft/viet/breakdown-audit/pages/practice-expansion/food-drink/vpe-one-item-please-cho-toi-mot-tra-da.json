@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-tra-da",
+  "phraseText": "Cho tôi trà đá",
+  "englishTitle": "Iced tea, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.449Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-tra-da",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "trà đá",
+      "english": "iced tea",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi trà đá",
+      "english": "Iced tea, please.",
+      "audioKey": "audio-authored-cho-toi-tra-da-6b39f7e1ae"
+    }
+  ]
+}

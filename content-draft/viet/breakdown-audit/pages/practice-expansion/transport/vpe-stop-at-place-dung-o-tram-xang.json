@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-tram-xang",
+  "phraseText": "Dừng ở trạm xăng",
+  "englishTitle": "Stop at the gas station.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.475Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-tram-xang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "trạm xăng",
+      "english": "gas station",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở trạm xăng",
+      "english": "Stop at the gas station.",
+      "audioKey": "audio-authored-dung-o-tram-xang-fbd230cf7c"
+    }
+  ]
+}

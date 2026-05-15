@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-i-need-a-dentist",
+  "phraseText": "Tôi cần một nha sĩ",
+  "englishTitle": "I need a dentist",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.311Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-i-need-a-dentist",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nha sĩ",
+      "english": "dentist",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần một nha sĩ",
+      "english": "I need a dentist",
+      "audioKey": "v500-heal-phar-i-need-a-dentist"
+    }
+  ]
+}

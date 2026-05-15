@@ -715,17 +715,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.detailPath.isEmpty)
         XCTAssertEqual(navigation.browseScrollToTopTrigger, 1)
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.browse])
+        XCTAssertFalse(navigation.showsStaticBackButton)
 
         navigation.goForward()
 
         XCTAssertEqual(navigation.currentRoute, .browse)
         XCTAssertEqual(navigation.browseScrollToTopTrigger, 2)
         XCTAssertTrue(navigation.forwardStack.isEmpty)
+        XCTAssertTrue(navigation.showsStaticBackButton)
     }
 
     func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {
@@ -735,17 +738,21 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.openDetail("viet-phrase-city-danang-place-dragon-bridge")
         XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.city("danang")))
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-city-danang-place-dragon-bridge"), .browseCollection(.city("danang"))])
+        XCTAssertFalse(navigation.showsStaticBackButton)
     }
 
     func testBrowseCollectionBackChainStillReturnsToBrowse() {
@@ -1145,12 +1152,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
         XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
-        XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout])
+        XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
         XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
-        XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard])
+        XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
         XCTAssertEqual(hanoi.practiceAction, .practiceMode(.hanoiBucketList))
@@ -1168,13 +1175,13 @@ final class AppChromeTests: XCTestCase {
 
     func testBrowseCategoryMessageSectionsMirrorMessagesHubGroups() {
         let expectations: [(String, String, [PracticeScenarioID])] = [
-            ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower]),
-            ("hotel", "Hotel", [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout]),
-            ("food", "Food", [.foodAllergyHelp, .restaurantOrderingPayment, .danangDay, .foodCoffeeOrder]),
-            ("getting-around", "Getting Around", [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp]),
-            ("shopping", "Shopping", [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard]),
-            ("emergency", "Emergency", [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp]),
-            ("local-greetings", "Local Greetings", [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry]),
+            ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower, .airportBaggageProblem]),
+            ("hotel", "Hotel", [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies]),
+            ("food", "Food", [.foodAllergyHelp, .restaurantOrderingPayment, .danangDay, .foodCoffeeOrder, .foodMenuItems]),
+            ("getting-around", "Getting Around", [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort]),
+            ("shopping", "Shopping", [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce]),
+            ("emergency", "Emergency", [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp]),
+            ("local-greetings", "Local Greetings", [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk]),
         ]
 
         for (categoryID, sectionTitle, scenarioIDs) in expectations {

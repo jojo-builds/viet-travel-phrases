@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-tran-please-wait-here",
+  "phraseText": "Xin vui lòng đợi ở đây",
+  "englishTitle": "Please wait here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.350Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-please-wait-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đợi",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin vui lòng đợi ở đây",
+      "english": "Please wait here",
+      "audioKey": "v500-tran-please-wait-here"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-smalltalk-di-dau-day",
+  "phraseText": "Đi đâu đấy?",
+  "englishTitle": "Where are you going?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-smalltalk-di-dau-day",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đâu",
+      "english": "where"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đấy?",
+      "english": "there / that"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi đâu đấy?",
+      "english": "Where are you going?",
+      "audioKey": "audio-phrase-di-dau-day"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-transport-route",
+  "phraseText": "Đi đường này đi",
+  "englishTitle": "Go this way",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đi",
+      "english": "imperative ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi đường này đi",
+      "english": "Go this way",
+      "audioKey": "taxi-4"
+    }
+  ]
+}

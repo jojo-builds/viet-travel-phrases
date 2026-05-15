@@ -46,39 +46,33 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể đặt",
+          "english": "can I put",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đặt túi",
-          "english": "book / reserve",
+          "vietnamese": "túi của tôi",
+          "english": "my bag",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "của tôi ở",
-          "english": "my / mine",
+          "vietnamese": "ở đây",
+          "english": "here",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "đây",
-          "english": "here / this",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is it possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Tôi có thể đặt túi của tôi ở đây được không?",
           "english": "Can I put my bag here",
-          "audioKey": null
+          "audioKey": "v500-tran-can-i-put-my-bag-here"
         }
       ]
     },

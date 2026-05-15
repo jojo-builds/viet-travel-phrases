@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-ves-is-this-vo-nguyen-giap-street",
+  "phraseText": "Đây có phải đường Võ Nguyên Giáp không?",
+  "englishTitle": "Is this Vo Nguyen Giap Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-is-this-vo-nguyen-giap-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường Võ Nguyên Giáp",
+      "english": "Vo Nguyen Giap Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải đường Võ Nguyên Giáp không?",
+      "english": "Is this Vo Nguyen Giap Street?",
+      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a"
+    }
+  ]
+}

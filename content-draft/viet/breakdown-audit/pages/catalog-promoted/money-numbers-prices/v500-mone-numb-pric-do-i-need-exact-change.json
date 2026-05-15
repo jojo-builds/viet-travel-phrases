@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-do-i-need-exact-change",
+  "phraseText": "Tôi có cần thay đổi chính xác không?",
+  "englishTitle": "Do I need exact change?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.326Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-do-i-need-exact-change",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thay",
+      "english": "replace / change"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đổi",
+      "english": "change / exchange"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "chính xác",
+      "english": "correct / exact",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có cần thay đổi chính xác không?",
+      "english": "Do I need exact change?",
+      "audioKey": "v500-mone-numb-pric-do-i-need-exact-change"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-can-i-get-a-ticket-refund",
+  "phraseText": "Tôi có thể được hoàn tiền vé không?",
+  "englishTitle": "Can I get a ticket refund?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-can-i-get-a-ticket-refund",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hoàn",
+      "english": "refund / return"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể được hoàn tiền vé không?",
+      "english": "Can I get a ticket refund?",
+      "audioKey": "v900-time-date-book-can-i-get-a-ticket-refund"
+    }
+  ]
+}

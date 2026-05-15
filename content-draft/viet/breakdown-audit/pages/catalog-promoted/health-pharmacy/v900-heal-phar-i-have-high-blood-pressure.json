@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-have-high-blood-pressure",
+  "phraseText": "Tôi bị cao huyết áp",
+  "englishTitle": "I have high blood pressure",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-have-high-blood-pressure",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cao",
+      "english": "high"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "huyết áp",
+      "english": "blood pressure",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị cao huyết áp",
+      "english": "I have high blood pressure",
+      "audioKey": "v900-heal-phar-i-have-high-blood-pressure"
+    }
+  ]
+}

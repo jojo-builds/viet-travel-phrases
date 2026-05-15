@@ -67,6 +67,177 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(definitions.map(\.english), ["please", "give me one", "fresh coconut"])
     }
 
+    func testLostBagMessageBreakdownKeepsBagInOwnedNounChunk() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Túi của tôi bị lấy mất",
+            pageID: "viet-phrase-emergency-6"
+        )
+
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Túi của tôi", "bị lấy mất"])
+        XCTAssertEqual(definitions.map(\.english), ["my bag", "was taken / stolen"])
+    }
+
+    func testReviewedMessagePopoverBreakdownsUseExactGlossContracts() {
+        let contracts: [(pageID: String, vietnamese: String, expected: [(String, String)])] = [
+            (
+                "viet-phrase-emergency-6",
+                "Túi của tôi bị lấy mất",
+                [
+                    ("Túi của tôi", "my bag"),
+                    ("bị lấy mất", "was taken / stolen"),
+                ]
+            ),
+            (
+                "viet-phrase-phone-7",
+                "eSIM của tôi không hoạt động",
+                [
+                    ("eSIM của tôi", "my eSIM"),
+                    ("không hoạt động", "is not working"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-phon-inte-powe-the-sim-card-is-not-working",
+                "Thẻ SIM không hoạt động",
+                [
+                    ("Thẻ SIM", "SIM card"),
+                    ("không hoạt động", "is not working"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
+                "ATM không đưa tiền mặt cho tôi",
+                [
+                    ("ATM", "ATM"),
+                    ("không đưa", "did not give"),
+                    ("tiền mặt", "cash"),
+                    ("cho tôi", "for me / please"),
+                ]
+            ),
+            (
+                "viet-phrase-hotel-8",
+                "Thẻ phòng không mở được",
+                [
+                    ("Thẻ phòng", "key card"),
+                    ("không mở được", "does not open"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-hote-acco-can-you-store-my-luggage-after-check-out",
+                "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
+                [
+                    ("Bạn có thể", "can you"),
+                    ("gửi hành lý của tôi", "store my luggage"),
+                    ("sau khi trả phòng", "after check-out"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-food-premium-has-peanuts",
+                "Cái này có đậu phộng không?",
+                [
+                    ("Cái này", "this one"),
+                    ("có", "have / yes"),
+                    ("đậu phộng", "peanuts"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-food-drin-does-this-have-egg-or-peanuts",
+                "Cái này có trứng hay đậu phộng không?",
+                [
+                    ("Cái này", "this one"),
+                    ("có", "have / yes"),
+                    ("trứng", "egg"),
+                    ("hay", "or"),
+                    ("đậu phộng", "peanuts"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-family-food-peanut-allergy",
+                "Tôi bị dị ứng đậu phộng",
+                [
+                    ("Tôi bị dị ứng", "I am allergic"),
+                    ("đậu phộng", "peanuts"),
+                ]
+            ),
+            (
+                "viet-family-service-card",
+                "Tôi quẹt thẻ được không?",
+                [
+                    ("Tôi quẹt", "I tap / swipe"),
+                    ("thẻ", "card"),
+                    ("được không?", "is it possible?"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+                "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+                [
+                    ("Tôi có thể thanh toán", "can I pay"),
+                    ("hóa đơn", "bill / receipt"),
+                    ("bằng thẻ", "by card"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-tran-can-i-pay-the-fare-by-card",
+                "Tôi có thể thanh toán tiền vé bằng thẻ không?",
+                [
+                    ("Tôi có thể thanh toán", "can I pay"),
+                    ("tiền vé", "the fare"),
+                    ("bằng thẻ", "by card"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-tran-are-you-my-driver",
+                "Bạn là tài xế của tôi à?",
+                [
+                    ("Bạn là", "are you"),
+                    ("tài xế của tôi", "my driver"),
+                    ("à?", "polite yes / opener"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+                "Vui lòng hủy thanh toán thẻ đó",
+                [
+                    ("Vui lòng", "please"),
+                    ("hủy", "cancel"),
+                    ("thanh toán thẻ", "card payment"),
+                    ("đó", "that"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+                "Làm ơn cho một quả dừa tươi",
+                [
+                    ("Làm ơn", "please"),
+                    ("cho một quả", "give me one"),
+                    ("dừa tươi", "fresh coconut"),
+                ]
+            ),
+        ]
+
+        for contract in contracts {
+            let definitions = PracticeStoryBreakdownDefinitions.tokens(
+                forVietnamese: contract.vietnamese,
+                pageID: contract.pageID
+            )
+            XCTAssertEqual(
+                definitions.map(\.vietnamese),
+                contract.expected.map(\.0),
+                contract.pageID
+            )
+            XCTAssertEqual(
+                definitions.map(\.english),
+                contract.expected.map(\.1),
+                contract.pageID
+            )
+        }
+    }
+
     func testMessageDefinitionBubblesDoNotShowInternalOrWholeSentenceGlosses() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -573,30 +744,37 @@ final class PracticeScenarioModeTests: XCTestCase {
             .airportPassportControl,
             .airportSimCash,
             .airportWifiPower,
+            .airportBaggageProblem,
             .hotelCheckInHelp,
             .hotelRoomHelp,
             .hotelBagsTaxi,
             .hotelWifiCheckout,
+            .hotelRoomSupplies,
             .restaurantOrderingPayment,
             .danangDay,
             .foodAllergyHelp,
             .foodCoffeeOrder,
+            .foodMenuItems,
             .taxiGrabPickup,
             .taxiRouteHelp,
             .driverProblemHelp,
             .walkingDirectionsHelp,
+            .taxiFareComfort,
             .shoppingMarketPrice,
             .shoppingSizeGift,
             .shoppingReceiptHelp,
             .shoppingPayCard,
+            .shoppingMarketProduce,
             .pharmacyHelp,
             .emergencyLostPassport,
             .emergencyLostBag,
             .emergencyDoctorHelp,
+            .emergencyCallHelp,
             .localGreetingMarket,
             .localGreetingHotel,
             .localGreetingRespect,
             .localThanksSorry,
+            .localSmallTalk,
         ])
         XCTAssertTrue(snapshot.scenarios.allSatisfy { $0.steps.count >= 6 })
 
@@ -819,7 +997,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertFalse(visibleCopy.contains("Cho tôi nhận phòng"))
     }
 
-    func testMessagesGroupFourThreadsForEachBrowseCategory() throws {
+    func testMessagesGroupFiveThreadsForEachBrowseCategory() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
             savedPageIDs: [],
@@ -830,7 +1008,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         let expectedGroups: [(String, [PracticeScenarioID], [String])] = [
             (
                 "Airport",
-                [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower],
+                [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower, .airportBaggageProblem],
                 [
                     "Đây là hộ chiếu của tôi",
                     "Đây là thị thực của tôi",
@@ -842,11 +1020,14 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
                     "Tôi có thể sạc điện thoại ở đâu?",
                     "Cảm ơn, tôi hiểu rồi",
+                    "Vali của tôi bị mất",
+                    "Túi của tôi bị hỏng",
+                    "Đây là thẻ hành lý của tôi",
                 ]
             ),
             (
                 "Hotel",
-                [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout],
+                [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies],
                 [
                     "Thẻ phòng không mở được",
                     "Máy lạnh không chạy",
@@ -857,11 +1038,14 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Bạn có thể sắp xếp một chiếc taxi cho tôi được không?",
                     "Mật khẩu Wi-Fi là gì?",
                     "Mấy giờ trả phòng?",
+                    "Cho tôi thêm khăn",
+                    "Tôi có thể lấy thêm xà phòng được không?",
+                    "Tôi có thể mượn bộ sạc được không?",
                 ]
             ),
             (
                 "Food",
-                [.restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder],
+                [.restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder, .foodMenuItems],
                 [
                     "Cho tôi bàn cho hai người nhé",
                     "Có nước suối không?",
@@ -872,11 +1056,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Cái gì không quá cay?",
                     "Ít đá thôi",
                     "Không đường",
+                    "Cho tôi tô này",
+                    "Cho tôi muỗng với đũa",
+                    "Cho thêm rau",
+                    "Tôi ăn chay",
                 ]
             ),
             (
                 "Getting Around",
-                [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp],
+                [.taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort],
                 [
                     "Bạn là tài xế của tôi à?",
                     "Hãy đi theo bản đồ",
@@ -887,11 +1075,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Người lái xe rời đi mà không có tôi",
                     "Bàn thông tin gần nhất ở đâu?",
                     "Làm ơn nói lại",
+                    "Cầu Rồng",
+                    "Tiền xe bao nhiêu?",
+                    "Làm ơn bật đồng hồ giúp tôi",
+                    "Mở máy lạnh giúp tôi",
                 ]
             ),
             (
                 "Shopping",
-                [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard],
+                [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce],
                 [
                     "Giá tốt nhất của bạn là gì?",
                     "Bạn có thể giảm giá cho tôi được không?",
@@ -902,11 +1094,14 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Bạn có thể xử lý hoàn tiền không?",
                     "Tôi quẹt thẻ được không?",
                     "Tôi có thể thử thẻ khác được không?",
+                    "Bao nhiêu một ký?",
+                    "Giá cuối bao nhiêu?",
+                    "Bạn có thể bỏ nó vào túi được không?",
                 ]
             ),
             (
                 "Emergency",
-                [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp],
+                [.pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp],
                 [
                     "Tôi bị đau đầu",
                     "Hộ chiếu của tôi bị mất",
@@ -917,11 +1112,14 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi cần giúp đỡ bây giờ",
                     "Tôi cần bác sĩ",
                     "Tôi bị sốt",
+                    "Gọi xe cứu thương",
+                    "Tôi cần quản lý",
+                    "Gọi khách sạn giúp tôi",
                 ]
             ),
             (
                 "Local Greetings",
-                [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry],
+                [.localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk],
                 [
                     "Chào bạn",
                     "Tôi đang vội",
@@ -932,6 +1130,8 @@ final class PracticeScenarioModeTests: XCTestCase {
                     "Tôi có thể vào được không?",
                     "Xin lỗi",
                     "Không, cảm ơn",
+                    "Bạn khỏe không?",
+                    "Tạm biệt",
                 ]
             ),
         ]
@@ -939,7 +1139,7 @@ final class PracticeScenarioModeTests: XCTestCase {
         for (sectionTitle, expectedIDs, expectedVisiblePhrases) in expectedGroups {
             let sectionScenarios = snapshot.scenarios.filter { $0.id.messageSectionTitle == sectionTitle }
             XCTAssertEqual(sectionScenarios.map(\.id), expectedIDs)
-            XCTAssertEqual(sectionScenarios.count, 4, "\(sectionTitle) should have exactly four message scenarios.")
+            XCTAssertEqual(sectionScenarios.count, 5, "\(sectionTitle) should have exactly five message scenarios.")
 
             let visibleCopy = sectionScenarios.flatMap(\.visibleCopy).joined(separator: "\n")
             for phrase in expectedVisiblePhrases {
@@ -1287,12 +1487,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Không, cảm ơn",
                 "Tôi đang vội",
-                "Tạm biệt",
+                "Cảm ơn, tôi hiểu rồi",
             ],
             english: [
                 "No, thank you",
                 "I'm in a hurry",
-                "Goodbye",
+                "Thanks, I understand now",
             ]
         )
     }
@@ -1369,32 +1569,39 @@ final class PracticeScenarioModeTests: XCTestCase {
             .airportPassportControl,
             .airportSimCash,
             .airportWifiPower,
+            .airportBaggageProblem,
             .hotelCheckInHelp,
             .hotelRoomHelp,
             .hotelBagsTaxi,
             .hotelWifiCheckout,
+            .hotelRoomSupplies,
             .restaurantOrderingPayment,
             .danangDay,
             .foodAllergyHelp,
             .foodCoffeeOrder,
+            .foodMenuItems,
             .taxiGrabPickup,
             .taxiRouteHelp,
             .driverProblemHelp,
             .walkingDirectionsHelp,
+            .taxiFareComfort,
             .shoppingMarketPrice,
             .shoppingSizeGift,
             .shoppingReceiptHelp,
             .shoppingPayCard,
+            .shoppingMarketProduce,
             .pharmacyHelp,
             .emergencyLostPassport,
             .emergencyLostBag,
             .emergencyDoctorHelp,
+            .emergencyCallHelp,
             .localGreetingMarket,
             .localGreetingHotel,
             .localGreetingRespect,
             .localThanksSorry,
+            .localSmallTalk,
         ])
-        XCTAssertLessThanOrEqual(snapshot.loadedFallbackCandidateCount, 420)
+        XCTAssertLessThanOrEqual(snapshot.loadedFallbackCandidateCount, 560)
     }
 
     func testMessagesUseShortSituationNamesAndUnreadPreviews() throws {
@@ -1410,30 +1617,37 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(namesByID[.airportPassportControl], "Passport Control")
         XCTAssertEqual(namesByID[.airportSimCash], "SIM & Cash")
         XCTAssertEqual(namesByID[.airportWifiPower], "Airport Wi-Fi")
+        XCTAssertEqual(namesByID[.airportBaggageProblem], "Baggage Problem")
         XCTAssertEqual(namesByID[.hotelCheckInHelp], "Hotel Check-In")
         XCTAssertEqual(namesByID[.hotelRoomHelp], "Room Help")
         XCTAssertEqual(namesByID[.hotelBagsTaxi], "Bags & Taxi")
         XCTAssertEqual(namesByID[.hotelWifiCheckout], "Hotel Wi-Fi")
+        XCTAssertEqual(namesByID[.hotelRoomSupplies], "Room Supplies")
         XCTAssertEqual(namesByID[.restaurantOrderingPayment], "Restaurant Table")
         XCTAssertEqual(namesByID[.danangDay], "Beach Snacks")
         XCTAssertEqual(namesByID[.foodAllergyHelp], "Food Allergies")
         XCTAssertEqual(namesByID[.foodCoffeeOrder], "Coffee Order")
+        XCTAssertEqual(namesByID[.foodMenuItems], "Menu Items")
         XCTAssertEqual(namesByID[.taxiGrabPickup], "Grab Pickup")
         XCTAssertEqual(namesByID[.taxiRouteHelp], "Taxi Route")
         XCTAssertEqual(namesByID[.driverProblemHelp], "Driver Help")
         XCTAssertEqual(namesByID[.walkingDirectionsHelp], "Walking Help")
+        XCTAssertEqual(namesByID[.taxiFareComfort], "Fare & Comfort")
         XCTAssertEqual(namesByID[.shoppingMarketPrice], "Market Price")
         XCTAssertEqual(namesByID[.shoppingSizeGift], "Gift & Size")
         XCTAssertEqual(namesByID[.shoppingReceiptHelp], "Receipt Help")
         XCTAssertEqual(namesByID[.shoppingPayCard], "Pay by Card")
+        XCTAssertEqual(namesByID[.shoppingMarketProduce], "Market Produce")
         XCTAssertEqual(namesByID[.pharmacyHelp], "Pharmacy Visit")
         XCTAssertEqual(namesByID[.emergencyLostPassport], "Lost Passport")
         XCTAssertEqual(namesByID[.emergencyLostBag], "Lost Bag")
         XCTAssertEqual(namesByID[.emergencyDoctorHelp], "Doctor Help")
+        XCTAssertEqual(namesByID[.emergencyCallHelp], "Call for Help")
         XCTAssertEqual(namesByID[.localGreetingMarket], "Market Hello")
         XCTAssertEqual(namesByID[.localGreetingHotel], "Hotel Hello")
         XCTAssertEqual(namesByID[.localGreetingRespect], "Respectful Hello")
         XCTAssertEqual(namesByID[.localThanksSorry], "Thanks & Sorry")
+        XCTAssertEqual(namesByID[.localSmallTalk], "Small Talk")
 
         for scenario in snapshot.scenarios {
             XCTAssertLessThanOrEqual(scenario.id.messageContactName.split(separator: " ").count, 3)
@@ -1791,10 +2005,25 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Where can I charge my phone?",
                     "My data is not working.",
+                    "My phone battery is dead",
                 ],
                 forbiddenTopEnglish: [
                     "Here is my passport",
                     "Can I have a receipt?",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .airportBaggageProblem,
+                stepID: "airport-bag-problem-tag",
+                localMeaning: "Do you have the baggage tag?",
+                expectedTopEnglish: [
+                    "This is my baggage tag",
+                    "Can I show it on my phone?",
+                    "Can you say it in a simpler way?",
+                ],
+                forbiddenTopEnglish: [
+                    "Where is the Grab pickup point?",
+                    "Here is my passport",
                 ]
             ),
             MessageScriptContract(
@@ -1846,10 +2075,25 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "What time is check-out?",
                     "What time?",
+                    "Can I check out later?",
                 ],
                 forbiddenTopEnglish: [
                     "Can I leave my bags until check-in?",
                     "The AC is not working",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .hotelRoomSupplies,
+                stepID: "hotel-supplies-charger",
+                localMeaning: "Do you need anything else for your phone?",
+                expectedTopEnglish: [
+                    "Can I borrow a charger?",
+                    "My phone battery is dead",
+                    "Okay",
+                ],
+                forbiddenTopEnglish: [
+                    "What is the Wi-Fi password?",
+                    "Can I leave my luggage here?",
                 ]
             ),
             MessageScriptContract(
@@ -1905,6 +2149,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ],
                 forbiddenTopEnglish: [
                     "I am allergic to peanuts",
+                    "Can I see your passport?",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .foodMenuItems,
+                stepID: "food-menu-utensils",
+                localMeaning: "Do you need anything else for this dish?",
+                expectedTopEnglish: [
+                    "A spoon and chopsticks please",
+                    "A bottle of water please",
+                    "Thank you",
+                ],
+                forbiddenTopEnglish: [
+                    "The bill, please",
                     "Can I see your passport?",
                 ]
             ),
@@ -1965,6 +2223,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .taxiFareComfort,
+                stepID: "taxi-fare-meter",
+                localMeaning: "Should I go by the meter?",
+                expectedTopEnglish: [
+                    "Please use the meter",
+                    "How much is the fare?",
+                    "Can you say it in a simpler way?",
+                ],
+                forbiddenTopEnglish: [
+                    "Where is baggage claim?",
+                    "Here is my passport",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .shoppingMarketPrice,
                 stepID: "shopping-market-discount",
                 localMeaning: "Is this price okay?",
@@ -2018,6 +2290,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenTopEnglish: [
                     "Do you have a smaller size?",
                     "I need a doctor",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .shoppingMarketProduce,
+                stepID: "market-produce-final-price",
+                localMeaning: "Will you take one kilo?",
+                expectedTopEnglish: [
+                    "What's your final price?",
+                    "How much per kilo?",
+                    "No thank you, I’ll look around first",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I have a receipt?",
+                    "Do you have a smaller size?",
                 ]
             ),
             MessageScriptContract(
@@ -2077,13 +2363,27 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             MessageScriptContract(
+                scenarioID: .emergencyCallHelp,
+                stepID: "emergency-call-hotel",
+                localMeaning: "Do you want me to call your hotel?",
+                expectedTopEnglish: [
+                    "Please call the hotel for me",
+                    "Can you call my emergency contact?",
+                    "No, thank you",
+                ],
+                forbiddenTopEnglish: [
+                    "Can I pay by card?",
+                    "Where is the fitting room?",
+                ]
+            ),
+            MessageScriptContract(
                 scenarioID: .localGreetingMarket,
                 stepID: "greeting-market-thanks",
                 localMeaning: "Do you need me to hold this item?",
                 expectedTopEnglish: [
-                    "Thank you",
                     "No thanks, maybe later",
-                    "No problem",
+                    "No, thank you",
+                    "Okay",
                 ],
                 forbiddenTopEnglish: [
                     "Can you give me a discount?",
@@ -2129,6 +2429,20 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ],
                 forbiddenTopEnglish: [
                     "Can I pay by card?",
+                    "Where is the hospital?",
+                ]
+            ),
+            MessageScriptContract(
+                scenarioID: .localSmallTalk,
+                stepID: "small-talk-how-are-you",
+                localMeaning: "Do you want to ask how they are too?",
+                expectedTopEnglish: [
+                    "How are you?",
+                    "Okay",
+                    "Can you say it in a simpler way?",
+                ],
+                forbiddenTopEnglish: [
+                    "Can you give me a discount?",
                     "Where is the hospital?",
                 ]
             ),
@@ -2192,6 +2506,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenNextTopEnglishFragments: ["passport", "receipt"]
             ),
             MessageTransitionContract(
+                scenarioID: .airportBaggageProblem,
+                selectedStepID: "airport-bag-problem-opening",
+                selectedEnglishFragment: "suitcase",
+                nextStepID: "airport-bag-problem-tag",
+                nextLocalMeaningFragment: "baggage tag",
+                expectedNextTopEnglishFragments: ["baggage tag", "phone", "simpler"],
+                forbiddenNextTopEnglishFragments: ["Grab", "passport"]
+            ),
+            MessageTransitionContract(
                 scenarioID: .hotelCheckInHelp,
                 selectedStepID: "hotel-story-opening",
                 selectedEnglishFragment: "reservation",
@@ -2226,6 +2549,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 nextLocalMeaningFragment: "Wi-Fi working",
                 expectedNextTopEnglishFragments: ["Wi-Fi is not working", "password is not working", "help me"],
                 forbiddenNextTopEnglishFragments: ["check-out", "luggage"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .hotelRoomSupplies,
+                selectedStepID: "hotel-supplies-opening",
+                selectedEnglishFragment: "towels",
+                nextStepID: "hotel-supplies-soap",
+                nextLocalMeaningFragment: "more soap",
+                expectedNextTopEnglishFragments: ["more soap", "Thank you"],
+                forbiddenNextTopEnglishFragments: ["Wi-Fi", "luggage"]
             ),
             MessageTransitionContract(
                 scenarioID: .restaurantOrderingPayment,
@@ -2264,6 +2596,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenNextTopEnglishFragments: ["allergic", "passport"]
             ),
             MessageTransitionContract(
+                scenarioID: .foodMenuItems,
+                selectedStepID: "food-menu-opening",
+                selectedEnglishFragment: "this bowl",
+                nextStepID: "food-menu-utensils",
+                nextLocalMeaningFragment: "anything else",
+                expectedNextTopEnglishFragments: ["spoon and chopsticks", "water", "Thank you"],
+                forbiddenNextTopEnglishFragments: ["passport", "bill"]
+            ),
+            MessageTransitionContract(
                 scenarioID: .taxiGrabPickup,
                 selectedStepID: "taxi-story-opening",
                 selectedEnglishFragment: "driver",
@@ -2298,6 +2639,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 nextLocalMeaningFragment: "turn right",
                 expectedNextTopEnglishFragments: ["understand now", "simpler", "map"],
                 forbiddenNextTopEnglishFragments: ["pay by card", "doctor"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .taxiFareComfort,
+                selectedStepID: "taxi-fare-opening",
+                selectedEnglishFragment: "Dragon Bridge",
+                nextStepID: "taxi-fare-price",
+                nextLocalMeaningFragment: "price",
+                expectedNextTopEnglishFragments: ["fare", "meter", "cash"],
+                forbiddenNextTopEnglishFragments: ["baggage", "passport"]
             ),
             MessageTransitionContract(
                 scenarioID: .shoppingMarketPrice,
@@ -2336,6 +2686,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenNextTopEnglishFragments: ["smaller size", "doctor"]
             ),
             MessageTransitionContract(
+                scenarioID: .shoppingMarketProduce,
+                selectedStepID: "market-produce-opening",
+                selectedEnglishFragment: "per kilo",
+                nextStepID: "market-produce-final-price",
+                nextLocalMeaningFragment: "take one kilo",
+                expectedNextTopEnglishFragments: ["final price", "look around"],
+                forbiddenNextTopEnglishFragments: ["receipt", "fitting room"]
+            ),
+            MessageTransitionContract(
                 scenarioID: .pharmacyHelp,
                 selectedStepID: "pharmacy-story-opening",
                 selectedEnglishFragment: "headache",
@@ -2372,6 +2731,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 forbiddenNextTopEnglishFragments: ["pay by card", "fitting room"]
             ),
             MessageTransitionContract(
+                scenarioID: .emergencyCallHelp,
+                selectedStepID: "emergency-call-opening",
+                selectedEnglishFragment: "ambulance",
+                nextStepID: "emergency-call-manager",
+                nextLocalMeaningFragment: "manager",
+                expectedNextTopEnglishFragments: ["manager", "simpler"],
+                forbiddenNextTopEnglishFragments: ["pay by card", "fitting room"]
+            ),
+            MessageTransitionContract(
                 scenarioID: .localGreetingMarket,
                 selectedStepID: "greeting-market-opening",
                 selectedEnglishFragment: "peer",
@@ -2386,7 +2754,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "male staff",
                 nextStepID: "greeting-hotel-wait",
                 nextLocalMeaningFragment: "wait a moment",
-                expectedNextTopEnglishFragments: ["acknowledgment", "Yes", "Wait for me"],
+                expectedNextTopEnglishFragments: ["acknowledgment", "Yes", "How long"],
                 forbiddenNextTopEnglishFragments: ["repeat", "discount"]
             ),
             MessageTransitionContract(
@@ -2406,6 +2774,15 @@ final class PracticeScenarioModeTests: XCTestCase {
                 nextLocalMeaningFragment: "wrong line",
                 expectedNextTopEnglishFragments: ["Sorry", "say that again", "Okay"],
                 forbiddenNextTopEnglishFragments: ["pay by card", "hospital"]
+            ),
+            MessageTransitionContract(
+                scenarioID: .localSmallTalk,
+                selectedStepID: "small-talk-opening",
+                selectedEnglishFragment: "Hi there",
+                nextStepID: "small-talk-how-are-you",
+                nextLocalMeaningFragment: "ask how they are",
+                expectedNextTopEnglishFragments: ["How are you", "Okay", "simpler"],
+                forbiddenNextTopEnglishFragments: ["discount", "hospital"]
             ),
         ]
 
@@ -2723,7 +3100,73 @@ final class PracticeScenarioModeTests: XCTestCase {
                tokenVietnamese != turnVietnamese {
                 failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) reused whole sentence gloss '\(token.english)'")
             }
+            if tokenEnglish == "my / mine",
+               tokenVietnamese != "cua toi",
+               tokenVietnamese != "cua minh" {
+                failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) drops the owned object in gloss '\(token.english)'")
+            }
+
+            for requiredFragment in requiredEnglishFragments(forVietnamese: token.vietnamese, turnEnglish: turn.english ?? "") {
+                if !token.english.localizedCaseInsensitiveContains(requiredFragment) {
+                    failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) gloss '\(token.english)' should include '\(requiredFragment)'")
+                }
+            }
         }
+    }
+
+    private func requiredEnglishFragments(forVietnamese vietnamese: String, turnEnglish: String) -> [String] {
+        let token = normalizedVietnamese(vietnamese)
+        let rawToken = vietnamese
+            .precomposedStringWithCanonicalMapping
+            .lowercased()
+        let english = normalizedEnglish(turnEnglish)
+        var fragments: [String] = []
+
+        func require(_ vietnameseFragment: String, _ englishFragment: String) {
+            if token.contains(vietnameseFragment) {
+                fragments.append(englishFragment)
+            }
+        }
+
+        func requireRaw(_ vietnameseFragment: String, _ englishFragment: String) {
+            if rawToken.contains(vietnameseFragment) {
+                fragments.append(englishFragment)
+            }
+        }
+
+        require("tui", "bag")
+        require("vali", "suitcase")
+        require("ho chieu", "passport")
+        require("bao ve", "security")
+        require("cong an", "police")
+        require("tien mat", "cash")
+        require("dau phong", "peanut")
+        require("dua tuoi", "coconut")
+
+        if token.contains("dien thoai") || (token.contains("thoai") && english.contains("phone")) {
+            fragments.append("phone")
+        }
+        if rawToken.contains("thẻ") && english.contains("card") {
+            fragments.append("card")
+        }
+        if rawToken.contains("thẻ hành lý") || (rawToken.contains("thẻ") && english.contains("baggage tag")) {
+            fragments.append("tag")
+        }
+        if token.contains("khach san") || (rawToken.contains("sạn của tôi") && english.contains("hotel")) {
+            fragments.append("hotel")
+        }
+        if token.contains("tai xe") || (rawToken.contains("xế của tôi") && english.contains("driver")) {
+            fragments.append("driver")
+        }
+        if token.contains("ban do") || (rawToken.contains("đồ của tôi") && english.contains("map")) {
+            fragments.append("map")
+        }
+        if rawToken.contains("ví của tôi") && english.contains("wallet") {
+            fragments.append("wallet")
+        }
+        requireRaw("esim", "eSIM")
+
+        return Array(Set(fragments)).sorted()
     }
 
     private func vietnameseLooksLikeCodeToken(_ value: String) -> Bool {

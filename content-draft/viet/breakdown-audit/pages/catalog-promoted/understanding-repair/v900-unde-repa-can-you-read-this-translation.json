@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-can-you-read-this-translation",
+  "phraseText": "Bạn có đọc được bản dịch này không?",
+  "englishTitle": "Can you read this translation?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-can-you-read-this-translation",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đọc",
+      "english": "read"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bản dịch",
+      "english": "translation",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có đọc được bản dịch này không?",
+      "english": "Can you read this translation?",
+      "audioKey": "v900-unde-repa-can-you-read-this-translation"
+    }
+  ]
+}

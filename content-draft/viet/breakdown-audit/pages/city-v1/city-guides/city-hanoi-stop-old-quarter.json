@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-old-quarter",
+  "phraseText": "Dừng ở phố cổ Hà Nội",
+  "englishTitle": "Stop in Hanoi Old Quarter",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.368Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-old-quarter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phố cổ Hà Nội",
+      "english": "Hanoi Old Quarter",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở phố cổ Hà Nội",
+      "english": "Stop in Hanoi Old Quarter",
+      "audioKey": "audio-authored-dung-o-pho-co-ha-noi-9506d5e669"
+    }
+  ]
+}

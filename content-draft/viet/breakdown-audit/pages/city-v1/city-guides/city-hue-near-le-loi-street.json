@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hue-near-le-loi-street",
+  "phraseText": "Đường Lê Lợi gần đây không?",
+  "englishTitle": "Is Le Loi Street near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.386Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-near-le-loi-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Lê Lợi",
+      "english": "Le Loi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đường Lê Lợi gần đây không?",
+      "english": "Is Le Loi Street near here?",
+      "audioKey": "audio-authored-duong-le-loi-gan-day-khong-ff6f22ec59"
+    }
+  ]
+}

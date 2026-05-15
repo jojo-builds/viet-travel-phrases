@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+  "phraseText": "Nơi nào ít đông đúc hơn?",
+  "englishTitle": "Where is less crowded?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nơi",
+      "english": "place"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ít",
+      "english": "less / a little"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đông đúc",
+      "english": "crowded",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hơn?",
+      "english": "more"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nơi nào ít đông đúc hơn?",
+      "english": "Where is less crowded?",
+      "audioKey": "v900-sigh-acti-where-is-less-crowded"
+    }
+  ]
+}

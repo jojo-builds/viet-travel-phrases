@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v900-tran-this-is-not-the-place-i-meant",
+  "phraseText": "Đây không phải là nơi tôi muốn nói",
+  "englishTitle": "This is not the place I meant",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-this-is-not-the-place-i-meant",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nơi",
+      "english": "place"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây không phải là nơi tôi muốn nói",
+      "english": "This is not the place I meant",
+      "audioKey": "v900-tran-this-is-not-the-place-i-meant"
+    }
+  ]
+}

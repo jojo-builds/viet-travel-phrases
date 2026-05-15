@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-hotel-check-in-polite",
+  "phraseText": "Cho tôi nhận phòng nhé",
+  "englishTitle": "I’d like to check in, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-check-in-polite",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhận phòng",
+      "english": "check in",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhé",
+      "english": "soft polite ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi nhận phòng nhé",
+      "english": "I’d like to check in, please",
+      "audioKey": "hotel-check-in-polite"
+    }
+  ]
+}

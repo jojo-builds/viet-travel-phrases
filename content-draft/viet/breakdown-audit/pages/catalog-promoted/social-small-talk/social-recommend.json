@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-social-9",
+  "phraseText": "Bạn gợi ý gì ở đây?",
+  "englishTitle": "What do you recommend here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-social-9",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gợi ý",
+      "english": "suggestion",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây?",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn gợi ý gì ở đây?",
+      "english": "What do you recommend here?",
+      "audioKey": "social-9"
+    }
+  ]
+}

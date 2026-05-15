@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-can-i-move-it-to-tomorrow",
+  "phraseText": "Tôi có thể chuyển nó sang ngày mai được không?",
+  "englishTitle": "Can I move it to tomorrow?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-can-i-move-it-to-tomorrow",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chuyển",
+      "english": "transfer / move"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sang",
+      "english": "to / across"
+    },
+    {
+      "vietnamese": "ngày mai",
+      "english": "tomorrow",
+      "keepTogetherReason": "fixed day expression"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể chuyển nó sang ngày mai được không?",
+      "english": "Can I move it to tomorrow?",
+      "audioKey": "v900-time-date-book-can-i-move-it-to-tomorrow"
+    }
+  ]
+}

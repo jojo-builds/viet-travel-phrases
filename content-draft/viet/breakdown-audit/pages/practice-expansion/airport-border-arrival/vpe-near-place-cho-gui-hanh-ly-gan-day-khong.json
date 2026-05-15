@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-near-place-cho-gui-hanh-ly-gan-day-khong",
+  "phraseText": "chỗ gửi hành lý gần đây không?",
+  "englishTitle": "Is luggage storage nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.429Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-cho-gui-hanh-ly-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "chỗ gửi hành lý",
+      "english": "luggage storage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "chỗ gửi hành lý gần đây không?",
+      "english": "Is luggage storage nearby?",
+      "audioKey": "audio-authored-cho-gui-hanh-ly-gan-day-khong-127709437a"
+    }
+  ]
+}

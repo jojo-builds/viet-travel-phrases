@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-phone-premium-no-signal",
+  "phraseText": "Không có tín hiệu ở đây.",
+  "englishTitle": "There is no signal here.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.330Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-phone-premium-no-signal",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tín hiệu",
+      "english": "signal",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây.",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không có tín hiệu ở đây.",
+      "english": "There is no signal here.",
+      "audioKey": "phone-premium-no-signal"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "pageID": "viet-phrase-v900-shop-that-is-still-too-expensive-for-me",
+  "phraseText": "Điều đó vẫn còn quá đắt đối với tôi",
+  "englishTitle": "That is still too expensive for me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-that-is-still-too-expensive-for-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vẫn",
+      "english": "still"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "còn",
+      "english": "It is still available"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đắt",
+      "english": "expensive"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đối",
+      "english": "opposite / toward"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điều đó vẫn còn quá đắt đối với tôi",
+      "english": "That is still too expensive for me",
+      "audioKey": "v900-shop-that-is-still-too-expensive-for-me"
+    }
+  ]
+}

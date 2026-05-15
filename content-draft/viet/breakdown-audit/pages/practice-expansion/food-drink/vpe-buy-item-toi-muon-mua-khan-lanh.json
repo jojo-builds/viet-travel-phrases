@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-khan-lanh",
+  "phraseText": "Tôi muốn mua khăn lạnh",
+  "englishTitle": "I want to buy a cold towel.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.396Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-khan-lanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "khăn",
+      "english": "towel / cloth"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lạnh",
+      "english": "cold"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua khăn lạnh",
+      "english": "I want to buy a cold towel.",
+      "audioKey": "audio-authored-toi-muon-mua-khan-lanh-144bfe3913"
+    }
+  ]
+}

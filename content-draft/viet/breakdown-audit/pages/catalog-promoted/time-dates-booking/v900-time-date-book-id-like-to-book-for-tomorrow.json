@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-id-like-to-book-for-tomorrow",
+  "phraseText": "Tôi muốn đặt chỗ cho ngày mai",
+  "englishTitle": "I’d like to book for tomorrow",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-id-like-to-book-for-tomorrow",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt chỗ",
+      "english": "make a reservation",
+      "keepTogetherReason": "compound booking action"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "vietnamese": "ngày mai",
+      "english": "tomorrow",
+      "keepTogetherReason": "fixed day expression"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn đặt chỗ cho ngày mai",
+      "english": "I’d like to book for tomorrow",
+      "audioKey": "v900-time-date-book-id-like-to-book-for-tomorrow"
+    }
+  ]
+}

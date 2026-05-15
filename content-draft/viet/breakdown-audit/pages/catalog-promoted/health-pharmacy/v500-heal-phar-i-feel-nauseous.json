@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-i-feel-nauseous",
+  "phraseText": "tôi cảm thấy buồn nôn",
+  "englishTitle": "I feel nauseous",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-i-feel-nauseous",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm thấy",
+      "english": "feel",
+      "keepTogetherReason": "compound feeling verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "buồn nôn",
+      "english": "nauseous",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi cảm thấy buồn nôn",
+      "english": "I feel nauseous",
+      "audioKey": "v500-heal-phar-i-feel-nauseous"
+    }
+  ]
+}

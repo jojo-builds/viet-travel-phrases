@@ -46,39 +46,33 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể thanh toán",
+          "english": "can I pay",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể thanh toán",
-          "english": "pay",
+          "vietnamese": "hóa đơn",
+          "english": "bill / receipt",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hóa đơn bằng",
-          "english": "bill",
+          "vietnamese": "bằng thẻ",
+          "english": "by card",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "thẻ",
-          "english": "can / able to",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
           "english": "Can I pay the bill by card",
-          "audioKey": null
+          "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
         }
       ]
     },

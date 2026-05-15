@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-money-another-one",
+  "phraseText": "Cho tôi xem cái khác",
+  "englishTitle": "Show me another one",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-money-another-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xem",
+      "english": "look / see"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi xem cái khác",
+      "english": "Show me another one",
+      "audioKey": "price-6"
+    }
+  ]
+}

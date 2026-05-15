@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-stop-ancient-town",
+  "phraseText": "Dừng ở Phố cổ Hội An",
+  "englishTitle": "Stop at Hoi An Ancient Town",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố cổ Hội An",
+      "english": "Hoi An Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Phố cổ Hội An",
+      "english": "Stop at Hoi An Ancient Town",
+      "audioKey": "audio-authored-dung-o-pho-co-hoi-an-0c9d613047"
+    }
+  ]
+}

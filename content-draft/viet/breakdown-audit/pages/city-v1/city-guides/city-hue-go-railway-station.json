@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hue-go-railway-station",
+  "phraseText": "Đi Ga Huế",
+  "englishTitle": "Go to Hue Railway Station",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.385Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-go-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Ga Huế",
+      "english": "Hue Railway Station",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Ga Huế",
+      "english": "Go to Hue Railway Station",
+      "audioKey": "audio-authored-di-ga-hue-0398aa0b7b"
+    }
+  ]
+}

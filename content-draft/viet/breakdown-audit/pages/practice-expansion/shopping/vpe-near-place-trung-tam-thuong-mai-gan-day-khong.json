@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-near-place-trung-tam-thuong-mai-gan-day-khong",
+  "phraseText": "trung tâm thương mại gần đây không?",
+  "englishTitle": "Is the mall nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.434Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-trung-tam-thuong-mai-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "trung tâm thương mại",
+      "english": "shopping mall",
+      "keepTogetherReason": "compound shopping-place term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "trung tâm thương mại gần đây không?",
+      "english": "Is the mall nearby?",
+      "audioKey": "audio-authored-trung-tam-thuong-mai-gan-day-khong-edacd39d01"
+    }
+  ]
+}

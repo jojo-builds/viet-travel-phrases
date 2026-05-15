@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-quay-giu-do",
+  "phraseText": "Dừng ở quầy giữ đồ",
+  "englishTitle": "Stop at the bag check.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.474Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-quay-giu-do",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giữ",
+      "english": "keep / hold"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đồ",
+      "english": "thing / item"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở quầy giữ đồ",
+      "english": "Stop at the bag check.",
+      "audioKey": "audio-authored-dung-o-quay-giu-do-80ff08c779"
+    }
+  ]
+}

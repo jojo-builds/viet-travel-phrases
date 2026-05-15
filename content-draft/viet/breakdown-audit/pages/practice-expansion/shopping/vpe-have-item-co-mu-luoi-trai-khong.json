@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-mu-luoi-trai-khong",
+  "phraseText": "Có mũ lưỡi trai không?",
+  "englishTitle": "Do you have a baseball cap?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.412Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-mu-luoi-trai-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mũ lưỡi trai",
+      "english": "baseball cap",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có mũ lưỡi trai không?",
+      "english": "Do you have a baseball cap?",
+      "audioKey": "audio-authored-co-mu-luoi-trai-khong-f12289fac1"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hcmc-near-binh-tay-market",
+  "phraseText": "Chợ Bình Tây gần đây không?",
+  "englishTitle": "Is Binh Tay Market near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.373Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-near-binh-tay-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Bình Tây",
+      "english": "Binh Tay Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Bình Tây gần đây không?",
+      "english": "Is Binh Tay Market near here?",
+      "audioKey": "audio-authored-cho-binh-tay-gan-day-khong-0443e728c0"
+    }
+  ]
+}

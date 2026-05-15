@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-mu-bao-hiem",
+  "phraseText": "Tôi cần mũ bảo hiểm",
+  "englishTitle": "I need a helmet.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.438Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-mu-bao-hiem",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mũ bảo hiểm",
+      "english": "helmet",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần mũ bảo hiểm",
+      "english": "I need a helmet.",
+      "audioKey": "audio-authored-toi-can-mu-bao-hiem-b32695ee3d"
+    }
+  ]
+}

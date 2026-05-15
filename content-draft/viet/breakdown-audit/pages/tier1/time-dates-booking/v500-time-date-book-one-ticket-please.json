@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-v500-time-date-book-one-ticket-please",
+  "phraseText": "Xin một vé",
+  "englishTitle": "One ticket, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-time-date-book-one-ticket-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin một vé",
+      "english": "One ticket, please",
+      "audioKey": "v500-time-date-book-one-ticket-please"
+    }
+  ]
+}

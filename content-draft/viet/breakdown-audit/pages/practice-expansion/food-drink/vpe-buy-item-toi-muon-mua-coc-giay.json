@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-coc-giay",
+  "phraseText": "Tôi muốn mua cốc giấy",
+  "englishTitle": "I want to buy a paper cup.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.394Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-coc-giay",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cốc",
+      "english": "cup"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "giấy",
+      "english": "paper"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua cốc giấy",
+      "english": "I want to buy a paper cup.",
+      "audioKey": "audio-authored-toi-muon-mua-coc-giay-9c046176d4"
+    }
+  ]
+}

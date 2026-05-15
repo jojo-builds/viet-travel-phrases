@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hanoi-go-long-bien-market",
+  "phraseText": "Đi Chợ Long Biên",
+  "englishTitle": "Go to Long Bien Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.365Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-go-long-bien-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Long Biên",
+      "english": "Long Bien Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ Long Biên",
+      "english": "Go to Long Bien Market",
+      "audioKey": "audio-authored-di-cho-long-bien-af7d351efa"
+    }
+  ]
+}

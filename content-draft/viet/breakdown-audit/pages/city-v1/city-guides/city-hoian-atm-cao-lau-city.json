@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hoian-atm-cao-lau-city",
+  "phraseText": "Ở đây có cao lầu không?",
+  "englishTitle": "Do you have cao lau here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.378Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-atm-cao-lau-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cao lầu",
+      "english": "cao lau dish",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ở đây có cao lầu không?",
+      "english": "Do you have cao lau here?",
+      "audioKey": "audio-authored-o-day-co-cao-lau-khong-a4556ef6fb"
+    }
+  ]
+}

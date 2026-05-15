@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-dong-ba-market",
+  "phraseText": "Chợ Đông Ba ở đâu?",
+  "englishTitle": "Where is Dong Ba Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-dong-ba-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Đông Ba",
+      "english": "Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Đông Ba ở đâu?",
+      "english": "Where is Dong Ba Market?",
+      "audioKey": "audio-authored-cho-dong-ba-o-dau-da14890866"
+    }
+  ]
+}

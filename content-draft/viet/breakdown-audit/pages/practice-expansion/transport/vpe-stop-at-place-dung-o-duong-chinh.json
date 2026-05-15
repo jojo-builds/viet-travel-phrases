@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-duong-chinh",
+  "phraseText": "Dừng ở đường chính",
+  "englishTitle": "Stop at the main road.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.472Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-duong-chinh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chính",
+      "english": "main / official"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở đường chính",
+      "english": "Stop at the main road.",
+      "audioKey": "audio-authored-dung-o-duong-chinh-bcffb7f184"
+    }
+  ]
+}

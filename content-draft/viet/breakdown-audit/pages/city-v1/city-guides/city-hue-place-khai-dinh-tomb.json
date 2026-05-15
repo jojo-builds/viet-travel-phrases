@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hue-place-khai-dinh-tomb",
+  "phraseText": "Lăng Khải Định",
+  "englishTitle": "Tomb of Khai Dinh",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.387Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-khai-dinh-tomb",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lăng Khải Định",
+      "english": "Tomb of Khai Dinh",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

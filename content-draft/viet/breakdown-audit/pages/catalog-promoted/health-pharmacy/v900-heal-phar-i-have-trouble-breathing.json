@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-have-trouble-breathing",
+  "phraseText": "Tôi khó thở",
+  "englishTitle": "I have trouble breathing",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-have-trouble-breathing",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "vietnamese": "khó thở",
+      "english": "trouble breathing",
+      "keepTogetherReason": "compound symptom term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi khó thở",
+      "english": "I have trouble breathing",
+      "audioKey": "v900-heal-phar-i-have-trouble-breathing"
+    }
+  ]
+}

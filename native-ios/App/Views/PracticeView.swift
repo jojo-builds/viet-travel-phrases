@@ -1823,6 +1823,8 @@ extension PracticeScenarioID {
             return Color(red: 0.05, green: 0.52, blue: 0.62)
         case .airportWifiPower:
             return Color(red: 0.05, green: 0.46, blue: 0.58)
+        case .airportBaggageProblem:
+            return Color(red: 0.16, green: 0.4, blue: 0.68)
         case .hotelCheckInHelp:
             return Color(red: 0.48, green: 0.31, blue: 0.76)
         case .hotelRoomHelp:
@@ -1831,6 +1833,8 @@ extension PracticeScenarioID {
             return Color(red: 0.38, green: 0.25, blue: 0.67)
         case .hotelWifiCheckout:
             return Color(red: 0.45, green: 0.29, blue: 0.72)
+        case .hotelRoomSupplies:
+            return Color(red: 0.5, green: 0.34, blue: 0.7)
         case .restaurantOrderingPayment:
             return Color(red: 0.08, green: 0.43, blue: 0.32)
         case .danangDay:
@@ -1839,13 +1843,15 @@ extension PracticeScenarioID {
             return Color(red: 0.1, green: 0.52, blue: 0.35)
         case .foodCoffeeOrder:
             return Color(red: 0.08, green: 0.45, blue: 0.34)
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
+        case .foodMenuItems:
+            return Color(red: 0.13, green: 0.5, blue: 0.3)
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort:
             return Color(red: 0.7, green: 0.42, blue: 0.08)
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce:
             return Color(red: 0.72, green: 0.42, blue: 0.08)
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp:
             return Color(red: 0.78, green: 0.12, blue: 0.16)
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return Color(red: 0.06, green: 0.5, blue: 0.52)
         }
     }
@@ -1874,7 +1880,7 @@ extension PracticeScenarioID {
             return .passportDesk
         case .airportSimCash:
             return .airportServices
-        case .airportWifiPower:
+        case .airportWifiPower, .airportBaggageProblem:
             return .airportServices
         case .hotelCheckInHelp:
             return .hotelLobby
@@ -1882,7 +1888,7 @@ extension PracticeScenarioID {
             return .hotelRoom
         case .hotelBagsTaxi:
             return .luggageLobby
-        case .hotelWifiCheckout:
+        case .hotelWifiCheckout, .hotelRoomSupplies:
             return .hotelLobby
         case .restaurantOrderingPayment:
             return .restaurantTable
@@ -1890,23 +1896,23 @@ extension PracticeScenarioID {
             return .beachCafe
         case .foodAllergyHelp:
             return .allergyPlate
-        case .foodCoffeeOrder:
+        case .foodCoffeeOrder, .foodMenuItems:
             return .beachCafe
         case .taxiGrabPickup, .driverProblemHelp:
             return .road
-        case .taxiRouteHelp, .walkingDirectionsHelp:
+        case .taxiRouteHelp, .walkingDirectionsHelp, .taxiFareComfort:
             return .routeMap
-        case .shoppingMarketPrice:
+        case .shoppingMarketPrice, .shoppingMarketProduce:
             return .market
         case .shoppingSizeGift:
             return .giftShop
         case .shoppingReceiptHelp, .shoppingPayCard:
             return .checkout
-        case .pharmacyHelp, .emergencyDoctorHelp:
+        case .pharmacyHelp, .emergencyDoctorHelp, .emergencyCallHelp:
             return .pharmacy
         case .emergencyLostPassport, .emergencyLostBag:
             return .emergencyDesk
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return .greeting
         }
     }
@@ -1921,6 +1927,8 @@ extension PracticeScenarioID {
             return "sim-cash-teal"
         case .airportWifiPower:
             return "wifi-cyan"
+        case .airportBaggageProblem:
+            return "baggage-problem-blue"
         case .hotelCheckInHelp:
             return "hotel-checkin-violet"
         case .hotelRoomHelp:
@@ -1929,6 +1937,8 @@ extension PracticeScenarioID {
             return "hotel-bags-indigo"
         case .hotelWifiCheckout:
             return "hotel-checkout-mauve"
+        case .hotelRoomSupplies:
+            return "room-supplies-violet"
         case .restaurantOrderingPayment:
             return "restaurant-table-green"
         case .danangDay:
@@ -1937,6 +1947,8 @@ extension PracticeScenarioID {
             return "food-allergy-leaf"
         case .foodCoffeeOrder:
             return "coffee-order-caramel"
+        case .foodMenuItems:
+            return "menu-items-green"
         case .taxiGrabPickup:
             return "grab-pickup-green"
         case .taxiRouteHelp:
@@ -1945,6 +1957,8 @@ extension PracticeScenarioID {
             return "driver-help-alert"
         case .walkingDirectionsHelp:
             return "walking-help-bluegreen"
+        case .taxiFareComfort:
+            return "taxi-fare-comfort"
         case .shoppingMarketPrice:
             return "market-price-orange"
         case .shoppingSizeGift:
@@ -1953,6 +1967,8 @@ extension PracticeScenarioID {
             return "receipt-help-gold"
         case .shoppingPayCard:
             return "pay-card-blue"
+        case .shoppingMarketProduce:
+            return "market-produce-gold"
         case .pharmacyHelp:
             return "pharmacy-red-teal"
         case .emergencyLostPassport:
@@ -1961,6 +1977,8 @@ extension PracticeScenarioID {
             return "lost-bag-crimson"
         case .emergencyDoctorHelp:
             return "doctor-help-clinical"
+        case .emergencyCallHelp:
+            return "emergency-call-red"
         case .localGreetingMarket:
             return "market-hello-teal"
         case .localGreetingHotel:
@@ -1969,6 +1987,8 @@ extension PracticeScenarioID {
             return "respect-hello-indigo"
         case .localThanksSorry:
             return "thanks-sorry-rose"
+        case .localSmallTalk:
+            return "small-talk-teal"
         }
     }
 
@@ -1982,6 +2002,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.13, green: 0.65, blue: 0.52), Color(red: 0.04, green: 0.33, blue: 0.35)]
         case .airportWifiPower:
             return [Color(red: 0.16, green: 0.58, blue: 0.82), Color(red: 0.04, green: 0.25, blue: 0.5)]
+        case .airportBaggageProblem:
+            return [Color(red: 0.2, green: 0.5, blue: 0.84), Color(red: 0.08, green: 0.22, blue: 0.44)]
         case .hotelCheckInHelp:
             return [Color(red: 0.6, green: 0.39, blue: 0.84), Color(red: 0.27, green: 0.15, blue: 0.55)]
         case .hotelRoomHelp:
@@ -1990,6 +2012,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.48, green: 0.37, blue: 0.78), Color(red: 0.17, green: 0.2, blue: 0.55)]
         case .hotelWifiCheckout:
             return [Color(red: 0.65, green: 0.38, blue: 0.66), Color(red: 0.25, green: 0.16, blue: 0.48)]
+        case .hotelRoomSupplies:
+            return [Color(red: 0.58, green: 0.42, blue: 0.8), Color(red: 0.24, green: 0.18, blue: 0.5)]
         case .restaurantOrderingPayment:
             return [Color(red: 0.24, green: 0.58, blue: 0.44), Color(red: 0.07, green: 0.31, blue: 0.24)]
         case .danangDay:
@@ -1998,6 +2022,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.28, green: 0.66, blue: 0.38), Color(red: 0.08, green: 0.31, blue: 0.22)]
         case .foodCoffeeOrder:
             return [Color(red: 0.72, green: 0.49, blue: 0.28), Color(red: 0.26, green: 0.17, blue: 0.12)]
+        case .foodMenuItems:
+            return [Color(red: 0.24, green: 0.62, blue: 0.38), Color(red: 0.08, green: 0.28, blue: 0.2)]
         case .taxiGrabPickup:
             return [Color(red: 0.28, green: 0.64, blue: 0.36), Color(red: 0.42, green: 0.3, blue: 0.08)]
         case .taxiRouteHelp:
@@ -2006,6 +2032,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.9, green: 0.45, blue: 0.2), Color(red: 0.5, green: 0.12, blue: 0.08)]
         case .walkingDirectionsHelp:
             return [Color(red: 0.18, green: 0.56, blue: 0.68), Color(red: 0.08, green: 0.32, blue: 0.34)]
+        case .taxiFareComfort:
+            return [Color(red: 0.82, green: 0.52, blue: 0.16), Color(red: 0.34, green: 0.2, blue: 0.08)]
         case .shoppingMarketPrice:
             return [Color(red: 0.88, green: 0.52, blue: 0.22), Color(red: 0.43, green: 0.23, blue: 0.07)]
         case .shoppingSizeGift:
@@ -2014,6 +2042,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.82, green: 0.58, blue: 0.2), Color(red: 0.34, green: 0.25, blue: 0.11)]
         case .shoppingPayCard:
             return [Color(red: 0.22, green: 0.5, blue: 0.82), Color(red: 0.18, green: 0.22, blue: 0.56)]
+        case .shoppingMarketProduce:
+            return [Color(red: 0.8, green: 0.58, blue: 0.2), Color(red: 0.3, green: 0.24, blue: 0.08)]
         case .pharmacyHelp:
             return [Color(red: 0.9, green: 0.24, blue: 0.26), Color(red: 0.08, green: 0.39, blue: 0.41)]
         case .emergencyLostPassport:
@@ -2022,6 +2052,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.94, green: 0.25, blue: 0.18), Color(red: 0.42, green: 0.08, blue: 0.1)]
         case .emergencyDoctorHelp:
             return [Color(red: 0.9, green: 0.22, blue: 0.28), Color(red: 0.13, green: 0.28, blue: 0.56)]
+        case .emergencyCallHelp:
+            return [Color(red: 0.9, green: 0.2, blue: 0.22), Color(red: 0.35, green: 0.08, blue: 0.12)]
         case .localGreetingMarket:
             return [Color(red: 0.15, green: 0.62, blue: 0.54), Color(red: 0.06, green: 0.32, blue: 0.29)]
         case .localGreetingHotel:
@@ -2030,6 +2062,8 @@ extension PracticeScenarioID {
             return [Color(red: 0.36, green: 0.46, blue: 0.78), Color(red: 0.08, green: 0.29, blue: 0.42)]
         case .localThanksSorry:
             return [Color(red: 0.74, green: 0.36, blue: 0.5), Color(red: 0.08, green: 0.34, blue: 0.38)]
+        case .localSmallTalk:
+            return [Color(red: 0.16, green: 0.58, blue: 0.56), Color(red: 0.06, green: 0.28, blue: 0.34)]
         }
     }
 
@@ -2043,6 +2077,8 @@ extension PracticeScenarioID {
             return "SIM"
         case .airportWifiPower:
             return "WI-FI"
+        case .airportBaggageProblem:
+            return "BAGS"
         case .hotelCheckInHelp:
             return "CHECK"
         case .hotelRoomHelp:
@@ -2051,6 +2087,8 @@ extension PracticeScenarioID {
             return "TAXI"
         case .hotelWifiCheckout:
             return "OUT"
+        case .hotelRoomSupplies:
+            return "SUPPLY"
         case .restaurantOrderingPayment:
             return "TABLE"
         case .danangDay:
@@ -2059,6 +2097,8 @@ extension PracticeScenarioID {
             return "ALLERGY"
         case .foodCoffeeOrder:
             return "COFFEE"
+        case .foodMenuItems:
+            return "MENU"
         case .taxiGrabPickup:
             return "PICKUP"
         case .taxiRouteHelp:
@@ -2067,6 +2107,8 @@ extension PracticeScenarioID {
             return "HELP"
         case .walkingDirectionsHelp:
             return "WALK"
+        case .taxiFareComfort:
+            return "FARE"
         case .shoppingMarketPrice:
             return "MARKET"
         case .shoppingSizeGift:
@@ -2075,6 +2117,8 @@ extension PracticeScenarioID {
             return "RCPT"
         case .shoppingPayCard:
             return "CARD"
+        case .shoppingMarketProduce:
+            return "KILO"
         case .pharmacyHelp:
             return "MEDS"
         case .emergencyLostPassport:
@@ -2083,6 +2127,8 @@ extension PracticeScenarioID {
             return "BAG"
         case .emergencyDoctorHelp:
             return "DOCTOR"
+        case .emergencyCallHelp:
+            return "CALL"
         case .localGreetingMarket:
             return "MARKET"
         case .localGreetingHotel:
@@ -2091,6 +2137,8 @@ extension PracticeScenarioID {
             return "FORMAL"
         case .localThanksSorry:
             return "THANKS"
+        case .localSmallTalk:
+            return "CHAT"
         }
     }
 
@@ -2104,6 +2152,8 @@ extension PracticeScenarioID {
             return "creditcard.and.123"
         case .airportWifiPower:
             return "wifi"
+        case .airportBaggageProblem:
+            return "suitcase.fill"
         case .hotelCheckInHelp:
             return "building.2.fill"
         case .hotelRoomHelp:
@@ -2112,6 +2162,8 @@ extension PracticeScenarioID {
             return "car.fill"
         case .hotelWifiCheckout:
             return "wifi.router.fill"
+        case .hotelRoomSupplies:
+            return "wrench.and.screwdriver.fill"
         case .restaurantOrderingPayment:
             return "wineglass.fill"
         case .danangDay:
@@ -2120,6 +2172,8 @@ extension PracticeScenarioID {
             return "exclamationmark.triangle.fill"
         case .foodCoffeeOrder:
             return "cup.and.saucer.fill"
+        case .foodMenuItems:
+            return "list.bullet.rectangle.fill"
         case .taxiGrabPickup:
             return "car.fill"
         case .taxiRouteHelp:
@@ -2128,6 +2182,8 @@ extension PracticeScenarioID {
             return "exclamationmark.triangle.fill"
         case .walkingDirectionsHelp:
             return "figure.walk"
+        case .taxiFareComfort:
+            return "speedometer"
         case .shoppingMarketPrice:
             return "storefront.fill"
         case .shoppingSizeGift:
@@ -2136,6 +2192,8 @@ extension PracticeScenarioID {
             return "receipt.fill"
         case .shoppingPayCard:
             return "creditcard.fill"
+        case .shoppingMarketProduce:
+            return "cart.fill"
         case .pharmacyHelp:
             return "pills.fill"
         case .emergencyLostPassport:
@@ -2144,6 +2202,8 @@ extension PracticeScenarioID {
             return "camera.viewfinder"
         case .emergencyDoctorHelp:
             return "stethoscope"
+        case .emergencyCallHelp:
+            return "phone.fill"
         case .localGreetingMarket:
             return "basket.fill"
         case .localGreetingHotel:
@@ -2152,6 +2212,8 @@ extension PracticeScenarioID {
             return "person.2.fill"
         case .localThanksSorry:
             return "bubble.left.and.bubble.right.fill"
+        case .localSmallTalk:
+            return "ellipsis.bubble.fill"
         }
     }
 
@@ -2197,6 +2259,8 @@ extension PracticeScenarioID {
             return CGSize(width: -0.14, height: 0.14)
         case .airportWifiPower:
             return CGSize(width: 0.12, height: 0.12)
+        case .airportBaggageProblem:
+            return CGSize(width: -0.12, height: 0.15)
         case .hotelCheckInHelp:
             return CGSize(width: 0.13, height: 0.16)
         case .hotelRoomHelp:
@@ -2205,6 +2269,8 @@ extension PracticeScenarioID {
             return CGSize(width: 0.16, height: 0.15)
         case .hotelWifiCheckout:
             return CGSize(width: 0.14, height: 0.13)
+        case .hotelRoomSupplies:
+            return CGSize(width: -0.12, height: 0.13)
         case .restaurantOrderingPayment:
             return CGSize(width: 0.16, height: 0.14)
         case .danangDay:
@@ -2213,6 +2279,8 @@ extension PracticeScenarioID {
             return CGSize(width: -0.14, height: 0.16)
         case .foodCoffeeOrder:
             return CGSize(width: 0.15, height: 0.12)
+        case .foodMenuItems:
+            return CGSize(width: -0.12, height: 0.14)
         case .taxiGrabPickup:
             return CGSize(width: 0.16, height: 0.15)
         case .taxiRouteHelp:
@@ -2221,6 +2289,8 @@ extension PracticeScenarioID {
             return CGSize(width: 0.14, height: 0.13)
         case .walkingDirectionsHelp:
             return CGSize(width: 0.14, height: 0.14)
+        case .taxiFareComfort:
+            return CGSize(width: 0.12, height: 0.14)
         case .shoppingMarketPrice:
             return CGSize(width: -0.12, height: 0.15)
         case .shoppingSizeGift:
@@ -2229,6 +2299,8 @@ extension PracticeScenarioID {
             return CGSize(width: -0.12, height: 0.14)
         case .shoppingPayCard:
             return CGSize(width: 0.13, height: 0.13)
+        case .shoppingMarketProduce:
+            return CGSize(width: -0.13, height: 0.15)
         case .pharmacyHelp:
             return CGSize(width: 0.14, height: 0.14)
         case .emergencyLostPassport:
@@ -2237,6 +2309,8 @@ extension PracticeScenarioID {
             return CGSize(width: 0.15, height: 0.14)
         case .emergencyDoctorHelp:
             return CGSize(width: 0.13, height: 0.14)
+        case .emergencyCallHelp:
+            return CGSize(width: 0.15, height: 0.13)
         case .localGreetingMarket:
             return CGSize(width: -0.13, height: 0.14)
         case .localGreetingHotel:
@@ -2245,6 +2319,8 @@ extension PracticeScenarioID {
             return CGSize(width: 0.14, height: 0.13)
         case .localThanksSorry:
             return CGSize(width: 0.12, height: 0.14)
+        case .localSmallTalk:
+            return CGSize(width: -0.12, height: 0.14)
         }
     }
 

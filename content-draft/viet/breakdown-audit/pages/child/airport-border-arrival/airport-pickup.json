@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-airport-pickup-clearer",
+  "phraseText": "Tôi gặp tài xế ở đâu?",
+  "englishTitle": "Where do I meet the driver?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.289Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-airport-pickup-clearer",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gặp",
+      "english": "meet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tài xế",
+      "english": "driver",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi gặp tài xế ở đâu?",
+      "english": "Where do I meet the driver?",
+      "audioKey": "airport-pickup-clearer"
+    }
+  ]
+}

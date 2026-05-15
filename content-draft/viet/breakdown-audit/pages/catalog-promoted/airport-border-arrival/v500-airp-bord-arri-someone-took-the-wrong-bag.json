@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-someone-took-the-wrong-bag",
+  "phraseText": "Có người lấy nhầm túi",
+  "englishTitle": "Someone took the wrong bag",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.291Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-someone-took-the-wrong-bag",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhầm",
+      "english": "mistaken / wrong"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "túi",
+      "english": "bag"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có người lấy nhầm túi",
+      "english": "Someone took the wrong bag",
+      "audioKey": "v500-airp-bord-arri-someone-took-the-wrong-bag"
+    }
+  ]
+}

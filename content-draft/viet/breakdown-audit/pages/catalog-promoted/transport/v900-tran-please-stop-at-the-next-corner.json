@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-stop-at-the-next-corner",
+  "phraseText": "Vui lòng dừng lại ở góc tiếp theo",
+  "englishTitle": "Please stop at the next corner",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-stop-at-the-next-corner",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "vietnamese": "dừng lại",
+      "english": "stop",
+      "keepTogetherReason": "compound stop command"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "góc",
+      "english": "corner"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tiếp",
+      "english": "continue / next"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "theo",
+      "english": "follow"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng dừng lại ở góc tiếp theo",
+      "english": "Please stop at the next corner",
+      "audioKey": "v900-tran-please-stop-at-the-next-corner"
+    }
+  ]
+}

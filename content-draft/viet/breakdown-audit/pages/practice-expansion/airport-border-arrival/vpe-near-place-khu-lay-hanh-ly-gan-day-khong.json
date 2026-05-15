@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-vpe-near-place-khu-lay-hanh-ly-gan-day-khong",
+  "phraseText": "khu lấy hành lý gần đây không?",
+  "englishTitle": "Is baggage claim nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.430Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-khu-lay-hanh-ly-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "khu",
+      "english": "area"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "khu lấy hành lý gần đây không?",
+      "english": "Is baggage claim nearby?",
+      "audioKey": "audio-authored-khu-lay-hanh-ly-gan-day-khong-33d3a8d382"
+    }
+  ]
+}

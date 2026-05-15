@@ -1,0 +1,77 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-you-store-my-luggage-after-check-out",
+  "phraseText": "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
+  "englishTitle": "Can you store my luggage after check-out?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.320Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-you-store-my-luggage-after-check-out",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "sau",
+      "english": "after / behind"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "khi",
+      "english": "when"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "trả phòng",
+      "english": "check out",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
+      "english": "Can you store my luggage after check-out?",
+      "audioKey": "v900-hote-acco-can-you-store-my-luggage-after-check-out"
+    }
+  ]
+}

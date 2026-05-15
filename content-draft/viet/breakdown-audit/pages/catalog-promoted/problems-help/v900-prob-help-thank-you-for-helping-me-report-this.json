@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-v900-prob-help-thank-you-for-helping-me-report-this",
+  "phraseText": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+  "englishTitle": "Thank you for helping me report this",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-prob-help-thank-you-for-helping-me-report-this",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+      "english": "Thank you for helping me report this",
+      "audioKey": "v900-prob-help-thank-you-for-helping-me-report-this"
+    }
+  ]
+}

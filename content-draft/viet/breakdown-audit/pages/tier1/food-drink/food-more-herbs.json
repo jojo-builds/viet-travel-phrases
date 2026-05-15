@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-food-more-herbs",
+  "phraseText": "Cho thêm rau",
+  "englishTitle": "More herbs please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-more-herbs",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "rau",
+      "english": "greens / herbs"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho thêm rau",
+      "english": "More herbs please",
+      "audioKey": "food-4"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-how-many-gigabytes-are-included",
+  "phraseText": "Có bao nhiêu gigabyte được bao gồm?",
+  "englishTitle": "How many gigabytes are included?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-how-many-gigabytes-are-included",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gigabyte",
+      "english": "gigabyte",
+      "keepTogetherReason": "data unit"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gồm?",
+      "english": "include"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bao nhiêu gigabyte được bao gồm?",
+      "english": "How many gigabytes are included?",
+      "audioKey": "v900-phon-inte-powe-how-many-gigabytes-are-included"
+    }
+  ]
+}

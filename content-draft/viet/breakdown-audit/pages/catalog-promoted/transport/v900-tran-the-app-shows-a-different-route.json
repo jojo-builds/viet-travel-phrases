@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-tran-the-app-shows-a-different-route",
+  "phraseText": "Ứng dụng hiển thị một tuyến đường khác",
+  "englishTitle": "The app shows a different route",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-the-app-shows-a-different-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hiển thị",
+      "english": "show / display",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tuyến",
+      "english": "line / route"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ứng dụng hiển thị một tuyến đường khác",
+      "english": "The app shows a different route",
+      "audioKey": "v900-tran-the-app-shows-a-different-route"
+    }
+  ]
+}

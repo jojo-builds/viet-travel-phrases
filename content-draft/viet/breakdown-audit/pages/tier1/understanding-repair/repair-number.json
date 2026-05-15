@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-repair-number",
+  "phraseText": "Làm ơn nói lại số đó",
+  "englishTitle": "Please say the number again",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.276Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-number",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói lại",
+      "english": "say again / repeat",
+      "keepTogetherReason": "compound repair action"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "số",
+      "english": "number"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn nói lại số đó",
+      "english": "Please say the number again",
+      "audioKey": "repair-6"
+    }
+  ]
+}

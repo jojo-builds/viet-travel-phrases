@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-repair-4",
+  "phraseText": "Ý anh/chị là cái nào?",
+  "englishTitle": "Which one do you mean?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-4",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ý",
+      "english": "meaning / idea"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "anh/chị",
+      "english": "sir or ma'am",
+      "keepTogetherReason": "slash address form"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nào?",
+      "english": "which / any"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ý anh/chị là cái nào?",
+      "english": "Which one do you mean?",
+      "audioKey": "repair-4"
+    }
+  ]
+}

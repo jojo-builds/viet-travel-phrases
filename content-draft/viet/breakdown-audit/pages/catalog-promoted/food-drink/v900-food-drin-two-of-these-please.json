@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-two-of-these-please",
+  "phraseText": "Xin vui lòng cho hai trong số này",
+  "englishTitle": "Two of these, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-two-of-these-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hai",
+      "english": "two"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "số",
+      "english": "number"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin vui lòng cho hai trong số này",
+      "english": "Two of these, please",
+      "audioKey": "v900-food-drin-two-of-these-please"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-cua-hai-quan-o-dau",
+  "phraseText": "cửa hải quan ở đâu?",
+  "englishTitle": "Where is customs?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.482Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-cua-hai-quan-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cửa",
+      "english": "door / counter"
+    },
+    {
+      "vietnamese": "hải quan",
+      "english": "customs",
+      "keepTogetherReason": "compound customs term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "cửa hải quan ở đâu?",
+      "english": "Where is customs?",
+      "audioKey": "audio-authored-cua-hai-quan-o-dau-05fd85cfce"
+    }
+  ]
+}

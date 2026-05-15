@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-transport-premium-wrong-car",
+  "phraseText": "Đây không phải là xe của tôi.",
+  "englishTitle": "This is not my car.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-transport-premium-wrong-car",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "của tôi.",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây không phải là xe của tôi.",
+      "english": "This is not my car.",
+      "audioKey": "transport-premium-wrong-car"
+    }
+  ]
+}

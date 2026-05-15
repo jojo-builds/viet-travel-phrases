@@ -1,0 +1,73 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-is-it-on-this-side-of-the-street",
+  "phraseText": "Có phải ở phía bên này của đường phố?",
+  "englishTitle": "Is it on this side of the street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-is-it-on-this-side-of-the-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phía",
+      "english": "side / direction"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bên",
+      "english": "side"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "của",
+      "english": "of"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "phố?",
+      "english": "street / old quarter"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phải ở phía bên này của đường phố?",
+      "english": "Is it on this side of the street?",
+      "audioKey": "v900-dire-navi-is-it-on-this-side-of-the-street"
+    }
+  ]
+}

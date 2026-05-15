@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-is-there-a-pharmacy-nearby",
+  "phraseText": "Có hiệu thuốc nào gần đây không?",
+  "englishTitle": "Is there a pharmacy nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.314Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-is-there-a-pharmacy-nearby",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hiệu thuốc",
+      "english": "pharmacy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có hiệu thuốc nào gần đây không?",
+      "english": "Is there a pharmacy nearby?",
+      "audioKey": "v900-heal-phar-is-there-a-pharmacy-nearby"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-is-there-a-ramp",
+  "phraseText": "Có đoạn đường nối không?",
+  "englishTitle": "Is there a ramp?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-is-there-a-ramp",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đoạn đường",
+      "english": "stretch of road",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nối",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có đoạn đường nối không?",
+      "english": "Is there a ramp?",
+      "audioKey": "v500-loca-serv-ever-task-is-there-a-ramp"
+    }
+  ]
+}

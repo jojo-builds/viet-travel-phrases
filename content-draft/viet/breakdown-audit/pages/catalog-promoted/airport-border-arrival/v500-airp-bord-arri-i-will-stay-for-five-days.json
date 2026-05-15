@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-i-will-stay-for-five-days",
+  "phraseText": "Tôi sẽ ở lại năm ngày",
+  "englishTitle": "I will stay for five days",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-i-will-stay-for-five-days",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "năm ngày",
+      "english": "five days",
+      "keepTogetherReason": "fixed duration phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi sẽ ở lại năm ngày",
+      "english": "I will stay for five days",
+      "audioKey": "v500-airp-bord-arri-i-will-stay-for-five-days"
+    }
+  ]
+}

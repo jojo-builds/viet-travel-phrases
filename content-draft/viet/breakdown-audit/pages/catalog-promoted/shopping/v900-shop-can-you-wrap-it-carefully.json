@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-shop-can-you-wrap-it-carefully",
+  "phraseText": "Bạn có thể gói nó cẩn thận được không?",
+  "englishTitle": "Can you wrap it carefully?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.339Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-can-you-wrap-it-carefully",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gói",
+      "english": "package / packet"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cẩn",
+      "english": "careful"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thận",
+      "english": "careful / kidney"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gói nó cẩn thận được không?",
+      "english": "Can you wrap it carefully?",
+      "audioKey": "v900-shop-can-you-wrap-it-carefully"
+    }
+  ]
+}

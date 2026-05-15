@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-thanks-cam-on-toi-hieu-roi",
+  "phraseText": "Cảm ơn, tôi hiểu rồi",
+  "englishTitle": "Thanks, I understand now",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.295Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-thanks-cam-on-toi-hieu-roi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cảm ơn,",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hiểu",
+      "english": "understand"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cảm ơn, tôi hiểu rồi",
+      "english": "Thanks, I understand now",
+      "audioKey": "directions-7"
+    }
+  ]
+}

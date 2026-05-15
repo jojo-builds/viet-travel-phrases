@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-ves-is-this-bach-dang-street",
+  "phraseText": "Đây có phải đường Bạch Đằng không?",
+  "englishTitle": "Is this Bach Dang Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-is-this-bach-dang-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường Bạch Đằng",
+      "english": "Bach Dang Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải đường Bạch Đằng không?",
+      "english": "Is this Bach Dang Street?",
+      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9"
+    }
+  ]
+}

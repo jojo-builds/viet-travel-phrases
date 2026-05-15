@@ -1,0 +1,66 @@
+{
+  "pageID": "viet-phrase-v900-shop-i-will-buy-two-if-the-price-is-good",
+  "phraseText": "Mình sẽ mua 2 cái nếu giá tốt",
+  "englishTitle": "I will buy two if the price is good",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.339Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-i-will-buy-two-if-the-price-is-good",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mình",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "2",
+      "english": [
+        "hiển",
+        "show"
+      ]
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nếu",
+      "english": "if"
+    },
+    {
+      "vietnamese": "giá tốt",
+      "english": "good price",
+      "keepTogetherReason": "compound price phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mình sẽ mua 2 cái nếu giá tốt",
+      "english": "I will buy two if the price is good",
+      "audioKey": "v900-shop-i-will-buy-two-if-the-price-is-good"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v900-poli-basi-im-in-a-hurry",
+  "phraseText": "tôi đang vội",
+  "englishTitle": "I’m in a hurry",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-poli-basi-im-in-a-hurry",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vội",
+      "english": "in a hurry"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi đang vội",
+      "english": "I’m in a hurry",
+      "audioKey": "v900-poli-basi-im-in-a-hurry"
+    }
+  ]
+}

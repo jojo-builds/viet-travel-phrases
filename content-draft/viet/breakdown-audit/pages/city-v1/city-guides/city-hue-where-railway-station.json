@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-railway-station",
+  "phraseText": "Ga Huế ở đâu?",
+  "englishTitle": "Where is Hue Railway Station?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ga Huế",
+      "english": "Hue Railway Station",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ga Huế ở đâu?",
+      "english": "Where is Hue Railway Station?",
+      "audioKey": "audio-authored-ga-hue-o-dau-8d7e17b9fa"
+    }
+  ]
+}

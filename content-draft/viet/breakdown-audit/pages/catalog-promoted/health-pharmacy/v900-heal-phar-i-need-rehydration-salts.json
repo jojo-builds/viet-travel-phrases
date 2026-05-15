@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-need-rehydration-salts",
+  "phraseText": "Tôi cần muối bù nước",
+  "englishTitle": "I need rehydration salts",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-need-rehydration-salts",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "muối",
+      "english": "salt"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bù nước",
+      "english": "rehydrate",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần muối bù nước",
+      "english": "I need rehydration salts",
+      "audioKey": "v900-heal-phar-i-need-rehydration-salts"
+    }
+  ]
+}

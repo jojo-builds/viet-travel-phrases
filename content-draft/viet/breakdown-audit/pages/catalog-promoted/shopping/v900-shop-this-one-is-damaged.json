@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-shop-this-one-is-damaged",
+  "phraseText": "Cái này bị hỏng",
+  "englishTitle": "This one is damaged",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-this-one-is-damaged",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị hỏng",
+      "english": "is broken / damaged",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này bị hỏng",
+      "english": "This one is damaged",
+      "audioKey": "v900-shop-this-one-is-damaged"
+    }
+  ]
+}

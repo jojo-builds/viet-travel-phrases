@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-please-send-it-to-this-hotel",
+  "phraseText": "Vui lòng gửi nó đến khách sạn này",
+  "englishTitle": "Please send it to this hotel",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.293Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-please-send-it-to-this-hotel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi nó đến khách sạn này",
+      "english": "Please send it to this hotel",
+      "audioKey": "v900-airp-bord-arri-please-send-it-to-this-hotel"
+    }
+  ]
+}

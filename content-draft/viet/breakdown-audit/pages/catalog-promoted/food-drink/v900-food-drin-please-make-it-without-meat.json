@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-please-make-it-without-meat",
+  "phraseText": "Hãy làm món này không có thịt",
+  "englishTitle": "Please make it without meat",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-please-make-it-without-meat",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "làm",
+      "english": "do / make"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "món",
+      "english": "dish"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "thịt",
+      "english": "meat"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy làm món này không có thịt",
+      "english": "Please make it without meat",
+      "audioKey": "v900-food-drin-please-make-it-without-meat"
+    }
+  ]
+}

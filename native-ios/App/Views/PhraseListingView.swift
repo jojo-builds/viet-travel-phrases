@@ -200,6 +200,7 @@ struct PhraseArticleTemplateView: View {
         .fullScreenCover(item: $presentedHeroImage) { presentation in
             PhraseHeroImageLightbox(presentation: presentation)
         }
+        .accessibilityIdentifier("PhraseArticle.\(page.id)")
     }
 
     private var hero: some View {

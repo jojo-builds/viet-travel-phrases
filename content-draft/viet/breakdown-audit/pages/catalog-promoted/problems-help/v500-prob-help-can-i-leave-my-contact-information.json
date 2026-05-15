@@ -1,0 +1,72 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-can-i-leave-my-contact-information",
+  "phraseText": "Tôi có thể để lại thông tin liên lạc của mình được không?",
+  "englishTitle": "Can I leave my contact information?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.335Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-can-i-leave-my-contact-information",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "để lại",
+      "english": "leave",
+      "keepTogetherReason": "compound leave-behind verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thông tin",
+      "english": "information",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "liên",
+      "english": "contact / link"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "lạc",
+      "english": "lost / peanut"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "của mình",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể để lại thông tin liên lạc của mình được không?",
+      "english": "Can I leave my contact information?",
+      "audioKey": "v500-prob-help-can-i-leave-my-contact-information"
+    }
+  ]
+}

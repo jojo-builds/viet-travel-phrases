@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-city-hcmc-sim-ben-thanh",
+  "phraseText": "Tôi muốn mua SIM gần chợ Bến Thành",
+  "englishTitle": "I want to buy a SIM near Ben Thanh Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.376Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-sim-ben-thanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "SIM",
+      "english": "SIM card"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "chợ Bến Thành",
+      "english": "Ben Thanh Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua SIM gần chợ Bến Thành",
+      "english": "I want to buy a SIM near Ben Thanh Market",
+      "audioKey": "audio-authored-toi-muon-mua-sim-gan-cho-ben-thanh-ddfae9b82c"
+    }
+  ]
+}

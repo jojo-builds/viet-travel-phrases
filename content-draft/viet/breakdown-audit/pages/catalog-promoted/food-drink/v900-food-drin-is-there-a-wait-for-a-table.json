@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-is-there-a-wait-for-a-table",
+  "phraseText": "Có phải đợi bàn không?",
+  "englishTitle": "Is there a wait for a table?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.307Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-is-there-a-wait-for-a-table",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đợi",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bàn",
+      "english": "table"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phải đợi bàn không?",
+      "english": "Is there a wait for a table?",
+      "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
+    }
+  ]
+}

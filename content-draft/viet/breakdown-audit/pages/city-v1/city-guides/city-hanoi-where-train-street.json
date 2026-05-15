@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-train-street",
+  "phraseText": "Phố đường tàu Hà Nội ở đâu?",
+  "englishTitle": "Where is Hanoi Train Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-train-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố đường tàu Hà Nội",
+      "english": "Hanoi Train Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố đường tàu Hà Nội ở đâu?",
+      "english": "Where is Hanoi Train Street?",
+      "audioKey": "audio-authored-pho-duong-tau-ha-noi-o-dau-101315f206"
+    }
+  ]
+}

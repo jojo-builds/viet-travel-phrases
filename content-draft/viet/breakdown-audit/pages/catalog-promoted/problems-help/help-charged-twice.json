@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-help-4",
+  "phraseText": "Tôi bị tính tiền hai lần",
+  "englishTitle": "I was charged twice",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.335Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-help-4",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị tính",
+      "english": "was charged",
+      "keepTogetherReason": "fixed payment phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hai",
+      "english": "two"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lần",
+      "english": "time / occasion"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị tính tiền hai lần",
+      "english": "I was charged twice",
+      "audioKey": "help-4"
+    }
+  ]
+}

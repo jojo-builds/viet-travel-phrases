@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-khoang-muoi-phut",
+  "phraseText": "Khoảng mười phút",
+  "englishTitle": "About ten minutes",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.426Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-khoang-muoi-phut",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khoảng",
+      "english": "about / around"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mười",
+      "english": "ten"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phút",
+      "english": "minutes"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khoảng mười phút",
+      "english": "About ten minutes",
+      "audioKey": "audio-authored-khoang-muoi-phut-c5a3cfd49e"
+    }
+  ]
+}

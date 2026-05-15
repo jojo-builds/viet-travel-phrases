@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-please-write-the-address-of-the-clinic",
+  "phraseText": "Hãy ghi địa chỉ phòng khám",
+  "englishTitle": "Please write the address of the clinic",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.314Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-please-write-the-address-of-the-clinic",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ghi",
+      "english": "write down / record"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "địa chỉ",
+      "english": "address",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phòng khám",
+      "english": "clinic",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy ghi địa chỉ phòng khám",
+      "english": "Please write the address of the clinic",
+      "audioKey": "v900-heal-phar-please-write-the-address-of-the-clinic"
+    }
+  ]
+}

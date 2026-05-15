@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-health-diarrhea",
+  "phraseText": "Tôi cần thuốc tiêu chảy",
+  "englishTitle": "I need something for diarrhea",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.282Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-health-diarrhea",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuốc",
+      "english": "medicine"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tiêu chảy",
+      "english": "diarrhea",
+      "keepTogetherReason": "compound symptom term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần thuốc tiêu chảy",
+      "english": "I need something for diarrhea",
+      "audioKey": "health-6"
+    }
+  ]
+}

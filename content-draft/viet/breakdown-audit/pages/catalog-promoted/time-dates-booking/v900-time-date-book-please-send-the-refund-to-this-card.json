@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-please-send-the-refund-to-this-card",
+  "phraseText": "Vui lòng gửi tiền hoàn lại vào thẻ này",
+  "englishTitle": "Please send the refund to this card",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-please-send-the-refund-to-this-card",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hoàn",
+      "english": "refund / return"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi tiền hoàn lại vào thẻ này",
+      "english": "Please send the refund to this card",
+      "audioKey": "v900-time-date-book-please-send-the-refund-to-this-card"
+    }
+  ]
+}

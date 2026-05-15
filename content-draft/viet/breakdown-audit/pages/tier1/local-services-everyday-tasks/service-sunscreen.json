@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-service-sunscreen",
+  "phraseText": "Ở đâu có kem chống nắng?",
+  "englishTitle": "Where is the sunscreen?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.286Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-service-sunscreen",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ở đâu",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "kem chống nắng?",
+      "english": "sunscreen",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ở đâu có kem chống nắng?",
+      "english": "Where is the sunscreen?",
+      "audioKey": "store-4"
+    }
+  ]
+}

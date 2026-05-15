@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hoian-place-faifo-coffee",
+  "phraseText": "Faifo Coffee",
+  "englishTitle": "Faifo Coffee",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.380Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-place-faifo-coffee",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Faifo Coffee",
+      "english": "Faifo Coffee",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

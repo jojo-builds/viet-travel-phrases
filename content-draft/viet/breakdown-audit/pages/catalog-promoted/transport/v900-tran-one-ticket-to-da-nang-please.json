@@ -1,0 +1,62 @@
+{
+  "pageID": "viet-phrase-v900-tran-one-ticket-to-da-nang-please",
+  "phraseText": "Cho xin 1 vé đi Đà Nẵng",
+  "englishTitle": "One ticket to Da Nang, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-one-ticket-to-da-nang-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "1",
+      "english": [
+        "cáo",
+        "report"
+      ]
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "Đà Nẵng",
+      "english": "Da Nang",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho xin 1 vé đi Đà Nẵng",
+      "english": "One ticket to Da Nang, please",
+      "audioKey": "v900-tran-one-ticket-to-da-nang-please"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-is-it-too-far-to-walk",
+  "phraseText": "Đi bộ có xa quá không?",
+  "englishTitle": "Is it too far to walk?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-is-it-too-far-to-walk",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi bộ",
+      "english": "walk / on foot",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xa",
+      "english": "far"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi bộ có xa quá không?",
+      "english": "Is it too far to walk?",
+      "audioKey": "v500-dire-navi-is-it-too-far-to-walk"
+    }
+  ]
+}

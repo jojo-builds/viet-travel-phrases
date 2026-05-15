@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-tran-i-paid-in-the-app-already",
+  "phraseText": "Tôi đã thanh toán trong ứng dụng rồi",
+  "englishTitle": "I paid in the app already",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-i-paid-in-the-app-already",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã thanh toán trong ứng dụng rồi",
+      "english": "I paid in the app already",
+      "audioKey": "v900-tran-i-paid-in-the-app-already"
+    }
+  ]
+}

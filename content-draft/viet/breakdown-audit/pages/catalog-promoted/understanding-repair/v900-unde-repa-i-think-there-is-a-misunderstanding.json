@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-i-think-there-is-a-misunderstanding",
+  "phraseText": "Tôi nghĩ có sự hiểu lầm",
+  "englishTitle": "I think there is a misunderstanding",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-i-think-there-is-a-misunderstanding",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sự",
+      "english": "matter / event"
+    },
+    {
+      "vietnamese": "hiểu lầm",
+      "english": "misunderstanding",
+      "keepTogetherReason": "compound misunderstanding noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ có sự hiểu lầm",
+      "english": "I think there is a misunderstanding",
+      "audioKey": "v900-unde-repa-i-think-there-is-a-misunderstanding"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-can-you-explain-it-in-english",
+  "phraseText": "Bạn có thể giải thích nó bằng tiếng Anh không?",
+  "englishTitle": "Can you explain it in English?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-can-you-explain-it-in-english",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "giải thích",
+      "english": "explain",
+      "keepTogetherReason": "compound explanation verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể giải thích nó bằng tiếng Anh không?",
+      "english": "Can you explain it in English?",
+      "audioKey": "v900-unde-repa-can-you-explain-it-in-english"
+    }
+  ]
+}

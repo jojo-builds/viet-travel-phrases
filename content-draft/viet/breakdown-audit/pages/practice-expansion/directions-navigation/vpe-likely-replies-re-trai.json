@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-re-trai",
+  "phraseText": "Rẽ trái",
+  "englishTitle": "Turn left",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-re-trai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Rẽ trái",
+      "english": "turn left",
+      "keepTogetherReason": "compound direction phrase"
+    }
+  ]
+}

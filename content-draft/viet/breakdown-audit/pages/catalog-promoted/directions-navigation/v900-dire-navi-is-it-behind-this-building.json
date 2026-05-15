@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-is-it-behind-this-building",
+  "phraseText": "Nó có ở phía sau tòa nhà này không?",
+  "englishTitle": "Is it behind this building?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-is-it-behind-this-building",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phía",
+      "english": "side / direction"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sau",
+      "english": "after / behind"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tòa nhà",
+      "english": "building",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó có ở phía sau tòa nhà này không?",
+      "english": "Is it behind this building?",
+      "audioKey": "v900-dire-navi-is-it-behind-this-building"
+    }
+  ]
+}

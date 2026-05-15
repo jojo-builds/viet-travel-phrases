@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-train-street",
+  "phraseText": "Dừng ở Phố đường tàu Hà Nội",
+  "englishTitle": "Stop at Hanoi Train Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.369Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-train-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố đường tàu Hà Nội",
+      "english": "Hanoi Train Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Phố đường tàu Hà Nội",
+      "english": "Stop at Hanoi Train Street",
+      "audioKey": "audio-authored-dung-o-pho-duong-tau-ha-noi-9b7192ef4b"
+    }
+  ]
+}

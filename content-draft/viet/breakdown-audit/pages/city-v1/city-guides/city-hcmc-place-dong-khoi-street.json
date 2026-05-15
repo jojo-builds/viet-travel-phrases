@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
+  "phraseText": "Đường Đồng Khởi",
+  "englishTitle": "Dong Khoi Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-dong-khoi-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Đồng Khởi",
+      "english": "Dong Khoi Street",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

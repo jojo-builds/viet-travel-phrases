@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-ve-vao-cua",
+  "phraseText": "Tôi cần vé vào cửa",
+  "englishTitle": "I need an entrance ticket.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.442Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-ve-vao-cua",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "vietnamese": "vé vào cửa",
+      "english": "entrance ticket",
+      "keepTogetherReason": "compound ticket noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần vé vào cửa",
+      "english": "I need an entrance ticket.",
+      "audioKey": "audio-authored-toi-can-ve-vao-cua-95397f47b5"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-service-bag",
+  "phraseText": "Có túi không?",
+  "englishTitle": "Do you have a bag?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.286Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-service-bag",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "túi",
+      "english": "bag"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có túi không?",
+      "english": "Do you have a bag?",
+      "audioKey": "store-2"
+    }
+  ]
+}

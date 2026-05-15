@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hoian-go-tran-phu-street",
+  "phraseText": "Đi Phố Trần Phú",
+  "englishTitle": "Go to Tran Phu Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-tran-phu-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố Trần Phú",
+      "english": "Tran Phu Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Phố Trần Phú",
+      "english": "Go to Tran Phu Street",
+      "audioKey": "audio-authored-di-pho-tran-phu-0957b3bca1"
+    }
+  ]
+}

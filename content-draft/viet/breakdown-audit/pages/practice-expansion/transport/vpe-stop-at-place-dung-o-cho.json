@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-cho",
+  "phraseText": "Dừng ở chợ",
+  "englishTitle": "Stop at the market.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.471Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-cho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chợ",
+      "english": "market"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở chợ",
+      "english": "Stop at the market.",
+      "audioKey": "audio-authored-dung-o-cho-eee0d82e72"
+    }
+  ]
+}

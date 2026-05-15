@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hoian-go-cao-lau-city",
+  "phraseText": "Ăn cao lầu ở đâu?",
+  "englishTitle": "Where can I eat cao lau?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-cao-lau-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cao lầu",
+      "english": "cao lau dish",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn cao lầu ở đâu?",
+      "english": "Where can I eat cao lau?",
+      "audioKey": "audio-authored-an-cao-lau-o-dau-560d9e6f49"
+    }
+  ]
+}

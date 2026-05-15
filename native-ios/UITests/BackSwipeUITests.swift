@@ -60,6 +60,21 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
     }
 
+    func testBrowseRootOpenedFromHomeShowsBackButton() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        systemTabCoordinate("Browse", in: app).tap()
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2),
+            "Browse was opened from Home, so the visible back button should match the existing back-swipe route."
+        )
+    }
+
     func testHomeCityCardBackButtonReturnsHome() {
         let app = XCUIApplication()
         app.launch()
@@ -67,19 +82,149 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
 
         let daNangCard = app.buttons["HomeCity.danang"]
-        for _ in 0..<5 where !daNangCard.isHittable {
-            app.swipeUp()
-        }
-
-        XCTAssertTrue(daNangCard.waitForExistence(timeout: 3))
+        scrollUntilHittable(daNangCard, in: app)
         daNangCard.tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.city.danang"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2))
 
         app.buttons["Go back"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        let restoredDaNangCard = app.buttons["HomeCity.danang"]
+        XCTAssertTrue(
+            restoredDaNangCard.waitForExistence(timeout: 3) && restoredDaNangCard.frame.intersects(app.frame),
+            "Back from a Home city card should restore the Home scroll position around Explore by city instead of jumping to the top."
+        )
         XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    func testHomeCityCardBackSwipeReturnsHomePosition() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let daNangCard = app.buttons["HomeCity.danang"]
+        scrollUntilHittable(daNangCard, in: app)
+        daNangCard.tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.city.danang"].waitForExistence(timeout: 5))
+
+        edgeSwipeBack(in: app)
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        assertVisible(
+            app.buttons["HomeCity.danang"],
+            in: app,
+            message: "Back swipe from a Home city card should restore the city shelf."
+        )
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    func testHomePhraseBackSwipeReturnsHomePosition() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let firstDayHeader = app.buttons["HomeShelf.Header.category.first-day"]
+        let airportPhrase = app.buttons["HomeQuick.viet-phrase-airport-1"]
+        scrollUntilVisible(firstDayHeader, in: app)
+        scrollUntilHittable(airportPhrase, in: app)
+        airportPhrase.tap()
+
+        XCTAssertTrue(
+            app.descendants(matching: .any)["PhraseArticle.viet-phrase-airport-1"].waitForExistence(timeout: 5),
+            "Tapping a Home phrase card should open its detail/article page."
+        )
+
+        edgeSwipeBack(in: app)
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        assertVisible(
+            firstDayHeader,
+            in: app,
+            message: "Back swipe from a Home phrase should restore the phrase shelf it came from."
+        )
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    func testHomeMessagesBackChainReturnsHomePosition() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let firstScenario = app.buttons["HomeScenario.danangFirstDay"]
+        scrollUntilHittable(firstScenario, in: app)
+        firstScenario.tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
+
+        app.buttons["Practice.Messages.Back"].tap()
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForNonExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 3))
+
+        app.buttons["Go back"].tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        assertVisible(
+            app.descendants(matching: .any)["HomeScenarioRail"],
+            in: app,
+            message: "Back from a Home message should restore the Messages shelf."
+        )
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    func testHomeSituationBackButtonReturnsHomePosition() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let arrivalSituation = app.buttons["HomeSituation.arrival"]
+        scrollUntilHittable(arrivalSituation, in: app)
+        arrivalSituation.tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2))
+
+        app.buttons["Go back"].tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        assertVisible(
+            app.buttons["HomeSituation.arrival"],
+            in: app,
+            message: "Back from a Home situation should restore the situation shelf."
+        )
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
+    func testHomeBrowseTabBackButtonReturnsScrolledHomePosition() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let daNangCard = app.buttons["HomeCity.danang"]
+        scrollUntilHittable(daNangCard, in: app)
+
+        systemTabCoordinate("Browse", in: app).tap()
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2))
+
+        app.buttons["Go back"].tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+        assertVisible(
+            app.buttons["HomeCity.danang"],
+            in: app,
+            message: "Back from a one-level Browse tab tap should restore the scrolled Home position."
+        )
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
@@ -128,5 +273,73 @@ final class BackSwipeUITests: XCTestCase {
         }
 
         return app.textFields["Search Vietnamese phrases"]
+    }
+
+    private func edgeSwipeBack(in app: XCUIApplication) {
+        let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.5))
+        start.press(forDuration: 0.05, thenDragTo: end)
+    }
+
+    private func scrollUntilVisible(
+        _ element: XCUIElement,
+        in app: XCUIApplication,
+        maxSwipes: Int = 8,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        for _ in 0..<maxSwipes where !element.exists || !element.frame.intersects(app.frame) {
+            app.swipeUp()
+        }
+
+        assertVisible(element, in: app, file: file, line: line)
+    }
+
+    private func scrollUntilHittable(
+        _ element: XCUIElement,
+        in app: XCUIApplication,
+        maxSwipes: Int = 8,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        for _ in 0..<maxSwipes where !isComfortablyHittable(element, in: app) {
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(element.waitForExistence(timeout: 3), "Expected element to exist.", file: file, line: line)
+        XCTAssertTrue(element.isHittable, "Expected element to be hittable.", file: file, line: line)
+        XCTAssertTrue(
+            isComfortablyVisible(element, in: app),
+            "Expected element to be fully visible above the tab bar before tapping.",
+            file: file,
+            line: line
+        )
+    }
+
+    private func isComfortablyHittable(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        element.exists && element.isHittable && isComfortablyVisible(element, in: app)
+    }
+
+    private func isComfortablyVisible(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        guard element.exists else {
+            return false
+        }
+
+        let frame = element.frame
+        let comfortableBottom = app.frame.maxY - 120
+        return frame.minY >= app.frame.minY + 24 && frame.maxY <= comfortableBottom
+    }
+
+    private func assertVisible(
+        _ element: XCUIElement,
+        in app: XCUIApplication,
+        message: String = "Expected element to be visible.",
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        XCTAssertTrue(element.waitForExistence(timeout: 3), message, file: file, line: line)
+        if element.exists {
+            XCTAssertTrue(element.frame.intersects(app.frame), message, file: file, line: line)
+        }
     }
 }

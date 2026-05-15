@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-chao-ban",
+  "phraseText": "Chào bạn",
+  "englishTitle": "Hi there / hello friend",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-chao-ban",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào bạn",
+      "english": "Hi there / hello friend",
+      "audioKey": "audio-phrase-chao-ban"
+    }
+  ]
+}

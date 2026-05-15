@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-polite-hello",
+  "phraseText": "Xin chào",
+  "englishTitle": "Hello",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.274Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-polite-hello",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin chào",
+      "english": "Hello",
+      "audioKey": "polite-1"
+    }
+  ]
+}

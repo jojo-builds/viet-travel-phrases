@@ -1,0 +1,62 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-where-can-i-pick-up-my-luggage",
+  "phraseText": "Tôi có thể nhận hành lý của mình ở đâu?",
+  "englishTitle": "Where can I pick up my luggage?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-where-can-i-pick-up-my-luggage",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhận",
+      "english": "receive / accept"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của mình",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể nhận hành lý của mình ở đâu?",
+      "english": "Where can I pick up my luggage?",
+      "audioKey": "v900-hote-acco-where-can-i-pick-up-my-luggage"
+    }
+  ]
+}

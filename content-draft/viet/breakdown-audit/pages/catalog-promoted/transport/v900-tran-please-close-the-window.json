@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-close-the-window",
+  "phraseText": "Hãy đóng cửa sổ lại",
+  "englishTitle": "Please close the window",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-close-the-window",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "vietnamese": "đóng",
+      "english": "close"
+    },
+    {
+      "vietnamese": "cửa sổ",
+      "english": "window",
+      "keepTogetherReason": "compound window noun"
+    },
+    {
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đóng cửa sổ lại",
+      "english": "Please close the window",
+      "audioKey": "v900-tran-please-close-the-window"
+    }
+  ]
+}

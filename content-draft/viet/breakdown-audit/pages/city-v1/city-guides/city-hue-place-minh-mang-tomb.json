@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hue-place-minh-mang-tomb",
+  "phraseText": "Lăng Minh Mạng",
+  "englishTitle": "Tomb of Minh Mang",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.387Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-minh-mang-tomb",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lăng Minh Mạng",
+      "english": "Tomb of Minh Mang",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

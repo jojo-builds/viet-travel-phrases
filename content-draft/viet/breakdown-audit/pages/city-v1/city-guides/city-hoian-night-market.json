@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hoian-night-market",
+  "phraseText": "Đi chợ đêm Hội An",
+  "englishTitle": "Go to Hoi An Night Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-night-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chợ đêm Hội An",
+      "english": "Hoi An Night Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi chợ đêm Hội An",
+      "english": "Go to Hoi An Night Market",
+      "audioKey": "audio-authored-di-cho-dem-hoi-an-20458c4184"
+    }
+  ]
+}

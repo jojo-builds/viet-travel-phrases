@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-is-there-an-elevator",
+  "phraseText": "Có thang máy không?",
+  "englishTitle": "Is there an elevator?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-is-there-an-elevator",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thang máy",
+      "english": "elevator",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có thang máy không?",
+      "english": "Is there an elevator?",
+      "audioKey": "v500-loca-serv-ever-task-is-there-an-elevator"
+    }
+  ]
+}

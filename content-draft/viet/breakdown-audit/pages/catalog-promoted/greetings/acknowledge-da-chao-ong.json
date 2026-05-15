@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-da-chao-ong",
+  "phraseText": "Dạ, chào ông",
+  "englishTitle": "Respectful hello to an elderly man",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-da-chao-ong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ,",
+      "english": "respectful yes / opener"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ông",
+      "english": "elderly man"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, chào ông",
+      "english": "Respectful hello to an elderly man",
+      "audioKey": "audio-phrase-da-chao-ong"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-vpe-near-place-quay-le-tan-gan-day-khong",
+  "phraseText": "quầy lễ tân gần đây không?",
+  "englishTitle": "Is the front desk nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.432Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-quay-le-tan-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lễ",
+      "english": "change"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tân",
+      "english": "front desk"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy lễ tân gần đây không?",
+      "english": "Is the front desk nearby?",
+      "audioKey": "audio-authored-quay-le-tan-gan-day-khong-f391784092"
+    }
+  ]
+}

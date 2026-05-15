@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-benh-vien",
+  "phraseText": "Dừng ở bệnh viện",
+  "englishTitle": "Stop at the hospital.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.471Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-benh-vien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bệnh viện",
+      "english": "hospital",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở bệnh viện",
+      "english": "Stop at the hospital.",
+      "audioKey": "audio-authored-dung-o-benh-vien-0af372485a"
+    }
+  ]
+}

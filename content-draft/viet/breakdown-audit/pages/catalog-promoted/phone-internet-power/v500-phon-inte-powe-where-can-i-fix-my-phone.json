@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-where-can-i-fix-my-phone",
+  "phraseText": "Tôi có thể sửa điện thoại ở đâu?",
+  "englishTitle": "Where can I fix my phone?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-where-can-i-fix-my-phone",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sửa",
+      "english": "repair / fix"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể sửa điện thoại ở đâu?",
+      "english": "Where can I fix my phone?",
+      "audioKey": "v500-phon-inte-powe-where-can-i-fix-my-phone"
+    }
+  ]
+}
