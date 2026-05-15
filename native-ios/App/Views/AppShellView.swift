@@ -8,6 +8,23 @@ private struct PracticeThreadForwardRestore: Equatable {
     let focusRequest: BrowseCollectionFocusRequest?
 }
 
+enum HomeScrollTarget: Hashable {
+    case top
+    case essentials
+    case firstDay
+    case city
+    case foodCoffee
+    case messages
+    case gettingAround
+    case situations
+    case whenStuck
+    case hotelBasics
+    case relationships
+    case moneyShopping
+    case helpEmergency
+    case recentlyViewed
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -28,6 +45,8 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
+    @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
+    @State private var homeScrollRestorationTarget: HomeScrollTarget?
     @State private var browseCityHeroRoute: BrowseCollectionRoute?
     @State private var browseCityHeroMorphResetID = 0
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
@@ -118,13 +137,28 @@ struct AppShellView: View {
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
                     chromeNamespace: chromeNamespace,
+                    isActive: navigation.currentRoute == .home,
                     isSearchActive: navigation.isSearchPresented,
                     heroMorphPageID: homePhraseHeroMorphPageID,
+                    currentScrollTarget: $homeCurrentScrollTarget,
+                    scrollRestorationTarget: $homeScrollRestorationTarget,
                     onSearchTapped: openSearch,
-                    onOpenDetail: openDetailFromHome,
-                    onOpenFeaturedDetail: openFeaturedDetailFromHome,
-                    onOpenCollection: openBrowseCollectionFromHome,
-                    onStartPractice: openPractice,
+                    onOpenDetail: { id, target in
+                        prepareHomeScrollRestoration(target)
+                        openDetailFromHome(id)
+                    },
+                    onOpenFeaturedDetail: { id, target in
+                        prepareHomeScrollRestoration(target)
+                        openFeaturedDetailFromHome(id)
+                    },
+                    onOpenCollection: { route, target in
+                        prepareHomeScrollRestoration(target)
+                        openBrowseCollectionFromHome(route)
+                    },
+                    onStartPractice: { action, target in
+                        prepareHomeScrollRestoration(target)
+                        openPractice(action)
+                    },
                     onBrowseAllTapped: openBrowseAll
                 )
                 .allowsHitTesting(navigation.currentRoute == .home && !isPreviewingForwardPage)
@@ -431,12 +465,15 @@ struct AppShellView: View {
                 navigation.openHome()
                 searchQuery = ""
             case .browse:
+                prepareHomeScrollRestoration()
                 clearPracticeThreadForwardRestore()
                 navigation.openBrowse()
             case .saved:
+                prepareHomeScrollRestoration()
                 clearPracticeThreadForwardRestore()
                 navigation.openSaved()
             case .practice:
+                prepareHomeScrollRestoration()
                 clearPracticeThreadForwardRestore()
                 clearPracticeStartRequest()
                 navigation.openPractice()
@@ -553,12 +590,15 @@ struct AppShellView: View {
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
                 chromeNamespace: chromeNamespace,
+                isActive: false,
                 isSearchActive: navigation.isSearchPresented,
+                currentScrollTarget: .constant(nil),
+                scrollRestorationTarget: .constant(nil),
                 onSearchTapped: openSearch,
-                onOpenDetail: openDetailFromHome,
-                onOpenFeaturedDetail: openFeaturedDetailFromHome,
-                onOpenCollection: openBrowseCollectionFromHome,
-                onStartPractice: openPractice,
+                onOpenDetail: { id, _ in openDetailFromHome(id) },
+                onOpenFeaturedDetail: { id, _ in openFeaturedDetailFromHome(id) },
+                onOpenCollection: { route, _ in openBrowseCollectionFromHome(route) },
+                onStartPractice: { action, _ in openPractice(action) },
                 onBrowseAllTapped: openBrowseAll
             )
         case .browse:
@@ -968,6 +1008,17 @@ struct AppShellView: View {
         openDetail(id, source: .article)
     }
 
+    private func prepareHomeScrollRestoration(_ target: HomeScrollTarget? = nil) {
+        guard navigation.currentRoute == .home else {
+            return
+        }
+
+        homeScrollRestorationTarget = target
+            ?? homeScrollRestorationTarget
+            ?? homeCurrentScrollTarget
+            ?? .top
+    }
+
     private func openDetailFromHome(_ id: String) {
         openDetail(id, source: .home)
     }
@@ -1133,6 +1184,7 @@ struct AppShellView: View {
     private func openBrowse() {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        prepareHomeScrollRestoration()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowse()
@@ -1142,6 +1194,7 @@ struct AppShellView: View {
     private func openSaved() {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        prepareHomeScrollRestoration()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
@@ -1151,6 +1204,7 @@ struct AppShellView: View {
     private func openPractice(preservingStartRequest: Bool = false) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        prepareHomeScrollRestoration()
         clearPracticeThreadForwardRestore()
         if !preservingStartRequest {
             clearPracticeStartRequest()
@@ -1257,6 +1311,7 @@ struct AppShellView: View {
     private func openSearch(prefilledQuery: String?, focusField: Bool) {
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
+        prepareHomeScrollRestoration()
         if let prefilledQuery {
             searchQuery = prefilledQuery
         }
@@ -2596,34 +2651,43 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
 
 struct HomeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
+    @Binding var currentScrollTarget: HomeScrollTarget?
+    @Binding var scrollRestorationTarget: HomeScrollTarget?
 
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
+    let isActive: Bool
     let isSearchActive: Bool
     let heroMorphPageID: String?
     var onSearchTapped: () -> Void
-    var onOpenDetail: (String) -> Void
-    var onOpenFeaturedDetail: (String) -> Void
-    var onOpenCollection: (BrowseCollectionRoute) -> Void
-    var onStartPractice: (BrowseCollectionPracticeAction) -> Void
+    var onOpenDetail: (String, HomeScrollTarget) -> Void
+    var onOpenFeaturedDetail: (String, HomeScrollTarget) -> Void
+    var onOpenCollection: (BrowseCollectionRoute, HomeScrollTarget) -> Void
+    var onStartPractice: (BrowseCollectionPracticeAction, HomeScrollTarget) -> Void
     var onBrowseAllTapped: () -> Void
 
     init(
         intentStore: LocalUserIntentStore,
         scrollToTopTrigger: Int = 0,
         chromeNamespace: Namespace.ID? = nil,
+        isActive: Bool = true,
         isSearchActive: Bool = false,
         heroMorphPageID: String? = nil,
+        currentScrollTarget: Binding<HomeScrollTarget?>,
+        scrollRestorationTarget: Binding<HomeScrollTarget?>,
         onSearchTapped: @escaping () -> Void,
-        onOpenDetail: @escaping (String) -> Void,
-        onOpenFeaturedDetail: @escaping (String) -> Void,
-        onOpenCollection: @escaping (BrowseCollectionRoute) -> Void,
-        onStartPractice: @escaping (BrowseCollectionPracticeAction) -> Void,
+        onOpenDetail: @escaping (String, HomeScrollTarget) -> Void,
+        onOpenFeaturedDetail: @escaping (String, HomeScrollTarget) -> Void,
+        onOpenCollection: @escaping (BrowseCollectionRoute, HomeScrollTarget) -> Void,
+        onStartPractice: @escaping (BrowseCollectionPracticeAction, HomeScrollTarget) -> Void,
         onBrowseAllTapped: @escaping () -> Void
     ) {
         self.intentStore = intentStore
+        self._currentScrollTarget = currentScrollTarget
+        self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
+        self.isActive = isActive
         self.isSearchActive = isSearchActive
         self.heroMorphPageID = heroMorphPageID
         self.onSearchTapped = onSearchTapped
@@ -2643,40 +2707,65 @@ struct HomeView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
                         header
-                            .id(Self.scrollTopID)
+                            .id(HomeScrollTarget.top)
 
                         useNowShelf
+                            .id(HomeScrollTarget.essentials)
 
-                        homepagePhraseShelf("first-day")
+                        homepagePhraseShelf("first-day", scrollTarget: .firstDay)
+                            .id(HomeScrollTarget.firstDay)
 
                         cityShelf
+                            .id(HomeScrollTarget.city)
 
                         LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-                            homepagePhraseShelf("food-coffee")
+                            homepagePhraseShelf("food-coffee", scrollTarget: .foodCoffee)
+                                .id(HomeScrollTarget.foodCoffee)
 
                             practiceScenariosShelf
+                                .id(HomeScrollTarget.messages)
 
-                            homepagePhraseShelf("taxi-getting-around")
+                            homepagePhraseShelf("taxi-getting-around", scrollTarget: .gettingAround)
+                                .id(HomeScrollTarget.gettingAround)
 
                             situationShelves
+                                .id(HomeScrollTarget.situations)
 
-                            homepagePhraseShelf("when-stuck")
+                            homepagePhraseShelf("when-stuck", scrollTarget: .whenStuck)
+                                .id(HomeScrollTarget.whenStuck)
 
-                            homepagePhraseShelf("hotel-basics")
+                            homepagePhraseShelf("hotel-basics", scrollTarget: .hotelBasics)
+                                .id(HomeScrollTarget.hotelBasics)
 
                             relationshipShelf
+                                .id(HomeScrollTarget.relationships)
 
-                            homepagePhraseShelf("money-shopping")
+                            homepagePhraseShelf("money-shopping", scrollTarget: .moneyShopping)
+                                .id(HomeScrollTarget.moneyShopping)
 
-                            homepagePhraseShelf("help-emergency")
+                            homepagePhraseShelf("help-emergency", scrollTarget: .helpEmergency)
+                                .id(HomeScrollTarget.helpEmergency)
 
                             recentlyViewedShelf
+                                .id(HomeScrollTarget.recentlyViewed)
                         }
                     }
+                    .scrollTargetLayout()
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
+                .scrollPosition(id: $currentScrollTarget, anchor: .top)
+                .onAppear {
+                    guard isActive else { return }
+                    restoreScrollTargetIfNeeded(with: scrollProxy)
+                }
+                .onChange(of: isActive) { _, isActive in
+                    guard isActive else { return }
+                    restoreScrollTargetIfNeeded(with: scrollProxy)
+                }
                 .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    scrollRestorationTarget = nil
+                    currentScrollTarget = .top
+                    scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
                 }
             }
             .ignoresSafeArea(edges: .top)
@@ -2686,8 +2775,6 @@ struct HomeView: View {
             HomeImagePreheater.preheat(HomeContent.homeScrollCriticalImageNames)
         }
     }
-
-    private static let scrollTopID = "HomeViewTop"
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -2719,14 +2806,14 @@ struct HomeView: View {
             title: "Essentials",
             subtitle: "Core phrases for any trip",
             route: .category("essentials"),
-            onOpenCollection: onOpenCollection
+            onOpenCollection: { onOpenCollection($0, .essentials) }
         ) {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.useNowFeaturePhraseCardItems,
                 heroMorphPageID: heroMorphPageID,
                 chromeNamespace: chromeNamespace,
                 visibilityRoute: .home,
-                onOpenDetail: onOpenFeaturedDetail,
+                onOpenDetail: { onOpenFeaturedDetail($0, .essentials) },
                 isSaved: { intentStore.isPageSaved($0) },
                 onToggleSaved: { intentStore.toggleSavedPage($0) }
             )
@@ -2735,12 +2822,12 @@ struct HomeView: View {
     }
 
     @ViewBuilder
-    private func homepagePhraseShelf(_ id: String) -> some View {
+    private func homepagePhraseShelf(_ id: String, scrollTarget: HomeScrollTarget) -> some View {
         if let shelf = HomeContent.homepagePhraseShelf(id) {
             HomeRoutePhraseShelf(
                 shelf: shelf,
-                onOpenDetail: onOpenDetail,
-                onOpenCollection: onOpenCollection
+                onOpenDetail: { onOpenDetail($0, scrollTarget) },
+                onOpenCollection: { onOpenCollection($0, scrollTarget) }
             )
         }
     }
@@ -2755,7 +2842,7 @@ struct HomeView: View {
                     items: items,
                     heroMorphPageID: heroMorphPageID,
                     chromeNamespace: chromeNamespace,
-                    onOpenDetail: onOpenFeaturedDetail,
+                    onOpenDetail: { onOpenFeaturedDetail($0, .recentlyViewed) },
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) }
                 )
@@ -2774,7 +2861,7 @@ struct HomeView: View {
         HomeShelf(title: "Messages", subtitle: "Short trip conversations") {
             HomeScenarioRail(
                 scenarios: HomeContent.practiceScenarios,
-                onStartPractice: onStartPractice
+                onStartPractice: { onStartPractice($0, .messages) }
             )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
@@ -2784,7 +2871,10 @@ struct HomeView: View {
         HomeShelf(title: "Start with a situation", subtitle: "Go straight to what is happening around you") {
             LazyVStack(spacing: 12) {
                 ForEach(HomeContent.situationCards) { card in
-                    HomeSituationActionRow(card: card, onOpenCollection: onOpenCollection)
+                    HomeSituationActionRow(
+                        card: card,
+                        onOpenCollection: { onOpenCollection($0, .situations) }
+                    )
                 }
             }
         }
@@ -2796,11 +2886,11 @@ struct HomeView: View {
             title: "Who are you speaking to?",
             subtitle: "Pick a warmer hello by age or relationship",
             route: .category("local-greetings"),
-            onOpenCollection: onOpenCollection
+            onOpenCollection: { onOpenCollection($0, .relationships) }
         ) {
             HomeRelationshipListCard(
                 phrases: Array(PhrasePage.xinChao.localGreetings.prefix(3)),
-                onOpenDetail: onOpenDetail
+                onOpenDetail: { onOpenDetail($0, .relationships) }
             )
         }
         .padding(.horizontal, HomeLayout.horizontalPadding)
@@ -2811,11 +2901,27 @@ struct HomeView: View {
             title: "Explore by city",
             subtitle: "Popular city guides for your trip",
             route: .category("city-guides"),
-            onOpenCollection: onOpenCollection
+            onOpenCollection: { onOpenCollection($0, .city) }
         ) {
-            HomeCityRail(cities: HomeContent.cityCards, onOpenCollection: onOpenCollection)
+            HomeCityRail(
+                cities: HomeContent.cityCards,
+                onOpenCollection: { onOpenCollection($0, .city) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private func restoreScrollTargetIfNeeded(with scrollProxy: ScrollViewProxy) {
+        guard let target = scrollRestorationTarget else {
+            return
+        }
+
+        currentScrollTarget = target
+        scrollProxy.scrollTo(target, anchor: .top)
+        Task { @MainActor in
+            scrollProxy.scrollTo(target, anchor: .top)
+            scrollRestorationTarget = nil
+        }
     }
 }
 
@@ -3832,42 +3938,52 @@ private struct HomeQuickPhraseCard: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            VStack(spacing: 8) {
-                AudioSpeakerButton(
-                    tint: item.tintName,
-                    size: 52,
-                    audioKey: item.audioKey,
-                    accessibilityIdentifier: "HomeQuick.Audio.\(item.pageID)"
-                )
-                .frame(height: 56)
+        ZStack(alignment: .top) {
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                VStack(spacing: 8) {
+                    Color.clear
+                        .frame(height: 56)
+                        .accessibilityHidden(true)
 
-                VStack(spacing: 3) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.66)
+                    VStack(spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.66)
 
-                    Text(item.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.78)
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.78)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 12)
+                .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
+                .contentShape(Rectangle())
+                .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 12)
-            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .buttonStyle(.plain)
+            .accessibilityLabel("\(item.title), \(item.subtitle)")
+            .accessibilityIdentifier("HomeQuick.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                size: 52,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "HomeQuick.Audio.\(item.pageID)"
+            )
+            .frame(height: 56)
+            .padding(.top, 12)
         }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeQuick.\(item.pageID)")
+        .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
     }
 }
 
