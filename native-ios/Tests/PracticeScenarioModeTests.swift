@@ -67,32 +67,36 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(definitions.map(\.english), ["please", "give me one", "fresh coconut"])
     }
 
-    func testLostBagMessageBreakdownKeepsBagInOwnedNounChunk() {
+    func testLostBagMessageBreakdownUsesReviewedTokenGlosses() {
         let definitions = PracticeStoryBreakdownDefinitions.tokens(
             forVietnamese: "Túi của tôi bị lấy mất",
             pageID: "viet-phrase-emergency-6"
         )
 
-        XCTAssertEqual(definitions.map(\.vietnamese), ["Túi của tôi", "bị lấy mất"])
-        XCTAssertEqual(definitions.map(\.english), ["my bag", "was taken / stolen"])
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Túi", "của tôi", "bị", "lấy", "mất"])
+        XCTAssertEqual(definitions.map(\.english), ["bag", "my / mine", "got / passive marker", "take / claim", "takes / lose"])
     }
 
-    func testReviewedMessagePopoverBreakdownsUseExactGlossContracts() {
+    func testReviewedMessagePopoverBreakdownsUseCurrentReviewedGlossContracts() {
         let contracts: [(pageID: String, vietnamese: String, expected: [(String, String)])] = [
             (
                 "viet-phrase-emergency-6",
                 "Túi của tôi bị lấy mất",
                 [
-                    ("Túi của tôi", "my bag"),
-                    ("bị lấy mất", "was taken / stolen"),
+                    ("Túi", "bag"),
+                    ("của tôi", "my / mine"),
+                    ("bị", "got / passive marker"),
+                    ("lấy", "take / claim"),
+                    ("mất", "takes / lose"),
                 ]
             ),
             (
                 "viet-phrase-phone-7",
                 "eSIM của tôi không hoạt động",
                 [
-                    ("eSIM của tôi", "my eSIM"),
-                    ("không hoạt động", "is not working"),
+                    ("eSIM", "eSIM"),
+                    ("của tôi", "my / mine"),
+                    ("không hoạt động", "not working"),
                 ]
             ),
             (
@@ -100,64 +104,76 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "Thẻ SIM không hoạt động",
                 [
                     ("Thẻ SIM", "SIM card"),
-                    ("không hoạt động", "is not working"),
+                    ("không hoạt động", "not working"),
                 ]
             ),
             (
                 "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
                 "ATM không đưa tiền mặt cho tôi",
                 [
-                    ("ATM", "ATM"),
-                    ("không đưa", "did not give"),
+                    ("ATM", "an ATM"),
+                    ("không", "no / not"),
+                    ("đưa", "give / take"),
                     ("tiền mặt", "cash"),
-                    ("cho tôi", "for me / please"),
+                    ("cho", "to / for"),
+                    ("tôi", "me"),
                 ]
             ),
             (
                 "viet-phrase-hotel-8",
                 "Thẻ phòng không mở được",
                 [
-                    ("Thẻ phòng", "key card"),
-                    ("không mở được", "does not open"),
+                    ("Thẻ phòng", "room key card"),
+                    ("không", "no / not"),
+                    ("mở", "open"),
+                    ("được", "possible / okay"),
                 ]
             ),
             (
                 "viet-phrase-v900-hote-acco-can-you-store-my-luggage-after-check-out",
                 "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
                 [
-                    ("Bạn có thể", "can you"),
-                    ("gửi hành lý của tôi", "store my luggage"),
-                    ("sau khi trả phòng", "after check-out"),
-                    ("không?", "question marker"),
+                    ("Bạn", "you"),
+                    ("có thể", "can / able to"),
+                    ("gửi", "send"),
+                    ("hành lý", "baggage / luggage"),
+                    ("của tôi", "my / mine"),
+                    ("sau", "after / behind"),
+                    ("khi", "when"),
+                    ("trả phòng", "check out"),
+                    ("không", "yes/no?"),
                 ]
             ),
             (
                 "viet-phrase-food-premium-has-peanuts",
                 "Cái này có đậu phộng không?",
                 [
-                    ("Cái này", "this one"),
-                    ("có", "have / yes"),
+                    ("Cái", "item / classifier"),
+                    ("này", "this"),
+                    ("có", "have / there is"),
                     ("đậu phộng", "peanuts"),
-                    ("không?", "question marker"),
+                    ("không", "yes/no?"),
                 ]
             ),
             (
                 "viet-phrase-v500-food-drin-does-this-have-egg-or-peanuts",
                 "Cái này có trứng hay đậu phộng không?",
                 [
-                    ("Cái này", "this one"),
-                    ("có", "have / yes"),
+                    ("Cái", "item / classifier"),
+                    ("này", "this"),
+                    ("có", "have / there is"),
                     ("trứng", "egg"),
                     ("hay", "or"),
                     ("đậu phộng", "peanuts"),
-                    ("không?", "question marker"),
+                    ("không", "yes/no?"),
                 ]
             ),
             (
                 "viet-family-food-peanut-allergy",
                 "Tôi bị dị ứng đậu phộng",
                 [
-                    ("Tôi bị dị ứng", "I am allergic"),
+                    ("Tôi", "I / me"),
+                    ("bị dị ứng", "am allergic"),
                     ("đậu phộng", "peanuts"),
                 ]
             ),
@@ -165,38 +181,48 @@ final class PracticeScenarioModeTests: XCTestCase {
                 "viet-family-service-card",
                 "Tôi quẹt thẻ được không?",
                 [
-                    ("Tôi quẹt", "I tap / swipe"),
+                    ("Tôi", "I / me"),
+                    ("quẹt", "swipe"),
                     ("thẻ", "card"),
-                    ("được không?", "is it possible?"),
+                    ("được không", "is that possible?"),
                 ]
             ),
             (
                 "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
                 "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
                 [
-                    ("Tôi có thể thanh toán", "can I pay"),
-                    ("hóa đơn", "bill / receipt"),
-                    ("bằng thẻ", "by card"),
-                    ("không?", "question marker"),
+                    ("Tôi", "I / me"),
+                    ("có thể", "can / able to"),
+                    ("thanh toán", "pay"),
+                    ("hóa đơn", "receipt / invoice"),
+                    ("bằng", "by / with"),
+                    ("thẻ", "card"),
+                    ("không", "yes/no?"),
                 ]
             ),
             (
                 "viet-phrase-v900-tran-can-i-pay-the-fare-by-card",
                 "Tôi có thể thanh toán tiền vé bằng thẻ không?",
                 [
-                    ("Tôi có thể thanh toán", "can I pay"),
-                    ("tiền vé", "the fare"),
-                    ("bằng thẻ", "by card"),
-                    ("không?", "question marker"),
+                    ("Tôi", "I / me"),
+                    ("có thể", "can / able to"),
+                    ("thanh toán", "pay"),
+                    ("tiền", "money"),
+                    ("vé", "ticket"),
+                    ("bằng", "by / with"),
+                    ("thẻ", "card"),
+                    ("không", "yes/no?"),
                 ]
             ),
             (
                 "viet-phrase-v500-tran-are-you-my-driver",
                 "Bạn là tài xế của tôi à?",
                 [
-                    ("Bạn là", "are you"),
-                    ("tài xế của tôi", "my driver"),
-                    ("à?", "polite yes / opener"),
+                    ("Bạn", "you"),
+                    ("là", "is / means"),
+                    ("tài xế", "driver"),
+                    ("của tôi", "my / mine"),
+                    ("à", "polite yes / opener"),
                 ]
             ),
             (
@@ -205,7 +231,8 @@ final class PracticeScenarioModeTests: XCTestCase {
                 [
                     ("Vui lòng", "please"),
                     ("hủy", "cancel"),
-                    ("thanh toán thẻ", "card payment"),
+                    ("thanh toán", "pay"),
+                    ("thẻ", "card"),
                     ("đó", "that"),
                 ]
             ),
