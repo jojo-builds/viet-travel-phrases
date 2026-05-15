@@ -715,17 +715,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.detailPath.isEmpty)
         XCTAssertEqual(navigation.browseScrollToTopTrigger, 1)
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.browse])
+        XCTAssertFalse(navigation.showsStaticBackButton)
 
         navigation.goForward()
 
         XCTAssertEqual(navigation.currentRoute, .browse)
         XCTAssertEqual(navigation.browseScrollToTopTrigger, 2)
         XCTAssertTrue(navigation.forwardStack.isEmpty)
+        XCTAssertTrue(navigation.showsStaticBackButton)
     }
 
     func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {
@@ -735,17 +738,21 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.openDetail("viet-phrase-city-danang-place-dragon-bridge")
         XCTAssertEqual(navigation.backPreviewRoute, .browseCollection(.city("danang")))
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
         XCTAssertEqual(navigation.backPreviewRoute, .home)
+        XCTAssertTrue(navigation.showsStaticBackButton)
 
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .home)
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-city-danang-place-dragon-bridge"), .browseCollection(.city("danang"))])
+        XCTAssertFalse(navigation.showsStaticBackButton)
     }
 
     func testBrowseCollectionBackChainStillReturnsToBrowse() {

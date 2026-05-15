@@ -60,6 +60,21 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
     }
 
+    func testBrowseRootOpenedFromHomeShowsBackButton() {
+        let app = XCUIApplication()
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        systemTabCoordinate("Browse", in: app).tap()
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2),
+            "Browse was opened from Home, so the visible back button should match the existing back-swipe route."
+        )
+    }
+
     func testHomeCityCardBackButtonReturnsHome() {
         let app = XCUIApplication()
         app.launch()
@@ -75,6 +90,7 @@ final class BackSwipeUITests: XCTestCase {
         daNangCard.tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.city.danang"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2))
 
         app.buttons["Go back"].tap()
 
