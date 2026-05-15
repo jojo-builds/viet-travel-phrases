@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-long-bien-market",
+  "phraseText": "Dừng ở Chợ Long Biên",
+  "englishTitle": "Stop at Long Bien Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.368Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-long-bien-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Long Biên",
+      "english": "Long Bien Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Chợ Long Biên",
+      "english": "Stop at Long Bien Market",
+      "audioKey": "audio-authored-dung-o-cho-long-bien-355e2d2ae8"
+    }
+  ]
+}

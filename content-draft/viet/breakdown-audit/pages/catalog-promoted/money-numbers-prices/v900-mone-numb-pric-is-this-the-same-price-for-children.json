@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-is-this-the-same-price-for-children",
+  "phraseText": "Đây có phải là mức giá tương tự cho trẻ em?",
+  "englishTitle": "Is this the same price for children?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-is-this-the-same-price-for-children",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mức giá",
+      "english": "price level",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "vietnamese": "tương tự",
+      "english": "same / similar",
+      "keepTogetherReason": "compound similarity phrase"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "trẻ em?",
+      "english": "children",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải là mức giá tương tự cho trẻ em?",
+      "english": "Is this the same price for children?",
+      "audioKey": "v900-mone-numb-pric-is-this-the-same-price-for-children"
+    }
+  ]
+}

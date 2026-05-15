@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-repair-english-help",
+  "phraseText": "Anh/chị nói tiếng Anh không?",
+  "englishTitle": "Do you speak English?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-english-help",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh/chị",
+      "english": "sir or ma'am",
+      "keepTogetherReason": "slash address form"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh/chị nói tiếng Anh không?",
+      "english": "Do you speak English?",
+      "audioKey": "repair-english-help"
+    }
+  ]
+}

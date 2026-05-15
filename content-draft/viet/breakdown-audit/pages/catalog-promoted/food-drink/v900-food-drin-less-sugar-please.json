@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-less-sugar-please",
+  "phraseText": "Làm ơn bớt đường đi",
+  "englishTitle": "Less sugar, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.308Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-less-sugar-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bớt",
+      "english": "reduce / less"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn bớt đường đi",
+      "english": "Less sugar, please",
+      "audioKey": "v900-food-drin-less-sugar-please"
+    }
+  ]
+}

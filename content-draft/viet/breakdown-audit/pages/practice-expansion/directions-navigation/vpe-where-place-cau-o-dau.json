@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-where-place-cau-o-dau",
+  "phraseText": "cầu ở đâu?",
+  "englishTitle": "Where is the bridge?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.482Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-cau-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cầu",
+      "english": "bridge"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "cầu ở đâu?",
+      "english": "Where is the bridge?",
+      "audioKey": "audio-authored-cau-o-dau-f668e83228"
+    }
+  ]
+}

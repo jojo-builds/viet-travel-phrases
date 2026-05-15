@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-tran-do-you-have-a-helmet",
+  "phraseText": "Bạn có mũ bảo hiểm không?",
+  "englishTitle": "Do you have a helmet?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-do-you-have-a-helmet",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mũ bảo hiểm",
+      "english": "helmet",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có mũ bảo hiểm không?",
+      "english": "Do you have a helmet?",
+      "audioKey": "v500-tran-do-you-have-a-helmet"
+    }
+  ]
+}

@@ -47,7 +47,7 @@
         {
           "id": "chunk-1",
           "vietnamese": "Thẻ của tôi",
-          "english": "my / mine",
+          "english": "my card",
           "audioKey": null
         },
         {
@@ -60,7 +60,7 @@
           "id": "chunk-3",
           "vietnamese": "Thẻ của tôi đã bị từ chối",
           "english": "My card was declined",
-          "audioKey": null
+          "audioKey": "v500-mone-numb-pric-my-card-was-declined"
         }
       ]
     },

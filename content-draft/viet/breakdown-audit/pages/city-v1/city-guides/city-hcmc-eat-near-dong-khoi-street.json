@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hcmc-eat-near-dong-khoi-street",
+  "phraseText": "Ăn gần Đường Đồng Khởi",
+  "englishTitle": "Eat near Dong Khoi Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.371Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-eat-near-dong-khoi-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Đường Đồng Khởi",
+      "english": "Dong Khoi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Đường Đồng Khởi",
+      "english": "Eat near Dong Khoi Street",
+      "audioKey": "audio-authored-an-gan-duong-dong-khoi-5ae1823444"
+    }
+  ]
+}

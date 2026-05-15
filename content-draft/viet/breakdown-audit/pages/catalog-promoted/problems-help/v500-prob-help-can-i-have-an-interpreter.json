@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-can-i-have-an-interpreter",
+  "phraseText": "Tôi có thể có một thông dịch viên?",
+  "englishTitle": "Can I have an interpreter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.335Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-can-i-have-an-interpreter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thông",
+      "english": "information / through"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "dịch",
+      "english": "translate / service"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "viên?",
+      "english": "staff / viên"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể có một thông dịch viên?",
+      "english": "Can I have an interpreter?",
+      "audioKey": "v500-prob-help-can-i-have-an-interpreter"
+    }
+  ]
+}

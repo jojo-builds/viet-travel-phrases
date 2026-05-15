@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-so-co-la-viet-nam",
+  "phraseText": "Tôi cần sô cô la Việt Nam",
+  "englishTitle": "I need Vietnamese chocolate.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.440Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-so-co-la-viet-nam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sô cô la",
+      "english": "chocolate",
+      "keepTogetherReason": "loanword food term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Việt Nam",
+      "english": "Vietnamese",
+      "keepTogetherReason": "country name used as modifier"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần sô cô la Việt Nam",
+      "english": "I need Vietnamese chocolate.",
+      "audioKey": "audio-authored-toi-can-so-co-la-viet-nam-71e5b249c4"
+    }
+  ]
+}

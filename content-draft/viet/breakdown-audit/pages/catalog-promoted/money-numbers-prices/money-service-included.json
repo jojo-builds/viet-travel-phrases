@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-money-premium-service-included",
+  "phraseText": "Dịch vụ đã được bao gồm chưa?",
+  "englishTitle": "Is service already included?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-money-premium-service-included",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dịch",
+      "english": "translate / service"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vụ",
+      "english": "service"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gồm",
+      "english": "include"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "chưa?",
+      "english": "not yet / already?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dịch vụ đã được bao gồm chưa?",
+      "english": "Is service already included?",
+      "audioKey": "money-premium-service-included"
+    }
+  ]
+}

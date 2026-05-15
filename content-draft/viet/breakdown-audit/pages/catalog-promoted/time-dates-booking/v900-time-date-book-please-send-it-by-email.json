@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-please-send-it-by-email",
+  "phraseText": "Vui lòng gửi nó qua email",
+  "englishTitle": "Please send it by email",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-please-send-it-by-email",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "qua",
+      "english": "through / past"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi nó qua email",
+      "english": "Please send it by email",
+      "audioKey": "v900-time-date-book-please-send-it-by-email"
+    }
+  ]
+}

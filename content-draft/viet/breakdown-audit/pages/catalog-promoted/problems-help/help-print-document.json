@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-help-premium-print-document",
+  "phraseText": "Tôi cần một bản in của tài liệu này.",
+  "englishTitle": "I need a printed copy of this document.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.335Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-help-premium-print-document",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bản in",
+      "english": "printed copy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của",
+      "english": "of"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tài",
+      "english": "driver / tài"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "liệu",
+      "english": "material / whether"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "này.",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần một bản in của tài liệu này.",
+      "english": "I need a printed copy of this document.",
+      "audioKey": "help-premium-print-document"
+    }
+  ]
+}

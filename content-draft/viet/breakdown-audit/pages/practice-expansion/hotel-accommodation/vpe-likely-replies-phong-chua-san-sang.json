@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-phong-chua-san-sang",
+  "phraseText": "Phòng chưa sẵn sàng",
+  "englishTitle": "The room is not ready yet",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-phong-chua-san-sang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chưa",
+      "english": "not yet / already?"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sẵn",
+      "english": "ready / available"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sàng",
+      "english": "morning"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng chưa sẵn sàng",
+      "english": "The room is not ready yet",
+      "audioKey": "audio-authored-phong-chua-san-sang-d8cea48a06"
+    }
+  ]
+}

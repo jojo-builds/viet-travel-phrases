@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-where-morning-glory",
+  "phraseText": "Morning Glory Hội An ở đâu?",
+  "englishTitle": "Where is Morning Glory Hoi An?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.383Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-where-morning-glory",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Morning Glory Hội An",
+      "english": "Morning Glory Hoi An",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Morning Glory Hội An ở đâu?",
+      "english": "Where is Morning Glory Hoi An?",
+      "audioKey": "audio-authored-morning-glory-hoi-an-o-dau-e29baeec87"
+    }
+  ]
+}

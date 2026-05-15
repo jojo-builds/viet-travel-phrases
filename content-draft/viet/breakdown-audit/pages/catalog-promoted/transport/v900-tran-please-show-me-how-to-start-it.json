@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-show-me-how-to-start-it",
+  "phraseText": "Hãy chỉ cho tôi cách bắt đầu nó",
+  "englishTitle": "Please show me how to start it",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-show-me-how-to-start-it",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cách",
+      "english": "way / distance"
+    },
+    {
+      "vietnamese": "bắt đầu",
+      "english": "start / begin",
+      "keepTogetherReason": "compound start verb"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy chỉ cho tôi cách bắt đầu nó",
+      "english": "Please show me how to start it",
+      "audioKey": "v900-tran-please-show-me-how-to-start-it"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-this-is-undercooked",
+  "phraseText": "Món này chưa được nấu chín kỹ",
+  "englishTitle": "This is undercooked",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-this-is-undercooked",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Món",
+      "english": "dish"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chưa",
+      "english": "not yet / already?"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nấu chín",
+      "english": "cooked",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "kỹ",
+      "english": "thoroughly"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Món này chưa được nấu chín kỹ",
+      "english": "This is undercooked",
+      "audioKey": "v900-food-drin-this-is-undercooked"
+    }
+  ]
+}

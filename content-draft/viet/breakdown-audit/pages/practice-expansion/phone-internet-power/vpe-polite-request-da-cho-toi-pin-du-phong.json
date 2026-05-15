@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-pin-du-phong",
+  "phraseText": "Dạ, cho tôi pin dự phòng",
+  "englishTitle": "Respectfully, please give me a power bank.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.452Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-pin-du-phong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "pin dự phòng",
+      "english": "power bank",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi pin dự phòng",
+      "english": "Respectfully, please give me a power bank.",
+      "audioKey": "audio-authored-da-cho-toi-pin-du-phong-9538f7a87d"
+    }
+  ]
+}

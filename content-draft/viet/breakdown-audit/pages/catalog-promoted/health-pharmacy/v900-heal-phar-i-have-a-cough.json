@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-have-a-cough",
+  "phraseText": "tôi bị ho",
+  "englishTitle": "I have a cough",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.312Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-have-a-cough",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ho",
+      "english": "cough"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi bị ho",
+      "english": "I have a cough",
+      "audioKey": "v900-heal-phar-i-have-a-cough"
+    }
+  ]
+}

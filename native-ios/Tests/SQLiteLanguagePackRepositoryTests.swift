@@ -116,6 +116,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
     func testSQLiteCityPagesUsePremiumHeroFallbacks() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let cityHeroNames = try repository.loadCityPageHeroImageNames()
+        let report = try loadBundledReport()
         let retiredHeroNames = Set([
             "HeroHanMarket",
             "HeroLinhUngPagoda",
@@ -134,7 +135,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "HeroBaNaHills",
         ])
 
-        XCTAssertEqual(cityHeroNames.count, 750)
+        XCTAssertEqual(cityHeroNames.count, report.validation.cityLibraryPageCount)
         XCTAssertEqual(cityHeroNames["city-hcmc-place-anan-saigon"], "HeroCityHcmc")
         XCTAssertEqual(cityHeroNames["city-hcmc-where-anan-saigon"], "HeroCompactPhraseMasthead")
 
@@ -483,6 +484,7 @@ private struct VietSQLiteFixtureReport: Decodable {
 
     struct Validation: Decodable {
         let integrityCheck: String
+        let cityLibraryPageCount: Int
     }
 
     struct Audio: Decodable {

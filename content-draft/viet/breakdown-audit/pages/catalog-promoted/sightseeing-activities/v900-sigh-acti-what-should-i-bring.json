@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-what-should-i-bring",
+  "phraseText": "Tôi nên mang theo những gì?",
+  "englishTitle": "What should I bring?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-what-should-i-bring",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nên",
+      "english": "should"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mang",
+      "english": "bring / carry"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "theo",
+      "english": "follow"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "những",
+      "english": "those / plural marker"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nên mang theo những gì?",
+      "english": "What should I bring?",
+      "audioKey": "v900-sigh-acti-what-should-i-bring"
+    }
+  ]
+}

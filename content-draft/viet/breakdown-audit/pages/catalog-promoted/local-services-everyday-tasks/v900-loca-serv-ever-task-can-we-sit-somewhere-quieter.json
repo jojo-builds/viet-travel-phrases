@@ -1,0 +1,72 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
+  "phraseText": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+  "englishTitle": "Can we sit somewhere quieter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chúng ta",
+      "english": "we / us",
+      "keepTogetherReason": "pronoun phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ngồi",
+      "english": "sit"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chỗ",
+      "english": "place / spot"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "yên tĩnh",
+      "english": "quiet",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "hơn",
+      "english": "more"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+      "english": "Can we sit somewhere quieter?",
+      "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter"
+    }
+  ]
+}

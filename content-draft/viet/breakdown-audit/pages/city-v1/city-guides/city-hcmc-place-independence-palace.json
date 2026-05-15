@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-independence-palace",
+  "phraseText": "Dinh Độc Lập",
+  "englishTitle": "Independence Palace",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-independence-palace",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dinh Độc Lập",
+      "english": "Independence Palace",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-soci-smal-talk-where-can-i-wait-out-the-rain",
+  "phraseText": "Tôi có thể chờ mưa ở đâu?",
+  "englishTitle": "Where can I wait out the rain?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-soci-smal-talk-where-can-i-wait-out-the-rain",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chờ",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mưa",
+      "english": "rain"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể chờ mưa ở đâu?",
+      "english": "Where can I wait out the rain?",
+      "audioKey": "v500-soci-smal-talk-where-can-i-wait-out-the-rain"
+    }
+  ]
+}

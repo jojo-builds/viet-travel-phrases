@@ -47,26 +47,26 @@
         {
           "id": "chunk-1",
           "vietnamese": "Vui lòng gửi",
-          "english": "please",
+          "english": "please send",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "tiền hoàn lại",
-          "english": "price / money",
+          "english": "the refund",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "vào thẻ này",
-          "english": "this one / this",
+          "english": "to this card",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Vui lòng gửi tiền hoàn lại vào thẻ này",
           "english": "Please send the refund to this card",
-          "audioKey": null
+          "audioKey": "v900-time-date-book-please-send-the-refund-to-this-card"
         }
       ]
     },

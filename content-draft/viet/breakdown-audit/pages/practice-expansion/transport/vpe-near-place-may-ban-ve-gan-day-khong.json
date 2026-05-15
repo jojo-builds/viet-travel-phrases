@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-vpe-near-place-may-ban-ve-gan-day-khong",
+  "phraseText": "máy bán vé gần đây không?",
+  "englishTitle": "Is the ticket machine nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.431Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-may-ban-ve-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "máy",
+      "english": "machine"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bán",
+      "english": "sell"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "máy bán vé gần đây không?",
+      "english": "Is the ticket machine nearby?",
+      "audioKey": "audio-authored-may-ban-ve-gan-day-khong-c2ac65c623"
+    }
+  ]
+}

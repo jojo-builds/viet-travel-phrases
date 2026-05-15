@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-tran-when-is-the-next-bus",
+  "phraseText": "Khi nào có chuyến xe buýt tiếp theo?",
+  "englishTitle": "When is the next bus?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.350Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-when-is-the-next-bus",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khi nào",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chuyến",
+      "english": "trip"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "xe buýt",
+      "english": "bus",
+      "keepTogetherReason": "compound vehicle term"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tiếp",
+      "english": "continue / next"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "theo?",
+      "english": "follow"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khi nào có chuyến xe buýt tiếp theo?",
+      "english": "When is the next bus?",
+      "audioKey": "v500-tran-when-is-the-next-bus"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-the-internet-is-very-slow",
+  "phraseText": "Internet rất chậm",
+  "englishTitle": "The internet is very slow",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-the-internet-is-very-slow",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Internet",
+      "english": "Internet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rất",
+      "english": "very"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chậm",
+      "english": "slow"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Internet rất chậm",
+      "english": "The internet is very slow",
+      "audioKey": "v500-phon-inte-powe-the-internet-is-very-slow"
+    }
+  ]
+}

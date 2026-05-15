@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-ho",
+  "phraseText": "Dừng ở hồ",
+  "englishTitle": "Stop at the lake.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.472Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-ho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hồ",
+      "english": "lake / clock"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở hồ",
+      "english": "Stop at the lake.",
+      "audioKey": "audio-authored-dung-o-ho-7cc7de6657"
+    }
+  ]
+}

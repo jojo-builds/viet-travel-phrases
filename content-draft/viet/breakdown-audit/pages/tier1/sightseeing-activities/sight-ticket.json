@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-sight-ticket",
+  "phraseText": "Vé bao nhiêu?",
+  "englishTitle": "How much is the ticket?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.286Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-sight-ticket",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vé bao nhiêu?",
+      "english": "How much is the ticket?",
+      "audioKey": "sight-1"
+    }
+  ]
+}

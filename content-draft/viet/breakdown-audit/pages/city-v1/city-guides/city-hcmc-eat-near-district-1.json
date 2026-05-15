@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hcmc-eat-near-district-1",
+  "phraseText": "Ăn gần Quận 1",
+  "englishTitle": "Eat near District 1",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.371Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-eat-near-district-1",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Quận 1",
+      "english": "District 1",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Quận 1",
+      "english": "Eat near District 1",
+      "audioKey": "audio-authored-an-gan-quan-1-cc70494074"
+    }
+  ]
+}

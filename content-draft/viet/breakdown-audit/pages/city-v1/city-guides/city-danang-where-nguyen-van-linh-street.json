@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-danang-where-nguyen-van-linh-street",
+  "phraseText": "Đường Nguyễn Văn Linh ở đâu?",
+  "englishTitle": "Where is Nguyen Van Linh Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.363Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-where-nguyen-van-linh-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Nguyễn Văn Linh",
+      "english": "Nguyen Van Linh Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đường Nguyễn Văn Linh ở đâu?",
+      "english": "Where is Nguyen Van Linh Street?",
+      "audioKey": "audio-authored-duong-nguyen-van-linh-o-dau-04b68ce6df"
+    }
+  ]
+}

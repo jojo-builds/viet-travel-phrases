@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-stop-an-hoi-island",
+  "phraseText": "Dừng ở Đảo An Hội",
+  "englishTitle": "Stop at An Hoi Island",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-an-hoi-island",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Đảo An Hội",
+      "english": "An Hoi Island",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Đảo An Hội",
+      "english": "Stop at An Hoi Island",
+      "audioKey": "audio-authored-dung-o-dao-an-hoi-6eeda6a703"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-please-speak-to-them-on-the-phone",
+  "phraseText": "Hãy nói chuyện với họ qua điện thoại",
+  "englishTitle": "Please speak to them on the phone",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.332Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-please-speak-to-them-on-the-phone",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chuyện",
+      "english": "matter / story"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "họ",
+      "english": "they"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "qua",
+      "english": "through / past"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy nói chuyện với họ qua điện thoại",
+      "english": "Please speak to them on the phone",
+      "audioKey": "v900-phon-inte-powe-please-speak-to-them-on-the-phone"
+    }
+  ]
+}

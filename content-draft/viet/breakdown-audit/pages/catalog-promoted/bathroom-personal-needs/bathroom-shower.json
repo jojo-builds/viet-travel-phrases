@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-bath-6",
+  "phraseText": "Ở đây có chỗ tắm không?",
+  "englishTitle": "Is there a shower here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.294Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-bath-6",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chỗ",
+      "english": "place / spot"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tắm",
+      "english": "shower / bathe"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ở đây có chỗ tắm không?",
+      "english": "Is there a shower here?",
+      "audioKey": "bath-6"
+    }
+  ]
+}

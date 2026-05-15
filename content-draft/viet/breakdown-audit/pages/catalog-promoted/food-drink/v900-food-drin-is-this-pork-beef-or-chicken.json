@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+  "phraseText": "Đây là thịt lợn, thịt bò hay thịt gà?",
+  "englishTitle": "Is this pork, beef, or chicken?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.307Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thịt lợn,",
+      "english": "pork",
+      "keepTogetherReason": "compound food term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thịt bò",
+      "english": "beef",
+      "keepTogetherReason": "compound food term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hay",
+      "english": "or"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thịt gà?",
+      "english": "chicken",
+      "keepTogetherReason": "compound food term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+      "english": "Is this pork, beef, or chicken?",
+      "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
+    }
+  ]
+}

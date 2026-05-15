@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-quan-short",
+  "phraseText": "Tôi cần quần short",
+  "englishTitle": "I need shorts.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.440Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-quan-short",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "quần",
+      "english": "pants"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "short",
+      "english": "shorts"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần quần short",
+      "english": "I need shorts.",
+      "audioKey": "audio-authored-toi-can-quan-short-d427861a80"
+    }
+  ]
+}

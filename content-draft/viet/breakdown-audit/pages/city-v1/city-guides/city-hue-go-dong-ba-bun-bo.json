@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-city-hue-go-dong-ba-bun-bo",
+  "phraseText": "Tôi muốn tìm bún bò ở chợ Đông Ba",
+  "englishTitle": "I want to find bun bo at Dong Ba Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.385Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-go-dong-ba-bun-bo",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tìm",
+      "english": "find"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bún bò ở chợ Đông Ba",
+      "english": "Bun bo at Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn tìm bún bò ở chợ Đông Ba",
+      "english": "I want to find bun bo at Dong Ba Market",
+      "audioKey": "audio-authored-toi-muon-tim-bun-bo-o-cho-dong-ba-6a80605aab"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-hanoi-go-bun-cha-huong-lien",
+  "phraseText": "Cho tôi đến nhà hàng Bún chả Hương Liên.",
+  "englishTitle": "Please take me to Bún chả Hương Liên restaurant.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-go-bun-cha-huong-lien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "Bún chả Hương Liên.",
+      "english": "Bun Cha Huong Lien",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến nhà hàng Bún chả Hương Liên.",
+      "english": "Please take me to Bún chả Hương Liên restaurant.",
+      "audioKey": "audio-authored-cho-toi-den-nha-hang-bun-cha-huong-lien-832e0b55cc"
+    }
+  ]
+}

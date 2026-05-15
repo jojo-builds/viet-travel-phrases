@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
+  "phraseText": "Chỉ nhận tiền mặt",
+  "englishTitle": "Cash only",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.425Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-chi-nhan-tien-mat",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nhận",
+      "english": "receive / accept"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiền mặt",
+      "english": "cash",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chỉ nhận tiền mặt",
+      "english": "Cash only",
+      "audioKey": "audio-authored-chi-nhan-tien-mat-bc6f44a629"
+    }
+  ]
+}

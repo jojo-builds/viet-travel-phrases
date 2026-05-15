@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-there-is-no-hot-water",
+  "phraseText": "Vòi sen chỉ có nước lạnh",
+  "englishTitle": "The shower only has cold water",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.318Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-there-is-no-hot-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Vòi sen",
+      "english": "shower",
+      "keepTogetherReason": "compound bathroom fixture"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nước lạnh",
+      "english": "cold water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vòi sen chỉ có nước lạnh",
+      "english": "The shower only has cold water",
+      "audioKey": "v500-hote-acco-there-is-no-hot-water"
+    }
+  ]
+}

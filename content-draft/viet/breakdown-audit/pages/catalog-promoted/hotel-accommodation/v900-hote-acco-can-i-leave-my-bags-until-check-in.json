@@ -1,0 +1,82 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-i-leave-my-bags-until-check-in",
+  "phraseText": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?",
+  "englishTitle": "Can I leave my bags until check-in?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.319Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-i-leave-my-bags-until-check-in",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "để lại",
+      "english": "leave",
+      "keepTogetherReason": "compound leave-behind verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "của mình",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "khi",
+      "english": "when"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "nhận phòng",
+      "english": "check in",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-11",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?",
+      "english": "Can I leave my bags until check-in?",
+      "audioKey": "v900-hote-acco-can-i-leave-my-bags-until-check-in"
+    }
+  ]
+}

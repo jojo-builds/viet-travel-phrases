@@ -1,0 +1,66 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
+  "phraseText": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
+  "englishTitle": "Is there an English-speaking doctor or pharmacist?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.314Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bác sĩ",
+      "english": "doctor",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hoặc",
+      "english": "or"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "dược sĩ",
+      "english": "pharmacist",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
+      "english": "Is there an English-speaking doctor or pharmacist?",
+      "audioKey": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis"
+    }
+  ]
+}

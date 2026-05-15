@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
+  "phraseText": "Đây có phải đường Nguyễn Văn Linh không?",
+  "englishTitle": "Is this Nguyen Van Linh Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-is-this-nguyen-van-linh-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường Nguyễn Văn Linh",
+      "english": "Nguyen Van Linh Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải đường Nguyễn Văn Linh không?",
+      "english": "Is this Nguyen Van Linh Street?",
+      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c"
+    }
+  ]
+}

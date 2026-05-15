@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-phong-y-te",
+  "phraseText": "Dừng ở phòng y tế",
+  "englishTitle": "Stop at the medical room.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.473Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-phong-y-te",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "y",
+      "english": "medical"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tế",
+      "english": "international / medical"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở phòng y tế",
+      "english": "Stop at the medical room.",
+      "audioKey": "audio-authored-dung-o-phong-y-te-8a3d2ecf43"
+    }
+  ]
+}

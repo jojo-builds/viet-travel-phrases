@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-need-pain-medicine",
+  "phraseText": "Tôi cần thuốc giảm đau",
+  "englishTitle": "I need pain medicine",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-need-pain-medicine",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuốc giảm đau",
+      "english": "pain medicine",
+      "keepTogetherReason": "compound medicine term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần thuốc giảm đau",
+      "english": "I need pain medicine",
+      "audioKey": "v900-heal-phar-i-need-pain-medicine"
+    }
+  ]
+}

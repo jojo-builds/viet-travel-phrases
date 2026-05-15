@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hoian-atm-cam-chau",
+  "phraseText": "Có ATM gần Cẩm Châu không?",
+  "englishTitle": "Is there an ATM near Cam Chau?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.377Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-atm-cam-chau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Cẩm Châu",
+      "english": "Cam Chau",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Cẩm Châu không?",
+      "english": "Is there an ATM near Cam Chau?",
+      "audioKey": "audio-authored-co-atm-gan-cam-chau-khong-f04e7a1395"
+    }
+  ]
+}

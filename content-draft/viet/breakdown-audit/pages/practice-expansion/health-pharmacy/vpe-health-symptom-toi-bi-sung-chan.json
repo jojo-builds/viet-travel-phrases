@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-health-symptom-toi-bi-sung-chan",
+  "phraseText": "Tôi bị sưng chân",
+  "englishTitle": "I have swollen feet.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.418Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-health-symptom-toi-bi-sung-chan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "vietnamese": "sưng chân",
+      "english": "swollen foot / leg",
+      "keepTogetherReason": "compound symptom term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị sưng chân",
+      "english": "I have swollen feet.",
+      "audioKey": "audio-authored-toi-bi-sung-chan-fe8ae854af"
+    }
+  ]
+}

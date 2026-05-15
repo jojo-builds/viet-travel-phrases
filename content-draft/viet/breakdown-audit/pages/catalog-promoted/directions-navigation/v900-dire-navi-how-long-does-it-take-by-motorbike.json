@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-how-long-does-it-take-by-motorbike",
+  "phraseText": "Đi xe máy mất bao lâu?",
+  "englishTitle": "How long does it take by motorbike?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-how-long-does-it-take-by-motorbike",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi xe máy",
+      "english": "go by motorbike",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi xe máy mất bao lâu?",
+      "english": "How long does it take by motorbike?",
+      "audioKey": "v900-dire-navi-how-long-does-it-take-by-motorbike"
+    }
+  ]
+}

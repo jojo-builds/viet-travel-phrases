@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-man-thai-beach",
+  "phraseText": "Biển Mân Thái",
+  "englishTitle": "Man Thai Beach",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.361Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-man-thai-beach",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Biển Mân Thái",
+      "english": "Man Thai Beach",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

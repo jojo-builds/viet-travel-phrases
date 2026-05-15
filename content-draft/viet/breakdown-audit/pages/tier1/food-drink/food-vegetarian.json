@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-food-vegetarian",
+  "phraseText": "Tôi ăn chay",
+  "englishTitle": "I am vegetarian",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-vegetarian",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ăn chay",
+      "english": "eat vegetarian",
+      "keepTogetherReason": "compound food phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi ăn chay",
+      "english": "I am vegetarian",
+      "audioKey": "food-vegetarian"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-transport-destination",
+  "phraseText": "Cho tôi tới đây",
+  "englishTitle": "Take me here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-destination",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tới",
+      "english": "to / arrive"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi tới đây",
+      "english": "Take me here",
+      "audioKey": "taxi-1"
+    }
+  ]
+}

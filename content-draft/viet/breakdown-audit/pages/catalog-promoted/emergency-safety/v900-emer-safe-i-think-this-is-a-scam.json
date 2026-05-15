@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-i-think-this-is-a-scam",
+  "phraseText": "Tôi nghĩ đây là một trò lừa đảo",
+  "englishTitle": "I think this is a scam",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-i-think-this-is-a-scam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trò",
+      "english": "trick / game"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "lừa đảo",
+      "english": "scam",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ đây là một trò lừa đảo",
+      "english": "I think this is a scam",
+      "audioKey": "v900-emer-safe-i-think-this-is-a-scam"
+    }
+  ]
+}

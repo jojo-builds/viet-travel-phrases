@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-stop-near-the-entrance",
+  "phraseText": "Vui lòng dừng gần lối vào",
+  "englishTitle": "Please stop near the entrance",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-stop-near-the-entrance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "dừng",
+      "english": "stop"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lối vào",
+      "english": "entrance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng dừng gần lối vào",
+      "english": "Please stop near the entrance",
+      "audioKey": "v900-tran-please-stop-near-the-entrance"
+    }
+  ]
+}

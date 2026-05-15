@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-is-this-room-available-tonight",
+  "phraseText": "Phòng này có trống tối nay không?",
+  "englishTitle": "Is this room available tonight?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.320Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-is-this-room-available-tonight",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trống",
+      "english": "empty"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tối",
+      "english": "evening / dark"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nay",
+      "english": "today / this"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng này có trống tối nay không?",
+      "english": "Is this room available tonight?",
+      "audioKey": "v900-hote-acco-is-this-room-available-tonight"
+    }
+  ]
+}

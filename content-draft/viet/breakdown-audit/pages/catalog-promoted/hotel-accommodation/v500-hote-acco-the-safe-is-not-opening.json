@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-the-safe-is-not-opening",
+  "phraseText": "két sắt không mở được",
+  "englishTitle": "The safe is not opening",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-the-safe-is-not-opening",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "két sắt",
+      "english": "safe box",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mở",
+      "english": "open"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "full",
+      "vietnamese": "két sắt không mở được",
+      "english": "The safe is not opening",
+      "audioKey": "v500-hote-acco-the-safe-is-not-opening"
+    }
+  ]
+}

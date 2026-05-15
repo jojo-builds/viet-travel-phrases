@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hoian-place-bay-mau-coconut-forest",
+  "phraseText": "Rừng dừa Bảy Mẫu",
+  "englishTitle": "Bay Mau Coconut Forest",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.380Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-place-bay-mau-coconut-forest",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Rừng dừa Bảy Mẫu",
+      "english": "Bay Mau Coconut Forest",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

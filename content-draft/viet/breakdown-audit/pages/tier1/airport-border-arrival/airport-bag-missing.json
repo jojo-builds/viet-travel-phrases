@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-airport-bag-missing",
+  "phraseText": "Hành lý của tôi chưa tới",
+  "englishTitle": "My bag did not arrive",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.281Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-bag-missing",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chưa",
+      "english": "not yet / already?"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tới",
+      "english": "to / arrive"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hành lý của tôi chưa tới",
+      "english": "My bag did not arrive",
+      "audioKey": "airport-6"
+    }
+  ]
+}

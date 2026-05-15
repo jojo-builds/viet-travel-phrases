@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong",
+  "phraseText": "bãi gửi xe máy gần đây không?",
+  "englishTitle": "Is motorbike parking nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.428Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "bãi gửi xe máy",
+      "english": "motorbike parking lot",
+      "keepTogetherReason": "compound parking-place term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "bãi gửi xe máy gần đây không?",
+      "english": "Is motorbike parking nearby?",
+      "audioKey": "audio-authored-bai-gui-xe-may-gan-day-khong-3a610a20fb"
+    }
+  ]
+}

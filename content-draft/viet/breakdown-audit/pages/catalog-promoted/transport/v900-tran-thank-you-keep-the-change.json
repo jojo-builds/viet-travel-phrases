@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-tran-thank-you-keep-the-change",
+  "phraseText": "Cảm ơn bạn, hãy giữ sự thay đổi",
+  "englishTitle": "Thank you, keep the change",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-thank-you-keep-the-change",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn,",
+      "english": "you"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giữ",
+      "english": "keep / hold"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sự",
+      "english": "matter / event"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thay",
+      "english": "replace / change"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đổi",
+      "english": "change / exchange"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cảm ơn bạn, hãy giữ sự thay đổi",
+      "english": "Thank you, keep the change",
+      "audioKey": "v900-tran-thank-you-keep-the-change"
+    }
+  ]
+}

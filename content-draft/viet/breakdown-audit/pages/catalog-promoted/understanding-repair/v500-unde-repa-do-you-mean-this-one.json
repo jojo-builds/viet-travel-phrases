@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-do-you-mean-this-one",
+  "phraseText": "Ý bạn là cái này phải không?",
+  "englishTitle": "Do you mean this one?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.355Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-do-you-mean-this-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ý",
+      "english": "meaning / idea"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "phải không?",
+      "english": "is that right?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ý bạn là cái này phải không?",
+      "english": "Do you mean this one?",
+      "audioKey": "v500-unde-repa-do-you-mean-this-one"
+    }
+  ]
+}

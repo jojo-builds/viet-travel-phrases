@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hanoi-eat-near-cha-ca-thang-long",
+  "phraseText": "Ăn gần Chả cá Thăng Long",
+  "englishTitle": "Eat near Cha Ca Thang Long",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-eat-near-cha-ca-thang-long",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Chả cá Thăng Long",
+      "english": "Cha Ca Thang Long",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Chả cá Thăng Long",
+      "english": "Eat near Cha Ca Thang Long",
+      "audioKey": "audio-authored-an-gan-cha-ca-thang-long-fcd5629cf7"
+    }
+  ]
+}

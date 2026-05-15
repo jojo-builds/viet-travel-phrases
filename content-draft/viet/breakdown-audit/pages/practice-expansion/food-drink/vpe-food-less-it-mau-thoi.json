@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-less-it-mau-thoi",
+  "phraseText": "Ít máu thôi",
+  "englishTitle": "Just a little blood cubes.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.404Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-less-it-mau-thoi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít",
+      "english": "less / a little"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "máu",
+      "english": "blood"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít máu thôi",
+      "english": "Just a little blood cubes.",
+      "audioKey": "audio-authored-it-mau-thoi-c0a6c134ae"
+    }
+  ]
+}

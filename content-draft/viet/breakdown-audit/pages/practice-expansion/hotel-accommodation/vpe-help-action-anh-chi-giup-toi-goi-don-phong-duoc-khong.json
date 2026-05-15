@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong",
+  "phraseText": "Giúp tôi gọi dọn phòng được không?",
+  "englishTitle": "Can you help me call housekeeping?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.421Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "dọn",
+      "english": "clean up"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi gọi dọn phòng được không?",
+      "english": "Can you help me call housekeeping?",
+      "audioKey": "audio-authored-giup-toi-goi-don-phong-duoc-khong-334f73a003"
+    }
+  ]
+}

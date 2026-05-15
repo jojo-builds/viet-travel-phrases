@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
+  "phraseText": "Có tính phí cho phòng tắm không?",
+  "englishTitle": "Is there a fee for the bathroom?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.295Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tính phí",
+      "english": "charge a fee",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phòng tắm",
+      "english": "bathroom / shower room",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có tính phí cho phòng tắm không?",
+      "english": "Is there a fee for the bathroom?",
+      "audioKey": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom"
+    }
+  ]
+}

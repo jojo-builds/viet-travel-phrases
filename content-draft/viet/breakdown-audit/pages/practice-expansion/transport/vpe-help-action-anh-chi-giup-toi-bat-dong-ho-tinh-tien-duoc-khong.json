@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong",
+  "phraseText": "Giúp tôi bật đồng hồ tính tiền được không?",
+  "englishTitle": "Can you help me turn on the meter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.419Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bật",
+      "english": "turn on"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đồng",
+      "english": "dong / currency"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hồ",
+      "english": "lake / clock"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tính",
+      "english": "calculate / charge"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi bật đồng hồ tính tiền được không?",
+      "english": "Can you help me turn on the meter?",
+      "audioKey": "audio-authored-giup-toi-bat-dong-ho-tinh-tien-duoc-khong-35f3ae771c"
+    }
+  ]
+}

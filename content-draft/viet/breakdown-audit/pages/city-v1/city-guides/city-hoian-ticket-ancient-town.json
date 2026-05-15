@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-city-hoian-ticket-ancient-town",
+  "phraseText": "Một vé vào phố cổ Hội An",
+  "englishTitle": "One ticket to Hoi An Ancient Town",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-ticket-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phố cổ Hội An",
+      "english": "Hoi An Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Một vé vào phố cổ Hội An",
+      "english": "One ticket to Hoi An Ancient Town",
+      "audioKey": "audio-authored-mot-ve-vao-pho-co-hoi-an-d266f3df2c"
+    }
+  ]
+}

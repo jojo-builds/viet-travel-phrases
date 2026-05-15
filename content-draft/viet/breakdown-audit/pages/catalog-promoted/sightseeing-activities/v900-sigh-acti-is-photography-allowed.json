@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-is-photography-allowed",
+  "phraseText": "Có được phép chụp ảnh không?",
+  "englishTitle": "Is photography allowed?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-is-photography-allowed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "được phép",
+      "english": "allowed / permitted",
+      "keepTogetherReason": "fixed permission phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chụp",
+      "english": "take a photo"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ảnh",
+      "english": "photo"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có được phép chụp ảnh không?",
+      "english": "Is photography allowed?",
+      "audioKey": "v900-sigh-acti-is-photography-allowed"
+    }
+  ]
+}

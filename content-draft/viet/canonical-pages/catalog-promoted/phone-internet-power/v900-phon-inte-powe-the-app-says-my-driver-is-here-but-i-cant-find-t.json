@@ -46,51 +46,39 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ứng dụng cho",
-          "english": "app",
+          "vietnamese": "Ứng dụng cho biết",
+          "english": "the app says",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "biết trình điều",
-          "english": "go / move",
+          "vietnamese": "trình điều khiển của tôi",
+          "english": "my driver",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "khiển của tôi",
-          "english": "my / mine",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "có ở đây",
           "english": "is here",
           "audioKey": null
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "nhưng tôi không",
-          "english": "yes/no question",
+          "id": "chunk-4",
+          "vietnamese": "nhưng tôi không thể tìm thấy",
+          "english": "but I cannot find",
           "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "chúng",
+          "english": "them",
+          "audioKey": "breakdown-money-premium-split-payment-first"
         },
         {
           "id": "chunk-6",
-          "vietnamese": "thể tìm thấy",
-          "english": "can find",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-7",
-          "vietnamese": "chúng",
-          "english": "we",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-8",
           "vietnamese": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
           "english": "The app says my driver is here, but I can't find them",
-          "audioKey": null
+          "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t"
         }
       ]
     },

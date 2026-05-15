@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-i-lost-my-room-key",
+  "phraseText": "Tôi bị mất chìa khóa phòng",
+  "englishTitle": "I lost my room key",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.336Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-i-lost-my-room-key",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị mất",
+      "english": "is missing / lost",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chìa khóa phòng",
+      "english": "room key",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị mất chìa khóa phòng",
+      "english": "I lost my room key",
+      "audioKey": "v500-prob-help-i-lost-my-room-key"
+    }
+  ]
+}

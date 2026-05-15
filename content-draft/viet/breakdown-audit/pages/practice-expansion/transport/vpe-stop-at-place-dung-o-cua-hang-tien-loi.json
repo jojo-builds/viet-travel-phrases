@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-cua-hang-tien-loi",
+  "phraseText": "Dừng ở cửa hàng tiện lợi",
+  "englishTitle": "Stop at a convenience store.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.471Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-cua-hang-tien-loi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "vietnamese": "cửa hàng tiện lợi",
+      "english": "convenience store",
+      "keepTogetherReason": "compound store noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở cửa hàng tiện lợi",
+      "english": "Stop at a convenience store.",
+      "audioKey": "audio-authored-dung-o-cua-hang-tien-loi-0396252b0c"
+    }
+  ]
+}

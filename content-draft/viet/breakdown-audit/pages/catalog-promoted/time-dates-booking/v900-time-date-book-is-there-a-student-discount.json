@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-is-there-a-student-discount",
+  "phraseText": "Có giảm giá cho sinh viên không?",
+  "englishTitle": "Is there a student discount?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-is-there-a-student-discount",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giảm giá",
+      "english": "discount / lower price",
+      "keepTogetherReason": "compound price phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "vietnamese": "sinh viên",
+      "english": "student",
+      "keepTogetherReason": "compound student noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có giảm giá cho sinh viên không?",
+      "english": "Is there a student discount?",
+      "audioKey": "v900-time-date-book-is-there-a-student-discount"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-war-remnants-museum",
+  "phraseText": "Bảo tàng Chứng tích Chiến tranh",
+  "englishTitle": "War Remnants Museum",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.375Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-war-remnants-museum",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bảo tàng Chứng tích Chiến tranh",
+      "english": "War Remnants Museum",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

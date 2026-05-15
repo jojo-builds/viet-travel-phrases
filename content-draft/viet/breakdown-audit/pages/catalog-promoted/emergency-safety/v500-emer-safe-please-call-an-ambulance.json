@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-please-call-an-ambulance",
+  "phraseText": "Hãy gọi xe cấp cứu",
+  "englishTitle": "Please call an ambulance",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-please-call-an-ambulance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "vietnamese": "xe cấp cứu",
+      "english": "ambulance",
+      "keepTogetherReason": "compound emergency vehicle term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy gọi xe cấp cứu",
+      "english": "Please call an ambulance",
+      "audioKey": "v500-emer-safe-please-call-an-ambulance"
+    }
+  ]
+}

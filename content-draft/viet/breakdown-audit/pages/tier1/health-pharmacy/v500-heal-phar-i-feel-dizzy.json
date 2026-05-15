@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-v500-heal-phar-i-feel-dizzy",
+  "phraseText": "Tôi cảm thấy chóng mặt",
+  "englishTitle": "I feel dizzy",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-heal-phar-i-feel-dizzy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm thấy",
+      "english": "feel",
+      "keepTogetherReason": "compound feeling verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chóng mặt",
+      "english": "dizzy",
+      "keepTogetherReason": "compound symptom term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cảm thấy chóng mặt",
+      "english": "I feel dizzy",
+      "audioKey": "v500-heal-phar-i-feel-dizzy"
+    }
+  ]
+}

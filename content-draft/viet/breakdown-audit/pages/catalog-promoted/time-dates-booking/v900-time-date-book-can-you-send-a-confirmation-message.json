@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-can-you-send-a-confirmation-message",
+  "phraseText": "Bạn có thể gửi tin nhắn xác nhận không?",
+  "englishTitle": "Can you send a confirmation message?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-can-you-send-a-confirmation-message",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "vietnamese": "tin nhắn",
+      "english": "message / text message",
+      "keepTogetherReason": "compound message noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "xác nhận",
+      "english": "confirm",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi tin nhắn xác nhận không?",
+      "english": "Can you send a confirmation message?",
+      "audioKey": "v900-time-date-book-can-you-send-a-confirmation-message"
+    }
+  ]
+}

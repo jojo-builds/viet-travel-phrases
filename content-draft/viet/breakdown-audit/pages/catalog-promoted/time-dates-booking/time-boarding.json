@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-time-7",
+  "phraseText": "Mấy giờ bắt đầu lên máy bay?",
+  "englishTitle": "What time does boarding start?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-time-7",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mấy giờ",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "vietnamese": "bắt đầu",
+      "english": "start / begin",
+      "keepTogetherReason": "compound start verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lên",
+      "english": "up / board"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "máy bay?",
+      "english": "plane",
+      "keepTogetherReason": "compound vehicle term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
+      "english": "What time does boarding start?",
+      "audioKey": "time-7"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+  "phraseText": "Tôi đã bị tính sai số tiền",
+  "englishTitle": "I was charged the wrong amount",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị tính",
+      "english": "was charged",
+      "keepTogetherReason": "fixed payment phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sai",
+      "english": "wrong"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "số",
+      "english": "number"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã bị tính sai số tiền",
+      "english": "I was charged the wrong amount",
+      "audioKey": "v900-mone-numb-pric-i-was-charged-the-wrong-amount"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-bathroom-wash-hands",
+  "phraseText": "Tôi rửa tay ở đây được không?",
+  "englishTitle": "Can I wash my hands here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.284Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-bathroom-wash-hands",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rửa",
+      "english": "wash"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tay",
+      "english": "hand"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi rửa tay ở đây được không?",
+      "english": "Can I wash my hands here?",
+      "audioKey": "bath-4"
+    }
+  ]
+}

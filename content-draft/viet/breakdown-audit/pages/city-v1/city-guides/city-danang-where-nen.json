@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-family-city-danang-where-nen",
+  "phraseText": "Nhà hàng Nén Đà Nẵng ở đâu?",
+  "englishTitle": "Where is Nén Đà Nẵng?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.363Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-where-nen",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Nén Đà Nẵng",
+      "english": "Nen Da Nang",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nhà hàng Nén Đà Nẵng ở đâu?",
+      "english": "Where is Nén Đà Nẵng?",
+      "audioKey": "audio-authored-nha-hang-nen-da-nang-o-dau-d7632fcda8"
+    }
+  ]
+}

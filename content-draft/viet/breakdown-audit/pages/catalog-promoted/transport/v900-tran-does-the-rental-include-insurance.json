@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-tran-does-the-rental-include-insurance",
+  "phraseText": "Giá thuê có bao gồm bảo hiểm không?",
+  "englishTitle": "Does the rental include insurance?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-does-the-rental-include-insurance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thuê",
+      "english": "rent"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gồm",
+      "english": "include"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "bảo hiểm",
+      "english": "insurance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giá thuê có bao gồm bảo hiểm không?",
+      "english": "Does the rental include insurance?",
+      "audioKey": "v900-tran-does-the-rental-include-insurance"
+    }
+  ]
+}

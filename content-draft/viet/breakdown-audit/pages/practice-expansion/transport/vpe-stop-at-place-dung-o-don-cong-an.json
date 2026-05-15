@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-don-cong-an",
+  "phraseText": "Dừng ở đồn công an",
+  "englishTitle": "Stop at the police station.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.472Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-don-cong-an",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đồn",
+      "english": "station"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "công",
+      "english": "public"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "an",
+      "english": "safe / peace"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở đồn công an",
+      "english": "Stop at the police station.",
+      "audioKey": "audio-authored-dung-o-don-cong-an-0999e63363"
+    }
+  ]
+}

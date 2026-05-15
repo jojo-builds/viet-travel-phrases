@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-thang-may",
+  "phraseText": "Dừng ở thang máy",
+  "englishTitle": "Stop at the elevator.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.474Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-thang-may",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thang máy",
+      "english": "elevator",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở thang máy",
+      "english": "Stop at the elevator.",
+      "audioKey": "audio-authored-dung-o-thang-may-a7a7c5e28a"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-ngay-mai-quay-lai",
+  "phraseText": "Ngày mai quay lại",
+  "englishTitle": "Come back tomorrow",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-ngay-mai-quay-lai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Ngày mai",
+      "english": "tomorrow",
+      "keepTogetherReason": "fixed day expression"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "quay lại",
+      "english": "go back / turn around",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ngày mai quay lại",
+      "english": "Come back tomorrow",
+      "audioKey": "audio-authored-ngay-mai-quay-lai-2acb817dcd"
+    }
+  ]
+}

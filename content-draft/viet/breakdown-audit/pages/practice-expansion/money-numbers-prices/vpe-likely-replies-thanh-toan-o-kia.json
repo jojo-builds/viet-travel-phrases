@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-thanh-toan-o-kia",
+  "phraseText": "Thanh toán ở kia",
+  "englishTitle": "Pay over there",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.428Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-thanh-toan-o-kia",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "kia",
+      "english": "over there"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thanh toán ở kia",
+      "english": "Pay over there",
+      "audioKey": "audio-authored-thanh-toan-o-kia-f3d3ddc24f"
+    }
+  ]
+}

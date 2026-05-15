@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-where-is-the-currency-exchange",
+  "phraseText": "Đổi tiền ở đâu?",
+  "englishTitle": "Where is the currency exchange?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.294Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-where-is-the-currency-exchange",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Đổi tiền",
+      "english": "exchange money",
+      "keepTogetherReason": "compound money action"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đổi tiền ở đâu?",
+      "english": "Where is the currency exchange?",
+      "audioKey": "v900-airp-bord-arri-where-is-the-currency-exchange"
+    }
+  ]
+}

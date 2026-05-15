@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-ben-thanh",
+  "phraseText": "Đi chợ Bến Thành",
+  "englishTitle": "Go to Ben Thanh Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-ben-thanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chợ Bến Thành",
+      "english": "Ben Thanh Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi chợ Bến Thành",
+      "english": "Go to Ben Thanh Market",
+      "audioKey": "audio-authored-di-cho-ben-thanh-811b5d848e"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-bai-bien-o-dau",
+  "phraseText": "bãi biển ở đâu?",
+  "englishTitle": "Where is the beach?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.481Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-bai-bien-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "bãi",
+      "english": "beach / lot"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "biển",
+      "english": "beach / sea"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "bãi biển ở đâu?",
+      "english": "Where is the beach?",
+      "audioKey": "audio-authored-bai-bien-o-dau-a0a85f82b9"
+    }
+  ]
+}

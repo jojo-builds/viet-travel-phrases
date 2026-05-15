@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hanoi-near-hang-gai-street",
+  "phraseText": "Phố Hàng Gai gần đây không?",
+  "englishTitle": "Is Hang Gai Street near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.366Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-near-hang-gai-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố Hàng Gai",
+      "english": "Hang Gai Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố Hàng Gai gần đây không?",
+      "english": "Is Hang Gai Street near here?",
+      "audioKey": "audio-authored-pho-hang-gai-gan-day-khong-ac7dc4ebe5"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-i-do-not-eat-pork",
+  "phraseText": "Tôi không ăn thịt lợn",
+  "englishTitle": "I do not eat pork",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.306Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-i-do-not-eat-pork",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thịt lợn",
+      "english": "pork",
+      "keepTogetherReason": "compound food term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không ăn thịt lợn",
+      "english": "I do not eat pork",
+      "audioKey": "v900-food-drin-i-do-not-eat-pork"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-i-have-a-fever",
+  "phraseText": "tôi bị sốt",
+  "englishTitle": "I have a fever",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-i-have-a-fever",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sốt",
+      "english": "fever"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi bị sốt",
+      "english": "I have a fever",
+      "audioKey": "v500-heal-phar-i-have-a-fever"
+    }
+  ]
+}

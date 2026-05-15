@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-can-you-check-the-security-camera",
+  "phraseText": "Bạn có thể kiểm tra camera an ninh được không?",
+  "englishTitle": "Can you check the security camera?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.336Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-can-you-check-the-security-camera",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "kiểm tra",
+      "english": "check",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "camera",
+      "english": "camera",
+      "keepTogetherReason": "loanword"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "an ninh",
+      "english": "security",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể kiểm tra camera an ninh được không?",
+      "english": "Can you check the security camera?",
+      "audioKey": "v500-prob-help-can-you-check-the-security-camera"
+    }
+  ]
+}

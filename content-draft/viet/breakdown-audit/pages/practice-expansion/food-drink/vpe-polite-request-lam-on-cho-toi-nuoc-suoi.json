@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-vpe-polite-request-lam-on-cho-toi-nuoc-suoi",
+  "phraseText": "Làm ơn cho tôi nước suối",
+  "englishTitle": "Please give me bottled water.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.453Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-lam-on-cho-toi-nuoc-suoi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nước suối",
+      "english": "bottled water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn cho tôi nước suối",
+      "english": "Please give me bottled water.",
+      "audioKey": "audio-authored-lam-on-cho-toi-nuoc-suoi-a2553e3b02"
+    }
+  ]
+}

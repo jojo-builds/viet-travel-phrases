@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-the-card-machine-is-not-working",
+  "phraseText": "Máy thẻ không hoạt động",
+  "englishTitle": "The card machine is not working",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-the-card-machine-is-not-working",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Máy",
+      "english": "machine"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không hoạt động",
+      "english": "not working",
+      "keepTogetherReason": "fixed negative phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Máy thẻ không hoạt động",
+      "english": "The card machine is not working",
+      "audioKey": "v900-mone-numb-pric-the-card-machine-is-not-working"
+    }
+  ]
+}

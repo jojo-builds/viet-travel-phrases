@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-take-the-faster-route",
+  "phraseText": "Hãy đi con đường nhanh hơn",
+  "englishTitle": "Please take the faster route",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-take-the-faster-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "con",
+      "english": "child / animal classifier"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhanh",
+      "english": "fast"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hơn",
+      "english": "more"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đi con đường nhanh hơn",
+      "english": "Please take the faster route",
+      "audioKey": "v900-tran-please-take-the-faster-route"
+    }
+  ]
+}

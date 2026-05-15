@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hcmc-stop-pasteur-street",
+  "phraseText": "Dừng ở Đường Pasteur",
+  "englishTitle": "Stop at Pasteur Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.376Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-stop-pasteur-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Đường Pasteur",
+      "english": "Pasteur Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Đường Pasteur",
+      "english": "Stop at Pasteur Street",
+      "audioKey": "audio-authored-dung-o-duong-pasteur-c7b28db040"
+    }
+  ]
+}

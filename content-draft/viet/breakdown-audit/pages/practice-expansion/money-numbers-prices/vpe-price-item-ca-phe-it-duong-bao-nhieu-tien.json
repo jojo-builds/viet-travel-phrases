@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-price-item-ca-phe-it-duong-bao-nhieu-tien",
+  "phraseText": "cà phê ít đường bao nhiêu tiền?",
+  "englishTitle": "How much is coffee with less sugar?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.455Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-price-item-ca-phe-it-duong-bao-nhieu-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cà phê ít đường",
+      "english": "less-sugar coffee",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu tiền?",
+      "english": "how much money",
+      "keepTogetherReason": "fixed price question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "cà phê ít đường bao nhiêu tiền?",
+      "english": "How much is coffee with less sugar?",
+      "audioKey": "audio-authored-ca-phe-it-duong-bao-nhieu-tien-9cc962706b"
+    }
+  ]
+}

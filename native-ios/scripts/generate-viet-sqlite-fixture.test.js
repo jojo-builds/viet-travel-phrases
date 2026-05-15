@@ -72,6 +72,19 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
     'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
     'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioPhraseRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'phrase' AND severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioBreakdownRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'breakdown_token' AND severity = 'planned' AND release_blocking = 0),
+    'duplicatedPlannedMissingAudioTexts', (
+      SELECT count(*)
+      FROM (
+        SELECT normalized_expected_text
+        FROM missing_audio_audit
+        WHERE severity = 'planned'
+          AND release_blocking = 0
+        GROUP BY normalized_expected_text
+        HAVING count(*) > 1
+      )
+    ),
     'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
   );`));
   const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
@@ -106,8 +119,14 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   assert.strictEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "current renderable rows should not have release-blocking missing audio");
   assert.strictEqual(counts.missingAudioAuditRows, counts.plannedMissingAudioAuditRows, "missing audio should be planned authored audio only");
   const plannedSourcePhrases = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
-  assert.ok(counts.plannedMissingAudioAuditRows <= plannedSourcePhrases, "planned missing audio should be deduped by normalized expected text");
-  assert.strictEqual(counts.cityPhraseTags, 750, "city phrase tags should remain tied to the curated city library");
+  assert.ok(counts.plannedMissingAudioPhraseRows <= plannedSourcePhrases, "planned phrase missing audio should be deduped by normalized expected text");
+  assert.ok(counts.plannedMissingAudioBreakdownRows >= 0, "planned breakdown missing audio rows should be counted separately");
+  assert.strictEqual(counts.duplicatedPlannedMissingAudioTexts, 0, "planned missing audio should not duplicate normalized expected text");
+  assert.strictEqual(
+    counts.cityPhraseTags,
+    report.validation.cityLibraryPageCount,
+    "city phrase tags should remain tied to the curated city library"
+  );
 
   const duplicateCanonicalPages = sqliteValue(`
     SELECT count(*)

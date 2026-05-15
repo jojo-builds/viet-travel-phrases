@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hanoi-go-giang-cafe",
+  "phraseText": "Đi Cà phê Giảng",
+  "englishTitle": "Go to Giang Cafe",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.365Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-go-giang-cafe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Cà phê Giảng",
+      "english": "Giang Cafe",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Cà phê Giảng",
+      "english": "Go to Giang Cafe",
+      "audioKey": "audio-authored-di-ca-phe-giang-437f37317a"
+    }
+  ]
+}

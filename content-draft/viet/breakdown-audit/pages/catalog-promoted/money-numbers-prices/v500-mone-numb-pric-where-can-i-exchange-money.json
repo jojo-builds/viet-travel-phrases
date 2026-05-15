@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-where-can-i-exchange-money",
+  "phraseText": "Tôi có thể đổi tiền ở đâu?",
+  "englishTitle": "Where can I exchange money?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-where-can-i-exchange-money",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "đổi tiền",
+      "english": "exchange money",
+      "keepTogetherReason": "compound money action"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể đổi tiền ở đâu?",
+      "english": "Where can I exchange money?",
+      "audioKey": "v500-mone-numb-pric-where-can-i-exchange-money"
+    }
+  ]
+}

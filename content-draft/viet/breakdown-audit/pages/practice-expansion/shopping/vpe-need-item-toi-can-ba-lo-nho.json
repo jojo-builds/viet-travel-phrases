@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-ba-lo-nho",
+  "phraseText": "Tôi cần ba lô nhỏ",
+  "englishTitle": "I need a small backpack.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.434Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-ba-lo-nho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ba lô nhỏ",
+      "english": "small backpack",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần ba lô nhỏ",
+      "english": "I need a small backpack.",
+      "audioKey": "audio-authored-toi-can-ba-lo-nho-828431635d"
+    }
+  ]
+}

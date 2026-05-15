@@ -1,0 +1,47 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-where-is-gate-10",
+  "phraseText": "Cổng 10 ở đâu?",
+  "englishTitle": "Where is gate 10?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.291Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-where-is-gate-10",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cổng",
+      "english": "gate"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "10",
+      "english": [
+        "thất",
+        "lost"
+      ]
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cổng 10 ở đâu?",
+      "english": "Where is gate 10?",
+      "audioKey": "v500-airp-bord-arri-where-is-gate-10"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-nuoc-loc",
+  "phraseText": "Cho tôi nước lọc",
+  "englishTitle": "Filtered water, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.446Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-nuoc-loc",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước lọc",
+      "english": "filtered water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi nước lọc",
+      "english": "Filtered water, please.",
+      "audioKey": "audio-authored-cho-toi-nuoc-loc-d0e759a8de"
+    }
+  ]
+}

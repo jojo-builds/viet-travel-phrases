@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-chua",
+  "phraseText": "Dừng ở chùa",
+  "englishTitle": "Stop at the pagoda.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.471Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-chua",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chùa",
+      "english": "pagoda"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở chùa",
+      "english": "Stop at the pagoda.",
+      "audioKey": "audio-authored-dung-o-chua-553c0d70b6"
+    }
+  ]
+}

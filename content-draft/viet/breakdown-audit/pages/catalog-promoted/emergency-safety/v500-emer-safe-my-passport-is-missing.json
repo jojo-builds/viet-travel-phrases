@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-my-passport-is-missing",
+  "phraseText": "Hộ chiếu của tôi bị mất",
+  "englishTitle": "My passport is missing",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-my-passport-is-missing",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị mất",
+      "english": "is missing / lost",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hộ chiếu của tôi bị mất",
+      "english": "My passport is missing",
+      "audioKey": "v500-emer-safe-my-passport-is-missing"
+    }
+  ]
+}

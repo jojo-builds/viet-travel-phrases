@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-the-sim",
+  "phraseText": "Dạ, cho tôi thẻ SIM",
+  "englishTitle": "Respectfully, please give me a SIM card.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.452Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-the-sim",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thẻ SIM",
+      "english": "SIM card",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi thẻ SIM",
+      "english": "Respectfully, please give me a SIM card.",
+      "audioKey": "audio-authored-da-cho-toi-the-sim-a121f9c47b"
+    }
+  ]
+}

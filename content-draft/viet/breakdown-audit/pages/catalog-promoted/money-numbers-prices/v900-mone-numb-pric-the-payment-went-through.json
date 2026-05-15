@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-the-payment-went-through",
+  "phraseText": "Việc thanh toán đã được thông qua",
+  "englishTitle": "The payment went through",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-the-payment-went-through",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Việc",
+      "english": "work / task"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thông",
+      "english": "information / through"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "qua",
+      "english": "through / past"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Việc thanh toán đã được thông qua",
+      "english": "The payment went through",
+      "audioKey": "v900-mone-numb-pric-the-payment-went-through"
+    }
+  ]
+}

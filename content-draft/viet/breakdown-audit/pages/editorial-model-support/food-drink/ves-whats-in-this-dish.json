@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-ves-whats-in-this-dish",
+  "phraseText": "Món này có gì?",
+  "englishTitle": "What is in this dish?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.392Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-whats-in-this-dish",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Món",
+      "english": "dish"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Món này có gì?",
+      "english": "What is in this dish?",
+      "audioKey": "audio-authored-mon-nay-co-gi-919c3d8876"
+    }
+  ]
+}

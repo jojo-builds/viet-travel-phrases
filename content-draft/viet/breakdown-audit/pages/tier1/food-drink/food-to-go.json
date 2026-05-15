@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-food-to-go",
+  "phraseText": "Mang đi",
+  "englishTitle": "To go",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-to-go",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "full",
+      "vietnamese": "Mang đi",
+      "english": "To go",
+      "audioKey": "food-to-go"
+    }
+  ]
+}

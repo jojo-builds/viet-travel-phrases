@@ -46,33 +46,27 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điều này có",
-          "english": "go / move",
+          "vietnamese": "Điều này có an toàn",
+          "english": "is this safe",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "an toàn với",
-          "english": "safe",
+          "vietnamese": "với thuốc của tôi",
+          "english": "with my medicine",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thuốc của tôi",
-          "english": "my / mine",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Điều này có an toàn với thuốc của tôi không?",
           "english": "Is this safe with my medicine",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine"
         }
       ]
     },

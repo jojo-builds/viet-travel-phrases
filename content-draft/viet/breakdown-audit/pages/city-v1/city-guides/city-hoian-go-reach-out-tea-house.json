@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hoian-go-reach-out-tea-house",
+  "phraseText": "Đi Reaching Out Tea House",
+  "englishTitle": "Go to Reaching Out Tea House",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-reach-out-tea-house",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Reaching Out Tea House",
+      "english": "Reaching Out Tea House",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Reaching Out Tea House",
+      "english": "Go to Reaching Out Tea House",
+      "audioKey": "audio-authored-di-reaching-out-tea-house-703ef21a07"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-thuoc-dau-bung-khong",
+  "phraseText": "Có thuốc đau bụng không?",
+  "englishTitle": "Do you have stomach medicine?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.415Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-thuoc-dau-bung-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thuốc đau bụng",
+      "english": "stomach medicine",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có thuốc đau bụng không?",
+      "english": "Do you have stomach medicine?",
+      "audioKey": "audio-authored-co-thuoc-dau-bung-khong-4f3b6d7cdf"
+    }
+  ]
+}

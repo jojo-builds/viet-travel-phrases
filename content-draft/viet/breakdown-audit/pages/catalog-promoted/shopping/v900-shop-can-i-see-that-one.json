@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-shop-can-i-see-that-one",
+  "phraseText": "Tôi có thể xem cái đó được không?",
+  "englishTitle": "Can I see that one?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.338Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-can-i-see-that-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xem",
+      "english": "look / see"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể xem cái đó được không?",
+      "english": "Can I see that one?",
+      "audioKey": "v900-shop-can-i-see-that-one"
+    }
+  ]
+}

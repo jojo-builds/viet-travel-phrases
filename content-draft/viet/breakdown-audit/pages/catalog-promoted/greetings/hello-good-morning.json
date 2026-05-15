@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-good-morning",
+  "phraseText": "Chào buổi sáng",
+  "englishTitle": "Good morning",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-good-morning",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "vietnamese": "buổi sáng",
+      "english": "morning",
+      "keepTogetherReason": "day-period phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào buổi sáng",
+      "english": "Good morning",
+      "audioKey": "audio-phrase-chao-buoi-sang"
+    }
+  ]
+}

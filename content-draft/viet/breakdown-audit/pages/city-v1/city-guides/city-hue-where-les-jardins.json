@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-les-jardins",
+  "phraseText": "Les Jardins de la Carambole ở đâu?",
+  "englishTitle": "Where is Les Jardins de la Carambole?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-les-jardins",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Les Jardins de la Carambole",
+      "english": "Les Jardins de la Carambole",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Les Jardins de la Carambole ở đâu?",
+      "english": "Where is Les Jardins de la Carambole?",
+      "audioKey": "audio-authored-les-jardins-de-la-carambole-o-dau-33b1ef63b9"
+    }
+  ]
+}

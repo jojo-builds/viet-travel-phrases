@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-ve-nguoi-lon",
+  "phraseText": "Tôi muốn mua vé người lớn",
+  "englishTitle": "I want to buy an adult ticket.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.401Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-ve-nguoi-lon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vé người lớn",
+      "english": "adult ticket",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua vé người lớn",
+      "english": "I want to buy an adult ticket.",
+      "audioKey": "audio-authored-toi-muon-mua-ve-nguoi-lon-e9f4fa93ab"
+    }
+  ]
+}

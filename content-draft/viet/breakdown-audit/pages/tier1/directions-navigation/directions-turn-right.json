@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-directions-turn-right",
+  "phraseText": "Tôi rẽ phải đúng không?",
+  "englishTitle": "Should I turn right?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.281Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-directions-turn-right",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rẽ phải",
+      "english": "turn right",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đúng không?",
+      "english": "is that correct?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi rẽ phải đúng không?",
+      "english": "Should I turn right?",
+      "audioKey": "directions-5"
+    }
+  ]
+}

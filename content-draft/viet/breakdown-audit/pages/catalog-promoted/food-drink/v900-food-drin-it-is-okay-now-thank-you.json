@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-it-is-okay-now-thank-you",
+  "phraseText": "Bây giờ thì ổn rồi, cảm ơn bạn",
+  "englishTitle": "It is okay now, thank you",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.308Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-it-is-okay-now-thank-you",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bây giờ",
+      "english": "now",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thì",
+      "english": "then / topic marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ổn",
+      "english": "okay / stable"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rồi,",
+      "english": "already / done"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bây giờ thì ổn rồi, cảm ơn bạn",
+      "english": "It is okay now, thank you",
+      "audioKey": "v900-food-drin-it-is-okay-now-thank-you"
+    }
+  ]
+}

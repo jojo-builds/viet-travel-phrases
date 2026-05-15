@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-food-menu",
+  "phraseText": "Cho tôi xem thực đơn được không?",
+  "englishTitle": "Can I see the menu?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-menu",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xem",
+      "english": "look / see"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thực đơn",
+      "english": "menu",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi xem thực đơn được không?",
+      "english": "Can I see the menu?",
+      "audioKey": "food-menu"
+    }
+  ]
+}

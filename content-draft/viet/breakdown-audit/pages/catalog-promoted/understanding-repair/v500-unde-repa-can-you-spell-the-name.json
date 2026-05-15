@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-can-you-spell-the-name",
+  "phraseText": "Bạn có thể đánh vần tên được không?",
+  "englishTitle": "Can you spell the name?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.355Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-can-you-spell-the-name",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đánh",
+      "english": "hit / brush"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vần",
+      "english": "syllable / rhyme"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tên",
+      "english": "name"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể đánh vần tên được không?",
+      "english": "Can you spell the name?",
+      "audioKey": "v500-unde-repa-can-you-spell-the-name"
+    }
+  ]
+}

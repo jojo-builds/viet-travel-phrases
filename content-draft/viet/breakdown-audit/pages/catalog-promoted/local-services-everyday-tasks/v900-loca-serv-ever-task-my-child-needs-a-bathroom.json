@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-my-child-needs-a-bathroom",
+  "phraseText": "Con tôi cần một phòng tắm",
+  "englishTitle": "My child needs a bathroom",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-my-child-needs-a-bathroom",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Con",
+      "english": "child / animal classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phòng tắm",
+      "english": "bathroom / shower room",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Con tôi cần một phòng tắm",
+      "english": "My child needs a bathroom",
+      "audioKey": "v900-loca-serv-ever-task-my-child-needs-a-bathroom"
+    }
+  ]
+}

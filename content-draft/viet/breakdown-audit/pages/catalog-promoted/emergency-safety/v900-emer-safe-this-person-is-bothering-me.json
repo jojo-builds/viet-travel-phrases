@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-this-person-is-bothering-me",
+  "phraseText": "Người này đang làm phiền tôi",
+  "englishTitle": "This person is bothering me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.302Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-this-person-is-bothering-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "làm phiền",
+      "english": "bother",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Người này đang làm phiền tôi",
+      "english": "This person is bothering me",
+      "audioKey": "v900-emer-safe-this-person-is-bothering-me"
+    }
+  ]
+}
