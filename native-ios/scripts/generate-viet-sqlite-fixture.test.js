@@ -107,7 +107,11 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   assert.strictEqual(counts.missingAudioAuditRows, counts.plannedMissingAudioAuditRows, "missing audio should be planned authored audio only");
   const plannedSourcePhrases = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
   assert.ok(counts.plannedMissingAudioAuditRows <= plannedSourcePhrases, "planned missing audio should be deduped by normalized expected text");
-  assert.strictEqual(counts.cityPhraseTags, 750, "city phrase tags should remain tied to the curated city library");
+  assert.strictEqual(
+    counts.cityPhraseTags,
+    report.validation.cityLibraryPageCount,
+    "city phrase tags should remain tied to the curated city library"
+  );
 
   const duplicateCanonicalPages = sqliteValue(`
     SELECT count(*)

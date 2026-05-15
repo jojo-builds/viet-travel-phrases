@@ -1,0 +1,66 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-you-email-me-the-invoice",
+  "phraseText": "Bạn có thể gửi email cho tôi hóa đơn được không?",
+  "englishTitle": "Can you email me the invoice?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "pending",
+    "method": "native app required",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-you-email-me-the-invoice",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "tokens": [
+    {
+      "id": "ban",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "co-the",
+      "vietnamese": "có thể",
+      "english": "can",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "gui",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "email",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "cho",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "toi",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "hoa-don",
+      "vietnamese": "hóa đơn",
+      "english": "invoice / bill",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "duoc-khong",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi email cho tôi hóa đơn được không?",
+      "english": "Can you email me the invoice?"
+    }
+  ]
+}

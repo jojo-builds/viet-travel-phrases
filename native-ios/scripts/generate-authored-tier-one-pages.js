@@ -4,6 +4,12 @@ const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const {
+  applyReviewedBreakdownOverride,
+  loadBreakdownAuditLedger,
+  renderBreakdownAuditExport,
+  validateBreakdownAuditCoverage,
+} = require("./lib/viet-breakdown-audit");
 
 const root = path.resolve(__dirname, "..");
 const familyRoot = path.resolve(root, "..");
@@ -22,9 +28,11 @@ const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
 const editorialPilotImportScriptPath = path.join(root, "scripts", "import-viet-editorial-pilot.js");
+const breakdownAuditExportPath = path.join(familyRoot, "content-draft", "viet", "breakdown-audit", "audit", "rendered-breakdown-audit.json");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
+const breakdownAuditLedger = loadBreakdownAuditLedger({ repoRoot: familyRoot });
 
 const phraseByID = new Map(catalog.phrases.map((phrase) => [phrase.id, phrase]));
 const familyByID = new Map(catalog.families.map((family) => [family.id, family]));
@@ -4722,10 +4730,24 @@ function sanitizeAuthoredPage(page) {
       ...phrase,
       english: cleanTravelerBody(phrase.english),
     })),
-    breakdown: curatedSectionBreakdown(page, section).map((token) => ({
-      ...token,
-      english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
-    })),
+    breakdown: section.id === "breakdown"
+      ? applyReviewedBreakdownOverride({
+        page,
+        existingBreakdown: curatedSectionBreakdown(page, section).map((token) => ({
+          ...token,
+          english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+        })),
+        ledger: breakdownAuditLedger,
+        audioKeyForToken: (text, { isFinal } = {}) => (
+          isFinal
+            ? authoredPhraseAudioKey(text, page.audioKey)
+            : authoredBreakdownAudioKey(text)
+        ),
+      })
+      : curatedSectionBreakdown(page, section).map((token) => ({
+        ...token,
+        english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+      })),
   })), profile));
 
   return {
@@ -4766,6 +4788,27 @@ function runEditorialPilotImport() {
     stdio: "inherit",
   });
   return true;
+}
+
+function writeBreakdownAuditExport(pages) {
+  fs.mkdirSync(path.dirname(breakdownAuditExportPath), { recursive: true });
+  fs.writeFileSync(breakdownAuditExportPath, `${JSON.stringify(
+    renderBreakdownAuditExport({ pages, ledger: breakdownAuditLedger }),
+    null,
+    2
+  )}\n`);
+}
+
+function validateBreakdownAuditForGeneration(pages) {
+  const report = validateBreakdownAuditCoverage({
+    pages,
+    ledger: breakdownAuditLedger,
+    requireAllReviewed: process.argv.includes("--require-breakdown-audit-complete"),
+  });
+  if (!report.ok) {
+    throw new Error(`Breakdown audit validation failed:\n${report.errors.slice(0, 40).join("\n")}`);
+  }
+  return report;
 }
 
 function main() {
@@ -4845,6 +4888,7 @@ function main() {
   }, null, 2)}\n`);
 
   const allPages = sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages]);
+  validateBreakdownAuditForGeneration(allPages);
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
     metadata: {
@@ -4883,7 +4927,9 @@ function main() {
   const importedEditorialPilot = runEditorialPilotImport();
   const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
   finalBundle.pages = sanitizeAuthoredPages(finalBundle.pages ?? []);
+  validateBreakdownAuditForGeneration(finalBundle.pages ?? []);
   fs.writeFileSync(outputPath, `${JSON.stringify(finalBundle, null, 2)}\n`);
+  writeBreakdownAuditExport(finalBundle.pages ?? []);
   const finalAudioAudit = collectAudioAudit(finalBundle.pages ?? []);
   fs.writeFileSync(auditPath, `${JSON.stringify({
     metadata: {

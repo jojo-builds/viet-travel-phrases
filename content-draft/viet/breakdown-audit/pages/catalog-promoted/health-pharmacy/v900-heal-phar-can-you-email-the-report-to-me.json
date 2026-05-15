@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-can-you-email-the-report-to-me",
+  "phraseText": "Bạn có thể gửi email báo cáo cho tôi được không?",
+  "englishTitle": "Can you email the report to me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "pending",
+    "method": "native app required",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-can-you-email-the-report-to-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Splits the old broken `gửi email báo` / `cáo cho tôi` chunk boundary into real learner pieces."
+  ],
+  "tokens": [
+    {
+      "id": "ban",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "co-the",
+      "vietnamese": "có thể",
+      "english": "can",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "gui",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "email",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "bao-cao",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "cho",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "toi",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "duoc-khong",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi email báo cáo cho tôi được không?",
+      "english": "Can you email the report to me?"
+    }
+  ]
+}

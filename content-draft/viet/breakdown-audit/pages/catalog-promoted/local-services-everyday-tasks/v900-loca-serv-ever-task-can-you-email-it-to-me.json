@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-can-you-email-it-to-me",
+  "phraseText": "Bạn có thể gửi email cho tôi được không?",
+  "englishTitle": "Can you email it to me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "pending",
+    "method": "native app required",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-can-you-email-it-to-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Fixes screenshot-style bad chunking where `gửi email cho` was glossed only as `email`."
+  ],
+  "tokens": [
+    {
+      "id": "ban",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "co-the",
+      "vietnamese": "có thể",
+      "english": "can",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "gui",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "email",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "cho",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "toi",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "duoc-khong",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi email cho tôi được không?",
+      "english": "Can you email it to me?"
+    }
+  ]
+}

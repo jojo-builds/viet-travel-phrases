@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-please-send-it-by-email",
+  "phraseText": "Vui lòng gửi nó qua email",
+  "englishTitle": "Please send it by email",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "pending",
+    "method": "native app required",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-please-send-it-by-email",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "tokens": [
+    {
+      "id": "vui-long",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite request phrase"
+    },
+    {
+      "id": "gui",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "no",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "qua",
+      "vietnamese": "qua",
+      "english": "by / via"
+    },
+    {
+      "id": "email",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi nó qua email",
+      "english": "Please send it by email"
+    }
+  ]
+}

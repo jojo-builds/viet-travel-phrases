@@ -86,9 +86,7 @@ enum PracticeStoryBreakdownDefinitions {
         }
 
         let normalizedVietnamese = normalized(vietnamese)
-        candidates += PhraseCatalog.allItems
-            .filter { normalized($0.title) == normalizedVietnamese }
-            .map(\.pageID)
+        candidates += pageIDsByNormalizedTitle[normalizedVietnamese, default: []]
 
         var seen = Set<String>()
         return candidates.filter { seen.insert($0).inserted }
@@ -106,6 +104,12 @@ enum PracticeStoryBreakdownDefinitions {
 
         return nil
     }
+
+    private static let pageIDsByNormalizedTitle: [String: [String]] = {
+        PhraseCatalog.allItems.reduce(into: [:]) { result, item in
+            result[normalized(item.title), default: []].append(item.pageID)
+        }
+    }()
 
     private static func trimmedWholePhraseToken(
         from tokens: [BreakdownToken],

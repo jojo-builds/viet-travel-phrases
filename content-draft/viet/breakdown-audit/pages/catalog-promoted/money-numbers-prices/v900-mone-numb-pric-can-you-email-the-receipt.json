@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-can-you-email-the-receipt",
+  "phraseText": "Bạn có thể gửi email hóa đơn được không?",
+  "englishTitle": "Can you email the receipt?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "pending",
+    "method": "native app required",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-can-you-email-the-receipt",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "tokens": [
+    {
+      "id": "ban",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "co-the",
+      "vietnamese": "có thể",
+      "english": "can",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "gui",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "email",
+      "vietnamese": "email",
+      "english": "email"
+    },
+    {
+      "id": "hoa-don",
+      "vietnamese": "hóa đơn",
+      "english": "receipt / bill",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "duoc-khong",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi email hóa đơn được không?",
+      "english": "Can you email the receipt?"
+    }
+  ]
+}
