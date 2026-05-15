@@ -46,27 +46,21 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy làm món",
-          "english": "please do",
+          "vietnamese": "Hãy làm món này",
+          "english": "please make this dish",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "này mà không",
-          "english": "yes/no question",
+          "vietnamese": "mà không cần đậu phộng",
+          "english": "without peanuts",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cần đậu phộng",
-          "english": "need",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Hãy làm món này mà không cần đậu phộng",
           "english": "Please make it without peanuts",
-          "audioKey": null
+          "audioKey": "v500-food-drin-please-make-it-without-peanuts"
         }
       ]
     },

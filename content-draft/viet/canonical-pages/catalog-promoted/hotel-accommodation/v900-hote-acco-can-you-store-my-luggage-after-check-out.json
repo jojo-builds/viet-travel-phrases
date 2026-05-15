@@ -52,33 +52,27 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "gửi hành lý",
-          "english": "store luggage",
+          "vietnamese": "gửi hành lý của tôi",
+          "english": "store my luggage",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "của tôi sau",
-          "english": "my / mine",
+          "vietnamese": "sau khi trả phòng",
+          "english": "after check-out",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "khi trả phòng",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
           "english": "Can you store my luggage after check-out",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-can-you-store-my-luggage-after-check-out"
         }
       ]
     },

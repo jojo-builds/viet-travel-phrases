@@ -46,27 +46,33 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng hủy",
+          "vietnamese": "Vui lòng",
           "english": "please",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thanh toán thẻ",
-          "english": "pay",
+          "vietnamese": "hủy",
+          "english": "cancel",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đó",
-          "english": "that one / that",
+          "vietnamese": "thanh toán thẻ",
+          "english": "card payment",
           "audioKey": null
         },
         {
           "id": "chunk-4",
+          "vietnamese": "đó",
+          "english": "that",
+          "audioKey": "breakdown-repair-premium-which-exit-first"
+        },
+        {
+          "id": "chunk-5",
           "vietnamese": "Vui lòng hủy thanh toán thẻ đó",
           "english": "Please cancel that card payment",
-          "audioKey": null
+          "audioKey": "v900-mone-numb-pric-please-cancel-that-card-payment"
         }
       ]
     },

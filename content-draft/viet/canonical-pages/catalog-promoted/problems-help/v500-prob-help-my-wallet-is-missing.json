@@ -47,7 +47,7 @@
         {
           "id": "chunk-1",
           "vietnamese": "Ví của tôi",
-          "english": "my / mine",
+          "english": "my wallet",
           "audioKey": null
         },
         {
@@ -60,7 +60,7 @@
           "id": "chunk-3",
           "vietnamese": "Ví của tôi bị mất",
           "english": "My wallet is missing",
-          "audioKey": null
+          "audioKey": "v500-prob-help-my-wallet-is-missing"
         }
       ]
     },

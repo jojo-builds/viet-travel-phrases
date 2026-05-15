@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-14T12:43:46.145Z",
+    "generatedAt": "2026-05-14T22:44:54.999Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 456,
     "editorialSupportPageCount": 26,
     "practiceExpansionPageCount": 1350,
-    "requiredAudioCount": 3124,
+    "requiredAudioCount": 3139,
     "missingAudioCount": 1678
   },
   "required": [
@@ -1162,6 +1162,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-food-coffee-bac-xiu",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-bac-xiu-deb6887592",
+      "text": "bạc xỉu",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-food-less-ice",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -1447,46 +1455,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-chay-78f4254ec2",
       "text": "chay",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-toi-bi-0a9d4721f7",
-      "text": "Tôi bị",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-di-b18afef0af",
-      "text": "dị",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v500-dire-navi-my-map-app-is-not-working-first",
-      "text": "ứng",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-dau-9b24b3d631",
-      "text": "đậu",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-food-peanut-allergy",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-authored-phong-a47787ffce",
-      "text": "phộng",
       "resolved": true
     },
     {
@@ -2045,6 +2013,14 @@
       "pageID": "viet-family-health-headache",
       "sectionID": "breakdown",
       "kind": "breakdown",
+      "audioKey": "breakdown-authored-toi-bi-0a9d4721f7",
+      "text": "Tôi bị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-headache",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
       "audioKey": "breakdown-authored-dau-05338a0df3",
       "text": "đau",
       "resolved": true
@@ -2079,6 +2055,22 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-say-xe-b7d705f395",
       "text": "say xe",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-di-b18afef0af",
+      "text": "dị",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-health-allergy",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-dire-navi-my-map-app-is-not-working-first",
+      "text": "ứng",
       "resolved": true
     },
     {
@@ -3229,14 +3221,6 @@
       "pageID": "viet-family-service-card",
       "sectionID": "breakdown",
       "kind": "breakdown",
-      "audioKey": "breakdown-authored-quet-f98989a914",
-      "text": "quẹt",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-service-card",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
       "audioKey": "breakdown-hotel-8-first",
       "text": "thẻ",
       "resolved": true
@@ -3279,22 +3263,6 @@
       "kind": "breakdown",
       "audioKey": "breakdown-authored-khoa-2a71e53085",
       "text": "khóa",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first",
-      "text": "đã",
-      "resolved": true
-    },
-    {
-      "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
-      "sectionID": "breakdown",
-      "kind": "breakdown",
-      "audioKey": "breakdown-hotel-7-first",
-      "text": "giữ",
       "resolved": true
     },
     {
@@ -3554,6 +3522,22 @@
       "resolved": true
     },
     {
+      "pageID": "viet-phrase-food-15",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-dau-9b24b3d631",
+      "text": "đậu",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-food-15",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-phong-a47787ffce",
+      "text": "phộng",
+      "resolved": true
+    },
+    {
       "pageID": "viet-phrase-money-how-much-common",
       "sectionID": "breakdown",
       "kind": "breakdown",
@@ -3607,6 +3591,14 @@
       "kind": "hero",
       "audioKey": "v500-airp-bord-arri-can-i-show-it-on-my-phone",
       "text": "Tôi có thể hiển thị nó trên điện thoại của tôi không?",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-can-i-show-it-on-my-phone",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-v500-dire-navi-how-far-is-it-first",
+      "text": "nó",
       "resolved": true
     },
     {
@@ -6762,6 +6754,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-authored-cho-toi-18c6fe1018",
+      "text": "cho tôi",
+      "resolved": true
+    },
+    {
       "pageID": "viet-phrase-v500-mone-numb-pric-where-can-i-exchange-money",
       "sectionID": "hero",
       "kind": "hero",
@@ -7231,6 +7231,14 @@
       "kind": "hero",
       "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
       "text": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "breakdown-money-premium-split-payment-first",
+      "text": "chúng",
       "resolved": true
     },
     {
@@ -11178,6 +11186,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-bun-cha-dcdec9d3be",
+      "text": "Bún chả",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-cha-ca-thang-long",
       "sectionID": "place-brief",
       "kind": "phrase",
@@ -12456,6 +12472,14 @@
       "audioKey": "audio-authored-o-day-co-cao-lau-khong-a4556ef6fb",
       "text": "Ở đây có cao lầu không?",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-cao-lau-city",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-cao-lau-99838274fc",
+      "text": "cao lầu",
+      "resolved": true
     },
     {
       "pageID": "viet-family-city-hoian-atm-cao-lau-city",
@@ -13858,11 +13882,11 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-ves-order-bun-bo-hue-bowl",
+      "pageID": "viet-family-ves-order-bun-cha-portion",
       "sectionID": "breakdown",
       "kind": "breakdown",
-      "audioKey": "breakdown-authored-cho-toi-18c6fe1018",
-      "text": "cho tôi",
+      "audioKey": "menu-name-bun-cha-dcdec9d3be",
+      "text": "bún chả",
       "resolved": true
     },
     {
@@ -14331,6 +14355,14 @@
     },
     {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-banh-mi-chay",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-banh-mi-chay-c6951411c2",
+      "text": "bánh mì chay",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-banh-mi-chay",
       "sectionID": "practice-pairs",
       "kind": "phrase",
       "audioKey": "audio-authored-toi-muon-mua-banh-xeo-fa38e9d608",
@@ -14368,6 +14400,14 @@
       "audioKey": "audio-authored-toi-muon-mua-pho-ga-f00a752696",
       "text": "Tôi muốn mua phở gà",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-banh-xeo",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-banh-xeo-d804413776",
+      "text": "bánh xèo",
+      "resolved": true
     },
     {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-banh-xeo",
@@ -14584,6 +14624,14 @@
       "audioKey": "audio-authored-toi-muon-mua-ca-phe-sua-da-d79afdc06b",
       "text": "Tôi muốn mua cà phê sữa đá",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-ca-phe-sua-da",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-ca-phe-sua-da-9f2e2911a1",
+      "text": "cà phê sữa đá",
+      "resolved": true
     },
     {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-chia-khoa-phong",
@@ -14890,6 +14938,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-goi-cuon",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-goi-cuon-cd88bf7b76",
+      "text": "gỏi cuốn",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-kem-chong-muoi",
       "sectionID": "practice-pairs",
       "kind": "phrase",
@@ -14962,6 +15018,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-nuoc-dua",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-nuoc-dua-ed4935356b",
+      "text": "nước dừa",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-nuoc-hoa-kho",
       "sectionID": "practice-pairs",
       "kind": "phrase",
@@ -14970,12 +15034,68 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-nuoc-loc",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-nuoc-loc-dcb3ba8910",
+      "text": "nước lọc",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-pho-bo",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-pho-bo-ccdeb76d64",
+      "text": "phở bò",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-pho-ga",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-pho-ga-92b24e0629",
+      "text": "phở gà",
+      "resolved": true
+    },
+    {
       "pageID": "viet-family-vpe-buy-item-toi-muon-mua-phong-doi",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-toi-muon-mua-phong-doi-2127b70670",
       "text": "Tôi muốn mua phòng đôi",
       "resolved": false
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-sinh-to-xoai",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-sinh-to-xoai-c79eab608a",
+      "text": "sinh tố xoài",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-sua-tuoi",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-sua-tuoi-feaf78151b",
+      "text": "sữa tươi",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-tra-da",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-tra-da-77b0392224",
+      "text": "trà đá",
+      "resolved": true
+    },
+    {
+      "pageID": "viet-family-vpe-buy-item-toi-muon-mua-tra-sen",
+      "sectionID": "breakdown",
+      "kind": "breakdown",
+      "audioKey": "menu-name-tra-sen-d498cfdeb0",
+      "text": "trà sen",
+      "resolved": true
     },
     {
       "pageID": "viet-family-vpe-food-has-co-bo-khong",

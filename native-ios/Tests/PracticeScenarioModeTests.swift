@@ -67,6 +67,177 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(definitions.map(\.english), ["please", "give me one", "fresh coconut"])
     }
 
+    func testLostBagMessageBreakdownKeepsBagInOwnedNounChunk() {
+        let definitions = PracticeStoryBreakdownDefinitions.tokens(
+            forVietnamese: "Túi của tôi bị lấy mất",
+            pageID: "viet-phrase-emergency-6"
+        )
+
+        XCTAssertEqual(definitions.map(\.vietnamese), ["Túi của tôi", "bị lấy mất"])
+        XCTAssertEqual(definitions.map(\.english), ["my bag", "was taken / stolen"])
+    }
+
+    func testReviewedMessagePopoverBreakdownsUseExactGlossContracts() {
+        let contracts: [(pageID: String, vietnamese: String, expected: [(String, String)])] = [
+            (
+                "viet-phrase-emergency-6",
+                "Túi của tôi bị lấy mất",
+                [
+                    ("Túi của tôi", "my bag"),
+                    ("bị lấy mất", "was taken / stolen"),
+                ]
+            ),
+            (
+                "viet-phrase-phone-7",
+                "eSIM của tôi không hoạt động",
+                [
+                    ("eSIM của tôi", "my eSIM"),
+                    ("không hoạt động", "is not working"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-phon-inte-powe-the-sim-card-is-not-working",
+                "Thẻ SIM không hoạt động",
+                [
+                    ("Thẻ SIM", "SIM card"),
+                    ("không hoạt động", "is not working"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
+                "ATM không đưa tiền mặt cho tôi",
+                [
+                    ("ATM", "ATM"),
+                    ("không đưa", "did not give"),
+                    ("tiền mặt", "cash"),
+                    ("cho tôi", "for me / please"),
+                ]
+            ),
+            (
+                "viet-phrase-hotel-8",
+                "Thẻ phòng không mở được",
+                [
+                    ("Thẻ phòng", "key card"),
+                    ("không mở được", "does not open"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-hote-acco-can-you-store-my-luggage-after-check-out",
+                "Bạn có thể gửi hành lý của tôi sau khi trả phòng không?",
+                [
+                    ("Bạn có thể", "can you"),
+                    ("gửi hành lý của tôi", "store my luggage"),
+                    ("sau khi trả phòng", "after check-out"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-food-premium-has-peanuts",
+                "Cái này có đậu phộng không?",
+                [
+                    ("Cái này", "this one"),
+                    ("có", "have / yes"),
+                    ("đậu phộng", "peanuts"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-food-drin-does-this-have-egg-or-peanuts",
+                "Cái này có trứng hay đậu phộng không?",
+                [
+                    ("Cái này", "this one"),
+                    ("có", "have / yes"),
+                    ("trứng", "egg"),
+                    ("hay", "or"),
+                    ("đậu phộng", "peanuts"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-family-food-peanut-allergy",
+                "Tôi bị dị ứng đậu phộng",
+                [
+                    ("Tôi bị dị ứng", "I am allergic"),
+                    ("đậu phộng", "peanuts"),
+                ]
+            ),
+            (
+                "viet-family-service-card",
+                "Tôi quẹt thẻ được không?",
+                [
+                    ("Tôi quẹt", "I tap / swipe"),
+                    ("thẻ", "card"),
+                    ("được không?", "is it possible?"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+                "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+                [
+                    ("Tôi có thể thanh toán", "can I pay"),
+                    ("hóa đơn", "bill / receipt"),
+                    ("bằng thẻ", "by card"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-tran-can-i-pay-the-fare-by-card",
+                "Tôi có thể thanh toán tiền vé bằng thẻ không?",
+                [
+                    ("Tôi có thể thanh toán", "can I pay"),
+                    ("tiền vé", "the fare"),
+                    ("bằng thẻ", "by card"),
+                    ("không?", "question marker"),
+                ]
+            ),
+            (
+                "viet-phrase-v500-tran-are-you-my-driver",
+                "Bạn là tài xế của tôi à?",
+                [
+                    ("Bạn là", "are you"),
+                    ("tài xế của tôi", "my driver"),
+                    ("à?", "polite yes / opener"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+                "Vui lòng hủy thanh toán thẻ đó",
+                [
+                    ("Vui lòng", "please"),
+                    ("hủy", "cancel"),
+                    ("thanh toán thẻ", "card payment"),
+                    ("đó", "that"),
+                ]
+            ),
+            (
+                "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+                "Làm ơn cho một quả dừa tươi",
+                [
+                    ("Làm ơn", "please"),
+                    ("cho một quả", "give me one"),
+                    ("dừa tươi", "fresh coconut"),
+                ]
+            ),
+        ]
+
+        for contract in contracts {
+            let definitions = PracticeStoryBreakdownDefinitions.tokens(
+                forVietnamese: contract.vietnamese,
+                pageID: contract.pageID
+            )
+            XCTAssertEqual(
+                definitions.map(\.vietnamese),
+                contract.expected.map(\.0),
+                contract.pageID
+            )
+            XCTAssertEqual(
+                definitions.map(\.english),
+                contract.expected.map(\.1),
+                contract.pageID
+            )
+        }
+    }
+
     func testMessageDefinitionBubblesDoNotShowInternalOrWholeSentenceGlosses() throws {
         let snapshot = try PracticeScenarioBuilder.loadSnapshot(
             practicePageIDs: [],
@@ -2723,7 +2894,73 @@ final class PracticeScenarioModeTests: XCTestCase {
                tokenVietnamese != turnVietnamese {
                 failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) reused whole sentence gloss '\(token.english)'")
             }
+            if tokenEnglish == "my / mine",
+               tokenVietnamese != "cua toi",
+               tokenVietnamese != "cua minh" {
+                failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) drops the owned object in gloss '\(token.english)'")
+            }
+
+            for requiredFragment in requiredEnglishFragments(forVietnamese: token.vietnamese, turnEnglish: turn.english ?? "") {
+                if !token.english.localizedCaseInsensitiveContains(requiredFragment) {
+                    failures.append("\(scenarioID) \(turn.stepID): \(token.vietnamese) gloss '\(token.english)' should include '\(requiredFragment)'")
+                }
+            }
         }
+    }
+
+    private func requiredEnglishFragments(forVietnamese vietnamese: String, turnEnglish: String) -> [String] {
+        let token = normalizedVietnamese(vietnamese)
+        let rawToken = vietnamese
+            .precomposedStringWithCanonicalMapping
+            .lowercased()
+        let english = normalizedEnglish(turnEnglish)
+        var fragments: [String] = []
+
+        func require(_ vietnameseFragment: String, _ englishFragment: String) {
+            if token.contains(vietnameseFragment) {
+                fragments.append(englishFragment)
+            }
+        }
+
+        func requireRaw(_ vietnameseFragment: String, _ englishFragment: String) {
+            if rawToken.contains(vietnameseFragment) {
+                fragments.append(englishFragment)
+            }
+        }
+
+        require("tui", "bag")
+        require("vali", "suitcase")
+        require("ho chieu", "passport")
+        require("bao ve", "security")
+        require("cong an", "police")
+        require("tien mat", "cash")
+        require("dau phong", "peanut")
+        require("dua tuoi", "coconut")
+
+        if token.contains("dien thoai") || (token.contains("thoai") && english.contains("phone")) {
+            fragments.append("phone")
+        }
+        if rawToken.contains("thẻ") && english.contains("card") {
+            fragments.append("card")
+        }
+        if rawToken.contains("thẻ hành lý") || (rawToken.contains("thẻ") && english.contains("baggage tag")) {
+            fragments.append("tag")
+        }
+        if token.contains("khach san") || (rawToken.contains("sạn của tôi") && english.contains("hotel")) {
+            fragments.append("hotel")
+        }
+        if token.contains("tai xe") || (rawToken.contains("xế của tôi") && english.contains("driver")) {
+            fragments.append("driver")
+        }
+        if token.contains("ban do") || (rawToken.contains("đồ của tôi") && english.contains("map")) {
+            fragments.append("map")
+        }
+        if rawToken.contains("ví của tôi") && english.contains("wallet") {
+            fragments.append("wallet")
+        }
+        requireRaw("esim", "eSIM")
+
+        return Array(Set(fragments)).sorted()
     }
 
     private func vietnameseLooksLikeCodeToken(_ value: String) -> Bool {

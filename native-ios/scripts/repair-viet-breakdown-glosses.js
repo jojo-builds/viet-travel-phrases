@@ -161,7 +161,7 @@ const exactGlosses = new Map(Object.entries({
   "gui tin nhan": "send a message",
   "hai": "two",
   "hanh ly": "baggage",
-  "hay": "please do",
+  "hay": "or",
   "hoa don": "bill / receipt",
   "ho chieu": "passport",
   "ho chieu cua toi": "my passport",
@@ -750,6 +750,11 @@ function fallbackFromVietnamese(vietnamese) {
   if (raw === "dạ") return "respectful opener";
   if (raw === "quầy") return "counter";
   if (raw === "quay") return "come back";
+  if (raw === "thẻ") return "card";
+  if (raw === "phộng") return "peanut";
+  if (raw === "đậu phộng") return "peanuts";
+  if (raw === "hãy") return "please do";
+  if (raw === "không?") return "question marker";
   if (raw === "lắm") return "very";
   if (raw === "làm") return "do / make";
   if (raw === "tới") return "arrive / reach";
@@ -1185,6 +1190,19 @@ function fullBreakdownToken(page, tokens, title, id) {
   return full;
 }
 
+function semanticReplacementWithFull(page, tokens, pieces) {
+  const title = String(page.title ?? page.targetText ?? "").trim();
+  return [
+    ...pieces.map((piece, index) => ({
+      id: `chunk-${index + 1}`,
+      vietnamese: piece.vietnamese,
+      english: piece.english,
+      audioKey: piece.audioKey ?? exactAudioKeyForText(piece.vietnamese) ?? null,
+    })),
+    fullBreakdownToken(page, tokens, title, `chunk-${pieces.length + 1}`),
+  ];
+}
+
 function subjectFromEnglish(page) {
   const english = cleanEnglish(englishTitleForPage(page));
   const lower = english.toLowerCase();
@@ -1197,6 +1215,237 @@ function subjectFromEnglish(page) {
 function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   const title = String(page.title ?? page.targetText ?? "").trim();
   const key = normalize(title);
+  if (key === "tui cua toi bi lay mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Túi của tôi", english: "my bag" },
+      { vietnamese: "bị lấy mất", english: "was taken / stolen" },
+    ]);
+  }
+  if (key === "tui cua toi bi hong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Túi của tôi", english: "my bag" },
+      { vietnamese: "bị hỏng", english: "is damaged" },
+    ]);
+  }
+  if (key === "vali cua toi bi mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vali của tôi", english: "my suitcase" },
+      { vietnamese: "bị mất", english: "is missing" },
+    ]);
+  }
+  if (key === "vi cua toi bi mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ví của tôi", english: "my wallet" },
+      { vietnamese: "bị mất", english: "is missing" },
+    ]);
+  }
+  if (key === "vi cua toi da bi danh cap") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ví của tôi", english: "my wallet" },
+      { vietnamese: "đã bị đánh cắp", english: "was stolen" },
+    ]);
+  }
+  if (key === "the cua toi da bi tu choi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ của tôi", english: "my card" },
+      { vietnamese: "đã bị từ chối", english: "was declined" },
+    ]);
+  }
+  if (key === "esim cua toi khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "eSIM của tôi", english: "my eSIM" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "the sim khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ SIM", english: "SIM card" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "toi co the hien thi no tren dien thoai cua toi khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể hiển thị", english: "can I show" },
+      { vietnamese: "nó", english: "it" },
+      { vietnamese: "trên điện thoại của tôi", english: "on my phone" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ung dung ban do cua toi khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng bản đồ của tôi", english: "my map app" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "the phong khong mo duoc") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ phòng", english: "key card" },
+      { vietnamese: "không mở được", english: "does not open" },
+    ]);
+  }
+  if (key === "atm khong dua tien mat cho toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "ATM", english: "ATM" },
+      { vietnamese: "không đưa", english: "did not give" },
+      { vietnamese: "tiền mặt", english: "cash" },
+      { vietnamese: "cho tôi", english: "for me / please" },
+    ]);
+  }
+  if (key === "atm da giu the cua toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "ATM", english: "ATM" },
+      { vietnamese: "đã giữ", english: "kept" },
+      { vietnamese: "thẻ của tôi", english: "my card" },
+    ]);
+  }
+  if (key === "ban co the gui hanh ly cua toi sau khi tra phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể", english: "can you" },
+      { vietnamese: "gửi hành lý của tôi", english: "store my luggage" },
+      { vietnamese: "sau khi trả phòng", english: "after check-out" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "cai nay co dau phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Cái này", english: "this one" },
+      { vietnamese: "có", english: "have / yes" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "cai nay co trung hay dau phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Cái này", english: "this one" },
+      { vietnamese: "có", english: "have / yes" },
+      { vietnamese: "trứng", english: "egg" },
+      { vietnamese: "hay", english: "or" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "toi bi di ung dau phong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi bị dị ứng", english: "I am allergic" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+    ]);
+  }
+  if (key === "hay lam mon nay ma khong can dau phong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Hãy làm món này", english: "please make this dish" },
+      { vietnamese: "mà không cần đậu phộng", english: "without peanuts" },
+    ]);
+  }
+  if (key === "toi quet the duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi quẹt", english: "I tap / swipe" },
+      { vietnamese: "thẻ", english: "card" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "toi co the thanh toan hoa don bang the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
+      { vietnamese: "hóa đơn", english: "bill / receipt" },
+      { vietnamese: "bằng thẻ", english: "by card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "toi co the thanh toan tien ve bang the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
+      { vietnamese: "tiền vé", english: "the fare" },
+      { vietnamese: "bằng thẻ", english: "by card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "co tinh phi the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Có tính phí", english: "is there a fee" },
+      { vietnamese: "thẻ", english: "card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ung dung se khong chap nhan the cua toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng", english: "the app" },
+      { vietnamese: "sẽ không chấp nhận", english: "will not accept" },
+      { vietnamese: "thẻ của tôi", english: "my card" },
+    ]);
+  }
+  if (key === "dieu nay co an toan voi thuoc cua toi khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Điều này có an toàn", english: "is this safe" },
+      { vietnamese: "với thuốc của tôi", english: "with my medicine" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ban co the giup toi goi bao hiem du lich cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể giúp tôi gọi", english: "can you help me call" },
+      { vietnamese: "bảo hiểm du lịch của tôi", english: "my travel insurance" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "may the khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Máy thẻ", english: "card machine" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "ung dung cho biet trinh dieu khien cua toi co o day nhung toi khong the tim thay chung") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng cho biết", english: "the app says" },
+      { vietnamese: "trình điều khiển của tôi", english: "my driver" },
+      { vietnamese: "có ở đây", english: "is here" },
+      { vietnamese: "nhưng tôi không thể tìm thấy", english: "but I cannot find" },
+      { vietnamese: "chúng", english: "them" },
+    ]);
+  }
+  if (key === "ban co the goi cho nguoi lien lac khan cap cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể gọi", english: "can you call" },
+      { vietnamese: "người liên lạc khẩn cấp của tôi", english: "my emergency contact" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "ban co the giup toi lien he voi khach san cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể giúp tôi liên hệ", english: "can you help me contact" },
+      { vietnamese: "khách sạn của tôi", english: "my hotel" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "vui long gui tien hoan lai vao the nay") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vui lòng gửi", english: "please send" },
+      { vietnamese: "tiền hoàn lại", english: "the refund" },
+      { vietnamese: "vào thẻ này", english: "to this card" },
+    ]);
+  }
+  if (key === "toi co the dat tui cua toi o day duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể đặt", english: "can I put" },
+      { vietnamese: "túi của tôi", english: "my bag" },
+      { vietnamese: "ở đây", english: "here" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "vui long huy thanh toan the do") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vui lòng", english: "please" },
+      { vietnamese: "hủy", english: "cancel" },
+      { vietnamese: "thanh toán thẻ", english: "card payment" },
+      { vietnamese: "đó", english: "that" },
+    ]);
+  }
+  if (key === "ban la tai xe cua toi a") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn là", english: "are you" },
+      { vietnamese: "tài xế của tôi", english: "my driver" },
+      { vietnamese: "à?", english: "polite yes / opener" },
+    ]);
+  }
   if (key === "se mat bao lau") {
     return [
       { id: "chunk-1", vietnamese: "Sẽ mất", english: "will take" },
@@ -1329,10 +1578,47 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   ];
 }
 
+const forcedSemanticBreakdownKeys = new Set([
+  "atm da giu the cua toi",
+  "atm khong dua tien mat cho toi",
+  "ban co the giup toi goi bao hiem du lich cua toi duoc khong",
+  "ban co the goi cho nguoi lien lac khan cap cua toi duoc khong",
+  "ban co the gui hanh ly cua toi sau khi tra phong khong",
+  "ban co the giup toi lien he voi khach san cua toi duoc khong",
+  "ban la tai xe cua toi a",
+  "cai nay co dau phong khong",
+  "cai nay co trung hay dau phong khong",
+  "co tinh phi the khong",
+  "dieu nay co an toan voi thuoc cua toi khong",
+  "esim cua toi khong hoat dong",
+  "hay lam mon nay ma khong can dau phong",
+  "may the khong hoat dong",
+  "the cua toi da bi tu choi",
+  "the phong khong mo duoc",
+  "the sim khong hoat dong",
+  "toi bi di ung dau phong",
+  "toi co the dat tui cua toi o day duoc khong",
+  "toi co the hien thi no tren dien thoai cua toi khong",
+  "toi co the thanh toan hoa don bang the khong",
+  "toi co the thanh toan tien ve bang the khong",
+  "toi quet the duoc khong",
+  "tui cua toi bi hong",
+  "tui cua toi bi lay mat",
+  "ung dung ban do cua toi khong hoat dong",
+  "ung dung cho biet trinh dieu khien cua toi co o day nhung toi khong the tim thay chung",
+  "ung dung se khong chap nhan the cua toi",
+  "vali cua toi bi mat",
+  "vi cua toi bi mat",
+  "vi cua toi da bi danh cap",
+  "vui long gui tien hoan lai vao the nay",
+  "vui long huy thanh toan the do",
+]);
+
 function shouldForceSemanticBreakdown(page) {
   const title = String(page.title ?? page.targetText ?? "").trim();
   const key = normalize(title);
-  return key === "se mat bao lau"
+  return forcedSemanticBreakdownKeys.has(key)
+    || key === "se mat bao lau"
     || key === "phai mat bao lau"
     || key === "viec sua chua se mat bao lau"
     || key === "toi dang mang thai"

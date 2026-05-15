@@ -46,21 +46,21 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Thẻ phòng không",
-          "english": "yes/no question",
+          "vietnamese": "Thẻ phòng",
+          "english": "key card",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mở được",
-          "english": "key card doesn’t work",
+          "vietnamese": "không mở được",
+          "english": "does not open",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Thẻ phòng không mở được",
           "english": "The key card doesn’t work",
-          "audioKey": null
+          "audioKey": "hotel-8"
         }
       ]
     },
