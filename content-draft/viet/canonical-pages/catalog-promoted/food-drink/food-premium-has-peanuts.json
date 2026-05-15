@@ -52,21 +52,27 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có đậu phộng",
-          "english": "where?",
-          "audioKey": null
+          "vietnamese": "có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "đậu phộng",
+          "english": "peanuts",
           "audioKey": null
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "chunk-5",
           "vietnamese": "Cái này có đậu phộng không?",
           "english": "Does this have peanuts",
-          "audioKey": null
+          "audioKey": "food-premium-has-peanuts"
         }
       ]
     },

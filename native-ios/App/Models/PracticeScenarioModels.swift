@@ -5,30 +5,37 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
     case airportPassportControl
     case airportSimCash
     case airportWifiPower
+    case airportBaggageProblem
     case hotelCheckInHelp
     case hotelRoomHelp
     case hotelBagsTaxi
     case hotelWifiCheckout
+    case hotelRoomSupplies
     case restaurantOrderingPayment
     case danangDay
     case foodAllergyHelp
     case foodCoffeeOrder
+    case foodMenuItems
     case taxiGrabPickup
     case taxiRouteHelp
     case driverProblemHelp
     case walkingDirectionsHelp
+    case taxiFareComfort
     case shoppingMarketPrice
     case shoppingSizeGift
     case shoppingReceiptHelp
     case shoppingPayCard
+    case shoppingMarketProduce
     case pharmacyHelp
     case emergencyLostPassport
     case emergencyLostBag
     case emergencyDoctorHelp
+    case emergencyCallHelp
     case localGreetingMarket
     case localGreetingHotel
     case localGreetingRespect
     case localThanksSorry
+    case localSmallTalk
 
     var id: String { rawValue }
 
@@ -42,6 +49,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "SIM and cash"
         case .airportWifiPower:
             return "Airport Wi-Fi"
+        case .airportBaggageProblem:
+            return "Baggage problem"
         case .hotelCheckInHelp:
             return "Hotel check-in"
         case .hotelRoomHelp:
@@ -50,6 +59,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Bags and taxi"
         case .hotelWifiCheckout:
             return "Wi-Fi and checkout"
+        case .hotelRoomSupplies:
+            return "Room supplies"
         case .restaurantOrderingPayment:
             return "Restaurant table"
         case .danangDay:
@@ -58,6 +69,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Food allergies"
         case .foodCoffeeOrder:
             return "Coffee order"
+        case .foodMenuItems:
+            return "Menu items"
         case .taxiGrabPickup:
             return "Grab pickup"
         case .taxiRouteHelp:
@@ -66,6 +79,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Driver help"
         case .walkingDirectionsHelp:
             return "Walking directions"
+        case .taxiFareComfort:
+            return "Fare and comfort"
         case .shoppingMarketPrice:
             return "Market price"
         case .shoppingSizeGift:
@@ -74,6 +89,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Receipt help"
         case .shoppingPayCard:
             return "Pay by card"
+        case .shoppingMarketProduce:
+            return "Market produce"
         case .pharmacyHelp:
             return "Pharmacy visit"
         case .emergencyLostPassport:
@@ -82,6 +99,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Lost bag"
         case .emergencyDoctorHelp:
             return "Doctor help"
+        case .emergencyCallHelp:
+            return "Call for help"
         case .localGreetingMarket:
             return "Market hello"
         case .localGreetingHotel:
@@ -90,6 +109,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Respectful hello"
         case .localThanksSorry:
             return "Thanks and sorry"
+        case .localSmallTalk:
+            return "Small talk"
         }
     }
 
@@ -103,6 +124,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "SIM"
         case .airportWifiPower:
             return "Wi-Fi"
+        case .airportBaggageProblem:
+            return "Problem"
         case .hotelCheckInHelp:
             return "Check-In"
         case .hotelRoomHelp:
@@ -111,6 +134,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Bags"
         case .hotelWifiCheckout:
             return "Wi-Fi"
+        case .hotelRoomSupplies:
+            return "Supplies"
         case .restaurantOrderingPayment:
             return "Table"
         case .danangDay:
@@ -119,6 +144,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Allergy"
         case .foodCoffeeOrder:
             return "Coffee"
+        case .foodMenuItems:
+            return "Menu"
         case .taxiGrabPickup:
             return "Grab"
         case .taxiRouteHelp:
@@ -127,6 +154,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Driver"
         case .walkingDirectionsHelp:
             return "Walk"
+        case .taxiFareComfort:
+            return "Fare"
         case .shoppingMarketPrice:
             return "Market"
         case .shoppingSizeGift:
@@ -135,6 +164,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Receipt"
         case .shoppingPayCard:
             return "Card"
+        case .shoppingMarketProduce:
+            return "Produce"
         case .pharmacyHelp:
             return "Pharmacy"
         case .emergencyLostPassport:
@@ -143,6 +174,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Lost Bag"
         case .emergencyDoctorHelp:
             return "Doctor"
+        case .emergencyCallHelp:
+            return "Call Help"
         case .localGreetingMarket:
             return "Market"
         case .localGreetingHotel:
@@ -151,6 +184,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Respect"
         case .localThanksSorry:
             return "Thanks"
+        case .localSmallTalk:
+            return "Small Talk"
         }
     }
 
@@ -164,6 +199,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "simcard.fill"
         case .airportWifiPower:
             return "wifi"
+        case .airportBaggageProblem:
+            return "suitcase.fill"
         case .hotelCheckInHelp:
             return "bed.double.fill"
         case .hotelRoomHelp:
@@ -172,6 +209,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "suitcase.cart.fill"
         case .hotelWifiCheckout:
             return "wifi.router.fill"
+        case .hotelRoomSupplies:
+            return "wrench.and.screwdriver.fill"
         case .restaurantOrderingPayment:
             return "fork.knife"
         case .danangDay:
@@ -180,6 +219,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "leaf.fill"
         case .foodCoffeeOrder:
             return "cup.and.saucer.fill"
+        case .foodMenuItems:
+            return "list.bullet.rectangle.fill"
         case .taxiGrabPickup:
             return "car.fill"
         case .taxiRouteHelp:
@@ -188,6 +229,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "exclamationmark.triangle.fill"
         case .walkingDirectionsHelp:
             return "figure.walk"
+        case .taxiFareComfort:
+            return "speedometer"
         case .shoppingMarketPrice:
             return "basket.fill"
         case .shoppingSizeGift:
@@ -196,6 +239,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "receipt.fill"
         case .shoppingPayCard:
             return "creditcard.fill"
+        case .shoppingMarketProduce:
+            return "cart.fill"
         case .pharmacyHelp:
             return "cross.case.fill"
         case .emergencyLostPassport:
@@ -204,6 +249,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "bag.fill"
         case .emergencyDoctorHelp:
             return "stethoscope"
+        case .emergencyCallHelp:
+            return "phone.fill"
         case .localGreetingMarket:
             return "hand.wave.fill"
         case .localGreetingHotel:
@@ -212,6 +259,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "person.2.fill"
         case .localThanksSorry:
             return "bubble.left.and.bubble.right.fill"
+        case .localSmallTalk:
+            return "ellipsis.bubble.fill"
         }
     }
 
@@ -221,19 +270,19 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return .blue
         case .airportPassportControl:
             return .red
-        case .airportSimCash, .airportWifiPower:
+        case .airportSimCash, .airportWifiPower, .airportBaggageProblem:
             return .green
-        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout:
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies:
             return .purple
-        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder:
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder, .foodMenuItems:
             return .green
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort:
             return .orange
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce:
             return .orange
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp:
             return .red
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return .teal
         }
     }
@@ -248,6 +297,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["airport-border-arrival", "phone-internet-power", "money-numbers-prices"]
         case .airportWifiPower:
             return ["airport-border-arrival", "phone-internet-power", "problems-help"]
+        case .airportBaggageProblem:
+            return ["airport-border-arrival", "problems-help"]
         case .hotelCheckInHelp:
             return ["hotel-accommodation", "problems-help"]
         case .hotelRoomHelp:
@@ -256,6 +307,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["hotel-accommodation", "transport", "directions-navigation"]
         case .hotelWifiCheckout:
             return ["hotel-accommodation", "phone-internet-power", "time-dates-booking"]
+        case .hotelRoomSupplies:
+            return ["hotel-accommodation", "local-services-everyday-tasks", "phone-internet-power"]
         case .restaurantOrderingPayment:
             return ["food-drink", "money-numbers-prices"]
         case .danangDay:
@@ -264,6 +317,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["food-drink", "health-pharmacy", "understanding-repair"]
         case .foodCoffeeOrder:
             return ["food-drink", "money-numbers-prices"]
+        case .foodMenuItems:
+            return ["food-drink", "local-services-everyday-tasks"]
         case .taxiGrabPickup:
             return ["transport", "directions-navigation"]
         case .taxiRouteHelp:
@@ -272,6 +327,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["transport", "problems-help", "emergency-safety"]
         case .walkingDirectionsHelp:
             return ["directions-navigation", "transport", "understanding-repair"]
+        case .taxiFareComfort:
+            return ["transport", "money-numbers-prices", "directions-navigation"]
         case .shoppingMarketPrice:
             return ["shopping", "money-numbers-prices"]
         case .shoppingSizeGift:
@@ -280,6 +337,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["shopping", "money-numbers-prices", "local-services-everyday-tasks"]
         case .shoppingPayCard:
             return ["shopping", "money-numbers-prices"]
+        case .shoppingMarketProduce:
+            return ["shopping", "money-numbers-prices", "food-drink"]
         case .pharmacyHelp:
             return ["health-pharmacy", "problems-help"]
         case .emergencyLostPassport:
@@ -288,7 +347,9 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["emergency-safety", "problems-help", "airport-border-arrival"]
         case .emergencyDoctorHelp:
             return ["health-pharmacy", "emergency-safety", "problems-help"]
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .emergencyCallHelp:
+            return ["emergency-safety", "problems-help", "health-pharmacy"]
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return ["polite-basics", "social-small-talk", "relationship-aware-hellos"]
         }
     }
@@ -303,6 +364,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["SIM", "Cash", "Info desk", "Pickup"]
         case .airportWifiPower:
             return ["Wi-Fi", "Charge", "Help desk", "Pickup"]
+        case .airportBaggageProblem:
+            return ["Missing bag", "Damaged bag", "Phone proof", "Report"]
         case .hotelCheckInHelp:
             return ["Booking", "Passport", "Wi-Fi", "Room help"]
         case .hotelRoomHelp:
@@ -311,6 +374,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Hold bags", "Pickup", "Taxi", "Airport"]
         case .hotelWifiCheckout:
             return ["Wi-Fi", "Checkout", "Receipt", "Bags"]
+        case .hotelRoomSupplies:
+            return ["Towels", "Soap", "Charger", "Laundry"]
         case .restaurantOrderingPayment:
             return ["Table", "Menu", "Order", "Pay"]
         case .danangDay:
@@ -319,6 +384,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Allergy", "Ingredients", "Safer dish", "Fix order"]
         case .foodCoffeeOrder:
             return ["Coffee", "Ice", "Sugar", "Pay"]
+        case .foodMenuItems:
+            return ["Dish", "Utensils", "Herbs", "Drink"]
         case .taxiGrabPickup:
             return ["Confirm car", "Pickup point", "Route", "Drop-off"]
         case .taxiRouteHelp:
@@ -327,6 +394,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Wrong car", "Call driver", "Unsafe", "Report"]
         case .walkingDirectionsHelp:
             return ["Find place", "Straight", "Turn", "Repeat"]
+        case .taxiFareComfort:
+            return ["Fare", "Meter", "Bag", "Air con"]
         case .shoppingMarketPrice:
             return ["Price", "Discount", "Two items", "Pay"]
         case .shoppingSizeGift:
@@ -335,6 +404,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Card", "Receipt", "Wrong charge", "Refund"]
         case .shoppingPayCard:
             return ["Card", "QR", "Another card", "Receipt"]
+        case .shoppingMarketProduce:
+            return ["Per kilo", "Final price", "Bag", "Pay"]
         case .pharmacyHelp:
             return ["Find help", "Symptoms", "Medicine", "Directions"]
         case .emergencyLostPassport:
@@ -343,6 +414,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Stolen bag", "Security", "Camera", "Report"]
         case .emergencyDoctorHelp:
             return ["Doctor", "Clinic", "Hospital", "Interpreter"]
+        case .emergencyCallHelp:
+            return ["Ambulance", "Manager", "Hotel", "Contact"]
         case .localGreetingMarket:
             return ["Hello", "Look around", "Thanks", "Goodbye"]
         case .localGreetingHotel:
@@ -351,6 +424,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return ["Respectful hello", "Look around", "Permission", "Thanks"]
         case .localThanksSorry:
             return ["Thank you", "Sorry", "Repeat", "No thanks"]
+        case .localSmallTalk:
+            return ["Hello", "How are you", "No thanks", "Goodbye"]
         }
     }
 
@@ -364,6 +439,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "SIM & Cash"
         case .airportWifiPower:
             return "Airport Wi-Fi"
+        case .airportBaggageProblem:
+            return "Baggage Problem"
         case .hotelCheckInHelp:
             return "Hotel Check-In"
         case .hotelRoomHelp:
@@ -372,6 +449,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Bags & Taxi"
         case .hotelWifiCheckout:
             return "Hotel Wi-Fi"
+        case .hotelRoomSupplies:
+            return "Room Supplies"
         case .restaurantOrderingPayment:
             return "Restaurant Table"
         case .danangDay:
@@ -380,6 +459,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Food Allergies"
         case .foodCoffeeOrder:
             return "Coffee Order"
+        case .foodMenuItems:
+            return "Menu Items"
         case .taxiGrabPickup:
             return "Grab Pickup"
         case .taxiRouteHelp:
@@ -388,6 +469,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Driver Help"
         case .walkingDirectionsHelp:
             return "Walking Help"
+        case .taxiFareComfort:
+            return "Fare & Comfort"
         case .shoppingMarketPrice:
             return "Market Price"
         case .shoppingSizeGift:
@@ -396,6 +479,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Receipt Help"
         case .shoppingPayCard:
             return "Pay by Card"
+        case .shoppingMarketProduce:
+            return "Market Produce"
         case .pharmacyHelp:
             return "Pharmacy Visit"
         case .emergencyLostPassport:
@@ -404,6 +489,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Lost Bag"
         case .emergencyDoctorHelp:
             return "Doctor Help"
+        case .emergencyCallHelp:
+            return "Call for Help"
         case .localGreetingMarket:
             return "Market Hello"
         case .localGreetingHotel:
@@ -412,6 +499,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Respectful Hello"
         case .localThanksSorry:
             return "Thanks & Sorry"
+        case .localSmallTalk:
+            return "Small Talk"
         }
     }
 
@@ -425,6 +514,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Airport services"
         case .airportWifiPower:
             return "Arrivals hall"
+        case .airportBaggageProblem:
+            return "Lost luggage desk"
         case .hotelCheckInHelp:
             return "Ngu Hanh Son, Da Nang"
         case .hotelRoomHelp:
@@ -433,6 +524,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Front desk"
         case .hotelWifiCheckout:
             return "Front desk"
+        case .hotelRoomSupplies:
+            return "Hotel room"
         case .restaurantOrderingPayment:
             return "Local restaurant"
         case .danangDay:
@@ -441,6 +534,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Street food stall"
         case .foodCoffeeOrder:
             return "Local cafe"
+        case .foodMenuItems:
+            return "Local restaurant"
         case .taxiGrabPickup:
             return "Pickup point"
         case .taxiRouteHelp:
@@ -449,6 +544,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Ride problem"
         case .walkingDirectionsHelp:
             return "Street corner"
+        case .taxiFareComfort:
+            return "In the taxi"
         case .shoppingMarketPrice:
             return "Local market"
         case .shoppingSizeGift:
@@ -457,6 +554,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Checkout counter"
         case .shoppingPayCard:
             return "Checkout counter"
+        case .shoppingMarketProduce:
+            return "Local market"
         case .pharmacyHelp:
             return "Nearby pharmacy"
         case .emergencyLostPassport:
@@ -465,6 +564,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "Security desk"
         case .emergencyDoctorHelp:
             return "Clinic desk"
+        case .emergencyCallHelp:
+            return "Help desk"
         case .localGreetingMarket:
             return "Morning market"
         case .localGreetingHotel:
@@ -472,6 +573,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .localGreetingRespect:
             return "Neighborhood shop"
         case .localThanksSorry:
+            return "Everyday chat"
+        case .localSmallTalk:
             return "Everyday chat"
         }
     }
@@ -486,6 +589,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "SC"
         case .airportWifiPower:
             return "AW"
+        case .airportBaggageProblem:
+            return "BP"
         case .hotelCheckInHelp:
             return "HC"
         case .hotelRoomHelp:
@@ -494,6 +599,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "BT"
         case .hotelWifiCheckout:
             return "HW"
+        case .hotelRoomSupplies:
+            return "RS"
         case .restaurantOrderingPayment:
             return "RT"
         case .danangDay:
@@ -502,6 +609,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "FA"
         case .foodCoffeeOrder:
             return "CO"
+        case .foodMenuItems:
+            return "MI"
         case .taxiGrabPickup:
             return "GP"
         case .taxiRouteHelp:
@@ -510,6 +619,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "DH"
         case .walkingDirectionsHelp:
             return "WH"
+        case .taxiFareComfort:
+            return "FC"
         case .shoppingMarketPrice:
             return "MP"
         case .shoppingSizeGift:
@@ -518,6 +629,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "RH"
         case .shoppingPayCard:
             return "PC"
+        case .shoppingMarketProduce:
+            return "PR"
         case .pharmacyHelp:
             return "PV"
         case .emergencyLostPassport:
@@ -526,6 +639,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "LB"
         case .emergencyDoctorHelp:
             return "DR"
+        case .emergencyCallHelp:
+            return "CH"
         case .localGreetingMarket:
             return "MH"
         case .localGreetingHotel:
@@ -534,6 +649,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "RH"
         case .localThanksSorry:
             return "TS"
+        case .localSmallTalk:
+            return "ST"
         }
     }
 
@@ -547,6 +664,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "simcard.fill"
         case .airportWifiPower:
             return "wifi"
+        case .airportBaggageProblem:
+            return "suitcase.fill"
         case .hotelCheckInHelp:
             return "person.crop.circle.badge.checkmark"
         case .hotelRoomHelp:
@@ -555,6 +674,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "suitcase.cart.fill"
         case .hotelWifiCheckout:
             return "wifi.router.fill"
+        case .hotelRoomSupplies:
+            return "wrench.and.screwdriver.fill"
         case .restaurantOrderingPayment:
             return "fork.knife"
         case .danangDay:
@@ -563,6 +684,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "leaf.fill"
         case .foodCoffeeOrder:
             return "cup.and.saucer.fill"
+        case .foodMenuItems:
+            return "list.bullet.rectangle.fill"
         case .taxiGrabPickup:
             return "car.fill"
         case .taxiRouteHelp:
@@ -571,6 +694,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "exclamationmark.triangle.fill"
         case .walkingDirectionsHelp:
             return "figure.walk"
+        case .taxiFareComfort:
+            return "speedometer"
         case .shoppingMarketPrice:
             return "basket.fill"
         case .shoppingSizeGift:
@@ -579,6 +704,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "receipt.fill"
         case .shoppingPayCard:
             return "creditcard.fill"
+        case .shoppingMarketProduce:
+            return "cart.fill"
         case .pharmacyHelp:
             return "cross.case.fill"
         case .emergencyLostPassport:
@@ -587,6 +714,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "bag.fill"
         case .emergencyDoctorHelp:
             return "stethoscope"
+        case .emergencyCallHelp:
+            return "phone.fill"
         case .localGreetingMarket:
             return "hand.wave.fill"
         case .localGreetingHotel:
@@ -595,43 +724,45 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return "person.2.fill"
         case .localThanksSorry:
             return "bubble.left.and.bubble.right.fill"
+        case .localSmallTalk:
+            return "ellipsis.bubble.fill"
         }
     }
 
     var messageSectionTitle: String {
         switch self {
-        case .danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower:
+        case .danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower, .airportBaggageProblem:
             return "Airport"
-        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout:
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies:
             return "Hotel"
-        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder:
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder, .foodMenuItems:
             return "Food"
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort:
             return "Getting Around"
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce:
             return "Shopping"
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp:
             return "Emergency"
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return "Local Greetings"
         }
     }
 
     var messageSectionSortRank: Int {
         switch self {
-        case .danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower:
+        case .danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower, .airportBaggageProblem:
             return 0
-        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout:
+        case .hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies:
             return 1
-        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder:
+        case .restaurantOrderingPayment, .danangDay, .foodAllergyHelp, .foodCoffeeOrder, .foodMenuItems:
             return 2
-        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp:
+        case .taxiGrabPickup, .taxiRouteHelp, .driverProblemHelp, .walkingDirectionsHelp, .taxiFareComfort:
             return 3
-        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard:
+        case .shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce:
             return 4
-        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp:
+        case .pharmacyHelp, .emergencyLostPassport, .emergencyLostBag, .emergencyDoctorHelp, .emergencyCallHelp:
             return 5
-        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry:
+        case .localGreetingMarket, .localGreetingHotel, .localGreetingRespect, .localThanksSorry, .localSmallTalk:
             return 6
         }
     }
@@ -646,6 +777,8 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
             return 2
         case .airportWifiPower, .hotelWifiCheckout, .foodCoffeeOrder, .walkingDirectionsHelp, .shoppingPayCard, .emergencyDoctorHelp, .localThanksSorry:
             return 3
+        case .airportBaggageProblem, .hotelRoomSupplies, .foodMenuItems, .taxiFareComfort, .shoppingMarketProduce, .emergencyCallHelp, .localSmallTalk:
+            return 4
         }
     }
 

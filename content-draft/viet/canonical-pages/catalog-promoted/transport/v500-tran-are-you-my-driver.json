@@ -46,19 +46,19 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn là tài",
-          "english": "are you the driver",
+          "vietnamese": "Bạn là",
+          "english": "are you",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "xế của tôi",
-          "english": "my / mine",
+          "vietnamese": "tài xế của tôi",
+          "english": "my driver",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "à",
+          "vietnamese": "à?",
           "english": "polite yes / opener",
           "audioKey": null
         },
@@ -66,7 +66,7 @@
           "id": "chunk-4",
           "vietnamese": "Bạn là tài xế của tôi à?",
           "english": "Are you my driver",
-          "audioKey": null
+          "audioKey": "v500-tran-are-you-my-driver"
         }
       ]
     },

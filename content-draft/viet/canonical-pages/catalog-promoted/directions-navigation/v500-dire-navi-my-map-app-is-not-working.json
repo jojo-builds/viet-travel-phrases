@@ -46,27 +46,21 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ứng dụng bản",
-          "english": "app",
+          "vietnamese": "Ứng dụng bản đồ của tôi",
+          "english": "my map app",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đồ của tôi",
-          "english": "my / mine",
+          "vietnamese": "không hoạt động",
+          "english": "is not working",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không hoạt động",
-          "english": "yes/no question",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Ứng dụng bản đồ của tôi không hoạt động",
           "english": "My map app is not working",
-          "audioKey": null
+          "audioKey": "v500-dire-navi-my-map-app-is-not-working"
         }
       ]
     },

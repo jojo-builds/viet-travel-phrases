@@ -46,21 +46,21 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Máy thẻ không",
-          "english": "yes/no question",
+          "vietnamese": "Máy thẻ",
+          "english": "card machine",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hoạt động",
-          "english": "working",
+          "vietnamese": "không hoạt động",
+          "english": "is not working",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Máy thẻ không hoạt động",
           "english": "The card machine is not working",
-          "audioKey": null
+          "audioKey": "v900-mone-numb-pric-the-card-machine-is-not-working"
         }
       ]
     },

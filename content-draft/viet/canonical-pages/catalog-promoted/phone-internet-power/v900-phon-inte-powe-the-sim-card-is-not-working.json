@@ -46,21 +46,21 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Thẻ SIM không",
-          "english": "yes/no question",
+          "vietnamese": "Thẻ SIM",
+          "english": "SIM card",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hoạt động",
-          "english": "working",
+          "vietnamese": "không hoạt động",
+          "english": "is not working",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Thẻ SIM không hoạt động",
           "english": "The SIM card is not working",
-          "audioKey": null
+          "audioKey": "v900-phon-inte-powe-the-sim-card-is-not-working"
         }
       ]
     },

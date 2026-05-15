@@ -27,31 +27,25 @@
       "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
       "breakdown": [
         {
-          "id": "store-6-piece-1",
-          "vietnamese": "Tôi",
-          "english": "I / me",
-          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+          "id": "chunk-1",
+          "vietnamese": "Tôi quẹt",
+          "english": "I tap / swipe",
+          "audioKey": null
         },
         {
-          "id": "store-6-piece-2",
-          "vietnamese": "quẹt",
-          "english": "swipe",
-          "audioKey": "breakdown-authored-quet-f98989a914"
-        },
-        {
-          "id": "store-6-piece-3",
+          "id": "chunk-2",
           "vietnamese": "thẻ",
           "english": "card",
           "audioKey": "breakdown-hotel-8-first"
         },
         {
-          "id": "store-6-piece-4",
+          "id": "chunk-3",
           "vietnamese": "được không?",
           "english": "is it possible?",
           "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
         },
         {
-          "id": "store-6-full",
+          "id": "chunk-4",
           "vietnamese": "Tôi quẹt thẻ được không?",
           "english": "Can I pay by card?",
           "audioKey": "store-6"

@@ -47,26 +47,26 @@
         {
           "id": "chunk-1",
           "vietnamese": "Có tính phí",
-          "english": "fee",
+          "english": "is there a fee",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "thẻ",
-          "english": "can / able to",
-          "audioKey": null
+          "english": "card",
+          "audioKey": "breakdown-hotel-8-first"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "chunk-4",
           "vietnamese": "Có tính phí thẻ không?",
           "english": "Is there a card fee",
-          "audioKey": null
+          "audioKey": "v500-mone-numb-pric-is-there-a-card-fee"
         }
       ]
     },
