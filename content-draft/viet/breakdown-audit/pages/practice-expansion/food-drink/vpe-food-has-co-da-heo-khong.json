@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-food-has-co-da-heo-khong",
+  "phraseText": "Có da heo không?",
+  "englishTitle": "Does it have pork skin?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.402Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-has-co-da-heo-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "da",
+      "english": "skin"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "heo",
+      "english": "pork"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có da heo không?",
+      "english": "Does it have pork skin?",
+      "audioKey": "audio-authored-co-da-heo-khong-af54a260a4"
+    }
+  ]
+}

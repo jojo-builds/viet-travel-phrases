@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-less-it-sua-thoi",
+  "phraseText": "Ít sữa thôi",
+  "englishTitle": "Just a little milk.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.405Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-less-it-sua-thoi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít",
+      "english": "less / a little"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sữa",
+      "english": "milk"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít sữa thôi",
+      "english": "Just a little milk.",
+      "audioKey": "audio-authored-it-sua-thoi-745590b9d2"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-where-place-hieu-kinh-thuoc-o-dau",
+  "phraseText": "hiệu kính thuốc ở đâu?",
+  "englishTitle": "Where is an optical shop?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.483Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-hieu-kinh-thuoc-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "hiệu",
+      "english": "shop / sign"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "kính",
+      "english": "glasses"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuốc",
+      "english": "medicine"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "hiệu kính thuốc ở đâu?",
+      "english": "Where is an optical shop?",
+      "audioKey": "audio-authored-hieu-kinh-thuoc-o-dau-74ad2f52b5"
+    }
+  ]
+}

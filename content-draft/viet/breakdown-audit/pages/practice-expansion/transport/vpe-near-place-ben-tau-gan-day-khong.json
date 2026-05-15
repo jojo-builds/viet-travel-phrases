@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-near-place-ben-tau-gan-day-khong",
+  "phraseText": "bến tàu gần đây không?",
+  "englishTitle": "Is the boat pier nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.428Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-ben-tau-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "bến tàu",
+      "english": "boat pier / station",
+      "keepTogetherReason": "compound transport place"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "bến tàu gần đây không?",
+      "english": "Is the boat pier nearby?",
+      "audioKey": "audio-authored-ben-tau-gan-day-khong-4ef6c4a9d6"
+    }
+  ]
+}

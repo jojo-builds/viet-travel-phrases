@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-where-is-the-international-terminal",
+  "phraseText": "Nhà ga quốc tế ở đâu?",
+  "englishTitle": "Where is the international terminal?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.294Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-where-is-the-international-terminal",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nhà ga",
+      "english": "terminal / station",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quốc tế",
+      "english": "international",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nhà ga quốc tế ở đâu?",
+      "english": "Where is the international terminal?",
+      "audioKey": "v900-airp-bord-arri-where-is-the-international-terminal"
+    }
+  ]
+}

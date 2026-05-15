@@ -4,8 +4,9 @@
   "englishTitle": "Can you email it to me?",
   "reviewStatus": "reviewed",
   "visualReview": {
-    "status": "pending",
-    "method": "native app required",
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.323Z",
     "launchArguments": [
       "--detail-page",
       "viet-phrase-v900-loca-serv-ever-task-can-you-email-it-to-me",
@@ -14,42 +15,42 @@
     ]
   },
   "notes": [
-    "Fixes screenshot-style bad chunking where `gửi email cho` was glossed only as `email`."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
   ],
   "tokens": [
     {
-      "id": "ban",
+      "id": "chunk-1",
       "vietnamese": "Bạn",
       "english": "you"
     },
     {
-      "id": "co-the",
+      "id": "chunk-2",
       "vietnamese": "có thể",
-      "english": "can",
+      "english": "can / able to",
       "keepTogetherReason": "fixed modal phrase"
     },
     {
-      "id": "gui",
+      "id": "chunk-3",
       "vietnamese": "gửi",
       "english": "send"
     },
     {
-      "id": "email",
+      "id": "chunk-4",
       "vietnamese": "email",
       "english": "email"
     },
     {
-      "id": "cho",
+      "id": "chunk-5",
       "vietnamese": "cho",
       "english": "to / for"
     },
     {
-      "id": "toi",
+      "id": "chunk-6",
       "vietnamese": "tôi",
       "english": "me"
     },
     {
-      "id": "duoc-khong",
+      "id": "chunk-7",
       "vietnamese": "được không?",
       "english": "is that possible?",
       "keepTogetherReason": "fixed yes-no question ending"
@@ -57,7 +58,8 @@
     {
       "id": "full",
       "vietnamese": "Bạn có thể gửi email cho tôi được không?",
-      "english": "Can you email it to me?"
+      "english": "Can you email it to me?",
+      "audioKey": "v900-loca-serv-ever-task-can-you-email-it-to-me"
     }
   ]
 }

@@ -1,0 +1,51 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-can-i-make-a-reservation",
+  "phraseText": "Tôi có thể đặt chỗ được không?",
+  "englishTitle": "Can I make a reservation?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.344Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-can-i-make-a-reservation",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt chỗ",
+      "english": "make a reservation",
+      "keepTogetherReason": "compound booking action"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể đặt chỗ được không?",
+      "english": "Can I make a reservation?",
+      "audioKey": "v500-time-date-book-can-i-make-a-reservation"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-shopping-pay-where",
+  "phraseText": "Trả ở đâu?",
+  "englishTitle": "Where do I pay?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.283Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-shopping-pay-where",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Trả",
+      "english": "pay / return"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Trả ở đâu?",
+      "english": "Where do I pay?",
+      "audioKey": "shop-5"
+    }
+  ]
+}

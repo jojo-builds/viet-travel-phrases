@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-emergency-ambulance",
+  "phraseText": "Gọi xe cứu thương",
+  "englishTitle": "Call an ambulance",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-emergency-ambulance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xe cứu thương",
+      "english": "ambulance",
+      "keepTogetherReason": "compound emergency vehicle term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Gọi xe cứu thương",
+      "english": "Call an ambulance",
+      "audioKey": "emergency-2"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-bai-dau-xe",
+  "phraseText": "Dừng ở bãi đậu xe",
+  "englishTitle": "Stop at the parking lot.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.470Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-bai-dau-xe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bãi",
+      "english": "beach / lot"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đậu",
+      "english": "bean / park"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở bãi đậu xe",
+      "english": "Stop at the parking lot.",
+      "audioKey": "audio-authored-dung-o-bai-dau-xe-bfb7d28f4e"
+    }
+  ]
+}

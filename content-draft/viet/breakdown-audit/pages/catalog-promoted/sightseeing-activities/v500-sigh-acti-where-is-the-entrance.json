@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-sigh-acti-where-is-the-entrance",
+  "phraseText": "Lối vào ở đâu?",
+  "englishTitle": "Where is the entrance?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-sigh-acti-where-is-the-entrance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lối vào",
+      "english": "entrance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lối vào ở đâu?",
+      "english": "Where is the entrance?",
+      "audioKey": "v500-sigh-acti-where-is-the-entrance"
+    }
+  ]
+}

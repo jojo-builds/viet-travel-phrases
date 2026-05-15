@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-directions-8",
+  "phraseText": "Điểm đón ở đâu?",
+  "englishTitle": "Where is the pickup point?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.295Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-directions-8",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điểm đón",
+      "english": "pickup point",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điểm đón ở đâu?",
+      "english": "Where is the pickup point?",
+      "audioKey": "directions-8"
+    }
+  ]
+}

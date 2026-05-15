@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-my-screen-is-broken",
+  "phraseText": "Màn hình của tôi bị hỏng",
+  "englishTitle": "My screen is broken",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-my-screen-is-broken",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Màn hình",
+      "english": "screen",
+      "keepTogetherReason": "compound device part"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bị hỏng",
+      "english": "is broken / damaged",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Màn hình của tôi bị hỏng",
+      "english": "My screen is broken",
+      "audioKey": "v500-phon-inte-powe-my-screen-is-broken"
+    }
+  ]
+}

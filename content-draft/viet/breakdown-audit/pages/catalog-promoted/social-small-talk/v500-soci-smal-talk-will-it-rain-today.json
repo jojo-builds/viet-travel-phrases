@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-soci-smal-talk-will-it-rain-today",
+  "phraseText": "Hôm nay trời có mưa không?",
+  "englishTitle": "Will it rain today?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-soci-smal-talk-will-it-rain-today",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "trời",
+      "english": "weather / sky"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mưa",
+      "english": "rain"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hôm nay trời có mưa không?",
+      "english": "Will it rain today?",
+      "audioKey": "v500-soci-smal-talk-will-it-rain-today"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-ves-where-cable-car",
+  "phraseText": "Cáp treo ở đâu?",
+  "englishTitle": "Where is the cable car?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.392Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-where-cable-car",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Cáp treo",
+      "english": "cable car",
+      "keepTogetherReason": "compound transport term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cáp treo ở đâu?",
+      "english": "Where is the cable car?",
+      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca"
+    }
+  ]
+}

@@ -26,7 +26,6 @@ const editorialSupportManifestPath = path.join(editorialSupportRoot, "manifest.j
 const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
 const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
-const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
 const editorialPilotImportScriptPath = path.join(root, "scripts", "import-viet-editorial-pilot.js");
 const breakdownAuditExportPath = path.join(familyRoot, "content-draft", "viet", "breakdown-audit", "audit", "rendered-breakdown-audit.json");
 
@@ -4768,17 +4767,6 @@ function sanitizeAuthoredPages(pages) {
   return pages.map(sanitizeAuthoredPage);
 }
 
-function runBreakdownGlossRepair() {
-  if (!fs.existsSync(breakdownRepairScriptPath)) {
-    return false;
-  }
-  execFileSync(process.execPath, [breakdownRepairScriptPath], {
-    cwd: familyRoot,
-    stdio: "inherit",
-  });
-  return true;
-}
-
 function runEditorialPilotImport() {
   if (!fs.existsSync(editorialPilotImportScriptPath)) {
     return false;
@@ -4923,7 +4911,6 @@ function main() {
     missing: audioAudit.missing,
   }, null, 2)}\n`);
 
-  const repairedBreakdowns = runBreakdownGlossRepair();
   const importedEditorialPilot = runEditorialPilotImport();
   const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
   finalBundle.pages = sanitizeAuthoredPages(finalBundle.pages ?? []);
@@ -4953,9 +4940,6 @@ function main() {
   console.log(`Editorial model support pages: ${editorialSupportPages.length}`);
   console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
-  if (repairedBreakdowns) {
-    console.log("Repaired breakdown captions after generation");
-  }
   if (importedEditorialPilot) {
     console.log("Applied approved editorial pilot imports");
   }

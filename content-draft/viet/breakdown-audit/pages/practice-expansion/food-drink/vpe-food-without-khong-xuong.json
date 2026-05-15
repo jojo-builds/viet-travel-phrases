@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-family-vpe-food-without-khong-xuong",
+  "phraseText": "Không xương",
+  "englishTitle": "No bones.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.407Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-without-khong-xuong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xương",
+      "english": "bones"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không xương",
+      "english": "No bones.",
+      "audioKey": "audio-authored-khong-xuong-d2046b85e8"
+    }
+  ]
+}

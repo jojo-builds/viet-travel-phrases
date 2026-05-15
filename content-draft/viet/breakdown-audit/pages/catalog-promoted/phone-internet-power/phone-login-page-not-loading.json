@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-phone-premium-login-page-not-loading",
+  "phraseText": "Trang đăng nhập Wi-Fi không tải.",
+  "englishTitle": "The Wi-Fi login page is not loading.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-phone-premium-login-page-not-loading",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Trang",
+      "english": "page / white"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đăng nhập",
+      "english": "log in",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Wi-Fi",
+      "english": "Wi-Fi",
+      "keepTogetherReason": "loanword"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tải.",
+      "english": "load"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Trang đăng nhập Wi-Fi không tải.",
+      "english": "The Wi-Fi login page is not loading.",
+      "audioKey": "phone-premium-login-page-not-loading"
+    }
+  ]
+}

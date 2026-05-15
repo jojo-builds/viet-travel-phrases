@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-this-is-my-baggage-tag",
+  "phraseText": "Đây là thẻ hành lý của tôi",
+  "englishTitle": "This is my baggage tag",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.291Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-this-is-my-baggage-tag",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thẻ hành lý",
+      "english": "baggage tag",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là thẻ hành lý của tôi",
+      "english": "This is my baggage tag",
+      "audioKey": "v500-airp-bord-arri-this-is-my-baggage-tag"
+    }
+  ]
+}

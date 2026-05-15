@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-khach-san",
+  "phraseText": "Dừng ở khách sạn",
+  "englishTitle": "Stop at the hotel.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.472Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-khach-san",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở khách sạn",
+      "english": "Stop at the hotel.",
+      "audioKey": "audio-authored-dung-o-khach-san-5104b24211"
+    }
+  ]
+}

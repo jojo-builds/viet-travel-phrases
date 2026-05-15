@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-shopping-color",
+  "phraseText": "Có màu khác không?",
+  "englishTitle": "Do you have another color?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.283Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-shopping-color",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "màu",
+      "english": "color"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có màu khác không?",
+      "english": "Do you have another color?",
+      "audioKey": "shop-2"
+    }
+  ]
+}

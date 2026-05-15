@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-cong-len-may-bay",
+  "phraseText": "Dừng ở cổng lên máy bay",
+  "englishTitle": "Stop at the boarding gate.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.471Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-cong-len-may-bay",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cổng lên máy bay",
+      "english": "boarding gate",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở cổng lên máy bay",
+      "english": "Stop at the boarding gate.",
+      "audioKey": "audio-authored-dung-o-cong-len-may-bay-8c386c5532"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-thanks-khong-cam-on",
+  "phraseText": "Không, cảm ơn",
+  "englishTitle": "No, thank you",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-thanks-khong-cam-on",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không,",
+      "english": "no"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không, cảm ơn",
+      "english": "No, thank you",
+      "audioKey": "polite-4"
+    }
+  ]
+}

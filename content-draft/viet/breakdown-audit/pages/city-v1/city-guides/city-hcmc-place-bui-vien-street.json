@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-bui-vien-street",
+  "phraseText": "Phố Bùi Viện",
+  "englishTitle": "Bui Vien Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-bui-vien-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố Bùi Viện",
+      "english": "Bui Vien Street",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

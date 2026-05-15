@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hcmc-hotel-district-1",
+  "phraseText": "Khách sạn ở Quận 1",
+  "englishTitle": "Hotel in District 1",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.373Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-hotel-district-1",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Quận 1",
+      "english": "District 1",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khách sạn ở Quận 1",
+      "english": "Hotel in District 1",
+      "audioKey": "audio-authored-khach-san-o-quan-1-f693507d24"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-is-there-an-extra-fee",
+  "phraseText": "Có phải trả thêm phí không?",
+  "englishTitle": "Is there an extra fee?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.326Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-is-there-an-extra-fee",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "trả",
+      "english": "pay / return"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phí",
+      "english": "fee"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phải trả thêm phí không?",
+      "english": "Is there an extra fee?",
+      "audioKey": "v500-mone-numb-pric-is-there-an-extra-fee"
+    }
+  ]
+}

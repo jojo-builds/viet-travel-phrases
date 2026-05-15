@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-tran-this-is-the-wrong-address",
+  "phraseText": "Đây là địa chỉ sai",
+  "englishTitle": "This is the wrong address",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-this-is-the-wrong-address",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "địa chỉ",
+      "english": "address",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sai",
+      "english": "wrong"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là địa chỉ sai",
+      "english": "This is the wrong address",
+      "audioKey": "v900-tran-this-is-the-wrong-address"
+    }
+  ]
+}

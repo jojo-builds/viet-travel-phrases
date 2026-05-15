@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-tuong-ot",
+  "phraseText": "Dạ, cho tôi tương ớt",
+  "englishTitle": "Respectfully, please give me chili sauce.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.452Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-tuong-ot",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tương",
+      "english": "sauce"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ớt",
+      "english": "chili"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi tương ớt",
+      "english": "Respectfully, please give me chili sauce.",
+      "audioKey": "audio-authored-da-cho-toi-tuong-ot-f57dd135f0"
+    }
+  ]
+}

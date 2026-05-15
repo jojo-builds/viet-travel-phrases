@@ -1,0 +1,74 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-should-i-take-it-before-bed",
+  "phraseText": "Tôi có nên dùng nó trước khi đi ngủ không?",
+  "englishTitle": "Should I take it before bed?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.315Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-should-i-take-it-before-bed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nên dùng",
+      "english": "should use / take",
+      "keepTogetherReason": "fixed advice phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trước",
+      "english": "before / front"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "khi",
+      "english": "when"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "ngủ",
+      "english": "sleep"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có nên dùng nó trước khi đi ngủ không?",
+      "english": "Should I take it before bed?",
+      "audioKey": "v900-heal-phar-should-i-take-it-before-bed"
+    }
+  ]
+}

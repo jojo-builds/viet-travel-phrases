@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-tran-how-many-stops-from-here",
+  "phraseText": "Có bao nhiêu điểm dừng từ đây?",
+  "englishTitle": "How many stops from here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-how-many-stops-from-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "điểm",
+      "english": "point / place"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "dừng",
+      "english": "stop"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "từ",
+      "english": "from"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đây?",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bao nhiêu điểm dừng từ đây?",
+      "english": "How many stops from here?",
+      "audioKey": "v900-tran-how-many-stops-from-here"
+    }
+  ]
+}

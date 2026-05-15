@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-shop-is-this-new",
+  "phraseText": "Cái này có mới không?",
+  "englishTitle": "Is this new?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.338Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-shop-is-this-new",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mới",
+      "english": "new"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này có mới không?",
+      "english": "Is this new?",
+      "audioKey": "v500-shop-is-this-new"
+    }
+  ]
+}

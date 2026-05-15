@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-when-will-it-arrive",
+  "phraseText": "Khi nào nó sẽ đến?",
+  "englishTitle": "When will it arrive?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.291Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-when-will-it-arrive",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khi nào",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đến?",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khi nào nó sẽ đến?",
+      "english": "When will it arrive?",
+      "audioKey": "v500-airp-bord-arri-when-will-it-arrive"
+    }
+  ]
+}

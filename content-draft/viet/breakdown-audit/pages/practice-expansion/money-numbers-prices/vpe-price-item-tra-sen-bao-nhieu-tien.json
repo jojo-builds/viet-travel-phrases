@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-price-item-tra-sen-bao-nhieu-tien",
+  "phraseText": "trà sen bao nhiêu tiền?",
+  "englishTitle": "How much is lotus tea?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.462Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-price-item-tra-sen-bao-nhieu-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "trà",
+      "english": "tea"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sen",
+      "english": "lotus / shower"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu tiền?",
+      "english": "how much money",
+      "keepTogetherReason": "fixed price question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "trà sen bao nhiêu tiền?",
+      "english": "How much is lotus tea?",
+      "audioKey": "audio-authored-tra-sen-bao-nhieu-tien-171a38bb05"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-anh-the",
+  "phraseText": "Tôi muốn mua ảnh thẻ",
+  "englishTitle": "I want to buy passport photos.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.392Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-anh-the",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ảnh thẻ",
+      "english": "passport photos",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua ảnh thẻ",
+      "english": "I want to buy passport photos.",
+      "audioKey": "audio-authored-toi-muon-mua-anh-the-4deeef3cb5"
+    }
+  ]
+}

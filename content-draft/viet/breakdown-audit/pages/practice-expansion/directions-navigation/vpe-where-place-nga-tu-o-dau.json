@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-nga-tu-o-dau",
+  "phraseText": "ngã tư ở đâu?",
+  "englishTitle": "Where is the intersection?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.484Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-nga-tu-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "ngã",
+      "english": "intersection / fall"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tư",
+      "english": "four / private"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "ngã tư ở đâu?",
+      "english": "Where is the intersection?",
+      "audioKey": "audio-authored-nga-tu-o-dau-add0feeaa4"
+    }
+  ]
+}

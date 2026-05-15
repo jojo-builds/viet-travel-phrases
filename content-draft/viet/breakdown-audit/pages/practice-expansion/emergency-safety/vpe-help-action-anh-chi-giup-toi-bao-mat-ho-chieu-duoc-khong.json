@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-bao-mat-ho-chieu-duoc-khong",
+  "phraseText": "Giúp tôi báo mất hộ chiếu được không?",
+  "englishTitle": "Can you help me report a lost passport?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.418Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-bao-mat-ho-chieu-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "báo",
+      "english": "report / notify"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi báo mất hộ chiếu được không?",
+      "english": "Can you help me report a lost passport?",
+      "audioKey": "audio-authored-giup-toi-bao-mat-ho-chieu-duoc-khong-c54b9fbfce"
+    }
+  ]
+}

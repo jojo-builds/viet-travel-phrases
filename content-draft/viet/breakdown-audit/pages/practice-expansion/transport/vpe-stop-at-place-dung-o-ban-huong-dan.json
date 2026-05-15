@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-ban-huong-dan",
+  "phraseText": "Dừng ở bàn hướng dẫn",
+  "englishTitle": "Stop at the help desk.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.470Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-ban-huong-dan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "vietnamese": "bàn hướng dẫn",
+      "english": "information desk",
+      "keepTogetherReason": "compound service-desk term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở bàn hướng dẫn",
+      "english": "Stop at the help desk.",
+      "audioKey": "audio-authored-dung-o-ban-huong-dan-5296dabbf0"
+    }
+  ]
+}

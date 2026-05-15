@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-bach-dang-route",
+  "phraseText": "Đi đường Bạch Đằng",
+  "englishTitle": "Go by Bach Dang Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.358Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-bach-dang-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường Bạch Đằng",
+      "english": "Bach Dang Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi đường Bạch Đằng",
+      "english": "Go by Bach Dang Street",
+      "audioKey": "audio-authored-di-duong-bach-dang-2ee76f9dab"
+    }
+  ]
+}

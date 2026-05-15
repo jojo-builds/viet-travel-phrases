@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-i-am-pregnant",
+  "phraseText": "tôi đang mang thai",
+  "englishTitle": "I am pregnant",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-i-am-pregnant",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mang thai",
+      "english": "pregnant",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi đang mang thai",
+      "english": "I am pregnant",
+      "audioKey": "v500-heal-phar-i-am-pregnant"
+    }
+  ]
+}

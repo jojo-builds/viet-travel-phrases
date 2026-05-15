@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-where-nguyen-hoang-night-market",
+  "phraseText": "Chợ đêm Nguyễn Hoàng ở đâu?",
+  "englishTitle": "Where is Nguyen Hoang Night Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.383Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-where-nguyen-hoang-night-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ đêm Nguyễn Hoàng",
+      "english": "Nguyen Hoang Night Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ đêm Nguyễn Hoàng ở đâu?",
+      "english": "Where is Nguyen Hoang Night Market?",
+      "audioKey": "audio-authored-cho-dem-nguyen-hoang-o-dau-f0439026ac"
+    }
+  ]
+}

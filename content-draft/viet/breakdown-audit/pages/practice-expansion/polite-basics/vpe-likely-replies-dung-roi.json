@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-dung-roi",
+  "phraseText": "Đúng rồi",
+  "englishTitle": "That is correct",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.425Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-dung-roi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đúng",
+      "english": "correct / right"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đúng rồi",
+      "english": "That is correct",
+      "audioKey": "audio-authored-dung-roi-030334c5fa"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hcmc-binh-tay-far",
+  "phraseText": "Chợ Bình Tây xa không?",
+  "englishTitle": "Is Binh Tay Market far?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.371Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-binh-tay-far",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Bình Tây",
+      "english": "Binh Tay Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xa",
+      "english": "far"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Bình Tây xa không?",
+      "english": "Is Binh Tay Market far?",
+      "audioKey": "audio-authored-cho-binh-tay-xa-khong-0499415dd3"
+    }
+  ]
+}

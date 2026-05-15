@@ -1,0 +1,89 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
+  "phraseText": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+  "englishTitle": "The app says my driver is here, but I can't find them.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.332Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho biết",
+      "english": "says / tells",
+      "keepTogetherReason": "compound reporting verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trình điều khiển",
+      "english": "driver",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "có ở đây",
+      "english": "is here",
+      "keepTogetherReason": "fixed location phrase"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "nhưng",
+      "english": "but"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-11",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-12",
+      "vietnamese": "thể",
+      "english": "can / able to"
+    },
+    {
+      "id": "chunk-13",
+      "vietnamese": "tìm thấy",
+      "english": "find",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-14",
+      "vietnamese": "chúng.",
+      "english": "we"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+      "english": "The app says my driver is here, but I can't find them.",
+      "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t"
+    }
+  ]
+}

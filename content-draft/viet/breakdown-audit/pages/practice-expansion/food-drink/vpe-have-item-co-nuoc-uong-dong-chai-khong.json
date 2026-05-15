@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-nuoc-uong-dong-chai-khong",
+  "phraseText": "Có nước uống đóng chai không?",
+  "englishTitle": "Do you have sealed drinking water?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.413Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-nuoc-uong-dong-chai-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "nước uống đóng chai",
+      "english": "bottled drinking water",
+      "keepTogetherReason": "compound bottled-water item"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có nước uống đóng chai không?",
+      "english": "Do you have sealed drinking water?",
+      "audioKey": "audio-authored-co-nuoc-uong-dong-chai-khong-2ec9721ba8"
+    }
+  ]
+}

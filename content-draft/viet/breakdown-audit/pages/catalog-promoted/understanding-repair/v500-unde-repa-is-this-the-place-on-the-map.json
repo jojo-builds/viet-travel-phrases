@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-is-this-the-place-on-the-map",
+  "phraseText": "Đây có phải là địa điểm trên bản đồ không?",
+  "englishTitle": "Is this the place on the map?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-is-this-the-place-on-the-map",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "địa điểm",
+      "english": "location",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trên",
+      "english": "on / above"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "bản đồ",
+      "english": "map",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải là địa điểm trên bản đồ không?",
+      "english": "Is this the place on the map?",
+      "audioKey": "v500-unde-repa-is-this-the-place-on-the-map"
+    }
+  ]
+}

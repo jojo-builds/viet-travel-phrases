@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-tram-sac-o-dau",
+  "phraseText": "trạm sạc ở đâu?",
+  "englishTitle": "Where is a charging station?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.486Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-tram-sac-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "trạm",
+      "english": "station / stop"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sạc",
+      "english": "charge"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "trạm sạc ở đâu?",
+      "english": "Where is a charging station?",
+      "audioKey": "audio-authored-tram-sac-o-dau-5a1c20b2df"
+    }
+  ]
+}

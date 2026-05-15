@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hcmc-atm-bui-vien-street",
+  "phraseText": "Có ATM gần Phố Bùi Viện không?",
+  "englishTitle": "Is there an ATM near Bui Vien Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-atm-bui-vien-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Phố Bùi Viện",
+      "english": "Bui Vien Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Phố Bùi Viện không?",
+      "english": "Is there an ATM near Bui Vien Street?",
+      "audioKey": "audio-authored-co-atm-gan-pho-bui-vien-khong-7a7221c80e"
+    }
+  ]
+}

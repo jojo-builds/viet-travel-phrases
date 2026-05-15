@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-son-tra-night-market",
+  "phraseText": "Chợ đêm Sơn Trà",
+  "englishTitle": "Son Tra Night Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-son-tra-night-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ đêm Sơn Trà",
+      "english": "Son Tra Night Market",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

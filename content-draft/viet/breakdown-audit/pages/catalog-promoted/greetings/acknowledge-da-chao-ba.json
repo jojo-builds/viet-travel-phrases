@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-da-chao-ba",
+  "phraseText": "Dạ, chào bà",
+  "englishTitle": "Respectful hello to an elderly woman",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.332Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-da-chao-ba",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ,",
+      "english": "respectful yes / opener"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bà",
+      "english": "elderly woman"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, chào bà",
+      "english": "Respectful hello to an elderly woman",
+      "audioKey": "audio-phrase-da-chao-ba"
+    }
+  ]
+}

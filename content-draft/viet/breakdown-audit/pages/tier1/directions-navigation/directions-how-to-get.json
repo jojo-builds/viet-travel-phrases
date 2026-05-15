@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-directions-how-to-get",
+  "phraseText": "Cho hỏi, đi tới đó thế nào?",
+  "englishTitle": "Excuse me, how do I get there?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-directions-how-to-get",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cho hỏi,",
+      "english": "excuse me / may I ask",
+      "keepTogetherReason": "fixed polite question opener"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tới",
+      "english": "to / arrive"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "vietnamese": "thế nào?",
+      "english": "how",
+      "keepTogetherReason": "fixed how question phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+      "english": "Excuse me, how do I get there?",
+      "audioKey": "directions-1"
+    }
+  ]
+}

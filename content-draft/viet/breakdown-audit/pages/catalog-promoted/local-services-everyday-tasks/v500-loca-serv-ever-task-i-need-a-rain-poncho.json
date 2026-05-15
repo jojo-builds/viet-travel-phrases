@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-i-need-a-rain-poncho",
+  "phraseText": "Tôi cần một chiếc áo mưa",
+  "englishTitle": "I need a rain poncho",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-i-need-a-rain-poncho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chiếc",
+      "english": "item classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "áo mưa",
+      "english": "rain poncho",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần một chiếc áo mưa",
+      "english": "I need a rain poncho",
+      "audioKey": "v500-loca-serv-ever-task-i-need-a-rain-poncho"
+    }
+  ]
+}

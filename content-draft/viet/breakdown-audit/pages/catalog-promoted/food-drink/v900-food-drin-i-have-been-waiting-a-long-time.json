@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-i-have-been-waiting-a-long-time",
+  "phraseText": "Tôi đã chờ đợi rất lâu rồi",
+  "englishTitle": "I have been waiting a long time",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.307Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-i-have-been-waiting-a-long-time",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chờ đợi",
+      "english": "wait",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rất",
+      "english": "very"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lâu",
+      "english": "long time"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã chờ đợi rất lâu rồi",
+      "english": "I have been waiting a long time",
+      "audioKey": "v900-food-drin-i-have-been-waiting-a-long-time"
+    }
+  ]
+}

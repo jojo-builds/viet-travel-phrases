@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-can-i-have-seats-together",
+  "phraseText": "Tôi có thể ngồi chung được không?",
+  "englishTitle": "Can I have seats together?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-can-i-have-seats-together",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ngồi",
+      "english": "sit"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chung",
+      "english": "together / shared"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể ngồi chung được không?",
+      "english": "Can I have seats together?",
+      "audioKey": "v900-time-date-book-can-i-have-seats-together"
+    }
+  ]
+}

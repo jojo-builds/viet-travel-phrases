@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-food-coffee-milk",
+  "phraseText": "Cho tôi một cà phê sữa đá",
+  "englishTitle": "One iced milk coffee please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-coffee-milk",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cà phê sữa đá",
+      "english": "iced milk coffee",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi một cà phê sữa đá",
+      "english": "One iced milk coffee please",
+      "audioKey": "coffee-1"
+    }
+  ]
+}

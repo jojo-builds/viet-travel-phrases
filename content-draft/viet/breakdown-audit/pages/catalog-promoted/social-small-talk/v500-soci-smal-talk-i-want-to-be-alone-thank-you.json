@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-soci-smal-talk-i-want-to-be-alone-thank-you",
+  "phraseText": "Tôi muốn ở một mình, cảm ơn bạn",
+  "englishTitle": "I want to be alone, thank you",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-soci-smal-talk-i-want-to-be-alone-thank-you",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một mình,",
+      "english": "alone",
+      "keepTogetherReason": "fixed alone phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn ở một mình, cảm ơn bạn",
+      "english": "I want to be alone, thank you",
+      "audioKey": "v500-soci-smal-talk-i-want-to-be-alone-thank-you"
+    }
+  ]
+}

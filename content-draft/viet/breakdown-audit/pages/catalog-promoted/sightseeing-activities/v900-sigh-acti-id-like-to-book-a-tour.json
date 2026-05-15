@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-id-like-to-book-a-tour",
+  "phraseText": "Tôi muốn đặt một chuyến tham quan",
+  "englishTitle": "I’d like to book a tour",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-id-like-to-book-a-tour",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt",
+      "english": "book / reserve / order"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "vietnamese": "chuyến tham quan",
+      "english": "tour",
+      "keepTogetherReason": "compound tour noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn đặt một chuyến tham quan",
+      "english": "I’d like to book a tour",
+      "audioKey": "v900-sigh-acti-id-like-to-book-a-tour"
+    }
+  ]
+}

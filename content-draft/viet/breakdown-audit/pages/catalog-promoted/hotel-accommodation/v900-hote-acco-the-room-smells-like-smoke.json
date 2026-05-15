@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-the-room-smells-like-smoke",
+  "phraseText": "Căn phòng có mùi khói",
+  "englishTitle": "The room smells like smoke",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-the-room-smells-like-smoke",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Căn phòng",
+      "english": "room",
+      "keepTogetherReason": "compound room noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mùi",
+      "english": "smell"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khói",
+      "english": "smoke"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Căn phòng có mùi khói",
+      "english": "The room smells like smoke",
+      "audioKey": "v900-hote-acco-the-room-smells-like-smoke"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may",
+  "phraseText": "Dừng ở bãi gửi xe máy",
+  "englishTitle": "Stop at motorbike parking.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.470Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bãi gửi xe máy",
+      "english": "motorbike parking lot",
+      "keepTogetherReason": "compound parking-place term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở bãi gửi xe máy",
+      "english": "Stop at motorbike parking.",
+      "audioKey": "audio-authored-dung-o-bai-gui-xe-may-84226e2b71"
+    }
+  ]
+}

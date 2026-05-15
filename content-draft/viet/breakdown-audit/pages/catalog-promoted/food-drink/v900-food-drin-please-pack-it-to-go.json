@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-please-pack-it-to-go",
+  "phraseText": "Hãy đóng gói nó để đi.",
+  "englishTitle": "Please pack it to go.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-please-pack-it-to-go",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "vietnamese": "đóng gói",
+      "english": "pack / package",
+      "keepTogetherReason": "compound packing verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đi.",
+      "english": "go"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đóng gói nó để đi.",
+      "english": "Please pack it to go.",
+      "audioKey": "v900-food-drin-please-pack-it-to-go"
+    }
+  ]
+}

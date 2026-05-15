@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-thia",
+  "phraseText": "Cho tôi thìa",
+  "englishTitle": "A spoon, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.448Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-thia",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thìa",
+      "english": "spoon"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi thìa",
+      "english": "A spoon, please.",
+      "audioKey": "audio-authored-cho-toi-thia-5cf0ca05eb"
+    }
+  ]
+}

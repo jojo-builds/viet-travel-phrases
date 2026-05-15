@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-sua-dac",
+  "phraseText": "Tôi muốn mua sữa đặc",
+  "englishTitle": "I want to buy condensed milk.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.399Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-sua-dac",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sữa đặc",
+      "english": "condensed milk",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua sữa đặc",
+      "english": "I want to buy condensed milk.",
+      "audioKey": "audio-authored-toi-muon-mua-sua-dac-a31a8074e9"
+    }
+  ]
+}

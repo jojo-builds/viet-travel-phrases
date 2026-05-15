@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-hotel-reservation",
+  "phraseText": "Tôi có đặt phòng",
+  "englishTitle": "I have a reservation",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-hotel-reservation",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt phòng",
+      "english": "book a room",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có đặt phòng",
+      "english": "I have a reservation",
+      "audioKey": "hotel-1"
+    }
+  ]
+}

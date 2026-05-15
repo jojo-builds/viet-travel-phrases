@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-is-it-next-to-the-hotel",
+  "phraseText": "Nó có ở cạnh khách sạn không?",
+  "englishTitle": "Is it next to the hotel?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-is-it-next-to-the-hotel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cạnh",
+      "english": "next to"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó có ở cạnh khách sạn không?",
+      "english": "Is it next to the hotel?",
+      "audioKey": "v500-dire-navi-is-it-next-to-the-hotel"
+    }
+  ]
+}

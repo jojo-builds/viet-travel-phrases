@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hanoi-go-tay-ho",
+  "phraseText": "Đi Tây Hồ",
+  "englishTitle": "Go to Tay Ho",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.365Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-go-tay-ho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Tây Hồ",
+      "english": "Tay Ho",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Tây Hồ",
+      "english": "Go to Tay Ho",
+      "audioKey": "audio-authored-di-tay-ho-9f562eeb0d"
+    }
+  ]
+}

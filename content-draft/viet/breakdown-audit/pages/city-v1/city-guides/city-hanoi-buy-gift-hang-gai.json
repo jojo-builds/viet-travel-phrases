@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-family-city-hanoi-buy-gift-hang-gai",
+  "phraseText": "Tôi muốn mua quà ở Hàng Gai",
+  "englishTitle": "I want to buy gifts on Hang Gai",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-buy-gift-hang-gai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quà",
+      "english": "gift"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "Hàng",
+      "english": "shop / goods"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "Gai",
+      "english": "street name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua quà ở Hàng Gai",
+      "english": "I want to buy gifts on Hang Gai",
+      "audioKey": "audio-authored-toi-muon-mua-qua-o-hang-gai-5d6234e6f6"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-this-is-not-the-room-i-booked",
+  "phraseText": "Đây không phải là phòng tôi đã đặt",
+  "englishTitle": "This is not the room I booked",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-this-is-not-the-room-i-booked",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đã đặt",
+      "english": "booked / reserved",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây không phải là phòng tôi đã đặt",
+      "english": "This is not the room I booked",
+      "audioKey": "v900-hote-acco-this-is-not-the-room-i-booked"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+  "phraseText": "Bún chả Hương Liên",
+  "englishTitle": "Bun Cha Huong Lien",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.366Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bún chả Hương Liên",
+      "english": "Bun Cha Huong Lien",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-xuong-o-day",
+  "phraseText": "Xuống ở đây",
+  "englishTitle": "Get off here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.428Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-xuong-o-day",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xuống ở",
+      "english": "get off at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xuống ở đây",
+      "english": "Get off here",
+      "audioKey": "audio-authored-xuong-o-day-239f69f7df"
+    }
+  ]
+}

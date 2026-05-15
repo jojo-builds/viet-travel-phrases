@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-please-do-not-shrink-this",
+  "phraseText": "Xin đừng thu nhỏ cái này",
+  "englishTitle": "Please do not shrink this",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-please-do-not-shrink-this",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đừng",
+      "english": "do not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thu",
+      "english": "collect"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhỏ",
+      "english": "small"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin đừng thu nhỏ cái này",
+      "english": "Please do not shrink this",
+      "audioKey": "v900-loca-serv-ever-task-please-do-not-shrink-this"
+    }
+  ]
+}

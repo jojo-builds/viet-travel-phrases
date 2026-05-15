@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-everything-was-good-thank-you",
+  "phraseText": "Mọi thứ đều tốt, cảm ơn bạn",
+  "englishTitle": "Everything was good, thank you",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.320Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-everything-was-good-thank-you",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Mọi thứ",
+      "english": "everything",
+      "keepTogetherReason": "compound all-things pronoun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đều",
+      "english": "all / both"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tốt,",
+      "english": "good"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cảm ơn",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mọi thứ đều tốt, cảm ơn bạn",
+      "english": "Everything was good, thank you",
+      "audioKey": "v900-hote-acco-everything-was-good-thank-you"
+    }
+  ]
+}

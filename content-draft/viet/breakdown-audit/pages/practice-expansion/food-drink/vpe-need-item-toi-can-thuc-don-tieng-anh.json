@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-thuc-don-tieng-anh",
+  "phraseText": "Tôi cần thực đơn tiếng Anh",
+  "englishTitle": "I need an English menu.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.440Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-thuc-don-tieng-anh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thực đơn tiếng Anh",
+      "english": "English menu",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần thực đơn tiếng Anh",
+      "english": "I need an English menu.",
+      "audioKey": "audio-authored-toi-can-thuc-don-tieng-anh-9e2893e684"
+    }
+  ]
+}

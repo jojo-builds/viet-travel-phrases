@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-danang-atm-airport",
+  "phraseText": "Có ATM gần Sân bay Đà Nẵng không?",
+  "englishTitle": "Is there an ATM near Da Nang Airport?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.358Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-atm-airport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Sân bay Đà Nẵng",
+      "english": "Da Nang Airport",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Sân bay Đà Nẵng không?",
+      "english": "Is there an ATM near Da Nang Airport?",
+      "audioKey": "audio-authored-co-atm-gan-san-bay-da-nang-khong-9301cc7d17"
+    }
+  ]
+}

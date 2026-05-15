@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-tuong-ot",
+  "phraseText": "Cho tôi tương ớt",
+  "englishTitle": "Chili sauce, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.449Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-tuong-ot",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tương",
+      "english": "sauce"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ớt",
+      "english": "chili"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi tương ớt",
+      "english": "Chili sauce, please.",
+      "audioKey": "audio-authored-cho-toi-tuong-ot-cd71812c59"
+    }
+  ]
+}

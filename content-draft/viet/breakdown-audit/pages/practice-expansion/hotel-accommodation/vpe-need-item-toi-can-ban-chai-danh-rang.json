@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-ban-chai-danh-rang",
+  "phraseText": "Tôi cần bàn chải đánh răng",
+  "englishTitle": "I need a toothbrush.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.434Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-ban-chai-danh-rang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bàn chải đánh răng",
+      "english": "toothbrush",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần bàn chải đánh răng",
+      "english": "I need a toothbrush.",
+      "audioKey": "audio-authored-toi-can-ban-chai-danh-rang-d3cb67e969"
+    }
+  ]
+}

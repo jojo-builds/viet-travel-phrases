@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-soci-smal-talk-please-do-not-take-my-photo",
+  "phraseText": "Làm ơn đừng chụp ảnh tôi",
+  "englishTitle": "Please do not take my photo",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-soci-smal-talk-please-do-not-take-my-photo",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đừng",
+      "english": "do not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chụp",
+      "english": "take a photo"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ảnh",
+      "english": "photo"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn đừng chụp ảnh tôi",
+      "english": "Please do not take my photo",
+      "audioKey": "v500-soci-smal-talk-please-do-not-take-my-photo"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-mo-cua-roi",
+  "phraseText": "Mở cửa rồi",
+  "englishTitle": "It is open now",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-mo-cua-roi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Mở cửa",
+      "english": "open / opening",
+      "keepTogetherReason": "compound business-hours verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mở cửa rồi",
+      "english": "It is open now",
+      "audioKey": "audio-authored-mo-cua-roi-44c2da304a"
+    }
+  ]
+}

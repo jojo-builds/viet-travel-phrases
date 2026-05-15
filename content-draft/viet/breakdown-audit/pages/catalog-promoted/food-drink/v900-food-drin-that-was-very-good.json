@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-that-was-very-good",
+  "phraseText": "Điều đó rất tốt",
+  "englishTitle": "That was very good",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-that-was-very-good",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "rất",
+      "english": "very"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tốt",
+      "english": "good"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điều đó rất tốt",
+      "english": "That was very good",
+      "audioKey": "v900-food-drin-that-was-very-good"
+    }
+  ]
+}

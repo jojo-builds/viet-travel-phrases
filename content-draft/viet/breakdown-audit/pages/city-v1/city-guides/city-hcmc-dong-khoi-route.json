@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hcmc-dong-khoi-route",
+  "phraseText": "Đi đường Đồng Khởi được không?",
+  "englishTitle": "Can we go by Dong Khoi Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.371Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-dong-khoi-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường Đồng Khởi",
+      "english": "Dong Khoi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi đường Đồng Khởi được không?",
+      "english": "Can we go by Dong Khoi Street?",
+      "audioKey": "audio-authored-di-duong-dong-khoi-duoc-khong-c12f6ee6ef"
+    }
+  ]
+}

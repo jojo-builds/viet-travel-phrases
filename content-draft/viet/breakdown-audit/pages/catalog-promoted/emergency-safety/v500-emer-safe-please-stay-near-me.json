@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-please-stay-near-me",
+  "phraseText": "Xin hãy ở gần tôi",
+  "englishTitle": "Please stay near me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-please-stay-near-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy ở gần tôi",
+      "english": "Please stay near me",
+      "audioKey": "v500-emer-safe-please-stay-near-me"
+    }
+  ]
+}

@@ -4,8 +4,9 @@
   "englishTitle": "Can you email the receipt?",
   "reviewStatus": "reviewed",
   "visualReview": {
-    "status": "pending",
-    "method": "native app required",
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
     "launchArguments": [
       "--detail-page",
       "viet-phrase-v900-mone-numb-pric-can-you-email-the-receipt",
@@ -13,36 +14,39 @@
       "first-breakdown"
     ]
   },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
   "tokens": [
     {
-      "id": "ban",
+      "id": "chunk-1",
       "vietnamese": "Bạn",
       "english": "you"
     },
     {
-      "id": "co-the",
+      "id": "chunk-2",
       "vietnamese": "có thể",
-      "english": "can",
+      "english": "can / able to",
       "keepTogetherReason": "fixed modal phrase"
     },
     {
-      "id": "gui",
+      "id": "chunk-3",
       "vietnamese": "gửi",
       "english": "send"
     },
     {
-      "id": "email",
+      "id": "chunk-4",
       "vietnamese": "email",
       "english": "email"
     },
     {
-      "id": "hoa-don",
+      "id": "chunk-5",
       "vietnamese": "hóa đơn",
-      "english": "receipt / bill",
+      "english": "receipt / invoice",
       "keepTogetherReason": "compound noun"
     },
     {
-      "id": "duoc-khong",
+      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
       "keepTogetherReason": "fixed yes-no question ending"
@@ -50,7 +54,8 @@
     {
       "id": "full",
       "vietnamese": "Bạn có thể gửi email hóa đơn được không?",
-      "english": "Can you email the receipt?"
+      "english": "Can you email the receipt?",
+      "audioKey": "v900-mone-numb-pric-can-you-email-the-receipt"
     }
   ]
 }

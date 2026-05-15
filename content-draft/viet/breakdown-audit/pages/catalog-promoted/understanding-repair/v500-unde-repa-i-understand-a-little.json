@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-i-understand-a-little",
+  "phraseText": "Tôi hiểu một chút",
+  "englishTitle": "I understand a little",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-i-understand-a-little",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hiểu",
+      "english": "understand"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chút",
+      "english": "a little"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi hiểu một chút",
+      "english": "I understand a little",
+      "audioKey": "v500-unde-repa-i-understand-a-little"
+    }
+  ]
+}

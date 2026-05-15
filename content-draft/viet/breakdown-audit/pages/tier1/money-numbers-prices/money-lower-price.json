@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-money-lower-price",
+  "phraseText": "Bớt chút được không?",
+  "englishTitle": "Can you lower it a little?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-money-lower-price",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bớt",
+      "english": "reduce / less"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chút",
+      "english": "a little"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bớt chút được không?",
+      "english": "Can you lower it a little?",
+      "audioKey": "price-4"
+    }
+  ]
+}

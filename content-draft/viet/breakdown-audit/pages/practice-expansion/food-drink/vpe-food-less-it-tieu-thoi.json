@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-less-it-tieu-thoi",
+  "phraseText": "Ít tiêu thôi",
+  "englishTitle": "Just a little pepper.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.405Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-less-it-tieu-thoi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít",
+      "english": "less / a little"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tiêu",
+      "english": "pepper / digest"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít tiêu thôi",
+      "english": "Just a little pepper.",
+      "audioKey": "audio-authored-it-tieu-thoi-2a38bc445b"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-railway-station",
+  "phraseText": "Ga Đà Nẵng",
+  "englishTitle": "Da Nang Railway Station",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ga Đà Nẵng",
+      "english": "Da Nang Railway Station",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

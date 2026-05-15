@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-mat-khau-wi-fi",
+  "phraseText": "Tôi cần mật khẩu Wi-Fi",
+  "englishTitle": "I need the Wi-Fi password.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.437Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-mat-khau-wi-fi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mật khẩu Wi-Fi",
+      "english": "Wi-Fi password",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần mật khẩu Wi-Fi",
+      "english": "I need the Wi-Fi password.",
+      "audioKey": "audio-authored-toi-can-mat-khau-wi-fi-ff3c2ae1b5"
+    }
+  ]
+}

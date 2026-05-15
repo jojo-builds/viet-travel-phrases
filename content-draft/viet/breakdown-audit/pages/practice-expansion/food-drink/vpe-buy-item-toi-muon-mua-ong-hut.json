@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-ong-hut",
+  "phraseText": "Tôi muốn mua ống hút",
+  "englishTitle": "I want to buy a straw.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.398Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-ong-hut",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ống",
+      "english": "tube / straw"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hút",
+      "english": "smoke / suck"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua ống hút",
+      "english": "I want to buy a straw.",
+      "audioKey": "audio-authored-toi-muon-mua-ong-hut-4d6bd480d6"
+    }
+  ]
+}

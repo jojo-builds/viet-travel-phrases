@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
+  "phraseText": "Hãy gõ nó vào điện thoại của tôi.",
+  "englishTitle": "Please type it into my phone.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gõ",
+      "english": "type / knock"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "của tôi.",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy gõ nó vào điện thoại của tôi.",
+      "english": "Please type it into my phone.",
+      "audioKey": "v500-unde-repa-please-type-it-into-my-phone"
+    }
+  ]
+}

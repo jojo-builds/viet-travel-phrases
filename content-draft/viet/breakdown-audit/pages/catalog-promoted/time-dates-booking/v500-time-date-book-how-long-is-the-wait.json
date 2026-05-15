@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-how-long-is-the-wait",
+  "phraseText": "Thời gian chờ đợi là bao lâu?",
+  "englishTitle": "How long is the wait?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.344Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-how-long-is-the-wait",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thời",
+      "english": "temporary / time"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gian",
+      "english": "time / space"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chờ đợi",
+      "english": "wait",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thời gian chờ đợi là bao lâu?",
+      "english": "How long is the wait?",
+      "audioKey": "v500-time-date-book-how-long-is-the-wait"
+    }
+  ]
+}

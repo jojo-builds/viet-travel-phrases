@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-okay-now-i-understand",
+  "phraseText": "Được rồi, bây giờ tôi đã hiểu",
+  "englishTitle": "Okay, now I understand",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-okay-now-i-understand",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rồi,",
+      "english": "already / done"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bây giờ",
+      "english": "now",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hiểu",
+      "english": "understand"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Được rồi, bây giờ tôi đã hiểu",
+      "english": "Okay, now I understand",
+      "audioKey": "v500-unde-repa-okay-now-i-understand"
+    }
+  ]
+}

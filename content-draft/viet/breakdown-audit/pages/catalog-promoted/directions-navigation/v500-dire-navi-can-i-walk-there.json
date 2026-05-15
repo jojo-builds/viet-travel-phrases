@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-can-i-walk-there",
+  "phraseText": "Tôi có thể đi bộ tới đó được không?",
+  "englishTitle": "Can I walk there?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.295Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-can-i-walk-there",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đi bộ",
+      "english": "walk / on foot",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tới",
+      "english": "to / arrive"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể đi bộ tới đó được không?",
+      "english": "Can I walk there?",
+      "audioKey": "v500-dire-navi-can-i-walk-there"
+    }
+  ]
+}

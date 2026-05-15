@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-chup-anh-giup-toi-duoc-khong",
+  "phraseText": "Em chụp ảnh giúp tôi được không?",
+  "englishTitle": "Can you take a photo for me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.469Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-pronoun-help-em-giup-toi-chup-anh-giup-toi-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Em",
+      "english": "younger person"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chụp",
+      "english": "take a photo"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ảnh",
+      "english": "photo"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Em chụp ảnh giúp tôi được không?",
+      "english": "Can you take a photo for me?",
+      "audioKey": "audio-authored-em-chup-anh-giup-toi-duoc-khong-76b09936cd"
+    }
+  ]
+}

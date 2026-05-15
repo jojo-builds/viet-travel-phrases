@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-food-drin-there-is-something-in-my-food",
+  "phraseText": "Có thứ gì đó trong thức ăn của tôi",
+  "englishTitle": "There is something in my food",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.304Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-food-drin-there-is-something-in-my-food",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thứ",
+      "english": "thing"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "vietnamese": "thức ăn",
+      "english": "food",
+      "keepTogetherReason": "compound food noun"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có thứ gì đó trong thức ăn của tôi",
+      "english": "There is something in my food",
+      "audioKey": "v500-food-drin-there-is-something-in-my-food"
+    }
+  ]
+}

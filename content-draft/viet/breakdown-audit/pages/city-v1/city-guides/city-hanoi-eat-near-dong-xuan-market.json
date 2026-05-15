@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hanoi-eat-near-dong-xuan-market",
+  "phraseText": "Ăn gần Chợ Đồng Xuân",
+  "englishTitle": "Eat near Dong Xuan Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-eat-near-dong-xuan-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Chợ Đồng Xuân",
+      "english": "Dong Xuan Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Chợ Đồng Xuân",
+      "english": "Eat near Dong Xuan Market",
+      "audioKey": "audio-authored-an-gan-cho-dong-xuan-081dd9e648"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-transport-premium-route-wrong",
+  "phraseText": "Tuyến đường này sai.",
+  "englishTitle": "This route is wrong.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-transport-premium-route-wrong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tuyến",
+      "english": "line / route"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sai.",
+      "english": "wrong"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tuyến đường này sai.",
+      "english": "This route is wrong.",
+      "audioKey": "transport-premium-route-wrong"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-tran-the-driver-left-without-me",
+  "phraseText": "Người lái xe rời đi mà không có tôi",
+  "englishTitle": "The driver left without me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-the-driver-left-without-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Người lái xe",
+      "english": "driver",
+      "keepTogetherReason": "compound driver noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rời",
+      "english": "leave"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "mà",
+      "english": "that / but"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Người lái xe rời đi mà không có tôi",
+      "english": "The driver left without me",
+      "audioKey": "v900-tran-the-driver-left-without-me"
+    }
+  ]
+}

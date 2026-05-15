@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+  "phraseText": "Vui lòng hủy thanh toán thẻ đó",
+  "englishTitle": "Please cancel that card payment",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hủy",
+      "english": "cancel"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng hủy thanh toán thẻ đó",
+      "english": "Please cancel that card payment",
+      "audioKey": "v900-mone-numb-pric-please-cancel-that-card-payment"
+    }
+  ]
+}

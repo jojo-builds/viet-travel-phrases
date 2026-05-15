@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-money-premium-price-changed",
+  "phraseText": "Sao bây giờ giá lại khác thế?",
+  "englishTitle": "Why is the price different now?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-money-premium-price-changed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sao",
+      "english": "why / how"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bây giờ",
+      "english": "now",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thế?",
+      "english": "can / able to"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Sao bây giờ giá lại khác thế?",
+      "english": "Why is the price different now?",
+      "audioKey": "money-premium-price-changed"
+    }
+  ]
+}

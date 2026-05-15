@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-bathroom-use",
+  "phraseText": "Tôi dùng nhà vệ sinh được không?",
+  "englishTitle": "Can I use the bathroom?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.284Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-bathroom-use",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "dùng",
+      "english": "use"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhà vệ sinh",
+      "english": "bathroom / toilet",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi dùng nhà vệ sinh được không?",
+      "english": "Can I use the bathroom?",
+      "audioKey": "bathroom-use"
+    }
+  ]
+}

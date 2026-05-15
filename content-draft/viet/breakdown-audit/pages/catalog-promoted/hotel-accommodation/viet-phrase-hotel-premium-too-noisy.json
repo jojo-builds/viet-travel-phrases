@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-hotel-premium-too-noisy",
+  "phraseText": "Căn phòng quá ồn ào.",
+  "englishTitle": "The room is too noisy.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:56:18.744Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-premium-too-noisy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Căn phòng",
+      "english": "room",
+      "keepTogetherReason": "compound room noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ồn ào.",
+      "english": "noisy",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Căn phòng quá ồn ào.",
+      "english": "The room is too noisy.",
+      "audioKey": "hotel-premium-too-noisy"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-emergency-premium-police-station",
+  "phraseText": "Làm ơn đưa tôi đến đồn cảnh sát.",
+  "englishTitle": "Please take me to the police station.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.299Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-emergency-premium-police-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đưa",
+      "english": "give / take"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đồn cảnh sát.",
+      "english": "police station",
+      "keepTogetherReason": "compound public-safety place term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+      "english": "Please take me to the police station.",
+      "audioKey": "emergency-premium-police-station"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-how-many-times-per-day",
+  "phraseText": "Bao nhiêu lần mỗi ngày?",
+  "englishTitle": "How many times per day?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-how-many-times-per-day",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lần",
+      "english": "time / occasion"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mỗi",
+      "english": "each"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ngày?",
+      "english": "day"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bao nhiêu lần mỗi ngày?",
+      "english": "How many times per day?",
+      "audioKey": "v500-heal-phar-how-many-times-per-day"
+    }
+  ]
+}

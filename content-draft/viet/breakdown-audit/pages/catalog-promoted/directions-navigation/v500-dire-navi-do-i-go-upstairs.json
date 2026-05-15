@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-do-i-go-upstairs",
+  "phraseText": "Tôi có lên lầu không?",
+  "englishTitle": "Do I go upstairs?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-do-i-go-upstairs",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lên lầu",
+      "english": "go upstairs",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có lên lầu không?",
+      "english": "Do I go upstairs?",
+      "audioKey": "v500-dire-navi-do-i-go-upstairs"
+    }
+  ]
+}

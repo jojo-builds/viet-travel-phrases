@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-airport-sim",
+  "phraseText": "Mua SIM ở đâu?",
+  "englishTitle": "Where can I buy a SIM card?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.281Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-sim",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "SIM",
+      "english": "SIM card"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mua SIM ở đâu?",
+      "english": "Where can I buy a SIM card?",
+      "audioKey": "airport-3"
+    }
+  ]
+}

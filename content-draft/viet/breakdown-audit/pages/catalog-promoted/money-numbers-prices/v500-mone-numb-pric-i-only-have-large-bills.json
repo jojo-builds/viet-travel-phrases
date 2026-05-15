@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-i-only-have-large-bills",
+  "phraseText": "Tôi chỉ có hóa đơn lớn",
+  "englishTitle": "I only have large bills",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.326Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-i-only-have-large-bills",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hóa đơn",
+      "english": "receipt / invoice",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lớn",
+      "english": "big / adult"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi chỉ có hóa đơn lớn",
+      "english": "I only have large bills",
+      "audioKey": "v500-mone-numb-pric-i-only-have-large-bills"
+    }
+  ]
+}

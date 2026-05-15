@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-can-you-change-this",
+  "phraseText": "Bạn có thể thay đổi điều này?",
+  "englishTitle": "Can you change this?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.305Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-can-you-change-this",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thay",
+      "english": "replace / change"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đổi",
+      "english": "change / exchange"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này?",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể thay đổi điều này?",
+      "english": "Can you change this?",
+      "audioKey": "v900-food-drin-can-you-change-this"
+    }
+  ]
+}

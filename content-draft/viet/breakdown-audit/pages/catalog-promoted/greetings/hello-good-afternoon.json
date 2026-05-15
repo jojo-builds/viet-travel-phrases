@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-good-afternoon",
+  "phraseText": "Chào buổi chiều",
+  "englishTitle": "Good afternoon",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-good-afternoon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "vietnamese": "buổi chiều",
+      "english": "afternoon",
+      "keepTogetherReason": "day-period phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào buổi chiều",
+      "english": "Good afternoon",
+      "audioKey": "audio-phrase-chao-buoi-chieu"
+    }
+  ]
+}

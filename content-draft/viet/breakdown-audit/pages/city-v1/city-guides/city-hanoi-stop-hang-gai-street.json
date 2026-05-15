@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-hang-gai-street",
+  "phraseText": "Dừng ở Phố Hàng Gai",
+  "englishTitle": "Stop at Hang Gai Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.368Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-hang-gai-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố Hàng Gai",
+      "english": "Hang Gai Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Phố Hàng Gai",
+      "english": "Stop at Hang Gai Street",
+      "audioKey": "audio-authored-dung-o-pho-hang-gai-4ef482dd8d"
+    }
+  ]
+}

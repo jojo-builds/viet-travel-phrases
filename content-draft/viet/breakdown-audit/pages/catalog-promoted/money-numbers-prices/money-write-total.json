@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-money-premium-write-total",
+  "phraseText": "Hãy viết tổng số ra.",
+  "englishTitle": "Please write the total down.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-money-premium-write-total",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "viết",
+      "english": "write"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tổng",
+      "english": "total"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "số",
+      "english": "number"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ra.",
+      "english": "out"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy viết tổng số ra.",
+      "english": "Please write the total down.",
+      "audioKey": "money-premium-write-total"
+    }
+  ]
+}

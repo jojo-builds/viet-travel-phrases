@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-wi-fi",
+  "phraseText": "Tôi muốn mua Wi-Fi",
+  "englishTitle": "I want to buy Wi-Fi.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.401Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-wi-fi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Wi-Fi",
+      "english": "Wi-Fi",
+      "keepTogetherReason": "loanword"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua Wi-Fi",
+      "english": "I want to buy Wi-Fi.",
+      "audioKey": "audio-authored-toi-muon-mua-wi-fi-ac972b8de2"
+    }
+  ]
+}

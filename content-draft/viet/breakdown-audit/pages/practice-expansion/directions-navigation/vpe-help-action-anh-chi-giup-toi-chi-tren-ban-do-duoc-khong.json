@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-chi-tren-ban-do-duoc-khong",
+  "phraseText": "Chỉ giúp tôi trên bản đồ được không?",
+  "englishTitle": "Can you point it out on the map?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.419Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-chi-tren-ban-do-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trên",
+      "english": "on / above"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bản đồ",
+      "english": "map",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chỉ giúp tôi trên bản đồ được không?",
+      "english": "Can you point it out on the map?",
+      "audioKey": "audio-authored-chi-giup-toi-tren-ban-do-duoc-khong-b91f152b50"
+    }
+  ]
+}

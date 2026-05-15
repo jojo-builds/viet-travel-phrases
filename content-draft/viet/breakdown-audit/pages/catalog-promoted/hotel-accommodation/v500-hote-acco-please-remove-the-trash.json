@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-please-remove-the-trash",
+  "phraseText": "Vui lòng loại bỏ thùng rác",
+  "englishTitle": "Please remove the trash",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-please-remove-the-trash",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "loại",
+      "english": "type / remove"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bỏ",
+      "english": "remove / leave"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thùng",
+      "english": "bin / box"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "rác",
+      "english": "trash"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng loại bỏ thùng rác",
+      "english": "Please remove the trash",
+      "audioKey": "v500-hote-acco-please-remove-the-trash"
+    }
+  ]
+}

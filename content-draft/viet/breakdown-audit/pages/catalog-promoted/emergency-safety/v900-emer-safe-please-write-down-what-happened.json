@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-please-write-down-what-happened",
+  "phraseText": "Hãy viết ra điều gì đã xảy ra",
+  "englishTitle": "Please write down what happened",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.302Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-please-write-down-what-happened",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "viết",
+      "english": "write"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ra",
+      "english": "out"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "xảy ra",
+      "english": "happen",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy viết ra điều gì đã xảy ra",
+      "english": "Please write down what happened",
+      "audioKey": "v900-emer-safe-please-write-down-what-happened"
+    }
+  ]
+}

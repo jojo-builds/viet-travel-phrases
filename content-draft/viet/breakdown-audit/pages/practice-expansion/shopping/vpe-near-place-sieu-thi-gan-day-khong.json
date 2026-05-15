@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-near-place-sieu-thi-gan-day-khong",
+  "phraseText": "siêu thị gần đây không?",
+  "englishTitle": "Is the supermarket nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.433Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-sieu-thi-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "siêu thị",
+      "english": "supermarket",
+      "keepTogetherReason": "compound shopping-place term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "siêu thị gần đây không?",
+      "english": "Is the supermarket nearby?",
+      "audioKey": "audio-authored-sieu-thi-gan-day-khong-4f443a47ad"
+    }
+  ]
+}

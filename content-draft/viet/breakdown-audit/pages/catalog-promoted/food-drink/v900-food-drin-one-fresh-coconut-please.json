@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+  "phraseText": "Làm ơn cho một quả dừa tươi",
+  "englishTitle": "One fresh coconut, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.308Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quả",
+      "english": "fruit / item classifier"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "dừa tươi",
+      "english": "fresh coconut",
+      "keepTogetherReason": "compound food term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn cho một quả dừa tươi",
+      "english": "One fresh coconut, please",
+      "audioKey": "v900-food-drin-one-fresh-coconut-please"
+    }
+  ]
+}

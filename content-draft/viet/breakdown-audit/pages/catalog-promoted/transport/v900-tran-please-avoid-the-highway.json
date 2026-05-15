@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-avoid-the-highway",
+  "phraseText": "Xin hãy tránh đường cao tốc",
+  "englishTitle": "Please avoid the highway",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-avoid-the-highway",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tránh",
+      "english": "avoid"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cao",
+      "english": "high"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tốc",
+      "english": "speed"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy tránh đường cao tốc",
+      "english": "Please avoid the highway",
+      "audioKey": "v900-tran-please-avoid-the-highway"
+    }
+  ]
+}

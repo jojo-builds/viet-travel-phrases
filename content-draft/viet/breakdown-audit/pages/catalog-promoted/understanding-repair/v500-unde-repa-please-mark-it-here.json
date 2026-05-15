@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-please-mark-it-here",
+  "phraseText": "Hãy đánh dấu nó ở đây",
+  "englishTitle": "Please mark it here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-please-mark-it-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "vietnamese": "đánh dấu",
+      "english": "mark",
+      "keepTogetherReason": "compound action verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đánh dấu nó ở đây",
+      "english": "Please mark it here",
+      "audioKey": "v500-unde-repa-please-mark-it-here"
+    }
+  ]
+}

@@ -60,18 +60,20 @@ enum PracticeStoryBreakdownDefinitions {
             return !normalizedToken.isEmpty && normalizedPhrase.contains(normalizedToken)
         }
 
-        guard !usefulTokens.isEmpty else {
+        let messageTokens = messageSemanticTokens(from: usefulTokens)
+
+        guard !messageTokens.isEmpty else {
             return []
         }
 
-        guard tokensCoverPhrase(usefulTokens, vietnamese: vietnamese) else {
+        guard tokensCoverPhrase(messageTokens, vietnamese: vietnamese) else {
             return []
         }
 
-        return usefulTokens.enumerated().map { index, token in
+        return messageTokens.enumerated().map { index, token in
             PracticeStoryDefinitionToken(
                 id: stableID(for: token, pageID: pageID, index: index),
-                vietnamese: token.vietnamese,
+                vietnamese: definitionVietnamese(for: token.vietnamese),
                 english: token.english,
                 sourcePageID: pageID
             )
@@ -126,6 +128,37 @@ enum PracticeStoryBreakdownDefinitions {
         return tokens
     }
 
+    private static func messageSemanticTokens(from tokens: [BreakdownToken]) -> [BreakdownToken] {
+        var output: [BreakdownToken] = []
+        var index = tokens.startIndex
+
+        while index < tokens.endIndex {
+            if index + 2 < tokens.endIndex,
+               normalized(tokens[index].vietnamese) == "cho",
+               normalized(tokens[index + 1].vietnamese) == "mot" {
+                let classifier = normalized(tokens[index + 2].vietnamese)
+                if ["qua", "cai", "ly", "to", "phan", "chai", "coc"].contains(classifier) {
+                    output.append(BreakdownToken(
+                        id: "\(tokens[index].id)-\(tokens[index + 1].id)-\(tokens[index + 2].id)",
+                        vietnamese: [
+                            tokens[index].vietnamese,
+                            tokens[index + 1].vietnamese,
+                            tokens[index + 2].vietnamese,
+                        ].joined(separator: " "),
+                        english: "give me one"
+                    ))
+                    index += 3
+                    continue
+                }
+            }
+
+            output.append(tokens[index])
+            index += 1
+        }
+
+        return output
+    }
+
     private static func tokensCoverPhrase(_ tokens: [BreakdownToken], vietnamese: String) -> Bool {
         var remainder = " \(normalized(vietnamese)) "
 
@@ -178,6 +211,10 @@ enum PracticeStoryBreakdownDefinitions {
                     partialResult.append(character)
                 }
             }
+    }
+
+    private static func definitionVietnamese(for value: String) -> String {
+        value.trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
     }
 
     private static func normalized(_ value: String) -> String {

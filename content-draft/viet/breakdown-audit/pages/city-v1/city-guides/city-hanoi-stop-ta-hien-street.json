@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-ta-hien-street",
+  "phraseText": "Dừng ở Phố Tạ Hiện",
+  "englishTitle": "Stop at Ta Hien Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.369Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-ta-hien-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố Tạ Hiện",
+      "english": "Ta Hien Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Phố Tạ Hiện",
+      "english": "Stop at Ta Hien Street",
+      "audioKey": "audio-authored-dung-o-pho-ta-hien-61af86caad"
+    }
+  ]
+}

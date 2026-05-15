@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-repair-write-down",
+  "phraseText": "Viết xuống giúp tôi",
+  "englishTitle": "Please write it down",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.276Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-write-down",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Viết xuống",
+      "english": "write down",
+      "keepTogetherReason": "compound repair action"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Viết xuống giúp tôi",
+      "english": "Please write it down",
+      "audioKey": "repair-2"
+    }
+  ]
+}

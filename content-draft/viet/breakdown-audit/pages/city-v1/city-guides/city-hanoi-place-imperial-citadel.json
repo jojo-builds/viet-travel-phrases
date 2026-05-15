@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hanoi-place-imperial-citadel",
+  "phraseText": "Hoàng thành Thăng Long",
+  "englishTitle": "Imperial Citadel of Thang Long",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.366Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-imperial-citadel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hoàng thành Thăng Long",
+      "english": "Imperial Citadel of Thang Long",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

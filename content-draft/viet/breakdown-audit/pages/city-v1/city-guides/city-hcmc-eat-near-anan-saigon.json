@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hcmc-eat-near-anan-saigon",
+  "phraseText": "Ăn gần Anăn Sài Gòn",
+  "englishTitle": "Eat near Anan Saigon",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.371Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-eat-near-anan-saigon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Anăn Sài Gòn",
+      "english": "Anan Saigon",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Anăn Sài Gòn",
+      "english": "Eat near Anan Saigon",
+      "audioKey": "audio-authored-an-gan-anan-sai-gon-31374474ed"
+    }
+  ]
+}

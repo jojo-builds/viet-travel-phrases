@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-transport-premium-turn-around",
+  "phraseText": "Xin hãy quay lại.",
+  "englishTitle": "Please turn around.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:56:18.744Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-transport-premium-turn-around",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "quay lại.",
+      "english": "go back / turn around",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy quay lại.",
+      "english": "Please turn around.",
+      "audioKey": "transport-premium-turn-around"
+    }
+  ]
+}

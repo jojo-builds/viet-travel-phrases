@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-family-city-hanoi-entrance-long-bien-market",
+  "phraseText": "Lối vào Chợ Long Biên ở đâu?",
+  "englishTitle": "Where is the entrance to Long Bien Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-entrance-long-bien-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lối vào",
+      "english": "entrance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Long Biên",
+      "english": "Long Bien Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lối vào Chợ Long Biên ở đâu?",
+      "english": "Where is the entrance to Long Bien Market?",
+      "audioKey": "audio-authored-loi-vao-cho-long-bien-o-dau-537f0c2942"
+    }
+  ]
+}

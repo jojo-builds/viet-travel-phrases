@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-nhap-ma-nay-duoc-khong",
+  "phraseText": "Giúp tôi nhập mã này được không?",
+  "englishTitle": "Can you help me enter this code?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.423Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-nhap-ma-nay-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhập",
+      "english": "enter / immigration"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mã",
+      "english": "code"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi nhập mã này được không?",
+      "english": "Can you help me enter this code?",
+      "audioKey": "audio-authored-giup-toi-nhap-ma-nay-duoc-khong-66460fb8f3"
+    }
+  ]
+}

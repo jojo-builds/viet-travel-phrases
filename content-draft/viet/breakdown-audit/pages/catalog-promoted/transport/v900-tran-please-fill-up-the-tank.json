@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-fill-up-the-tank",
+  "phraseText": "Hãy đổ đầy bình.",
+  "englishTitle": "Please fill up the tank.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-fill-up-the-tank",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đổ đầy",
+      "english": "fill up",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bình.",
+      "english": "tank / bottle"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đổ đầy bình.",
+      "english": "Please fill up the tank.",
+      "audioKey": "v900-tran-please-fill-up-the-tank"
+    }
+  ]
+}

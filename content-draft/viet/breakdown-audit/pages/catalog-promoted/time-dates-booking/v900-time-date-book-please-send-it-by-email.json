@@ -4,8 +4,9 @@
   "englishTitle": "Please send it by email",
   "reviewStatus": "reviewed",
   "visualReview": {
-    "status": "pending",
-    "method": "native app required",
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
     "launchArguments": [
       "--detail-page",
       "viet-phrase-v900-time-date-book-please-send-it-by-email",
@@ -13,37 +14,41 @@
       "first-breakdown"
     ]
   },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
   "tokens": [
     {
-      "id": "vui-long",
+      "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite request phrase"
+      "keepTogetherReason": "fixed polite phrase"
     },
     {
-      "id": "gui",
+      "id": "chunk-2",
       "vietnamese": "gửi",
       "english": "send"
     },
     {
-      "id": "no",
+      "id": "chunk-3",
       "vietnamese": "nó",
       "english": "it"
     },
     {
-      "id": "qua",
+      "id": "chunk-4",
       "vietnamese": "qua",
-      "english": "by / via"
+      "english": "through / past"
     },
     {
-      "id": "email",
+      "id": "chunk-5",
       "vietnamese": "email",
       "english": "email"
     },
     {
       "id": "full",
       "vietnamese": "Vui lòng gửi nó qua email",
-      "english": "Please send it by email"
+      "english": "Please send it by email",
+      "audioKey": "v900-time-date-book-please-send-it-by-email"
     }
   ]
 }

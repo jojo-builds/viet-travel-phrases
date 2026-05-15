@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-is-it-across-from-the-cafe",
+  "phraseText": "Nó có ở đối diện quán cà phê không?",
+  "englishTitle": "Is it across from the cafe?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-is-it-across-from-the-cafe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đối diện",
+      "english": "across from",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "quán cà phê",
+      "english": "cafe",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó có ở đối diện quán cà phê không?",
+      "english": "Is it across from the cafe?",
+      "audioKey": "v900-dire-navi-is-it-across-from-the-cafe"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-where-can-i-buy-sunscreen",
+  "phraseText": "Tôi có thể mua kem chống nắng ở đâu?",
+  "englishTitle": "Where can I buy sunscreen?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-where-can-i-buy-sunscreen",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "kem chống nắng",
+      "english": "sunscreen",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể mua kem chống nắng ở đâu?",
+      "english": "Where can I buy sunscreen?",
+      "audioKey": "v900-loca-serv-ever-task-where-can-i-buy-sunscreen"
+    }
+  ]
+}

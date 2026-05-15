@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-phone-premium-otp-not-arriving",
+  "phraseText": "Mã xác minh không đến.",
+  "englishTitle": "The verification code is not arriving.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.330Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-phone-premium-otp-not-arriving",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Mã xác minh",
+      "english": "verification code",
+      "keepTogetherReason": "compound code term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đến.",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mã xác minh không đến.",
+      "english": "The verification code is not arriving.",
+      "audioKey": "phone-premium-otp-not-arriving"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-tran-please-drive-carefully",
+  "phraseText": "Hãy lái xe cẩn thận",
+  "englishTitle": "Please drive carefully",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.349Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-please-drive-carefully",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lái",
+      "english": "drive"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cẩn",
+      "english": "careful"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thận",
+      "english": "careful / kidney"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy lái xe cẩn thận",
+      "english": "Please drive carefully",
+      "audioKey": "v500-tran-please-drive-carefully"
+    }
+  ]
+}

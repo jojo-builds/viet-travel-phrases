@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hoian-place-cao-lau-city",
+  "phraseText": "Cao lầu ở Hội An",
+  "englishTitle": "Cao lau in Hoi An",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.380Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-place-cao-lau-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cao lầu ở Hội An",
+      "english": "Cao lau in Hoi An",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-food-one-portion",
+  "phraseText": "Cho tôi một phần",
+  "englishTitle": "One portion please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-one-portion",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một phần",
+      "english": "one portion",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi một phần",
+      "english": "One portion please",
+      "audioKey": "food-1"
+    }
+  ]
+}

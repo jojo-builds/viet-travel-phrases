@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-the-app-will-not-accept-my-card",
+  "phraseText": "Ứng dụng sẽ không chấp nhận thẻ của tôi",
+  "englishTitle": "The app will not accept my card",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.332Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-the-app-will-not-accept-my-card",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chấp",
+      "english": "accept"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhận",
+      "english": "receive / accept"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ứng dụng sẽ không chấp nhận thẻ của tôi",
+      "english": "The app will not accept my card",
+      "audioKey": "v900-phon-inte-powe-the-app-will-not-accept-my-card"
+    }
+  ]
+}

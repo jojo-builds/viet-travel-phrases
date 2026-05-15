@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-ves-what-time-come-back",
+  "phraseText": "Mấy giờ quay lại?",
+  "englishTitle": "What time do we come back?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.392Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-what-time-come-back",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mấy giờ",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quay lại?",
+      "english": "go back / turn around",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mấy giờ quay lại?",
+      "english": "What time do we come back?",
+      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d"
+    }
+  ]
+}

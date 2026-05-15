@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+  "phraseText": "Phố Phan Đình Phùng",
+  "englishTitle": "Phan Dinh Phung Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.367Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-phan-dinh-phung-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố Phan Đình Phùng",
+      "english": "Phan Dinh Phung Street",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

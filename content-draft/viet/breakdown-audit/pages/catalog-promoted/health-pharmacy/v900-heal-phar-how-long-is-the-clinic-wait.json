@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-how-long-is-the-clinic-wait",
+  "phraseText": "Phòng khám phải đợi bao lâu?",
+  "englishTitle": "How long is the clinic wait?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.312Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-how-long-is-the-clinic-wait",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng khám",
+      "english": "clinic",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đợi",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng khám phải đợi bao lâu?",
+      "english": "How long is the clinic wait?",
+      "audioKey": "v900-heal-phar-how-long-is-the-clinic-wait"
+    }
+  ]
+}

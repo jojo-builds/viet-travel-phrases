@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-emergency-passport",
+  "phraseText": "Tôi mất hộ chiếu",
+  "englishTitle": "I lost my passport",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-emergency-passport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi mất hộ chiếu",
+      "english": "I lost my passport",
+      "audioKey": "emergency-3"
+    }
+  ]
+}

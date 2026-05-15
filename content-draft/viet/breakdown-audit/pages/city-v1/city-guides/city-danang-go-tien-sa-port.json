@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-go-tien-sa-port",
+  "phraseText": "Đi Cảng Tiên Sa",
+  "englishTitle": "Go to Tien Sa Port",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-go-tien-sa-port",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Cảng Tiên Sa",
+      "english": "Tien Sa Port",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Cảng Tiên Sa",
+      "english": "Go to Tien Sa Port",
+      "audioKey": "audio-authored-di-cang-tien-sa-c6af75b73b"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-time-6",
+  "phraseText": "Dời lại muộn hơn được không?",
+  "englishTitle": "Can we move it later?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-time-6",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Dời lại",
+      "english": "move later / postpone",
+      "keepTogetherReason": "compound reschedule verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "muộn",
+      "english": "late"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hơn",
+      "english": "more"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dời lại muộn hơn được không?",
+      "english": "Can we move it later?",
+      "audioKey": "time-6"
+    }
+  ]
+}

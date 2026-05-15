@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-was-bitten-by-an-insect",
+  "phraseText": "Tôi bị côn trùng cắn",
+  "englishTitle": "I was bitten by an insect",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.314Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-was-bitten-by-an-insect",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "vietnamese": "côn trùng",
+      "english": "insect / insects",
+      "keepTogetherReason": "compound insect term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cắn",
+      "english": "bite",
+      "keepTogetherReason": "compound health term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị côn trùng cắn",
+      "english": "I was bitten by an insect",
+      "audioKey": "v900-heal-phar-i-was-bitten-by-an-insect"
+    }
+  ]
+}

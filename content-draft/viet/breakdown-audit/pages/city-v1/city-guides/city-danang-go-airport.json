@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-go-airport",
+  "phraseText": "Đi Sân bay Đà Nẵng",
+  "englishTitle": "Go to Da Nang Airport",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-go-airport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Sân bay Đà Nẵng",
+      "english": "Da Nang Airport",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Sân bay Đà Nẵng",
+      "english": "Go to Da Nang Airport",
+      "audioKey": "audio-authored-di-san-bay-da-nang-4803017169"
+    }
+  ]
+}

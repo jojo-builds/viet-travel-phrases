@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-tran-does-this-bus-go-there",
+  "phraseText": "Xe buýt này có đi đến đó không?",
+  "englishTitle": "Does this bus go there?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-does-this-bus-go-there",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xe buýt",
+      "english": "bus",
+      "keepTogetherReason": "compound vehicle term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xe buýt này có đi đến đó không?",
+      "english": "Does this bus go there?",
+      "audioKey": "v500-tran-does-this-bus-go-there"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-how-are-you-anh",
+  "phraseText": "Anh khỏe không?",
+  "englishTitle": "How are you, older man?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-how-are-you-anh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh",
+      "english": "older man / respectful male address"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "khỏe",
+      "english": "healthy / well"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh khỏe không?",
+      "english": "How are you, older man?",
+      "audioKey": "audio-authored-anh-khoe-khong-942769853d"
+    }
+  ]
+}

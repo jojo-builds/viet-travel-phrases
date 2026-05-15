@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-am-allergic-to-penicillin",
+  "phraseText": "Tôi bị dị ứng với penicillin",
+  "englishTitle": "I am allergic to penicillin",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.312Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-am-allergic-to-penicillin",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị dị ứng",
+      "english": "am allergic",
+      "keepTogetherReason": "fixed health phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "penicillin",
+      "english": "penicillin"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị dị ứng với penicillin",
+      "english": "I am allergic to penicillin",
+      "audioKey": "v900-heal-phar-i-am-allergic-to-penicillin"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bus-ticket-to-the-city",
+  "phraseText": "Mua vé xe buýt vào thành phố ở đâu?",
+  "englishTitle": "Where can I buy a bus ticket to the city?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.293Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bus-ticket-to-the-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vé xe buýt",
+      "english": "bus ticket",
+      "keepTogetherReason": "compound ticket term"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thành phố",
+      "english": "city",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mua vé xe buýt vào thành phố ở đâu?",
+      "english": "Where can I buy a bus ticket to the city?",
+      "audioKey": "v900-airp-bord-arri-where-can-i-buy-a-bus-ticket-to-the-city"
+    }
+  ]
+}

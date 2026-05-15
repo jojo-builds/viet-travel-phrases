@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-do-you-have-this-medicine",
+  "phraseText": "Bạn có thuốc này không?",
+  "englishTitle": "Do you have this medicine?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.312Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-do-you-have-this-medicine",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuốc",
+      "english": "medicine"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thuốc này không?",
+      "english": "Do you have this medicine?",
+      "audioKey": "v900-heal-phar-do-you-have-this-medicine"
+    }
+  ]
+}

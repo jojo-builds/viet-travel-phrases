@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-tam-vi",
+  "phraseText": "Cho tôi xuống gần nhà hàng Tầm Vị.",
+  "englishTitle": "Let me off near Tầm Vị restaurant.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.369Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-tam-vi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xuống",
+      "english": "down / get off"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "Tầm Vị.",
+      "english": "Tam Vi",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi xuống gần nhà hàng Tầm Vị.",
+      "english": "Let me off near Tầm Vị restaurant.",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368"
+    }
+  ]
+}

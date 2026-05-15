@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-nuoc-rua-tay",
+  "phraseText": "Cho tôi nước rửa tay",
+  "englishTitle": "Hand sanitizer, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.447Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-nuoc-rua-tay",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước rửa tay",
+      "english": "hand sanitizer",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi nước rửa tay",
+      "english": "Hand sanitizer, please.",
+      "audioKey": "audio-authored-cho-toi-nuoc-rua-tay-b3c979257d"
+    }
+  ]
+}

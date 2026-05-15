@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-ho-thi-ky-flower-market",
+  "phraseText": "Đi Chợ hoa Hồ Thị Kỷ",
+  "englishTitle": "Go to Ho Thi Ky Flower Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-ho-thi-ky-flower-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ hoa Hồ Thị Kỷ",
+      "english": "Ho Thi Ky Flower Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ hoa Hồ Thị Kỷ",
+      "english": "Go to Ho Thi Ky Flower Market",
+      "audioKey": "audio-authored-di-cho-hoa-ho-thi-ky-33435a6064"
+    }
+  ]
+}

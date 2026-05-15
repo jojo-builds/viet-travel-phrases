@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-v900-tran-where-is-the-boat-pier",
+  "phraseText": "Bến thuyền ở đâu?",
+  "englishTitle": "Where is the boat pier?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-where-is-the-boat-pier",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Bến thuyền",
+      "english": "boat pier",
+      "keepTogetherReason": "compound transport place"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bến thuyền ở đâu?",
+      "english": "Where is the boat pier?",
+      "audioKey": "v900-tran-where-is-the-boat-pier"
+    }
+  ]
+}

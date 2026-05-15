@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-please-leave-me-alone",
+  "phraseText": "Xin hãy để tôi yên",
+  "englishTitle": "Please leave me alone",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-please-leave-me-alone",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "vietnamese": "để tôi yên",
+      "english": "leave me alone",
+      "keepTogetherReason": "fixed safety phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy để tôi yên",
+      "english": "Please leave me alone",
+      "audioKey": "v500-emer-safe-please-leave-me-alone"
+    }
+  ]
+}

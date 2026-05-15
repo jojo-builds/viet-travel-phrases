@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-less-it-me-thoi",
+  "phraseText": "Ít mè thôi",
+  "englishTitle": "Just a little sesame.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.404Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-less-it-me-thoi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít",
+      "english": "less / a little"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mè",
+      "english": "sesame"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít mè thôi",
+      "english": "Just a little sesame.",
+      "audioKey": "audio-authored-it-me-thoi-6168af87f2"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-quay-doi-tien",
+  "phraseText": "Dừng ở quầy đổi tiền",
+  "englishTitle": "Stop at the money exchange counter.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.474Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-quay-doi-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "vietnamese": "đổi tiền",
+      "english": "exchange money",
+      "keepTogetherReason": "compound money action"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở quầy đổi tiền",
+      "english": "Stop at the money exchange counter.",
+      "audioKey": "audio-authored-dung-o-quay-doi-tien-5c5ad86585"
+    }
+  ]
+}

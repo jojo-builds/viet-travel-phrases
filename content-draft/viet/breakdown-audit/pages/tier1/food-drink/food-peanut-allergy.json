@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-food-peanut-allergy",
+  "phraseText": "Tôi bị dị ứng đậu phộng",
+  "englishTitle": "I am allergic to peanuts",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-peanut-allergy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị dị ứng",
+      "english": "am allergic",
+      "keepTogetherReason": "fixed health phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đậu phộng",
+      "english": "peanuts",
+      "keepTogetherReason": "compound food allergy term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị dị ứng đậu phộng",
+      "english": "I am allergic to peanuts",
+      "audioKey": "food-peanut-allergy"
+    }
+  ]
+}

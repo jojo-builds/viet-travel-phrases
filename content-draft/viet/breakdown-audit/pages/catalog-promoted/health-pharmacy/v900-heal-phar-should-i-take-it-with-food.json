@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-should-i-take-it-with-food",
+  "phraseText": "Tôi có nên dùng nó cùng với thức ăn không?",
+  "englishTitle": "Should I take it with food?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.315Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-should-i-take-it-with-food",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nên dùng",
+      "english": "should use / take",
+      "keepTogetherReason": "fixed advice phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cùng",
+      "english": "together"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "vietnamese": "thức ăn",
+      "english": "food",
+      "keepTogetherReason": "compound food noun"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có nên dùng nó cùng với thức ăn không?",
+      "english": "Should I take it with food?",
+      "audioKey": "v900-heal-phar-should-i-take-it-with-food"
+    }
+  ]
+}

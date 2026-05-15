@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-time-open",
+  "phraseText": "Mấy giờ mở cửa?",
+  "englishTitle": "What time does it open?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.283Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-time-open",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mấy giờ",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "vietnamese": "mở cửa?",
+      "english": "open / opening",
+      "keepTogetherReason": "compound business-hours verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mấy giờ mở cửa?",
+      "english": "What time does it open?",
+      "audioKey": "time-5"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-take-me-place-cho-toi-den-ban-huong-dan",
+  "phraseText": "Cho tôi đến bàn hướng dẫn",
+  "englishTitle": "Please take me to the help desk.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.476Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-take-me-place-cho-toi-den-ban-huong-dan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "vietnamese": "bàn hướng dẫn",
+      "english": "information desk",
+      "keepTogetherReason": "compound service-desk term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến bàn hướng dẫn",
+      "english": "Please take me to the help desk.",
+      "audioKey": "audio-authored-cho-toi-den-ban-huong-dan-17f03ec492"
+    }
+  ]
+}

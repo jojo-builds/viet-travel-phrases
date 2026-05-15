@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-ca-phe-den",
+  "phraseText": "Dạ, cho tôi cà phê đen",
+  "englishTitle": "Respectfully, please give me black coffee.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.450Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-ca-phe-den",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cà phê đen",
+      "english": "black coffee",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi cà phê đen",
+      "english": "Respectfully, please give me black coffee.",
+      "audioKey": "audio-authored-da-cho-toi-ca-phe-den-50e6216d92"
+    }
+  ]
+}

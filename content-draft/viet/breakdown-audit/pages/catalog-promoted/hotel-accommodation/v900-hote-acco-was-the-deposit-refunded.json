@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-was-the-deposit-refunded",
+  "phraseText": "Tiền đặt cọc có được hoàn lại không?",
+  "englishTitle": "Was the deposit refunded?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-was-the-deposit-refunded",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đặt",
+      "english": "book / reserve / order"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cọc",
+      "english": "deposit"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hoàn",
+      "english": "refund / return"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tiền đặt cọc có được hoàn lại không?",
+      "english": "Was the deposit refunded?",
+      "audioKey": "v900-hote-acco-was-the-deposit-refunded"
+    }
+  ]
+}
