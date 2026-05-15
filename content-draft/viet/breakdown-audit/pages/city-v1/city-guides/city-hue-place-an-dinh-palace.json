@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hue-place-an-dinh-palace",
+  "phraseText": "Cung An Định",
+  "englishTitle": "An Dinh Palace",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.386Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-an-dinh-palace",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cung An Định",
+      "english": "An Dinh Palace",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

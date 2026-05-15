@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
+  "phraseText": "Vui lòng rẽ trái ở đường tiếp theo",
+  "englishTitle": "Please turn left at the next street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rẽ trái",
+      "english": "turn left",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tiếp",
+      "english": "continue / next"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "theo",
+      "english": "follow"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng rẽ trái ở đường tiếp theo",
+      "english": "Please turn left at the next street",
+      "audioKey": "v900-tran-please-turn-left-at-the-next-street"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+  "phraseText": "Tôi không thể ăn món này vì bị dị ứng",
+  "englishTitle": "I cannot eat this because of an allergy",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.303Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thể",
+      "english": "can / able to"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "món",
+      "english": "dish"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "vì",
+      "english": "because"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "bị dị ứng",
+      "english": "am allergic",
+      "keepTogetherReason": "fixed health phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không thể ăn món này vì bị dị ứng",
+      "english": "I cannot eat this because of an allergy",
+      "audioKey": "v500-food-drin-i-cannot-eat-this-because-of-an-allergy"
+    }
+  ]
+}

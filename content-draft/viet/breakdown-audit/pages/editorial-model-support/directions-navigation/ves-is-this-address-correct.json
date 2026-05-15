@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-ves-is-this-address-correct",
+  "phraseText": "Địa chỉ này đúng không?",
+  "englishTitle": "Is this address correct?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-is-this-address-correct",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Địa chỉ",
+      "english": "address",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đúng không?",
+      "english": "is that correct?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Địa chỉ này đúng không?",
+      "english": "Is this address correct?",
+      "audioKey": "audio-authored-dia-chi-nay-dung-khong-620d046937"
+    }
+  ]
+}

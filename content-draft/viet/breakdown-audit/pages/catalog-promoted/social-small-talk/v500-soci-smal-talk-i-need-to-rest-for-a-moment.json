@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-soci-smal-talk-i-need-to-rest-for-a-moment",
+  "phraseText": "Tôi cần nghỉ ngơi một lát",
+  "englishTitle": "I need to rest for a moment",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.343Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-soci-smal-talk-i-need-to-rest-for-a-moment",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nghỉ ngơi",
+      "english": "rest",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lát",
+      "english": "a moment"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần nghỉ ngơi một lát",
+      "english": "I need to rest for a moment",
+      "audioKey": "v500-soci-smal-talk-i-need-to-rest-for-a-moment"
+    }
+  ]
+}

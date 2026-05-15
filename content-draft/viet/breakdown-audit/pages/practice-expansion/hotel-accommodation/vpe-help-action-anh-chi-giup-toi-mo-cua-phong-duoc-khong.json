@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-mo-cua-phong-duoc-khong",
+  "phraseText": "Giúp tôi mở cửa phòng được không?",
+  "englishTitle": "Can you help me open the room door?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.423Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-mo-cua-phong-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "vietnamese": "mở cửa phòng",
+      "english": "open the room door",
+      "keepTogetherReason": "compound room-door action"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi mở cửa phòng được không?",
+      "english": "Can you help me open the room door?",
+      "audioKey": "audio-authored-giup-toi-mo-cua-phong-duoc-khong-bf904314f1"
+    }
+  ]
+}

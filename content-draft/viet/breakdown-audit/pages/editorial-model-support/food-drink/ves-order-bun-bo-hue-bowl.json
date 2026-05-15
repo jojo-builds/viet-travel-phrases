@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-family-ves-order-bun-bo-hue-bowl",
+  "phraseText": "Dạ, cho tôi một tô bún bò Huế.",
+  "englishTitle": "One bowl of bun bo Hue, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.391Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-order-bun-bo-hue-bowl",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một tô",
+      "english": "one bowl",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bún bò Huế.",
+      "english": "Bun bo Hue",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi một tô bún bò Huế.",
+      "english": "One bowl of bun bo Hue, please.",
+      "audioKey": "audio-authored-da-cho-toi-mot-to-bun-bo-hue-f624687fc3"
+    }
+  ]
+}

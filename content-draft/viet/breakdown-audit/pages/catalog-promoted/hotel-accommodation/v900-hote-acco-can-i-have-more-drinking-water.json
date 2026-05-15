@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-i-have-more-drinking-water",
+  "phraseText": "Tôi có thể uống thêm nước được không?",
+  "englishTitle": "Can I have more drinking water?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.319Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-i-have-more-drinking-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "uống",
+      "english": "drink"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nước",
+      "english": "water"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể uống thêm nước được không?",
+      "english": "Can I have more drinking water?",
+      "audioKey": "v900-hote-acco-can-i-have-more-drinking-water"
+    }
+  ]
+}

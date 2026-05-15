@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-ves-can-you-wait-here",
+  "phraseText": "Anh chờ tôi ở đây được không?",
+  "englishTitle": "Can you wait for me here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-can-you-wait-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh",
+      "english": "older man / respectful male address"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chờ",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh chờ tôi ở đây được không?",
+      "english": "Can you wait for me here?",
+      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762"
+    }
+  ]
+}

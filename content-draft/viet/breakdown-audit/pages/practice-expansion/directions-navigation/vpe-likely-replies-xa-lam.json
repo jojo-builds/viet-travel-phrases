@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-xa-lam",
+  "phraseText": "Xa lắm",
+  "englishTitle": "It is very far",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.428Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-xa-lam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xa",
+      "english": "far"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lắm",
+      "english": "very"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xa lắm",
+      "english": "It is very far",
+      "audioKey": "audio-authored-xa-lam-91a9486a7f"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-i-did-not-agree-to-that-price",
+  "phraseText": "Tôi không đồng ý với mức giá đó",
+  "englishTitle": "I did not agree to that price",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-i-did-not-agree-to-that-price",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đồng ý",
+      "english": "agree",
+      "keepTogetherReason": "compound agreement phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "mức giá",
+      "english": "price level",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không đồng ý với mức giá đó",
+      "english": "I did not agree to that price",
+      "audioKey": "v900-emer-safe-i-did-not-agree-to-that-price"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-noi-bang-tieng-anh-duoc-khong",
+  "phraseText": "Nói bằng tiếng Anh giúp tôi được không?",
+  "englishTitle": "Can you speak in English?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.423Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-noi-bang-tieng-anh-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nói bằng tiếng Anh giúp tôi được không?",
+      "english": "Can you speak in English?",
+      "audioKey": "audio-authored-noi-bang-tieng-anh-giup-toi-duoc-khong-1e2d58aa3a"
+    }
+  ]
+}

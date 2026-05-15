@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-khan-tam-khong",
+  "phraseText": "Có khăn tắm không?",
+  "englishTitle": "Do you have a bath towel?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.411Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-khan-tam-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "khăn tắm",
+      "english": "bath towel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có khăn tắm không?",
+      "english": "Do you have a bath towel?",
+      "audioKey": "audio-authored-co-khan-tam-khong-a1229e5d3e"
+    }
+  ]
+}

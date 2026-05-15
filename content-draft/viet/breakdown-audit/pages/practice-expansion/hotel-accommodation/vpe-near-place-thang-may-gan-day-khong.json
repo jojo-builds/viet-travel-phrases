@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-near-place-thang-may-gan-day-khong",
+  "phraseText": "thang máy gần đây không?",
+  "englishTitle": "Is the elevator nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.433Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-thang-may-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "thang máy",
+      "english": "elevator",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "thang máy gần đây không?",
+      "english": "Is the elevator nearby?",
+      "audioKey": "audio-authored-thang-may-gan-day-khong-3a5c5997a7"
+    }
+  ]
+}

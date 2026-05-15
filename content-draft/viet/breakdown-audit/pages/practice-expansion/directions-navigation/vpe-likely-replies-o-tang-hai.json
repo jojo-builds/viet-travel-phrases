@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-o-tang-hai",
+  "phraseText": "Ở tầng hai",
+  "englishTitle": "It is on the second floor",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-o-tang-hai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tầng",
+      "english": "floor"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hai",
+      "english": "two"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ở tầng hai",
+      "english": "It is on the second floor",
+      "audioKey": "audio-authored-o-tang-hai-4871d37d1c"
+    }
+  ]
+}

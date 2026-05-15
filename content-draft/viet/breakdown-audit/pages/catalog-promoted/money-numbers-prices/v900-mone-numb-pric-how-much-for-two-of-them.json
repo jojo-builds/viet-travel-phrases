@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-how-much-for-two-of-them",
+  "phraseText": "Hai cái đó bao nhiêu?",
+  "englishTitle": "How much for two of them?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-how-much-for-two-of-them",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hai",
+      "english": "two"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hai cái đó bao nhiêu?",
+      "english": "How much for two of them?",
+      "audioKey": "v900-mone-numb-pric-how-much-for-two-of-them"
+    }
+  ]
+}

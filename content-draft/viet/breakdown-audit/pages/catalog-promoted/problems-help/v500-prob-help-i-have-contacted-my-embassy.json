@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-i-have-contacted-my-embassy",
+  "phraseText": "Tôi đã liên lạc với đại sứ quán của tôi",
+  "englishTitle": "I have contacted my embassy",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.336Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-i-have-contacted-my-embassy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "liên",
+      "english": "contact / link"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lạc",
+      "english": "lost / peanut"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đại sứ quán",
+      "english": "embassy",
+      "keepTogetherReason": "compound place term"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã liên lạc với đại sứ quán của tôi",
+      "english": "I have contacted my embassy",
+      "audioKey": "v500-prob-help-i-have-contacted-my-embassy"
+    }
+  ]
+}

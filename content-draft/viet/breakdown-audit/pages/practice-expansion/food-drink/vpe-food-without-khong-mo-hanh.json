@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-without-khong-mo-hanh",
+  "phraseText": "Không mỡ hành",
+  "englishTitle": "No scallion oil.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.406Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-without-khong-mo-hanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mỡ",
+      "english": "fat / grease"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hành",
+      "english": "baggage / onion"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không mỡ hành",
+      "english": "No scallion oil.",
+      "audioKey": "audio-authored-khong-mo-hanh-9f31cdd348"
+    }
+  ]
+}

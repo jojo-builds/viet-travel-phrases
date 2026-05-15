@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+  "phraseText": "Tôi có thể có biên nhận được không?",
+  "englishTitle": "Can I have a receipt?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "biên nhận",
+      "english": "receipt",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể có biên nhận được không?",
+      "english": "Can I have a receipt?",
+      "audioKey": "v500-mone-numb-pric-can-i-have-a-receipt"
+    }
+  ]
+}

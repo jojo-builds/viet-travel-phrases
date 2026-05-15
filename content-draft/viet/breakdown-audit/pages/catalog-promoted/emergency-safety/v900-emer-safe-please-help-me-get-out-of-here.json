@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-please-help-me-get-out-of-here",
+  "phraseText": "Xin hãy giúp tôi ra khỏi đây",
+  "englishTitle": "Please help me get out of here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-please-help-me-get-out-of-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ra",
+      "english": "out"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "khỏi",
+      "english": "out of / from"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy giúp tôi ra khỏi đây",
+      "english": "Please help me get out of here",
+      "audioKey": "v900-emer-safe-please-help-me-get-out-of-here"
+    }
+  ]
+}

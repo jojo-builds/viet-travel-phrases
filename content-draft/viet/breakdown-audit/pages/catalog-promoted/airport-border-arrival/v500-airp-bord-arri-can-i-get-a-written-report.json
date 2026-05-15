@@ -1,0 +1,71 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-can-i-get-a-written-report",
+  "phraseText": "Tôi có thể nhận được một báo cáo bằng văn bản không?",
+  "englishTitle": "Can I get a written report?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.289Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-can-i-get-a-written-report",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhận",
+      "english": "receive / accept"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "bằng văn bản",
+      "english": "in writing",
+      "keepTogetherReason": "fixed document phrase"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể nhận được một báo cáo bằng văn bản không?",
+      "english": "Can I get a written report?",
+      "audioKey": "v500-airp-bord-arri-can-i-get-a-written-report"
+    }
+  ]
+}

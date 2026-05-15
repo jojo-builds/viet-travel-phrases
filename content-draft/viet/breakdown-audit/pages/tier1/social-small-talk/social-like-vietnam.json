@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-social-like-vietnam",
+  "phraseText": "Tôi thích Việt Nam",
+  "englishTitle": "I like Vietnam",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-social-like-vietnam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thích",
+      "english": "like"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Việt Nam",
+      "english": "Vietnam",
+      "keepTogetherReason": "country name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi thích Việt Nam",
+      "english": "I like Vietnam",
+      "audioKey": "smalltalk-4"
+    }
+  ]
+}

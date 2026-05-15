@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-one-item-is-missing",
+  "phraseText": "Một mặt hàng bị thiếu",
+  "englishTitle": "One item is missing",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-one-item-is-missing",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mặt",
+      "english": "face / cash"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hàng",
+      "english": "shop / goods"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thiếu",
+      "english": "missing / short"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Một mặt hàng bị thiếu",
+      "english": "One item is missing",
+      "audioKey": "v500-loca-serv-ever-task-one-item-is-missing"
+    }
+  ]
+}

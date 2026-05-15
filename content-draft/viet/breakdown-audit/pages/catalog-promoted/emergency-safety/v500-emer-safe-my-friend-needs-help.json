@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-my-friend-needs-help",
+  "phraseText": "Bạn tôi cần giúp đỡ",
+  "englishTitle": "My friend needs help",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-my-friend-needs-help",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giúp đỡ",
+      "english": "help",
+      "keepTogetherReason": "compound help verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn tôi cần giúp đỡ",
+      "english": "My friend needs help",
+      "audioKey": "v500-emer-safe-my-friend-needs-help"
+    }
+  ]
+}

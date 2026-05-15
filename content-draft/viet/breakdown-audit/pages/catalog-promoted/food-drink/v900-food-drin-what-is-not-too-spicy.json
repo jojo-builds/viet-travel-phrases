@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-what-is-not-too-spicy",
+  "phraseText": "Cái gì không quá cay?",
+  "englishTitle": "What is not too spicy?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-what-is-not-too-spicy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cay?",
+      "english": "spicy"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái gì không quá cay?",
+      "english": "What is not too spicy?",
+      "audioKey": "v900-food-drin-what-is-not-too-spicy"
+    }
+  ]
+}

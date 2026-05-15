@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-where-place-cho-dau-taxi-o-dau",
+  "phraseText": "chỗ đậu taxi ở đâu?",
+  "englishTitle": "Where is the taxi stand?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.482Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-cho-dau-taxi-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "chỗ",
+      "english": "place / spot"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đậu",
+      "english": "bean / park"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "taxi",
+      "english": "taxi"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "chỗ đậu taxi ở đâu?",
+      "english": "Where is the taxi stand?",
+      "audioKey": "audio-authored-cho-dau-taxi-o-dau-5c18116f6c"
+    }
+  ]
+}

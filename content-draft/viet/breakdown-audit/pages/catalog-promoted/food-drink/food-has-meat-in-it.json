@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-food-premium-has-meat-in-it",
+  "phraseText": "Cái này có thịt trong đó.",
+  "englishTitle": "This has meat in it.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.302Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-food-premium-has-meat-in-it",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thịt",
+      "english": "meat"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đó.",
+      "english": "that"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này có thịt trong đó.",
+      "english": "This has meat in it.",
+      "audioKey": "food-premium-has-meat-in-it"
+    }
+  ]
+}

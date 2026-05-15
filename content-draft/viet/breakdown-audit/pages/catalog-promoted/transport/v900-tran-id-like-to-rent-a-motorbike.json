@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-tran-id-like-to-rent-a-motorbike",
+  "phraseText": "Tôi muốn thuê một chiếc xe máy",
+  "englishTitle": "I’d like to rent a motorbike",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-id-like-to-rent-a-motorbike",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuê",
+      "english": "rent"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "chiếc",
+      "english": "item classifier"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "xe máy",
+      "english": "motorbike",
+      "keepTogetherReason": "compound vehicle term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn thuê một chiếc xe máy",
+      "english": "I’d like to rent a motorbike",
+      "audioKey": "v900-tran-id-like-to-rent-a-motorbike"
+    }
+  ]
+}

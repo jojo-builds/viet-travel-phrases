@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-i-dont-understand-this-word",
+  "phraseText": "Tôi không hiểu từ này",
+  "englishTitle": "I don’t understand this word",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-i-dont-understand-this-word",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hiểu",
+      "english": "understand"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "từ",
+      "english": "from"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không hiểu từ này",
+      "english": "I don’t understand this word",
+      "audioKey": "v500-unde-repa-i-dont-understand-this-word"
+    }
+  ]
+}

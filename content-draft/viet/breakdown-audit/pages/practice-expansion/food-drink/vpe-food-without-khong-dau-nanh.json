@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-without-khong-dau-nanh",
+  "phraseText": "Không đậu nành",
+  "englishTitle": "No soy.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.406Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-without-khong-dau-nanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đậu",
+      "english": "bean / park"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nành",
+      "english": "soy"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không đậu nành",
+      "english": "No soy.",
+      "audioKey": "audio-authored-khong-dau-nanh-815bb8716c"
+    }
+  ]
+}

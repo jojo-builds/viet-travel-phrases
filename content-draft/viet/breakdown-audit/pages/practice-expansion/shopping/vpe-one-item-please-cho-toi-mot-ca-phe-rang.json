@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-rang",
+  "phraseText": "Cho tôi cà phê rang",
+  "englishTitle": "Roasted coffee, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.443Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-rang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cà phê",
+      "english": "coffee",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rang",
+      "english": "roasted"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi cà phê rang",
+      "english": "Roasted coffee, please.",
+      "audioKey": "audio-authored-cho-toi-ca-phe-rang-6fb8418b9d"
+    }
+  ]
+}

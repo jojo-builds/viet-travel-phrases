@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-tran-i-feel-unsafe-please-stop",
+  "phraseText": "Tôi cảm thấy không an toàn, xin hãy dừng lại",
+  "englishTitle": "I feel unsafe, please stop",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-i-feel-unsafe-please-stop",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm thấy",
+      "english": "feel",
+      "keepTogetherReason": "compound feeling verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không an toàn,",
+      "english": "unsafe / not safe",
+      "keepTogetherReason": "fixed safety phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "vietnamese": "dừng lại",
+      "english": "stop",
+      "keepTogetherReason": "compound stop command"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cảm thấy không an toàn, xin hãy dừng lại",
+      "english": "I feel unsafe, please stop",
+      "audioKey": "v500-tran-i-feel-unsafe-please-stop"
+    }
+  ]
+}

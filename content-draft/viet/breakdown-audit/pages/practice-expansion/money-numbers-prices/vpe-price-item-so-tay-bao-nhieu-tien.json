@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-price-item-so-tay-bao-nhieu-tien",
+  "phraseText": "sổ tay bao nhiêu tiền?",
+  "englishTitle": "How much is a notebook?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.461Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-price-item-so-tay-bao-nhieu-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "sổ",
+      "english": "book / notebook"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tay",
+      "english": "hand"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu tiền?",
+      "english": "how much money",
+      "keepTogetherReason": "fixed price question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "sổ tay bao nhiêu tiền?",
+      "english": "How much is a notebook?",
+      "audioKey": "audio-authored-so-tay-bao-nhieu-tien-3bd8e15cb2"
+    }
+  ]
+}

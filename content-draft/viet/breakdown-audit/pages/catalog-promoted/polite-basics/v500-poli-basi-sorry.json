@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v500-poli-basi-sorry",
+  "phraseText": "Lấy làm tiếc",
+  "englishTitle": "Sorry",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-poli-basi-sorry",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "làm",
+      "english": "do / make"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiếc",
+      "english": "regret / sorry"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lấy làm tiếc",
+      "english": "Sorry",
+      "audioKey": "v500-poli-basi-sorry"
+    }
+  ]
+}

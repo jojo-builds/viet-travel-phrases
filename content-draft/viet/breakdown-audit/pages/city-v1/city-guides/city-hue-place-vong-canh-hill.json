@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hue-place-vong-canh-hill",
+  "phraseText": "Đồi Vọng Cảnh",
+  "englishTitle": "Vong Canh Hill",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.388Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-vong-canh-hill",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đồi Vọng Cảnh",
+      "english": "Vong Canh Hill",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

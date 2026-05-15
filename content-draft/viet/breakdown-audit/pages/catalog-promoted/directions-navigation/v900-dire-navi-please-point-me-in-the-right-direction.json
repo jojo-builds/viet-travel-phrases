@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-please-point-me-in-the-right-direction",
+  "phraseText": "Xin hãy chỉ cho tôi đi đúng hướng",
+  "englishTitle": "Please point me in the right direction",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.298Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-please-point-me-in-the-right-direction",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đúng",
+      "english": "correct / right"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "hướng",
+      "english": "direction"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy chỉ cho tôi đi đúng hướng",
+      "english": "Please point me in the right direction",
+      "audioKey": "v900-dire-navi-please-point-me-in-the-right-direction"
+    }
+  ]
+}

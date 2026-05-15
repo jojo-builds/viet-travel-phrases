@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ve-xe-buyt",
+  "phraseText": "Cho tôi vé xe buýt",
+  "englishTitle": "A bus ticket, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.450Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-ve-xe-buyt",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé xe buýt",
+      "english": "bus ticket",
+      "keepTogetherReason": "compound ticket term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi vé xe buýt",
+      "english": "A bus ticket, please.",
+      "audioKey": "audio-authored-cho-toi-ve-xe-buyt-002c50a871"
+    }
+  ]
+}

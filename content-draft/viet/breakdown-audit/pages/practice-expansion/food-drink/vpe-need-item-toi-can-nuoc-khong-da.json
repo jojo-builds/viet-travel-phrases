@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-nuoc-khong-da",
+  "phraseText": "Tôi cần nước không đá",
+  "englishTitle": "I need water without ice.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.438Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-nuoc-khong-da",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước",
+      "english": "water"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không đá",
+      "english": "no ice",
+      "keepTogetherReason": "compound food phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần nước không đá",
+      "english": "I need water without ice.",
+      "audioKey": "audio-authored-toi-can-nuoc-khong-da-86d89a651d"
+    }
+  ]
+}

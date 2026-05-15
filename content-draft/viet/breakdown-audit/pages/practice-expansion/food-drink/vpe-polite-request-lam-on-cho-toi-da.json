@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-polite-request-lam-on-cho-toi-da",
+  "phraseText": "Làm ơn cho tôi đá",
+  "englishTitle": "Please give me ice.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.453Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-lam-on-cho-toi-da",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đá",
+      "english": "ice / iced"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn cho tôi đá",
+      "english": "Please give me ice.",
+      "audioKey": "audio-authored-lam-on-cho-toi-da-7d27a9bb6f"
+    }
+  ]
+}

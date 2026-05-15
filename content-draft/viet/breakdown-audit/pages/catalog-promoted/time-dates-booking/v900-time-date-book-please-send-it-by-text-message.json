@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-please-send-it-by-text-message",
+  "phraseText": "Vui lòng gửi nó bằng tin nhắn văn bản",
+  "englishTitle": "Please send it by text message",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-please-send-it-by-text-message",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "vietnamese": "tin nhắn",
+      "english": "message / text message",
+      "keepTogetherReason": "compound message noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "văn bản",
+      "english": "writing / document",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi nó bằng tin nhắn văn bản",
+      "english": "Please send it by text message",
+      "audioKey": "v900-time-date-book-please-send-it-by-text-message"
+    }
+  ]
+}

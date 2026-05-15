@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-food-coffee-black",
+  "phraseText": "Cho tôi cà phê đen đá",
+  "englishTitle": "I’d like an iced black coffee",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-coffee-black",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cà phê đen",
+      "english": "black coffee",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đá",
+      "english": "ice / iced"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi cà phê đen đá",
+      "english": "I’d like an iced black coffee",
+      "audioKey": "coffee-2"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-how-long-does-it-take-to-get-downtown",
+  "phraseText": "Đi vào trung tâm thành phố mất bao lâu?",
+  "englishTitle": "How long does it take to get downtown?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.292Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-how-long-does-it-take-to-get-downtown",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "trung tâm thành phố",
+      "english": "city center / downtown",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi vào trung tâm thành phố mất bao lâu?",
+      "english": "How long does it take to get downtown?",
+      "audioKey": "v900-airp-bord-arri-how-long-does-it-take-to-get-downtown"
+    }
+  ]
+}

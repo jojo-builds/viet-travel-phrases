@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-where-do-i-scan-the-ticket",
+  "phraseText": "Tôi quét vé ở đâu?",
+  "englishTitle": "Where do I scan the ticket?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-where-do-i-scan-the-ticket",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quét",
+      "english": "scan"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi quét vé ở đâu?",
+      "english": "Where do I scan the ticket?",
+      "audioKey": "v900-time-date-book-where-do-i-scan-the-ticket"
+    }
+  ]
+}

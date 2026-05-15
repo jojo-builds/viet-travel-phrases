@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-does-this-contain-fish-sauce",
+  "phraseText": "Cái này có nước mắm không?",
+  "englishTitle": "Does this contain fish sauce?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.306Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-does-this-contain-fish-sauce",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nước mắm",
+      "english": "fish sauce",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này có nước mắm không?",
+      "english": "Does this contain fish sauce?",
+      "audioKey": "v900-food-drin-does-this-contain-fish-sauce"
+    }
+  ]
+}

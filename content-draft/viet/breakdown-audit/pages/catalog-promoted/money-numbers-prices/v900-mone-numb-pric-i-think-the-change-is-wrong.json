@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-i-think-the-change-is-wrong",
+  "phraseText": "Tôi nghĩ sự thay đổi là sai",
+  "englishTitle": "I think the change is wrong",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-i-think-the-change-is-wrong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sự",
+      "english": "matter / event"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thay",
+      "english": "replace / change"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đổi",
+      "english": "change / exchange"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "sai",
+      "english": "wrong"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ sự thay đổi là sai",
+      "english": "I think the change is wrong",
+      "audioKey": "v900-mone-numb-pric-i-think-the-change-is-wrong"
+    }
+  ]
+}

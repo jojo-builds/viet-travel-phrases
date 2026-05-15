@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-should-i-cross-the-street",
+  "phraseText": "Tôi có nên băng qua đường không?",
+  "englishTitle": "Should I cross the street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.298Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-should-i-cross-the-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nên",
+      "english": "should"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "băng qua",
+      "english": "cross",
+      "keepTogetherReason": "compound direction verb"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có nên băng qua đường không?",
+      "english": "Should I cross the street?",
+      "audioKey": "v900-dire-navi-should-i-cross-the-street"
+    }
+  ]
+}

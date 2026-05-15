@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-is-there-an-english-guide",
+  "phraseText": "Có hướng dẫn tiếng Anh không?",
+  "englishTitle": "Is there an English guide?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-is-there-an-english-guide",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "hướng dẫn",
+      "english": "instructions / guide",
+      "keepTogetherReason": "compound instruction term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có hướng dẫn tiếng Anh không?",
+      "english": "Is there an English guide?",
+      "audioKey": "v900-sigh-acti-is-there-an-english-guide"
+    }
+  ]
+}

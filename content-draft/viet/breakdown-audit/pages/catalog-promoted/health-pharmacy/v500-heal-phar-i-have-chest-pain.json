@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-heal-phar-i-have-chest-pain",
+  "phraseText": "Tôi bị đau ngực",
+  "englishTitle": "I have chest pain",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.310Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-heal-phar-i-have-chest-pain",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị đau",
+      "english": "hurts / has pain",
+      "keepTogetherReason": "fixed symptom phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ngực",
+      "english": "chest"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị đau ngực",
+      "english": "I have chest pain",
+      "audioKey": "v500-heal-phar-i-have-chest-pain"
+    }
+  ]
+}

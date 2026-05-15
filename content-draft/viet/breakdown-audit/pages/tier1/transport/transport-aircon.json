@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-transport-aircon",
+  "phraseText": "Mở máy lạnh giúp tôi",
+  "englishTitle": "Please turn on the air conditioning",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-aircon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mở",
+      "english": "open"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "máy lạnh",
+      "english": "air conditioner",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mở máy lạnh giúp tôi",
+      "english": "Please turn on the air conditioning",
+      "audioKey": "taxi-5"
+    }
+  ]
+}

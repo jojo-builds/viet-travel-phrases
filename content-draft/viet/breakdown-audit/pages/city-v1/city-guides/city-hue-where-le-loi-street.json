@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-le-loi-street",
+  "phraseText": "Đường Lê Lợi ở đâu?",
+  "englishTitle": "Where is Le Loi Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-le-loi-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Lê Lợi",
+      "english": "Le Loi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đường Lê Lợi ở đâu?",
+      "english": "Where is Le Loi Street?",
+      "audioKey": "audio-authored-duong-le-loi-o-dau-e8a43e5e8c"
+    }
+  ]
+}

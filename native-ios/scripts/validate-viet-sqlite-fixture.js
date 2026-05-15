@@ -127,12 +127,25 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-hello-chao",
   "viet-phrase-hello-chao-ban",
   "viet-phrase-hello-da-chao-anh-chi",
+  "viet-family-food-to-go",
+  "viet-phrase-coffee-6",
   "viet-phrase-help-1",
+  "viet-phrase-polite-2",
   "viet-phrase-polite-3",
   "viet-phrase-polite-5",
+  "viet-phrase-v500-poli-basi-okay",
+  "viet-phrase-polite-thank-you-polite",
   "viet-phrase-repair-4",
   "viet-phrase-repair-english-help",
   "viet-phrase-repair-number-amount",
+  "viet-phrase-time-1",
+  "viet-phrase-time-2",
+  "viet-phrase-vpe-food-without-khong-da",
+  "viet-phrase-vpe-food-without-khong-duong",
+  "viet-phrase-vpe-likely-replies-di-thang",
+  "viet-phrase-vpe-likely-replies-gan-day",
+  "viet-phrase-vpe-likely-replies-re-phai",
+  "viet-phrase-vpe-likely-replies-re-trai",
   "viet-phrase-ves-can-you-show-me-politeness",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
@@ -269,6 +282,19 @@ function main() {
     'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
     'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
     'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioPhraseRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'phrase' AND severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioBreakdownRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'breakdown_token' AND severity = 'planned' AND release_blocking = 0),
+    'duplicatedPlannedMissingAudioTexts', (
+      SELECT count(*)
+      FROM (
+        SELECT normalized_expected_text
+        FROM missing_audio_audit
+        WHERE severity = 'planned'
+          AND release_blocking = 0
+        GROUP BY normalized_expected_text
+        HAVING count(*) > 1
+      )
+    ),
     'cities', (SELECT count(*) FROM city),
     'cityPlaces', (SELECT count(*) FROM city_place),
     'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
@@ -339,7 +365,8 @@ function main() {
   assertEqual(counts.plannedMissingAudioAuditRows, counts.missingAudioAuditRows, "missing audio audit rows should all be planned");
   assertEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "release-blocking missing audio audit rows");
   assertEqual(counts.plannedMissingAudioAuditRows, plannedAudioQueueRows, "planned missing audio queue rows");
-  assertTrue(counts.plannedMissingAudioAuditRows <= plannedAudioSourcePhraseCount, "planned missing audio rows must be deduped by normalized expected text");
+  assertTrue(counts.plannedMissingAudioPhraseRows <= plannedAudioSourcePhraseCount, "planned phrase missing audio rows must be deduped by normalized expected text");
+  assertZero(counts.duplicatedPlannedMissingAudioTexts, "duplicated planned missing audio normalized text rows");
   assertTrue(plannedAudioSourcePhraseCount >= cityLibraryPages.length, "planned source phrases should include at least the city-library pages");
   assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
   assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
@@ -832,8 +859,18 @@ function main() {
       GROUP BY pp.id, pp.title
       HAVING pp.title LIKE '% %'
          AND token_count = 1
+         AND pp.id NOT IN (${reviewedCompoundPhrasePageIDSQL})
+         AND NOT EXISTS (
+           SELECT 1
+           FROM phrase_city_tag pct
+           WHERE pct.phrase_id = pp.phrase_id
+             AND (
+               pct.page_kind IN ('place', 'restaurant', 'dish', 'street')
+               OR pct.place_kind IN ('place', 'restaurant', 'dish', 'street')
+             )
+         )
     );
-  `), "multiword pages with only one breakdown token");
+  `), "non-entity multiword pages with only one breakdown token");
 
   assertZero(sqliteValue(`
     SELECT count(*)

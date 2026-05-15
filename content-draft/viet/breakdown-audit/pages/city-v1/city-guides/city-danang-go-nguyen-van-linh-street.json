@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-go-nguyen-van-linh-street",
+  "phraseText": "Đi Đường Nguyễn Văn Linh",
+  "englishTitle": "Go to Nguyen Van Linh Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-go-nguyen-van-linh-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Đường Nguyễn Văn Linh",
+      "english": "Nguyen Van Linh Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Đường Nguyễn Văn Linh",
+      "english": "Go to Nguyen Van Linh Street",
+      "audioKey": "audio-authored-di-duong-nguyen-van-linh-1041762d59"
+    }
+  ]
+}

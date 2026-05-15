@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-my-phone-got-wet",
+  "phraseText": "Điện thoại của tôi bị ướt",
+  "englishTitle": "My phone got wet",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-my-phone-got-wet",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ướt",
+      "english": "wet"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điện thoại của tôi bị ướt",
+      "english": "My phone got wet",
+      "audioKey": "v500-phon-inte-powe-my-phone-got-wet"
+    }
+  ]
+}

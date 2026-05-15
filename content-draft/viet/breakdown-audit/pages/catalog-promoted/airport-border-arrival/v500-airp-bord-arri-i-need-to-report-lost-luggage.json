@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-i-need-to-report-lost-luggage",
+  "phraseText": "Tôi cần báo cáo hành lý thất lạc",
+  "englishTitle": "I need to report lost luggage",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-i-need-to-report-lost-luggage",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thất lạc",
+      "english": "lost / missing",
+      "keepTogetherReason": "compound problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần báo cáo hành lý thất lạc",
+      "english": "I need to report lost luggage",
+      "audioKey": "v500-airp-bord-arri-i-need-to-report-lost-luggage"
+    }
+  ]
+}

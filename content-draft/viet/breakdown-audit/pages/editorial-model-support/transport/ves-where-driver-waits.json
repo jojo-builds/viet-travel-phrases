@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-ves-where-driver-waits",
+  "phraseText": "Tài xế chờ ở đâu?",
+  "englishTitle": "Where does the driver wait?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.392Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-where-driver-waits",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tài xế",
+      "english": "driver",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chờ",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tài xế chờ ở đâu?",
+      "english": "Where does the driver wait?",
+      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5"
+    }
+  ]
+}

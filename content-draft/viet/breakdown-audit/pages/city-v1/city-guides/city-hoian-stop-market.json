@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-stop-market",
+  "phraseText": "Dừng ở Chợ Hội An",
+  "englishTitle": "Stop at Hoi An Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Hội An",
+      "english": "Hoi An Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Chợ Hội An",
+      "english": "Stop at Hoi An Market",
+      "audioKey": "audio-authored-dung-o-cho-hoi-an-5fbe5198c4"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-health-symptom-toi-bi-dau-tai",
+  "phraseText": "Tôi bị đau tai",
+  "englishTitle": "I have ear pain.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.418Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-health-symptom-toi-bi-dau-tai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị đau",
+      "english": "hurts / has pain",
+      "keepTogetherReason": "fixed symptom phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tai",
+      "english": "accident / ear"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị đau tai",
+      "english": "I have ear pain.",
+      "audioKey": "audio-authored-toi-bi-dau-tai-51b00083a6"
+    }
+  ]
+}

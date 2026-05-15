@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-how-much-to-district-1",
+  "phraseText": "Đến Quận 1 bao nhiêu?",
+  "englishTitle": "How much to District 1?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.289Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-how-much-to-district-1",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Quận 1",
+      "english": "District 1",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đến Quận 1 bao nhiêu?",
+      "english": "How much to District 1?",
+      "audioKey": "v500-airp-bord-arri-how-much-to-district-1"
+    }
+  ]
+}

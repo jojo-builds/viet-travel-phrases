@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-landmark-81",
+  "phraseText": "Landmark 81",
+  "englishTitle": "Landmark 81",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-landmark-81",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Landmark 81",
+      "english": "Landmark 81",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

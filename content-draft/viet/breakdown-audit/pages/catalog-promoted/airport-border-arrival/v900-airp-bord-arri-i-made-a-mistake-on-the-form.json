@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-i-made-a-mistake-on-the-form",
+  "phraseText": "Tôi đã mắc lỗi trong biểu mẫu",
+  "englishTitle": "I made a mistake on the form",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.292Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-i-made-a-mistake-on-the-form",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mắc",
+      "english": "expensive / stuck"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lỗi",
+      "english": "mistake / fault"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "biểu mẫu",
+      "english": "form",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã mắc lỗi trong biểu mẫu",
+      "english": "I made a mistake on the form",
+      "audioKey": "v900-airp-bord-arri-i-made-a-mistake-on-the-form"
+    }
+  ]
+}

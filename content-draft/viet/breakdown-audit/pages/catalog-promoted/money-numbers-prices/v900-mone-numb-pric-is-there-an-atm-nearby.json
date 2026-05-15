@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
+  "phraseText": "Có máy ATM nào gần đây không?",
+  "englishTitle": "Is there an ATM nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "máy",
+      "english": "machine"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có máy ATM nào gần đây không?",
+      "english": "Is there an ATM nearby?",
+      "audioKey": "v900-mone-numb-pric-is-there-an-atm-nearby"
+    }
+  ]
+}

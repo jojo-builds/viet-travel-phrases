@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
+  "phraseText": "Vui lòng in nó bằng màu đen và trắng",
+  "englishTitle": "Please print it in black and white",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "in",
+      "english": "print"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "màu",
+      "english": "color"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đen",
+      "english": "black"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "và",
+      "english": "and"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "trắng",
+      "english": "white"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng in nó bằng màu đen và trắng",
+      "english": "Please print it in black and white",
+      "audioKey": "v900-loca-serv-ever-task-please-print-it-in-black-and-white"
+    }
+  ]
+}

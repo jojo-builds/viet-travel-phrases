@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-where-market",
+  "phraseText": "Chợ Hội An ở đâu?",
+  "englishTitle": "Where is Hoi An Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.383Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-where-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Hội An",
+      "english": "Hoi An Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Hội An ở đâu?",
+      "english": "Where is Hoi An Market?",
+      "audioKey": "audio-authored-cho-hoi-an-o-dau-914a7752f7"
+    }
+  ]
+}

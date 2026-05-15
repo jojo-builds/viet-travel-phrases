@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hoian-place-memories-land",
+  "phraseText": "Đảo Ký ức Hội An",
+  "englishTitle": "Hoi An Memories Land",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.381Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-place-memories-land",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đảo Ký ức Hội An",
+      "english": "Hoi An Memories Land",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

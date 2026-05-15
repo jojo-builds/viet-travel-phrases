@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-do-you-have-anything-available-today",
+  "phraseText": "Hôm nay bạn có sẵn thứ gì không?",
+  "englishTitle": "Do you have anything available today?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-do-you-have-anything-available-today",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sẵn",
+      "english": "ready / available"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thứ",
+      "english": "thing"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hôm nay bạn có sẵn thứ gì không?",
+      "english": "Do you have anything available today?",
+      "audioKey": "v900-time-date-book-do-you-have-anything-available-today"
+    }
+  ]
+}

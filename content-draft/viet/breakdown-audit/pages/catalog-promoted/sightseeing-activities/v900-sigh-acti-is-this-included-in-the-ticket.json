@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-is-this-included-in-the-ticket",
+  "phraseText": "Cái này có bao gồm trong vé không?",
+  "englishTitle": "Is this included in the ticket?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-is-this-included-in-the-ticket",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gồm",
+      "english": "include"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này có bao gồm trong vé không?",
+      "english": "Is this included in the ticket?",
+      "audioKey": "v900-sigh-acti-is-this-included-in-the-ticket"
+    }
+  ]
+}

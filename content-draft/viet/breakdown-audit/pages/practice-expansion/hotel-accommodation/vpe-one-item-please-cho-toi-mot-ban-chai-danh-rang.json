@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang",
+  "phraseText": "Cho tôi bàn chải đánh răng",
+  "englishTitle": "A toothbrush, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.443Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bàn chải đánh răng",
+      "english": "toothbrush",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi bàn chải đánh răng",
+      "english": "A toothbrush, please.",
+      "audioKey": "audio-authored-cho-toi-ban-chai-danh-rang-1165853a38"
+    }
+  ]
+}

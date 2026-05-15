@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-what-is-the-exchange-rate",
+  "phraseText": "Tỷ giá hối đoái là gì?",
+  "englishTitle": "What is the exchange rate?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-what-is-the-exchange-rate",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Tỷ giá hối đoái",
+      "english": "exchange rate",
+      "keepTogetherReason": "compound money term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tỷ giá hối đoái là gì?",
+      "english": "What is the exchange rate?",
+      "audioKey": "v900-mone-numb-pric-what-is-the-exchange-rate"
+    }
+  ]
+}

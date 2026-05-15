@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-where-place-bai-dau-xe-o-dau",
+  "phraseText": "bãi đậu xe ở đâu?",
+  "englishTitle": "Where is the parking lot?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.481Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-bai-dau-xe-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "bãi",
+      "english": "beach / lot"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đậu",
+      "english": "bean / park"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "bãi đậu xe ở đâu?",
+      "english": "Where is the parking lot?",
+      "audioKey": "audio-authored-bai-dau-xe-o-dau-3c63264fcb"
+    }
+  ]
+}

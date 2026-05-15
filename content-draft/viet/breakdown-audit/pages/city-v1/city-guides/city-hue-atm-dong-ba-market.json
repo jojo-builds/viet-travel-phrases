@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hue-atm-dong-ba-market",
+  "phraseText": "Có ATM gần Chợ Đông Ba không?",
+  "englishTitle": "Is there an ATM near Dong Ba Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.384Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-atm-dong-ba-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Chợ Đông Ba",
+      "english": "Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Chợ Đông Ba không?",
+      "english": "Is there an ATM near Dong Ba Market?",
+      "audioKey": "audio-authored-co-atm-gan-cho-dong-ba-khong-ceaeaf03df"
+    }
+  ]
+}

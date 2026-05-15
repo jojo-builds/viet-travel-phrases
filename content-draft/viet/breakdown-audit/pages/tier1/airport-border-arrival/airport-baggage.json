@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-airport-baggage",
+  "phraseText": "Lấy hành lý ở đâu?",
+  "englishTitle": "Where is baggage claim?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.281Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-baggage",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lấy hành lý ở đâu?",
+      "english": "Where is baggage claim?",
+      "audioKey": "airport-2"
+    }
+  ]
+}

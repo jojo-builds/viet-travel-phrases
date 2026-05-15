@@ -1,0 +1,52 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-my-map-app-is-not-working",
+  "phraseText": "Ứng dụng bản đồ của tôi không hoạt động",
+  "englishTitle": "My map app is not working",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-my-map-app-is-not-working",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bản đồ",
+      "english": "map",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không hoạt động",
+      "english": "not working",
+      "keepTogetherReason": "fixed negative phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ứng dụng bản đồ của tôi không hoạt động",
+      "english": "My map app is not working",
+      "audioKey": "v500-dire-navi-my-map-app-is-not-working"
+    }
+  ]
+}

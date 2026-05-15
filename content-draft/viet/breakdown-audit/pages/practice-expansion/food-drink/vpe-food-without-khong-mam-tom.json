@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-food-without-khong-mam-tom",
+  "phraseText": "Không mắm tôm",
+  "englishTitle": "No shrimp paste.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.406Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-without-khong-mam-tom",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mắm",
+      "english": "fish sauce"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôm",
+      "english": "shrimp"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không mắm tôm",
+      "english": "No shrimp paste.",
+      "audioKey": "audio-authored-khong-mam-tom-6205a60155"
+    }
+  ]
+}

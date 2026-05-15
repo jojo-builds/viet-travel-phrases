@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-city-hue-place-royal-antiquities-museum",
+  "phraseText": "Bảo tàng Cổ vật Cung đình Huế",
+  "englishTitle": "Hue Museum of Royal Antiquities",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.387Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-royal-antiquities-museum",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bảo",
+      "english": "insurance / tell"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tàng",
+      "english": "museum"
+    },
+    {
+      "vietnamese": "Cổ vật",
+      "english": "antiquities",
+      "keepTogetherReason": "compound museum term"
+    },
+    {
+      "vietnamese": "Cung đình",
+      "english": "royal court",
+      "keepTogetherReason": "compound heritage term"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "Huế",
+      "english": "Hue style / city name in the dish"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bảo tàng Cổ vật Cung đình Huế",
+      "english": "Hue Museum of Royal Antiquities",
+      "audioKey": "audio-authored-bao-tang-co-vat-cung-dinh-hue-f79a38abcb"
+    }
+  ]
+}

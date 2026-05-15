@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-v500-tran-please-go-straight",
+  "phraseText": "Hãy đi thẳng",
+  "englishTitle": "Please go straight",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.349Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-please-go-straight",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đi thẳng",
+      "english": "go straight",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đi thẳng",
+      "english": "Please go straight",
+      "audioKey": "v500-tran-please-go-straight"
+    }
+  ]
+}

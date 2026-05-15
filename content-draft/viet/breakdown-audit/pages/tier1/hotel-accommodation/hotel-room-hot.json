@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-hotel-room-hot",
+  "phraseText": "Phòng này nóng quá",
+  "englishTitle": "This room is too hot",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-hotel-room-hot",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nóng",
+      "english": "hot"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng này nóng quá",
+      "english": "This room is too hot",
+      "audioKey": "hotel-4"
+    }
+  ]
+}

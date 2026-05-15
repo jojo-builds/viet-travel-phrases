@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-directions-turn-left",
+  "phraseText": "Rẽ trái ở đâu?",
+  "englishTitle": "Where do I turn left?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-directions-turn-left",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Rẽ trái",
+      "english": "turn left",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Rẽ trái ở đâu?",
+      "english": "Where do I turn left?",
+      "audioKey": "directions-4"
+    }
+  ]
+}

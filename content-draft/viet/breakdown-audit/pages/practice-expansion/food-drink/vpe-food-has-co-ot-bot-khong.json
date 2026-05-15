@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-food-has-co-ot-bot-khong",
+  "phraseText": "Có ớt bột không?",
+  "englishTitle": "Does it have chili powder?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.403Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-has-co-ot-bot-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ớt",
+      "english": "chili"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bột",
+      "english": "powder"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ớt bột không?",
+      "english": "Does it have chili powder?",
+      "audioKey": "audio-authored-co-ot-bot-khong-a16715e3e2"
+    }
+  ]
+}

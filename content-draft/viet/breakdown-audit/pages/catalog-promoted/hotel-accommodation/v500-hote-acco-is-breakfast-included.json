@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-is-breakfast-included",
+  "phraseText": "Có bao gồm bữa sáng không?",
+  "englishTitle": "Is breakfast included?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-is-breakfast-included",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gồm",
+      "english": "include"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bữa",
+      "english": "meal"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sáng",
+      "english": "morning / light"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bao gồm bữa sáng không?",
+      "english": "Is breakfast included?",
+      "audioKey": "v500-hote-acco-is-breakfast-included"
+    }
+  ]
+}

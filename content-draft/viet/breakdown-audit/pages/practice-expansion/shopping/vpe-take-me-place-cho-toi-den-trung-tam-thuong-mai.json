@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-take-me-place-cho-toi-den-trung-tam-thuong-mai",
+  "phraseText": "Cho tôi đến trung tâm thương mại",
+  "englishTitle": "Please take me to the mall.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.481Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-take-me-place-cho-toi-den-trung-tam-thuong-mai",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "vietnamese": "trung tâm thương mại",
+      "english": "shopping mall",
+      "keepTogetherReason": "compound shopping-place term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến trung tâm thương mại",
+      "english": "Please take me to the mall.",
+      "audioKey": "audio-authored-cho-toi-den-trung-tam-thuong-mai-52b6c7e2d9"
+    }
+  ]
+}

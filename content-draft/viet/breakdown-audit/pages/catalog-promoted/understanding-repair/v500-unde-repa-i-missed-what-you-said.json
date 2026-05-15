@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-i-missed-what-you-said",
+  "phraseText": "Tôi đã bỏ lỡ những gì bạn nói",
+  "englishTitle": "I missed what you said",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-i-missed-what-you-said",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bỏ",
+      "english": "remove / leave"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lỡ",
+      "english": "miss / accidentally"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "những",
+      "english": "those / plural marker"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã bỏ lỡ những gì bạn nói",
+      "english": "I missed what you said",
+      "audioKey": "v500-unde-repa-i-missed-what-you-said"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-can-i-pay-now",
+  "phraseText": "Tôi có thể thanh toán bây giờ được không?",
+  "englishTitle": "Can I pay now?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-can-i-pay-now",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bây giờ",
+      "english": "now",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể thanh toán bây giờ được không?",
+      "english": "Can I pay now?",
+      "audioKey": "v500-hote-acco-can-i-pay-now"
+    }
+  ]
+}

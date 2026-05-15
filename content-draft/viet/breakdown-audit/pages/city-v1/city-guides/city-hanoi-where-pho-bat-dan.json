@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-pho-bat-dan",
+  "phraseText": "Phở Bát Đàn ở đâu?",
+  "englishTitle": "Where is Pho Bat Dan?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-pho-bat-dan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phở Bát Đàn",
+      "english": "Pho Bat Dan",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phở Bát Đàn ở đâu?",
+      "english": "Where is Pho Bat Dan?",
+      "audioKey": "audio-authored-pho-bat-dan-o-dau-83990a6d09"
+    }
+  ]
+}

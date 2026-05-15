@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-a-table-for-four-please",
+  "phraseText": "Vui lòng cho một bàn cho bốn người",
+  "englishTitle": "A table for four, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.304Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-a-table-for-four-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "provide"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bàn",
+      "english": "table"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cho",
+      "english": "for"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "bốn",
+      "english": "four"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng cho một bàn cho bốn người",
+      "english": "A table for four, please",
+      "audioKey": "v900-food-drin-a-table-for-four-please"
+    }
+  ]
+}

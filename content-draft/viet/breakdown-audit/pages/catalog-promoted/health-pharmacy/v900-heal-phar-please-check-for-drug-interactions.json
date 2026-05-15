@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-please-check-for-drug-interactions",
+  "phraseText": "Vui lòng kiểm tra tương tác thuốc",
+  "englishTitle": "Please check for drug interactions",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.314Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-please-check-for-drug-interactions",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "kiểm tra",
+      "english": "check",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "vietnamese": "tương tác thuốc",
+      "english": "drug interactions",
+      "keepTogetherReason": "compound medical term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng kiểm tra tương tác thuốc",
+      "english": "Please check for drug interactions",
+      "audioKey": "v900-heal-phar-please-check-for-drug-interactions"
+    }
+  ]
+}

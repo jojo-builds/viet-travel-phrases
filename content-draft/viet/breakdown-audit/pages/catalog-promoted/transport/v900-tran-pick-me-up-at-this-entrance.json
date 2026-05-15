@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-tran-pick-me-up-at-this-entrance",
+  "phraseText": "Hãy đón tôi ở lối vào này",
+  "englishTitle": "Please pick me up at this entrance",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-pick-me-up-at-this-entrance",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đón",
+      "english": "pick up"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lối vào",
+      "english": "entrance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đón tôi ở lối vào này",
+      "english": "Please pick me up at this entrance",
+      "audioKey": "v900-tran-pick-me-up-at-this-entrance"
+    }
+  ]
+}

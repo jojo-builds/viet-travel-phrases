@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hcmc-where-ben-thanh",
+  "phraseText": "Chợ Bến Thành ở đâu?",
+  "englishTitle": "Where is Ben Thanh Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.377Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-where-ben-thanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Bến Thành",
+      "english": "Ben Thanh Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Bến Thành ở đâu?",
+      "english": "Where is Ben Thanh Market?",
+      "audioKey": "audio-authored-cho-ben-thanh-o-dau-bb40bb0327"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-bang-ca-nhan",
+  "phraseText": "Dạ, cho tôi băng cá nhân",
+  "englishTitle": "Respectfully, please give me bandages.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.450Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-bang-ca-nhan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "băng cá nhân",
+      "english": "bandages",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi băng cá nhân",
+      "english": "Respectfully, please give me bandages.",
+      "audioKey": "audio-authored-da-cho-toi-bang-ca-nhan-fe60f58471"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-i-am-staying-at-this-hotel",
+  "phraseText": "Tôi đang ở khách sạn này",
+  "englishTitle": "I am staying at this hotel",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-i-am-staying-at-this-hotel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đang ở",
+      "english": "am staying at / am at",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đang ở khách sạn này",
+      "english": "I am staying at this hotel",
+      "audioKey": "v500-airp-bord-arri-i-am-staying-at-this-hotel"
+    }
+  ]
+}

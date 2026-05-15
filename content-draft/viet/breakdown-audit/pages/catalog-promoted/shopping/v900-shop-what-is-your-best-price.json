@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-shop-what-is-your-best-price",
+  "phraseText": "Giá tốt nhất của bạn là gì?",
+  "englishTitle": "What is your best price?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-what-is-your-best-price",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Giá tốt",
+      "english": "good price",
+      "keepTogetherReason": "compound price phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhất",
+      "english": "most / first"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "của bạn",
+      "english": "your",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giá tốt nhất của bạn là gì?",
+      "english": "What is your best price?",
+      "audioKey": "v900-shop-what-is-your-best-price"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-food-premium-has-peanuts",
+  "phraseText": "Cái này có đậu phộng không?",
+  "englishTitle": "Does this have peanuts?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.302Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-food-premium-has-peanuts",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đậu phộng",
+      "english": "peanuts",
+      "keepTogetherReason": "compound food allergy term"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này có đậu phộng không?",
+      "english": "Does this have peanuts?",
+      "audioKey": "food-premium-has-peanuts"
+    }
+  ]
+}

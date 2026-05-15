@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-near-place-quay-doi-tien-gan-day-khong",
+  "phraseText": "quầy đổi tiền gần đây không?",
+  "englishTitle": "Is the money exchange counter nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.432Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-quay-doi-tien-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "vietnamese": "đổi tiền",
+      "english": "exchange money",
+      "keepTogetherReason": "compound money action"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy đổi tiền gần đây không?",
+      "english": "Is the money exchange counter nearby?",
+      "audioKey": "audio-authored-quay-doi-tien-gan-day-khong-5c8e22c2fc"
+    }
+  ]
+}

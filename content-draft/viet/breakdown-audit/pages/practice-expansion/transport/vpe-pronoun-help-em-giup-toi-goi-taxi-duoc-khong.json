@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-vpe-pronoun-help-em-giup-toi-goi-taxi-duoc-khong",
+  "phraseText": "Em giúp tôi gọi taxi được không?",
+  "englishTitle": "Can you help me call a taxi?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.469Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-pronoun-help-em-giup-toi-goi-taxi-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Em",
+      "english": "younger person"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "taxi",
+      "english": "taxi"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Em giúp tôi gọi taxi được không?",
+      "english": "Can you help me call a taxi?",
+      "audioKey": "audio-authored-em-giup-toi-goi-taxi-duoc-khong-d6a5828121"
+    }
+  ]
+}

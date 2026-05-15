@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-dao-cao-khong",
+  "phraseText": "Có dao cạo không?",
+  "englishTitle": "Do you have a razor?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.410Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-dao-cao-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "dao",
+      "english": "knife"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cạo",
+      "english": "shave"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có dao cạo không?",
+      "english": "Do you have a razor?",
+      "audioKey": "audio-authored-co-dao-cao-khong-a88c64cbc7"
+    }
+  ]
+}

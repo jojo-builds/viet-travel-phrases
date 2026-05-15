@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-transport-meter",
+  "phraseText": "Làm ơn bật đồng hồ giúp tôi",
+  "englishTitle": "Please use the meter",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-meter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bật",
+      "english": "turn on"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đồng",
+      "english": "dong / currency"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hồ",
+      "english": "lake / clock"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+      "english": "Please use the meter",
+      "audioKey": "transport-meter"
+    }
+  ]
+}

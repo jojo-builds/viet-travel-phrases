@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-ve-vao-cua-khong",
+  "phraseText": "Có vé vào cửa không?",
+  "englishTitle": "Do you have an entrance ticket?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.417Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-ve-vao-cua-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "vé vào cửa",
+      "english": "entrance ticket",
+      "keepTogetherReason": "compound ticket noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có vé vào cửa không?",
+      "english": "Do you have an entrance ticket?",
+      "audioKey": "audio-authored-co-ve-vao-cua-khong-52e61e6463"
+    }
+  ]
+}

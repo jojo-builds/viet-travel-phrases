@@ -1,0 +1,78 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-im-trying-but-i-dont-know-the-right-words",
+  "phraseText": "Tôi đang cố gắng nhưng không biết dùng từ thích hợp",
+  "englishTitle": "I’m trying, but I don’t know the right words",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.358Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-im-trying-but-i-dont-know-the-right-words",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "vietnamese": "cố gắng",
+      "english": "try / make an effort",
+      "keepTogetherReason": "compound effort verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhưng",
+      "english": "but"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "biết",
+      "english": "know"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "dùng",
+      "english": "use"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "từ",
+      "english": "from"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "thích",
+      "english": "like"
+    },
+    {
+      "id": "chunk-11",
+      "vietnamese": "hợp",
+      "english": "suitable / combine"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đang cố gắng nhưng không biết dùng từ thích hợp",
+      "english": "I’m trying, but I don’t know the right words",
+      "audioKey": "v900-unde-repa-im-trying-but-i-dont-know-the-right-words"
+    }
+  ]
+}

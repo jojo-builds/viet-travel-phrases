@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-do-you-mean-today-or-tomorrow",
+  "phraseText": "Ý bạn là hôm nay hay ngày mai?",
+  "englishTitle": "Do you mean today or tomorrow?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.357Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-do-you-mean-today-or-tomorrow",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ý",
+      "english": "meaning / idea"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hay",
+      "english": "or"
+    },
+    {
+      "vietnamese": "ngày mai?",
+      "english": "tomorrow",
+      "keepTogetherReason": "fixed day expression"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ý bạn là hôm nay hay ngày mai?",
+      "english": "Do you mean today or tomorrow?",
+      "audioKey": "v900-unde-repa-do-you-mean-today-or-tomorrow"
+    }
+  ]
+}

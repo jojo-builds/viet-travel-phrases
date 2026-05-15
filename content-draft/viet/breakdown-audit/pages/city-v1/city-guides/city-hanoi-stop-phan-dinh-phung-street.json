@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-phan-dinh-phung-street",
+  "phraseText": "Dừng ở Phố Phan Đình Phùng",
+  "englishTitle": "Stop at Phan Dinh Phung Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.368Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-phan-dinh-phung-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố Phan Đình Phùng",
+      "english": "Phan Dinh Phung Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Phố Phan Đình Phùng",
+      "english": "Stop at Phan Dinh Phung Street",
+      "audioKey": "audio-authored-dung-o-pho-phan-dinh-phung-23e02f2531"
+    }
+  ]
+}

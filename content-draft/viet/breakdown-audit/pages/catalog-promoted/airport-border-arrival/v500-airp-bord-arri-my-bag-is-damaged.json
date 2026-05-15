@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-my-bag-is-damaged",
+  "phraseText": "Túi của tôi bị hỏng",
+  "englishTitle": "My bag is damaged",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-my-bag-is-damaged",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Túi",
+      "english": "bag"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị hỏng",
+      "english": "is broken / damaged",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Túi của tôi bị hỏng",
+      "english": "My bag is damaged",
+      "audioKey": "v500-airp-bord-arri-my-bag-is-damaged"
+    }
+  ]
+}

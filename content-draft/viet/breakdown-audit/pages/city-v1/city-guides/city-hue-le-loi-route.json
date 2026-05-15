@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hue-le-loi-route",
+  "phraseText": "Đi đường Lê Lợi",
+  "englishTitle": "Go by Le Loi Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.385Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-le-loi-route",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đường Lê Lợi",
+      "english": "Le Loi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi đường Lê Lợi",
+      "english": "Go by Le Loi Street",
+      "audioKey": "audio-authored-di-duong-le-loi-3be30004e8"
+    }
+  ]
+}

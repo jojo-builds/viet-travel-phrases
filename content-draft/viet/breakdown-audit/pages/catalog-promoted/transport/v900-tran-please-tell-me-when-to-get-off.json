@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-tell-me-when-to-get-off",
+  "phraseText": "Hãy cho tôi biết khi nào nên xuống xe",
+  "englishTitle": "Please tell me when to get off",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.352Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-tell-me-when-to-get-off",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "biết",
+      "english": "know"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khi nào",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nên",
+      "english": "should"
+    },
+    {
+      "vietnamese": "xuống xe",
+      "english": "get off the vehicle",
+      "keepTogetherReason": "compound transit action"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy cho tôi biết khi nào nên xuống xe",
+      "english": "Please tell me when to get off",
+      "audioKey": "v900-tran-please-tell-me-when-to-get-off"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-can-i-have-an-iron",
+  "phraseText": "Tôi có thể có một cái bàn ủi được không?",
+  "englishTitle": "Can I have an iron?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.316Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-can-i-have-an-iron",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một cái",
+      "english": "one item",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bàn",
+      "english": "table"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "ủi",
+      "english": "laundry service"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể có một cái bàn ủi được không?",
+      "english": "Can I have an iron?",
+      "audioKey": "v500-hote-acco-can-i-have-an-iron"
+    }
+  ]
+}

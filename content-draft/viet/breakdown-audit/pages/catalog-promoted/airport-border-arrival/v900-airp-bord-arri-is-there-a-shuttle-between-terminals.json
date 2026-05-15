@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-is-there-a-shuttle-between-terminals",
+  "phraseText": "Có xe đưa đón giữa các nhà ga không?",
+  "englishTitle": "Is there a shuttle between terminals?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.293Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-is-there-a-shuttle-between-terminals",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xe đưa đón",
+      "english": "shuttle",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giữa các",
+      "english": "between",
+      "keepTogetherReason": "fixed preposition phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhà ga",
+      "english": "terminal / station",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có xe đưa đón giữa các nhà ga không?",
+      "english": "Is there a shuttle between terminals?",
+      "audioKey": "v900-airp-bord-arri-is-there-a-shuttle-between-terminals"
+    }
+  ]
+}

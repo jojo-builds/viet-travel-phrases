@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-hue-pharmacy-dong-ba",
+  "phraseText": "Có nhà thuốc gần chợ Đông Ba không?",
+  "englishTitle": "Is there a pharmacy near Dong Ba Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.386Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-pharmacy-dong-ba",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nhà thuốc",
+      "english": "pharmacy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chợ Đông Ba",
+      "english": "Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có nhà thuốc gần chợ Đông Ba không?",
+      "english": "Is there a pharmacy near Dong Ba Market?",
+      "audioKey": "audio-authored-co-nha-thuoc-gan-cho-dong-ba-khong-8265c47cfd"
+    }
+  ]
+}

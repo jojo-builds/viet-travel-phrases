@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-thung-rac",
+  "phraseText": "Dừng ở thùng rác",
+  "englishTitle": "Stop at a trash bin.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.475Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-thung-rac",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thùng",
+      "english": "bin / box"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "rác",
+      "english": "trash"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở thùng rác",
+      "english": "Stop at a trash bin.",
+      "audioKey": "audio-authored-dung-o-thung-rac-1505cb31b3"
+    }
+  ]
+}

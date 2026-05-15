@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-repair-number-amount",
+  "phraseText": "Anh/chị vừa nói bao nhiêu?",
+  "englishTitle": "How much did you say?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-number-amount",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh/chị",
+      "english": "sir or ma'am",
+      "keepTogetherReason": "slash address form"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vừa",
+      "english": "just / enough"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh/chị vừa nói bao nhiêu?",
+      "english": "How much did you say?",
+      "audioKey": "repair-number-amount"
+    }
+  ]
+}

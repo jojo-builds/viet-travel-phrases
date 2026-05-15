@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-need-item-toi-can-thiep-buu-dien",
+  "phraseText": "Tôi cần thiệp bưu điện",
+  "englishTitle": "I need postcards.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.440Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-need-item-toi-can-thiep-buu-dien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thiệp bưu điện",
+      "english": "postcard",
+      "keepTogetherReason": "compound item term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần thiệp bưu điện",
+      "english": "I need postcards.",
+      "audioKey": "audio-authored-toi-can-thiep-buu-dien-6ba224d6b0"
+    }
+  ]
+}

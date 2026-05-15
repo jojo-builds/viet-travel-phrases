@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hanoi-atm-giang-cafe",
+  "phraseText": "Có ATM gần Cà phê Giảng không?",
+  "englishTitle": "Is there an ATM near Giang Cafe?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.364Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-atm-giang-cafe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Cà phê Giảng",
+      "english": "Giang Cafe",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Cà phê Giảng không?",
+      "english": "Is there an ATM near Giang Cafe?",
+      "audioKey": "audio-authored-co-atm-gan-ca-phe-giang-khong-f7a28c8608"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-someone-took-my-phone",
+  "phraseText": "Ai đó đã lấy điện thoại của tôi",
+  "englishTitle": "Someone took my phone",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-someone-took-my-phone",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Ai đó",
+      "english": "someone",
+      "keepTogetherReason": "compound indefinite pronoun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ai đó đã lấy điện thoại của tôi",
+      "english": "Someone took my phone",
+      "audioKey": "v500-prob-help-someone-took-my-phone"
+    }
+  ]
+}

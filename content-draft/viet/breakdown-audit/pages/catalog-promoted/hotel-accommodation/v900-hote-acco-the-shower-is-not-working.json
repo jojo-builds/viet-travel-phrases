@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-the-shower-is-not-working",
+  "phraseText": "Vòi hoa sen không hoạt động",
+  "englishTitle": "The shower is not working",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-the-shower-is-not-working",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vòi",
+      "english": "tap / faucet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hoa",
+      "english": "flower"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sen",
+      "english": "lotus / shower"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không hoạt động",
+      "english": "not working",
+      "keepTogetherReason": "fixed negative phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vòi hoa sen không hoạt động",
+      "english": "The shower is not working",
+      "audioKey": "v900-hote-acco-the-shower-is-not-working"
+    }
+  ]
+}

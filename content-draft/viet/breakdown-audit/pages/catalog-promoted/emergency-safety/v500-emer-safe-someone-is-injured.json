@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-someone-is-injured",
+  "phraseText": "Có người bị thương",
+  "englishTitle": "Someone is injured",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-someone-is-injured",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thương",
+      "english": "injury / love"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có người bị thương",
+      "english": "Someone is injured",
+      "audioKey": "v500-emer-safe-someone-is-injured"
+    }
+  ]
+}

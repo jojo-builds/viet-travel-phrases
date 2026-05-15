@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-where-faifo-coffee",
+  "phraseText": "Faifo Coffee ở đâu?",
+  "englishTitle": "Where is Faifo Coffee?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.383Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-where-faifo-coffee",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Faifo Coffee",
+      "english": "Faifo Coffee",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Faifo Coffee ở đâu?",
+      "english": "Where is Faifo Coffee?",
+      "audioKey": "audio-authored-faifo-coffee-o-dau-82ba7bcb2d"
+    }
+  ]
+}

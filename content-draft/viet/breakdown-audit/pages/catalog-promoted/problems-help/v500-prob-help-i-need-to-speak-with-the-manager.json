@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-i-need-to-speak-with-the-manager",
+  "phraseText": "Tôi cần nói chuyện với người quản lý",
+  "englishTitle": "I need to speak with the manager",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.336Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-i-need-to-speak-with-the-manager",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chuyện",
+      "english": "matter / story"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "quản lý",
+      "english": "manager",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần nói chuyện với người quản lý",
+      "english": "I need to speak with the manager",
+      "audioKey": "v500-prob-help-i-need-to-speak-with-the-manager"
+    }
+  ]
+}

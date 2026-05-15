@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-is-this-price-in-vietnamese-dong",
+  "phraseText": "Giá này bằng đồng Việt Nam phải không?",
+  "englishTitle": "Is this price in Vietnamese dong?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-is-this-price-in-vietnamese-dong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đồng",
+      "english": "dong / currency"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "Việt Nam",
+      "english": "Vietnamese",
+      "keepTogetherReason": "country name used as modifier"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "phải không?",
+      "english": "is that right?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giá này bằng đồng Việt Nam phải không?",
+      "english": "Is this price in Vietnamese dong?",
+      "audioKey": "v900-mone-numb-pric-is-this-price-in-vietnamese-dong"
+    }
+  ]
+}

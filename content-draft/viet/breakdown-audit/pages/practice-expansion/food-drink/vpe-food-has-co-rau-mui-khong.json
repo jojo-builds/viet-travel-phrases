@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-food-has-co-rau-mui-khong",
+  "phraseText": "Có rau mùi không?",
+  "englishTitle": "Does it have cilantro?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.403Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-food-has-co-rau-mui-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rau",
+      "english": "greens / herbs"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mùi",
+      "english": "smell"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có rau mùi không?",
+      "english": "Does it have cilantro?",
+      "audioKey": "audio-authored-co-rau-mui-khong-2d8b1252f9"
+    }
+  ]
+}

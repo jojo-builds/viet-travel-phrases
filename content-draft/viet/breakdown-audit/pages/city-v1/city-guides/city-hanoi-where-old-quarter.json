@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-old-quarter",
+  "phraseText": "Phố cổ Hà Nội ở đâu?",
+  "englishTitle": "Where is Hanoi Old Quarter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-old-quarter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố cổ Hà Nội",
+      "english": "Hanoi Old Quarter",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố cổ Hà Nội ở đâu?",
+      "english": "Where is Hanoi Old Quarter?",
+      "audioKey": "audio-authored-pho-co-ha-noi-o-dau-244e0acb6a"
+    }
+  ]
+}

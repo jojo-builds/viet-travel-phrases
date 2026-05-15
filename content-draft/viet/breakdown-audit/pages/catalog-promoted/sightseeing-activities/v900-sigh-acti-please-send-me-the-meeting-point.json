@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-please-send-me-the-meeting-point",
+  "phraseText": "Vui lòng gửi cho tôi điểm tập trung",
+  "englishTitle": "Please send me the meeting point",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-please-send-me-the-meeting-point",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "vietnamese": "điểm tập trung",
+      "english": "meeting point",
+      "keepTogetherReason": "compound meeting-place term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng gửi cho tôi điểm tập trung",
+      "english": "Please send me the meeting point",
+      "audioKey": "v900-sigh-acti-please-send-me-the-meeting-point"
+    }
+  ]
+}

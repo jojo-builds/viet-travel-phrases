@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v900-tran-are-we-going-the-right-way",
+  "phraseText": "Chúng ta có đang đi đúng hướng không?",
+  "englishTitle": "Are we going the right way?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.350Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-are-we-going-the-right-way",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chúng ta",
+      "english": "we / us",
+      "keepTogetherReason": "pronoun phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đúng",
+      "english": "correct / right"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hướng",
+      "english": "direction"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chúng ta có đang đi đúng hướng không?",
+      "english": "Are we going the right way?",
+      "audioKey": "v900-tran-are-we-going-the-right-way"
+    }
+  ]
+}

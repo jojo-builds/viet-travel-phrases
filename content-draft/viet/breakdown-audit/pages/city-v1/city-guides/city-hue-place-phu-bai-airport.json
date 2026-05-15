@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hue-place-phu-bai-airport",
+  "phraseText": "Sân bay Phú Bài",
+  "englishTitle": "Phu Bai Airport",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.387Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-place-phu-bai-airport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sân bay Phú Bài",
+      "english": "Phu Bai Airport",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

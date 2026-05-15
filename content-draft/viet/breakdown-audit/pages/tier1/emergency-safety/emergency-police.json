@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-emergency-police",
+  "phraseText": "Gọi công an",
+  "englishTitle": "Call the police",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-emergency-police",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "công",
+      "english": "public"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "an",
+      "english": "safe / peace"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Gọi công an",
+      "english": "Call the police",
+      "audioKey": "emergency-1"
+    }
+  ]
+}

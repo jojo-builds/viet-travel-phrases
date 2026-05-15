@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-please-count-it-again",
+  "phraseText": "Hãy đếm lại nhé",
+  "englishTitle": "Please count it again",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-please-count-it-again",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đếm lại",
+      "english": "count again",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhé",
+      "english": "soft polite ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy đếm lại nhé",
+      "english": "Please count it again",
+      "audioKey": "v500-mone-numb-pric-please-count-it-again"
+    }
+  ]
+}

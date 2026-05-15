@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-is-this-enough",
+  "phraseText": "Thế này đã đủ chưa?",
+  "englishTitle": "Is this enough?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.326Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-is-this-enough",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thế",
+      "english": "can / able to"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đủ",
+      "english": "enough"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "chưa?",
+      "english": "not yet / already?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thế này đã đủ chưa?",
+      "english": "Is this enough?",
+      "audioKey": "v500-mone-numb-pric-is-this-enough"
+    }
+  ]
+}

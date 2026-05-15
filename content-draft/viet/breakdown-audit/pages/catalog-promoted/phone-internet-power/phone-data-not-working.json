@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-phone-premium-data-not-working",
+  "phraseText": "Dữ liệu của tôi không hoạt động.",
+  "englishTitle": "My data is not working.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-phone-premium-data-not-working",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dữ",
+      "english": "data / fierce"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "liệu",
+      "english": "material / whether"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không hoạt động.",
+      "english": "not working",
+      "keepTogetherReason": "fixed negative phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dữ liệu của tôi không hoạt động.",
+      "english": "My data is not working.",
+      "audioKey": "phone-premium-data-not-working"
+    }
+  ]
+}

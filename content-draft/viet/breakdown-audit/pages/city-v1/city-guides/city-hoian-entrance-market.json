@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-family-city-hoian-entrance-market",
+  "phraseText": "Lối vào Chợ Hội An ở đâu?",
+  "englishTitle": "Where is the entrance to Hoi An Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.378Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-entrance-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lối vào",
+      "english": "entrance",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Hội An",
+      "english": "Hoi An Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lối vào Chợ Hội An ở đâu?",
+      "english": "Where is the entrance to Hoi An Market?",
+      "audioKey": "audio-authored-loi-vao-cho-hoi-an-o-dau-9fe3f9c261"
+    }
+  ]
+}

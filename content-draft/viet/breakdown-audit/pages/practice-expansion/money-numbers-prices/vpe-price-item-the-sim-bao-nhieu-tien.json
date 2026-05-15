@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-price-item-the-sim-bao-nhieu-tien",
+  "phraseText": "thẻ SIM bao nhiêu tiền?",
+  "englishTitle": "How much is a SIM card?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.461Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-price-item-the-sim-bao-nhieu-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "thẻ SIM",
+      "english": "SIM card",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu tiền?",
+      "english": "how much money",
+      "keepTogetherReason": "fixed price question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "thẻ SIM bao nhiêu tiền?",
+      "english": "How much is a SIM card?",
+      "audioKey": "audio-authored-the-sim-bao-nhieu-tien-5de8032448"
+    }
+  ]
+}

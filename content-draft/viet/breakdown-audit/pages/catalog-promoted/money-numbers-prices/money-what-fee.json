@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-money-premium-what-fee",
+  "phraseText": "Khoản phí này dùng để làm gì?",
+  "englishTitle": "What is this fee for?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-money-premium-what-fee",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Khoản phí",
+      "english": "fee",
+      "keepTogetherReason": "compound fee term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "dùng",
+      "english": "use"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "làm",
+      "english": "do / make"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khoản phí này dùng để làm gì?",
+      "english": "What is this fee for?",
+      "audioKey": "money-premium-what-fee"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-my-phone-is-missing",
+  "phraseText": "Điện thoại của tôi bị mất",
+  "englishTitle": "My phone is missing",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.336Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-my-phone-is-missing",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị mất",
+      "english": "is missing / lost",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điện thoại của tôi bị mất",
+      "english": "My phone is missing",
+      "audioKey": "v500-prob-help-my-phone-is-missing"
+    }
+  ]
+}

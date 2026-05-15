@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-danang-near-helio-night-market",
+  "phraseText": "Chợ đêm Helio gần đây không?",
+  "englishTitle": "Is Helio Night Market near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.360Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-near-helio-night-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ đêm Helio",
+      "english": "Helio Night Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ đêm Helio gần đây không?",
+      "english": "Is Helio Night Market near here?",
+      "audioKey": "audio-authored-cho-dem-helio-gan-day-khong-6c5f1b7183"
+    }
+  ]
+}

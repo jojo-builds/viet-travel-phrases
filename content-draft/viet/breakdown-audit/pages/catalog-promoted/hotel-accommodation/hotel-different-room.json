@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-hotel-premium-different-room",
+  "phraseText": "Tôi đã đặt một phòng khác.",
+  "englishTitle": "I booked a different room.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.316Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-premium-different-room",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã đặt",
+      "english": "booked / reserved",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khác.",
+      "english": "different / another"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã đặt một phòng khác.",
+      "english": "I booked a different room.",
+      "audioKey": "hotel-premium-different-room"
+    }
+  ]
+}

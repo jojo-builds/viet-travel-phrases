@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v500-tran-i-left-something-in-the-car",
+  "phraseText": "Tôi để quên thứ gì đó trong xe",
+  "englishTitle": "I left something in the car",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-i-left-something-in-the-car",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "vietnamese": "để quên",
+      "english": "left behind / forgot",
+      "keepTogetherReason": "compound forgot-left verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thứ",
+      "english": "thing"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gì",
+      "english": "what"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi để quên thứ gì đó trong xe",
+      "english": "I left something in the car",
+      "audioKey": "v500-tran-i-left-something-in-the-car"
+    }
+  ]
+}
