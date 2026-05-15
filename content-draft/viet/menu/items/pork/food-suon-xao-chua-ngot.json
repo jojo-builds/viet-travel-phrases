@@ -1,0 +1,65 @@
+{
+  "itemID": "food-suon-xao-chua-ngot",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sườn xào chua ngọt",
+  "englishTranslation": "Sweet-and-sour pork ribs",
+  "romanizedNoTones": "Suon xao chua ngot",
+  "soundOut": "swoon sow choo-ah ngawt",
+  "notes": "",
+  "atAGlance": "Sườn xào chua ngọt is sweet-and-sour pork ribs, usually with tomato or pineapple notes, fish sauce, sugar, and rice.",
+  "whatItIs": "Sườn xào chua ngọt is pork ribs stir-fried in a sweet-sour glaze, often with tomato, pineapple, vinegar or tamarind, garlic, and fish sauce.",
+  "usuallyIncludes": [
+    "pork ribs",
+    "sweet-sour glaze",
+    "tomato or pineapple",
+    "onion",
+    "plain rice"
+  ],
+  "howToEnjoy": "Eat with rice so the sweet-sour glaze has somewhere to go. The ribs can be sticky, so share the plate and keep napkins close.",
+  "howLocalsOrder": "Order sườn xào chua ngọt as a family-style plate. Ask for less sweet, less chili, or extra rice if the glaze is rich.",
+  "worthKnowing": "Chua ngọt means sour-sweet, a useful phrase for recognizing Vietnamese dishes that balance fruit, vinegar, tamarind, sugar, and fish sauce.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "less sweet",
+    "less spicy",
+    "with rice",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần sườn xào chua ngọt.",
+    "english": "I’d like one order of sweet-and-sour pork ribs.",
+    "pronunciation": "chaw toy moht fuhn swoon sow choo-ah ngawt",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Sườn xào chua ngọt was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

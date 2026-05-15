@@ -1,0 +1,68 @@
+{
+  "itemID": "food-bo-nhung-dam",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò nhúng dấm",
+  "englishTranslation": "Beef dipped in vinegar hot pot",
+  "romanizedNoTones": "Bo nhung dam",
+  "soundOut": "baw nyoong zuhm",
+  "notes": "",
+  "atAGlance": "Bò nhúng dấm is thin beef slices swished through hot vinegar broth, usually with onion, herbs, rice paper, and a small sharp dip of fish sauce, chili, or lime-pepper salt.",
+  "whatItIs": "Bò nhúng dấm is thin beef swished through hot vinegar broth, then rolled with rice paper, herbs, noodles, and a fish-sauce-lime dip. It is a table-cooking, roll-your-own meal.",
+  "usuallyIncludes": [
+    "thin beef slices",
+    "vinegar hot pot broth",
+    "rice paper",
+    "fresh herbs",
+    "noodles and fish-sauce-lime dip"
+  ],
+  "howToEnjoy": "Swish beef briefly in the vinegar broth, lay it into rice paper with herbs and noodles, roll, then dip. Keep the beef tender by not overcooking it.",
+  "howLocalsOrder": "Order bò nhúng dấm by table size and ask about rice paper, herbs, noodles, and the fish-sauce-lime dip before everyone starts rolling.",
+  "worthKnowing": "The vinegar broth cooks and brightens the beef; the rice paper and herbs turn it into a fresh roll rather than a plain hot pot.",
+  "goodToKnow": "Swish the beef briefly so it stays tender, then roll it with herbs and noodles. This is a table-size meal, so order for the group rather than one quick bowl.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "less spicy",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò nhúng dấm.",
+    "english": "I’d like one order of beef dipped in vinegar hot pot.",
+    "pronunciation": "chaw toy moht fuhn baw nyoong zuhm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix",
+      "copy hygiene fix",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Bò nhúng dấm was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

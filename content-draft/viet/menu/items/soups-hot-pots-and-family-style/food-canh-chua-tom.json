@@ -1,0 +1,62 @@
+{
+  "itemID": "food-canh-chua-tom",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Canh chua tôm",
+  "englishTranslation": "Sweet-and-sour shrimp soup",
+  "romanizedNoTones": "Canh chua tom",
+  "soundOut": "kan choo-ah tom",
+  "notes": "",
+  "atAGlance": "Canh chua tôm is tamarind-sour shrimp soup with pineapple, tomato, okra, herbs, and a bright broth that is usually eaten with rice.",
+  "whatItIs": "Canh chua tôm is the shrimp version of Vietnamese sour soup, with tamarind brightness, vegetables, and herbs.",
+  "usuallyIncludes": [
+    "shrimp",
+    "tamarind broth",
+    "pineapple",
+    "tomato",
+    "okra and herbs"
+  ],
+  "howToEnjoy": "Spoon the broth over rice and eat shrimp with the vegetables. Add chili only after tasting the sour balance.",
+  "howLocalsOrder": "Canh chua tôm is the shrimp version of southern sour soup, so order it when you want tamarind brightness without a heavy broth. Ask small or large, then eat it with rice so the pineapple, tomato, and okra make sense.",
+  "worthKnowing": "Canh chua often appears in family meals beside braised fish or pork, so the soup adds freshness to richer dishes. In Vietnamese family meals, soups and hot pots are shared around rice, herbs, vegetables, and broth, so they carry table rhythm as much as flavor.",
+  "goodToKnow": "This is a shared soup, not a noodle soup. The sweet-sour broth is there to wake up rice and other dishes.",
+  "commonOptions": [
+    "with rice",
+    "less chili",
+    "extra herbs",
+    "share bowl"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains shrimp.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh chua tôm.",
+    "english": "I’d like one bowl of sweet-and-sour shrimp soup.",
+    "pronunciation": "chaw toy moht toh kan choo-ah tom",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Canh chua tôm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

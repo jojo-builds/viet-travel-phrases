@@ -1,0 +1,63 @@
+{
+  "itemID": "food-xoi-bap",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xôi bắp",
+  "englishTranslation": "Sticky rice with corn",
+  "romanizedNoTones": "Xoi bap",
+  "soundOut": "soy bap",
+  "notes": "",
+  "atAGlance": "Xôi bắp is sticky rice with corn, usually with mung bean, fried shallot, sugar or savory toppings.",
+  "whatItIs": "Xôi bắp is sticky rice with corn, mung bean, fried shallots, and sometimes sugar or coconut depending on the stall. It can lean savory, sweet, or both.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "corn",
+    "mung bean",
+    "fried shallots",
+    "sugar or coconut optional"
+  ],
+  "howToEnjoy": "Taste before adding sugar or chili because stalls vary. The best bites have chewy corn, soft mung bean, and fragrant fried shallots together.",
+  "howLocalsOrder": "Order xôi bắp when you want a lighter, corn-sweet sticky rice. Ask for less sugar, extra fried shallots, or pack to go before the packet is closed.",
+  "worthKnowing": "Bắp means corn in southern Vietnamese usage; this is a useful word for reading snacks and dessert menus.",
+  "goodToKnow": "Xôi bắp can lean lightly sweet or lightly savory depending on the seller. Look for chewy corn, sticky rice, mung bean, fried shallots, and a sesame-sugar or coconut finish.",
+  "commonOptions": [
+    "less sugar",
+    "extra fried shallots",
+    "extra mung bean",
+    "pack to go"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi bắp.",
+    "english": "I’d like one order of sticky rice with corn.",
+    "pronunciation": "chaw toy moht fuhn soy bap",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Xôi bắp was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

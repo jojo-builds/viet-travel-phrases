@@ -1,0 +1,62 @@
+{
+  "itemID": "food-lau-ga-la-e",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Lẩu gà lá é",
+  "englishTranslation": "Chicken hot pot with lemon basil",
+  "romanizedNoTones": "Lau ga la e",
+  "soundOut": "low gah lah eh",
+  "notes": "",
+  "atAGlance": "Lẩu gà lá é is chicken hot pot with peppery lá é herb, often linked with Đà Lạt and Phú Yên. The herb goes in fresh so the broth smells bright.",
+  "whatItIs": "Lẩu gà lá é is a chicken hot pot scented with lá é, a peppery Vietnamese herb, often with mushrooms or bamboo shoots.",
+  "usuallyIncludes": [
+    "chicken",
+    "lá é herb",
+    "sour bamboo shoots",
+    "mushrooms",
+    "noodles"
+  ],
+  "howToEnjoy": "Cook the chicken and vegetables first, then add lá é near the end. The fresh herb should perfume the bowl.",
+  "howLocalsOrder": "Lẩu gà lá é is a chicken hot pot scented with lá é, the lemon-basil-like herb tied to central highland cooking. Ask for the herb-heavy version and choose spice level before the pot starts bubbling.",
+  "worthKnowing": "Travelers often meet this dish around Đà Lạt, though the herb and style also connect to Phú Yên.",
+  "goodToKnow": "Lá é is often translated as lemon basil, but its peppery herbal aroma is the point. Add it late so it stays fragrant.",
+  "commonOptions": [
+    "extra lá é",
+    "less chili",
+    "with noodles",
+    "share pot"
+  ],
+  "regionalAssociation": "Đà Lạt and Phú Yên",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu gà lá é.",
+    "english": "I’d like one order of chicken hot pot with lemon basil.",
+    "pronunciation": "chaw toy moht noy low gah lah eh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Lẩu gà lá é was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

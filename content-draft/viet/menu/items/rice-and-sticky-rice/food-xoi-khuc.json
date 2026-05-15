@@ -1,0 +1,65 @@
+{
+  "itemID": "food-xoi-khuc",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xôi khúc",
+  "englishTranslation": "Sticky rice dumpling with mung bean and pork",
+  "romanizedNoTones": "Xoi khuc",
+  "soundOut": "soy khook",
+  "notes": "",
+  "atAGlance": "Xôi khúc is sticky rice dumpling with khúc leaves, usually with mung bean, pork filling, and herbal green rice.",
+  "whatItIs": "Xôi khúc is sticky rice wrapped around a khúc-leaf dumpling with mung bean and pork inside. It is warm, dense, herbal, and especially loved as a northern breakfast.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "khúc leaf dough",
+    "mung bean",
+    "pork filling",
+    "fried shallots optional"
+  ],
+  "howToEnjoy": "Eat it warm and break into the center so the mung bean, pork, and herbal dough mix with the sticky rice. It is filling, so one portion can be plenty.",
+  "howLocalsOrder": "Order xôi khúc early in the day if you see it at a stall. Ask whether it has pork if you are avoiding meat; the filling is often hidden until you bite in.",
+  "worthKnowing": "In northern Vietnam, khúc leaf gives this sticky-rice dumpling its herbal character, making it feel different from ordinary xôi packets.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "pack to go",
+    "ask about pork",
+    "extra fried shallots",
+    "one piece"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi khúc.",
+    "english": "I’d like one order of sticky rice dumpling with mung bean and pork.",
+    "pronunciation": "chaw toy moht fuhn soy khook",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Xôi khúc was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

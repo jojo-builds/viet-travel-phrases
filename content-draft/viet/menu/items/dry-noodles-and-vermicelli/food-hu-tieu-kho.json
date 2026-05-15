@@ -1,0 +1,65 @@
+{
+  "itemID": "food-hu-tieu-kho",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Hủ tiếu khô",
+  "englishTranslation": "Dry rice noodles",
+  "romanizedNoTones": "Hu tieu kho",
+  "soundOut": "hoo tee-ew koh",
+  "notes": "",
+  "atAGlance": "Hủ tiếu khô is dry hủ tiếu noodles, usually with minced pork, shrimp or slices, herbs, sauce, and broth on the side.",
+  "whatItIs": "Hủ tiếu khô is the dry version of southern hủ tiếu: noodles tossed with savory seasoning, toppings, herbs, and often a separate clear broth on the side.",
+  "usuallyIncludes": [
+    "rice noodles",
+    "pork or shrimp toppings",
+    "fried shallots",
+    "savory dry noodle dressing",
+    "clear side broth"
+  ],
+  "howToEnjoy": "Mix the noodles first so the dressing coats them, then sip the side broth between bites. Add lime, chili, and greens slowly so the dry bowl keeps its balance.",
+  "howLocalsOrder": "Order hủ tiếu khô when you want the noodle flavor concentrated instead of in soup. Ask for soup on the side if it is not obvious, and say less chili before mixing.",
+  "worthKnowing": "Khô means dry, but the order often still includes broth separately; that two-part rhythm is the point.",
+  "goodToKnow": "Khô means dry-style, but the broth still matters. Many southern shops serve it on the side so you get both chewy dressed noodles and a clean pork-seafood broth.",
+  "commonOptions": [
+    "side broth",
+    "less spicy",
+    "extra herbs",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô hủ tiếu khô.",
+    "english": "I’d like one bowl of dry rice noodles.",
+    "pronunciation": "chaw toy moht toh hoo tee-ew koh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Hủ tiếu khô was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

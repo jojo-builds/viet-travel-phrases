@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bo-bia",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò bía",
+  "englishTranslation": "Jicama and sausage rolls",
+  "romanizedNoTones": "Bo bia",
+  "soundOut": "baw bee-ah",
+  "notes": "",
+  "atAGlance": "Bò bía is thin fresh rolls with jicama and sausage, usually with egg, herbs, dried shrimp, and peanut-hoisin sauce.",
+  "whatItIs": "Bò bía is a soft rice-paper roll with jicama, Chinese sausage, egg, dried shrimp, herbs, and peanut-hoisin dip. It is sweet, savory, crunchy, and snacky.",
+  "usuallyIncludes": [
+    "rice paper",
+    "jicama",
+    "sausage or egg",
+    "herbs",
+    "hoisin-peanut sauce"
+  ],
+  "howToEnjoy": "Dip each roll in peanut-hoisin and eat while the rice paper is still soft. Ask about peanuts or dried shrimp if allergies matter.",
+  "howLocalsOrder": "Order bò bía as a snack by the roll or plate. Ask for no peanuts or no dried shrimp before the roll is made.",
+  "worthKnowing": "At Vietnamese snack stalls, bò bía is not a beef roll; the usual flavor comes from jicama, sausage, egg, herbs, and peanut-hoisin dip.",
+  "goodToKnow": "If peanut-hoisin dip or nước chấm, a lime-fish-sauce dip comes separately, start with a small dip; it can be salty, sweet, sour, and spicy at once.",
+  "commonOptions": [
+    "no peanuts",
+    "no dried shrimp",
+    "extra herbs",
+    "less chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò bía.",
+    "english": "I’d like one order of jicama and sausage rolls.",
+    "pronunciation": "chaw toy moht fuhn baw bee-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bò bía was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

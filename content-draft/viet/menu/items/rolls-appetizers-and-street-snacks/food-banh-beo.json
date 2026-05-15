@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-beo",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bèo",
+  "englishTranslation": "Steamed rice cakes with shrimp topping",
+  "romanizedNoTones": "Banh beo",
+  "soundOut": "bahn beh-oh",
+  "notes": "",
+  "atAGlance": "Tiny steamed rice cakes from central Vietnam, topped with shrimp floss, scallion oil, and fish sauce for spoon-by-spoon bites.",
+  "whatItIs": "Bánh bèo comes in small dishes or saucers: soft rice batter steamed until tender, then finished with savory shrimp crumbs, crispy bits, scallion oil, and nước mắm.",
+  "usuallyIncludes": [
+    "steamed rice cakes",
+    "shrimp topping",
+    "scallion oil",
+    "fried shallots",
+    "nước chấm"
+  ],
+  "howToEnjoy": "Add a little fish sauce to each cup and use the spoon to release the cake from the dish. The fun is in eating several small, delicate bites rather than one big plate.",
+  "howLocalsOrder": "Order bánh bèo as small steamed rice cakes in little cups or shallow dishes, usually several at a time. Spoon nước chấm lightly so the shrimp topping and fried shallots stay clear.",
+  "worthKnowing": "This is a signature of Huế and central Vietnamese snack culture, where careful textures and tiny portions can carry a surprising amount of flavor.",
+  "goodToKnow": "If you avoid shrimp, ask whether the shrimp topping or nước mắm can be left off.",
+  "commonOptions": [
+    "extra nước chấm, a lime-fish-sauce dip with sugar, garlic, and chili",
+    "more herbs",
+    "no chili",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Often topped with shrimp and nước mắm.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh bèo.",
+    "english": "I’d like one order of steamed rice cakes with shrimp topping.",
+    "pronunciation": "chaw toy moht fuhn bahn beh-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "strict sauce wording",
+      "vegetarian chip guardrail",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh bèo was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-com-chien-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên chay",
+  "englishTranslation": "Vegetarian fried rice",
+  "romanizedNoTones": "Com chien chay",
+  "soundOut": "kum chee-en chai",
+  "notes": "",
+  "atAGlance": "Cơm chiên chay is vegetarian fried rice, usually with egg or tofu depending on the shop, vegetables, scallion, and wok heat.",
+  "whatItIs": "Cơm chiên chay is vegetarian fried rice with vegetables, tofu or mushrooms, scallions, and wok heat; some shops may add egg unless you ask.",
+  "usuallyIncludes": [
+    "fried rice",
+    "vegetables",
+    "tofu or mushrooms",
+    "scallions",
+    "egg optional"
+  ],
+  "howToEnjoy": "Eat hot from the wok while the grains stay separate. Ask about egg and fish sauce before cooking if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order cơm chiên chay and say no egg or no fish sauce before the wok starts. Extra vegetables are the easiest useful add-on.",
+  "worthKnowing": "Vietnamese vegetarian fried rice can be simple and satisfying, but egg and fish sauce are the two quiet ingredients worth checking.",
+  "goodToKnow": "Chay fried rice may still include egg unless you ask; also confirm no fish sauce in mixed kitchens.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "no egg",
+    "extra vegetables"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask for no egg or no fish sauce if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên chay.",
+    "english": "I’d like one order of vegetarian fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm chiên chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

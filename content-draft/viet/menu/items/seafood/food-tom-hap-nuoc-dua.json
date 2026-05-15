@@ -1,0 +1,65 @@
+{
+  "itemID": "food-tom-hap-nuoc-dua",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tôm hấp nước dừa",
+  "englishTranslation": "Shrimp steamed in coconut water",
+  "romanizedNoTones": "Tom hap nuoc dua",
+  "soundOut": "tom hup nook yoo-uh",
+  "notes": "",
+  "atAGlance": "Tôm hấp nước dừa is shrimp steamed in coconut water, usually with sweet broth, herbs, and salt-pepper-lime dip.",
+  "whatItIs": "Tôm hấp nước dừa is shrimp steamed in coconut water so the shellfish tastes gently sweet, clean, and fragrant.",
+  "usuallyIncludes": [
+    "shrimp",
+    "coconut water",
+    "dipping salt",
+    "lime optional",
+    "herbs optional"
+  ],
+  "howToEnjoy": "Peel if needed, dip lightly in lime-pepper salt, and taste the coconut sweetness before adding chili.",
+  "howLocalsOrder": "Order tôm hấp nước dừa as a shared shrimp plate. Ask whether shells remain and request less chili if you want the coconut sweetness to lead.",
+  "worthKnowing": "This is a gentler Vietnamese seafood order than salt-chili grilling: coconut water sweetens the steam rather than turning into a creamy sauce.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about shells",
+    "less spicy",
+    "lime-pepper salt",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tôm hấp nước dừa.",
+    "english": "I’d like one order of shrimp steamed in coconut water.",
+    "pronunciation": "chaw toy moht fuhn tom hup nook yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Tôm hấp nước dừa was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

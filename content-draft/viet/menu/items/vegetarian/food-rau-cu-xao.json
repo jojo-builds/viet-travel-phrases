@@ -1,0 +1,65 @@
+{
+  "itemID": "food-rau-cu-xao",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Rau củ xào",
+  "englishTranslation": "Stir-fried vegetables",
+  "romanizedNoTones": "Rau cu xao",
+  "soundOut": "row koo sow",
+  "notes": "",
+  "atAGlance": "Rau củ xào is stir-fried mixed vegetables, usually with garlic, greens, carrots or seasonal vegetables, and rice.",
+  "whatItIs": "Rau củ xào is mixed vegetables stir-fried with garlic and light seasoning. It is a useful rice-table order when you want greens, crunch, and a break from rich dishes.",
+  "usuallyIncludes": [
+    "mixed seasonal vegetables",
+    "leafy greens",
+    "garlic",
+    "savory wok seasoning",
+    "rice"
+  ],
+  "howToEnjoy": "Eat with rice while the vegetables are still bright and lightly crisp. Ask for less oil or no fish sauce if you want a cleaner vegetarian plate.",
+  "howLocalsOrder": "Order rau củ xào as a shared vegetable plate. Say ít dầu, không nước mắm, or thêm rau before the wok starts.",
+  "worthKnowing": "Xào means stir-fried, so this is usually fast, garlicky, and made to sit beside rice and other shared plates.",
+  "goodToKnow": "Ask whether the vegetables are stir-fried with fish sauce, oyster sauce, or shared wok seasoning at mixed restaurants.",
+  "commonOptions": [
+    "less oil",
+    "no fish sauce",
+    "vegetarian",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about fish sauce or oyster sauce if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần rau củ xào.",
+    "english": "I’d like one order of stir-fried vegetables.",
+    "pronunciation": "chaw toy moht fuhn row koo sow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Rau củ xào was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

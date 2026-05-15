@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bo-luc-lac",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bò lúc lắc",
+  "englishTranslation": "Shaking beef",
+  "romanizedNoTones": "Bo luc lac",
+  "soundOut": "baw look lak",
+  "notes": "",
+  "atAGlance": "Tender cubes of “shaking beef” seared in a hot wok, usually served with greens, tomato, onion, and a lime-pepper dipping salt.",
+  "whatItIs": "Bò lúc lắc gets its name from the shaking motion of the pan. The beef is cut into cubes, quickly seared, and glossed with a fish-sauce-and-garlic glaze so the outside is browned while the inside stays juicy.",
+  "usuallyIncludes": [
+    "seared beef cubes",
+    "onion or bell pepper",
+    "tomato or salad",
+    "lime-pepper salt",
+    "rice or fries optional"
+  ],
+  "howToEnjoy": "Dip a cube into lime, salt, and pepper before eating it with rice or salad. It is a good shared dish when you want something celebratory but easy to recognize.",
+  "howLocalsOrder": "Bò lúc lắc is ordered for seared beef cubes, often with rice, salad, and lime-pepper salt. Ask for a fried egg or extra rice before the plate leaves the wok.",
+  "worthKnowing": "The dish reflects Vietnam's restaurant-style comfort food: a little French steakhouse influence, a lot of wok heat, and the unmistakable Vietnamese habit of brightening rich meat with lime and herbs.",
+  "goodToKnow": "The classic finishing move is dipping each beef cube into lime-pepper salt. It sharpens the buttery beef without turning the plate into a saucy stir-fry.",
+  "commonOptions": [
+    "rice or fries",
+    "extra onions",
+    "lime-pepper salt",
+    "less pepper"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò lúc lắc.",
+    "english": "I’d like one order of shaking beef.",
+    "pronunciation": "chaw toy moht fuhn baw look lak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bò lúc lắc was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

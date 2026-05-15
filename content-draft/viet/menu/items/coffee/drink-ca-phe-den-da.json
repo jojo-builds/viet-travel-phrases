@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-ca-phe-den-da",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cà phê đen đá",
+  "englishTranslation": "Vietnamese iced black coffee",
+  "romanizedNoTones": "Ca phe den da",
+  "soundOut": "kah fay den dah",
+  "notes": "",
+  "atAGlance": "Cà phê đen đá is the stripped-down iced robusta order, bold, bitter-edged, and slowly softened by ice at sidewalk coffee tables.",
+  "whatItIs": "Cà phê đen đá is phin-brewed robusta served over ice, usually without milk. Expect black iced coffee with a bold roasted edge, light bitterness, and a clean finish once the ice melts in.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "ice"
+  ],
+  "howToEnjoy": "Drink it slowly as the ice opens it up; add sugar only if you want to soften the roast.",
+  "howLocalsOrder": "Cà phê đen đá is the sharper black iced coffee order. Ask for sugar on the side if you want control, then let the ice soften the strong roasted edge.",
+  "worthKnowing": "In Vietnam, Cà phê đen đá is the stripped-down side of Vietnamese coffee culture, where robusta strength is the point rather than something to hide.",
+  "goodToKnow": "It can be much stronger than a typical iced Americano.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê đen đá.",
+    "english": "I’d like one glass of Vietnamese iced black coffee.",
+    "pronunciation": "chaw toy moht lee kah fay den dah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê đen đá was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

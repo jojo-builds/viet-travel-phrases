@@ -1,0 +1,66 @@
+{
+  "itemID": "food-chao-suon",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cháo sườn",
+  "englishTranslation": "Pork rib porridge",
+  "romanizedNoTones": "Chao suon",
+  "soundOut": "chow swoon",
+  "notes": "",
+  "atAGlance": "Cháo sườn is pork rib rice porridge, usually with soft rice, tender rib meat, scallion, pepper, and fried dough if offered.",
+  "whatItIs": "Cháo sườn is pork rib rice porridge, often smooth and peppery, with tender rib meat and sometimes quẩy fried dough sticks.",
+  "usuallyIncludes": [
+    "rice porridge",
+    "pork ribs",
+    "black pepper",
+    "scallions",
+    "quẩy fried dough if offered"
+  ],
+  "howToEnjoy": "Stir in pepper or herbs after tasting, then dip quẩy into the porridge if served. The bowl should feel soft, warm, and rib-rich.",
+  "howLocalsOrder": "Order cháo sườn for a gentle breakfast or late-night bowl. Ask for less pepper, extra quẩy, or more rib meat before serving.",
+  "worthKnowing": "In Vietnam, cháo sườn is comfort food, not a rice plate; the ribs flavor the porridge from within.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "less pepper",
+    "extra quẩy",
+    "extra rib meat",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô cháo sườn.",
+    "english": "I’d like one bowl of pork rib porridge.",
+    "pronunciation": "chaw toy moht toh chow swoon",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Cháo sườn was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

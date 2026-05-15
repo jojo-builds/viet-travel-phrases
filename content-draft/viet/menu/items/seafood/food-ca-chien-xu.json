@@ -1,0 +1,62 @@
+{
+  "itemID": "food-ca-chien-xu",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá chiên xù",
+  "englishTranslation": "Crispy fried fish",
+  "romanizedNoTones": "Ca chien xu",
+  "soundOut": "kah chee-en soo",
+  "notes": "",
+  "atAGlance": "Crisp-fried fish with a golden crust, usually eaten with rice, herbs, and a lime-pepper salt dip or ginger fish sauce that cuts through the crunch.",
+  "whatItIs": "Cá chiên xù is fish fried until the outside turns shaggy and crisp while the flesh stays moist. Depending on the restaurant, it may be served whole or as fillets.",
+  "usuallyIncludes": [
+    "fried fish",
+    "crisp crumb or batter",
+    "fresh herbs or cucumber",
+    "fish sauce or tamarind dip",
+    "rice if ordered as a meal"
+  ],
+  "howToEnjoy": "Pull pieces of fish away from the bone or crust, dip lightly in lime-pepper salt dip or ginger fish sauce, and eat with rice and vegetables. A squeeze of lime keeps the fried coating lively.",
+  "howLocalsOrder": "Cá chiên xù is ordered for crisp skin or coating, so ask whether it comes whole and whether bones remain. Locals use lime-pepper salt or a ginger fish-sauce dip to sharpen each bite.",
+  "worthKnowing": "Vietnamese fried fish is often about contrast: hot crisp skin, clean white flesh, fresh herbs, and nước mắm or tamarind sauce rather than a heavy batter-only experience.",
+  "goodToKnow": "Ask about bones before ordering, especially with whole fish. Crisp fish is best eaten hot, with herbs and a bright fish-sauce or tamarind dip if served.",
+  "commonOptions": [
+    "ask about bones",
+    "extra herbs",
+    "rice on the side",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá chiên xù.",
+    "english": "I’d like one order of crispy fried fish.",
+    "pronunciation": "chaw toy moht fuhn kah chee-en soo",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cá chiên xù was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

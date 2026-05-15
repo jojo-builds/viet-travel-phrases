@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-sapoche",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố sapôchê",
+  "englishTranslation": "Sapodilla smoothie",
+  "romanizedNoTones": "Sinh to sapoche",
+  "soundOut": "sing toh sah-poh-chay",
+  "notes": "",
+  "atAGlance": "Sinh tố sapôchê uses sapodilla for a brown-sugar, pear-like smoothie that many visitors have never tasted before Vietnam.",
+  "whatItIs": "Sinh tố sapôchê is sapoche blended with ice and milk. Expect sapodilla smoothie with brown-sugar, caramel, and pear-like notes in a thick creamy blend.",
+  "usuallyIncludes": [
+    "sapodilla",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it when you want a fruit flavor that feels soft and caramel-like instead of sharp.",
+  "howLocalsOrder": "Sinh tố sapôchê is blended to order, so ask ít đường, ít sữa, or ít đá before the fruit hits the blender. The best version should taste like sapodilla, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố sapôchê is a classic Vietnamese smoothie-shop flavor that can surprise visitors who have never tasted sapodilla.",
+  "goodToKnow": "Usually sweet even before added sugar.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố sapôchê.",
+    "english": "I’d like one glass of sapodilla smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh sah-poh-chay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố sapôchê was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

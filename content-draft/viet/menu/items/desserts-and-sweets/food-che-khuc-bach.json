@@ -1,0 +1,63 @@
+{
+  "itemID": "food-che-khuc-bach",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè khúc bạch",
+  "englishTranslation": "Almond panna cotta dessert",
+  "romanizedNoTones": "Che khuc bach",
+  "soundOut": "cheh khook bak",
+  "notes": "",
+  "atAGlance": "Chè khúc bạch is a chilled dessert with soft milk-jelly cubes, lychee or longan, syrup, and sliced almonds. It is lighter and cleaner than coconut-heavy chè.",
+  "whatItIs": "Chè khúc bạch is a modern chilled chè with creamy jelly cubes, fruit, syrup, and almonds.",
+  "usuallyIncludes": [
+    "milk jelly",
+    "lychee or longan",
+    "clear syrup",
+    "almonds",
+    "ice"
+  ],
+  "howToEnjoy": "Eat it cold and keep the syrup light. The best bites pair a jelly cube with lychee or longan.",
+  "howLocalsOrder": "Order chè khúc bạch cold and ask less sweet if you want the almond-like jelly cubes, lychee, and syrup to feel delicate.",
+  "worthKnowing": "Compared with bean-based chè, khúc bạch feels closer to panna cotta in syrup, which makes it approachable while still showing Vietnam’s love of chilled texture desserts.",
+  "goodToKnow": "The cubes should be silky and lightly creamy, not chewy like tapioca. It is a good choice when you want a cooler, gentler dessert.",
+  "commonOptions": [
+    "less sweet",
+    "extra lychee",
+    "no almonds",
+    "less ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Usually contains dairy and almonds.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè khúc bạch.",
+    "english": "I’d like one glass of almond panna cotta dessert.",
+    "pronunciation": "chaw toy moht lee cheh khook bak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè khúc bạch was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

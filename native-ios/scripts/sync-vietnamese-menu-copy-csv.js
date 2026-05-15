@@ -3,6 +3,13 @@
 const fs = require("fs");
 const path = require("path");
 
+if (!process.argv.includes("--allow-deprecated-sync")) {
+  console.error(
+    "sync-vietnamese-menu-copy-csv.js is deprecated. The CSV is now an export from authored menu JSON; run native-ios/scripts/generate-vietnamese-menu-copy.js instead."
+  );
+  process.exit(2);
+}
+
 const repoRoot = path.resolve(__dirname, "..", "..");
 const menuJSONPath = path.join(repoRoot, "native-ios", "Resources", "vietnamese-menu-copy.json");
 const menuCSVPath = path.join(repoRoot, "content-draft", "viet", "menu", "speaklocal_vietnamese_full_menu_detail_copy.csv");
@@ -15,6 +22,7 @@ const itemsByID = new Map(payload.items.map((item) => [item.itemID, item]));
 const rows = parseCSV(fs.readFileSync(menuCSVPath, "utf8"));
 const [header, ...bodyRows] = rows;
 const headerIndexes = new Map(header.map((name, index) => [name, index]));
+const syncAllRows = process.argv.includes("--all");
 
 const fieldMap = {
   atAGlance: "at_a_glance",
@@ -36,7 +44,9 @@ let updated = 0;
 
 for (const row of bodyRows) {
   const itemID = row[headerIndexes.get("item_id")];
-  if (!overrideIDs.has(itemID)) {
+  const override = overrides[itemID] ?? {};
+
+  if (!syncAllRows && !overrideIDs.has(itemID)) {
     continue;
   }
 
@@ -46,7 +56,7 @@ for (const row of bodyRows) {
   }
 
   for (const [jsonField, csvField] of Object.entries(fieldMap)) {
-    if (!Object.prototype.hasOwnProperty.call(overrides[itemID], jsonField)) {
+    if (!syncAllRows && !Object.prototype.hasOwnProperty.call(override, jsonField)) {
       continue;
     }
 
@@ -62,7 +72,7 @@ for (const row of bodyRows) {
 }
 
 fs.writeFileSync(menuCSVPath, stringifyCSV([header, ...bodyRows]));
-console.log(`Synced ${updated} Vietnamese menu override rows back to CSV`);
+console.log(`Synced ${updated} Vietnamese menu ${syncAllRows ? "rows" : "override rows"} back to CSV`);
 
 function csvValue(value) {
   if (Array.isArray(value)) {

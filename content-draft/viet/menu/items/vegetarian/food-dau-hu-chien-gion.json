@@ -1,0 +1,66 @@
+{
+  "itemID": "food-dau-hu-chien-gion",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Đậu hũ chiên giòn",
+  "englishTranslation": "Crispy fried tofu",
+  "romanizedNoTones": "Dau hu chien gion",
+  "soundOut": "dow hoo chee-en yawn",
+  "notes": "",
+  "atAGlance": "Đậu hũ chiên giòn is crispy fried tofu, usually with hot tofu cubes, herbs, and soy or chili sauce.",
+  "whatItIs": "Đậu hũ chiên giòn is crispy fried tofu, often served with soy-chili dip, herbs, or rice. The outside should be crisp while the inside stays soft.",
+  "usuallyIncludes": [
+    "crispy fried tofu",
+    "soft tofu center",
+    "soy-chili dip",
+    "herbs",
+    "rice optional"
+  ],
+  "howToEnjoy": "Eat it hot and dip lightly so the tofu stays crisp. Ask for soy dip rather than fish-sauce dip if vegetarian eating matters.",
+  "howLocalsOrder": "Order đậu hũ chiên giòn as a snack or rice side. Ask for vegetarian dip, no chili, or extra herbs before it arrives.",
+  "worthKnowing": "At Vietnamese tofu shops and rice stalls, freshly fried tofu is much better than tofu that has sat too long; heat and texture are the whole point.",
+  "goodToKnow": "Ask what dip comes with the tofu; fish sauce can appear at non-vegetarian rice shops.",
+  "commonOptions": [
+    "vegetarian dip",
+    "no fish sauce",
+    "no chili",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the nước chấm is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần đậu hũ chiên giòn.",
+    "english": "I’d like one order of crispy fried tofu.",
+    "pronunciation": "chaw toy moht fuhn dow hoo chee-en yawn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Đậu hũ chiên giòn was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

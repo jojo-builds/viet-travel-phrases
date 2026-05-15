@@ -1,0 +1,59 @@
+{
+  "itemID": "food-banh-tieu",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh tiêu",
+  "englishTranslation": "Hollow sesame donut",
+  "romanizedNoTones": "Banh tieu",
+  "soundOut": "bahn tee-ew",
+  "notes": "",
+  "atAGlance": "Bánh tiêu is a hollow sesame donut with a crisp outside, airy middle, and gentle sweetness. It is a street snack, not a sandwich.",
+  "whatItIs": "Bánh tiêu is a hollow sesame donut with a crisp outside, airy middle, and gentle sweetness. It is a street snack or bakery bite rather than a filled dessert.",
+  "usuallyIncludes": [
+    "fried sesame dough",
+    "hollow center",
+    "light sweetness"
+  ],
+  "howToEnjoy": "Eat it fresh if possible, while the outside still crackles. It is best simple: sesame aroma, light sweetness, and warm dough.",
+  "howLocalsOrder": "Bánh tiêu is best ordered freshly fried, when the sesame shell is still airy and warm. Buy a few to share, and eat it soon because the hollow crunch fades quickly.",
+  "worthKnowing": "Bánh tiêu belongs to Vietnam’s everyday snack world, where fried dough, sesame, and portable bakery treats sit beside savory bread orders.",
+  "goodToKnow": "Freshness matters most. The outside should still have a little crackle, while the center stays light and hollow.",
+  "commonOptions": [
+    "freshly fried",
+    "takeaway",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một cái bánh tiêu.",
+    "english": "I’d like one order of hollow sesame donut.",
+    "pronunciation": "chaw toy moht kai bahn tee-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh tiêu was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

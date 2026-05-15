@@ -1,0 +1,64 @@
+{
+  "itemID": "food-tom-rang-muoi",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tôm rang muối",
+  "englishTranslation": "Salt-roasted shrimp",
+  "romanizedNoTones": "Tom rang muoi",
+  "soundOut": "tom rang moo-ee",
+  "notes": "",
+  "atAGlance": "Tôm rang muối is salt-roasted shrimp, usually with garlic, chili, crisp shells, and rice.",
+  "whatItIs": "Tôm rang muối is salt-roasted or salt-tossed shrimp, often shell-on, with a dry savory crust of salt, chili, garlic, or spices.",
+  "usuallyIncludes": [
+    "shrimp in shell",
+    "salt crust",
+    "garlic",
+    "chili",
+    "fried aromatics"
+  ],
+  "howToEnjoy": "Peel if needed, then taste the salty crust before adding lime or chili. Shell-on shrimp can be messy, but the shell carries much of the flavor.",
+  "howLocalsOrder": "Order tôm rang muối as a shared seafood plate. Ask whether shells remain, and say less chili before the shrimp is tossed with salt seasoning.",
+  "worthKnowing": "Rang muối means roasted or tossed with salt seasoning, a common Vietnamese seafood style for slow sharing.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about shells",
+    "less spicy",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tôm rang muối.",
+    "english": "I’d like one order of salt-roasted shrimp.",
+    "pronunciation": "chaw toy moht fuhn tom rang moo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Tôm rang muối was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

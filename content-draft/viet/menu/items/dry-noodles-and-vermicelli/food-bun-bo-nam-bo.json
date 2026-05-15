@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bun-bo-nam-bo",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bún bò Nam Bộ",
+  "englishTranslation": "Southern beef vermicelli salad",
+  "romanizedNoTones": "Bun bo Nam Bo",
+  "soundOut": "boon baw nahm boh",
+  "notes": "",
+  "atAGlance": "Bún bò Nam Bộ is southern beef noodle salad, usually with warm beef, herbs, peanuts, fried shallots, and sweet-tart fish sauce.",
+  "whatItIs": "Bún bò Nam Bộ is a southern dry noodle bowl with warm beef, herbs, peanuts, fried shallots, and sweet-tart fish-sauce dressing. It tastes best once everything is mixed through the noodles.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "seared beef",
+    "fresh herbs",
+    "nước chấm",
+    "peanuts or fried shallots"
+  ],
+  "howToEnjoy": "Toss the warm stir-fried beef through the cool vermicelli with herbs, bean sprouts, peanuts, fried shallots, and fish-sauce dressing. The bowl should taste smoky, nutty, fresh, and tangy at once.",
+  "howLocalsOrder": "Order bún bò Nam Bộ when you want beef without broth. Ask for no peanuts or nước chấm on the side before the bowl is tossed.",
+  "worthKnowing": "Despite the name, this is not bún bò Huế. It is a dry southern-style beef vermicelli bowl where texture and dressing do the work.",
+  "goodToKnow": "The fish-sauce dressing goes over the bowl and gets tossed through the noodles, herbs, beef, peanuts, and fried shallots. Pour gradually if you want more control over sweetness and salt.",
+  "commonOptions": [
+    "nước chấm on the side",
+    "no peanuts",
+    "extra herbs",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún bò Nam Bộ.",
+    "english": "I’d like one order of southern beef vermicelli salad.",
+    "pronunciation": "chaw toy moht fuhn boon baw nahm boh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún bò Nam Bộ was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-cha-gio",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chả giò",
+  "englishTranslation": "Fried spring rolls",
+  "romanizedNoTones": "Cha gio",
+  "soundOut": "chah yaw",
+  "notes": "",
+  "atAGlance": "Chả giò is Vietnamese fried spring rolls, usually with crisp shell, pork or mixed filling, lettuce, herbs, and fish sauce.",
+  "whatItIs": "Chả giò are southern Vietnamese fried spring rolls, usually pork or mixed filling in a crisp wrapper, served with lettuce, herbs, and nước chấm.",
+  "usuallyIncludes": [
+    "fried wrapper",
+    "fried spring rolls",
+    "vegetables",
+    "herbs",
+    "nước chấm"
+  ],
+  "howToEnjoy": "Wrap a hot fried roll in lettuce or herbs, then dip in nước chấm. The greens cool the fried shell and keep each bite fresh.",
+  "howLocalsOrder": "Order chả giò as a shared starter or alongside bún. Ask for no chili in the nước chấm, and use the lettuce and herbs instead of eating the rolls plain.",
+  "worthKnowing": "In southern Vietnam, chả giò is the fried-roll word visitors need; in the north, you may see nem rán for a similar idea.",
+  "goodToKnow": "If nước chấm, a lime-fish-sauce dip with sugar, garlic, and chili comes separately, start with a small dip; it can be salty, sweet, sour, and spicy at once.",
+  "commonOptions": [
+    "extra lettuce",
+    "extra herbs",
+    "no chili",
+    "extra nước chấm"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả giò.",
+    "english": "I’d like one order of fried spring rolls.",
+    "pronunciation": "chaw toy moht fuhn chah yaw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-test-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "native copy audit fix"
+    ],
+    "reviewNote": "Chả giò was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

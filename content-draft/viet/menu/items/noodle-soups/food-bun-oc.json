@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bun-oc",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún ốc",
+  "englishTranslation": "Snail noodle soup",
+  "romanizedNoTones": "Bun oc",
+  "soundOut": "boon awk",
+  "notes": "",
+  "atAGlance": "Bún ốc is snail vermicelli soup, often Hanoi-style, with a tomato-bright broth, herbs, and chewy river snails. It is tangy, clean, and more about texture than richness.",
+  "whatItIs": "Bún ốc is snail vermicelli soup with a tangy tomato-leaning broth, herbs, and chewy snails. It is a classic example of texture doing as much work as flavor.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "snails",
+    "tomato broth",
+    "herbs",
+    "chili optional"
+  ],
+  "howToEnjoy": "Try the snails with broth and herbs before adding extra chili. If chewy seafood textures are not your thing, choose another soup.",
+  "howLocalsOrder": "Say Bún ốc when you specifically want snails in a tangy tomato broth. Ask about the snails or request less chili first, then brighten the bowl with herbs once it arrives.",
+  "worthKnowing": "Bún ốc is especially associated with Hanoi-style street eating, though you may see versions elsewhere.",
+  "goodToKnow": "Ốc means snails. If texture matters, ask before ordering; the snails should be chewy rather than soft like clams.",
+  "commonOptions": [
+    "extra herbs",
+    "less chili",
+    "no shrimp paste",
+    "ask about snails"
+  ],
+  "regionalAssociation": "Hanoi and northern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains snails and may include shrimp paste.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún ốc.",
+    "english": "I’d like one bowl of snail noodle soup.",
+    "pronunciation": "chaw toy moht toh boon awk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún ốc was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

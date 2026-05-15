@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-nuoc-dua",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Nước dừa",
+  "englishTranslation": "Fresh coconut water",
+  "romanizedNoTones": "Nuoc dua",
+  "soundOut": "nook yoo-uh",
+  "notes": "",
+  "atAGlance": "Nước dừa is young coconut water, clean and lightly sweet, a simple taste of tropical Vietnam at markets, beaches, and roadside stalls.",
+  "whatItIs": "Nước dừa is water from a young coconut, sometimes served in the coconut itself. Expect fresh coconut water that is clean, lightly sweet, nutty, and cooling.",
+  "usuallyIncludes": [
+    "fresh coconut water",
+    "coconut flesh optional",
+    "ice optional"
+  ],
+  "howToEnjoy": "Drink it cold and scoop the soft coconut flesh if it is offered.",
+  "howLocalsOrder": "Nước dừa is often ordered as a whole coconut or takeaway cup. Ask for no ice and coconut flesh if you want the clean, lightly sweet coconut experience.",
+  "worthKnowing": "In Vietnam, Nước dừa is one of the simplest ways to taste tropical Vietnam at beaches, markets, and street carts.",
+  "goodToKnow": "Usually not as sweet as bottled coconut drinks.",
+  "commonOptions": [
+    "no ice",
+    "with coconut flesh",
+    "whole coconut",
+    "takeaway cup"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước dừa.",
+    "english": "I’d like one glass of fresh coconut water.",
+    "pronunciation": "chaw toy moht lee nook yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước dừa was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-sup-cua",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Súp cua",
+  "englishTranslation": "Crab soup",
+  "romanizedNoTones": "Sup cua",
+  "soundOut": "soop koo-ah",
+  "notes": "",
+  "atAGlance": "Súp cua is a thick crab soup with egg ribbons, pepper, cilantro, and sometimes corn or asparagus. It is warm, silky, and snack-sized.",
+  "whatItIs": "Súp cua is thick crab soup with egg ribbons, crab meat, mushrooms or quail egg, cilantro, and black pepper. It is silky, warming, and often sold as a small snack bowl.",
+  "usuallyIncludes": [
+    "crab soup",
+    "egg ribbons",
+    "corn or asparagus",
+    "cilantro",
+    "pepper"
+  ],
+  "howToEnjoy": "Stir gently, add pepper or chili oil only after tasting, and eat while hot so the egg ribbons and crab stay silky.",
+  "howLocalsOrder": "Order súp cua by bowl size, then ask for no pepper or no chili oil if you want it gentle. Ask about crab or quail egg if allergies matter.",
+  "worthKnowing": "This is a comfort snack rather than a seafood feast; the texture should be thick and spoonable.",
+  "goodToKnow": "A little pepper or chili can wake up the bowl, but the texture should stay silky and crab-sweet.",
+  "commonOptions": [
+    "no pepper",
+    "no chili oil",
+    "extra quail egg",
+    "ask about crab"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô súp cua.",
+    "english": "I’d like one bowl of crab soup.",
+    "pronunciation": "chaw toy moht toh soop koo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Súp cua was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

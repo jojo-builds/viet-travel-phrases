@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-chuoi-nuong",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh chuối nướng",
+  "englishTranslation": "Baked banana cake",
+  "romanizedNoTones": "Banh chuoi nuong",
+  "soundOut": "bahn choo-ee noong",
+  "notes": "",
+  "atAGlance": "Bánh chuối nướng is baked banana cake, often dense, coconut-rich, and caramelized at the edges.",
+  "whatItIs": "Bánh chuối nướng is a baked banana dessert where ripe banana and coconut create a dense slice.",
+  "usuallyIncludes": [
+    "banana",
+    "coconut milk",
+    "bread or starch base",
+    "sugar"
+  ],
+  "howToEnjoy": "Eat it warm or room temperature, noticing the dense banana, coconut, and toasted edges. It is cake-like but usually more pudding-rich than fluffy.",
+  "howLocalsOrder": "Order bánh chuối nướng by slice. Ask whether coconut milk is poured on top if you want it richer or lighter.",
+  "worthKnowing": "Vietnamese banana sweets often lean soft, sticky, and coconut-rich rather than cake-like.",
+  "goodToKnow": "This is not fluffy American banana bread. Expect a moist, custardy texture.",
+  "commonOptions": [
+    "one slice",
+    "pack to go",
+    "less sweet",
+    "coconut milk on the side"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh chuối nướng.",
+    "english": "I’d like one order of baked banana cake.",
+    "pronunciation": "chaw toy moht fuhn bahn choo-ee noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh chuối nướng was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

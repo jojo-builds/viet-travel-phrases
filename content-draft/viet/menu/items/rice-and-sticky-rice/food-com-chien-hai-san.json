@@ -1,0 +1,65 @@
+{
+  "itemID": "food-com-chien-hai-san",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên hải sản",
+  "englishTranslation": "Seafood fried rice",
+  "romanizedNoTones": "Com chien hai san",
+  "soundOut": "kum chee-en high sahn",
+  "notes": "",
+  "atAGlance": "Cơm chiên hải sản is seafood fried rice, usually with shrimp, squid, egg, scallion, and wok-tossed grains.",
+  "whatItIs": "Cơm chiên hải sản is seafood fried rice with shrimp, squid, fish cake, egg, scallions, and wok aroma. It should be savory and briny, not wet.",
+  "usuallyIncludes": [
+    "fried rice",
+    "shrimp or squid",
+    "egg",
+    "scallions",
+    "peas or vegetables"
+  ],
+  "howToEnjoy": "Eat it hot so the rice grains stay separate and the seafood stays tender. Ask what seafood is included if shellfish is a concern.",
+  "howLocalsOrder": "Order cơm chiên hải sản for a seafood-heavy fried rice. Ask ít dầu, ít cay, or no shellfish before the wok starts.",
+  "worthKnowing": "Hải sản can vary by shop, so the same name may mean shrimp and squid at one place and a broader seafood mix at another.",
+  "goodToKnow": "Good seafood fried rice should taste wok-hot, lightly smoky, and dotted with sweet seafood. Use chili or soy if offered, but the rice itself should carry the flavor.",
+  "commonOptions": [
+    "less oil",
+    "less spicy",
+    "ask about shellfish",
+    "extra egg"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên hải sản.",
+    "english": "I’d like one order of seafood fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en high sahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm chiên hải sản was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

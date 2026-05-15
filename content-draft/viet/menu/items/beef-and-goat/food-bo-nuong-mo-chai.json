@@ -1,0 +1,66 @@
+{
+  "itemID": "food-bo-nuong-mo-chai",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò nướng mỡ chài",
+  "englishTranslation": "Grilled beef wrapped in caul fat",
+  "romanizedNoTones": "Bo nuong mo chai",
+  "soundOut": "baw noong muh chai",
+  "notes": "",
+  "atAGlance": "Bò nướng mỡ chài is seasoned beef wrapped in lacey caul fat and grilled, usually with smoke, herbs, pickles, and a salty-sweet dip.",
+  "whatItIs": "Bò nướng mỡ chài is seasoned beef wrapped in lacey caul fat and grilled, so the fat bastes the meat as it cooks. It is often eaten with herbs, pickles, rice paper, or a salty-sweet dip.",
+  "usuallyIncludes": [
+    "seasoned beef",
+    "caul fat",
+    "grilled smoke",
+    "rice paper and herbs",
+    "salty-sweet dip"
+  ],
+  "howToEnjoy": "Wrap the grilled beef with herbs and rice paper if served, then dip lightly. The caul fat keeps the beef juicy, so balance it with fresh sides.",
+  "howLocalsOrder": "Order bò nướng mỡ chài as a shared grilled plate. Ask for extra rice paper, extra herbs, or less chili before the platter arrives.",
+  "worthKnowing": "In Vietnamese old-school grill cooking, mỡ chài is caul fat, a thin net of fat that melts around the beef and keeps it juicy.",
+  "goodToKnow": "Mỡ chài is caul fat wrapped around beef, so the grill flavor is richer than ordinary beef skewers.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "less spicy",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò nướng mỡ chài.",
+    "english": "I’d like one order of grilled beef wrapped in caul fat.",
+    "pronunciation": "chaw toy moht fuhn baw noong muh chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bò nướng mỡ chài was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-chuoi",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố chuối",
+  "englishTranslation": "Banana smoothie",
+  "romanizedNoTones": "Sinh to chuoi",
+  "soundOut": "sing toh choo-ee",
+  "notes": "",
+  "atAGlance": "Sinh tố chuối is banana smoothie comfort, creamy and familiar, but usually sweeter and colder in Vietnamese café style.",
+  "whatItIs": "Sinh tố chuối is ripe banana blended with ice, milk, or condensed milk. Expect banana smoothie that is creamy, mellow, filling, and naturally sweet.",
+  "usuallyIncludes": [
+    "banana",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it when you want something gentle and substantial between meals.",
+  "howLocalsOrder": "Sinh tố chuối is blended to order, so ask ít đường, ít sữa, or ít đá before the fruit hits the blender. The best version should taste like banana, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố chuối is a familiar fruit drink made Vietnamese by the ice-and-condensed-milk smoothie style.",
+  "goodToKnow": "Good when you want a less tart fruit drink.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố chuối.",
+    "english": "I’d like one glass of banana smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh choo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố chuối was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

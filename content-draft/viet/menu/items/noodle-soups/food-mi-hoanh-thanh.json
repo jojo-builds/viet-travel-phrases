@@ -1,0 +1,64 @@
+{
+  "itemID": "food-mi-hoanh-thanh",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì hoành thánh",
+  "englishTranslation": "Wonton egg noodle soup",
+  "romanizedNoTones": "Mi hoanh thanh",
+  "soundOut": "mee hwanh tanh",
+  "notes": "",
+  "atAGlance": "Mì hoành thánh is wonton egg-noodle soup, usually with pork wontons, egg noodles, chives, and broth.",
+  "whatItIs": "Mì hoành thánh is egg-noodle soup with wontons, a Vietnamese-Chinese shop classic. The bowl usually balances chewy yellow noodles, pork or shrimp wontons, greens, scallions, and a clear savory broth.",
+  "usuallyIncludes": [
+    "egg noodles",
+    "wontons",
+    "clear broth",
+    "greens",
+    "scallions"
+  ],
+  "howToEnjoy": "Taste a wonton and a spoonful of broth before adding chili oil. The best bowls have springy noodles, tender wontons, and broth that stays clean enough to sip.",
+  "howLocalsOrder": "Order mì hoành thánh when you want the wontons to be the point of the bowl. Ask for less chili or chili on the side if the shop adds chili oil by default.",
+  "worthKnowing": "This is part of Vietnam’s Chinese-influenced noodle-shop language, especially visible in southern cities and older market neighborhoods.",
+  "goodToKnow": "Ask for không cay if you want Mì hoành thánh without added chili.",
+  "commonOptions": [
+    "less spicy",
+    "extra wontons",
+    "chili on the side",
+    "extra greens"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì hoành thánh.",
+    "english": "I’d like one bowl of wonton egg noodle soup.",
+    "pronunciation": "chaw toy moht toh mee hwanh tanh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mì hoành thánh was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-bo-tai-chanh",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò tái chanh",
+  "englishTranslation": "Beef carpaccio with lime",
+  "romanizedNoTones": "Bo tai chanh",
+  "soundOut": "baw tie chan",
+  "notes": "",
+  "atAGlance": "Bò tái chanh is rare beef cured with lime, tossed with herbs, onion, peanuts, and bright dressing. It is a shared appetizer, not a cooked steak plate.",
+  "whatItIs": "Bò tái chanh is lime-cured rare beef salad with herbs, onion, peanuts, and a sweet-sour-salty dressing.",
+  "usuallyIncludes": [
+    "rare beef",
+    "lime",
+    "herbs",
+    "onion",
+    "peanuts"
+  ],
+  "howToEnjoy": "Eat it as a shared starter with herbs and crunchy toppings. Ask for no peanuts or less chili before it is mixed.",
+  "howLocalsOrder": "Bò tái chanh is lime-cured beef salad, so ask for no peanuts or less chili before tossing. It is a bright drinking-snack style order, not a rice-heavy stew.",
+  "worthKnowing": "Bò tái chanh sits in Vietnam’s bright shared-appetizer world: rare beef, lime, herbs, onion, and peanuts wake up the table before richer grilled or hot-pot dishes arrive.",
+  "goodToKnow": "Tái means rare. The lime changes the beef texture, but cautious travelers should treat it as rare beef.",
+  "commonOptions": [
+    "no peanuts",
+    "less chili",
+    "extra herbs",
+    "share plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains rare beef and often peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò tái chanh.",
+    "english": "I’d like one order of beef carpaccio with lime.",
+    "pronunciation": "chaw toy moht fuhn baw tie chan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-peanuts",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bò tái chanh was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

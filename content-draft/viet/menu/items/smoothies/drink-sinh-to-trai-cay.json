@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-trai-cay",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố trái cây",
+  "englishTranslation": "Mixed fruit smoothie",
+  "romanizedNoTones": "Sinh to trai cay",
+  "soundOut": "sing toh chai kay",
+  "notes": "",
+  "atAGlance": "Sinh tố trái cây is the mixed-fruit smoothie wildcard, where the stall’s ripe fruit, condensed milk, and ice decide the cup.",
+  "whatItIs": "Sinh tố trái cây is seasonal fruit blended with ice, milk, or yogurt. Expect mixed-fruit smoothie with whatever is ripe: sweet, creamy, colorful, and sometimes surprising.",
+  "usuallyIncludes": [
+    "mixed fruit",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask what fruit is going in if you care about flavor or allergies.",
+  "howLocalsOrder": "Sinh tố trái cây is blended to order, so ask ít đường, ít sữa, or ít đá before the fruit hits the blender. The best version should taste like mixed fruit, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố trái cây is a good way to let a Vietnamese smoothie stall show its freshest fruit of the day.",
+  "goodToKnow": "Flavor changes by shop and season.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố trái cây.",
+    "english": "I’d like one glass of mixed fruit smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh chai kay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố trái cây was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

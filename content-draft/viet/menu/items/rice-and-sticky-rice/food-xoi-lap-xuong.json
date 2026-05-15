@@ -1,0 +1,63 @@
+{
+  "itemID": "food-xoi-lap-xuong",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xôi lạp xưởng",
+  "englishTranslation": "Sticky rice with Chinese sausage",
+  "romanizedNoTones": "Xoi lap xuong",
+  "soundOut": "soy lap swoong",
+  "notes": "",
+  "atAGlance": "Xôi lạp xưởng is sticky rice with Chinese sausage, usually with sweet-savory lạp xưởng, fried shallots, and sticky grains.",
+  "whatItIs": "Xôi lạp xưởng is sticky rice topped with sweet-savory Chinese-style sausage. The sausage fat perfumes the rice, especially when the packet is still warm.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "pork",
+    "fried shallots",
+    "savory topping"
+  ],
+  "howToEnjoy": "Slice or mix the sausage through the sticky rice so the sweet fat seasons the grains. Fried shallots or scallion oil add crunch and aroma.",
+  "howLocalsOrder": "Order xôi lạp xưởng when you want sticky rice with a sweet sausage bite. Ask for extra fried shallots or pack to go before it is wrapped.",
+  "worthKnowing": "Lạp xưởng is a useful menu word for Chinese-style sausage, common in Vietnamese breakfasts, rice plates, and fried rice.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra sausage",
+    "extra fried shallots",
+    "pack to go",
+    "less oil"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi lạp xưởng.",
+    "english": "I’d like one order of sticky rice with Chinese sausage.",
+    "pronunciation": "chaw toy moht fuhn soy lap swoong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Xôi lạp xưởng was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

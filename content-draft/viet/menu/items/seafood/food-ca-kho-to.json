@@ -1,0 +1,62 @@
+{
+  "itemID": "food-ca-kho-to",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cá kho tộ",
+  "englishTranslation": "Caramelized fish in clay pot",
+  "romanizedNoTones": "Ca kho to",
+  "soundOut": "kah kaw toh",
+  "notes": "",
+  "atAGlance": "Cá kho tộ is fish simmered in a clay pot with fish sauce, caramelized sugar, pepper, and sometimes pork fat until the fish-sauce caramel braise turns dark and glossy.",
+  "whatItIs": "Cá kho tộ is fish braised in a clay pot with fish sauce, caramelized sugar, black pepper, and sometimes pork fat until the fish-sauce caramel braise is glossy and intense.",
+  "usuallyIncludes": [
+    "fish",
+    "fish sauce caramel",
+    "black pepper",
+    "clay pot",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat it with plain rice. The fish-sauce caramel braise is too concentrated to treat like a light dip, and fish bones may be present.",
+  "howLocalsOrder": "Cá kho tộ is a rice-table order, not a solo snack. Ask about bones, then eat the salty fish-sauce caramel juices with plain rice and balance it with vegetables or soup.",
+  "worthKnowing": "Cá kho tộ is closely tied to southern comfort food and family meals. The clay pot matters: it concentrates fish sauce, caramelized sugar, pepper, and fish juices into an intense glaze for plain rice.",
+  "goodToKnow": "The clay-pot glaze is a fish-sauce caramel: salty, sweet, peppery, and concentrated. Eat it with plain rice and ask about bones if you prefer easier pieces.",
+  "commonOptions": [
+    "extra rice",
+    "ask about bones",
+    "less pepper",
+    "share clay pot"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain fish bones and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá kho tộ.",
+    "english": "I’d like one order of caramelized fish in clay pot.",
+    "pronunciation": "chaw toy moht fuhn kah kaw toh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cá kho tộ was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

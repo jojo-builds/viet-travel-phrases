@@ -1546,7 +1546,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(drinkSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 86)
     }
 
-    func testVietnameseMenuDetailPagesUseSuppliedTemplateCopy() {
+    func testVietnameseMenuDetailPagesUseHandwrittenSourceCopy() {
         let pho = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
         let coffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-sua-da"))
         let eggCoffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-trung"))
@@ -1555,9 +1555,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(pho.englishTitle, "Beef noodle soup")
         XCTAssertEqual(pho.pronunciation, "fuh baw")
         XCTAssertEqual(pho.heroImageName, "HeroMenuFoodPhoBo")
-        XCTAssertEqual(pho.sections.map(\.id), ["what-it-is", "usually-includes", "how-to-enjoy", "worth-knowing", "common-options", "useful-phrases", "standard-way"])
+        XCTAssertEqual(pho.sections.map(\.id), ["what-it-is", "usually-includes", "how-to-enjoy", "how-locals-order", "worth-knowing", "common-options", "useful-phrases", "order-line"])
         XCTAssertTrue(pho.sections.first?.body.contains("clear, fragrant broth") == true)
         XCTAssertTrue(pho.sections.first { $0.id == "how-to-enjoy" }?.body.contains("Taste the broth first") == true)
+        XCTAssertTrue(pho.sections.first { $0.id == "how-locals-order" }?.body.contains("shops may ask which cut you want") == true)
+        XCTAssertEqual(pho.sections.first { $0.id == "how-locals-order" }?.phrases, [])
         XCTAssertTrue(pho.sections.first { $0.id == "worth-knowing" }?.body.contains("signature noodle soups") == true)
         XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.presentation, .menuChips)
         XCTAssertEqual(pho.sections.first { $0.id == "usually-includes" }?.chips, ["beef broth", "rice noodles", "sliced beef", "herbs", "lime"])
@@ -1565,21 +1567,26 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.presentation, .menuChips)
         XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.chips, ["extra herbs", "chili", "bean sprouts", "less spicy", "no MSG"])
         XCTAssertEqual(pho.sections.first { $0.id == "common-options" }?.breakdown, [])
-        XCTAssertEqual(pho.sections.first { $0.id == "standard-way" }?.phrases.first?.vietnamese, "Cho tôi một tô phở bò.")
+        XCTAssertEqual(pho.sections.first { $0.id == "order-line" }?.presentation, .plainText)
+        XCTAssertTrue(pho.sections.first { $0.id == "order-line" }?.body.contains("Cho tôi một tô phở bò.") == true)
+        XCTAssertEqual(pho.sections.first { $0.id == "order-line" }?.phrases, [])
 
         XCTAssertEqual(coffee.title, "Cà phê sữa đá")
         XCTAssertEqual(coffee.englishTitle, "Vietnamese iced milk coffee")
         XCTAssertEqual(coffee.heroImageName, "HeroMenuDrinkCaPheSuaDa")
-        XCTAssertTrue(coffee.sections.first?.body.contains("robusta coffee") == true)
-        XCTAssertTrue(coffee.sections.first { $0.id == "worth-knowing" }?.body.contains("phin") == true)
-        XCTAssertEqual(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.map(\.vietnamese), ["Ít đường thôi", "Ít đá thôi", "Không đá", "Tính tiền giúp tôi"])
+        XCTAssertTrue(coffee.sections.first?.body.contains("robusta bitterness") == true)
+        XCTAssertTrue(coffee.sections.first { $0.id == "how-locals-order" }?.body.contains("less sweet") == true)
+        XCTAssertTrue(coffee.sections.first { $0.id == "worth-knowing" }?.body.contains("condensed milk gives the body") == true)
+        XCTAssertEqual(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.map(\.vietnamese), ["Làm ơn bớt đường đi", "Không đường nhé", "Ít đá thôi", "Làm ơn đừng có đá", "Tính tiền giúp tôi"])
+        XCTAssertTrue(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.allSatisfy { $0.playbackAudioKey != nil } == true)
         XCTAssertEqual(coffee.practiceCTALabel, "Practice ordering this")
         XCTAssertFalse(coffee.showsCatalogExplore)
 
         XCTAssertEqual(eggCoffee.title, "Cà phê trứng")
-        XCTAssertTrue(eggCoffee.sections.first?.body.contains("Hanoi-born egg coffee") == true)
+        XCTAssertTrue(eggCoffee.sections.first?.body.contains("fresh milk was scarce") == true)
         XCTAssertTrue(eggCoffee.sections.first { $0.id == "usually-includes" }?.chips.contains("egg cream") == true)
-        XCTAssertTrue(eggCoffee.sections.first { $0.id == "worth-knowing" }?.body.contains("Hanoi café culture") == true)
+        XCTAssertTrue(eggCoffee.sections.first { $0.id == "worth-knowing" }?.body.contains("Nguyễn Văn Giảng") == true)
+        XCTAssertTrue(eggCoffee.sections.first { $0.id == "worth-knowing" }?.body.contains("1946") == true)
     }
 
     func testVietnameseFoodMenuCopyHighlightsFoodSaucesAndCorrectIngredients() {
@@ -1611,15 +1618,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(banhMiBoKho.sections.first?.body.contains("beef stew served with bread") == true)
         XCTAssertEqual(banhMiBoKho.sections.first { $0.id == "usually-includes" }?.chips, ["baguette", "beef stew", "carrots", "herbs", "spiced broth"])
         XCTAssertFalse(banhMiBoKho.sections.first?.body.localizedCaseInsensitiveContains("sandwich with") == true)
-        XCTAssertEqual(banhMiBoKho.sections.first { $0.id == "standard-way" }?.phrases.first?.english, "I’d like one order of beef stew with bread.")
+        XCTAssertTrue(banhMiBoKho.sections.first { $0.id == "order-line" }?.body.contains("I’d like one order of beef stew with bread.") == true)
+        XCTAssertEqual(banhMiBoKho.sections.first { $0.id == "order-line" }?.phrases, [])
 
         XCTAssertTrue(boKhoBanhMi.sections.first?.body.contains("beef stew served with bread") == true)
         XCTAssertEqual(boKhoBanhMi.sections.first { $0.id == "usually-includes" }?.chips, ["beef stew", "baguette", "carrots", "herbs", "spiced broth"])
-        XCTAssertEqual(boKhoBanhMi.sections.first { $0.id == "standard-way" }?.phrases.first?.english, "I’d like one order of beef stew with bread.")
-        XCTAssertFalse(boKhoBanhMi.sections.first { $0.id == "standard-way" }?.phrases.first?.english.localizedCaseInsensitiveContains("sandwich") == true)
+        XCTAssertTrue(boKhoBanhMi.sections.first { $0.id == "order-line" }?.body.contains("I’d like one order of beef stew with bread.") == true)
+        XCTAssertFalse(boKhoBanhMi.sections.first { $0.id == "order-line" }?.body.localizedCaseInsensitiveContains("sandwich") == true)
 
         XCTAssertTrue(caRiDe.sections.first?.body.contains("goat curry") == true)
-        XCTAssertEqual(caRiDe.sections.first { $0.id == "usually-includes" }?.chips, ["goat", "curry sauce", "warm spices", "herbs", "bread or rice"])
+        XCTAssertEqual(caRiDe.sections.first { $0.id == "usually-includes" }?.chips, ["goat", "curry broth", "potato or taro", "coconut milk or richness", "bread or noodles"])
         XCTAssertFalse(caRiDe.sections.first { $0.id == "usually-includes" }?.chips.contains("fish") == true)
     }
 
@@ -1637,7 +1645,16 @@ final class AppChromeTests: XCTestCase {
         let caKhoTo = item("food-ca-kho-to")
         XCTAssertTrue(caKhoTo.atAGlance.contains("fish sauce, caramelized sugar"))
         XCTAssertTrue(caKhoTo.goodToKnow.contains("fish-sauce caramel"))
-        XCTAssertTrue(caKhoTo.guideWorthKnowing.contains("clay pot and fish-sauce caramel"))
+        XCTAssertTrue(caKhoTo.guideWorthKnowing.contains("clay pot matters"))
+        XCTAssertTrue(caKhoTo.guideWorthKnowing.contains("plain rice"))
+
+        let banhMiPate = item("food-banh-mi-pate")
+        XCTAssertTrue(banhMiPate.guideWorthKnowing.contains("French colonial bread"))
+        XCTAssertTrue(banhMiPate.guideHowLocalsOrder.contains("fast, cheap, portable"))
+
+        let comTam = item("food-com-tam-bi-cha-suon")
+        XCTAssertTrue(comTam.guideWorthKnowing.contains("broken rice grains from milling"))
+        XCTAssertTrue(comTam.guideHowLocalsOrder.contains("without the fried-egg add-on"))
 
         let banhBao = item("food-banh-bao")
         XCTAssertTrue(banhBao.atAGlance.contains("soft steamed bun"))
@@ -1660,11 +1677,52 @@ final class AppChromeTests: XCTestCase {
 
         let ruouDe = item("drink-ruou-de")
         XCTAssertTrue(ruouDe.travelerCaution?.contains("Alcoholic") == true)
-        XCTAssertTrue(ruouDe.guideWorthKnowing.contains("rice-liquor culture"))
+        XCTAssertTrue(ruouDe.guideWorthKnowing.contains("rice-spirit culture"))
     }
 
     func testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields() {
         XCTAssertEqual(VietnameseMenuCatalog.guideCopyAuditFailures(), [])
+    }
+
+    func testVietnameseMenuItemsAreHandwrittenReviewedAndUseTextOnlyOrderLines() {
+        XCTAssertEqual(VietnameseMenuCatalog.allItems.count, 355)
+
+        for item in VietnameseMenuCatalog.allItems {
+            XCTAssertEqual(item.editorialReview?.status, "handwritten-reviewed", "\(item.itemID) should be individually reviewed")
+            XCTAssertEqual(item.guideOrderLine.audioPolicy, "text-only", "\(item.itemID) order line should stay text-only")
+            XCTAssertGreaterThanOrEqual(item.guideHowLocalsOrder.split(separator: " ").count, 18, "\(item.itemID) should include a specific How locals order note")
+
+            let detail = try! XCTUnwrap(PhraseDetailPage.page(withID: item.detailPageID))
+            let localOrder = try! XCTUnwrap(detail.sections.first { $0.id == "how-locals-order" })
+            XCTAssertEqual(localOrder.title, "How locals order")
+            XCTAssertTrue(localOrder.body.contains(item.guideHowLocalsOrder), "\(item.itemID) should show How locals order copy")
+            XCTAssertEqual(localOrder.phrases, [], "\(item.itemID) How locals order must stay text-only")
+
+            let orderLine = try! XCTUnwrap(detail.sections.first { $0.id == "order-line" })
+            XCTAssertTrue(orderLine.body.contains(item.guideOrderLine.vietnamese), "\(item.itemID) order line should show Vietnamese text")
+            XCTAssertEqual(orderLine.phrases, [], "\(item.itemID) order line must not create one-off audio rows")
+            XCTAssertFalse(detail.sections.contains { $0.id == "standard-way" }, "\(item.itemID) should not render a quick-say audio section")
+        }
+    }
+
+    func testVietnameseMenuHelperPhrasesAreReusableAndAudioBacked() {
+        let manifest = try! XCTUnwrap(AudioAssetManifest.main)
+        XCTAssertGreaterThanOrEqual(VietnameseMenuCatalog.helperPhrases.filter(\.isReady).count, 10)
+
+        for helper in VietnameseMenuCatalog.helperPhrases where helper.isReady {
+            let audioKey = try! XCTUnwrap(helper.audioKey, "\(helper.id) should declare an audio key")
+            XCTAssertTrue(
+                manifest.hasPlayableEntry(for: audioKey, matchingText: helper.vietnamese),
+                "\(helper.id) audio should exactly match \(helper.vietnamese)"
+            )
+        }
+
+        for item in VietnameseMenuCatalog.allItems {
+            let detail = try! XCTUnwrap(PhraseDetailPage.page(withID: item.detailPageID))
+            for phrase in detail.sections.first(where: { $0.id == "useful-phrases" })?.phrases ?? [] {
+                XCTAssertNotNil(phrase.playbackAudioKey, "\(item.itemID) helper \(phrase.id) should be playable")
+            }
+        }
     }
 
     func testVietnameseMenuItemsUseUniqueImageAssetNames() {

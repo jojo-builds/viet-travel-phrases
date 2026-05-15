@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-bo",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bò",
+  "englishTranslation": "Honeycomb cake",
+  "romanizedNoTones": "Banh bo",
+  "soundOut": "bahn baw",
+  "notes": "",
+  "atAGlance": "Bánh bò is honeycomb cake, a chewy steamed or baked rice cake with airy tunnels and gentle coconut sweetness.",
+  "whatItIs": "Bánh bò is a Vietnamese honeycomb cake, usually chewy and lightly sweet rather than fluffy.",
+  "usuallyIncludes": [
+    "rice flour",
+    "tapioca starch",
+    "coconut milk",
+    "yeast or leavening"
+  ],
+  "howToEnjoy": "Eat it fresh so the honeycomb crumb stays springy. The best bites are lightly sweet, coconut-fragrant, and bouncy rather than dry.",
+  "howLocalsOrder": "Order bánh bò by piece or small bag at bakeries and markets. Ask for a small portion if you just want to taste the honeycomb texture.",
+  "worthKnowing": "Bánh bò shows how Vietnamese sweets can be springy and steamed rather than fluffy and baked. The honeycomb texture and coconut aroma are the point.",
+  "goodToKnow": "The honeycomb texture is the point. It should bounce a little when you bite it.",
+  "commonOptions": [
+    "one piece",
+    "pack to go",
+    "small portion",
+    "less sweet"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh bò.",
+    "english": "I’d like one order of honeycomb cake.",
+    "pronunciation": "chaw toy moht fuhn bahn baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh bò was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

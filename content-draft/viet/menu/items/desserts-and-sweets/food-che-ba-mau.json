@@ -1,0 +1,63 @@
+{
+  "itemID": "food-che-ba-mau",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chè ba màu",
+  "englishTranslation": "Three-color dessert",
+  "romanizedNoTones": "Che ba mau",
+  "soundOut": "cheh bah mow",
+  "notes": "",
+  "atAGlance": "Chè ba màu is the classic three-color dessert cup: beans, pandan jelly, coconut milk, and crushed ice layered so every spoonful changes texture.",
+  "whatItIs": "Chè ba màu means three-color chè, usually a layered cup of beans, jellies, coconut milk, and ice.",
+  "usuallyIncludes": [
+    "mung beans",
+    "red beans",
+    "pandan jelly",
+    "coconut milk",
+    "crushed ice"
+  ],
+  "howToEnjoy": "Dig down through the layers before stirring everything together. The contrast between creamy, chewy, icy, and soft is the point.",
+  "howLocalsOrder": "Order chè ba màu by cup, then decide ice and coconut milk. Stir only after admiring the red bean, mung bean, jelly, and coconut layers.",
+  "worthKnowing": "Chè is Vietnam’s broad dessert-drink world, and ba màu is one of the easiest first cups to understand visually because the layers show texture before you taste it.",
+  "goodToKnow": "This is as much about texture as sweetness. Stir lightly if you want the coconut milk to reach every layer.",
+  "commonOptions": [
+    "less sweet",
+    "less ice",
+    "extra coconut milk",
+    "takeaway cup"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè ba màu.",
+    "english": "I’d like one glass of three-color dessert.",
+    "pronunciation": "chaw toy moht lee cheh bah mow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè ba màu was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

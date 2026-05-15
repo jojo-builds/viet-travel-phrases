@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-chien-nuoc-mam",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Gà chiên nước mắm",
+  "englishTranslation": "Fish sauce fried chicken",
+  "romanizedNoTones": "Ga chien nuoc mam",
+  "soundOut": "gah chee-en nook mahm",
+  "notes": "",
+  "atAGlance": "Gà chiên nước mắm is fish-sauce fried chicken, usually with crisp skin, garlic, sugar, and salty glaze.",
+  "whatItIs": "Gà chiên nước mắm is fried chicken tossed in a sticky fish-sauce garlic glaze. It should be crisp-edged, salty-sweet, garlicky, and made for rice or sharing.",
+  "usuallyIncludes": [
+    "chicken",
+    "crispy coating",
+    "fish sauce glaze",
+    "garlic",
+    "herbs"
+  ],
+  "howToEnjoy": "Eat while the edges are still sticky-crisp, and use rice or cucumber to balance the fish-sauce garlic glaze.",
+  "howLocalsOrder": "Order gà chiên nước mắm as a shared plate or rice companion. Ask for less chili or extra rice before the glaze is tossed through.",
+  "worthKnowing": "Nước mắm here is not a dip; it becomes a savory caramel-like coating for the fried chicken.",
+  "goodToKnow": "The glaze is fish sauce, sugar, garlic, and chili, so it is sticky, savory, and sweet rather than a plain fried-chicken sauce.",
+  "commonOptions": [
+    "less spicy",
+    "extra rice",
+    "share size",
+    "extra cucumber"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà chiên nước mắm.",
+    "english": "I’d like one order of fish sauce fried chicken.",
+    "pronunciation": "chaw toy moht fuhn gah chee-en nook mahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà chiên nước mắm was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

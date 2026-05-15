@@ -1,0 +1,66 @@
+{
+  "itemID": "food-com-nieu",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm niêu",
+  "englishTranslation": "Clay pot rice",
+  "romanizedNoTones": "Com nieu",
+  "soundOut": "kum nee-ew",
+  "notes": "",
+  "atAGlance": "Cơm niêu is clay-pot rice, usually with crisp rice edges, fluffy center, and shared savory dishes.",
+  "whatItIs": "Cơm niêu is clay-pot rice, served hot with a crisp bottom or edges and meant to accompany shared dishes. The rice itself is the attraction.",
+  "usuallyIncludes": [
+    "clay-pot rice",
+    "crisp rice edges",
+    "steamed rice center",
+    "shared side dishes",
+    "scallion oil optional"
+  ],
+  "howToEnjoy": "Scrape some crisp rice edge with the soft rice, then eat it alongside braised fish, vegetables, or soup. Order shared dishes if the menu lists cơm niêu as plain rice.",
+  "howLocalsOrder": "Order cơm niêu when you want the clay-pot rice experience. Ask what dishes come with it, because some shops sell the rice alone and others serve a full set.",
+  "worthKnowing": "The joy is texture: soft rice in the middle, toasted edges near the pot, and family-style dishes around it.",
+  "goodToKnow": "Ask what comes with the clay-pot rice. Some places serve a full shared set, while others expect you to choose braised fish, vegetables, or soup separately.",
+  "commonOptions": [
+    "ask what comes with it",
+    "extra shared dish",
+    "vegetables",
+    "braised fish"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm niêu.",
+    "english": "I’d like one order of clay pot rice.",
+    "pronunciation": "chaw toy moht fuhn kum nee-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm niêu was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

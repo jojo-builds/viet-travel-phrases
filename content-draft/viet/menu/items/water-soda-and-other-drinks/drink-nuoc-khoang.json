@@ -1,0 +1,58 @@
+{
+  "itemID": "drink-nuoc-khoang",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước khoáng",
+  "englishTranslation": "Mineral water",
+  "romanizedNoTones": "Nuoc khoang",
+  "soundOut": "nook kwahng",
+  "notes": "",
+  "atAGlance": "Nước khoáng is mineral water, a practical menu word to know because still and sparkling bottles may both appear.",
+  "whatItIs": "Nước khoáng is bottled mineral water; menus may use the same label for still or sparkling bottles. Expect a clean, faintly mineral taste rather than sweetness, fruit, or tea flavor.",
+  "usuallyIncludes": [
+    "mineral water",
+    "bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Specify có ga or không ga if you care about bubbles.",
+  "howLocalsOrder": "Nước khoáng is a simple water order, but ask for a sealed cold bottle if that matters. Say không đá if you do not want ice added to the glass.",
+  "worthKnowing": "In Vietnam, Nước khoáng is useful because mineral water may be still or sparkling, so có ga and không ga are the words to notice.",
+  "goodToKnow": "Ask if it is chilled.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai nước khoáng.",
+    "english": "I’d like one bottle of mineral water.",
+    "pronunciation": "chaw toy moht chai nook kwahng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-drink-specificity-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước khoáng was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Removed generic depending-on-order phrasing from mineral water copy."
+  }
+}

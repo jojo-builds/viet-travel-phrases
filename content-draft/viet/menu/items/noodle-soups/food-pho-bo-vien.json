@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-bo-vien",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở bò viên",
+  "englishTranslation": "Pho with beef meatballs",
+  "romanizedNoTones": "Pho bo vien",
+  "soundOut": "fuh baw vee-en",
+  "notes": "",
+  "atAGlance": "Phở bò viên is beef phở with springy beef meatballs, clear broth, rice noodles, herbs, and lime. It is a good choice when you want texture without rare slices.",
+  "whatItIs": "Phở bò viên is phở with beef meatballs instead of sliced beef. The meatballs are springy and mild, while the broth still carries the phở aroma.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "beef meatballs",
+    "onion",
+    "herbs and lime"
+  ],
+  "howToEnjoy": "Slice or bite the meatballs with noodles and herbs. Add chili sauce slowly so the beef broth stays clear.",
+  "howLocalsOrder": "Say Phở bò viên when the beef meatballs are the part you want, not just a plain beef bowl. Locals season lightly at the table, then use extra herbs or bean sprouts only if the broth still feels too heavy.",
+  "worthKnowing": "Bò viên appears across Vietnamese noodle shops and street snacks. In phở, it is the easiest beef topping if rare meat makes you nervous.",
+  "goodToKnow": "Bò viên are bouncy beef meatballs. The texture is firmer than sliced beef and easy to recognize in a mixed phở menu.",
+  "commonOptions": [
+    "extra meatballs",
+    "extra herbs",
+    "bean sprouts",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở bò viên.",
+    "english": "I’d like one bowl of pho with beef meatballs.",
+    "pronunciation": "chaw toy moht toh fuh baw vee-en",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở bò viên was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

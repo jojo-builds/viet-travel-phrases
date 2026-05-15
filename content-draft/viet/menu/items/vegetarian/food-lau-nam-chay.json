@@ -1,0 +1,66 @@
+{
+  "itemID": "food-lau-nam-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu nấm chay",
+  "englishTranslation": "Vegetarian mushroom hot pot",
+  "romanizedNoTones": "Lau nam chay",
+  "soundOut": "low nahm chai",
+  "notes": "",
+  "atAGlance": "Lẩu nấm chay is vegetarian mushroom hot pot, usually with mixed mushrooms, tofu, greens, noodles, and vegetable broth.",
+  "whatItIs": "Lẩu nấm chay is vegetarian mushroom hot pot with vegetable broth, mixed mushrooms, tofu, greens, herbs, and noodles. It is earthy, light, and shared at the table.",
+  "usuallyIncludes": [
+    "vegetable broth",
+    "mixed mushrooms",
+    "tofu",
+    "greens",
+    "noodles"
+  ],
+  "howToEnjoy": "Cook mushrooms and greens in stages, then add noodles near the end. Ask about fish sauce or meat broth if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order lẩu nấm chay by table size, and say không nước mắm or nước dùng chay if the broth needs to be fully vegetarian.",
+  "worthKnowing": "In Vietnamese chay hot pot, mushrooms bring the depth, so the pot can feel satisfying without meat when the broth is clean and aromatic.",
+  "goodToKnow": "Ask whether the hot-pot broth is vegetable-based and whether the table dips are vegetarian.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra mushrooms",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the broth and table dips are vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần lẩu nấm chay.",
+    "english": "I’d like one order of vegetarian mushroom hot pot.",
+    "pronunciation": "chaw toy moht fuhn low nahm chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Lẩu nấm chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

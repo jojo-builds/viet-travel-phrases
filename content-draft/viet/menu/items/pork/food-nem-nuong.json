@@ -1,0 +1,65 @@
+{
+  "itemID": "food-nem-nuong",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Nem nướng",
+  "englishTranslation": "Grilled pork sausage",
+  "romanizedNoTones": "Nem nuong",
+  "soundOut": "nem noong",
+  "notes": "",
+  "atAGlance": "Nem nướng is grilled pork sausage, usually with smoke, sweet garlic seasoning, herbs, and thick Nha Trang-style peanut-garlic dip.",
+  "whatItIs": "Nem nướng is grilled pork sausage, often smoky, bouncy, and slightly sweet, served with herbs, rice paper or noodles, pickles, and a thick peanut-garlic dip in many shops.",
+  "usuallyIncludes": [
+    "grilled pork sausage",
+    "rice paper optional",
+    "fresh herbs",
+    "rice noodles",
+    "thick Nha Trang-style peanut-garlic dip"
+  ],
+  "howToEnjoy": "Wrap the sausage with herbs and rice paper if served, or mix it into noodles. Use the thick dip slowly because it is rich and sweet-savory.",
+  "howLocalsOrder": "Order nem nướng as a shared grilled pork plate or ask for the cuốn version if you want to wrap. Say no peanuts or no chili before the dip arrives.",
+  "worthKnowing": "Nha Trang and south-central versions are especially famous, often because of the dip and crunchy roll fillings.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "no peanuts",
+    "no chili",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nem nướng.",
+    "english": "I’d like one order of grilled pork sausage.",
+    "pronunciation": "chaw toy moht fuhn nem noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Nem nướng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

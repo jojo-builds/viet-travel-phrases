@@ -1,0 +1,65 @@
+{
+  "itemID": "food-mi-xao-hai-san",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì xào hải sản",
+  "englishTranslation": "Stir-fried egg noodles with seafood",
+  "romanizedNoTones": "Mi xao hai san",
+  "soundOut": "mee sow high sahn",
+  "notes": "",
+  "atAGlance": "Mì xào hải sản is stir-fried noodles with seafood, usually with shrimp, squid, greens, garlic, and fish-sauce-and-garlic glaze.",
+  "whatItIs": "Mì xào hải sản is wok-fried egg noodles with seafood such as shrimp, squid, or fish cake, plus vegetables and garlic. It should taste briny, hot, and a little smoky from the pan.",
+  "usuallyIncludes": [
+    "egg noodles",
+    "seafood",
+    "fresh herbs",
+    "garlic-fish-sauce stir-fry glaze",
+    "fried shallots or crunchy topping"
+  ],
+  "howToEnjoy": "Eat it soon after it lands so the noodles keep their chew and the seafood stays tender. Ask about shellfish before ordering if allergies matter.",
+  "howLocalsOrder": "Order mì xào hải sản for a seafood noodle plate rather than soup. Ask ít cay, ít dầu, or không hải sản có vỏ if you need less chili, less oil, or no shellfish.",
+  "worthKnowing": "At casual shops, hải sản can mean a mix of shrimp, squid, fish cake, or whatever seafood the kitchen has ready.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "less oil",
+    "extra vegetables",
+    "ask about shellfish"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì xào hải sản.",
+    "english": "I’d like one bowl of stir-fried egg noodles with seafood.",
+    "pronunciation": "chaw toy moht toh mee sow high sahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mì xào hải sản was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

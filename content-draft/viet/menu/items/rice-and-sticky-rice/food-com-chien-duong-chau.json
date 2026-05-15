@@ -1,0 +1,67 @@
+{
+  "itemID": "food-com-chien-duong-chau",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên dương châu",
+  "englishTranslation": "Yangzhou fried rice",
+  "romanizedNoTones": "Com chien duong chau",
+  "soundOut": "kum chee-en yuhng chow",
+  "notes": "",
+  "atAGlance": "Cơm chiên dương châu is Dương Châu fried rice, usually with egg, sausage or ham, shrimp, peas, carrot, and scallion.",
+  "whatItIs": "Cơm chiên dương châu is Yangzhou-style fried rice in Vietnamese restaurant language, usually with egg, sausage or ham, shrimp, peas, carrots, and scallions.",
+  "usuallyIncludes": [
+    "fried rice grains",
+    "egg",
+    "sausage or ham",
+    "shrimp",
+    "peas and carrots"
+  ],
+  "howToEnjoy": "Eat it hot while the grains stay separate and lightly smoky from the wok. Add chili or soy-lime seasoning sparingly so the egg and sausage flavor stays clear.",
+  "howLocalsOrder": "Order cơm chiên dương châu when you want a mixed fried rice plate. Ask for no shrimp, no pork sausage, or less oil before the wok starts if those matter.",
+  "worthKnowing": "This is a familiar Chinese-Vietnamese restaurant order, useful when traveling with people who want something simple but still local to the menu style.",
+  "goodToKnow": "This mixed fried rice can include shrimp and pork sausage or ham, so ask first if shellfish or pork matters.",
+  "commonOptions": [
+    "less oil",
+    "no shrimp",
+    "no pork",
+    "extra egg"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên dương châu.",
+    "english": "I’d like one order of yangzhou fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en yuhng chow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm chiên dương châu was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

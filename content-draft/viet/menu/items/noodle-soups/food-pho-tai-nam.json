@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-tai-nam",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở tái nạm",
+  "englishTranslation": "Pho with rare beef and brisket",
+  "romanizedNoTones": "Pho tai nam",
+  "soundOut": "fuh tie nahm",
+  "notes": "",
+  "atAGlance": "Phở tái nạm gives you two beef textures in one bowl: tender rare beef and richer brisket. It is still a clean broth dish, but the meat feels fuller than plain phở tái.",
+  "whatItIs": "Phở tái nạm combines rare beef with brisket in the same bowl. The rare beef stays tender, while nạm brings a deeper beef flavor and more chew.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "rare beef",
+    "brisket",
+    "herbs and lime"
+  ],
+  "howToEnjoy": "Taste both beef cuts before changing the broth. Add lime or chili only after you know how rich the brisket makes the bowl.",
+  "howLocalsOrder": "Phở tái nạm is the order when you want rare beef, so say the full name instead of just phở. Add lime, herbs, and chili after tasting the beef broth; ask chín if you decide you want cooked meat instead.",
+  "worthKnowing": "Tái nạm combines rare beef with brisket or flank, a classic phở-shop move for people who want both tenderness and deeper beef flavor.",
+  "goodToKnow": "Nạm is brisket, so this bowl has more chew and beef depth. Taste the broth before adding chili sauce or lime.",
+  "commonOptions": [
+    "extra brisket",
+    "extra herbs",
+    "bean sprouts",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở tái nạm.",
+    "english": "I’d like one bowl of pho with rare beef and brisket.",
+    "pronunciation": "chaw toy moht toh fuh tie nahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở tái nạm was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

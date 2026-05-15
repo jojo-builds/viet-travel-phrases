@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-tra-lai",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà lài",
+  "englishTranslation": "Jasmine tea",
+  "romanizedNoTones": "Tra lai",
+  "soundOut": "chah lie",
+  "notes": "",
+  "atAGlance": "Trà lài is jasmine tea, fragrant and clean, part of the Vietnamese habit of using tea for welcome, pause, and conversation.",
+  "whatItIs": "Trà lài is tea scented with jasmine blossoms. Expect jasmine tea with a fragrant floral nose, light body, and clean tea bitterness.",
+  "usuallyIncludes": [
+    "jasmine tea",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Pair it with snacks or a meal when you want something aromatic but not heavy.",
+  "howLocalsOrder": "Trà lài is ordered by temperature and sweetness. Ask ít đường or ít đá before the glass is made, because Vietnamese tea drinks can arrive sweeter and icier than expected.",
+  "worthKnowing": "In Vietnamese tea shops, trà lài is one of the easiest floral teas to recognize because jasmine scent rises before the first sip.",
+  "goodToKnow": "Can be plain or sweetened depending on the shop.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà lài.",
+    "english": "I’d like one glass of jasmine tea.",
+    "pronunciation": "chaw toy moht lee chah lie",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Trà lài was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

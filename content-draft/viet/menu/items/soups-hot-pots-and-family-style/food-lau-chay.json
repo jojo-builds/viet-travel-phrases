@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-chay",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu chay",
+  "englishTranslation": "Vegetarian hot pot",
+  "romanizedNoTones": "Lau chay",
+  "soundOut": "low chai",
+  "notes": "",
+  "atAGlance": "Lẩu chay is vegetarian hot pot, usually with mushrooms, tofu, greens, noodles, and vegetable broth.",
+  "whatItIs": "Lẩu chay is vegetarian hot pot with vegetable broth, tofu, mushrooms, greens, herbs, and noodles. The broth should taste clean, earthy, and light.",
+  "usuallyIncludes": [
+    "vegetable broth",
+    "tofu",
+    "mushrooms",
+    "greens",
+    "noodles"
+  ],
+  "howToEnjoy": "Add mushrooms and tofu first, greens next, and noodles near the end. Ask whether the broth and dip are fully vegetarian if the restaurant is mixed.",
+  "howLocalsOrder": "Order lẩu chay by table size and say không nước mắm if fish sauce needs to stay out of the broth and dip. Ask for extra mushrooms or noodles before the pot starts.",
+  "worthKnowing": "Chay hot pot is common at vegetarian restaurants and Buddhist-style eateries, but mixed restaurants may need a clearer no-fish-sauce request.",
+  "goodToKnow": "Ask whether the broth and dip are fully vegetarian if needed.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra mushrooms",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask whether the broth and dip are fully vegetarian if needed.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu chay.",
+    "english": "I’d like one order of vegetarian hot pot.",
+    "pronunciation": "chaw toy moht noy low chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Lẩu chay was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

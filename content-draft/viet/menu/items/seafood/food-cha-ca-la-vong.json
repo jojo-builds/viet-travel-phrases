@@ -1,0 +1,65 @@
+{
+  "itemID": "food-cha-ca-la-vong",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chả cá Lã Vọng",
+  "englishTranslation": "Turmeric fish with dill",
+  "romanizedNoTones": "Cha ca La Vong",
+  "soundOut": "chah kah lah vawng",
+  "notes": "",
+  "atAGlance": "Chả cá Lã Vọng is Hanoi-style turmeric fish with dill and scallions, eaten with rice vermicelli, peanuts, herbs, and usually mắm tôm or a milder nước chấm.",
+  "whatItIs": "Chả cá Lã Vọng is Hanoi-style turmeric fish cooked with dill and scallions, eaten with vermicelli, herbs, peanuts, and usually mắm tôm or nước chấm.",
+  "usuallyIncludes": [
+    "turmeric fish",
+    "dill",
+    "scallions",
+    "rice vermicelli",
+    "peanuts"
+  ],
+  "howToEnjoy": "Mix fish, dill, noodles, herbs, and peanuts in small bites. Try mắm tôm carefully first; it is fermented, strong, and central to the classic version.",
+  "howLocalsOrder": "Order chả cá Lã Vọng when you want the Hanoi turmeric-dill fish experience. Ask for nước chấm instead of mắm tôm if fermented shrimp paste feels too strong.",
+  "worthKnowing": "Dill is not a garnish here; it is cooked in abundance with Hanoi-style turmeric fish.",
+  "goodToKnow": "This is not fish cake. The famous version is about hot turmeric-marinated fish and dill at the table.",
+  "commonOptions": [
+    "nước chấm instead of mắm tôm",
+    "no peanuts",
+    "extra herbs",
+    "less spicy"
+  ],
+  "regionalAssociation": "Hanoi",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain peanuts and shrimp paste.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả cá Lã Vọng.",
+    "english": "I’d like one order of turmeric fish with dill.",
+    "pronunciation": "chaw toy moht fuhn chah kah lah vawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-ask-peanuts"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-test-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "native copy audit fix"
+    ],
+    "reviewNote": "Chả cá Lã Vọng was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

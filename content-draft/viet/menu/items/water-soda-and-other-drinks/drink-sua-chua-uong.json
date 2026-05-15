@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-sua-chua-uong",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sữa chua uống",
+  "englishTranslation": "Drinking yogurt",
+  "romanizedNoTones": "Sua chua uong",
+  "soundOut": "soo-uh choo-ah oong",
+  "notes": "",
+  "atAGlance": "Sữa chua uống is drinking yogurt, tangy, sweet, and refreshing in the Vietnamese snack-drink lane.",
+  "whatItIs": "Sữa chua uống is yogurt drink served chilled. Expect drinkable yogurt that is tangy, sweet, creamy, and refreshing.",
+  "usuallyIncludes": [
+    "drinking yogurt",
+    "bottle or cup",
+    "sugar"
+  ],
+  "howToEnjoy": "Order it when you want something tart and cooling rather than fizzy.",
+  "howLocalsOrder": "Sữa chua uống is usually ordered cold. Ask ít đường if you want more yogurt tang, or ít đá if you do not want the drink watered down.",
+  "worthKnowing": "In Vietnam, Sữa chua uống fits Vietnam’s love of dairy drinks that blur snack and refreshment.",
+  "goodToKnow": "Usually sweetened.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains dairy.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sữa chua uống.",
+    "english": "I’d like one glass of drinking yogurt.",
+    "pronunciation": "chaw toy moht lee soo-uh choo-ah oong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sữa chua uống was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

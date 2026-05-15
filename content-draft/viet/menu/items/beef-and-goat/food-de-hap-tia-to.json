@@ -1,0 +1,66 @@
+{
+  "itemID": "food-de-hap-tia-to",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Dê hấp tía tô",
+  "englishTranslation": "Goat steamed with perilla",
+  "romanizedNoTones": "De hap tia to",
+  "soundOut": "yay hup tee-ah toh",
+  "notes": "",
+  "atAGlance": "Dê hấp tía tô is goat steamed with purple perilla, ginger, and herbs, usually eaten with dipping salt or a light fermented-bean style dip depending on the shop.",
+  "whatItIs": "Dê hấp tía tô is goat steamed with perilla leaves, ginger, and light seasoning. The perilla gives the goat a minty, herbal lift.",
+  "usuallyIncludes": [
+    "goat",
+    "purple perilla",
+    "ginger",
+    "herbs",
+    "dipping salt or light dip"
+  ],
+  "howToEnjoy": "Eat the steamed goat with perilla and a light dip, using herbs to balance the meat’s stronger flavor. It is gentler than grilled goat.",
+  "howLocalsOrder": "Order dê hấp tía tô when you want goat without grill smoke. Ask for extra perilla, dipping salt on the side, or less chili.",
+  "worthKnowing": "In Vietnam, tía tô is perilla, a herb that makes steamed goat smell fresh and slightly peppery.",
+  "goodToKnow": "Tía tô gives the goat a herbal, minty-perilla lift. Ask for the dip on the side if you want to taste the steamed goat and herbs first.",
+  "commonOptions": [
+    "extra perilla",
+    "less spicy",
+    "dip on the side",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần dê hấp tía tô.",
+    "english": "I’d like one order of goat steamed with perilla.",
+    "pronunciation": "chaw toy moht fuhn yay hup tee-ah toh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Dê hấp tía tô was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

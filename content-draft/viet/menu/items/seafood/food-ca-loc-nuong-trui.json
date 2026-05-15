@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ca-loc-nuong-trui",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cá lóc nướng trui",
+  "englishTranslation": "Grilled snakehead fish",
+  "romanizedNoTones": "Ca loc nuong trui",
+  "soundOut": "kah lawk noong choo-ee",
+  "notes": "",
+  "atAGlance": "Cá lóc nướng trui is snakehead fish grilled whole, usually with smoky skin, herbs, rice paper, and tamarind or fish sauce.",
+  "whatItIs": "Cá lóc nướng trui is whole snakehead fish grilled rustic-style, often served with rice paper, herbs, noodles, cucumber, and a salty-sour dip. It is a wrap-and-share fish order.",
+  "usuallyIncludes": [
+    "whole snakehead fish",
+    "smoky grilled skin",
+    "rice paper",
+    "fresh herbs",
+    "nước chấm or tamarind dip"
+  ],
+  "howToEnjoy": "Pull fish from the bones, place it in rice paper with herbs and noodles if served, roll, then dip. Go slowly because whole fish can have small bones.",
+  "howLocalsOrder": "Order cá lóc nướng trui as a shared grilled fish. Ask for extra bánh tráng, extra herbs, and whether bones remain before everyone starts rolling.",
+  "worthKnowing": "This is strongly tied to Mekong Delta-style eating: smoky whole fish, fresh herbs, rice paper, and a hands-on table.",
+  "goodToKnow": "Whole fish can have bones; ask có xương không if that worries you.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "ask about bones",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá lóc nướng trui.",
+    "english": "I’d like one order of grilled snakehead fish.",
+    "pronunciation": "chaw toy moht fuhn kah lawk noong choo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cá lóc nướng trui was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

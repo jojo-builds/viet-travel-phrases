@@ -1,0 +1,64 @@
+{
+  "itemID": "food-ca-ri-de",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà ri dê",
+  "englishTranslation": "Goat curry",
+  "romanizedNoTones": "Ca ri de",
+  "soundOut": "kah ree yay",
+  "notes": "",
+  "atAGlance": "Cà ri dê is goat curry with a rich spiced broth, often eaten with bread or noodles so you can soak up the curry and tender goat pieces.",
+  "whatItIs": "Cà ri dê is goat curry with coconut, warm spices, potatoes or taro, and herbs, often eaten with bread, noodles, or rice.",
+  "usuallyIncludes": [
+    "goat",
+    "curry broth",
+    "potato or taro",
+    "coconut milk or richness",
+    "bread or noodles"
+  ],
+  "howToEnjoy": "Use bread or noodles to catch the coconut-spiced curry broth. Goat can be rich, so herbs and chili should be added gradually.",
+  "howLocalsOrder": "Order cà ri dê and choose bread, noodles, or rice if asked. Say ít cay if you want the coconut and spice without much heat.",
+  "worthKnowing": "Goat curry is a favorite at many Vietnamese dê restaurants, where the meat is shared across grilled, steamed, and curry dishes.",
+  "goodToKnow": "This is a curry bowl, not a quick dip. Tear bread into the broth or alternate spoonfuls with noodles so the goat, spice, and coconut richness stay together.",
+  "commonOptions": [
+    "with bread",
+    "with noodles",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "name-and-menu-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cà ri dê.",
+    "english": "I’d like one order of goat curry.",
+    "pronunciation": "chaw toy moht fuhn kah ree yay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cà ri dê was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

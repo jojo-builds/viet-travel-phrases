@@ -1,0 +1,65 @@
+{
+  "itemID": "food-oc-huong-rang-muoi",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Ốc hương rang muối",
+  "englishTranslation": "Salt-roasted sweet snails",
+  "romanizedNoTones": "Oc huong rang muoi",
+  "soundOut": "awk hyoong rang moo-ee",
+  "notes": "",
+  "atAGlance": "Ốc hương rang muối is sweet sea snails roasted with salt, usually with chili, garlic, rau răm, and lime-pepper salt dip or ginger fish sauce.",
+  "whatItIs": "Ốc hương rang muối are spotted babylon snails tossed with salt, chili, garlic, and aromatics. The shells carry a savory dry crust.",
+  "usuallyIncludes": [
+    "sea snails",
+    "salt",
+    "chili",
+    "garlic or fried aromatics",
+    "rau răm"
+  ],
+  "howToEnjoy": "Pull the snails from the shells and taste the salt crust before adding lime or chili. Eat slowly; this is a sharing plate, not a rush meal.",
+  "howLocalsOrder": "Order ốc hương rang muối at an ốc shop when you want a fragrant shellfish plate. Ask for less chili before the snails are tossed.",
+  "worthKnowing": "At Vietnamese ốc shops, ốc hương is prized for aroma and chew, and rang muối makes the shell itself part of the flavor experience.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "share size",
+    "lime-pepper salt",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần ốc hương rang muối.",
+    "english": "I’d like one order of salt-roasted sweet snails.",
+    "pronunciation": "chaw toy moht fuhn awk hyoong rang moo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Ốc hương rang muối was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

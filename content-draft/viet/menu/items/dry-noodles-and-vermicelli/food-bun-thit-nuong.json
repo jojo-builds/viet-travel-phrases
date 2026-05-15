@@ -1,0 +1,67 @@
+{
+  "itemID": "food-bun-thit-nuong",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bún thịt nướng",
+  "englishTranslation": "Grilled pork vermicelli bowl",
+  "romanizedNoTones": "Bun thit nuong",
+  "soundOut": "boon tit noong",
+  "notes": "",
+  "atAGlance": "Bún thịt nướng is rice vermicelli with lemongrass grilled pork, usually with herbs, pickles, peanuts, scallion oil, and nước chấm.",
+  "whatItIs": "Bún thịt nướng is a cool rice-vermicelli bowl with lemongrass grilled pork, herbs, pickles, peanuts, scallion oil, and nước chấm for tossing through the noodles.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "grilled pork",
+    "fresh herbs",
+    "nước chấm",
+    "peanuts"
+  ],
+  "howToEnjoy": "Pour the nước chấm over the vermicelli little by little, then toss from the bottom so grilled pork, herbs, pickles, peanuts, and noodles mix evenly.",
+  "howLocalsOrder": "Order bún thịt nướng when you want a cool noodle bowl with smoky pork. Ask for nước chấm on the side or no chili if you want to control the sweet-sour fish-sauce dressing.",
+  "worthKnowing": "This southern-style bowl is about contrast: warm grilled pork, cool bún, crunchy pickles, herbs, peanuts, and a bright pour of nước chấm.",
+  "goodToKnow": "Nước chấm is the dressing here; it is meant to season the noodles, not sit untouched on the side.",
+  "commonOptions": [
+    "nước chấm on the side",
+    "more herbs",
+    "no chili",
+    "no peanuts"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún thịt nướng.",
+    "english": "I’d like one order of grilled pork vermicelli bowl.",
+    "pronunciation": "chaw toy moht fuhn boon tit noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Bún thịt nướng was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

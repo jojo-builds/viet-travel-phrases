@@ -1,0 +1,62 @@
+{
+  "itemID": "food-ba-roi-chien-nuoc-mam",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Ba rọi chiên nước mắm",
+  "englishTranslation": "Pork belly fried with fish sauce",
+  "romanizedNoTones": "Ba roi chien nuoc mam",
+  "soundOut": "bah roy chee-en nook mahm",
+  "notes": "",
+  "atAGlance": "Ba rọi chiên nước mắm is pork belly fried until crisp, then tossed in garlic fish-sauce glaze. It is salty, sticky, crunchy, and built for sharing with rice.",
+  "whatItIs": "Ba rọi chiên nước mắm is fried pork belly tossed in garlic fish-sauce glaze. It is crisp-edged, salty-sweet, and much richer than grilled lean pork.",
+  "usuallyIncludes": [
+    "pork belly",
+    "fish sauce glaze",
+    "garlic",
+    "scallions",
+    "crispy edges"
+  ],
+  "howToEnjoy": "Eat with rice while the pork is still crisp. Ask for less chili if the glaze is spicy.",
+  "howLocalsOrder": "Ba rọi chiên nước mắm is pork belly fried until crisp, then coated in a salty-sweet fish-sauce glaze. Ask less spicy early and order rice or pickles to balance the richness.",
+  "worthKnowing": "Nước mắm means fish sauce; in this dish it becomes a sticky glaze with sugar and garlic. In Vietnamese home and street cooking, pork often gets its identity from caramelized fish sauce, grill smoke, pickles, herbs, or rice-plate sides.",
+  "goodToKnow": "Nước mắm is fish sauce, but here it becomes a glaze with sugar and garlic. It is not a lime-pepper salt dip or ginger fish sauce on the side.",
+  "commonOptions": [
+    "extra rice",
+    "less garlic",
+    "less chili",
+    "share plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork belly and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần ba rọi chiên nước mắm.",
+    "english": "I’d like one order of pork belly fried with fish sauce.",
+    "pronunciation": "chaw toy moht fuhn bah roy chee-en nook mahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Ba rọi chiên nước mắm was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

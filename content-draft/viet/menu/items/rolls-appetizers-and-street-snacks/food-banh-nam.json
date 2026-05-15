@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-nam",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh nậm",
+  "englishTranslation": "Flat steamed rice dumplings",
+  "romanizedNoTones": "Banh nam",
+  "soundOut": "bahn nahm",
+  "notes": "",
+  "atAGlance": "Bánh nậm is flat steamed rice dumplings in banana leaf, usually with shrimp-pork topping and fish sauce.",
+  "whatItIs": "Bánh nậm is a flat Huế rice-flour dumpling steamed in banana leaf, usually with minced shrimp or pork scattered across the soft rice sheet.",
+  "usuallyIncludes": [
+    "rice flour sheet",
+    "banana leaf",
+    "shrimp or pork topping",
+    "scallion oil",
+    "nước chấm"
+  ],
+  "howToEnjoy": "Open the banana leaf, spoon on a little nước chấm, and eat the soft rice sheet gently so the topping stays in each bite.",
+  "howLocalsOrder": "Order bánh nậm by portion, often several pieces at a time. Ask about shrimp or pork if you avoid either, and say no chili before nước chấm is added.",
+  "worthKnowing": "Bánh nậm is part of Huế’s delicate bánh culture, where small steamed cakes show off texture and careful dipping.",
+  "goodToKnow": "If nước chấm, a lime-fish-sauce dip with sugar, garlic, and chili comes separately, start with a small dip; it can be salty, sweet, sour, and spicy at once.",
+  "commonOptions": [
+    "no chili",
+    "ask about shrimp",
+    "ask about pork",
+    "extra nước chấm"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh nậm.",
+    "english": "I’d like one order of flat steamed rice dumplings.",
+    "pronunciation": "chaw toy moht fuhn bahn nahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh nậm was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

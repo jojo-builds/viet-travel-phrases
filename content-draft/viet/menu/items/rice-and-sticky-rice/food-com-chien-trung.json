@@ -1,0 +1,63 @@
+{
+  "itemID": "food-com-chien-trung",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên trứng",
+  "englishTranslation": "Egg fried rice",
+  "romanizedNoTones": "Com chien trung",
+  "soundOut": "kum chee-en choong",
+  "notes": "",
+  "atAGlance": "Cơm chiên trứng is egg fried rice, usually with egg, scallion, garlic, and grains fried until separate.",
+  "whatItIs": "Cơm chiên trứng is egg fried rice, usually just rice, egg, scallions, garlic, and wok seasoning. Its simplicity makes texture important.",
+  "usuallyIncludes": [
+    "fried rice",
+    "egg",
+    "scallions",
+    "garlic",
+    "pepper"
+  ],
+  "howToEnjoy": "Eat it while the grains are hot and separate, with egg coating the rice instead of clumping. Add chili only if you want heat, not because the dish needs rescuing.",
+  "howLocalsOrder": "Order cơm chiên trứng when you want the simplest fried rice. Ask ít dầu, thêm trứng, or không cay before the wok starts.",
+  "worthKnowing": "This can be a safe fallback order for travelers, but a good shop still makes it fragrant with egg, scallion, and hot wok breath.",
+  "goodToKnow": "This is a simple wok-rice order, often chosen when you want something quick, hot, and not too heavy. The egg should coat the grains lightly.",
+  "commonOptions": [
+    "less oil",
+    "extra egg",
+    "no chili",
+    "extra scallions"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên trứng.",
+    "english": "I’d like one order of egg fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en choong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm chiên trứng was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

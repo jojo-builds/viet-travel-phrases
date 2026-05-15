@@ -1,0 +1,66 @@
+{
+  "itemID": "food-bo-xao-rau-cai",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò xào rau cải",
+  "englishTranslation": "Beef stir-fried with greens",
+  "romanizedNoTones": "Bo xao rau cai",
+  "soundOut": "baw sow row kai",
+  "notes": "",
+  "atAGlance": "Bò xào rau cải is beef quickly stir-fried with leafy greens, usually with garlic, oyster-style sauce, rice, and crisp-tender vegetables.",
+  "whatItIs": "Bò xào rau cải is beef stir-fried with mustard greens or leafy vegetables, garlic, and savory wok seasoning. It is a family-table plate made for rice.",
+  "usuallyIncludes": [
+    "beef",
+    "rau cải leafy greens",
+    "garlic",
+    "savory wok seasoning",
+    "rice"
+  ],
+  "howToEnjoy": "Eat with rice so the garlicky greens and beef juices season the grains. The greens should stay bright, not overcooked.",
+  "howLocalsOrder": "Order bò xào rau cải as a shared plate. Ask for extra vegetables, less oil, or no chili before the wok starts.",
+  "worthKnowing": "On Vietnamese rice tables, rau cải can mean mustard greens or similar leafy greens, so expect a slightly bitter, fresh counterpoint to beef.",
+  "goodToKnow": "Ask for không cay if you want Bò xào rau cải without added chili.",
+  "commonOptions": [
+    "extra vegetables",
+    "less oil",
+    "no chili",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò xào rau cải.",
+    "english": "I’d like one order of beef stir-fried with greens.",
+    "pronunciation": "chaw toy moht fuhn baw sow row kai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bò xào rau cải was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

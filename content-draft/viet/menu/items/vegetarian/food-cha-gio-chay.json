@@ -1,0 +1,64 @@
+{
+  "itemID": "food-cha-gio-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chả giò chay",
+  "englishTranslation": "Vegetarian fried spring rolls",
+  "romanizedNoTones": "Cha gio chay",
+  "soundOut": "chah yaw chai",
+  "notes": "",
+  "atAGlance": "Chả giò chay is vegetarian fried spring rolls, usually with taro, mushrooms, glass noodles, herbs, and soy-lime vegetarian dip.",
+  "whatItIs": "Chả giò chay are vegetarian fried spring rolls, often filled with taro, mushrooms, glass noodles, carrot, or mung bean, served with herbs and vegetarian nước chấm or soy dip.",
+  "usuallyIncludes": [
+    "taro",
+    "mushrooms",
+    "glass noodles",
+    "crisp wrapper",
+    "herbs and vegetarian dip"
+  ],
+  "howToEnjoy": "Wrap a hot roll in lettuce or herbs if served, then dip lightly. Ask about fish sauce in the dip if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order chả giò chay and check the dip by saying không nước mắm. Ask for extra herbs or no chili before the rolls are served.",
+  "worthKnowing": "Chay fried rolls can be excellent because taro and mushrooms make the filling sweet, earthy, and crisp-edged.",
+  "goodToKnow": "Ask what nước chấm comes with it; vegetarian rolls at mixed shops may still be served with fish-sauce nước chấm.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra herbs",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the nước chấm is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả giò chay.",
+    "english": "I’d like one order of vegetarian fried spring rolls.",
+    "pronunciation": "chaw toy moht fuhn chah yaw chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chả giò chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

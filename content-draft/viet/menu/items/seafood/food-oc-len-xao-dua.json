@@ -1,0 +1,65 @@
+{
+  "itemID": "food-oc-len-xao-dua",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Ốc len xào dừa",
+  "englishTranslation": "Sea snails in coconut sauce",
+  "romanizedNoTones": "Oc len xao dua",
+  "soundOut": "awk len sow yoo-uh",
+  "notes": "",
+  "atAGlance": "Ốc len xào dừa is mud creeper snails in coconut sauce, usually with sweet coconut milk, herbs, and chili.",
+  "whatItIs": "Ốc len xào dừa are small sea snails cooked in coconut milk with lemongrass and chili. The fun is pulling or sucking the sweet coconut broth from the shells.",
+  "usuallyIncludes": [
+    "mud creeper snails",
+    "coconut milk",
+    "lemongrass",
+    "chili",
+    "rau răm or herbs"
+  ],
+  "howToEnjoy": "Use toothpicks or the shell-sipping method the shop provides, and go slowly. The coconut broth is rich, sweet, salty, and often gently spicy.",
+  "howLocalsOrder": "Order ốc len xào dừa as a shared ốc-shop plate. Ask for less chili before cooking and extra bread if you want to catch the coconut broth.",
+  "worthKnowing": "This is classic southern snail-shop eating: hands-on, slow, messy, coconut-rich, and made for sharing.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "extra bread",
+    "share size",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần ốc len xào dừa.",
+    "english": "I’d like one order of sea snails in coconut sauce.",
+    "pronunciation": "chaw toy moht fuhn awk len sow yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Ốc len xào dừa was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

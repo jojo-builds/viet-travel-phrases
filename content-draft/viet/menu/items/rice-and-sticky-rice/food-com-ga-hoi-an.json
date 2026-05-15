@@ -1,0 +1,62 @@
+{
+  "itemID": "food-com-ga-hoi-an",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm gà Hội An",
+  "englishTranslation": "Hội An chicken rice",
+  "romanizedNoTones": "Com ga Hoi An",
+  "soundOut": "kum gah hoy ahn",
+  "notes": "",
+  "atAGlance": "Cơm gà Hội An is Hội An chicken rice: turmeric-tinted rice, shredded or chopped chicken, herbs, onion, chili-lime seasoning, and often a small side broth.",
+  "whatItIs": "Cơm gà Hội An is Hội An chicken rice with turmeric-tinted rice, chicken, herbs, onion, and a bright chili-lime seasoning. The rice is as important as the chicken.",
+  "usuallyIncludes": [
+    "turmeric rice",
+    "chicken",
+    "herbs",
+    "onion",
+    "chili-lime seasoning"
+  ],
+  "howToEnjoy": "Mix some herbs and onion through the rice, then add chili-lime seasoning carefully. Ask for less chili if you want the chicken and rice to stay gentle.",
+  "howLocalsOrder": "Cơm gà Hội An is a Hội An-style chicken rice order, so ask for less chili if the shredded chicken salad looks fiery. Extra herbs and side broth are good local-feeling additions.",
+  "worthKnowing": "The Hội An name matters because the rice, shredded chicken, herbs, and chili-lime onion mixture belong to the old-town chicken-rice style. It should taste brighter and more fragrant than plain chicken over rice.",
+  "goodToKnow": "This is not plain chicken on rice. The rice, herbs, and chili-lime onion mixture are what make it taste like Hội An.",
+  "commonOptions": [
+    "less chili",
+    "extra herbs",
+    "side broth",
+    "extra chicken"
+  ],
+  "regionalAssociation": "Hội An",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm gà Hội An.",
+    "english": "I’d like one order of Hội An chicken rice.",
+    "pronunciation": "chaw toy moht fuhn kum gah hoy ahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cơm gà Hội An was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

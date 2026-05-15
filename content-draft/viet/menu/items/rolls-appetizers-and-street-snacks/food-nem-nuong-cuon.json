@@ -1,0 +1,64 @@
+{
+  "itemID": "food-nem-nuong-cuon",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nem nướng cuốn",
+  "englishTranslation": "Grilled pork sausage rolls",
+  "romanizedNoTones": "Nem nuong cuon",
+  "soundOut": "nem noong kwun",
+  "notes": "",
+  "atAGlance": "Nem nướng cuốn is fresh rolls with grilled pork sausage, usually with nem nướng, herbs, pickles, rice paper, and a thick Nha Trang-style peanut-garlic dip.",
+  "whatItIs": "Nem nướng cuốn is grilled pork sausage wrapped with rice paper, herbs, cucumber, pickles, noodles, and a thick peanut-garlic dip. It is smoky, crunchy, fresh, and rich at once.",
+  "usuallyIncludes": [
+    "rice paper",
+    "pork",
+    "rice vermicelli",
+    "herbs",
+    "thick Nha Trang-style peanut-garlic dip"
+  ],
+  "howToEnjoy": "Build each roll with nem nướng, herbs, crunch, and noodles, then dip into the thick peanut-garlic dip. Use less dip at first; it can be sweet and rich.",
+  "howLocalsOrder": "Order nem nướng cuốn when you want the roll-it-yourself version of grilled pork sausage. Ask for extra rice paper, no peanuts, or no chili before the platter arrives.",
+  "worthKnowing": "Nha Trang-style nem nướng is famous for the dip and the crunchy bits inside the roll, not just the pork sausage.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "no peanuts",
+    "no chili",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nem nướng cuốn.",
+    "english": "I’d like one order of grilled pork sausage rolls.",
+    "pronunciation": "chaw toy moht fuhn nem noong kwun",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Nem nướng cuốn was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "itemID": "food-sua-chua-nep-cam",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sữa chua nếp cẩm",
+  "englishTranslation": "Yogurt with black sticky rice",
+  "romanizedNoTones": "Sua chua nep cam",
+  "soundOut": "soo-uh choo-ah nep kahm",
+  "notes": "",
+  "atAGlance": "Sữa chua nếp cẩm is yogurt with fermented black sticky rice. It is tangy, creamy, gently boozy-smelling, and chewy from the rice.",
+  "whatItIs": "Sữa chua nếp cẩm combines tart yogurt with sweet fermented black sticky rice.",
+  "usuallyIncludes": [
+    "yogurt",
+    "black sticky rice",
+    "fermented rice syrup",
+    "ice optional"
+  ],
+  "howToEnjoy": "Stir lightly so the yogurt and rice meet without losing all the chewy rice pockets.",
+  "howLocalsOrder": "Order sữa chua nếp cẩm cold and stir lightly so the tangy yogurt meets the chewy purple sticky rice without turning soupy.",
+  "worthKnowing": "This is a good example of Vietnamese desserts using fermentation and texture, not only sugar.",
+  "goodToKnow": "The black sticky rice brings a fermented aroma and chew. It is dessert, not just a yogurt cup.",
+  "commonOptions": [
+    "less sweet",
+    "more sticky rice",
+    "less ice",
+    "takeaway cup"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains dairy.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sữa chua nếp cẩm.",
+    "english": "I’d like one glass of yogurt with black sticky rice.",
+    "pronunciation": "chaw toy moht lee soo-uh choo-ah nep kahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sữa chua nếp cẩm was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

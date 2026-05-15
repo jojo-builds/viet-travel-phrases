@@ -1,0 +1,66 @@
+{
+  "itemID": "food-goi-cuon-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi cuốn chay",
+  "englishTranslation": "Vegetarian fresh spring rolls",
+  "romanizedNoTones": "Goi cuon chay",
+  "soundOut": "goy kwun chai",
+  "notes": "",
+  "atAGlance": "Gỏi cuốn chay is vegetarian fresh rolls, usually with rice paper, noodles, tofu, herbs, lettuce, and soy-lime vegetarian dip.",
+  "whatItIs": "Gỏi cuốn chay are vegetarian fresh rice-paper rolls with tofu or mushrooms, noodles, herbs, cucumber, lettuce, and a vegetarian soy-lime or peanut dip.",
+  "usuallyIncludes": [
+    "rice paper",
+    "tofu or mushrooms",
+    "rice vermicelli",
+    "fresh herbs",
+    "vegetarian dip"
+  ],
+  "howToEnjoy": "Dip lightly so the rice paper stays intact and the herbs remain fresh. Ask whether the dip contains fish sauce if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order gỏi cuốn chay and repeat chay for the dip too. Ask không nước mắm or no peanuts before the rolls arrive.",
+  "worthKnowing": "The rolls may look simple, but the dip decides whether they are truly vegetarian at mixed shops.",
+  "goodToKnow": "Ask about the dip: peanut sauce is common, but some shops serve fish-sauce nước chấm unless you specify chay.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "no peanuts",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the roll dip is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi cuốn chay.",
+    "english": "I’d like one order of vegetarian fresh spring rolls.",
+    "pronunciation": "chaw toy moht fuhn goy kwun chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Gỏi cuốn chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-thom",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép thơm",
+  "englishTranslation": "Pineapple juice",
+  "romanizedNoTones": "Nuoc ep thom",
+  "soundOut": "nook ep tum",
+  "notes": "",
+  "atAGlance": "Nước ép thơm is pineapple juice with tropical bite, golden sweetness, and enough tartness to stay refreshing in Vietnamese heat.",
+  "whatItIs": "Nước ép thơm is fresh pineapple juice, often served over ice. Expect pineapple juice that is golden, tangy, fragrant, and sweet with a little tropical bite.",
+  "usuallyIncludes": [
+    "pineapple",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar if you like pineapple’s natural acidity.",
+  "howLocalsOrder": "Nước ép thơm is usually made or poured cold, so ask no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép thơm shows how Vietnamese juice stalls turn market fruit into quick, bright refreshment.",
+  "goodToKnow": "Can be tart.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép thơm.",
+    "english": "I’d like one glass of pineapple juice.",
+    "pronunciation": "chaw toy moht lee nook ep tum",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép thơm was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

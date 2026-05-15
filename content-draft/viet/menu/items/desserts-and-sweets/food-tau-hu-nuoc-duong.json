@@ -1,0 +1,62 @@
+{
+  "itemID": "food-tau-hu-nuoc-duong",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tàu hũ nước đường",
+  "englishTranslation": "Silken tofu with ginger syrup",
+  "romanizedNoTones": "Tau hu nuoc duong",
+  "soundOut": "tow hoo nook duhng",
+  "notes": "",
+  "atAGlance": "Tàu hũ nước đường is soft tofu pudding in ginger sugar syrup. It is silky, warm or chilled, and gentler than many coconut-heavy desserts.",
+  "whatItIs": "Tàu hũ nước đường is silken tofu pudding served with sweet ginger syrup.",
+  "usuallyIncludes": [
+    "soft tofu pudding",
+    "ginger syrup",
+    "sugar syrup",
+    "coconut optional"
+  ],
+  "howToEnjoy": "Spoon carefully so the tofu stays silky. Ginger syrup gives the dessert its warmth.",
+  "howLocalsOrder": "Order tàu hũ nước đường warm if available, then spoon gently so the tofu custard stays silky in the ginger syrup.",
+  "worthKnowing": "Tàu hũ nước đường is a gentle street dessert with Chinese-Vietnamese roots, showing how soft tofu can become dessert when paired with ginger syrup.",
+  "goodToKnow": "This is dessert tofu, not savory tofu. The texture should be very soft and spoonable.",
+  "commonOptions": [
+    "warm",
+    "cold",
+    "extra ginger",
+    "less sweet"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tàu hũ nước đường.",
+    "english": "I’d like one order of silken tofu with ginger syrup.",
+    "pronunciation": "chaw toy moht fuhn tow hoo nook duhng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Tàu hũ nước đường was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

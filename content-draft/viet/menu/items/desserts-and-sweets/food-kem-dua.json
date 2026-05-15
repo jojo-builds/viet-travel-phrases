@@ -1,0 +1,62 @@
+{
+  "itemID": "food-kem-dua",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Kem dừa",
+  "englishTranslation": "Coconut ice cream",
+  "romanizedNoTones": "Kem dua",
+  "soundOut": "kem yoo-uh",
+  "notes": "",
+  "atAGlance": "Kem dừa is coconut ice cream, often served in a coconut shell or cup with coconut flakes, peanuts, or jelly toppings.",
+  "whatItIs": "Kem dừa is a coconut ice-cream dessert, usually more tropical and textural than a plain scoop.",
+  "usuallyIncludes": [
+    "coconut ice cream",
+    "coconut flakes",
+    "peanuts optional",
+    "jelly optional"
+  ],
+  "howToEnjoy": "Eat before it melts and mix in toppings slowly so the coconut flavor stays clear.",
+  "howLocalsOrder": "Kem dừa is a casual cold dessert, so choose the flavor and whether you want toppings. Eat it quickly in Vietnam's heat before the creamy texture turns soupy.",
+  "worthKnowing": "Coconut desserts are a strong through-line in Vietnamese sweets, from chè to ice cream.",
+  "goodToKnow": "Ask no peanuts if needed. The best versions taste like coconut, not just vanilla with coconut bits.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Often contains dairy and peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly kem dừa.",
+    "english": "I’d like one glass of coconut ice cream.",
+    "pronunciation": "chaw toy moht lee kem yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Kem dừa was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

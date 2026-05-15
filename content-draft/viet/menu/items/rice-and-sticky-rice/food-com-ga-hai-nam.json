@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-ga-hai-nam",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm gà Hải Nam",
+  "englishTranslation": "Hainanese-style chicken rice",
+  "romanizedNoTones": "Com ga Hai Nam",
+  "soundOut": "kum gah high nahm",
+  "notes": "",
+  "atAGlance": "Vietnam’s take on Hainanese chicken rice: silky poached chicken, fragrant rice, cucumber, herbs, side broth, and ginger-scallion, chili, or soy dips.",
+  "whatItIs": "Cơm gà Hải Nam serves poached chicken over rice cooked with chicken fat or broth, often with cucumber, pickles, soup, and ginger-scallion, chili, or soy-based dips.",
+  "usuallyIncludes": [
+    "fragrant chicken rice",
+    "poached chicken",
+    "cucumber",
+    "side broth",
+    "ginger-scallion or chili dip"
+  ],
+  "howToEnjoy": "Try the chicken with each dip before mixing everything. The rice is not a background starch here; it should taste gently of chicken and aromatics.",
+  "howLocalsOrder": "Order cơm gà Hải Nam when you want fragrant rice and gentle chicken rather than heavy spice. Ask for extra ginger-scallion dip or side broth for the full chicken-rice rhythm.",
+  "worthKnowing": "The dish reflects the Chinese diaspora's influence in Vietnamese cities, adapted into everyday rice-shop language with Vietnamese herbs, pickles, and dipping habits.",
+  "goodToKnow": "It is usually mild and a strong option when you want a filling but not spicy meal.",
+  "commonOptions": [
+    "extra ginger-scallion dip",
+    "side broth",
+    "extra rice",
+    "less chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm gà Hải Nam.",
+    "english": "I’d like one order of Hainanese-style chicken rice.",
+    "pronunciation": "chaw toy moht fuhn kum gah high nahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm gà Hải Nam was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

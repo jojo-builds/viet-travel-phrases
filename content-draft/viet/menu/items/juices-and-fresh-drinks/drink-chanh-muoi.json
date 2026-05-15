@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-chanh-muoi",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chanh muối",
+  "englishTranslation": "Salted lime drink",
+  "romanizedNoTones": "Chanh muoi",
+  "soundOut": "chan moo-ee",
+  "notes": "",
+  "atAGlance": "Chanh muối uses preserved salted lime for a sour-salty-sweet drink that feels more like Vietnamese refreshment than ordinary lemonade.",
+  "whatItIs": "Chanh muối is preserved salted lime mixed with water, sugar, and ice or hot water. Expect salty preserved-lime drink that is sour, salty, sweet, and deeply refreshing once diluted.",
+  "usuallyIncludes": [
+    "salted preserved lime",
+    "water",
+    "sugar",
+    "ice"
+  ],
+  "howToEnjoy": "Stir well; the preserved lime flavor is concentrated and should spread through the glass.",
+  "howLocalsOrder": "Chanh muối is salty, sweet, and sour from preserved lime, so ask less salty or less sweet before it is stirred. It should refresh, not taste briny.",
+  "worthKnowing": "In Vietnam, Chanh muối is a classic Vietnamese salty-sour drink, loved for refreshment and comfort rather than pure sweetness.",
+  "goodToKnow": "The salty preserved-lime flavor may surprise you.",
+  "commonOptions": [
+    "less sweet",
+    "less salty",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chanh muối.",
+    "english": "I’d like one glass of salted lime drink.",
+    "pronunciation": "chaw toy moht lee chan moo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chanh muối was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

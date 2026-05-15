@@ -1,0 +1,66 @@
+{
+  "itemID": "food-che-troi-nuoc",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chè trôi nước",
+  "englishTranslation": "Sticky rice balls in ginger syrup",
+  "romanizedNoTones": "Che troi nuoc",
+  "soundOut": "cheh choy nook",
+  "notes": "",
+  "atAGlance": "Chè trôi nước is warm glutinous rice balls filled with mung bean and served in ginger syrup, often with coconut milk and sesame.",
+  "whatItIs": "Chè trôi nước is warm glutinous rice balls filled with mung bean and served in ginger syrup, often with sesame or coconut milk.",
+  "usuallyIncludes": [
+    "glutinous rice balls",
+    "mung bean filling",
+    "ginger syrup",
+    "coconut milk optional",
+    "sesame"
+  ],
+  "howToEnjoy": "Eat it warm in a bowl, spooning ginger syrup over each chewy rice ball. The filling can be hot, so bite carefully.",
+  "howLocalsOrder": "Order chè trôi nước when you want a warm dessert, not an iced chè glass. Ask for less sweet syrup or no coconut milk if offered.",
+  "worthKnowing": "In Vietnam, the name evokes floating rice balls, and the ginger syrup makes this warm chè feel soothing rather than just sweet.",
+  "goodToKnow": "This is a warm dessert, not an iced cup. The ginger syrup is part of the comfort.",
+  "commonOptions": [
+    "less sweet",
+    "no coconut milk",
+    "extra ginger",
+    "one bowl"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè trôi nước.",
+    "english": "I’d like one glass of sticky rice balls in ginger syrup.",
+    "pronunciation": "chaw toy moht lee cheh choy nook",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Chè trôi nước was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

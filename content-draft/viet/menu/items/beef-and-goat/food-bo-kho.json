@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bo-kho",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bò kho",
+  "englishTranslation": "Vietnamese beef stew",
+  "romanizedNoTones": "Bo kho",
+  "soundOut": "baw kaw",
+  "notes": "",
+  "atAGlance": "Vietnamese beef stew with warm spices, carrot, lemongrass, and tender beef, eaten with bread, noodles, or rice depending on the shop.",
+  "whatItIs": "Bò kho is not just “beef stew” in a Western sense; it is perfumed with lemongrass, star anise, cinnamon, annatto oil, and fish sauce, with beef cooked until spoon-tender.",
+  "usuallyIncludes": [
+    "beef",
+    "spiced broth",
+    "carrots",
+    "herbs",
+    "bread or noodles"
+  ],
+  "howToEnjoy": "Tear off pieces of bánh mì and dip them into the broth, or order the noodle version if you want a fuller bowl. Add basil, lime, and chili slowly so you do not cover the spice of the stew.",
+  "howLocalsOrder": "Order bò kho with bánh mì, noodles, or rice depending on how you want to eat the broth. Ask for extra bread, less chili, or more carrots before serving.",
+  "worthKnowing": "Bò kho is a beloved breakfast and lunch dish, especially in southern Vietnam, and it shows how Vietnamese cooks make French-era bread feel entirely local.",
+  "goodToKnow": "Ask whether the shop serves it with bánh mì, hủ tiếu, or mì if you have a preference.",
+  "commonOptions": [
+    "with bread",
+    "with noodles",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò kho.",
+    "english": "I’d like one order of Vietnamese beef stew.",
+    "pronunciation": "chaw toy moht fuhn baw kaw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bò kho was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

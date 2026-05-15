@@ -1,0 +1,65 @@
+{
+  "itemID": "food-hu-tieu-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Hủ tiếu chay",
+  "englishTranslation": "Vegetarian rice noodle soup",
+  "romanizedNoTones": "Hu tieu chay",
+  "soundOut": "hoo tee-ew chai",
+  "notes": "",
+  "atAGlance": "Hủ tiếu chay is vegetarian hủ tiếu noodle soup, usually with clear broth, rice noodles, tofu, mushrooms, greens, and herbs.",
+  "whatItIs": "Hủ tiếu chay is southern-style rice noodle soup made vegetarian with tofu, mushrooms, vegetables, herbs, and a light sweet-savory broth.",
+  "usuallyIncludes": [
+    "rice noodles",
+    "light vegetarian broth",
+    "tofu",
+    "mushrooms",
+    "greens and herbs"
+  ],
+  "howToEnjoy": "Taste the broth first, then add herbs, lime, and chili slowly. Ask about fish sauce if you need a strict vegetarian bowl.",
+  "howLocalsOrder": "Order hủ tiếu chay when you want a lighter vegetarian noodle soup. Say không nước mắm if fish-sauce seasoning is a concern.",
+  "worthKnowing": "Hủ tiếu is a southern noodle-shop staple, and chay versions often lean on mushrooms and tofu for depth.",
+  "goodToKnow": "Ask whether the broth is vegetable-based; hủ tiếu shops may keep pork or seafood broth for standard bowls.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra tofu",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the broth is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô hủ tiếu chay.",
+    "english": "I’d like one bowl of vegetarian rice noodle soup.",
+    "pronunciation": "chaw toy moht toh hoo tee-ew chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Hủ tiếu chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

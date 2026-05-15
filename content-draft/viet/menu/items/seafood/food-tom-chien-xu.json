@@ -1,0 +1,64 @@
+{
+  "itemID": "food-tom-chien-xu",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tôm chiên xù",
+  "englishTranslation": "Breaded fried shrimp",
+  "romanizedNoTones": "Tom chien xu",
+  "soundOut": "tom chee-en soo",
+  "notes": "",
+  "atAGlance": "Tôm chiên xù is breaded fried shrimp with a golden crisp coating and sweet shrimp inside, often shared as a snack or seafood starter.",
+  "whatItIs": "Tôm chiên xù is breaded fried shrimp, usually crisp outside with tender shrimp inside, served with lime, salt, chili, or a mayonnaise-style dip depending on the shop.",
+  "usuallyIncludes": [
+    "shrimp",
+    "crisp breading",
+    "hot oil frying",
+    "lettuce or cucumber",
+    "chili or mayo-style dip if served"
+  ],
+  "howToEnjoy": "Eat while the coating is crisp, and check whether tails or shells remain. Dip lightly so the breading stays crunchy.",
+  "howLocalsOrder": "Order tôm chiên xù when you want crunchy fried shrimp. Ask about shells, no chili, or extra lime-pepper salt before sharing.",
+  "worthKnowing": "Chiên xù signals a crumbed, crunchy fried style, useful for recognizing shrimp, fish, or pork cutlet dishes.",
+  "goodToKnow": "Eat it hot so the coating stays crisp. Ask whether the shrimp are peeled if you prefer an easier bite.",
+  "commonOptions": [
+    "ask about shells",
+    "no chili",
+    "lime-pepper salt",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tôm chiên xù.",
+    "english": "I’d like one order of breaded fried shrimp.",
+    "pronunciation": "chaw toy moht fuhn tom chee-en soo",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Tôm chiên xù was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

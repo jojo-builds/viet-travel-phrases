@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-com",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh cốm",
+  "englishTranslation": "Green rice flakes cake",
+  "romanizedNoTones": "Banh com",
+  "soundOut": "bahn kohm",
+  "notes": "",
+  "atAGlance": "Bánh cốm is green young-rice cake, usually sticky and fragrant with mung bean filling. It is closely tied to Hanoi gift culture.",
+  "whatItIs": "Bánh cốm is a sweet green rice cake with mung bean inside.",
+  "usuallyIncludes": [
+    "young green rice",
+    "mung bean filling",
+    "sugar",
+    "pandan-like aroma"
+  ],
+  "howToEnjoy": "Eat it as a small chewy green-rice cake, often with mung bean filling. It is subtle, fragrant, and better as a small bite than a big dessert.",
+  "howLocalsOrder": "Order bánh cốm by piece or box, especially in Hanoi gift-shop contexts. Ask for a small piece if you just want to try the green-rice aroma.",
+  "worthKnowing": "Bánh cốm is closely tied to Hanoi and gift-giving, especially around weddings and visits.",
+  "goodToKnow": "Cốm means young green rice flakes. The texture is sticky and chewy, not fluffy cake.",
+  "commonOptions": [
+    "one piece",
+    "gift box",
+    "pack to go",
+    "small portion"
+  ],
+  "regionalAssociation": "Hanoi",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh cốm.",
+    "english": "I’d like one order of green rice flakes cake.",
+    "pronunciation": "chaw toy moht fuhn bahn kohm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh cốm was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

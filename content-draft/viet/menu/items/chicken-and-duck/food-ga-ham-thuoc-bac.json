@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-ham-thuoc-bac",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà hầm thuốc bắc",
+  "englishTranslation": "Chicken stewed with Chinese herbs",
+  "romanizedNoTones": "Ga ham thuoc bac",
+  "soundOut": "gah hum too-uk bak",
+  "notes": "",
+  "atAGlance": "Gà hầm thuốc bắc is chicken simmered with Chinese medicinal herbs, usually with black chicken or tender pieces, dates, goji berries, and dark broth.",
+  "whatItIs": "Gà hầm thuốc bắc is chicken simmered in a dark herbal broth with Chinese-Vietnamese medicinal herbs, dates, goji berries, and sometimes black chicken.",
+  "usuallyIncludes": [
+    "chicken",
+    "herbal broth",
+    "ginger",
+    "aromatics",
+    "mushrooms"
+  ],
+  "howToEnjoy": "Sip the broth first; it can taste earthy, sweet, bitter, and medicinal. Eat the chicken slowly with rice or noodles if served.",
+  "howLocalsOrder": "Order gà hầm thuốc bắc when you want a restorative herbal chicken soup. Ask whether it is black chicken and whether the portion is one person or shared.",
+  "worthKnowing": "Thuốc bắc points to northern/Chinese-style medicinal herbs, a flavor family travelers may find earthy and unfamiliar.",
+  "goodToKnow": "The dark herbal broth is the point; expect medicinal warmth and black chicken or bone-in pieces rather than a light chicken soup.",
+  "commonOptions": [
+    "ask portion size",
+    "with noodles",
+    "with rice",
+    "ask about black chicken"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà hầm thuốc bắc.",
+    "english": "I’d like one order of chicken stewed with Chinese herbs.",
+    "pronunciation": "chaw toy moht fuhn gah hum too-uk bak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà hầm thuốc bắc was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-tra-atiso",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà atiso",
+  "englishTranslation": "Artichoke tea",
+  "romanizedNoTones": "Tra atiso",
+  "soundOut": "chah ah-tee-soh",
+  "notes": "",
+  "atAGlance": "Trà atiso is Đà Lạt artichoke tea, earthy, gently sweet, and tied to the highland city’s cool-weather produce culture.",
+  "whatItIs": "Trà atiso is tea made from artichoke, often linked with Đà Lạt. Expect artichoke tea with a mellow herbal sweetness and lightly earthy finish.",
+  "usuallyIncludes": [
+    "artichoke tea",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it hot or iced as a gentle herbal option rather than a sharp tea.",
+  "howLocalsOrder": "Order trà atiso hot or iced, especially in Đà Lạt contexts. Ask ít đường if you want the earthy artichoke flavor instead of a sweet herbal drink.",
+  "worthKnowing": "Atiso, artichoke tea, is associated with Đà Lạt and tastes herbal, mellow, and slightly earthy.",
+  "goodToKnow": "Can be naturally sweet or sweetened, depending on the shop.",
+  "commonOptions": [
+    "hot",
+    "iced",
+    "less sugar",
+    "no ice"
+  ],
+  "regionalAssociation": "Đà Lạt",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà atiso.",
+    "english": "I’d like one glass of artichoke tea.",
+    "pronunciation": "chaw toy moht lee chah ah-tee-soh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Trà atiso was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-com-nieu-ca-kho",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm niêu cá kho",
+  "englishTranslation": "Clay pot rice with caramelized fish",
+  "romanizedNoTones": "Com nieu ca kho",
+  "soundOut": "kum nee-ew kah kaw",
+  "notes": "",
+  "atAGlance": "Cơm niêu cá kho pairs clay-pot rice with caramelized fish. The fish sauce, caramel, pepper, and rice are the point: salty-sweet sauce against plain rice.",
+  "whatItIs": "Cơm niêu cá kho is clay-pot rice with caramelized fish. It puts two comforts together: hot rice and fish braised in fish-sauce caramel.",
+  "usuallyIncludes": [
+    "clay-pot rice",
+    "caramelized fish",
+    "fish-sauce caramel",
+    "pepper",
+    "pickles or greens"
+  ],
+  "howToEnjoy": "Use the rice to soften the salty-sweet fish sauce caramel. Ask about bones before ordering if you want an easier plate.",
+  "howLocalsOrder": "Cơm niêu cá kho is a clay-pot rice order, good for sharing with braised or salty dishes. Ask whether the crispy rice is served at the table, and order extra rice if the table has strong fish-sauce caramel dishes.",
+  "worthKnowing": "Cơm niêu means clay-pot rice; cá kho is the braised fish. Together, they read more like a sit-down comfort meal than a quick rice plate. In Vietnam, rice plates are everyday meals shaped by broken rice, scallion oil, pickles, fish-sauce caramel, and quick street-service habits.",
+  "goodToKnow": "Cơm niêu means clay-pot rice, often prized for hot fluffy rice and crisp edges. Watch for fish bones in cá kho.",
+  "commonOptions": [
+    "extra rice",
+    "ask about bones",
+    "less pepper",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain fish bones and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm niêu cá kho.",
+    "english": "I’d like one order of clay pot rice with caramelized fish.",
+    "pronunciation": "chaw toy moht fuhn kum nee-ew kah kaw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cơm niêu cá kho was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

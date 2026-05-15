@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-ca-phe-sua-nong",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê sữa nóng",
+  "englishTranslation": "Hot Vietnamese milk coffee",
+  "romanizedNoTones": "Ca phe sua nong",
+  "soundOut": "kah fay soo-uh nawng",
+  "notes": "",
+  "atAGlance": "Cà phê sữa nóng is hot phin coffee over condensed milk, sweet, fragrant, and stronger than its creamy look suggests.",
+  "whatItIs": "Cà phê sữa nóng is phin coffee dripping onto condensed milk, served hot in a small glass or cup. Expect hot condensed-milk coffee: thick, sweet, fragrant, and stronger than the creamy look suggests.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "condensed milk"
+  ],
+  "howToEnjoy": "Stir fully before sipping so the first taste is not just condensed milk at the bottom.",
+  "howLocalsOrder": "Cà phê sữa nóng is for slow hot sipping, usually with condensed milk already in the cup. Ask less sweet before brewing if you want more coffee bitterness than caramel milk.",
+  "worthKnowing": "In Vietnam, Cà phê sữa nóng turns the phin drip into a slow, warming ritual, especially at morning cafés and sidewalk tables.",
+  "goodToKnow": "Sweetness is built in; ask for less milk if the café can adjust it.",
+  "commonOptions": [
+    "less sweet",
+    "stronger",
+    "with ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê sữa nóng.",
+    "english": "I’d like one glass of hot Vietnamese milk coffee.",
+    "pronunciation": "chaw toy moht lee kah fay soo-uh nawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê sữa nóng was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

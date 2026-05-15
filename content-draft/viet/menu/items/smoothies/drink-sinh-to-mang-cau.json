@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-mang-cau",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Sinh tố mãng cầu",
+  "englishTranslation": "Soursop smoothie",
+  "romanizedNoTones": "Sinh to mang cau",
+  "soundOut": "sing toh mahng kow",
+  "notes": "",
+  "atAGlance": "Sinh tố mãng cầu is soursop smoothie, tangy, creamy, fragrant, and one of the more exciting tropical fruit drinks for visitors.",
+  "whatItIs": "Sinh tố mãng cầu is mãng cầu blended with ice, milk, or condensed milk. Expect soursop smoothie that is creamy, tropical, tart, and almost sherbet-like.",
+  "usuallyIncludes": [
+    "soursop",
+    "ice",
+    "condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar if you like the fruit’s natural tang.",
+  "howLocalsOrder": "Sinh tố mãng cầu has natural tartness, so ask less sugar only if you enjoy a sharper fruit taste. Less ice makes the smoothie thicker and more fragrant.",
+  "worthKnowing": "In Vietnam, Sinh tố mãng cầu introduces a fruit many visitors do not know before Vietnam: fragrant, soft, and sweet-sour.",
+  "goodToKnow": "The texture can be thick and pulpy.",
+  "commonOptions": [
+    "less sweet",
+    "less milk",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Usually contains dairy or condensed milk.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố mãng cầu.",
+    "english": "I’d like one glass of soursop smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh mahng kow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố mãng cầu was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

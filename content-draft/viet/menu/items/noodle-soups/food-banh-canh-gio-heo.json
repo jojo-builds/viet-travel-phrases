@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-canh-gio-heo",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh canh giò heo",
+  "englishTranslation": "Thick noodle soup with pork knuckle",
+  "romanizedNoTones": "Banh canh gio heo",
+  "soundOut": "bahn kan yaw heh-oh",
+  "notes": "",
+  "atAGlance": "Bánh canh giò heo is thick noodle soup with pork knuckle, scallions, pepper, and a rich pork broth. It is heavier and more collagen-rich than the seafood versions.",
+  "whatItIs": "Bánh canh giò heo is thick noodle soup with pork knuckle, pork broth, scallions, and pepper. It is rich, chewy, and more rustic than a light chicken soup.",
+  "usuallyIncludes": [
+    "thick tapioca noodles",
+    "pork knuckle",
+    "pork broth",
+    "scallions",
+    "pepper"
+  ],
+  "howToEnjoy": "Expect bones, skin, and tender pork. Ask for leaner pieces if you want less collagen and easier eating.",
+  "howLocalsOrder": "Bánh canh giò heo is the pork-knuckle version, heavier and more collagen-rich than seafood bowls. Ask for leaner pieces or less pepper if you want the thick noodles without too much richness.",
+  "worthKnowing": "Giò heo means pork knuckle, a texture Vietnamese diners often enjoy for richness and collagen; this bowl is about chew as much as broth.",
+  "goodToKnow": "Giò heo means pork knuckle. Expect bones and skin; ask for an easier cut if that is not what you want.",
+  "commonOptions": [
+    "extra herbs",
+    "less pepper",
+    "ask for leaner pork",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork knuckle with bones and skin.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bánh canh giò heo.",
+    "english": "I’d like one bowl of thick noodle soup with pork knuckle.",
+    "pronunciation": "chaw toy moht toh bahn kan yaw heh-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh canh giò heo was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

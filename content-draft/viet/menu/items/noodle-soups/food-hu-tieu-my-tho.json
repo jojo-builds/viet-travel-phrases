@@ -1,0 +1,61 @@
+{
+  "itemID": "food-hu-tieu-my-tho",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Hủ tiếu Mỹ Tho",
+  "englishTranslation": "Mỹ Tho-style rice noodle soup",
+  "romanizedNoTones": "Hu tieu My Tho",
+  "soundOut": "hoo tee-ew mee taw",
+  "notes": "",
+  "atAGlance": "Hủ tiếu Mỹ Tho is a Mekong Delta rice-noodle soup from the Mỹ Tho style, known for clear broth, chewy noodles, pork, shrimp, herbs, and fried garlic.",
+  "whatItIs": "Hủ tiếu Mỹ Tho is a Mekong Delta rice-noodle soup with clear broth, chewy noodles, pork, shrimp, fried garlic, and herbs. It is lighter than phở but still satisfying.",
+  "usuallyIncludes": [
+    "rice noodles",
+    "pork or shrimp toppings",
+    "fried shallots",
+    "dry noodle dressing",
+    "clear side broth"
+  ],
+  "howToEnjoy": "Ask whether the shop serves it nước or khô. For khô, mix the dry noodles with their savory dressing, then sip the clear pork-and-seafood broth from the side bowl between bites.",
+  "howLocalsOrder": "Hủ tiếu Mỹ Tho is often worth ordering khô, dry style, if you want the toppings and fried garlic to stand out. Ask for soup on the side so you can alternate bites and broth.",
+  "worthKnowing": "Mỹ Tho is a Mekong Delta city, and the name signals a southern rice-noodle style rather than a random topping.",
+  "goodToKnow": "Mỹ Tho is a Mekong Delta name to recognize. The dry version should still come with broth, because that clear, sweet side bowl is the backbone of the noodles.",
+  "commonOptions": [
+    "soup style",
+    "dry style",
+    "extra herbs",
+    "no shrimp"
+  ],
+  "regionalAssociation": "Mỹ Tho and the Mekong Delta",
+  "originPosture": "regional-association",
+  "travelerCaution": "Often contains pork and shrimp.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô hủ tiếu Mỹ Tho.",
+    "english": "I’d like one bowl of mỹ Tho-style rice noodle soup.",
+    "pronunciation": "chaw toy moht toh hoo tee-ew mee taw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Hủ tiếu Mỹ Tho was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

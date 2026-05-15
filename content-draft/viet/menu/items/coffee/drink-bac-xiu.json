@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-bac-xiu",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bạc xỉu",
+  "englishTranslation": "Light milk coffee",
+  "romanizedNoTones": "Bac xiu",
+  "soundOut": "bak see-ew",
+  "notes": "",
+  "atAGlance": "Bạc xỉu is southern coffee comfort, with more milk than coffee and a creamy sweetness for people who want aroma without the full robusta punch.",
+  "whatItIs": "Bạc xỉu is sweet milk with a smaller amount of coffee, often iced. Expect milk-forward coffee, pale and creamy, with coffee aroma rather than a heavy coffee punch.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "condensed milk",
+    "fresh milk",
+    "ice optional"
+  ],
+  "howToEnjoy": "Choose it when cà phê sữa đá sounds too strong; stir before drinking so the coffee scent spreads through the milk.",
+  "howLocalsOrder": "Bạc xỉu is ordered when you want milk first and coffee second. Ask less sweet or less coffee depending on whether you want creamy comfort or more roasted flavor.",
+  "worthKnowing": "In Vietnam, Bạc xỉu comes from southern café culture and is loved by people who want coffee fragrance with a softer, sweeter body.",
+  "goodToKnow": "It is usually sweet and gentle, not a strong coffee order.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "less coffee",
+    "takeaway"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "commonly-associated-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly bạc xỉu.",
+    "english": "I’d like one glass of light milk coffee.",
+    "pronunciation": "chaw toy moht lee bak see-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bạc xỉu was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

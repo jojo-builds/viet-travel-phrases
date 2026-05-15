@@ -1,0 +1,62 @@
+{
+  "itemID": "food-chao-hai-san",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cháo hải sản",
+  "englishTranslation": "Seafood rice porridge",
+  "romanizedNoTones": "Chao hai san",
+  "soundOut": "chow high sahn",
+  "notes": "",
+  "atAGlance": "Cháo hải sản is seafood rice porridge with soft rice, ginger, scallions, pepper, and whatever seafood the shop uses. It is gentle in texture but not always simple for allergies.",
+  "whatItIs": "Cháo hải sản is seafood congee: soft rice porridge with ginger, herbs, pepper, and seafood such as shrimp, squid, fish, or clams depending on the kitchen.",
+  "usuallyIncludes": [
+    "rice porridge",
+    "seafood",
+    "ginger",
+    "scallions",
+    "pepper"
+  ],
+  "howToEnjoy": "Eat it hot and add pepper slowly. The ginger is there to keep the seafood flavor clean.",
+  "howLocalsOrder": "Cháo hải sản is a comfort-bowl order, especially good when you want something soft. Ask for extra ginger or less pepper before mixing, and order fried dough on the side if the shop has it.",
+  "worthKnowing": "Cháo is comfort food, but hải sản turns it into a seafood order. That word matters for shellfish allergies. In Vietnam, cháo is a rice-porridge comfort-food lane. The topping tells you whether the bowl stays gentle or turns more adventurous.",
+  "goodToKnow": "Hải sản means seafood. Ask what seafood is inside if shellfish matters.",
+  "commonOptions": [
+    "extra ginger",
+    "less pepper",
+    "ask what seafood",
+    "with fried dough"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains seafood and may include shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô cháo hải sản.",
+    "english": "I’d like one bowl of seafood rice porridge.",
+    "pronunciation": "chaw toy moht toh chow high sahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cháo hải sản was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

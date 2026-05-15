@@ -1,0 +1,64 @@
+{
+  "itemID": "food-thit-luoc-cuon-banh-trang",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Thịt luộc cuốn bánh tráng",
+  "englishTranslation": "Boiled pork with rice paper rolls",
+  "romanizedNoTones": "Thit luoc cuon banh trang",
+  "soundOut": "tit loo-uk kwun bahn chang",
+  "notes": "",
+  "atAGlance": "Thịt luộc cuốn bánh tráng is boiled pork rolled with rice paper, herbs, noodles, cucumber, green banana, and often mắm nêm or nước chấm.",
+  "whatItIs": "Thịt luộc cuốn bánh tráng is a roll-your-own boiled pork plate. The pork is intentionally simple because rice paper, herbs, noodles, cucumber, green banana, and a strong dip complete the bite.",
+  "usuallyIncludes": [
+    "boiled pork",
+    "rice paper",
+    "fresh herbs",
+    "rice noodles",
+    "mắm nêm or nước chấm"
+  ],
+  "howToEnjoy": "Soften rice paper if needed, layer pork, herbs, noodles, and cucumber, then roll and dip. Start lightly with mắm nêm because the fermented anchovy flavor can be powerful.",
+  "howLocalsOrder": "Order thịt luộc cuốn bánh tráng for a fresh roll-it-yourself meal. Ask for extra bánh tráng, extra herbs, or nước chấm instead of mắm nêm if you want a milder dip.",
+  "worthKnowing": "This dish shows why Vietnamese “plain” pork is not plain at the table: herbs, rice paper, green banana, and fermented dip turn it into a bright meal.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "nước chấm instead of mắm nêm",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần thịt luộc cuốn bánh tráng.",
+    "english": "I’d like one order of boiled pork with rice paper rolls.",
+    "pronunciation": "chaw toy moht fuhn tit loo-uk kwun bahn chang",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Thịt luộc cuốn bánh tráng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

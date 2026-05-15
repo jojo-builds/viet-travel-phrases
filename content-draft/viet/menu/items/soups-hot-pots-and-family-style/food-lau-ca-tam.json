@@ -1,0 +1,63 @@
+{
+  "itemID": "food-lau-ca-tam",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu cá tầm",
+  "englishTranslation": "Sturgeon hot pot",
+  "romanizedNoTones": "Lau ca tam",
+  "soundOut": "low kah tahm",
+  "notes": "",
+  "atAGlance": "Lẩu cá tầm is sturgeon hot pot, usually with firm fish, sour broth, vegetables, and noodles.",
+  "whatItIs": "Lẩu cá tầm is sturgeon hot pot, often with a sour broth, herbs, greens, tomatoes, pineapple or tamarind, and noodles. The fish is firm and clean-tasting.",
+  "usuallyIncludes": [
+    "sturgeon",
+    "sour broth",
+    "greens",
+    "noodles",
+    "cartilage-rich fish pieces"
+  ],
+  "howToEnjoy": "Cook sturgeon pieces gently and watch for bones or cartilage. Add herbs and noodles in stages so the sour broth stays bright.",
+  "howLocalsOrder": "Order lẩu cá tầm as a shared hot pot, especially in highland or cooler-weather settings. Ask for less spicy broth, extra herbs, or bone guidance.",
+  "worthKnowing": "Cá tầm, sturgeon, is especially associated with cooler highland destinations like Đà Lạt and Sa Pa in traveler menus.",
+  "goodToKnow": "Sturgeon can have firm flesh and cartilage-rich pieces. Add greens and noodles after the fish has warmed through.",
+  "commonOptions": [
+    "less spicy",
+    "extra herbs",
+    "ask about bones",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu cá tầm.",
+    "english": "I’d like one order of sturgeon hot pot.",
+    "pronunciation": "chaw toy moht noy low kah tahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu cá tầm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

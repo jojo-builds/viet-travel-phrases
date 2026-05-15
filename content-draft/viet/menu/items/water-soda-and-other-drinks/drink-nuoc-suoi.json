@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-nuoc-suoi",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Nước suối",
+  "englishTranslation": "Bottled water",
+  "romanizedNoTones": "Nuoc suoi",
+  "soundOut": "nook soo-ee",
+  "notes": "",
+  "atAGlance": "Nước suối is sealed bottled water, the practical travel-day order when you want plain water with no glass of ice.",
+  "whatItIs": "Nước suối is sealed still water. Expect bottled water, plain, clean, and often served room-temperature unless you ask for it cold.",
+  "usuallyIncludes": [
+    "bottled water",
+    "sealed bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Ask for lạnh if you want it chilled, or không đá if you do not want ice.",
+  "howLocalsOrder": "Order nước suối and ask lạnh if you want it chilled. Say không đá if you do not want ice poured into a glass.",
+  "worthKnowing": "Nước suối is the practical sealed bottled-water order for restaurants, shops, and travel days.",
+  "goodToKnow": "Check the seal if buying from a small stall.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai nước suối.",
+    "english": "I’d like one bottle of bottled water.",
+    "pronunciation": "chaw toy moht chai nook soo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Nước suối was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-canh-ga-nuong",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cánh gà nướng",
+  "englishTranslation": "Grilled chicken wings",
+  "romanizedNoTones": "Canh ga nuong",
+  "soundOut": "kanh gah noong",
+  "notes": "",
+  "atAGlance": "Cánh gà nướng is grilled chicken wings, usually with charred skin, lemongrass or honeyed marinade, and dipping salt.",
+  "whatItIs": "Cánh gà nướng are grilled chicken wings with smoky skin, often seasoned with lemongrass, honey, chili salt, or garlic depending on the shop.",
+  "usuallyIncludes": [
+    "grilled chicken wings",
+    "savory marinade",
+    "charred edges",
+    "dipping salt",
+    "cucumber or herbs"
+  ],
+  "howToEnjoy": "Eat the wings hot from the grill, dipping lightly in lime-pepper salt if served. Ask for less chili before grilling because the heat can be rubbed into the skin.",
+  "howLocalsOrder": "Order cánh gà nướng as a snack or shared plate. Say ít cay early, then ask for extra cucumber or dipping salt if you want to pace the heat.",
+  "worthKnowing": "In Vietnam, grilled wings often sit between street snack and beer-food: smoky, hands-on, and best eaten before the skin softens.",
+  "goodToKnow": "The wings may be sweet, salty, or spicy depending on the marinade; ask less spicy before they go on the grill.",
+  "commonOptions": [
+    "less spicy",
+    "lime-pepper salt",
+    "extra cucumber",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cánh gà nướng.",
+    "english": "I’d like one order of grilled chicken wings.",
+    "pronunciation": "chaw toy moht fuhn kanh gah noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cánh gà nướng was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

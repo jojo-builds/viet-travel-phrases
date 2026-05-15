@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-dac-biet",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở đặc biệt",
+  "englishTranslation": "Special combination pho",
+  "romanizedNoTones": "Pho dac biet",
+  "soundOut": "fuh dak bee-et",
+  "notes": "",
+  "atAGlance": "Phở đặc biệt is the special combination bowl, usually with several beef cuts such as rare beef, brisket, meatballs, tendon, or tripe depending on the shop.",
+  "whatItIs": "Phở đặc biệt is the house combination phở. It lets a shop show several beef textures in one bowl, from tender slices to chewier cuts.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "mixed beef cuts",
+    "onion",
+    "herbs and lime"
+  ],
+  "howToEnjoy": "Taste each beef cut before adding condiments. If you are cautious, ask what meats come in the special bowl before ordering.",
+  "howLocalsOrder": "Phở đặc biệt means the combination bowl, so it can include mixed beef cuts such as brisket, tendon, tripe, or meatballs. Ask no tripe or no tendon before ordering if those textures are not for you.",
+  "worthKnowing": "On Vietnamese menus, đặc biệt usually means the fuller house version. It can be delicious, but it is not always the safest first order for texture-sensitive eaters.",
+  "goodToKnow": "Đặc biệt means special, not one fixed recipe. Ask what is included if tendon, tripe, or rare beef matters.",
+  "commonOptions": [
+    "no tripe",
+    "no tendon",
+    "extra herbs",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "May include tendon, tripe, meatballs, brisket, and rare beef.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở đặc biệt.",
+    "english": "I’d like one bowl of special combination pho.",
+    "pronunciation": "chaw toy moht toh fuh dak bee-et",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở đặc biệt was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ca-ri-ga",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà ri gà",
+  "englishTranslation": "Chicken curry",
+  "romanizedNoTones": "Ca ri ga",
+  "soundOut": "kah ree gah",
+  "notes": "",
+  "atAGlance": "Cà ri gà is Vietnamese chicken curry, usually with coconut milk, potato, carrot, lemongrass, and bread or noodles.",
+  "whatItIs": "Cà ri gà is Vietnamese chicken curry with coconut milk, potatoes, carrots, onions, and warm spices, often eaten with bread, rice noodles, or rice.",
+  "usuallyIncludes": [
+    "chicken",
+    "coconut curry broth",
+    "potatoes",
+    "carrots",
+    "bread or noodles"
+  ],
+  "howToEnjoy": "Dip bread into the coconut curry broth or spoon it over noodles or rice. Add chili only after tasting the broth’s sweetness and spice.",
+  "howLocalsOrder": "Order cà ri gà and choose bread, noodles, or rice if the shop asks. Say ít cay if you want the coconut and potato sweetness to lead.",
+  "worthKnowing": "Vietnamese curry often feels lighter and sweeter than Indian or Thai curries, with baguette as a very local pairing.",
+  "goodToKnow": "Ask for không cay if you want Cà ri gà without added chili.",
+  "commonOptions": [
+    "with bread",
+    "with noodles",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cà ri gà.",
+    "english": "I’d like one order of chicken curry.",
+    "pronunciation": "chaw toy moht fuhn kah ree gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cà ri gà was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

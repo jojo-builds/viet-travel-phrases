@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-tang-luc",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước tăng lực",
+  "englishTranslation": "Energy drink",
+  "romanizedNoTones": "Nuoc tang luc",
+  "soundOut": "nook tang look",
+  "notes": "",
+  "atAGlance": "Nước tăng lực is energy drink, sweet, caffeinated, intense, and common at convenience stores and late-night food stops.",
+  "whatItIs": "Nước tăng lực is a canned or bottled energy drink. Expect energy drink that is sweet, fizzy or syrupy, caffeinated, and intense.",
+  "usuallyIncludes": [
+    "energy drink",
+    "can or bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Order it cold if you need a quick caffeine hit, but expect sweetness.",
+  "howLocalsOrder": "Order nước tăng lực cold by can or bottle, then decide ice. Ask không đá or ít đá if you do not want it poured over much ice.",
+  "worthKnowing": "In Vietnamese convenience stores and roadside stops, energy drinks are common on late-night food runs; expect sweet caffeine more than subtle flavor.",
+  "goodToKnow": "Contains caffeine and lots of sugar.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước tăng lực.",
+    "english": "I’d like one glass of energy drink.",
+    "pronunciation": "chaw toy moht lee nook tang look",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Nước tăng lực was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

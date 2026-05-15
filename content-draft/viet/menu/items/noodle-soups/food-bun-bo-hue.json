@@ -1,0 +1,63 @@
+{
+  "itemID": "food-bun-bo-hue",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bún bò Huế",
+  "englishTranslation": "Spicy Hue beef noodle soup",
+  "romanizedNoTones": "Bun bo Hue",
+  "soundOut": "boon baw hway",
+  "notes": "",
+  "atAGlance": "Bún bò Huế is a bold central-Vietnam noodle soup with lemongrass, chili warmth, beef, and thick round noodles. It is richer and spicier than phở.",
+  "whatItIs": "Bún bò Huế is a bold central-Vietnam noodle soup with lemongrass, chili warmth, beef, and thicker round noodles. It is richer, deeper, and usually spicier than phở.",
+  "usuallyIncludes": [
+    "broth",
+    "rice vermicelli",
+    "beef",
+    "herbs",
+    "lime"
+  ],
+  "howToEnjoy": "Taste before adding chili. If heat is a concern, ask for less spicy early, then use the herbs and lime to brighten the broth.",
+  "howLocalsOrder": "For Bún bò Huế, ask ít cay before the bowl is made if you want Hue lemongrass depth without full chili heat. Many diners add herbs and lime, but the red broth should still lead.",
+  "worthKnowing": "The name points to Huế, the former imperial capital, and the dish is strongly associated with central Vietnam. Recipes still shift by shop, especially the spice level and toppings.",
+  "goodToKnow": "Ask for less spicy if you are heat-sensitive. The broth is the point, so taste it before adding extra chili.",
+  "commonOptions": [
+    "extra herbs",
+    "chili",
+    "bean sprouts",
+    "less spicy",
+    "no MSG"
+  ],
+  "regionalAssociation": "Huế and central Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Ask for less spicy if heat is a concern.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún bò Huế.",
+    "english": "I’d like one bowl of spicy Hue beef noodle soup.",
+    "pronunciation": "chaw toy moht toh boon baw hway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún bò Huế was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

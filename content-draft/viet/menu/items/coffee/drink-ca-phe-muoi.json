@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-muoi",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cà phê muối",
+  "englishTranslation": "Salt coffee",
+  "romanizedNoTones": "Ca phe muoi",
+  "soundOut": "kah fay moo-ee",
+  "notes": "",
+  "atAGlance": "Cà phê muối is Huế-style coffee creativity in a glass, using salted cream to make condensed-milk sweetness taste deeper and almost caramel-like.",
+  "whatItIs": "Cà phê muối is Vietnamese coffee topped or mixed with salted cream. Expect salt coffee with a creamy cap, caramel-like sweetness, and a tiny salty edge that sharpens the coffee.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter",
+    "salted cream",
+    "condensed milk"
+  ],
+  "howToEnjoy": "Sip through the salted cream instead of stirring everything flat right away.",
+  "howLocalsOrder": "Cà phê muối is a salted-cream coffee order, so sip through the cap before stirring. Ask less sweet if you want the salt and robusta bitterness to come forward.",
+  "worthKnowing": "In Vietnam, Cà phê muối is tied to Huế-style café creativity and has become popular because salt makes the condensed milk taste deeper.",
+  "goodToKnow": "It should taste gently salty, not briny.",
+  "commonOptions": [
+    "less sweet",
+    "more coffee",
+    "iced",
+    "takeaway"
+  ],
+  "regionalAssociation": "Huế",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê muối.",
+    "english": "I’d like one glass of salt coffee.",
+    "pronunciation": "chaw toy moht lee kah fay moo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê muối was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

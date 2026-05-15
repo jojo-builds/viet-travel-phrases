@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-rau-ma",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Rau má",
+  "englishTranslation": "Pennywort juice",
+  "romanizedNoTones": "Rau ma",
+  "soundOut": "row mah",
+  "notes": "",
+  "atAGlance": "Rau má is pennywort juice, green, grassy, and cooling, a Vietnamese drink that can feel both herbal and refreshingly alive.",
+  "whatItIs": "Rau má is rau má leaves blended or pressed into a green drink. Expect pennywort juice that is grassy, herbal, cooling, and slightly bitter.",
+  "usuallyIncludes": [
+    "pennywort",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Try it plain first if you like herbal flavors, or with mung bean if offered for a softer taste.",
+  "howLocalsOrder": "Rau má is a green, herbal drink; ask less sugar if you want the pennywort bite. Some shops offer mung bean, which makes it thicker and softer.",
+  "worthKnowing": "In Vietnam, Rau má is a very Vietnamese herbal refreshment, more earthy than fruity and often loved for its cooling feel.",
+  "goodToKnow": "The green flavor is strong.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly rau má.",
+    "english": "I’d like one glass of pennywort juice.",
+    "pronunciation": "chaw toy moht lee row mah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Rau má was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

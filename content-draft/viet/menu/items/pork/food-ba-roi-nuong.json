@@ -1,0 +1,64 @@
+{
+  "itemID": "food-ba-roi-nuong",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Ba rọi nướng",
+  "englishTranslation": "Grilled pork belly",
+  "romanizedNoTones": "Ba roi nuong",
+  "soundOut": "bah roy noong",
+  "notes": "",
+  "atAGlance": "Ba rọi nướng is grilled pork belly, usually with charred fat, lemongrass or honeyed marinade, herbs, and rice or noodles.",
+  "whatItIs": "Ba rọi nướng is grilled pork belly with charred edges and rich fat, often eaten with rice, herbs, pickles, or wrapped with rice paper depending on the shop.",
+  "usuallyIncludes": [
+    "pork belly",
+    "charred fat",
+    "savory marinade",
+    "herbs",
+    "rice paper or rice"
+  ],
+  "howToEnjoy": "Balance fatty pork belly with herbs, pickles, or rice. If rice paper is served, wrap small pieces so the herbs cut the richness.",
+  "howLocalsOrder": "Order ba rọi nướng as a shared grilled pork belly plate. Ask for extra herbs, rice paper, or less chili before the grill seasoning is finished.",
+  "worthKnowing": "Ba rọi means pork belly, so expect richness; the fresh sides are there to make the fat delicious rather than heavy.",
+  "goodToKnow": "The pork belly is rich, so rice paper, herbs, cucumber, or a light dip help balance the charred fat. Ask for the dip on the side if you want control.",
+  "commonOptions": [
+    "extra herbs",
+    "rice paper",
+    "less spicy",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần ba rọi nướng.",
+    "english": "I’d like one order of grilled pork belly.",
+    "pronunciation": "chaw toy moht fuhn bah roy noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Ba rọi nướng was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-cua-rang-muoi",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cua rang muối",
+  "englishTranslation": "Salt-roasted crab",
+  "romanizedNoTones": "Cua rang muoi",
+  "soundOut": "koo-ah rang moo-ee",
+  "notes": "",
+  "atAGlance": "Cua rang muối is salt-roasted crab, usually with garlic, chili, salt crust, and sweet crab meat.",
+  "whatItIs": "Cua rang muối is crab tossed with salt, chili, garlic, and aromatics until the shell carries a dry savory crust.",
+  "usuallyIncludes": [
+    "crab",
+    "salt-chili seasoning",
+    "garlic",
+    "lime optional",
+    "dipping salt"
+  ],
+  "howToEnjoy": "Crack the shell, taste the salty crust, then use lime-pepper dip lightly. It is a slow shared plate, not a tidy one-person order.",
+  "howLocalsOrder": "Order cua rang muối as a shared crab plate. Ask for less chili before the crab is tossed, and ask for shell crackers if the shop has them.",
+  "worthKnowing": "Rang muối is a favorite Vietnamese seafood style because the seasoning clings to the shell and perfumes your fingers as you eat.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "lime-pepper salt",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cua rang muối.",
+    "english": "I’d like one order of salt-roasted crab.",
+    "pronunciation": "chaw toy moht fuhn koo-ah rang moo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cua rang muối was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

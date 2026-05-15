@@ -1,0 +1,62 @@
+{
+  "itemID": "food-heo-quay",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Heo quay",
+  "englishTranslation": "Roasted pork",
+  "romanizedNoTones": "Heo quay",
+  "soundOut": "heh-oh kway",
+  "notes": "",
+  "atAGlance": "Heo quay is roast pork with crisp skin, rich meat, and a salty-sweet nước chấm, a lime-fish-sauce dip with sugar, garlic, and chili. The crackling is the reason people order it.",
+  "whatItIs": "Heo quay is roast pork with crackling skin and rich meat, usually eaten with rice, herbs, pickles, or nước chấm, a lime-fish-sauce dip with sugar, garlic, and chili.",
+  "usuallyIncludes": [
+    "roast pork",
+    "crisp crackling skin",
+    "rich pork meat",
+    "pickles or cucumber",
+    "rice or noodles optional"
+  ],
+  "howToEnjoy": "Look for crisp skin and balance it with rice or pickles. If the skin matters to you, ask for skin-on pieces.",
+  "howLocalsOrder": "Heo quay is ordered for crackly roasted pork skin, so ask for skin-on pieces if that is what you want. It is often eaten with rice, bánh hỏi, or pickles to cut the richness.",
+  "worthKnowing": "Heo quay is common in rice plates, noodle pairings, and shared meals, but the crackling is the reason people seek it out. Good shops protect that brittle skin texture.",
+  "goodToKnow": "Ask for skin-on pieces if you want the classic texture. Pickles, herbs, or rice cut through the richness.",
+  "commonOptions": [
+    "skin-on pieces",
+    "with rice",
+    "extra pickles",
+    "share plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork and may include fatty skin-on pieces.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần heo quay.",
+    "english": "I’d like one order of roasted pork.",
+    "pronunciation": "chaw toy moht fuhn heh-oh kway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Heo quay was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

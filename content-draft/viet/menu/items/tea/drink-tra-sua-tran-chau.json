@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-tra-sua-tran-chau",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Trà sữa trân châu",
+  "englishTranslation": "Bubble milk tea",
+  "romanizedNoTones": "Tra sua tran chau",
+  "soundOut": "chah soo-uh chan chow",
+  "notes": "",
+  "atAGlance": "Trà sữa trân châu adds chewy pearls to milk tea, making texture just as important as sweetness or tea flavor.",
+  "whatItIs": "Trà sữa trân châu is milk tea served with trân châu, chewy tapioca pearls. Expect bubble milk tea with chewy tapioca pearls, creamy tea, and a sweet finish.",
+  "usuallyIncludes": [
+    "tea",
+    "milk",
+    "tapioca pearls",
+    "ice",
+    "sugar"
+  ],
+  "howToEnjoy": "Use a wide straw and adjust sugar or ice if the café allows it.",
+  "howLocalsOrder": "Trà sữa trân châu is ordered by sweetness and ice level first, toppings second. Ask less sweet and less ice before it is sealed, especially if tapioca pearls are going in.",
+  "worthKnowing": "In Vietnam, Trà sữa trân châu is part of Vietnam’s modern milk-tea scene, where texture is as important as the drink flavor.",
+  "goodToKnow": "The pearls make it filling.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà sữa trân châu.",
+    "english": "I’d like one glass of bubble milk tea.",
+    "pronunciation": "chaw toy moht lee chah soo-uh chan chow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà sữa trân châu was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

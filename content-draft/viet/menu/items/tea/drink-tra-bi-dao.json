@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-tra-bi-dao",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà bí đao",
+  "englishTranslation": "Winter melon tea",
+  "romanizedNoTones": "Tra bi dao",
+  "soundOut": "chah bee dow",
+  "notes": "",
+  "atAGlance": "Trà bí đao is winter melon tea, dark, mellow, caramel-like, and part of Vietnam’s cooling herbal drink tradition.",
+  "whatItIs": "Trà bí đao is tea or drink made from bí đao, winter melon. Expect winter melon tea that is dark, mellow, caramel-like, and usually sweet over ice.",
+  "usuallyIncludes": [
+    "winter melon tea",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it cold and ask for less sugar if you want the herbal melon note clearer.",
+  "howLocalsOrder": "Order trà bí đao cold unless you want a hot herbal cup. Ask ít đường if you want the mellow winter-melon flavor clearer.",
+  "worthKnowing": "Winter-melon tea is a popular cooling drink from bottles, street stalls, and casual cafés; it is usually dark, mellow, caramel-like, and sweet over ice.",
+  "goodToKnow": "Bí đao is winter melon, not peach.",
+  "commonOptions": [
+    "less sweet",
+    "no ice",
+    "cold bottle",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà bí đao.",
+    "english": "I’d like one glass of winter melon tea.",
+    "pronunciation": "chaw toy moht lee chah bee dow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Trà bí đao was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-ta-nuong",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà ta nướng",
+  "englishTranslation": "Grilled free-range chicken",
+  "romanizedNoTones": "Ga ta nuong",
+  "soundOut": "gah tah noong",
+  "notes": "",
+  "atAGlance": "Gà ta nướng is free-range chicken grilled over heat, usually with firm meat, crisp skin, lime leaves, and dipping salt.",
+  "whatItIs": "Gà ta nướng is grilled free-range chicken, usually chewier and more flavorful than industrial chicken, often served with lime leaves, herbs, and dipping salt.",
+  "usuallyIncludes": [
+    "free-range chicken",
+    "grilled skin",
+    "lime leaves",
+    "dipping salt",
+    "herbs or cucumber"
+  ],
+  "howToEnjoy": "Eat the grilled pieces with herbs and a light touch of lime-pepper salt. Expect chew; that firmer texture is part of why people order gà ta.",
+  "howLocalsOrder": "Order gà ta nướng when you want free-range chicken with real chew. Ask for dipping salt on the side, less chili, or extra herbs before serving.",
+  "worthKnowing": "Gà ta means local/free-range chicken, prized in Vietnam for texture and deeper chicken flavor.",
+  "goodToKnow": "Gà ta can be firmer and more flavorful than standard chicken; ask if it is chopped bone-in before ordering.",
+  "commonOptions": [
+    "dipping salt on the side",
+    "less spicy",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà ta nướng.",
+    "english": "I’d like one order of grilled free-range chicken.",
+    "pronunciation": "chaw toy moht fuhn gah tah noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà ta nướng was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "itemID": "food-vit-nuong-chao",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Vịt nướng chao",
+  "englishTranslation": "Duck grilled with fermented bean curd",
+  "romanizedNoTones": "Vit nuong chao",
+  "soundOut": "veet noong chow",
+  "notes": "",
+  "atAGlance": "Vịt nướng chao is duck grilled with fermented tofu sauce, usually with smoky duck, chao, herbs, and pickles.",
+  "whatItIs": "Vịt nướng chao is duck grilled with chao, fermented tofu, which gives the marinade a salty, funky, creamy depth.",
+  "usuallyIncludes": [
+    "duck",
+    "fermented tofu marinade",
+    "grilled char",
+    "herbs",
+    "pickles"
+  ],
+  "howToEnjoy": "Eat the duck hot from the grill with herbs, cucumber, or rice. The chao flavor is strong, so dip lightly if extra chao is served.",
+  "howLocalsOrder": "Order vịt nướng chao when you want the fermented-bean-curd marinade to be the main flavor. Ask for less chili or extra herbs before grilling.",
+  "worthKnowing": "In Vietnam, chao is fermented tofu; it tastes savory, funky, and rich, very different from a simple salt-pepper grill.",
+  "goodToKnow": "Ask for không cay if you want Vịt nướng chao without added chili.",
+  "commonOptions": [
+    "less spicy",
+    "extra herbs",
+    "with rice",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần vịt nướng chao.",
+    "english": "I’d like one order of duck grilled with fermented bean curd.",
+    "pronunciation": "chaw toy moht fuhn veet noong chow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Vịt nướng chao was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

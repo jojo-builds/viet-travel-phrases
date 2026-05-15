@@ -1,0 +1,63 @@
+{
+  "itemID": "food-thit-kho-tieu",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Thịt kho tiêu",
+  "englishTranslation": "Pork braised with pepper",
+  "romanizedNoTones": "Thit kho tieu",
+  "soundOut": "tit kaw tee-ew",
+  "notes": "",
+  "atAGlance": "Thịt kho tiêu is pork braised with fish sauce caramel and plenty of black pepper. It is darker, sharper, and less sweet-feeling than the coconut-water egg version.",
+  "whatItIs": "Thịt kho tiêu is pork braised in fish-sauce caramel with black pepper. It is darker, pepperier, and more rice-hungry than a simple pork plate.",
+  "usuallyIncludes": [
+    "pork",
+    "fish sauce caramel",
+    "black pepper",
+    "garlic",
+    "scallions"
+  ],
+  "howToEnjoy": "Spoon a small amount of sauce onto rice, then add more only if you want the peppery salty-sweet flavor stronger.",
+  "howLocalsOrder": "Thịt kho tiêu is pork braised with black pepper, so order it with rice and ask for less pepper if you are heat-sensitive. The point is salty caramel depth, not a separate chili burn.",
+  "worthKnowing": "Kho dishes are Vietnamese braises, often built from fish sauce and caramelized sugar. Tiêu tells you this one leans into pepper.",
+  "goodToKnow": "Tiêu means pepper. Order rice with it because the peppery caramel sauce is too concentrated to eat alone.",
+  "commonOptions": [
+    "extra rice",
+    "less pepper",
+    "pickled greens",
+    "leaner pork"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần thịt kho tiêu.",
+    "english": "I’d like one order of pork braised with pepper.",
+    "pronunciation": "chaw toy moht fuhn tit kaw tee-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Thịt kho tiêu was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

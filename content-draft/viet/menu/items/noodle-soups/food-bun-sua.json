@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bun-sua",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún sứa",
+  "englishTranslation": "Jellyfish noodle soup",
+  "romanizedNoTones": "Bun sua",
+  "soundOut": "boon soo-uh",
+  "notes": "",
+  "atAGlance": "Bún sứa is a coastal jellyfish noodle soup, especially familiar around Nha Trang and central beach towns. The broth is light; the jellyfish adds a crisp springy bite.",
+  "whatItIs": "Bún sứa is a light coastal noodle soup with jellyfish, herbs, and seafood broth. The jellyfish gives a crisp springy texture rather than a strong fish flavor.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "jellyfish",
+    "light seafood broth",
+    "herbs",
+    "fish cake optional"
+  ],
+  "howToEnjoy": "Eat the jellyfish with herbs and broth in the same bite. Add chili slowly so the light seafood flavor stays visible.",
+  "howLocalsOrder": "Bún sứa is a texture order: cool, crisp jellyfish in a light seafood bowl. Ask what seafood is included and keep chili modest so you can still taste the delicate broth.",
+  "worthKnowing": "Bún sứa is especially tied to central coastal cities such as Nha Trang. For travelers, the main surprise is the texture.",
+  "goodToKnow": "Sứa means jellyfish. Order it when you are curious about a cool, crisp seafood texture that feels more like a beach-market salad than a heavy noodle bowl.",
+  "commonOptions": [
+    "extra herbs",
+    "less chili",
+    "ask what seafood",
+    "no shrimp paste"
+  ],
+  "regionalAssociation": "central coast and Nha Trang",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains jellyfish and seafood broth.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún sứa.",
+    "english": "I’d like one bowl of jellyfish noodle soup.",
+    "pronunciation": "chaw toy moht toh boon soo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún sứa was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}
