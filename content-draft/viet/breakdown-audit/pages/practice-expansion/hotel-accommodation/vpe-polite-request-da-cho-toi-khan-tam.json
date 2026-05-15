@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-polite-request-da-cho-toi-khan-tam",
+  "phraseText": "Dạ, cho tôi khăn tắm",
+  "englishTitle": "Respectfully, please give me a bath towel.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.451Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-polite-request-da-cho-toi-khan-tam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ, cho tôi",
+      "english": "respectfully, please give me",
+      "keepTogetherReason": "fixed polite request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "khăn tắm",
+      "english": "bath towel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, cho tôi khăn tắm",
+      "english": "Respectfully, please give me a bath towel.",
+      "audioKey": "audio-authored-da-cho-toi-khan-tam-1b020451a9"
+    }
+  ]
+}

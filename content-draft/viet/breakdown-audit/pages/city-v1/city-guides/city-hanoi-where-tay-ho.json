@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-tay-ho",
+  "phraseText": "Tây Hồ ở đâu?",
+  "englishTitle": "Where is Tay Ho?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-tay-ho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tây Hồ",
+      "english": "Tay Ho",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tây Hồ ở đâu?",
+      "english": "Where is Tay Ho?",
+      "audioKey": "audio-authored-tay-ho-o-dau-9ce491d8b4"
+    }
+  ]
+}

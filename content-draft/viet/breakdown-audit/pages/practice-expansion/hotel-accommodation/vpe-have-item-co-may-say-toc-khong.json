@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-may-say-toc-khong",
+  "phraseText": "Có máy sấy tóc không?",
+  "englishTitle": "Do you have a hair dryer?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.412Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-may-say-toc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "máy sấy tóc",
+      "english": "hair dryer",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có máy sấy tóc không?",
+      "english": "Do you have a hair dryer?",
+      "audioKey": "audio-authored-co-may-say-toc-khong-f54ad7710d"
+    }
+  ]
+}

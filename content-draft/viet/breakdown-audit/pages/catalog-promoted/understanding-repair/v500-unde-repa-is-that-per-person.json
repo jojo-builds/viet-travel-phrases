@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-is-that-per-person",
+  "phraseText": "Đó có phải là mỗi người?",
+  "englishTitle": "Is that per person?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-is-that-per-person",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mỗi",
+      "english": "each"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "người?",
+      "english": "person"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đó có phải là mỗi người?",
+      "english": "Is that per person?",
+      "audioKey": "v500-unde-repa-is-that-per-person"
+    }
+  ]
+}

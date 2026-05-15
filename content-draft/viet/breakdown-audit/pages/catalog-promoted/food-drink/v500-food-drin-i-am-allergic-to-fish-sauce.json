@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-food-drin-i-am-allergic-to-fish-sauce",
+  "phraseText": "Tôi bị dị ứng với nước mắm",
+  "englishTitle": "I am allergic to fish sauce",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.303Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-food-drin-i-am-allergic-to-fish-sauce",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị dị ứng",
+      "english": "am allergic",
+      "keepTogetherReason": "fixed health phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nước mắm",
+      "english": "fish sauce",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị dị ứng với nước mắm",
+      "english": "I am allergic to fish sauce",
+      "audioKey": "v500-food-drin-i-am-allergic-to-fish-sauce"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-shop-i-bought-the-wrong-size",
+  "phraseText": "Tôi mua nhầm kích thước",
+  "englishTitle": "I bought the wrong size",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.339Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-i-bought-the-wrong-size",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nhầm",
+      "english": "mistaken / wrong"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "kích",
+      "english": "size / activate"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thước",
+      "english": "measure / ruler"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi mua nhầm kích thước",
+      "english": "I bought the wrong size",
+      "audioKey": "v900-shop-i-bought-the-wrong-size"
+    }
+  ]
+}

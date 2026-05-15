@@ -1,0 +1,75 @@
+{
+  "pageID": "viet-phrase-hotel-premium-booking-wrong",
+  "phraseText": "Tôi nghĩ có vấn đề với việc đặt phòng của tôi.",
+  "englishTitle": "I think there is a problem with my booking.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.315Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-premium-booking-wrong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vấn",
+      "english": "issue"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đề",
+      "english": "propose / topic"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "việc",
+      "english": "work / task"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "đặt phòng",
+      "english": "book a room",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "của tôi.",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ có vấn đề với việc đặt phòng của tôi.",
+      "english": "I think there is a problem with my booking.",
+      "audioKey": "hotel-premium-booking-wrong"
+    }
+  ]
+}

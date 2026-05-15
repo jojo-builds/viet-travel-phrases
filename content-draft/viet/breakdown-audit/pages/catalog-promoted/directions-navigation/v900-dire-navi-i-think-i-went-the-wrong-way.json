@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-i-think-i-went-the-wrong-way",
+  "phraseText": "Tôi nghĩ tôi đã đi sai đường",
+  "englishTitle": "I think I went the wrong way",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-i-think-i-went-the-wrong-way",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I (second subject)"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "sai",
+      "english": "wrong"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ tôi đã đi sai đường",
+      "english": "I think I went the wrong way",
+      "audioKey": "v900-dire-navi-i-think-i-went-the-wrong-way"
+    }
+  ]
+}

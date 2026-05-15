@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-hoian-go-morning-glory",
+  "phraseText": "Cho tôi đến nhà hàng Morning Glory Hội An.",
+  "englishTitle": "Please take me to Morning Glory Hội An restaurant.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-morning-glory",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "Morning Glory Hội An.",
+      "english": "Morning Glory Hoi An",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến nhà hàng Morning Glory Hội An.",
+      "english": "Please take me to Morning Glory Hội An restaurant.",
+      "audioKey": "audio-authored-cho-toi-den-nha-hang-morning-glory-hoi-an-319dbe3a8b"
+    }
+  ]
+}

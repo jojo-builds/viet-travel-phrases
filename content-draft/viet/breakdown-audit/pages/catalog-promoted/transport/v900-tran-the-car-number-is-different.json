@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v900-tran-the-car-number-is-different",
+  "phraseText": "Số xe khác hẳn",
+  "englishTitle": "The car number is different",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-the-car-number-is-different",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Số",
+      "english": "number"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xe",
+      "english": "vehicle"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hẳn",
+      "english": "completely / noticeably"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Số xe khác hẳn",
+      "english": "The car number is different",
+      "audioKey": "v900-tran-the-car-number-is-different"
+    }
+  ]
+}

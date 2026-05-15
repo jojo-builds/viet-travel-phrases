@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-phong-bi-khong",
+  "phraseText": "Có phong bì không?",
+  "englishTitle": "Do you have an envelope?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.414Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-phong-bi-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phong",
+      "english": "envelope / style"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bì",
+      "english": "envelope"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phong bì không?",
+      "english": "Do you have an envelope?",
+      "audioKey": "audio-authored-co-phong-bi-khong-550e464a5b"
+    }
+  ]
+}

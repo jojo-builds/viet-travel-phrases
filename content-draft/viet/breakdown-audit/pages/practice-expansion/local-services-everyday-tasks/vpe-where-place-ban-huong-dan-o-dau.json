@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-where-place-ban-huong-dan-o-dau",
+  "phraseText": "bàn hướng dẫn ở đâu?",
+  "englishTitle": "Where is the help desk?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.481Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-ban-huong-dan-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "bàn hướng dẫn",
+      "english": "information desk",
+      "keepTogetherReason": "compound service-desk term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "bàn hướng dẫn ở đâu?",
+      "english": "Where is the help desk?",
+      "audioKey": "audio-authored-ban-huong-dan-o-dau-0373dfd46e"
+    }
+  ]
+}

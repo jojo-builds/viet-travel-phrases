@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-transport-cash",
+  "phraseText": "Tôi trả bằng tiền mặt",
+  "englishTitle": "I’ll pay cash",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-cash",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "trả",
+      "english": "pay / return"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bằng",
+      "english": "by / with"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tiền mặt",
+      "english": "cash",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi trả bằng tiền mặt",
+      "english": "I’ll pay cash",
+      "audioKey": "taxi-7"
+    }
+  ]
+}

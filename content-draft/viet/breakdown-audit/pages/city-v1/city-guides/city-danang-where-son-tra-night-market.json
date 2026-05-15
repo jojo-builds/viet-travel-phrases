@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-danang-where-son-tra-night-market",
+  "phraseText": "Chợ đêm Sơn Trà ở đâu?",
+  "englishTitle": "Where is Son Tra Night Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.363Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-where-son-tra-night-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ đêm Sơn Trà",
+      "english": "Son Tra Night Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ đêm Sơn Trà ở đâu?",
+      "english": "Where is Son Tra Night Market?",
+      "audioKey": "audio-authored-cho-dem-son-tra-o-dau-d0f887c351"
+    }
+  ]
+}

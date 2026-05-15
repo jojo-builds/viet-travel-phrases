@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-i-lost-my-credit-card",
+  "phraseText": "Tôi bị mất thẻ tín dụng",
+  "englishTitle": "I lost my credit card",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-i-lost-my-credit-card",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị mất",
+      "english": "is missing / lost",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thẻ tín dụng",
+      "english": "credit card",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị mất thẻ tín dụng",
+      "english": "I lost my credit card",
+      "audioKey": "v500-emer-safe-i-lost-my-credit-card"
+    }
+  ]
+}

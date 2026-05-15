@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-near-place-cua-ra-gan-day-khong",
+  "phraseText": "cửa ra gần đây không?",
+  "englishTitle": "Is the exit nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.429Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-cua-ra-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "cửa ra",
+      "english": "exit",
+      "keepTogetherReason": "compound exit noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "cửa ra gần đây không?",
+      "english": "Is the exit nearby?",
+      "audioKey": "audio-authored-cua-ra-gan-day-khong-9be709f393"
+    }
+  ]
+}

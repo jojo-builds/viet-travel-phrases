@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-thiep-buu-dien",
+  "phraseText": "Tôi muốn mua thiệp bưu điện",
+  "englishTitle": "I want to buy postcards.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.400Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-thiep-buu-dien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thiệp bưu điện",
+      "english": "postcard",
+      "keepTogetherReason": "compound item term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua thiệp bưu điện",
+      "english": "I want to buy postcards.",
+      "audioKey": "audio-authored-toi-muon-mua-thiep-buu-dien-b5c5d7a004"
+    }
+  ]
+}

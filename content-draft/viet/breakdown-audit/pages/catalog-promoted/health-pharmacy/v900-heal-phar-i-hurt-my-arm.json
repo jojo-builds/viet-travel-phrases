@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-hurt-my-arm",
+  "phraseText": "tôi bị thương ở tay",
+  "englishTitle": "I hurt my arm",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-hurt-my-arm",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thương",
+      "english": "injury / love"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tay",
+      "english": "hand"
+    },
+    {
+      "id": "full",
+      "vietnamese": "tôi bị thương ở tay",
+      "english": "I hurt my arm",
+      "audioKey": "v900-heal-phar-i-hurt-my-arm"
+    }
+  ]
+}

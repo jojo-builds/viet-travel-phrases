@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-airport",
+  "phraseText": "Sân bay Phú Bài ở đâu?",
+  "englishTitle": "Where is Phu Bai Airport?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-airport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sân bay Phú Bài",
+      "english": "Phu Bai Airport",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Sân bay Phú Bài ở đâu?",
+      "english": "Where is Phu Bai Airport?",
+      "audioKey": "audio-authored-san-bay-phu-bai-o-dau-9e32a12323"
+    }
+  ]
+}

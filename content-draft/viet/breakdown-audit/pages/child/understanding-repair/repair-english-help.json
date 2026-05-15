@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-repair-english-help-self-limit",
+  "phraseText": "Xin lỗi, tôi không nói tiếng Việt",
+  "englishTitle": "Sorry, I don’t speak Vietnamese",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-english-help-self-limit",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin lỗi,",
+      "english": "sorry",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "vietnamese": "tiếng Việt",
+      "english": "Vietnamese language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+      "english": "Sorry, I don’t speak Vietnamese",
+      "audioKey": "repair-english-help-self-limit"
+    }
+  ]
+}

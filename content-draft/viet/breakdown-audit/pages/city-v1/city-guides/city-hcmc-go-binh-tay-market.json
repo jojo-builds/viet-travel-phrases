@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-binh-tay-market",
+  "phraseText": "Đi Chợ Bình Tây",
+  "englishTitle": "Go to Binh Tay Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-binh-tay-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Bình Tây",
+      "english": "Binh Tay Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ Bình Tây",
+      "english": "Go to Binh Tay Market",
+      "audioKey": "audio-authored-di-cho-binh-tay-c2f5763288"
+    }
+  ]
+}

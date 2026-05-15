@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-phrase-emergency-5",
+  "phraseText": "Cứu tôi với!",
+  "englishTitle": "Help!",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.289Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-emergency-5",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cứu",
+      "english": "rescue / help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "với!",
+      "english": "with / to"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cứu tôi với!",
+      "english": "Help!",
+      "audioKey": "emergency-5"
+    }
+  ]
+}

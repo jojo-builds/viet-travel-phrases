@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent",
+  "phraseText": "Tôi có thể mua thuốc chống muỗi ở đâu?",
+  "englishTitle": "Where can I buy mosquito repellent?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "vietnamese": "thuốc chống muỗi",
+      "english": "mosquito repellent",
+      "keepTogetherReason": "compound repellent term"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể mua thuốc chống muỗi ở đâu?",
+      "english": "Where can I buy mosquito repellent?",
+      "audioKey": "v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent"
+    }
+  ]
+}

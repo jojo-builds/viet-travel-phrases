@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ong-hut",
+  "phraseText": "Cho tôi ống hút",
+  "englishTitle": "A straw, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.447Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-ong-hut",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ống",
+      "english": "tube / straw"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hút",
+      "english": "smoke / suck"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi ống hút",
+      "english": "A straw, please.",
+      "audioKey": "audio-authored-cho-toi-ong-hut-a4233fbd17"
+    }
+  ]
+}

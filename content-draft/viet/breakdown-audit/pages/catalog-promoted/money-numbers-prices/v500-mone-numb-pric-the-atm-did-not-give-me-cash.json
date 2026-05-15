@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
+  "phraseText": "ATM không đưa tiền mặt cho tôi",
+  "englishTitle": "The ATM did not give me cash",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-the-atm-did-not-give-me-cash",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đưa",
+      "english": "give / take"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tiền mặt",
+      "english": "cash",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "ATM không đưa tiền mặt cho tôi",
+      "english": "The ATM did not give me cash",
+      "audioKey": "v500-mone-numb-pric-the-atm-did-not-give-me-cash"
+    }
+  ]
+}

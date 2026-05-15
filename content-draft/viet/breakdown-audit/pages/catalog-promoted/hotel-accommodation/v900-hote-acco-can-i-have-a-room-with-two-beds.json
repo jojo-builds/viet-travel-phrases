@@ -1,0 +1,75 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-i-have-a-room-with-two-beds",
+  "phraseText": "Tôi có thể đặt một phòng có hai giường được không?",
+  "englishTitle": "Can I have a room with two beds?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.318Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-i-have-a-room-with-two-beds",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt",
+      "english": "book / reserve / order"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "hai",
+      "english": "two"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "giường",
+      "english": "a room with two beds"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể đặt một phòng có hai giường được không?",
+      "english": "Can I have a room with two beds?",
+      "audioKey": "v900-hote-acco-can-i-have-a-room-with-two-beds"
+    }
+  ]
+}

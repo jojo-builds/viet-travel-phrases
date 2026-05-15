@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-is-it-open-today",
+  "phraseText": "Hôm nay có mở cửa không?",
+  "englishTitle": "Is it open today?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.344Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-is-it-open-today",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "mở cửa",
+      "english": "open / opening",
+      "keepTogetherReason": "compound business-hours verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hôm nay có mở cửa không?",
+      "english": "Is it open today?",
+      "audioKey": "v500-time-date-book-is-it-open-today"
+    }
+  ]
+}

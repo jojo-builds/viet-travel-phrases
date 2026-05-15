@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-near-place-khach-san-gan-day-khong",
+  "phraseText": "khách sạn gần đây không?",
+  "englishTitle": "Is the hotel nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.430Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-khach-san-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "khách sạn gần đây không?",
+      "english": "Is the hotel nearby?",
+      "audioKey": "audio-authored-khach-san-gan-day-khong-0e29f2e9c8"
+    }
+  ]
+}

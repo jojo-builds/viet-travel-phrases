@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-city-hue-bun-bo",
+  "phraseText": "Tôi muốn ăn bún bò Huế",
+  "englishTitle": "I want to eat bun bo Hue",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.384Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-bun-bo",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bún bò Huế",
+      "english": "Bun bo Hue",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn ăn bún bò Huế",
+      "english": "I want to eat bun bo Hue",
+      "audioKey": "audio-authored-toi-muon-an-bun-bo-hue-5c5f5ccf1f"
+    }
+  ]
+}

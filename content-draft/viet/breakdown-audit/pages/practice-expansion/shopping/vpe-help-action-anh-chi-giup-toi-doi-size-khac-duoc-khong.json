@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-doi-size-khac-duoc-khong",
+  "phraseText": "Giúp tôi đổi size khác được không?",
+  "englishTitle": "Can you help me change to another size?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.420Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-doi-size-khac-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "vietnamese": "đổi size",
+      "english": "change size",
+      "keepTogetherReason": "compound sizing action"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi đổi size khác được không?",
+      "english": "Can you help me change to another size?",
+      "audioKey": "audio-authored-giup-toi-doi-size-khac-duoc-khong-b063d3e383"
+    }
+  ]
+}

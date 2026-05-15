@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-there-are-insects-in-the-room",
+  "phraseText": "Có côn trùng trong phòng",
+  "englishTitle": "There are insects in the room",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-there-are-insects-in-the-room",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "côn trùng",
+      "english": "insect / insects",
+      "keepTogetherReason": "compound insect term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có côn trùng trong phòng",
+      "english": "There are insects in the room",
+      "audioKey": "v900-hote-acco-there-are-insects-in-the-room"
+    }
+  ]
+}

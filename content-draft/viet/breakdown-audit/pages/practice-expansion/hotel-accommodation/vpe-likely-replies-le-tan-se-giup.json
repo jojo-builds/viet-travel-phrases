@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-le-tan-se-giup",
+  "phraseText": "Lễ tân sẽ giúp",
+  "englishTitle": "The front desk will help",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.426Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-le-tan-se-giup",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lễ",
+      "english": "change"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tân",
+      "english": "front desk"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lễ tân sẽ giúp",
+      "english": "The front desk will help",
+      "audioKey": "audio-authored-le-tan-se-giup-25299d5d32"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "pageID": "viet-phrase-food-premium-without-this-ingredient",
+  "phraseText": "Bạn có thể làm nó mà không cần thành phần này?",
+  "englishTitle": "Can you make it without this ingredient?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.303Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-food-premium-without-this-ingredient",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "làm",
+      "english": "do / make"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mà",
+      "english": "that / but"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "thành",
+      "english": "become / city"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "phần",
+      "english": "portion / part"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "này?",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể làm nó mà không cần thành phần này?",
+      "english": "Can you make it without this ingredient?",
+      "audioKey": "food-premium-without-this-ingredient"
+    }
+  ]
+}

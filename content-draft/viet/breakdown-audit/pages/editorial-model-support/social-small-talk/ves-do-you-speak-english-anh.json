@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-ves-do-you-speak-english-anh",
+  "phraseText": "Anh nói tiếng Anh không?",
+  "englishTitle": "Do you speak English?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-do-you-speak-english-anh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Anh",
+      "english": "English"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Anh nói tiếng Anh không?",
+      "english": "Do you speak English?",
+      "audioKey": "audio-authored-anh-noi-tieng-anh-khong-38b15123ba"
+    }
+  ]
+}

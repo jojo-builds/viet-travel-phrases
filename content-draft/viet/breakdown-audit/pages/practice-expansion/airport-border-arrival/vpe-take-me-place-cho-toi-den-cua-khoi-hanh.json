@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-take-me-place-cho-toi-den-cua-khoi-hanh",
+  "phraseText": "Cho tôi đến cửa khởi hành",
+  "englishTitle": "Please take me to the departure door.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.477Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-take-me-place-cho-toi-den-cua-khoi-hanh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "cửa khởi hành",
+      "english": "departure gate",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến cửa khởi hành",
+      "english": "Please take me to the departure door.",
+      "audioKey": "audio-authored-cho-toi-den-cua-khoi-hanh-b4b6d06954"
+    }
+  ]
+}

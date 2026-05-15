@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-what-time-does-it-start",
+  "phraseText": "Nó bắt đầu lúc mấy giờ?",
+  "englishTitle": "What time does it start?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-what-time-does-it-start",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "vietnamese": "bắt đầu",
+      "english": "start / begin",
+      "keepTogetherReason": "compound start verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lúc",
+      "english": "at the time"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mấy giờ?",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+      "english": "What time does it start?",
+      "audioKey": "v900-time-date-book-what-time-does-it-start"
+    }
+  ]
+}

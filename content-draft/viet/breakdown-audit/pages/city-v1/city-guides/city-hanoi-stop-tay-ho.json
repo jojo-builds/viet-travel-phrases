@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-stop-tay-ho",
+  "phraseText": "Dừng ở Tây Hồ",
+  "englishTitle": "Stop at Tay Ho",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.369Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-stop-tay-ho",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Tây Hồ",
+      "english": "Tay Ho",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Tây Hồ",
+      "english": "Stop at Tay Ho",
+      "audioKey": "audio-authored-dung-o-tay-ho-1c049299a3"
+    }
+  ]
+}

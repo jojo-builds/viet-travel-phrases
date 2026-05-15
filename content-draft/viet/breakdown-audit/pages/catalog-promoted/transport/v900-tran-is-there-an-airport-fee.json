@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-tran-is-there-an-airport-fee",
+  "phraseText": "Có phí sân bay không?",
+  "englishTitle": "Is there an airport fee?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-is-there-an-airport-fee",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phí",
+      "english": "fee"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sân bay",
+      "english": "airport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phí sân bay không?",
+      "english": "Is there an airport fee?",
+      "audioKey": "v900-tran-is-there-an-airport-fee"
+    }
+  ]
+}

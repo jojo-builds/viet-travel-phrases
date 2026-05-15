@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-ves-call-taxi-for-me",
+  "phraseText": "Gọi giúp tôi taxi được không?",
+  "englishTitle": "Can you call me a taxi?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.390Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-call-taxi-for-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "taxi",
+      "english": "taxi"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Gọi giúp tôi taxi được không?",
+      "english": "Can you call me a taxi?",
+      "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-near-place-ho-gan-day-khong",
+  "phraseText": "hồ gần đây không?",
+  "englishTitle": "Is the lake nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.430Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-ho-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "hồ",
+      "english": "lake / clock"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "hồ gần đây không?",
+      "english": "Is the lake nearby?",
+      "audioKey": "audio-authored-ho-gan-day-khong-56cdd851ab"
+    }
+  ]
+}

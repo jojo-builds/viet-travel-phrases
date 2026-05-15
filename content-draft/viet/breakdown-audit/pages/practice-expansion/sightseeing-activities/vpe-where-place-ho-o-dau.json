@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-vpe-where-place-ho-o-dau",
+  "phraseText": "hồ ở đâu?",
+  "englishTitle": "Where is the lake?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.483Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-ho-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "hồ",
+      "english": "lake / clock"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "hồ ở đâu?",
+      "english": "Where is the lake?",
+      "audioKey": "audio-authored-ho-o-dau-c3cc3d1f8a"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-stop-cam-chau",
+  "phraseText": "Dừng ở Cẩm Châu",
+  "englishTitle": "Stop at Cam Chau",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-cam-chau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Cẩm Châu",
+      "english": "Cam Chau",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Cẩm Châu",
+      "english": "Stop at Cam Chau",
+      "audioKey": "audio-authored-dung-o-cam-chau-12a12c864b"
+    }
+  ]
+}

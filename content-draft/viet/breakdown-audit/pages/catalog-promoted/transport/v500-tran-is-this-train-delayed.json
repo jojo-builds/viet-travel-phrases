@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v500-tran-is-this-train-delayed",
+  "phraseText": "Chuyến tàu này có bị trễ không?",
+  "englishTitle": "Is this train delayed?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.349Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-is-this-train-delayed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chuyến",
+      "english": "trip"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tàu",
+      "english": "train / boat"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trễ",
+      "english": "late / delayed"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chuyến tàu này có bị trễ không?",
+      "english": "Is this train delayed?",
+      "audioKey": "v500-tran-is-this-train-delayed"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-food-less-ice",
+  "phraseText": "Ít đá thôi",
+  "englishTitle": "Just a little ice",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-less-ice",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít đá",
+      "english": "less ice",
+      "keepTogetherReason": "compound food phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít đá thôi",
+      "english": "Just a little ice",
+      "audioKey": "coffee-4"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-no-thanks-maybe-later",
+  "phraseText": "Không, cảm ơn, có thể để sau",
+  "englishTitle": "No thanks, maybe later",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-no-thanks-maybe-later",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không,",
+      "english": "no"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm ơn,",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sau",
+      "english": "after / behind"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không, cảm ơn, có thể để sau",
+      "english": "No thanks, maybe later",
+      "audioKey": "v500-mone-numb-pric-no-thanks-maybe-later"
+    }
+  ]
+}

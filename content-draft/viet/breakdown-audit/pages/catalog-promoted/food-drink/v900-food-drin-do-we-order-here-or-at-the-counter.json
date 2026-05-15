@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-do-we-order-here-or-at-the-counter",
+  "phraseText": "Chúng ta đặt hàng ở đây hay tại quầy?",
+  "englishTitle": "Do we order here or at the counter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.306Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-do-we-order-here-or-at-the-counter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chúng ta",
+      "english": "we / us",
+      "keepTogetherReason": "pronoun phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đặt",
+      "english": "book / reserve / order"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hàng",
+      "english": "shop / goods"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hay",
+      "english": "or"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "tại",
+      "english": "at / because"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "quầy?",
+      "english": "counter / desk"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chúng ta đặt hàng ở đây hay tại quầy?",
+      "english": "Do we order here or at the counter?",
+      "audioKey": "v900-food-drin-do-we-order-here-or-at-the-counter"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+  "phraseText": "Đường Võ Nguyên Giáp",
+  "englishTitle": "Vo Nguyen Giap Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Võ Nguyên Giáp",
+      "english": "Vo Nguyen Giap Street",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

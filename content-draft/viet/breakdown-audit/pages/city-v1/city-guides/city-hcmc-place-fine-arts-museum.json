@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-fine-arts-museum",
+  "phraseText": "Bảo tàng Mỹ thuật",
+  "englishTitle": "Fine Arts Museum",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-fine-arts-museum",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bảo tàng Mỹ thuật",
+      "english": "Fine Arts Museum",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

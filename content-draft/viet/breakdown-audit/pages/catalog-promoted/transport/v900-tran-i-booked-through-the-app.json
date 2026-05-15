@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-tran-i-booked-through-the-app",
+  "phraseText": "Tôi đã đặt qua ứng dụng",
+  "englishTitle": "I booked through the app",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-i-booked-through-the-app",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã đặt",
+      "english": "booked / reserved",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "qua",
+      "english": "through / past"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã đặt qua ứng dụng",
+      "english": "I booked through the app",
+      "audioKey": "v900-tran-i-booked-through-the-app"
+    }
+  ]
+}

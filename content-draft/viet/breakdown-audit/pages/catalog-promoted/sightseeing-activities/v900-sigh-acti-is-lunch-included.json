@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-is-lunch-included",
+  "phraseText": "Có bao gồm bữa trưa không?",
+  "englishTitle": "Is lunch included?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-is-lunch-included",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao",
+      "english": "how / cover"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gồm",
+      "english": "include"
+    },
+    {
+      "vietnamese": "bữa trưa",
+      "english": "lunch",
+      "keepTogetherReason": "compound meal term"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bao gồm bữa trưa không?",
+      "english": "Is lunch included?",
+      "audioKey": "v900-sigh-acti-is-lunch-included"
+    }
+  ]
+}

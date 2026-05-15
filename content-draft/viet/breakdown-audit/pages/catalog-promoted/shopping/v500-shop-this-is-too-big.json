@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v500-shop-this-is-too-big",
+  "phraseText": "Cái này quá lớn",
+  "englishTitle": "This is too big",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.338Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-shop-this-is-too-big",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lớn",
+      "english": "big / adult"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái này quá lớn",
+      "english": "This is too big",
+      "audioKey": "v500-shop-this-is-too-big"
+    }
+  ]
+}

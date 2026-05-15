@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-food-premium-which-dish-safe",
+  "phraseText": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+  "englishTitle": "Which dish is safest for this allergy?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.302Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-food-premium-which-dish-safe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Món ăn",
+      "english": "dish / food",
+      "keepTogetherReason": "compound food noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "an toàn",
+      "english": "safe",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhất",
+      "english": "most / first"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "bị dị ứng",
+      "english": "am allergic",
+      "keepTogetherReason": "fixed health phrase"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "này?",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+      "english": "Which dish is safest for this allergy?",
+      "audioKey": "food-premium-which-dish-safe"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-where-place-loi-sang-duong-o-dau",
+  "phraseText": "lối sang đường ở đâu?",
+  "englishTitle": "Where is a crosswalk?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.484Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-loi-sang-duong-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "lối",
+      "english": "way / entrance"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sang",
+      "english": "to / across"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đường",
+      "english": "street"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "lối sang đường ở đâu?",
+      "english": "Where is a crosswalk?",
+      "audioKey": "audio-authored-loi-sang-duong-o-dau-887f2cacb9"
+    }
+  ]
+}

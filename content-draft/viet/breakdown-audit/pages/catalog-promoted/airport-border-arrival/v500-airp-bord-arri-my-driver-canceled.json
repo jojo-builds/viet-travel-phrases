@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-my-driver-canceled",
+  "phraseText": "Tài xế của tôi đã hủy",
+  "englishTitle": "My driver canceled",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-my-driver-canceled",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tài xế",
+      "english": "driver",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hủy",
+      "english": "cancel"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tài xế của tôi đã hủy",
+      "english": "My driver canceled",
+      "audioKey": "v500-airp-bord-arri-my-driver-canceled"
+    }
+  ]
+}

@@ -27,19 +27,37 @@
       "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
-          "id": "chunk-1",
-          "vietnamese": "Tôi bị dị ứng",
-          "english": "I am allergic",
-          "audioKey": null
+          "id": "food-peanut-allergy-piece-1",
+          "vietnamese": "Tôi bị",
+          "english": "I have / got",
+          "audioKey": "breakdown-authored-toi-bi-0a9d4721f7"
         },
         {
-          "id": "chunk-2",
-          "vietnamese": "đậu phộng",
-          "english": "peanuts",
-          "audioKey": null
+          "id": "food-peanut-allergy-piece-2",
+          "vietnamese": "dị",
+          "english": "go",
+          "audioKey": "breakdown-authored-di-b18afef0af"
         },
         {
-          "id": "chunk-3",
+          "id": "food-peanut-allergy-piece-3",
+          "vietnamese": "ứng",
+          "english": "react / allergy",
+          "audioKey": "breakdown-v500-dire-navi-my-map-app-is-not-working-first"
+        },
+        {
+          "id": "food-peanut-allergy-piece-4",
+          "vietnamese": "đậu",
+          "english": "bean / peanut",
+          "audioKey": "breakdown-authored-dau-9b24b3d631"
+        },
+        {
+          "id": "food-peanut-allergy-piece-5",
+          "vietnamese": "phộng",
+          "english": "peanut",
+          "audioKey": "breakdown-authored-phong-a47787ffce"
+        },
+        {
+          "id": "food-peanut-allergy-full",
           "vietnamese": "Tôi bị dị ứng đậu phộng",
           "english": "I am allergic to peanuts",
           "audioKey": "food-peanut-allergy"

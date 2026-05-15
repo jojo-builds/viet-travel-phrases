@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-how-long-will-it-take",
+  "phraseText": "Sẽ mất bao lâu?",
+  "englishTitle": "How long will it take?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-how-long-will-it-take",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sẽ mất",
+      "english": "will take",
+      "keepTogetherReason": "fixed verb phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Sẽ mất bao lâu?",
+      "english": "How long will it take?",
+      "audioKey": "v500-loca-serv-ever-task-how-long-will-it-take"
+    }
+  ]
+}

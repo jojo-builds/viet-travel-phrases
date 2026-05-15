@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-food-pay-now",
+  "phraseText": "Tính tiền giúp tôi",
+  "englishTitle": "Please let me pay",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-pay-now",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tính",
+      "english": "calculate / charge"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tính tiền giúp tôi",
+      "english": "Please let me pay",
+      "audioKey": "coffee-7"
+    }
+  ]
+}

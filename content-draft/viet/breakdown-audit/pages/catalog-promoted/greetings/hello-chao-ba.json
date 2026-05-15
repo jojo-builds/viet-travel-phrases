@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-chao-ba",
+  "phraseText": "Chào bà",
+  "englishTitle": "Hello to an elderly woman",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-chao-ba",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bà",
+      "english": "elderly woman"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào bà",
+      "english": "Hello to an elderly woman",
+      "audioKey": "breakdown-viet-hello-ba-full"
+    }
+  ]
+}

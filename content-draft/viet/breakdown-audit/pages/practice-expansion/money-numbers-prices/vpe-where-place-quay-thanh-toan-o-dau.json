@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-where-place-quay-thanh-toan-o-dau",
+  "phraseText": "quầy thanh toán ở đâu?",
+  "englishTitle": "Where is the checkout counter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.485Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-quay-thanh-toan-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thanh toán",
+      "english": "pay",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy thanh toán ở đâu?",
+      "english": "Where is the checkout counter?",
+      "audioKey": "audio-authored-quay-thanh-toan-o-dau-dae6912781"
+    }
+  ]
+}

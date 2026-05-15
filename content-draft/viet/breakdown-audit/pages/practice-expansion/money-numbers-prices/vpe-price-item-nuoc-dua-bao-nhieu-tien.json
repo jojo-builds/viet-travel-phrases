@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-price-item-nuoc-dua-bao-nhieu-tien",
+  "phraseText": "nước dừa bao nhiêu tiền?",
+  "englishTitle": "How much is coconut water?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.458Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-price-item-nuoc-dua-bao-nhieu-tien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "nước dừa",
+      "english": "coconut water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu tiền?",
+      "english": "how much money",
+      "keepTogetherReason": "fixed price question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "nước dừa bao nhiêu tiền?",
+      "english": "How much is coconut water?",
+      "audioKey": "audio-authored-nuoc-dua-bao-nhieu-tien-75f49bd4a0"
+    }
+  ]
+}

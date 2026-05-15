@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-sai-roi",
+  "phraseText": "Sai rồi",
+  "englishTitle": "That is not correct",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.427Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-sai-roi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Sai",
+      "english": "wrong"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Sai rồi",
+      "english": "That is not correct",
+      "audioKey": "audio-authored-sai-roi-a7c3df0ce1"
+    }
+  ]
+}

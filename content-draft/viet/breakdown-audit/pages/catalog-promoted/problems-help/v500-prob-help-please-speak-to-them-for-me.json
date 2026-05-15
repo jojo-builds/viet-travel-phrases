@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-please-speak-to-them-for-me",
+  "phraseText": "Hãy nói chuyện với họ giúp tôi",
+  "englishTitle": "Please speak to them for me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-please-speak-to-them-for-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chuyện",
+      "english": "matter / story"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "họ",
+      "english": "they"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy nói chuyện với họ giúp tôi",
+      "english": "Please speak to them for me",
+      "audioKey": "v500-prob-help-please-speak-to-them-for-me"
+    }
+  ]
+}

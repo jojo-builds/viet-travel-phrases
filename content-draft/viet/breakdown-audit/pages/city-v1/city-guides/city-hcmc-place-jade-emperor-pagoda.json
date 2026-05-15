@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-jade-emperor-pagoda",
+  "phraseText": "Chùa Ngọc Hoàng",
+  "englishTitle": "Jade Emperor Pagoda",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.374Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-jade-emperor-pagoda",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chùa Ngọc Hoàng",
+      "english": "Jade Emperor Pagoda",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

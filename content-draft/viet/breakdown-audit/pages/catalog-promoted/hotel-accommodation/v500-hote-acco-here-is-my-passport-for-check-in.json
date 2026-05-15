@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
+  "phraseText": "Đây là hộ chiếu của tôi để nhận phòng",
+  "englishTitle": "Here is my passport for check-in",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-here-is-my-passport-for-check-in",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nhận phòng",
+      "english": "check in",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là hộ chiếu của tôi để nhận phòng",
+      "english": "Here is my passport for check-in",
+      "audioKey": "v500-hote-acco-here-is-my-passport-for-check-in"
+    }
+  ]
+}

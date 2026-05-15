@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-cho-lon",
+  "phraseText": "Đi Chợ Lớn",
+  "englishTitle": "Go to Cho Lon",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-cho-lon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Lớn",
+      "english": "Cho Lon",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ Lớn",
+      "english": "Go to Cho Lon",
+      "audioKey": "audio-authored-di-cho-lon-c0b21b04e7"
+    }
+  ]
+}

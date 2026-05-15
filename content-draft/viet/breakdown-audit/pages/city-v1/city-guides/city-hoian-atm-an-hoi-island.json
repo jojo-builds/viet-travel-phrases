@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hoian-atm-an-hoi-island",
+  "phraseText": "Có ATM gần Đảo An Hội không?",
+  "englishTitle": "Is there an ATM near An Hoi Island?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.377Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-atm-an-hoi-island",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Đảo An Hội",
+      "english": "An Hoi Island",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Đảo An Hội không?",
+      "english": "Is there an ATM near An Hoi Island?",
+      "audioKey": "audio-authored-co-atm-gan-dao-an-hoi-khong-a6cd542db6"
+    }
+  ]
+}

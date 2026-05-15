@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-stop-at-place-dung-o-quay-le-tan",
+  "phraseText": "Dừng ở quầy lễ tân",
+  "englishTitle": "Stop at the front desk.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.474Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-stop-at-place-dung-o-quay-le-tan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lễ",
+      "english": "change"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tân",
+      "english": "front desk"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở quầy lễ tân",
+      "english": "Stop at the front desk.",
+      "audioKey": "audio-authored-dung-o-quay-le-tan-250ce0dcaa"
+    }
+  ]
+}

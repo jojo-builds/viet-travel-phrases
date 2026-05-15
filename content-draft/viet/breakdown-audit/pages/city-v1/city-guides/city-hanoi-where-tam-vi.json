@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-tam-vi",
+  "phraseText": "Tầm Vị ở đâu?",
+  "englishTitle": "Where is Tam Vi?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-tam-vi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tầm Vị",
+      "english": "Tam Vi",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tầm Vị ở đâu?",
+      "english": "Where is Tam Vi?",
+      "audioKey": "audio-authored-tam-vi-o-dau-b1adc2cdb6"
+    }
+  ]
+}

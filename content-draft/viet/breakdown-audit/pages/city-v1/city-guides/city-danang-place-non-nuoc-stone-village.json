@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-non-nuoc-stone-village",
+  "phraseText": "Làng đá Non Nước",
+  "englishTitle": "Non Nuoc Stone Carving Village",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-non-nuoc-stone-village",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làng đá Non Nước",
+      "english": "Non Nuoc Stone Carving Village",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

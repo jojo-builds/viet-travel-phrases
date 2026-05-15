@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-ban-in-mau-khong",
+  "phraseText": "Có bản in màu không?",
+  "englishTitle": "Do you have a color print?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.408Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-ban-in-mau-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bản in",
+      "english": "printed copy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "màu",
+      "english": "color"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bản in màu không?",
+      "english": "Do you have a color print?",
+      "audioKey": "audio-authored-co-ban-in-mau-khong-b66a948edf"
+    }
+  ]
+}

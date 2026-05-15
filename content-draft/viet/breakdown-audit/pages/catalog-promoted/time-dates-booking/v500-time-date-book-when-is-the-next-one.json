@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-when-is-the-next-one",
+  "phraseText": "Lần tiếp theo là khi nào?",
+  "englishTitle": "When is the next one?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-when-is-the-next-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Lần",
+      "english": "time / occasion"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tiếp",
+      "english": "continue / next"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "theo",
+      "english": "follow"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khi nào?",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Lần tiếp theo là khi nào?",
+      "english": "When is the next one?",
+      "audioKey": "v500-time-date-book-when-is-the-next-one"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-where-is-the-nearest-embassy",
+  "phraseText": "Đại sứ quán gần nhất ở đâu?",
+  "englishTitle": "Where is the nearest embassy?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-where-is-the-nearest-embassy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đại sứ quán",
+      "english": "embassy",
+      "keepTogetherReason": "compound place term"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần nhất",
+      "english": "nearest",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đại sứ quán gần nhất ở đâu?",
+      "english": "Where is the nearest embassy?",
+      "audioKey": "v500-prob-help-where-is-the-nearest-embassy"
+    }
+  ]
+}

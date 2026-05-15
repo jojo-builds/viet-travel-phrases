@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-go-railway-station",
+  "phraseText": "Đi Ga Đà Nẵng",
+  "englishTitle": "Go to Da Nang Railway Station",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-go-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Ga Đà Nẵng",
+      "english": "Da Nang Railway Station",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Ga Đà Nẵng",
+      "english": "Go to Da Nang Railway Station",
+      "audioKey": "audio-authored-di-ga-da-nang-749edddb8f"
+    }
+  ]
+}

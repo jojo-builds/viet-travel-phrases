@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-heal-phar-i-have-a-sore-throat",
+  "phraseText": "Tôi bị đau họng",
+  "englishTitle": "I have a sore throat",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.313Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-heal-phar-i-have-a-sore-throat",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị đau",
+      "english": "hurts / has pain",
+      "keepTogetherReason": "fixed symptom phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "họng",
+      "english": "throat"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị đau họng",
+      "english": "I have a sore throat",
+      "audioKey": "v900-heal-phar-i-have-a-sore-throat"
+    }
+  ]
+}

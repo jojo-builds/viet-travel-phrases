@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+  "phraseText": "Ai đó có thể đến sửa nó được không?",
+  "englishTitle": "Can someone come fix it?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.317Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Ai đó",
+      "english": "someone",
+      "keepTogetherReason": "compound indefinite pronoun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sửa",
+      "english": "repair / fix"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ai đó có thể đến sửa nó được không?",
+      "english": "Can someone come fix it?",
+      "audioKey": "v500-hote-acco-can-someone-come-fix-it"
+    }
+  ]
+}

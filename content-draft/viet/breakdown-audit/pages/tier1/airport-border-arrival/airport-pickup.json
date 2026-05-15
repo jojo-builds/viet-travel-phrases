@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-airport-pickup",
+  "phraseText": "Khu đón ở đâu?",
+  "englishTitle": "Where is the pickup area?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.281Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-airport-pickup",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khu đón",
+      "english": "pickup area",
+      "keepTogetherReason": "compound airport place term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khu đón ở đâu?",
+      "english": "Where is the pickup area?",
+      "audioKey": "airport-5"
+    }
+  ]
+}

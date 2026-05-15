@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hcmc-stop-binh-tay-market",
+  "phraseText": "Dừng ở Chợ Bình Tây",
+  "englishTitle": "Stop at Binh Tay Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.376Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-stop-binh-tay-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Bình Tây",
+      "english": "Binh Tay Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Chợ Bình Tây",
+      "english": "Stop at Binh Tay Market",
+      "audioKey": "audio-authored-dung-o-cho-binh-tay-aa06b37299"
+    }
+  ]
+}

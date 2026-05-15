@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-i-do-not-want-any-trouble",
+  "phraseText": "Tôi không muốn bất kỳ rắc rối nào",
+  "englishTitle": "I do not want any trouble",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-i-do-not-want-any-trouble",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bất kỳ",
+      "english": "any",
+      "keepTogetherReason": "fixed determiner"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "rắc rối",
+      "english": "trouble",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không muốn bất kỳ rắc rối nào",
+      "english": "I do not want any trouble",
+      "audioKey": "v900-emer-safe-i-do-not-want-any-trouble"
+    }
+  ]
+}

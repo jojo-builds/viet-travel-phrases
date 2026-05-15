@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-how-much-per-kilo-for-laundry",
+  "phraseText": "Giặt đồ bao nhiêu một kg?",
+  "englishTitle": "How much per kilo for laundry?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.323Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-how-much-per-kilo-for-laundry",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Giặt đồ",
+      "english": "laundry / wash clothes",
+      "keepTogetherReason": "compound laundry phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "kg?",
+      "english": "kg"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giặt đồ bao nhiêu một kg?",
+      "english": "How much per kilo for laundry?",
+      "audioKey": "v900-loca-serv-ever-task-how-much-per-kilo-for-laundry"
+    }
+  ]
+}

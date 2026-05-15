@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-co-phong-khac",
+  "phraseText": "Có phòng khác",
+  "englishTitle": "There is another room",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.425Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-co-phong-khac",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "khác",
+      "english": "different / another"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có phòng khác",
+      "english": "There is another room",
+      "audioKey": "audio-authored-co-phong-khac-6fa11a8728"
+    }
+  ]
+}

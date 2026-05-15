@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water",
+  "phraseText": "Tôi có thể mua một chai nước ở đâu?",
+  "englishTitle": "Where can I buy a bottle of water?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.293Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một chai",
+      "english": "one bottle",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nước",
+      "english": "water"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể mua một chai nước ở đâu?",
+      "english": "Where can I buy a bottle of water?",
+      "audioKey": "v900-airp-bord-arri-where-can-i-buy-a-bottle-of-water"
+    }
+  ]
+}

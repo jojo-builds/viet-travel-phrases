@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-repair-meaning",
+  "phraseText": "Cái đó nghĩa là gì?",
+  "englishTitle": "What does that mean?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.276Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-meaning",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nghĩa",
+      "english": "meaning"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "gì?",
+      "english": "what"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cái đó nghĩa là gì?",
+      "english": "What does that mean?",
+      "audioKey": "repair-3"
+    }
+  ]
+}

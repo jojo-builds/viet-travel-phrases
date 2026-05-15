@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-v500-shop-how-much-is-this-item",
+  "phraseText": "Mặt hàng này giá bao nhiêu?",
+  "englishTitle": "How much is this item?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-shop-how-much-is-this-item",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mặt",
+      "english": "face / cash"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hàng",
+      "english": "shop / goods"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mặt hàng này giá bao nhiêu?",
+      "english": "How much is this item?",
+      "audioKey": "v500-shop-how-much-is-this-item"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-shop-this-fits-well",
+  "phraseText": "Điều này rất phù hợp",
+  "englishTitle": "This fits well",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-this-fits-well",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điều",
+      "english": "thing / matter"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "rất",
+      "english": "very"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phù",
+      "english": "suitable"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hợp",
+      "english": "suitable / combine"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điều này rất phù hợp",
+      "english": "This fits well",
+      "audioKey": "v900-shop-this-fits-well"
+    }
+  ]
+}

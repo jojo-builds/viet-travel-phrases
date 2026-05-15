@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-please-call-the-police",
+  "phraseText": "Hãy gọi cảnh sát",
+  "englishTitle": "Please call the police",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-please-call-the-police",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cảnh sát",
+      "english": "police",
+      "keepTogetherReason": "compound public-safety term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy gọi cảnh sát",
+      "english": "Please call the police",
+      "audioKey": "v500-emer-safe-please-call-the-police"
+    }
+  ]
+}

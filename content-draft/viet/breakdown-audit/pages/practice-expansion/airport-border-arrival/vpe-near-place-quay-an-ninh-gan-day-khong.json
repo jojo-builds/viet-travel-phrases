@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-vpe-near-place-quay-an-ninh-gan-day-khong",
+  "phraseText": "quầy an ninh gần đây không?",
+  "englishTitle": "Is the security desk nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.432Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-quay-an-ninh-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy an ninh",
+      "english": "security desk",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy an ninh gần đây không?",
+      "english": "Is the security desk nearby?",
+      "audioKey": "audio-authored-quay-an-ninh-gan-day-khong-3a125e268f"
+    }
+  ]
+}

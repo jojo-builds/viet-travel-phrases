@@ -29,13 +29,13 @@
         {
           "id": "repair-english-help-piece-1",
           "vietnamese": "Anh/chị",
-          "english": "sir or ma'am",
+          "english": "you (polite)",
           "audioKey": "breakdown-repair-english-help-first"
         },
         {
           "id": "repair-english-help-piece-2",
           "vietnamese": "nói",
-          "english": "say / speak",
+          "english": "speak / say",
           "audioKey": "breakdown-problems-3-first"
         },
         {
@@ -47,13 +47,13 @@
         {
           "id": "repair-english-help-piece-4",
           "vietnamese": "không?",
-          "english": "question marker",
+          "english": "asks yes or no",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "repair-english-help-full",
           "vietnamese": "Anh/chị nói tiếng Anh không?",
-          "english": "Do you speak English",
+          "english": "Do you speak English?",
           "audioKey": "repair-english-help"
         }
       ],

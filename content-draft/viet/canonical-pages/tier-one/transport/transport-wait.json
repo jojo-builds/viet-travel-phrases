@@ -29,13 +29,20 @@
         {
           "id": "taxi-6-piece-1",
           "vietnamese": "Chờ tôi",
-          "english": "for me / please",
+          "english": "can I have",
           "audioKey": "breakdown-authored-cho-toi-588928baee"
         },
         {
           "id": "taxi-6-piece-2",
-          "vietnamese": "năm phút",
-          "english": "five minutes"
+          "vietnamese": "năm",
+          "english": "five",
+          "audioKey": "breakdown-taxi-6-piece-3"
+        },
+        {
+          "id": "taxi-6-piece-3",
+          "vietnamese": "phút",
+          "english": "minutes",
+          "audioKey": "breakdown-taxi-6-piece-4"
         },
         {
           "id": "taxi-6-full",

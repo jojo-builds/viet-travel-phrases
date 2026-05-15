@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-can-i-borrow-a-charger",
+  "phraseText": "Tôi có thể mượn bộ sạc được không?",
+  "englishTitle": "Can I borrow a charger?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.330Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-can-i-borrow-a-charger",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mượn",
+      "english": "borrow"
+    },
+    {
+      "vietnamese": "bộ sạc",
+      "english": "charger",
+      "keepTogetherReason": "compound device accessory term"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể mượn bộ sạc được không?",
+      "english": "Can I borrow a charger?",
+      "audioKey": "v500-phon-inte-powe-can-i-borrow-a-charger"
+    }
+  ]
+}

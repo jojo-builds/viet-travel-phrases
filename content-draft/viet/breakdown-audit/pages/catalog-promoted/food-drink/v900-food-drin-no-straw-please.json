@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-no-straw-please",
+  "phraseText": "Làm ơn đừng có rơm",
+  "englishTitle": "No straw, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.308Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-no-straw-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đừng",
+      "english": "do not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "rơm",
+      "english": "straw"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn đừng có rơm",
+      "english": "No straw, please",
+      "audioKey": "v900-food-drin-no-straw-please"
+    }
+  ]
+}

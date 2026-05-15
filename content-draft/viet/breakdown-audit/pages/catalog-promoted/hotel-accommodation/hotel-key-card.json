@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-hotel-8",
+  "phraseText": "Thẻ phòng không mở được",
+  "englishTitle": "The key card doesn’t work",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.315Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-8",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thẻ phòng",
+      "english": "room key card",
+      "keepTogetherReason": "compound hotel item term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "mở",
+      "english": "open"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thẻ phòng không mở được",
+      "english": "The key card doesn’t work",
+      "audioKey": "hotel-8"
+    }
+  ]
+}

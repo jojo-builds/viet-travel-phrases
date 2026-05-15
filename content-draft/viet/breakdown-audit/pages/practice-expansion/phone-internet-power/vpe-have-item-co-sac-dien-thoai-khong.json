@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-have-item-co-sac-dien-thoai-khong",
+  "phraseText": "Có sạc điện thoại không?",
+  "englishTitle": "Do you have a phone charger?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.414Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-have-item-co-sac-dien-thoai-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sạc điện thoại",
+      "english": "phone charger",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có sạc điện thoại không?",
+      "english": "Do you have a phone charger?",
+      "audioKey": "audio-authored-co-sac-dien-thoai-khong-c914ca1f23"
+    }
+  ]
+}

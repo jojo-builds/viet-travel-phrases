@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-vpe-where-place-khu-lay-hanh-ly-o-dau",
+  "phraseText": "khu lấy hành lý ở đâu?",
+  "englishTitle": "Where is baggage claim?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.483Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-khu-lay-hanh-ly-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "khu",
+      "english": "area"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hành lý",
+      "english": "baggage / luggage",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "khu lấy hành lý ở đâu?",
+      "english": "Where is baggage claim?",
+      "audioKey": "audio-authored-khu-lay-hanh-ly-o-dau-09145979ce"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-where-place-quay-an-ninh-o-dau",
+  "phraseText": "quầy an ninh ở đâu?",
+  "englishTitle": "Where is the security desk?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.485Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-quay-an-ninh-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy an ninh",
+      "english": "security desk",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy an ninh ở đâu?",
+      "english": "Where is the security desk?",
+      "audioKey": "audio-authored-quay-an-ninh-o-dau-17563b1639"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-how-long-does-it-take",
+  "phraseText": "Phải mất bao lâu?",
+  "englishTitle": "How long does it take?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.344Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-how-long-does-it-take",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phải mất",
+      "english": "must take / takes",
+      "keepTogetherReason": "fixed verb phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phải mất bao lâu?",
+      "english": "How long does it take?",
+      "audioKey": "v500-time-date-book-how-long-does-it-take"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v500-sigh-acti-can-i-join-today",
+  "phraseText": "Tôi có thể tham gia ngay hôm nay không?",
+  "englishTitle": "Can I join today?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-sigh-acti-can-i-join-today",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tham gia",
+      "english": "join / participate",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ngay",
+      "english": "right away / right"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể tham gia ngay hôm nay không?",
+      "english": "Can I join today?",
+      "audioKey": "v500-sigh-acti-can-i-join-today"
+    }
+  ]
+}

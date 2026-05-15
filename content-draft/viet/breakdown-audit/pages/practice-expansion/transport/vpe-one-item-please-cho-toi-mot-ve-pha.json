@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-vpe-one-item-please-cho-toi-mot-ve-pha",
+  "phraseText": "Cho tôi vé phà",
+  "englishTitle": "A ferry ticket, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.449Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-one-item-please-cho-toi-mot-ve-pha",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phà",
+      "english": "ferry"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi vé phà",
+      "english": "A ferry ticket, please.",
+      "audioKey": "audio-authored-cho-toi-ve-pha-d1d708985a"
+    }
+  ]
+}

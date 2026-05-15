@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-emergency-not-safe",
+  "phraseText": "Tôi cảm thấy không an toàn",
+  "englishTitle": "I feel unsafe",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-emergency-not-safe",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm thấy",
+      "english": "feel",
+      "keepTogetherReason": "compound feeling verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "không an toàn",
+      "english": "unsafe / not safe",
+      "keepTogetherReason": "fixed safety phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cảm thấy không an toàn",
+      "english": "I feel unsafe",
+      "audioKey": "emergency-4"
+    }
+  ]
+}

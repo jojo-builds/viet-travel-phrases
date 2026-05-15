@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-phone-battery-dead",
+  "phraseText": "Điện thoại tôi hết pin rồi",
+  "englishTitle": "My phone battery is dead",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.284Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-phone-battery-dead",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Điện thoại",
+      "english": "phone",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hết",
+      "english": "out / finished"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "pin",
+      "english": "battery"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "rồi",
+      "english": "already / done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Điện thoại tôi hết pin rồi",
+      "english": "My phone battery is dead",
+      "audioKey": "phone-3"
+    }
+  ]
+}

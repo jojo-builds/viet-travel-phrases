@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-danang-go-con-market",
+  "phraseText": "Đi Chợ Cồn",
+  "englishTitle": "Go to Con Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-go-con-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Cồn",
+      "english": "Con Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ Cồn",
+      "english": "Go to Con Market",
+      "audioKey": "audio-authored-di-cho-con-da078e5102"
+    }
+  ]
+}

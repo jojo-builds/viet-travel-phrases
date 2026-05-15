@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v500-shop-okay-ill-take-it",
+  "phraseText": "Được rồi, tôi sẽ lấy nó",
+  "englishTitle": "Okay, I’ll take it",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.338Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-shop-okay-ill-take-it",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rồi,",
+      "english": "already / done"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Được rồi, tôi sẽ lấy nó",
+      "english": "Okay, I’ll take it",
+      "audioKey": "v500-shop-okay-ill-take-it"
+    }
+  ]
+}

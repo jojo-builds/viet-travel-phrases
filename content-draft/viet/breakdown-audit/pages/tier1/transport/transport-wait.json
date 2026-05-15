@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-transport-wait",
+  "phraseText": "Chờ tôi năm phút",
+  "englishTitle": "Wait for me five minutes",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.277Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-transport-wait",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chờ",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "năm",
+      "english": "five"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "phút",
+      "english": "minutes"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chờ tôi năm phút",
+      "english": "Wait for me five minutes",
+      "audioKey": "taxi-6"
+    }
+  ]
+}

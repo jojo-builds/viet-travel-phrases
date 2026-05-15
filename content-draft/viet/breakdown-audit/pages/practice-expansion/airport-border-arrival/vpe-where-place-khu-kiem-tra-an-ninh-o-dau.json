@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-vpe-where-place-khu-kiem-tra-an-ninh-o-dau",
+  "phraseText": "khu kiểm tra an ninh ở đâu?",
+  "englishTitle": "Where is security screening?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.483Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-khu-kiem-tra-an-ninh-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "khu kiểm tra an ninh",
+      "english": "security screening area",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "khu kiểm tra an ninh ở đâu?",
+      "english": "Where is security screening?",
+      "audioKey": "audio-authored-khu-kiem-tra-an-ninh-o-dau-4c1a284ce8"
+    }
+  ]
+}

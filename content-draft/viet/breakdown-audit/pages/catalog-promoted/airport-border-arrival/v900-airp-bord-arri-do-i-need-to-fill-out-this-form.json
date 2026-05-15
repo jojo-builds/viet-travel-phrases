@@ -1,0 +1,69 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-do-i-need-to-fill-out-this-form",
+  "phraseText": "Tôi có cần điền vào mẫu đơn này không?",
+  "englishTitle": "Do I need to fill out this form?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.292Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-do-i-need-to-fill-out-this-form",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cần điền",
+      "english": "need to fill in",
+      "keepTogetherReason": "fixed task phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mẫu",
+      "english": "form / sample"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đơn",
+      "english": "form / order"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có cần điền vào mẫu đơn này không?",
+      "english": "Do I need to fill out this form?",
+      "audioKey": "v900-airp-bord-arri-do-i-need-to-fill-out-this-form"
+    }
+  ]
+}

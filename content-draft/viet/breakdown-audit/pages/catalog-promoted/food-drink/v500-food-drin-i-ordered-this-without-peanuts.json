@@ -1,0 +1,74 @@
+{
+  "pageID": "viet-phrase-v500-food-drin-i-ordered-this-without-peanuts",
+  "phraseText": "Tôi đã gọi món này mà không có đậu phộng",
+  "englishTitle": "I ordered this without peanuts",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.303Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-food-drin-i-ordered-this-without-peanuts",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "món",
+      "english": "dish"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "mà",
+      "english": "that / but"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "đậu phộng",
+      "english": "peanuts",
+      "keepTogetherReason": "compound food allergy term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã gọi món này mà không có đậu phộng",
+      "english": "I ordered this without peanuts",
+      "audioKey": "v500-food-drin-i-ordered-this-without-peanuts"
+    }
+  ]
+}

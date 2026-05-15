@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-vpe-help-action-anh-chi-giup-toi-dat-tour-ngay-mai-duoc-khong",
+  "phraseText": "Giúp tôi đặt tour ngày mai được không?",
+  "englishTitle": "Can you help me book a tour tomorrow?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.419Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-help-action-anh-chi-giup-toi-dat-tour-ngay-mai-duoc-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt tour",
+      "english": "book a tour",
+      "keepTogetherReason": "compound booking action"
+    },
+    {
+      "vietnamese": "ngày mai",
+      "english": "tomorrow",
+      "keepTogetherReason": "fixed day expression"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giúp tôi đặt tour ngày mai được không?",
+      "english": "Can you help me book a tour tomorrow?",
+      "audioKey": "audio-authored-giup-toi-dat-tour-ngay-mai-duoc-khong-2cccabdd67"
+    }
+  ]
+}

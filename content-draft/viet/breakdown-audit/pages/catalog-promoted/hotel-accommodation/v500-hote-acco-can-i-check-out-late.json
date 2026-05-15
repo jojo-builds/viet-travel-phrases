@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v500-hote-acco-can-i-check-out-late",
+  "phraseText": "Tôi có thể trả phòng muộn được không?",
+  "englishTitle": "Can I check out late?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.316Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-hote-acco-can-i-check-out-late",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "trả phòng",
+      "english": "check out",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "muộn",
+      "english": "late"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể trả phòng muộn được không?",
+      "english": "Can I check out late?",
+      "audioKey": "v500-hote-acco-can-i-check-out-late"
+    }
+  ]
+}

@@ -27,25 +27,37 @@
       "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
       "breakdown": [
         {
-          "id": "chunk-1",
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-1",
           "vietnamese": "ATM",
           "english": "ATM",
           "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first"
         },
         {
-          "id": "chunk-2",
-          "vietnamese": "đã giữ",
-          "english": "kept",
-          "audioKey": null
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-2",
+          "vietnamese": "đã",
+          "english": "already / past marker",
+          "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "thẻ của tôi",
-          "english": "my card",
-          "audioKey": null
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-3",
+          "vietnamese": "giữ",
+          "english": "keep / hold",
+          "audioKey": "breakdown-hotel-7-first"
         },
         {
-          "id": "chunk-4",
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-4",
+          "vietnamese": "thẻ",
+          "english": "card",
+          "audioKey": "breakdown-hotel-8-first"
+        },
+        {
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-5",
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "audioKey": "breakdown-smalltalk-3-piece-4"
+        },
+        {
+          "id": "v500-mone-numb-pric-the-atm-kept-my-card-full",
           "vietnamese": "ATM đã giữ thẻ của tôi",
           "english": "The ATM kept my card",
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"

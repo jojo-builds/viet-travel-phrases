@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-phon-inte-powe-how-many-days-is-it-valid",
+  "phraseText": "Có hiệu lực trong bao nhiêu ngày?",
+  "englishTitle": "How many days is it valid?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.330Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-phon-inte-powe-how-many-days-is-it-valid",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hiệu",
+      "english": "shop / sign"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lực",
+      "english": "force / pressure"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "ngày?",
+      "english": "day"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có hiệu lực trong bao nhiêu ngày?",
+      "english": "How many days is it valid?",
+      "audioKey": "v500-phon-inte-powe-how-many-days-is-it-valid"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-sight-photos",
+  "phraseText": "Tôi chụp hình ở đây được không?",
+  "englishTitle": "Can I take photos here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.286Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-sight-photos",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chụp",
+      "english": "take a photo"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hình",
+      "english": "photo"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi chụp hình ở đây được không?",
+      "english": "Can I take photos here?",
+      "audioKey": "sight-3"
+    }
+  ]
+}

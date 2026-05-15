@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-quay-doi-tien-o-dau",
+  "phraseText": "quầy đổi tiền ở đâu?",
+  "englishTitle": "Where is the money exchange counter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.485Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-quay-doi-tien-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "quầy",
+      "english": "counter / desk"
+    },
+    {
+      "vietnamese": "đổi tiền",
+      "english": "exchange money",
+      "keepTogetherReason": "compound money action"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "quầy đổi tiền ở đâu?",
+      "english": "Where is the money exchange counter?",
+      "audioKey": "audio-authored-quay-doi-tien-o-dau-607f2d3f0c"
+    }
+  ]
+}

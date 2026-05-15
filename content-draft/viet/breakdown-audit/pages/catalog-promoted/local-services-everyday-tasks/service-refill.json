@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-service-9",
+  "phraseText": "Châm thêm nước vào chai này được không?",
+  "englishTitle": "Can you refill this water bottle?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-service-9",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Châm",
+      "english": "refill"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước",
+      "english": "water"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "chai",
+      "english": "bottle"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Châm thêm nước vào chai này được không?",
+      "english": "Can you refill this water bottle?",
+      "audioKey": "service-9"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-can-i-use-a-translation-app",
+  "phraseText": "Tôi có thể sử dụng ứng dụng dịch thuật không?",
+  "englishTitle": "Can I use a translation app?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.355Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-can-i-use-a-translation-app",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sử dụng",
+      "english": "use",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "vietnamese": "dịch thuật",
+      "english": "translation",
+      "keepTogetherReason": "compound translation term"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể sử dụng ứng dụng dịch thuật không?",
+      "english": "Can I use a translation app?",
+      "audioKey": "v500-unde-repa-can-i-use-a-translation-app"
+    }
+  ]
+}

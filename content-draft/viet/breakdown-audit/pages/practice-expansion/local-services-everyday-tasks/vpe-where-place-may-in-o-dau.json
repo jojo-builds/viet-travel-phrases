@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-vpe-where-place-may-in-o-dau",
+  "phraseText": "máy in ở đâu?",
+  "englishTitle": "Where is a printer?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.484Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-where-place-may-in-o-dau",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "máy",
+      "english": "machine"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "in",
+      "english": "print"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "máy in ở đâu?",
+      "english": "Where is a printer?",
+      "audioKey": "audio-authored-may-in-o-dau-2b9230a952"
+    }
+  ]
+}

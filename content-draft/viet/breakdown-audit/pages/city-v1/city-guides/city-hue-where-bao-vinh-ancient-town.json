@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-where-bao-vinh-ancient-town",
+  "phraseText": "Phố cổ Bao Vinh ở đâu?",
+  "englishTitle": "Where is Bao Vinh Ancient Town?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-bao-vinh-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố cổ Bao Vinh",
+      "english": "Bao Vinh Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố cổ Bao Vinh ở đâu?",
+      "english": "Where is Bao Vinh Ancient Town?",
+      "audioKey": "audio-authored-pho-co-bao-vinh-o-dau-7437b9f44b"
+    }
+  ]
+}

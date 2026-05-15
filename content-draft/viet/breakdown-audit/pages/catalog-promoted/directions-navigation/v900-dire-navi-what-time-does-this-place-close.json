@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-what-time-does-this-place-close",
+  "phraseText": "Nơi này đóng cửa lúc mấy giờ?",
+  "englishTitle": "What time does this place close?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.298Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-what-time-does-this-place-close",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nơi",
+      "english": "place"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "vietnamese": "đóng cửa",
+      "english": "close / closed / closing",
+      "keepTogetherReason": "compound business-hours verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "lúc",
+      "english": "at the time"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "mấy giờ?",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nơi này đóng cửa lúc mấy giờ?",
+      "english": "What time does this place close?",
+      "audioKey": "v900-dire-navi-what-time-does-this-place-close"
+    }
+  ]
+}

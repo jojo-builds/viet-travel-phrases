@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-price-8",
+  "phraseText": "Tổng cộng bao nhiêu?",
+  "englishTitle": "How much altogether?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.325Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-price-8",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Tổng cộng",
+      "english": "total",
+      "keepTogetherReason": "compound total phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tổng cộng bao nhiêu?",
+      "english": "How much altogether?",
+      "audioKey": "price-8"
+    }
+  ]
+}

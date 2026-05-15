@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-bathroom-water",
+  "phraseText": "Tôi cần nước",
+  "englishTitle": "I need water",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.284Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-bathroom-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước",
+      "english": "water"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần nước",
+      "english": "I need water",
+      "audioKey": "bath-5"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-v500-emer-safe-do-not-touch-me",
+  "phraseText": "Đừng chạm vào tôi",
+  "englishTitle": "Do not touch me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-emer-safe-do-not-touch-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đừng",
+      "english": "do not"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chạm",
+      "english": "touch"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đừng chạm vào tôi",
+      "english": "Do not touch me",
+      "audioKey": "v500-emer-safe-do-not-touch-me"
+    }
+  ]
+}

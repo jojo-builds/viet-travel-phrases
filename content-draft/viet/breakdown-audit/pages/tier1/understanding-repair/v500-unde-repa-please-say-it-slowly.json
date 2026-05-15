@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-v500-unde-repa-please-say-it-slowly",
+  "phraseText": "Hãy nói từ từ nhé",
+  "englishTitle": "Please say it slowly",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.286Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-unde-repa-please-say-it-slowly",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "từ từ",
+      "english": "slowly",
+      "keepTogetherReason": "fixed manner phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhé",
+      "english": "soft polite ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy nói từ từ nhé",
+      "english": "Please say it slowly",
+      "audioKey": "v500-unde-repa-please-say-it-slowly"
+    }
+  ]
+}

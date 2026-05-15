@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-vpe-buy-item-toi-muon-mua-ban-in-den-trang",
+  "phraseText": "Tôi muốn mua bản in đen trắng",
+  "englishTitle": "I want to buy a black-and-white print.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.393Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-buy-item-toi-muon-mua-ban-in-den-trang",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mua",
+      "english": "buy"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bản in",
+      "english": "printed copy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đen",
+      "english": "black"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trắng",
+      "english": "white"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn mua bản in đen trắng",
+      "english": "I want to buy a black-and-white print.",
+      "audioKey": "audio-authored-toi-muon-mua-ban-in-den-trang-059f709f8d"
+    }
+  ]
+}

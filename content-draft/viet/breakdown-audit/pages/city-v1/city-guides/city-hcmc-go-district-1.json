@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-district-1",
+  "phraseText": "Đến Quận 1",
+  "englishTitle": "Head to District 1",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-district-1",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Quận 1",
+      "english": "District 1",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đến Quận 1",
+      "english": "Head to District 1",
+      "audioKey": "audio-authored-den-quan-1-a5d89ab95e"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-danang-stop-con-market",
+  "phraseText": "Dừng ở Chợ Cồn",
+  "englishTitle": "Stop at Con Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-stop-con-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Cồn",
+      "english": "Con Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Chợ Cồn",
+      "english": "Stop at Con Market",
+      "audioKey": "audio-authored-dung-o-cho-con-a8822d2df7"
+    }
+  ]
+}

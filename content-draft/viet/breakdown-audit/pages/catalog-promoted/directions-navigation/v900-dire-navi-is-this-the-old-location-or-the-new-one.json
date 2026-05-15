@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-is-this-the-old-location-or-the-new-one",
+  "phraseText": "Đây là địa điểm cũ hay địa điểm mới?",
+  "englishTitle": "Is this the old location or the new one?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.298Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-is-this-the-old-location-or-the-new-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "địa điểm cũ",
+      "english": "old location",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hay",
+      "english": "or"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "địa điểm mới?",
+      "english": "new location",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây là địa điểm cũ hay địa điểm mới?",
+      "english": "Is this the old location or the new one?",
+      "audioKey": "v900-dire-navi-is-this-the-old-location-or-the-new-one"
+    }
+  ]
+}

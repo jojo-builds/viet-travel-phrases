@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-chao-ong",
+  "phraseText": "Chào ông",
+  "englishTitle": "Hello to an elderly man",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-chao-ong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ông",
+      "english": "elderly man"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào ông",
+      "english": "Hello to an elderly man",
+      "audioKey": "breakdown-viet-hello-ong-full"
+    }
+  ]
+}

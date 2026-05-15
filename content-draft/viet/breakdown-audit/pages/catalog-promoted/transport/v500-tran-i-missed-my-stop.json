@@ -1,0 +1,64 @@
+{
+  "pageID": "viet-phrase-v500-tran-i-missed-my-stop",
+  "phraseText": "Tôi đã bỏ lỡ điểm dừng của mình",
+  "englishTitle": "I missed my stop",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-i-missed-my-stop",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bỏ",
+      "english": "remove / leave"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lỡ",
+      "english": "miss / accidentally"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "điểm",
+      "english": "point / place"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "dừng",
+      "english": "stop"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "của mình",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã bỏ lỡ điểm dừng của mình",
+      "english": "I missed my stop",
+      "audioKey": "v500-tran-i-missed-my-stop"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-vpe-likely-replies-giu-binh-tinh",
+  "phraseText": "Giữ bình tĩnh",
+  "englishTitle": "Stay calm",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.426Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-likely-replies-giu-binh-tinh",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Giữ",
+      "english": "keep / hold"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bình",
+      "english": "tank / bottle"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tĩnh",
+      "english": "calculate / bill"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giữ bình tĩnh",
+      "english": "Stay calm",
+      "audioKey": "audio-authored-giu-binh-tinh-e2f217e63b"
+    }
+  ]
+}

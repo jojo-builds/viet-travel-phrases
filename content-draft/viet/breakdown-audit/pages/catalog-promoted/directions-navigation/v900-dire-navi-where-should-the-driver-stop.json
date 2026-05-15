@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-where-should-the-driver-stop",
+  "phraseText": "Người lái xe nên dừng ở đâu?",
+  "englishTitle": "Where should the driver stop?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.299Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-where-should-the-driver-stop",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Người lái xe",
+      "english": "driver",
+      "keepTogetherReason": "compound driver noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nên",
+      "english": "should"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đâu?",
+      "english": "where"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Người lái xe nên dừng ở đâu?",
+      "english": "Where should the driver stop?",
+      "audioKey": "v900-dire-navi-where-should-the-driver-stop"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hoian-go-market",
+  "phraseText": "Đi Chợ Hội An",
+  "englishTitle": "Go to Hoi An Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Chợ Hội An",
+      "english": "Hoi An Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Chợ Hội An",
+      "english": "Go to Hoi An Market",
+      "audioKey": "audio-authored-di-cho-hoi-an-57e9673431"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-turn-right-here",
+  "phraseText": "Vui lòng rẽ phải ở đây",
+  "englishTitle": "Please turn right here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-turn-right-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "rẽ phải",
+      "english": "turn right",
+      "keepTogetherReason": "compound direction phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng rẽ phải ở đây",
+      "english": "Please turn right here",
+      "audioKey": "v900-tran-please-turn-right-here"
+    }
+  ]
+}

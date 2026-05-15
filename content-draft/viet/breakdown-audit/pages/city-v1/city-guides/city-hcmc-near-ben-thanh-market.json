@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hcmc-near-ben-thanh-market",
+  "phraseText": "Chợ Bến Thành gần đây không?",
+  "englishTitle": "Is Ben Thanh Market near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.373Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-near-ben-thanh-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Bến Thành",
+      "english": "Ben Thanh Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Bến Thành gần đây không?",
+      "english": "Is Ben Thanh Market near here?",
+      "audioKey": "audio-authored-cho-ben-thanh-gan-day-khong-2a0251592d"
+    }
+  ]
+}

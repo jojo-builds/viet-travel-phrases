@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-da-chao-co",
+  "phraseText": "Dạ, chào cô",
+  "englishTitle": "Respectful hello to an aunt-age woman",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-da-chao-co",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ,",
+      "english": "respectful yes / opener"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cô",
+      "english": "aunt-age woman / respectful female address"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, chào cô",
+      "english": "Respectful hello to an aunt-age woman",
+      "audioKey": "audio-phrase-da-chao-co"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-vpe-near-place-hieu-kinh-thuoc-gan-day-khong",
+  "phraseText": "hiệu kính thuốc gần đây không?",
+  "englishTitle": "Is an optical shop nearby?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.430Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-vpe-near-place-hieu-kinh-thuoc-gan-day-khong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "hiệu",
+      "english": "shop / sign"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "kính",
+      "english": "glasses"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thuốc",
+      "english": "medicine"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "hiệu kính thuốc gần đây không?",
+      "english": "Is an optical shop nearby?",
+      "audioKey": "audio-authored-hieu-kinh-thuoc-gan-day-khong-3a8cd51a95"
+    }
+  ]
+}

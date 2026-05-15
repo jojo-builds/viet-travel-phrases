@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-directions-how-long",
+  "phraseText": "Đi bộ mất bao lâu?",
+  "englishTitle": "How long does it take on foot?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-directions-how-long",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi bộ",
+      "english": "walk / on foot",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao lâu?",
+      "english": "how long",
+      "keepTogetherReason": "fixed duration question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi bộ mất bao lâu?",
+      "english": "How long does it take on foot?",
+      "audioKey": "directions-3"
+    }
+  ]
+}

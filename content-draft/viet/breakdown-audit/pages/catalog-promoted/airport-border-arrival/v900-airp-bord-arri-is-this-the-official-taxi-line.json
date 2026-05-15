@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-is-this-the-official-taxi-line",
+  "phraseText": "Đây có phải là tuyến taxi chính thức?",
+  "englishTitle": "Is this the official taxi line?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.293Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-is-this-the-official-taxi-line",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tuyến taxi",
+      "english": "taxi line",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "vietnamese": "chính thức?",
+      "english": "official",
+      "keepTogetherReason": "compound official adjective"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải là tuyến taxi chính thức?",
+      "english": "Is this the official taxi line?",
+      "audioKey": "v900-airp-bord-arri-is-this-the-official-taxi-line"
+    }
+  ]
+}
