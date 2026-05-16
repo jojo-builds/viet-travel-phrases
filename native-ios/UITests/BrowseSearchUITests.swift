@@ -339,9 +339,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.arrivals"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.streets"].waitForExistence(timeout: 2))
         tapWhenVisible(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"], app: app)
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].isSelected)
         XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-airport"].exists)
@@ -390,7 +388,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(targetFilter.waitForExistence(timeout: 2))
 
         let stableBrowseByY = browseByTitle.frame.minY
-        targetFilter.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        tapWhenComfortablyVisible(identifier: targetFilterID, app: app)
         RunLoop.current.run(until: Date().addingTimeInterval(0.45))
 
         XCTAssertTrue(targetFilter.isSelected)

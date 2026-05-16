@@ -24,10 +24,17 @@ const expectedSubcategories = new Set([
 const difficultyValues = new Set(["beginner", "intermediate", "advanced"]);
 const pageKindValues = new Set(["phrase", "place", "city", "restaurant", "dish", "category", "relationship-person"]);
 const bannedSourcePhrases = /\b(top|best|#1|number one|must-visit|must visit)\b/i;
-const expectedApprovedPageCount = 750;
-const expectedPagesPerCity = 150;
+const expectedApprovedPageCount = 500;
+const expectedPagesPerCity = 100;
 const minimumSubcategoryPagesPerCity = 8;
-const minimumPlacePagesPerCity = 25;
+const minimumPlacePagesPerCity = 100;
+const nounInventorySubcategories = new Set([
+  "arrivals-routes",
+  "landmarks-attractions",
+  "neighborhoods-streets",
+  "food-coffee",
+  "shopping-markets",
+]);
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
 const browseNounPageKinds = new Set(["place", "restaurant", "dish"]);
@@ -49,6 +56,7 @@ const browseNounPlaceKinds = new Set([
   "park",
   "river",
   "village",
+  "experience",
 ]);
 const baNaJourneySourceID = "city-danang-place-ba-na-hills";
 const landmarkActionRequiredSections = [
@@ -223,6 +231,12 @@ function main() {
   const authoredCityPages = (authoredPages.pages ?? []).filter((page) => page.tierRole === "city-v1");
   const authoredCityPagesByID = new Map(authoredCityPages.map((page) => [page.id, page]));
   const authoredPagesByID = new Map((authoredPages.pages ?? []).map((page) => [page.id, page]));
+  const plannedCityHeroAudioPageIDs = new Set(
+    (audioAudit.missing ?? [])
+      .filter((entry) => entry.kind === "hero" && String(entry.pageID ?? "").startsWith("viet-family-city-"))
+      .map((entry) => entry.pageID)
+  );
+  const plannedAudioKeys = new Set((audioAudit.missing ?? []).map((entry) => entry.audioKey).filter(Boolean));
 
   assert(library.scenarioID === "city-guides", "city library scenarioID must be city-guides");
   assert(cities.size === expectedCities.size, `expected ${expectedCities.size} cities, found ${cities.size}`);
@@ -245,7 +259,7 @@ function main() {
     const count = pagesByCity.get(cityID) ?? 0;
     assert(count >= expectedPagesPerCity, `${cityID} must have at least ${expectedPagesPerCity} approved pages, found ${count}`);
     const cityPages = pages.filter((page) => page.cityID === cityID);
-    for (const subcategoryID of expectedSubcategories) {
+    for (const subcategoryID of nounInventorySubcategories) {
       const subcategoryCount = cityPages.filter((page) => page.subcategoryID === subcategoryID).length;
       assert(
         subcategoryCount >= minimumSubcategoryPagesPerCity,
@@ -285,7 +299,11 @@ function main() {
     assert(page.context && page.context.length >= 40, `${page.id} needs specific context`);
     assert(page.tip && page.tip.length >= 35, `${page.id} needs a useful traveler tip`);
     assert(page.rationale && page.rationale.length >= 40, `${page.id} needs rationale`);
-    assert(Array.isArray(page.chunks) && page.chunks.length >= 2, `${page.id} needs meaningful chunks`);
+    const targetWordCount = page.targetText.split(/\s+/).filter(Boolean).length;
+    assert(
+      Array.isArray(page.chunks) && (page.chunks.length >= 2 || (targetWordCount === 1 && page.chunks.length === 1)),
+      `${page.id} needs meaningful chunks`
+    );
     assert(Array.isArray(page.sourceIDs) && page.sourceIDs.length > 0, `${page.id} needs sourceIDs`);
     for (const sourceID of page.sourceIDs) {
       assert(sources.has(sourceID), `${page.id} references missing source ${sourceID}`);
@@ -329,11 +347,22 @@ function main() {
     assert(catalogPhrase.placeKind === placeKind, `${page.id} catalog placeKind mismatch`);
     assert((catalogPhrase.contentRole ?? "") === (page.contentRole ?? ""), `${page.id} catalog contentRole mismatch`);
     if (isBrowseNounPage(pageKind, placeKind)) {
-      assert(page.audioStatus === "ready", `${page.id} browse noun audio status must be ready`);
-      assert(page.audioKey, `${page.id} browse noun must declare an audioKey`);
-      assert(hasExactAudio(audioManifest, page.audioKey, page.targetText), `${page.id} browse noun audioKey must resolve to exact manifest text`);
-      assert(catalogPhrase.audioStatus === "ready", `${page.id} catalog audio status must be ready`);
-      assert(catalogPhrase.audioKey === page.audioKey, `${page.id} catalog audioKey mismatch`);
+      const expectedAudioStatus = page.audioStatus ?? library.audioStatus ?? "planned";
+      if (expectedAudioStatus === "ready") {
+        assert(page.audioKey, `${page.id} browse noun must declare an audioKey`);
+        assert(hasExactAudio(audioManifest, page.audioKey, page.targetText), `${page.id} browse noun audioKey must resolve to exact manifest text`);
+        assert(catalogPhrase.audioStatus === "ready", `${page.id} catalog audio status must be ready`);
+        assert(catalogPhrase.audioKey === page.audioKey, `${page.id} catalog audioKey mismatch`);
+      } else {
+        assert(expectedAudioStatus === "planned", `${page.id} browse noun audio status must be ready or planned`);
+        assert(catalogPhrase.audioStatus === "planned", `${page.id} catalog planned audio status mismatch`);
+        assert(!catalogPhrase.audioKey, `${page.id} planned audio must not expose playable catalog audio`);
+        const authoredPage = authoredCityPagesByID.get(`viet-family-${page.id}`);
+        assert(
+          plannedCityHeroAudioPageIDs.has(`viet-family-${page.id}`) || plannedAudioKeys.has(authoredPage?.audioKey),
+          `${page.id} planned audio must be present in missing-audio audit`
+        );
+      }
     } else {
       const expectedAudioStatus = page.audioStatus ?? library.audioStatus ?? "planned";
       assert(catalogPhrase.audioStatus === expectedAudioStatus, `${page.id} catalog audio status mismatch`);

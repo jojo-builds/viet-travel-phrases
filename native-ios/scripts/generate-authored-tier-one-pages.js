@@ -2044,6 +2044,7 @@ const cityAttractionPlaceKinds = new Set([
   "park",
   "river",
   "village",
+  "experience",
 ]);
 
 function cityPlaceKind(place) {
@@ -2663,6 +2664,7 @@ function cityPlaceTypeLabel(placeKind) {
     port: "port",
     village: "village",
     dish: "local dish",
+    experience: "experience",
   };
   return labels[placeKind] ?? "place";
 }
@@ -3690,12 +3692,44 @@ function isNameBasedProfile(profile) {
   return ["place", "restaurant", "dish", "street"].includes(profile);
 }
 
+function authoredCitySectionBody(page, sectionID) {
+  const body = cleanTravelerBody((page.sections || []).find((section) => section.id === sectionID)?.body || "");
+  if (!body) return "";
+  if (/^(say it slowly|show the restaurant|start with the dish name|map, arrival|first-ordering sentences|short spice|ingredient, allergy)/i.test(body)) return "";
+  if (/^(direction, ticket|use the place name with|ticket, entrance|pickup areas can be split)/i.test(body)) return "";
+  return body;
+}
+
+function isGenericNameAboutBody(body, page, profile) {
+  const text = normalizeAudioText(body || "");
+  const title = normalizeAudioText(page.title || "");
+  const english = normalizeAudioText(page.englishTitle || page.summary || "");
+  const city = normalizeAudioText(page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName || "");
+  if (!text || !title) return true;
+  if (profile === "restaurant" && text === normalizeAudioText(`${page.title || ""} is a restaurant${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (profile === "dish" && text === normalizeAudioText(`${page.title || ""} is a local dish${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (text === normalizeAudioText(`${page.title || ""} is ${page.englishTitle || page.summary || ""}${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (text === normalizeAudioText(`${page.title || ""} means ${page.englishTitle || page.summary || ""}.`)) return true;
+  return Boolean(english && text === english);
+}
+
+function authoredCityAboutBody(page, profile) {
+  const atGlance = authoredCitySectionBody(page, "at-glance");
+  if (atGlance && !isGenericNameAboutBody(atGlance, page, profile)) return atGlance;
+
+  const summary = cleanTravelerBody(page.summary || "");
+  if (summary && !isGenericNameAboutBody(summary, page, profile)) return summary;
+  return "";
+}
+
 function adultNameAboutBody(page, profile) {
   const meta = page.cityMetadata || {};
   const city = meta.cityShortTitle || meta.cityName || "";
   const where = city ? ` in ${city}` : "";
   const title = page.title || page.vietnamese || "";
   const english = page.englishTitle || page.summary || "";
+  const authoredBody = authoredCityAboutBody(page, profile);
+  if (authoredBody) return authoredBody;
 
   if (/bà nà hills/i.test(title)) {
     return "Bà Nà Hills is a mountain resort and day-trip attraction outside Da Nang, known for the cable car and Golden Bridge.";

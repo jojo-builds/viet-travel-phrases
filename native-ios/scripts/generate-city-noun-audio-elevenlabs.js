@@ -37,6 +37,7 @@ const browsePlaceKinds = new Set([
   "park",
   "river",
   "village",
+  "experience",
 ]);
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
 const dishPlaceKinds = new Set(["dish"]);

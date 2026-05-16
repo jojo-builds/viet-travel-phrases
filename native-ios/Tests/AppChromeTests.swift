@@ -1173,6 +1173,27 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse((hanoi.cityHub?.cityBrowseAllItems ?? []).isEmpty)
     }
 
+    func testCityCollectionsExposeNounImageInventoryWithoutSituationRows() {
+        let danang = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("danang")))
+        let cityHub = try! XCTUnwrap(danang.cityHub)
+        let filterTitles = cityHub.cityBrowseFilters.map(\.title)
+        let allItems = cityHub.cityBrowseAllItems
+
+        XCTAssertTrue(filterTitles.contains("Landmarks"), "filters: \(filterTitles)")
+        XCTAssertTrue(filterTitles.contains("Markets"), "filters: \(filterTitles)")
+        XCTAssertTrue(filterTitles.contains("Restaurants"), "filters: \(filterTitles)")
+        XCTAssertTrue(filterTitles.contains("Cafes"), "filters: \(filterTitles)")
+        XCTAssertTrue(filterTitles.contains("Dishes"), "filters: \(filterTitles)")
+        XCTAssertFalse(filterTitles.contains("Help"))
+        XCTAssertFalse(filterTitles.contains("Getting around"))
+        XCTAssertGreaterThanOrEqual(allItems.count, 25, "items: \(allItems.map(\.pageID))")
+        XCTAssertFalse(allItems.contains { $0.pageID == "viet-family-bathroom-where" })
+        XCTAssertTrue(
+            allItems.allSatisfy { $0.imageName != nil },
+            "City noun rows should carry hero image metadata so the city page can render menu-style thumbnails."
+        )
+    }
+
     func testBrowseCategoryMessageSectionsMirrorMessagesHubGroups() {
         let expectations: [(String, String, [PracticeScenarioID])] = [
             ("airport", "Airport", [.danangFirstDay, .airportPassportControl, .airportSimCash, .airportWifiPower, .airportBaggageProblem]),
@@ -1343,12 +1364,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Landmarks" })
         XCTAssertTrue(cityHub.browseGroups.contains { $0.title == "Streets" })
         XCTAssertTrue(cityHub.browseGroups.allSatisfy { $0.targetRoute == nil })
-        XCTAssertEqual(Array(cityHub.cityBrowseFilters.map(\.title).prefix(4)), ["Arrivals", "Landmarks", "Neighborhoods", "Food & coffee"])
-        XCTAssertTrue(cityHub.cityBrowseFilters.contains { $0.title == "Getting around" })
+        XCTAssertEqual(Array(cityHub.cityBrowseFilters.map(\.title).prefix(4)), ["Landmarks", "Restaurants", "Cafes", "Dishes"])
+        XCTAssertTrue(cityHub.cityBrowseFilters.contains { $0.title == "Restaurants" })
+        XCTAssertTrue(cityHub.cityBrowseFilters.contains { $0.title == "Cafes" })
+        XCTAssertTrue(cityHub.cityBrowseFilters.contains { $0.title == "Dishes" })
+        XCTAssertFalse(cityHub.cityBrowseFilters.contains { $0.title == "Getting around" })
         XCTAssertFalse(cityHub.cityBrowseFilters.contains { $0.title == "Quick phrases" })
-        XCTAssertEqual(cityHub.cityBrowseAllItems.first?.pageID, "viet-phrase-city-danang-place-airport")
+        XCTAssertTrue(cityHub.cityBrowseAllItems.first?.pageID.contains("-place-") == true)
         XCTAssertTrue(cityHub.cityBrowseAllItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
-        XCTAssertTrue(cityHub.cityBrowseAllItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertFalse(cityHub.cityBrowseAllItems.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
         XCTAssertEqual(Set(cityHub.cityBrowseAllItems.map(\.pageID)).count, cityHub.cityBrowseAllItems.count)
     }
 
@@ -1413,10 +1437,12 @@ final class AppChromeTests: XCTestCase {
             let cityHub = try! XCTUnwrap(descriptor.cityHub)
             let groupTitles = cityHub.browseGroups.map(\.title)
 
-            XCTAssertGreaterThanOrEqual(cityHub.browseGroups.count, 6, "\(descriptor.title) should expose an even noun-first Browse grid")
+            XCTAssertGreaterThanOrEqual(cityHub.browseGroups.count, 8, "\(descriptor.title) should expose an even noun-first Browse grid")
             XCTAssertTrue(groupTitles.contains("Landmarks"), "\(descriptor.title) should expose landmark nouns")
             XCTAssertTrue(groupTitles.contains("Streets"), "\(descriptor.title) should expose street-name nouns")
-            XCTAssertTrue(groupTitles.contains("Food & coffee"), "\(descriptor.title) should expose restaurant/cafe/dish nouns")
+            XCTAssertTrue(groupTitles.contains("Restaurants"), "\(descriptor.title) should expose restaurant nouns")
+            XCTAssertTrue(groupTitles.contains("Cafes"), "\(descriptor.title) should expose cafe nouns")
+            XCTAssertTrue(groupTitles.contains("Dishes"), "\(descriptor.title) should expose dish nouns")
             XCTAssertTrue(groupTitles.contains("Markets"), "\(descriptor.title) should expose market nouns")
 
             for disallowedTitle in disallowedBrowseGroupTitles {
@@ -1426,7 +1452,7 @@ final class AppChromeTests: XCTestCase {
             for group in cityHub.browseGroups {
                 XCTAssertFalse(group.items.isEmpty, "\(descriptor.title) \(group.title) should drill into entity rows")
                 XCTAssertTrue(group.items.allSatisfy { $0.pageID.contains("-place-") }, "\(descriptor.title) \(group.title) should start with noun/entity pages: \(group.items.map(\.pageID))")
-                XCTAssertTrue(group.items.allSatisfy { $0.audioKey != nil }, "\(descriptor.title) \(group.title) noun rows should have playable audio keys")
+                XCTAssertTrue(group.items.allSatisfy { $0.imageName != nil }, "\(descriptor.title) \(group.title) noun rows should carry image metadata")
                 XCTAssertFalse(group.items.contains { item in
                     item.title.localizedCaseInsensitiveContains("ở đâu")
                         || item.subtitle.localizedCaseInsensitiveContains("where is")
