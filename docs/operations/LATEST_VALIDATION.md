@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-13
+Last updated: 2026-05-16
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -10,7 +10,44 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
-## Current Native-Only Cleanup Evidence
+## Current Main Merge Sweep Evidence
+
+Current `main` evidence from the non-paywall, non-Messages merge sweep:
+
+- validated app-code commit: `067ad01d` (`Align city browse tests with noun-first tours`)
+- merged lane: `feature/browse-page`
+- explicitly skipped lanes: `feature/paywall`, `feature/messages-section`, `archive/messages-section-20260516`
+- synced clean non-paywall, non-Messages feature lanes back to `067ad01d`
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `node native-ios/scripts/validate-viet-city-library.js`
+  - passed: `807` pages, `707` beginner, `95` intermediate, `5` advanced
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`
+  - passed: `3129` source phrases, `3121` canonical pages, `22923` relations, `0` release-blocking missing-audio rows, `5` cities, `500` city places, `807` city phrase tags, `0` banned file matches
+- `node native-ios/scripts/sync-viet-audio.js`
+  - passed: validated `4353` native audio manifest entries in `native-ios/Resources/Audio`
+- `node native-ios/scripts/validate-viet-hero-image-assets.js`
+  - still fails on inherited asset debt: `HeroVietnameseFoodMenu` is `864 x 1821`, expected `853 x 1844`
+  - the asset blob matches the pre-merge `main` baseline, so this is not a merge regression
+  - the new strict unique city-place hero asset gate is optional behind `--require-unique-city-place-assets`
+- XcodeBuildMCP simulator build, `SpeakLocalNative`, Debug, iOS 26.5 simulator
+  - passed with `CODE_SIGNING_ALLOWED=NO`
+- XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/AppChromeTests`
+  - passed: `122` tests, `0` failures
+- XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/SQLiteLanguagePackRepositoryTests` plus `SpeakLocalNativeTests/PracticeScenarioModeTests`
+  - passed: `68` tests, `0` failures
+- Physical iPhone Debug build/install from `main`
+  - build passed
+  - install passed
+  - launch was denied because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
+## Previous Native-Only Cleanup Evidence
 
 This cleanup records the repo direction that `native-ios/` is the only active app product surface.
 
@@ -54,7 +91,8 @@ Known pre-existing test debt:
 
 ## Remaining Proof Needed
 
-- Fresh physical iPhone install from current `main` after Jojo's iPhone finishes updating to iOS 26.5 and appears available to Xcode.
+- Unlock the phone and open SpeakLocal, or rerun launch, to visually confirm the installed `067ad01d` build.
+- Fix or replace `HeroVietnameseFoodMenu` so the hero-image asset validator can pass cleanly.
 - Fresh StoreKit purchase/restore/relaunch proof when the native paywall branch is ready.
 - Fresh screenshots for any native UI work that changes visible app behavior.
 

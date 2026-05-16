@@ -1,6 +1,6 @@
 # App Status
 
-Last updated: 2026-05-13
+Last updated: 2026-05-16
 Authority lane: live app operational truth
 
 ## Live App Status
@@ -24,7 +24,7 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 ## Current Operational Truth
 
 - SpeakLocal Vietnam is the current native proof app.
-- The native app includes the SwiftUI shell, listing/detail pages, search, Browse, Home, Messages, local audio playback, bottom chrome, and bundled offline Viet resources.
+- The native app includes the SwiftUI shell, listing/detail pages, search, Browse, Home, Practice, local audio playback, bottom chrome, and bundled offline Viet resources.
 - Future destination apps should inherit the native shell and language-pack/resource model rather than reintroducing a second app framework.
 - Premium/paywall work should use native StoreKit expectations and stay isolated in its feature branch until Jojo says it is ready for `main`.
 
@@ -36,4 +36,4 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 
 ## Evidence Boundary
 
-This document does not claim a new App Store/TestFlight release. It records the repo direction and active app surface after the native-only cleanup. Fresh device proof should be captured from the current `main` native build after this cleanup is merged.
+This document does not claim a new App Store/TestFlight release. It records the repo direction and active app surface after the native-only cleanup and 2026-05-16 non-paywall merge sweep.
