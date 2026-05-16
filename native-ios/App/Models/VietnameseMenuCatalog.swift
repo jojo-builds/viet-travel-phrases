@@ -336,9 +336,17 @@ enum VietnameseMenuCatalog {
                 body: item.guideHowToEnjoy
             ),
             PhraseDetailSection(
+                id: "useful-phrases",
+                title: "Useful phrases",
+                body: "",
+                phrases: helperPhrases,
+                presentation: .phraseList
+            ),
+            PhraseDetailSection(
                 id: "how-locals-order",
                 title: "How locals order",
                 body: item.guideHowLocalsOrder,
+                inlineDefinitions: menuInlineDefinitions(for: item),
                 presentation: .plainText
             ),
             PhraseDetailSection(
@@ -353,13 +361,6 @@ enum VietnameseMenuCatalog {
                 body: "",
                 chips: item.commonOptions,
                 presentation: .menuChips
-            ),
-            PhraseDetailSection(
-                id: "useful-phrases",
-                title: "Useful phrases",
-                body: "",
-                phrases: helperPhrases,
-                presentation: .phraseList
             ),
             PhraseDetailSection(
                 id: "order-line",
@@ -534,6 +535,54 @@ enum VietnameseMenuCatalog {
             "built around",
             "centered on",
             "broth and topping should make sense together",
+        ]
+        let unglossedOrderingFragments = [
+            "ask it cay",
+            "it cay",
+            "không cay",
+            "không ớt",
+            "ít đá",
+            "không đá",
+            "ít đường",
+            "không đường",
+            "ít ngọt",
+            "ít muối",
+            "ít sữa",
+            "không sữa",
+            "không pate",
+            "không pâté",
+            "không đậu phộng",
+            "không nước mắm",
+            "nước mắm riêng",
+            "nước chấm riêng",
+            "ít dầu",
+            "thêm rau",
+            "thêm cơm",
+            "thêm trứng",
+            "thêm chanh",
+            "khuấy đều",
+            "nước dùng chay",
+            "có xương không",
+            "còn vỏ không",
+            "có thịt không",
+            "chay được không",
+            "có nước mắm không",
+            "không rượu",
+            "nhẹ tiêu",
+            "milk đặc",
+            "thêm cà phê",
+            "ask hot, đá",
+            "cà phê đen hot",
+            "cà phê sữa hot",
+            "trà hot",
+        ]
+        let mechanicalCaseFragments = [
+            "; Ask",
+            ". ask for",
+            "then Ask",
+            "and Ask",
+            "so Ask",
+            "no ice for no ice",
         ]
         let vagueSauceFragments = [
             "extra sauce",
@@ -876,6 +925,16 @@ enum VietnameseMenuCatalog {
                 isFood ? foodVisibleBlockFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
                     "\(item.itemID): visible food copy contains blocked fragment '\($0)'"
                 } : nil,
+                unglossedOrderingFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
+                    "\(item.itemID): visible copy contains unglossed ordering phrase '\($0)'"
+                },
+                visibleText.localizedCaseInsensitiveContains("ít cay")
+                    && !Self.hasLessSpicyGlossBeforeItCay(in: visibleText)
+                    ? "\(item.itemID): visible copy uses 'ít cay' without giving 'less spicy' before it"
+                    : nil,
+                mechanicalCaseFragments.first(where: { visibleText.contains($0) }).map {
+                    "\(item.itemID): visible copy contains mechanical case fragment '\($0)'"
+                },
                 vagueSauceFragments.first(where: { visibleText.localizedCaseInsensitiveContains($0) }).map {
                     "\(item.itemID): sauce copy must name or explain the sauce instead of '\($0)'"
                 },
@@ -955,6 +1014,30 @@ enum VietnameseMenuCatalog {
 
             return phrase.playbackAudioKey == nil ? nil : phrase
         }
+    }
+
+    private static func menuInlineDefinitions(for item: VietnameseMenuItem) -> [PhraseInlineDefinition] {
+        if item.itemID == "food-bun-bo-hue", item.guideHowLocalsOrder.localizedCaseInsensitiveContains("ít cay") {
+            return [
+                PhraseInlineDefinition(
+                    id: "menu-inline-it-cay",
+                    vietnamese: "ít cay",
+                    english: "less spicy"
+                ),
+            ]
+        }
+
+        return []
+    }
+
+    private static func hasLessSpicyGlossBeforeItCay(in text: String) -> Bool {
+        let lower = text.lowercased()
+        guard let phraseRange = lower.range(of: "ít cay") else {
+            return true
+        }
+
+        let prefix = lower[..<phraseRange.lowerBound].suffix(80)
+        return prefix.contains("less spicy")
     }
 
     static func descriptor(for kind: VietnameseMenuKind) -> BrowseCollectionDescriptor {

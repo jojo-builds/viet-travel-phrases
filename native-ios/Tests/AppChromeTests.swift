@@ -1555,6 +1555,7 @@ final class AppChromeTests: XCTestCase {
 
     func testVietnameseMenuDetailPagesUseHandwrittenSourceCopy() {
         let pho = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+        let bunBoHue = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bun-bo-hue"))
         let coffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-sua-da"))
         let eggCoffee = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-drink-ca-phe-trung"))
 
@@ -1562,7 +1563,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(pho.englishTitle, "Beef noodle soup")
         XCTAssertEqual(pho.pronunciation, "fuh baw")
         XCTAssertEqual(pho.heroImageName, "HeroMenuFoodPhoBo")
-        XCTAssertEqual(pho.sections.map(\.id), ["what-it-is", "usually-includes", "how-to-enjoy", "how-locals-order", "worth-knowing", "common-options", "useful-phrases", "order-line"])
+        XCTAssertEqual(pho.sections.map(\.id), ["what-it-is", "usually-includes", "how-to-enjoy", "useful-phrases", "how-locals-order", "worth-knowing", "common-options", "order-line"])
         XCTAssertTrue(pho.sections.first?.body.contains("clear, fragrant broth") == true)
         XCTAssertTrue(pho.sections.first { $0.id == "how-to-enjoy" }?.body.contains("Taste the broth first") == true)
         XCTAssertTrue(pho.sections.first { $0.id == "how-locals-order" }?.body.contains("shops may ask which cut you want") == true)
@@ -1577,6 +1578,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(pho.sections.first { $0.id == "order-line" }?.presentation, .plainText)
         XCTAssertTrue(pho.sections.first { $0.id == "order-line" }?.body.contains("Cho tôi một tô phở bò.") == true)
         XCTAssertEqual(pho.sections.first { $0.id == "order-line" }?.phrases, [])
+
+        let bunBoHueLocalOrder = try! XCTUnwrap(bunBoHue.sections.first { $0.id == "how-locals-order" })
+        XCTAssertTrue(bunBoHueLocalOrder.body.contains("ask for less spicy by saying ít cay"))
+        XCTAssertEqual(bunBoHueLocalOrder.inlineDefinitions, [
+            PhraseInlineDefinition(id: "menu-inline-it-cay", vietnamese: "ít cay", english: "less spicy")
+        ])
+        XCTAssertFalse(bunBoHueLocalOrder.body.localizedCaseInsensitiveContains("it cay"))
+        XCTAssertEqual(bunBoHueLocalOrder.phrases, [])
 
         XCTAssertEqual(coffee.title, "Cà phê sữa đá")
         XCTAssertEqual(coffee.englishTitle, "Vietnamese iced milk coffee")

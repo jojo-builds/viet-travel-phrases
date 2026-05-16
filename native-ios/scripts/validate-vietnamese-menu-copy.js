@@ -83,6 +83,56 @@ const blockedVisibleFragments = [
   "For Americans",
 ];
 
+const unglossedOrderingFragments = [
+  "ask it cay",
+  "it cay",
+  "không cay",
+  "không ớt",
+  "ít đá",
+  "không đá",
+  "ít đường",
+  "không đường",
+  "ít ngọt",
+  "ít muối",
+  "ít sữa",
+  "không sữa",
+  "không pate",
+  "không pâté",
+  "không đậu phộng",
+  "không nước mắm",
+  "nước mắm riêng",
+  "nước chấm riêng",
+  "ít dầu",
+  "thêm rau",
+  "thêm cơm",
+  "thêm trứng",
+  "thêm chanh",
+  "khuấy đều",
+  "nước dùng chay",
+  "có xương không",
+  "còn vỏ không",
+  "có thịt không",
+  "chay được không",
+  "có nước mắm không",
+  "không rượu",
+  "nhẹ tiêu",
+  "milk đặc",
+  "thêm cà phê",
+  "ask hot, đá",
+  "cà phê đen hot",
+  "cà phê sữa hot",
+  "trà hot",
+];
+
+const mechanicalCaseFragments = [
+  "; Ask",
+  ". ask for",
+  "then Ask",
+  "and Ask",
+  "so Ask",
+  "no ice for no ice",
+];
+
 const vagueSauceFragments = [
   "extra sauce",
   "dipping sauce",
@@ -417,6 +467,22 @@ function main() {
     );
     if (blocked) {
       failures.push(`${context}: visible copy contains blocked fragment "${blocked}"`);
+    }
+    const unglossedOrdering = unglossedOrderingFragments.find((fragment) =>
+      visibleText.toLowerCase().includes(fragment.toLowerCase())
+    );
+    if (unglossedOrdering) {
+      failures.push(`${context}: visible copy contains unglossed ordering phrase "${unglossedOrdering}"`);
+    }
+    if (
+      visibleText.toLowerCase().includes("ít cay") &&
+      !/less spicy[^.\n]{0,80}ít cay/i.test(visibleText)
+    ) {
+      failures.push(`${context}: visible copy uses "ít cay" without giving "less spicy" before it`);
+    }
+    const mechanicalCase = mechanicalCaseFragments.find((fragment) => visibleText.includes(fragment));
+    if (mechanicalCase) {
+      failures.push(`${context}: visible copy contains mechanical case fragment "${mechanicalCase}"`);
     }
     if (/\bIn Vietnam,[^.\n]*\bin Vietnam\b/i.test(visibleText)) {
       failures.push(`${context}: visible copy repeats "in Vietnam" in the same sentence`);

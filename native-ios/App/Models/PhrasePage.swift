@@ -137,8 +137,21 @@ struct PhraseArticleSection: Identifiable, Equatable {
     let body: String
     let phrases: [PhraseOption]
     let breakdown: [BreakdownToken]
+    var inlineDefinitions: [PhraseInlineDefinition] = []
     var chips: [String] = []
     let presentation: SectionPresentation
+}
+
+struct PhraseInlineDefinition: Identifiable, Equatable {
+    let id: String
+    let vietnamese: String
+    let english: String
+
+    init(id: String? = nil, vietnamese: String, english: String) {
+        self.id = id ?? vietnamese.lowercased()
+        self.vietnamese = vietnamese
+        self.english = english
+    }
 }
 
 enum SectionPresentation: String, Decodable, Equatable {
@@ -196,6 +209,7 @@ struct PhraseDetailSection: Identifiable, Equatable {
     let body: String
     var phrases: [PhraseOption] = []
     var breakdown: [BreakdownToken] = []
+    var inlineDefinitions: [PhraseInlineDefinition] = []
     var chips: [String] = []
     var presentation: SectionPresentation = .automatic
 
@@ -212,6 +226,7 @@ struct PhraseDetailSection: Identifiable, Equatable {
             body: body,
             phrases: phrases,
             breakdown: breakdown,
+            inlineDefinitions: inlineDefinitions,
             chips: chips,
             presentation: resolvedPresentation
         )
