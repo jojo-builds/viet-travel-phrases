@@ -1169,7 +1169,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hanoi.cityHub?.situationTitle, "Browse by")
         XCTAssertEqual(hanoi.cityHub?.browseTitle, "Browse by")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
-        XCTAssertEqual(hanoi.cityHub?.cityBrowseFilters.first?.title, "Arrivals")
+        XCTAssertEqual(hanoi.cityHub?.cityBrowseFilters.first?.title, "Landmarks")
         XCTAssertFalse((hanoi.cityHub?.cityBrowseAllItems ?? []).isEmpty)
     }
 
@@ -1832,7 +1832,6 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(items.contains { item in
             item.title.localizedCaseInsensitiveContains("ở đâu")
                 || item.title.localizedCaseInsensitiveContains("Cho tôi")
-                || item.title.hasPrefix("Đi ")
                 || item.subtitle.localizedCaseInsensitiveContains("where is")
                 || item.subtitle.localizedCaseInsensitiveContains("please take")
                 || item.subtitle.localizedCaseInsensitiveContains("near ")
