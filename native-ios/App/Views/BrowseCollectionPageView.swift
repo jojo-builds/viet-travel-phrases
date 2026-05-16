@@ -74,6 +74,7 @@ struct BrowseCollectionPageView: View {
                                     descriptor: descriptor,
                                     onPractice: { onPractice(descriptor.practiceAction) }
                                 )
+                                .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
                                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
                             }
 

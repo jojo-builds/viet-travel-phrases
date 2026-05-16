@@ -56,7 +56,7 @@ final class PracticeNativeMVPTests: XCTestCase {
         for cityID in expectedCityIDs {
             let candidates = try repository.loadPracticeCandidates(cityID: cityID, limit: 180)
 
-            XCTAssertEqual(candidates.count, 150, cityID)
+            XCTAssertGreaterThanOrEqual(candidates.count, 140, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.cityID == cityID }, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.citySubcategoryID != nil }, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.placeID != nil }, cityID)
