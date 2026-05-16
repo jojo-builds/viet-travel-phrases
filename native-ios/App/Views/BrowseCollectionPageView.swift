@@ -635,7 +635,7 @@ private struct BrowseCollectionMessageEntryCard: View {
                 }
                 .layoutPriority(1)
 
-                Text("Open")
+                Text("Practice")
                     .font(.caption.weight(.black))
                     .foregroundStyle(.red)
                     .padding(.horizontal, 14)
@@ -646,13 +646,13 @@ private struct BrowseCollectionMessageEntryCard: View {
             .phraseListCard(cornerRadius: 24)
         }
         .buttonStyle(.plain)
-        .accessibilityIdentifier("BrowseCollection.MessagesEntry.\(descriptor.route.id)")
+        .accessibilityIdentifier("BrowseCollection.PracticeEntry.\(descriptor.route.id)")
     }
 }
 
 private extension BrowseCollectionDescriptor {
     var hasMessageSection: Bool {
-        messageSectionTitle != nil && !messageScenarioIDs.isEmpty
+        false
     }
 }
 

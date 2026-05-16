@@ -35,6 +35,7 @@ struct BrowseCollectionFocusRequest: Equatable {
 
 enum BrowseCollectionPracticeAction: Equatable {
     case addStarterPages([String])
+    case practiceSource(String)
     case practiceMode(PracticeMode)
     case practiceScenario(PracticeScenarioID)
 }

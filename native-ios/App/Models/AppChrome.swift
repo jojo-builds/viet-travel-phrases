@@ -27,7 +27,7 @@ enum DockItemKind: Equatable, Hashable {
         case .saved:
             return "heart"
         case .practice:
-            return "text.bubble.fill"
+            return "square.grid.2x2.fill"
         }
     }
 
@@ -40,7 +40,7 @@ enum DockItemKind: Equatable, Hashable {
         case .saved:
             return "Saved"
         case .practice:
-            return "Messages"
+            return "Practice"
         }
     }
 }

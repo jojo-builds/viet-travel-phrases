@@ -14,7 +14,7 @@ enum HomeScrollTarget: Hashable {
     case firstDay
     case city
     case foodCoffee
-    case messages
+    case practice
     case gettingAround
     case situations
     case whenStuck
@@ -33,6 +33,7 @@ struct AppShellView: View {
     @State private var searchFocusRequestID = 0
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
+    @State private var requestedPracticeSourceID: String?
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
@@ -93,7 +94,7 @@ struct AppShellView: View {
                 tabShellContent(for: .saved)
             }
 
-            Tab("Messages", systemImage: DockItemKind.practice.symbolName, value: AppSystemTab.practice) {
+            Tab("Practice", systemImage: DockItemKind.practice.symbolName, value: AppSystemTab.practice) {
                 tabShellContent(for: .practice)
             }
 
@@ -330,6 +331,10 @@ struct AppShellView: View {
                 scenarioID: requestedPracticeScenarioID,
                 scenarioThreadDismissal: requestedPracticeScenarioThreadDismissal
             )
+        }
+
+        if let requestedPracticeSourceID {
+            return PracticeStartRequest(id: practiceStartRequestID, sourceID: requestedPracticeSourceID)
         }
 
         if let requestedPracticeMode {
@@ -1218,18 +1223,28 @@ struct AppShellView: View {
         switch action {
         case .addStarterPages(let pageIDs):
             intentStore.addPracticePages(pageIDs)
+            requestedPracticeSourceID = nil
+            requestedPracticeMode = nil
+            requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
+        case .practiceSource(let sourceID):
+            practiceStartRequestID += 1
+            requestedPracticeSourceID = sourceID
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
         case .practiceMode(let mode):
             practiceStartRequestID += 1
+            requestedPracticeSourceID = nil
             requestedPracticeMode = mode
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
         case .practiceScenario(let scenarioID):
             practiceStartRequestID += 1
+            requestedPracticeSourceID = nil
             requestedPracticeMode = nil
             requestedPracticeScenarioID = scenarioID
             clearPracticeThreadForwardRestore()
@@ -1382,6 +1397,7 @@ struct AppShellView: View {
     }
 
     private func clearPracticeStartRequest() {
+        requestedPracticeSourceID = nil
         requestedPracticeMode = nil
         requestedPracticeScenarioID = nil
         requestedPracticeScenarioThreadDismissal = .messagesHub
@@ -1473,6 +1489,7 @@ struct AppShellView: View {
         }
 
         practiceStartRequestID += 1
+        requestedPracticeSourceID = nil
         requestedPracticeMode = nil
         requestedPracticeScenarioID = restore.scenarioID
         requestedPracticeScenarioThreadDismissal = .originRoute
@@ -2723,7 +2740,7 @@ struct HomeView: View {
                                 .id(HomeScrollTarget.foodCoffee)
 
                             practiceScenariosShelf
-                                .id(HomeScrollTarget.messages)
+                                .id(HomeScrollTarget.practice)
 
                             homepagePhraseShelf("taxi-getting-around", scrollTarget: .gettingAround)
                                 .id(HomeScrollTarget.gettingAround)
@@ -2858,10 +2875,9 @@ struct HomeView: View {
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Messages", subtitle: "Short trip conversations") {
-            HomeScenarioRail(
-                scenarios: HomeContent.practiceScenarios,
-                onStartPractice: { onStartPractice($0, .messages) }
+        HomeShelf(title: "Practice", subtitle: "Quick matching rounds") {
+            HomePracticeStarterRail(
+                onStartPractice: { onStartPractice($0, .practice) }
             )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
@@ -3984,6 +4000,109 @@ private struct HomeQuickPhraseCard: View {
             .padding(.top, 12)
         }
         .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
+    }
+}
+
+private struct HomePracticeStarter: Identifiable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tint: AccentTint
+    let action: BrowseCollectionPracticeAction
+
+    static let defaults: [HomePracticeStarter] = [
+        HomePracticeStarter(
+            id: "quick",
+            title: "Quick match",
+            subtitle: "Four useful pairs",
+            symbolName: "bolt.fill",
+            tint: .red,
+            action: .practiceSource("quick")
+        ),
+        HomePracticeStarter(
+            id: "saved",
+            title: "Saved",
+            subtitle: "Practice what you kept",
+            symbolName: "heart.fill",
+            tint: .red,
+            action: .practiceSource("saved")
+        ),
+        HomePracticeStarter(
+            id: "food-drinks",
+            title: "Food & drinks",
+            subtitle: "Order, ask, pay",
+            symbolName: "takeoutbag.and.cup.and.straw.fill",
+            tint: .orange,
+            action: .practiceSource("topic:food-drinks")
+        ),
+        HomePracticeStarter(
+            id: "airport",
+            title: "Airport",
+            subtitle: "Arrival and baggage",
+            symbolName: "airplane.arrival",
+            tint: .red,
+            action: .practiceSource("topic:airport")
+        ),
+    ]
+}
+
+private struct HomePracticeStarterRail: View {
+    let onStartPractice: (BrowseCollectionPracticeAction) -> Void
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(alignment: .top, spacing: 10) {
+                ForEach(HomePracticeStarter.defaults) { starter in
+                    Button {
+                        onStartPractice(starter.action)
+                    } label: {
+                        VStack(alignment: .leading, spacing: 12) {
+                            HomePracticeStarterIcon(symbolName: starter.symbolName, tint: starter.tint)
+
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(starter.title)
+                                    .font(.headline.weight(.black))
+                                    .foregroundStyle(.primary)
+                                    .lineLimit(2)
+                                    .minimumScaleFactor(0.78)
+
+                                Text(starter.subtitle)
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(2)
+                            }
+
+                            Spacer(minLength: 0)
+                        }
+                        .padding(14)
+                        .frame(width: 152, height: 138, alignment: .leading)
+                        .phraseListCard(cornerRadius: 22)
+                        .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("Home.PracticeStarter.\(starter.id)")
+                }
+            }
+            .padding(.trailing, HomeLayout.horizontalPadding)
+            .padding(.bottom, 2)
+        }
+        .frame(height: 144)
+        .scrollClipDisabled()
+        .accessibilityIdentifier("HomePracticeStarterRail")
+    }
+}
+
+private struct HomePracticeStarterIcon: View {
+    let symbolName: String
+    let tint: AccentTint
+
+    var body: some View {
+        Image(systemName: symbolName)
+            .font(.headline.weight(.bold))
+            .foregroundStyle(tint.color)
+            .frame(width: 48, height: 48)
+            .nativeGlass(cornerRadius: 24, tint: tint.color, interactive: true)
     }
 }
 

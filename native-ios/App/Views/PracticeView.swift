@@ -65,103 +65,24 @@ struct PracticeView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
-
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: 18) {
-                        PracticeCurrentScenarioSurface(
-                            scenarioState: scenarioState,
-                            unreadScenarioIDs: unreadScenarioIDs,
-                            onStart: startScenario,
-                            onMarkUnread: markScenarioUnread,
-                            onBrowseTapped: onBrowseTapped,
-                            onRetry: reloadScenarioSnapshot
-                        )
-                        .id(Self.scrollTopID)
-                    }
-                    .padding(.horizontal, PracticeLayout.horizontalPadding)
-                    .padding(.top, topContentPadding)
-                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
-                }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
-                }
-                .onChange(of: practiceScrollResetTrigger) { _, _ in
-                    let targetID = practiceScrollTargetID ?? Self.scrollTopID
-                    let targetAnchor: UnitPoint = practiceScrollTargetID == nil ? .top : .center
-                    withAnimation(.easeInOut(duration: 0.24)) {
-                        scrollProxy.scrollTo(targetID, anchor: targetAnchor)
-                    }
-                    practiceScrollTargetID = nil
-                }
-                .accessibilityIdentifier("PracticeView")
-            }
-
-            if isScenarioThreadVisible {
-                PracticeMessagesThreadHost(
-                    activeScenarioSession: activeScenarioSession,
-                    scenarioCompletion: scenarioCompletion,
-                    returnFocusRequest: scenarioReturnFocusRequest,
-                    isInPracticePool: isScenarioPageInPractice,
-                    isSavedPhrasePage: isScenarioPageSaved,
-                    onOpenPhrasePage: { pageID, returnTurnID in
-                        openScenarioPhrasePage(pageID, returnTurnID: returnTurnID)
-                    },
-                    onTogglePracticePage: toggleScenarioPracticePage,
-                    onToggleSavedPhrasePage: toggleScenarioSavedPage,
-                    onSelectScenarioOption: { option, step in
-                        selectScenarioOption(option, for: step)
-                    },
-                    onPracticeAnother: startAnotherScenario,
-                    onBackToPractice: dismissScenarioThread,
-                    onBrowseTapped: {
-                        dismissScenarioSheet()
-                        onBrowseTapped()
-                    },
-                    onDismiss: dismissScenarioThread,
-                    onReturnFocusConsumed: {
-                        scenarioReturnFocusRequest = nil
-                    }
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .transition(.opacity)
-                .zIndex(20)
-            }
-        }
-        .task {
-            if isActive {
-                reloadScenarioSnapshot()
-            } else {
-                prewarmScenarioSnapshot()
-            }
+        PracticeMatchRootView(
+            intentStore: intentStore,
+            isActive: isActive,
+            scrollToTopTrigger: scrollToTopTrigger,
+            requestedStartID: startRequest?.id ?? (initialMode == nil ? nil : -1),
+            requestedSourceID: startRequest?.sourceID,
+            requestedMode: startRequest?.mode ?? initialMode,
+            onBrowseTapped: onBrowseTapped
+        )
+        .onAppear {
+            onThreadPresentationChanged(false)
         }
         .onChange(of: isActive) { _, active in
             if active {
-                reloadScenarioSnapshot()
-                startRequestedScenarioIfReady()
-            } else {
                 onThreadPresentationChanged(false)
-                prewarmScenarioSnapshot()
             }
         }
-        .onChange(of: startRequest) { _, _ in
-            startRequestedScenarioIfReady()
-        }
-        .onChange(of: intentStore.practicePageIDs) { _, _ in
-            reloadOrPrewarmScenarioSnapshot()
-        }
-        .onChange(of: intentStore.savedPageIDs) { _, _ in
-            reloadOrPrewarmScenarioSnapshot()
-        }
-        .onChange(of: intentStore.recentPageIDs) { _, _ in
-            reloadOrPrewarmScenarioSnapshot()
-        }
-        .onChange(of: isScenarioThreadVisible) { _, isVisible in
-            onThreadPresentationChanged(isVisible)
-        }
+        .accessibilityIdentifier("PracticeView")
     }
 
     private static let scrollTopID = "PracticeViewTop"
@@ -2932,7 +2853,7 @@ private struct PracticeBrowseCard: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Save useful phrases as you browse so Messages can use them later.")
+                    Text("Save useful phrases as you browse so Practice can use them later.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
@@ -3162,7 +3083,7 @@ private struct PracticeFeedbackCard: View {
                     .buttonStyle(.plain)
                     .foregroundStyle(.secondary)
                     .nativeGlass(cornerRadius: 18, interactive: true)
-                    .accessibilityLabel("Remove from Messages")
+                    .accessibilityLabel("Remove from Practice")
                 }
             }
         }
@@ -3244,7 +3165,7 @@ private struct PracticeCompletionSurface: View {
                 }
 
                 Button(action: onContinue) {
-                    Label("Back to Practice", systemImage: "text.bubble.fill")
+                    Label("Back to Practice", systemImage: "square.grid.2x2.fill")
                         .font(.headline.weight(.bold))
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
@@ -3304,7 +3225,7 @@ private struct PracticeLoadingCard: View {
             ProgressView()
                 .tint(.red)
 
-            Text("Preparing phrase-sourced messages...")
+            Text("Preparing practice rounds...")
                 .font(.headline.weight(.bold))
                 .foregroundStyle(.secondary)
         }
@@ -3320,7 +3241,7 @@ private struct PracticeErrorCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("Messages are unavailable", systemImage: "exclamationmark.triangle.fill")
+            Label("Practice is unavailable", systemImage: "exclamationmark.triangle.fill")
                 .font(.headline.weight(.bold))
                 .foregroundStyle(.orange)
 
@@ -3457,6 +3378,1402 @@ private struct MeloBundleImage: View {
 private enum PracticeLayout {
     static let horizontalPadding: CGFloat = 20
     static let storyComposerBottomPadding: CGFloat = 104
+}
+
+// MARK: - Match Practice v1
+
+private enum PracticeMatchDataState {
+    case loading
+    case loaded(PracticeMatchSnapshot)
+    case failed(String)
+
+    var snapshot: PracticeMatchSnapshot? {
+        if case .loaded(let snapshot) = self {
+            return snapshot
+        }
+
+        return nil
+    }
+}
+
+private struct PracticeMatchTopicSpec: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tint: AccentTint
+    var categoryIDs: [String] = []
+    var cityID: String? = nil
+
+    static let defaults: [PracticeMatchTopicSpec] = [
+        PracticeMatchTopicSpec(
+            id: "essentials",
+            title: "Essentials",
+            subtitle: "Hello, thanks, basics",
+            symbolName: "bolt.fill",
+            tint: .red,
+            categoryIDs: ["greetings", "polite-basics", "understanding-repair"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "first-day",
+            title: "First day",
+            subtitle: "Airport, hotel, taxi",
+            symbolName: "calendar.badge.clock",
+            tint: .orange,
+            categoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "food-drinks",
+            title: "Food & drinks",
+            subtitle: "Order, ask, pay",
+            symbolName: "takeoutbag.and.cup.and.straw.fill",
+            tint: .orange,
+            categoryIDs: ["food-drink"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "airport",
+            title: "Airport",
+            subtitle: "Arrival and baggage",
+            symbolName: "airplane.arrival",
+            tint: .red,
+            categoryIDs: ["airport-border-arrival"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "taxi-directions",
+            title: "Taxi & directions",
+            subtitle: "Pickup, drop-off, maps",
+            symbolName: "car.fill",
+            tint: .green,
+            categoryIDs: ["transport", "directions-navigation"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "shopping-markets",
+            title: "Shopping & markets",
+            subtitle: "Prices, cash, receipts",
+            symbolName: "bag.fill",
+            tint: .orange,
+            categoryIDs: ["shopping", "money-numbers-prices"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "emergency",
+            title: "Emergency",
+            subtitle: "Help and pharmacy",
+            symbolName: "cross.case.fill",
+            tint: .red,
+            categoryIDs: ["health-pharmacy", "problems-help"]
+        ),
+        PracticeMatchTopicSpec(
+            id: "hanoi",
+            title: "Hanoi",
+            subtitle: "Old Quarter and city basics",
+            symbolName: "building.2.fill",
+            tint: .green,
+            cityID: "hanoi"
+        ),
+        PracticeMatchTopicSpec(
+            id: "hcmc",
+            title: "Saigon",
+            subtitle: "District 1 and city basics",
+            symbolName: "building.columns.fill",
+            tint: .orange,
+            cityID: "hcmc"
+        ),
+        PracticeMatchTopicSpec(
+            id: "danang",
+            title: "Da Nang",
+            subtitle: "City names and phrases",
+            symbolName: "building.2.fill",
+            tint: .blue,
+            cityID: "danang"
+        ),
+        PracticeMatchTopicSpec(
+            id: "hoian",
+            title: "Hoi An",
+            subtitle: "Old Town and cafe basics",
+            symbolName: "sun.horizon.fill",
+            tint: .orange,
+            cityID: "hoian"
+        ),
+        PracticeMatchTopicSpec(
+            id: "hue",
+            title: "Hue",
+            subtitle: "Heritage and food basics",
+            symbolName: "building.columns.fill",
+            tint: .purple,
+            cityID: "hue"
+        ),
+    ]
+}
+
+private struct PracticeMatchItem: Identifiable, Equatable {
+    let pageID: String
+    let vietnamese: String
+    let english: String
+    let audioKey: String?
+    let symbolName: String
+    let tint: AccentTint
+
+    var id: String { pageID }
+}
+
+private struct PracticeMatchSource: Identifiable, Equatable {
+    enum Kind: String, Equatable {
+        case quick
+        case saved
+        case topic
+    }
+
+    let id: String
+    let kind: Kind
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tint: AccentTint
+    let items: [PracticeMatchItem]
+
+    var itemCountLabel: String {
+        if items.count >= 40 {
+            return "40+ items"
+        }
+
+        return "\(items.count) item\(items.count == 1 ? "" : "s")"
+    }
+
+    var canStart: Bool {
+        items.count >= PracticeMatchRound.pairCount
+    }
+}
+
+private struct PracticeMatchSnapshot {
+    let quickSource: PracticeMatchSource
+    let savedSource: PracticeMatchSource
+    let topicSources: [PracticeMatchSource]
+
+    var sources: [PracticeMatchSource] {
+        [quickSource, savedSource] + topicSources
+    }
+
+    func source(sourceID: String?, mode: PracticeMode?) -> PracticeMatchSource {
+        if let sourceID,
+           let source = sources.first(where: { $0.id == sourceID }) {
+            return source
+        }
+
+        guard let mode else {
+            return quickSource
+        }
+
+        switch mode {
+        case .savedReview, .missedReview:
+            return savedSource
+        case .hcmcCity:
+            return topicSources.first(where: { $0.id == "topic:hcmc" }) ?? quickSource
+        case .hanoiBucketList:
+            return topicSources.first(where: { $0.id == "topic:hanoi" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+        case .danangCity:
+            return topicSources.first(where: { $0.id == "topic:danang" }) ?? quickSource
+        case .hoianCity:
+            return topicSources.first(where: { $0.id == "topic:hoian" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+        case .hueCity:
+            return topicSources.first(where: { $0.id == "topic:hue" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+        }
+    }
+
+    static func load(savedPageIDs: [String]) throws -> PracticeMatchSnapshot {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let quickCandidates = try Self.candidates(
+            repository: repository,
+            categoryIDs: ["greetings", "polite-basics", "understanding-repair", "airport-border-arrival", "hotel-accommodation", "transport"],
+            requiringAudio: true,
+            limit: 100
+        )
+        let quickItems = Self.uniquePracticeItems(from: quickCandidates)
+        let savedItems: [PracticeMatchItem]
+        if savedPageIDs.isEmpty {
+            savedItems = []
+        } else {
+            savedItems = Self.uniquePracticeItems(
+                from: try repository.loadPracticeCandidates(
+                    pageIDs: savedPageIDs,
+                    limit: max(80, savedPageIDs.count)
+                )
+            )
+        }
+
+        let topicSources = try PracticeMatchTopicSpec.defaults.map { spec in
+            let candidates = try Self.candidates(
+                repository: repository,
+                cityID: spec.cityID,
+                categoryIDs: spec.categoryIDs,
+                requiringAudio: true,
+                limit: 140
+            )
+            let items = Self.uniquePracticeItems(from: candidates)
+
+            return PracticeMatchSource(
+                id: "topic:\(spec.id)",
+                kind: .topic,
+                title: spec.title,
+                subtitle: spec.subtitle,
+                symbolName: spec.symbolName,
+                tint: spec.tint,
+                items: items
+            )
+        }
+
+        return PracticeMatchSnapshot(
+            quickSource: PracticeMatchSource(
+                id: "quick",
+                kind: .quick,
+                title: "Quick 1-Minute Practice",
+                subtitle: "A mix of useful phrases for your trip.",
+                symbolName: "bolt.fill",
+                tint: .red,
+                items: quickItems
+            ),
+            savedSource: PracticeMatchSource(
+                id: "saved",
+                kind: .saved,
+                title: "Practice saved",
+                subtitle: savedItems.count < PracticeMatchRound.pairCount
+                    ? "Save at least 4 items to start personalized practice."
+                    : "Review what you saved while browsing.",
+                symbolName: "heart.fill",
+                tint: .red,
+                items: savedItems
+            ),
+            topicSources: topicSources
+        )
+    }
+
+    private static func candidates(
+        repository: VietSQLiteLanguagePackRepository,
+        cityID: String? = nil,
+        categoryIDs: [String] = [],
+        requiringAudio: Bool,
+        limit: Int
+    ) throws -> [PracticeCandidate] {
+        let audioCandidates = try repository.loadPracticeCandidates(
+            cityID: cityID,
+            categoryIDs: categoryIDs.isEmpty ? nil : categoryIDs,
+            requiringAudio: requiringAudio,
+            limit: limit
+        )
+
+        if audioCandidates.count >= PracticeMatchRound.pairCount || !requiringAudio {
+            return audioCandidates
+        }
+
+        return try repository.loadPracticeCandidates(
+            cityID: cityID,
+            categoryIDs: categoryIDs.isEmpty ? nil : categoryIDs,
+            requiringAudio: false,
+            limit: limit
+        )
+    }
+
+    private static func uniquePracticeItems(from candidates: [PracticeCandidate]) -> [PracticeMatchItem] {
+        var seenPageIDs = Set<String>()
+        var seenVietnamese = Set<String>()
+        var seenEnglish = Set<String>()
+
+        return candidates.compactMap { candidate in
+            let vietnamese = candidate.vietnamese.trimmingCharacters(in: .whitespacesAndNewlines)
+            let english = candidate.english.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard
+                !vietnamese.isEmpty,
+                !english.isEmpty,
+                vietnamese.count <= 54,
+                english.count <= 70,
+                vietnamese.split(separator: " ").count <= 9,
+                english.split(separator: " ").count <= 11,
+                seenPageIDs.insert(candidate.pageID).inserted,
+                seenVietnamese.insert(vietnamese.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)).inserted,
+                seenEnglish.insert(english.lowercased()).inserted
+            else {
+                return nil
+            }
+
+            return PracticeMatchItem(
+                pageID: candidate.pageID,
+                vietnamese: vietnamese,
+                english: english,
+                audioKey: candidate.playableAudioKey,
+                symbolName: candidate.symbolName,
+                tint: candidate.tintName
+            )
+        }
+    }
+}
+
+private struct PracticeMatchPair: Identifiable, Equatable {
+    let id: String
+    let item: PracticeMatchItem
+}
+
+private enum PracticeMatchCardSide: Equatable {
+    case prompt
+    case answer
+}
+
+private struct PracticeMatchCard: Identifiable, Equatable {
+    let id: String
+    let pairID: String
+    let item: PracticeMatchItem
+    let side: PracticeMatchCardSide
+}
+
+private struct PracticeMatchRound: Equatable {
+    static let pairCount = 4
+
+    let id: String
+    let pairs: [PracticeMatchPair]
+    let prompts: [PracticeMatchCard]
+    let answers: [PracticeMatchCard]
+
+    static func make(source: PracticeMatchSource, roundIndex: Int) -> PracticeMatchRound? {
+        guard source.items.count >= pairCount else {
+            return nil
+        }
+
+        let offset = (roundIndex * pairCount) % source.items.count
+        let rotated = Array(source.items[offset...]) + Array(source.items[..<offset])
+        let selected = Array(rotated.prefix(pairCount))
+        let pairs = selected.map { item in
+            PracticeMatchPair(id: item.id, item: item)
+        }
+        let promptCards = pairs.map { pair in
+            PracticeMatchCard(
+                id: "prompt:\(pair.id)",
+                pairID: pair.id,
+                item: pair.item,
+                side: .prompt
+            )
+        }
+        let answerCards = pairs.map { pair in
+            PracticeMatchCard(
+                id: "answer:\(pair.id)",
+                pairID: pair.id,
+                item: pair.item,
+                side: .answer
+            )
+        }
+
+        return PracticeMatchRound(
+            id: "\(source.id):\(roundIndex)",
+            pairs: pairs,
+            prompts: stableShuffle(promptCards, seed: "\(source.id):prompt:\(roundIndex)"),
+            answers: stableShuffle(answerCards, seed: "\(source.id):answer:\(roundIndex)")
+        )
+    }
+
+    private static func stableShuffle<T: Identifiable>(_ values: [T], seed: String) -> [T] where T.ID == String {
+        values.sorted { lhs, rhs in
+            stableRank("\(seed):\(lhs.id)") < stableRank("\(seed):\(rhs.id)")
+        }
+    }
+
+    private static func stableRank(_ text: String) -> UInt64 {
+        text.utf8.reduce(UInt64(1469598103934665603)) { partial, byte in
+            (partial ^ UInt64(byte)) &* 1099511628211
+        }
+    }
+}
+
+private struct PracticeMatchActiveSession: Equatable {
+    let source: PracticeMatchSource
+    var roundIndex: Int
+    var round: PracticeMatchRound
+    var selectedPromptID: String?
+    var selectedAnswerID: String?
+    var matchedPairIDs: Set<String> = []
+    var incorrectPromptID: String?
+    var incorrectAnswerID: String?
+    var hintedPairID: String?
+
+    var progressText: String {
+        "\(min(roundIndex + 1, 10)) / 10"
+    }
+
+    var progressFraction: CGFloat {
+        CGFloat(min(roundIndex + 1, 10)) / 10
+    }
+
+    var isRoundComplete: Bool {
+        matchedPairIDs.count == PracticeMatchRound.pairCount
+    }
+
+    var isSessionComplete: Bool {
+        roundIndex >= 9 && isRoundComplete
+    }
+
+    init?(source: PracticeMatchSource, roundIndex: Int = 0) {
+        guard let round = PracticeMatchRound.make(source: source, roundIndex: roundIndex) else {
+            return nil
+        }
+
+        self.source = source
+        self.roundIndex = roundIndex
+        self.round = round
+    }
+
+    mutating func startNextRound() {
+        let nextIndex = roundIndex + 1
+        guard let nextRound = PracticeMatchRound.make(source: source, roundIndex: nextIndex) else {
+            return
+        }
+
+        roundIndex = nextIndex
+        round = nextRound
+        selectedPromptID = nil
+        selectedAnswerID = nil
+        matchedPairIDs = []
+        incorrectPromptID = nil
+        incorrectAnswerID = nil
+        hintedPairID = nil
+    }
+}
+
+private struct PracticeMatchRootView: View {
+    @ObservedObject var intentStore: LocalUserIntentStore
+    let isActive: Bool
+    let scrollToTopTrigger: Int
+    let requestedStartID: Int?
+    let requestedSourceID: String?
+    let requestedMode: PracticeMode?
+    let onBrowseTapped: () -> Void
+
+    @State private var loadState = PracticeMatchDataState.loading
+    @State private var loadGeneration = 0
+    @State private var activeSession: PracticeMatchActiveSession?
+    @State private var handledRequestedKey: String?
+
+    var body: some View {
+        ZStack {
+            PhrasePageStyle.pageBackground
+                .ignoresSafeArea()
+
+            if let activeSession {
+                PracticeMatchRoundView(
+                    session: activeSession,
+                    onBack: {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            self.activeSession = nil
+                        }
+                    },
+                    onSelectPrompt: selectPrompt,
+                    onSelectAnswer: selectAnswer,
+                    onHint: revealHint,
+                    onContinue: continuePractice
+                )
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+            } else {
+                PracticeMatchHubView(
+                    state: loadState,
+                    onStartSource: startSource,
+                    onBrowseTapped: onBrowseTapped,
+                    onRetry: reloadSnapshot
+                )
+                .transition(.opacity)
+            }
+        }
+        .task {
+            reloadSnapshot()
+        }
+        .onChange(of: isActive) { _, active in
+            guard active else { return }
+            reloadSnapshot()
+        }
+        .onChange(of: intentStore.savedPageIDs) { _, _ in
+            reloadSnapshot()
+        }
+        .onChange(of: requestedMode) { _, _ in
+            startRequestedModeIfPossible()
+        }
+        .onChange(of: requestedSourceID) { _, _ in
+            startRequestedModeIfPossible()
+        }
+        .onChange(of: requestedStartID) { _, _ in
+            startRequestedModeIfPossible()
+        }
+        .onChange(of: scrollToTopTrigger) { _, _ in
+            activeSession = nil
+        }
+        .accessibilityIdentifier("Practice.Match.Root")
+    }
+
+    private func reloadSnapshot() {
+        loadGeneration += 1
+        let generation = loadGeneration
+        let savedPageIDs = intentStore.savedPageIDs
+
+        if loadState.snapshot == nil {
+            loadState = .loading
+        }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let snapshot = try PracticeMatchSnapshot.load(savedPageIDs: savedPageIDs)
+                DispatchQueue.main.async {
+                    guard generation == loadGeneration else { return }
+                    loadState = .loaded(snapshot)
+                    startRequestedModeIfPossible()
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    guard generation == loadGeneration else { return }
+                    loadState = .failed(error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    private func startRequestedModeIfPossible() {
+        guard let requestKey = requestedKey else {
+            return
+        }
+        guard handledRequestedKey != requestKey else {
+            return
+        }
+        guard let snapshot = loadState.snapshot else {
+            return
+        }
+
+        handledRequestedKey = requestKey
+        startSource(snapshot.source(sourceID: requestedSourceID, mode: requestedMode))
+    }
+
+    private var requestedKey: String? {
+        if let requestedSourceID {
+            return "\(requestedStartID ?? -1):source:\(requestedSourceID)"
+        }
+
+        if let requestedMode {
+            return "\(requestedStartID ?? -1):mode:\(requestedMode.rawValue)"
+        }
+
+        return nil
+    }
+
+    private func startSource(_ source: PracticeMatchSource) {
+        guard source.canStart, let session = PracticeMatchActiveSession(source: source) else {
+            return
+        }
+
+        withAnimation(.easeInOut(duration: 0.22)) {
+            activeSession = session
+        }
+    }
+
+    private func selectPrompt(_ card: PracticeMatchCard) {
+        guard var session = activeSession, !session.matchedPairIDs.contains(card.pairID), !session.isRoundComplete else {
+            return
+        }
+
+        session.selectedPromptID = card.id
+        activeSession = session
+        resolveSelectionIfReady()
+    }
+
+    private func selectAnswer(_ card: PracticeMatchCard) {
+        guard var session = activeSession, !session.matchedPairIDs.contains(card.pairID), !session.isRoundComplete else {
+            return
+        }
+
+        session.selectedAnswerID = card.id
+        activeSession = session
+        resolveSelectionIfReady()
+    }
+
+    private func resolveSelectionIfReady() {
+        guard var session = activeSession,
+              let promptID = session.selectedPromptID,
+              let answerID = session.selectedAnswerID,
+              let prompt = session.round.prompts.first(where: { $0.id == promptID }),
+              let answer = session.round.answers.first(where: { $0.id == answerID })
+        else {
+            return
+        }
+
+        if prompt.pairID == answer.pairID {
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+                session.matchedPairIDs.insert(prompt.pairID)
+                session.hintedPairID = session.hintedPairID == prompt.pairID ? nil : session.hintedPairID
+                session.selectedPromptID = nil
+                session.selectedAnswerID = nil
+                activeSession = session
+            }
+        } else {
+            session.incorrectPromptID = prompt.id
+            session.incorrectAnswerID = answer.id
+            activeSession = session
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.62) {
+                guard var current = activeSession,
+                      current.round.id == session.round.id,
+                      current.incorrectPromptID == prompt.id,
+                      current.incorrectAnswerID == answer.id
+                else {
+                    return
+                }
+
+                withAnimation(.easeOut(duration: 0.16)) {
+                    current.selectedPromptID = nil
+                    current.selectedAnswerID = nil
+                    current.incorrectPromptID = nil
+                    current.incorrectAnswerID = nil
+                    activeSession = current
+                }
+            }
+        }
+    }
+
+    private func revealHint() {
+        guard var session = activeSession, !session.isRoundComplete else {
+            return
+        }
+
+        let hintedPairID: String?
+        if let selectedPromptID = session.selectedPromptID,
+           let prompt = session.round.prompts.first(where: { $0.id == selectedPromptID }),
+           !session.matchedPairIDs.contains(prompt.pairID) {
+            hintedPairID = prompt.pairID
+        } else {
+            hintedPairID = session.round.pairs.first { pair in
+                !session.matchedPairIDs.contains(pair.id)
+            }?.id
+        }
+
+        withAnimation(.spring(response: 0.24, dampingFraction: 0.86)) {
+            session.hintedPairID = hintedPairID
+            activeSession = session
+        }
+    }
+
+    private func continuePractice() {
+        guard var session = activeSession else {
+            return
+        }
+
+        if session.isSessionComplete {
+            withAnimation(.easeInOut(duration: 0.2)) {
+                activeSession = nil
+            }
+        } else {
+            withAnimation(.easeInOut(duration: 0.22)) {
+                session.startNextRound()
+                activeSession = session
+            }
+        }
+    }
+}
+
+private struct PracticeMatchHubView: View {
+    let state: PracticeMatchDataState
+    let onStartSource: (PracticeMatchSource) -> Void
+    let onBrowseTapped: () -> Void
+    let onRetry: () -> Void
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 22) {
+                PracticeMatchHero()
+
+                switch state {
+                case .loading:
+                    PracticeLoadingCard()
+                case .failed(let message):
+                    PracticeErrorCard(message: message, onRetry: onRetry)
+                case .loaded(let snapshot):
+                    PracticeMatchQuickSection(
+                        quickSource: snapshot.quickSource,
+                        savedSource: snapshot.savedSource,
+                        onStartSource: onStartSource,
+                        onBrowseTapped: onBrowseTapped
+                    )
+
+                    PracticeMatchTopicList(
+                        sources: snapshot.topicSources,
+                        onStartSource: onStartSource
+                    )
+                }
+            }
+            .padding(.horizontal, PracticeLayout.horizontalPadding)
+            .padding(.top, 22)
+            .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+        }
+        .accessibilityIdentifier("Practice.Match.Hub")
+    }
+}
+
+private struct PracticeMatchHero: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Practice")
+                .font(.system(size: 42, weight: .black, design: .rounded))
+                .foregroundStyle(.primary)
+
+            Text("Short matching rounds from the phrasebook.")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private struct PracticeMatchQuickSection: View {
+    let quickSource: PracticeMatchSource
+    let savedSource: PracticeMatchSource
+    let onStartSource: (PracticeMatchSource) -> Void
+    let onBrowseTapped: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            PracticeMatchSourceCard(
+                source: quickSource,
+                title: "Quick 1-Minute Practice",
+                subtitle: "Start with common Vietnam phrases.",
+                actionTitle: "Start",
+                onTap: { onStartSource(quickSource) }
+            )
+
+            if savedSource.canStart {
+                PracticeMatchSourceCard(
+                    source: savedSource,
+                    title: "Practice saved",
+                    subtitle: savedSource.subtitle,
+                    actionTitle: "Start",
+                    onTap: { onStartSource(savedSource) }
+                )
+            } else {
+                PracticeMatchSavedEmptyCard(
+                    savedCount: savedSource.items.count,
+                    onBrowseTapped: onBrowseTapped
+                )
+            }
+        }
+    }
+}
+
+private struct PracticeMatchTopicList: View {
+    let sources: [PracticeMatchSource]
+    let onStartSource: (PracticeMatchSource) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Practice by topic")
+                .font(.title2.weight(.black))
+                .foregroundStyle(.primary)
+
+            VStack(spacing: 10) {
+                ForEach(sources.filter(\.canStart)) { source in
+                    Button {
+                        onStartSource(source)
+                    } label: {
+                        HStack(spacing: 12) {
+                            PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 44)
+
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(source.title)
+                                    .font(.headline.weight(.bold))
+                                    .foregroundStyle(.primary)
+
+                                Text(source.itemCountLabel)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                            }
+                            .layoutPriority(1)
+
+                            Image(systemName: "chevron.right")
+                                .font(.headline.weight(.bold))
+                                .foregroundStyle(.secondary.opacity(0.62))
+                        }
+                        .padding(12)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .phraseListCard(cornerRadius: 18)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("Practice.Match.Topic.\(source.id)")
+                }
+            }
+        }
+    }
+}
+
+private struct PracticeMatchSourceCard: View {
+    let source: PracticeMatchSource
+    let title: String
+    let subtitle: String
+    let actionTitle: String
+    let onTap: () -> Void
+
+    var body: some View {
+        Button(action: onTap) {
+            HStack(spacing: 14) {
+                PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 56)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text(subtitle)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+
+                    Text(source.itemCountLabel)
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(source.tint.color)
+                }
+                .layoutPriority(1)
+
+                Text(actionTitle)
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 14)
+                    .frame(height: 34)
+                    .background(Color.red, in: Capsule(style: .continuous))
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                LinearGradient(
+                    colors: [source.tint.color.opacity(0.12), .white.opacity(0.72)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ),
+                in: RoundedRectangle(cornerRadius: 22, style: .continuous)
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(.white.opacity(0.82), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(!source.canStart)
+        .accessibilityIdentifier("Practice.Match.Source.\(source.id)")
+    }
+}
+
+private struct PracticeMatchSavedEmptyCard: View {
+    let savedCount: Int
+    let onBrowseTapped: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 14) {
+                PracticeIcon(symbolName: "heart.fill", tint: .red, size: 52)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("Save more to practice")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text("Save at least 4 items to start personalized practice.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+                .layoutPriority(1)
+            }
+
+            Button(action: onBrowseTapped) {
+                Text(savedCount == 0 ? "Go to Browse" : "\(savedCount) saved · Go to Browse")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(14)
+        .phraseListCard(cornerRadius: 22)
+    }
+}
+
+private struct PracticeMatchRoundView: View {
+    let session: PracticeMatchActiveSession
+    let onBack: () -> Void
+    let onSelectPrompt: (PracticeMatchCard) -> Void
+    let onSelectAnswer: (PracticeMatchCard) -> Void
+    let onHint: () -> Void
+    let onContinue: () -> Void
+
+    var body: some View {
+        VStack(spacing: 0) {
+            PracticeMatchRoundHeader(session: session, onBack: onBack)
+
+            if session.isRoundComplete {
+                PracticeMatchCompletionView(session: session, onContinue: onContinue)
+                    .transition(.opacity.combined(with: .scale(scale: 0.98)))
+            } else {
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 18) {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Match all pairs")
+                                .font(.title2.weight(.black))
+                                .foregroundStyle(.primary)
+
+                            Text("Tap a phrase and its meaning.")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+
+                        PracticeMatchBoardView(
+                            session: session,
+                            onSelectPrompt: onSelectPrompt,
+                            onSelectAnswer: onSelectAnswer
+                        )
+
+                        Button(action: onHint) {
+                            Label("Need a hint?", systemImage: "lightbulb.fill")
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(Color(red: 0.80, green: 0.52, blue: 0.08))
+                                .padding(.horizontal, 16)
+                                .frame(height: 42)
+                                .nativeGlass(cornerRadius: 21, tint: Color.yellow.opacity(0.4), interactive: true)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .accessibilityIdentifier("Practice.Match.Hint")
+
+                        if session.hintedPairID != nil {
+                            PracticeMatchHintNotice()
+                        }
+                    }
+                    .padding(.horizontal, PracticeLayout.horizontalPadding)
+                    .padding(.top, 22)
+                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+                }
+                .transition(.opacity)
+            }
+        }
+        .background(PhrasePageStyle.pageBackground.ignoresSafeArea())
+        .accessibilityIdentifier("Practice.Match.Round")
+    }
+}
+
+private struct PracticeMatchRoundHeader: View {
+    let session: PracticeMatchActiveSession
+    let onBack: () -> Void
+
+    var body: some View {
+        VStack(spacing: 14) {
+            HStack {
+                Button(action: onBack) {
+                    Image(systemName: "xmark")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .frame(width: 44, height: 44)
+                        .nativeGlass(cornerRadius: 22, interactive: true)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close practice")
+
+                Spacer()
+
+                Text(session.progressText)
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .monospacedDigit()
+
+                Spacer()
+
+                Color.clear
+                    .frame(width: 44, height: 44)
+            }
+
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Capsule(style: .continuous)
+                        .fill(Color.black.opacity(0.07))
+
+                    Capsule(style: .continuous)
+                        .fill(Color.red)
+                        .frame(width: max(30, proxy.size.width * session.progressFraction))
+                }
+            }
+            .frame(height: 7)
+        }
+        .padding(.horizontal, PracticeLayout.horizontalPadding)
+        .padding(.top, 14)
+        .padding(.bottom, 8)
+        .nativeGlass(cornerRadius: 0)
+    }
+}
+
+private struct PracticeMatchBoardView: View {
+    let session: PracticeMatchActiveSession
+    let onSelectPrompt: (PracticeMatchCard) -> Void
+    let onSelectAnswer: (PracticeMatchCard) -> Void
+
+    private let cardHeight: CGFloat = 72
+    private let cardSpacing: CGFloat = 14
+    private let columnSpacing: CGFloat = 18
+
+    var body: some View {
+        ZStack {
+            PracticeMatchConnectionLayer(
+                session: session,
+                cardHeight: cardHeight,
+                cardSpacing: cardSpacing,
+                columnSpacing: columnSpacing
+            )
+            .allowsHitTesting(false)
+
+            HStack(alignment: .top, spacing: columnSpacing) {
+                VStack(spacing: cardSpacing) {
+                    ForEach(session.round.prompts) { card in
+                        PracticeMatchCardButton(
+                            card: card,
+                            state: cardState(card),
+                            height: cardHeight,
+                            onTap: { onSelectPrompt(card) }
+                        )
+                    }
+                }
+
+                VStack(spacing: cardSpacing) {
+                    ForEach(session.round.answers) { card in
+                        PracticeMatchCardButton(
+                            card: card,
+                            state: cardState(card),
+                            height: cardHeight,
+                            onTap: { onSelectAnswer(card) }
+                        )
+                    }
+                }
+            }
+        }
+        .accessibilityIdentifier("Practice.Match.Board")
+    }
+
+    private func cardState(_ card: PracticeMatchCard) -> PracticeMatchCardVisualState {
+        if session.matchedPairIDs.contains(card.pairID) {
+            return .matched
+        }
+        if session.incorrectPromptID == card.id || session.incorrectAnswerID == card.id {
+            return .incorrect
+        }
+        if session.hintedPairID == card.pairID {
+            return .hinted
+        }
+        if session.selectedPromptID == card.id || session.selectedAnswerID == card.id {
+            return .selected
+        }
+
+        return .normal
+    }
+}
+
+private enum PracticeMatchCardVisualState {
+    case normal
+    case selected
+    case matched
+    case incorrect
+    case hinted
+}
+
+private struct PracticeMatchCardButton: View {
+    let card: PracticeMatchCard
+    let state: PracticeMatchCardVisualState
+    let height: CGFloat
+    let onTap: () -> Void
+
+    var body: some View {
+        Button(action: onTap) {
+            HStack(spacing: 8) {
+                Text(text)
+                    .font(.system(size: card.side == .prompt ? 15 : 14, weight: .bold))
+                    .foregroundStyle(textColor)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.72)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+
+                if card.side == .prompt, let audioKey = card.item.audioKey {
+                    AudioSpeakerButton(
+                        tint: card.item.tint,
+                        size: 30,
+                        audioKey: audioKey,
+                        accessibilityIdentifier: "Practice.Match.Audio.\(card.item.pageID)"
+                    )
+                    .frame(width: 34)
+                }
+
+                if state == .matched {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.green)
+                } else if state == .hinted {
+                    Image(systemName: "lightbulb.fill")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(Color(red: 0.88, green: 0.61, blue: 0.08))
+                }
+            }
+            .padding(.horizontal, 10)
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .background(background, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(stroke, lineWidth: state == .normal ? 1 : 1.35)
+            }
+            .offset(x: state == .incorrect ? -4 : 0)
+            .animation(
+                state == .incorrect
+                    ? .linear(duration: 0.08).repeatCount(4, autoreverses: true)
+                    : .easeOut(duration: 0.16),
+                value: state
+            )
+        }
+        .buttonStyle(.plain)
+        .disabled(state == .matched)
+        .accessibilityIdentifier("Practice.Match.Card.\(card.id)")
+    }
+
+    private var text: String {
+        switch card.side {
+        case .prompt:
+            return card.item.vietnamese
+        case .answer:
+            return card.item.english
+        }
+    }
+
+    private var textColor: Color {
+        state == .matched ? .primary.opacity(0.68) : .primary
+    }
+
+    private var background: Color {
+        switch state {
+        case .normal:
+            return .white.opacity(0.80)
+        case .selected:
+            return Color.red.opacity(0.08)
+        case .matched:
+            return Color.green.opacity(0.12)
+        case .incorrect:
+            return Color.red.opacity(0.10)
+        case .hinted:
+            return Color.yellow.opacity(0.18)
+        }
+    }
+
+    private var stroke: Color {
+        switch state {
+        case .normal:
+            return Color.black.opacity(0.07)
+        case .selected:
+            return Color.red.opacity(0.48)
+        case .matched:
+            return Color.green.opacity(0.48)
+        case .incorrect:
+            return Color.red.opacity(0.62)
+        case .hinted:
+            return Color.orange.opacity(0.44)
+        }
+    }
+}
+
+private struct PracticeMatchConnectionLayer: View {
+    let session: PracticeMatchActiveSession
+    let cardHeight: CGFloat
+    let cardSpacing: CGFloat
+    let columnSpacing: CGFloat
+
+    var body: some View {
+        GeometryReader { proxy in
+            let columnWidth = max((proxy.size.width - columnSpacing) / 2, 1)
+            Canvas { context, size in
+                for pair in session.round.pairs {
+                    let visual = visualStyle(for: pair.id)
+                    guard visual.shouldDraw,
+                          let promptIndex = session.round.prompts.firstIndex(where: { $0.pairID == pair.id }),
+                          let answerIndex = session.round.answers.firstIndex(where: { $0.pairID == pair.id })
+                    else {
+                        continue
+                    }
+
+                    let start = CGPoint(
+                        x: columnWidth - 1,
+                        y: centerY(for: promptIndex)
+                    )
+                    let end = CGPoint(
+                        x: columnWidth + columnSpacing + 1,
+                        y: centerY(for: answerIndex)
+                    )
+                    var path = Path()
+                    path.move(to: start)
+                    let controlOffset = max(columnSpacing * 0.7, 16)
+                    path.addCurve(
+                        to: end,
+                        control1: CGPoint(x: start.x + controlOffset, y: start.y),
+                        control2: CGPoint(x: end.x - controlOffset, y: end.y)
+                    )
+                    context.stroke(
+                        path,
+                        with: .color(visual.color),
+                        style: StrokeStyle(
+                            lineWidth: visual.lineWidth,
+                            lineCap: .round,
+                            dash: visual.dash
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    private func centerY(for index: Int) -> CGFloat {
+        CGFloat(index) * (cardHeight + cardSpacing) + (cardHeight / 2)
+    }
+
+    private func visualStyle(for pairID: String) -> PracticeMatchConnectionVisual {
+        if session.matchedPairIDs.contains(pairID) {
+            return PracticeMatchConnectionVisual(
+                shouldDraw: true,
+                color: .green.opacity(0.70),
+                lineWidth: 2.2,
+                dash: []
+            )
+        }
+
+        if session.hintedPairID == pairID {
+            return PracticeMatchConnectionVisual(
+                shouldDraw: true,
+                color: .orange.opacity(0.64),
+                lineWidth: 1.8,
+                dash: [4, 6]
+            )
+        }
+
+        return PracticeMatchConnectionVisual(
+            shouldDraw: false,
+            color: .clear,
+            lineWidth: 0,
+            dash: []
+        )
+    }
+}
+
+private struct PracticeMatchConnectionVisual {
+    let shouldDraw: Bool
+    let color: Color
+    let lineWidth: CGFloat
+    let dash: [CGFloat]
+}
+
+private struct PracticeMatchHintNotice: View {
+    var body: some View {
+        Label("Hint used. We revealed one match.", systemImage: "lightbulb.fill")
+            .font(.subheadline.weight(.bold))
+            .foregroundStyle(Color(red: 0.70, green: 0.46, blue: 0.08))
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                Color.yellow.opacity(0.18),
+                in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+            )
+    }
+}
+
+private struct PracticeMatchCompletionView: View {
+    let session: PracticeMatchActiveSession
+    let onContinue: () -> Void
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 22) {
+                ZStack {
+                    Circle()
+                        .fill(
+                            LinearGradient(
+                                colors: [Color.red.opacity(0.18), Color.orange.opacity(0.16)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 132, height: 132)
+
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 74, weight: .black))
+                        .foregroundStyle(.green)
+                }
+                .padding(.top, 34)
+
+                VStack(spacing: 7) {
+                    Text(session.isSessionComplete ? "Practice complete" : "Great job!")
+                        .font(.system(size: 30, weight: .black, design: .rounded))
+                        .foregroundStyle(.primary)
+
+                    Text("You matched all 4 pairs.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("You matched:")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 14)
+                        .padding(.top, 14)
+                        .padding(.bottom, 8)
+
+                    ForEach(session.round.pairs) { pair in
+                        HStack(spacing: 10) {
+                            Text(pair.item.vietnamese)
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.72)
+
+                            if let audioKey = pair.item.audioKey {
+                                AudioSpeakerButton(tint: pair.item.tint, size: 26, audioKey: audioKey)
+                                    .frame(width: 30)
+                            }
+
+                            Spacer(minLength: 8)
+
+                            Rectangle()
+                                .fill(Color.black.opacity(0.10))
+                                .frame(width: 24, height: 1)
+
+                            Text(pair.item.english)
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.72)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+
+                        if pair.id != session.round.pairs.last?.id {
+                            Divider()
+                                .padding(.leading, 14)
+                        }
+                    }
+                }
+                .phraseListCard(cornerRadius: 18)
+
+                Button(action: onContinue) {
+                    Text(session.isSessionComplete ? "Back to Practice" : "Continue")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 52)
+                        .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("Practice.Match.Continue")
+            }
+            .padding(.horizontal, PracticeLayout.horizontalPadding)
+            .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+        }
+        .accessibilityIdentifier("Practice.Match.Complete")
+    }
 }
 
 #Preview {

@@ -23,8 +23,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(DockItemKind.browse.title, "Browse")
         XCTAssertEqual(DockItemKind.saved.symbolName, "heart")
         XCTAssertEqual(DockItemKind.saved.title, "Saved")
-        XCTAssertEqual(DockItemKind.practice.symbolName, "text.bubble.fill")
-        XCTAssertEqual(DockItemKind.practice.title, "Messages")
+        XCTAssertEqual(DockItemKind.practice.symbolName, "square.grid.2x2.fill")
+        XCTAssertEqual(DockItemKind.practice.title, "Practice")
     }
 
     func testPlayableAudioTintsUseOneConsistentActionColor() {
