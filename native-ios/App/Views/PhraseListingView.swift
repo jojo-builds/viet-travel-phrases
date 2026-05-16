@@ -776,7 +776,7 @@ private struct ArticleSectionView: View {
 
     private var plainTextSection: some View {
         SectionBlock(title: section.title) {
-            Text(section.body)
+            DefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
@@ -1026,6 +1026,73 @@ private struct ArticleCallout: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
+    }
+}
+
+private struct DefinedBodyText: View {
+    let text: String
+    let definitions: [PhraseInlineDefinition]
+    @State private var selectedDefinition: PhraseInlineDefinition?
+
+    var body: some View {
+        Text(attributedText)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                if definitions.count == 1 {
+                    selectedDefinition = definitions[0]
+                }
+            }
+            .environment(\.openURL, OpenURLAction { url in
+                guard url.scheme == "speaklocal-definition",
+                      let id = url.host(),
+                      let definition = definitions.first(where: { $0.id == id })
+                else {
+                    return .systemAction
+                }
+
+                selectedDefinition = definition
+                return .handled
+            })
+            .popover(item: $selectedDefinition) { definition in
+                DefinitionPopover(definition: definition)
+                    .presentationCompactAdaptation(.popover)
+            }
+    }
+
+    private var attributedText: AttributedString {
+        var attributed = AttributedString(text)
+        for definition in definitions {
+            var searchStart = attributed.startIndex
+            while let range = attributed[searchStart...].range(
+                of: definition.vietnamese,
+                options: [.caseInsensitive, .diacriticInsensitive]
+            ) {
+                attributed[range].foregroundColor = .red
+                attributed[range].font = .body.weight(.semibold)
+                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
+                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
+                searchStart = range.upperBound
+            }
+        }
+        return attributed
+    }
+}
+
+private struct DefinitionPopover: View {
+    let definition: PhraseInlineDefinition
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(definition.vietnamese)
+                .font(.headline.weight(.black))
+                .foregroundStyle(.red)
+
+            Text(definition.english)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .padding(14)
+        .presentationCompactAdaptation(.popover)
     }
 }
 
