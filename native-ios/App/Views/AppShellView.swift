@@ -39,6 +39,7 @@ struct AppShellView: View {
     @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
+    @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
@@ -219,6 +220,7 @@ struct AppShellView: View {
                     startRequest: practiceStartRequest,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
+                    topContentClearance: showsStaticBackButton ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
                     onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
@@ -647,6 +649,7 @@ struct AppShellView: View {
                 startRequest: practiceStartRequest,
                 isActive: false,
                 scrollToTopTrigger: 0,
+                topContentClearance: 0,
                 onOpenDetail: openDetailFromPractice,
                 onBrowseTapped: openBrowseAll
             )
@@ -1219,14 +1222,18 @@ struct AppShellView: View {
     }
 
     private func openPractice(_ action: BrowseCollectionPracticeAction) {
+        let matchReturnFocus = currentBrowseCollectionPracticeFocusRequest()
+
         switch action {
         case .addStarterPages(let pageIDs):
             intentStore.addPracticePages(pageIDs)
-            requestedPracticeSourceID = nil
+            practiceStartRequestID += 1
+            requestedPracticeSourceID = pageIDs.isEmpty ? "quick" : "practice"
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceSource(let sourceID):
             practiceStartRequestID += 1
             requestedPracticeSourceID = sourceID
@@ -1234,6 +1241,7 @@ struct AppShellView: View {
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceMode(let mode):
             practiceStartRequestID += 1
             requestedPracticeSourceID = nil
@@ -1241,6 +1249,7 @@ struct AppShellView: View {
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceScenario:
             practiceStartRequestID += 1
             requestedPracticeSourceID = "quick"
@@ -1249,9 +1258,22 @@ struct AppShellView: View {
             clearPracticeThreadForwardRestore()
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = nil
         }
 
         openPractice(preservingStartRequest: true)
+    }
+
+    private func currentBrowseCollectionPracticeFocusRequest() -> BrowseCollectionFocusRequest? {
+        guard case let .browseCollection(route) = navigation.currentRoute else {
+            return nil
+        }
+
+        return BrowseCollectionFocusRequest(
+            id: 0,
+            route: route,
+            target: .practiceEntry
+        )
     }
 
     private func returnFromPracticeThreadToOrigin(_ scenarioID: PracticeScenarioID?) {
@@ -1292,9 +1314,18 @@ struct AppShellView: View {
 
     private func goBack() {
         cancelInteractiveChromeState()
+        preparePracticeMatchFocusRestoreIfNeeded()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+    }
+
+    private func preparePracticeMatchFocusRestoreIfNeeded() {
+        guard navigation.currentRoute == .practice else {
+            return
+        }
+
+        prepareBrowseCollectionFocusRestoreIfNeeded(pendingPracticeMatchReturnFocus)
     }
 
     private func goForward() {
@@ -1391,6 +1422,7 @@ struct AppShellView: View {
         requestedPracticeScenarioID = nil
         requestedPracticeScenarioThreadDismissal = .messagesHub
         pendingPracticeThreadReturnFocus = nil
+        pendingPracticeMatchReturnFocus = nil
     }
 
     private func clearPracticeThreadForwardRestore() {
@@ -1453,6 +1485,7 @@ struct AppShellView: View {
             withoutRouteAnimation {
                 switch direction {
                 case .back:
+                    preparePracticeMatchFocusRestoreIfNeeded()
                     navigation.goBack()
                 case .forward:
                     navigateForwardInState()
@@ -1473,7 +1506,9 @@ struct AppShellView: View {
         }
 
         guard let restore = pendingPracticeThreadForwardRestore else {
-            clearPracticeStartRequest()
+            if requestedPracticeSourceID == nil, requestedPracticeMode == nil, requestedPracticeScenarioID == nil {
+                clearPracticeStartRequest()
+            }
             return
         }
 
@@ -2107,7 +2142,6 @@ struct AppShellNavigationState: Equatable {
             browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .practice
-            practiceScrollToTopTrigger += 1
         case .detailPage(let detailPageID):
             guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) else {
                 return
@@ -3992,12 +4026,12 @@ private struct HomePracticeStarter: Identifiable {
             action: .practiceSource("quick")
         ),
         HomePracticeStarter(
-            id: "saved",
-            title: "Saved",
-            subtitle: "Practice what you kept",
-            symbolName: "heart.fill",
+            id: "practice",
+            title: "Practice pool",
+            subtitle: "Your added phrases",
+            symbolName: "bookmark.fill",
             tint: .red,
-            action: .practiceSource("saved")
+            action: .practiceSource("practice")
         ),
         HomePracticeStarter(
             id: "food-drinks",

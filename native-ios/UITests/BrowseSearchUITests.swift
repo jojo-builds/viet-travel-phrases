@@ -144,7 +144,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 4))
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(

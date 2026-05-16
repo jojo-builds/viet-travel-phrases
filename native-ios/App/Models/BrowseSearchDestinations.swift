@@ -16,6 +16,7 @@ enum BrowseCollectionRoute: Hashable, Equatable, Identifiable {
 
 struct BrowseCollectionFocusRequest: Equatable {
     static let messageSectionScrollTargetID = "BrowseCollection.MessageSection"
+    static let practiceEntryScrollTargetID = "BrowseCollection.PracticeEntry"
 
     let id: Int
     let route: BrowseCollectionRoute
@@ -23,11 +24,14 @@ struct BrowseCollectionFocusRequest: Equatable {
 
     enum Target: Equatable {
         case messageScenario(PracticeScenarioID)
+        case practiceEntry
 
         var scrollTargetID: String {
             switch self {
             case .messageScenario:
                 return BrowseCollectionFocusRequest.messageSectionScrollTargetID
+            case .practiceEntry:
+                return BrowseCollectionFocusRequest.practiceEntryScrollTargetID
             }
         }
     }
@@ -1059,6 +1063,11 @@ enum BrowseSearchDestinations {
             preferredPageIDs: destination?.preferredPageIDs ?? [],
             limit: 3
         )
+        let practiceStarterItems = starterItems(
+            categoryIDs: categoryIDs,
+            preferredPageIDs: destination?.preferredPageIDs ?? [],
+            limit: 8
+        )
         let starterItems = entityContent?.starterItems ?? phraseStarterItems
         let subcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
         let shelves = categoryExploreShelves(
@@ -1080,7 +1089,7 @@ enum BrowseSearchDestinations {
             starterItems: starterItems,
             practiceTitle: messageEntryTitle(for: title),
             practiceSubtitle: practiceSubtitle(for: title),
-            practiceAction: .addStarterPages(phraseStarterItems.map(\.pageID)),
+            practiceAction: .addStarterPages(practiceStarterItems.map(\.pageID)),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: shelves
         )
