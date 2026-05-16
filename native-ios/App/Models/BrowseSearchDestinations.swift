@@ -47,18 +47,21 @@ struct BrowseSearchPhraseItem: Identifiable, Equatable {
     let symbolName: String
     let tintName: AccentTint
     let audioKey: String?
+    var imageName: String? = nil
 
     var id: String { pageID }
 
     static func resolve(pageID: String) -> BrowseSearchPhraseItem? {
         if let item = PhraseCatalog.catalogItem(forOpenablePageID: pageID) {
+            let detailPage = PhraseDetailPage.page(withID: item.pageID)
             return BrowseSearchPhraseItem(
                 pageID: item.pageID,
                 title: item.title,
                 subtitle: item.subtitle,
                 symbolName: item.symbolName,
                 tintName: item.tintName,
-                audioKey: item.playbackAudioKey
+                audioKey: item.playbackAudioKey,
+                imageName: detailPage?.heroImageName
             )
         }
 
@@ -69,7 +72,8 @@ struct BrowseSearchPhraseItem: Identifiable, Equatable {
                 subtitle: PhrasePage.xinChao.intentSummary,
                 symbolName: "hand.wave.fill",
                 tintName: .red,
-                audioKey: PhrasePage.xinChao.quickSay.first?.playbackAudioKey
+                audioKey: PhrasePage.xinChao.quickSay.first?.playbackAudioKey,
+                imageName: PhrasePageStyle.heroImageName
             )
         }
 
@@ -80,7 +84,8 @@ struct BrowseSearchPhraseItem: Identifiable, Equatable {
                 subtitle: page.englishTitle,
                 symbolName: page.iconName,
                 tintName: page.tintName,
-                audioKey: page.playbackAudioKey
+                audioKey: page.playbackAudioKey,
+                imageName: page.heroImageName
             )
         }
 
@@ -98,7 +103,8 @@ struct BrowseSearchPhraseItem: Identifiable, Equatable {
             subtitle: result.subtitle,
             symbolName: "doc.text.magnifyingglass",
             tintName: .blue,
-            audioKey: nil
+            audioKey: nil,
+            imageName: nil
         )
     }
 }
@@ -347,11 +353,11 @@ struct BrowseCityHub: Equatable {
     let browseGroups: [BrowseCollectionSubcategory]
 
     var cityBrowseFilters: [BrowseCollectionSubcategory] {
-        Self.mergedCityFilters(from: browseGroups + situations)
+        Self.mergedCityFilters(from: browseGroups)
     }
 
     var cityBrowseAllItems: [BrowseSearchPhraseItem] {
-        Self.uniquePhraseItems(cityBrowseFilters.flatMap(\.items) + namesToKnowItems + quickPhraseItems)
+        Self.uniquePhraseItems(cityBrowseFilters.flatMap(\.items))
     }
 
     private static func mergedCityFilters(from filters: [BrowseCollectionSubcategory]) -> [BrowseCollectionSubcategory] {
@@ -426,6 +432,18 @@ struct BrowseCityHub: Equatable {
             return "neighborhoods"
         }
 
+        if text.contains(".browse.restaurants") {
+            return "restaurants"
+        }
+
+        if text.contains(".browse.cafes") {
+            return "cafes"
+        }
+
+        if text.contains(".browse.dishes") {
+            return "dishes"
+        }
+
         if text.contains("arriv") {
             return "arrivals"
         }
@@ -453,6 +471,10 @@ struct BrowseCityHub: Equatable {
 
         if text.contains("beach") || text.contains("nature") || text.contains("river") || text.contains("heritage") {
             return "beaches-nature"
+        }
+
+        if text.contains("tour") || text.contains("cruise") || text.contains("experience") || text.contains("show") {
+            return "tours"
         }
 
         if text.contains("food") || text.contains("coffee") || text.contains("café") || text.contains("cafe") {
@@ -492,6 +514,7 @@ struct BrowseCityCollectionItem: Equatable {
     let subcategoryTitle: String
     let pageKind: String
     let placeKind: String
+    let imageName: String?
 
     var phraseItem: BrowseSearchPhraseItem {
         BrowseSearchPhraseItem(
@@ -500,7 +523,8 @@ struct BrowseCityCollectionItem: Equatable {
             subtitle: subtitle,
             symbolName: symbolName,
             tintName: tintName,
-            audioKey: audioKey
+            audioKey: audioKey,
+            imageName: imageName
         )
     }
 }
@@ -1438,18 +1462,32 @@ enum BrowseSearchDestinations {
     ) -> [BrowseCollectionSubcategory] {
         let specs: [CityBrowseGroupSpec] = [
             CityBrowseGroupSpec(
-                id: "arrivals",
-                title: "Arrivals",
-                subtitle: "Airports, stations, ports",
-                symbolName: "airplane.arrival",
-                placeKinds: ["airport", "station", "port"]
-            ),
-            CityBrowseGroupSpec(
                 id: "landmarks",
                 title: "Landmarks",
                 subtitle: "Sights, temples, museums",
                 symbolName: "building.columns.fill",
                 placeKinds: ["landmark", "attraction", "museum"]
+            ),
+            CityBrowseGroupSpec(
+                id: "restaurants",
+                title: "Restaurants",
+                subtitle: "Named dining stops",
+                symbolName: "fork.knife",
+                placeKinds: ["restaurant"]
+            ),
+            CityBrowseGroupSpec(
+                id: "cafes",
+                title: "Cafes",
+                subtitle: "Coffee shops and tea stops",
+                symbolName: "cup.and.saucer.fill",
+                placeKinds: ["cafe"]
+            ),
+            CityBrowseGroupSpec(
+                id: "dishes",
+                title: "Dishes",
+                subtitle: "Local foods to order",
+                symbolName: "takeoutbag.and.cup.and.straw.fill",
+                placeKinds: ["dish"]
             ),
             CityBrowseGroupSpec(
                 id: "neighborhoods",
@@ -1466,13 +1504,6 @@ enum BrowseSearchDestinations {
                 placeKinds: ["street"]
             ),
             CityBrowseGroupSpec(
-                id: "food-coffee",
-                title: "Food & coffee",
-                subtitle: "Restaurants, cafés, dishes",
-                symbolName: "cup.and.saucer.fill",
-                placeKinds: ["restaurant", "cafe", "dish"]
-            ),
-            CityBrowseGroupSpec(
                 id: "markets",
                 title: "Markets",
                 subtitle: "Markets and shopping stops",
@@ -1485,6 +1516,20 @@ enum BrowseSearchDestinations {
                 subtitle: "Beaches, parks, rivers",
                 symbolName: "water.waves",
                 placeKinds: ["beach", "nature", "park", "river", "village"]
+            ),
+            CityBrowseGroupSpec(
+                id: "tours",
+                title: "Tours",
+                subtitle: "Cruises, shows, day trips",
+                symbolName: "ticket.fill",
+                placeKinds: ["experience"]
+            ),
+            CityBrowseGroupSpec(
+                id: "arrivals",
+                title: "Arrivals",
+                subtitle: "Airports, stations, ports",
+                symbolName: "airplane.arrival",
+                placeKinds: ["airport", "station", "port"]
             ),
         ]
 
@@ -1502,7 +1547,7 @@ enum BrowseSearchDestinations {
                 symbolName: spec.symbolName,
                 tintName: tintName,
                 phraseCount: items.count,
-                items: Array(items.prefix(4).map(\.phraseItem)),
+                items: items.map(\.phraseItem),
                 targetRoute: nil
             )
         }
@@ -1648,7 +1693,8 @@ enum BrowseSearchDestinations {
                     subcategoryID: "arrivals-routes",
                     subcategoryTitle: "Arrivals and routes",
                     pageKind: pageKind,
-                    placeKind: pageKind == "place" ? fallbackPlaceKind(for: item) : ""
+                    placeKind: pageKind == "place" ? fallbackPlaceKind(for: item) : "",
+                    imageName: BrowseSearchPhraseItem.resolve(pageID: item.pageID)?.imageName
                 )
             }
     }
@@ -2571,6 +2617,18 @@ enum BrowseSearchDestinations {
                         "viet-phrase-city-danang-place-my-khe",
                         "viet-phrase-city-danang-place-marble-mountains",
                         "viet-phrase-city-hue-place-perfume-river",
+                    ]
+                ),
+                CategoryEntityGroupSpec(
+                    id: "tours",
+                    title: "Tours",
+                    subtitle: "Cruises, shows, and day trips",
+                    symbolName: "ticket.fill",
+                    placeKinds: ["experience"],
+                    preferredPageIDs: [
+                        "viet-phrase-city-danang-place-han-river-cruise",
+                        "viet-phrase-city-hoian-place-cam-thanh-basket-boat",
+                        "viet-phrase-city-hue-place-perfume-river-dragon-boat",
                     ]
                 ),
             ]

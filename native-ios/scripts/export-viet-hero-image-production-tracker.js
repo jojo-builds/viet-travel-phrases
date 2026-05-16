@@ -12,6 +12,7 @@ const outputRoot = path.join(
   "hero-image-production-001"
 );
 
+const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredPagesPath = path.join(repoRoot, "native-ios", "Resources", "viet-authored-listing-pages.json");
 const heroFollowupsPath = path.join(
   repoRoot,
@@ -183,30 +184,38 @@ function relative(filePath) {
   return filePath ? path.relative(repoRoot, filePath) : "";
 }
 
+function readJSON(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
 function pageLookup() {
-  const data = JSON.parse(fs.readFileSync(authoredPagesPath, "utf8"));
+  const data = readJSON(authoredPagesPath);
   return new Map(data.pages.map((page) => [page.id, page]));
 }
 
-function imagePromptFor(profile, title) {
+function imagePromptFor(profile, title, imagePromptNote = "") {
   const base =
-    "Create an app-owned photographic-style hero image for a Vietnamese travel phrasebook. No readable text, no logos, no watermarks, no faces as the subject. Keep the main landmark/object recognizable inside the upper third because the iOS masthead crops a shallow horizontal band.";
+    "Create a super-realistic app-owned hero photo for a Vietnamese travel phrasebook, matching the premium real-life menu-item hero image quality. No readable text, no logos, no watermarks, no faces as the subject. Keep the main landmark/object recognizable inside the upper third because the iOS masthead crops a shallow horizontal band.";
+  const subjectNote = imagePromptNote ? ` Specific subject guidance: ${imagePromptNote}` : "";
   if (profile === "cityHub") {
-    return `${base} Show ${title} as a calm city travel-mode scene with one strong local cue and enough sky/soft background for the page title overlay.`;
+    return `${base} Show ${title} as a calm city travel-mode scene with one strong local cue and enough sky/soft background for the page title overlay.${subjectNote}`;
   }
   if (profile === "restaurant") {
-    return `${base} Show ${title} through a tasteful restaurant/street-food table or entrance mood without copying a real storefront sign or brand logo.`;
+    return `${base} Show ${title} through a tasteful restaurant/street-food table or entrance mood without copying a real storefront sign or brand logo.${subjectNote}`;
   }
   if (profile === "dish") {
-    return `${base} Show ${title} as an appetizing Vietnamese dish close-up with clean natural light and room for the masthead fade.`;
+    return `${base} Show ${title} as an appetizing Vietnamese dish close-up with clean natural light and room for the masthead fade.${subjectNote}`;
   }
   if (profile === "streetDriver") {
-    return `${base} Show ${title} as a driver/street context with road, curb, or address cues. Avoid fake readable street-sign text.`;
+    return `${base} Show ${title} as a driver/street context with road, curb, or address cues. Avoid fake readable street-sign text.${subjectNote}`;
   }
-  return `${base} Show ${title} with the real visual cue a first-time traveler would recognize.`;
+  return `${base} Show ${title} with the real visual cue a first-time traveler would recognize.${subjectNote}`;
 }
 
 function priorityFor(row) {
+  if (row.requiresUniquePlaceHero) {
+    return "P0";
+  }
   if (row.heroImageName && row.heroImageName.startsWith("BrowseCollection")) {
     return "P1";
   }
@@ -228,39 +237,85 @@ function priorityFor(row) {
   return "P2";
 }
 
-function statusFor(row, assetPath) {
+function statusFor(row, currentAssetPath, targetAssetPath) {
+  if (row.requiresUniquePlaceHero) {
+    if (!row.targetHeroImageName) {
+      return "MISSING_TARGET_HERO_NAME";
+    }
+    if (row.currentHeroImageName !== row.targetHeroImageName) {
+      return "NEEDS_UNIQUE_REALISTIC_ASSET";
+    }
+    if (!targetAssetPath) {
+      return "NEEDS_UNIQUE_REALISTIC_ASSET";
+    }
+    return "SHIPPED_REVIEW_CROP";
+  }
   if (row.heroImageName && row.heroImageName.startsWith("BrowseCollection")) {
     return "HAS_COLLECTION_ASSET_NEEDS_CROP_AUDIT";
   }
-  if (isPageSpecificHero(row.heroImageName) && assetPath) {
+  if (isPageSpecificHero(row.heroImageName) && currentAssetPath) {
     return "SHIPPED_REVIEW_CROP";
   }
   if (row.heroImageName === "HeroNeutralMasthead" || row.issue === "neutral_city_fallback") {
     return "NEEDS_OWNED_ASSET";
   }
-  if (row.heroImageName && assetPath) {
+  if (row.heroImageName && currentAssetPath) {
     return "HAS_GENERIC_OR_SHARED_ASSET";
   }
   return "NEEDS_OWNED_ASSET";
 }
 
+function cityPlaceRows() {
+  const cityLibrary = readJSON(cityLibraryPath);
+  return (cityLibrary.pages ?? [])
+    .filter((page) => page.kind === "place" && page.status === "approved")
+    .map((page) => {
+      const targetHeroImageName = page.productionIntake?.targetHeroImageName
+        ?? page.editorialImport?.targetHeroImageName
+        ?? "";
+      return {
+        pageID: `viet-family-${page.id}`,
+        sourcePageID: page.id,
+        title: `${page.targetText ?? ""} / ${page.englishText ?? ""}`.trim(),
+        profile: pageProfileFromCitySource(page),
+        heroImageName: page.heroImageName ?? "",
+        targetHeroImageName,
+        issue: page.heroImageName === targetHeroImageName ? "" : "city_place_requires_unique_realistic_hero",
+        followUp: "Generate a unique realistic menu-quality image for this exact city noun; do not reuse the city masthead or another place image.",
+        imagePromptNote: page.productionIntake?.imagePromptNote ?? page.editorialImport?.imagePromptNote ?? "",
+        requiresUniquePlaceHero: true,
+      };
+    });
+}
+
 function trackerRows() {
   const pages = pageLookup();
-  const followups = parseCsv(fs.readFileSync(heroFollowupsPath, "utf8"));
-  const rows = [...cityHubRows, ...followups].map((row) => {
+  const cityRows = cityPlaceRows();
+  const followedPageIDs = new Set(cityRows.map((row) => row.pageID));
+  const followups = parseCsv(fs.readFileSync(heroFollowupsPath, "utf8"))
+    .filter((row) => !followedPageIDs.has(row.pageID));
+  const rows = [...cityHubRows, ...cityRows, ...followups].map((row) => {
     const page = pages.get(row.pageID);
-    const currentHeroImageName = page?.heroImageName
+    const currentHeroImageName = row.heroImageName
+      ?? page?.heroImageName
       ?? page?.metadata?.editorialImport?.heroImageName
-      ?? row.heroImageName
       ?? "";
-    const assetPath = currentHeroImageName ? firstPngInImageset(currentHeroImageName) : "";
-    const dimensions = pngDimensions(assetPath);
-    const currentRow = { ...row, heroImageName: currentHeroImageName };
-    const priority = priorityFor(currentRow);
-    const status = statusFor(currentRow, assetPath);
-    const targetAssetName = currentHeroImageName && currentHeroImageName !== "HeroNeutralMasthead"
+    const currentAssetPath = currentHeroImageName ? firstPngInImageset(currentHeroImageName) : "";
+    const dimensions = pngDimensions(currentAssetPath);
+    const targetAssetName = row.targetHeroImageName
+      || (currentHeroImageName && currentHeroImageName !== "HeroNeutralMasthead"
       ? currentHeroImageName
-      : suggestedHeroName(row.pageID);
+      : suggestedHeroName(row.pageID));
+    const targetAssetPath = targetAssetName ? firstPngInImageset(targetAssetName) : "";
+    const targetDimensions = pngDimensions(targetAssetPath);
+    const currentRow = {
+      ...row,
+      heroImageName: currentHeroImageName,
+      currentHeroImageName,
+      targetHeroImageName: targetAssetName,
+    };
+    const priority = priorityFor(currentRow);
+    const status = statusFor(currentRow, currentAssetPath, targetAssetPath);
     const title = row.title || `${page?.title ?? ""} / ${page?.englishTitle ?? ""}`.trim();
     return {
       priority,
@@ -270,8 +325,10 @@ function trackerRows() {
       profile: row.profile || pageProfile(page),
       currentHeroImageName,
       targetHeroImageName: targetAssetName,
-      assetPath: relative(assetPath),
+      assetPath: relative(currentAssetPath),
+      targetAssetPath: relative(targetAssetPath),
       currentPx: dimensions,
+      targetPx: targetDimensions,
       targetRepoPx: "853 x 1844",
       sourceMasterPx: ">= 1600 x 2400 preferred",
       targetComponent: page?.id ? "PhraseListingView HeroMastheadImage" : "Browse city/collection masthead",
@@ -279,10 +336,10 @@ function trackerRows() {
       safeZone: "Recognizable subject must survive the top 276pt masthead crop; keep the key visual in the upper third and center 70% width.",
       currentIssue: row.issue || "",
       nextAction: nextActionFor(status, currentRow),
-      generationPrompt: imagePromptFor(row.profile || pageProfile(page), title),
+      generationPrompt: imagePromptFor(row.profile || pageProfile(page), title, row.imagePromptNote),
       negativePrompt: "no readable text, no watermark, no logos, no fake signs, no unrelated Ha Long Bay/karst imagery for city-specific pages, no people as the main subject",
       proofRequired: "Simulator screenshot plus phone spot-check before DONE",
-      sourceOwnership: sourceOwnership(currentHeroImageName),
+      sourceOwnership: sourceOwnershipForRow(currentRow),
       receiptOrProof: receiptForHero(currentHeroImageName) || row.followUp || "",
       notes: notesFor(currentRow),
     };
@@ -302,6 +359,14 @@ function pageProfile(page) {
   if (categories.includes("city-page-kind-place") && categories.includes("place-kind-street")) return "streetDriver";
   if (categories.includes("city-page-kind-place")) return "landmark";
   return "phrase";
+}
+
+function pageProfileFromCitySource(page) {
+  if (page.pageKind === "dish" || page.placeKind === "dish" || page.contentRole === "dish") return "dish";
+  if (page.pageKind === "restaurant" || page.placeKind === "restaurant" || page.placeKind === "cafe") return "restaurant";
+  if (page.placeKind === "street") return "streetDriver";
+  if (page.placeKind === "experience") return "macroAttraction";
+  return "landmark";
 }
 
 function suggestedHeroName(pageID) {
@@ -339,6 +404,13 @@ function sourceOwnership(heroImageName) {
     return "app-owned generated asset";
   }
   return "existing app asset; audit ownership before reusing broadly";
+}
+
+function sourceOwnershipForRow(row) {
+  if (row.requiresUniquePlaceHero && row.currentHeroImageName !== row.targetHeroImageName) {
+    return "shared or legacy fallback; replace with unique app-owned generated realistic asset";
+  }
+  return sourceOwnership(row.currentHeroImageName ?? row.heroImageName);
 }
 
 function isPageSpecificHero(heroImageName) {
@@ -494,7 +566,7 @@ function manifestRows(rows) {
   return [
     { key: "generatedAt", value: new Date().toISOString() },
     { key: "assetTrackerRows", value: rows.length },
-    { key: "sourceAudit", value: path.relative(repoRoot, heroFollowupsPath) },
+    { key: "sourceAudit", value: `${path.relative(repoRoot, cityLibraryPath)}, ${path.relative(repoRoot, heroFollowupsPath)}` },
     { key: "authoredPages", value: path.relative(repoRoot, authoredPagesPath) },
     { key: "existingHeroAssets", value: fs.readdirSync(assetsRoot).filter((name) => name.startsWith("Hero") && name.endsWith(".imageset")).sort().join(", ") },
     { key: "statusCounts", value: JSON.stringify(counts) },

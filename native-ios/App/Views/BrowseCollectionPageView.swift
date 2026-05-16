@@ -133,9 +133,23 @@ struct BrowseCollectionPageView: View {
 private enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
-    static let bottomChromeContentClearance: CGFloat = 48
+    static let bottomChromeContentClearance: CGFloat = 128
     static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
     static let focusRestoreAnimationDuration: TimeInterval = 0.24
+    static let cityFilterCardSpacing: CGFloat = 12
+    static let cityFilterCardHeight: CGFloat = 166
+    static let cityFilterImageHeight: CGFloat = 108
+    static let cityNounThumbnailSize: CGFloat = 62
+}
+
+private extension BrowseSearchPhraseItem {
+    var resolvedImageName: String? {
+        guard let imageName, UIImage(named: imageName) != nil else {
+            return nil
+        }
+
+        return imageName
+    }
 }
 
 private struct BrowseCollectionHeader: View {
@@ -286,11 +300,11 @@ private struct BrowseCityHubContent: View {
         let cityBrowseAllItems = cityHub.cityBrowseAllItems
 
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
-            if let cityNameAudioItem = cityHub.cityNameAudioItem {
-                BrowseCityNameAudioPlayer(item: cityNameAudioItem)
-            }
-
             if isCountryHub {
+                if let cityNameAudioItem = cityHub.cityNameAudioItem {
+                    BrowseCityNameAudioPlayer(item: cityNameAudioItem)
+                }
+
                 BrowseCityCardGridSection(
                     title: cityHub.situationTitle,
                     cards: cityHub.situations,
@@ -336,6 +350,10 @@ private struct BrowseCityHubContent: View {
                         onOpenDetail: onOpenDetail
                     )
                 }
+
+                if let cityNameAudioItem = cityHub.cityNameAudioItem {
+                    BrowseCityNameAudioPlayer(item: cityNameAudioItem)
+                }
             }
         }
         .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
@@ -379,58 +397,223 @@ private struct BrowseCityFilterSection: View {
     var body: some View {
         BrowseCollectionSection(title: title) {
             VStack(alignment: .leading, spacing: 12) {
-                ScrollViewReader { filterScrollProxy in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            BrowseCityFilterPill(
-                                title: "All",
-                                identifier: "BrowseCollection.CityFilter.all",
-                                isSelected: selectedFilterID == nil,
-                                tintName: tintName,
-                                onSelect: onSelectAll
-                            )
-                            .id(Self.filterScrollID(nil))
-
-                            ForEach(filters) { filter in
-                                BrowseCityFilterPill(
-                                    title: filter.title,
-                                    identifier: "BrowseCollection.CityFilter.\(filter.id)",
-                                    isSelected: filter.id == selectedFilterID,
-                                    tintName: filter.tintName,
-                                    onSelect: { onSelectFilter(filter) }
-                                )
-                                .id(Self.filterScrollID(filter.id))
-                            }
-                        }
-                        .padding(.horizontal, 1)
-                        .padding(.bottom, 2)
-                    }
-                    .scrollClipDisabled()
-                    .onChange(of: selectedFilterID) { _, newValue in
-                        withAnimation(.snappy(duration: 0.24)) {
-                            filterScrollProxy.scrollTo(Self.filterScrollID(newValue), anchor: .leading)
-                        }
-                    }
-                }
+                imageFilterRail
 
                 VStack(spacing: 0) {
                     ForEach(visibleItems) { item in
-                        BrowseCollectionPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                        BrowseCityNounRow(item: item, onOpenDetail: onOpenDetail)
 
                         if item.id != visibleItems.last?.id {
-                            Divider().padding(.leading, 70)
+                            Divider().padding(.leading, 86)
                         }
                     }
                 }
                 .padding(.vertical, 8)
                 .phraseListCard(cornerRadius: 24)
-                .accessibilityIdentifier("BrowseCollection.CityFilterRows")
             }
         }
     }
 
+    private var imageFilterRail: some View {
+        GeometryReader { proxy in
+            let cardWidth = max(154, (proxy.size.width - BrowseCollectionLayout.cityFilterCardSpacing) / 2)
+
+            ScrollViewReader { filterScrollProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: BrowseCollectionLayout.cityFilterCardSpacing) {
+                        BrowseCityImageFilterCard(
+                            title: "All",
+                            imageName: allImageName,
+                            tintName: tintName,
+                            identifier: "BrowseCollection.CityFilter.all",
+                            isSelected: selectedFilterID == nil,
+                            action: onSelectAll
+                        )
+                        .frame(width: cardWidth)
+                        .id(Self.filterScrollID(nil))
+
+                        ForEach(filters) { filter in
+                            BrowseCityImageFilterCard(
+                                title: filter.title,
+                                imageName: filterImageName(filter),
+                                tintName: filter.tintName,
+                                identifier: "BrowseCollection.CityFilter.\(filter.id)",
+                                isSelected: filter.id == selectedFilterID,
+                                action: { onSelectFilter(filter) }
+                            )
+                            .frame(width: cardWidth)
+                            .id(Self.filterScrollID(filter.id))
+                        }
+                    }
+                    .padding(.bottom, 2)
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+                .onChange(of: selectedFilterID) { _, newValue in
+                    withAnimation(.snappy(duration: 0.24)) {
+                        filterScrollProxy.scrollTo(Self.filterScrollID(newValue), anchor: .leading)
+                    }
+                }
+            }
+        }
+        .frame(height: BrowseCollectionLayout.cityFilterCardHeight)
+    }
+
+    private var allImageName: String? {
+        allItems.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+    }
+
+    private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
+        filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+    }
+
     private static func filterScrollID(_ filterID: String?) -> String {
         "BrowseCollection.CityFilter.ScrollTarget.\(filterID ?? "all")"
+    }
+}
+
+private struct BrowseCityImageFilterCard: View {
+    let title: String
+    let imageName: String?
+    let tintName: AccentTint
+    let identifier: String
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 0) {
+                cityImage
+
+                Text(title)
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+                    .padding(.horizontal, 14)
+                    .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
+                    .background(.white.opacity(0.96))
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .allowsHitTesting(false)
+            }
+            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier(identifier)
+    }
+
+    @ViewBuilder
+    private var cityImage: some View {
+        if let imageName {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(height: BrowseCollectionLayout.cityFilterImageHeight)
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .accessibilityHidden(true)
+        } else {
+            ZStack {
+                tintName.color.opacity(0.15)
+                Image(systemName: "photo")
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(tintName.color)
+            }
+            .frame(height: BrowseCollectionLayout.cityFilterImageHeight)
+            .frame(maxWidth: .infinity)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+private struct BrowseCityNounRow: View {
+    let item: BrowseSearchPhraseItem
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        Button {
+            onOpenDetail(item.pageID)
+        } label: {
+            HStack(spacing: 14) {
+                thumbnail
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(item.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.74)
+
+                    Text(item.subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .layoutPriority(1)
+
+                Spacer(minLength: 0)
+
+                trailingControl
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("BrowseCollection.Row.\(item.pageID)")
+    }
+
+    @ViewBuilder
+    private var thumbnail: some View {
+        if let imageName = item.resolvedImageName {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    width: BrowseCollectionLayout.cityNounThumbnailSize,
+                    height: BrowseCollectionLayout.cityNounThumbnailSize
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                }
+                .accessibilityHidden(true)
+        } else {
+            Image(systemName: item.symbolName)
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(item.tintName.color)
+                .frame(
+                    width: BrowseCollectionLayout.cityNounThumbnailSize,
+                    height: BrowseCollectionLayout.cityNounThumbnailSize
+                )
+                .nativeGlass(cornerRadius: 16, tint: item.tintName.color.opacity(0.12), interactive: false)
+                .accessibilityHidden(true)
+        }
+    }
+
+    @ViewBuilder
+    private var trailingControl: some View {
+        if AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
+            AudioSpeakerButton(tint: item.tintName, audioKey: item.audioKey)
+        } else {
+            Image(systemName: "chevron.right")
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(.secondary.opacity(0.8))
+                .frame(width: 36, height: 36)
+                .nativeGlass(cornerRadius: 18, interactive: false)
+        }
     }
 }
 

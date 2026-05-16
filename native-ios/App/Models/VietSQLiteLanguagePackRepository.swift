@@ -329,6 +329,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.english_title,
           pp.icon_name,
           pp.tint_name,
+          pp.hero_image_name,
           aa.source_manifest_key,
           COALESCE(
             (
@@ -367,7 +368,7 @@ final class VietSQLiteLanguagePackRepository {
 
         return try rows(sql) { statement in
             let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray
-            let categoryIDs = Self.stringColumn(statement, index: 6)
+            let categoryIDs = Self.stringColumn(statement, index: 7)
                 .split(separator: "|")
                 .map(String.init)
 
@@ -573,6 +574,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.english_title,
           pp.icon_name,
           pp.tint_name,
+          pp.hero_image_name,
           aa.source_manifest_key,
           COALESCE(
             (
@@ -614,7 +616,7 @@ final class VietSQLiteLanguagePackRepository {
             try self.bindText(cityID, to: 1, in: statement, sql: sql)
             try self.bindInt(limit, to: 2, in: statement, sql: sql)
         }) { statement in
-            let categoryIDs = Self.stringColumn(statement, index: 6)
+            let categoryIDs = Self.stringColumn(statement, index: 7)
                 .split(separator: "|")
                 .map(String.init)
 
@@ -625,13 +627,14 @@ final class VietSQLiteLanguagePackRepository {
                 categoryIDs: categoryIDs.isEmpty ? ["city-guides"] : categoryIDs,
                 symbolName: Self.stringColumn(statement, index: 3),
                 tintName: AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray,
-                audioKey: Self.optionalStringColumn(statement, index: 5),
-                cityID: Self.stringColumn(statement, index: 7),
-                cityName: Self.stringColumn(statement, index: 8),
-                subcategoryID: Self.stringColumn(statement, index: 9),
-                subcategoryTitle: Self.stringColumn(statement, index: 10),
-                pageKind: Self.stringColumn(statement, index: 11),
-                placeKind: Self.stringColumn(statement, index: 12)
+                audioKey: Self.optionalStringColumn(statement, index: 6),
+                cityID: Self.stringColumn(statement, index: 8),
+                cityName: Self.stringColumn(statement, index: 9),
+                subcategoryID: Self.stringColumn(statement, index: 10),
+                subcategoryTitle: Self.stringColumn(statement, index: 11),
+                pageKind: Self.stringColumn(statement, index: 12),
+                placeKind: Self.stringColumn(statement, index: 13),
+                imageName: Self.optionalStringColumn(statement, index: 5)
             )
         }
     }

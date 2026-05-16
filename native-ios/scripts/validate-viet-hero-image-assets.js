@@ -11,6 +11,7 @@ const browseDestinationsPath = path.join(repoRoot, "native-ios", "App", "Models"
 
 const EXPECTED_DIMENSIONS = "853 x 1844";
 const PHOTO_LIKE_MIN_BYTES = 120_000;
+const requireUniqueCityPlaceAssets = process.argv.includes("--require-unique-city-place-assets");
 
 const retiredHeroNames = new Set([
   "HeroHanMarket",
@@ -42,7 +43,7 @@ function readJson(filePath) {
 }
 
 function isRetiredHeroName(heroImageName) {
-  return /^HeroCity[A-Za-z]+Place/.test(heroImageName) || retiredHeroNames.has(heroImageName);
+  return retiredHeroNames.has(heroImageName);
 }
 
 function firstPngInImageset(heroImageName) {
@@ -99,6 +100,31 @@ function addHeroName(set, heroImageName) {
   }
 }
 
+function pascalCaseIdentifier(value) {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
+    .split(/[^A-Za-z0-9]+/)
+    .filter(Boolean)
+    .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1).toLowerCase()}`)
+    .join("");
+}
+
+function expectedTargetHeroName(page) {
+  if (page.productionIntake?.targetHeroImageName) {
+    return page.productionIntake.targetHeroImageName;
+  }
+  if (page.editorialImport?.targetHeroImageName) {
+    return page.editorialImport.targetHeroImageName;
+  }
+  const cityID = String(page.cityID ?? "");
+  const placeID = String(page.placeID ?? "");
+  const suffix = placeID.startsWith(`${cityID}-`) ? placeID.slice(cityID.length + 1) : placeID;
+  return `HeroCity${pascalCaseIdentifier(cityID)}Place${pascalCaseIdentifier(suffix)}`;
+}
+
 function collectCityLibraryHeroNames() {
   const cityLibrary = readJson(cityLibraryPath);
   const heroNames = new Set();
@@ -128,11 +154,25 @@ function validateCityLibraryAndAuthoredPages() {
   const authoredPages = readJson(authoredPagesPath);
   const authoredByID = new Map(authoredPages.pages.map((page) => [page.id, page]));
   const approvedPlaces = cityLibrary.pages.filter((page) => page.kind === "place" && page.status === "approved");
+  const sourceLegacyOrSharedHeroPages = [];
+  const authoredLegacyOrSharedHeroPages = [];
+  const missingTargetAssets = [];
 
   for (const page of approvedPlaces) {
     if (!page.heroImageName) {
       fail(`approved place ${page.id} is missing heroImageName`);
       continue;
+    }
+
+    const targetHeroImageName = expectedTargetHeroName(page);
+    if (!page.productionIntake?.targetHeroImageName) {
+      fail(`approved place ${page.id} is missing productionIntake.targetHeroImageName`);
+    }
+    if (requireUniqueCityPlaceAssets && page.heroImageName !== targetHeroImageName) {
+      sourceLegacyOrSharedHeroPages.push(`${page.id}: current=${page.heroImageName}, target=${targetHeroImageName}`);
+    }
+    if (requireUniqueCityPlaceAssets && !firstPngInImageset(targetHeroImageName)) {
+      missingTargetAssets.push(`${page.id}: ${targetHeroImageName}.imageset`);
     }
 
     const authoredPageID = `viet-family-${page.id}`;
@@ -145,9 +185,25 @@ function validateCityLibraryAndAuthoredPages() {
     if (authoredPage.heroImageName !== page.heroImageName) {
       fail(`${authoredPageID} hero mismatch: authored=${authoredPage.heroImageName}, source=${page.heroImageName}`);
     }
+    if (requireUniqueCityPlaceAssets && authoredPage.heroImageName !== targetHeroImageName) {
+      authoredLegacyOrSharedHeroPages.push(`${authoredPageID}: current=${authoredPage.heroImageName}, target=${targetHeroImageName}`);
+    }
+  }
+
+  if (sourceLegacyOrSharedHeroPages.length > 0) {
+    fail(`${sourceLegacyOrSharedHeroPages.length} approved city source places still use shared/legacy hero names instead of unique generated assets; examples: ${sourceLegacyOrSharedHeroPages.slice(0, 8).join(" | ")}`);
+  }
+  if (authoredLegacyOrSharedHeroPages.length > 0) {
+    fail(`${authoredLegacyOrSharedHeroPages.length} rendered city place pages still use shared/legacy hero names instead of unique generated assets; examples: ${authoredLegacyOrSharedHeroPages.slice(0, 8).join(" | ")}`);
+  }
+  if (missingTargetAssets.length > 0) {
+    fail(`${missingTargetAssets.length} approved city places are missing their target unique realistic imagesets; examples: ${missingTargetAssets.slice(0, 8).join(" | ")}`);
   }
 
   console.log(`approved city-library places checked: ${approvedPlaces.length}`);
+  if (!requireUniqueCityPlaceAssets) {
+    console.log("unique city-place hero asset gate skipped; run with --require-unique-city-place-assets for production-image completion");
+  }
 }
 
 function validateRetiredAssetsAreGone() {

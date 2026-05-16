@@ -310,16 +310,26 @@ struct PhraseArticleTemplateView: View {
         page.id.hasPrefix("viet-menu-")
     }
 
+    private var usesCityNounDetailFit: Bool {
+        (page.id.hasPrefix("viet-family-city-") || page.id.hasPrefix("viet-phrase-city-"))
+            && page.heroImageName != nil
+            && !usesCompactPhraseHero
+    }
+
+    private var usesImageDetailFit: Bool {
+        usesVietnameseMenuDetailFit || usesCityNounDetailFit
+    }
+
     private var supportsHeroImageLightbox: Bool {
-        usesVietnameseMenuDetailFit && page.heroImageName != nil
+        usesImageDetailFit && page.heroImageName != nil
     }
 
     private var shouldShowHeroPlaybackDock: Bool {
-        !usesVietnameseMenuDetailFit || page.playbackAudioKey != nil
+        !usesImageDetailFit || page.playbackAudioKey != nil
     }
 
     private var heroImageHeight: CGFloat {
-        usesVietnameseMenuDetailFit ? 238 : PhrasePageStyle.heroImageHeight
+        usesImageDetailFit ? 238 : PhrasePageStyle.heroImageHeight
     }
 
     private var heroTitleSize: CGFloat {
@@ -327,7 +337,7 @@ struct PhraseArticleTemplateView: View {
             return 38
         }
 
-        return usesVietnameseMenuDetailFit ? 46 : 54
+        return usesImageDetailFit ? 46 : 54
     }
 
     private var heroTextTopPadding: CGFloat {
@@ -335,19 +345,19 @@ struct PhraseArticleTemplateView: View {
             return 20
         }
 
-        return usesVietnameseMenuDetailFit ? 20 : PhrasePageStyle.heroTextTopPadding
+        return usesImageDetailFit ? 20 : PhrasePageStyle.heroTextTopPadding
     }
 
     private var heroPlayerTopSpacing: CGFloat {
-        usesVietnameseMenuDetailFit ? 12 : PhrasePageStyle.heroPlayerTopSpacing
+        usesImageDetailFit ? 12 : PhrasePageStyle.heroPlayerTopSpacing
     }
 
     private var articleSectionsTopPadding: CGFloat {
-        usesVietnameseMenuDetailFit ? 22 : PhrasePageStyle.articleSectionsTopPadding
+        usesImageDetailFit ? 22 : PhrasePageStyle.articleSectionsTopPadding
     }
 
     private var articleBottomChromeContentClearance: CGFloat {
-        usesVietnameseMenuDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
+        usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
     }
 
     private var usesHomePhraseHeroMorph: Bool {
