@@ -132,67 +132,69 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"].exists)
     }
 
-    func testBrowseMessageThreadBackReturnsToCollectionMessageFocus() {
+    func testBrowsePracticeBackReturnsToCollectionPracticeFocus() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
-        let scenarioID = "BrowseCollection.Message.Contact.danangFirstDay"
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
-        tapWhenComfortablyVisible(identifier: scenarioID, app: app)
+        tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
-        tapWhenVisible(app.buttons["Practice.Messages.Back"], app: app)
+        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 5))
+        tapWhenVisible(app.buttons["Close practice"], app: app)
+        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
-        let messageContact = app.buttons.matching(identifier: scenarioID).firstMatch
-        XCTAssertTrue(messageContact.waitForExistence(timeout: 3))
+        let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
+        XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
-            messageContact.isHittable,
-            "Back from a Browse-launched message should restore the Airport page near the message contact that opened it."
+            practiceEntry.isHittable,
+            "Back from Browse-launched practice should restore the Airport page near the practice entry that opened it."
         )
-        XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
+        XCTAssertFalse(app.staticTexts["Match all pairs"].exists)
     }
 
-    func testBrowseMessageThreadEdgeSwipesBackAndForwardToSameThread() {
-        let app = launchApp(arguments: ["--browse-category", "airport", "--reset-practice-message-threads"])
-        let scenarioID = "BrowseCollection.Message.Contact.airportWifiPower"
-        let thread = app.descendants(matching: .any)["Practice.Messages.Thread"]
+    func testBrowsePracticeEdgeSwipesBackAndForwardToSameRound() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
+        let roundTitle = app.staticTexts["Match all pairs"]
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
-        tapWhenComfortablyVisible(identifier: scenarioID, app: app)
+        tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
-        XCTAssertTrue(thread.waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Airport Wi-Fi"].waitForExistence(timeout: 4))
+        XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
 
         edgeSwipeBack(app)
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
-        XCTAssertTrue(thread.waitForNonExistence(timeout: 4))
+        XCTAssertTrue(roundTitle.waitForNonExistence(timeout: 4))
 
-        let messageContact = app.buttons.matching(identifier: scenarioID).firstMatch
-        XCTAssertTrue(messageContact.waitForExistence(timeout: 3))
+        let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
+        XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
-            messageContact.isHittable,
-            "Back swipe from Airport Wi-Fi should restore the Airport page near the exact message contact."
+            practiceEntry.isHittable,
+            "Back swipe from Airport practice should restore the Airport page near the practice entry."
         )
 
         edgeSwipeForward(app)
 
-        XCTAssertTrue(thread.waitForExistence(timeout: 5))
+        XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
         XCTAssertTrue(
-            app.staticTexts["Airport Wi-Fi"].waitForExistence(timeout: 4),
-            "Forward swipe should reopen the Airport Wi-Fi thread, not the generic Messages hub."
+            app.staticTexts["Match all pairs"].waitForExistence(timeout: 4),
+            "Forward swipe should reopen the active practice round, not the generic Practice hub."
         )
     }
 
-    func testFoodMessageSectionUsesQuickConversationsLabel() {
+    func testFoodCollectionShowsPracticeEntryInsteadOfMessageSection() {
         let app = launchApp(arguments: ["--browse-category", "food"])
-        let scenarioID = "BrowseCollection.Message.Contact.foodAllergyHelp"
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.food"
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.food"].waitForExistence(timeout: 4))
-        scrollUntilHittable(app.buttons[scenarioID], app: app)
+        scrollUntilHittable(app.buttons[practiceEntryID], app: app)
 
-        XCTAssertTrue(app.staticTexts["Quick conversations"].waitForExistence(timeout: 2))
-        XCTAssertFalse(app.staticTexts["Food"].isHittable, "Food is the message-system grouping; the Browse section should explain the row content.")
+        XCTAssertTrue(app.buttons[practiceEntryID].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["Quick conversations"].exists)
     }
 
     func testFoodCollectionStartsWithCoffeeNounRows() {

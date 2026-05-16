@@ -3402,17 +3402,25 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
     let subtitle: String
     let symbolName: String
     let tint: AccentTint
-    var categoryIDs: [String] = []
-    var cityID: String? = nil
+    let pageIDs: [String]
 
     static let defaults: [PracticeMatchTopicSpec] = [
         PracticeMatchTopicSpec(
             id: "essentials",
             title: "Essentials",
-            subtitle: "Hello, thanks, basics",
+            subtitle: "Hello, thanks, help",
             symbolName: "bolt.fill",
             tint: .red,
-            categoryIDs: ["greetings", "polite-basics", "understanding-repair"]
+            pageIDs: [
+                "viet-phrase-polite-1",
+                "viet-phrase-polite-2",
+                "viet-phrase-polite-5",
+                "viet-phrase-polite-7",
+                "viet-phrase-help-1",
+                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+                "viet-phrase-problems-3",
+                "viet-phrase-bath-1",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "first-day",
@@ -3420,7 +3428,16 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Airport, hotel, taxi",
             symbolName: "calendar.badge.clock",
             tint: .orange,
-            categoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport"]
+            pageIDs: [
+                "viet-phrase-airport-2",
+                "viet-phrase-airport-5",
+                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                "viet-phrase-hotel-1",
+                "viet-phrase-hotel-5",
+                "viet-phrase-ves-call-taxi-for-me",
+                "viet-phrase-store-1",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "food-drinks",
@@ -3428,7 +3445,16 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Order, ask, pay",
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tint: .orange,
-            categoryIDs: ["food-drink"]
+            pageIDs: [
+                "viet-phrase-store-1",
+                "viet-phrase-food-menu",
+                "viet-phrase-coffee-7",
+                "viet-phrase-food-not-spicy-clearer",
+                "viet-phrase-vpe-one-item-please-cho-toi-mot-nuoc-suoi",
+                "viet-phrase-food-1",
+                "viet-phrase-social-9",
+                "viet-phrase-food-premium-has-peanuts",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "airport",
@@ -3436,7 +3462,14 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Arrival and baggage",
             symbolName: "airplane.arrival",
             tint: .red,
-            categoryIDs: ["airport-border-arrival"]
+            pageIDs: [
+                "viet-phrase-airport-2",
+                "viet-phrase-airport-5",
+                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
+                "viet-phrase-help-1",
+                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "taxi-directions",
@@ -3444,7 +3477,14 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Pickup, drop-off, maps",
             symbolName: "car.fill",
             tint: .green,
-            categoryIDs: ["transport", "directions-navigation"]
+            pageIDs: [
+                "viet-phrase-ves-call-taxi-for-me",
+                "viet-phrase-taxi-1",
+                "viet-phrase-ves-drop-me-off-here",
+                "viet-phrase-taxi-6",
+                "viet-phrase-taxi-7",
+                "viet-phrase-airport-pickup-clearer",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "shopping-markets",
@@ -3452,7 +3492,12 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Prices, cash, receipts",
             symbolName: "bag.fill",
             tint: .orange,
-            categoryIDs: ["shopping", "money-numbers-prices"]
+            pageIDs: [
+                "viet-phrase-store-6",
+                "viet-phrase-repair-number-amount",
+                "viet-phrase-polite-4",
+                "viet-phrase-help-1",
+            ]
         ),
         PracticeMatchTopicSpec(
             id: "emergency",
@@ -3460,47 +3505,12 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             subtitle: "Help and pharmacy",
             symbolName: "cross.case.fill",
             tint: .red,
-            categoryIDs: ["health-pharmacy", "problems-help"]
-        ),
-        PracticeMatchTopicSpec(
-            id: "hanoi",
-            title: "Hanoi",
-            subtitle: "Old Quarter and city basics",
-            symbolName: "building.2.fill",
-            tint: .green,
-            cityID: "hanoi"
-        ),
-        PracticeMatchTopicSpec(
-            id: "hcmc",
-            title: "Saigon",
-            subtitle: "District 1 and city basics",
-            symbolName: "building.columns.fill",
-            tint: .orange,
-            cityID: "hcmc"
-        ),
-        PracticeMatchTopicSpec(
-            id: "danang",
-            title: "Da Nang",
-            subtitle: "City names and phrases",
-            symbolName: "building.2.fill",
-            tint: .blue,
-            cityID: "danang"
-        ),
-        PracticeMatchTopicSpec(
-            id: "hoian",
-            title: "Hoi An",
-            subtitle: "Old Town and cafe basics",
-            symbolName: "sun.horizon.fill",
-            tint: .orange,
-            cityID: "hoian"
-        ),
-        PracticeMatchTopicSpec(
-            id: "hue",
-            title: "Hue",
-            subtitle: "Heritage and food basics",
-            symbolName: "building.columns.fill",
-            tint: .purple,
-            cityID: "hue"
+            pageIDs: [
+                "viet-phrase-help-1",
+                "viet-phrase-emergency-3",
+                "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+            ]
         ),
     ]
 }
@@ -3532,11 +3542,7 @@ private struct PracticeMatchSource: Identifiable, Equatable {
     let items: [PracticeMatchItem]
 
     var itemCountLabel: String {
-        if items.count >= 40 {
-            return "40+ items"
-        }
-
-        return "\(items.count) item\(items.count == 1 ? "" : "s")"
+        "\(items.count) practice-ready"
     }
 
     var canStart: Bool {
@@ -3567,27 +3573,26 @@ private struct PracticeMatchSnapshot {
         case .savedReview, .missedReview:
             return savedSource
         case .hcmcCity:
-            return topicSources.first(where: { $0.id == "topic:hcmc" }) ?? quickSource
+            return topicSources.first(where: { $0.id == "topic:first-day" }) ?? quickSource
         case .hanoiBucketList:
-            return topicSources.first(where: { $0.id == "topic:hanoi" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+            return topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
         case .danangCity:
-            return topicSources.first(where: { $0.id == "topic:danang" }) ?? quickSource
+            return topicSources.first(where: { $0.id == "topic:first-day" }) ?? quickSource
         case .hoianCity:
-            return topicSources.first(where: { $0.id == "topic:hoian" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+            return topicSources.first(where: { $0.id == "topic:food-drinks" }) ?? quickSource
         case .hueCity:
-            return topicSources.first(where: { $0.id == "topic:hue" }) ?? topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
+            return topicSources.first(where: { $0.id == "topic:essentials" }) ?? quickSource
         }
     }
 
     static func load(savedPageIDs: [String]) throws -> PracticeMatchSnapshot {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
-        let quickCandidates = try Self.candidates(
-            repository: repository,
-            categoryIDs: ["greetings", "polite-basics", "understanding-repair", "airport-border-arrival", "hotel-accommodation", "transport"],
-            requiringAudio: true,
-            limit: 100
+        let quickItems = Self.uniquePracticeItems(
+            from: try repository.loadPracticeCandidates(
+                pageIDs: Self.quickPageIDs,
+                limit: Self.quickPageIDs.count * 4
+            )
         )
-        let quickItems = Self.uniquePracticeItems(from: quickCandidates)
         let savedItems: [PracticeMatchItem]
         if savedPageIDs.isEmpty {
             savedItems = []
@@ -3600,15 +3605,17 @@ private struct PracticeMatchSnapshot {
             )
         }
 
-        let topicSources = try PracticeMatchTopicSpec.defaults.map { spec in
-            let candidates = try Self.candidates(
-                repository: repository,
-                cityID: spec.cityID,
-                categoryIDs: spec.categoryIDs,
-                requiringAudio: true,
-                limit: 140
+        let topicSources: [PracticeMatchSource] = try PracticeMatchTopicSpec.defaults.compactMap { spec in
+            let items = Self.uniquePracticeItems(
+                from: try repository.loadPracticeCandidates(
+                    pageIDs: spec.pageIDs,
+                    limit: spec.pageIDs.count * 4
+                )
             )
-            let items = Self.uniquePracticeItems(from: candidates)
+
+            guard items.count >= PracticeMatchRound.pairCount else {
+                return nil
+            }
 
             return PracticeMatchSource(
                 id: "topic:\(spec.id)",
@@ -3625,8 +3632,8 @@ private struct PracticeMatchSnapshot {
             quickSource: PracticeMatchSource(
                 id: "quick",
                 kind: .quick,
-                title: "Quick 1-Minute Practice",
-                subtitle: "A mix of useful phrases for your trip.",
+                title: "Quick practice",
+                subtitle: "Four easy phrases to match.",
                 symbolName: "bolt.fill",
                 tint: .red,
                 items: quickItems
@@ -3646,31 +3653,16 @@ private struct PracticeMatchSnapshot {
         )
     }
 
-    private static func candidates(
-        repository: VietSQLiteLanguagePackRepository,
-        cityID: String? = nil,
-        categoryIDs: [String] = [],
-        requiringAudio: Bool,
-        limit: Int
-    ) throws -> [PracticeCandidate] {
-        let audioCandidates = try repository.loadPracticeCandidates(
-            cityID: cityID,
-            categoryIDs: categoryIDs.isEmpty ? nil : categoryIDs,
-            requiringAudio: requiringAudio,
-            limit: limit
-        )
-
-        if audioCandidates.count >= PracticeMatchRound.pairCount || !requiringAudio {
-            return audioCandidates
-        }
-
-        return try repository.loadPracticeCandidates(
-            cityID: cityID,
-            categoryIDs: categoryIDs.isEmpty ? nil : categoryIDs,
-            requiringAudio: false,
-            limit: limit
-        )
-    }
+    private static let quickPageIDs = [
+        "viet-phrase-polite-1",
+        "viet-phrase-polite-2",
+        "viet-phrase-polite-5",
+        "viet-phrase-polite-7",
+        "viet-phrase-help-1",
+        "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+        "viet-phrase-problems-3",
+        "viet-phrase-bath-1",
+    ]
 
     private static func uniquePracticeItems(from candidates: [PracticeCandidate]) -> [PracticeMatchItem] {
         var seenPageIDs = Set<String>()
@@ -3792,19 +3784,15 @@ private struct PracticeMatchActiveSession: Equatable {
     var hintedPairID: String?
 
     var progressText: String {
-        "\(min(roundIndex + 1, 10)) / 10"
+        "\(matchedPairIDs.count) / \(PracticeMatchRound.pairCount)"
     }
 
     var progressFraction: CGFloat {
-        CGFloat(min(roundIndex + 1, 10)) / 10
+        CGFloat(matchedPairIDs.count) / CGFloat(PracticeMatchRound.pairCount)
     }
 
     var isRoundComplete: Bool {
         matchedPairIDs.count == PracticeMatchRound.pairCount
-    }
-
-    var isSessionComplete: Bool {
-        roundIndex >= 9 && isRoundComplete
     }
 
     init?(source: PracticeMatchSource, roundIndex: Int = 0) {
@@ -3815,22 +3803,6 @@ private struct PracticeMatchActiveSession: Equatable {
         self.source = source
         self.roundIndex = roundIndex
         self.round = round
-    }
-
-    mutating func startNextRound() {
-        let nextIndex = roundIndex + 1
-        guard let nextRound = PracticeMatchRound.make(source: source, roundIndex: nextIndex) else {
-            return
-        }
-
-        roundIndex = nextIndex
-        round = nextRound
-        selectedPromptID = nil
-        selectedAnswerID = nil
-        matchedPairIDs = []
-        incorrectPromptID = nil
-        incorrectAnswerID = nil
-        hintedPairID = nil
     }
 }
 
@@ -4051,19 +4023,8 @@ private struct PracticeMatchRootView: View {
     }
 
     private func continuePractice() {
-        guard var session = activeSession else {
-            return
-        }
-
-        if session.isSessionComplete {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                activeSession = nil
-            }
-        } else {
-            withAnimation(.easeInOut(duration: 0.22)) {
-                session.startNextRound()
-                activeSession = session
-            }
+        withAnimation(.easeInOut(duration: 0.2)) {
+            activeSession = nil
         }
     }
 }
@@ -4132,7 +4093,7 @@ private struct PracticeMatchQuickSection: View {
         VStack(alignment: .leading, spacing: 12) {
             PracticeMatchSourceCard(
                 source: quickSource,
-                title: "Quick 1-Minute Practice",
+                title: "Quick practice",
                 subtitle: "Start with common Vietnam phrases.",
                 actionTitle: "Start",
                 onTap: { onStartSource(quickSource) }
@@ -4390,9 +4351,11 @@ private struct PracticeMatchRoundHeader: View {
                     Capsule(style: .continuous)
                         .fill(Color.black.opacity(0.07))
 
-                    Capsule(style: .continuous)
-                        .fill(Color.red)
-                        .frame(width: max(30, proxy.size.width * session.progressFraction))
+                    if session.progressFraction > 0 {
+                        Capsule(style: .continuous)
+                            .fill(Color.red)
+                            .frame(width: max(30, proxy.size.width * session.progressFraction))
+                    }
                 }
             }
             .frame(height: 7)
@@ -4705,7 +4668,7 @@ private struct PracticeMatchCompletionView: View {
                 .padding(.top, 34)
 
                 VStack(spacing: 7) {
-                    Text(session.isSessionComplete ? "Practice complete" : "Great job!")
+                    Text("Nice match")
                         .font(.system(size: 30, weight: .black, design: .rounded))
                         .foregroundStyle(.primary)
 
@@ -4759,7 +4722,7 @@ private struct PracticeMatchCompletionView: View {
                 .phraseListCard(cornerRadius: 18)
 
                 Button(action: onContinue) {
-                    Text(session.isSessionComplete ? "Back to Practice" : "Continue")
+                    Text("Back to Practice")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)

@@ -151,30 +151,30 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
-    func testHomeMessagesBackChainReturnsHomePosition() {
+    func testHomePracticeBackChainReturnsHomePosition() {
         let app = XCUIApplication()
         app.launch()
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
 
-        let firstScenario = app.buttons["HomeScenario.danangFirstDay"]
-        scrollUntilHittable(firstScenario, in: app)
-        firstScenario.tap()
+        let quickPractice = app.buttons["Home.PracticeStarter.quick"]
+        scrollUntilHittable(quickPractice, in: app)
+        quickPractice.tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 5))
 
-        app.buttons["Practice.Messages.Back"].tap()
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Messages.Thread"].waitForNonExistence(timeout: 4))
+        app.buttons["Close practice"].tap()
+        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
         XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 3))
 
         app.buttons["Go back"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         assertVisible(
-            app.descendants(matching: .any)["HomeScenarioRail"],
+            app.descendants(matching: .any)["HomePracticeStarterRail"],
             in: app,
-            message: "Back from a Home message should restore the Messages shelf."
+            message: "Back from Home practice should restore the Practice shelf."
         )
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }

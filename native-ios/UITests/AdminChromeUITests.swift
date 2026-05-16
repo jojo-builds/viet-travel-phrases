@@ -264,15 +264,15 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.food"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.buttons["HomeShelf.More.food-coffee"].exists)
 
-        let scenarioRail = app.descendants(matching: .any)["HomeScenarioRail"]
-        for _ in 0..<3 where !scenarioRail.exists {
+        let practiceRail = app.descendants(matching: .any)["HomePracticeStarterRail"]
+        for _ in 0..<3 where !practiceRail.exists {
             app.swipeUp()
         }
-        XCTAssertTrue(scenarioRail.waitForExistence(timeout: 3))
-        for _ in 0..<2 where !app.buttons["HomeScenario.danangFirstDay"].exists {
+        XCTAssertTrue(practiceRail.waitForExistence(timeout: 3))
+        for _ in 0..<2 where !app.buttons["Home.PracticeStarter.quick"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.buttons["HomeScenario.danangFirstDay"].exists)
+        XCTAssertTrue(app.buttons["Home.PracticeStarter.quick"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-lower.png")
 
         for _ in 0..<5 where !app.staticTexts["Who are you speaking to?"].exists {
@@ -296,20 +296,20 @@ final class AdminChromeUITests: XCTestCase {
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-use-now-large-card-start.png")
     }
 
-    func testHomeMessageCirclesStayVisibleAcrossRail() {
+    func testHomePracticeStarterCardsStayVisibleAcrossRail() {
         let app = launchApp(arguments: ["--reset-demo-state"])
         assertHomeVisible(in: app)
 
-        scrollToHomeScenarioRail(in: app)
-        assertHomeScenarioContactVisible(app: app, id: "danangFirstDay")
-        assertHomeScenarioContactVisible(app: app, id: "hotelCheckInHelp")
-        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-message-circles-visible.png")
+        scrollToHomePracticeRail(in: app)
+        assertHomePracticeStarterVisible(app: app, id: "quick")
+        assertHomePracticeStarterVisible(app: app, id: "saved")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-practice-starters-visible.png")
 
-        revealHomeScenario(app: app, id: "taxiGrabPickup")
-        assertHomeScenarioContactVisible(app: app, id: "taxiGrabPickup")
-        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-message-circles-taxi.png")
+        revealHomePracticeStarter(app: app, id: "food-drinks")
+        assertHomePracticeStarterVisible(app: app, id: "food-drinks")
+        captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-practice-starters-food.png")
 
-        XCTAssertTrue(app.staticTexts["Grab Pickup"].exists)
+        XCTAssertTrue(app.staticTexts["Food & drinks"].exists)
     }
 
     func testHomeExploreByCityShowsAllCityGuides() {
@@ -524,51 +524,51 @@ final class AdminChromeUITests: XCTestCase {
         }
     }
 
-    private func scrollToHomeScenarioRail(in app: XCUIApplication) {
-        let scenarioRail = app.descendants(matching: .any)["HomeScenarioRail"]
-        for _ in 0..<5 where !scenarioRail.exists {
+    private func scrollToHomePracticeRail(in app: XCUIApplication) {
+        let practiceRail = app.descendants(matching: .any)["HomePracticeStarterRail"]
+        for _ in 0..<5 where !practiceRail.exists {
             app.swipeUp()
         }
-        XCTAssertTrue(scenarioRail.waitForExistence(timeout: 3))
+        XCTAssertTrue(practiceRail.waitForExistence(timeout: 3))
 
-        let firstContact = app.buttons["HomeScenario.danangFirstDay"]
-        for _ in 0..<5 where !firstContact.frame.intersects(app.frame) {
+        let firstStarter = app.buttons["Home.PracticeStarter.quick"]
+        for _ in 0..<5 where !firstStarter.frame.intersects(app.frame) {
             app.swipeUp()
         }
         XCTAssertTrue(
-            firstContact.waitForExistence(timeout: 3) && firstContact.frame.intersects(app.frame),
-            "Expected the first message contact to be visible after scrolling to the rail."
+            firstStarter.waitForExistence(timeout: 3) && firstStarter.frame.intersects(app.frame),
+            "Expected the first practice starter to be visible after scrolling to the rail."
         )
     }
 
-    private func revealHomeScenario(app: XCUIApplication, id: String) {
-        let targetButton = app.buttons["HomeScenario.\(id)"]
-        let scenarioRail = app.descendants(matching: .any)["HomeScenarioRail"]
+    private func revealHomePracticeStarter(app: XCUIApplication, id: String) {
+        let targetButton = app.buttons["Home.PracticeStarter.\(id)"]
+        let practiceRail = app.descendants(matching: .any)["HomePracticeStarterRail"]
         for _ in 0..<5 where !targetButton.frame.intersects(app.frame) {
-            if scenarioRail.exists && scenarioRail.frame.intersects(app.frame) {
-                dragRailLeft(scenarioRail)
+            if practiceRail.exists && practiceRail.frame.intersects(app.frame) {
+                dragRailLeft(practiceRail)
             } else {
                 app.swipeLeft()
             }
         }
         XCTAssertTrue(
             targetButton.frame.intersects(app.frame),
-            "Expected HomeScenario.\(id) to be visible after dragging the scenario rail."
+            "Expected Home.PracticeStarter.\(id) to be visible after dragging the practice rail."
         )
     }
 
-    private func assertHomeScenarioContactVisible(
+    private func assertHomePracticeStarterVisible(
         app: XCUIApplication,
         id: String,
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        let button = app.buttons["HomeScenario.\(id)"]
+        let button = app.buttons["Home.PracticeStarter.\(id)"]
 
-        XCTAssertTrue(button.waitForExistence(timeout: 3), "Missing message contact \(id).", file: file, line: line)
-        XCTAssertTrue(button.frame.intersects(app.frame), "Message contact \(id) is not visible.", file: file, line: line)
-        XCTAssertGreaterThan(button.frame.width, 72, "Message contact \(id) should keep a tappable circle width.", file: file, line: line)
-        XCTAssertGreaterThan(button.frame.height, 100, "Message contact \(id) should include avatar and label.", file: file, line: line)
+        XCTAssertTrue(button.waitForExistence(timeout: 3), "Missing practice starter \(id).", file: file, line: line)
+        XCTAssertTrue(button.frame.intersects(app.frame), "Practice starter \(id) is not visible.", file: file, line: line)
+        XCTAssertGreaterThan(button.frame.width, 120, "Practice starter \(id) should keep a tappable card width.", file: file, line: line)
+        XCTAssertGreaterThan(button.frame.height, 110, "Practice starter \(id) should include icon and label.", file: file, line: line)
     }
 
     private func scrollToHomeCityRail(in app: XCUIApplication) {

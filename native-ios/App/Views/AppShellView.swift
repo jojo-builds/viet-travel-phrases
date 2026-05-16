@@ -325,11 +325,10 @@ struct AppShellView: View {
     }
 
     private var practiceStartRequest: PracticeStartRequest? {
-        if let requestedPracticeScenarioID {
+        if requestedPracticeScenarioID != nil {
             return PracticeStartRequest(
                 id: practiceStartRequestID,
-                scenarioID: requestedPracticeScenarioID,
-                scenarioThreadDismissal: requestedPracticeScenarioThreadDismissal
+                sourceID: "quick"
             )
         }
 
@@ -1242,24 +1241,14 @@ struct AppShellView: View {
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
-        case .practiceScenario(let scenarioID):
+        case .practiceScenario:
             practiceStartRequestID += 1
-            requestedPracticeSourceID = nil
+            requestedPracticeSourceID = "quick"
             requestedPracticeMode = nil
-            requestedPracticeScenarioID = scenarioID
+            requestedPracticeScenarioID = nil
             clearPracticeThreadForwardRestore()
-            if case .browseCollection(let route) = navigation.currentRoute {
-                let focusRequest = BrowseCollectionFocusRequest(
-                    id: 0,
-                    route: route,
-                    target: .messageScenario(scenarioID)
-                )
-                requestedPracticeScenarioThreadDismissal = .originRoute
-                pendingPracticeThreadReturnFocus = focusRequest
-            } else {
-                requestedPracticeScenarioThreadDismissal = .messagesHub
-                pendingPracticeThreadReturnFocus = nil
-            }
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
         }
 
         openPractice(preservingStartRequest: true)
@@ -3191,13 +3180,6 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
     }
 }
 
-private struct HomeScenario: Identifiable {
-    let scenarioID: PracticeScenarioID
-
-    var id: String { scenarioID.rawValue }
-    var practiceAction: BrowseCollectionPracticeAction { .practiceScenario(scenarioID) }
-}
-
 private enum HomePhraseShelfLayout {
     case quickTiles
     case spotlightRows
@@ -3522,17 +3504,6 @@ private enum HomeContent {
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
-
-    static let practiceScenarios: [HomeScenario] = {
-        [
-            .danangFirstDay,
-            .hotelCheckInHelp,
-            .taxiGrabPickup,
-            .pharmacyHelp,
-            .danangDay,
-            .restaurantOrderingPayment,
-        ].map { HomeScenario(scenarioID: $0) }
-    }()
 
     static let situationCards = [
         HomeSituationCard(
@@ -4103,61 +4074,6 @@ private struct HomePracticeStarterIcon: View {
             .foregroundStyle(tint.color)
             .frame(width: 48, height: 48)
             .nativeGlass(cornerRadius: 24, tint: tint.color, interactive: true)
-    }
-}
-
-private struct HomeScenarioRail: View {
-    let scenarios: [HomeScenario]
-    let onStartPractice: (BrowseCollectionPracticeAction) -> Void
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(alignment: .top, spacing: 8) {
-                ForEach(scenarios) { scenario in
-                    HomeScenarioContactButton(
-                        scenario: scenario,
-                        onStartPractice: onStartPractice
-                    )
-                }
-            }
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .frame(height: HomeLayout.messageRailHeight)
-        .scrollClipDisabled()
-        .accessibilityIdentifier("HomeScenarioRail")
-    }
-}
-
-private struct HomeScenarioContactButton: View {
-    let scenario: HomeScenario
-    let onStartPractice: (BrowseCollectionPracticeAction) -> Void
-
-    var body: some View {
-        Button {
-            onStartPractice(scenario.practiceAction)
-        } label: {
-            VStack(spacing: 9) {
-                PracticeMessageAvatar(
-                    scenarioID: scenario.scenarioID,
-                    size: HomeLayout.messageAvatarSize,
-                    showsSymbol: true
-                )
-
-                Text(scenario.scenarioID.messageContactName)
-                    .font(.callout.weight(.medium))
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.78)
-                    .frame(height: 38, alignment: .top)
-            }
-            .frame(width: HomeLayout.messageContactWidth, alignment: .top)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(scenario.scenarioID.messageContactName)
-        .accessibilityIdentifier("HomeScenario.\(scenario.id)")
     }
 }
 
