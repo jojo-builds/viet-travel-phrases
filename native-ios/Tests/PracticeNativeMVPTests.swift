@@ -160,6 +160,43 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertFalse(snapshot.bucketPrompts.isEmpty)
     }
 
+    func testMatchPracticeSourcesOnlyExposePlayableAudioBackedItems() throws {
+        let snapshot = try PracticeMatchSnapshot.load(
+            practicePageIDs: [
+                "viet-phrase-ves-call-taxi-for-me",
+                "viet-phrase-taxi-1",
+                "viet-phrase-v500-tran-please-stop-right-here",
+                "viet-phrase-v500-tran-please-wait-here",
+                "viet-phrase-v500-tran-are-you-my-driver",
+            ],
+            savedPageIDs: [
+                "viet-phrase-ves-drop-me-off-here",
+                "viet-phrase-polite-1",
+                "viet-phrase-polite-2",
+                "viet-phrase-polite-5",
+                "viet-phrase-polite-7",
+            ]
+        )
+        let requiredSources = [snapshot.quickSource, snapshot.practiceSource, snapshot.savedSource] + snapshot.topicSources
+        var failures: [String] = []
+
+        for source in requiredSources where source.canStart {
+            for item in source.items {
+                if !AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
+                    failures.append("\(source.id) exposes \(item.pageID) without playable audio")
+                }
+            }
+        }
+
+        XCTAssertTrue(failures.isEmpty, failures.joined(separator: "\n"))
+        XCTAssertFalse(snapshot.practiceSource.items.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertFalse(snapshot.savedSource.items.contains { $0.pageID == "viet-phrase-ves-drop-me-off-here" })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:taxi-directions" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:shopping-markets" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:emergency" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:danang-city" && $0.canStart })
+    }
+
     func testMissedPromptsReappearInMissedReview() throws {
         let store = isolatedProgressStore()
         let firstSnapshot = try PracticeDeckSnapshot.load(

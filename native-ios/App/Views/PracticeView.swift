@@ -3420,8 +3420,8 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-polite-2",
                 "viet-phrase-polite-5",
                 "viet-phrase-polite-7",
-                "viet-phrase-help-1",
-                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+                "viet-phrase-v500-prob-help-can-you-help-me",
+                "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
                 "viet-phrase-problems-3",
                 "viet-phrase-bath-1",
             ]
@@ -3439,7 +3439,7 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
                 "viet-phrase-hotel-1",
                 "viet-phrase-hotel-5",
-                "viet-phrase-ves-call-taxi-for-me",
+                "viet-phrase-hotel-9",
                 "viet-phrase-store-1",
             ]
         ),
@@ -3453,8 +3453,8 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-store-1",
                 "viet-phrase-food-menu",
                 "viet-phrase-coffee-7",
-                "viet-phrase-food-not-spicy-clearer",
-                "viet-phrase-vpe-one-item-please-cho-toi-mot-nuoc-suoi",
+                "viet-phrase-v900-food-drin-please-make-it-less-spicy",
+                "viet-phrase-v900-food-drin-one-fresh-coconut-please",
                 "viet-phrase-food-1",
                 "viet-phrase-social-9",
                 "viet-phrase-food-premium-has-peanuts",
@@ -3471,8 +3471,8 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-airport-5",
                 "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
                 "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
-                "viet-phrase-help-1",
-                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+                "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+                "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3482,12 +3482,14 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             symbolName: "car.fill",
             tint: .green,
             pageIDs: [
-                "viet-phrase-ves-call-taxi-for-me",
                 "viet-phrase-taxi-1",
-                "viet-phrase-ves-drop-me-off-here",
                 "viet-phrase-taxi-6",
                 "viet-phrase-taxi-7",
-                "viet-phrase-airport-pickup-clearer",
+                "viet-phrase-v500-tran-are-you-my-driver",
+                "viet-phrase-v500-tran-please-follow-the-map",
+                "viet-phrase-v500-tran-please-stop-right-here",
+                "viet-phrase-v500-tran-please-wait-here",
+                "viet-phrase-v900-tran-can-you-pick-me-up-here",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3498,9 +3500,12 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             tint: .orange,
             pageIDs: [
                 "viet-phrase-store-6",
-                "viet-phrase-repair-number-amount",
                 "viet-phrase-polite-4",
-                "viet-phrase-help-1",
+                "viet-phrase-shop-5",
+                "viet-phrase-v500-mone-numb-pric-how-much-for-one",
+                "viet-phrase-v500-shop-can-you-lower-the-price",
+                "viet-phrase-v500-shop-do-you-have-this",
+                "viet-phrase-v500-shop-can-i-touch-it",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3510,27 +3515,45 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             symbolName: "cross.case.fill",
             tint: .red,
             pageIDs: [
-                "viet-phrase-help-1",
-                "viet-phrase-emergency-3",
                 "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
-                "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+                "viet-phrase-v500-prob-help-can-you-help-me",
+                "viet-phrase-v500-emer-safe-please-call-the-police",
+                "viet-phrase-v500-emer-safe-please-call-an-ambulance",
+                "viet-phrase-v500-heal-phar-i-need-a-hospital",
+                "viet-phrase-v500-heal-phar-where-is-the-pharmacy",
+                "viet-phrase-v500-emer-safe-i-need-first-aid",
+            ]
+        ),
+        PracticeMatchTopicSpec(
+            id: "danang-city",
+            title: "Da Nang",
+            subtitle: "Beaches, bridges, markets",
+            symbolName: "mappin.and.ellipse",
+            tint: .blue,
+            pageIDs: [
+                "viet-phrase-city-danang-place-my-khe",
+                "viet-phrase-city-danang-place-dragon-bridge",
+                "viet-phrase-city-danang-place-han-market",
+                "viet-phrase-city-danang-place-airport",
+                "viet-phrase-city-danang-place-marble-mountains",
+                "viet-phrase-city-danang-place-son-tra",
             ]
         ),
     ]
 }
 
-private struct PracticeMatchItem: Identifiable, Equatable {
+struct PracticeMatchItem: Identifiable, Equatable {
     let pageID: String
     let vietnamese: String
     let english: String
-    let audioKey: String?
+    let audioKey: String
     let symbolName: String
     let tint: AccentTint
 
     var id: String { pageID }
 }
 
-private struct PracticeMatchSource: Identifiable, Equatable {
+struct PracticeMatchSource: Identifiable, Equatable {
     enum Kind: String, Equatable {
         case quick
         case practice
@@ -3555,7 +3578,7 @@ private struct PracticeMatchSource: Identifiable, Equatable {
     }
 }
 
-private struct PracticeMatchSnapshot {
+struct PracticeMatchSnapshot {
     let quickSource: PracticeMatchSource
     let practiceSource: PracticeMatchSource
     let savedSource: PracticeMatchSource
@@ -3687,8 +3710,8 @@ private struct PracticeMatchSnapshot {
         "viet-phrase-polite-2",
         "viet-phrase-polite-5",
         "viet-phrase-polite-7",
-        "viet-phrase-help-1",
-        "viet-phrase-vpe-help-action-anh-chi-giup-toi-noi-lai-lan-nua-duoc-khong",
+        "viet-phrase-v500-prob-help-can-you-help-me",
+        "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
         "viet-phrase-problems-3",
         "viet-phrase-bath-1",
     ]
@@ -3704,6 +3727,7 @@ private struct PracticeMatchSnapshot {
             guard
                 !vietnamese.isEmpty,
                 !english.isEmpty,
+                let playableAudioKey = candidate.playableAudioKey,
                 vietnamese.count <= 54,
                 english.count <= 70,
                 vietnamese.split(separator: " ").count <= 9,
@@ -3719,7 +3743,7 @@ private struct PracticeMatchSnapshot {
                 pageID: candidate.pageID,
                 vietnamese: vietnamese,
                 english: english,
-                audioKey: candidate.playableAudioKey,
+                audioKey: playableAudioKey,
                 symbolName: candidate.symbolName,
                 tint: candidate.tintName
             )
@@ -3813,7 +3837,7 @@ private struct PracticeMatchActiveSession: Equatable {
     var hintedPairID: String?
 
     var progressText: String {
-        "\(matchedPairIDs.count) / \(PracticeMatchRound.pairCount)"
+        "\(matchedPairIDs.count) of \(PracticeMatchRound.pairCount)"
     }
 
     var progressFraction: CGFloat {
@@ -4317,24 +4341,25 @@ private struct PracticeMatchRoundView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            PracticeMatchRoundHeader(session: session, onBack: onBack)
-                .padding(.top, topContentClearance)
-
             if session.isRoundComplete {
                 PracticeMatchCompletionView(session: session, onContinue: onContinue)
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 18) {
-                        VStack(alignment: .leading, spacing: 6) {
+                    VStack(spacing: 22) {
+                        VStack(spacing: 8) {
                             Text("Match all pairs")
-                                .font(.title2.weight(.black))
+                                .font(.system(size: 32, weight: .black, design: .rounded))
                                 .foregroundStyle(.primary)
+                                .multilineTextAlignment(.center)
 
                             Text("Tap a phrase and its meaning.")
-                                .font(.subheadline.weight(.semibold))
+                                .font(.headline.weight(.semibold))
                                 .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
                         }
+
+                        PracticeMatchRoundHeader(session: session, onBack: onBack)
 
                         PracticeMatchBoardView(
                             session: session,
@@ -4359,7 +4384,7 @@ private struct PracticeMatchRoundView: View {
                         }
                     }
                     .padding(.horizontal, PracticeLayout.horizontalPadding)
-                    .padding(.top, 22)
+                    .padding(.top, max(28, topContentClearance + 28))
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
                 .transition(.opacity)
@@ -4423,10 +4448,9 @@ private struct PracticeMatchRoundHeader: View {
             }
             .frame(height: 7)
         }
-        .padding(.horizontal, PracticeLayout.horizontalPadding)
-        .padding(.top, 14)
-        .padding(.bottom, 8)
-        .nativeGlass(cornerRadius: 0)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .nativeGlass(cornerRadius: 28)
     }
 }
 
@@ -4519,11 +4543,11 @@ private struct PracticeMatchCardButton: View {
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
 
-                if card.side == .prompt, let audioKey = card.item.audioKey {
+                if card.side == .prompt {
                     AudioSpeakerButton(
                         tint: card.item.tint,
                         size: 30,
-                        audioKey: audioKey,
+                        audioKey: card.item.audioKey,
                         accessibilityIdentifier: "Practice.Match.Audio.\(card.item.pageID)"
                     )
                     .frame(width: 34)
@@ -4756,10 +4780,8 @@ private struct PracticeMatchCompletionView: View {
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.72)
 
-                            if let audioKey = pair.item.audioKey {
-                                AudioSpeakerButton(tint: pair.item.tint, size: 26, audioKey: audioKey)
-                                    .frame(width: 30)
-                            }
+                            AudioSpeakerButton(tint: pair.item.tint, size: 26, audioKey: pair.item.audioKey)
+                                .frame(width: 30)
 
                             Spacer(minLength: 8)
 
