@@ -499,6 +499,7 @@ struct SavedTripPracticeItem: Identifiable, Equatable {
     let audioKey: String?
     let symbolName: String
     let tintName: AccentTint
+    let imageName: String?
     let kind: SavedTripSectionKind
 
     var id: String { pageID }
@@ -604,6 +605,7 @@ private enum SavedTripResolver {
             audioKey: AudioAssetManifest.main?.audioKey(forExactText: menuItem.vietnameseItem),
             symbolName: kind.symbolName,
             tintName: menuItem.kind?.tintName ?? kind.tintName,
+            imageName: menuItem.menuImageName,
             kind: kind
         )
     }
@@ -622,6 +624,7 @@ private enum SavedTripResolver {
             audioKey: candidate.playableAudioKey,
             symbolName: candidate.symbolName,
             tintName: candidate.tintName,
+            imageName: nil,
             kind: .phrases
         )
     }
