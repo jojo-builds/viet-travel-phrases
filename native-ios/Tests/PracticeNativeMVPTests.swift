@@ -218,6 +218,11 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:shopping-markets" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:emergency" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:danang-city" && $0.canStart })
+        XCTAssertGreaterThan(snapshot.quickSource.items.count, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:essentials" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:first-day" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:taxi-directions" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:danang-city" }?.items.count ?? 0, 20)
     }
 
     func testAirportBrowsePracticeStarterCanOpenMatchRound() throws {
