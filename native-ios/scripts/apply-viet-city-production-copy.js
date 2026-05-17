@@ -478,8 +478,11 @@ function cleanVisibleText(value, page, city) {
   text = text.replace(/\btailoring-and-fitting surface\b/gi, "tailoring-and-fitting stop");
   text = text.replace(/\bstall row\b/gi, "stall aisle");
   text = text.replace(/\bimage-heavy browsing\b/gi, "a visual cafe search");
+  text = text.replace(/\bimage-led tile\b/gi, "photo-friendly landmark");
   text = text.replace(/\bfood-anchor noun\b/gi, "food name");
   text = text.replace(/\bfood-anchor\b/gi, "food");
+  text = text.replace(/\bnouns\b/gi, "names");
+  text = text.replace(/\bname to keep ready\b/gi, "name to use");
   text = text.replace(/\bmenu-image reference point\b/gi, "menu name");
   text = text.replace(/\bimage-led browse\b/gi, "photo-friendly planning");
   text = text.replace(/\bvisual browse\b/gi, "photo-friendly planning");
@@ -669,6 +672,53 @@ function withoutDuplicateSentences(sentences) {
   return result.join(" ");
 }
 
+function visibleSentenceKey(value) {
+  return normalize(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function withoutPriorVisibleSentences(body, seen) {
+  const kept = [];
+  for (const item of sentenceList(body)) {
+    const key = visibleSentenceKey(item);
+    if (!key) continue;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    kept.push(item);
+  }
+  return kept.join(" ");
+}
+
+function fallbackSectionBody(section, page, city) {
+  const cityName = city.shortTitle || city.title;
+  const englishName = page.englishText || "This stop";
+  switch (section.id) {
+  case "place-brief":
+    return `${englishName} works best as a short ${cityName} name before you add the practical detail: entrance, table, ticket, price, pickup, or the ride back.`;
+  case "use-it-with":
+    return `Use ${englishName} as the first words, then ask the small question that fits the moment instead of explaining the whole plan again.`;
+  case "when-to-use":
+    return `Save ${englishName} for the moments when a driver, server, hotel desk, ticket counter, or friend needs one clear reference point.`;
+  case "good-to-know":
+    return `${englishName} is worth saving offline because the name keeps the next question short when the moment gets busy.`;
+  default:
+    return `${englishName} keeps the ${cityName} conversation concrete when pointing, maps, or English descriptions are not enough.`;
+  }
+}
+
+function distinctSectionBodies(sections, page, city) {
+  const seen = new Set();
+  return sections.map((section) => {
+    const body = withoutPriorVisibleSentences(section.body || "", seen);
+    return { ...section, body: body.length >= 55 ? body : fallbackSectionBody(section, page, city) };
+  });
+}
+
 function sourceContext(page, city) {
   const text = cleanVisibleText(page.context, page, city);
   if (!text || /\bcity guide\b/i.test(text)) return "";
@@ -758,15 +808,15 @@ function targetNameLine(page) {
       return `${english || "This street"} is the street or area name to keep with your hotel, cross street, or pickup side.`;
     }
     if (profile === "restaurant" || profile === "cafe") {
-      return `${english || "This stop"} is the name to keep ready for the ride, table, menu, bill, and pickup after you leave.`;
+      return `${english || "This stop"} starts the ride conversation, then the table, menu, bill, and pickup after you leave.`;
     }
     if (profile === "market") {
       return `${english || "This market"} is the market name to pair with gates, cash, prices, bags, and meetup points.`;
     }
     if (profile === "transit") {
-      return `${english || "This stop"} is the arrival name to pair with terminal, platform, luggage, pickup, or transfer details.`;
+      return `${english || "This stop"} is for terminal, platform, luggage, pickup, or transfer details.`;
     }
-    return `${english || "This stop"} is the stop name to keep ready before you ask about entrance, tickets, photos, water, or pickup.`;
+    return `${english || "This stop"} is the stop name before entrance, tickets, photos, water, or pickup questions begin.`;
   }
   if (profile === "dish") {
     return `Say ${target} for ${english}.`;
@@ -775,7 +825,7 @@ function targetNameLine(page) {
     return `${target} is the Vietnamese street or area name for ${english}; add the hotel, cross street, or pickup side when the road is long.`;
   }
   if (profile === "restaurant" || profile === "cafe") {
-    return `${target} is the name to show or say for ${english}; once it lands, the conversation can move to the table, menu, drinks, bill, and ride back.`;
+    return `${target} is the local name for ${english}; use it for the ride, then the table, menu, drinks, bill, and ride back.`;
   }
   if (profile === "market") {
     return `${target} is the Vietnamese name for ${english}; pair it with the gate, entrance, cash, price, bag, or meetup point you need next.`;
@@ -783,7 +833,7 @@ function targetNameLine(page) {
   if (profile === "transit") {
     return `${target} is the Vietnamese stop name for ${english}; pair it with terminal, platform, luggage, ticket, pickup, or transfer details.`;
   }
-  return `Say ${target} for ${english}, then keep the questions concrete: entrance, tickets, photos, water, bathrooms, or the ride back.`;
+  return `Say ${target} for ${english}.`;
 }
 
 function sceneDetail(page) {
@@ -1077,18 +1127,16 @@ function aboutBody(page, city) {
   const tone = cityTone(city);
   const detail = detailSentence(page);
   const context = sourceContext(page, city);
-  const tip = sourceTip(page, city);
   const connection = isExplicitKnownConnection(page, city);
   const scene = sceneDetail(page);
 
   switch (profileFor(page)) {
   case "dish":
-    return withoutDuplicateSentences([dishStory(page, city), context, tip, scene, detail]);
+    return withoutDuplicateSentences([dishStory(page, city), context, scene, detail]);
   case "market":
     return withoutDuplicateSentences([
       context || `${englishName} is a ${cityName} market stop where prices, snacks, goods, cash, and pickup plans all meet quickly.`,
       connection,
-      tip,
       scene,
       detail,
     ]);
@@ -1096,14 +1144,12 @@ function aboutBody(page, city) {
     return withoutDuplicateSentences([
       context || `${englishName} is a ${cityName} street or area to keep ready for drivers, addresses, hotel directions, and meetups.`,
       connection,
-      tip,
       scene,
       detail,
     ]);
   case "transit":
     return withoutDuplicateSentences([
       context || `${englishName} is a ${cityName} arrival or transfer name to keep ready before luggage, traffic, tickets, or pickup details become urgent.`,
-      tip,
       scene,
       detail || tone.placeLens,
     ]);
@@ -1111,7 +1157,6 @@ function aboutBody(page, city) {
     return withoutDuplicateSentences([
       restaurantFoodHook(page, city),
       context || `${englishName} is a ${cityName} restaurant name to show clearly for a ride, booking, table, menu, bill, and pickup afterward.`,
-      tip,
       scene,
       detail,
     ]);
@@ -1119,7 +1164,6 @@ function aboutBody(page, city) {
     return withoutDuplicateSentences([
       cafeFoodHook(page, city),
       context || `${englishName} is a ${cityName} coffee stop for cooling down, meeting up, and tasting Vietnam's cafe rhythm.`,
-      tip,
       scene,
       detail,
     ]);
@@ -1127,7 +1171,6 @@ function aboutBody(page, city) {
     return withoutDuplicateSentences([
       context || `${englishName} is a ${cityName} ${kindLabel(page)} where timing, entrance, photos, food, and pickup plans are easier when the name is clear.`,
       connection,
-      tip,
       scene,
       detail,
     ]);
@@ -1142,47 +1185,50 @@ function aboutBody(page, city) {
   }
 }
 
-function quickSayBody(page, city) {
+function summaryBody(page, city) {
+  const cityName = city.shortTitle || city.title;
+  const englishName = page.englishText || "This stop";
   const profile = profileFor(page);
-  const nameLine = targetNameLine(page);
+  const placeKind = kindLabel(page);
+
+  switch (profile) {
+  case "dish":
+    return `${englishName} is a ${cityName} food name to recognize before ordering. Keep it close for ingredients, sauce, spice, sweetness, ice, portion size, and diet questions.`;
+  case "restaurant":
+    return `${englishName} is a named ${cityName} restaurant stop, so the useful words start with the ride and then move to table, menu, drinks, bill, and pickup afterward.`;
+  case "cafe":
+    return `${englishName} is a named ${cityName} cafe stop, useful for the ride there, a clear drink order, sweetness or ice choices, water, the bill, and meeting up again.`;
+  case "market":
+    return `${englishName} is a ${cityName} market name for getting there, choosing an entrance, asking prices, keeping cash ready, buying snacks or gifts, and meeting again afterward.`;
+  case "street":
+    return `${englishName} is a ${cityName} street or area name to pair with a hotel, cross street, map pin, gate, cafe, and pickup side when the road itself is not enough.`;
+  case "transit":
+    return `${englishName} is a ${cityName} arrival or transfer name for luggage, tickets, gates, terminal details, pickup lanes, and the first practical minutes after you arrive.`;
+  case "experience":
+    return `${englishName} is a ${cityName} ${placeKind} to name clearly before entrance, ticket, photo, bathroom, water, timing, and ride-back questions take over.`;
+  default:
+    return `${englishName} is a ${cityName} stop to name clearly before a driver, hotel desk, ticket counter, or friend needs a simple point of orientation.`;
+  }
+}
+
+function quickPageCue(page, city) {
+  const tip = sourceTip(page, city);
+  if (tip) {
+    return tip;
+  }
   const cue = pageSpecificTravelCue(page, city);
-  if (profile === "dish") {
-    return withoutDuplicateSentences([
-      nameLine,
-      cue,
-    ]);
+  if (cue) {
+    return cue;
   }
-  if (profile === "street") {
-    return withoutDuplicateSentences([
-      nameLine,
-      cue,
-      "Add the hotel, cafe, cross street, bridge, gate, or pickup side when the road name alone is not enough.",
-    ]);
-  }
-  if (profile === "restaurant" || profile === "cafe") {
-    return withoutDuplicateSentences([
-      nameLine,
-      cue,
-    ]);
-  }
-  if (profile === "market") {
-    return withoutDuplicateSentences([
-      nameLine,
-      cue,
-      "Once you are inside, price, cash, bag, entrance, and meeting-point phrases do most of the work.",
-    ]);
-  }
-  if (profile === "transit") {
-    return withoutDuplicateSentences([
-      nameLine,
-      cue,
-      "Add the terminal, platform, gate, luggage, pickup lane, or transfer detail before the moment gets rushed.",
-    ]);
-  }
+  return "";
+}
+
+function quickSayBody(page, city) {
+  const nameLine = targetNameLine(page);
+  const cue = quickPageCue(page, city);
   return withoutDuplicateSentences([
     nameLine,
     cue,
-    "After the name lands, ask about the entrance, tickets, photos, bathroom, water, shade, or the ride back.",
   ]);
 }
 
@@ -1292,7 +1338,11 @@ function useItWithBody(page, city) {
       "Vietnamese coffee and tea can arrive strong, sweet, and very cold.",
     ]);
   case "dish":
-    return withoutDuplicateSentences([dishOrderAdvice(page), cue, tip]);
+    return withoutDuplicateSentences([
+      `Before ordering ${englishName}, ask what is inside and whether sauce, spice, sweetness, or anything you avoid can be adjusted.`,
+      `Use the dish name with portion, ingredient, allergy, and sauce questions instead of pointing at the menu silently.`,
+      tip ? `Keep that food note in mind: ${lowerFirst(tip).replace(/\.$/, "")}.` : "",
+    ]);
   case "experience":
     if (placeKind === "museum" || placeKind === "landmark" || placeKind === "attraction") {
       return withoutDuplicateSentences([
@@ -1401,8 +1451,10 @@ function goodToKnowBody(page, city) {
   if (profile === "restaurant" || profile === "cafe") {
     const focus = profile === "cafe" ? cafeFoodHook(page, city) : restaurantFoodHook(page, city);
     return withoutDuplicateSentences([
-      focus,
-      oldTip,
+      profile === "cafe"
+        ? `${englishName} works best when you decide sweetness, ice, milk, water, and the bill before the table turns into pointing and guessing.`
+        : `${englishName} works best when the pickup point is saved before you sit down, because the bill and ride back can be harder after a long meal.`,
+      oldTip || focus,
     ]);
   }
   if (profile === "market") {
@@ -1427,7 +1479,6 @@ function goodToKnowBody(page, city) {
     return oldTip;
   }
   return withoutDuplicateSentences([
-    pageSpecificTravelCue(page, city),
     oldTip,
     `${englishName} gives ${cityName} one more real point of orientation.`,
     tone.placeLens,
@@ -1439,7 +1490,7 @@ function editorialSections(page, city) {
   if (profileFor(page) === "restaurant" || profileFor(page) === "cafe") {
     const isCafe = profileFor(page) === "cafe";
     const focus = isCafe ? cafeFoodHook(page, city) : restaurantFoodHook(page, city);
-    return [
+    return distinctSectionBodies([
       { id: "at-glance", title: config.atTitle, body: aboutBody(page, city) },
       { id: "quick-say", title: config.quickTitle, body: quickSayBody(page, city) },
       { id: "place-brief", title: config.placeBriefTitle, body: placeBriefBody(page, city) },
@@ -1448,7 +1499,7 @@ function editorialSections(page, city) {
       { id: "menu-dietary", title: isCafe ? "Sweetness & ice" : "Drinks", body: restaurantDrinksFocus(page, city) },
       { id: "when-to-use", title: config.whenTitle, body: whenBody(page, city) },
       { id: "good-to-know", title: "Good to know", body: goodToKnowBody(page, city) },
-    ];
+    ], page, city);
   }
 
   const sections = [
@@ -1470,7 +1521,7 @@ function editorialSections(page, city) {
     );
   }
 
-  return sections;
+  return distinctSectionBodies(sections, page, city);
 }
 
 function cityIDsForHub(cityID) {
@@ -1602,7 +1653,7 @@ function main() {
         reviewer: `city-owner:${sanitizedPage.cityID}`,
         checklistStatus: "reviewed",
       },
-      summary: aboutBody(sanitizedPage, city),
+      summary: summaryBody(sanitizedPage, city),
       targetHeroImageName,
       heroImageName: existingEditorialImport.heroImageName ?? sanitizedPage.heroImageName,
       sections: editorialSections(sanitizedPage, city),
