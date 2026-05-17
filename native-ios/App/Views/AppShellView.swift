@@ -30,6 +30,7 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
+    @State private var isSystemSearchPresented = false
     @State private var searchFocusRequestID = 0
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
@@ -107,14 +108,17 @@ struct AppShellView: View {
                     tabShellContent(for: .search)
                 }
                 .navigationTitle("Search")
-                .searchable(
-                    text: $searchQuery,
-                    isPresented: systemSearchPresentation,
-                    placement: .automatic,
-                    prompt: "Search Vietnamese phrases"
-                )
             }
         }
+        .searchable(
+            text: $searchQuery,
+            isPresented: systemSearchPresentation,
+            placement: .automatic,
+            prompt: "Search Vietnamese phrases"
+        )
+        .searchFocused($isSearchFieldFocused)
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled()
         .tabViewSearchActivation(.searchTabSelection)
     }
 
@@ -430,13 +434,21 @@ struct AppShellView: View {
     private var systemSearchPresentation: Binding<Bool> {
         Binding(
             get: {
-                navigation.isSearchPresented && isSearchFieldFocused
+                navigation.isSearchPresented && isSystemSearchPresented
             },
             set: { isPresented in
                 if isPresented {
-                    openSearch(prefilledQuery: nil, focusField: true)
+                    isSystemSearchPresented = true
+                    if !navigation.isSearchPresented {
+                        openSearch(prefilledQuery: nil, focusField: false)
+                    }
                 } else {
                     cancelSearchFocus()
+                    if navigation.isSearchPresented {
+                        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+                            navigation.goBack()
+                        }
+                    }
                 }
             }
         )
@@ -458,7 +470,7 @@ struct AppShellView: View {
         case .home, .browse, .saved, .practice:
             openPrimarySystemTab(tab)
         case .search:
-            openSearch(prefilledQuery: nil, focusField: true)
+            openSearch(prefilledQuery: nil, focusField: false)
         }
     }
 
@@ -1442,7 +1454,7 @@ struct AppShellView: View {
     }
 
     private func openSearch() {
-        openSearch(prefilledQuery: nil, focusField: true)
+        openSearch(prefilledQuery: nil, focusField: false)
     }
 
     private func openSearchQuery(_ query: String) {
@@ -1457,8 +1469,9 @@ struct AppShellView: View {
             searchQuery = prefilledQuery
         }
 
+        isSystemSearchPresented = true
         if !focusField {
-            cancelSearchFocus()
+            isSearchFieldFocused = false
         }
 
         withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
@@ -1467,6 +1480,8 @@ struct AppShellView: View {
 
         if focusField {
             focusSearchField()
+        } else {
+            defocusSearchFieldAfterPresentation()
         }
     }
 
@@ -1478,9 +1493,30 @@ struct AppShellView: View {
         }
     }
 
+    private func defocusSearchFieldAfterPresentation() {
+        searchFocusRequestID += 1
+        let requestID = searchFocusRequestID
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 260_000_000)
+
+            guard
+                requestID == searchFocusRequestID,
+                navigation.isSearchPresented,
+                isSystemSearchPresented
+            else {
+                return
+            }
+
+            isSearchFieldFocused = false
+        }
+    }
+
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
+        isSystemSearchPresented = true
+        isSearchFieldFocused = true
 
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: 220_000_000)
@@ -1508,6 +1544,7 @@ struct AppShellView: View {
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
+        isSystemSearchPresented = false
         isSearchFieldFocused = false
     }
 
