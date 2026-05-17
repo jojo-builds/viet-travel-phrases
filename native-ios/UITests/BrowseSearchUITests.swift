@@ -571,9 +571,13 @@ final class BrowseSearchUITests: XCTestCase {
 
         openSearch(in: app)
 
+        let field = searchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
-        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+        XCTAssertTrue(field.waitForExistence(timeout: 2))
+
+        field.typeText("taxi")
+
+        XCTAssertTrue(app.staticTexts["Results for taxi"].waitForExistence(timeout: 3))
     }
 
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
@@ -593,7 +597,6 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(field.waitForExistence(timeout: 4))
         field.tap()
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
 
         for query in ["h", "ho", "hot", "hote", "hotel"] {
             field.typeText(String(query.last!))
@@ -617,7 +620,6 @@ final class BrowseSearchUITests: XCTestCase {
         let field = searchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
         XCTAssertTrue(field.waitForExistence(timeout: 2))
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
 
         field.typeText("hotel")
 
@@ -630,12 +632,15 @@ final class BrowseSearchUITests: XCTestCase {
 
         let field = searchField(in: app)
         XCTAssertTrue(field.waitForExistence(timeout: 3))
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+        field.tap()
 
         tapWhenVisible(app.buttons["Search.Prompt.hotel"], app: app)
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 2))
+
+        searchField(in: app).typeText(XCUIKeyboardKey.delete.rawValue)
+
+        XCTAssertTrue(app.staticTexts["Results for hote"].waitForExistence(timeout: 3))
     }
 
     func testSearchFilterResetsWhenQueryChanges() {
@@ -645,7 +650,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(field.waitForExistence(timeout: 4))
         XCTAssertTrue(app.buttons["Search.Filter.Cities"].waitForExistence(timeout: 3))
 
-        app.buttons["Search.Filter.Cities"].tap()
+        app.buttons["Search.Filter.Cities"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         field.tap()
         field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 5))
         field.typeText("hotel")
@@ -708,6 +713,11 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     private func searchField(in app: XCUIApplication) -> XCUIElement {
+        let nativeSearchField = app.textFields["Search.NativeField"]
+        if nativeSearchField.exists {
+            return nativeSearchField
+        }
+
         let promptedSearchField = app.searchFields["Search Vietnamese phrases"]
         if promptedSearchField.exists {
             return promptedSearchField

@@ -5,13 +5,14 @@ import UIKit
 
 struct SearchPageView: View {
     @Binding private var query: String
+    @Binding private var isFieldFocused: Bool
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
+    @FocusState private var isInputFocused: Bool
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
-    let isFieldFocused: Bool
     let onClose: () -> Void
     var onOpenDetail: (String) -> Void = { _ in }
     var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
@@ -20,7 +21,7 @@ struct SearchPageView: View {
 
     init(
         query: Binding<String> = .constant(""),
-        isFieldFocused: Bool = false,
+        isFieldFocused: Binding<Bool> = .constant(false),
         onClose: @escaping () -> Void,
         onOpenDetail: @escaping (String) -> Void = { _ in },
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
@@ -28,10 +29,10 @@ struct SearchPageView: View {
         onBrowseTapped: @escaping () -> Void = {}
     ) {
         _query = query
+        _isFieldFocused = isFieldFocused
         _searchResults = State(
             initialValue: SearchPageResults(query: query.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines))
         )
-        self.isFieldFocused = isFieldFocused
         self.onClose = onClose
         self.onOpenDetail = onOpenDetail
         self.onOpenCollection = onOpenCollection
@@ -77,13 +78,34 @@ struct SearchPageView: View {
                 .zIndex(SearchPageLayout.resultsZIndex)
             }
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            searchInputBar
+        }
         .accessibilityIdentifier("SearchPageView")
         .onAppear(perform: refreshSearchResultsIfNeeded)
-        .onChange(of: trimmedQuery) { _, nextQuery in
+        .onAppear {
+            if isFieldFocused {
+                focusInputSoon()
+            }
+        }
+        .onChange(of: query) { _, nextQuery in
+            let nextQuery = nextQuery.trimmingCharacters(in: .whitespacesAndNewlines)
             if searchResults.query != nextQuery {
                 selectedFilter = .all
             }
             scheduleSearchResultsRefresh(for: nextQuery)
+        }
+        .onChange(of: isFieldFocused) { _, isFocused in
+            if isFocused {
+                focusInputSoon()
+            } else if isInputFocused {
+                isInputFocused = false
+            }
+        }
+        .onChange(of: isInputFocused) { _, isFocused in
+            if isFieldFocused != isFocused {
+                isFieldFocused = isFocused
+            }
         }
         .onDisappear {
             searchRefreshTask?.cancel()
@@ -92,11 +114,67 @@ struct SearchPageView: View {
     }
 
     private var effectiveFieldFocused: Bool {
-        isFieldFocused
+        isFieldFocused || isInputFocused
     }
 
     private var trimmedQuery: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var searchInputBar: some View {
+        HStack(spacing: 10) {
+            HStack(spacing: 8) {
+                Image(systemName: "magnifyingglass")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                TextField("Search Vietnamese phrases", text: $query)
+                    .focused($isInputFocused)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .submitLabel(.search)
+                    .font(.body.weight(.medium))
+                    .accessibilityLabel("Search Vietnamese phrases")
+                    .accessibilityIdentifier("Search.NativeField")
+
+                if !trimmedQuery.isEmpty {
+                    Button {
+                        query = ""
+                        isFieldFocused = true
+                        focusInputSoon()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.headline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Clear search")
+                    .accessibilityIdentifier("Search.Clear")
+                }
+            }
+            .padding(.horizontal, 14)
+            .frame(height: 54)
+            .nativeGlass(cornerRadius: 27, interactive: true)
+
+            Button(action: onClose) {
+                Image(systemName: "xmark")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .frame(width: 54, height: 54)
+                    .nativeGlass(cornerRadius: 27, interactive: true)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Close search")
+            .accessibilityIdentifier("Search.Close")
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 8)
+        .padding(.bottom, 8)
+        .background {
+            Rectangle()
+                .fill(PhrasePageStyle.pageBackground.opacity(0.94))
+                .ignoresSafeArea(edges: .bottom)
+        }
     }
 
     private func refreshSearchResultsIfNeeded() {
@@ -106,6 +184,13 @@ struct SearchPageView: View {
         }
 
         searchResults = SearchPageResults(query: nextQuery)
+    }
+
+    private func focusInputSoon() {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 80_000_000)
+            isInputFocused = true
+        }
     }
 
     private func scheduleSearchResultsRefresh(for nextQuery: String) {
