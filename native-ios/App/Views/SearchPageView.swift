@@ -67,18 +67,23 @@ struct SearchPageView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
                             header(results: searchResults, mode: headerMode)
+                                .searchKeyboardDismissArea(dismissInlineSearchFocus)
                             searchField
 
                             if searchResults.query.isEmpty {
                                 if effectiveFieldFocused {
                                     focusedContent
+                                        .searchKeyboardDismissArea(dismissInlineSearchFocus)
                                 } else {
                                     defaultContent
+                                        .searchKeyboardDismissArea(dismissInlineSearchFocus)
                                 }
                             } else if searchResults.hasResults {
                                 resultsContent(results: searchResults)
+                                    .searchKeyboardDismissArea(dismissInlineSearchFocus)
                             } else {
                                 recoveryContent
+                                    .searchKeyboardDismissArea(dismissInlineSearchFocus)
                             }
                         }
                         .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
@@ -157,17 +162,27 @@ struct SearchPageView: View {
 
     private func applyInlineSearchFocusIfNeeded() {
         guard isFieldFocused else {
+            dismissInlineSearchFocus()
             return
         }
 
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: 80_000_000)
             guard isFieldFocused else {
+                dismissInlineSearchFocus()
                 return
             }
 
             isInlineSearchFieldFocused = true
         }
+    }
+
+    private func dismissInlineSearchFocus() {
+        guard isInlineSearchFieldFocused else {
+            return
+        }
+
+        isInlineSearchFieldFocused = false
     }
 
     private func applyReturnFocusIfNeeded(_ request: SearchReturnFocusRequest?, scrollProxy: ScrollViewProxy) {
@@ -260,6 +275,7 @@ struct SearchPageView: View {
                 .autocorrectionDisabled()
                 .submitLabel(.search)
                 .focused($isInlineSearchFieldFocused)
+                .onSubmit(dismissInlineSearchFocus)
                 .accessibilityIdentifier("Search Vietnamese phrases")
 
             if !query.isEmpty {
@@ -503,6 +519,24 @@ struct SearchPageView: View {
         return ["taxi", "bathroom", "thank you"]
     }
 
+}
+
+private struct SearchKeyboardDismissArea: ViewModifier {
+    let dismiss: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                TapGesture().onEnded(dismiss)
+            )
+    }
+}
+
+private extension View {
+    func searchKeyboardDismissArea(_ dismiss: @escaping () -> Void) -> some View {
+        modifier(SearchKeyboardDismissArea(dismiss: dismiss))
+    }
 }
 
 private struct SearchPageResults {

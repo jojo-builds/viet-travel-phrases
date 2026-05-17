@@ -594,6 +594,24 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testSearchTapOutsideFieldReturnsToDiscoveryContent() {
+        let app = launchApp()
+        openSearch(in: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 3))
+        field.tap()
+
+        XCTAssertTrue(app.staticTexts["Quick suggestions"].waitForExistence(timeout: 2))
+
+        let title = app.staticTexts["Search.Title"]
+        XCTAssertTrue(title.waitForExistence(timeout: 2))
+        title.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+
+        XCTAssertTrue(app.staticTexts["Suggested needs"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.staticTexts["Quick suggestions"].exists)
+    }
+
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
         let app = XCUIApplication()
         app.launchArguments = ["--search-query", "hotel"]
