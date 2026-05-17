@@ -241,6 +241,75 @@ final class PracticeNativeMVPTests: XCTestCase {
         }
     }
 
+    func testMatchRoundSamplesFourItemsFromFullSourcePool() throws {
+        let source = makeMatchSource(itemCount: 84)
+        let firstFourIDs = Set(source.items.prefix(4).map(\.id))
+
+        let sampledRounds = try (0..<8).map { seed in
+            var generator = SeededPracticeRandomNumberGenerator(seed: UInt64(seed + 1))
+            return try XCTUnwrap(PracticeMatchRound.make(source: source, rng: &generator))
+        }
+        let selectionSignatures = Set(sampledRounds.map { round in
+            round.pairs.map(\.id).joined(separator: "|")
+        })
+
+        XCTAssertGreaterThan(selectionSignatures.count, 1)
+        XCTAssertTrue(sampledRounds.contains { round in
+            !Set(round.pairs.map(\.id)).isSubset(of: firstFourIDs)
+        })
+        XCTAssertTrue(sampledRounds.allSatisfy { $0.pairs.count == 4 })
+    }
+
+    func testMatchRoundShufflesPromptAndAnswerSidesIndependently() throws {
+        let source = makeMatchSource(itemCount: 16)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 11)
+
+        let round = try XCTUnwrap(PracticeMatchRound.make(source: source, rng: &generator))
+        let promptPairIDs = round.prompts.map(\.pairID)
+        let answerPairIDs = round.answers.map(\.pairID)
+
+        XCTAssertEqual(Set(promptPairIDs), Set(answerPairIDs))
+        XCTAssertNotEqual(promptPairIDs, answerPairIDs)
+    }
+
+    func testMatchRoundAvoidsImmediateRepeatsWhenSourceHasEnoughItems() throws {
+        let source = makeMatchSource(itemCount: 12)
+        let currentRoundIDs = Set(source.items.prefix(PracticeMatchRound.pairCount).map(\.id))
+        var generator = SeededPracticeRandomNumberGenerator(seed: 22)
+
+        let nextRound = try XCTUnwrap(
+            PracticeMatchRound.make(
+                source: source,
+                avoidingItemIDs: currentRoundIDs,
+                rng: &generator
+            )
+        )
+
+        XCTAssertTrue(Set(nextRound.pairs.map(\.id)).isDisjoint(with: currentRoundIDs))
+    }
+
+    func testMatchSessionAdvancesAndCanReturnToPreviousRound() throws {
+        let source = makeMatchSource(itemCount: 12)
+        var initialGenerator = SeededPracticeRandomNumberGenerator(seed: 31)
+        var nextGenerator = SeededPracticeRandomNumberGenerator(seed: 32)
+        var session = try XCTUnwrap(PracticeMatchActiveSession(source: source, rng: &initialGenerator))
+        let firstRound = session.round
+
+        session.matchedPairIDs = Set(firstRound.pairs.map(\.id))
+
+        XCTAssertTrue(session.advanceToNextRound(rng: &nextGenerator))
+        XCTAssertEqual(session.roundIndex, 1)
+        XCTAssertNotEqual(session.round.id, firstRound.id)
+        XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertTrue(session.canReturnToPreviousRound)
+        XCTAssertTrue(Set(session.round.pairs.map(\.id)).isDisjoint(with: Set(firstRound.pairs.map(\.id))))
+
+        XCTAssertTrue(session.returnToPreviousRound())
+        XCTAssertEqual(session.roundIndex, 0)
+        XCTAssertEqual(session.round, firstRound)
+        XCTAssertTrue(session.matchedPairIDs.isEmpty)
+    }
+
     func testMissedPromptsReappearInMissedReview() throws {
         let store = isolatedProgressStore()
         let firstSnapshot = try PracticeDeckSnapshot.load(
@@ -289,5 +358,39 @@ final class PracticeNativeMVPTests: XCTestCase {
             defaults.removePersistentDomain(forName: suiteName)
         }
         return LocalPracticeProgressStore(defaults: defaults)
+    }
+
+    private func makeMatchSource(itemCount: Int) -> PracticeMatchSource {
+        PracticeMatchSource(
+            id: "topic:essentials",
+            kind: .topic,
+            title: "Essentials",
+            subtitle: "Test phrases",
+            symbolName: "sparkles",
+            tint: .red,
+            items: (0..<itemCount).map { index in
+                PracticeMatchItem(
+                    pageID: "viet-test-practice-\(index)",
+                    vietnamese: "Cau \(index)",
+                    english: "Phrase \(index)",
+                    audioKey: "viet-test-practice-\(index)",
+                    symbolName: "sparkles",
+                    tint: .red
+                )
+            }
+        )
+    }
+}
+
+private struct SeededPracticeRandomNumberGenerator: RandomNumberGenerator {
+    var state: UInt64
+
+    init(seed: UInt64) {
+        state = seed
+    }
+
+    mutating func next() -> UInt64 {
+        state = state &* 6364136223846793005 &+ 1442695040888963407
+        return state
     }
 }

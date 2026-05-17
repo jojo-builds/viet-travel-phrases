@@ -14,6 +14,8 @@ struct PracticeView: View {
     let topContentClearance: CGFloat
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
+    var onCloseMatchToOrigin: () -> Void
+    var onMatchPresentationChanged: (Bool) -> Void
     var onThreadBackToOrigin: (PracticeScenarioID?) -> Void
     var onThreadPresentationChanged: (Bool) -> Void
 
@@ -49,6 +51,8 @@ struct PracticeView: View {
         messageStore: LocalPracticeMessageStore = LocalPracticeMessageStore(),
         onOpenDetail: @escaping (String) -> Void,
         onBrowseTapped: @escaping () -> Void,
+        onCloseMatchToOrigin: @escaping () -> Void = {},
+        onMatchPresentationChanged: @escaping (Bool) -> Void = { _ in },
         onThreadBackToOrigin: @escaping (PracticeScenarioID?) -> Void = { _ in },
         onThreadPresentationChanged: @escaping (Bool) -> Void = { _ in }
     ) {
@@ -61,6 +65,8 @@ struct PracticeView: View {
         self.topContentClearance = topContentClearance
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
+        self.onCloseMatchToOrigin = onCloseMatchToOrigin
+        self.onMatchPresentationChanged = onMatchPresentationChanged
         self.onThreadBackToOrigin = onThreadBackToOrigin
         self.onThreadPresentationChanged = onThreadPresentationChanged
         _progressStore = StateObject(wrappedValue: progressStore)
@@ -76,14 +82,20 @@ struct PracticeView: View {
             requestedSourceID: startRequest?.sourceID,
             requestedMode: startRequest?.mode ?? initialMode,
             topContentClearance: topContentClearance,
-            onBrowseTapped: onBrowseTapped
+            onBrowseTapped: onBrowseTapped,
+            onCloseToOrigin: onCloseMatchToOrigin,
+            onPresentationChanged: onMatchPresentationChanged
         )
         .onAppear {
             onThreadPresentationChanged(false)
+            onMatchPresentationChanged(false)
         }
         .onChange(of: isActive) { _, active in
             if active {
                 onThreadPresentationChanged(false)
+            }
+            if !active {
+                onMatchPresentationChanged(false)
             }
         }
         .accessibilityIdentifier("PracticeView")
@@ -3886,24 +3898,24 @@ struct PracticeMatchSnapshot {
     }
 }
 
-private struct PracticeMatchPair: Identifiable, Equatable {
+struct PracticeMatchPair: Identifiable, Equatable {
     let id: String
     let item: PracticeMatchItem
 }
 
-private enum PracticeMatchCardSide: Equatable {
+enum PracticeMatchCardSide: Equatable {
     case prompt
     case answer
 }
 
-private struct PracticeMatchCard: Identifiable, Equatable {
+struct PracticeMatchCard: Identifiable, Equatable {
     let id: String
     let pairID: String
     let item: PracticeMatchItem
     let side: PracticeMatchCardSide
 }
 
-private struct PracticeMatchRound: Equatable {
+struct PracticeMatchRound: Equatable {
     static let pairCount = 4
 
     let id: String
@@ -3912,13 +3924,25 @@ private struct PracticeMatchRound: Equatable {
     let answers: [PracticeMatchCard]
 
     static func make(source: PracticeMatchSource, roundIndex: Int) -> PracticeMatchRound? {
+        var generator = SystemRandomNumberGenerator()
+        return make(source: source, roundIndex: roundIndex, rng: &generator)
+    }
+
+    static func make<RNG: RandomNumberGenerator>(
+        source: PracticeMatchSource,
+        roundIndex: Int = 0,
+        avoidingItemIDs: Set<String> = [],
+        rng: inout RNG
+    ) -> PracticeMatchRound? {
         guard source.items.count >= pairCount else {
             return nil
         }
 
-        let offset = (roundIndex * pairCount) % source.items.count
-        let rotated = Array(source.items[offset...]) + Array(source.items[..<offset])
-        let selected = Array(rotated.prefix(pairCount))
+        let selected = selectedItems(
+            from: source.items,
+            avoidingItemIDs: avoidingItemIDs,
+            rng: &rng
+        )
         let pairs = selected.map { item in
             PracticeMatchPair(id: item.id, item: item)
         }
@@ -3938,32 +3962,54 @@ private struct PracticeMatchRound: Equatable {
                 side: .answer
             )
         }
+        let prompts = promptCards.shuffled(using: &rng)
+        var answers = answerCards.shuffled(using: &rng)
+
+        if answers.map(\.pairID) == prompts.map(\.pairID), answers.count > 1 {
+            answers = Array(answers.dropFirst()) + [answers[0]]
+        }
 
         return PracticeMatchRound(
-            id: "\(source.id):\(roundIndex)",
+            id: [
+                source.id,
+                "\(roundIndex)",
+                selected.map(\.id).joined(separator: "|"),
+                prompts.map(\.id).joined(separator: "|"),
+                answers.map(\.id).joined(separator: "|"),
+            ].joined(separator: ":"),
             pairs: pairs,
-            prompts: stableShuffle(promptCards, seed: "\(source.id):prompt:\(roundIndex)"),
-            answers: stableShuffle(answerCards, seed: "\(source.id):answer:\(roundIndex)")
+            prompts: prompts,
+            answers: answers
         )
     }
 
-    private static func stableShuffle<T: Identifiable>(_ values: [T], seed: String) -> [T] where T.ID == String {
-        values.sorted { lhs, rhs in
-            stableRank("\(seed):\(lhs.id)") < stableRank("\(seed):\(rhs.id)")
-        }
-    }
+    private static func selectedItems<RNG: RandomNumberGenerator>(
+        from items: [PracticeMatchItem],
+        avoidingItemIDs: Set<String>,
+        rng: inout RNG
+    ) -> [PracticeMatchItem] {
+        let shuffled = items.shuffled(using: &rng)
+        let preferred = shuffled.filter { !avoidingItemIDs.contains($0.id) }
 
-    private static func stableRank(_ text: String) -> UInt64 {
-        text.utf8.reduce(UInt64(1469598103934665603)) { partial, byte in
-            (partial ^ UInt64(byte)) &* 1099511628211
+        guard preferred.count < pairCount else {
+            return Array(preferred.prefix(pairCount))
         }
+
+        let selectedIDs = Set(preferred.map(\.id))
+        let fill = shuffled
+            .filter { !selectedIDs.contains($0.id) }
+            .prefix(pairCount - preferred.count)
+
+        return preferred + fill
     }
 }
 
-private struct PracticeMatchActiveSession: Equatable {
+struct PracticeMatchActiveSession: Equatable {
     let source: PracticeMatchSource
     var roundIndex: Int
     var round: PracticeMatchRound
+    private var previousRounds: [PracticeMatchRound] = []
+    private var recentItemIDs: [String] = []
     var selectedPromptID: String?
     var selectedAnswerID: String?
     var matchedPairIDs: Set<String> = []
@@ -3983,8 +4029,17 @@ private struct PracticeMatchActiveSession: Equatable {
         matchedPairIDs.count == PracticeMatchRound.pairCount
     }
 
+    var canReturnToPreviousRound: Bool {
+        !previousRounds.isEmpty
+    }
+
     init?(source: PracticeMatchSource, roundIndex: Int = 0) {
-        guard let round = PracticeMatchRound.make(source: source, roundIndex: roundIndex) else {
+        var generator = SystemRandomNumberGenerator()
+        self.init(source: source, roundIndex: roundIndex, rng: &generator)
+    }
+
+    init?<RNG: RandomNumberGenerator>(source: PracticeMatchSource, roundIndex: Int = 0, rng: inout RNG) {
+        guard let round = PracticeMatchRound.make(source: source, roundIndex: roundIndex, rng: &rng) else {
             return nil
         }
 
@@ -3992,6 +4047,67 @@ private struct PracticeMatchActiveSession: Equatable {
         self.roundIndex = roundIndex
         self.round = round
     }
+
+    mutating func advanceToNextRound() -> Bool {
+        var generator = SystemRandomNumberGenerator()
+        return advanceToNextRound(rng: &generator)
+    }
+
+    mutating func advanceToNextRound<RNG: RandomNumberGenerator>(rng: inout RNG) -> Bool {
+        let nextRecentItemIDs = Self.trimmedRecentItemIDs(
+            recentItemIDs + round.pairs.map(\.id),
+            sourceItemCount: source.items.count
+        )
+        guard let nextRound = PracticeMatchRound.make(
+            source: source,
+            roundIndex: roundIndex + 1,
+            avoidingItemIDs: Set(nextRecentItemIDs),
+            rng: &rng
+        ) else {
+            return false
+        }
+
+        previousRounds.append(round)
+        roundIndex += 1
+        round = nextRound
+        recentItemIDs = nextRecentItemIDs
+        resetRoundState()
+        return true
+    }
+
+    mutating func returnToPreviousRound() -> Bool {
+        guard let previousRound = previousRounds.popLast() else {
+            return false
+        }
+
+        roundIndex = max(roundIndex - 1, 0)
+        round = previousRound
+        resetRoundState()
+        return true
+    }
+
+    private mutating func resetRoundState() {
+        selectedPromptID = nil
+        selectedAnswerID = nil
+        matchedPairIDs = []
+        incorrectPromptID = nil
+        incorrectAnswerID = nil
+        hintedPairID = nil
+    }
+
+    private static func trimmedRecentItemIDs(_ ids: [String], sourceItemCount: Int) -> [String] {
+        let retainedCount = min(max(sourceItemCount - PracticeMatchRound.pairCount, 0), PracticeMatchRound.pairCount * 3)
+        guard retainedCount > 0 else {
+            return []
+        }
+
+        return Array(ids.suffix(retainedCount))
+    }
+}
+
+private enum PracticeMatchDismissalTarget {
+    case hub
+    case originRoute
 }
 
 private struct PracticeMatchRootView: View {
@@ -4003,10 +4119,13 @@ private struct PracticeMatchRootView: View {
     let requestedMode: PracticeMode?
     let topContentClearance: CGFloat
     let onBrowseTapped: () -> Void
+    let onCloseToOrigin: () -> Void
+    let onPresentationChanged: (Bool) -> Void
 
     @State private var loadState = PracticeMatchDataState.loading
     @State private var loadGeneration = 0
     @State private var activeSession: PracticeMatchActiveSession?
+    @State private var activeSessionDismissalTarget = PracticeMatchDismissalTarget.hub
     @State private var handledRequestedKey: String?
 
     var body: some View {
@@ -4014,30 +4133,29 @@ private struct PracticeMatchRootView: View {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
 
+            PracticeMatchHubView(
+                state: loadState,
+                topContentClearance: topContentClearance,
+                onStartSource: { startSource($0, dismissalTarget: .hub) },
+                onBrowseTapped: onBrowseTapped,
+                onRetry: reloadSnapshot
+            )
+            .allowsHitTesting(activeSession == nil)
+            .accessibilityHidden(activeSession != nil)
+
             if let activeSession {
                 PracticeMatchRoundView(
                     session: activeSession,
                     topContentClearance: topContentClearance,
-                    onBack: {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            self.activeSession = nil
-                        }
-                    },
+                    onClose: closeActiveSession,
+                    onPreviousRound: returnToPreviousRound,
                     onSelectPrompt: selectPrompt,
                     onSelectAnswer: selectAnswer,
                     onHint: revealHint,
                     onContinue: continuePractice
                 )
-                .transition(.opacity.combined(with: .move(edge: .trailing)))
-            } else {
-                PracticeMatchHubView(
-                    state: loadState,
-                    topContentClearance: topContentClearance,
-                    onStartSource: startSource,
-                    onBrowseTapped: onBrowseTapped,
-                    onRetry: reloadSnapshot
-                )
-                .transition(.opacity)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .zIndex(1)
             }
         }
         .task {
@@ -4046,6 +4164,9 @@ private struct PracticeMatchRootView: View {
         .onChange(of: isActive) { _, active in
             guard active else { return }
             reloadSnapshot()
+        }
+        .onChange(of: isPresentingMatch) { _, isPresented in
+            onPresentationChanged(isPresented)
         }
         .onChange(of: intentStore.savedPageIDs) { _, _ in
             reloadSnapshot()
@@ -4064,8 +4185,19 @@ private struct PracticeMatchRootView: View {
         }
         .onChange(of: scrollToTopTrigger) { _, _ in
             activeSession = nil
+            activeSessionDismissalTarget = .hub
+        }
+        .onAppear {
+            onPresentationChanged(isPresentingMatch)
+        }
+        .onDisappear {
+            onPresentationChanged(false)
         }
         .accessibilityIdentifier("Practice.Match.Root")
+    }
+
+    private var isPresentingMatch: Bool {
+        isActive && activeSession != nil
     }
 
     private func reloadSnapshot() {
@@ -4115,7 +4247,7 @@ private struct PracticeMatchRootView: View {
         }
 
         handledRequestedKey = requestKey
-        startSource(requestedSource)
+        startSource(requestedSource, dismissalTarget: .originRoute)
     }
 
     private var requestedKey: String? {
@@ -4130,12 +4262,35 @@ private struct PracticeMatchRootView: View {
         return nil
     }
 
-    private func startSource(_ source: PracticeMatchSource) {
+    private func startSource(_ source: PracticeMatchSource, dismissalTarget: PracticeMatchDismissalTarget) {
         guard source.canStart, let session = PracticeMatchActiveSession(source: source) else {
             return
         }
 
         withAnimation(.easeInOut(duration: 0.22)) {
+            activeSessionDismissalTarget = dismissalTarget
+            activeSession = session
+        }
+    }
+
+    private func closeActiveSession() {
+        let dismissalTarget = activeSessionDismissalTarget
+        withAnimation(.easeInOut(duration: 0.2)) {
+            activeSession = nil
+            activeSessionDismissalTarget = .hub
+        }
+
+        if dismissalTarget == .originRoute {
+            onCloseToOrigin()
+        }
+    }
+
+    private func returnToPreviousRound() {
+        guard var session = activeSession, session.returnToPreviousRound() else {
+            return
+        }
+
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
             activeSession = session
         }
     }
@@ -4226,8 +4381,13 @@ private struct PracticeMatchRootView: View {
     }
 
     private func continuePractice() {
-        withAnimation(.easeInOut(duration: 0.2)) {
-            activeSession = nil
+        guard var session = activeSession, session.advanceToNextRound() else {
+            closeActiveSession()
+            return
+        }
+
+        withAnimation(.easeInOut(duration: 0.22)) {
+            activeSession = session
         }
     }
 }
@@ -4514,7 +4674,8 @@ private struct PracticeMatchSavedEmptyCard: View {
 private struct PracticeMatchRoundView: View {
     let session: PracticeMatchActiveSession
     let topContentClearance: CGFloat
-    let onBack: () -> Void
+    let onClose: () -> Void
+    let onPreviousRound: () -> Void
     let onSelectPrompt: (PracticeMatchCard) -> Void
     let onSelectAnswer: (PracticeMatchCard) -> Void
     let onHint: () -> Void
@@ -4523,11 +4684,26 @@ private struct PracticeMatchRoundView: View {
     var body: some View {
         VStack(spacing: 0) {
             if session.isRoundComplete {
-                PracticeMatchCompletionView(session: session, onContinue: onContinue)
+                PracticeMatchCompletionView(
+                    session: session,
+                    topContentClearance: topContentClearance,
+                    onClose: onClose,
+                    onPreviousRound: onPreviousRound,
+                    onContinue: onContinue
+                )
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 22) {
+                        PracticeMatchSheetHandle()
+                            .padding(.top, max(16, topContentClearance + 16))
+
+                        PracticeMatchRoundHeader(
+                            session: session,
+                            onClose: onClose,
+                            onPreviousRound: onPreviousRound
+                        )
+
                         VStack(spacing: 8) {
                             Text("Match all pairs")
                                 .font(.system(size: 32, weight: .black, design: .rounded))
@@ -4539,8 +4715,6 @@ private struct PracticeMatchRoundView: View {
                                 .foregroundStyle(.secondary)
                                 .multilineTextAlignment(.center)
                         }
-
-                        PracticeMatchRoundHeader(session: session, onBack: onBack)
 
                         PracticeMatchBoardView(
                             session: session,
@@ -4565,7 +4739,6 @@ private struct PracticeMatchRoundView: View {
                         }
                     }
                     .padding(.horizontal, PracticeLayout.horizontalPadding)
-                    .padding(.top, max(28, topContentClearance + 28))
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
                 .transition(.opacity)
@@ -4578,12 +4751,43 @@ private struct PracticeMatchRoundView: View {
 
 private struct PracticeMatchRoundHeader: View {
     let session: PracticeMatchActiveSession
-    let onBack: () -> Void
+    let onClose: () -> Void
+    let onPreviousRound: () -> Void
 
     var body: some View {
-        VStack(spacing: 14) {
+        VStack(spacing: 12) {
             HStack {
-                Button(action: onBack) {
+                Button(action: onPreviousRound) {
+                    Image(systemName: "chevron.left")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(session.canReturnToPreviousRound ? Color.primary : Color.secondary.opacity(0.55))
+                        .frame(width: 44, height: 44)
+                        .background(.white.opacity(0.72), in: Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(.white.opacity(0.86), lineWidth: 1)
+                        }
+                        .shadow(color: .black.opacity(0.045), radius: 10, x: 0, y: 5)
+                }
+                .frame(width: 44, height: 44)
+                .contentShape(Circle())
+                .buttonStyle(.plain)
+                .disabled(!session.canReturnToPreviousRound)
+                .accessibilityLabel("Previous round")
+                .accessibilityIdentifier("Practice.Match.PreviousRound")
+                .padding(.leading, AppBackSwipeGesturePolicy.edgeStartWidth)
+
+                Spacer()
+
+                Text(session.source.title)
+                    .font(.subheadline.weight(.black))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+
+                Spacer()
+
+                Button(action: onClose) {
                     Image(systemName: "xmark")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
@@ -4600,38 +4804,49 @@ private struct PracticeMatchRoundHeader: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel("Close practice")
                 .accessibilityIdentifier("Practice.Match.Close")
-                .padding(.leading, AppBackSwipeGesturePolicy.edgeStartWidth)
-
-                Spacer()
-
-                Text(session.progressText)
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .monospacedDigit()
-
-                Spacer()
-
-                Color.clear
-                    .frame(width: 44 + AppBackSwipeGesturePolicy.edgeStartWidth, height: 44)
+                .padding(.trailing, AppBackSwipeGesturePolicy.edgeStartWidth)
             }
 
-            GeometryReader { proxy in
-                ZStack(alignment: .leading) {
-                    Capsule(style: .continuous)
-                        .fill(Color.black.opacity(0.07))
-
-                    if session.progressFraction > 0 {
-                        Capsule(style: .continuous)
-                            .fill(Color.red)
-                            .frame(width: max(30, proxy.size.width * session.progressFraction))
-                    }
-                }
-            }
-            .frame(height: 7)
+            PracticeMatchProgressDots(
+                matchedCount: session.matchedPairIDs.count,
+                totalCount: PracticeMatchRound.pairCount
+            )
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
         .nativeGlass(cornerRadius: 28)
+    }
+}
+
+private struct PracticeMatchProgressDots: View {
+    let matchedCount: Int
+    let totalCount: Int
+
+    var body: some View {
+        HStack(spacing: 8) {
+            ForEach(0..<totalCount, id: \.self) { index in
+                Circle()
+                    .fill(index < matchedCount ? Color.red : Color.black.opacity(0.13))
+                    .frame(width: 8, height: 8)
+                    .overlay {
+                        Circle()
+                            .stroke(.white.opacity(index < matchedCount ? 0.6 : 0), lineWidth: 1)
+                    }
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(matchedCount) matched")
+        .accessibilityIdentifier("Practice.Match.ProgressDots")
+    }
+}
+
+private struct PracticeMatchSheetHandle: View {
+    var body: some View {
+        Capsule(style: .continuous)
+            .fill(Color.black.opacity(0.12))
+            .frame(width: 46, height: 5)
+            .frame(maxWidth: .infinity)
+            .accessibilityHidden(true)
     }
 }
 
@@ -4913,11 +5128,23 @@ private struct PracticeMatchHintNotice: View {
 
 private struct PracticeMatchCompletionView: View {
     let session: PracticeMatchActiveSession
+    let topContentClearance: CGFloat
+    let onClose: () -> Void
+    let onPreviousRound: () -> Void
     let onContinue: () -> Void
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 22) {
+                PracticeMatchSheetHandle()
+                    .padding(.top, max(16, topContentClearance + 16))
+
+                PracticeMatchRoundHeader(
+                    session: session,
+                    onClose: onClose,
+                    onPreviousRound: onPreviousRound
+                )
+
                 ZStack {
                     Circle()
                         .fill(
@@ -4940,9 +5167,10 @@ private struct PracticeMatchCompletionView: View {
                         .font(.system(size: 30, weight: .black, design: .rounded))
                         .foregroundStyle(.primary)
 
-                    Text("You matched all 4 pairs.")
+                    Text("You matched these 4. Keep the round going when you want more.")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
                 }
 
                 VStack(alignment: .leading, spacing: 0) {
@@ -4988,7 +5216,7 @@ private struct PracticeMatchCompletionView: View {
                 .phraseListCard(cornerRadius: 18)
 
                 Button(action: onContinue) {
-                    Text("Back to Practice")
+                    Text("Next round")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
