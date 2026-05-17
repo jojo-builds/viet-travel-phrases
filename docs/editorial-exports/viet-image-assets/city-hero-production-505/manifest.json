@@ -7045,14 +7045,12 @@
       "targetHeroImageName": "HeroCityHoianPlaceComGa",
       "imagePromptNote": "yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight",
       "queueIndex": 336,
-      "status": "imported",
-      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-ba-sources/HeroCityHoianPlaceComGa.png",
-      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceComGa/HeroCityHoianPlaceComGa.png",
+      "status": "needs_generation",
+      "sourceImagePath": "",
+      "approvedImagePath": "",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an appetizing Vietnamese dish/drink close-up with realistic texture for SpeakLocal Vietnam.\nPage: Cơm gà Hội An / Hoi An chicken rice\nCity: hoian\nSpecific subject guidance: yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceComGa.imageset/hero-city-hoian-place-com-ga.png",
-      "sha256": "36ae69420a29ccb0a2dd19e623344c800de9de50410d7f3acb5d62c09a5c5820"
+      "reviewerNotes": "",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an appetizing Vietnamese dish/drink close-up with realistic texture for SpeakLocal Vietnam.\nPage: Cơm gà Hội An / Hoi An chicken rice\nCity: hoian\nSpecific subject guidance: yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
     },
     {
       "id": "city-hoian-place-cooking-class",
@@ -7066,14 +7064,12 @@
       "targetHeroImageName": "HeroCityHoianPlaceCookingClass",
       "imagePromptNote": "open-air cooking table with herbs, rice paper, and bowls, no brand signage",
       "queueIndex": 337,
-      "status": "imported",
-      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-ba-sources/HeroCityHoianPlaceCookingClass.png",
-      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceCookingClass/HeroCityHoianPlaceCookingClass.png",
+      "status": "needs_generation",
+      "sourceImagePath": "",
+      "approvedImagePath": "",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Lớp học nấu ăn Hội An / Hoi An cooking class\nCity: hoian\nSpecific subject guidance: open-air cooking table with herbs, rice paper, and bowls, no brand signage\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCookingClass.imageset/hero-city-hoian-place-cooking-class.png",
-      "sha256": "2c4aa7803940769d030a54b720c7d35c929e6f438c45f8d26c055f41032cce22"
+      "reviewerNotes": "",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Lớp học nấu ăn Hội An / Hoi An cooking class\nCity: hoian\nSpecific subject guidance: open-air cooking table with herbs, rice paper, and bowls, no brand signage\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
     },
     {
       "id": "city-hoian-place-countryside-bicycle-loop",
@@ -7087,14 +7083,12 @@
       "targetHeroImageName": "HeroCityHoianPlaceCountrysideBicycleLoop",
       "imagePromptNote": "bicycle path through rice fields and vegetable gardens, morning",
       "queueIndex": 338,
-      "status": "imported",
-      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-ba-sources/HeroCityHoianPlaceCountrysideBicycleLoop.png",
-      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceCountrysideBicycleLoop/HeroCityHoianPlaceCountrysideBicycleLoop.png",
+      "status": "needs_generation",
+      "sourceImagePath": "",
+      "approvedImagePath": "",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Đạp xe vùng quê Hội An / Hoi An countryside bicycle loop\nCity: hoian\nSpecific subject guidance: bicycle path through rice fields and vegetable gardens, morning\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCountrysideBicycleLoop.imageset/hero-city-hoian-place-countryside-bicycle-loop.png",
-      "sha256": "d919390f9fbe49166c07c3c81a60f12250ad93abcf0fa4836fe1c1539a6f5dda"
+      "reviewerNotes": "",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Đạp xe vùng quê Hội An / Hoi An countryside bicycle loop\nCity: hoian\nSpecific subject guidance: bicycle path through rice fields and vegetable gardens, morning\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
     },
     {
       "id": "city-hoian-place-cua-dai-beach",
@@ -7108,14 +7102,12 @@
       "targetHeroImageName": "HeroCityHoianPlaceCuaDaiBeach",
       "imagePromptNote": "quieter coastal beach with boats and low waves, overcast soft light",
       "queueIndex": 339,
-      "status": "imported",
-      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-ba-sources/HeroCityHoianPlaceCuaDaiBeach.png",
-      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceCuaDaiBeach/HeroCityHoianPlaceCuaDaiBeach.png",
+      "status": "needs_generation",
+      "sourceImagePath": "",
+      "approvedImagePath": "",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Biển Cửa Đại / Cua Dai Beach\nCity: hoian\nSpecific subject guidance: quieter coastal beach with boats and low waves, overcast soft light\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCuaDaiBeach.imageset/hero-city-hoian-place-cua-dai-beach.png",
-      "sha256": "0e39523784487eab638a8599603fbe2320dddae38caa51e629b945c6b4d0ead2"
+      "reviewerNotes": "",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Biển Cửa Đại / Cua Dai Beach\nCity: hoian\nSpecific subject guidance: quieter coastal beach with boats and low waves, overcast soft light\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
     },
     {
       "id": "city-hoian-place-cua-dai-estuary",
@@ -7129,14 +7121,12 @@
       "targetHeroImageName": "HeroCityHoianPlaceCuaDaiEstuary",
       "imagePromptNote": "river meeting the sea with fishing boats and sandbars, hazy morning",
       "queueIndex": 340,
-      "status": "imported",
-      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-ba-sources/HeroCityHoianPlaceCuaDaiEstuary.png",
-      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceCuaDaiEstuary/HeroCityHoianPlaceCuaDaiEstuary.png",
+      "status": "needs_generation",
+      "sourceImagePath": "",
+      "approvedImagePath": "",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Cửa Đại / Cua Dai Estuary\nCity: hoian\nSpecific subject guidance: river meeting the sea with fishing boats and sandbars, hazy morning\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCuaDaiEstuary.imageset/hero-city-hoian-place-cua-dai-estuary.png",
-      "sha256": "53f96bb531974d177b72476b657f1e4953db1b5f8da26dcedb44b86ca997f7d5"
+      "reviewerNotes": "",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Cửa Đại / Cua Dai Estuary\nCity: hoian\nSpecific subject guidance: river meeting the sea with fishing boats and sandbars, hazy morning\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
     },
     {
       "id": "city-hoian-place-cua-dai-pier",
