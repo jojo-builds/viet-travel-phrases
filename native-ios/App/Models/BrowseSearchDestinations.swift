@@ -347,6 +347,8 @@ struct BrowseCollectionDescriptor: Identifiable, Equatable {
 
 struct BrowseCityHub: Equatable {
     let cityNameAudioItem: BrowseCityNameAudioItem?
+    let introTitle: String
+    let introText: String
     let situationTitle: String
     let situations: [BrowseCollectionSubcategory]
     let namesTitle: String
@@ -1115,6 +1117,8 @@ enum BrowseSearchDestinations {
             exploreShelves: [],
             cityHub: BrowseCityHub(
                 cityNameAudioItem: nil,
+                introTitle: "Start here",
+                introText: "Start with the city names travelers use most, then branch into arrival, food, hotel, help, and getting around.",
                 situationTitle: "Start here",
                 situations: countryStartCards(),
                 namesTitle: "Essential phrases",
@@ -1204,6 +1208,8 @@ enum BrowseSearchDestinations {
     ) -> BrowseCityHub {
         BrowseCityHub(
             cityNameAudioItem: cityNameAudioItem(for: cityID, city: city),
+            introTitle: "Start here",
+            introText: cityIntro(for: cityID),
             situationTitle: "Browse by",
             situations: citySituationCards(for: cityID, tintName: city.tintName, groupedItems: groupedItems),
             namesTitle: "Names to know",
@@ -2531,17 +2537,34 @@ enum BrowseSearchDestinations {
     private static func citySubtitle(for id: String) -> String {
         switch id {
         case "hcmc":
-            return "Airport arrivals, District 1 rides, markets, cafés, and first-day help."
+            return "Start with Saigon's airport, District 1, markets, cafes, and fast-moving street life."
         case "hanoi":
-            return "Airport arrivals, Old Quarter streets, food, landmarks, and everyday help."
+            return "Old Quarter lanes, lakes, northern food, coffee stops, and calm cultural landmarks."
         case "danang":
-            return "Airport arrivals, beach rides, river landmarks, markets, and day trips."
+            return "Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."
         case "hoian":
-            return "Old Town walks, lantern streets, cafés, markets, and rides back."
+            return "Ancient Town walks, lantern streets, tailor stops, cafes, markets, and countryside routes."
         case "hue":
-            return "Citadel visits, river rides, food stops, heritage routes, and practical help."
+            return "Imperial gates, royal tombs, Perfume River rides, garden houses, and central dishes."
         default:
             return "Arrivals, food, places, streets, and practical help."
+        }
+    }
+
+    private static func cityIntro(for id: String) -> String {
+        switch id {
+        case "hcmc":
+            return "Saigon is the Vietnam city where the day can move from airport pickup to strong coffee, market bargaining, river lights, and late food without ever slowing down. These names help you recognize the city by real places, not just broad neighborhoods."
+        case "hanoi":
+            return "Hanoi rewards travelers who can name the lake, the Old Quarter, the street, and the dish. The city feels layered: old lanes, shaded lakes, temple courtyards, train-station pickups, and bowls of northern food tucked into small shops."
+        case "danang":
+            return "Da Nang is practical and scenic at the same time: airport to beach, riverfront to bridges, markets to seafood, then out toward mountain or heritage trips. These city names help you talk about the exact side of town you mean."
+        case "hoian":
+            return "Hoi An is small enough to wander and rich enough to need names: the old town, the river, the bridge, the market, the beach, and the villages outside the lantern streets. These entries keep the romance of the place while still helping you ask clearly."
+        case "hue":
+            return "Hue is easier to love when the names stop blurring together. The city stretches from the Imperial City to river pagodas, royal tombs, garden houses, markets, and deeply local food, so exact names make the trip feel less intimidating."
+        default:
+            return "Start with the city names travelers use most, then branch into arrival, food, streets, landmarks, and getting back."
         }
     }
 

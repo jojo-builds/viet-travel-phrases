@@ -461,7 +461,7 @@ function main() {
       }
     }
 
-    if (isLandmarkActionPage) {
+    if (isLandmarkActionPage && page.editorialImport?.reviewStatus !== "handwritten-reviewed") {
       const sectionIDs = new Set((authoredPage.sections ?? []).map((section) => section.id));
       const missingSections = landmarkActionRequiredSections.filter((sectionID) => !sectionIDs.has(sectionID));
       if (missingSections.length > 0) {

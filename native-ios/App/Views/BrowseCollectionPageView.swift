@@ -339,6 +339,31 @@ private struct BrowseCityHubContent: View {
                     )
                 }
             } else {
+                BrowseCityIntroSection(
+                    title: cityHub.introTitle,
+                    text: cityHub.introText
+                )
+
+                if let cityNameAudioItem = cityHub.cityNameAudioItem {
+                    BrowseCityNameAudioPlayer(item: cityNameAudioItem)
+                }
+
+                if !cityHub.namesToKnowItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: cityHub.namesTitle,
+                        items: cityHub.namesToKnowItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
+
+                if !cityHub.quickPhraseItems.isEmpty {
+                    BrowseCollectionStarterSection(
+                        title: "Say first",
+                        items: cityHub.quickPhraseItems,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
+
                 if !cityBrowseAllItems.isEmpty {
                     BrowseCityFilterSection(
                         title: cityHub.browseTitle,
@@ -350,10 +375,6 @@ private struct BrowseCityHubContent: View {
                         onSelectFilter: selectCityFilter,
                         onOpenDetail: onOpenDetail
                     )
-                }
-
-                if let cityNameAudioItem = cityHub.cityNameAudioItem {
-                    BrowseCityNameAudioPlayer(item: cityNameAudioItem)
                 }
             }
         }
@@ -374,6 +395,21 @@ private struct BrowseCityHubContent: View {
         }
 
         selectedCityCardID = filter.id
+    }
+}
+
+private struct BrowseCityIntroSection: View {
+    let title: String
+    let text: String
+
+    var body: some View {
+        BrowseCollectionSection(title: title) {
+            Text(text)
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .lineSpacing(3)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }
 
