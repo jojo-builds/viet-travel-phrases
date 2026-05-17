@@ -15,8 +15,6 @@ struct BrowseCollectionPageView: View {
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
-    @State private var isPhotoBackdropAtCollapsedTapPosition = false
-    @State private var lastPhotoBackdropScrollChangeDate = Date.distantPast
 
     @ViewBuilder
     var body: some View {
@@ -33,7 +31,6 @@ struct BrowseCollectionPageView: View {
             didApplyPhotoBackdropInitialPosition = false
             isPhotoBackdropImmersive = false
             photoBackdropScrollOffset = 0
-            isPhotoBackdropAtCollapsedTapPosition = false
         }
         .preference(
             key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
@@ -107,27 +104,22 @@ struct BrowseCollectionPageView: View {
                         }
                     }
                     .simultaneousGesture(
-                        TapGesture().onEnded {
-                            togglePhotoBackdropImmersiveIfAvailable(metrics: metrics)
+                        SpatialTapGesture().onEnded { value in
+                            togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
                         }
                     )
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
-                        let canToggleImmersive = offset <= metrics.collapsedTapOffset
-                        if isPhotoBackdropAtCollapsedTapPosition != canToggleImmersive {
-                            isPhotoBackdropAtCollapsedTapPosition = canToggleImmersive
-                            lastPhotoBackdropScrollChangeDate = Date()
-                        }
-
                         let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
                         if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
                             photoBackdropScrollOffset = backdropOffset
-                            lastPhotoBackdropScrollChangeDate = Date()
                         }
 
                         if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
-                            isPhotoBackdropImmersive = false
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
                         }
                     }
                     .onChange(of: scrollToTopTrigger) { _, _ in
@@ -247,7 +239,8 @@ struct BrowseCollectionPageView: View {
         .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
-        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
@@ -292,7 +285,7 @@ struct BrowseCollectionPageView: View {
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
-        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -333,20 +326,25 @@ struct BrowseCollectionPageView: View {
         didApplyPhotoBackdropInitialPosition = true
     }
 
-    private func togglePhotoBackdropImmersiveIfAvailable(metrics: PhrasePhotoBackdropLayout.Metrics) {
+    private func togglePhotoBackdropImmersive(at location: CGPoint, metrics: PhrasePhotoBackdropLayout.Metrics) {
         if isPhotoBackdropImmersive {
-            isPhotoBackdropImmersive = false
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
+            }
             return
         }
 
-        guard isPhotoBackdropAtCollapsedTapPosition else {
-            return
-        }
-        guard Date().timeIntervalSince(lastPhotoBackdropScrollChangeDate) > 0.35 else {
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
             return
         }
 
-        isPhotoBackdropImmersive = true
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
+        }
     }
 
     private func selectCityBrowseGroup(_ filter: BrowseCollectionSubcategory, scrollProxy: ScrollViewProxy) {

@@ -324,27 +324,32 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
     }
 
-    func testCityNounDetailHeroImageSupportsLightboxDismissPaths() {
+    func testCityNounDetailPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
         let pageID = "viet-phrase-city-danang-place-dragon-bridge"
         let app = launchApp(arguments: ["--detail-page", pageID])
-        let imageIdentifier = "PhraseArticle.HeroImageLightbox.Image.\(pageID)"
+        let content = app.descendants(matching: .any)["PhraseArticle.PhotoBackdrop.Content.\(pageID)"]
 
         XCTAssertTrue(app.staticTexts["Cầu Rồng"].waitForExistence(timeout: 4))
-        tapCityNounHeroMasthead(app)
-
-        XCTAssertTrue(app.images[imageIdentifier].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
-
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+        XCTAssertTrue(content.waitForExistence(timeout: 2))
 
         tapCityNounHeroMasthead(app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .down)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+        XCTAssertTrue(content.waitForNonExistence(timeout: 2))
 
         tapCityNounHeroMasthead(app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .up)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+        XCTAssertTrue(content.waitForExistence(timeout: 2))
+    }
+
+    func testCityHubPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
+        let app = launchApp(arguments: ["--browse-city", "danang"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(app.staticTexts["Browse by"].waitForNonExistence(timeout: 2))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
     }
 
     func testVietnameseMenuDetailUsesMenuChipsInsteadOfBreakdownMath() {
@@ -792,7 +797,11 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     private func tapCityNounHeroMasthead(_ app: XCUIApplication) {
-        app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: 0.25)).tap()
+        tapPhotoBackdropImage(app)
+    }
+
+    private func tapPhotoBackdropImage(_ app: XCUIApplication) {
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: 0.18)).tap()
     }
 
     private func tapWhenComfortablyVisible(identifier: String, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
