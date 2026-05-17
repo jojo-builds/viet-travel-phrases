@@ -3979,8 +3979,13 @@ private struct PracticeMatchRootView: View {
             return
         }
 
+        let requestedSource = snapshot.source(sourceID: requestedSourceID, mode: requestedMode)
+        guard requestedSource.canStart else {
+            return
+        }
+
         handledRequestedKey = requestKey
-        startSource(snapshot.source(sourceID: requestedSourceID, mode: requestedMode))
+        startSource(requestedSource)
     }
 
     private var requestedKey: String? {
