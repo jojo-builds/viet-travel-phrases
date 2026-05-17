@@ -3,16 +3,24 @@ import SwiftUI
 import UIKit
 #endif
 
+struct SearchReturnFocusRequest: Equatable {
+    let id: Int
+    let scrollID: String
+}
+
 struct SearchPageView: View {
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
+    @FocusState private var isInlineSearchFieldFocused: Bool
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
     let isFieldFocused: Bool
+    let returnFocusRequest: SearchReturnFocusRequest?
     let onClose: () -> Void
+    var onPrepareReturnFocus: (String) -> Void = { _ in }
     var onOpenDetail: (String) -> Void = { _ in }
     var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
     var onSearchQuery: (String) -> Void = { _ in }
@@ -21,7 +29,9 @@ struct SearchPageView: View {
     init(
         query: Binding<String> = .constant(""),
         isFieldFocused: Bool = false,
+        returnFocusRequest: SearchReturnFocusRequest? = nil,
         onClose: @escaping () -> Void,
+        onPrepareReturnFocus: @escaping (String) -> Void = { _ in },
         onOpenDetail: @escaping (String) -> Void = { _ in },
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
         onSearchQuery: @escaping (String) -> Void = { _ in },
@@ -32,7 +42,9 @@ struct SearchPageView: View {
             initialValue: SearchPageResults(query: query.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines))
         )
         self.isFieldFocused = isFieldFocused
+        self.returnFocusRequest = returnFocusRequest
         self.onClose = onClose
+        self.onPrepareReturnFocus = onPrepareReturnFocus
         self.onOpenDetail = onOpenDetail
         self.onOpenCollection = onOpenCollection
         self.onSearchQuery = onSearchQuery
@@ -51,39 +63,54 @@ struct SearchPageView: View {
                 PhrasePageStyle.pageBackground
                     .ignoresSafeArea()
 
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                        header(results: searchResults, mode: headerMode)
+                ScrollViewReader { scrollProxy in
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
+                            header(results: searchResults, mode: headerMode)
+                            searchField
 
-                        if searchResults.query.isEmpty {
-                            if effectiveFieldFocused {
-                                focusedContent
+                            if searchResults.query.isEmpty {
+                                if effectiveFieldFocused {
+                                    focusedContent
+                                } else {
+                                    defaultContent
+                                }
+                            } else if searchResults.hasResults {
+                                resultsContent(results: searchResults)
                             } else {
-                                defaultContent
+                                recoveryContent
                             }
-                        } else if searchResults.hasResults {
-                            resultsContent(results: searchResults)
-                        } else {
-                            recoveryContent
                         }
+                        .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
+                        .padding(.horizontal, SearchPageLayout.horizontalPadding)
+                        .padding(.bottom, SearchPageLayout.resultsBottomClearance)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
-                    .padding(.horizontal, SearchPageLayout.horizontalPadding)
-                    .padding(.bottom, SearchPageLayout.resultsBottomClearance)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .scrollDismissesKeyboard(.interactively)
+                    .ignoresSafeArea(edges: .top)
+                    .zIndex(SearchPageLayout.resultsZIndex)
+                    .onAppear {
+                        applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
+                    }
+                    .onChange(of: returnFocusRequest) { _, request in
+                        applyReturnFocusIfNeeded(request, scrollProxy: scrollProxy)
+                    }
                 }
-                .scrollDismissesKeyboard(.interactively)
-                .ignoresSafeArea(edges: .top)
-                .zIndex(SearchPageLayout.resultsZIndex)
             }
         }
         .accessibilityIdentifier("SearchPageView")
-        .onAppear(perform: refreshSearchResultsIfNeeded)
+        .onAppear {
+            refreshSearchResultsIfNeeded()
+            applyInlineSearchFocusIfNeeded()
+        }
         .onChange(of: trimmedQuery) { _, nextQuery in
             if searchResults.query != nextQuery {
                 selectedFilter = .all
             }
             scheduleSearchResultsRefresh(for: nextQuery)
+        }
+        .onChange(of: isFieldFocused) { _, _ in
+            applyInlineSearchFocusIfNeeded()
         }
         .onDisappear {
             searchRefreshTask?.cancel()
@@ -92,7 +119,7 @@ struct SearchPageView: View {
     }
 
     private var effectiveFieldFocused: Bool {
-        isFieldFocused
+        isFieldFocused || isInlineSearchFieldFocused
     }
 
     private var trimmedQuery: String {
@@ -126,6 +153,46 @@ struct SearchPageView: View {
 
             searchResults = SearchPageResults(query: nextQuery)
         }
+    }
+
+    private func applyInlineSearchFocusIfNeeded() {
+        guard isFieldFocused else {
+            return
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 80_000_000)
+            guard isFieldFocused else {
+                return
+            }
+
+            isInlineSearchFieldFocused = true
+        }
+    }
+
+    private func applyReturnFocusIfNeeded(_ request: SearchReturnFocusRequest?, scrollProxy: ScrollViewProxy) {
+        guard let request else {
+            return
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 120_000_000)
+            withAnimation(.snappy(duration: 0.24)) {
+                scrollProxy.scrollTo(request.scrollID, anchor: .center)
+            }
+        }
+    }
+
+    private static func phraseResultScrollID(for pageID: String) -> String {
+        "SearchResult.\(pageID)"
+    }
+
+    private static func collectionResultScrollID(for route: BrowseCollectionRoute) -> String {
+        "Search.Collection.\(route.id)"
+    }
+
+    private static func cityResultScrollID(for cityID: String) -> String {
+        "Search.City.\(cityID)"
     }
 
     private var currentWindowTopSafeAreaInset: CGFloat {
@@ -177,6 +244,47 @@ struct SearchPageView: View {
                     .lineSpacing(3)
                     .padding(.top, 10)
             }
+        }
+    }
+
+    private var searchField: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(.secondary)
+                .frame(width: 20)
+                .accessibilityHidden(true)
+
+            TextField("Search Vietnamese phrases", text: $query)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .submitLabel(.search)
+                .focused($isInlineSearchFieldFocused)
+                .accessibilityIdentifier("Search Vietnamese phrases")
+
+            if !query.isEmpty {
+                Button {
+                    query = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 28, height: 28)
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Clear search")
+                .accessibilityIdentifier("Search.InlineClear")
+            }
+        }
+        .padding(.horizontal, 14)
+        .frame(height: 50)
+        .frame(maxWidth: .infinity)
+        .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.black.opacity(0.06), lineWidth: 1)
+                .allowsHitTesting(false)
         }
     }
 
@@ -236,7 +344,11 @@ struct SearchPageView: View {
                 SearchSection(title: "Browse matches") {
                     LazyVStack(spacing: 12) {
                         ForEach(results.collectionResults.prefix(3)) { match in
-                            SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
+                            SearchCollectionCard(match: match) { route in
+                                onPrepareReturnFocus(Self.collectionResultScrollID(for: match.descriptor.route))
+                                onOpenCollection(route)
+                            }
+                            .id(Self.collectionResultScrollID(for: match.descriptor.route))
                         }
                     }
                 }
@@ -244,7 +356,7 @@ struct SearchPageView: View {
 
             if selectedFilter.includesCities, !results.cityResults.isEmpty {
                 SearchSection(title: "Cities") {
-                    cityShortcutRow(cities: results.cityResults)
+                    cityShortcutRow(cities: results.cityResults, recordsReturnFocus: true)
                 }
             }
 
@@ -252,7 +364,11 @@ struct SearchPageView: View {
                 SearchSection(title: "Results") {
                     LazyVStack(spacing: 10) {
                         ForEach(results.phraseResults) { item in
-                            SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                            SearchPhraseRow(item: item) { pageID in
+                                onPrepareReturnFocus(Self.phraseResultScrollID(for: pageID))
+                                onOpenDetail(pageID)
+                            }
+                            .id(Self.phraseResultScrollID(for: item.pageID))
                         }
                     }
                     .padding(14)
@@ -306,13 +422,17 @@ struct SearchPageView: View {
         }
     }
 
-    private func cityShortcutRow(cities: [BrowseCityShortcut]) -> some View {
+    private func cityShortcutRow(cities: [BrowseCityShortcut], recordsReturnFocus: Bool = false) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(cities) { city in
                         SearchCityCard(city: city) {
+                            if recordsReturnFocus {
+                                onPrepareReturnFocus(Self.cityResultScrollID(for: city.id))
+                            }
                             onOpenCollection(city.collectionRoute)
                         }
+                        .id(Self.cityResultScrollID(for: city.id))
                     }
                 }
             .padding(.bottom, 2)
@@ -329,7 +449,11 @@ struct SearchPageView: View {
         return SearchSection(title: "Likely next") {
             LazyVStack(spacing: 10) {
                 ForEach(items) { item in
-                    SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                    SearchPhraseRow(item: item) { pageID in
+                        onPrepareReturnFocus(Self.phraseResultScrollID(for: pageID))
+                        onOpenDetail(pageID)
+                    }
+                    .id(Self.phraseResultScrollID(for: item.pageID))
                 }
             }
         }

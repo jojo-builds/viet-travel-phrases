@@ -564,7 +564,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["Browse.NextShelf.recent"].exists)
     }
 
-    func testSearchTabOpensSystemSearchField() {
+    func testSearchTabOpensSearchField() {
         let app = XCUIApplication()
         app.launch()
 
@@ -580,6 +580,20 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Results for taxi"].waitForExistence(timeout: 3))
     }
 
+    func testSearchTabDoesNotAutoFocusSystemSearchField() {
+        let app = XCUIApplication()
+        app.launch()
+
+        openDock("Search", in: app)
+
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
+        XCTAssertFalse(
+            app.keyboards.firstMatch.waitForExistence(timeout: 0.5),
+            "Tapping the bottom Search tab should open discovery/results without flashing keyboard focus."
+        )
+    }
+
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
         let app = XCUIApplication()
         app.launchArguments = ["--search-query", "hotel"]
@@ -587,6 +601,28 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
         XCTAssertEqual(app.keyboards.count, 0)
+    }
+
+    func testBackFromSearchResultRestoresResultScrollPosition() {
+        let app = launchApp(arguments: ["--search-query", "hotel"])
+        let resultRows = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "SearchResult."))
+        let targetResult = resultRows.element(boundBy: 8)
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
+        scrollUntilHittable(targetResult, app: app)
+        let targetIdentifier = targetResult.identifier
+        targetResult.tap()
+
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+        let restoredResult = app.buttons[targetIdentifier]
+        XCTAssertTrue(restoredResult.waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            restoredResult.isHittable,
+            "Back from a Search result should restore the Search results near the row that opened the detail page."
+        )
     }
 
     func testProgressiveSearchTypingAndDeletingKeepsFieldResponsive() {
