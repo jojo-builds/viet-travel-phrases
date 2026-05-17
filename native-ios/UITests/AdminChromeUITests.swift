@@ -421,7 +421,7 @@ final class AdminChromeUITests: XCTestCase {
 
     private func openDock(_ title: String, in app: XCUIApplication) {
         let dockButton = systemTab(title, in: app)
-        if dockButton.waitForExistence(timeout: 2) {
+        if dockButton.waitForExistence(timeout: 2), dockButton.isHittable {
             dockButton.tap()
         } else {
             systemTabCoordinate(title, in: app).tap()
@@ -458,7 +458,7 @@ final class AdminChromeUITests: XCTestCase {
         case "Messages":
             normalizedX = 0.66
         case "Search":
-            normalizedX = 0.88
+            normalizedX = 0.82
         default:
             normalizedX = 0.5
         }

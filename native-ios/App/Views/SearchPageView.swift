@@ -80,6 +80,9 @@ struct SearchPageView: View {
         .accessibilityIdentifier("SearchPageView")
         .onAppear(perform: refreshSearchResultsIfNeeded)
         .onChange(of: trimmedQuery) { _, nextQuery in
+            if searchResults.query != nextQuery {
+                selectedFilter = .all
+            }
             scheduleSearchResultsRefresh(for: nextQuery)
         }
         .onDisappear {
@@ -765,6 +768,7 @@ private struct SearchRecoveryCard: View {
             .phraseListCard(cornerRadius: 24)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("Search.Recovery.\(action.id)")
     }
 }
 

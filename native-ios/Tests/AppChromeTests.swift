@@ -925,6 +925,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 0)
     }
 
+    func testOpeningCurrentDetailFromSearchClosesSearch() {
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
+
+        navigation.openSearch()
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertFalse(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+        XCTAssertEqual(navigation.detailScrollToTopRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
+    }
+
     func testEdgeSwipeBackPopsOneDetailPage() {
         var navigation = AppShellNavigationState()
         navigation.openDetail("viet-phrase-hello-chao-anh")
@@ -1099,7 +1113,7 @@ final class AppChromeTests: XCTestCase {
 
         navigation.openBrowse()
         navigation.openSearch()
-        navigation.openBrowseCollection(.category("hotel"))
+        navigation.openBrowseCollectionFromSearch(.category("hotel"))
 
         XCTAssertFalse(navigation.isSearchPresented)
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
@@ -1115,6 +1129,47 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
         XCTAssertTrue(navigation.forwardStack.isEmpty)
+    }
+
+    func testOpeningHomeCollectionFromSearchKeepsHomeBrowseHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openHomeBrowseCollection(.city("danang"))
+        navigation.openSearch()
+        navigation.openBrowseCollectionFromSearch(.category("hotel"))
+
+        XCTAssertFalse(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.browseCollectionPath, [.city("danang"), .category("hotel")])
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel")), .browseCollection(.city("danang"))])
+    }
+
+    func testOpeningCollectionFromDetailSearchCanBackReturnToDetail() {
+        var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
+
+        navigation.openSearch()
+        navigation.openBrowseCollectionFromSearch(.category("hotel"))
+
+        XCTAssertFalse(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.detailPath, [])
+        XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
     }
 
     func testBrowseSearchDestinationsResolveToCanonicalPages() {

@@ -253,7 +253,7 @@ final class BackSwipeUITests: XCTestCase {
         case "Messages":
             normalizedX = 0.66
         case "Search":
-            normalizedX = 0.88
+            normalizedX = 0.82
         default:
             normalizedX = 0.5
         }
