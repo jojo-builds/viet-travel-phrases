@@ -501,6 +501,13 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testSavedLaunchArgumentOpensSavedPage() {
+        XCTAssertEqual(
+            AppShellView.initialRoute(for: ["SpeakLocalNative", "--saved"]),
+            .saved
+        )
+    }
+
     func testBrowseCollectionLaunchArgumentsOpenCollectionPages() {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--browse-category", "hotel"]),
@@ -2176,6 +2183,34 @@ final class LocalUserIntentStoreTests: XCTestCase {
 
         XCTAssertEqual(store.savedPageIDs, ["viet-phrase-problems-2"])
         XCTAssertTrue(store.practicePageIDs.isEmpty)
+    }
+
+    func testSavedMenuItemsPersistAsTripItems() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.toggleSavedPage("viet-menu-drink-ca-phe-sua-da")
+
+        XCTAssertEqual(store.savedPageIDs, ["viet-menu-drink-ca-phe-sua-da"])
+        XCTAssertTrue(store.isPageSaved("viet-menu-drink-ca-phe-sua-da"))
+        XCTAssertTrue(store.practicePageIDs.isEmpty)
+    }
+
+    func testSavedTripSnapshotGroupsMenuItemsAndPhrases() {
+        let snapshot = SavedTripSnapshot.make(
+            savedPageIDs: [
+                "viet-menu-drink-ca-phe-sua-da",
+                "viet-menu-food-pho-bo",
+                "viet-thank-you",
+            ],
+            practiceReadyCount: 3
+        )
+
+        XCTAssertEqual(snapshot.totalItemCount, 3)
+        XCTAssertEqual(snapshot.practiceReadyCount, 3)
+        XCTAssertEqual(snapshot.railItems.map(\.id), ["all", "phrases", "food", "drinks"])
+        XCTAssertEqual(snapshot.sections.map(\.kind), [.phrases, .food, .drinks])
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .drinks })?.items.first?.title, "Cà phê sữa đá")
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .food })?.items.first?.imageName, "HeroMenuFoodPhoBo")
     }
 
     func testCategoryPracticeAddsCanonicalStarterPagesWithoutDuplicates() {

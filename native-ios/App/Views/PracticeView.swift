@@ -3577,7 +3577,7 @@ private struct PracticeMatchSnapshot {
 
         switch mode {
         case .savedReview, .missedReview:
-            return practiceSource.canStart ? practiceSource : savedSource
+            return savedSource
         case .hcmcCity:
             return topicSources.first(where: { $0.id == "topic:first-day" }) ?? quickSource
         case .hanoiBucketList:
@@ -3611,15 +3611,14 @@ private struct PracticeMatchSnapshot {
             )
         }
 
-        let savedItems: [PracticeMatchItem]
-        if savedPageIDs.isEmpty {
-            savedItems = []
-        } else {
-            savedItems = Self.uniquePracticeItems(
-                from: try repository.loadPracticeCandidates(
-                    pageIDs: savedPageIDs,
-                    limit: max(80, savedPageIDs.count)
-                )
+        let savedItems = try SavedTripPracticeCatalog.items(for: savedPageIDs).map { item in
+            PracticeMatchItem(
+                pageID: item.pageID,
+                vietnamese: item.vietnamese,
+                english: item.english,
+                audioKey: item.audioKey,
+                symbolName: item.symbolName,
+                tint: item.tintName
             )
         }
 
@@ -3670,10 +3669,10 @@ private struct PracticeMatchSnapshot {
             savedSource: PracticeMatchSource(
                 id: "saved",
                 kind: .saved,
-                title: "Saved phrases",
+                title: "Practice Saved",
                 subtitle: savedItems.count < PracticeMatchRound.pairCount
-                    ? "Save at least 4 phrases to start a saved round."
-                    : "Review what you saved while browsing.",
+                    ? "Save 4 items to unlock your trip round."
+                    : "Review the things you saved.",
                 symbolName: "heart.fill",
                 tint: .red,
                 items: savedItems
@@ -4088,7 +4087,6 @@ private struct PracticeMatchHubView: View {
                 case .loaded(let snapshot):
                     PracticeMatchQuickSection(
                         quickSource: snapshot.quickSource,
-                        practiceSource: snapshot.practiceSource,
                         savedSource: snapshot.savedSource,
                         onStartSource: onStartSource,
                         onBrowseTapped: onBrowseTapped
@@ -4126,7 +4124,6 @@ private struct PracticeMatchHero: View {
 
 private struct PracticeMatchQuickSection: View {
     let quickSource: PracticeMatchSource
-    let practiceSource: PracticeMatchSource
     let savedSource: PracticeMatchSource
     let onStartSource: (PracticeMatchSource) -> Void
     let onBrowseTapped: () -> Void
@@ -4141,21 +4138,6 @@ private struct PracticeMatchQuickSection: View {
                 onTap: { onStartSource(quickSource) }
             )
 
-            if practiceSource.canStart {
-                PracticeMatchSourceCard(
-                    source: practiceSource,
-                    title: practiceSource.title,
-                    subtitle: practiceSource.subtitle,
-                    actionTitle: "Start",
-                    onTap: { onStartSource(practiceSource) }
-                )
-            } else {
-                PracticeMatchPracticeEmptyCard(
-                    practiceCount: practiceSource.items.count,
-                    onBrowseTapped: onBrowseTapped
-                )
-            }
-
             if savedSource.canStart {
                 PracticeMatchSourceCard(
                     source: savedSource,
@@ -4163,6 +4145,11 @@ private struct PracticeMatchQuickSection: View {
                     subtitle: savedSource.subtitle,
                     actionTitle: "Start",
                     onTap: { onStartSource(savedSource) }
+                )
+            } else {
+                PracticeMatchSavedEmptyCard(
+                    savedCount: savedSource.items.count,
+                    onBrowseTapped: onBrowseTapped
                 )
             }
         }
@@ -4270,21 +4257,21 @@ private struct PracticeMatchSourceCard: View {
     }
 }
 
-private struct PracticeMatchPracticeEmptyCard: View {
-    let practiceCount: Int
+private struct PracticeMatchSavedEmptyCard: View {
+    let savedCount: Int
     let onBrowseTapped: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 14) {
-                PracticeIcon(symbolName: "bookmark.fill", tint: .red, size: 52)
+                PracticeIcon(symbolName: "heart.fill", tint: .red, size: 52)
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Add phrases to practice")
+                    Text("Practice Saved")
                         .font(.headline.weight(.black))
                         .foregroundStyle(.primary)
 
-                    Text("Use Browse practice entries to build a focused matching pool.")
+                    Text("Save 4 phrases, foods, or drinks to start a trip round.")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -4292,7 +4279,7 @@ private struct PracticeMatchPracticeEmptyCard: View {
             }
 
             Button(action: onBrowseTapped) {
-                Text(practiceCount == 0 ? "Go to Browse" : "\(practiceCount) added · Go to Browse")
+                Text(savedCount == 0 ? "Browse Vietnam" : "\(savedCount) saved · Browse Vietnam")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)

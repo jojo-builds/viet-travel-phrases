@@ -415,6 +415,7 @@ enum PhraseCatalog {
         }
 
         return pageID == PhrasePage.xinChao.id
+            || VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
     }
 

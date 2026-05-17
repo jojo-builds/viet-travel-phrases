@@ -33,15 +33,16 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
 
-    func testPracticePoolSourceStartsFromPracticePageIDs() {
+    func testPracticeSavedSourceStartsFromSavedTripItems() {
         let app = launchPracticeApp(extraArguments: ["--seed-returning-user-shelves"])
 
-        let practicePoolButton = app.buttons["Practice.Match.Source.practice"]
-        XCTAssertTrue(practicePoolButton.waitForExistence(timeout: 8))
-        XCTAssertTrue(app.staticTexts["My practice phrases"].exists)
-        XCTAssertTrue(app.staticTexts["5 practice-ready"].exists)
+        let savedPracticeButton = app.buttons["Practice.Match.Source.saved"]
+        XCTAssertTrue(savedPracticeButton.waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["Practice Saved"].exists)
+        XCTAssertTrue(app.staticTexts["6 practice-ready"].exists)
+        XCTAssertFalse(app.buttons["Practice.Match.Source.practice"].exists)
 
-        practicePoolButton.tap()
+        savedPracticeButton.tap()
 
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["0 / 4"].waitForExistence(timeout: 4))

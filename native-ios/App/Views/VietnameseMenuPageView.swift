@@ -5,6 +5,8 @@ struct VietnameseMenuPageView: View {
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
     let sectionJumpRequest: VietnameseMenuSectionJumpRequest?
+    var isSaved: (String) -> Bool
+    var onToggleSaved: (String) -> Void
     var onOpenDetail: (String) -> Void
 
     @State private var currentSectionID: String?
@@ -190,6 +192,8 @@ struct VietnameseMenuPageView: View {
                 VietnameseMenuSectionBlock(
                     section: section,
                     heroImageName: menuThumbnailImageName,
+                    isSaved: isSaved,
+                    onToggleSaved: onToggleSaved,
                     onOpenDetail: onOpenDetail
                 )
                 .padding(.top, index == 0 ? 0 : VietnameseMenuLayout.sectionSpacing)
@@ -338,6 +342,8 @@ private struct VietnameseMenuSectionImageCard: View {
 private struct VietnameseMenuSectionBlock: View {
     let section: VietnameseMenuSection
     let heroImageName: (VietnameseMenuItem) -> String
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
     let onOpenDetail: (String) -> Void
 
     var body: some View {
@@ -354,7 +360,9 @@ private struct VietnameseMenuSectionBlock: View {
                     VietnameseMenuItemRow(
                         item: item,
                         heroImageName: heroImageName(item),
-                        onOpenDetail: { onOpenDetail(item.detailPageID) }
+                        isSaved: isSaved(item.detailPageID),
+                        onOpenDetail: { onOpenDetail(item.detailPageID) },
+                        onToggleSaved: { onToggleSaved(item.detailPageID) }
                     )
 
                     if item.id != section.items.last?.id {
@@ -372,57 +380,81 @@ private struct VietnameseMenuSectionBlock: View {
 private struct VietnameseMenuItemRow: View {
     let item: VietnameseMenuItem
     let heroImageName: String
+    let isSaved: Bool
     let onOpenDetail: () -> Void
+    let onToggleSaved: () -> Void
 
     var body: some View {
-        Button(action: onOpenDetail) {
-            HStack(spacing: 14) {
-                Image(heroImageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 62, height: 62)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color.white.opacity(0.8), lineWidth: 1)
+        HStack(spacing: 10) {
+            Button(action: onOpenDetail) {
+                HStack(spacing: 14) {
+                    Image(heroImageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 62, height: 62)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                        }
+                        .accessibilityHidden(true)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.vietnameseItem)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.74)
+
+                        Text(item.englishTranslation)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
-                    .accessibilityHidden(true)
-
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(item.vietnameseItem)
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.74)
-
-                    Text(item.englishTranslation)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .layoutPriority(1)
-
-                Spacer(minLength: 0)
-
-                if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
-                    AudioSpeakerButton(tint: item.kind?.tintName ?? .orange, audioKey: audioKey)
-                } else {
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.semibold))
-                        .foregroundStyle(.secondary.opacity(0.8))
-                        .frame(width: 36, height: 36)
-                        .nativeGlass(cornerRadius: 18, interactive: false)
+                    .layoutPriority(1)
                 }
             }
+            .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
             .contentShape(Rectangle())
+            .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
+
+            if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
+                AudioSpeakerButton(
+                    tint: item.kind?.tintName ?? .orange,
+                    size: 44,
+                    audioKey: audioKey,
+                    accessibilityIdentifier: "VietnameseMenu.Audio.\(item.detailPageID)"
+                )
+                .zIndex(1)
+            } else {
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.secondary.opacity(0.8))
+                    .frame(width: 36, height: 36)
+                    .nativeGlass(cornerRadius: 18, interactive: false)
+                    .zIndex(1)
+            }
+
+            Button(action: onToggleSaved) {
+                Image(systemName: isSaved ? "heart.fill" : "heart")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.red)
+                    .frame(width: 44, height: 44)
+                    .background(Color.white.opacity(0.001), in: Circle())
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .frame(width: 44, height: 44)
+            .contentShape(Circle())
+            .accessibilityLabel(isSaved ? "Remove from Saved" : "Save to My Trip")
+            .accessibilityIdentifier("VietnameseMenu.Save.\(item.detailPageID)")
+            .zIndex(2)
         }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
     }
 }
 
