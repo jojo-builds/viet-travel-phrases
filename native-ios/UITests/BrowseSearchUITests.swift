@@ -573,6 +573,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
         XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
+        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
     }
 
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
@@ -606,6 +607,51 @@ final class BrowseSearchUITests: XCTestCase {
 
         field.typeText("a")
         XCTAssertTrue(app.staticTexts["Results for ha"].waitForExistence(timeout: 3))
+    }
+
+    func testBrowseCompactSearchFocusesFieldForTyping() {
+        let app = launchApp(arguments: ["--browse"])
+
+        tapWhenVisible(app.buttons["Browse.CompactSearch"], app: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+        XCTAssertTrue(field.waitForExistence(timeout: 2))
+        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+
+        field.typeText("hotel")
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+    }
+
+    func testFocusedSearchSuggestionKeepsKeyboardUsable() {
+        let app = launchApp()
+        openSearch(in: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 3))
+        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 3))
+
+        tapWhenVisible(app.buttons["Search.Prompt.hotel"], app: app)
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.keyboards.element.waitForExistence(timeout: 2))
+    }
+
+    func testSearchFilterResetsWhenQueryChanges() {
+        let app = launchApp(arguments: ["--search-query", "hanoi", "--search-focused"])
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Search.Filter.Cities"].waitForExistence(timeout: 3))
+
+        app.buttons["Search.Filter.Cities"].tap()
+        field.tap()
+        field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 5))
+        field.typeText("hotel")
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["Search.Collection.category.hotel"].waitForExistence(timeout: 3))
     }
 
     private func launchApp(arguments: [String] = []) -> XCUIApplication {

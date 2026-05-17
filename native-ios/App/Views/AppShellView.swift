@@ -1268,10 +1268,11 @@ struct AppShellView: View {
     }
 
     private func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
-        if navigation.searchOriginSystemTab == .home {
-            openBrowseCollectionFromHome(route)
-        } else {
-            openBrowseCollection(route)
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.openBrowseCollectionFromSearch(route)
         }
     }
 
@@ -1431,17 +1432,21 @@ struct AppShellView: View {
 
     private func goForward() {
         cancelInteractiveChromeState()
+        let shouldFocusSearch = navigation.forwardPreviewRoute == .search
         withAnimation(.snappy(duration: 0.34)) {
             navigateForwardInState()
+        }
+        if shouldFocusSearch {
+            focusSearchField()
         }
     }
 
     private func openSearch() {
-        openSearch(prefilledQuery: nil, focusField: false)
+        openSearch(prefilledQuery: nil, focusField: true)
     }
 
     private func openSearchQuery(_ query: String) {
-        openSearch(prefilledQuery: query, focusField: false)
+        openSearch(prefilledQuery: query, focusField: isSearchFieldFocused)
     }
 
     private func openSearch(prefilledQuery: String?, focusField: Bool) {
@@ -2033,6 +2038,12 @@ struct AppShellNavigationState: Equatable {
         }
 
         guard detailPath.last != canonicalPageID else {
+            if isSearchPresented {
+                isSearchPresented = false
+                forwardStack.removeAll()
+                detailScrollToTopRoute = .detailPage(canonicalPageID)
+                detailScrollToTopTrigger += 1
+            }
             return
         }
 
@@ -2152,6 +2163,39 @@ struct AppShellNavigationState: Equatable {
         browseCollectionScrollToTopTrigger += 1
     }
 
+    mutating func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
+        let originRoute = routeBelowSearch
+        let originSnapshot = AppShellNavigationSnapshot(
+            rootRoute: rootRoute,
+            browseCollectionPath: browseCollectionPath,
+            detailPath: detailPath,
+            isSearchPresented: false
+        )
+
+        if originRoute == .browseCollection(route) {
+            isSearchPresented = false
+            forwardStack.removeAll()
+            browseCollectionScrollToTopRoute = route
+            browseCollectionScrollToTopTrigger += 1
+            return
+        }
+
+        if case .detailPage = originRoute, backStack.last != originSnapshot {
+            backStack.append(originSnapshot)
+        }
+
+        rootRoute = rootRoute == .home ? .home : .browse
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+
+        if browseCollectionPath.last != route {
+            browseCollectionPath.append(route)
+        }
+        browseCollectionScrollToTopRoute = route
+        browseCollectionScrollToTopTrigger += 1
+    }
+
     mutating func goBack() {
         if isSearchPresented {
             isSearchPresented = false
@@ -2162,6 +2206,7 @@ struct AppShellNavigationState: Equatable {
         guard !detailPath.isEmpty else {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
+                restoreExplicitBackStackAfterPoppingCollectionIfNeeded()
                 return
             }
 
@@ -2196,6 +2241,19 @@ struct AppShellNavigationState: Equatable {
 
         let currentDetailID = detailPath.removeLast()
         forwardStack.append(.detailPage(currentDetailID))
+    }
+
+    private mutating func restoreExplicitBackStackAfterPoppingCollectionIfNeeded() {
+        guard browseCollectionPath.isEmpty, let previousSnapshot = backStack.last else {
+            return
+        }
+
+        switch previousSnapshot.currentRoute {
+        case .detailPage, .phrasePage, .saved, .practice:
+            restore(backStack.removeLast())
+        case .home, .browse, .browseCollection, .search:
+            return
+        }
     }
 
     mutating func goForward() {
