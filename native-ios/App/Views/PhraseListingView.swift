@@ -14,6 +14,7 @@ struct PhraseListingView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
@@ -32,6 +33,7 @@ struct PhraseListingView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
@@ -49,6 +51,7 @@ struct PhraseListingView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
@@ -69,6 +72,7 @@ struct PhraseListingView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
+            isActive: isActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
@@ -90,6 +94,7 @@ struct PhraseArticleTemplateView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
@@ -100,6 +105,11 @@ struct PhraseArticleTemplateView: View {
     var onToggleSaved: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var isPhotoBackdropAtCollapsedTapPosition = false
+    @State private var lastPhotoBackdropScrollChangeDate = Date.distantPast
     @State private var presentedHeroImage: PhraseHeroImagePresentation?
 
     init(
@@ -110,6 +120,7 @@ struct PhraseArticleTemplateView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
@@ -127,6 +138,7 @@ struct PhraseArticleTemplateView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
@@ -138,7 +150,16 @@ struct PhraseArticleTemplateView: View {
         self.onDetailTapped = onDetailTapped
     }
 
+    @ViewBuilder
     var body: some View {
+        if usesPhotoBackdropLayout {
+            photoBackdropBody
+        } else {
+            standardBody
+        }
+    }
+
+    private var standardBody: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
@@ -201,6 +222,239 @@ struct PhraseArticleTemplateView: View {
             PhraseHeroImageLightbox(presentation: presentation)
         }
         .accessibilityIdentifier("PhraseArticle.\(page.id)")
+    }
+
+    private var photoBackdropBody: some View {
+        GeometryReader { geometry in
+            let imageName = page.heroImageName ?? PhrasePageStyle.heroImageName
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+
+            ZStack(alignment: .top) {
+                photoBackdropImage(imageName: imageName, geometry: geometry)
+
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(Self.photoBackdropInitialID)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
+
+                            photoBackdropContentSheet
+                                .id(Self.photoBackdropContentID)
+                        }
+                    }
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
+                            togglePhotoBackdropImmersiveIfAvailable(metrics: metrics)
+                        }
+                    )
+                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
+                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
+                    }) { _, offset in
+                        let canToggleImmersive = offset <= metrics.collapsedTapOffset
+                        if isPhotoBackdropAtCollapsedTapPosition != canToggleImmersive {
+                            isPhotoBackdropAtCollapsedTapPosition = canToggleImmersive
+                            lastPhotoBackdropScrollChangeDate = Date()
+                        }
+
+                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
+                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = backdropOffset
+                            lastPhotoBackdropScrollChangeDate = Date()
+                        }
+
+                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                            isPhotoBackdropImmersive = false
+                        }
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        guard scrollToTopRoute == nil || scrollToTopRoute == chromeRoute else {
+                            return
+                        }
+
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+                    }
+                    .task(id: isActive) {
+                        guard isActive else {
+                            return
+                        }
+
+                        if initialScrollTarget == nil {
+                            await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                        } else {
+                            await applyInitialScrollTargetIfNeeded(scrollProxy)
+                        }
+                    }
+                }
+                .ignoresSafeArea(edges: .top)
+            }
+            .overlay(alignment: .topLeading) {
+                if showsChrome && !isPhotoBackdropImmersive {
+                    fixedBackButton
+                        .padding(.leading, 24)
+                        .padding(.top, 6)
+                        .offset(y: -24)
+                        .transition(.opacity)
+                }
+            }
+        }
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && !isPhotoBackdropImmersive
+        )
+        .toolbar(isActive && isPhotoBackdropImmersive ? .hidden : .visible, for: .tabBar)
+        .accessibilityIdentifier("PhraseArticle.\(page.id)")
+    }
+
+    private func photoBackdropImage(imageName: String, geometry: GeometryProxy) -> some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: geometry.size.height + geometry.safeAreaInsets.top + geometry.safeAreaInsets.bottom + 160,
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .accessibilityHidden(true)
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
+            safeAreaBottom: safeAreaBottom
+        )
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
+        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
+        let backdropHeight = min(
+            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
+            maximumBackdropHeight
+        )
+
+        return VStack(spacing: 0) {
+            Spacer(minLength: 0)
+
+            PhrasePageStyle.pageBackground
+                .frame(height: backdropHeight)
+        }
+        .frame(
+            height: backdropBottom,
+            alignment: .bottom
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    private var photoBackdropContentSheet: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 8) {
+                    heroBadge
+
+                    Text(page.destination.uppercased())
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                PhraseHeroCopyStack(
+                    title: page.title,
+                    englishTitle: page.englishTitle,
+                    pronunciation: page.pronunciation,
+                    titleSize: heroTitleSize,
+                    titleLineLimit: 2,
+                    pronunciationLineLimit: 2,
+                    morphPageID: morphPageID,
+                    morphNamespace: chromeNamespace,
+                    isMorphActive: false,
+                    isMorphSource: false
+                )
+
+                if shouldShowHeroPlaybackDock {
+                    PlaybackDockView(
+                        audioKey: page.playbackAudioKey,
+                        isSaved: isSaved,
+                        onToggleSaved: onToggleSaved,
+                        visibilityRoute: chromeRoute
+                    )
+                    .padding(.top, heroPlayerTopSpacing)
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, PhrasePageStyle.heroTextBottomPadding + 6)
+
+            LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
+                ForEach(visibleSections) { section in
+                    ArticleSectionView(
+                        section: section,
+                        currentPageID: page.id,
+                        onOpenDetail: onDetailTapped
+                    )
+                    .id(section.id)
+                }
+
+                if shouldRenderCatalogExplore {
+                    ExploreCatalogSection(
+                        currentPageID: page.id,
+                        onOpenDetail: onDetailTapped
+                    )
+                    .id(Self.catalogExploreID)
+                }
+            }
+            .padding(.horizontal, PhrasePageStyle.horizontalPadding)
+            .padding(.top, articleSectionsTopPadding)
+            .padding(.bottom, articleBottomChromeContentClearance)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .accessibilityIdentifier("PhraseArticle.PhotoBackdrop.Content.\(page.id)")
     }
 
     private var hero: some View {
@@ -320,8 +574,15 @@ struct PhraseArticleTemplateView: View {
         usesVietnameseMenuDetailFit || usesCityNounDetailFit
     }
 
+    private var usesPhotoBackdropLayout: Bool {
+        PhrasePhotoBackdropLayout.supportsCityListingPage(
+            pageID: page.id,
+            heroImageName: page.heroImageName
+        )
+    }
+
     private var supportsHeroImageLightbox: Bool {
-        usesImageDetailFit && page.heroImageName != nil
+        usesImageDetailFit && page.heroImageName != nil && !usesPhotoBackdropLayout
     }
 
     private var shouldShowHeroPlaybackDock: Bool {
@@ -357,7 +618,11 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var articleBottomChromeContentClearance: CGFloat {
-        usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
+        if usesPhotoBackdropLayout {
+            return PhrasePhotoBackdropLayout.bottomReadingClearance
+        }
+
+        return usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
     }
 
     private var usesHomePhraseHeroMorph: Bool {
@@ -374,6 +639,8 @@ struct PhraseArticleTemplateView: View {
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
     private static let catalogExploreID = "PhraseArticleTemplateViewCatalogExplore"
+    private static let photoBackdropInitialID = "PhraseArticleTemplateViewPhotoBackdropInitial"
+    private static let photoBackdropContentID = "PhraseArticleTemplateViewPhotoBackdropContent"
 
     private var visibleSections: [PhraseArticleSection] {
         Self.visibleSections(for: page)
@@ -498,6 +765,37 @@ struct PhraseArticleTemplateView: View {
         didApplyInitialScrollTarget = true
     }
 
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+        isPhotoBackdropImmersive = false
+        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersiveIfAvailable(metrics: PhrasePhotoBackdropLayout.Metrics) {
+        if isPhotoBackdropImmersive {
+            isPhotoBackdropImmersive = false
+            return
+        }
+
+        guard isPhotoBackdropAtCollapsedTapPosition else {
+            return
+        }
+        guard Date().timeIntervalSince(lastPhotoBackdropScrollChangeDate) > 0.35 else {
+            return
+        }
+
+        isPhotoBackdropImmersive = true
+    }
+
     @ViewBuilder
     private var heroBadge: some View {
         if page.id == PhrasePage.xinChao.id {
@@ -531,6 +829,79 @@ struct PhraseArticleTemplateView: View {
         .nativeGlass(cornerRadius: 26, interactive: true)
     }
 
+}
+
+struct PhrasePhotoBackdropImmersiveChromePreferenceKey: PreferenceKey {
+    static var defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+struct PhrasePhotoBackdropTabBarBackgroundPreferenceKey: PreferenceKey {
+    static var defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+enum PhrasePhotoBackdropLayout {
+    static let bottomReadingClearance: CGFloat = 332
+    static let minimumBottomChromeBackdropHeight: CGFloat = 220
+    static let minimumBottomChromeBackdropOffset: CGFloat = 104
+    static let sheetCornerClearance: CGFloat = 44
+    private static let backdropOffsetUpdateStep: CGFloat = 16
+
+    static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        let isCityPage = pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+        return isCityPage && heroImageName.hasPrefix("HeroCity")
+    }
+
+    struct Metrics {
+        let initialAnchorOffset: CGFloat
+        let initialContentTop: CGFloat
+        let collapsedContentTop: CGFloat
+        let collapsedTapOffset: CGFloat
+        let revealImmersiveOffset: CGFloat
+    }
+
+    static func metrics(for size: CGSize) -> Metrics {
+        let height = max(size.height, 1)
+        let collapsedPeek = min(max(height * 0.11, 78), 104)
+        let collapsedContentTop = max(height - collapsedPeek, 0)
+        let preferredInitialTop = max(height * 0.25, 210)
+        let initialContentTop = min(preferredInitialTop, max(collapsedContentTop - 72, 0))
+
+        return Metrics(
+            initialAnchorOffset: max(collapsedContentTop - initialContentTop, 0),
+            initialContentTop: initialContentTop,
+            collapsedContentTop: collapsedContentTop,
+            collapsedTapOffset: 18,
+            revealImmersiveOffset: 24
+        )
+    }
+
+    static func bottomChromeBackdropHeight(safeAreaBottom: CGFloat) -> CGFloat {
+        max(safeAreaBottom + 186, minimumBottomChromeBackdropHeight)
+    }
+
+    static func bottomChromeBackdropOffset(safeAreaBottom: CGFloat) -> CGFloat {
+        max(safeAreaBottom + 70, minimumBottomChromeBackdropOffset)
+    }
+
+    static func quantizedBackdropOffset(for offset: CGFloat) -> CGFloat {
+        guard offset > 0 else {
+            return 0
+        }
+
+        return (offset / backdropOffsetUpdateStep).rounded() * backdropOffsetUpdateStep
+    }
 }
 
 private struct PhraseHeroImagePresentation: Identifiable, Equatable {

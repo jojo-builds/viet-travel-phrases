@@ -35,6 +35,8 @@ struct AppShellView: View {
     @State private var searchReturnFocusRequestID = 0
     @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
     @State private var didApplyLaunchSearchFocus = false
+    @State private var hidesPhotoBackdropChrome = false
+    @State private var showsPhotoBackdropTabBarBackground = false
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeSourceID: String?
     @State private var requestedPracticeMode: PracticeMode?
@@ -112,6 +114,21 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
+        .toolbar(hidesPhotoBackdropChrome ? .hidden : .visible, for: .tabBar)
+        .toolbarBackground(
+            showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
+            for: .tabBar
+        )
+        .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
+        .background {
+            #if canImport(UIKit)
+            AppShellTabBarAppearanceBridge(
+                usesContentBackground: showsPhotoBackdropTabBarBackground && !hidesPhotoBackdropChrome
+            )
+            .frame(width: 0, height: 0)
+            #endif
+        }
     }
 
     @ViewBuilder
@@ -127,6 +144,14 @@ struct AppShellView: View {
     private var shellContent: some View {
         shellContentBody
             .preferredColorScheme(.light)
+    }
+
+    private var tabBarBackgroundVisibility: Visibility {
+        if hidesPhotoBackdropChrome {
+            return .hidden
+        }
+
+        return showsPhotoBackdropTabBarBackground ? .visible : .automatic
     }
 
     private var shellContentBody: some View {
@@ -245,6 +270,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.rootScrollToTopTrigger,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: navigation.currentRoute == .phrasePage,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
@@ -300,6 +326,7 @@ struct AppShellView: View {
                 currentRoute: navigation.currentRoute,
                 isSearchPresented: navigation.isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
+                hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
                 isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -325,6 +352,16 @@ struct AppShellView: View {
             )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
                 menuSectionChromeStates = states
+            }
+            .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
+                withAnimation(.easeInOut(duration: 0.18)) {
+                    hidesPhotoBackdropChrome = isHidden
+                }
+            }
+            .onPreferenceChange(PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self) { isVisible in
+                withAnimation(.easeInOut(duration: 0.18)) {
+                    showsPhotoBackdropTabBarBackground = isVisible
+                }
             }
             .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
                 savedTripSectionChromeStates = states
@@ -396,6 +433,7 @@ struct AppShellView: View {
                     focusRequest: browseCollectionFocusRequest,
                     chromeNamespace: chromeNamespace,
                     cityHeroMorphRoute: browseCityHeroRoute,
+                    isActive: isActive,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -514,6 +552,7 @@ struct AppShellView: View {
                     initialScrollTarget: launchDetailScrollTarget,
                     scrollToTopTrigger: navigation.detailScrollToTopTrigger,
                     scrollToTopRoute: navigation.detailScrollToTopRoute,
+                    isActive: isActive,
                     onBackTapped: goBack
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -536,6 +575,7 @@ struct AppShellView: View {
                     scrollToTopRoute: navigation.detailScrollToTopRoute,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: isActive,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
@@ -646,6 +686,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
                     focusRequest: nil,
+                    isActive: false,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
@@ -678,6 +719,7 @@ struct AppShellView: View {
                 scrollToTopTrigger: navigation.rootScrollToTopTrigger,
                 chromeNamespace: chromeNamespace,
                 isSearchActive: navigation.isSearchPresented,
+                isActive: false,
                 showsChrome: false,
                 topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
@@ -691,6 +733,7 @@ struct AppShellView: View {
                 xinChaoListingView(
                     routePageID: detailPageID,
                     scrollToTopTrigger: 0,
+                    isActive: false,
                     onBackTapped: goBack
                 )
             } else if let detailPage = PhraseDetailPage.page(withID: detailPageID) {
@@ -699,6 +742,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: 0,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: false,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
@@ -729,6 +773,7 @@ struct AppShellView: View {
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int,
         scrollToTopRoute: AppRoute? = nil,
+        isActive: Bool = true,
         onBackTapped: @escaping () -> Void
     ) -> some View {
         PhraseListingView(
@@ -739,6 +784,7 @@ struct AppShellView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: navigation.isSearchPresented,
+            isActive: isActive,
             showsChrome: false,
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
@@ -2824,6 +2870,7 @@ private extension View {
         currentRoute: AppRoute,
         isSearchPresented: Bool,
         isPracticeThreadPresented: Bool,
+        hidesPhotoBackdropChrome: Bool,
         isPracticeMatchPresented: Bool,
         showsStaticBackButton: Bool,
         showsMenuSectionChrome: Bool,
@@ -2838,6 +2885,7 @@ private extension View {
                 currentRoute: currentRoute,
                 isSearchPresented: isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
+                hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
                 isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -2873,12 +2921,110 @@ private extension View {
     }
 }
 
+#if canImport(UIKit)
+private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
+    let usesContentBackground: Bool
+
+    func makeUIViewController(context: Context) -> Controller {
+        Controller()
+    }
+
+    func updateUIViewController(_ controller: Controller, context: Context) {
+        controller.usesContentBackground = usesContentBackground
+    }
+
+    final class Controller: UIViewController {
+        var usesContentBackground = false {
+            didSet {
+                guard oldValue != usesContentBackground else {
+                    return
+                }
+                applyAppearance()
+            }
+        }
+
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            applyAppearance()
+        }
+
+        override func didMove(toParent parent: UIViewController?) {
+            super.didMove(toParent: parent)
+            applyAppearance()
+        }
+
+        private func applyAppearance() {
+            DispatchQueue.main.async { [weak self] in
+                guard let self, let tabBar = self.findTabBar() else {
+                    return
+                }
+
+                let appearance = UITabBarAppearance()
+                if self.usesContentBackground {
+                    appearance.configureWithOpaqueBackground()
+                    appearance.backgroundColor = UIColor(PhrasePageStyle.pageBackground)
+                } else {
+                    appearance.configureWithDefaultBackground()
+                }
+
+                tabBar.standardAppearance = appearance
+                tabBar.scrollEdgeAppearance = appearance
+            }
+        }
+
+        private func findTabBar() -> UITabBar? {
+            if let tabBar = tabBarController?.tabBar {
+                return tabBar
+            }
+
+            var ancestor = parent
+            while let controller = ancestor {
+                if let tabController = controller as? UITabBarController {
+                    return tabController.tabBar
+                }
+
+                if let tabBar = controller.tabBarController?.tabBar {
+                    return tabBar
+                }
+
+                ancestor = controller.parent
+            }
+
+            return view.window?.rootViewController?.findDescendantTabBar()
+        }
+    }
+}
+
+private extension UIViewController {
+    func findDescendantTabBar() -> UITabBar? {
+        if let tabController = self as? UITabBarController {
+            return tabController.tabBar
+        }
+
+        for child in children {
+            if let tabBar = child.findDescendantTabBar() {
+                return tabBar
+            }
+        }
+
+        if let presentedViewController,
+           let tabBar = presentedViewController.findDescendantTabBar()
+        {
+            return tabBar
+        }
+
+        return nil
+    }
+}
+#endif
+
 private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>: ViewModifier {
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
 
     let currentRoute: AppRoute
     let isSearchPresented: Bool
     let isPracticeThreadPresented: Bool
+    let hidesPhotoBackdropChrome: Bool
     let isPracticeMatchPresented: Bool
     let showsStaticBackButton: Bool
     let showsMenuSectionChrome: Bool
@@ -2896,10 +3042,12 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
             isSearchPresented: isSearchPresented,
             isMenuSectionChromeVisible: showsMenuSectionChrome
         )
-        let showsTopAdminRow = !isPracticeThreadPresented
+        let showsTopAdminRow = !hidesPhotoBackdropChrome
+            && !isPracticeThreadPresented
             && !isPracticeMatchPresented
             && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
-        let showsTopGlassChrome = showsTopAdminRow || showsMenuSectionChrome
+        let showsTopGlassChrome = !hidesPhotoBackdropChrome
+            && (showsTopAdminRow || showsMenuSectionChrome)
 
         content
             .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
@@ -2923,13 +3071,13 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
                 }
             }
             .overlay(alignment: .top) {
-                if !isPracticeThreadPresented {
+                if !isPracticeThreadPresented && !hidesPhotoBackdropChrome {
                     ChromeSeparationGradient(edge: .top)
                         .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {
-                if !isPracticeThreadPresented, showsMenuSectionChrome {
+                if !isPracticeThreadPresented, !hidesPhotoBackdropChrome, showsMenuSectionChrome {
                     MenuSectionChromeBackdropGradient()
                         .transition(.opacity)
                         .zIndex(AppChromeLayout.menuSectionBackdropLayerZIndex)

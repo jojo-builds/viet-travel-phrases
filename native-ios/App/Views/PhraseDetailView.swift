@@ -7,6 +7,7 @@ struct PhraseDetailView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
@@ -24,6 +25,7 @@ struct PhraseDetailView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
@@ -40,6 +42,7 @@ struct PhraseDetailView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
@@ -61,6 +64,7 @@ struct PhraseDetailView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
+            isActive: isActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,

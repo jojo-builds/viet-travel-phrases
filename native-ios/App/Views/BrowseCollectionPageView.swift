@@ -7,20 +7,49 @@ struct BrowseCollectionPageView: View {
     let focusRequest: BrowseCollectionFocusRequest?
     var chromeNamespace: Namespace.ID? = nil
     var cityHeroMorphRoute: BrowseCollectionRoute? = nil
+    var isActive: Bool = true
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
 
     @State private var selectedSubcategoryID: String?
     @State private var selectedCityCardID: String?
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var isPhotoBackdropAtCollapsedTapPosition = false
+    @State private var lastPhotoBackdropScrollChangeDate = Date.distantPast
 
+    @ViewBuilder
     var body: some View {
-        let selectedSubcategory = descriptor.subcategories.first { $0.id == selectedSubcategoryID }
-        let starterTitle = selectedSubcategory.map {
-            $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
-        } ?? descriptor.starterTitle
-        let starterItems = selectedSubcategory?.items ?? descriptor.starterItems
+        Group {
+            if usesPhotoBackdropLayout {
+                photoBackdropBody
+            } else {
+                standardBody
+            }
+        }
+        .onChange(of: descriptor.id) { _, _ in
+            selectedSubcategoryID = nil
+            selectedCityCardID = nil
+            didApplyPhotoBackdropInitialPosition = false
+            isPhotoBackdropImmersive = false
+            photoBackdropScrollOffset = 0
+            isPhotoBackdropAtCollapsedTapPosition = false
+        }
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
+        )
+        .toolbar(isActive && isPhotoBackdropImmersive ? .hidden : .visible, for: .tabBar)
+        .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
+    }
 
+    private var standardBody: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
@@ -35,57 +64,7 @@ struct BrowseCollectionPageView: View {
                         )
                             .id(Self.scrollTopID)
 
-                        if let cityHub = descriptor.cityHub {
-                            BrowseCityHubContent(
-                                descriptor: descriptor,
-                                cityHub: cityHub,
-                                selectedCityCardID: $selectedCityCardID,
-                                onOpenDetail: onOpenDetail,
-                                onOpenCollection: onOpenCollection,
-                                onPractice: { onPractice(descriptor.practiceAction) }
-                            )
-                        } else {
-                            BrowseCollectionSubcategoryRail(
-                                subcategories: descriptor.subcategories,
-                                selectedSubcategoryID: selectedSubcategoryID,
-                                onSelect: { subcategory in
-                                    selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
-                                }
-                            )
-
-                            BrowseCollectionStarterSection(
-                                title: starterTitle,
-                                items: starterItems,
-                                onOpenDetail: onOpenDetail
-                            )
-                            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
-
-                            if descriptor.hasMessageSection {
-                                BrowseCollectionMessageSection(
-                                    descriptor: descriptor,
-                                    onStartScenario: { scenarioID in
-                                        onPractice(.practiceScenario(scenarioID))
-                                    }
-                                )
-                                .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
-                                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
-                            } else {
-                                BrowseCollectionMessageEntryCard(
-                                    descriptor: descriptor,
-                                    onPractice: { onPractice(descriptor.practiceAction) }
-                                )
-                                .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
-                                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
-                            }
-
-                            if selectedSubcategory == nil {
-                                BrowseCollectionExploreSection(
-                                    shelves: descriptor.exploreShelves,
-                                    onOpenDetail: onOpenDetail,
-                                    onOpenCollection: onOpenCollection
-                                )
-                            }
-                        }
+                        collectionSections
                     }
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
                 }
@@ -102,14 +81,291 @@ struct BrowseCollectionPageView: View {
             }
             .ignoresSafeArea(edges: .top)
         }
-        .onChange(of: descriptor.id) { _, _ in
-            selectedSubcategoryID = nil
-            selectedCityCardID = nil
+    }
+
+    private var photoBackdropBody: some View {
+        GeometryReader { geometry in
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+
+            ZStack(alignment: .top) {
+                photoBackdropImage(geometry: geometry)
+
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(Self.photoBackdropInitialID)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
+
+                            photoBackdropContentSheet
+                                .id(Self.scrollTopID)
+                        }
+                    }
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
+                            togglePhotoBackdropImmersiveIfAvailable(metrics: metrics)
+                        }
+                    )
+                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
+                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
+                    }) { _, offset in
+                        let canToggleImmersive = offset <= metrics.collapsedTapOffset
+                        if isPhotoBackdropAtCollapsedTapPosition != canToggleImmersive {
+                            isPhotoBackdropAtCollapsedTapPosition = canToggleImmersive
+                            lastPhotoBackdropScrollChangeDate = Date()
+                        }
+
+                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
+                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = backdropOffset
+                            lastPhotoBackdropScrollChangeDate = Date()
+                        }
+
+                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                            isPhotoBackdropImmersive = false
+                        }
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        guard scrollToTopRoute == nil || scrollToTopRoute == descriptor.route else {
+                            return
+                        }
+
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+                    }
+                    .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
+                        guard isActive else {
+                            return
+                        }
+
+                        if focusRequest == nil {
+                            await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                        } else {
+                            await restoreFocusIfNeeded(scrollProxy)
+                        }
+                    }
+                }
+                .ignoresSafeArea(edges: .top)
+            }
         }
-        .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+    }
+
+    @ViewBuilder
+    private var collectionSections: some View {
+        if let cityHub = descriptor.cityHub {
+            BrowseCityHubContent(
+                descriptor: descriptor,
+                cityHub: cityHub,
+                selectedCityCardID: $selectedCityCardID,
+                onOpenDetail: onOpenDetail,
+                onOpenCollection: onOpenCollection,
+                onPractice: { onPractice(descriptor.practiceAction) }
+            )
+        } else {
+            BrowseCollectionSubcategoryRail(
+                subcategories: descriptor.subcategories,
+                selectedSubcategoryID: selectedSubcategoryID,
+                onSelect: { subcategory in
+                    selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
+                }
+            )
+
+            BrowseCollectionStarterSection(
+                title: starterTitle,
+                items: starterItems,
+                onOpenDetail: onOpenDetail
+            )
+            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+
+            if descriptor.hasMessageSection {
+                BrowseCollectionMessageSection(
+                    descriptor: descriptor,
+                    onStartScenario: { scenarioID in
+                        onPractice(.practiceScenario(scenarioID))
+                    }
+                )
+                .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
+                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            } else {
+                BrowseCollectionMessageEntryCard(
+                    descriptor: descriptor,
+                    onPractice: { onPractice(descriptor.practiceAction) }
+                )
+                .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
+                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            }
+
+            if selectedSubcategory == nil {
+                BrowseCollectionExploreSection(
+                    shelves: descriptor.exploreShelves,
+                    onOpenDetail: onOpenDetail,
+                    onOpenCollection: onOpenCollection
+                )
+            }
+        }
+    }
+
+    private var photoBackdropContentSheet: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            BrowseCollectionHeaderCopy(
+                descriptor: descriptor,
+                chromeNamespace: chromeNamespace,
+                usesCityHeroMorph: usesCityHeroMorph
+            )
+            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            .padding(.bottom, 26)
+
+            collectionSections
+                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+    }
+
+    private func photoBackdropImage(geometry: GeometryProxy) -> some View {
+        Image(descriptor.mastheadImageName)
+            .resizable()
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: geometry.size.height + geometry.safeAreaInsets.top + geometry.safeAreaInsets.bottom + 160,
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .homePhraseHeroMorph(
+                BrowseCityHeroMorphID.image(descriptor.route.id),
+                namespace: chromeNamespace,
+                isActive: usesCityHeroMorph,
+                isSource: false,
+                anchor: .top
+            )
+            .accessibilityHidden(true)
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
+            safeAreaBottom: safeAreaBottom
+        )
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
+        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
+        let backdropHeight = min(
+            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
+            maximumBackdropHeight
+        )
+
+        return VStack(spacing: 0) {
+            Spacer(minLength: 0)
+
+            PhrasePageStyle.pageBackground
+                .frame(height: backdropHeight)
+        }
+        .frame(
+            height: backdropBottom,
+            alignment: .bottom
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 
     private static let scrollTopID = "BrowseCollectionTop"
+    private static let photoBackdropInitialID = "BrowseCollectionPhotoBackdropInitial"
+
+    private var selectedSubcategory: BrowseCollectionSubcategory? {
+        descriptor.subcategories.first { $0.id == selectedSubcategoryID }
+    }
+
+    private var starterTitle: String {
+        selectedSubcategory.map {
+            $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
+        } ?? descriptor.starterTitle
+    }
+
+    private var starterItems: [BrowseSearchPhraseItem] {
+        selectedSubcategory?.items ?? descriptor.starterItems
+    }
+
+    private var usesPhotoBackdropLayout: Bool {
+        descriptor.cityHub != nil
+    }
+
+    private var usesCityHeroMorph: Bool {
+        cityHeroMorphRoute == descriptor.route
+    }
+
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+        isPhotoBackdropImmersive = false
+        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersiveIfAvailable(metrics: PhrasePhotoBackdropLayout.Metrics) {
+        if isPhotoBackdropImmersive {
+            isPhotoBackdropImmersive = false
+            return
+        }
+
+        guard isPhotoBackdropAtCollapsedTapPosition else {
+            return
+        }
+        guard Date().timeIntervalSince(lastPhotoBackdropScrollChangeDate) > 0.35 else {
+            return
+        }
+
+        isPhotoBackdropImmersive = true
+    }
 
     @MainActor
     private func restoreFocusIfNeeded(_ scrollProxy: ScrollViewProxy) async {
@@ -173,52 +429,66 @@ private struct BrowseCollectionHeader: View {
                     anchor: .top
                 )
 
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 8) {
-                    ZStack {
-                        Circle().fill(Color.red)
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(.yellow)
-                    }
-                    .frame(width: 22, height: 22)
-
-                    Text(descriptor.eyebrow)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-
-                Text(descriptor.title)
-                    .font(.system(size: 46, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.64)
-                    .homePhraseHeroMorph(
-                        BrowseCityHeroMorphID.title(descriptor.route.id),
-                        namespace: chromeNamespace,
-                        isActive: usesCityHeroMorph,
-                        isSource: false,
-                        properties: .position,
-                        anchor: .leading
-                    )
-                    .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
-
-                Text(descriptor.subtitle)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .homePhraseHeroMorph(
-                        BrowseCityHeroMorphID.subtitle(descriptor.route.id),
-                        namespace: chromeNamespace,
-                        isActive: usesCityHeroMorph,
-                        isSource: false,
-                        properties: .position,
-                        anchor: .leading
-                    )
-            }
+            BrowseCollectionHeaderCopy(
+                descriptor: descriptor,
+                chromeNamespace: chromeNamespace,
+                usesCityHeroMorph: usesCityHeroMorph
+            )
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.top, 16)
+        }
+    }
+}
+
+private struct BrowseCollectionHeaderCopy: View {
+    let descriptor: BrowseCollectionDescriptor
+    let chromeNamespace: Namespace.ID?
+    let usesCityHeroMorph: Bool
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text(descriptor.eyebrow)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            Text(descriptor.title)
+                .font(.system(size: 46, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.64)
+                .homePhraseHeroMorph(
+                    BrowseCityHeroMorphID.title(descriptor.route.id),
+                    namespace: chromeNamespace,
+                    isActive: usesCityHeroMorph,
+                    isSource: false,
+                    properties: .position,
+                    anchor: .leading
+                )
+                .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
+
+            Text(descriptor.subtitle)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineSpacing(3)
+                .fixedSize(horizontal: false, vertical: true)
+                .homePhraseHeroMorph(
+                    BrowseCityHeroMorphID.subtitle(descriptor.route.id),
+                    namespace: chromeNamespace,
+                    isActive: usesCityHeroMorph,
+                    isSource: false,
+                    properties: .position,
+                    anchor: .leading
+                )
         }
     }
 }
