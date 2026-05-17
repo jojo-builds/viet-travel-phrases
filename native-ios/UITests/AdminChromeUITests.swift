@@ -467,11 +467,6 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     private func searchField(in app: XCUIApplication) -> XCUIElement {
-        let nativeSearchField = app.textFields["Search.NativeField"]
-        if nativeSearchField.exists {
-            return nativeSearchField
-        }
-
         let promptedSearchField = app.searchFields["Search Vietnamese phrases"]
         if promptedSearchField.exists {
             return promptedSearchField

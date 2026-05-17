@@ -316,7 +316,7 @@ struct TopAdminHitTestEnvelope: View {
 enum SearchPageLayout {
     static let horizontalPadding: CGFloat = 24
     static let titleTopPadding: CGFloat = 74
-    static let focusedResultsTopPadding: CGFloat = 116
+    static let focusedResultsTopPadding: CGFloat = 64
     static let contentSpacing: CGFloat = 20
     static let resultGroupSpacing: CGFloat = 12
     static let resultGroupTopPadding: CGFloat = 10

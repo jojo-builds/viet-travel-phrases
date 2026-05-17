@@ -59,7 +59,7 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var isSearchFieldFocused = false
+    @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
     private let launchPracticeEntryContext: PracticeEntryContext
@@ -107,6 +107,12 @@ struct AppShellView: View {
                     tabShellContent(for: .search)
                 }
                 .navigationTitle("Search")
+                .searchable(
+                    text: $searchQuery,
+                    isPresented: systemSearchPresentation,
+                    placement: .automatic,
+                    prompt: "Search Vietnamese phrases"
+                )
             }
         }
         .tabViewSearchActivation(.searchTabSelection)
@@ -269,7 +275,7 @@ struct AppShellView: View {
                 if navigation.isSearchPresented {
                     SearchPageView(
                         query: $searchQuery,
-                        isFieldFocused: $isSearchFieldFocused,
+                        isFieldFocused: isSearchFieldFocused,
                         onClose: closeSearch,
                         onOpenDetail: openDetailFromSearch,
                         onOpenCollection: openBrowseCollectionFromSearch,
@@ -417,6 +423,21 @@ struct AppShellView: View {
             },
             set: { tab in
                 selectSystemTab(tab)
+            }
+        )
+    }
+
+    private var systemSearchPresentation: Binding<Bool> {
+        Binding(
+            get: {
+                navigation.isSearchPresented && isSearchFieldFocused
+            },
+            set: { isPresented in
+                if isPresented {
+                    openSearch(prefilledQuery: nil, focusField: true)
+                } else {
+                    cancelSearchFocus()
+                }
             }
         )
     }
@@ -702,7 +723,7 @@ struct AppShellView: View {
         case .search:
             SearchPageView(
                 query: $searchQuery,
-                isFieldFocused: $isSearchFieldFocused,
+                isFieldFocused: isSearchFieldFocused,
                 onClose: closeSearch,
                 onOpenDetail: openDetailFromSearch,
                 onOpenCollection: openBrowseCollectionFromSearch,
@@ -1425,7 +1446,7 @@ struct AppShellView: View {
     }
 
     private func openSearchQuery(_ query: String) {
-        openSearch(prefilledQuery: query, focusField: navigation.isSearchPresented || isSearchFieldFocused)
+        openSearch(prefilledQuery: query, focusField: isSearchFieldFocused)
     }
 
     private func openSearch(prefilledQuery: String?, focusField: Bool) {
@@ -1460,18 +1481,15 @@ struct AppShellView: View {
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
-        isSearchFieldFocused = true
 
         Task { @MainActor in
-            for delay in [180_000_000, 360_000_000] {
-                try? await Task.sleep(nanoseconds: UInt64(delay))
+            try? await Task.sleep(nanoseconds: 220_000_000)
 
-                guard requestID == searchFocusRequestID, navigation.isSearchPresented else {
-                    return
-                }
-
-                isSearchFieldFocused = true
+            guard requestID == searchFocusRequestID, navigation.isSearchPresented else {
+                return
             }
+
+            isSearchFieldFocused = true
         }
     }
 
