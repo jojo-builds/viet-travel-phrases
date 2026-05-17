@@ -48654,7 +48654,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceFromDanangAirport",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Sân bay Đà Nẵng đi Hội An",
@@ -48704,7 +48704,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceFromDanangAirport",
         "replaceGeneratedSections": false
       }
     },
@@ -48739,7 +48739,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceFromDanangRailwayStation",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Ga Đà Nẵng đi Hội An",
@@ -48789,7 +48789,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceFromDanangRailwayStation",
         "replaceGeneratedSections": false
       }
     },
@@ -48824,7 +48824,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceFujianAssemblyHall",
       "audioKey": "audio-authored-hoi-quan-phuc-kien-9b940f7920",
       "audioStatus": "ready",
       "productionIntake": {
@@ -48876,7 +48876,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceFujianAssemblyHall",
         "replaceGeneratedSections": false
       }
     },
@@ -48911,7 +48911,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceHainanAssemblyHall",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Hội quán Hải Nam",
@@ -48961,7 +48961,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceHainanAssemblyHall",
         "replaceGeneratedSections": false
       }
     },
@@ -48996,7 +48996,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceHandicraftWorkshop",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Xưởng thủ công mỹ nghệ Hội An",
@@ -49046,7 +49046,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceHandicraftWorkshop",
         "replaceGeneratedSections": false
       }
     },
@@ -49513,7 +49513,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceLanternMakingClass",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -49564,7 +49564,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceLanternMakingClass",
         "replaceGeneratedSections": false
       }
     },
@@ -49599,7 +49599,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "attraction",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceLuneCenter",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Hoi An Lune Center",
@@ -49649,7 +49649,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceLuneCenter",
         "replaceGeneratedSections": false
       }
     },
@@ -49684,7 +49684,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMadamKhanh",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -49750,7 +49750,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMadamKhanh",
         "replaceGeneratedSections": false
       }
     },
@@ -49785,7 +49785,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMaiFish",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -49851,7 +49851,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMaiFish",
         "replaceGeneratedSections": false
       }
     },
@@ -49886,7 +49886,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMangoMango",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -49952,7 +49952,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMangoMango",
         "replaceGeneratedSections": false
       }
     },
@@ -49987,7 +49987,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMarket",
       "audioKey": "audio-authored-cho-hoi-an-21c54be924",
       "audioStatus": "ready",
       "productionIntake": {
@@ -50039,7 +50039,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -50074,7 +50074,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "attraction",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMemoriesLand",
       "audioKey": "audio-authored-dao-ky-uc-hoi-an-334d77090b",
       "audioStatus": "ready",
       "productionIntake": {
@@ -50126,7 +50126,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMemoriesLand",
         "replaceGeneratedSections": false
       }
     },
@@ -50157,7 +50157,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMetiseko",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Metiseko",
@@ -50207,7 +50207,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMetiseko",
         "replaceGeneratedSections": false
       }
     },
@@ -50242,7 +50242,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMiQuang",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -50303,7 +50303,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMiQuang",
         "replaceGeneratedSections": false
       }
     },
@@ -50338,7 +50338,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMinhAnWard",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Phường Minh An",
@@ -50388,7 +50388,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMinhAnWard",
         "replaceGeneratedSections": false
       }
     },
@@ -50425,7 +50425,7 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "everyday",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMorningGlory",
       "audioKey": "audio-authored-morning-glory-hoi-an-23a4c1cd06",
       "audioStatus": "ready",
       "productionIntake": {
@@ -50492,7 +50492,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMorningGlory",
         "replaceGeneratedSections": false
       }
     },
@@ -50531,7 +50531,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMotHerbalDrink",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -50592,7 +50592,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMotHerbalDrink",
         "replaceGeneratedSections": false
       }
     },
@@ -50627,7 +50627,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMuseum",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bảo tàng Hội An",
@@ -50677,7 +50677,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -50712,7 +50712,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceMySonSanctuary",
       "audioKey": "audio-authored-thanh-dia-my-son-753e846337",
       "audioStatus": "ready",
       "productionIntake": {
@@ -50764,7 +50764,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceMySonSanctuary",
         "replaceGeneratedSections": false
       }
     },
@@ -50799,7 +50799,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceNguyenHoangNightMarket",
       "audioKey": "audio-authored-cho-dem-nguyen-hoang-a985d67a93",
       "audioStatus": "ready",
       "productionIntake": {
@@ -50851,7 +50851,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceNguyenHoangNightMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -50886,7 +50886,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceNguyenPhucChuStreet",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Phố Nguyễn Phúc Chu",
@@ -50936,7 +50936,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceNguyenPhucChuStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -50971,7 +50971,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceNguyenThaiHocStreet",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Phố Nguyễn Thái Học",
@@ -51021,7 +51021,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceNguyenThaiHocStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -51056,7 +51056,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceNightMarket",
       "audioKey": "audio-authored-cho-dem-hoi-an-49ee15d5c0",
       "audioStatus": "ready",
       "productionIntake": {
@@ -51108,7 +51108,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceNightMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -51143,7 +51143,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceNuEatery",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -51209,7 +51209,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceNuEatery",
         "replaceGeneratedSections": false
       }
     },
@@ -51244,7 +51244,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlacePhinCoffee",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -51310,7 +51310,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlacePhinCoffee",
         "replaceGeneratedSections": false
       }
     },
@@ -51345,7 +51345,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlacePhungHungOldHouse",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Nhà cổ Phùng Hưng",
@@ -51395,7 +51395,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlacePhungHungOldHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -51430,7 +51430,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlacePotteryWorkshop",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -51481,7 +51481,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlacePotteryWorkshop",
         "replaceGeneratedSections": false
       }
     },
@@ -51516,7 +51516,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlacePreciousHeritageMuseum",
       "audioKey": "audio-authored-bao-tang-di-san-vo-gia-9626caf2e0",
       "audioStatus": "ready",
       "productionIntake": {
@@ -51568,7 +51568,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlacePreciousHeritageMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -51603,7 +51603,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceQuanCongTemple",
       "audioKey": "audio-authored-mieu-quan-cong-6eb9694a92",
       "audioStatus": "ready",
       "productionIntake": {
@@ -51655,7 +51655,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceQuanCongTemple",
         "replaceGeneratedSections": false
       }
     },
@@ -51690,7 +51690,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceQuanThangOldHouse",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Nhà cổ Quân Thắng",
@@ -51740,7 +51740,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceQuanThangOldHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -51776,7 +51776,7 @@
       "pageKind": "restaurant",
       "placeKind": "cafe",
       "contentRole": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceReachOutTeaHouse",
       "audioKey": "audio-authored-reaching-out-tea-house-66e6535b2f",
       "audioStatus": "ready",
       "productionIntake": {
@@ -51843,7 +51843,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceReachOutTeaHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -51878,7 +51878,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceReachingOutArtsCrafts",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Reaching Out Arts & Crafts",
@@ -51928,7 +51928,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceReachingOutArtsCrafts",
         "replaceGeneratedSections": false
       }
     },
@@ -51963,7 +51963,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceRiceFields",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Cánh đồng Hội An",
@@ -52013,7 +52013,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceRiceFields",
         "replaceGeneratedSections": false
       }
     },
@@ -52048,7 +52048,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceRoastery",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -52114,7 +52114,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceRoastery",
         "replaceGeneratedSections": false
       }
     },
@@ -52149,7 +52149,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceRosiesCafe",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -52215,7 +52215,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceRosiesCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -52250,7 +52250,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceSaHuynhCultureMuseum",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bảo tàng Văn hóa Sa Huỳnh",
@@ -52300,7 +52300,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceSaHuynhCultureMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -52335,7 +52335,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceSilkVillage",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Làng lụa Hội An",
@@ -52385,7 +52385,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceSilkVillage",
         "replaceGeneratedSections": false
       }
     },
@@ -52420,7 +52420,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceStreetsRestaurantCafe",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -52486,7 +52486,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceStreetsRestaurantCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -52521,7 +52521,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTailorFitting",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -52572,7 +52572,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTailorFitting",
         "replaceGeneratedSections": false
       }
     },
@@ -52607,7 +52607,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTanKyOldHouse",
       "audioKey": "audio-authored-nha-co-tan-ky-b4e3c45de2",
       "audioStatus": "ready",
       "productionIntake": {
@@ -52659,7 +52659,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTanKyOldHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -52694,7 +52694,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceThanhHa",
       "audioKey": "audio-authored-lang-gom-thanh-ha-3243968343",
       "audioStatus": "ready",
       "productionIntake": {
@@ -52746,7 +52746,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceThanhHa",
         "replaceGeneratedSections": false
       }
     },
@@ -52781,7 +52781,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTheField",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -52847,7 +52847,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTheField",
         "replaceGeneratedSections": false
       }
     },
@@ -52882,7 +52882,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceThuBonRiver",
       "audioKey": "audio-authored-song-thu-bon-21ccb108aa",
       "audioStatus": "ready",
       "productionIntake": {
@@ -52934,7 +52934,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceThuBonRiver",
         "replaceGeneratedSections": false
       }
     },
@@ -52969,7 +52969,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTraNhieuVillage",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Làng Trà Nhiêu",
@@ -53019,7 +53019,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTraNhieuVillage",
         "replaceGeneratedSections": false
       }
     },
@@ -53054,7 +53054,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTraQue",
       "audioKey": "audio-authored-lang-rau-tra-que-7657234b1c",
       "audioStatus": "ready",
       "productionIntake": {
@@ -53106,7 +53106,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTraQue",
         "replaceGeneratedSections": false
       }
     },
@@ -53141,7 +53141,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTradeCeramicsMuseum",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bảo tàng Gốm sứ Mậu dịch",
@@ -53191,7 +53191,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTradeCeramicsMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -53226,7 +53226,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTraditionalArtPerformanceHouse",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Nhà biểu diễn nghệ thuật cổ truyền Hội An",
@@ -53276,7 +53276,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTraditionalArtPerformanceHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -53311,7 +53311,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTranPhuStreet",
       "audioKey": "audio-authored-pho-tran-phu-1b1635024b",
       "audioStatus": "ready",
       "productionIntake": {
@@ -53363,7 +53363,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTranPhuStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -53398,7 +53398,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceTrieuChauAssemblyHall",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Hội quán Triều Châu",
@@ -53448,7 +53448,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceTrieuChauAssemblyHall",
         "replaceGeneratedSections": false
       }
     },
@@ -53483,7 +53483,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceUCafe",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -53549,7 +53549,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceUCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -53584,7 +53584,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceVysMarket",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -53650,7 +53650,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceVysMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -53689,7 +53689,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceWhiteRoseDumplings",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -53750,7 +53750,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceWhiteRoseDumplings",
         "replaceGeneratedSections": false
       }
     },
@@ -53785,7 +53785,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceWhiteRoseRestaurant",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -53851,7 +53851,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceWhiteRoseRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -53886,7 +53886,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceWonton",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -53947,7 +53947,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceWonton",
         "replaceGeneratedSections": false
       }
     },
@@ -53982,7 +53982,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceYalyCouture",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Yaly Couture",
@@ -54032,7 +54032,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceYalyCouture",
         "replaceGeneratedSections": false
       }
     },
@@ -56270,7 +56270,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAnCuuMarket",
       "audioKey": "audio-authored-cho-an-cuu-8be5ddeb54",
       "audioStatus": "ready",
       "productionIntake": {
@@ -56322,7 +56322,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAnCuuMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -56357,7 +56357,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAnDinhPalace",
       "audioKey": "audio-authored-cung-an-dinh-2f846e7509",
       "audioStatus": "ready",
       "productionIntake": {
@@ -56409,7 +56409,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAnDinhPalace",
         "replaceGeneratedSections": false
       }
     },
@@ -56444,7 +56444,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAnHienGardenHouse",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Nhà vườn An Hiên",
@@ -56494,7 +56494,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAnHienGardenHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -56529,7 +56529,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAncientHueGalleryCuisine",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -56595,7 +56595,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAncientHueGalleryCuisine",
         "replaceGeneratedSections": false
       }
     },
@@ -56630,7 +56630,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAncientHueRestaurant",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -56696,7 +56696,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAncientHueRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -56731,7 +56731,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceAncientSpaceRestaurant",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -56797,7 +56797,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceAncientSpaceRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -56832,7 +56832,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBaVanBanhLoc",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -56898,7 +56898,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBaVanBanhLoc",
         "replaceGeneratedSections": false
       }
     },
@@ -56933,7 +56933,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "park",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBachMaNationalPark",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Vườn quốc gia Bạch Mã",
@@ -56983,7 +56983,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBachMaNationalPark",
         "replaceGeneratedSections": false
       }
     },
@@ -57022,7 +57022,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBanhBeo",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57083,7 +57083,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBanhBeo",
         "replaceGeneratedSections": false
       }
     },
@@ -57122,7 +57122,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBanhBotLoc",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57183,7 +57183,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBanhBotLoc",
         "replaceGeneratedSections": false
       }
     },
@@ -57222,7 +57222,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBanhKhoai",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57283,7 +57283,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBanhKhoai",
         "replaceGeneratedSections": false
       }
     },
@@ -57322,7 +57322,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBanhNam",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57383,7 +57383,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBanhNam",
         "replaceGeneratedSections": false
       }
     },
@@ -57418,7 +57418,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBaoQuocPagoda",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Chùa Báo Quốc",
@@ -57468,7 +57468,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBaoQuocPagoda",
         "replaceGeneratedSections": false
       }
     },
@@ -57503,7 +57503,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBaoVinhAncientTown",
       "audioKey": "audio-authored-pho-co-bao-vinh-32eb0a803a",
       "audioStatus": "ready",
       "productionIntake": {
@@ -57555,7 +57555,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBaoVinhAncientTown",
         "replaceGeneratedSections": false
       }
     },
@@ -57590,7 +57590,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBenNguMarket",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Chợ Bến Ngự",
@@ -57640,7 +57640,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBenNguMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -57675,7 +57675,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBenTrangCafeBistro",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57741,7 +57741,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBenTrangCafeBistro",
         "replaceGeneratedSections": false
       }
     },
@@ -57868,10 +57868,10 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBunBoCity",
         "replaceGeneratedSections": false
       },
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBunBoCity",
       "audioKey": "audio-authored-bun-bo-hue-d24e6940ff",
       "audioStatus": "ready",
       "productionIntake": {
@@ -57917,7 +57917,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBunHen",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -57978,7 +57978,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBunHen",
         "replaceGeneratedSections": false
       }
     },
@@ -58017,7 +58017,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceBunThitNuong",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58078,7 +58078,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceBunThitNuong",
         "replaceGeneratedSections": false
       }
     },
@@ -58113,7 +58113,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceCheHue",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58174,7 +58174,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceCheHue",
         "replaceGeneratedSections": false
       }
     },
@@ -58209,7 +58209,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceChuVanAnStreet",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Đường Chu Văn An",
@@ -58259,7 +58259,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceChuVanAnStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -58298,7 +58298,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceComAmPhu",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58359,7 +58359,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceComAmPhu",
         "replaceGeneratedSections": false
       }
     },
@@ -58398,7 +58398,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceComHen",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58459,7 +58459,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceComHen",
         "replaceGeneratedSections": false
       }
     },
@@ -58494,7 +58494,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceCycloCitadelLoop",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58545,7 +58545,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceCycloCitadelLoop",
         "replaceGeneratedSections": false
       }
     },
@@ -58580,7 +58580,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDaiNamRestaurant",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58646,7 +58646,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDaiNamRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -58681,7 +58681,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDePoCafe",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -58747,7 +58747,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDePoCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -58782,7 +58782,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDiemPhungThiArtCenter",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Trung tâm Nghệ thuật Điềm Phùng Thị",
@@ -58832,7 +58832,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDiemPhungThiArtCenter",
         "replaceGeneratedSections": false
       }
     },
@@ -58867,7 +58867,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDienThoPalace",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Cung Diên Thọ",
@@ -58917,7 +58917,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDienThoPalace",
         "replaceGeneratedSections": false
       }
     },
@@ -58952,7 +58952,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDongBaMarket",
       "audioKey": "audio-authored-cho-dong-ba-9912a894df",
       "audioStatus": "ready",
       "productionIntake": {
@@ -59004,7 +59004,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDongBaMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -59043,7 +59043,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDongBaBunBo",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -59104,7 +59104,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDongBaBunBo",
         "replaceGeneratedSections": false
       }
     },
@@ -59139,7 +59139,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDongKhanhTomb",
       "audioKey": "audio-authored-lang-dong-khanh-0a174d31f6",
       "audioStatus": "ready",
       "productionIntake": {
@@ -59191,7 +59191,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDongKhanhTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -59226,7 +59226,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDucDucTomb",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Lăng Dục Đức",
@@ -59276,7 +59276,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDucDucTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -59311,7 +59311,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceDuyetThiDuongTheater",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Duyệt Thị Đường",
@@ -59361,7 +59361,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceDuyetThiDuongTheater",
         "replaceGeneratedSections": false
       }
     },
@@ -59396,7 +59396,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceFlagTower",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Kỳ Đài Huế",
@@ -59446,7 +59446,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceFlagTower",
         "replaceGeneratedSections": false
       }
     },
@@ -59481,7 +59481,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceForbiddenPurpleCity",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Tử Cấm Thành",
@@ -59531,7 +59531,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceForbiddenPurpleCity",
         "replaceGeneratedSections": false
       }
     },
@@ -59566,7 +59566,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceGiaHoi",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Gia Hội",
@@ -59616,7 +59616,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceGiaHoi",
         "replaceGeneratedSections": false
       }
     },
@@ -59651,7 +59651,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceGiaLongTomb",
       "audioKey": "audio-authored-lang-gia-long-c74f2689ef",
       "audioStatus": "ready",
       "productionIntake": {
@@ -59703,7 +59703,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceGiaLongTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -59738,7 +59738,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceHenIsland",
       "audioKey": "audio-authored-con-hen-4f60ff1af2",
       "audioStatus": "ready",
       "productionIntake": {
@@ -59790,7 +59790,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceHenIsland",
         "replaceGeneratedSections": false
       }
     },
@@ -59825,7 +59825,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceHonChenTemple",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Điện Hòn Chén",
@@ -59875,7 +59875,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceHonChenTemple",
         "replaceGeneratedSections": false
       }
     },
@@ -59910,7 +59910,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceHuyenTranTemple",
       "audioKey": "audio-authored-den-huyen-tran-3698ce4246",
       "audioStatus": "ready",
       "productionIntake": {
@@ -59962,7 +59962,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceHuyenTranTemple",
         "replaceGeneratedSections": false
       }
     },
@@ -59997,7 +59997,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceImperialCity",
       "audioKey": "audio-authored-kinh-thanh-hue-de5f6bd582",
       "audioStatus": "ready",
       "productionIntake": {
@@ -60049,7 +60049,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceImperialCity",
         "replaceGeneratedSections": false
       }
     },
@@ -60084,7 +60084,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceIncenseVillageWorkshop",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -60135,7 +60135,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceIncenseVillageWorkshop",
         "replaceGeneratedSections": false
       }
     },
@@ -60170,7 +60170,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceKhaiDinhTomb",
       "audioKey": "audio-authored-lang-khai-dinh-f288b1b267",
       "audioStatus": "ready",
       "productionIntake": {
@@ -60222,7 +60222,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceKhaiDinhTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -60257,7 +60257,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceKhongGianHoaiCoCoffee",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -60323,7 +60323,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceKhongGianHoaiCoCoffee",
         "replaceGeneratedSections": false
       }
     },
@@ -60358,7 +60358,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceKimLong",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Kim Long",
@@ -60408,7 +60408,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceKimLong",
         "replaceGeneratedSections": false
       }
     },
@@ -60443,7 +60443,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceKodoCafe",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -60509,7 +60509,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceKodoCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -60544,7 +60544,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLagoonSeafoodBoat",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -60595,7 +60595,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLagoonSeafoodBoat",
         "replaceGeneratedSections": false
       }
     },
@@ -60630,7 +60630,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLangThangCoffee",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -60696,7 +60696,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLangThangCoffee",
         "replaceGeneratedSections": false
       }
     },
@@ -60731,7 +60731,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLapAnLagoon",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Đầm Lập An",
@@ -60781,7 +60781,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLapAnLagoon",
         "replaceGeneratedSections": false
       }
     },
@@ -60816,7 +60816,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLeBaDangArtCenter",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Trung tâm Nghệ thuật Lê Bá Đảng",
@@ -60866,7 +60866,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLeBaDangArtCenter",
         "replaceGeneratedSections": false
       }
     },
@@ -60901,7 +60901,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLeBaDangMemorySpace",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Không gian lưu niệm Lê Bá Đảng",
@@ -60951,7 +60951,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLeBaDangMemorySpace",
         "replaceGeneratedSections": false
       }
     },
@@ -60986,7 +60986,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLeLoiStreet",
       "audioKey": "audio-authored-duong-le-loi-01f6855c42",
       "audioStatus": "ready",
       "productionIntake": {
@@ -61038,7 +61038,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLeLoiStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -61075,7 +61075,7 @@
       "pageKind": "restaurant",
       "placeKind": "restaurant",
       "contentRole": "everyday",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLesJardins",
       "audioKey": "audio-authored-les-jardins-de-la-carambole-f6ee3d6d4e",
       "audioStatus": "ready",
       "productionIntake": {
@@ -61142,7 +61142,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLesJardins",
         "replaceGeneratedSections": false
       }
     },
@@ -61177,7 +61177,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLienHoaVegetarian",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -61243,7 +61243,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLienHoaVegetarian",
         "replaceGeneratedSections": false
       }
     },
@@ -61278,7 +61278,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceLongAnPalace",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Điện Long An",
@@ -61328,7 +61328,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceLongAnPalace",
         "replaceGeneratedSections": false
       }
     },
@@ -61363,7 +61363,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceMandarinCoffeeRestaurant",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -61429,7 +61429,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceMandarinCoffeeRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -61468,7 +61468,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceMeXung",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -61529,7 +61529,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceMeXung",
         "replaceGeneratedSections": false
       }
     },
@@ -61564,7 +61564,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceMinhMangTomb",
       "audioKey": "audio-authored-lang-minh-mang-72102727f8",
       "audioStatus": "ready",
       "productionIntake": {
@@ -61616,7 +61616,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceMinhMangTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -61651,7 +61651,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceMuseumCommissionedPorcelains",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Bảo tàng Đồ sứ ký kiểu thời Nguyễn",
@@ -61701,7 +61701,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceMuseumCommissionedPorcelains",
         "replaceGeneratedSections": false
       }
     },
@@ -61736,7 +61736,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNamGiaoEsplanade",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Đàn Nam Giao",
@@ -61786,7 +61786,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNamGiaoEsplanade",
         "replaceGeneratedSections": false
       }
     },
@@ -61821,7 +61821,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNgoMonGate",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Ngọ Môn",
@@ -61871,7 +61871,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNgoMonGate",
         "replaceGeneratedSections": false
       }
     },
@@ -61906,7 +61906,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNguBinhMountain",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Núi Ngự Bình",
@@ -61956,7 +61956,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNguBinhMountain",
         "replaceGeneratedSections": false
       }
     },
@@ -61991,7 +61991,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNguyenDinhChieuStreet",
       "audioKey": "audio-authored-pho-di-bo-nguyen-dinh-chieu-44a42a9d42",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62043,7 +62043,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNguyenDinhChieuStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -62078,7 +62078,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNhaNhacRoyalCourtMusic",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Nhã nhạc cung đình Huế",
@@ -62128,7 +62128,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNhaNhacRoyalCourtMusic",
         "replaceGeneratedSections": false
       }
     },
@@ -62163,7 +62163,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNightMarket",
       "audioKey": "audio-authored-cho-dem-hue-4bf5e32962",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62215,7 +62215,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNightMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -62250,7 +62250,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNineDynasticUrns",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Cửu Đỉnh",
@@ -62300,7 +62300,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNineDynasticUrns",
         "replaceGeneratedSections": false
       }
     },
@@ -62335,7 +62335,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceNorthernBusStation",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Bến xe phía Bắc Huế",
@@ -62385,7 +62385,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceNorthernBusStation",
         "replaceGeneratedSections": false
       }
     },
@@ -62420,7 +62420,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePerfumeRiver",
       "audioKey": "audio-authored-song-huong-c35e0a05ca",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62472,7 +62472,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePerfumeRiver",
         "replaceGeneratedSections": false
       }
     },
@@ -62507,7 +62507,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePerfumeRiverDragonBoat",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -62558,7 +62558,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePerfumeRiverDragonBoat",
         "replaceGeneratedSections": false
       }
     },
@@ -62593,7 +62593,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePhamNguLaoStreet",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Đường Phạm Ngũ Lão",
@@ -62643,7 +62643,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePhamNguLaoStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -62678,7 +62678,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "airport",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePhuBaiAirport",
       "audioKey": "audio-authored-san-bay-phu-bai-d5c67cd22a",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62730,7 +62730,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePhuBaiAirport",
         "replaceGeneratedSections": false
       }
     },
@@ -62765,7 +62765,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePhuCamChurch",
       "audioKey": "audio-authored-nha-tho-phu-cam-aa283c1b46",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62817,7 +62817,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePhuCamChurch",
         "replaceGeneratedSections": false
       }
     },
@@ -62852,7 +62852,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlacePhuHauMarket",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Chợ Phú Hậu",
@@ -62902,7 +62902,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlacePhuHauMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -62937,7 +62937,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceRailwayStation",
       "audioKey": "audio-authored-ga-hue-de638a95f8",
       "audioStatus": "ready",
       "productionIntake": {
@@ -62989,7 +62989,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceRailwayStation",
         "replaceGeneratedSections": false
       }
     },
@@ -63024,7 +63024,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceRoyalAntiquitiesMuseum",
       "audioKey": "audio-authored-bao-tang-co-vat-cung-dinh-hue-f79a38abcb",
       "audioStatus": "ready",
       "productionIntake": {
@@ -63076,7 +63076,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceRoyalAntiquitiesMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -63111,7 +63111,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceRoyalCourtMusicShow",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -63162,7 +63162,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceRoyalCourtMusicShow",
         "replaceGeneratedSections": false
       }
     },
@@ -63197,7 +63197,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceRuChaMangrove",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Rú Chá",
@@ -63247,7 +63247,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceRuChaMangrove",
         "replaceGeneratedSections": false
       }
     },
@@ -63282,7 +63282,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceSongHuongFloatingRestaurant",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -63348,7 +63348,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceSongHuongFloatingRestaurant",
         "replaceGeneratedSections": false
       }
     },
@@ -63383,7 +63383,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceSonglab",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Sống Platform - SốngLab",
@@ -63433,7 +63433,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceSonglab",
         "replaceGeneratedSections": false
       }
     },
@@ -63468,7 +63468,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "station",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceSouthernBusStation",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Bến xe phía Nam Huế",
@@ -63518,7 +63518,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceSouthernBusStation",
         "replaceGeneratedSections": false
       }
     },
@@ -63553,7 +63553,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTamGiangLagoon",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Phá Tam Giang",
@@ -63603,7 +63603,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTamGiangLagoon",
         "replaceGeneratedSections": false
       }
     },
@@ -63638,7 +63638,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTayLocMarket",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Chợ Tây Lộc",
@@ -63688,7 +63688,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTayLocMarket",
         "replaceGeneratedSections": false
       }
     },
@@ -63723,7 +63723,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThaiHoaPalace",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Điện Thái Hòa",
@@ -63773,7 +63773,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThaiHoaPalace",
         "replaceGeneratedSections": false
       }
     },
@@ -63808,7 +63808,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThanhCafe",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -63874,7 +63874,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThanhCafe",
         "replaceGeneratedSections": false
       }
     },
@@ -63909,7 +63909,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThanhToanBridge",
       "audioKey": "audio-authored-cau-ngoi-thanh-toan-6e6b5a9eec",
       "audioStatus": "ready",
       "productionIntake": {
@@ -63961,7 +63961,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThanhToanBridge",
         "replaceGeneratedSections": false
       }
     },
@@ -63996,7 +63996,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTheMieuTemple",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Thế Miếu",
@@ -64046,7 +64046,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTheMieuTemple",
         "replaceGeneratedSections": false
       }
     },
@@ -64081,7 +64081,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThienMuPagoda",
       "audioKey": "audio-authored-chua-thien-mu-701da3ec1f",
       "audioStatus": "ready",
       "productionIntake": {
@@ -64133,7 +64133,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThienMuPagoda",
         "replaceGeneratedSections": false
       }
     },
@@ -64168,7 +64168,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThieuTriTomb",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Lăng Thiệu Trị",
@@ -64218,7 +64218,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThieuTriTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -64253,7 +64253,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThuyBieuVillage",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Làng Thủy Biều",
@@ -64303,7 +64303,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThuyBieuVillage",
         "replaceGeneratedSections": false
       }
     },
@@ -64338,7 +64338,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceThuyXuanIncenseVillage",
       "audioKey": "audio-authored-lang-huong-thuy-xuan-a4e21804da",
       "audioStatus": "ready",
       "productionIntake": {
@@ -64390,7 +64390,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceThuyXuanIncenseVillage",
         "replaceGeneratedSections": false
       }
     },
@@ -64425,7 +64425,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTinhGiaVien",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -64491,7 +64491,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTinhGiaVien",
         "replaceGeneratedSections": false
       }
     },
@@ -64526,7 +64526,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "port",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceToaKhamBoatStation",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Bến thuyền Tòa Khâm",
@@ -64576,7 +64576,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceToaKhamBoatStation",
         "replaceGeneratedSections": false
       }
     },
@@ -64611,7 +64611,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTruongTienBridge",
       "audioKey": "audio-authored-cau-truong-tien-457b4dcf02",
       "audioStatus": "ready",
       "productionIntake": {
@@ -64663,7 +64663,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTruongTienBridge",
         "replaceGeneratedSections": false
       }
     },
@@ -64698,7 +64698,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "market",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTruongTienPlaza",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Trung tâm thương mại Trường Tiền",
@@ -64748,7 +64748,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTruongTienPlaza",
         "replaceGeneratedSections": false
       }
     },
@@ -64783,7 +64783,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTuDucTomb",
       "audioKey": "audio-authored-lang-tu-duc-da4ab18573",
       "audioStatus": "ready",
       "productionIntake": {
@@ -64835,7 +64835,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTuDucTomb",
         "replaceGeneratedSections": false
       }
     },
@@ -64870,7 +64870,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceTuHieuPagoda",
       "audioKey": "audio-authored-chua-tu-hieu-d2a26763e6",
       "audioStatus": "ready",
       "productionIntake": {
@@ -64922,7 +64922,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceTuHieuPagoda",
         "replaceGeneratedSections": false
       }
     },
@@ -64957,7 +64957,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceVongCanhHill",
       "audioKey": "audio-authored-doi-vong-canh-973c1cfd1f",
       "audioStatus": "ready",
       "productionIntake": {
@@ -65009,7 +65009,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceVongCanhHill",
         "replaceGeneratedSections": false
       }
     },
@@ -65044,7 +65044,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "neighborhood",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceVyDa",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
         "intakeVietnameseName": "Vỹ Dạ",
@@ -65094,7 +65094,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceVyDa",
         "replaceGeneratedSections": false
       }
     },
@@ -65129,7 +65129,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "street",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceWalkingStreet",
       "audioKey": "audio-authored-pho-di-bo-hue-a8bcc9ad7d",
       "audioStatus": "ready",
       "productionIntake": {
@@ -65181,7 +65181,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceWalkingStreet",
         "replaceGeneratedSections": false
       }
     },
@@ -65216,7 +65216,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "restaurant",
-      "heroImageName": "HeroCityHue",
+      "heroImageName": "HeroCityHuePlaceYThaoGarden",
       "contentRole": "everyday",
       "productionIntake": {
         "sourceFile": "hue-nouns.md",
@@ -65282,7 +65282,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHue",
+        "heroImageName": "HeroCityHuePlaceYThaoGarden",
         "replaceGeneratedSections": false
       }
     },
