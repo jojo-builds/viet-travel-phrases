@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-17T15:30:50.219Z",
+    "generatedAt": "2026-05-17T21:00:17.969Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 807,
     "editorialSupportPageCount": 26,
@@ -11746,6 +11746,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-3d-art-in-paradise",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
+      "text": "Bạn chụp giúp tôi được không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-43-factory",
       "sectionID": "hero",
       "kind": "hero",
@@ -11818,19 +11826,19 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "photos",
-      "kind": "phrase",
-      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
-      "text": "Bạn chụp giúp tôi được không?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-danang-place-bac-my-an-market",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-cho-bac-my-an-9fa3d7ba23",
       "text": "Chợ Bắc Mỹ An",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
+      "text": "Đường Bạch Đằng ở đâu?",
       "resolved": false
     },
     {
@@ -12330,6 +12338,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-nen",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
+      "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-ngu-hanh-son-district",
       "sectionID": "hero",
       "kind": "hero",
@@ -12506,28 +12522,12 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-danang-stop-nen",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
-      "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-danang-to-airport",
       "sectionID": "breakdown",
       "kind": "breakdown",
       "audioKey": "audio-authored-san-bay-da-nang-152a0e4b10",
       "text": "sân bay Đà Nẵng",
       "resolved": true
-    },
-    {
-      "pageID": "viet-family-city-danang-where-bach-dang-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
-      "text": "Đường Bạch Đằng ở đâu?",
-      "resolved": false
     },
     {
       "pageID": "viet-family-city-hanoi-atm-bun-cha-huong-lien",
@@ -13218,6 +13218,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
+      "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-bun-cha-ta",
       "sectionID": "hero",
       "kind": "hero",
@@ -13247,6 +13255,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cha-ca-o-ha-noi-8140292a96",
       "text": "Chả cá ở Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-cha-ca-thang-long",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-cha-ca-thang-long-a27ee5242f",
+      "text": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
       "resolved": false
     },
     {
@@ -13346,6 +13362,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-giang-cafe",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
+      "text": "Dừng ở Cà phê Giảng",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-giap-bat-bus-station",
       "sectionID": "hero",
       "kind": "hero",
@@ -13359,6 +13383,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cho-hang-da-d60aebbfd3",
       "text": "Chợ Hàng Da",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-hang-gai-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-pho-hang-gai-o-dau-6464750f35",
+      "text": "Phố Hàng Gai ở đâu?",
       "resolved": false
     },
     {
@@ -13595,6 +13627,14 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
+      "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
       "sectionID": "before-you-go",
       "kind": "phrase",
       "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
@@ -13671,6 +13711,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-di-bo-an-vat-ha-noi-8ff5e76134",
       "text": "Đi bộ ăn vặt Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-tam-vi",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368",
+      "text": "Cho tôi xuống gần nhà hàng Tầm Vị.",
       "resolved": false
     },
     {
@@ -13847,54 +13895,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-cong-vien-yen-so-db67277cbf",
       "text": "Công viên Yên Sở",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-bun-cha-huong-lien",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
-      "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-cha-ca-thang-long",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-cha-ca-thang-long-a27ee5242f",
-      "text": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-giang-cafe",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
-      "text": "Dừng ở Cà phê Giảng",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-pho-bat-dan",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
-      "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-tam-vi",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368",
-      "text": "Cho tôi xuống gần nhà hàng Tầm Vị.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-where-hang-gai-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-pho-hang-gai-o-dau-6464750f35",
-      "text": "Phố Hàng Gai ở đâu?",
       "resolved": false
     },
     {
@@ -14642,6 +14642,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-anan-saigon",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-anan-sai-gon-6183ddc907",
+      "text": "Cho tôi xuống gần nhà hàng Anăn Sài Gòn.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-ao-dai-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -14887,6 +14895,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-di-bo-dong-khoi-e217e08f80",
       "text": "Đi bộ Đồng Khởi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
+      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -15295,22 +15311,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-toi-muon-mua-sim-gan-cho-ben-thanh-ddfae9b82c",
       "text": "Tôi muốn mua SIM gần chợ Bến Thành",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hcmc-stop-anan-saigon",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-anan-sai-gon-6183ddc907",
-      "text": "Cho tôi xuống gần nhà hàng Anăn Sài Gòn.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hcmc-where-dong-khoi-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
-      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -15962,6 +15962,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
+      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-banh-xeo",
       "sectionID": "hero",
       "kind": "hero",
@@ -16162,6 +16170,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-faifo-coffee",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-faifo-coffee-7681bd356b",
+      "text": "Dừng ở Faifo Coffee",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-folk-culture-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -16322,6 +16338,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-morning-glory",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
+      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-mot-herbal-drink",
       "sectionID": "hero",
       "kind": "hero",
@@ -16415,6 +16439,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-nha-co-quan-thang-cc1f0cdc47",
       "text": "Nhà cổ Quân Thắng",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-reach-out-tea-house",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-reaching-out-tea-house-78d411e6a4",
+      "text": "Dừng ở Reaching Out Tea House",
       "resolved": false
     },
     {
@@ -16599,38 +16631,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-yaly-couture-c6e18fb83d",
       "text": "Yaly Couture",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-banh-mi-phuong",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
-      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-faifo-coffee",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-faifo-coffee-7681bd356b",
-      "text": "Dừng ở Faifo Coffee",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-morning-glory",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
-      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-reach-out-tea-house",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-reaching-out-tea-house-78d411e6a4",
-      "text": "Dừng ở Reaching Out Tea House",
       "resolved": false
     },
     {
@@ -17626,6 +17626,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hue-place-les-jardins",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-les-jardins-de-la-carambole-f4b64e6c5c",
+      "text": "Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hue-place-lien-hoa-vegetarian",
       "sectionID": "hero",
       "kind": "hero",
@@ -17962,27 +17970,27 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-hue-place-walking-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-di-pho-di-bo-hue-639ec583b5",
+      "text": "Đi phố đi bộ Huế",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hue-place-walking-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-pho-di-bo-hue-o-dau-255aae3009",
+      "text": "Phố đi bộ Huế ở đâu?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hue-place-y-thao-garden",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-y-thao-garden-d671a76e48",
       "text": "Ý Thảo Garden",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hue-stop-les-jardins",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-les-jardins-de-la-carambole-f4b64e6c5c",
-      "text": "Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hue-walking-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-di-pho-di-bo-hue-639ec583b5",
-      "text": "Đi phố đi bộ Huế",
       "resolved": false
     },
     {
@@ -17992,14 +18000,6 @@
       "audioKey": "audio-authored-pho-di-bo-hue-a8bcc9ad7d",
       "text": "phố đi bộ Huế",
       "resolved": true
-    },
-    {
-      "pageID": "viet-family-city-hue-walking-street",
-      "sectionID": "related-phrases",
-      "kind": "phrase",
-      "audioKey": "audio-authored-pho-di-bo-hue-o-dau-255aae3009",
-      "text": "Phố đi bộ Huế ở đâu?",
-      "resolved": false
     },
     {
       "pageID": "viet-family-ves-can-you-show-me-politeness",
@@ -29700,6 +29700,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-3d-art-in-paradise",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
+      "text": "Bạn chụp giúp tôi được không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-43-factory",
       "sectionID": "hero",
       "kind": "hero",
@@ -29748,19 +29756,19 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "photos",
-      "kind": "phrase",
-      "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127",
-      "text": "Bạn chụp giúp tôi được không?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-danang-place-bac-my-an-market",
       "sectionID": "hero",
       "kind": "hero",
       "audioKey": "audio-authored-cho-bac-my-an-9fa3d7ba23",
       "text": "Chợ Bắc Mỹ An",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
+      "text": "Đường Bạch Đằng ở đâu?",
       "resolved": false
     },
     {
@@ -30164,6 +30172,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-nen",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
+      "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-ngu-hanh-son-district",
       "sectionID": "hero",
       "kind": "hero",
@@ -30305,22 +30321,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-yen-retreat-78096a7742",
       "text": "Yên Retreat",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-danang-stop-nen",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2",
-      "text": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-danang-where-bach-dang-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
-      "text": "Đường Bạch Đằng ở đâu?",
       "resolved": false
     },
     {
@@ -30852,6 +30852,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
+      "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-bun-cha-ta",
       "sectionID": "hero",
       "kind": "hero",
@@ -30881,6 +30889,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cha-ca-o-ha-noi-8140292a96",
       "text": "Chả cá ở Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-cha-ca-thang-long",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-cha-ca-thang-long-a27ee5242f",
+      "text": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
       "resolved": false
     },
     {
@@ -30972,6 +30988,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-giang-cafe",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
+      "text": "Dừng ở Cà phê Giảng",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-giap-bat-bus-station",
       "sectionID": "hero",
       "kind": "hero",
@@ -30985,6 +31009,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cho-hang-da-d60aebbfd3",
       "text": "Chợ Hàng Da",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-hang-gai-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-pho-hang-gai-o-dau-6464750f35",
+      "text": "Phố Hàng Gai ở đâu?",
       "resolved": false
     },
     {
@@ -31173,6 +31205,14 @@
     },
     {
       "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
+      "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-bat-dan",
       "sectionID": "before-you-go",
       "kind": "phrase",
       "audioKey": "audio-authored-da-cho-toi-mot-to-pho-5e65b6808d",
@@ -31233,6 +31273,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-di-bo-an-vat-ha-noi-8ff5e76134",
       "text": "Đi bộ ăn vặt Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-tam-vi",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368",
+      "text": "Cho tôi xuống gần nhà hàng Tầm Vị.",
       "resolved": false
     },
     {
@@ -31369,54 +31417,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-cong-vien-yen-so-db67277cbf",
       "text": "Công viên Yên Sở",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-bun-cha-huong-lien",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377",
-      "text": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-cha-ca-thang-long",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-cha-ca-thang-long-a27ee5242f",
-      "text": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-giang-cafe",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
-      "text": "Dừng ở Cà phê Giảng",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-pho-bat-dan",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81",
-      "text": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-stop-tam-vi",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368",
-      "text": "Cho tôi xuống gần nhà hàng Tầm Vị.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hanoi-where-hang-gai-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-pho-hang-gai-o-dau-6464750f35",
-      "text": "Phố Hàng Gai ở đâu?",
       "resolved": false
     },
     {
@@ -31996,6 +31996,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-anan-saigon",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-anan-sai-gon-6183ddc907",
+      "text": "Cho tôi xuống gần nhà hàng Anăn Sài Gòn.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-ao-dai-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -32225,6 +32233,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-di-bo-dong-khoi-e217e08f80",
       "text": "Đi bộ Đồng Khởi",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
+      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -32537,22 +32553,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-toi-muon-mua-sim-gan-cho-ben-thanh-ddfae9b82c",
       "text": "Tôi muốn mua SIM gần chợ Bến Thành",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hcmc-stop-anan-saigon",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-anan-sai-gon-6183ddc907",
-      "text": "Cho tôi xuống gần nhà hàng Anăn Sài Gòn.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hcmc-where-dong-khoi-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
-      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -33052,6 +33052,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
+      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-banh-xeo",
       "sectionID": "hero",
       "kind": "hero",
@@ -33212,6 +33220,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-faifo-coffee",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-faifo-coffee-7681bd356b",
+      "text": "Dừng ở Faifo Coffee",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-folk-culture-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -33332,6 +33348,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-morning-glory",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
+      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-mot-herbal-drink",
       "sectionID": "hero",
       "kind": "hero",
@@ -33401,6 +33425,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-nha-co-quan-thang-cc1f0cdc47",
       "text": "Nhà cổ Quân Thắng",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-reach-out-tea-house",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-dung-o-reaching-out-tea-house-78d411e6a4",
+      "text": "Dừng ở Reaching Out Tea House",
       "resolved": false
     },
     {
@@ -33553,38 +33585,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-yaly-couture-c6e18fb83d",
       "text": "Yaly Couture",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-banh-mi-phuong",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
-      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-faifo-coffee",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-faifo-coffee-7681bd356b",
-      "text": "Dừng ở Faifo Coffee",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-morning-glory",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
-      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hoian-stop-reach-out-tea-house",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-dung-o-reaching-out-tea-house-78d411e6a4",
-      "text": "Dừng ở Reaching Out Tea House",
       "resolved": false
     },
     {
@@ -34404,6 +34404,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hue-place-les-jardins",
+      "sectionID": "place-brief",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-les-jardins-de-la-carambole-f4b64e6c5c",
+      "text": "Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hue-place-lien-hoa-vegetarian",
       "sectionID": "hero",
       "kind": "hero",
@@ -34644,35 +34652,27 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hue-place-y-thao-garden",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-y-thao-garden-d671a76e48",
-      "text": "Ý Thảo Garden",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hue-stop-les-jardins",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-les-jardins-de-la-carambole-f4b64e6c5c",
-      "text": "Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-hue-walking-street",
-      "sectionID": "hero",
-      "kind": "hero",
+      "pageID": "viet-family-city-hue-place-walking-street",
+      "sectionID": "place-brief",
+      "kind": "phrase",
       "audioKey": "audio-authored-di-pho-di-bo-hue-639ec583b5",
       "text": "Đi phố đi bộ Huế",
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hue-walking-street",
-      "sectionID": "related-phrases",
+      "pageID": "viet-family-city-hue-place-walking-street",
+      "sectionID": "place-brief",
       "kind": "phrase",
       "audioKey": "audio-authored-pho-di-bo-hue-o-dau-255aae3009",
       "text": "Phố đi bộ Huế ở đâu?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hue-place-y-thao-garden",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-y-thao-garden-d671a76e48",
+      "text": "Ý Thảo Garden",
       "resolved": false
     },
     {

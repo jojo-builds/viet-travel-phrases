@@ -2551,6 +2551,7 @@ function applyCityEditorialImport(sections, pageRecord) {
   const nextSections = editorialImport.replaceGeneratedSections === true
     ? []
     : sections.map((section) => ({ ...section }));
+  const generatedSectionByID = new Map(sections.map((section) => [section.id, section]));
   const shouldReplaceGeneratedSections = editorialImport.replaceGeneratedSections === true;
   const insertBeforeIndex = () => {
     const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
@@ -2558,7 +2559,11 @@ function applyCityEditorialImport(sections, pageRecord) {
   };
 
   for (const editorialSection of editorialImport.sections) {
+    const generatedSection = shouldReplaceGeneratedSections
+      ? generatedSectionByID.get(editorialSection.id)
+      : null;
     const next = {
+      ...(generatedSection ? { ...generatedSection } : {}),
       id: editorialSection.id,
       title: editorialSection.title,
       body: editorialSection.body,
