@@ -265,18 +265,6 @@ function main() {
   }
 
   const report = readJSON(reportPath);
-  const authoredPages = fs.existsSync(authoredPagesPath) ? readJSON(authoredPagesPath) : { pages: [] };
-  const handwrittenCityArticlePageIDs = (authoredPages.pages ?? [])
-    .filter((page) => page.tierRole === "city-v1")
-    .filter((page) => page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed")
-    .flatMap((page) => [
-      page.id,
-      String(page.id ?? "").replace(/^viet-family-/, "viet-phrase-"),
-    ])
-    .filter(Boolean);
-  const handwrittenCityArticlePageIDSQL = handwrittenCityArticlePageIDs.length
-    ? handwrittenCityArticlePageIDs.map(sqlQuote).join(",")
-    : "''";
   const counts = JSON.parse(sqliteValue(`SELECT json_object(
     'scenarios', (SELECT count(*) FROM scenario),
     'clusters', (SELECT count(*) FROM phrase_cluster),
@@ -590,7 +578,6 @@ function main() {
         ) THEN 0 ELSE 1 END AS text_only
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
-      WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
     ),
     runs AS (
       SELECT
@@ -627,7 +614,6 @@ function main() {
           ) THEN 0 ELSE 1 END AS text_only
         FROM phrase_page pp
         JOIN page_section ps ON ps.page_id = pp.id
-        WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
       ),
       runs AS (
         SELECT
@@ -690,7 +676,6 @@ function main() {
     LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
     LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
-      AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND (
         has_breakdown = 0
         OR has_context_copy = 0
@@ -739,7 +724,6 @@ function main() {
       LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
       LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
       WHERE pc.page_id != 'viet-phrase-polite-1'
-        AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
         AND (
           has_breakdown = 0
           OR has_context_copy = 0
@@ -843,9 +827,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM phrase_page pp
-    WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
-      AND
-      NOT EXISTS (
+    WHERE NOT EXISTS (
       SELECT 1
       FROM page_section ps
       WHERE ps.page_id = pp.id
@@ -856,9 +838,7 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM page_section ps
-    JOIN phrase_page pp ON pp.id = ps.page_id
     WHERE ps.section_key = 'breakdown'
-      AND pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND NOT EXISTS (
         SELECT 1
         FROM page_section_item psi

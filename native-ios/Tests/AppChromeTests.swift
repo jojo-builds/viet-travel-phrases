@@ -1173,8 +1173,6 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hanoi.subcategories.isEmpty)
         XCTAssertFalse(hanoi.starterItems.isEmpty)
         XCTAssertNotNil(hanoi.cityHub)
-        XCTAssertEqual(hanoi.cityHub?.introTitle, "Start here")
-        XCTAssertTrue(hanoi.cityHub?.introText.contains("Old Quarter") == true)
         XCTAssertEqual(hanoi.cityHub?.situationTitle, "Browse by")
         XCTAssertEqual(hanoi.cityHub?.browseTitle, "Browse by")
         XCTAssertEqual(hanoi.cityHub?.namesTitle, "Names to know")
@@ -1332,15 +1330,12 @@ final class AppChromeTests: XCTestCase {
         let cityHub = try! XCTUnwrap(danang.cityHub)
 
         XCTAssertEqual(danang.title, "Da Nang")
-        XCTAssertEqual(danang.subtitle, "Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips.")
+        XCTAssertEqual(danang.subtitle, "Airport arrivals, beach rides, river landmarks, markets, and day trips.")
         XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
         XCTAssertEqual(danang.starterTitle, "Names to know")
         XCTAssertEqual(danang.practiceTitle, "Da Nang day")
         XCTAssertEqual(danang.practiceSubtitle, "Airport pickup, beach drop-off, food, and a ride back.")
         XCTAssertFalse(danang.practiceSubtitle.localizedCaseInsensitiveContains("phrase loop"))
-        XCTAssertEqual(cityHub.introTitle, "Start here")
-        XCTAssertTrue(cityHub.introText.contains("airport to beach"))
-        XCTAssertTrue(cityHub.introText.contains("exact side of town"))
 
         XCTAssertEqual(
             cityHub.situations.map(\.title),
@@ -1414,7 +1409,7 @@ final class AppChromeTests: XCTestCase {
 
         let baNa = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-ba-na-hills")
         let baNaRows = baNa.sections.flatMap(\.phrases)
-        XCTAssertTrue(baNaRows.contains { $0.id == "taxi-1" })
+        XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-taxi-1" })
         XCTAssertTrue(baNaRows.contains { $0.detailPageID == "viet-phrase-v500-time-date-book-two-tickets-please" })
         assertNoDerivedPlacePhraseRows(baNaRows.map { phrase in
             BrowseSearchPhraseItem(
@@ -1433,8 +1428,8 @@ final class AppChromeTests: XCTestCase {
 
         let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
         let dragonRows = dragonBridge.sections.flatMap(\.phrases)
-        XCTAssertTrue(dragonRows.contains { $0.id == "v500-tran-please-stop-right-here" })
-        XCTAssertTrue(dragonRows.contains { $0.id == "directions-8" })
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-v500-tran-please-stop-right-here" })
+        XCTAssertTrue(dragonRows.contains { $0.detailPageID == "viet-phrase-directions-8" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })

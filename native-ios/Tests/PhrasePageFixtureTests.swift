@@ -508,51 +508,6 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
-    func testCityNounPagesAreHandwrittenReviewedAndUseUniqueTargetHeroes() throws {
-        try skipRetiredGeneratedJSONCatalog()
-
-        let url = try XCTUnwrap(Bundle.main.url(
-            forResource: "viet-authored-listing-pages",
-            withExtension: "json"
-        ))
-        let data = try Data(contentsOf: url)
-        let object = try XCTUnwrap(try JSONSerialization.jsonObject(with: data) as? [String: Any])
-        let pages = try XCTUnwrap(object["pages"] as? [[String: Any]])
-        let cityNounPages = pages.filter { page in
-            guard page["tierRole"] as? String == "city-v1",
-                  let metadata = page["cityMetadata"] as? [String: Any],
-                  metadata["derivedPlacePhrase"] as? Bool == false,
-                  let pageKind = metadata["pageKind"] as? String
-            else { return false }
-
-            return ["place", "restaurant", "dish"].contains(pageKind)
-        }
-        let groupedByCity = Dictionary(grouping: cityNounPages) { page -> String in
-            let metadata = page["cityMetadata"] as? [String: Any]
-            return metadata?["cityID"] as? String ?? ""
-        }
-        let targetHeroes = cityNounPages.compactMap { page -> String? in
-            let metadata = page["cityMetadata"] as? [String: Any]
-            return metadata?["targetHeroImageName"] as? String
-        }
-
-        XCTAssertEqual(cityNounPages.count, 500)
-        XCTAssertEqual(groupedByCity["hanoi"]?.count, 100)
-        XCTAssertEqual(groupedByCity["hcmc"]?.count, 100)
-        XCTAssertEqual(groupedByCity["danang"]?.count, 100)
-        XCTAssertEqual(groupedByCity["hoian"]?.count, 100)
-        XCTAssertEqual(groupedByCity["hue"]?.count, 100)
-        XCTAssertEqual(Set(targetHeroes).count, 500)
-
-        for page in cityNounPages {
-            let pageID = try XCTUnwrap(page["id"] as? String)
-            let metadata = try XCTUnwrap(page["cityMetadata"] as? [String: Any], pageID)
-            XCTAssertEqual(metadata["editorialReviewStatus"] as? String, "handwritten-reviewed", pageID)
-            XCTAssertFalse((page["summary"] as? String ?? "").isEmpty, pageID)
-            XCTAssertFalse((metadata["targetHeroImageName"] as? String ?? "").isEmpty, pageID)
-        }
-    }
-
     func testTierOneGeneratedPagesUseExpandedListingPattern() throws {
         try skipRetiredGeneratedJSONCatalog()
 

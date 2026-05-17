@@ -3090,8 +3090,6 @@ function cityPageForRecord(pageRecord, context) {
       sourceIDs: pageRecord.sourceIDs ?? [],
       rationale: pageRecord.rationale,
       editorialImportPatchID: pageRecord.editorialImport?.patchID ?? null,
-      editorialReviewStatus: pageRecord.editorialImport?.reviewStatus ?? null,
-      targetHeroImageName: pageRecord.editorialImport?.targetHeroImageName ?? pageRecord.productionIntake?.targetHeroImageName ?? null,
     },
     sections: withSectionPresentations(authoredSections),
     examples: [selfOption],
@@ -3692,11 +3690,6 @@ function phraseRoleForPage(page, profile) {
 
 function isNameBasedProfile(profile) {
   return ["place", "restaurant", "dish", "street"].includes(profile);
-}
-
-function preservesHandwrittenCityEditorial(page) {
-  return page.tierRole === "city-v1"
-    && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
 }
 
 function authoredCitySectionBody(page, sectionID) {
@@ -4383,8 +4376,8 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
     const keepByProfile = {
       place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
       street: new Set(["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
-      restaurant: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "pay-and-leave", "breakdown", "good-to-know"]),
-      dish: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
+      restaurant: new Set(["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"]),
+      dish: new Set(["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
   }
@@ -4762,13 +4755,10 @@ function sanitizeAuthoredPage(page) {
   const profile = authoredPageProfile(page);
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
-  const preserveCityEditorial = preservesHandwrittenCityEditorial(page);
   const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
     title: cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
-    body: preserveCityEditorial
-      ? cleanFinalPunctuation(section.body || "")
-      : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
+    body: isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,
       english: cleanTravelerBody(phrase.english),
@@ -4795,9 +4785,7 @@ function sanitizeAuthoredPage(page) {
 
   return {
     ...page,
-    summary: preserveCityEditorial
-      ? cleanFinalPunctuation(page.summary || "")
-      : profile === "derived-place-phrase"
+    summary: profile === "derived-place-phrase"
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
       : isNameBasedProfile(profile)
       ? cleanFinalPunctuation(adultNameAboutBody(page, profile))

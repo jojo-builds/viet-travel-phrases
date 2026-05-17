@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-17T06:23:28.857Z",
+    "generatedAt": "2026-05-16T15:08:41.570Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 807,
     "editorialSupportPageCount": 26,
@@ -11843,10 +11843,18 @@
     },
     {
       "pageID": "viet-family-city-danang-place-bach-dang-street",
-      "sectionID": "place-brief",
+      "sectionID": "show-driver",
       "kind": "phrase",
-      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
-      "text": "Đường Bạch Đằng ở đâu?",
+      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
+      "text": "Cho tôi đến đường Bạch Đằng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
+      "text": "Đây có phải đường Bạch Đằng không?",
       "resolved": false
     },
     {
@@ -12258,6 +12266,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-danang-place-marble-mountains",
+      "sectionID": "key-phrases",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
+      "text": "Tài xế chờ ở đâu?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-mi-quang",
       "sectionID": "hero",
       "kind": "hero",
@@ -12402,6 +12418,22 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "sectionID": "show-driver",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
+      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
+      "text": "Đây có phải đường Nguyễn Văn Linh không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-non-nuoc-beach",
       "sectionID": "hero",
       "kind": "hero",
@@ -12472,6 +12504,22 @@
       "audioKey": "audio-authored-ban-dao-son-tra-2364c7b9ad",
       "text": "Bán đảo Sơn Trà",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
+      "text": "Anh chờ tôi ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
+      "text": "Mấy giờ quay lại?",
+      "resolved": false
     },
     {
       "pageID": "viet-family-city-danang-place-son-tra-district",
@@ -12554,6 +12602,22 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "sectionID": "show-driver",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
+      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
+      "text": "Đây có phải đường Võ Nguyên Giáp không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-wonderlust",
       "sectionID": "hero",
       "kind": "hero",
@@ -12576,6 +12640,14 @@
       "audioKey": "audio-authored-san-bay-da-nang-152a0e4b10",
       "text": "sân bay Đà Nẵng",
       "resolved": true
+    },
+    {
+      "pageID": "viet-family-city-danang-where-bach-dang-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
+      "text": "Đường Bạch Đằng ở đâu?",
+      "resolved": false
     },
     {
       "pageID": "viet-family-city-hanoi-atm-bun-cha-huong-lien",
@@ -18074,30 +18146,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-ves-can-you-show-me-politeness",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
-      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-can-you-wait-here",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
-      "text": "Anh chờ tôi ở đây được không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-can-you-wait-here",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
-      "text": "Mấy giờ quay lại?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-ves-do-you-speak-english-anh",
       "sectionID": "hero",
       "kind": "hero",
@@ -18111,46 +18159,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-toi-dang-o-duong-vo-nguyen-giap-16506a9333",
       "text": "Tôi đang ở đường Võ Nguyên Giáp.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
-      "text": "Đây có phải đường Võ Nguyên Giáp không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
-      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-bach-dang-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
-      "text": "Đây có phải đường Bạch Đằng không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-bach-dang-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
-      "text": "Cho tôi đến đường Bạch Đằng.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
-      "text": "Đây có phải đường Nguyễn Văn Linh không?",
       "resolved": false
     },
     {
@@ -18191,14 +18199,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-co-mon-nao-noi-tieng-khong-ec75eed66f",
       "text": "Có món nào nổi tiếng không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-where-driver-waits",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
-      "text": "Tài xế chờ ở đâu?",
       "resolved": false
     },
     {
@@ -29837,10 +29837,18 @@
     },
     {
       "pageID": "viet-family-city-danang-place-bach-dang-street",
-      "sectionID": "place-brief",
+      "sectionID": "show-driver",
       "kind": "phrase",
-      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
-      "text": "Đường Bạch Đằng ở đâu?",
+      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
+      "text": "Cho tôi đến đường Bạch Đằng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bach-dang-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
+      "text": "Đây có phải đường Bạch Đằng không?",
       "resolved": false
     },
     {
@@ -30148,6 +30156,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-marble-mountains",
+      "sectionID": "key-phrases",
+      "kind": "phrase",
+      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
+      "text": "Tài xế chờ ở đâu?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-mi-quang",
       "sectionID": "hero",
       "kind": "hero",
@@ -30268,6 +30284,22 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "sectionID": "show-driver",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
+      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
+      "text": "Đây có phải đường Nguyễn Văn Linh không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-oc-hut",
       "sectionID": "hero",
       "kind": "hero",
@@ -30313,6 +30345,22 @@
       "kind": "hero",
       "audioKey": "audio-authored-six-on-six-cafe-0d62e89fe4",
       "text": "Six On Six Cafe",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
+      "text": "Anh chờ tôi ở đây được không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-son-tra",
+      "sectionID": "use-it-with",
+      "kind": "phrase",
+      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
+      "text": "Mấy giờ quay lại?",
       "resolved": false
     },
     {
@@ -30380,6 +30428,22 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "sectionID": "show-driver",
+      "kind": "phrase",
+      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
+      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "sectionID": "confirm",
+      "kind": "phrase",
+      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
+      "text": "Đây có phải đường Võ Nguyên Giáp không?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-wonderlust",
       "sectionID": "hero",
       "kind": "hero",
@@ -30393,6 +30457,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-yen-retreat-78096a7742",
       "text": "Yên Retreat",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-where-bach-dang-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-duong-bach-dang-o-dau-7accb753ff",
+      "text": "Đường Bạch Đằng ở đâu?",
       "resolved": false
     },
     {
@@ -34748,30 +34820,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-ves-can-you-show-me-politeness",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8",
-      "text": "Cho tôi đến đường Nguyễn Văn Linh.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-can-you-wait-here",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762",
-      "text": "Anh chờ tôi ở đây được không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-can-you-wait-here",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-may-gio-quay-lai-10be0e986d",
-      "text": "Mấy giờ quay lại?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-ves-do-you-speak-english-anh",
       "sectionID": "hero",
       "kind": "hero",
@@ -34788,46 +34836,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a",
-      "text": "Đây có phải đường Võ Nguyên Giáp không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608",
-      "text": "Cho tôi đến đường Võ Nguyên Giáp.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-bach-dang-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9",
-      "text": "Đây có phải đường Bạch Đằng không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-bach-dang-street",
-      "sectionID": "explore-next",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-den-duong-bach-dang-b8999db078",
-      "text": "Cho tôi đến đường Bạch Đằng.",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c",
-      "text": "Đây có phải đường Nguyễn Văn Linh không?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-ves-order-cao-lau-portion",
       "sectionID": "explore-next",
       "kind": "phrase",
@@ -34841,14 +34849,6 @@
       "kind": "phrase",
       "audioKey": "audio-authored-co-mon-nao-noi-tieng-khong-ec75eed66f",
       "text": "Có món nào nổi tiếng không?",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-ves-where-driver-waits",
-      "sectionID": "hero",
-      "kind": "hero",
-      "audioKey": "audio-authored-tai-xe-cho-o-dau-0b819e85a5",
-      "text": "Tài xế chờ ở đâu?",
       "resolved": false
     },
     {
