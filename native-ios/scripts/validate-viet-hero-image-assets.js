@@ -10,6 +10,7 @@ const authoredPagesPath = path.join(repoRoot, "native-ios", "Resources", "viet-a
 const browseDestinationsPath = path.join(repoRoot, "native-ios", "App", "Models", "BrowseSearchDestinations.swift");
 
 const EXPECTED_DIMENSIONS = "853 x 1844";
+const EXPECTED_CITY_DIMENSIONS = "720 x 1556";
 const PHOTO_LIKE_MIN_BYTES = 120_000;
 const requireUniqueCityPlaceAssets = process.argv.includes("--require-unique-city-place-assets");
 const existingNonCityDimensionAllowlist = new Map([
@@ -129,9 +130,12 @@ function validateAsset(heroImageName, context) {
   }
 
   const dimensions = rasterDimensions(raster);
+  const expectedDimensions = heroImageName.startsWith("HeroCity")
+    ? EXPECTED_CITY_DIMENSIONS
+    : EXPECTED_DIMENSIONS;
   const allowedDimensions = existingNonCityDimensionAllowlist.get(heroImageName);
-  if (dimensions !== EXPECTED_DIMENSIONS && dimensions !== allowedDimensions) {
-    fail(`${context}: ${heroImageName} is ${dimensions}, expected ${EXPECTED_DIMENSIONS}`);
+  if (dimensions !== expectedDimensions && dimensions !== allowedDimensions) {
+    fail(`${context}: ${heroImageName} is ${dimensions}, expected ${expectedDimensions}`);
   }
 
   const bytes = fs.statSync(raster).size;
