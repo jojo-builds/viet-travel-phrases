@@ -128,7 +128,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.hanoi.browse.landmarks"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"].exists)
     }
 
@@ -384,19 +384,19 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Start here"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Da Nang is practical and scenic at the same time: airport to beach, riverfront to bridges, markets to seafood, then out toward mountain or heritage trips. These city names help you talk about the exact side of town you mean."].waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "airport to beach").waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
         tapWhenVisible(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"], app: app)
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].isSelected)
-        XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-airport"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.CityGroup.danang.browse.landmarks"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Names to know"].exists)
         XCTAssertFalse(app.staticTexts["Browse Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["Da Nang day"].exists)
         XCTAssertFalse(app.staticTexts["Common moments"].exists)
         XCTAssertFalse(app.staticTexts["Quick phrases"].exists)
+        XCTAssertFalse(app.staticTexts["Say first"].exists)
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
     }
@@ -426,32 +426,24 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
-    func testCityFilterSelectionKeepsBrowseByStableAndPromotesSelectedPill() {
+    func testCityBrowseCardSelectionJumpsToMatchingSection() {
         let app = launchApp(arguments: ["--browse-city", "danang"])
         let targetFilterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
+        let targetGroupID = "BrowseCollection.CityGroup.danang.browse.landmarks"
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        let browseByTitle = app.staticTexts["Browse by"]
         let targetFilter = app.buttons[targetFilterID]
-        XCTAssertTrue(browseByTitle.waitForExistence(timeout: 2))
         XCTAssertTrue(targetFilter.waitForExistence(timeout: 2))
 
-        let stableBrowseByY = browseByTitle.frame.minY
         tapWhenComfortablyVisible(identifier: targetFilterID, app: app)
         RunLoop.current.run(until: Date().addingTimeInterval(0.45))
 
         XCTAssertTrue(targetFilter.isSelected)
-        XCTAssertEqual(
-            browseByTitle.frame.minY,
-            stableBrowseByY,
-            accuracy: 3,
-            "Changing city filters should not move the vertical Browse by section."
-        )
-        XCTAssertEqual(
-            targetFilter.frame.minX,
-            browseByTitle.frame.minX,
-            accuracy: 24,
-            "The selected city filter should animate to the leading filter position."
+        let targetGroup = app.descendants(matching: .any)[targetGroupID]
+        XCTAssertTrue(targetGroup.waitForExistence(timeout: 2))
+        XCTAssertTrue(
+            targetGroup.frame.intersects(app.windows.firstMatch.frame),
+            "Selecting a Browse by city card should jump down to its matching noun section."
         )
     }
 
@@ -746,6 +738,11 @@ final class BrowseSearchUITests: XCTestCase {
 
     private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
         app.descendants(matching: .any)["Tab Bar"]
+    }
+
+    private func matchingStaticText(app: XCUIApplication, containing text: String) -> XCUIElement {
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.matching(predicate).firstMatch
     }
 
     private func systemTabCoordinate(_ title: String, in app: XCUIApplication) -> XCUICoordinate {

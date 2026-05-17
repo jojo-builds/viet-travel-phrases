@@ -58,7 +58,7 @@ struct BrowseCollectionPageView: View {
                         BrowseCollectionHeader(descriptor: descriptor)
                             .id(Self.scrollTopID)
 
-                        collectionSections
+                        collectionSections(scrollProxy: scrollProxy)
                     }
                     .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
                 }
@@ -102,7 +102,7 @@ struct BrowseCollectionPageView: View {
                                 .frame(height: max(metrics.initialContentTop - 1, 0))
                                 .accessibilityHidden(true)
 
-                            photoBackdropContentSheet
+                            photoBackdropContentSheet(scrollProxy: scrollProxy)
                                 .id(Self.scrollTopID)
                         }
                     }
@@ -158,14 +158,17 @@ struct BrowseCollectionPageView: View {
     }
 
     @ViewBuilder
-    private var collectionSections: some View {
+    private func collectionSections(scrollProxy: ScrollViewProxy) -> some View {
         if let cityHub = descriptor.cityHub {
             BrowseCityHubContent(
                 descriptor: descriptor,
                 cityHub: cityHub,
-                selectedCityCardID: $selectedCityCardID,
+                selectedCityCardID: selectedCityCardID,
                 onOpenDetail: onOpenDetail,
                 onOpenCollection: onOpenCollection,
+                onSelectCityCard: { filter in
+                    selectCityBrowseGroup(filter, scrollProxy: scrollProxy)
+                },
                 onPractice: { onPractice(descriptor.practiceAction) }
             )
         } else {
@@ -212,7 +215,7 @@ struct BrowseCollectionPageView: View {
         }
     }
 
-    private var photoBackdropContentSheet: some View {
+    private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Capsule()
                 .fill(.secondary.opacity(0.22))
@@ -226,7 +229,7 @@ struct BrowseCollectionPageView: View {
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 26)
 
-            collectionSections
+            collectionSections(scrollProxy: scrollProxy)
                 .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
         }
         .background {
@@ -344,6 +347,17 @@ struct BrowseCollectionPageView: View {
         }
 
         isPhotoBackdropImmersive = true
+    }
+
+    private func selectCityBrowseGroup(_ filter: BrowseCollectionSubcategory, scrollProxy: ScrollViewProxy) {
+        guard !filter.items.isEmpty else {
+            return
+        }
+
+        selectedCityCardID = filter.id
+        withAnimation(.snappy(duration: 0.28)) {
+            scrollProxy.scrollTo(BrowseCityBrowseScrollID.group(filter.id), anchor: .top)
+        }
     }
 
     @MainActor
@@ -504,15 +518,15 @@ private struct BrowseCollectionSubcategoryCard: View {
 private struct BrowseCityHubContent: View {
     let descriptor: BrowseCollectionDescriptor
     let cityHub: BrowseCityHub
-    @Binding var selectedCityCardID: String?
+    let selectedCityCardID: String?
 
     let onOpenDetail: (String) -> Void
     let onOpenCollection: (BrowseCollectionRoute) -> Void
+    let onSelectCityCard: (BrowseCollectionSubcategory) -> Void
     let onPractice: () -> Void
 
     var body: some View {
         let cityBrowseFilters = cityHub.cityBrowseFilters
-        let cityBrowseAllItems = cityHub.cityBrowseAllItems
 
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
             if isCountryHub {
@@ -562,31 +576,12 @@ private struct BrowseCityHubContent: View {
                     BrowseCityNameAudioPlayer(item: cityNameAudioItem)
                 }
 
-                if !cityHub.namesToKnowItems.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: cityHub.namesTitle,
-                        items: cityHub.namesToKnowItems,
-                        onOpenDetail: onOpenDetail
-                    )
-                }
-
-                if !cityHub.quickPhraseItems.isEmpty {
-                    BrowseCollectionStarterSection(
-                        title: "Say first",
-                        items: cityHub.quickPhraseItems,
-                        onOpenDetail: onOpenDetail
-                    )
-                }
-
-                if !cityBrowseAllItems.isEmpty {
+                if !cityBrowseFilters.isEmpty {
                     BrowseCityFilterSection(
                         title: cityHub.browseTitle,
                         filters: cityBrowseFilters,
                         selectedFilterID: selectedCityCardID,
-                        allItems: cityBrowseAllItems,
-                        tintName: descriptor.tintName,
-                        onSelectAll: selectAllCityFilters,
-                        onSelectFilter: selectCityFilter,
+                        onSelectFilter: onSelectCityCard,
                         onOpenDetail: onOpenDetail
                     )
                 }
@@ -597,18 +592,6 @@ private struct BrowseCityHubContent: View {
 
     private var isCountryHub: Bool {
         descriptor.route == .category("city-guides")
-    }
-
-    private func selectAllCityFilters() {
-        selectedCityCardID = nil
-    }
-
-    private func selectCityFilter(_ filter: BrowseCollectionSubcategory) {
-        guard !filter.items.isEmpty else {
-            return
-        }
-
-        selectedCityCardID = filter.id
     }
 }
 
@@ -631,36 +614,27 @@ private struct BrowseCityFilterSection: View {
     let title: String
     let filters: [BrowseCollectionSubcategory]
     let selectedFilterID: String?
-    let allItems: [BrowseSearchPhraseItem]
-    let tintName: AccentTint
-    let onSelectAll: () -> Void
     let onSelectFilter: (BrowseCollectionSubcategory) -> Void
     let onOpenDetail: (String) -> Void
 
-    private var selectedFilter: BrowseCollectionSubcategory? {
-        filters.first { $0.id == selectedFilterID }
-    }
-
-    private var visibleItems: [BrowseSearchPhraseItem] {
-        selectedFilter?.items ?? allItems
+    private var visibleFilters: [BrowseCollectionSubcategory] {
+        filters.filter { !$0.items.isEmpty }
     }
 
     var body: some View {
         BrowseCollectionSection(title: title) {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 18) {
                 imageFilterRail
 
-                VStack(spacing: 0) {
-                    ForEach(visibleItems) { item in
-                        BrowseCityNounRow(item: item, onOpenDetail: onOpenDetail)
-
-                        if item.id != visibleItems.last?.id {
-                            Divider().padding(.leading, 86)
-                        }
+                VStack(alignment: .leading, spacing: 18) {
+                    ForEach(visibleFilters) { filter in
+                        BrowseCityNounGroupSection(
+                            filter: filter,
+                            onOpenDetail: onOpenDetail
+                        )
+                        .id(BrowseCityBrowseScrollID.group(filter.id))
                     }
                 }
-                .padding(.vertical, 8)
-                .phraseListCard(cornerRadius: 24)
             }
         }
     }
@@ -672,18 +646,7 @@ private struct BrowseCityFilterSection: View {
             ScrollViewReader { filterScrollProxy in
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: BrowseCollectionLayout.cityFilterCardSpacing) {
-                        BrowseCityImageFilterCard(
-                            title: "All",
-                            imageName: allImageName,
-                            tintName: tintName,
-                            identifier: "BrowseCollection.CityFilter.all",
-                            isSelected: selectedFilterID == nil,
-                            action: onSelectAll
-                        )
-                        .frame(width: cardWidth)
-                        .id(Self.filterScrollID(nil))
-
-                        ForEach(filters) { filter in
+                        ForEach(visibleFilters) { filter in
                             BrowseCityImageFilterCard(
                                 title: filter.title,
                                 imageName: filterImageName(filter),
@@ -702,6 +665,10 @@ private struct BrowseCityFilterSection: View {
                 .scrollTargetBehavior(.viewAligned)
                 .scrollClipDisabled()
                 .onChange(of: selectedFilterID) { _, newValue in
+                    guard let newValue else {
+                        return
+                    }
+
                     withAnimation(.snappy(duration: 0.24)) {
                         filterScrollProxy.scrollTo(Self.filterScrollID(newValue), anchor: .leading)
                     }
@@ -711,16 +678,18 @@ private struct BrowseCityFilterSection: View {
         .frame(height: BrowseCollectionLayout.cityFilterCardHeight)
     }
 
-    private var allImageName: String? {
-        allItems.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
-    }
-
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
         filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
     }
 
-    private static func filterScrollID(_ filterID: String?) -> String {
-        "BrowseCollection.CityFilter.ScrollTarget.\(filterID ?? "all")"
+    private static func filterScrollID(_ filterID: String) -> String {
+        "BrowseCollection.CityFilter.ScrollTarget.\(filterID)"
+    }
+}
+
+private enum BrowseCityBrowseScrollID {
+    static func group(_ filterID: String) -> String {
+        "BrowseCollection.CityGroup.ScrollTarget.\(filterID)"
     }
 }
 
@@ -782,6 +751,35 @@ private struct BrowseCityImageFilterCard: View {
             .frame(maxWidth: .infinity)
             .accessibilityHidden(true)
         }
+    }
+}
+
+private struct BrowseCityNounGroupSection: View {
+    let filter: BrowseCollectionSubcategory
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(filter.title)
+                .font(.headline.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+
+            VStack(spacing: 0) {
+                ForEach(filter.items) { item in
+                    BrowseCityNounRow(item: item, onOpenDetail: onOpenDetail)
+
+                    if item.id != filter.items.last?.id {
+                        Divider().padding(.leading, 86)
+                    }
+                }
+            }
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("BrowseCollection.CityGroup.\(filter.id)")
     }
 }
 
