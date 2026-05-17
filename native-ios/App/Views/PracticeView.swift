@@ -3600,7 +3600,7 @@ struct PracticeMatchSnapshot {
 
         switch mode {
         case .savedReview, .missedReview:
-            return practiceSource.canStart ? practiceSource : savedSource
+            return savedSource
         case .hcmcCity:
             return topicSources.first(where: { $0.id == "topic:first-day" }) ?? quickSource
         case .hanoiBucketList:
@@ -3634,15 +3634,20 @@ struct PracticeMatchSnapshot {
             )
         }
 
-        let savedItems: [PracticeMatchItem]
-        if savedPageIDs.isEmpty {
-            savedItems = []
-        } else {
-            savedItems = Self.uniquePracticeItems(
-                from: try repository.loadPracticeCandidates(
-                    pageIDs: savedPageIDs,
-                    limit: max(80, savedPageIDs.count)
-                )
+        let savedItems = try SavedTripPracticeCatalog.items(for: savedPageIDs).compactMap { item -> PracticeMatchItem? in
+            guard let playableAudioKey = item.audioKey,
+                  AudioSpeakerButton.isPlayableAudioKey(playableAudioKey)
+            else {
+                return nil
+            }
+
+            PracticeMatchItem(
+                pageID: item.pageID,
+                vietnamese: item.vietnamese,
+                english: item.english,
+                audioKey: playableAudioKey,
+                symbolName: item.symbolName,
+                tint: item.tintName
             )
         }
 
@@ -3693,10 +3698,10 @@ struct PracticeMatchSnapshot {
             savedSource: PracticeMatchSource(
                 id: "saved",
                 kind: .saved,
-                title: "Saved phrases",
+                title: "Practice Saved",
                 subtitle: savedItems.count < PracticeMatchRound.pairCount
-                    ? "Save at least 4 phrases to start a saved round."
-                    : "Review what you saved while browsing.",
+                    ? "Save 4 items to unlock your trip round."
+                    : "Review the things you saved.",
                 symbolName: "heart.fill",
                 tint: .red,
                 items: savedItems
@@ -4188,6 +4193,11 @@ private struct PracticeMatchQuickSection: View {
                     actionTitle: "Start",
                     onTap: { onStartSource(savedSource) }
                 )
+            } else {
+                PracticeMatchSavedEmptyCard(
+                    savedCount: savedSource.items.count,
+                    onBrowseTapped: onBrowseTapped
+                )
             }
         }
     }
@@ -4317,6 +4327,42 @@ private struct PracticeMatchPracticeEmptyCard: View {
 
             Button(action: onBrowseTapped) {
                 Text(practiceCount == 0 ? "Go to Browse" : "\(practiceCount) added · Go to Browse")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(14)
+        .phraseListCard(cornerRadius: 22)
+    }
+}
+
+private struct PracticeMatchSavedEmptyCard: View {
+    let savedCount: Int
+    let onBrowseTapped: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 14) {
+                PracticeIcon(symbolName: "heart.fill", tint: .red, size: 52)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("Practice Saved")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text("Save 4 phrases, foods, or drinks to start a trip round.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+                .layoutPriority(1)
+            }
+
+            Button(action: onBrowseTapped) {
+                Text(savedCount == 0 ? "Browse Vietnam" : "\(savedCount) saved · Browse Vietnam")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)

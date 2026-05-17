@@ -160,6 +160,29 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertFalse(snapshot.bucketPrompts.isEmpty)
     }
 
+    func testSavedPracticeItemsIncludeMenuDrinks() throws {
+        let items = try SavedTripPracticeCatalog.items(
+            for: [
+                "viet-menu-drink-ca-phe-sua-da",
+                "viet-menu-drink-ca-phe-den-da",
+                "viet-menu-drink-nuoc-mia",
+                "viet-menu-drink-tra-da",
+            ]
+        )
+
+        XCTAssertEqual(
+            items.map(\.pageID),
+            [
+                "viet-menu-drink-ca-phe-sua-da",
+                "viet-menu-drink-ca-phe-den-da",
+                "viet-menu-drink-nuoc-mia",
+                "viet-menu-drink-tra-da",
+            ]
+        )
+        XCTAssertEqual(items.map(\.vietnamese), ["Cà phê sữa đá", "Cà phê đen đá", "Nước mía", "Trà đá"])
+        XCTAssertTrue(items.allSatisfy { $0.kind == .drinks })
+    }
+
     func testMatchPracticeSourcesOnlyExposePlayableAudioBackedItems() throws {
         let snapshot = try PracticeMatchSnapshot.load(
             practicePageIDs: [
