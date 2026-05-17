@@ -292,11 +292,34 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
 
         tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], direction: .down)
+        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .down)
         XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
 
         tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], direction: .up)
+        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .up)
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+    }
+
+    func testCityNounDetailHeroImageSupportsLightboxDismissPaths() {
+        let pageID = "viet-phrase-city-danang-place-dragon-bridge"
+        let app = launchApp(arguments: ["--detail-page", pageID])
+        let imageIdentifier = "PhraseArticle.HeroImageLightbox.Image.\(pageID)"
+
+        XCTAssertTrue(app.staticTexts["Cầu Rồng"].waitForExistence(timeout: 4))
+        tapCityNounHeroMasthead(app)
+
+        XCTAssertTrue(app.images[imageIdentifier].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
+
+        tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+
+        tapCityNounHeroMasthead(app)
+        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .down)
+        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+
+        tapCityNounHeroMasthead(app)
+        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .up)
         XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
     }
 
@@ -335,7 +358,9 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse-city", "danang"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Airport arrivals, beach rides, river landmarks, markets, and day trips."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Start here"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Da Nang is practical and scenic at the same time: airport to beach, riverfront to bridges, markets to seafood, then out toward mountain or heritage trips. These city names help you talk about the exact side of town you mean."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.all"].waitForExistence(timeout: 2))
@@ -637,6 +662,10 @@ final class BrowseSearchUITests: XCTestCase {
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
     }
 
+    private func tapCityNounHeroMasthead(_ app: XCUIApplication) {
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: 0.25)).tap()
+    }
+
     private func tapWhenComfortablyVisible(identifier: String, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
         for _ in 0..<7 {
             let element = app.buttons.matching(identifier: identifier).firstMatch
@@ -782,7 +811,7 @@ final class BrowseSearchUITests: XCTestCase {
         case down
     }
 
-    private func swipeHeroImageLightbox(_ image: XCUIElement, direction: HeroImageLightboxSwipeDirection, file: StaticString = #filePath, line: UInt = #line) {
+    private func swipeHeroImageLightbox(_ image: XCUIElement, app: XCUIApplication, direction: HeroImageLightboxSwipeDirection, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(image.waitForExistence(timeout: 3), "Hero image lightbox was not visible.", file: file, line: line)
 
         let startOffset: CGVector
@@ -796,8 +825,8 @@ final class BrowseSearchUITests: XCTestCase {
             endOffset = CGVector(dx: 0.5, dy: 0.82)
         }
 
-        let start = image.coordinate(withNormalizedOffset: startOffset)
-        let end = image.coordinate(withNormalizedOffset: endOffset)
+        let start = app.coordinate(withNormalizedOffset: startOffset)
+        let end = app.coordinate(withNormalizedOffset: endOffset)
         start.press(forDuration: 0.05, thenDragTo: end)
     }
 

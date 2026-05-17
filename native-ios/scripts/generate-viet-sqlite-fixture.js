@@ -265,6 +265,17 @@ function main() {
     return phrase;
   });
   const authoredPages = authoredBundle.pages ?? [];
+  const handwrittenCityArticlePageIDs = authoredPages
+    .filter((page) => page.tierRole === "city-v1")
+    .filter((page) => page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed")
+    .flatMap((page) => [
+      page.id,
+      String(page.id ?? "").replace(/^viet-family-/, "viet-phrase-"),
+    ])
+    .filter(Boolean);
+  const handwrittenCityArticlePageIDSQL = handwrittenCityArticlePageIDs.length
+    ? handwrittenCityArticlePageIDs.map(sqlValue).join(", ")
+    : "''";
   const cityLibraryPages = (cityLibrary?.pages ?? []).filter((page) => page.status === "approved");
   const cityLibraryPageByPhraseID = new Map(cityLibraryPages.map((page) => [page.id, page]));
   const cityLibraryPhraseIDs = new Set(cityLibraryPages.map((page) => page.id));
@@ -2119,6 +2130,7 @@ function main() {
         ) THEN 0 ELSE 1 END AS text_only
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
+      WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
     ),
     runs AS (
       SELECT
@@ -2215,6 +2227,7 @@ function main() {
     LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
     LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
+      AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND (
         has_breakdown = 0
         OR has_context_copy = 0

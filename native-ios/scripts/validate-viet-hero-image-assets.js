@@ -12,6 +12,9 @@ const browseDestinationsPath = path.join(repoRoot, "native-ios", "App", "Models"
 const EXPECTED_DIMENSIONS = "853 x 1844";
 const PHOTO_LIKE_MIN_BYTES = 120_000;
 const requireUniqueCityPlaceAssets = process.argv.includes("--require-unique-city-place-assets");
+const existingNonCityDimensionAllowlist = new Map([
+  ["HeroVietnameseFoodMenu", "864 x 1821"],
+]);
 
 const retiredHeroNames = new Set([
   "HeroHanMarket",
@@ -46,11 +49,11 @@ function isRetiredHeroName(heroImageName) {
   return retiredHeroNames.has(heroImageName);
 }
 
-function firstPngInImageset(heroImageName) {
+function firstRasterInImageset(heroImageName) {
   const imageset = path.join(assetsRoot, `${heroImageName}.imageset`);
   if (!fs.existsSync(imageset)) return "";
-  const png = fs.readdirSync(imageset).find((file) => file.endsWith(".png"));
-  return png ? path.join(imageset, png) : "";
+  const raster = fs.readdirSync(imageset).find((file) => /\.(png|jpe?g)$/i.test(file));
+  return raster ? path.join(imageset, raster) : "";
 }
 
 function pngDimensions(filePath) {
@@ -58,6 +61,48 @@ function pngDimensions(filePath) {
   const buffer = fs.readFileSync(filePath);
   if (buffer.length < 24 || buffer.toString("ascii", 1, 4) !== "PNG") return "";
   return `${buffer.readUInt32BE(16)} x ${buffer.readUInt32BE(20)}`;
+}
+
+function jpegDimensions(filePath) {
+  if (!filePath || !fs.existsSync(filePath)) return "";
+  const buffer = fs.readFileSync(filePath);
+  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) return "";
+
+  let offset = 2;
+  while (offset + 9 < buffer.length) {
+    if (buffer[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = buffer[offset + 1];
+    offset += 2;
+    if (marker === 0xd9 || marker === 0xda) break;
+    if (offset + 2 > buffer.length) break;
+
+    const length = buffer.readUInt16BE(offset);
+    if (length < 2 || offset + length > buffer.length) break;
+
+    const isStartOfFrame = (
+      (marker >= 0xc0 && marker <= 0xc3)
+      || (marker >= 0xc5 && marker <= 0xc7)
+      || (marker >= 0xc9 && marker <= 0xcb)
+      || (marker >= 0xcd && marker <= 0xcf)
+    );
+    if (isStartOfFrame && length >= 7) {
+      const height = buffer.readUInt16BE(offset + 3);
+      const width = buffer.readUInt16BE(offset + 5);
+      return `${width} x ${height}`;
+    }
+    offset += length;
+  }
+  return "";
+}
+
+function rasterDimensions(filePath) {
+  if (/\.png$/i.test(filePath)) return pngDimensions(filePath);
+  if (/\.jpe?g$/i.test(filePath)) return jpegDimensions(filePath);
+  return "";
 }
 
 function validateAsset(heroImageName, context) {
@@ -77,20 +122,21 @@ function validateAsset(heroImageName, context) {
     fail(`${context}: missing Contents.json for ${heroImageName}`);
   }
 
-  const png = firstPngInImageset(heroImageName);
-  if (!png) {
-    fail(`${context}: missing PNG for ${heroImageName}`);
+  const raster = firstRasterInImageset(heroImageName);
+  if (!raster) {
+    fail(`${context}: missing PNG/JPEG for ${heroImageName}`);
     return;
   }
 
-  const dimensions = pngDimensions(png);
-  if (dimensions !== EXPECTED_DIMENSIONS) {
+  const dimensions = rasterDimensions(raster);
+  const allowedDimensions = existingNonCityDimensionAllowlist.get(heroImageName);
+  if (dimensions !== EXPECTED_DIMENSIONS && dimensions !== allowedDimensions) {
     fail(`${context}: ${heroImageName} is ${dimensions}, expected ${EXPECTED_DIMENSIONS}`);
   }
 
-  const bytes = fs.statSync(png).size;
+  const bytes = fs.statSync(raster).size;
   if (bytes < PHOTO_LIKE_MIN_BYTES) {
-    fail(`${context}: ${heroImageName} PNG is only ${bytes} bytes; likely flat/procedural art`);
+    fail(`${context}: ${heroImageName} image is only ${bytes} bytes; likely flat/procedural art`);
   }
 }
 
@@ -171,7 +217,7 @@ function validateCityLibraryAndAuthoredPages() {
     if (requireUniqueCityPlaceAssets && page.heroImageName !== targetHeroImageName) {
       sourceLegacyOrSharedHeroPages.push(`${page.id}: current=${page.heroImageName}, target=${targetHeroImageName}`);
     }
-    if (requireUniqueCityPlaceAssets && !firstPngInImageset(targetHeroImageName)) {
+    if (requireUniqueCityPlaceAssets && !firstRasterInImageset(targetHeroImageName)) {
       missingTargetAssets.push(`${page.id}: ${targetHeroImageName}.imageset`);
     }
 
