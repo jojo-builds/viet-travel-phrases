@@ -46,6 +46,7 @@ struct AppShellView: View {
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
+    @State private var isPracticeMatchPresented = false
     @State private var homePhraseHeroRoutePageID: String?
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
@@ -220,9 +221,11 @@ struct AppShellView: View {
                     startRequest: practiceStartRequest,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
-                    topContentClearance: showsStaticBackButton ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
+                    topContentClearance: showsStaticBackButton && !isPracticeMatchPresented ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
+                    onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                    onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
                     onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                     onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
@@ -297,6 +300,7 @@ struct AppShellView: View {
                 currentRoute: navigation.currentRoute,
                 isSearchPresented: navigation.isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
+                isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
                 canGoForward: navigation.canGoForward,
@@ -664,7 +668,9 @@ struct AppShellView: View {
                 scrollToTopTrigger: 0,
                 topContentClearance: 0,
                 onOpenDetail: openDetailFromPractice,
-                onBrowseTapped: openBrowseAll
+                onBrowseTapped: openBrowseAll,
+                onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                onMatchPresentationChanged: { isPracticeMatchPresented = $0 }
             )
         case .phrasePage:
             PhraseListingView(
@@ -1372,6 +1378,16 @@ struct AppShellView: View {
             )
         }
         cancelInteractiveChromeState()
+        prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.goBack()
+        }
+    }
+
+    private func returnFromPracticeMatchToOrigin() {
+        let focusRequest = pendingPracticeMatchReturnFocus
+        cancelInteractiveChromeState()
+        clearPracticeStartRequest()
         prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
@@ -2808,6 +2824,7 @@ private extension View {
         currentRoute: AppRoute,
         isSearchPresented: Bool,
         isPracticeThreadPresented: Bool,
+        isPracticeMatchPresented: Bool,
         showsStaticBackButton: Bool,
         showsMenuSectionChrome: Bool,
         canGoForward: Bool,
@@ -2821,6 +2838,7 @@ private extension View {
                 currentRoute: currentRoute,
                 isSearchPresented: isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
+                isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
                 canGoForward: canGoForward,
@@ -2861,6 +2879,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
     let currentRoute: AppRoute
     let isSearchPresented: Bool
     let isPracticeThreadPresented: Bool
+    let isPracticeMatchPresented: Bool
     let showsStaticBackButton: Bool
     let showsMenuSectionChrome: Bool
     let canGoForward: Bool
@@ -2878,6 +2897,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
             isMenuSectionChromeVisible: showsMenuSectionChrome
         )
         let showsTopAdminRow = !isPracticeThreadPresented
+            && !isPracticeMatchPresented
             && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
         let showsTopGlassChrome = showsTopAdminRow || showsMenuSectionChrome
 

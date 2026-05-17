@@ -166,10 +166,6 @@ final class BackSwipeUITests: XCTestCase {
 
         app.buttons["Close practice"].tap()
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
-        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 3))
-
-        app.buttons["Go back"].tap()
-
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         assertVisible(
             app.descendants(matching: .any)["HomePracticeStarterRail"],
