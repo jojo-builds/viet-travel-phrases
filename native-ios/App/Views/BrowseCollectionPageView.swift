@@ -5,8 +5,6 @@ struct BrowseCollectionPageView: View {
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
     let focusRequest: BrowseCollectionFocusRequest?
-    var chromeNamespace: Namespace.ID? = nil
-    var cityHeroMorphRoute: BrowseCollectionRoute? = nil
     var isActive: Bool = true
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
@@ -57,11 +55,7 @@ struct BrowseCollectionPageView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
-                        BrowseCollectionHeader(
-                            descriptor: descriptor,
-                            chromeNamespace: chromeNamespace,
-                            cityHeroMorphRoute: cityHeroMorphRoute
-                        )
+                        BrowseCollectionHeader(descriptor: descriptor)
                             .id(Self.scrollTopID)
 
                         collectionSections
@@ -228,11 +222,7 @@ struct BrowseCollectionPageView: View {
                 .padding(.bottom, 10)
                 .accessibilityHidden(true)
 
-            BrowseCollectionHeaderCopy(
-                descriptor: descriptor,
-                chromeNamespace: chromeNamespace,
-                usesCityHeroMorph: usesCityHeroMorph
-            )
+            BrowseCollectionHeaderCopy(descriptor: descriptor)
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 26)
 
@@ -268,13 +258,6 @@ struct BrowseCollectionPageView: View {
             )
             .clipped()
             .ignoresSafeArea()
-            .homePhraseHeroMorph(
-                BrowseCityHeroMorphID.image(descriptor.route.id),
-                namespace: chromeNamespace,
-                isActive: usesCityHeroMorph,
-                isSource: false,
-                anchor: .top
-            )
             .accessibilityHidden(true)
     }
 
@@ -330,10 +313,6 @@ struct BrowseCollectionPageView: View {
 
     private var usesPhotoBackdropLayout: Bool {
         descriptor.cityHub != nil
-    }
-
-    private var usesCityHeroMorph: Bool {
-        cityHeroMorphRoute == descriptor.route
     }
 
     @MainActor
@@ -411,29 +390,12 @@ private extension BrowseSearchPhraseItem {
 
 private struct BrowseCollectionHeader: View {
     let descriptor: BrowseCollectionDescriptor
-    let chromeNamespace: Namespace.ID?
-    let cityHeroMorphRoute: BrowseCollectionRoute?
-
-    private var usesCityHeroMorph: Bool {
-        cityHeroMorphRoute == descriptor.route
-    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HeroMastheadImage(imageName: descriptor.mastheadImageName)
-                .homePhraseHeroMorph(
-                    BrowseCityHeroMorphID.image(descriptor.route.id),
-                    namespace: chromeNamespace,
-                    isActive: usesCityHeroMorph,
-                    isSource: false,
-                    anchor: .top
-                )
 
-            BrowseCollectionHeaderCopy(
-                descriptor: descriptor,
-                chromeNamespace: chromeNamespace,
-                usesCityHeroMorph: usesCityHeroMorph
-            )
+            BrowseCollectionHeaderCopy(descriptor: descriptor)
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.top, 16)
         }
@@ -442,8 +404,6 @@ private struct BrowseCollectionHeader: View {
 
 private struct BrowseCollectionHeaderCopy: View {
     let descriptor: BrowseCollectionDescriptor
-    let chromeNamespace: Namespace.ID?
-    let usesCityHeroMorph: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -466,14 +426,6 @@ private struct BrowseCollectionHeaderCopy: View {
                 .foregroundStyle(.primary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.64)
-                .homePhraseHeroMorph(
-                    BrowseCityHeroMorphID.title(descriptor.route.id),
-                    namespace: chromeNamespace,
-                    isActive: usesCityHeroMorph,
-                    isSource: false,
-                    properties: .position,
-                    anchor: .leading
-                )
                 .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
 
             Text(descriptor.subtitle)
@@ -481,14 +433,6 @@ private struct BrowseCollectionHeaderCopy: View {
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
                 .fixedSize(horizontal: false, vertical: true)
-                .homePhraseHeroMorph(
-                    BrowseCityHeroMorphID.subtitle(descriptor.route.id),
-                    namespace: chromeNamespace,
-                    isActive: usesCityHeroMorph,
-                    isSource: false,
-                    properties: .position,
-                    anchor: .leading
-                )
         }
     }
 }

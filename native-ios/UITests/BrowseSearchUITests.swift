@@ -414,7 +414,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["BrowseCollection.Title.category.getting-around"].exists)
     }
 
-    func testBrowseCityCardTransitionKeepsDestinationBodyMounted() {
+    func testBrowseCityCardNativeDissolveKeepsDestinationBodyMounted() {
         let app = launchApp(arguments: ["--browse"])
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
@@ -422,7 +422,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 1))
         XCTAssertTrue(
             app.staticTexts["Browse by"].waitForExistence(timeout: 0.2),
-            "City-card transitions should not swap the destination body for a blank placeholder."
+            "City-card native dissolve should mount the destination body immediately."
         )
     }
 

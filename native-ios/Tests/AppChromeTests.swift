@@ -346,12 +346,10 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
     }
 
-    func testBrowseCityHeroMorphTimingKeepsDestinationBodyMounted() {
-        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
-        XCTAssertGreaterThan(
-            BrowseCityHeroMorphTiming.cleanupDelayNanoseconds,
-            BrowseCityHeroMorphTiming.navigationDurationNanoseconds
-        )
+    func testBrowseCityRoutesUseShortNativeDissolveTransition() {
+        XCTAssertTrue(BrowseCollectionNativeTransition.usesCityDissolve(for: .city("danang")))
+        XCTAssertFalse(BrowseCollectionNativeTransition.usesCityDissolve(for: .category("airport")))
+        XCTAssertLessThanOrEqual(BrowseCollectionNativeTransition.cityDissolveDuration, 0.24)
     }
 
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
@@ -2196,18 +2194,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(forwardPresentation.horizontalOffset, 280, accuracy: 0.001)
     }
 
-    func testCityHeroMorphKeepsInactiveBrowsePageVisible() {
+    func testSettledInactiveRoutesAreHidden() {
         let presentation = AppInteractiveNavigationPresentation.presentation(
             route: .browse,
             currentRoute: .browseCollection(.city("danang")),
             backPreviewRoute: .browse,
             forwardPreviewRoute: nil,
             drag: nil,
-            width: 400,
-            visibleInactiveRoutes: [.browse]
+            width: 400
         )
 
-        XCTAssertEqual(presentation.opacity, 1, accuracy: 0.001)
+        XCTAssertEqual(presentation.opacity, 0, accuracy: 0.001)
         XCTAssertEqual(presentation.horizontalOffset, 0, accuracy: 0.001)
     }
 

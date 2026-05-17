@@ -4,8 +4,6 @@ struct BrowsePageView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
-    var chromeNamespace: Namespace.ID? = nil
-    var cityHeroMorphRoute: BrowseCollectionRoute? = nil
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
@@ -106,8 +104,6 @@ struct BrowsePageView: View {
         BrowseShelf(title: "Cities") {
             BrowseCityHeroRail(
                 cities: cityHeroShortcuts,
-                chromeNamespace: chromeNamespace,
-                activeMorphRoute: cityHeroMorphRoute,
                 onOpenCollection: onOpenCollection
             )
         }
@@ -325,8 +321,6 @@ private struct BrowseSituationCard: View {
 
 private struct BrowseCityHeroRail: View {
     let cities: [BrowseCityShortcut]
-    let chromeNamespace: Namespace.ID?
-    let activeMorphRoute: BrowseCollectionRoute?
     let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
@@ -339,8 +333,6 @@ private struct BrowseCityHeroRail: View {
                         BrowseCityHeroCard(
                             city: city,
                             width: cardWidth,
-                            chromeNamespace: chromeNamespace,
-                            isMorphSource: activeMorphRoute == city.collectionRoute,
                             onOpenCollection: onOpenCollection
                         )
                     }
@@ -360,16 +352,10 @@ private struct BrowseCityHeroRail: View {
 private struct BrowseCityHeroCard: View {
     let city: BrowseCityShortcut
     let width: CGFloat
-    let chromeNamespace: Namespace.ID?
-    let isMorphSource: Bool
     let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     private var descriptor: BrowseCollectionDescriptor? {
         BrowseSearchDestinations.collectionDescriptor(for: city.collectionRoute)
-    }
-
-    private var routeID: String {
-        city.collectionRoute.id
     }
 
     private var title: String {
@@ -395,13 +381,6 @@ private struct BrowseCityHeroCard: View {
                         .scaledToFill()
                         .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: .top)
                         .clipped()
-                        .homePhraseHeroMorph(
-                            BrowseCityHeroMorphID.image(routeID),
-                            namespace: chromeNamespace,
-                            isActive: isMorphSource,
-                            isSource: true,
-                            anchor: .top
-                        )
 
                     Color.white.opacity(0.98)
                         .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight)
@@ -429,14 +408,6 @@ private struct BrowseCityHeroCard: View {
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .minimumScaleFactor(0.72)
-                            .homePhraseHeroMorph(
-                                BrowseCityHeroMorphID.title(routeID),
-                                namespace: chromeNamespace,
-                                isActive: isMorphSource,
-                                isSource: true,
-                                properties: .position,
-                                anchor: .leading
-                            )
 
                         Spacer(minLength: 8)
                     }
@@ -448,14 +419,6 @@ private struct BrowseCityHeroCard: View {
                         .lineLimit(3)
                         .minimumScaleFactor(0.82)
                         .fixedSize(horizontal: false, vertical: true)
-                        .homePhraseHeroMorph(
-                            BrowseCityHeroMorphID.subtitle(routeID),
-                            namespace: chromeNamespace,
-                            isActive: isMorphSource,
-                            isSource: true,
-                            properties: .position,
-                            anchor: .leading
-                        )
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 24)
