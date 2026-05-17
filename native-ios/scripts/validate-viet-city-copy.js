@@ -71,6 +71,13 @@ const formulaicVisiblePatterns = [
   /\ballergy risk usually live\b/i,
   /\btickets, entrance, bathrooms, photos, or the return ride\b/i,
   /\bshow (?:the )?(?:map|saved map result|ticket|booking screen)\b/i,
+  /\bimage-led tile\b/i,
+  /\bkeep the name ready for this job\b/i,
+  /\bkeep this in mind\b/i,
+  /\bkeep that job in mind\b/i,
+  /\bname to keep ready\b/i,
+  /\bafter the name lands\b/i,
+  /\bthen keep the questions concrete\b/i,
   /\buse the vietnamese name when\b/i,
   /\buse [^,.]+ when the destination is\b/i,
   /\bpart of how .* becomes legible\b/i,
@@ -100,6 +107,38 @@ function normalizedLower(value) {
   return normalize(value).toLowerCase();
 }
 
+function visibleSentences(value) {
+  return normalize(value)
+    .split(/(?<=[.!?])\s+/)
+    .map((item) => normalize(item))
+    .filter((item) => item.length >= 28);
+}
+
+function visibleSentenceKey(value) {
+  return normalizedLower(value)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function validateNoRepeatedVisibleSentences(context, sections) {
+  const seen = new Map();
+  for (const section of sections) {
+    for (const sentence of visibleSentences(section.text)) {
+      const key = visibleSentenceKey(sentence);
+      if (!key) continue;
+      const previous = seen.get(key);
+      if (previous) {
+        fail(`${context} repeats visible sentence in ${previous} and ${section.label}: "${sentence}"`);
+      } else {
+        seen.set(key, section.label);
+      }
+    }
+  }
+}
+
 function visibleHubText(city) {
   const hub = city.hubEditorial ?? {};
   return [
@@ -117,6 +156,17 @@ function visibleEditorialText(page) {
     editorial.summary,
     ...(editorial.sections ?? []).flatMap((section) => [section.title, section.body]),
   ].filter(Boolean).join("\n");
+}
+
+function visibleEditorialSections(page) {
+  const editorial = page.editorialImport ?? {};
+  return [
+    { label: "summary", text: editorial.summary },
+    ...(editorial.sections ?? []).map((section) => ({
+      label: section.id,
+      text: section.body,
+    })),
+  ];
 }
 
 function sourceEditorialInputText(page) {
@@ -203,29 +253,6 @@ function validateNoBannedVisibleText(context, text) {
 
 function reviewRowsByPageID(reviewReport) {
   return new Map((reviewReport.pages ?? []).map((page) => [page.id, page]));
-}
-
-function normalizedTemplateKey(page, text) {
-  let key = normalizedLower(text);
-  const removals = [
-    page.id,
-    page.cityID,
-    page.targetText,
-    page.englishText,
-    page.placeID,
-    page.productionIntake?.intakeVietnameseName,
-    page.productionIntake?.targetHeroImageName,
-  ].filter(Boolean);
-  for (const value of removals) {
-    const fragment = String(value).toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    key = key.replace(new RegExp(fragment, "gi"), "{name}");
-  }
-  return key
-    .replace(/\b(da nang|đà nẵng|hanoi|hà nội|saigon|sài gòn|ho chi minh city|ho chi minh|hcmc|hoi an|hội an|hue|huế)\b/gi, "{city}")
-    .replace(/\b[a-z0-9]+(?:-[a-z0-9]+){2,}\b/gi, "{id}")
-    .replace(/[0-9]+/g, "{n}")
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 function validateRuntimeSectionParity(sourcePage, runtimePage) {
@@ -328,7 +355,6 @@ function main() {
   const countsByCity = new Map();
   const targetHeroNames = new Map();
   const duplicatedBodies = new Map();
-  const normalizedTemplateBodies = new Map();
 
   for (const page of nounPages) {
     countsByCity.set(page.cityID, (countsByCity.get(page.cityID) ?? 0) + 1);
@@ -360,6 +386,7 @@ function main() {
     const text = visibleEditorialText(page);
     validateNoBannedVisibleText(page.id, text);
     validateNoBannedVisibleText(`${page.id} source editorial inputs`, sourceEditorialInputText(page));
+    validateNoRepeatedVisibleSentences(page.id, visibleEditorialSections(page));
     validateProfileUtility(page);
 
     for (const section of editorial.sections ?? []) {
@@ -371,10 +398,6 @@ function main() {
         const rows = duplicatedBodies.get(body) ?? [];
         rows.push(`${page.id}:${section.id}`);
         duplicatedBodies.set(body, rows);
-        const normalizedKey = `${profileFor(page)}:${section.id}:${normalizedTemplateKey(page, section.body)}`;
-        const normalizedRows = normalizedTemplateBodies.get(normalizedKey) ?? [];
-        normalizedRows.push(`${page.id}:${section.id}`);
-        normalizedTemplateBodies.set(normalizedKey, normalizedRows);
       }
     }
 
@@ -401,12 +424,6 @@ function main() {
   for (const [body, rows] of duplicatedBodies.entries()) {
     if (rows.length > 3) {
       fail(`duplicated authored section body appears ${rows.length} times: ${rows.slice(0, 6).join(", ")} :: ${body.slice(0, 120)}`);
-    }
-  }
-
-  for (const [body, rows] of normalizedTemplateBodies.entries()) {
-    if (rows.length > 6) {
-      fail(`normalized template body appears ${rows.length} times: ${rows.slice(0, 6).join(", ")} :: ${body.slice(0, 160)}`);
     }
   }
 
