@@ -48195,7 +48195,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "port",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceCuaDaiPier",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bến tàu Cửa Đại",
@@ -48245,7 +48245,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceCuaDaiPier",
         "replaceGeneratedSections": false
       }
     },
@@ -48280,7 +48280,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceDucAnOldHouse",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Nhà cổ Đức An",
@@ -48330,7 +48330,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceDucAnOldHouse",
         "replaceGeneratedSections": false
       }
     },
@@ -48365,7 +48365,7 @@
       "status": "approved",
       "pageKind": "restaurant",
       "placeKind": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceEspressoStation",
       "contentRole": "cafe",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -48431,7 +48431,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceEspressoStation",
         "replaceGeneratedSections": false
       }
     },
@@ -48467,7 +48467,7 @@
       "pageKind": "restaurant",
       "placeKind": "cafe",
       "contentRole": "cafe",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceFaifoCoffee",
       "audioKey": "audio-authored-faifo-coffee-7e9cf20535",
       "audioStatus": "ready",
       "productionIntake": {
@@ -48534,7 +48534,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceFaifoCoffee",
         "replaceGeneratedSections": false
       }
     },
@@ -48569,7 +48569,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceFolkCultureMuseum",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bảo tàng Văn hóa Dân gian",
@@ -48619,7 +48619,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceFolkCultureMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -49081,7 +49081,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "museum",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceHistoryCultureMuseum",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Bảo tàng Lịch sử - Văn hóa Hội An",
@@ -49131,7 +49131,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceHistoryCultureMuseum",
         "replaceGeneratedSections": false
       }
     },
@@ -49166,7 +49166,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "river",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceHoaiRiver",
       "audioKey": "audio-authored-song-hoai-b43d44c10a",
       "audioStatus": "ready",
       "productionIntake": {
@@ -49218,7 +49218,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceHoaiRiver",
         "replaceGeneratedSections": false
       }
     },
@@ -49253,7 +49253,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "landmark",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceJapaneseBridge",
       "audioKey": "audio-authored-chua-cau-1a150570a2",
       "audioStatus": "ready",
       "productionIntake": {
@@ -49305,7 +49305,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceJapaneseBridge",
         "replaceGeneratedSections": false
       }
     },
@@ -49340,7 +49340,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "village",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceKimBongCarpentryVillage",
       "audioKey": "audio-authored-lang-moc-kim-bong-d04a2fccd8",
       "audioStatus": "ready",
       "productionIntake": {
@@ -49392,7 +49392,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceKimBongCarpentryVillage",
         "replaceGeneratedSections": false
       }
     },
@@ -49427,7 +49427,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceLanternBoat",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -49478,7 +49478,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceLanternBoat",
         "replaceGeneratedSections": false
       }
     },

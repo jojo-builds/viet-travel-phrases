@@ -7140,12 +7140,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceCuaDaiPier",
       "imagePromptNote": "pier with small boats and Cua Dai coastline, daylight, no operator signs",
       "queueIndex": 341,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bb-sources/HeroCityHoianPlaceCuaDaiPier.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceCuaDaiPier/HeroCityHoianPlaceCuaDaiPier.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an arrival or transfer scene with curb, terminal, station, or luggage cues for SpeakLocal Vietnam.\nPage: Bến tàu Cửa Đại / Cua Dai Pier\nCity: hoian\nSpecific subject guidance: pier with small boats and Cua Dai coastline, daylight, no operator signs\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an arrival or transfer scene with curb, terminal, station, or luggage cues for SpeakLocal Vietnam.\nPage: Bến tàu Cửa Đại / Cua Dai Pier\nCity: hoian\nSpecific subject guidance: pier with small boats and Cua Dai coastline, daylight, no operator signs\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceCuaDaiPier.imageset/hero-city-hoian-place-cua-dai-pier.png",
+      "sha256": "8cbfae164f8917f6ca8622ee9bf616cb5fa072f1eb237f826f89fb4ec19acc1e"
     },
     {
       "id": "city-hoian-place-duc-an-old-house",
@@ -7159,12 +7161,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceDucAnOldHouse",
       "imagePromptNote": "antique wooden house interior with old shelves and warm window light, no copied artifacts",
       "queueIndex": 342,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bb-sources/HeroCityHoianPlaceDucAnOldHouse.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceDucAnOldHouse/HeroCityHoianPlaceDucAnOldHouse.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a recognizable landmark/place hero for SpeakLocal Vietnam.\nPage: Nhà cổ Đức An / Duc An Old House\nCity: hoian\nSpecific subject guidance: antique wooden house interior with old shelves and warm window light, no copied artifacts\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a recognizable landmark/place hero for SpeakLocal Vietnam.\nPage: Nhà cổ Đức An / Duc An Old House\nCity: hoian\nSpecific subject guidance: antique wooden house interior with old shelves and warm window light, no copied artifacts\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceDucAnOldHouse.imageset/hero-city-hoian-place-duc-an-old-house.png",
+      "sha256": "35b75abaf2ea908471ea57dec2d2775ae191f8ef87dd0a57b49b7d4e86b374ec"
     },
     {
       "id": "city-hoian-place-espresso-station",
@@ -7178,12 +7182,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceEspressoStation",
       "imagePromptNote": "small espresso bar in a narrow Hoi An lane, coffee machine",
       "queueIndex": 343,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bb-sources/HeroCityHoianPlaceEspressoStation.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceEspressoStation/HeroCityHoianPlaceEspressoStation.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a restaurant, cafe, dish table, or entrance mood without copied signage for SpeakLocal Vietnam.\nPage: The Espresso Station / The Espresso Station\nCity: hoian\nSpecific subject guidance: small espresso bar in a narrow Hoi An lane, coffee machine\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a restaurant, cafe, dish table, or entrance mood without copied signage for SpeakLocal Vietnam.\nPage: The Espresso Station / The Espresso Station\nCity: hoian\nSpecific subject guidance: small espresso bar in a narrow Hoi An lane, coffee machine\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceEspressoStation.imageset/hero-city-hoian-place-espresso-station.png",
+      "sha256": "a58d0097d189c4f5a2a29e6c407226225effa5d35022466d57fa0bdc89ede762"
     },
     {
       "id": "city-hoian-place-faifo-coffee",
@@ -7197,12 +7203,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceFaifoCoffee",
       "imagePromptNote": "old-town rooftop coffee table overlooking yellow roofs, golden light",
       "queueIndex": 344,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bb-sources/HeroCityHoianPlaceFaifoCoffee.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceFaifoCoffee/HeroCityHoianPlaceFaifoCoffee.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a restaurant, cafe, dish table, or entrance mood without copied signage for SpeakLocal Vietnam.\nPage: Faifo Coffee / Faifo Coffee\nCity: hoian\nSpecific subject guidance: old-town rooftop coffee table overlooking yellow roofs, golden light\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a restaurant, cafe, dish table, or entrance mood without copied signage for SpeakLocal Vietnam.\nPage: Faifo Coffee / Faifo Coffee\nCity: hoian\nSpecific subject guidance: old-town rooftop coffee table overlooking yellow roofs, golden light\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceFaifoCoffee.imageset/hero-city-hoian-place-faifo-coffee.png",
+      "sha256": "2a8c869f62a42bfafd149c7762c911b390baf9063dc71e65149c21c8324473e4"
     },
     {
       "id": "city-hoian-place-folk-culture-museum",
@@ -7216,12 +7224,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceFolkCultureMuseum",
       "imagePromptNote": "folk-culture exhibit with lanterns, textiles, and wood beams",
       "queueIndex": 345,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bb-sources/HeroCityHoianPlaceFolkCultureMuseum.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceFolkCultureMuseum/HeroCityHoianPlaceFolkCultureMuseum.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a cultural or museum scene with respectful lighting and no copied exhibit text for SpeakLocal Vietnam.\nPage: Bảo tàng Văn hóa Dân gian / Museum of Folk Culture\nCity: hoian\nSpecific subject guidance: folk-culture exhibit with lanterns, textiles, and wood beams\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a cultural or museum scene with respectful lighting and no copied exhibit text for SpeakLocal Vietnam.\nPage: Bảo tàng Văn hóa Dân gian / Museum of Folk Culture\nCity: hoian\nSpecific subject guidance: folk-culture exhibit with lanterns, textiles, and wood beams\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceFolkCultureMuseum.imageset/hero-city-hoian-place-folk-culture-museum.png",
+      "sha256": "eaaeca6e23354a0a580f5950e20873f72f778c9936275f8d0264af47075384b4"
     },
     {
       "id": "city-hoian-place-from-danang-airport",
@@ -7330,12 +7340,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceHistoryCultureMuseum",
       "imagePromptNote": "small museum gallery with maps and ceramics in warm light, invented displays only",
       "queueIndex": 351,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bd-sources/HeroCityHoianPlaceHistoryCultureMuseum.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceHistoryCultureMuseum/HeroCityHoianPlaceHistoryCultureMuseum.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a cultural or museum scene with respectful lighting and no copied exhibit text for SpeakLocal Vietnam.\nPage: Bảo tàng Lịch sử - Văn hóa Hội An / Museum of History and Culture\nCity: hoian\nSpecific subject guidance: small museum gallery with maps and ceramics in warm light, invented displays only\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a cultural or museum scene with respectful lighting and no copied exhibit text for SpeakLocal Vietnam.\nPage: Bảo tàng Lịch sử - Văn hóa Hội An / Museum of History and Culture\nCity: hoian\nSpecific subject guidance: small museum gallery with maps and ceramics in warm light, invented displays only\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceHistoryCultureMuseum.imageset/hero-city-hoian-place-history-culture-museum.png",
+      "sha256": "62adf70564fe8144797301c90863622ef6d9ece05de73959f9a16633365eaccd"
     },
     {
       "id": "city-hoian-place-hoai-river",
@@ -7349,12 +7361,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceHoaiRiver",
       "imagePromptNote": "lantern boats on calm river by yellow old-town buildings, blue hour",
       "queueIndex": 352,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bd-sources/HeroCityHoianPlaceHoaiRiver.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceHoaiRiver/HeroCityHoianPlaceHoaiRiver.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Sông Hoài / Hoai River\nCity: hoian\nSpecific subject guidance: lantern boats on calm river by yellow old-town buildings, blue hour\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a beach, river, park, or nature scene with realistic weather and depth for SpeakLocal Vietnam.\nPage: Sông Hoài / Hoai River\nCity: hoian\nSpecific subject guidance: lantern boats on calm river by yellow old-town buildings, blue hour\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceHoaiRiver.imageset/hero-city-hoian-place-hoai-river.png",
+      "sha256": "40447d329c15589e0e1fbdd6c0a86af48200d1138993a8fba6b6511fd3e45fef"
     },
     {
       "id": "city-hoian-place-japanese-bridge",
@@ -7368,12 +7382,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceJapaneseBridge",
       "imagePromptNote": "covered bridge over narrow waterway with lantern reflections, golden hour, no crowds blocking bridge",
       "queueIndex": 353,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bd-sources/HeroCityHoianPlaceJapaneseBridge.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceJapaneseBridge/HeroCityHoianPlaceJapaneseBridge.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a recognizable landmark/place hero for SpeakLocal Vietnam.\nPage: Chùa Cầu / Japanese Covered Bridge\nCity: hoian\nSpecific subject guidance: covered bridge over narrow waterway with lantern reflections, golden hour, no crowds blocking bridge\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create a recognizable landmark/place hero for SpeakLocal Vietnam.\nPage: Chùa Cầu / Japanese Covered Bridge\nCity: hoian\nSpecific subject guidance: covered bridge over narrow waterway with lantern reflections, golden hour, no crowds blocking bridge\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceJapaneseBridge.imageset/hero-city-hoian-place-japanese-bridge.png",
+      "sha256": "d7e3061a4d4c4d7dbf33f232d1dd3a4e23e0725aad6c96ca357d2d69c8f26b13"
     },
     {
       "id": "city-hoian-place-kim-bong-carpentry-village",
@@ -7387,12 +7403,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceKimBongCarpentryVillage",
       "imagePromptNote": "woodworking village workshop with carved panels and tools, natural light, no copied artworks",
       "queueIndex": 354,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bd-sources/HeroCityHoianPlaceKimBongCarpentryVillage.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceKimBongCarpentryVillage/HeroCityHoianPlaceKimBongCarpentryVillage.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Làng mộc Kim Bồng / Kim Bong Carpentry Village\nCity: hoian\nSpecific subject guidance: woodworking village workshop with carved panels and tools, natural light, no copied artworks\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Làng mộc Kim Bồng / Kim Bong Carpentry Village\nCity: hoian\nSpecific subject guidance: woodworking village workshop with carved panels and tools, natural light, no copied artworks\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceKimBongCarpentryVillage.imageset/hero-city-hoian-place-kim-bong-carpentry-village.png",
+      "sha256": "ec8fb6c34d13cb1cde75ee34959695288b7a781c2655eb822d7cc7d3830ee64c"
     },
     {
       "id": "city-hoian-place-lantern-boat",
@@ -7406,12 +7424,14 @@
       "targetHeroImageName": "HeroCityHoianPlaceLanternBoat",
       "imagePromptNote": "small wooden boat with paper lanterns on Hoai River at night, faces indistinct",
       "queueIndex": 355,
-      "status": "needs_generation",
-      "sourceImagePath": "",
-      "approvedImagePath": "",
+      "status": "imported",
+      "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-bd-sources/HeroCityHoianPlaceLanternBoat.png",
+      "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceLanternBoat/HeroCityHoianPlaceLanternBoat.png",
       "rejectReason": "",
-      "reviewerNotes": "",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Thuyền hoa đăng Hội An / Lantern boat ride\nCity: hoian\nSpecific subject guidance: small wooden boat with paper lanterns on Hoai River at night, faces indistinct\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay."
+      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Thuyền hoa đăng Hội An / Lantern boat ride\nCity: hoian\nSpecific subject guidance: small wooden boat with paper lanterns on Hoai River at night, faces indistinct\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceLanternBoat.imageset/hero-city-hoian-place-lantern-boat.png",
+      "sha256": "b318d30de6d741a5b4696d3851e5c37e984b2c426edcf686e2842bfeede560f6"
     },
     {
       "id": "city-hoian-place-lantern-making-class",
