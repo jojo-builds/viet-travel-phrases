@@ -523,6 +523,10 @@ struct HeroMastheadImage: View {
         case "HeroCategoryEmergency", "HeroCategoryEssentials":
             return -78
         default:
+            if imageName.hasPrefix("HeroCity") && imageName.contains("Place") {
+                return -220
+            }
+
             if imageName.hasPrefix("HeroCity")
                 || imageName.hasPrefix("HeroCategory")
                 || imageName.hasPrefix("HeroCountry")
