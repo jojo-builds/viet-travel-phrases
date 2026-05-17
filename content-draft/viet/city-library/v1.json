@@ -47753,7 +47753,7 @@
       "status": "approved",
       "pageKind": "dish",
       "placeKind": "dish",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceComGa",
       "contentRole": "dish",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -47814,7 +47814,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceComGa",
         "replaceGeneratedSections": false
       },
       "audioKey": "menu-name-com-ga-hoi-an-0554d2d062",
@@ -47851,7 +47851,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceCookingClass",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -47902,7 +47902,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceCookingClass",
         "replaceGeneratedSections": false
       }
     },
@@ -47937,7 +47937,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "experience",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceCountrysideBicycleLoop",
       "contentRole": "experience",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
@@ -47988,7 +47988,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceCountrysideBicycleLoop",
         "replaceGeneratedSections": false
       }
     },
@@ -48023,7 +48023,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "beach",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceCuaDaiBeach",
       "audioKey": "audio-authored-bien-cua-dai-973f406ec5",
       "audioStatus": "ready",
       "productionIntake": {
@@ -48075,7 +48075,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceCuaDaiBeach",
         "replaceGeneratedSections": false
       }
     },
@@ -48110,7 +48110,7 @@
       "status": "approved",
       "pageKind": "place",
       "placeKind": "nature",
-      "heroImageName": "HeroCityHoian",
+      "heroImageName": "HeroCityHoianPlaceCuaDaiEstuary",
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Cửa Đại",
@@ -48160,7 +48160,7 @@
         "approvedBy": "codex-city-production-pass",
         "reviewStatus": "handwritten-reviewed",
         "claimRisk": "stable-traveler-context",
-        "heroImageName": "HeroCityHoian",
+        "heroImageName": "HeroCityHoianPlaceCuaDaiEstuary",
         "replaceGeneratedSections": false
       }
     },
