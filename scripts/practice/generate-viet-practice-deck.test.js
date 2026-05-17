@@ -55,6 +55,16 @@ const scenarios = new Set(practiceCore.items.map((item) => item.source.scenarioI
 assert.ok(scenarios.size >= 8, `expected at least 8 scenarios, got ${scenarios.size}`);
 
 const questionTypes = new Set(practiceCore.items.map((item) => item.questionType));
+const airportChunkItem = practiceCore.items.find((item) => item.id === "viet-practice-chunks-airport-1");
+assert.ok(
+  airportChunkItem,
+  "chunk rebuild generation should ignore the authored full-phrase breakdown token",
+);
+assert.deepStrictEqual(
+  airportChunkItem.answer.correctSequence.map((chunk) => chunk.vietnamese),
+  ["Nhập cảnh", "ở đâu?"],
+);
+
 for (const type of REQUIRED_TYPES) {
   assert.ok(questionTypes.has(type), `missing question type ${type}`);
 }

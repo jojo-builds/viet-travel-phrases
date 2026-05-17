@@ -267,7 +267,7 @@ function usableBreakdownTokensForPhrase(page, phrase) {
     }
     const tokens = breakdownSection.breakdown
       .filter((token) => token.vietnamese)
-      .filter((token) => !/-full$/.test(token.id));
+      .filter((token) => token.id !== "full" && !/-full$/.test(token.id));
     if (tokens.length < 2) {
       continue;
     }
