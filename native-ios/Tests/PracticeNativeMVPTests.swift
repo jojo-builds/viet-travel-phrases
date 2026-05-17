@@ -218,6 +218,27 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:shopping-markets" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:emergency" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:danang-city" && $0.canStart })
+        XCTAssertGreaterThan(snapshot.quickSource.items.count, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:essentials" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:first-day" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:taxi-directions" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:danang-city" }?.items.count ?? 0, 20)
+    }
+
+    func testAirportBrowsePracticeStarterCanOpenMatchRound() throws {
+        let descriptor = try XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        switch descriptor.practiceAction {
+        case .practiceSource(let sourceID):
+            let snapshot = try PracticeMatchSnapshot.load(practicePageIDs: [], savedPageIDs: [])
+            let source = try XCTUnwrap(snapshot.topicSources.first { $0.id == sourceID })
+
+            XCTAssertEqual(sourceID, "topic:airport")
+            XCTAssertTrue(source.canStart)
+            XCTAssertGreaterThanOrEqual(source.items.count, 4)
+        case .addStarterPages, .practiceMode, .practiceScenario:
+            XCTFail("Airport Browse practice entry should use the audio-backed airport match topic.")
+        }
     }
 
     func testMissedPromptsReappearInMissedReview() throws {

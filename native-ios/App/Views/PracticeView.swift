@@ -3407,6 +3407,31 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
     let symbolName: String
     let tint: AccentTint
     let pageIDs: [String]
+    let categoryIDs: [String]
+    let cityID: String?
+    let candidateLimit: Int
+
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        symbolName: String,
+        tint: AccentTint,
+        pageIDs: [String],
+        categoryIDs: [String],
+        cityID: String? = nil,
+        candidateLimit: Int = 96
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.symbolName = symbolName
+        self.tint = tint
+        self.pageIDs = pageIDs
+        self.categoryIDs = categoryIDs
+        self.cityID = cityID
+        self.candidateLimit = candidateLimit
+    }
 
     static let defaults: [PracticeMatchTopicSpec] = [
         PracticeMatchTopicSpec(
@@ -3424,6 +3449,16 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
                 "viet-phrase-problems-3",
                 "viet-phrase-bath-1",
+            ],
+            categoryIDs: [
+                "greetings",
+                "polite-basics",
+                "gratitude",
+                "problems-help",
+                "understanding-repair",
+                "bathroom-personal-needs",
+                "small-talk",
+                "social-small-talk",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3441,7 +3476,17 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-hotel-5",
                 "viet-phrase-hotel-9",
                 "viet-phrase-store-1",
-            ]
+            ],
+            categoryIDs: [
+                "airport-border-arrival",
+                "hotel-accommodation",
+                "transport",
+                "food-drink",
+                "phone-internet-power",
+                "money-numbers-prices",
+                "polite-basics",
+            ],
+            candidateLimit: 128
         ),
         PracticeMatchTopicSpec(
             id: "food-drinks",
@@ -3458,7 +3503,15 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-food-1",
                 "viet-phrase-social-9",
                 "viet-phrase-food-premium-has-peanuts",
-            ]
+            ],
+            categoryIDs: [
+                "food-drink",
+                "food-coffee",
+                "restaurants",
+                "local-dishes",
+                "dish-order-diet",
+            ],
+            candidateLimit: 120
         ),
         PracticeMatchTopicSpec(
             id: "airport",
@@ -3473,6 +3526,11 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
                 "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
                 "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
+            ],
+            categoryIDs: [
+                "airport-border-arrival",
+                "arrivals-routes",
+                "place-kind-airport",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3490,7 +3548,15 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-tran-please-stop-right-here",
                 "viet-phrase-v500-tran-please-wait-here",
                 "viet-phrase-v900-tran-can-you-pick-me-up-here",
-            ]
+            ],
+            categoryIDs: [
+                "transport",
+                "directions-navigation",
+                "hotel-call-taxi",
+                "transport-wait-here",
+                "transport-wrong-pickup-point",
+            ],
+            candidateLimit: 128
         ),
         PracticeMatchTopicSpec(
             id: "shopping-markets",
@@ -3506,7 +3572,14 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-shop-can-you-lower-the-price",
                 "viet-phrase-v500-shop-do-you-have-this",
                 "viet-phrase-v500-shop-can-i-touch-it",
-            ]
+            ],
+            categoryIDs: [
+                "shopping",
+                "shopping-markets",
+                "money-numbers-prices",
+                "place-kind-market",
+            ],
+            candidateLimit: 112
         ),
         PracticeMatchTopicSpec(
             id: "emergency",
@@ -3522,6 +3595,11 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-v500-heal-phar-i-need-a-hospital",
                 "viet-phrase-v500-heal-phar-where-is-the-pharmacy",
                 "viet-phrase-v500-emer-safe-i-need-first-aid",
+            ],
+            categoryIDs: [
+                "emergency-safety",
+                "health-pharmacy",
+                "problems-help",
             ]
         ),
         PracticeMatchTopicSpec(
@@ -3537,7 +3615,16 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-city-danang-place-airport",
                 "viet-phrase-city-danang-place-marble-mountains",
                 "viet-phrase-city-danang-place-son-tra",
-            ]
+            ],
+            categoryIDs: [
+                "actual-landmarks",
+                "city-guides",
+                "city-page-kind-place",
+                "place-kind-market",
+                "place-kind-beach",
+            ],
+            cityID: "danang",
+            candidateLimit: 120
         ),
     ]
 }
@@ -3616,11 +3703,11 @@ struct PracticeMatchSnapshot {
 
     static func load(practicePageIDs: [String], savedPageIDs: [String]) throws -> PracticeMatchSnapshot {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
-        let quickItems = Self.uniquePracticeItems(
-            from: try repository.loadPracticeCandidates(
-                pageIDs: Self.quickPageIDs,
-                limit: Self.quickPageIDs.count * 4
-            )
+        let quickItems = try Self.sourceItems(
+            repository: repository,
+            pageIDs: Self.quickPageIDs,
+            categoryIDs: Self.quickCategoryIDs,
+            candidateLimit: 160
         )
         let practiceItems: [PracticeMatchItem]
         if practicePageIDs.isEmpty {
@@ -3652,11 +3739,12 @@ struct PracticeMatchSnapshot {
         }
 
         let topicSources: [PracticeMatchSource] = try PracticeMatchTopicSpec.defaults.compactMap { spec in
-            let items = Self.uniquePracticeItems(
-                from: try repository.loadPracticeCandidates(
-                    pageIDs: spec.pageIDs,
-                    limit: spec.pageIDs.count * 4
-                )
+            let items = try Self.sourceItems(
+                repository: repository,
+                pageIDs: spec.pageIDs,
+                categoryIDs: spec.categoryIDs,
+                cityID: spec.cityID,
+                candidateLimit: spec.candidateLimit
             )
 
             guard items.count >= PracticeMatchRound.pairCount else {
@@ -3720,6 +3808,48 @@ struct PracticeMatchSnapshot {
         "viet-phrase-problems-3",
         "viet-phrase-bath-1",
     ]
+
+    private static let quickCategoryIDs = [
+        "greetings",
+        "polite-basics",
+        "gratitude",
+        "problems-help",
+        "understanding-repair",
+        "bathroom-personal-needs",
+        "airport-border-arrival",
+        "hotel-accommodation",
+        "transport",
+        "food-drink",
+    ]
+
+    private static func sourceItems(
+        repository: VietSQLiteLanguagePackRepository,
+        pageIDs: [String],
+        categoryIDs: [String],
+        cityID: String? = nil,
+        candidateLimit: Int
+    ) throws -> [PracticeMatchItem] {
+        var candidates = try repository.loadPracticeCandidates(
+            pageIDs: pageIDs,
+            limit: max(pageIDs.count * 4, pageIDs.count)
+        )
+
+        if !categoryIDs.isEmpty {
+            candidates += try repository.loadPracticeCandidates(
+                categoryIDs: categoryIDs,
+                limit: candidateLimit
+            )
+        }
+
+        if let cityID {
+            candidates += try repository.loadPracticeCandidates(
+                cityID: cityID,
+                limit: candidateLimit
+            )
+        }
+
+        return uniquePracticeItems(from: candidates)
+    }
 
     private static func uniquePracticeItems(from candidates: [PracticeCandidate]) -> [PracticeMatchItem] {
         var seenPageIDs = Set<String>()
@@ -3979,8 +4109,13 @@ private struct PracticeMatchRootView: View {
             return
         }
 
+        let requestedSource = snapshot.source(sourceID: requestedSourceID, mode: requestedMode)
+        guard requestedSource.canStart else {
+            return
+        }
+
         handledRequestedKey = requestKey
-        startSource(snapshot.source(sourceID: requestedSourceID, mode: requestedMode))
+        startSource(requestedSource)
     }
 
     private var requestedKey: String? {

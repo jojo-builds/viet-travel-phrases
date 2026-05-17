@@ -1091,7 +1091,7 @@ enum BrowseSearchDestinations {
             starterItems: starterItems,
             practiceTitle: messageEntryTitle(for: title),
             practiceSubtitle: practiceSubtitle(for: title),
-            practiceAction: .addStarterPages(practiceStarterItems.map(\.pageID)),
+            practiceAction: categoryPracticeAction(for: id, starterPageIDs: practiceStarterItems.map(\.pageID)),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: shelves
         )
@@ -2485,6 +2485,15 @@ enum BrowseSearchDestinations {
         }
 
         return "A quick \(title.lowercased()) conversation."
+    }
+
+    private static func categoryPracticeAction(for id: String, starterPageIDs: [String]) -> BrowseCollectionPracticeAction {
+        switch id {
+        case "airport":
+            return .practiceSource("topic:airport")
+        default:
+            return .addStarterPages(starterPageIDs)
+        }
     }
 
     private static func messageEntryTitle(for title: String) -> String {
