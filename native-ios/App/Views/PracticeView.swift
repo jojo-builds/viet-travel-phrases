@@ -3641,7 +3641,7 @@ struct PracticeMatchSnapshot {
                 return nil
             }
 
-            PracticeMatchItem(
+            return PracticeMatchItem(
                 pageID: item.pageID,
                 vietnamese: item.vietnamese,
                 english: item.english,
