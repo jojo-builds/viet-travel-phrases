@@ -39,6 +39,7 @@ struct AppShellView: View {
     @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
+    @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
@@ -53,6 +54,9 @@ struct AppShellView: View {
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
     @State private var menuSectionJumpRequestID = 0
     @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
+    @State private var savedTripSectionChromeStates: [SavedTripSectionChromeState] = []
+    @State private var savedTripSectionJumpRequestID = 0
+    @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -198,8 +202,10 @@ struct AppShellView: View {
                 SavedPagesView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.savedScrollToTopTrigger,
+                    sectionJumpRequest: savedTripSectionJumpRequest,
                     onOpenDetail: openDetailFromSaved,
-                    onBrowseTapped: openBrowseAll
+                    onBrowseTapped: openBrowseAll,
+                    onStartSavedPractice: { openPractice(.practiceSource("saved")) }
                 )
                 .allowsHitTesting(navigation.currentRoute == .saved && !isPreviewingForwardPage)
                 .accessibilityHidden(navigation.currentRoute != .saved)
@@ -219,6 +225,7 @@ struct AppShellView: View {
                     startRequest: practiceStartRequest,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
+                    topContentClearance: showsStaticBackButton ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
                     onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
@@ -307,11 +314,19 @@ struct AppShellView: View {
                             state: currentMenuSectionChromeState,
                             onSelect: jumpToMenuSection
                         )
+                    } else if let currentSavedTripSectionChromeState {
+                        SavedTripTopSectionRail(
+                            state: currentSavedTripSectionChromeState,
+                            onSelect: jumpToSavedTripSection
+                        )
                     }
                 }
             )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
                 menuSectionChromeStates = states
+            }
+            .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
+                savedTripSectionChromeStates = states
             }
             .onAppear {
                 applyLaunchSearchFocusIfNeeded()
@@ -355,6 +370,8 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     sectionJumpRequest: menuSectionJumpRequest,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
                     onOpenDetail: openDetailFromBrowse
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -454,6 +471,18 @@ struct AppShellView: View {
         menuSectionJumpRequest = VietnameseMenuSectionJumpRequest(
             requestID: menuSectionJumpRequestID,
             route: currentMenuSectionChromeState.route,
+            sectionID: sectionID
+        )
+    }
+
+    private func jumpToSavedTripSection(_ sectionID: String) {
+        guard currentSavedTripSectionChromeState != nil else {
+            return
+        }
+
+        savedTripSectionJumpRequestID += 1
+        savedTripSectionJumpRequest = SavedTripSectionJumpRequest(
+            requestID: savedTripSectionJumpRequestID,
             sectionID: sectionID
         )
     }
@@ -621,6 +650,8 @@ struct AppShellView: View {
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
                     sectionJumpRequest: nil,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
                     onOpenDetail: openDetailFromBrowse
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
@@ -638,8 +669,10 @@ struct AppShellView: View {
             SavedPagesView(
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
+                sectionJumpRequest: nil,
                 onOpenDetail: openDetailFromSaved,
-                onBrowseTapped: openBrowseAll
+                onBrowseTapped: openBrowseAll,
+                onStartSavedPractice: { openPractice(.practiceSource("saved")) }
             )
         case .practice:
             PracticeView(
@@ -647,6 +680,7 @@ struct AppShellView: View {
                 startRequest: practiceStartRequest,
                 isActive: false,
                 scrollToTopTrigger: 0,
+                topContentClearance: 0,
                 onOpenDetail: openDetailFromPractice,
                 onBrowseTapped: openBrowseAll
             )
@@ -754,12 +788,21 @@ struct AppShellView: View {
         return menuSectionChromeStates.last { $0.route == route }
     }
 
+    private var currentSavedTripSectionChromeState: SavedTripSectionChromeState? {
+        guard navigation.currentRoute == .saved else {
+            return nil
+        }
+
+        return savedTripSectionChromeStates.last
+    }
+
     private var showsMenuSectionChrome: Bool {
         guard !isPracticeThreadPresented, !navigation.isSearchPresented else {
             return false
         }
 
         return currentMenuSectionChromeState?.isPinned == true
+            || currentSavedTripSectionChromeState?.isPinned == true
     }
 
     private func topAdminRow(showsPinnedAudioSpeedControl: Bool) -> some View {
@@ -893,6 +936,67 @@ struct AppShellView: View {
                 .accessibilityLabel("Menu section")
                 .accessibilityValue(currentSection?.title ?? "")
                 .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
+
+                Spacer(minLength: 0)
+            }
+            .frame(height: AppChromeLayout.menuSectionChromeHeight)
+        }
+    }
+
+    private struct SavedTripTopSectionRail: View {
+        let state: SavedTripSectionChromeState
+        let onSelect: (String) -> Void
+
+        private var currentSection: SavedTripSectionChromeItem? {
+            state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
+        }
+
+        var body: some View {
+            HStack {
+                Spacer(minLength: 0)
+
+                Menu {
+                    ForEach(state.sections) { section in
+                        Button {
+                            onSelect(section.id)
+                        } label: {
+                            Label(section.title, systemImage: section.symbolName)
+                        }
+                        .accessibilityIdentifier("SavedTrip.TopSectionMenu.\(section.id)")
+                    }
+                } label: {
+                    HStack(spacing: 7) {
+                        if let currentSection {
+                            Image(systemName: currentSection.symbolName)
+                                .font(.caption.weight(.black))
+                                .foregroundStyle(currentSection.tintName.color)
+
+                            Text(currentSection.title)
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.78)
+                        }
+
+                        Image(systemName: "chevron.down")
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .contentShape(Capsule(style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+                .accessibilityLabel("Saved section")
+                .accessibilityValue(currentSection?.title ?? "")
+                .accessibilityIdentifier("SavedTrip.TopSectionPill")
 
                 Spacer(minLength: 0)
             }
@@ -1219,14 +1323,18 @@ struct AppShellView: View {
     }
 
     private func openPractice(_ action: BrowseCollectionPracticeAction) {
+        let matchReturnFocus = currentBrowseCollectionPracticeFocusRequest()
+
         switch action {
         case .addStarterPages(let pageIDs):
             intentStore.addPracticePages(pageIDs)
-            requestedPracticeSourceID = nil
+            practiceStartRequestID += 1
+            requestedPracticeSourceID = pageIDs.isEmpty ? "quick" : "practice"
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceSource(let sourceID):
             practiceStartRequestID += 1
             requestedPracticeSourceID = sourceID
@@ -1234,6 +1342,7 @@ struct AppShellView: View {
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceMode(let mode):
             practiceStartRequestID += 1
             requestedPracticeSourceID = nil
@@ -1241,6 +1350,7 @@ struct AppShellView: View {
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceScenario:
             practiceStartRequestID += 1
             requestedPracticeSourceID = "quick"
@@ -1249,9 +1359,22 @@ struct AppShellView: View {
             clearPracticeThreadForwardRestore()
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = nil
         }
 
         openPractice(preservingStartRequest: true)
+    }
+
+    private func currentBrowseCollectionPracticeFocusRequest() -> BrowseCollectionFocusRequest? {
+        guard case let .browseCollection(route) = navigation.currentRoute else {
+            return nil
+        }
+
+        return BrowseCollectionFocusRequest(
+            id: 0,
+            route: route,
+            target: .practiceEntry
+        )
     }
 
     private func returnFromPracticeThreadToOrigin(_ scenarioID: PracticeScenarioID?) {
@@ -1292,9 +1415,18 @@ struct AppShellView: View {
 
     private func goBack() {
         cancelInteractiveChromeState()
+        preparePracticeMatchFocusRestoreIfNeeded()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+    }
+
+    private func preparePracticeMatchFocusRestoreIfNeeded() {
+        guard navigation.currentRoute == .practice else {
+            return
+        }
+
+        prepareBrowseCollectionFocusRestoreIfNeeded(pendingPracticeMatchReturnFocus)
     }
 
     private func goForward() {
@@ -1391,6 +1523,7 @@ struct AppShellView: View {
         requestedPracticeScenarioID = nil
         requestedPracticeScenarioThreadDismissal = .messagesHub
         pendingPracticeThreadReturnFocus = nil
+        pendingPracticeMatchReturnFocus = nil
     }
 
     private func clearPracticeThreadForwardRestore() {
@@ -1453,6 +1586,7 @@ struct AppShellView: View {
             withoutRouteAnimation {
                 switch direction {
                 case .back:
+                    preparePracticeMatchFocusRestoreIfNeeded()
                     navigation.goBack()
                 case .forward:
                     navigateForwardInState()
@@ -1473,7 +1607,9 @@ struct AppShellView: View {
         }
 
         guard let restore = pendingPracticeThreadForwardRestore else {
-            clearPracticeStartRequest()
+            if requestedPracticeSourceID == nil, requestedPracticeMode == nil, requestedPracticeScenarioID == nil {
+                clearPracticeStartRequest()
+            }
             return
         }
 
@@ -1519,6 +1655,10 @@ struct AppShellView: View {
 
         if arguments.contains("--browse") {
             return .browse
+        }
+
+        if arguments.contains("--saved") {
+            return .saved
         }
 
         if arguments.contains("--practice")
@@ -2107,7 +2247,6 @@ struct AppShellNavigationState: Equatable {
             browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .practice
-            practiceScrollToTopTrigger += 1
         case .detailPage(let detailPageID):
             guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) else {
                 return
@@ -2934,8 +3073,16 @@ struct SavedPagesView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
+    let sectionJumpRequest: SavedTripSectionJumpRequest?
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
+    var onStartSavedPractice: () -> Void
+
+    @State private var currentSectionID: String? = "all"
+    @State private var isSectionRailPinned = false
+    @State private var pendingSectionJumpID = 0
+    @State private var pendingSectionJumpSectionID: String?
+    @State private var practiceReadyCount = 0
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -2944,48 +3091,210 @@ struct SavedPagesView: View {
 
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: 18) {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Saved")
-                                .font(.system(size: 42, weight: .black, design: .serif))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.78)
+                    VStack(alignment: .leading, spacing: SavedTripLayout.sectionSpacing) {
+                        header
+                            .id(Self.scrollTopID)
+                            .padding(.horizontal, SavedTripLayout.horizontalPadding)
 
-                            Text("Phrase pages you marked stay private on this device.")
-                                .font(.title3.weight(.semibold))
-                                .foregroundStyle(.secondary)
-                                .lineLimit(2)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                        .padding(.top, 76)
-                        .id(Self.scrollTopID)
+                        SavedTripPracticeCard(
+                            practiceReadyCount: snapshot.practiceReadyCount,
+                            totalSavedCount: snapshot.totalItemCount,
+                            onStart: onStartSavedPractice,
+                            onBrowse: onBrowseTapped
+                        )
+                        .padding(.horizontal, SavedTripLayout.horizontalPadding)
 
-                        if savedItems.isEmpty {
+                        if snapshot.totalItemCount == 0 {
                             savedEmptyState
+                                .padding(.horizontal, SavedTripLayout.horizontalPadding)
                         } else {
-                            LazyVStack(spacing: 12) {
-                                ForEach(savedItems) { item in
-                                    HomeWidePhraseButton(item: item, onOpenDetail: onOpenDetail)
-                                }
-                            }
+                            sectionRail(scrollProxy: scrollProxy)
+
+                            Color.clear
+                                .frame(width: 1, height: 1)
+                                .id(Self.savedContentTopID)
+                                .accessibilityHidden(true)
+
+                            sectionedSavedItems
+                                .padding(.horizontal, SavedTripLayout.horizontalPadding)
                         }
                     }
-                    .padding(.horizontal, HomeLayout.horizontalPadding)
                     .padding(.bottom, HomeLayout.bottomChromeContentClearance)
                 }
+                .onPreferenceChange(SavedTripSectionFramePreferenceKey.self) { frames in
+                    updateCurrentSection(from: frames)
+                }
+                .onPreferenceChange(SavedTripRailFramePreferenceKey.self) { frame in
+                    isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= SavedTripLayout.glassRailRevealY
+                }
                 .onChange(of: scrollToTopTrigger) { _, _ in
+                    currentSectionID = "all"
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                }
+                .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                    guard let sectionJumpRequest else {
+                        return
+                    }
+
+                    jumpToSection(sectionJumpRequest.sectionID)
+                }
+                .onChange(of: intentStore.savedPageIDs) { _, _ in
+                    if !snapshot.railItems.contains(where: { $0.id == currentSectionID }) {
+                        currentSectionID = "all"
+                    }
+                }
+                .task(id: pendingSectionJumpID) {
+                    await performPendingSectionJump(scrollProxy)
+                }
+                .task(id: intentStore.savedPageIDs) {
+                    await refreshPracticeReadyCount(for: intentStore.savedPageIDs)
                 }
             }
         }
+        .preference(
+            key: SavedTripSectionChromePreferenceKey.self,
+            value: sectionChromeState.map { [$0] } ?? []
+        )
         .accessibilityIdentifier("SavedPagesView")
     }
 
     private static let scrollTopID = "SavedPagesViewTop"
+    private static let savedContentTopID = "SavedPagesViewContentTop"
 
-    private var savedItems: [HomePhraseItem] {
-        intentStore.savedPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    private var snapshot: SavedTripSnapshot {
+        SavedTripSnapshot.make(
+            savedPageIDs: intentStore.savedPageIDs,
+            practiceReadyCount: practiceReadyCount
+        )
+    }
+
+    private var resolvedCurrentSectionID: String {
+        currentSectionID ?? "all"
+    }
+
+    private var sectionChromeState: SavedTripSectionChromeState? {
+        let railItems = snapshot.railItems
+        guard !railItems.isEmpty else {
+            return nil
+        }
+
+        return SavedTripSectionChromeState(
+            currentSectionID: resolvedCurrentSectionID,
+            isPinned: isSectionRailPinned,
+            sections: railItems.map { item in
+                SavedTripSectionChromeItem(
+                    id: item.id,
+                    title: item.title,
+                    symbolName: item.symbolName,
+                    tintName: item.tintName
+                )
+            }
+        )
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text("SPEAKLOCAL VIETNAM")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            Text("Saved")
+                .font(.system(size: 42, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
+
+            Text("Your saved phrases, foods, drinks, and places for your trip.")
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineSpacing(2)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.top, 76)
+    }
+
+    private func sectionRail(scrollProxy: ScrollViewProxy) -> some View {
+        GeometryReader { proxy in
+            let cardWidth = SavedTripLayout.sectionCardWidth(containerWidth: proxy.size.width)
+
+            ScrollViewReader { railProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: SavedTripLayout.sectionCardSpacing) {
+                        ForEach(snapshot.railItems) { item in
+                            SavedTripSectionImageCard(
+                                item: item,
+                                isSelected: resolvedCurrentSectionID == item.id,
+                                action: { jumpToSection(item.id) }
+                            )
+                            .frame(width: cardWidth)
+                            .id(Self.railScrollID(for: item.id))
+                        }
+                    }
+                    .padding(.leading, SavedTripLayout.horizontalPadding)
+                    .padding(.trailing, SavedTripLayout.horizontalPadding)
+                    .padding(.bottom, 2)
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+                .onChange(of: resolvedCurrentSectionID) { _, sectionID in
+                    withAnimation(.snappy(duration: 0.24)) {
+                        railProxy.scrollTo(Self.railScrollID(for: sectionID), anchor: .leading)
+                    }
+                }
+            }
+        }
+        .frame(height: SavedTripLayout.sectionCardHeight)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: SavedTripRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
+    }
+
+    private var sectionedSavedItems: some View {
+        LazyVStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(snapshot.sections.enumerated()), id: \.element.id) { index, section in
+                Color.clear
+                    .frame(width: 1, height: 1)
+                    .id(Self.sectionAnchorID(for: section.id))
+                    .accessibilityHidden(true)
+
+                SavedTripSectionBlock(
+                    section: section,
+                    onOpenDetail: onOpenDetail,
+                    onToggleSaved: { item in intentStore.toggleSavedPage(item.pageID) }
+                )
+                .padding(.top, index == 0 ? 0 : SavedTripLayout.sectionSpacing)
+                .background {
+                    GeometryReader { proxy in
+                        Color.clear.preference(
+                            key: SavedTripSectionFramePreferenceKey.self,
+                            value: [
+                                SavedTripSectionFrame(
+                                    id: section.id,
+                                    order: index,
+                                    minY: proxy.frame(in: .global).minY
+                                ),
+                            ]
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private var savedEmptyState: some View {
@@ -3000,11 +3309,11 @@ struct SavedPagesView: View {
                     .nativeGlass(cornerRadius: 23, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Save useful phrases as you explore")
+                    Text("Save what matters for your trip")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Browse the catalog, then tap the heart on a phrase page to keep it here.")
+                    Text("Browse Vietnam, then tap the heart on phrases, foods, and drinks to keep them here.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
@@ -3015,6 +3324,413 @@ struct SavedPagesView: View {
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
+    }
+
+    private func jumpToSection(_ sectionID: String) {
+        let validIDs = Set(snapshot.railItems.map(\.id))
+        guard validIDs.contains(sectionID) else {
+            return
+        }
+
+        currentSectionID = sectionID
+        pendingSectionJumpSectionID = sectionID
+        pendingSectionJumpID += 1
+    }
+
+    @MainActor
+    private func performPendingSectionJump(_ scrollProxy: ScrollViewProxy) async {
+        guard pendingSectionJumpID > 0, let pendingSectionJumpSectionID else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: SavedTripLayout.sectionJumpDelayNanoseconds)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        let target = pendingSectionJumpSectionID == "all"
+            ? Self.savedContentTopID
+            : Self.sectionAnchorID(for: pendingSectionJumpSectionID)
+
+        withAnimation(.snappy(duration: 0.32)) {
+            scrollProxy.scrollTo(
+                target,
+                anchor: UnitPoint(x: 0.5, y: SavedTripLayout.sectionJumpViewportAnchorY)
+            )
+        }
+    }
+
+    private func updateCurrentSection(from frames: [SavedTripSectionFrame]) {
+        guard !frames.isEmpty else {
+            return
+        }
+
+        let sortedFrames = frames.sorted { lhs, rhs in
+            if lhs.order == rhs.order {
+                return lhs.minY < rhs.minY
+            }
+
+            return lhs.order < rhs.order
+        }
+        let activeFrames = sortedFrames.filter { $0.minY <= SavedTripLayout.sectionActivationY }
+        let selectedID = activeFrames.max { $0.minY < $1.minY }?.id ?? "all"
+
+        if currentSectionID != selectedID {
+            currentSectionID = selectedID
+        }
+    }
+
+    private func refreshPracticeReadyCount(for pageIDs: [String]) async {
+        let count = await Task.detached(priority: .userInitiated) {
+            (try? SavedTripPracticeCatalog.items(for: pageIDs).count) ?? 0
+        }.value
+
+        await MainActor.run {
+            guard pageIDs == intentStore.savedPageIDs else {
+                return
+            }
+
+            practiceReadyCount = count
+        }
+    }
+
+    private static func railScrollID(for sectionID: String) -> String {
+        "saved-rail-\(sectionID)"
+    }
+
+    private static func sectionAnchorID(for sectionID: String) -> String {
+        "saved-section-anchor-\(sectionID)"
+    }
+}
+
+private enum SavedTripLayout {
+    static let horizontalPadding: CGFloat = 20
+    static let sectionSpacing: CGFloat = 22
+    static let sectionTitleToRowsSpacing: CGFloat = 20
+    static let sectionCardSpacing: CGFloat = 12
+    static let sectionCardHeight: CGFloat = 154
+    static let sectionImageHeight: CGFloat = 96
+    static let practiceUnlockCount = 4
+    static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 280
+    static let sectionJumpViewportAnchorY: CGFloat = 0.19
+    static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
+    static let glassRailRevealY: CGFloat = 72
+
+    static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
+        max(132, min(164, (containerWidth - horizontalPadding * 2 - sectionCardSpacing * 1.5) / 2.35))
+    }
+}
+
+private struct SavedTripPracticeCard: View {
+    let practiceReadyCount: Int
+    let totalSavedCount: Int
+    let onStart: () -> Void
+    let onBrowse: () -> Void
+
+    private var canStart: Bool {
+        practiceReadyCount >= SavedTripLayout.practiceUnlockCount
+    }
+
+    private var remainingCount: Int {
+        max(0, SavedTripLayout.practiceUnlockCount - practiceReadyCount)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 14) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(
+                            LinearGradient(
+                                colors: [Color.red.opacity(0.16), Color.red.opacity(0.04)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 72, height: 72)
+                        .rotationEffect(.degrees(-4))
+
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(.white.opacity(0.82))
+                        .frame(width: 54, height: 54)
+                        .shadow(color: Color.red.opacity(0.14), radius: 10, x: 0, y: 7)
+
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 24, weight: .black))
+                        .foregroundStyle(.red)
+                }
+                .frame(width: 84, height: 78)
+                .accessibilityHidden(true)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(canStart ? "Practice your saved items" : "Save 4 items to unlock practice")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Text(canStart ? "Review the things you saved." : "Saved phrases, foods, and drinks become match rounds.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .layoutPriority(1)
+            }
+
+            Button(action: canStart ? onStart : onBrowse) {
+                HStack {
+                    Text(canStart ? "Start Practicing" : (totalSavedCount == 0 ? "Browse Vietnam" : "Save \(remainingCount) more"))
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+
+                    Spacer(minLength: 8)
+
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+                }
+                .padding(.horizontal, 18)
+                .frame(maxWidth: .infinity)
+                .frame(height: 48)
+                .background(Color.red, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier(canStart ? "SavedTrip.Practice.Start" : "SavedTrip.Practice.Browse")
+        }
+        .padding(16)
+        .background(
+            LinearGradient(
+                colors: [Color.red.opacity(0.11), Color.white.opacity(0.78)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ),
+            in: RoundedRectangle(cornerRadius: 22, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .stroke(.white.opacity(0.82), lineWidth: 1)
+                .allowsHitTesting(false)
+        }
+        .shadow(color: Color.red.opacity(0.045), radius: 18, x: 0, y: 10)
+    }
+}
+
+private struct SavedTripSectionImageCard: View {
+    let item: SavedTripRailItem
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 0) {
+                if let imageName = item.imageName {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: SavedTripLayout.sectionImageHeight)
+                        .frame(maxWidth: .infinity)
+                        .clipped()
+                } else {
+                    ZStack {
+                        item.tintName.color.opacity(0.10)
+
+                        Image(systemName: item.symbolName)
+                            .font(.system(size: 30, weight: .black))
+                            .foregroundStyle(item.tintName.color)
+                    }
+                    .frame(height: SavedTripLayout.sectionImageHeight)
+                    .frame(maxWidth: .infinity)
+                }
+
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(item.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.72)
+                }
+                .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
+                .background(.white.opacity(0.96))
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .allowsHitTesting(false)
+            }
+            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier("SavedTrip.SectionRail.\(item.id)")
+    }
+}
+
+private struct SavedTripSectionBlock: View {
+    let section: SavedTripSection
+    let onOpenDetail: (String) -> Void
+    let onToggleSaved: (SavedTripItem) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: SavedTripLayout.sectionTitleToRowsSpacing) {
+            Text(section.title)
+                .font(.title2.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("SavedTrip.SectionTitle.\(section.id)")
+
+            VStack(spacing: 0) {
+                ForEach(section.items) { item in
+                    SavedTripItemRow(
+                        item: item,
+                        onOpenDetail: { onOpenDetail(item.pageID) },
+                        onToggleSaved: { onToggleSaved(item) }
+                    )
+
+                    if item.id != section.items.last?.id {
+                        Divider().padding(.leading, 86)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
+        }
+    }
+}
+
+private struct SavedTripItemRow: View {
+    let item: SavedTripItem
+    let onOpenDetail: () -> Void
+    let onToggleSaved: () -> Void
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Button(action: onOpenDetail) {
+                HStack(spacing: 14) {
+                    thumbnail
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.title)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.74)
+
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("SavedTrip.Row.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "SavedTrip.Audio.\(item.pageID)"
+            )
+
+            Button(action: onToggleSaved) {
+                Image(systemName: "heart.fill")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.red)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Remove from Saved")
+            .accessibilityIdentifier("SavedTrip.Unsave.\(item.pageID)")
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+    }
+
+    @ViewBuilder
+    private var thumbnail: some View {
+        if let imageName = item.imageName {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 62, height: 62)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                }
+                .accessibilityHidden(true)
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(item.tintName.color.opacity(0.10))
+
+                Image(systemName: item.symbolName)
+                    .font(.system(size: 22, weight: .black))
+                    .foregroundStyle(item.tintName.color)
+            }
+            .frame(width: 62, height: 62)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+struct SavedTripSectionJumpRequest: Equatable {
+    let requestID: Int
+    let sectionID: String
+}
+
+struct SavedTripSectionChromeItem: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+}
+
+struct SavedTripSectionChromeState: Equatable {
+    let currentSectionID: String
+    let isPinned: Bool
+    let sections: [SavedTripSectionChromeItem]
+}
+
+struct SavedTripSectionChromePreferenceKey: PreferenceKey {
+    static var defaultValue: [SavedTripSectionChromeState] = []
+
+    static func reduce(value: inout [SavedTripSectionChromeState], nextValue: () -> [SavedTripSectionChromeState]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct SavedTripSectionFrame: Equatable {
+    let id: String
+    let order: Int
+    let minY: CGFloat
+}
+
+private struct SavedTripSectionFramePreferenceKey: PreferenceKey {
+    static var defaultValue: [SavedTripSectionFrame] = []
+
+    static func reduce(value: inout [SavedTripSectionFrame], nextValue: () -> [SavedTripSectionFrame]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct SavedTripRailFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect?
+
+    static func reduce(value: inout CGRect?, nextValue: () -> CGRect?) {
+        value = nextValue() ?? value
     }
 }
 
@@ -3992,12 +4708,12 @@ private struct HomePracticeStarter: Identifiable {
             action: .practiceSource("quick")
         ),
         HomePracticeStarter(
-            id: "saved",
-            title: "Saved",
-            subtitle: "Practice what you kept",
-            symbolName: "heart.fill",
+            id: "practice",
+            title: "Practice pool",
+            subtitle: "Your added phrases",
+            symbolName: "bookmark.fill",
             tint: .red,
-            action: .practiceSource("saved")
+            action: .practiceSource("practice")
         ),
         HomePracticeStarter(
             id: "food-drinks",

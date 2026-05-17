@@ -302,7 +302,7 @@ final class AdminChromeUITests: XCTestCase {
 
         scrollToHomePracticeRail(in: app)
         assertHomePracticeStarterVisible(app: app, id: "quick")
-        assertHomePracticeStarterVisible(app: app, id: "saved")
+        assertHomePracticeStarterVisible(app: app, id: "practice")
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-practice-starters-visible.png")
 
         revealHomePracticeStarter(app: app, id: "food-drinks")

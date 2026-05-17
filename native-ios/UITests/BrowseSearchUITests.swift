@@ -144,7 +144,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 4))
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
@@ -249,6 +249,31 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(drinks.staticTexts["14"].exists)
         XCTAssertFalse(drinks.staticTexts["iced, black, milk"].exists)
         drinks.terminate()
+    }
+
+    func testVietnameseMenuRowSaveAddsItemToSavedTrip() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu", "--reset-demo-state"])
+
+        XCTAssertTrue(app.staticTexts["Vietnamese drinks"].waitForExistence(timeout: 4))
+        tapHorizontalCard(
+            app.buttons["VietnameseMenu.SectionRail.coffee"],
+            app: app,
+            scrollAnchor: app.buttons["VietnameseMenu.SectionRail.popular"]
+        )
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.coffee"].waitForExistence(timeout: 3))
+
+        let saveButton = app.buttons["VietnameseMenu.Save.viet-menu-drink-ca-phe-sua-nong"]
+        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
+        tapWhenVisible(saveButton, app: app)
+        XCTAssertEqual(saveButton.label, "Remove from Saved")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        let savedCoffee = app.buttons["SavedTrip.Row.viet-menu-drink-ca-phe-sua-nong"]
+        scrollUntilHittable(savedCoffee, app: app)
+        XCTAssertTrue(app.staticTexts["Cà phê sữa nóng"].exists)
+        XCTAssertTrue(app.staticTexts["Hot Vietnamese milk coffee"].exists)
     }
 
     func testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff() {

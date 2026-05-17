@@ -298,6 +298,10 @@ final class LocalUserIntentStore: ObservableObject {
     private static let returningUserShelfSeedSavedPageIDs = LocalUserIntentStore.canonicalizedPageIDs([
         "viet-phrase-polite-2",
         "viet-phrase-problems-2",
+        "viet-menu-drink-ca-phe-sua-da",
+        "viet-menu-drink-ca-phe-den-da",
+        "viet-menu-drink-nuoc-mia",
+        "viet-menu-drink-tra-da",
     ])
 
     private static let returningUserShelfSeedPracticePageIDs = LocalUserIntentStore.canonicalizedPageIDs([
@@ -308,4 +312,328 @@ final class LocalUserIntentStore: ObservableObject {
         "viet-phrase-hello-chao-em",
     ])
 #endif
+}
+
+// MARK: - Saved Trip
+
+enum SavedTripSectionKind: String, CaseIterable, Equatable, Identifiable {
+    case phrases
+    case food
+    case drinks
+    case places
+    case cities
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .phrases:
+            return "Phrases"
+        case .food:
+            return "Food"
+        case .drinks:
+            return "Drinks"
+        case .places:
+            return "Places"
+        case .cities:
+            return "Cities"
+        }
+    }
+
+    var singularLabel: String {
+        switch self {
+        case .phrases:
+            return "Phrase"
+        case .food:
+            return "Food"
+        case .drinks:
+            return "Drink"
+        case .places:
+            return "Place"
+        case .cities:
+            return "City"
+        }
+    }
+
+    var symbolName: String {
+        switch self {
+        case .phrases:
+            return "text.bubble.fill"
+        case .food:
+            return "fork.knife"
+        case .drinks:
+            return "cup.and.saucer.fill"
+        case .places:
+            return "mappin.and.ellipse"
+        case .cities:
+            return "building.2.fill"
+        }
+    }
+
+    var tintName: AccentTint {
+        switch self {
+        case .phrases:
+            return .red
+        case .food:
+            return .orange
+        case .drinks:
+            return .teal
+        case .places:
+            return .green
+        case .cities:
+            return .blue
+        }
+    }
+}
+
+struct SavedTripItem: Identifiable, Equatable {
+    let pageID: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tintName: AccentTint
+    let audioKey: String?
+    let imageName: String?
+    let kind: SavedTripSectionKind
+
+    var id: String { pageID }
+
+    var categoryLabel: String {
+        kind.singularLabel
+    }
+}
+
+struct SavedTripSection: Identifiable, Equatable {
+    let kind: SavedTripSectionKind
+    let items: [SavedTripItem]
+
+    var id: String { kind.id }
+    var title: String { kind.title }
+    var symbolName: String { kind.symbolName }
+    var tintName: AccentTint { kind.tintName }
+    var countLabel: String { "\(items.count) \(items.count == 1 ? "item" : "items")" }
+    var featuredImageName: String? { items.first(where: { $0.imageName != nil })?.imageName }
+}
+
+struct SavedTripRailItem: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let countLabel: String
+    let symbolName: String
+    let tintName: AccentTint
+    let imageName: String?
+}
+
+struct SavedTripSnapshot: Equatable {
+    let sections: [SavedTripSection]
+    let practiceReadyCount: Int
+
+    var totalItemCount: Int {
+        sections.reduce(0) { $0 + $1.items.count }
+    }
+
+    var railItems: [SavedTripRailItem] {
+        guard totalItemCount > 0 else {
+            return []
+        }
+
+        return [
+            SavedTripRailItem(
+                id: "all",
+                title: "All",
+                countLabel: "\(totalItemCount) \(totalItemCount == 1 ? "item" : "items")",
+                symbolName: "heart.fill",
+                tintName: .red,
+                imageName: sections.lazy.flatMap(\.items).first(where: { $0.imageName != nil })?.imageName
+            ),
+        ] + sections.map { section in
+            SavedTripRailItem(
+                id: section.id,
+                title: section.title,
+                countLabel: section.countLabel,
+                symbolName: section.symbolName,
+                tintName: section.tintName,
+                imageName: section.featuredImageName
+            )
+        }
+    }
+
+    static func make(savedPageIDs: [String], practiceReadyCount: Int = 0) -> SavedTripSnapshot {
+        var seenPageIDs = Set<String>()
+        let items = savedPageIDs.compactMap { pageID -> SavedTripItem? in
+            guard let item = SavedTripResolver.item(for: pageID) else {
+                return nil
+            }
+            guard seenPageIDs.insert(item.pageID).inserted else {
+                return nil
+            }
+
+            return item
+        }
+
+        let sections = SavedTripSectionKind.allCases.compactMap { kind -> SavedTripSection? in
+            let sectionItems = items.filter { $0.kind == kind }
+            guard !sectionItems.isEmpty else {
+                return nil
+            }
+
+            return SavedTripSection(kind: kind, items: sectionItems)
+        }
+
+        return SavedTripSnapshot(
+            sections: sections,
+            practiceReadyCount: practiceReadyCount
+        )
+    }
+
+    static func load(savedPageIDs: [String]) throws -> SavedTripSnapshot {
+        let practiceItems = try SavedTripPracticeCatalog.items(for: savedPageIDs)
+        return make(savedPageIDs: savedPageIDs, practiceReadyCount: practiceItems.count)
+    }
+}
+
+struct SavedTripPracticeItem: Identifiable, Equatable {
+    let pageID: String
+    let vietnamese: String
+    let english: String
+    let audioKey: String?
+    let symbolName: String
+    let tintName: AccentTint
+    let kind: SavedTripSectionKind
+
+    var id: String { pageID }
+}
+
+enum SavedTripPracticeCatalog {
+    static func items(for savedPageIDs: [String]) throws -> [SavedTripPracticeItem] {
+        var repository: VietSQLiteLanguagePackRepository?
+        var seenPageIDs = Set<String>()
+        var seenVietnamese = Set<String>()
+        var seenEnglish = Set<String>()
+        var items: [SavedTripPracticeItem] = []
+
+        func phraseRepository() throws -> VietSQLiteLanguagePackRepository {
+            if let repository {
+                return repository
+            }
+
+            let loadedRepository = try VietSQLiteLanguagePackRepository.bundled()
+            repository = loadedRepository
+            return loadedRepository
+        }
+
+        func append(_ item: SavedTripPracticeItem?) {
+            guard let item else {
+                return
+            }
+            guard item.vietnamese.count <= 54, item.english.count <= 70 else {
+                return
+            }
+            guard item.vietnamese.split(separator: " ").count <= 9,
+                  item.english.split(separator: " ").count <= 11
+            else {
+                return
+            }
+            guard seenPageIDs.insert(item.pageID).inserted,
+                  seenVietnamese.insert(item.vietnamese.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)).inserted,
+                  seenEnglish.insert(item.english.lowercased()).inserted
+            else {
+                return
+            }
+
+            items.append(item)
+        }
+
+        for pageID in savedPageIDs {
+            if let menuItem = SavedTripResolver.menuPracticeItem(for: pageID) {
+                append(menuItem)
+                continue
+            }
+
+            let candidates = try phraseRepository().loadPracticeCandidates(pageIDs: [pageID], limit: 4)
+            append(candidates.compactMap(SavedTripResolver.practiceItem(for:)).first)
+        }
+
+        return items
+    }
+}
+
+private enum SavedTripResolver {
+    static func item(for pageID: String) -> SavedTripItem? {
+        if let menuItem = VietnameseMenuCatalog.detailItem(withPageID: pageID),
+           let kind = savedKind(for: menuItem.kind) {
+            return SavedTripItem(
+                pageID: menuItem.detailPageID,
+                title: menuItem.vietnameseItem,
+                subtitle: menuItem.englishTranslation,
+                symbolName: kind.symbolName,
+                tintName: menuItem.kind?.tintName ?? kind.tintName,
+                audioKey: AudioAssetManifest.main?.audioKey(forExactText: menuItem.vietnameseItem),
+                imageName: menuItem.menuImageName,
+                kind: kind
+            )
+        }
+
+        guard let item = BrowseSearchPhraseItem.resolve(pageID: pageID) else {
+            return nil
+        }
+
+        return SavedTripItem(
+            pageID: item.pageID,
+            title: item.title,
+            subtitle: item.subtitle,
+            symbolName: item.symbolName,
+            tintName: item.tintName,
+            audioKey: item.audioKey,
+            imageName: item.imageName,
+            kind: .phrases
+        )
+    }
+
+    static func menuPracticeItem(for pageID: String) -> SavedTripPracticeItem? {
+        guard let menuItem = VietnameseMenuCatalog.detailItem(withPageID: pageID),
+              let kind = savedKind(for: menuItem.kind)
+        else {
+            return nil
+        }
+
+        return SavedTripPracticeItem(
+            pageID: menuItem.detailPageID,
+            vietnamese: menuItem.vietnameseItem.trimmingCharacters(in: .whitespacesAndNewlines),
+            english: menuItem.englishTranslation.trimmingCharacters(in: .whitespacesAndNewlines),
+            audioKey: AudioAssetManifest.main?.audioKey(forExactText: menuItem.vietnameseItem),
+            symbolName: kind.symbolName,
+            tintName: menuItem.kind?.tintName ?? kind.tintName,
+            kind: kind
+        )
+    }
+
+    static func practiceItem(for candidate: PracticeCandidate) -> SavedTripPracticeItem? {
+        let vietnamese = candidate.vietnamese.trimmingCharacters(in: .whitespacesAndNewlines)
+        let english = candidate.english.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !vietnamese.isEmpty, !english.isEmpty else {
+            return nil
+        }
+
+        return SavedTripPracticeItem(
+            pageID: candidate.pageID,
+            vietnamese: vietnamese,
+            english: english,
+            audioKey: candidate.playableAudioKey,
+            symbolName: candidate.symbolName,
+            tintName: candidate.tintName,
+            kind: .phrases
+        )
+    }
+
+    private static func savedKind(for menuKind: VietnameseMenuKind?) -> SavedTripSectionKind? {
+        switch menuKind {
+        case .food:
+            return .food
+        case .drink:
+            return .drinks
+        case nil:
+            return nil
+        }
+    }
 }
