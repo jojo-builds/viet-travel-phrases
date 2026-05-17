@@ -25,7 +25,7 @@ final class PracticeUITests: XCTestCase {
         quickButton.tap()
 
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["0 / 4"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["0 of 4"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.buttons["Xin chào"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.buttons["Cảm ơn"].exists)
         XCTAssertTrue(app.buttons["Hello"].exists)
@@ -40,12 +40,14 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(savedPracticeButton.waitForExistence(timeout: 8))
         XCTAssertTrue(app.staticTexts["Practice Saved"].exists)
         XCTAssertTrue(app.staticTexts["6 practice-ready"].exists)
-        XCTAssertFalse(app.buttons["Practice.Match.Source.practice"].exists)
+        XCTAssertTrue(app.buttons["Practice.Match.Source.practice"].exists)
+        XCTAssertTrue(app.staticTexts["My practice phrases"].exists)
+        XCTAssertTrue(app.staticTexts["5 practice-ready"].exists)
 
         savedPracticeButton.tap()
 
         XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["0 / 4"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["0 of 4"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
 
