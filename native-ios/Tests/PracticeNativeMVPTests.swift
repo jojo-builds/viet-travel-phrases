@@ -223,6 +223,10 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:first-day" }?.items.count ?? 0, 40)
         XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:taxi-directions" }?.items.count ?? 0, 40)
         XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:danang-city" }?.items.count ?? 0, 20)
+
+        let foodSource = try XCTUnwrap(snapshot.topicSources.first { $0.id == "topic:food-drinks" })
+        XCTAssertGreaterThanOrEqual(foodSource.imageBackedItems.count, PracticeMatchRound.pairCount)
+        XCTAssertTrue(foodSource.imageBackedItems.contains { $0.pageID.hasPrefix("viet-menu-") })
     }
 
     func testAirportBrowsePracticeStarterCanOpenMatchRound() throws {
@@ -270,6 +274,36 @@ final class PracticeNativeMVPTests: XCTestCase {
 
         XCTAssertEqual(Set(promptPairIDs), Set(answerPairIDs))
         XCTAssertNotEqual(promptPairIDs, answerPairIDs)
+    }
+
+    func testMatchRoundRotatesThroughImageAndAudioModesWhenImagesExist() throws {
+        let source = makeMatchSource(itemCount: 16, imageEvery: 1)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 13)
+
+        let firstRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 0, rng: &generator))
+        let imageRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 1, rng: &generator))
+        let listeningRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 2, rng: &generator))
+        let audioImageRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 3, rng: &generator))
+
+        XCTAssertEqual(firstRound.mode, .phraseToMeaning)
+        XCTAssertEqual(imageRound.mode, .imageToPhrase)
+        XCTAssertEqual(listeningRound.mode, .audioToMeaning)
+        XCTAssertEqual(audioImageRound.mode, .audioToImage)
+        XCTAssertTrue(imageRound.pairs.allSatisfy { $0.item.imageName != nil })
+        XCTAssertTrue(audioImageRound.pairs.allSatisfy { $0.item.imageName != nil })
+    }
+
+    func testMatchRoundSkipsImageModesWhenSourceHasNoImages() throws {
+        let source = makeMatchSource(itemCount: 16)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 14)
+
+        let firstRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 0, rng: &generator))
+        let secondRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 1, rng: &generator))
+        let thirdRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 2, rng: &generator))
+
+        XCTAssertEqual(firstRound.mode, .phraseToMeaning)
+        XCTAssertEqual(secondRound.mode, .audioToMeaning)
+        XCTAssertEqual(thirdRound.mode, .phraseToMeaning)
     }
 
     func testMatchRoundAvoidsImmediateRepeatsWhenSourceHasEnoughItems() throws {
@@ -360,7 +394,7 @@ final class PracticeNativeMVPTests: XCTestCase {
         return LocalPracticeProgressStore(defaults: defaults)
     }
 
-    private func makeMatchSource(itemCount: Int) -> PracticeMatchSource {
+    private func makeMatchSource(itemCount: Int, imageEvery: Int? = nil) -> PracticeMatchSource {
         PracticeMatchSource(
             id: "topic:essentials",
             kind: .topic,
@@ -375,7 +409,8 @@ final class PracticeNativeMVPTests: XCTestCase {
                     english: "Phrase \(index)",
                     audioKey: "viet-test-practice-\(index)",
                     symbolName: "sparkles",
-                    tint: .red
+                    tint: .red,
+                    imageName: imageEvery.flatMap { index % $0 == 0 ? "HeroMenuFoodPhoBo" : nil }
                 )
             }
         )
