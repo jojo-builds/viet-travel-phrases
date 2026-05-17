@@ -30,7 +30,7 @@ First version decisions:
 - MVP active recall is deliberate but bounded: users must retrieve meaning, use-case, social role, or next action before seeing feedback. Hold full phrase-construction `Build It` for the first post-MVP iteration unless a follow-up deck/audio generator task proves token sequencing and token audio are release-clean.
 - Use a `Practice` destination from home/quick access plus contextual `Practice this` actions on listing pages. Wait on a permanent fourth bottom-chrome item until simulator/device proof says it improves navigation instead of crowding the app shell.
 - Use the mascot sparingly as a guide, hint, completion, or cultural-note layer. In health, emergency, safety, and money-dispute contexts, keep the mascot neutral or absent.
-- Default sessions should be short: `5` prompts for a deck, `3` to `5` prompts from a single listing page, with `Keep going` after completion.
+- Default sessions should be short and continuous: compact `4`-pair match rounds or `3` to `5` prompts from a single listing page, with `Next round` / `Keep going` after completion instead of a hard lesson stop.
 - Missed-phrase review should be available as its own deck and also suggested after a session. It should never feel like punishment.
 
 ## Why this matters
@@ -420,17 +420,16 @@ Recommended first version:
   - recent;
   - missed/retry.
 - Add Saved/recent phrase decks once saved/recent page ID persistence exists; add `My practice phrases` as soon as the add/remove pool exists.
-- End every session with:
-  - practiced count;
-  - missed count;
-  - replay missed;
-  - open source page;
-  - continue category.
+- End a compact round with a restrained success moment, a recap of what was matched, and `Next round` as the primary action. Avoid dead-end copy such as `Back to Practice` after a successful round.
+- Let contextual Practice starts dismiss cleanly back to the originating Home, Browse, Saved, city, menu, or phrase surface. Inside an active Practice layer, the close button exits the layer; any back affordance inside the layer should mean previous round/card, not app-level navigation.
 
 Session design:
 
-- Default deck length: `5` prompts.
+- Default match length: `4` pairs.
+- Default deck length: `5` prompts when using prompt-based decks.
 - Listing page deck length: `3` to `5` prompts.
+- Match rounds use controlled random selection from the full eligible source, avoid immediate repeats when enough items exist, and softly cycle through the pool. Do not expose `80 remaining`, mastery percentages, XP, streaks, lives, or course-map progress.
+- Use subtle progress indicators, such as small dots or the solved card state itself. Avoid visible `0 of 4` text when the board already communicates completion.
 - No visible countdown timer in MVP.
 - No lives, hearts, or streak-blocking UI.
 - Let users stop after any prompt without penalty.
