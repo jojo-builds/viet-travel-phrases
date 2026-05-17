@@ -30,8 +30,10 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
-    @State private var isSystemSearchPresented = false
     @State private var searchFocusRequestID = 0
+    @State private var isSearchFieldFocused = false
+    @State private var searchReturnFocusRequestID = 0
+    @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
     @State private var didApplyLaunchSearchFocus = false
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeSourceID: String?
@@ -60,7 +62,6 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
     private let launchPracticeEntryContext: PracticeEntryContext
@@ -110,16 +111,6 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
-        .searchable(
-            text: $searchQuery,
-            isPresented: systemSearchPresentation,
-            placement: .automatic,
-            prompt: "Search Vietnamese phrases"
-        )
-        .searchFocused($isSearchFieldFocused)
-        .textInputAutocapitalization(.never)
-        .autocorrectionDisabled()
-        .tabViewSearchActivation(.searchTabSelection)
     }
 
     @ViewBuilder
@@ -280,7 +271,9 @@ struct AppShellView: View {
                     SearchPageView(
                         query: $searchQuery,
                         isFieldFocused: isSearchFieldFocused,
+                        returnFocusRequest: searchReturnFocusRequest,
                         onClose: closeSearch,
+                        onPrepareReturnFocus: prepareSearchReturnFocus,
                         onOpenDetail: openDetailFromSearch,
                         onOpenCollection: openBrowseCollectionFromSearch,
                         onSearchQuery: openSearchQuery,
@@ -427,29 +420,6 @@ struct AppShellView: View {
             },
             set: { tab in
                 selectSystemTab(tab)
-            }
-        )
-    }
-
-    private var systemSearchPresentation: Binding<Bool> {
-        Binding(
-            get: {
-                navigation.isSearchPresented && isSystemSearchPresented
-            },
-            set: { isPresented in
-                if isPresented {
-                    isSystemSearchPresented = true
-                    if !navigation.isSearchPresented {
-                        openSearch(prefilledQuery: nil, focusField: false)
-                    }
-                } else {
-                    cancelSearchFocus()
-                    if navigation.isSearchPresented {
-                        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
-                            navigation.goBack()
-                        }
-                    }
-                }
             }
         )
     }
@@ -736,7 +706,9 @@ struct AppShellView: View {
             SearchPageView(
                 query: $searchQuery,
                 isFieldFocused: isSearchFieldFocused,
+                returnFocusRequest: searchReturnFocusRequest,
                 onClose: closeSearch,
+                onPrepareReturnFocus: prepareSearchReturnFocus,
                 onOpenDetail: openDetailFromSearch,
                 onOpenCollection: openBrowseCollectionFromSearch,
                 onSearchQuery: openSearchQuery,
@@ -1465,11 +1437,13 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
         prepareHomeScrollRestoration()
+        if !navigation.isSearchPresented {
+            searchReturnFocusRequest = nil
+        }
         if let prefilledQuery {
             searchQuery = prefilledQuery
         }
 
-        isSystemSearchPresented = true
         if !focusField {
             isSearchFieldFocused = false
         }
@@ -1480,9 +1454,15 @@ struct AppShellView: View {
 
         if focusField {
             focusSearchField()
-        } else {
-            defocusSearchFieldAfterPresentation()
         }
+    }
+
+    private func prepareSearchReturnFocus(_ scrollID: String) {
+        searchReturnFocusRequestID += 1
+        searchReturnFocusRequest = SearchReturnFocusRequest(
+            id: searchReturnFocusRequestID,
+            scrollID: scrollID
+        )
     }
 
     private func closeSearch() {
@@ -1493,29 +1473,9 @@ struct AppShellView: View {
         }
     }
 
-    private func defocusSearchFieldAfterPresentation() {
-        searchFocusRequestID += 1
-        let requestID = searchFocusRequestID
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 260_000_000)
-
-            guard
-                requestID == searchFocusRequestID,
-                navigation.isSearchPresented,
-                isSystemSearchPresented
-            else {
-                return
-            }
-
-            isSearchFieldFocused = false
-        }
-    }
-
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
-        isSystemSearchPresented = true
         isSearchFieldFocused = true
 
         Task { @MainActor in
@@ -1544,7 +1504,6 @@ struct AppShellView: View {
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
-        isSystemSearchPresented = false
         isSearchFieldFocused = false
     }
 
@@ -1913,6 +1872,10 @@ struct AppShellNavigationState: Equatable {
             return routeBelowSearch
         }
 
+        if let searchResultBackPreviewRoute {
+            return searchResultBackPreviewRoute
+        }
+
         if !detailPath.isEmpty {
             guard detailPath.count > 1 else {
                 if let collectionRoute = browseCollectionPath.last {
@@ -1939,6 +1902,42 @@ struct AppShellNavigationState: Equatable {
 
         if rootRoute == .browse || rootRoute == .phrasePage || rootRoute == .saved || rootRoute == .practice {
             return .home
+        }
+
+        return nil
+    }
+
+    private var searchResultBackPreviewRoute: AppRoute? {
+        guard let snapshot = backStack.last, snapshot.isSearchPresented else {
+            return nil
+        }
+
+        if !detailPath.isEmpty {
+            guard
+                rootRoute == snapshot.rootRoute,
+                browseCollectionPath == snapshot.browseCollectionPath,
+                Array(detailPath.dropLast()) == snapshot.detailPath
+            else {
+                return nil
+            }
+
+            return .search
+        }
+
+        guard !browseCollectionPath.isEmpty else {
+            return nil
+        }
+
+        if rootRoute == snapshot.rootRoute,
+           Array(browseCollectionPath.dropLast()) == snapshot.browseCollectionPath,
+           snapshot.detailPath.isEmpty {
+            return .search
+        }
+
+        if browseCollectionPath.count == snapshot.browseCollectionPath.count + 1,
+           Array(browseCollectionPath.dropLast()) == snapshot.browseCollectionPath,
+           !snapshot.detailPath.isEmpty {
+            return .search
         }
 
         return nil
@@ -2044,6 +2043,19 @@ struct AppShellNavigationState: Equatable {
         backStack.append(snapshot)
     }
 
+    private mutating func recordSearchRouteForBackHistoryIfNeeded() {
+        guard isSearchPresented else {
+            return
+        }
+
+        let snapshot = currentSnapshot
+        guard backStack.last != snapshot else {
+            return
+        }
+
+        backStack.append(snapshot)
+    }
+
     private mutating func restore(_ snapshot: AppShellNavigationSnapshot) {
         rootRoute = snapshot.rootRoute
         browseCollectionPath = snapshot.browseCollectionPath
@@ -2061,6 +2073,7 @@ struct AppShellNavigationState: Equatable {
                 return
             }
 
+            recordSearchRouteForBackHistoryIfNeeded()
             detailPath.removeAll()
             browseCollectionPath.removeAll()
             isSearchPresented = false
@@ -2084,6 +2097,7 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
+        recordSearchRouteForBackHistoryIfNeeded()
         isSearchPresented = false
         forwardStack.removeAll()
         detailPath.append(canonicalPageID)
@@ -2217,7 +2231,9 @@ struct AppShellNavigationState: Equatable {
             return
         }
 
-        if case .detailPage = originRoute, backStack.last != originSnapshot {
+        if isSearchPresented {
+            recordSearchRouteForBackHistoryIfNeeded()
+        } else if case .detailPage = originRoute, backStack.last != originSnapshot {
             backStack.append(originSnapshot)
         }
 
@@ -2243,6 +2259,7 @@ struct AppShellNavigationState: Equatable {
         guard !detailPath.isEmpty else {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
+                restoreSearchBackStackAfterPoppingCollectionIfNeeded()
                 restoreExplicitBackStackAfterPoppingCollectionIfNeeded()
                 return
             }
@@ -2278,6 +2295,43 @@ struct AppShellNavigationState: Equatable {
 
         let currentDetailID = detailPath.removeLast()
         forwardStack.append(.detailPage(currentDetailID))
+        restoreSearchBackStackAfterPoppingDetailIfNeeded()
+    }
+
+    private mutating func restoreSearchBackStackAfterPoppingDetailIfNeeded() {
+        guard let previousSnapshot = backStack.last, previousSnapshot.isSearchPresented else {
+            return
+        }
+
+        guard
+            rootRoute == previousSnapshot.rootRoute,
+            browseCollectionPath == previousSnapshot.browseCollectionPath,
+            detailPath == previousSnapshot.detailPath
+        else {
+            return
+        }
+
+        restore(backStack.removeLast())
+    }
+
+    private mutating func restoreSearchBackStackAfterPoppingCollectionIfNeeded() {
+        guard let previousSnapshot = backStack.last, previousSnapshot.isSearchPresented else {
+            return
+        }
+
+        if rootRoute == previousSnapshot.rootRoute,
+           browseCollectionPath == previousSnapshot.browseCollectionPath,
+           detailPath == previousSnapshot.detailPath {
+            restore(backStack.removeLast())
+            return
+        }
+
+        if rootRoute == previousSnapshot.rootRoute,
+           browseCollectionPath == previousSnapshot.browseCollectionPath,
+           detailPath.isEmpty,
+           !previousSnapshot.detailPath.isEmpty {
+            restore(backStack.removeLast())
+        }
     }
 
     private mutating func restoreExplicitBackStackAfterPoppingCollectionIfNeeded() {

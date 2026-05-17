@@ -916,6 +916,38 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(homeSearchNavigation.backPreviewRoute, .home)
     }
 
+    func testBackFromSearchPhraseResultRestoresSearchPage() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openSearch()
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-anh")])
+    }
+
+    func testBackFromSearchCollectionResultRestoresSearchPage() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openSearch()
+        navigation.openBrowseCollectionFromSearch(.category("hotel"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
+    }
+
     func testDuplicateCurrentDetailDoesNotRequestTopScroll() {
         var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
@@ -1085,7 +1117,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
-    func testOpeningDetailFromSearchClosesSearchAndStartsArticleRoute() {
+    func testOpeningDetailFromSearchCanBackReturnToSearch() {
         var navigation = AppShellNavigationState()
 
         navigation.openSearch()
@@ -1093,13 +1125,15 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertFalse(navigation.isSearchPresented)
         XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-repair-3"))
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
         XCTAssertEqual(navigation.detailPath, ["viet-phrase-repair-3"])
         XCTAssertTrue(navigation.forwardStack.isEmpty)
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 1)
 
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-repair-3")])
 
         navigation.goForward()
@@ -1108,7 +1142,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.forwardStack.isEmpty)
     }
 
-    func testOpeningBrowseCollectionFromSearchClosesSearchAndKeepsBrowseHistory() {
+    func testOpeningBrowseCollectionFromSearchCanBackReturnToSearchThenBrowse() {
         var navigation = AppShellNavigationState()
 
         navigation.openBrowse()
@@ -1117,21 +1151,28 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertFalse(navigation.isSearchPresented)
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
         XCTAssertEqual(navigation.browseCollectionPath, [.category("hotel")])
         XCTAssertTrue(navigation.forwardStack.isEmpty)
 
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel")), .search])
 
         navigation.goForward()
 
-        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
-        XCTAssertTrue(navigation.forwardStack.isEmpty)
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
     }
 
-    func testOpeningHomeCollectionFromSearchKeepsHomeBrowseHistory() {
+    func testOpeningHomeCollectionFromSearchCanBackReturnToSearchThenHomeRoute() {
         var navigation = AppShellNavigationState()
 
         navigation.openHomeBrowseCollection(.city("danang"))
@@ -1140,21 +1181,32 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertFalse(navigation.isSearchPresented)
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
         XCTAssertEqual(navigation.browseCollectionPath, [.city("danang"), .category("hotel")])
         XCTAssertTrue(navigation.forwardStack.isEmpty)
 
         navigation.goBack()
 
-        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
 
         navigation.goBack()
 
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel")), .search])
+
+        navigation.goBack()
+
         XCTAssertEqual(navigation.currentRoute, .home)
-        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel")), .browseCollection(.city("danang"))])
+        XCTAssertEqual(navigation.forwardStack, [
+            .browseCollection(.category("hotel")),
+            .search,
+            .browseCollection(.city("danang")),
+        ])
     }
 
-    func testOpeningCollectionFromDetailSearchCanBackReturnToDetail() {
+    func testOpeningCollectionFromDetailSearchCanBackReturnToSearchThenDetail() {
         var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
         navigation.openSearch()
@@ -1163,13 +1215,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(navigation.isSearchPresented)
         XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("hotel")))
         XCTAssertEqual(navigation.detailPath, [])
+        XCTAssertEqual(navigation.backPreviewRoute, .search)
         XCTAssertTrue(navigation.forwardStack.isEmpty)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .search)
+        XCTAssertTrue(navigation.isSearchPresented)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
 
         navigation.goBack()
 
         XCTAssertEqual(navigation.currentRoute, .detailPage("viet-phrase-hello-chao-anh"))
         XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh"])
-        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel"))])
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("hotel")), .search])
     }
 
     func testBrowseSearchDestinationsResolveToCanonicalPages() {
