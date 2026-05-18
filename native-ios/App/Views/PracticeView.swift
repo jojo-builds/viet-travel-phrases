@@ -4952,78 +4952,99 @@ private struct PracticeMatchRoundView: View {
     let onHint: () -> Void
     let onContinue: () -> Void
 
+    @State private var isTopicPickerPresented = false
+
     var body: some View {
         VStack(spacing: 0) {
             if session.isRoundComplete {
                 PracticeMatchCompletionView(
                     session: session,
                     intentStore: intentStore,
-                    sourceOptions: sourceOptions,
                     topContentClearance: topContentClearance,
-                    onClose: onClose,
-                    onPreviousRound: onPreviousRound,
-                    onSelectSource: onSelectSource,
                     onContinue: onContinue
                 )
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
-                VStack(spacing: 14) {
-                    PracticeMatchSheetHandle()
-                        .padding(.top, max(12, topContentClearance + 12))
+                ZStack(alignment: .top) {
+                    VStack(spacing: 12) {
+                        PracticeMatchSheetHandle()
+                            .padding(.top, max(8, topContentClearance + 8))
 
-                    PracticeMatchRoundHeader(
-                        session: session,
-                        sourceOptions: sourceOptions,
-                        onClose: onClose,
-                        onPreviousRound: onPreviousRound,
-                        onSelectSource: onSelectSource
-                    )
+                        PracticeMatchRoundHeader(
+                            session: session,
+                            isTopicPickerPresented: $isTopicPickerPresented,
+                            onClose: onClose,
+                            onPreviousRound: onPreviousRound
+                        )
 
-                    VStack(spacing: 7) {
-                        Text("Match the pairs")
-                            .font(.system(size: 28, weight: .black, design: .rounded))
-                            .foregroundStyle(.primary)
-                            .multilineTextAlignment(.center)
+                        VStack(spacing: 7) {
+                            Text("Match the pairs")
+                                .font(.system(size: 27, weight: .black, design: .rounded))
+                                .foregroundStyle(.primary)
+                                .multilineTextAlignment(.center)
 
-                        Text(session.round.mode.instruction)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
+                            Text(session.round.mode.instruction)
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                        }
+                        .padding(.top, 2)
+
+                        PracticeMatchBoardView(
+                            session: session,
+                            onSelectPrompt: onSelectPrompt,
+                            onSelectAnswer: onSelectAnswer
+                        )
+
+                        Button(action: onHint) {
+                            Label("Need a hint?", systemImage: "lightbulb.fill")
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(Color(red: 0.72, green: 0.44, blue: 0.05))
+                                .padding(.horizontal, 16)
+                                .frame(height: 38)
+                                .nativeGlass(
+                                    cornerRadius: 19,
+                                    tint: session.source.atmosphere.glow.opacity(0.34),
+                                    interactive: true
+                                )
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .accessibilityIdentifier("Practice.Match.Hint")
+
+                        if session.hintedPairID != nil {
+                            PracticeMatchHintNotice()
+                        }
+
+                        Spacer(minLength: 0)
+                    }
+                    .padding(.horizontal, PracticeLayout.horizontalPadding)
+                    .padding(.bottom, 12)
+                    .background {
+                        PracticeMatchSheetBackground(source: session.source, isComplete: false)
                     }
 
-                    PracticeMatchBoardView(
-                        session: session,
-                        onSelectPrompt: onSelectPrompt,
-                        onSelectAnswer: onSelectAnswer
-                    )
-
-                    Button(action: onHint) {
-                        Label("Need a hint?", systemImage: "lightbulb.fill")
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(Color(red: 0.72, green: 0.44, blue: 0.05))
-                            .padding(.horizontal, 16)
-                            .frame(height: 38)
-                            .nativeGlass(
-                                cornerRadius: 19,
-                                tint: session.source.atmosphere.glow.opacity(0.34),
-                                interactive: true
-                            )
+                    if isTopicPickerPresented {
+                        PracticeMatchTopicPickerOverlay(
+                            currentSourceID: session.source.id,
+                            sources: sourceOptions,
+                            onDismiss: {
+                                withAnimation(.spring(response: 0.24, dampingFraction: 0.88)) {
+                                    isTopicPickerPresented = false
+                                }
+                            },
+                            onSelectSource: { source in
+                                withAnimation(.spring(response: 0.24, dampingFraction: 0.88)) {
+                                    isTopicPickerPresented = false
+                                }
+                                onSelectSource(source)
+                            }
+                        )
+                        .padding(.top, max(88, topContentClearance + 88))
+                        .transition(.opacity.combined(with: .scale(scale: 0.98, anchor: .top)))
+                        .zIndex(2)
                     }
-                    .buttonStyle(.plain)
-                    .frame(maxWidth: .infinity)
-                    .accessibilityIdentifier("Practice.Match.Hint")
-
-                    if session.hintedPairID != nil {
-                        PracticeMatchHintNotice()
-                    }
-
-                    Spacer(minLength: 0)
-                }
-                .padding(.horizontal, PracticeLayout.horizontalPadding)
-                .padding(.bottom, 12)
-                .background {
-                    PracticeMatchSheetBackground(source: session.source, isComplete: false)
                 }
                 .transition(.opacity)
             }
@@ -5178,18 +5199,16 @@ private struct PracticeMatchSheetBackground: View {
                 .stroke(.white.opacity(0.54), lineWidth: 0.8)
         }
         .shadow(color: source.atmosphere.tint.opacity(0.14), radius: 28, x: 0, y: -10)
+        .padding(.horizontal, 8)
         .ignoresSafeArea(edges: .bottom)
     }
 }
 
 private struct PracticeMatchRoundHeader: View {
     let session: PracticeMatchActiveSession
-    let sourceOptions: [PracticeMatchSource]
+    @Binding var isTopicPickerPresented: Bool
     let onClose: () -> Void
     let onPreviousRound: () -> Void
-    let onSelectSource: (PracticeMatchSource) -> Void
-
-    @State private var isTopicPopoverPresented = false
 
     var body: some View {
         VStack(spacing: 10) {
@@ -5199,11 +5218,12 @@ private struct PracticeMatchRoundHeader: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(session.canReturnToPreviousRound ? Color.primary : Color.secondary.opacity(0.55))
                         .frame(width: 44, height: 44)
-                        .nativeGlass(
-                            in: Circle(),
-                            tint: .white,
-                            interactive: session.canReturnToPreviousRound
-                        )
+                        .background(.white.opacity(0.78), in: Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(.white.opacity(0.82), lineWidth: 1)
+                        }
+                        .shadow(color: .black.opacity(0.10), radius: 14, x: 0, y: 7)
                 }
                 .frame(width: 44, height: 44)
                 .contentShape(Circle())
@@ -5216,7 +5236,9 @@ private struct PracticeMatchRoundHeader: View {
                 Spacer()
 
                 Button {
-                    isTopicPopoverPresented.toggle()
+                    withAnimation(.spring(response: 0.24, dampingFraction: 0.88)) {
+                        isTopicPickerPresented.toggle()
+                    }
                 } label: {
                     HStack(spacing: 7) {
                         Image(systemName: session.source.symbolName)
@@ -5235,24 +5257,14 @@ private struct PracticeMatchRoundHeader: View {
                     }
                     .padding(.horizontal, 12)
                     .frame(height: 34)
-                    .nativeGlass(
-                        in: Capsule(style: .continuous),
-                        tint: session.source.atmosphere.surface,
-                        interactive: true
-                    )
+                    .background(.white.opacity(0.76), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(0.86), lineWidth: 1)
+                    }
+                    .shadow(color: .black.opacity(0.06), radius: 12, x: 0, y: 6)
                 }
                 .buttonStyle(.plain)
-                .popover(isPresented: $isTopicPopoverPresented, arrowEdge: .top) {
-                    PracticeMatchTopicPopover(
-                        currentSourceID: session.source.id,
-                        sources: sourceOptions,
-                        onSelectSource: { source in
-                            isTopicPopoverPresented = false
-                            onSelectSource(source)
-                        }
-                    )
-                    .presentationCompactAdaptation(.popover)
-                }
                 .accessibilityLabel("Change practice topic")
                 .accessibilityIdentifier("Practice.Match.TopicPicker")
 
@@ -5263,7 +5275,12 @@ private struct PracticeMatchRoundHeader: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
                         .frame(width: 44, height: 44)
-                        .nativeGlass(in: Circle(), tint: .white, interactive: true)
+                        .background(.white.opacity(0.78), in: Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(.white.opacity(0.82), lineWidth: 1)
+                        }
+                        .shadow(color: .black.opacity(0.10), radius: 14, x: 0, y: 7)
                 }
                 .frame(width: 44, height: 44)
                 .contentShape(Circle())
@@ -5288,63 +5305,93 @@ private struct PracticeMatchRoundHeader: View {
                 .accessibilityIdentifier("Practice.Match.ModeBadge")
         }
         .padding(.horizontal, 14)
-        .padding(.vertical, 12)
-        .nativeGlass(cornerRadius: 28, tint: session.source.atmosphere.surface)
     }
 }
 
-private struct PracticeMatchTopicPopover: View {
+private struct PracticeMatchTopicPickerOverlay: View {
     let currentSourceID: String
     let sources: [PracticeMatchSource]
+    let onDismiss: () -> Void
     let onSelectSource: (PracticeMatchSource) -> Void
 
+    private var panelHeight: CGFloat {
+        CGFloat(sources.count) * 58 + CGFloat(max(sources.count - 1, 0)) + 12
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Change topic")
-                .font(.caption.weight(.black))
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 8)
-                .padding(.bottom, 2)
+        ZStack(alignment: .top) {
+            Color.black.opacity(0.10)
+                .ignoresSafeArea()
+                .onTapGesture(perform: onDismiss)
 
-            ForEach(sources) { source in
-                Button {
-                    onSelectSource(source)
-                } label: {
-                    HStack(spacing: 10) {
-                        PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 34)
+            ZStack(alignment: .top) {
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(.regularMaterial)
 
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(source.title)
-                                .font(.subheadline.weight(.black))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(.white.opacity(0.74))
 
-                            Text(source.itemCountLabel)
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(.secondary)
+                VStack(spacing: 0) {
+                    ForEach(sources) { source in
+                        Button {
+                            onSelectSource(source)
+                        } label: {
+                            HStack(spacing: 12) {
+                                PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 38)
+
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(source.title)
+                                        .font(.headline.weight(.black))
+                                        .foregroundStyle(.primary)
+                                        .lineLimit(1)
+
+                                    Text(source.itemCountLabel)
+                                        .font(.caption.weight(.semibold))
+                                        .foregroundStyle(.secondary)
+                                }
+                                .layoutPriority(1)
+
+                                if source.id == currentSourceID {
+                                    Image(systemName: "checkmark")
+                                        .font(.headline.weight(.black))
+                                        .foregroundStyle(.primary)
+                                }
+                            }
+                            .padding(.horizontal, 12)
+                            .frame(height: 58)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(
+                                source.id == currentSourceID ? source.atmosphere.tint.opacity(0.10) : Color.clear,
+                                in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            )
                         }
-                        .layoutPriority(1)
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("Practice.Match.TopicOption.\(source.id)")
 
-                        if source.id == currentSourceID {
-                            Image(systemName: "checkmark")
-                                .font(.subheadline.weight(.black))
-                                .foregroundStyle(source.atmosphere.tint)
+                        if source.id != sources.last?.id {
+                            Divider()
+                                .padding(.leading, 62)
+                                .opacity(0.42)
                         }
                     }
-                    .padding(8)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        source.id == currentSourceID ? source.atmosphere.tint.opacity(0.10) : Color.clear,
-                        in: RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    )
                 }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("Practice.Match.TopicOption.\(source.id)")
+                .padding(6)
             }
+            .frame(width: 300, height: panelHeight)
+            .overlay(alignment: .top) {
+                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                    .fill(.regularMaterial)
+                    .frame(width: 18, height: 18)
+                    .rotationEffect(.degrees(45))
+                    .offset(y: -8)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(.white.opacity(0.68), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.16), radius: 22, x: 0, y: 12)
         }
-        .padding(10)
-        .frame(width: 292)
-        .presentationCompactAdaptation(.popover)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
@@ -5887,89 +5934,83 @@ private struct PracticeMatchHintNotice: View {
 private struct PracticeMatchCompletionView: View {
     let session: PracticeMatchActiveSession
     @ObservedObject var intentStore: LocalUserIntentStore
-    let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
-    let onClose: () -> Void
-    let onPreviousRound: () -> Void
-    let onSelectSource: (PracticeMatchSource) -> Void
     let onContinue: () -> Void
 
     @State private var rewardPulse = false
 
     var body: some View {
-        VStack(spacing: 14) {
-            PracticeMatchSheetHandle()
-                .padding(.top, max(12, topContentClearance + 12))
-
-            PracticeMatchRoundHeader(
-                session: session,
-                sourceOptions: sourceOptions,
-                onClose: onClose,
-                onPreviousRound: onPreviousRound,
-                onSelectSource: onSelectSource
-            )
-
+        VStack(spacing: 12) {
             PracticeMatchRewardIcon(
                 tint: session.source.atmosphere.glow,
                 isActive: rewardPulse
             )
-            .padding(.top, 4)
+            .padding(.top, max(46, topContentClearance + 34))
 
             VStack(spacing: 6) {
                 Text("Nice match!")
-                    .font(.system(size: 27, weight: .black, design: .rounded))
-                    .foregroundStyle(.primary)
+                    .font(.system(size: 28, weight: .black, design: .rounded))
+                    .foregroundStyle(.white)
+                    .shadow(color: .black.opacity(0.20), radius: 8, x: 0, y: 4)
 
                 Text("You matched all 4 pairs.")
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white.opacity(0.88))
                     .multilineTextAlignment(.center)
             }
 
-            VStack(alignment: .leading, spacing: 0) {
-                Text("You matched")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .padding(.horizontal, 12)
-                    .padding(.top, 10)
-                    .padding(.bottom, 4)
+            Spacer(minLength: 0)
 
-                ForEach(session.round.pairs) { pair in
-                    PracticeMatchCompletionRow(pair: pair, intentStore: intentStore)
+            VStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("You matched")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 12)
+                        .padding(.top, 10)
+                        .padding(.bottom, 4)
 
-                    if pair.id != session.round.pairs.last?.id {
-                        Divider()
-                            .padding(.leading, 12)
+                    ForEach(session.round.pairs) { pair in
+                        PracticeMatchCompletionRow(pair: pair, intentStore: intentStore)
+
+                        if pair.id != session.round.pairs.last?.id {
+                            Divider()
+                                .padding(.leading, 68)
+                                .opacity(0.42)
+                        }
                     }
                 }
-            }
-            .phraseListCard(cornerRadius: 18)
+                .background(.white.opacity(0.30), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
 
-            Button(action: onContinue) {
-                Text("Next round")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .background(
-                        LinearGradient(
-                            colors: [Color.red, Color(red: 1.0, green: 0.31, blue: 0.20)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ),
-                        in: RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    )
+                Button(action: onContinue) {
+                    Text("Next round")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(
+                            LinearGradient(
+                                colors: [Color.red, Color(red: 1.0, green: 0.31, blue: 0.20)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        )
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("Practice.Match.Continue")
             }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("Practice.Match.Continue")
-
-            Spacer(minLength: 0)
+            .padding(12)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(.white.opacity(0.44), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.18), radius: 24, x: 0, y: 12)
+            .padding(.horizontal, 12)
+            .padding(.bottom, 12)
         }
-        .padding(.horizontal, PracticeLayout.horizontalPadding)
-        .padding(.bottom, 12)
-        .background {
-            PracticeMatchSheetBackground(source: session.source, isComplete: true)
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             withAnimation(.spring(response: 0.46, dampingFraction: 0.70).delay(0.04)) {
                 rewardPulse = true
