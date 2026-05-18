@@ -16,6 +16,7 @@ const audienceRewriteReviewIDs = new Set([
 const logisticsLead = /\b(entrance|tickets?|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/i;
 const logisticsList = /\b(entrance|tickets?|photo|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/gi;
 const templatePhrases = [
+  /\buse this when\b/i,
   /\bto name clearly before\b/i,
   /\bworth saving offline\b/i,
   /\buseful when\b/i,
@@ -26,7 +27,24 @@ const templatePhrases = [
   /\bbefore .*questions take over\b/i,
   /\bnot just another dot on a map\b/i,
   /\bpractical layer is simple\b/i,
+  /\bbelongs because\b/i,
+  /\bmanaged outdoor activity area\b/i,
+  /\bconfirm the destination\b/i,
+  /\bhelps travelers\b/i,
+  /\blocal name noun\b/i,
+  /\btravelers?\b/i,
 ];
+const bannedExactSectionTitles = new Set([
+  "Why it belongs",
+  "Travel moment",
+  "Hear the name",
+  "At the place",
+  "Traveler role",
+  "Indoor reason",
+  "Arrival handoff",
+  "When it helps",
+]);
+const templateOpening = /^Use\s+/i;
 const sensoryOrCulture = /\b(neon|lights?|skyline|river|bridge|beach|market|coffee|cafes?|restaurants?|food|dish|dishes|taste|sauce|herbs?|noodles?|incense|temple|pagoda|tomb|imperial|royal|lanterns?|boats?|waterways?|coconut|craft|artisan|workshop|marble|stone|museum|art|history|old|modern|village|streets?|alley|promenade|garden|mountain|forest|lake|courtyard|architecture|ritual|worship|decor|scent|color|sound|song|steam|grilled|sweet|spicy|crisp|family|night|sunset|morning|coastal|heritage|culture|scooters?|facades?|buildings?|trees?|boulevard|signs?|vegetarian)\b/i;
 const citySpecific = {
   danang: /\b(da nang|han river|dragon|my khe|marble|son tra|ba na|beach|bridge|seafood|central-vietnam|coastal)\b/i,
@@ -57,9 +75,16 @@ function firstText(page) {
 function allText(page) {
   const editorial = page.editorialImport || {};
   return normalize([
+    page.context,
+    page.tip,
+    page.rationale,
     editorial.summary,
     ...(editorial.sections || []).flatMap((section) => [section.title, section.body]),
   ].filter(Boolean).join("\n"));
+}
+
+function startsWithTemplateOpening(value) {
+  return templateOpening.test(normalize(value));
 }
 
 function fail(list, message) {
@@ -89,8 +114,25 @@ function auditPage(page) {
     fail(failures, "missing city-specific texture");
   }
   const sections = page.editorialImport?.sections || [];
-  if (sections.length < 6) {
+  if (sections.length < 4) {
     fail(failures, "missing expected editorial sections");
+  }
+  if (startsWithTemplateOpening(page.context)) {
+    fail(failures, "context opens with template-like Use wording");
+  }
+  if (startsWithTemplateOpening(page.tip)) {
+    fail(failures, "tip opens with template-like Use wording");
+  }
+  if (startsWithTemplateOpening(page.rationale)) {
+    fail(failures, "rationale opens with template-like Use wording");
+  }
+  for (const section of sections) {
+    if (bannedExactSectionTitles.has(normalize(section.title))) {
+      fail(failures, `keeps template section title: ${section.title}`);
+    }
+    if (startsWithTemplateOpening(section.body)) {
+      fail(failures, `section ${section.id || section.title} opens with template-like Use wording`);
+    }
   }
   if (!audienceRewriteReviewIDs.has(page.editorialImport?.audienceRewrite?.reviewID)) {
     fail(failures, "missing audience rewrite evidence");

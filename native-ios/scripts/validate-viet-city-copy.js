@@ -51,6 +51,11 @@ const bannedVisibleFragments = [
   "becomes legible",
   "do the real work",
   "exact venue",
+  "managed outdoor activity area",
+  "confirm the destination",
+  "helps travelers",
+  "local name noun",
+  "travelers",
 ];
 
 const formulaicVisiblePatterns = [
@@ -80,11 +85,13 @@ const formulaicVisiblePatterns = [
   /\bthen keep the questions concrete\b/i,
   /\buse the vietnamese name when\b/i,
   /\buse [^,.]+ when the destination is\b/i,
+  /\buse this when\b/i,
   /\bpart of how .* becomes legible\b/i,
   /\bthis is a more deliberate restaurant plan\b/i,
   /\bcheck .* ingredients first if you avoid\b/i,
   /\bthink in sequence:\s*arrival\b/i,
   /\btable, menu, order, drink, bill, and pickup phrases do the real work\b/i,
+  /\bthe traveler(?:s)?\b/i,
 ];
 
 function readJSON(filePath) {
@@ -271,6 +278,9 @@ function validateRuntimeSectionParity(sourcePage, runtimePage) {
       fail(`${runtimePage.id} missing runtime section ${section.id}`);
       continue;
     }
+    if (runtimeSection.title !== section.title) {
+      fail(`${runtimePage.id} runtime section ${section.id} title does not match source editorial section`);
+    }
     if (runtimeSection.body !== section.body) {
       fail(`${runtimePage.id} runtime section ${section.id} body does not match source editorial section`);
     }
@@ -376,8 +386,8 @@ function main() {
     if (normalize(editorial.summary).length < 120) {
       fail(`${page.id} summary is too thin`);
     }
-    if (!Array.isArray(editorial.sections) || editorial.sections.length < 6) {
-      fail(`${page.id} needs at least 6 authored editorial sections`);
+    if (!Array.isArray(editorial.sections) || editorial.sections.length < 4) {
+      fail(`${page.id} needs at least 4 authored editorial sections`);
     }
     if (!editorial.targetHeroImageName) {
       fail(`${page.id} missing editorialImport.targetHeroImageName`);

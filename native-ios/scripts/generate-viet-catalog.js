@@ -155,7 +155,7 @@ function contentRoleFor(page, place) {
   const placeKind = placeKindFor(place);
   if (placeKind === "drink") return "drink";
   if (placeKind === "dessert") return "dessert";
-  if (placeKind === "dish") return "dish-anchor";
+  if (placeKind === "dish") return "dish";
   if (placeKind === "cafe") return "cafe";
   if (placeKind === "restaurant") {
     const sourceIDs = new Set([...(place.sourceIDs ?? []), ...(page.sourceIDs ?? [])]);
