@@ -213,6 +213,8 @@ enum BrowsePageLayout {
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
+    static let cityHeroImageCopySeparatorHeight: CGFloat = 1
+    static let cityHeroImageCopySeparatorOpacity: Double = 0.06
     static let cityHeroCardSpacing: CGFloat = 14
     static let phraseFamilyCardHeight: CGFloat = 166
     static let situationColumns = [
@@ -402,8 +404,8 @@ private struct BrowseCityHeroCard: View {
                 }
 
                 Rectangle()
-                    .fill(Color.black.opacity(0.06))
-                    .frame(width: width, height: 1)
+                    .fill(Color.black.opacity(BrowsePageLayout.cityHeroImageCopySeparatorOpacity))
+                    .frame(width: width, height: BrowsePageLayout.cityHeroImageCopySeparatorHeight)
                     .frame(maxHeight: .infinity, alignment: .top)
                     .offset(y: BrowsePageLayout.cityHeroImageHeight)
                     .allowsHitTesting(false)

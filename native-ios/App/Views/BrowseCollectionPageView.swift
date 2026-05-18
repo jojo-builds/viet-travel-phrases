@@ -40,7 +40,6 @@ struct BrowseCollectionPageView: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
         )
-        .toolbar(isActive && isPhotoBackdropImmersive ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("BrowseCollection.\(descriptor.route.id)")
     }
 
@@ -145,7 +144,31 @@ struct BrowseCollectionPageView: View {
                     togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
                 }
             )
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: descriptor.route.id,
+                        imageName: descriptor.mastheadImageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: descriptor.route.id,
+                            heroImageName: descriptor.mastheadImageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: descriptor.route.id,
+                            heroImageName: descriptor.mastheadImageName
+                        )
+                    )
+                    : nil
+            )
         }
+        .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
     }

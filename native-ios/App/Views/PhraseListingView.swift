@@ -303,7 +303,31 @@ struct PhraseArticleTemplateView: View {
                         .transition(.opacity)
                 }
             }
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: page.id,
+                        imageName: imageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: page.id,
+                            heroImageName: imageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: page.id,
+                            heroImageName: imageName
+                        )
+                    )
+                    : nil
+            )
         }
+        .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
         .preference(
@@ -314,20 +338,32 @@ struct PhraseArticleTemplateView: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && !isPhotoBackdropImmersive
         )
-        .toolbar(isActive && isPhotoBackdropImmersive ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("PhraseArticle.\(page.id)")
     }
 
     private func photoBackdropImage(imageName: String, geometry: GeometryProxy) -> some View {
-        Image(imageName)
+        let frameHeight = PhrasePhotoBackdropLayout.backdropFrameHeight(
+            for: geometry.size,
+            safeAreaInsets: geometry.safeAreaInsets,
+            pageID: page.id,
+            heroImageName: imageName
+        )
+        let verticalFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: geometry.size,
+            pageID: page.id,
+            heroImageName: imageName
+        )
+
+        return Image(imageName)
             .resizable()
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
-                height: geometry.size.height + geometry.safeAreaInsets.top + geometry.safeAreaInsets.bottom + 160,
+                height: frameHeight,
                 alignment: .top
             )
             .clipped()
+            .offset(y: -verticalFocusOffset)
             .ignoresSafeArea()
             .accessibilityHidden(true)
     }
@@ -847,12 +883,34 @@ struct PhrasePhotoBackdropTabBarBackgroundPreferenceKey: PreferenceKey {
     }
 }
 
+struct PhrasePhotoBackdropImmersiveImageContext: Equatable {
+    let pageID: String
+    let imageName: String
+    let viewportSize: CGSize
+    let safeAreaTop: CGFloat
+    let safeAreaBottom: CGFloat
+    let imageFrameHeight: CGFloat
+    let verticalFocusOffset: CGFloat
+}
+
+struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
+    static var defaultValue: PhrasePhotoBackdropImmersiveImageContext?
+
+    static func reduce(
+        value: inout PhrasePhotoBackdropImmersiveImageContext?,
+        nextValue: () -> PhrasePhotoBackdropImmersiveImageContext?
+    ) {
+        value = nextValue() ?? value
+    }
+}
+
 enum PhrasePhotoBackdropLayout {
     static let bottomReadingClearance: CGFloat = 332
     static let minimumBottomChromeBackdropHeight: CGFloat = 220
     static let minimumBottomChromeBackdropOffset: CGFloat = 104
     static let sheetCornerClearance: CGFloat = 44
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: 0.18)
+    private static let standardBackdropVerticalOverscan: CGFloat = 160
     private static let backdropOffsetUpdateStep: CGFloat = 16
 
     static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
@@ -876,6 +934,29 @@ enum PhrasePhotoBackdropLayout {
     static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
         supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
+    }
+
+    static func backdropFrameHeight(
+        for size: CGSize,
+        safeAreaInsets: EdgeInsets,
+        pageID: String,
+        heroImageName: String?
+    ) -> CGFloat {
+        let height = max(size.height, 1)
+
+        if supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return height + safeAreaInsets.bottom
+        }
+
+        return height + safeAreaInsets.top + safeAreaInsets.bottom + standardBackdropVerticalOverscan
+    }
+
+    static func backdropVerticalFocusOffset(
+        for size: CGSize,
+        pageID: String,
+        heroImageName: String?
+    ) -> CGFloat {
+        0
     }
 
     struct Metrics {
