@@ -10,21 +10,21 @@
 - `native-ios/` is the only active app product surface. The legacy Expo/React Native shell is no longer an implementation lane for app work.
 - Native app identity and variant planning live in `native-ios/Config/apps/*.json`; bundled phrase/audio runtime truth lives in `native-ios/Resources/` and authored source under `content-draft/`.
 - App UI review should use native simulator and physical iPhone builds from `native-ios/`, not Expo web preview routes.
-- SpeakLocal v2 is being framed as a travel phrasebook, not an academic language-learning app.
-- SpeakLocal v2's primary audience is the excited pre-trip traveler who has booked or is seriously planning a destination trip and wants to absorb the country through food, cities, culture, pronunciation, and useful local phrases before arrival.
-- In-destination utility remains important, but it validates the pre-trip preparation rather than defining the app as a panic translator. SpeakLocal should not compete head-on with Google Translate, Apple Translate, or general-purpose AI for arbitrary live translation.
-- The product wedge is curated trip fluency: destination-specific food/menu vocabulary, city/place exploration, culturally respectful phrasing, audio-first pronunciation, saved trip phrases, and practiceable everyday moments that make the trip feel richer.
-- Home and Browse should lead with desire and exploration first, especially food, coffee, menus, cities, markets, greetings, and confidence-building phrase hubs. Arrival, transport, repair, health, and emergency utility should stay easy to find and starter-safe, but should not become the emotional center of the product.
-- Food Menu and Drink Menu detail pages are now authored as per-item source files under `content-draft/viet/menu/items/**`; `native-ios/Resources/vietnamese-menu-copy.json` and the menu CSV are generated artifacts, not the prose-authoring surface.
+- SpeakLocal v2 is being framed as a curated destination travel companion, not an academic language-learning app and not a general AI translation box.
+- SpeakLocal v2's primary audience is the excited pre-trip traveler who has booked or is seriously planning Vietnam and wants the country to feel more vivid and less intimidating through food, places, culture, pronunciation, and useful local phrases before arrival.
+- In-destination utility remains important, but it should feel like prepared confidence rather than fear-led positioning or a panic translator. SpeakLocal should not compete head-on with Google Translate, Apple Translate, or general-purpose AI for arbitrary live translation.
+- The product wedge is curated Vietnam immersion plus practical phrase readiness: destination-specific food/menu items, city/place exploration, things to do, culturally respectful phrasing, audio-first pronunciation, saved trip phrases, and practiceable everyday moments that make the trip feel richer.
+- Home and Browse should lead with desire and exploration first, especially food, coffee, menus, cities, markets, landmarks, culture, greetings, and confidence-building phrase hubs. Arrival, transport, repair, health, and emergency utility should stay easy to find and starter-safe, but should not become the emotional center of the product.
+- Vietnamese food and drink detail pages are now authored as per-item source files under `content-draft/viet/menu/items/**`; `native-ios/Resources/vietnamese-menu-copy.json` and the menu CSV are generated artifacts, not the prose-authoring surface.
 - One-off menu order lines such as "I'd like one..." are text-only guidance. Audio investment belongs on item names and reusable helper phrases such as spice, sugar, ice, sauce, vegetarian, allergy, to-go, and payment options.
 - Menu item pages use `How locals order` as a text-only SpeakLocal brand section. It should explain the real ordering move for that item, including sauce/dip/broth behavior for food and flavor, sweetness, ice, body, or temperature choices for drinks, while reusing only generic helper-phrase audio.
 - Current repo naming and pricing direction is now:
   - `SpeakLocal Vietnam`
   - `SpeakLocal Philippines`
-  - `$4.99` one-time unlock
-- Current premium framing across app and website copy now follows:
-  - free = get by
-  - premium = do not get stuck
+  - `7-day free trial, then $4.99/month`
+- Current premium/subscription framing across app and website copy now follows:
+  - trial = experience the curated Vietnam companion before paying
+  - paid subscription = keep the full food, place, phrase, audio, practice, and trip-support library for the journey
 
 ## Website and app role decisions
 
@@ -37,13 +37,13 @@
 
 ## Monetization decisions
 
-- Viet v2 uses a single non-consumable iOS unlock through native StoreKit.
-- Viet v2 does not add a custom backend for purchase verification in this pass. Repo truth should describe that as a deliberate v2 simplicity tradeoff, not hidden completeness.
+- Viet v2 uses an Apple-native monthly subscription through StoreKit: 7-day free trial, then `$4.99/month`.
+- Viet v2 does not add a custom backend for subscription verification in this pass. Repo truth should describe that as a deliberate v2 simplicity tradeoff, not hidden completeness.
 - Premium access truth is:
   - real StoreKit entitlement when the iOS native store path is available
-  - persisted on-device purchase state for restart continuity
+  - persisted on-device entitlement state for restart continuity
   - no fake success state in user-facing purchase or restore flows
-- The dev validation unlock may still exist, but only as a clearly labeled local validation aid when the real store path is unavailable.
+- The dev validation access path may still exist, but only as a clearly labeled local validation aid when the real store path is unavailable.
 - Premium remains app-first for now.
 - Do not introduce website premium, cross-platform entitlement sync, login/account architecture, or code-redemption flow in the current direction.
 - Any future web monetization idea remains deferred until app sales prove it is worth revisiting.

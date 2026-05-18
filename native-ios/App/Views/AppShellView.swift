@@ -112,7 +112,7 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
-        .toolbar(hidesPhotoBackdropChrome ? .hidden : .visible, for: .tabBar)
+        .toolbar(hidesSystemTabBar ? .hidden : .visible, for: .tabBar)
         .toolbarBackground(
             showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
             for: .tabBar
@@ -145,11 +145,15 @@ struct AppShellView: View {
     }
 
     private var tabBarBackgroundVisibility: Visibility {
-        if hidesPhotoBackdropChrome {
+        if hidesSystemTabBar {
             return .hidden
         }
 
         return showsPhotoBackdropTabBarBackground ? .visible : .automatic
+    }
+
+    private var hidesSystemTabBar: Bool {
+        hidesPhotoBackdropChrome || isPracticeMatchPresented || isPracticeThreadPresented
     }
 
     private var shellContentBody: some View {

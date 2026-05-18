@@ -21,8 +21,8 @@ Required screens and copy:
 5 Placement Quiz Question. Phrase-based learning check, not generic travel trivia. Prompt: "You hear 'Cảm ơn'. What does it mean?" Add circular red audio button. Multiple choice: "Thank you", "Hello", "How much?", "I need help". Must feel friendly, not like an exam.
 6 Level Result. Show three possible result cards or a selected outcome. Outcomes visible: Beginner: Start with essentials; Intermediate: Ready for everyday travel; Advanced: Ready for deeper local phrases. Include line: "You can change this anytime." CTA: "Build my phrase map".
 7 Personalized Preview. Headline: "For your Hanoi trip". Sections: "Start with these first", "Hotel check-in", "Local greetings", "Practice before you land". Show the app prepared real value before paywall; include subtle Melo near a prepared list or small map marker.
-8 Trial / Paywall. Headline: "Try Speak Local Vietnam free for 7 days". Emphasize: offline Vietnam phrase map, city guidance, audio, practice, personalized recommendations. Classy native paywall, not aggressive. CTA: "Start 7-day trial". Secondary: "Continue limited preview". No mascot dominance.
-Constraints: All text should be readable at phone size; no clipped text; no lorem ipsum; no weird fake UI labels; no bottom nav unless screen 7 preview needs it subtly; no route language; no hidden-city implication; no generic quiz trivia; no subscription pressure language.
+8 Trial / Paywall. Headline: "Try Speak Local Vietnam free for 7 days". Emphasize: offline Vietnam phrase map, city guidance, audio, practice, personalized recommendations. Classy native paywall, not aggressive. CTA: "Start 7-day trial". Secondary actions are legal/restore links only, such as "Restore purchase", "Terms", and "Privacy". No ongoing free-tier or limited-preview promise. No mascot dominance.
+Constraints: All text should be readable at phone size; no clipped text; no lorem ipsum; no weird fake UI labels; no bottom nav unless screen 7 preview needs it subtly; no route language; no hidden-city implication; no generic quiz trivia; keep trial language calm and non-pressuring.
 ```
 
 ## Compact Alternate Prompt
@@ -40,7 +40,7 @@ A1 Welcome plus destination. Headline: "Build your Vietnam phrase map". Short co
 A2 Travel focus. Headline: "What should we prepare first?" Multi-select glass chips: Airport, Hotel, Food, Getting Around, Shopping, Emergency, Local greetings. Small line: "Everything stays available." CTA: "Continue".
 A3 Quick check. Friendly phrase check: "You hear 'Cảm ơn'. What does it mean?" Red audio button, choices Thank you, Hello, How much?, I need help. Secondary skip link: "Skip and show everything".
 A4 Personalized preview. Headline: "For your Hanoi trip". Cards: Hotel check-in, Local greetings, Practice before you land, Street names. Show prepared value before trial. Include subtle Melo near list.
-A5 Trial paywall. Headline: "Try Speak Local Vietnam free for 7 days". Bullets: Offline phrase map, City guidance, Audio and practice, Personalized recommendations. CTA: "Start 7-day trial". Secondary: "Continue limited preview". Add small reassurance: "Cancel anytime." No price.
+A5 Trial paywall. Headline: "Try Speak Local Vietnam free for 7 days". Bullets: Offline phrase map, City guidance, Audio and practice, Personalized recommendations. CTA: "Start 7-day trial". Secondary links only: "Restore purchase", "Terms", and "Privacy". Add small reassurance: "Cancel anytime." No price.
 Constraints: readable text, no clipped UI, no route wording, no aggressive paywall, no generic travel trivia, no childish mascot, no purple gradients, no dense survey feeling.
 ```
 

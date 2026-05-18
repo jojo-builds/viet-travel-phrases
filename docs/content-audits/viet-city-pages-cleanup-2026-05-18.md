@@ -1,5 +1,7 @@
 # Viet City Pages Cleanup Audit - 2026-05-18
 
+Follow-up audience audit: `docs/content-audits/viet-city-copy-audience-drift-2026-05-18.md` is the current source for target-audience drift, city hub count clarification, and next city-copy rewrite priorities.
+
 ## Scope
 
 This pass cleaned the existing city page inventory. It did not add another batch of city listings.

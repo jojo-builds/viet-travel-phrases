@@ -193,7 +193,7 @@ function sourcePageIDForRuntimePage(runtimePage) {
 
 function requireTextIncludes(page, text, patterns, label) {
   if (!patterns.some((pattern) => pattern.test(text))) {
-    fail(`${page.id} missing ${label} utility in authored copy`);
+    fail(`${page.id} missing ${label} audience cue in authored copy`);
   }
 }
 
@@ -203,8 +203,9 @@ function profileFor(page) {
   if (placeKind === "street" || placeKind === "neighborhood") return "street";
   if (["airport", "station", "port", "pier"].includes(placeKind)) return "transit";
   if (placeKind === "market" || page.subcategoryID === "shopping-markets") return "market";
-  if (pageKind === "restaurant" || placeKind === "restaurant" || placeKind === "cafe") return "restaurant";
-  if (pageKind === "dish" || placeKind === "dish" || placeKind === "local dish" || placeKind === "food spot") return "dish";
+  if (placeKind === "cafe") return "cafe";
+  if (pageKind === "restaurant" || placeKind === "restaurant") return "restaurant";
+  if (["dish", "drink", "dessert"].includes(pageKind) || ["dish", "drink", "dessert", "local dish", "food spot"].includes(placeKind)) return "dish";
   if (["landmark", "museum", "attraction", "experience", "beach", "nature", "park", "river", "village"].includes(placeKind)) return "attraction";
   return "place";
 }
@@ -213,25 +214,28 @@ function validateProfileUtility(page) {
   const text = normalizedLower(visibleEditorialText(page));
   switch (profileFor(page)) {
   case "street":
-    requireTextIncludes(page, text, [/driver/, /pickup/, /map pin/, /street/], "driver or pickup");
+    requireTextIncludes(page, text, [/street/, /shopfront/, /crossing/, /map pin/, /neighborhood/, /hotel edge/, /lane/], "street or neighborhood");
     break;
   case "transit":
-    requireTextIncludes(page, text, [/pickup/, /drop-off/, /arrival/, /transfer/, /luggage/, /ticket/], "arrival or transfer");
+    requireTextIncludes(page, text, [/arrival/, /platform/, /route board/, /luggage/, /station door/, /city light/, /sign/, /boat/, /river/, /boarding/, /water/, /pier/], "arrival or water-threshold texture");
     break;
   case "market":
-    requireTextIncludes(page, text, [/cash/, /price/, /bargain/, /market/, /meeting point/, /pickup/], "cash or price");
+    requireTextIncludes(page, text, [/stall/, /snack/, /gift/, /color/, /bargain/, /market/, /browsing/, /shop/, /storefront/, /food counter/, /cool air/, /fabric/, /fitting/, /measuring tape/, /custom-made/, /handmade/, /workshop/, /tool/, /material/], "market or craft texture");
+    break;
+  case "cafe":
+    requireTextIncludes(page, text, [/coffee/, /ice/, /sweet/, /street stool/, /counter/, /pause/, /espresso/, /cafe/], "cafe texture");
     break;
   case "restaurant":
-    requireTextIncludes(page, text, [/table/, /menu/, /order/, /drink/, /bill/, /pay/, /payment/, /cash/, /card/], "table menu pay");
+    requireTextIncludes(page, text, [/table/, /menu/, /drink/, /house dish/, /staff/, /meal/, /dining/], "restaurant texture");
     break;
   case "dish":
-    requireTextIncludes(page, text, [/order/, /inside/, /ingredient/, /sauce/, /spic/, /allergy/, /diet/, /sweet/, /ice/], "order ingredients adjustment");
+    requireTextIncludes(page, text, [/menu/, /texture/, /herb/, /sauce/, /spic/, /sweet/, /ice/, /topping/, /coconut/, /flavor/, /dish/, /beer/, /glass/, /stool/, /snack/, /evening street/], "food or drink texture");
     break;
   case "attraction":
-    requireTextIncludes(page, text, [/ticket/, /entrance/, /photo/, /pickup/, /driver/, /return/, /visit/], "ticket entrance or pickup");
+    requireTextIncludes(page, text, [/view/, /entry detail/, /photo/, /local pride/, /stage/, /light/, /water/, /gate/, /courtyard/, /temple/, /visit/, /route/, /dish/, /spice/, /shared plate/, /local appetite/, /food/, /craft/, /hands/, /material/, /skill/, /museum/, /art/, /history/, /objects?/, /artifacts?/], "place significance");
     break;
   default:
-    requireTextIncludes(page, text, [/driver/, /pickup/, /ticket/, /entrance/, /photo/, /market/, /order/, /pay/, /map/], "traveler utility");
+    requireTextIncludes(page, text, [/photo/, /market/, /map/, /city/, /street/, /view/, /water/, /food/, /culture/], "traveler image");
     break;
   }
 }

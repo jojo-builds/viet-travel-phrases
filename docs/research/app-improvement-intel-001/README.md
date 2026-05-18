@@ -24,10 +24,10 @@ Top recommendations:
 
 Primary audience:
 
-- First-time Vietnam travelers who need immediate polite survival phrases.
-- Beginner language learners who want to recognize and say practical phrases.
-- Travelers in low-connectivity moments who need offline confidence.
-- Users who are willing to practice only if it is short, useful, and tied to real phrases.
+- Excited first-time or early-stage Vietnam travelers who want useful phrases, food/place context, and audio before they arrive.
+- Curious travelers who want Vietnam to feel more vivid and less intimidating without taking a formal language course.
+- Travelers in low-connectivity moments who still want offline confidence.
+- Users who are willing to practice only if it is short, useful, positive, and tied to real phrases.
 
 Repo context used:
 

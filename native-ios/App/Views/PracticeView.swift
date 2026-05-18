@@ -3648,8 +3648,27 @@ struct PracticeMatchItem: Identifiable, Equatable {
     let audioKey: String
     let symbolName: String
     let tint: AccentTint
+    let imageName: String?
 
     var id: String { pageID }
+
+    init(
+        pageID: String,
+        vietnamese: String,
+        english: String,
+        audioKey: String,
+        symbolName: String,
+        tint: AccentTint,
+        imageName: String? = nil
+    ) {
+        self.pageID = pageID
+        self.vietnamese = vietnamese
+        self.english = english
+        self.audioKey = audioKey
+        self.symbolName = symbolName
+        self.tint = tint
+        self.imageName = imageName
+    }
 }
 
 struct PracticeMatchSource: Identifiable, Equatable {
@@ -3672,9 +3691,109 @@ struct PracticeMatchSource: Identifiable, Equatable {
         "\(items.count) practice-ready"
     }
 
+    var imageBackedItems: [PracticeMatchItem] {
+        items.filter { $0.imageName != nil }
+    }
+
+    var supportsImageRounds: Bool {
+        imageBackedItems.count >= PracticeMatchRound.pairCount
+    }
+
+    var availableRoundModes: [PracticeMatchRoundMode] {
+        if supportsImageRounds {
+            return PracticeMatchRoundMode.allCases
+        }
+
+        return PracticeMatchRoundMode.textOnlyCases
+    }
+
+    func roundMode(for roundIndex: Int) -> PracticeMatchRoundMode {
+        let modes = availableRoundModes
+        guard !modes.isEmpty else {
+            return .phraseToMeaning
+        }
+
+        return modes[abs(roundIndex) % modes.count]
+    }
+
     var canStart: Bool {
         items.count >= PracticeMatchRound.pairCount
     }
+}
+
+enum PracticeMatchRoundMode: String, CaseIterable, Equatable {
+    case phraseToMeaning
+    case imageToPhrase
+    case audioToMeaning
+    case audioToImage
+
+    static let textOnlyCases: [PracticeMatchRoundMode] = [
+        .phraseToMeaning,
+        .audioToMeaning,
+    ]
+
+    var requiresImage: Bool {
+        switch self {
+        case .imageToPhrase, .audioToImage:
+            return true
+        case .phraseToMeaning, .audioToMeaning:
+            return false
+        }
+    }
+
+    var instruction: String {
+        switch self {
+        case .phraseToMeaning:
+            return "Tap the Vietnamese phrase, then its meaning."
+        case .imageToPhrase:
+            return "Tap the image, then the phrase it shows."
+        case .audioToMeaning:
+            return "Listen first, then tap the meaning."
+        case .audioToImage:
+            return "Listen first, then tap the matching image."
+        }
+    }
+
+    var badgeLabel: String {
+        switch self {
+        case .phraseToMeaning:
+            return "Phrase"
+        case .imageToPhrase:
+            return "Image"
+        case .audioToMeaning:
+            return "Listen"
+        case .audioToImage:
+            return "Audio + Image"
+        }
+    }
+
+    func contentKind(for side: PracticeMatchCardSide) -> PracticeMatchCardContentKind {
+        switch (self, side) {
+        case (.phraseToMeaning, .prompt):
+            return .phrase
+        case (.phraseToMeaning, .answer):
+            return .meaning
+        case (.imageToPhrase, .prompt):
+            return .image
+        case (.imageToPhrase, .answer):
+            return .phrase
+        case (.audioToMeaning, .prompt):
+            return .audio
+        case (.audioToMeaning, .answer):
+            return .meaning
+        case (.audioToImage, .prompt):
+            return .audio
+        case (.audioToImage, .answer):
+            return .image
+        }
+    }
+}
+
+enum PracticeMatchCardContentKind {
+    case phrase
+    case meaning
+    case audio
+    case image
 }
 
 struct PracticeMatchSnapshot {
@@ -3746,18 +3865,22 @@ struct PracticeMatchSnapshot {
                 english: item.english,
                 audioKey: playableAudioKey,
                 symbolName: item.symbolName,
-                tint: item.tintName
+                tint: item.tintName,
+                imageName: item.imageName
             )
         }
 
         let topicSources: [PracticeMatchSource] = try PracticeMatchTopicSpec.defaults.compactMap { spec in
-            let items = try Self.sourceItems(
+            var items = try Self.sourceItems(
                 repository: repository,
                 pageIDs: spec.pageIDs,
                 categoryIDs: spec.categoryIDs,
                 cityID: spec.cityID,
                 candidateLimit: spec.candidateLimit
             )
+            if spec.id == "food-drinks" {
+                items = Self.uniquePracticeItems(from: items + Self.menuPracticeItems())
+            }
 
             guard items.count >= PracticeMatchRound.pairCount else {
                 return nil
@@ -3892,9 +4015,57 @@ struct PracticeMatchSnapshot {
                 english: english,
                 audioKey: playableAudioKey,
                 symbolName: candidate.symbolName,
-                tint: candidate.tintName
+                tint: candidate.tintName,
+                imageName: Self.imageName(forMenuCandidate: candidate)
             )
         }
+    }
+
+    private static func menuPracticeItems() -> [PracticeMatchItem] {
+        let popularItems = VietnameseMenuCatalog.popularItems(for: .food, limit: 14)
+            + VietnameseMenuCatalog.popularItems(for: .drink, limit: 10)
+        let fallbackItems = VietnameseMenuCatalog.items(for: .food)
+            + VietnameseMenuCatalog.items(for: .drink)
+
+        var seenItemIDs = Set<String>()
+        return (popularItems + fallbackItems).compactMap { item in
+            guard seenItemIDs.insert(item.itemID).inserted,
+                  let kind = item.kind,
+                  let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem),
+                  AudioSpeakerButton.isPlayableAudioKey(audioKey)
+            else {
+                return nil
+            }
+
+            return PracticeMatchItem(
+                pageID: item.detailPageID,
+                vietnamese: item.vietnameseItem.trimmingCharacters(in: .whitespacesAndNewlines),
+                english: item.englishTranslation.trimmingCharacters(in: .whitespacesAndNewlines),
+                audioKey: audioKey,
+                symbolName: kind.symbolName,
+                tint: item.kind?.tintName ?? kind.tintName,
+                imageName: item.menuImageName
+            )
+        }
+    }
+
+    private static func uniquePracticeItems(from items: [PracticeMatchItem]) -> [PracticeMatchItem] {
+        var seenPageIDs = Set<String>()
+        var seenVietnamese = Set<String>()
+        var seenEnglish = Set<String>()
+
+        return items.filter { item in
+            seenPageIDs.insert(item.pageID).inserted
+                && seenVietnamese.insert(item.vietnamese.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)).inserted
+                && seenEnglish.insert(item.english.lowercased()).inserted
+        }
+    }
+
+    private static func imageName(forMenuCandidate candidate: PracticeCandidate) -> String? {
+        if let menuItem = VietnameseMenuCatalog.detailItem(withPageID: candidate.pageID) {
+            return menuItem.menuImageName
+        }
+        return nil
     }
 }
 
@@ -3919,6 +4090,7 @@ struct PracticeMatchRound: Equatable {
     static let pairCount = 4
 
     let id: String
+    let mode: PracticeMatchRoundMode
     let pairs: [PracticeMatchPair]
     let prompts: [PracticeMatchCard]
     let answers: [PracticeMatchCard]
@@ -3938,8 +4110,14 @@ struct PracticeMatchRound: Equatable {
             return nil
         }
 
+        let mode = source.roundMode(for: roundIndex)
+        let eligibleItems = mode.requiresImage ? source.imageBackedItems : source.items
+        guard eligibleItems.count >= pairCount else {
+            return nil
+        }
+
         let selected = selectedItems(
-            from: source.items,
+            from: eligibleItems,
             avoidingItemIDs: avoidingItemIDs,
             rng: &rng
         )
@@ -3973,10 +4151,12 @@ struct PracticeMatchRound: Equatable {
             id: [
                 source.id,
                 "\(roundIndex)",
+                mode.rawValue,
                 selected.map(\.id).joined(separator: "|"),
                 prompts.map(\.id).joined(separator: "|"),
                 answers.map(\.id).joined(separator: "|"),
             ].joined(separator: ":"),
+            mode: mode,
             pairs: pairs,
             prompts: prompts,
             answers: answers
@@ -4146,9 +4326,11 @@ private struct PracticeMatchRootView: View {
             if let activeSession {
                 PracticeMatchRoundView(
                     session: activeSession,
+                    sourceOptions: sourceOptions,
                     topContentClearance: topContentClearance,
                     onClose: closeActiveSession,
                     onPreviousRound: returnToPreviousRound,
+                    onSelectSource: selectSource,
                     onSelectPrompt: selectPrompt,
                     onSelectAnswer: selectAnswer,
                     onHint: revealHint,
@@ -4193,11 +4375,16 @@ private struct PracticeMatchRootView: View {
         .onDisappear {
             onPresentationChanged(false)
         }
+        .toolbar(isPresentingMatch ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("Practice.Match.Root")
     }
 
     private var isPresentingMatch: Bool {
         isActive && activeSession != nil
+    }
+
+    private var sourceOptions: [PracticeMatchSource] {
+        loadState.snapshot?.topicSources.filter(\.canStart) ?? []
     }
 
     private func reloadSnapshot() {
@@ -4287,6 +4474,16 @@ private struct PracticeMatchRootView: View {
 
     private func returnToPreviousRound() {
         guard var session = activeSession, session.returnToPreviousRound() else {
+            return
+        }
+
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+            activeSession = session
+        }
+    }
+
+    private func selectSource(_ source: PracticeMatchSource) {
+        guard source.canStart, let session = PracticeMatchActiveSession(source: source) else {
             return
         }
 
@@ -4673,9 +4870,11 @@ private struct PracticeMatchSavedEmptyCard: View {
 
 private struct PracticeMatchRoundView: View {
     let session: PracticeMatchActiveSession
+    let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
     let onClose: () -> Void
     let onPreviousRound: () -> Void
+    let onSelectSource: (PracticeMatchSource) -> Void
     let onSelectPrompt: (PracticeMatchCard) -> Void
     let onSelectAnswer: (PracticeMatchCard) -> Void
     let onHint: () -> Void
@@ -4686,76 +4885,99 @@ private struct PracticeMatchRoundView: View {
             if session.isRoundComplete {
                 PracticeMatchCompletionView(
                     session: session,
+                    sourceOptions: sourceOptions,
                     topContentClearance: topContentClearance,
                     onClose: onClose,
                     onPreviousRound: onPreviousRound,
+                    onSelectSource: onSelectSource,
                     onContinue: onContinue
                 )
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 22) {
-                        PracticeMatchSheetHandle()
-                            .padding(.top, max(16, topContentClearance + 16))
+                VStack(spacing: 14) {
+                    PracticeMatchSheetHandle()
+                        .padding(.top, max(12, topContentClearance + 12))
 
-                        PracticeMatchRoundHeader(
-                            session: session,
-                            onClose: onClose,
-                            onPreviousRound: onPreviousRound
-                        )
+                    PracticeMatchRoundHeader(
+                        session: session,
+                        sourceOptions: sourceOptions,
+                        onClose: onClose,
+                        onPreviousRound: onPreviousRound,
+                        onSelectSource: onSelectSource
+                    )
 
-                        VStack(spacing: 8) {
-                            Text("Match all pairs")
-                                .font(.system(size: 32, weight: .black, design: .rounded))
-                                .foregroundStyle(.primary)
-                                .multilineTextAlignment(.center)
+                    VStack(spacing: 7) {
+                        Text("Match the pairs")
+                            .font(.system(size: 28, weight: .black, design: .rounded))
+                            .foregroundStyle(.primary)
+                            .multilineTextAlignment(.center)
 
-                            Text("Tap a phrase and its meaning.")
-                                .font(.headline.weight(.semibold))
-                                .foregroundStyle(.secondary)
-                                .multilineTextAlignment(.center)
-                        }
-
-                        PracticeMatchBoardView(
-                            session: session,
-                            onSelectPrompt: onSelectPrompt,
-                            onSelectAnswer: onSelectAnswer
-                        )
-
-                        Button(action: onHint) {
-                            Label("Need a hint?", systemImage: "lightbulb.fill")
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(Color(red: 0.80, green: 0.52, blue: 0.08))
-                                .padding(.horizontal, 16)
-                                .frame(height: 42)
-                                .nativeGlass(cornerRadius: 21, tint: Color.yellow.opacity(0.4), interactive: true)
-                        }
-                        .buttonStyle(.plain)
-                        .frame(maxWidth: .infinity)
-                        .accessibilityIdentifier("Practice.Match.Hint")
-
-                        if session.hintedPairID != nil {
-                            PracticeMatchHintNotice()
-                        }
+                        Text(session.round.mode.instruction)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
                     }
-                    .padding(.horizontal, PracticeLayout.horizontalPadding)
-                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+
+                    PracticeMatchBoardView(
+                        session: session,
+                        onSelectPrompt: onSelectPrompt,
+                        onSelectAnswer: onSelectAnswer
+                    )
+
+                    Button(action: onHint) {
+                        Label("Need a hint?", systemImage: "lightbulb.fill")
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(Color(red: 0.80, green: 0.52, blue: 0.08))
+                            .padding(.horizontal, 16)
+                            .frame(height: 38)
+                            .nativeGlass(cornerRadius: 19, tint: Color.yellow.opacity(0.4), interactive: true)
+                    }
+                    .buttonStyle(.plain)
+                    .frame(maxWidth: .infinity)
+                    .accessibilityIdentifier("Practice.Match.Hint")
+
+                    if session.hintedPairID != nil {
+                        PracticeMatchHintNotice()
+                    }
+
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, PracticeLayout.horizontalPadding)
+                .padding(.bottom, 12)
+                .background {
+                    UnevenRoundedRectangle(
+                        cornerRadii: RectangleCornerRadii(
+                            topLeading: 30,
+                            bottomLeading: 0,
+                            bottomTrailing: 0,
+                            topTrailing: 30
+                        ),
+                        style: .continuous
+                    )
+                        .fill(PhrasePageStyle.pageBackground)
+                        .ignoresSafeArea(edges: .bottom)
                 }
                 .transition(.opacity)
             }
         }
-        .background(PhrasePageStyle.pageBackground.ignoresSafeArea())
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .background(Color.black.opacity(0.08).ignoresSafeArea())
         .accessibilityIdentifier("Practice.Match.Round")
     }
 }
 
 private struct PracticeMatchRoundHeader: View {
     let session: PracticeMatchActiveSession
+    let sourceOptions: [PracticeMatchSource]
     let onClose: () -> Void
     let onPreviousRound: () -> Void
+    let onSelectSource: (PracticeMatchSource) -> Void
+
+    @State private var isTopicPopoverPresented = false
 
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             HStack {
                 Button(action: onPreviousRound) {
                     Image(systemName: "chevron.left")
@@ -4779,11 +5001,46 @@ private struct PracticeMatchRoundHeader: View {
 
                 Spacer()
 
-                Text(session.source.title)
-                    .font(.subheadline.weight(.black))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.72)
+                Button {
+                    isTopicPopoverPresented.toggle()
+                } label: {
+                    HStack(spacing: 7) {
+                        Image(systemName: session.source.symbolName)
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(session.source.tint.color)
+
+                        Text(session.source.title)
+                            .font(.subheadline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+
+                        Image(systemName: "chevron.down")
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 12)
+                    .frame(height: 34)
+                    .background(.white.opacity(0.76), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(0.9), lineWidth: 1)
+                    }
+                }
+                .buttonStyle(.plain)
+                .popover(isPresented: $isTopicPopoverPresented, arrowEdge: .top) {
+                    PracticeMatchTopicPopover(
+                        currentSourceID: session.source.id,
+                        sources: sourceOptions,
+                        onSelectSource: { source in
+                            isTopicPopoverPresented = false
+                            onSelectSource(source)
+                        }
+                    )
+                    .presentationCompactAdaptation(.popover)
+                }
+                .accessibilityLabel("Change practice topic")
+                .accessibilityIdentifier("Practice.Match.TopicPicker")
 
                 Spacer()
 
@@ -4811,10 +5068,73 @@ private struct PracticeMatchRoundHeader: View {
                 matchedCount: session.matchedPairIDs.count,
                 totalCount: PracticeMatchRound.pairCount
             )
+
+            Text(session.round.mode.badgeLabel)
+                .font(.caption2.weight(.black))
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 10)
+                .frame(height: 22)
+                .background(Color.black.opacity(0.05), in: Capsule(style: .continuous))
+                .accessibilityIdentifier("Practice.Match.ModeBadge")
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
         .nativeGlass(cornerRadius: 28)
+    }
+}
+
+private struct PracticeMatchTopicPopover: View {
+    let currentSourceID: String
+    let sources: [PracticeMatchSource]
+    let onSelectSource: (PracticeMatchSource) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Change topic")
+                .font(.caption.weight(.black))
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 8)
+                .padding(.bottom, 2)
+
+            ForEach(sources) { source in
+                Button {
+                    onSelectSource(source)
+                } label: {
+                    HStack(spacing: 10) {
+                        PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 34)
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(source.title)
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+
+                            Text(source.itemCountLabel)
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                        .layoutPriority(1)
+
+                        if source.id == currentSourceID {
+                            Image(systemName: "checkmark")
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .padding(8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        source.id == currentSourceID ? Color.red.opacity(0.08) : Color.clear,
+                        in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    )
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("Practice.Match.TopicOption.\(source.id)")
+            }
+        }
+        .padding(10)
+        .frame(width: 292)
+        .presentationCompactAdaptation(.popover)
     }
 }
 
@@ -4834,8 +5154,9 @@ private struct PracticeMatchProgressDots: View {
                     }
             }
         }
-        .accessibilityElement(children: .ignore)
+        .accessibilityElement(children: .combine)
         .accessibilityLabel("\(matchedCount) matched")
+        .accessibilityAddTraits(.isStaticText)
         .accessibilityIdentifier("Practice.Match.ProgressDots")
     }
 }
@@ -4855,9 +5176,9 @@ private struct PracticeMatchBoardView: View {
     let onSelectPrompt: (PracticeMatchCard) -> Void
     let onSelectAnswer: (PracticeMatchCard) -> Void
 
-    private let cardHeight: CGFloat = 72
-    private let cardSpacing: CGFloat = 14
-    private let columnSpacing: CGFloat = 18
+    private let cardHeight: CGFloat = 64
+    private let cardSpacing: CGFloat = 10
+    private let columnSpacing: CGFloat = 16
 
     var body: some View {
         ZStack {
@@ -4874,6 +5195,7 @@ private struct PracticeMatchBoardView: View {
                     ForEach(session.round.prompts) { card in
                         PracticeMatchCardButton(
                             card: card,
+                            mode: session.round.mode,
                             state: cardState(card),
                             height: cardHeight,
                             onTap: { onSelectPrompt(card) }
@@ -4885,6 +5207,7 @@ private struct PracticeMatchBoardView: View {
                     ForEach(session.round.answers) { card in
                         PracticeMatchCardButton(
                             card: card,
+                            mode: session.round.mode,
                             state: cardState(card),
                             height: cardHeight,
                             onTap: { onSelectAnswer(card) }
@@ -4924,42 +5247,24 @@ private enum PracticeMatchCardVisualState {
 
 private struct PracticeMatchCardButton: View {
     let card: PracticeMatchCard
+    let mode: PracticeMatchRoundMode
     let state: PracticeMatchCardVisualState
     let height: CGFloat
     let onTap: () -> Void
 
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 8) {
-                Text(text)
-                    .font(.system(size: card.side == .prompt ? 15 : 14, weight: .bold))
-                    .foregroundStyle(textColor)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.72)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
+            ZStack(alignment: .topTrailing) {
+                PracticeMatchCardContent(
+                    card: card,
+                    contentKind: contentKind,
+                    textColor: textColor,
+                    height: height
+                )
 
-                if card.side == .prompt {
-                    AudioSpeakerButton(
-                        tint: card.item.tint,
-                        size: 30,
-                        audioKey: card.item.audioKey,
-                        accessibilityIdentifier: "Practice.Match.Audio.\(card.item.pageID)"
-                    )
-                    .frame(width: 34)
-                }
-
-                if state == .matched {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(.green)
-                } else if state == .hinted {
-                    Image(systemName: "lightbulb.fill")
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(Color(red: 0.88, green: 0.61, blue: 0.08))
-                }
+                statusIcon
+                    .padding(5)
             }
-            .padding(.horizontal, 10)
             .frame(maxWidth: .infinity)
             .frame(height: height)
             .background(background, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -4980,17 +5285,25 @@ private struct PracticeMatchCardButton: View {
         .accessibilityIdentifier("Practice.Match.Card.\(card.id)")
     }
 
-    private var text: String {
-        switch card.side {
-        case .prompt:
-            return card.item.vietnamese
-        case .answer:
-            return card.item.english
-        }
+    private var contentKind: PracticeMatchCardContentKind {
+        mode.contentKind(for: card.side)
     }
 
     private var textColor: Color {
         state == .matched ? .primary.opacity(0.68) : .primary
+    }
+
+    @ViewBuilder
+    private var statusIcon: some View {
+        if state == .matched {
+            Image(systemName: "checkmark.circle.fill")
+                .font(.headline.weight(.black))
+                .foregroundStyle(.green)
+        } else if state == .hinted {
+            Image(systemName: "lightbulb.fill")
+                .font(.headline.weight(.black))
+                .foregroundStyle(Color(red: 0.88, green: 0.61, blue: 0.08))
+        }
     }
 
     private var background: Color {
@@ -5021,6 +5334,131 @@ private struct PracticeMatchCardButton: View {
         case .hinted:
             return Color.orange.opacity(0.44)
         }
+    }
+}
+
+private struct PracticeMatchCardContent: View {
+    let card: PracticeMatchCard
+    let contentKind: PracticeMatchCardContentKind
+    let textColor: Color
+    let height: CGFloat
+
+    var body: some View {
+        switch contentKind {
+        case .phrase:
+            HStack(spacing: 8) {
+                Text(card.item.vietnamese)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(textColor)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.68)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+
+                AudioSpeakerButton(
+                    tint: card.item.tint,
+                    size: 28,
+                    audioKey: card.item.audioKey,
+                    accessibilityIdentifier: "Practice.Match.Audio.\(card.item.pageID)"
+                )
+                .frame(width: 32)
+            }
+            .padding(.horizontal, 9)
+            .frame(maxWidth: .infinity, minHeight: height)
+        case .meaning:
+            Text(card.item.english)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(textColor)
+                .lineLimit(2)
+                .minimumScaleFactor(0.68)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 10)
+                .frame(maxWidth: .infinity, minHeight: height)
+        case .audio:
+            PracticeMatchAudioPrompt(
+                tint: card.item.tint,
+                audioKey: card.item.audioKey,
+                pageID: card.item.pageID
+            )
+            .padding(.horizontal, 8)
+            .frame(maxWidth: .infinity, minHeight: height)
+        case .image:
+            PracticeMatchImagePrompt(
+                imageName: card.item.imageName,
+                symbolName: card.item.symbolName,
+                tint: card.item.tint,
+                height: height
+            )
+            .padding(6)
+            .frame(maxWidth: .infinity, minHeight: height)
+        }
+    }
+}
+
+private struct PracticeMatchAudioPrompt: View {
+    let tint: AccentTint
+    let audioKey: String
+    let pageID: String
+
+    var body: some View {
+        HStack(spacing: 8) {
+            AudioSpeakerButton(
+                tint: tint,
+                size: 34,
+                audioKey: audioKey,
+                accessibilityIdentifier: "Practice.Match.AudioPrompt.\(pageID)"
+            )
+
+            PracticeMatchWaveform(tint: tint)
+                .frame(maxWidth: .infinity)
+        }
+    }
+}
+
+private struct PracticeMatchWaveform: View {
+    let tint: AccentTint
+
+    private let bars: [CGFloat] = [0.32, 0.64, 0.42, 0.82, 0.5, 0.72, 0.38, 0.58, 0.45]
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 3) {
+            ForEach(Array(bars.enumerated()), id: \.offset) { _, scale in
+                Capsule(style: .continuous)
+                    .fill(tint.color.opacity(0.42))
+                    .frame(width: 3, height: 24 * scale)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct PracticeMatchImagePrompt: View {
+    let imageName: String?
+    let symbolName: String
+    let tint: AccentTint
+    let height: CGFloat
+
+    var body: some View {
+        Group {
+            if let imageName {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                ZStack {
+                    tint.color.opacity(0.14)
+
+                    Image(systemName: symbolName)
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(tint.color)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: max(height - 12, 44))
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .accessibilityHidden(true)
     }
 }
 
@@ -5128,106 +5566,132 @@ private struct PracticeMatchHintNotice: View {
 
 private struct PracticeMatchCompletionView: View {
     let session: PracticeMatchActiveSession
+    let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
     let onClose: () -> Void
     let onPreviousRound: () -> Void
+    let onSelectSource: (PracticeMatchSource) -> Void
     let onContinue: () -> Void
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 22) {
-                PracticeMatchSheetHandle()
-                    .padding(.top, max(16, topContentClearance + 16))
+        VStack(spacing: 14) {
+            PracticeMatchSheetHandle()
+                .padding(.top, max(12, topContentClearance + 12))
 
-                PracticeMatchRoundHeader(
-                    session: session,
-                    onClose: onClose,
-                    onPreviousRound: onPreviousRound
-                )
+            PracticeMatchRoundHeader(
+                session: session,
+                sourceOptions: sourceOptions,
+                onClose: onClose,
+                onPreviousRound: onPreviousRound,
+                onSelectSource: onSelectSource
+            )
 
-                ZStack {
-                    Circle()
-                        .fill(
-                            LinearGradient(
-                                colors: [Color.red.opacity(0.18), Color.orange.opacity(0.16)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
+            ZStack {
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [Color.red.opacity(0.18), Color.orange.opacity(0.16)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
                         )
-                        .frame(width: 132, height: 132)
+                    )
+                    .frame(width: 92, height: 92)
 
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 74, weight: .black))
-                        .foregroundStyle(.green)
-                }
-                .padding(.top, 34)
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 56, weight: .black))
+                    .foregroundStyle(.green)
+            }
+            .padding(.top, 4)
 
-                VStack(spacing: 7) {
-                    Text("Nice match")
-                        .font(.system(size: 30, weight: .black, design: .rounded))
-                        .foregroundStyle(.primary)
+            VStack(spacing: 6) {
+                Text("Nice match")
+                    .font(.system(size: 27, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
 
-                    Text("You matched these 4. Keep the round going when you want more.")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                }
+                Text("You matched all 4 pairs.")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
 
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("You matched:")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.secondary)
-                        .padding(.horizontal, 14)
-                        .padding(.top, 14)
-                        .padding(.bottom, 8)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("You matched")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 10)
+                    .padding(.bottom, 4)
 
-                    ForEach(session.round.pairs) { pair in
-                        HStack(spacing: 10) {
-                            Text(pair.item.vietnamese)
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.72)
+                ForEach(session.round.pairs) { pair in
+                    HStack(spacing: 9) {
+                        Text(pair.item.vietnamese)
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
 
-                            AudioSpeakerButton(tint: pair.item.tint, size: 26, audioKey: pair.item.audioKey)
-                                .frame(width: 30)
+                        AudioSpeakerButton(tint: pair.item.tint, size: 24, audioKey: pair.item.audioKey)
+                            .frame(width: 28)
 
-                            Spacer(minLength: 8)
+                        Spacer(minLength: 8)
 
+                        if let imageName = pair.item.imageName {
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 38, height: 38)
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .accessibilityHidden(true)
+                        } else {
                             Rectangle()
                                 .fill(Color.black.opacity(0.10))
-                                .frame(width: 24, height: 1)
-
-                            Text(pair.item.english)
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.72)
+                                .frame(width: 22, height: 1)
                         }
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 12)
 
-                        if pair.id != session.round.pairs.last?.id {
-                            Divider()
-                                .padding(.leading, 14)
-                        }
+                        Text(pair.item.english)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+
+                    if pair.id != session.round.pairs.last?.id {
+                        Divider()
+                            .padding(.leading, 12)
                     }
                 }
-                .phraseListCard(cornerRadius: 18)
-
-                Button(action: onContinue) {
-                    Text("Next round")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 52)
-                        .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("Practice.Match.Continue")
             }
-            .padding(.horizontal, PracticeLayout.horizontalPadding)
-            .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+            .phraseListCard(cornerRadius: 18)
+
+            Button(action: onContinue) {
+                Text("Next round")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("Practice.Match.Continue")
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, PracticeLayout.horizontalPadding)
+        .padding(.bottom, 12)
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 30,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 30
+                ),
+                style: .continuous
+            )
+                .fill(PhrasePageStyle.pageBackground)
+                .ignoresSafeArea(edges: .bottom)
         }
         .accessibilityIdentifier("Practice.Match.Complete")
     }

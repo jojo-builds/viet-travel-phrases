@@ -111,17 +111,17 @@ function visibleBannedMatches(text) {
   return matches;
 }
 
-function profileUtilityPass(page, text) {
+function profileAudienceCuePass(page, text) {
   const lower = normalizedLower(text);
   const patternsByProfile = {
-    "street-neighborhood": [/driver/, /pickup/, /street/, /cross street/, /hotel/, /map/],
-    transit: [/arrival/, /pickup/, /drop-off/, /transfer/, /luggage/, /ticket/, /terminal/, /platform/, /pier/],
-    market: [/cash/, /price/, /bag/, /market/, /meeting point/, /entrance/, /gate/],
-    cafe: [/coffee/, /tea/, /iced/, /sweet/, /table/, /menu/, /bill/, /pickup/],
-    restaurant: [/table/, /menu/, /order/, /drink/, /bill/, /payment/, /pickup/, /recommended/],
-    dish: [/order/, /inside/, /ingredient/, /sauce/, /spic/, /allergy/, /diet/, /sweet/, /ice/],
-    "place-experience": [/ticket/, /entrance/, /photo/, /pickup/, /return/, /visit/, /water/, /bathroom/],
-    place: [/driver/, /pickup/, /ticket/, /entrance/, /photo/, /market/, /order/, /pay/, /map/],
+    "street-neighborhood": [/street/, /shopfront/, /crossing/, /map pin/, /neighborhood/, /hotel edge/, /lane/],
+    transit: [/arrival/, /platform/, /route board/, /luggage/, /station door/, /city light/, /sign/, /boat/, /river/, /boarding/, /water/, /pier/],
+    market: [/stall/, /snack/, /gift/, /color/, /bargain/, /market/, /browsing/, /shop/, /storefront/, /food counter/, /cool air/, /fabric/, /fitting/, /measuring tape/, /custom-made/, /handmade/, /workshop/, /tool/, /material/],
+    cafe: [/coffee/, /ice/, /sweet/, /street stool/, /counter/, /pause/, /espresso/, /cafe/],
+    restaurant: [/table/, /menu/, /drink/, /house dish/, /staff/, /meal/, /dining/],
+    dish: [/menu/, /texture/, /herb/, /sauce/, /spic/, /sweet/, /ice/, /topping/, /coconut/, /flavor/, /dish/, /beer/, /glass/, /stool/, /snack/, /evening street/],
+    "place-experience": [/view/, /entry detail/, /photo/, /local pride/, /stage/, /light/, /water/, /gate/, /courtyard/, /temple/, /visit/, /route/, /dish/, /spice/, /shared plate/, /local appetite/, /food/, /craft/, /hands/, /material/, /skill/, /museum/, /art/, /history/, /objects?/, /artifacts?/],
+    place: [/photo/, /market/, /map/, /city/, /street/, /view/, /water/, /food/, /culture/],
   };
   return (patternsByProfile[profileFor(page)] ?? patternsByProfile.place).some((pattern) => pattern.test(lower));
 }
@@ -143,7 +143,7 @@ function pageChecklist(page) {
   return {
     voiceLengthPass: text.length >= 900,
     sectionCountPass: sections.length >= 6,
-    profileUtilityPass: profileUtilityPass(page, text),
+    profileAudienceCuePass: profileAudienceCuePass(page, text),
     noBannedVisibleTextPass: bannedMatches.length === 0,
     noBannedSourceInputPass: sourceBannedMatches.length === 0,
     sourceNotesPresent: Boolean(page.editorialImport?.sourceNotes || page.sourceIDs?.length),
@@ -163,7 +163,7 @@ function pageEvidence(page) {
     summaryExcerpt: excerpt(page.editorialImport?.summary),
     aboutExcerpt: excerpt(sectionBody(page, "at-glance")),
     phrasebookExcerpt: excerpt(sectionBody(page, "quick-say")),
-    utilityExcerpt: excerpt(sectionBody(page, "use-it-with") || sectionBody(page, "table-menu") || sectionBody(page, "how-to-order")),
+    belongingExcerpt: excerpt(sectionBody(page, "use-it-with") || sectionBody(page, "table-menu") || sectionBody(page, "how-to-order")),
     timingExcerpt: excerpt(sectionBody(page, "when-to-use") || sectionBody(page, "before-you-go")),
     goodToKnowExcerpt: excerpt(sectionBody(page, "good-to-know")),
   };
@@ -222,8 +222,8 @@ function main() {
     evidenceMode: "Every row stores current copy excerpts and computed pass/fail checks; native validation must also prove source/runtime parity before the report is accepted.",
     editorialStandard: [
       "Lead with the place, food, culture, or travel moment.",
-      "Use phrases as practical tools inside a Vietnam travel page, not app-mechanics instructions.",
-      "Keep noun-first Browse behavior and page-type-specific utility.",
+      "Make the place, food, culture, or travel moment vivid before the trip.",
+      "Keep noun-first Browse behavior and page-type-specific sensory or cultural cues.",
       "Avoid volatile claims about hours, rankings, prices, schedules, or access rules.",
     ],
     summary: {

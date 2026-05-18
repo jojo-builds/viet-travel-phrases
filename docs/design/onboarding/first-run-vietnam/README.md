@@ -63,7 +63,7 @@ This packet explores first-run onboarding for SpeakLocal Vietnam as production-s
    Shows what SpeakLocal prepared for the user's trip before asking for the trial: Hotel check-in, Local greetings, Practice before you land, and similar useful starts.
 
 8. **Trial / Paywall**
-   Presents the 7-day free trial in the same calm native language as the app: offline phrase map, city guidance, audio, practice, and personalized recommendations. The secondary action stays available through Continue limited preview.
+   Presents the 7-day free trial in the same calm native language as the app: offline phrase map, city guidance, audio, practice, and personalized recommendations. Secondary actions stay limited to restore purchase, terms, and privacy links unless the product direction changes.
 
 ## Recommended Direction
 
