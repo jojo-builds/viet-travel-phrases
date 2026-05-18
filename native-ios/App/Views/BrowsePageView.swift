@@ -4,8 +4,6 @@ struct BrowsePageView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
-    var chromeNamespace: Namespace.ID? = nil
-    var cityHeroMorphRoute: BrowseCollectionRoute? = nil
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
@@ -24,6 +22,8 @@ struct BrowsePageView: View {
 
                         situationGrid
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+                        menuGuideShelf
 
                         cityShortcuts
 
@@ -106,10 +106,22 @@ struct BrowsePageView: View {
         BrowseShelf(title: "Cities") {
             BrowseCityHeroRail(
                 cities: cityHeroShortcuts,
-                chromeNamespace: chromeNamespace,
-                activeMorphRoute: cityHeroMorphRoute,
                 onOpenCollection: onOpenCollection
             )
+        }
+    }
+
+    private var menuGuideShelf: some View {
+        BrowseShelf(title: "Menu guides") {
+            BrowseTwoColumnGrid(
+                items: BrowseSearchDestinations.menuGuides,
+                spacing: 12
+            ) { destination in
+                BrowseStartHereCard(destination: destination, actionLabel: "Browse") {
+                    open(destination: destination)
+                }
+            }
+            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
         }
     }
 
@@ -201,7 +213,6 @@ enum BrowsePageLayout {
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
-    static let cityHeroImageFadeHeight: CGFloat = 146
     static let cityHeroCardSpacing: CGFloat = 14
     static let phraseFamilyCardHeight: CGFloat = 166
     static let situationColumns = [
@@ -325,8 +336,6 @@ private struct BrowseSituationCard: View {
 
 private struct BrowseCityHeroRail: View {
     let cities: [BrowseCityShortcut]
-    let chromeNamespace: Namespace.ID?
-    let activeMorphRoute: BrowseCollectionRoute?
     let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
@@ -339,8 +348,6 @@ private struct BrowseCityHeroRail: View {
                         BrowseCityHeroCard(
                             city: city,
                             width: cardWidth,
-                            chromeNamespace: chromeNamespace,
-                            isMorphSource: activeMorphRoute == city.collectionRoute,
                             onOpenCollection: onOpenCollection
                         )
                     }
@@ -360,16 +367,10 @@ private struct BrowseCityHeroRail: View {
 private struct BrowseCityHeroCard: View {
     let city: BrowseCityShortcut
     let width: CGFloat
-    let chromeNamespace: Namespace.ID?
-    let isMorphSource: Bool
     let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     private var descriptor: BrowseCollectionDescriptor? {
         BrowseSearchDestinations.collectionDescriptor(for: city.collectionRoute)
-    }
-
-    private var routeID: String {
-        city.collectionRoute.id
     }
 
     private var title: String {
@@ -395,32 +396,17 @@ private struct BrowseCityHeroCard: View {
                         .scaledToFill()
                         .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: .top)
                         .clipped()
-                        .homePhraseHeroMorph(
-                            BrowseCityHeroMorphID.image(routeID),
-                            namespace: chromeNamespace,
-                            isActive: isMorphSource,
-                            isSource: true,
-                            anchor: .top
-                        )
 
                     Color.white.opacity(0.98)
                         .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight)
                 }
 
-                LinearGradient(
-                    stops: [
-                        .init(color: .clear, location: 0),
-                        .init(color: Color.white.opacity(0.24), location: 0.38),
-                        .init(color: Color.white.opacity(0.72), location: 0.68),
-                        .init(color: Color.white.opacity(0.98), location: 1),
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(width: width, height: BrowsePageLayout.cityHeroImageFadeHeight)
-                .frame(maxHeight: .infinity, alignment: .top)
-                .offset(y: BrowsePageLayout.cityHeroImageHeight - BrowsePageLayout.cityHeroImageFadeHeight)
-                .allowsHitTesting(false)
+                Rectangle()
+                    .fill(Color.black.opacity(0.06))
+                    .frame(width: width, height: 1)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .offset(y: BrowsePageLayout.cityHeroImageHeight)
+                    .allowsHitTesting(false)
 
                 VStack(alignment: .leading, spacing: 9) {
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -429,14 +415,6 @@ private struct BrowseCityHeroCard: View {
                             .foregroundStyle(.primary)
                             .lineLimit(2)
                             .minimumScaleFactor(0.72)
-                            .homePhraseHeroMorph(
-                                BrowseCityHeroMorphID.title(routeID),
-                                namespace: chromeNamespace,
-                                isActive: isMorphSource,
-                                isSource: true,
-                                properties: .position,
-                                anchor: .leading
-                            )
 
                         Spacer(minLength: 8)
                     }
@@ -448,14 +426,6 @@ private struct BrowseCityHeroCard: View {
                         .lineLimit(3)
                         .minimumScaleFactor(0.82)
                         .fixedSize(horizontal: false, vertical: true)
-                        .homePhraseHeroMorph(
-                            BrowseCityHeroMorphID.subtitle(routeID),
-                            namespace: chromeNamespace,
-                            isActive: isMorphSource,
-                            isSource: true,
-                            properties: .position,
-                            anchor: .leading
-                        )
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 24)
@@ -480,6 +450,7 @@ private struct BrowseCityHeroCard: View {
 
 private struct BrowseStartHereCard: View {
     let destination: BrowseDestination
+    var actionLabel = "Start"
     let action: () -> Void
 
     var body: some View {
@@ -503,7 +474,7 @@ private struct BrowseStartHereCard: View {
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    Text("Start")
+                    Text(actionLabel)
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(.red)
                 }

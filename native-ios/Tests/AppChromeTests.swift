@@ -342,15 +342,10 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testBrowseCityHeroImageFadeIsStrongEnoughToHideImagePanelSeam() {
-        XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
-    }
-
-    func testBrowseCityHeroMorphTimingKeepsDestinationBodyMounted() {
-        XCTAssertLessThanOrEqual(BrowseCityHeroMorphTiming.navigationDuration, 0.38)
-        XCTAssertGreaterThan(
-            BrowseCityHeroMorphTiming.cleanupDelayNanoseconds,
-            BrowseCityHeroMorphTiming.navigationDurationNanoseconds
+    func testBrowseCityHeroCardKeepsImageAndCopyAreasStable() {
+        XCTAssertEqual(
+            BrowsePageLayout.cityHeroImageHeight + BrowsePageLayout.cityHeroCopyAreaHeight,
+            BrowsePageLayout.cityHeroCardHeight
         )
     }
 
@@ -1239,6 +1234,10 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertNotNil(hotel.openablePageID)
         XCTAssertTrue(BrowseSearchDestinations.situations.allSatisfy { $0.openablePageID != nil })
+        XCTAssertFalse(BrowseSearchDestinations.situations.contains { $0.id == VietnameseMenuKind.food.routeID })
+        XCTAssertFalse(BrowseSearchDestinations.situations.contains { $0.id == VietnameseMenuKind.drink.routeID })
+        XCTAssertEqual(BrowseSearchDestinations.menuGuides.map(\.title), ["Food Menu", "Drink Menu"])
+        XCTAssertEqual(BrowseSearchDestinations.menuGuides.map(\.id), [VietnameseMenuKind.food.routeID, VietnameseMenuKind.drink.routeID])
         XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.isEmpty)
         XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
     }
@@ -1458,19 +1457,19 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(
             cityHub.situations.map(\.title),
-            ["Arriving", "Getting around", "Beach day", "Food & coffee", "Places to visit", "Help"]
+            ["Arriving", "Getting around", "Beach day", "Food & cafes", "Places to visit", "Help"]
         )
         XCTAssertTrue(cityHub.situations.allSatisfy { $0.targetRoute == nil })
         XCTAssertTrue(cityHub.situations.allSatisfy { !$0.items.isEmpty })
         XCTAssertEqual(cityHub.cityNameAudioItem?.title, "Đà Nẵng")
         XCTAssertEqual(cityHub.cityNameAudioItem?.subtitle, "Da Nang")
         XCTAssertNotNil(AudioAssetManifest.main?.url(for: cityHub.cityNameAudioItem?.audioKey))
-        XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Food & coffee" })?.subtitle, "Restaurants, cafés, markets")
+        XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Food & cafes" })?.subtitle, "Restaurants, cafés, markets")
         XCTAssertEqual(cityHub.situations.first(where: { $0.title == "Places to visit" })?.subtitle, "Dragon Bridge, Marble Mountains, Bà Nà Hills")
         XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Arriving" })?.items.contains { $0.pageID == "viet-phrase-airport-3" } == true)
         XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Getting around" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-nguyen-van-linh-street" } == true)
         XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Beach day" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-my-khe" } == true)
-        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Food & coffee" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-nen" } == true)
+        XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Food & cafes" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-nen" } == true)
         XCTAssertTrue(cityHub.situations.first(where: { $0.title == "Places to visit" })?.items.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" } == true)
         XCTAssertEqual(cityHub.namesToKnowItems.first?.pageID, "viet-phrase-city-danang-place-airport")
         XCTAssertTrue(cityHub.namesToKnowItems.contains { $0.pageID == "viet-phrase-city-danang-place-dragon-bridge" })
@@ -1592,11 +1591,11 @@ final class AppChromeTests: XCTestCase {
     func testGenericFoodCollectionStartsWithCoffeeAndDishNounsBeforePlaces() {
         let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
 
-        XCTAssertEqual(food.title, "Food & coffee")
-        XCTAssertEqual(food.starterTitle, "Coffee, dishes, and drinks")
+        XCTAssertEqual(food.title, "Eating Out")
+        XCTAssertEqual(food.starterTitle, "Quick orders")
         XCTAssertEqual(
             food.subcategories.map(\.title),
-            ["Coffee & drinks", "Local dishes", "Order & adjust", "Allergies & diet", "Paying", "Places to eat & drink"]
+            ["Order drinks", "Order dishes", "Adjust the order", "Allergies & diet", "Paying", "Places to eat & drink"]
         )
 
         let starterIDs = food.starterItems.map(\.pageID)
@@ -1618,14 +1617,14 @@ final class AppChromeTests: XCTestCase {
 
         for subcategory in food.subcategories {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into useful rows")
-            if subcategory.title == "Coffee & drinks" {
+            if subcategory.title == "Order drinks" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
                 XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-coffee-2")
                 XCTAssertEqual(subcategory.items.first?.title, "Cà phê đen")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-2" })
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong" })
                 XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
-            } else if subcategory.title == "Local dishes" {
+            } else if subcategory.title == "Order dishes" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
                 XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
                 XCTAssertEqual(subcategory.items.first?.title, "Phở")
@@ -1650,7 +1649,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(VietnameseMenuCatalog.items(for: .food).count, 269)
         XCTAssertEqual(VietnameseMenuCatalog.items(for: .drink).count, 86)
 
-        XCTAssertEqual(food.title, "Vietnamese menu")
+        XCTAssertEqual(food.title, "Food Menu")
         XCTAssertEqual(food.mastheadImageName, "HeroVietnameseFoodMenu")
         XCTAssertEqual(food.starterTitle, "Popular dishes")
         XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
@@ -1658,7 +1657,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(food.subcategories.first?.title, "Noodle soups")
         XCTAssertEqual(food.subcategories.first?.phraseCount, 26)
 
-        XCTAssertEqual(drinks.title, "Vietnamese drinks")
+        XCTAssertEqual(drinks.title, "Drink Menu")
         XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
         XCTAssertEqual(drinks.starterTitle, "Popular drinks")
         XCTAssertEqual(drinks.starterItems.first?.pageID, "viet-menu-drink-ca-phe-sua-da")
@@ -2032,7 +2031,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(countryHub.situationTitle, "Start here")
         XCTAssertEqual(
             countryHub.situations.map(\.title),
-            ["First day in Vietnam", "Airport arrival", "Taxi / Grab", "Food & drink", "Hotel", "Help"]
+            ["First day in Vietnam", "Airport arrival", "Taxi / Grab", "Eating Out", "Hotel", "Help"]
         )
         XCTAssertTrue(countryHub.situations.allSatisfy { $0.targetRoute != nil })
 
@@ -2196,18 +2195,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(forwardPresentation.horizontalOffset, 280, accuracy: 0.001)
     }
 
-    func testCityHeroMorphKeepsInactiveBrowsePageVisible() {
+    func testInactiveBrowsePageHidesAfterOpeningCityCollection() {
         let presentation = AppInteractiveNavigationPresentation.presentation(
             route: .browse,
             currentRoute: .browseCollection(.city("danang")),
             backPreviewRoute: .browse,
             forwardPreviewRoute: nil,
             drag: nil,
-            width: 400,
-            visibleInactiveRoutes: [.browse]
+            width: 400
         )
 
-        XCTAssertEqual(presentation.opacity, 1, accuracy: 0.001)
+        XCTAssertEqual(presentation.opacity, 0, accuracy: 0.001)
         XCTAssertEqual(presentation.horizontalOffset, 0, accuracy: 0.001)
     }
 

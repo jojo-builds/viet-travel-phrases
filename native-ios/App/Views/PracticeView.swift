@@ -3502,7 +3502,7 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
         ),
         PracticeMatchTopicSpec(
             id: "food-drinks",
-            title: "Food & drinks",
+            title: "Eating Out",
             subtitle: "Order, ask, pay",
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tint: .orange,
