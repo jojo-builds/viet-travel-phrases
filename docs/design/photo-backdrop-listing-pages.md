@@ -16,7 +16,7 @@ The current city-wide rule enables the treatment for non-compact `viet-family-ci
 
 Vietnamese menu item detail pages also use the treatment when the page ID starts with `viet-menu-` and the hero asset starts with `BackdropMenu`. Menu collection rows and section cards keep the square `HeroMenu*` thumbnail system; only item detail pages switch to the portrait backdrop asset.
 
-Hub collection pages use the same interaction when the `BrowseCollectionDescriptor` has `cityHub` content. That includes the city guide hubs and the All Vietnam hub.
+Hub and category collection pages use the same interaction when the `BrowseCollectionDescriptor` has `cityHub` content or a `HeroCategory*` masthead. That includes the city guide hubs, the All Vietnam hub, and phrase category pages such as Airport, Hotel, Eating Out, Getting Around, Shopping, Emergency, and Local Greetings.
 
 ## Implementation Steps
 
@@ -46,11 +46,11 @@ The page behavior lives in `PhraseArticleTemplateView`:
 - `PhrasePhotoBackdropLayout.quantizedBackdropOffset(for:)` keeps the bottom backing from invalidating the full page on every pixel of scroll.
 - `photoBackdropBottomChromeBackdrop(geometry:metrics:)` paints the content-colored surface behind the system tab/search chrome and clamps it below the rounded sheet edge so the photo does not look cut off in the pulled-down state.
 
-The hub behavior lives in `BrowseCollectionPageView`:
+The hub/category behavior lives in `BrowseCollectionPageView`:
 
-- `usesPhotoBackdropLayout` is true when `descriptor.cityHub != nil`.
-- The hub sheet reuses `BrowseCollectionHeaderCopy` so the city title, subtitle, and morph targets stay consistent with the standard header.
-- Hub background images use the descriptor `mastheadImageName`.
+- `usesPhotoBackdropLayout` is true when `descriptor.cityHub != nil` or the descriptor masthead starts with `HeroCategory`.
+- The sheet reuses `BrowseCollectionHeaderCopy` so the title, subtitle, and morph targets stay consistent with the standard header.
+- Background images use the descriptor `mastheadImageName`.
 
 The shell behavior lives in `AppShellView`:
 
@@ -77,3 +77,4 @@ For each representative page group, test these states on the feature simulator:
 - 355 Vietnamese menu item detail pages, using generated `BackdropMenu*` portrait JPEGs at `720x1556`; the production manifest and review packet live under `docs/editorial-exports/viet-image-assets/menu-backdrop-production-355/`.
 - City hub collection pages with `BrowseCollectionRoute.city(...)`.
 - The All Vietnam hub collection page at `BrowseCollectionRoute.category("city-guides")`.
+- Phrase category collection pages with `HeroCategory*` mastheads, stored as lightweight `720x1556` JPEGs in `native-ios/Resources/Assets.xcassets`.
