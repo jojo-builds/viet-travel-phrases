@@ -24,9 +24,9 @@ final class PracticeUITests: XCTestCase {
         XCTAssertTrue(quickButton.waitForExistence(timeout: 8))
         quickButton.tap()
 
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.ProgressDots"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Board"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.buttons["Need a hint?"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.staticTexts["0 of 4"].exists)
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
@@ -44,15 +44,15 @@ final class PracticeUITests: XCTestCase {
 
         savedPracticeButton.tap()
 
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.ProgressDots"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
 
     func testLegacyPracticeScenarioLaunchFallsBackToMatchRound() {
         let app = launchPracticeApp(extraArguments: ["--practice-scenario", "danangFirstDay"])
 
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
     }
 

@@ -53,7 +53,7 @@ Create screen 5: Personalized Preview. Headline: "For your Hanoi hotel arrival".
 ### 6. Trial Paywall
 
 ```text
-Create screen 6: 7-Day Trial Paywall. Headline: "Try Speak Local Vietnam free for 7 days". Benefits: Offline Vietnam phrase map, Bundled audio for real phrases, City and situation guidance, Practice tuned to your level, Personalized recommendations. Reassurance: "No charge during the 7-day trial." CTA "Start 7-day trial". Secondary links only: Restore purchase, Terms, Privacy. No Continue limited preview, Maybe later, Skip, Free plan, or ongoing free-tier language. No Melo.
+Create screen 6: 7-Day Trial Paywall. Headline: "Try Speak Local Vietnam free for 7 days". Benefits: Offline Vietnam phrase map, Bundled audio for real phrases, City and situation guidance, Practice tuned to your level, Personalized recommendations. Reassurance: "No charge during the 7-day trial." CTA "Start 7-day trial". Secondary links only: Restore purchase, Terms, Privacy. No limited-preview CTA, Maybe later, Skip, Free plan, or ongoing free-tier language. No Melo.
 ```
 
 ## Compact Alternate Prompts

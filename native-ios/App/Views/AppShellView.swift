@@ -30,8 +30,8 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
+    @State private var isSystemSearchPresented = false
     @State private var searchFocusRequestID = 0
-    @State private var isSearchFieldFocused = false
     @State private var searchReturnFocusRequestID = 0
     @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
     @State private var didApplyLaunchSearchFocus = false
@@ -55,8 +55,6 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphResetID = 0
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeScrollRestorationTarget: HomeScrollTarget?
-    @State private var browseCityHeroRoute: BrowseCollectionRoute?
-    @State private var browseCityHeroMorphResetID = 0
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
     @State private var menuSectionJumpRequestID = 0
     @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
@@ -65,6 +63,7 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
     private let launchPracticeEntryContext: PracticeEntryContext
@@ -114,13 +113,24 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
-        .toolbar(hidesPhotoBackdropChrome ? .hidden : .visible, for: .tabBar)
+        .toolbar(hidesSystemTabBar ? .hidden : .visible, for: .tabBar)
         .toolbarBackground(
             showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
             for: .tabBar
         )
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
+        .searchable(
+            text: $searchQuery,
+            isPresented: systemSearchPresentation,
+            placement: .automatic,
+            prompt: "Search Vietnamese phrases"
+        )
+        .searchFocused($isSearchFieldFocused)
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled()
+        .tabViewSearchActivation(.searchTabSelection)
         .background {
             #if canImport(UIKit)
             AppShellTabBarAppearanceBridge(
@@ -147,11 +157,15 @@ struct AppShellView: View {
     }
 
     private var tabBarBackgroundVisibility: Visibility {
-        if hidesPhotoBackdropChrome {
+        if hidesSystemTabBar {
             return .hidden
         }
 
         return showsPhotoBackdropTabBarBackground ? .visible : .automatic
+    }
+
+    private var hidesSystemTabBar: Bool {
+        hidesPhotoBackdropChrome || isPracticeMatchPresented || isPracticeThreadPresented
     }
 
     private var shellContentBody: some View {
@@ -201,8 +215,6 @@ struct AppShellView: View {
                 BrowsePageView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.browseScrollToTopTrigger,
-                    chromeNamespace: chromeNamespace,
-                    cityHeroMorphRoute: browseCityHeroRoute,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
@@ -216,8 +228,7 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: pageWidth,
-                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
+                    width: pageWidth
                 )
 
                 SavedPagesView(
@@ -302,6 +313,7 @@ struct AppShellView: View {
                         isFieldFocused: isSearchFieldFocused,
                         returnFocusRequest: searchReturnFocusRequest,
                         onClose: closeSearch,
+                        onDismissSearchFocus: dismissSearchFieldFocus,
                         onPrepareReturnFocus: prepareSearchReturnFocus,
                         onOpenDetail: openDetailFromSearch,
                         onOpenCollection: openBrowseCollectionFromSearch,
@@ -414,7 +426,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -422,8 +434,7 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: width,
-                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
+                    width: width
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
@@ -431,8 +442,6 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
-                    chromeNamespace: chromeNamespace,
-                    cityHeroMorphRoute: browseCityHeroRoute,
                     isActive: isActive,
                     onOpenDetail: openDetailFromBrowse,
                     onOpenCollection: openBrowseCollection,
@@ -440,7 +449,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -448,8 +457,7 @@ struct AppShellView: View {
                     backPreviewRoute: navigation.backPreviewRoute,
                     forwardPreviewRoute: navigation.forwardPreviewRoute,
                     drag: interactiveDrag,
-                    width: width,
-                    visibleInactiveRoutes: browseCityHeroVisibleRoutes
+                    width: width
                 )
             }
         }
@@ -466,15 +474,27 @@ struct AppShellView: View {
         )
     }
 
-    private var browseCityHeroVisibleRoutes: [AppRoute] {
-        guard let browseCityHeroRoute else {
-            return []
-        }
-
-        return [
-            .browse,
-            .browseCollection(browseCityHeroRoute),
-        ]
+    private var systemSearchPresentation: Binding<Bool> {
+        Binding(
+            get: {
+                navigation.isSearchPresented && isSystemSearchPresented
+            },
+            set: { isPresented in
+                if isPresented {
+                    isSystemSearchPresented = true
+                    if !navigation.isSearchPresented {
+                        openSearch(prefilledQuery: nil, focusField: false)
+                    }
+                } else {
+                    cancelSearchFocus()
+                    if navigation.isSearchPresented {
+                        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+                            navigation.goBack()
+                        }
+                    }
+                }
+            }
+        )
     }
 
     private func selectSystemTab(_ tab: AppSystemTab) {
@@ -609,8 +629,8 @@ struct AppShellView: View {
     }
 
     private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
-        browseCityHeroRoute == route
-            ? AppPageTransition.browseCityHeroMorph
+        BrowseCollectionNativeTransition.usesCityDissolve(for: route)
+            ? AppPageTransition.browseCityDissolve
             : AppPageTransition.slideFromTrailing
     }
 
@@ -758,6 +778,7 @@ struct AppShellView: View {
                 isFieldFocused: isSearchFieldFocused,
                 returnFocusRequest: searchReturnFocusRequest,
                 onClose: closeSearch,
+                onDismissSearchFocus: dismissSearchFieldFocus,
                 onPrepareReturnFocus: prepareSearchReturnFocus,
                 onOpenDetail: openDetailFromSearch,
                 onOpenCollection: openBrowseCollectionFromSearch,
@@ -1243,54 +1264,11 @@ struct AppShellView: View {
     }
 
     private func openBrowseCollection(_ route: BrowseCollectionRoute) {
-        if shouldUseBrowseCityHeroMorph(for: route) {
-            openBrowseCollectionWithCityHeroMorph(route)
-            return
-        }
-
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollection(route)
-        }
-    }
-
-    private func shouldUseBrowseCityHeroMorph(for route: BrowseCollectionRoute) -> Bool {
-        guard case .city = route else {
-            return false
-        }
-
-        return navigation.currentRoute == .browse && !navigation.isSearchPresented
-    }
-
-    private func openBrowseCollectionWithCityHeroMorph(_ route: BrowseCollectionRoute) {
-        cancelInteractiveChromeState()
-        cancelSearchFocus()
-        clearPracticeThreadForwardRestore()
-        browseCityHeroMorphResetID += 1
-        let resetID = browseCityHeroMorphResetID
-
-        withoutRouteAnimation {
-            browseCityHeroRoute = route
-        }
-
-        withAnimation(BrowseCityHeroMorphTiming.navigationAnimation) {
-            navigation.openBrowseCollection(route)
-        }
-        clearBrowseCityHeroLaunch(after: resetID)
-    }
-
-    private func clearBrowseCityHeroLaunch(after resetID: Int) {
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: BrowseCityHeroMorphTiming.cleanupDelayNanoseconds)
-            guard browseCityHeroMorphResetID == resetID else {
-                return
-            }
-
-            withoutRouteAnimation {
-                browseCityHeroRoute = nil
-            }
         }
     }
 
@@ -1298,7 +1276,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openHomeBrowseCollection(route)
         }
     }
@@ -1307,7 +1285,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollectionFromSearch(route)
         }
     }
@@ -1506,6 +1484,7 @@ struct AppShellView: View {
             searchQuery = prefilledQuery
         }
 
+        isSystemSearchPresented = true
         if !focusField {
             isSearchFieldFocused = false
         }
@@ -1516,6 +1495,8 @@ struct AppShellView: View {
 
         if focusField {
             focusSearchField()
+        } else {
+            defocusSearchFieldAfterPresentation(requiresPresented: true, delays: [260_000_000])
         }
     }
 
@@ -1535,9 +1516,42 @@ struct AppShellView: View {
         }
     }
 
+    private func defocusSearchFieldAfterPresentation(requiresPresented: Bool, delays: [UInt64]) {
+        searchFocusRequestID += 1
+        let requestID = searchFocusRequestID
+
+        Task { @MainActor in
+            for delay in delays {
+                try? await Task.sleep(nanoseconds: delay)
+
+                guard
+                    requestID == searchFocusRequestID,
+                    navigation.isSearchPresented,
+                    !requiresPresented || isSystemSearchPresented
+                else {
+                    return
+                }
+
+                isSearchFieldFocused = false
+                #if canImport(UIKit)
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                #endif
+            }
+        }
+    }
+
+    private func dismissSearchFieldFocus() {
+        searchFocusRequestID += 1
+        isSearchFieldFocused = false
+        #if canImport(UIKit)
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        #endif
+    }
+
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
+        isSystemSearchPresented = true
         isSearchFieldFocused = true
 
         Task { @MainActor in
@@ -1557,26 +1571,32 @@ struct AppShellView: View {
         }
         didApplyLaunchSearchFocus = true
 
-        guard launchSearchShouldFocus, navigation.isSearchPresented else {
+        guard navigation.isSearchPresented else {
             return
         }
 
-        focusSearchField()
+        if launchSearchShouldFocus {
+            focusSearchField()
+        } else {
+            defocusSearchFieldAfterPresentation(
+                requiresPresented: false,
+                delays: [260_000_000, 520_000_000, 900_000_000]
+            )
+        }
     }
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
+        isSystemSearchPresented = false
         isSearchFieldFocused = false
     }
 
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
         homePhraseHeroMorphResetID += 1
-        browseCityHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
-        browseCityHeroRoute = nil
         interactiveDrag = nil
     }
 
@@ -2734,15 +2754,13 @@ struct AppInteractiveNavigationPresentation: Equatable {
         backPreviewRoute: AppRoute?,
         forwardPreviewRoute: AppRoute?,
         drag: AppInteractiveNavigationDrag?,
-        width: CGFloat,
-        visibleInactiveRoutes: [AppRoute] = []
+        width: CGFloat
     ) -> AppInteractiveNavigationPresentation {
         let isCurrentRoute = route == currentRoute
-        let shouldKeepVisible = isCurrentRoute || visibleInactiveRoutes.contains(route)
         guard let drag else {
             return AppInteractiveNavigationPresentation(
                 horizontalOffset: 0,
-                opacity: shouldKeepVisible ? 1 : 0,
+                opacity: isCurrentRoute ? 1 : 0,
                 scale: 1,
                 brightness: 0,
                 shadowOpacity: 0,
@@ -2800,10 +2818,29 @@ enum AppPageTransition {
         removal: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation)
     )
 
-    static let browseCityHeroMorph = AnyTransition.asymmetric(
-        insertion: .identity,
-        removal: .identity
+    static let browseCityDissolve = AnyTransition.asymmetric(
+        insertion: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation),
+        removal: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation)
     )
+}
+
+enum BrowseCollectionNativeTransition {
+    static let cityDissolveDuration: TimeInterval = 0.22
+    static let cityDissolveAnimation: Animation = .easeInOut(duration: cityDissolveDuration)
+
+    static func usesCityDissolve(for route: BrowseCollectionRoute) -> Bool {
+        guard case .city = route else {
+            return false
+        }
+
+        return true
+    }
+
+    static func animation(for route: BrowseCollectionRoute) -> Animation {
+        usesCityDissolve(for: route)
+            ? cityDissolveAnimation
+            : .snappy(duration: 0.34)
+    }
 }
 
 enum HomePhraseHeroMorphTiming {
@@ -2814,17 +2851,6 @@ enum HomePhraseHeroMorphTiming {
     static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
 }
 
-enum BrowseCityHeroMorphTiming {
-    static let navigationDuration = 0.36
-    static let cleanupDelayNanoseconds: UInt64 = 740_000_000
-
-    static var navigationDurationNanoseconds: UInt64 {
-        UInt64(navigationDuration * 1_000_000_000)
-    }
-
-    static let navigationAnimation: Animation = .timingCurve(0.22, 1, 0.36, 1, duration: navigationDuration)
-}
-
 private struct NavigationPageMotion: ViewModifier {
     let route: AppRoute
     let currentRoute: AppRoute
@@ -2832,7 +2858,6 @@ private struct NavigationPageMotion: ViewModifier {
     let forwardPreviewRoute: AppRoute?
     let drag: AppInteractiveNavigationDrag?
     let width: CGFloat
-    let visibleInactiveRoutes: [AppRoute]
 
     func body(content: Content) -> some View {
         content
@@ -2859,8 +2884,7 @@ private struct NavigationPageMotion: ViewModifier {
             backPreviewRoute: backPreviewRoute,
             forwardPreviewRoute: forwardPreviewRoute,
             drag: drag,
-            width: width,
-            visibleInactiveRoutes: visibleInactiveRoutes
+            width: width
         )
     }
 }
@@ -2904,8 +2928,7 @@ private extension View {
         backPreviewRoute: AppRoute?,
         forwardPreviewRoute: AppRoute?,
         drag: AppInteractiveNavigationDrag?,
-        width: CGFloat,
-        visibleInactiveRoutes: [AppRoute] = []
+        width: CGFloat
     ) -> some View {
         modifier(
             NavigationPageMotion(
@@ -2914,8 +2937,7 @@ private extension View {
                 backPreviewRoute: backPreviewRoute,
                 forwardPreviewRoute: forwardPreviewRoute,
                 drag: drag,
-                width: width,
-                visibleInactiveRoutes: visibleInactiveRoutes
+                width: width
             )
         )
     }
@@ -4418,8 +4440,8 @@ private enum HomeContent {
         ),
         HomePhraseShelfDefinition(
             id: "food-coffee",
-            title: "Food & coffee",
-            subtitle: "Menu, water, coffee, spice, allergies, and paying.",
+            title: "Eating Out",
+            subtitle: "Tables, ordering, allergies, and paying.",
             route: .category("food"),
             sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
             pageIDs: [
@@ -4548,7 +4570,7 @@ private enum HomeContent {
         ),
         HomeSituationCard(
             id: "food-shopping",
-            title: "Food and shopping",
+            title: "Eating out and shopping",
             subtitle: "Restaurants, markets, items, prices",
             imageName: "HomeSituationFoodShopping",
             route: .category("food")
@@ -5034,7 +5056,7 @@ private struct HomePracticeStarter: Identifiable {
         ),
         HomePracticeStarter(
             id: "food-drinks",
-            title: "Food & drinks",
+            title: "Eating Out",
             subtitle: "Order, ask, pay",
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tint: .orange,

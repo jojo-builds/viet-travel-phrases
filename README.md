@@ -65,7 +65,7 @@ Current reality summary:
   - `SpeakLocal Vietnam`
   - `SpeakLocal Philippines`
 - Repo premium pricing now resolves to:
-  - `$4.99` one-time unlock
+  - `7-day free trial, then $4.99/month`
 - Current website direction is now:
   - phone-forward, app-aligned, and responsive on desktop
   - a gateway into the app rather than a separate product

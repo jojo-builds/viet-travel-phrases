@@ -7484,16 +7484,16 @@
       "profile": "experience",
       "currentHeroImageName": "HeroCityHoian",
       "targetHeroImageName": "HeroCityHoianPlaceLuneCenter",
-      "imagePromptNote": "bamboo-inspired riverside theatre exterior at dusk, neutral signage, lantern glow",
+      "imagePromptNote": "round full-moon bamboo dome theater beside the Hoai River at blue hour, warm lantern glow, Hoi An old-town roofs nearby",
       "queueIndex": 357,
       "status": "imported",
       "sourceImagePath": "native-ios/artifacts/city-hero-production/worker-be-sources/HeroCityHoianPlaceLuneCenter.png",
       "approvedImagePath": "docs/editorial-exports/viet-image-assets/city-hero-production-505/sources/HeroCityHoianPlaceLuneCenter/HeroCityHoianPlaceLuneCenter.png",
       "rejectReason": "",
-      "reviewerNotes": "Production batch approved after masthead crop gate: realistic, page-specific, upper-middle subject, no obvious readable text/logo artifact.",
-      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an experience or day-trip scene with the main activity/place cue visible for SpeakLocal Vietnam.\nPage: Hoi An Lune Center / Hoi An Lune Center\nCity: hoian\nSpecific subject guidance: bamboo-inspired riverside theatre exterior at dusk, neutral signage, lantern glow\nComposition: vertical masthead source, key subject centered in the upper third and center 70% width, with enough soft background for an iOS title fade.\nStyle: realistic travel/editorial photo, natural light, app-owned, premium but not glossy stock-photo artificial.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no people as the main subject, no wrong-city cues, no generic Ha Long Bay imagery unless the page is actually Ha Long Bay.",
-      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceLuneCenter.imageset/hero-city-hoian-place-lune-center.png",
-      "sha256": "660417afdd52d2b53179ca65c0f9ac759a609debaf792aa6d34ff7afd251c514"
+      "reviewerNotes": "Reference-backed replacement after audit failure: user screenshot/web reference showed the venue as a round full-moon bamboo dome, not the previous tall angular bamboo pavilion. Replacement is crop-safe, no readable text/logo/watermark, and imported as 720q80 JPEG.",
+      "prompt": "Use case: photorealistic-natural\nAsset type: native iOS tall city hero image\nPrimary request: Create an original, realistic travel-editorial hero image of Hoi An Lune Center in Hoi An, Vietnam.\nSubject accuracy: The building must read as the actual Lune Center / Hoi An performance venue: a low round full-moon bamboo dome theater with a woven lattice shell, warm golden interior glow, riverside setting, Hoi An lantern atmosphere. Do not depict a tall angular bamboo pavilion, generic wooden tower, temple, pagoda, shopfront, or cafe.\nComposition: vertical portrait masthead, 9:19 feel, subject centered in the upper third and within the center 70% width, with enough soft sky/water/old-town background for an iOS title fade. Crop-safe for a 720 x 1556 app image.\nStyle: app-owned photorealistic travel/editorial photo, natural dusk blue-hour light, premium but not glossy stock-photo artificial, realistic textures and depth.\nConstraints: no readable text, no fake signs, no logos, no watermarks, no obvious copied signage, no people as the main subject, no wrong-city cues.",
+      "assetPath": "native-ios/Resources/Assets.xcassets/HeroCityHoianPlaceLuneCenter.imageset/hero-city-hoian-place-lune-center-720q80.jpg",
+      "sha256": "2666a2bd8802c4414d900ec89be5c25546f8076cd78c25c6ce1c97da3e442de5"
     },
     {
       "id": "city-hoian-place-madam-khanh",

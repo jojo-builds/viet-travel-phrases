@@ -50,11 +50,11 @@ Personal shelves are state-gated. `Recently viewed` must not appear on a fresh f
    - Layout: realistic image city cards.
    - Purpose: city guides and location-led discovery.
 
-4. `Food & coffee`
+4. `Eating Out`
    - Route: `.category("food")`
    - Source categories: `food-drink`, `money-numbers-prices`
    - Layout: medium two-column audio grid plus a wide `More` row.
-   - Purpose: menu, water, coffee, spice/allergy, paying.
+   - Purpose: tables, ordering, allergies, and paying.
 
 5. `Messages`
    - Source: `HomeContent.practiceScenarios`

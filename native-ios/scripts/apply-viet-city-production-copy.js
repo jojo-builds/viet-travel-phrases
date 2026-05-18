@@ -1607,7 +1607,7 @@ function applyHubEditorial(city) {
         "Arrivals",
         "Landmarks",
         "Neighborhoods",
-        "Food & coffee",
+        "Food & cafes",
         "Markets",
       ],
     },

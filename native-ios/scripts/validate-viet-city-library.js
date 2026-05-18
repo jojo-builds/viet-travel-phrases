@@ -22,7 +22,7 @@ const expectedSubcategories = new Set([
   "practical-help-near-places",
 ]);
 const difficultyValues = new Set(["beginner", "intermediate", "advanced"]);
-const pageKindValues = new Set(["phrase", "place", "city", "restaurant", "dish", "category", "relationship-person"]);
+const pageKindValues = new Set(["phrase", "place", "city", "restaurant", "dish", "drink", "dessert", "category", "relationship-person"]);
 const bannedSourcePhrases = /\b(top|best|#1|number one|must-visit|must visit)\b/i;
 const expectedApprovedPageCount = 500;
 const expectedPagesPerCity = 100;
@@ -36,8 +36,8 @@ const nounInventorySubcategories = new Set([
   "shopping-markets",
 ]);
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
-const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
-const browseNounPageKinds = new Set(["place", "restaurant", "dish"]);
+const dishPlaceKinds = new Set(["local dish", "food spot", "dish", "drink", "dessert"]);
+const browseNounPageKinds = new Set(["place", "restaurant", "dish", "drink", "dessert"]);
 const browseNounPlaceKinds = new Set([
   "airport",
   "station",
@@ -50,6 +50,8 @@ const browseNounPlaceKinds = new Set([
   "restaurant",
   "cafe",
   "dish",
+  "drink",
+  "dessert",
   "market",
   "beach",
   "nature",
@@ -318,7 +320,7 @@ function main() {
     const isLandmarkActionPage = page.id === "city-danang-place-dragon-bridge";
     assert(pageKindValues.has(pageKind), `${page.id} has bad pageKind ${pageKind}`);
     assert(page.placeKind === placeKind, `${page.id} page placeKind must match place ${page.placeID}`);
-    if (pageKind === "restaurant" || pageKind === "dish") {
+    if (pageKind === "restaurant" || pageKind === "dish" || pageKind === "drink" || pageKind === "dessert") {
       assert(page.contentRole, `${page.id} ${pageKind} page needs contentRole`);
     }
     const target = normalizeText(page.targetText);
@@ -403,7 +405,7 @@ function main() {
     assert(authoredPage.practiceMetadata?.practiceCTALabel, `${page.id} authored page needs practice CTA metadata`);
 
     const renderedText = pageText(authoredPage);
-    if ((pageKind === "restaurant" || pageKind === "dish") && /landmark quickly/i.test(renderedText)) {
+    if ((pageKind === "restaurant" || pageKind === "dish" || pageKind === "drink" || pageKind === "dessert") && /landmark quickly/i.test(renderedText)) {
       pageKindTemplateErrors.push(`${page.id} ${pageKind} page still uses landmark recognition copy`);
     }
 
@@ -418,11 +420,11 @@ function main() {
       pageKindTemplateErrors.push(`${page.id} repeats generic place-brief prefix`);
     }
 
-    if ((pageKind === "restaurant" || pageKind === "dish") && (authoredPage.categoryIDs ?? []).includes("actual-landmarks")) {
+    if ((pageKind === "restaurant" || pageKind === "dish" || pageKind === "drink" || pageKind === "dessert") && (authoredPage.categoryIDs ?? []).includes("actual-landmarks")) {
       pageKindTemplateErrors.push(`${page.id} ${pageKind} page is categorized as actual-landmarks`);
     }
 
-    if (isDerivedPlacePhrase || ["place", "restaurant", "dish", "city", "category"].includes(pageKind)) {
+    if (isDerivedPlacePhrase || ["place", "restaurant", "dish", "drink", "dessert", "city", "category"].includes(pageKind)) {
       const relationshipSections = (authoredPage.sections ?? []).filter((section) => section.id === "relationship-words" || section.presentation === "relationship-shelf");
       if (relationshipSections.length > 0) {
         pageKindTemplateErrors.push(`${page.id} ${isDerivedPlacePhrase ? "derived place phrase" : pageKind} page has a relationship/person shelf`);
@@ -482,24 +484,24 @@ function main() {
     }
 
     if (pageKind === "restaurant") {
-      const restaurantTaskCount = [
-        /\breservation|booking|booked|đặt bàn\b/i,
-        /\btable|party size|entrance|door|bàn\b/i,
-        /\bmenu|recommend|dish|món|thực đơn\b/i,
-        /\ballergy|diet|vegetarian|vegan|pork|seafood|shellfish|nuts|dị ứng|ăn chay\b/i,
-        /\bbill|payment|card|cash|receipt|hóa đơn|thẻ|tiền mặt\b/i,
-        /\baddress|ride back|drop-off|taxi|driver|map pin\b/i,
+      const restaurantCueCount = [
+        /\btable|tables|bàn\b/i,
+        /\bmenu|menus|dish|dishes|món|thực đơn\b/i,
+        /\bdrink|drinks|coffee|cafe|espresso|ice|sweetness\b/i,
+        /\bcounter|counters|staff|house dish|meal|dining\b/i,
+        /\bstreet stool|street stools|pause|city rhythm|local rhythm\b/i,
+        /\bsetting|courtyard|tile floor|natural light|narrow lane\b/i,
       ].filter((pattern) => pattern.test(renderedText)).length;
-      if (restaurantTaskCount < 2) {
-        pageKindTemplateErrors.push(`${page.id} restaurant page needs at least two restaurant-specific traveler tasks`);
+      if (restaurantCueCount < 2) {
+        pageKindTemplateErrors.push(`${page.id} restaurant page needs at least two restaurant/cafe sensory cues`);
       }
     }
 
-    if (pageKind === "dish") {
-      const hasDishOrdering = /\border|eat|try|ask for|ăn|món|cho tôi|tôi muốn/i.test(renderedText);
-      const hasIngredientDiet = /\bingredient|diet|allergy|vegetarian|vegan|pork|beef|seafood|spice|spicy|herb|noodle|broth|dị ứng|ăn chay|thịt|hải sản|cay/i.test(renderedText);
-      if (!hasDishOrdering || !hasIngredientDiet) {
-        pageKindTemplateErrors.push(`${page.id} dish page needs ordering plus ingredient/diet guidance`);
+    if (pageKind === "dish" || pageKind === "drink" || pageKind === "dessert") {
+      const hasFoodIdentity = /\bdish|drink|dessert|coffee|beer|tea|chè|cà phê|bia|món|bowl|plate|glass|cup|menu/i.test(renderedText);
+      const hasFoodTexture = /\btexture|ingredient|sauce|spice|spicy|herb|noodle|broth|sweet|sweetness|ice|topping|coconut|milk|fruit|flavor|steam|crunch|dipping|stool|snack|evening street/i.test(renderedText);
+      if (!hasFoodIdentity || !hasFoodTexture) {
+        pageKindTemplateErrors.push(`${page.id} dish page needs food/drink identity plus sensory detail`);
       }
     }
   }

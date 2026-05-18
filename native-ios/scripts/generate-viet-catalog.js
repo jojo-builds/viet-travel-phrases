@@ -125,7 +125,7 @@ function normalizeCitySearchAliases({ city, place, page }) {
 }
 
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
-const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const dishPlaceKinds = new Set(["local dish", "food spot", "dish", "drink", "dessert"]);
 
 function normalizeCityKind(value) {
   return String(value ?? "").trim().toLowerCase();
@@ -144,6 +144,7 @@ function pageKindFor(page, place) {
   if (page.kind !== "place") return page.kind;
   const placeKind = normalizeCityKind(place.kind);
   if (restaurantPlaceKinds.has(placeKind)) return "restaurant";
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (dishPlaceKinds.has(placeKind)) return "dish";
   return "place";
 }
@@ -152,6 +153,8 @@ function contentRoleFor(page, place) {
   if (page.contentRole) return page.contentRole;
   if (place.contentRole) return place.contentRole;
   const placeKind = placeKindFor(place);
+  if (placeKind === "drink") return "drink";
+  if (placeKind === "dessert") return "dessert";
   if (placeKind === "dish") return "dish-anchor";
   if (placeKind === "cafe") return "cafe";
   if (placeKind === "restaurant") {

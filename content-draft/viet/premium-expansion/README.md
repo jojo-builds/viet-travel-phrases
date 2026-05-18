@@ -8,8 +8,8 @@ Rules:
 - Some lane manifests here may be future prepared-not-live slices.
 - Some lane manifests here may be `promoted-live` historical records that document how a lane entered runtime truth.
 - Current live Viet truth is now `150 / 350 / 500`.
-- The future planning target still remains `150 / 750` at `$4.99` one-time if content expansion resumes.
-- Use `npm run validate:premium-expansion` from `E:\AI\SpeakLocal-App-Family\app` to validate these lane manifests.
+- The current premium planning target is `150 / 750 / 900` with a `7-day free trial, then $4.99/month` subscription.
+- Use `npm run validate:premium-expansion` from `/Users/jojolim/Developer/products/speaklocal/app-family` to validate these lane manifests.
 
 Current lane records:
 
