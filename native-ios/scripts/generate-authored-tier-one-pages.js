@@ -4880,6 +4880,49 @@ function sanitizeAuthoredPages(pages) {
   return pages.map(sanitizeAuthoredPage);
 }
 
+function sourceReasonToGoCityPagesByRuntimeID() {
+  const library = loadCityLibrary();
+  if (!library) return new Map();
+  const entries = (library.pages ?? [])
+    .filter((page) => page.status === "approved")
+    .filter((page) => page.kind !== "phrase")
+    .filter((page) => page.editorialImport?.audienceRewrite?.standard === "reason-to-go-factual-hook-before-local-name")
+    .filter((page) => page.editorialImport?.runtimeOverride?.kind !== "ba-na-hills-journey")
+    .map((page) => [cityPageID(page.id), page]);
+  return new Map(entries);
+}
+
+function applySourceReasonToGoCityEditorial(pages) {
+  const sourceByRuntimeID = sourceReasonToGoCityPagesByRuntimeID();
+  if (sourceByRuntimeID.size === 0) return pages;
+
+  return pages.map((page) => {
+    const sourcePage = sourceByRuntimeID.get(page.id);
+    const sourceSections = sourcePage?.editorialImport?.sections ?? [];
+    if (!sourcePage || sourceSections.length === 0) return page;
+
+    const existingSectionsByID = new Map((page.sections ?? []).map((section) => [section.id, section]));
+    const sections = sourceSections.map((section) => ({
+      ...(existingSectionsByID.get(section.id) ?? {}),
+      id: section.id,
+      title: section.title,
+      body: section.body,
+    }));
+
+    return {
+      ...page,
+      summary: cleanFinalPunctuation(sourcePage.editorialImport.summary || page.summary || ""),
+      sections: withSectionPresentations(sections),
+      cityMetadata: {
+        ...(page.cityMetadata ?? {}),
+        rationale: cleanTravelerBody(sourcePage.rationale),
+        editorialAudienceRewriteReviewID: sourcePage.editorialImport.audienceRewrite.reviewID,
+        editorialAudienceRewriteStandard: sourcePage.editorialImport.audienceRewrite.standard,
+      },
+    };
+  });
+}
+
 function runEditorialPilotImport() {
   if (!fs.existsSync(editorialPilotImportScriptPath)) {
     return false;
@@ -4988,7 +5031,9 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages]);
+  const allPages = applySourceReasonToGoCityEditorial(
+    sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages])
+  );
   validateBreakdownAuditForGeneration(allPages);
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
@@ -5026,7 +5071,7 @@ function main() {
 
   const importedEditorialPilot = runEditorialPilotImport();
   const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
-  finalBundle.pages = sanitizeAuthoredPages(finalBundle.pages ?? []);
+  finalBundle.pages = applySourceReasonToGoCityEditorial(sanitizeAuthoredPages(finalBundle.pages ?? []));
   validateBreakdownAuditForGeneration(finalBundle.pages ?? []);
   fs.writeFileSync(outputPath, `${JSON.stringify(finalBundle, null, 2)}\n`);
   writeBreakdownAuditExport(finalBundle.pages ?? []);

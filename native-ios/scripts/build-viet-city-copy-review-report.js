@@ -37,6 +37,10 @@ const bannedFragments = [
   "For transit stops, the practical question is where to stand next",
   "allergy risk usually live",
   "tickets, entrance, bathrooms, photos, or the return ride",
+  "Hear the name",
+  "Why it belongs",
+  "Travel moment",
+  "map pin",
 ];
 const formulaicPatterns = [
   /use the vietnamese name when/i,
@@ -47,6 +51,11 @@ const formulaicPatterns = [
   /this is a more deliberate/i,
   /\. keep\b/,
   /start with [^,.]+, then ask for one portion, what is inside/i,
+  /\bthe traveler(?:s)?\b/i,
+  /\bmap pin\b/i,
+  /\bhear the name\b/i,
+  /\bwhy it belongs\b/i,
+  /\btravel moment\b/i,
 ];
 
 function readJSON(filePath) {
@@ -114,14 +123,14 @@ function visibleBannedMatches(text) {
 function profileAudienceCuePass(page, text) {
   const lower = normalizedLower(text);
   const patternsByProfile = {
-    "street-neighborhood": [/street/, /shopfront/, /crossing/, /map pin/, /neighborhood/, /hotel edge/, /lane/],
+    "street-neighborhood": [/street/, /shopfront/, /crossing/, /neighborhood/, /hotel edge/, /lane/, /saved place/],
     transit: [/arrival/, /platform/, /route board/, /luggage/, /station door/, /city light/, /sign/, /boat/, /river/, /boarding/, /water/, /pier/],
     market: [/stall/, /snack/, /gift/, /color/, /bargain/, /market/, /browsing/, /shop/, /storefront/, /food counter/, /cool air/, /fabric/, /fitting/, /measuring tape/, /custom-made/, /handmade/, /workshop/, /tool/, /material/],
     cafe: [/coffee/, /ice/, /sweet/, /street stool/, /counter/, /pause/, /espresso/, /cafe/],
     restaurant: [/table/, /menu/, /drink/, /house dish/, /staff/, /meal/, /dining/],
     dish: [/menu/, /texture/, /herb/, /sauce/, /spic/, /sweet/, /ice/, /topping/, /coconut/, /flavor/, /dish/, /beer/, /glass/, /stool/, /snack/, /evening street/],
     "place-experience": [/view/, /entry detail/, /photo/, /local pride/, /stage/, /light/, /water/, /gate/, /courtyard/, /temple/, /visit/, /route/, /dish/, /spice/, /shared plate/, /local appetite/, /food/, /craft/, /hands/, /material/, /skill/, /museum/, /art/, /history/, /objects?/, /artifacts?/],
-    place: [/photo/, /market/, /map/, /city/, /street/, /view/, /water/, /food/, /culture/],
+    place: [/photo/, /market/, /city/, /street/, /view/, /water/, /food/, /culture/],
   };
   return (patternsByProfile[profileFor(page)] ?? patternsByProfile.place).some((pattern) => pattern.test(lower));
 }
@@ -140,10 +149,19 @@ function pageChecklist(page) {
   const sourceText = [page.context, page.tip, page.rationale].filter(Boolean).join("\n");
   const sourceBannedMatches = visibleBannedMatches(sourceText);
   const runtimeOverride = page.editorialImport?.runtimeOverride;
+  const sectionTitleByID = new Map(sections.map((section) => [section.id, section.title]));
+  const reasonToGoStructurePass =
+    sectionTitleByID.get("at-glance") === "Why go" &&
+    sectionTitleByID.get("place-brief") === "What you'll get" &&
+    sectionTitleByID.get("quick-say") === "Say it locally" &&
+    sectionTitleByID.get("use-it-with") === "Worth it if";
+  const reasonHookPass = /\b(worth|reason|history|historic|culture|craft|food|flavor|view|architecture|ritual|story|memory|market|coffee|river|beach)\b/i.test(text);
   return {
     voiceLengthPass: text.length >= 480,
     sectionCountPass: sections.length >= 4,
     profileAudienceCuePass: profileAudienceCuePass(page, text),
+    reasonToGoStructurePass,
+    reasonHookPass,
     noBannedVisibleTextPass: bannedMatches.length === 0,
     noBannedSourceInputPass: sourceBannedMatches.length === 0,
     sourceNotesPresent: Boolean(page.editorialImport?.sourceNotes || page.sourceIDs?.length),
@@ -162,6 +180,7 @@ function pageEvidence(page) {
   return {
     summaryExcerpt: excerpt(page.editorialImport?.summary),
     aboutExcerpt: excerpt(sectionBody(page, "at-glance")),
+    whatYouGetExcerpt: excerpt(sectionBody(page, "place-brief")),
     phrasebookExcerpt: excerpt(sectionBody(page, "quick-say")),
     belongingExcerpt: excerpt(sectionBody(page, "use-it-with") || sectionBody(page, "table-menu") || sectionBody(page, "how-to-order")),
     timingExcerpt: excerpt(sectionBody(page, "when-to-use") || sectionBody(page, "before-you-go")),

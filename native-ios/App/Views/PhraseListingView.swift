@@ -387,8 +387,7 @@ struct PhraseArticleTemplateView: View {
         return VStack(spacing: 0) {
             Spacer(minLength: 0)
 
-            PhrasePageStyle.pageBackground
-                .frame(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(height: backdropHeight)
         }
         .frame(
             height: backdropBottom,
@@ -906,8 +905,8 @@ struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
 
 enum PhrasePhotoBackdropLayout {
     static let bottomReadingClearance: CGFloat = 332
-    static let minimumBottomChromeBackdropHeight: CGFloat = 220
-    static let minimumBottomChromeBackdropOffset: CGFloat = 104
+    static let minimumBottomChromeBackdropHeight: CGFloat = 196
+    static let minimumBottomChromeBackdropOffset: CGFloat = 92
     static let sheetCornerClearance: CGFloat = 44
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
@@ -992,11 +991,16 @@ enum PhrasePhotoBackdropLayout {
     }
 
     static func bottomChromeBackdropHeight(safeAreaBottom: CGFloat) -> CGFloat {
-        max(safeAreaBottom + 186, minimumBottomChromeBackdropHeight)
+        max(safeAreaBottom + 162, minimumBottomChromeBackdropHeight)
     }
 
     static func bottomChromeBackdropOffset(safeAreaBottom: CGFloat) -> CGFloat {
-        max(safeAreaBottom + 70, minimumBottomChromeBackdropOffset)
+        max(safeAreaBottom + 58, minimumBottomChromeBackdropOffset)
+    }
+
+    static func bottomChromeBackdropVisibleHeight(safeAreaBottom: CGFloat) -> CGFloat {
+        bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom)
+            - bottomChromeBackdropOffset(safeAreaBottom: safeAreaBottom)
     }
 
     static func quantizedBackdropOffset(for offset: CGFloat) -> CGFloat {
@@ -1005,6 +1009,24 @@ enum PhrasePhotoBackdropLayout {
         }
 
         return (offset / backdropOffsetUpdateStep).rounded() * backdropOffsetUpdateStep
+    }
+}
+
+struct PhotoBackdropBottomChromeBacking: View {
+    let height: CGFloat
+
+    var body: some View {
+        LinearGradient(
+            gradient: Gradient(stops: [
+                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.34), location: 0.30),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.62),
+                .init(color: PhrasePageStyle.pageBackground, location: 1),
+            ]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .frame(height: height)
     }
 }
 

@@ -12,6 +12,7 @@ const expectedPagesPerCity = 100;
 const audienceRewriteReviewIDs = new Set([
   "viet-city-audience-rewrite-2026-05-18",
   "viet-city-handwritten-copy-2026-05-18",
+  "viet-city-reason-to-go-copy-2026-05-18",
 ]);
 const logisticsLead = /\b(entrance|tickets?|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/i;
 const logisticsList = /\b(entrance|tickets?|photo|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/gi;
@@ -26,6 +27,7 @@ const templatePhrases = [
   /\bkeeps the next question short\b/i,
   /\bbefore .*questions take over\b/i,
   /\bnot just another dot on a map\b/i,
+  /\bmap pin\b/i,
   /\bpractical layer is simple\b/i,
   /\bbelongs because\b/i,
   /\bmanaged outdoor activity area\b/i,
@@ -116,6 +118,18 @@ function auditPage(page) {
   const sections = page.editorialImport?.sections || [];
   if (sections.length < 4) {
     fail(failures, "missing expected editorial sections");
+  }
+  const titlesByID = new Map(sections.map((section) => [section.id, normalize(section.title)]));
+  const expectedTitles = {
+    "at-glance": "Why go",
+    "place-brief": "What you'll get",
+    "quick-say": "Say it locally",
+    "use-it-with": "Worth it if",
+  };
+  for (const [sectionID, expectedTitle] of Object.entries(expectedTitles)) {
+    if (titlesByID.get(sectionID) !== expectedTitle) {
+      fail(failures, `section ${sectionID} should be "${expectedTitle}"`);
+    }
   }
   if (startsWithTemplateOpening(page.context)) {
     fail(failures, "context opens with template-like Use wording");

@@ -115,10 +115,7 @@ struct AppShellView: View {
             }
         }
         .toolbar(hidesNativeToolbarTabBar ? .hidden : .visible, for: .tabBar)
-        .toolbarBackground(
-            showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
-            for: .tabBar
-        )
+        .toolbarBackground(Color.clear, for: .tabBar)
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
         .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
@@ -168,7 +165,7 @@ struct AppShellView: View {
             return .hidden
         }
 
-        return showsPhotoBackdropTabBarBackground ? .visible : .automatic
+        return .automatic
     }
 
     private var hidesSystemTabBar: Bool {
@@ -3057,9 +3054,11 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
                     tabBar.isTranslucent = true
                     tabBar.layer.shadowOpacity = 0
                 } else if usesContentBackground {
-                    appearance.configureWithOpaqueBackground()
-                    appearance.backgroundColor = UIColor(PhrasePageStyle.pageBackground)
-                    appearance.shadowColor = nil
+                    appearance.configureWithTransparentBackground()
+                    appearance.backgroundColor = .clear
+                    appearance.shadowColor = .clear
+                    tabBar.backgroundColor = .clear
+                    tabBar.isTranslucent = true
                     tabBar.layer.shadowOpacity = 0
                 } else {
                     appearance.configureWithDefaultBackground()

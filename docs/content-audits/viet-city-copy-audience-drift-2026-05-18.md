@@ -8,6 +8,8 @@ SpeakLocal Vietnam is for English-speaking travelers who are excited to go to Vi
 
 The app is not a school-style Vietnamese course, not an arbitrary AI translator, and not a fear-led emergency phrasebook. Google Translate and general AI tools can translate what a traveler asks for; SpeakLocal earns belief by curating what Vietnam travelers should see, hear, save, and practice before and during the trip.
 
+For city place pages, assume many readers are still planning from the United States. The copy should make the destination feel worth saving before arrival; do not center a map view, map pins, or ride logistics unless the page is actually about transit or orientation.
+
 The current offer truth is a 7-day free trial, then `$4.99/month` through `app.speaklocal.vietnam.subscription.monthly`.
 
 ## Sources Of Truth
@@ -35,9 +37,9 @@ Historical task logs, old `.agent` reviews, and archived app-surface notes can c
 - `docs/PRIORITIES.md` no longer says plain `subscriptions` are out of scope; it now only excludes account-required subscription features beyond the current StoreKit trial/monthly surface.
 - First-run onboarding draft docs no longer present a limited-preview paywall CTA as a secondary action.
 - Historical copy-review extraction softened older emergency-first wording to practical first-day language so agents do not copy the old emotional frame forward.
-- All 500 approved city noun/place pages were rewritten from source around the accepted standard: desire first, significance second, phrase/audio support third.
+- All 500 approved city noun/place pages were rewritten from source around the accepted standard: reason to go first, factual or historical hook second, local-name/audio support third.
 - The five source city hubs and the Swift-visible `All Vietnam` / city hub copy were brought into the same positive travel-discovery direction.
-- The 500 city noun/place page `context`, `tip`, `rationale`, summaries, and editorial sections were normalized so older `useful for pickup/tickets` source copy does not re-seed future generator drift.
+- The 500 city noun/place page `context`, `tip`, `rationale`, summaries, and editorial sections were normalized so older logistics-first or map-pin source copy does not re-seed future generator drift.
 - The city production report and native authored listing resource were regenerated from the rewritten source copy.
 - A dedicated audience-fit audit was added at `native-ios/scripts/audit-viet-city-audience-fit.js`.
 - Final subagent review gates covered Hanoi, Ho Chi Minh City / Saigon, Da Nang, Hoi An, Hue, plus All Vietnam / Swift-visible hub copy. The reviewers initially flagged performance venues falling into museum copy, lake/canal/roundabout framing, prompt residue, plural-title grammar artifacts, and duplicated template sections; those classes were fixed in the source rewrite generator and revalidated.
@@ -74,7 +76,7 @@ This means the backend city hub editorial is not the only authority for what app
 Completed alignment:
 
 - The city hub intros are in the current emotional lane: food, coffee, markets, lakes, bridges, old streets, lanterns, rivers, royal history, and exact names that make places easier to recognize.
-- The 500 city noun/place pages now lead with a visual or sensory reason to care, then explain why the place/food/culture belongs in that city, then keep phrase/audio support as a smaller layer.
+- The 500 city noun/place pages now lead with why someone would want to go, what they will get from the stop, and a factual/cultural hook before the local-name/audio support.
 - The source-owned rewrite script is `scripts/rewrite-viet-city-audience-copy.js`; rerun it before regeneration if the copy standard changes.
 - Food, coffee, markets, culture, place specificity, and sensory terms are present at meaningful volume across the rewritten corpus.
 
@@ -101,13 +103,14 @@ Known drift risk:
 
 ### P2 - Maintain The Rewritten City Copy
 
-The first sentence of a city noun page should continue to answer: "Why would an excited Vietnam traveler care about this?" The practical phrase support should come after that.
+The first sentence of a city noun page should continue to answer: "Why would someone planning a Vietnam trip care about going here?" Practical phrase support should come after the place has a real reason to exist.
 
 When copy changes, update source first, rerun:
 
 - `node scripts/rewrite-viet-city-audience-copy.js`
 - `node native-ios/scripts/audit-viet-city-audience-fit.js`
 - `node native-ios/scripts/generate-authored-tier-one-pages.js`
+- `node native-ios/scripts/validate-viet-city-copy.js`
 - `node native-ios/scripts/build-viet-city-copy-review-report.js`
 
 ### P3 - Keep Audience-Fit Validation Active
@@ -119,7 +122,7 @@ The lightweight city-copy audience audit now checks:
 - repeated generic logistics-first openings;
 - utility-to-discovery ratio by page kind;
 - pages whose summary has no place/food/culture/sensory reason to care;
-- old template phrases such as `useful when`, `save by name`, and `not just another dot on a map`.
+- old template phrases such as `useful when`, `save by name`, `map pin`, and `not just another dot on a map`.
 
 ## Page-Type Copy Standard
 
@@ -129,7 +132,7 @@ The lightweight city-copy audience audit now checks:
 | Landmark/place | What it is and why the traveler would recognize or visit it | How to say/show it, ticket/photo/entrance only when relevant |
 | Restaurant/cafe | Taste, vibe, dish/drink reason, and why to save the name | Table, menu, order, bill, pickup |
 | Dish | What it tastes like, where it appears, and how to order it | Ingredients, spice/sauce/ice/allergy adjustments |
-| Market/street/neighborhood | What the traveler can browse, eat, buy, or use for orientation | Map pin, cross street, price, pickup |
+| Market/street/neighborhood | What the traveler can browse, eat, buy, or use for orientation | Saved place, cross street, price, meeting point |
 | Transit | Arrival confidence and orientation | Terminal, luggage, ticket, pickup; practical language can be the lead here |
 
 ## Current Validation Snapshot
@@ -150,7 +153,9 @@ The lightweight city-copy audience audit now checks:
   - `cities: 5`
   - `cityPlaces: 500`
   - `cityPhraseTags: 807`
-- Prompt/internal/template residue scan:
-  - `No prompt/article/internal/template residue in reader copy`
+- `node scripts/practice/generate-viet-practice-deck.js --check`
+  - `Practice deck check OK: 8267 items, 18 scenarios, 8 question types`
+- `node scripts/guard-native-only.js`
+  - `Native-only guard passed: no active Expo/React Native app surface found.`
 - `git diff --check`
   - passed
