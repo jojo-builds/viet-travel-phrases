@@ -140,7 +140,7 @@
     },
     {
       "pageID": "city-danang-place-bach-dang-street",
-      "summary": "Bach Dang Street is the Han River street travelers keep running into, useful for hotels, walks, cafes, river views, bridge photos, and central pickups.",
+      "summary": "Bach Dang Street is the Han River street travelers keep running into: hotel addresses, cafe walks, river views, bridge photos, and central pickups all gather here.",
       "context": "Use it as a central riverfront street label when an address or meeting point sits along the Han.",
       "tip": "Đường Bạch Đằng is not a sight by itself; it is a strong street reference for central Da Nang.",
       "rationale": "It belongs because riverfront directions often start with the street before a cafe, market, or bridge.",
@@ -235,7 +235,7 @@
       "tip": "Hải sản Bé Mặn identifies the restaurant; hải sản alone only says seafood.",
       "rationale": "It belongs because seafood plans need named venues as well as the broader dish word.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named seafood restaurant useful for beach-side taxi rides and dinner plans."},
+        {"id": "at-glance", "title": "About", "body": "A named seafood restaurant for beach-side taxi rides, dinner plans, and map-pin arrivals."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Hải sản Bé Mặn; the first words tell locals it is seafood."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture open tables, trays of seafood, sea air, and a busy casual dinner."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers choose a specific seafood stop instead of a vague coastline request."},
@@ -260,7 +260,7 @@
     },
     {
       "pageID": "city-danang-place-boulevard-gelato-coffee",
-      "summary": "Boulevard Gelato & Coffee is a soft landing during Da Nang heat, useful when the group wants dessert, coffee, air-conditioning, and an easy place to sit.",
+      "summary": "Boulevard Gelato & Coffee is a soft landing during Da Nang heat, the kind of dessert-and-coffee stop that gives a tired group air-conditioning and an easy place to sit.",
       "context": "Use it for a named cafe or dessert stop, especially with family or a tired afternoon group.",
       "tip": "The English title is usually the clearest label, so pair it with the map location.",
       "rationale": "It belongs because small comfort stops can keep a full travel day enjoyable.",
@@ -290,7 +290,7 @@
     },
     {
       "pageID": "city-danang-place-bun-cha-ca-hon",
-      "summary": "Bun Cha Ca Hon turns the fish-cake noodle bowl into a specific Da Nang stop, useful for a direct breakfast plan instead of a vague noodle search.",
+      "summary": "Bun Cha Ca Hon turns the fish-cake noodle bowl into a specific Da Nang stop, giving breakfast plans a real shop title instead of a vague noodle search.",
       "context": "Use it when heading to this named shop and wanting the dish tied to the destination.",
       "tip": "Bún Chả Cá Hờn includes both the dish and shop identity, so keep the full label visible.",
       "rationale": "It belongs because named dish shops make local breakfasts easier for first-time travelers.",
@@ -380,7 +380,7 @@
     },
     {
       "pageID": "city-danang-place-con-market",
-      "summary": "Con Market is one of Da Nang's best first market names to know, packed with snacks, dry goods, local food counters, quick buys, and sensory momentum.",
+      "summary": "Con Market is one of Da Nang's strongest first market names to know, packed with snacks, dry goods, local food counters, quick buys, and sensory momentum.",
       "context": "Use it for central market visits, food exploring, souvenirs, snacks, and finding the ride afterward.",
       "tip": "Chợ Cồn is short and strong; chợ tells people you mean the market, not a street or mall.",
       "rationale": "It belongs because travelers need at least one central market noun that feels vivid and practical.",
@@ -470,7 +470,7 @@
     },
     {
       "pageID": "city-danang-place-dragon-carp-statue",
-      "summary": "The Dragon Carp Statue is a compact riverfront photo and meeting point near Love Bridge and Dragon Bridge, useful when the group is already walking the Han.",
+      "summary": "The Dragon Carp Statue is a compact riverfront photo and meeting point near Love Bridge and Dragon Bridge, right where a Han River walk often needs a clear landmark.",
       "context": "Use it for nearby meetups, photo stops, and giving a more precise riverfront location.",
       "tip": "Tượng Cá Chép Hóa Rồng is long, so pair it with the nearby bridge area.",
       "rationale": "It belongs because small landmarks make crowded river walks easier to coordinate.",
@@ -485,7 +485,7 @@
     },
     {
       "pageID": "city-danang-place-fatfish",
-      "summary": "Fatfish is a riverfront dining label to keep intact, useful for an evening meal where the venue title, map pin, and Han River location do the work.",
+      "summary": "Fatfish is a riverfront dining label to keep intact, especially for an evening meal where the venue title, map pin, and Han River location do the work.",
       "context": "Use it when heading to this named restaurant or meeting someone there before a river walk.",
       "tip": "The English title does not need translating; clear pronunciation plus the map is enough.",
       "rationale": "It belongs because proper dining venues help travelers plan nights around the river.",
@@ -515,7 +515,7 @@
     },
     {
       "pageID": "city-danang-place-golden-bridge",
-      "summary": "Golden Bridge is the famous Ba Na photo stop with stone hands and mountain air, best understood as part of the Ba Na Hills outing, not a separate neighborhood.",
+      "summary": "Golden Bridge is the famous Ba Na photo stop with stone hands and mountain air, better understood as part of the Ba Na Hills outing than as a separate neighborhood.",
       "context": "Use it when confirming the bridge inside the Ba Na plan or asking where the photo stop is.",
       "tip": "Cầu Vàng is short and easy to recognize; connect it to Bà Nà when arranging the day.",
       "rationale": "It belongs because travelers often search the image before they know the larger destination.",
@@ -710,7 +710,7 @@
     },
     {
       "pageID": "city-danang-place-la-maison-1888",
-      "summary": "La Maison 1888 is a destination-restaurant title to preserve carefully, useful for resort-area arrivals, reservations, dressier dinners, and driver confirmation.",
+      "summary": "La Maison 1888 is a destination-restaurant title to preserve carefully, carrying resort-area arrivals, reservations, dressier dinners, and driver confirmation in one name.",
       "context": "Use it when the meal has been planned in advance and the exact venue matters.",
       "tip": "The French-English title should stay as written; show the resort or map pin when arranging a ride.",
       "rationale": "It belongs because premium dining plans need precise proper titles and calm arrival language.",
@@ -725,7 +725,7 @@
     },
     {
       "pageID": "city-danang-place-lady-buddha",
-      "summary": "Lady Buddha is the traveler shorthand for the tall white statue on Son Tra, best paired with Linh Ung Pagoda, sea views, and respectful arrival.",
+      "summary": "Lady Buddha is the traveler shorthand for the tall white statue on Son Tra, closely tied to Linh Ung Pagoda, sea views, and respectful arrival.",
       "context": "Use it when the statue area is the goal inside a broader Son Tra or Linh Ung visit.",
       "tip": "Tượng Phật Bà is the Vietnamese label; connect it to Sơn Trà if the English title is unclear.",
       "rationale": "It belongs because visitors often know the statue visually before they know the pagoda name.",
@@ -820,7 +820,7 @@
       "tip": "Madame Lân may be heard with the Vietnamese tone, but the written title is clear on maps.",
       "rationale": "It belongs because familiar central restaurants can help first-time travelers ease into local dining.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named central restaurant useful for first meals, group dinners, and easy arrival."},
+        {"id": "at-glance", "title": "About", "body": "A named central restaurant for first meals, group dinners, and easy arrival."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Madame Lân, keeping the proper title instead of translating it."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture lanterns, shared dishes, central streets, and a table after a river walk."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a concrete restaurant label for a comfortable first food plan."},
@@ -905,7 +905,7 @@
     },
     {
       "pageID": "city-danang-place-museum",
-      "summary": "Da Nang Museum is the broad city-history stop, useful when travelers want the story of the city itself rather than Cham sculpture or fine art specifically.",
+      "summary": "Da Nang Museum is the broad city-history stop for travelers who want the story of the city itself rather than Cham sculpture or fine art specifically.",
       "context": "Use it for general city history and central culture browsing, especially on slower weather days.",
       "tip": "Bảo tàng Đà Nẵng is the general museum title; add details if comparing it with other museums.",
       "rationale": "It belongs because travelers need a clear label for the city museum among several culture stops.",
@@ -935,7 +935,7 @@
     },
     {
       "pageID": "city-danang-place-my-an",
-      "summary": "My An is the beach-neighborhood label behind the sand, useful for cafes, apartments, guesthouses, food streets, and explaining where the day is based.",
+      "summary": "My An is the beach-neighborhood label behind the sand, tying together cafes, apartments, guesthouses, food streets, and the area where the day is based.",
       "context": "Use it when referring to the neighborhood, not My An Beach or My Khe Beach.",
       "tip": "Mỹ An is short, but it works well with a cafe, hotel, or street detail for final arrival.",
       "rationale": "It belongs because travelers need neighborhood language for the beach side of Da Nang.",
@@ -970,7 +970,7 @@
       "tip": "Biển Mỹ Khê is the beach label; do not confuse it with Võ Nguyên Giáp Street beside it.",
       "rationale": "It belongs because My Khe is the default beach reference point for many first visits.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "Da Nang's best-known beach stretch, with wide sand, hotels, and sunrise views."},
+        {"id": "at-glance", "title": "About", "body": "Da Nang's most familiar beach stretch, with wide sand, hotels, and sunrise views."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Biển Mỹ Khê; biển means beach or sea in Vietnamese directions."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture pale sand, morning waves, beach hotels, palms, and a long coastal road."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives first-time travelers the main beach reference for Da Nang's coast."},
@@ -995,7 +995,7 @@
     },
     {
       "pageID": "city-danang-place-my-quang-dung",
-      "summary": "My Quang Dung is another specific mì Quảng target, useful when travelers want the dish but need one exact shop title instead of a broad noodle request.",
+      "summary": "My Quang Dung is another specific mì Quảng target, giving travelers one exact shop title when the craving is clear but a broad noodle request feels too loose.",
       "context": "Use it when going to this named mì Quảng shop and confirming address or pickup.",
       "tip": "Mỳ Quảng Dung keeps the regional dish and shop identity together in a short label.",
       "rationale": "It belongs because multiple mì Quảng options let travelers compare local food stops without confusion.",
@@ -1015,7 +1015,7 @@
       "tip": "Hải sản Năm Đảnh identifies the venue; hải sản alone only says the food category.",
       "rationale": "It belongs because seafood plans become easier when travelers can name a real stop.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named seafood restaurant entry useful for taxi rides and casual dinner plans."},
+        {"id": "at-glance", "title": "About", "body": "A named seafood restaurant entry for taxi rides, casual dinner plans, and map checks."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Hải sản Năm Đảnh; the first words mark it as seafood dining."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture grilled shellfish, plastic stools, shared plates, and a busy neighborhood feel."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It makes Da Nang's seafood scene navigable instead of leaving it too broad."},
@@ -1130,7 +1130,7 @@
     },
     {
       "pageID": "city-danang-place-nguyen-van-linh-street",
-      "summary": "Nguyen Van Linh Street is the airport-to-center corridor many travelers see early, useful for ride-app checks, hotel directions, and understanding the first road into town.",
+      "summary": "Nguyen Van Linh Street is the airport-to-center corridor many travelers see early, tying ride-app checks, hotel directions, and the first road into town together.",
       "context": "Use it when an address or driver route runs along the airport-center axis.",
       "tip": "Đường Nguyễn Văn Linh is a street label; đường helps locals hear that you mean a road.",
       "rationale": "It belongs because arrival routes feel less confusing when main street names are familiar.",
@@ -1140,12 +1140,12 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture a broad city avenue, airport traffic, planted medians, and hotel routes."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers track the first ride from airport curb toward central Da Nang."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it for address checks, ride-app reassurance, pickups, and turn-by-turn confusion."},
-        {"id": "good-to-know", "title": "Good to know", "body": "Street names work best with building numbers or hotel pins for exact arrival."}
+        {"id": "good-to-know", "title": "Good to know", "body": "Street names land more clearly with building numbers or hotel pins for exact arrival."}
       ]
     },
     {
       "pageID": "city-danang-place-non-nuoc-beach",
-      "summary": "Non Nuoc Beach names the southern beach near Marble Mountains, useful when the coast plan is quieter, resort-adjacent, and not the main My Khe stretch.",
+      "summary": "Non Nuoc Beach names the southern beach near Marble Mountains, pointing to a quieter, resort-adjacent coast plan beyond the main My Khe stretch.",
       "context": "Use it when pairing beach time with Marble Mountains, Non Nuoc resorts, or southern Da Nang.",
       "tip": "Biển Non Nước tells people you mean the beach; Non Nước also appears in the craft village name.",
       "rationale": "It belongs because southern beach names keep Da Nang's coastline from becoming one blur.",
@@ -1190,7 +1190,7 @@
     },
     {
       "pageID": "city-danang-place-pham-van-dong-beach",
-      "summary": "Pham Van Dong Beach gives the northern end of Da Nang's main beachfront its own label, useful for hotel areas, park-like beach entries, and taxi precision.",
+      "summary": "Pham Van Dong Beach gives the northern end of Da Nang's main beachfront its own label, with hotel areas, park-like beach entries, and taxi precision built in.",
       "context": "Use it when the beach plan is near the northern main beachfront rather than all of My Khe.",
       "tip": "Biển Phạm Văn Đồng is the beach label; it can also connect to nearby park and hotel areas.",
       "rationale": "It belongs because beachfront precision matters when the coast stretches for kilometers.",
@@ -1250,7 +1250,7 @@
     },
     {
       "pageID": "city-danang-place-reply-1988",
-      "summary": "Reply 1988 Cafe is a named cafe stop with a retro mood, useful when travelers want a specific coffee break instead of another unnamed beach-side pause.",
+      "summary": "Reply 1988 Cafe is a named cafe stop with a retro mood, giving a coffee break a specific destination instead of another unnamed beach-side pause.",
       "context": "Use it when choosing this cafe for coffee, photos, or meeting someone nearby.",
       "tip": "The English-Korean style title should stay intact; the map pin is the clearest support.",
       "rationale": "It belongs because cafes are part of Da Nang's everyday travel rhythm and visual discovery.",
@@ -1340,7 +1340,7 @@
     },
     {
       "pageID": "city-danang-place-thanh-binh-beach",
-      "summary": "Thanh Binh Beach gives travelers a west-bay beach label, useful when a Da Nang plan points away from the famous east-coast hotel strip.",
+      "summary": "Thanh Binh Beach gives travelers a west-bay beach label for plans that point away from the famous east-coast hotel strip.",
       "context": "Use it when the beach or address is on the bay side rather than My Khe or Non Nuoc.",
       "tip": "Biển Thanh Bình marks a different coastal side of the city, so the map view helps.",
       "rationale": "It belongs because Da Nang's coast wraps around more than the beach most travelers picture.",
@@ -1355,7 +1355,7 @@
     },
     {
       "pageID": "city-danang-place-the-temptation",
-      "summary": "The Temptation is a proper restaurant title to keep in English, useful when a guide, map, or reservation sends travelers to a specific Da Nang dining room.",
+      "summary": "The Temptation is a proper restaurant title to keep in English when a guide, map, or reservation sends travelers to a specific Da Nang dining room.",
       "context": "Use it when the venue has been chosen and the exact address or reservation needs confirmation.",
       "tip": "Do not translate the title; say it as written and support it with the map pin.",
       "rationale": "It belongs because restaurant proper titles often need preservation more than explanation.",
@@ -1365,7 +1365,7 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture a small polished restaurant, evening arrival, reservation time, and quiet service."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers handle proper dining names without inventing Vietnamese descriptions."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it for reservations, driver confirmation, table arrival, and the ride home."},
-        {"id": "good-to-know", "title": "Good to know", "body": "If the title is unfamiliar, the written booking or map pin is the best support."}
+        {"id": "good-to-know", "title": "Good to know", "body": "If the title is unfamiliar, the written booking or map pin gives the clearest support."}
       ]
     },
     {
@@ -1375,7 +1375,7 @@
       "tip": "Cầu Thuận Phước is a bridge label; cầu is the word to listen for first.",
       "rationale": "It belongs because Da Nang directions often use bridge names as real map cues.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A northern Han River bridge useful for port, peninsula, and coastal orientation."},
+        {"id": "at-glance", "title": "About", "body": "A northern Han River bridge for port, peninsula, and coastal orientation."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Cầu Thuận Phước; cầu signals a bridge in Vietnamese directions."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture a broad bridge near the river mouth, port routes, and open coastal light."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers distinguish one river crossing from another in Da Nang."},
@@ -1400,12 +1400,12 @@
     },
     {
       "pageID": "city-danang-place-tran-hung-dao-street",
-      "summary": "Tran Hung Dao Street is the east-bank river street useful for Dragon Bridge views, cafe drop-offs, night photos, and knowing which side of the Han you are on.",
+      "summary": "Tran Hung Dao Street is the east-bank river street for Dragon Bridge views, cafe drop-offs, night photos, and knowing which side of the Han you are on.",
       "context": "Use it when directions reference the east side of the river or bridge-viewing areas.",
       "tip": "Đường Trần Hưng Đạo is a street label; pair it with a bridge or venue for accuracy.",
       "rationale": "It belongs because east-bank and west-bank river routes can feel similar until a street name helps.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "An east-bank riverside street useful for bridge views, cafes, and river drop-offs."},
+        {"id": "at-glance", "title": "About", "body": "An east-bank riverside street for bridge views, cafes, and river drop-offs."},
         {"id": "quick-say", "title": "Hear the name", "body": "Listen for Đường Trần Hưng Đạo; đường tells people it is a street."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture river traffic, bridge lights, cafes, scooters, and the east side of the Han."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers pick the correct riverbank for Dragon Bridge and cafe plans."},
