@@ -8,11 +8,15 @@ struct VietnameseMenuPageView: View {
     var isSaved: (String) -> Bool
     var onToggleSaved: (String) -> Void
     var onOpenDetail: (String) -> Void
+    var isActive: Bool = true
 
     @State private var currentSectionID: String?
     @State private var isSectionRailPinned = false
     @State private var pendingSectionJumpID = 0
     @State private var pendingSectionJumpSectionID: String?
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
 
     private var route: BrowseCollectionRoute {
         .category(kind.routeID)
@@ -46,7 +50,39 @@ struct VietnameseMenuPageView: View {
         )
     }
 
+    @ViewBuilder
     var body: some View {
+        Group {
+            if usesPhotoBackdropLayout {
+                photoBackdropBody
+            } else {
+                standardBody
+            }
+        }
+        .onChange(of: kind) { _, _ in
+            currentSectionID = nil
+            isSectionRailPinned = false
+            pendingSectionJumpSectionID = nil
+            didApplyPhotoBackdropInitialPosition = false
+            isPhotoBackdropImmersive = false
+            photoBackdropScrollOffset = 0
+        }
+        .preference(
+            key: VietnameseMenuSectionChromePreferenceKey.self,
+            value: isActive ? sectionChromeState.map { [$0] } ?? [] : []
+        )
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
+        )
+        .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
+    }
+
+    private var standardBody: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
@@ -90,50 +126,255 @@ struct VietnameseMenuPageView: View {
             }
             .ignoresSafeArea(edges: .top)
         }
-        .preference(
-            key: VietnameseMenuSectionChromePreferenceKey.self,
-            value: sectionChromeState.map { [$0] } ?? []
-        )
-        .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
     }
 
     private static let scrollTopID = "VietnameseMenuPageTop"
+    private static let photoBackdropInitialID = "VietnameseMenuPhotoBackdropInitial"
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 0) {
             HeroMastheadImage(imageName: kind.heroImageName, height: VietnameseMenuLayout.heroHeight)
 
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 8) {
-                    ZStack {
-                        Circle().fill(Color.red)
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(.yellow)
-                    }
-                    .frame(width: 22, height: 22)
-
-                    Text("SPEAKLOCAL VIETNAM")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-
-                Text(kind.title)
-                    .font(.system(size: 46, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.68)
-                    .accessibilityIdentifier("VietnameseMenu.Title.\(kind.routeID)")
-
-                Text(kind.subtitle)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
-            .padding(.top, 16)
+            headerCopy
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+                .padding(.top, 16)
         }
+    }
+
+    private var headerCopy: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text("SPEAKLOCAL VIETNAM")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            Text(kind.title)
+                .font(.system(size: 46, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.68)
+                .accessibilityIdentifier("VietnameseMenu.Title.\(kind.routeID)")
+
+            Text(kind.subtitle)
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineSpacing(2)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var photoBackdropBody: some View {
+        GeometryReader { geometry in
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+
+            ZStack(alignment: .top) {
+                photoBackdropImage(geometry: geometry)
+
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(Self.photoBackdropInitialID)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
+
+                            photoBackdropContentSheet(scrollProxy: scrollProxy)
+                                .id(Self.scrollTopID)
+                        }
+                    }
+                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
+                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
+                    }) { _, offset in
+                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
+                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = backdropOffset
+                        }
+
+                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
+                        }
+                    }
+                    .onPreferenceChange(VietnameseMenuSectionFramePreferenceKey.self) { frames in
+                        updateCurrentSection(from: frames)
+                    }
+                    .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                        isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= VietnameseMenuLayout.glassRailRevealY
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        guard scrollToTopRoute == nil || scrollToTopRoute == route else {
+                            return
+                        }
+
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+                    }
+                    .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                        guard let sectionJumpRequest, sectionJumpRequest.route == route else {
+                            return
+                        }
+
+                        jumpToSection(sectionJumpRequest.sectionID)
+                    }
+                    .task(id: "\(isActive)-\(pendingSectionJumpID)") {
+                        guard isActive else {
+                            return
+                        }
+
+                        if pendingSectionJumpID == 0 {
+                            await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                        } else {
+                            await performPendingSectionJump(scrollProxy)
+                        }
+                    }
+                }
+                .ignoresSafeArea(edges: .top)
+            }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: route.id,
+                        imageName: photoBackdropImageName ?? kind.heroImageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: route.id,
+                            heroImageName: photoBackdropImageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: route.id,
+                            heroImageName: photoBackdropImageName
+                        )
+                    )
+                    : nil
+            )
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+    }
+
+    private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            headerCopy
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+                .padding(.bottom, 24)
+
+            sectionRail(scrollProxy: scrollProxy)
+                .padding(.bottom, VietnameseMenuLayout.sectionSpacing)
+
+            sectionedMenu
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .accessibilityIdentifier("VietnameseMenu.PhotoBackdrop.Content.\(kind.routeID)")
+    }
+
+    private func photoBackdropImage(geometry: GeometryProxy) -> some View {
+        Image(photoBackdropImageName ?? kind.heroImageName)
+            .resizable()
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                    for: geometry.size,
+                    safeAreaInsets: geometry.safeAreaInsets,
+                    pageID: route.id,
+                    heroImageName: photoBackdropImageName
+                ),
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .accessibilityHidden(true)
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
+            safeAreaBottom: safeAreaBottom
+        )
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
+        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
+        let backdropHeight = min(
+            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
+            maximumBackdropHeight
+        )
+
+        return VStack(spacing: 0) {
+            Spacer(minLength: 0)
+
+            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+        }
+        .frame(
+            height: backdropBottom,
+            alignment: .bottom
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 
     private func sectionRail(scrollProxy: ScrollViewProxy) -> some View {
@@ -241,6 +482,51 @@ struct VietnameseMenuPageView: View {
                 Self.sectionAnchorID(for: pendingSectionJumpSectionID),
                 anchor: UnitPoint(x: 0.5, y: VietnameseMenuLayout.sectionJumpViewportAnchorY)
             )
+        }
+    }
+
+    private var photoBackdropImageName: String? {
+        kind.photoBackdropImageName
+    }
+
+    private var usesPhotoBackdropLayout: Bool {
+        photoBackdropImageName != nil
+    }
+
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        isPhotoBackdropImmersive = false
+        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersive(at location: CGPoint, metrics: PhrasePhotoBackdropLayout.Metrics) {
+        if isPhotoBackdropImmersive {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
+            }
+            return
+        }
+
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
+            return
+        }
+
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
         }
     }
 

@@ -433,7 +433,8 @@ struct AppShellView: View {
                     sectionJumpRequest: menuSectionJumpRequest,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
-                    onOpenDetail: openDetailFromBrowse
+                    onOpenDetail: openDetailFromBrowse,
+                    isActive: isActive
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
@@ -709,7 +710,8 @@ struct AppShellView: View {
                     sectionJumpRequest: nil,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
-                    onOpenDetail: openDetailFromBrowse
+                    onOpenDetail: openDetailFromBrowse,
+                    isActive: false
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
                 BrowseCollectionPageView(

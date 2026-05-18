@@ -352,6 +352,34 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
     }
 
+    func testVietnameseFoodMenuCategoryPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+        let content = app.descendants(matching: .any)["VietnameseMenu.PhotoBackdrop.Content.vietnamese-food-menu"]
+
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
+        XCTAssertTrue(content.waitForExistence(timeout: 3))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(content.waitForNonExistence(timeout: 2))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(content.waitForExistence(timeout: 2))
+    }
+
+    func testVietnameseDrinkMenuCategoryPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu"])
+        let content = app.descendants(matching: .any)["VietnameseMenu.PhotoBackdrop.Content.vietnamese-drink-menu"]
+
+        XCTAssertTrue(app.staticTexts["Drink Menu"].waitForExistence(timeout: 4))
+        XCTAssertTrue(content.waitForExistence(timeout: 3))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(content.waitForNonExistence(timeout: 2))
+
+        tapPhotoBackdropImage(app)
+        XCTAssertTrue(content.waitForExistence(timeout: 2))
+    }
+
     func testVietnameseMenuDetailUsesMenuChipsInsteadOfBreakdownMath() {
         let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
 
