@@ -9,6 +9,10 @@ const swiftPath = path.join(repoRoot, "native-ios", "App", "Models", "BrowseSear
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
 const expectedPagesPerCity = 100;
+const audienceRewriteReviewIDs = new Set([
+  "viet-city-audience-rewrite-2026-05-18",
+  "viet-city-handwritten-copy-2026-05-18",
+]);
 const logisticsLead = /\b(entrance|tickets?|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/i;
 const logisticsList = /\b(entrance|tickets?|photo|bathroom|pickup|pick-up|timing|ride back|return ride|driver|luggage|terminal|platform|bill|payment)\b/gi;
 const templatePhrases = [
@@ -88,7 +92,7 @@ function auditPage(page) {
   if (sections.length < 6) {
     fail(failures, "missing expected editorial sections");
   }
-  if (page.editorialImport?.audienceRewrite?.reviewID !== "viet-city-audience-rewrite-2026-05-18") {
+  if (!audienceRewriteReviewIDs.has(page.editorialImport?.audienceRewrite?.reviewID)) {
     fail(failures, "missing audience rewrite evidence");
   }
   return failures;
@@ -122,7 +126,7 @@ function main() {
       fail(failures, `missing city hub ${cityID}`);
       continue;
     }
-    if (city.hubEditorial?.audienceRewrite?.reviewID !== "viet-city-audience-rewrite-2026-05-18") {
+    if (!audienceRewriteReviewIDs.has(city.hubEditorial?.audienceRewrite?.reviewID)) {
       fail(failures, `${cityID} hub missing audience rewrite evidence`);
     }
     const cityPages = pages.filter((page) => page.cityID === cityID);

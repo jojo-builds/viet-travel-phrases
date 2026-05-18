@@ -141,7 +141,7 @@
     {
       "pageID": "city-hoian-place-banh-mi",
       "summary": "Bánh mì Hội An is the sandwich idea, not one single shop: crusty bread, herbs, sauce, and fast counter energy that fits breakfast, snacks, and food-walk plans.",
-      "context": "Use Bánh mì Hội An when you want the sandwich generally. Named shop rows can carry the exact storefront if you are heading to Phượng or Madam Khánh.",
+      "context": "Use Bánh mì Hội An when you want the sandwich generally. Named shop entries can carry the exact storefront if you are heading to Phượng or Madam Khánh.",
       "tip": "If you dislike chili, pâté, or a sauce, ask before the sandwich is assembled. Bánh mì moves fast at popular counters.",
       "rationale": "It belongs because Hoi An travelers often arrive with sandwich shops saved, but still need the general food noun for menus and flexible ordering.",
       "sections": [
@@ -202,7 +202,7 @@
       "pageID": "city-hoian-place-bebe-tailor",
       "summary": "BeBe Tailor is a named Hoi An tailoring stop, useful for fittings, fabric decisions, pickup dates, and map-pin conversations without making any claim about quality.",
       "context": "Keep BeBe Tailor as the venue name. It helps when arranging a fitting, returning for clothing, or showing a driver the shop location.",
-      "tip": "Branch details and appointment times should come from your booking or map, not memory. Tailor errands work best when the exact address is visible.",
+      "tip": "Branch details and appointment times should come from your booking or map, not memory. Tailor errands go smoother when the exact address is visible.",
       "rationale": "It belongs because tailoring is part of Hoi An's visitor identity, and named shops make the measuring-and-return loop easier to navigate.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named tailor stop in Hoi An for fittings, clothing pickup, fabric browsing, and address-based plans."},
@@ -442,7 +442,7 @@
       "pageID": "city-hoian-place-cocobox",
       "summary": "Cocobox is a named Hoi An cafe and juice stop, useful for a quick old-town drink, a meeting point, or a small pause between shopping, sightseeing, and heat.",
       "context": "Keep Cocobox as the venue name. Use it when asking for the shop, ordering a drink, or finding a nearby meeting point.",
-      "tip": "Use the current menu for drink details. The name works best as a venue cue, not as a promise about what is available that day.",
+      "tip": "Use the current menu for drink details. The name works as a venue cue, not as a promise about what is available that day.",
       "rationale": "It belongs because Hoi An's travel rhythm needs quick cafe and juice stops as much as temples, markets, and full meals.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named cafe or juice stop that can serve as a quick refreshment point in Hoi An."},
@@ -517,7 +517,7 @@
       "pageID": "city-hoian-place-cua-dai-estuary",
       "summary": "Cua Dai Estuary names the river-mouth side of Hoi An, where coastal, river, beach, and island-departure language can overlap if travelers are not precise.",
       "context": "Cửa Đại can point to the river mouth, beach side, or nearby pier context. Show the map pin when the exact destination matters.",
-      "tip": "Use Biển Cửa Đại for the beach and Bến tàu Cửa Đại for the pier. This entry is best for understanding the broader river-meets-sea area.",
+      "tip": "Use Biển Cửa Đại for the beach and Bến tàu Cửa Đại for the pier. This entry explains the broader river-meets-sea area.",
       "rationale": "It belongs because Hoi An geography is easier when travelers can separate old-town river scenes from the bigger coastal mouth.",
       "sections": [
         {"id":"at-glance","title":"About","body":"The Cửa Đại river-mouth area where Hoi An's river system meets the coast."},
@@ -548,7 +548,7 @@
       "summary": "Duc An Old House is a named preserved home in the old-town circuit, helping travelers make heritage walks feel specific instead of just seeing yellow walls from outside.",
       "context": "Nhà cổ Đức An is the name to show when you want this house, not a generic old house. It helps with tickets, guides, and meeting nearby.",
       "tip": "Old houses are close together, so keep the exact Vietnamese name or map pin ready if you are following a heritage ticket route.",
-      "rationale": "It belongs because Hoi An's architecture is best understood through named houses, each turning the town's trading past into a visitable stop.",
+      "rationale": "It belongs because Hoi An's architecture becomes clearer through named houses, each turning the town's trading past into a visitable stop.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named Hoi An old house and heritage stop within the ancient-town walking area."},
         {"id":"quick-say","title":"Hear the name","body":"Nhà cổ Đức An means Duc An Old House and distinguishes it from nearby preserved homes."},
@@ -847,7 +847,7 @@
       "pageID": "city-hoian-place-memories-land",
       "summary": "Hoi An Memories Land is a named island-style destination across the river, useful for evening plans, tickets, entrances, and pickups without overexplaining the show or venue.",
       "context": "Đảo Ký ức Hội An names the destination. Use it when confirming the entrance, ride, or meeting point tied to your ticket or booking.",
-      "tip": "Let the booking handle show times and inclusions. The destination name is best for finding the entrance and arranging transport.",
+      "tip": "Let the booking handle show times and inclusions. The destination name helps with finding the entrance and arranging transport.",
       "rationale": "It belongs because Hoi An evening planning includes ticketed venues and river-side destinations, not only open streets and markets.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named Hoi An destination associated with evening visits, tickets, and river-adjacent plans."},
@@ -881,7 +881,7 @@
       "rationale": "It belongs because Hoi An sits inside central Vietnam's food world, and travelers benefit from knowing more than the most famous local dish.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A central Vietnam noodle dish that appears in Hoi An food browsing and menu reading."},
-        {"id":"quick-say","title":"Hear the name","body":"Mì Quảng ở Hội An means Mi Quang in a Hoi An food context."},
+        {"id":"quick-say","title":"Hear the name","body":"Mì Quảng ở Hội An means Mi Quang in a Hoi An food context on menus."},
         {"id":"place-brief","title":"What to picture","body":"Picture turmeric-colored noodles, herbs, peanuts, rice cracker, broth or sauce, and a casual local table."},
         {"id":"use-it-with","title":"Why it belongs","body":"It rounds out the Hoi An food list with a regional noodle name beyond cao lầu."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when reading a menu, choosing a noodle dish, or asking what central Vietnam dish a place serves."},
@@ -891,7 +891,7 @@
     {
       "pageID": "city-hoian-place-minh-an-ward",
       "summary": "Minh An Ward is a central Hoi An address clue, useful when old-town hotels, streets, and meeting points use a ward name rather than a famous landmark.",
-      "context": "Phường Minh An is best treated as a map and address label in the heart of Hoi An, not as an attraction by itself.",
+      "context": "Treat Phường Minh An as a map and address label in the heart of Hoi An, not as an attraction by itself.",
       "tip": "Use Minh An with a street, hotel, or shop name. The ward helps orientation, but it usually needs a more specific destination.",
       "rationale": "It belongs because travelers encounter Vietnamese ward names in addresses, and knowing them reduces friction when navigating central Hoi An.",
       "sections": [
@@ -1130,7 +1130,7 @@
     },
     {
       "pageID": "city-hoian-place-reach-out-tea-house",
-      "summary": "Reaching Out Tea House is a calm named tea stop in Hoi An, distinct from coffee rows and useful for quiet ordering, meeting, or taking a slower old-town pause.",
+      "summary": "Reaching Out Tea House is a calm named tea stop in Hoi An, distinct from coffee stops and useful for quiet ordering, meeting, or taking a slower old-town pause.",
       "context": "Preserve Reaching Out Tea House as the venue name. Use it when asking for the entrance, ordering, or meeting nearby.",
       "tip": "Let the current venue guide ordering style and etiquette. The name is enough to find the place without overclaiming details.",
       "rationale": "It belongs because Hoi An's cafe culture includes quiet tea experiences, not only rooftop coffee and quick drinks.",
@@ -1162,11 +1162,11 @@
       "pageID": "city-hoian-place-rice-fields",
       "summary": "Hoi An rice fields give the countryside its open green breath, useful for bike routes, photo stops, village rides, and understanding the calm spaces between named attractions.",
       "context": "Cánh đồng Hội An is a landscape cue, not one exact attraction. Use it when talking about rice-field routes, cycling, or countryside photos.",
-      "tip": "Use a route, village, or map pin if you need a specific field area. The phrase is best for the landscape idea.",
+      "tip": "Use a route, village, or map pin if you need a specific field area. The phrase carries the landscape idea.",
       "rationale": "It belongs because the first-time Hoi An imagination should include fields and village roads, not only lantern streets and beaches.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A landscape entry for Hoi An's rice-field routes, countryside views, cycling, and photo stops."},
-        {"id":"quick-say","title":"Hear the name","body":"Cánh đồng Hội An means Hoi An rice fields in the countryside."},
+        {"id":"quick-say","title":"Hear the name","body":"Cánh đồng Hội An means Hoi An rice fields in the countryside nearby."},
         {"id":"place-brief","title":"What to picture","body":"Picture green paddies, narrow paths, bicycles, water channels, morning light, and village edges in the distance."},
         {"id":"use-it-with","title":"Why it belongs","body":"It brings the countryside between Hoi An's villages and old-town base into the travel plan."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when asking about cycling routes, countryside photos, or a quiet stop outside the center."},
@@ -1271,7 +1271,7 @@
       "rationale": "It belongs because Hoi An's old-house interiors turn the trading-port story into rooms, beams, courtyards, and family-scale space.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A well-known preserved old house in Hoi An Ancient Town and a classic heritage stop."},
-        {"id":"quick-say","title":"Hear the name","body":"Nhà cổ Tấn Ký means Tan Ky Old House in Hoi An Ancient Town."},
+        {"id":"quick-say","title":"Hear the name","body":"Nhà cổ Tấn Ký means Tan Ky Old House in Hoi An Ancient Town heritage walks."},
         {"id":"place-brief","title":"What to picture","body":"Picture carved beams, old rooms, courtyard light, dark wood, and yellow old-town streets just outside."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a specific house interior within Hoi An's broader preserved-town experience."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the house, following a heritage-ticket route, or meeting outside after a visit."},
@@ -1286,7 +1286,7 @@
       "rationale": "It belongs because Hoi An's craft geography includes villages where things are made, not only shops where things are sold.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A pottery village near Hoi An, useful for craft visits, workshops, and terracotta browsing."},
-        {"id":"quick-say","title":"Hear the name","body":"Làng gốm Thanh Hà means Thanh Ha Pottery Village near Hoi An."},
+        {"id":"quick-say","title":"Hear the name","body":"Làng gốm Thanh Hà means Thanh Ha Pottery Village near Hoi An old town."},
         {"id":"place-brief","title":"What to picture","body":"Picture pottery wheels, clay, terracotta shelves, village paths, and warm hands-on craft energy."},
         {"id":"use-it-with","title":"Why it belongs","body":"It grounds Hoi An's pottery craft story in a named village outside the old town."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when arranging a ride, asking for the village, or planning a craft stop outside the old town."},
@@ -1406,7 +1406,7 @@
       "rationale": "It belongs because each assembly hall reflects Hoi An's trading and community history in a specific, nameable way.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named old-town assembly hall and heritage stop in Hoi An's walking circuit."},
-        {"id":"quick-say","title":"Hear the name","body":"Hội quán Triều Châu means Trieu Chau Assembly Hall in Hoi An."},
+        {"id":"quick-say","title":"Hear the name","body":"Hội quán Triều Châu means Trieu Chau Assembly Hall in Hoi An old town."},
         {"id":"place-brief","title":"What to picture","body":"Picture ornate facades, carved details, tiled roofs, a courtyard pause, and old-town streets close by."},
         {"id":"use-it-with","title":"Why it belongs","body":"It separates one assembly hall from the wider heritage cluster in the old town."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the hall, checking a walking route, or meeting after a visit."},
@@ -1466,7 +1466,7 @@
       "rationale": "It belongs because Hoi An food planning often mixes named restaurants with signature dishes, and clarity prevents over-specific recommendations.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named Hoi An restaurant entry associated with the white rose dumpling search path."},
-        {"id":"quick-say","title":"Hear the name","body":"Nhà hàng White Rose identifies White Rose Restaurant in Hoi An."},
+        {"id":"quick-say","title":"Hear the name","body":"Nhà hàng White Rose identifies White Rose Restaurant in Hoi An food plans."},
         {"id":"place-brief","title":"What to picture","body":"Picture a restaurant table, plates of dumplings, soft window light, and travelers checking a saved food stop."},
         {"id":"use-it-with","title":"Why it belongs","body":"It keeps the restaurant destination distinct from the broader dumpling dish page."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the restaurant, asking for a table, or setting a meeting point after eating."},
@@ -1481,7 +1481,7 @@
       "rationale": "It belongs because Hoi An's food identity includes more than cao lầu and white rose dumplings; wontons are part of the local menu vocabulary.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A Hoi An wonton dish name useful for menu reading, ordering, and food-tour choices."},
-        {"id":"quick-say","title":"Hear the name","body":"Hoành thánh Hội An means Hoi An wonton, a local menu item."},
+        {"id":"quick-say","title":"Hear the name","body":"Hoành thánh Hội An means Hoi An wonton, a local menu item to recognize."},
         {"id":"place-brief","title":"What to picture","body":"Picture crisp wontons or sauced pieces, herbs, tomato notes, and a plate that may vary by kitchen."},
         {"id":"use-it-with","title":"Why it belongs","body":"It rounds out Hoi An's signature dish vocabulary with another recognizable menu item."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when reading a menu, asking what style of wonton is served, or choosing a shared plate."},
