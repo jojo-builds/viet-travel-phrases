@@ -357,12 +357,11 @@ final class AppChromeTests: XCTestCase {
         return nil
     }
 
-    func testBrowseSituationCardsReserveReadableTextWidth() {
-        XCTAssertEqual(BrowsePageLayout.situationIconSize, 48)
-        XCTAssertGreaterThanOrEqual(BrowsePageLayout.situationCardMinHeight, 132)
+    func testBrowseSituationCardsUseImageBackedTitleCards() {
+        XCTAssertEqual(BrowsePageLayout.situationCardMinHeight, 158)
         XCTAssertGreaterThanOrEqual(
             BrowsePageLayout.situationCardTitleContentWidth(cardWidth: 176),
-            124
+            144
         )
     }
 

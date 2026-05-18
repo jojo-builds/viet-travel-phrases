@@ -191,6 +191,7 @@ struct BrowseCollectionPageView: View {
             BrowseCollectionSubcategoryRail(
                 subcategories: descriptor.subcategories,
                 selectedSubcategoryID: selectedSubcategoryID,
+                fallbackImageName: descriptor.mastheadImageName,
                 onSelect: { subcategory in
                     selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
                 }
@@ -333,7 +334,7 @@ struct BrowseCollectionPageView: View {
     }
 
     private var usesPhotoBackdropLayout: Bool {
-        descriptor.cityHub != nil
+        descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
     }
 
     @MainActor
@@ -413,6 +414,8 @@ private enum BrowseCollectionLayout {
     static let cityFilterCardHeight: CGFloat = 166
     static let cityFilterImageHeight: CGFloat = 108
     static let cityNounThumbnailSize: CGFloat = 62
+    static let subcategoryCardWidth: CGFloat = 136
+    static let subcategoryCardHeight: CGFloat = 124
 }
 
 private extension BrowseSearchPhraseItem {
@@ -477,6 +480,7 @@ private struct BrowseCollectionHeaderCopy: View {
 private struct BrowseCollectionSubcategoryRail: View {
     let subcategories: [BrowseCollectionSubcategory]
     let selectedSubcategoryID: String?
+    let fallbackImageName: String?
     let onSelect: (BrowseCollectionSubcategory) -> Void
 
     var body: some View {
@@ -486,6 +490,7 @@ private struct BrowseCollectionSubcategoryRail: View {
                     BrowseCollectionSubcategoryCard(
                         subcategory: subcategory,
                         isSelected: subcategory.id == selectedSubcategoryID,
+                        fallbackImageName: fallbackImageName,
                         onSelect: { onSelect(subcategory) }
                     )
                 }
@@ -500,41 +505,86 @@ private struct BrowseCollectionSubcategoryRail: View {
 private struct BrowseCollectionSubcategoryCard: View {
     let subcategory: BrowseCollectionSubcategory
     let isSelected: Bool
+    let fallbackImageName: String?
     let onSelect: () -> Void
+
+    private var imageName: String? {
+        subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName ?? fallbackImageName
+    }
 
     var body: some View {
         Button(action: onSelect) {
-            VStack(alignment: .leading, spacing: 10) {
-                Image(systemName: subcategory.symbolName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(subcategory.tintName.color)
-                    .frame(width: 48, height: 48)
-                    .nativeGlass(cornerRadius: 18, tint: subcategory.tintName.color.opacity(0.14), interactive: true)
+            ZStack(alignment: .bottomLeading) {
+                cardImage
+
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.12),
+                        .init(color: Color.black.opacity(0.16), location: 0.48),
+                        .init(color: Color.black.opacity(0.68), location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
 
                 Text(subcategory.title)
                     .font(.subheadline.weight(.black))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.78)
-
-                Text(subcategory.subtitle)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white)
                     .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .minimumScaleFactor(0.72)
+                    .shadow(color: .black.opacity(0.32), radius: 8, x: 0, y: 2)
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(12)
-            .frame(width: 120, height: 136, alignment: .topLeading)
-            .phraseListCard(cornerRadius: 20)
+            .frame(
+                width: BrowseCollectionLayout.subcategoryCardWidth,
+                height: BrowseCollectionLayout.subcategoryCardHeight,
+                alignment: .bottomLeading
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.55) : .clear, lineWidth: 2)
+                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : .white.opacity(0.64), lineWidth: isSelected ? 2 : 1)
             }
+            .shadow(color: .black.opacity(0.04), radius: 9, x: 0, y: 5)
+            .nativeGlass(cornerRadius: 20, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(subcategory.title). \(subcategory.subtitle)")
         .accessibilityAddTraits(isSelected ? .isSelected : [])
         .accessibilityIdentifier("BrowseCollection.Subcategory.\(subcategory.id)")
+    }
+
+    @ViewBuilder
+    private var cardImage: some View {
+        if let imageName {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    width: BrowseCollectionLayout.subcategoryCardWidth,
+                    height: BrowseCollectionLayout.subcategoryCardHeight,
+                    alignment: .top
+                )
+                .clipped()
+                .accessibilityHidden(true)
+        } else {
+            ZStack {
+                subcategory.tintName.color.opacity(0.16)
+
+                Image(systemName: subcategory.symbolName)
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(subcategory.tintName.color)
+            }
+            .frame(
+                width: BrowseCollectionLayout.subcategoryCardWidth,
+                height: BrowseCollectionLayout.subcategoryCardHeight
+            )
+            .accessibilityHidden(true)
+        }
     }
 }
 
