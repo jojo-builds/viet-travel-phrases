@@ -202,7 +202,7 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
 - Section title: `"What the Full Trip Pack adds"`
 - Section body: `"It is not a separate part of the app. It adds extra follow-up, repair, and recovery phrases inside the same categories once the first line is not enough."`
 - Benefit bullet: `"Free already covers all 18 travel categories."`
-- Benefit bullet: `"The one-time unlock adds the next step after the basic phrase: follow-up, repair, and recovery."`
+- Benefit bullet: obsolete purchase wording about adding follow-up, repair, and recovery after the basic phrase.
 - Benefit bullet: `"Each situation still starts with one main phrase, with only a few extra versions when they help."`
 - Benefit bullet: `"Historical live reality in that snapshot was 150 free visible entries plus 350 unlock-only visible entries, for 500 total visible entries."`
 
@@ -375,7 +375,7 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
   - `[Free live] Choose the exact dish | Summary: Pointing plus this phrase works well at busy stalls. | Primary English card: "I'll take this bowl"`
   - `[Free live] Ask for mild food first | Summary: This is one of the most practical restaurant safety phrases. | Primary English card: "Not spicy please"`
   - `[Free live] Ask for more herbs or greens | Summary: This helps on noodle, rice, and street-food orders. | Primary English card: "More herbs please"`
-  - `[Free live] Ask for bottled water | Summary: This stays in the free layer because it solves a first-day survival need. | Primary English card: "Do you have bottled water?"`
+  - `[Free live] Ask for bottled water | Summary: This stays in the free layer because it solves a common first-day practical need. | Primary English card: "Do you have bottled water?"`
   - `[Free live] Ask for the missing utensils | Summary: Keep this short and direct in busy places. | Primary English card: "A spoon and chopsticks please"`
   - `[Free live] Turn the meal into takeaway | Summary: This is the default restaurant exit phrase when you still want the food. | Primary English card: "Pack it to go"`
   - `[Free live] Check for a specific ingredient | Summary: This is the kind of safety phrase free users should not have to guess at. | Primary English card: "Does this have egg or peanuts?"`
@@ -425,10 +425,10 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
 - Visible situation headings:
   - `[Free live] Find immigration first | Summary: Arrival phrases should keep you moving to the next checkpoint fast. | Primary English card: "Where is immigration?"`
   - `[Free live] Find baggage claim | Summary: Keep this simple because staff can usually point if the phrase is clear. | Primary English card: "Where is baggage claim?"`
-  - `[Free live] Find the SIM or eSIM counter | Summary: Connectivity is a first-day survival need, not just premium polish. | Primary English card: "Where can I buy a SIM card?"`
+  - `[Free live] Find the SIM or eSIM counter | Summary: Connectivity is a common first-day practical need, not just premium polish. | Primary English card: "Where can I buy a SIM card?"`
   - `[Free live] Find cash access after landing | Summary: This helps when rides or food still need cash on the first day. | Primary English card: "Where is the ATM?"`
   - `[Free live] Find the pickup area | Summary: This keeps the first transport handoff from going messy. | Primary English card: "Where is the pickup area?"`
-  - `[Free live] Report the missing bag | Summary: Missing baggage is still a first-day survival problem and should stay in starter access. | Primary English card: "My bag did not arrive"`
+  - `[Free live] Report the missing bag | Summary: Missing baggage is still a first-day practical problem and should stay in starter access. | Primary English card: "My bag did not arrive"`
   - `[Unlock-only live] Find the next terminal | Summary: This matters once the trip includes connections or separate domestic legs. | Primary English card: "Where is the domestic terminal?"`
 
 ### Health & Pharmacy
@@ -512,7 +512,7 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
 - Scenario tip: `"These phrases stay short and direct on purpose because the moment is usually urgent."`
 - Card highlights: `"bathroom"`, `"toilet paper"`, `"soap"`, `"water"`
 - Visible situation headings:
-  - `[Free live] Find the bathroom | Summary: This is a direct survival phrase and should stay short. | Primary English card: "Where is the bathroom?"`
+  - `[Free live] Find the bathroom | Summary: This is a direct practical phrase and should stay short. | Primary English card: "Where is the bathroom?"`
   - `[Free live] Ask for toilet paper | Summary: This is the most common bathroom follow-up after finding the room. | Primary English card: "Do you have toilet paper?"`
   - `[Free live] Ask for soap | Summary: Keep this direct because the need is obvious and immediate. | Primary English card: "Do you have soap?"`
   - `[Free live] Ask to wash your hands | Summary: Useful in markets, food areas, and roadside stops. | Primary English card: "Can I wash my hands here?"`
@@ -585,7 +585,7 @@ This is a documentation-only extraction of a historical Viet app copy snapshot f
 ## Likely Copy-Review Hotspots (Observation Only, Not Rewrites)
 
 - The app currently uses several overlapping unit words for similar concepts: `"category"`, `"situation"`, `"entry"`, `"phrase"`, `"card"`, `"row"`, and `"moment"`.
-- The premium system is named in multiple ways depending on screen and state: `"Full Trip Pack"`, `"unlock"`, `"one-time unlock"`, `"purchase"`, `"restore"`, and `"validation unlock"`.
+- The premium system is named in multiple ways depending on screen and state, including older unlock/purchase language, restore language, and validation-access language.
 - Counts are described with several slightly different patterns: `"Unlock adds"`, `"Unlock adds now"`, `"+29 unlock adds now"`, `"+{n} more situations"`, `"+{n} more phrases"`, `"Total live"`, and `"Total live now"`.
 - Audio state language also varies across surfaces: `"Audio now"`, `"Audio coming"`, `"Audio coming soon."`, `"Text for now"`, and `"text-first while audio catches up"`.
 - The home screen teaches a model of `"category" -> "situation" -> "main phrase first"`, but the actual in-flow headings and card chrome do not always reinforce those terms consistently.

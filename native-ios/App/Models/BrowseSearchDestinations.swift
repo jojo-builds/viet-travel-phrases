@@ -1103,7 +1103,7 @@ enum BrowseSearchDestinations {
         return BrowseCollectionDescriptor(
             route: .category("city-guides"),
             title: "All Vietnam",
-            subtitle: "Everyday phrases for cities, food, transport, hotels, and help.",
+            subtitle: "Food, places, city names, culture, and phrases that make Vietnam easier to picture.",
             eyebrow: "SPEAKLOCAL VIETNAM",
             mastheadImageName: "HeroCountryVietnam",
             symbolName: "star.fill",
@@ -1112,13 +1112,13 @@ enum BrowseSearchDestinations {
             starterTitle: "Essential phrases",
             starterItems: essentialItems,
             practiceTitle: "Vietnam basics",
-            practiceSubtitle: "Arrival, taxi, food, hotel, and help.",
+            practiceSubtitle: "Food, coffee, city names, places, and useful phrases before you land.",
             practiceAction: .addStarterPages(essentialItems.map(\.pageID)),
             exploreShelves: [],
             cityHub: BrowseCityHub(
                 cityNameAudioItem: nil,
                 introTitle: "Start here",
-                introText: "Start with the city names travelers use most, then branch into arrival, food, hotel, help, and getting around.",
+                introText: "Start with the foods, places, city names, and Vietnamese sounds that make the trip feel vivid before you land. Then use the phrase and audio layer when those names turn into real plans.",
                 situationTitle: "Start here",
                 situations: countryStartCards(),
                 namesTitle: "Essential phrases",
@@ -1499,10 +1499,10 @@ enum BrowseSearchDestinations {
             ),
             CityBrowseGroupSpec(
                 id: "dishes",
-                title: "Dishes",
-                subtitle: "Local foods to order",
+                title: "Food & drinks",
+                subtitle: "Dishes, drinks, and sweets",
                 symbolName: "takeoutbag.and.cup.and.straw.fill",
-                placeKinds: ["dish"]
+                placeKinds: ["dish", "drink", "dessert"]
             ),
             CityBrowseGroupSpec(
                 id: "neighborhoods",
@@ -1609,7 +1609,7 @@ enum BrowseSearchDestinations {
     }
 
     private static func isBrowseEntityPageKind(_ pageKind: String) -> Bool {
-        ["place", "restaurant", "dish"].contains(pageKind)
+        ["place", "restaurant", "dish", "drink", "dessert"].contains(pageKind)
     }
 
     private static func entitySortPriority(_ item: BrowseCityCollectionItem) -> Int {
@@ -1618,8 +1618,12 @@ enum BrowseSearchDestinations {
             return 0
         case "restaurant":
             return 1
-        case "dish":
+        case "drink":
             return 2
+        case "dessert":
+            return 3
+        case "dish":
+            return 4
         default:
             return 9
         }
@@ -2520,17 +2524,17 @@ enum BrowseSearchDestinations {
     private static func cityPracticeSubtitle(for id: String) -> String {
         switch id {
         case "danang":
-            return "Airport pickup, beach drop-off, food, and a ride back."
+            return "Beach roads, bridge names, seafood, markets, and mountain trips."
         case "hanoi":
-            return "Airport pickup, Old Quarter, food, and a ride back."
+            return "Old Quarter lanes, lakes, coffee, temple courtyards, and northern food."
         case "hcmc":
-            return "Airport pickup, District 1, coffee, and a ride back."
+            return "District 1, markets, coffee, river lights, and late food."
         case "hoian":
-            return "Hotel pickup, Old Town, food, and a ride back."
+            return "Lantern streets, river boats, old houses, markets, and villages."
         case "hue":
-            return "Station pickup, the Citadel, food, and a ride back."
+            return "Imperial gates, river pagodas, tomb roads, incense, and local food."
         default:
-            return "Arrival, food, places, and getting back."
+            return "Food, places, city names, and useful phrases before you land."
         }
     }
 
@@ -2554,17 +2558,17 @@ enum BrowseSearchDestinations {
     private static func cityIntro(for id: String) -> String {
         switch id {
         case "hcmc":
-            return "Saigon is the Vietnam city where the day can move from airport pickup to strong coffee, market bargaining, river lights, and late food without ever slowing down. These names help you recognize the city by real places, not just broad neighborhoods."
+            return "Saigon comes alive through District 1, coffee, markets, river lights, old civic buildings, and late food in the same long day."
         case "hanoi":
-            return "Hanoi rewards travelers who can name the lake, the Old Quarter, the street, and the dish. The city feels layered: old lanes, shaded lakes, temple courtyards, train-station pickups, and bowls of northern food tucked into small shops."
+            return "Hanoi comes into focus through shaded lakes, old lanes, temple courtyards, coffee shops, northern dishes, and streets that carry the city one turn at a time."
         case "danang":
-            return "Da Nang is practical and scenic at the same time: airport to beach, riverfront to bridges, markets to seafood, then out toward mountain or heritage trips. These city names help you talk about the exact side of town you mean."
+            return "Da Nang comes into focus through river bridges, beach roads, seafood, markets, mountain day trips, and modern nights along the Han River."
         case "hoian":
-            return "Hoi An is small enough to wander and rich enough to need names: the old town, the river, the bridge, the market, the beach, and the villages outside the lantern streets. These entries keep the romance of the place while still helping you ask clearly."
+            return "Hoi An comes into focus through yellow walls, lantern streets, river boats, old houses, tailor stops, markets, beaches, and villages beyond the Ancient Town."
         case "hue":
-            return "Hue is easier to love when the names stop blurring together. The city stretches from the Imperial City to river pagodas, royal tombs, garden houses, markets, and deeply local food, so exact names make the trip feel less intimidating."
+            return "Hue opens as Vietnam's old royal capital with living rituals: imperial gates, river pagodas, tomb roads, garden houses, markets, incense, and deeply local food."
         default:
-            return "Start with the city names travelers use most, then branch into arrival, food, streets, landmarks, and getting back."
+            return "Start with the foods, places, city names, and Vietnamese sounds that make the trip feel vivid before you land."
         }
     }
 

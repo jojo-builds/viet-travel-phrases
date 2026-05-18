@@ -2,11 +2,11 @@
 
 ## Product audience baseline
 
-- SpeakLocal v2 is a native travel phrasebook for the excited pre-trip traveler, not a general translator and not an academic language-learning app.
-- The primary user is planning or seriously considering a destination trip and wants to absorb the place before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases.
-- The app should still work in-country, but that utility is the payoff for pre-trip preparation. Google Translate, Apple Translate, and general-purpose AI own arbitrary live translation; SpeakLocal should own curated trip fluency.
-- For Vietnam, the strongest app signals should be food and coffee, city/place exploration, menu and drink vocabulary, noun-first browse paths, culturally respectful phrase hubs, audio-first pronunciation, and saved/practice loops that help the traveler build a personal trip phrase set.
-- Arrival, transport, repair, health, and emergency flows remain important and starter-safe, but they should be presented as reachable support surfaces rather than the emotional lead of the product.
+- SpeakLocal v2 is a native curated destination travel companion for the excited pre-trip traveler, not a general translator and not an academic language-learning app.
+- The primary user is planning or seriously considering a Vietnam trip and wants the country to feel more vivid and less intimidating before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases.
+- The app should still work in-country, but that utility is the payoff for pre-trip preparation. Google Translate, Apple Translate, and general-purpose AI own arbitrary live translation; SpeakLocal should own curated Vietnam discovery plus practical phrase readiness.
+- For Vietnam, the strongest app signals should be food and coffee, city/place exploration, menu and drink vocabulary, things to do, noun-first browse paths, culturally respectful phrase hubs, audio-first pronunciation, and saved/practice loops that help the traveler build a personal trip phrase set.
+- Arrival, transport, repair, health, and emergency flows remain important, but they should be presented as reachable support surfaces rather than the emotional lead of the product.
 
 ## What now exists
 
@@ -24,7 +24,7 @@
   - the shared shell behavior is now implemented and locally validated in repo truth, but the small-iPhone physical walkthrough and native purchase proof still remain open in `docs/operations/*`
 - A real family premium seam:
   - native app config product IDs
-  - native StoreKit one-time purchase / restore adapter
+  - native StoreKit subscription / restore adapter
   - StoreKit entitlement sync plus on-device persistence
   - dev validation unlock only when the real store path is unavailable
 - A real Viet content boundary on top of that seam:
@@ -75,7 +75,7 @@ Tagalog now inherits automatically:
 - starter vs premium filtering behavior
 - the grouped scenario UI
 - native StoreKit premium-provider expectations
-- the `$4.99` one-time unlock surface
+- the `7-day free trial, then $4.99/month` subscription surface
 - the `SpeakLocal Philippines` build name
 
 Tagalog still needs separate work for:

@@ -33,7 +33,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 ## Not doing right now
 
-- subscriptions
+- account-required subscription features beyond the current Apple-native trial and monthly subscription surface
 - account sync
 - cloud-backed unlock dependency
 - competing with Google Translate, Apple Translate, or general-purpose AI as an arbitrary live translator

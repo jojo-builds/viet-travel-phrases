@@ -21,7 +21,7 @@ Status and blockers live in:
 - Active app surface: `native-ios/`
 - Development machine: Jojo's MacBook
 - Bundle ID: `com.jojobuilds.viettravelphrases`
-- Product ID: `com.jojobuilds.viettravelphrases.premiumunlock`
+- Product ID: `app.speaklocal.vietnam.subscription.monthly`
 - Legacy Expo/EAS/React Native build paths: archive only, not an active lane
 
 Do not upgrade any build, purchase, restore, or device-proof truth unless fresh evidence is actually captured during the run.
@@ -98,7 +98,7 @@ Only run this lane when the native paywall or Apple-side purchase behavior is un
 
 Before purchase proof:
 
-- confirm App Store Connect product state for `com.jojobuilds.viettravelphrases.premiumunlock`
+- confirm App Store Connect product state for `app.speaklocal.vietnam.subscription.monthly`
 - confirm sandbox account and storefront
 - confirm the build under test is the native SwiftUI app
 - install via TestFlight or the agreed native release path
