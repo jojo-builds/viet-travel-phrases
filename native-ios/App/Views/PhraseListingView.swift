@@ -909,7 +909,8 @@ enum PhrasePhotoBackdropLayout {
     static let minimumBottomChromeBackdropHeight: CGFloat = 220
     static let minimumBottomChromeBackdropOffset: CGFloat = 104
     static let sheetCornerClearance: CGFloat = 44
-    static let immersiveDissolveAnimation: Animation = .easeInOut(duration: 0.18)
+    static let immersiveDissolveDuration = 0.18
+    static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     private static let standardBackdropVerticalOverscan: CGFloat = 160
     private static let backdropOffsetUpdateStep: CGFloat = 16
 
