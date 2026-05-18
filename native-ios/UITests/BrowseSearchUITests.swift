@@ -302,49 +302,26 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-pho-bo"].waitForExistence(timeout: 3))
     }
 
-    func testVietnameseMenuDetailHeroImageSupportsAllDismissPaths() {
-        let app = launchApp(arguments: ["--detail-page", "viet-menu-food-pho-bo"])
-        let imageIdentifier = "PhraseArticle.HeroImageLightbox.Image.viet-menu-food-pho-bo"
+    func testVietnameseMenuDetailPhotoBackdropHidesAndRestoresContent() {
+        assertPhotoBackdropHidesAndRestoresContent(
+            pageID: "viet-menu-food-pho-bo",
+            title: "Phở bò",
+            launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
+        )
 
-        XCTAssertTrue(app.staticTexts["Phở bò"].waitForExistence(timeout: 4))
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
-
-        XCTAssertTrue(app.images[imageIdentifier].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
-
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
-
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .down)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
-
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageButton.viet-menu-food-pho-bo"], app: app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .up)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+        assertPhotoBackdropHidesAndRestoresContent(
+            pageID: "viet-menu-drink-ca-phe-sua-da",
+            title: "Cà phê sữa đá",
+            launchArguments: ["--detail-page", "viet-menu-drink-ca-phe-sua-da"]
+        )
     }
 
-    func testCityNounDetailHeroImageSupportsLightboxDismissPaths() {
-        let pageID = "viet-phrase-city-danang-place-dragon-bridge"
-        let app = launchApp(arguments: ["--detail-page", pageID])
-        let imageIdentifier = "PhraseArticle.HeroImageLightbox.Image.\(pageID)"
-
-        XCTAssertTrue(app.staticTexts["Cầu Rồng"].waitForExistence(timeout: 4))
-        tapCityNounHeroMasthead(app)
-
-        XCTAssertTrue(app.images[imageIdentifier].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["PhraseArticle.HeroImageLightbox.Close"].exists)
-
-        tapWhenVisible(app.buttons["PhraseArticle.HeroImageLightbox.Close"], app: app)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
-
-        tapCityNounHeroMasthead(app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .down)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
-
-        tapCityNounHeroMasthead(app)
-        swipeHeroImageLightbox(app.images[imageIdentifier], app: app, direction: .up)
-        XCTAssertFalse(app.images[imageIdentifier].waitForExistence(timeout: 1))
+    func testCityNounDetailPhotoBackdropHidesAndRestoresContent() {
+        assertPhotoBackdropHidesAndRestoresContent(
+            pageID: "viet-phrase-city-danang-place-dragon-bridge",
+            title: "Cầu Rồng",
+            launchArguments: ["--detail-page", "viet-phrase-city-danang-place-dragon-bridge"]
+        )
     }
 
     func testVietnameseMenuDetailUsesMenuChipsInsteadOfBreakdownMath() {
@@ -794,8 +771,57 @@ final class BrowseSearchUITests: XCTestCase {
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
     }
 
-    private func tapCityNounHeroMasthead(_ app: XCUIApplication) {
-        app.coordinate(withNormalizedOffset: CGVector(dx: 0.88, dy: 0.25)).tap()
+    private func assertPhotoBackdropHidesAndRestoresContent(
+        pageID: String,
+        title: String,
+        launchArguments: [String],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let app = launchApp(arguments: launchArguments)
+        let contentIdentifier = "PhraseArticle.PhotoBackdrop.Content.\(pageID)"
+        let legacyLightboxButtonIdentifier = "PhraseArticle.HeroImageButton.\(pageID)"
+
+        XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4), file: file, line: line)
+        XCTAssertFalse(app.buttons[legacyLightboxButtonIdentifier].exists, file: file, line: line)
+        XCTAssertTrue(app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 3), file: file, line: line)
+
+        for _ in 0..<4 where app.descendants(matching: .any)[contentIdentifier].exists {
+            app.swipeDown()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.55))
+        }
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertFalse(
+            app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 1),
+            "Photo backdrop content should hide in immersive mode.",
+            file: file,
+            line: line
+        )
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertTrue(
+            app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 2),
+            "Tapping the immersive photo should restore the content sheet.",
+            file: file,
+            line: line
+        )
+
+        for _ in 0..<2 {
+            app.swipeDown()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.55))
+        }
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertFalse(app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 1), file: file, line: line)
+        app.swipeUp()
+        XCTAssertTrue(
+            app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 2),
+            "Swiping upward should restore the content sheet.",
+            file: file,
+            line: line
+        )
+
+        app.terminate()
     }
 
     private func tapWhenComfortablyVisible(identifier: String, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
@@ -936,30 +962,6 @@ final class BrowseSearchUITests: XCTestCase {
         return frame.minX >= appFrame.minX + 8
             && frame.maxX <= appFrame.maxX - 8
             && frame.intersects(appFrame)
-    }
-
-    private enum HeroImageLightboxSwipeDirection {
-        case up
-        case down
-    }
-
-    private func swipeHeroImageLightbox(_ image: XCUIElement, app: XCUIApplication, direction: HeroImageLightboxSwipeDirection, file: StaticString = #filePath, line: UInt = #line) {
-        XCTAssertTrue(image.waitForExistence(timeout: 3), "Hero image lightbox was not visible.", file: file, line: line)
-
-        let startOffset: CGVector
-        let endOffset: CGVector
-        switch direction {
-        case .up:
-            startOffset = CGVector(dx: 0.5, dy: 0.78)
-            endOffset = CGVector(dx: 0.5, dy: 0.18)
-        case .down:
-            startOffset = CGVector(dx: 0.5, dy: 0.22)
-            endOffset = CGVector(dx: 0.5, dy: 0.82)
-        }
-
-        let start = app.coordinate(withNormalizedOffset: startOffset)
-        let end = app.coordinate(withNormalizedOffset: endOffset)
-        start.press(forDuration: 0.05, thenDragTo: end)
     }
 
     private func captureBrowseCityHeroFadeProofIfRequested(app: XCUIApplication, name: String) {
