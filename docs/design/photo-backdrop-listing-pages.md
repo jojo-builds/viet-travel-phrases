@@ -31,7 +31,7 @@ Hub collection pages use the same interaction when the `BrowseCollectionDescript
 9. Preserve the collapsed image position with `metrics.collapsedContentTop`, leaving a visible sheet handle/edge so users can always pull the content back.
 10. Allow a tap anywhere on the currently visible image area to toggle immersive mode; users should not need to pull the sheet all the way down first.
 11. Restore chrome when the user taps the image again or scrolls/swipes the content upward.
-12. Keep the tab bar on a content-colored backing in normal mode, and hide the backing in immersive mode.
+12. Keep the tab/search chrome on a soft content-colored backing in normal mode, avoid opaque rectangular tab-bar bands, and hide the backing in immersive mode.
 13. Apply `.statusBarHidden(...)` and `.persistentSystemOverlays(...)` while immersive so native overlays disappear wherever iOS allows it. The physical Dynamic Island/camera cutout remains outside app control.
 14. Keep `PhrasePhotoBackdropLayout.bottomReadingClearance` large enough that the final section/card can scroll above the bottom chrome.
 
@@ -56,7 +56,7 @@ The shell behavior lives in `AppShellView`:
 
 - `PhrasePhotoBackdropImmersiveChromePreferenceKey` hides top/bottom chrome while the photo is immersive.
 - The root shell also applies `.statusBarHidden(true)` and `.persistentSystemOverlays(.hidden)` while immersive so status/home-style overlays do not remain on top of the photo.
-- `PhrasePhotoBackdropTabBarBackgroundPreferenceKey` asks the shell to use a content-colored tab bar backing during normal photo-backdrop reading.
+- `PhrasePhotoBackdropTabBarBackgroundPreferenceKey` asks the shell to keep the tab bar transparent while the page supplies a soft content-colored backing during normal photo-backdrop reading.
 - Photo-backdrop preferences are gated by each page's active route so inactive navigation-stack pages do not leak tab bar state.
 - `AppShellTabBarAppearanceBridge` applies the native `UITabBarAppearance` background without committing signing or project-setting changes.
 

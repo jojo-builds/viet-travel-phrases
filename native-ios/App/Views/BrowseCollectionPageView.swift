@@ -302,8 +302,7 @@ struct BrowseCollectionPageView: View {
         return VStack(spacing: 0) {
             Spacer(minLength: 0)
 
-            PhrasePageStyle.pageBackground
-                .frame(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(height: backdropHeight)
         }
         .frame(
             height: backdropBottom,

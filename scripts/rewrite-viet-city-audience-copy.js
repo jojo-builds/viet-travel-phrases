@@ -5,8 +5,9 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
+const handwrittenCopyDir = path.join(repoRoot, "content-draft", "viet", "city-library", "handwritten-copy");
 
-const REVIEW_ID = "viet-city-audience-rewrite-2026-05-18";
+const REVIEW_ID = "viet-city-reason-to-go-copy-2026-05-18";
 let placeByID = new Map();
 
 const cityProfiles = {
@@ -79,10 +80,10 @@ const kindProfiles = {
   port: {
     surface: "port",
     scene: "boats, sea air, arrivals, and the edge between the city and the next crossing",
-    meaning: "the map turning toward islands, boats, ferries, and coastal travel",
+    meaning: "the trip turning toward islands, boats, ferries, and coastal travel",
     practical: "arrival, pier, luggage, ticket, pickup, transfer, and drop-off phrases",
     belongs:
-      "It shows the city turning toward water, boats, islands, ferries, and the coastal routes that make Vietnam feel wider than the street map.",
+      "It shows the city turning toward water, boats, islands, ferries, and the coastal routes that make Vietnam feel wider than one street plan.",
   },
   pier: {
     surface: "pier",
@@ -105,7 +106,7 @@ const kindProfiles = {
     surface: "street",
     scene: "a line through the city: cafes, signs, crossings, hotels, shops, and traffic all giving the neighborhood shape",
     meaning: "a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement",
-    practical: "street, map, driver, pickup, hotel, and cross-street phrases",
+    practical: "street, route, ride, meeting point, hotel, and cross-street phrases",
     texture: "street signs, shopfronts, scooters, crossings, cafe edges, and neighborhood movement",
     belongs:
       "It turns a broad city into something walkable: trees, signs, crossings, shops, hotels, and a street name the traveler can picture.",
@@ -114,7 +115,7 @@ const kindProfiles = {
     surface: "neighborhood",
     scene: "a pocket of the city with its own cafes, streets, hotels, shops, and evening rhythm",
     meaning: "the area identity behind cafes, streets, hotels, shops, and evening rhythm",
-    practical: "street, map, driver, pickup, hotel, and cross-street phrases",
+    practical: "street, route, ride, meeting point, hotel, and cross-street phrases",
     texture: "cafes, lanes, small shops, hotel edges, evening walks, and neighborhood identity",
     texture: "cafes, lanes, small shops, hotel edges, evening walks, and neighborhood identity",
     belongs:
@@ -168,7 +169,7 @@ const kindProfiles = {
   landmark: {
     surface: "landmark",
     scene: "a visual landmark that gives the city a shape in memory",
-    meaning: "history, architecture, local pride, or a classic route in visual form",
+    meaning: "architecture, views, local pride, and history in visual form",
     practical: "visit, entrance, ticket, photo, driver, pickup, and return phrases",
     texture: "architecture, views, local pride, history, city light, and landmark memory",
     belongs:
@@ -497,7 +498,7 @@ const pageOverrides = {
     summary:
       "The Vietnam Museum of Ethnology opens Hanoi into a wider Vietnam: textiles, tools, ritual objects, stilt houses, and outdoor architecture from communities across the country.",
     about:
-      "This is a culture stop where Vietnam becomes more than one city or one postcard: galleries, craft objects, village-house forms, and the many ethnic traditions behind the national map.",
+      "This is a culture stop where Vietnam becomes more than one city or one postcard: galleries, craft objects, village-house forms, and the many ethnic traditions behind the country as a whole.",
     picture:
       "Picture walking from quiet exhibition rooms into a courtyard of stilt-house forms, wooden structures, and objects that make regional life easier to imagine.",
     hear:
@@ -676,8 +677,10 @@ const pageOverrides = {
       "Picture rooms painted so the floor, walls, and camera angle make visitors look as if they are inside the scene.",
     meaning:
       "3D Art in Paradise matters because it adds a playful, camera-ready side to Da Nang, especially for families or travelers who want a low-pressure indoor pause.",
+    hear:
+      "Say Bảo tàng 3D Art in Paradise Đà Nẵng for 3D Art in Paradise Da Nang. It is a long venue name, so keep it together and connect it to the painted optical-illusion rooms.",
     practical:
-      "The travel moment is photo play, indoor cooling-off time, friends posing in painted rooms, and a break between outdoor Da Nang plans.",
+      "Worth it if you want playful photo time, indoor cooling-off, friends posing in painted rooms, and a break between outdoor Da Nang plans.",
     good:
       "Bảo tàng 3D Art in Paradise Đà Nẵng belongs with playful painted rooms, optical illusions, and the easy fun of stepping into a photo scene.",
     context:
@@ -686,6 +689,28 @@ const pageOverrides = {
       "Bảo tàng 3D Art in Paradise Đà Nẵng belongs beside painted rooms, optical illusions, and the easy fun of a camera-ready indoor pause.",
     rationale:
       "3D Art in Paradise makes Da Nang feel more playful through painted rooms, optical illusions, and a low-pressure indoor break from outdoor sightseeing.",
+  },
+  "city-danang-place-museum": {
+    summary:
+      "Da Nang Museum is worth a stop if you want the city to feel less like only beaches and bridges. Its riverside building began as the French-era Governor's Palace, later served as Da Nang City Hall, and now holds the city's historical collection.",
+    about:
+      "This is Da Nang's city-history stop: a former French-era Governor's Palace and City Hall turned museum, facing the Han River and giving the modern coastal city an older civic story.",
+    picture:
+      "Expect rooms about Da Nang's urban growth, wartime history, cultural communities, and the City Hall building itself, with artifacts that make the city feel more layered.",
+    hear:
+      "Say Bảo tàng Đà Nẵng for Da Nang Museum. Bảo tàng means museum, and the full name matters because Da Nang has several museum stops.",
+    meaning:
+      "The payoff is context: the museum helps explain how Da Nang grew from an older port and civic center into the beach-and-bridge city many visitors see first.",
+    practical:
+      "Worth it if you want a slower cultural stop near the river, a rainy-afternoon plan, or background before visiting Cham sites, old streets, and central Da Nang.",
+    good:
+      "Choose this name for the main city-history museum. If you mean Cham sculpture or fine art, choose those more specific museum names instead.",
+    context:
+      "Da Nang Museum brings the city's civic history into focus through a former Governor's Palace and City Hall building, historical galleries, wartime memory, and Han River setting.",
+    tip:
+      "Bảo tàng Đà Nẵng names the main city-history museum, not the Cham Sculpture Museum or Da Nang Fine Arts Museum.",
+    rationale:
+      "Da Nang Museum makes the city feel more layered by connecting modern beach-and-bridge Da Nang to civic history, wartime memory, and a riverside heritage building.",
   },
   "city-danang-place-dragon-bridge-fire-show": {
     summary:
@@ -1185,8 +1210,8 @@ function normalizedLower(value) {
 
 function stripUtilityLead(value) {
   return trimSentence(value)
-    .replace(/\b(useful|helps?|use this|say the name|keep|confirm|ask|pair it|name clearly|ready)\b[^.]*\./gi, "")
-    .replace(/\b(driver|pickup|ticket|entrance|bathroom|water|timing|ride back|return ride)\b[^.]*\./gi, "")
+    .replace(/(?:^|(?<=[.!?])\s+)\b(useful|helps?|use this|say the name|keep|confirm|ask|pair it|name clearly|ready)\b[^.]*\./gi, "")
+    .replace(/(?:^|(?<=[.!?])\s+)\b(driver|pickup|ticket|entrance|bathroom|water|timing|ride back|return ride)\b[^.]*\./gi, "")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -1465,7 +1490,7 @@ function visualCue(page, profile, city) {
       port: [
         `waterfront boarding, sea air, and the move between city streets and island routes`,
         `ferry edges, ticket windows, boat sounds, and the open-water side of the trip`,
-        `port gates, coastal light, and the point where the map turns toward water`,
+        `port gates, coastal light, and the point where the city turns toward water`,
       ],
       pier: [
         `boarding steps, boat noses, river light, and the pause before the day moves onto water`,
@@ -1487,8 +1512,7 @@ function visualCue(page, profile, city) {
 }
 
 function sourceMeaning(page, profile, city) {
-  const source = stripUtilityLead(page.tip) || stripUtilityLead(page.rationale) || stripUtilityLead(page.context);
-  return cleanMeaning(source, profile.meaning).replace(/\.$/, "");
+  return cleanMeaning(pageOverrides[page.id]?.meaning || profile.meaning, profile.meaning).replace(/\.$/, "");
 }
 
 function belongsFor(page, profile, city) {
@@ -1667,7 +1691,7 @@ function summaryFor(page, profile, city) {
     `${title} gives the trip a named scene: ${scene}.`,
     `${title} gives ${city.name} a concrete travel image: ${scene}.`,
     `${title} brings this part of ${city.name} into view: ${scene}.`,
-    `${title} turns the map into a scene: ${scene}.`,
+    `${title} turns an abstract name into a scene: ${scene}.`,
     `${title} gives the itinerary a vivid point of reference: ${scene}.`,
     `${title} carries the city picture through ${pictureLead(scene, title)}.`,
     `${title} becomes memorable through ${pictureLead(scene, title)}.`,
@@ -1676,6 +1700,32 @@ function summaryFor(page, profile, city) {
     return `${title} is where ${city.name} starts to feel real: ${scene}. ${belongsFor(page, profile, city)}`;
   }
   return `${pick(openers, page.id)} ${belongsFor(page, profile, city)}`;
+}
+
+function summaryLeadFor(page, profile, city) {
+  if (pageOverrides[page.id]?.summary) return pageOverrides[page.id].summary;
+  const title = pageTitle(page);
+  const scene = pictureLead(visualCue(page, profile, city), title);
+  const meaning = sourceMeaning(page, profile, city);
+  const frames = {
+    dish: `${title} is worth trying in ${city.name} because it gives the trip a flavor to imagine before arrival. Expect ${scene}.`,
+    drink: `${title} is worth knowing in ${city.name} because drink culture is part pause, part local rhythm. Expect ${scene}.`,
+    dessert: `${title} is worth trying in ${city.name} for sweetness, texture, color, and a small break between bigger plans. Expect ${scene}.`,
+    cafe: `${title} is worth saving for ${city.name}'s cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect ${scene}.`,
+    restaurant: `${title} is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect ${scene}.`,
+    market: `${title} is worth browsing because it shows ${city.name} through stalls, snacks, goods, color, and everyday buying rhythm. Expect ${scene}.`,
+    street: `${title} is worth recognizing because a named street can make ${city.name} feel walkable before arrival. Expect ${scene}.`,
+    neighborhood: `${title} is worth recognizing because neighborhoods turn ${city.name} from landmarks into lived-in areas. Expect ${scene}.`,
+    airport: `${title} is worth recognizing because it is where the planned trip first becomes ${city.name}. Expect ${scene}.`,
+    station: `${title} is worth recognizing because travel days still carry the mood of ${city.name}. Expect ${scene}.`,
+    port: `${title} is worth recognizing because it opens ${city.name} toward water, crossings, islands, or the next route. Expect ${scene}.`,
+    museum: `${title} is worth a stop if you want ${city.name} to feel more layered than the streets outside. Expect ${scene}.`,
+    heritage: `${title} is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect ${scene}.`,
+    sacred: `${title} is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect ${scene}.`,
+    beach: `${title} is worth picturing because it changes the trip into coastal Vietnam: sea air, sand, seafood, and open light. Expect ${scene}.`,
+    river: `${title} is worth knowing because water helps organize ${city.name}: bridges, reflections, banks, boats, and evening light. Expect ${scene}.`,
+  };
+  return frames[profile.key] || `${title} is worth knowing in ${city.name} because it brings ${meaning} into the trip. Expect ${scene}.`;
 }
 
 function aboutFor(page, profile, city) {
@@ -1951,6 +2001,119 @@ function goodToKnowFor(page, profile, city) {
   return `${body} ${title} carries ${texture}.`;
 }
 
+function readerSafeCopy(value) {
+  return sentence(
+    trimSentence(value)
+      .replace(/\btravel moment\b/gi, "trip moment")
+      .replace(/\bthe trip moment is\b/gi, "worth it if you want")
+      .replace(/\bplace name\b/gi, "label")
+      .replace(/\bTraveler\b/g, "Visitor")
+      .replace(/\btraveler\b/g, "visitor")
+      .replace(/\bvisitor walking\b/gi, "walking")
+      .replace(/\bthe traveler can\b/gi, "you can")
+      .replace(/\ba traveler will usually meet\b/gi, "you will usually meet")
+      .replace(/\bthe traveler already imagines\b/gi, "the scene already includes")
+      .replace(/\bthe traveler sees or hears\b/gi, "you see or hear")
+      .replace(/\bthe traveler arrives\b/gi, "arrival")
+      .replace(/\bthe traveler lands\b/gi, "arrival")
+      .replace(/\bthe traveler\b/gi, "you")
+      .replace(/\btravelers\b/gi, "visitors")
+      .replace(/\bnational map\b/gi, "country as a whole")
+      .replace(/\bmaps\b/gi, "routes")
+      .replace(/\bmap pin\b/gi, "saved place")
+      .replace(/\bnot just another dot on a map\b/gi, "not just an abstract name")
+      .replace(/\bstreet map\b/gi, "street plan")
+      .replace(/\bthe map\b/gi, "the route")
+      .replace(/\bmap\b/gi, "route")
+      .replace(/\bdrivers?\b/gi, "rides")
+      .replace(/\bpickup point\b/gi, "meeting point")
+      .replace(/\bpicked up\b/gi, "met again")
+      .replace(/\bpickup\b/gi, "meeting")
+      .replace(/\breturn ride\b|\bride back\b/gi, "return plan")
+      .replace(/\bpayoff\b/gi, "reason to go")
+      .replace(/\.{2,}/g, ".")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
+}
+
+function reasonToGoFor(page, profile, city) {
+  if (pageOverrides[page.id]?.about) return readerSafeCopy(pageOverrides[page.id].about);
+  const title = pageTitle(page);
+  const meaning = sourceMeaning(page, profile, city);
+  const texture = textureFor(page, profile, city, "why-go");
+  const frames = {
+    dish: `${title} is worth trying because it turns ${city.name} into flavor: ${meaning}, with ${texture}.`,
+    drink: `${title} is worth knowing because Vietnam's drink culture often carries the pause between bigger plans: ${texture}.`,
+    dessert: `${title} is worth trying for the sweet side of ${city.name}: ${meaning}, with ${texture}.`,
+    cafe: `${title} is worth saving when you want ${city.name}'s cafe culture, not just caffeine: ${texture}.`,
+    restaurant: `${title} is worth considering when a meal should feel like part of the itinerary: ${meaning}, with ${texture}.`,
+    market: `${title} is worth browsing because it shows everyday ${city.name}: ${texture}.`,
+    street: `${title} is worth recognizing because streets shape how ${city.name} feels on the ground: ${texture}.`,
+    neighborhood: `${title} is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: ${texture}.`,
+    airport: `${title} is worth recognizing before arrival because it is where the trip first turns from plan into Vietnam: ${texture}.`,
+    station: `${title} is worth recognizing because travel days still carry the city's mood: ${texture}.`,
+    port: `${title} is worth recognizing because it opens ${city.name} toward water, crossings, and the next stretch of the trip: ${texture}.`,
+    museum: `${title} is worth a stop when you want more than scenery: ${meaning}, with ${texture}.`,
+    heritage: `${title} is worth visiting because it makes history physical: ${texture}.`,
+    sacred: `${title} is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: ${texture}.`,
+    beach: `${title} is worth picturing because it changes the trip into coastal Vietnam: ${texture}.`,
+    river: `${title} is worth knowing because the water helps organize the city: ${texture}.`,
+  };
+  return readerSafeCopy(frames[profile.key] || `${title} is worth knowing because it gives ${city.name} a specific ${profile.surface} scene: ${texture}.`);
+}
+
+function whatYouGetFor(page, profile, city) {
+  if (pageOverrides[page.id]?.meaning) return readerSafeCopy(pageOverrides[page.id].meaning);
+  const title = pageTitle(page);
+  const scene = pictureLead(visualCue(page, profile, city), title);
+  const meaning = sourceMeaning(page, profile, city);
+  const texture = textureFor(page, profile, city, "what-you-get");
+  return readerSafeCopy(`At ${title}, you get ${meaning}: ${scene}, with ${texture}.`);
+}
+
+function sayItLocallyFor(page, profile, city) {
+  if (pageOverrides[page.id]?.hear) return readerSafeCopy(pageOverrides[page.id].hear);
+  const title = pageTitle(page);
+  const target = vietnameseName(page);
+  const texture = textureFor(page, profile, city, "say-locally");
+  if (normalizedLower(target) === normalizedLower(title)) {
+    return readerSafeCopy(`${title} usually stays as the venue name. Say it slowly and connect it to the scene around it: ${texture}.`);
+  }
+  return readerSafeCopy(`Say ${target} for ${title}. The local name is easier to remember once it sits beside ${texture}.`);
+}
+
+function worthItIfFor(page, profile, city) {
+  if (pageOverrides[page.id]?.practical) return readerSafeCopy(pageOverrides[page.id].practical);
+  const title = pageTitle(page);
+  const texture = textureFor(page, profile, city, "worth-it-if");
+  const frames = {
+    dish: `Worth it if you want a food memory rather than only a place name: ${texture}.`,
+    drink: `Worth it if a cold glass, coffee pause, or sidewalk drink would make the day feel more local: ${texture}.`,
+    dessert: `Worth it if you want the sweet, textural side of the city: ${texture}.`,
+    cafe: `Worth it if the trip needs a slower pause between walks, markets, meals, or heat: ${texture}.`,
+    restaurant: `Worth it if the meal itself should be one of the day's memories: ${texture}.`,
+    market: `Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: ${texture}.`,
+    street: `Worth it if the street helps you understand the neighborhood before you are there: ${texture}.`,
+    neighborhood: `Worth it if you want the city to feel like lived-in areas, not only landmarks: ${texture}.`,
+    museum: `Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: ${texture}.`,
+    heritage: `Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: ${texture}.`,
+    sacred: `Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: ${texture}.`,
+    beach: `Worth it if the Vietnam image in your head includes sea air, sand, seafood, and coastal mornings: ${texture}.`,
+    nature: `Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: ${texture}.`,
+  };
+  return readerSafeCopy(frames[profile.key] || `Worth it if ${title} gives your itinerary a clearer image: ${texture}.`);
+}
+
+function beforeYouGoFor(page, profile, city) {
+  const title = pageTitle(page);
+  const scene = pictureLead(visualCue(page, profile, city), title);
+  const texture = textureFor(page, profile, city, "before-you-go");
+  const override = pageOverrides[page.id]?.tip || pageOverrides[page.id]?.rationale || "";
+  const fallback = `${title} works best when the name is tied to the reason for going, not memorized as an abstract label. Picture ${scene} with ${texture}.`;
+  return readerSafeCopy(override && override.length > 40 ? `${override}. Picture ${scene}.` : fallback);
+}
+
 function contextSurface(profile) {
   const labels = {
     dish: "food",
@@ -1970,50 +2133,54 @@ function rewritePage(page) {
   const title = pageTitle(page);
   const target = vietnameseName(page);
   const editorial = page.editorialImport || {};
-  editorial.summary = summaryFor(page, profile, city);
+  editorial.summary = readerSafeCopy(summaryLeadFor(page, profile, city));
   editorial.sections = [
     {
       id: "at-glance",
-      title: "Why it matters",
-      body: aboutFor(page, profile, city),
-    },
-    {
-      id: "quick-say",
-      title: "Hear the name",
-      body: hearNameFor(page, profile, city),
+      title: "Why go",
+      body: reasonToGoFor(page, profile, city),
     },
     {
       id: "place-brief",
-      title: "What to picture",
-      body: pictureFor(page, profile, city),
+      title: "What you'll get",
+      body: whatYouGetFor(page, profile, city),
+    },
+    {
+      id: "quick-say",
+      title: "Say it locally",
+      body: sayItLocallyFor(page, profile, city),
     },
     {
       id: "use-it-with",
-      title: "Why it belongs",
-      body: meaningFor(page, profile, city),
+      title: "Worth it if",
+      body: worthItIfFor(page, profile, city),
     },
     {
       id: "when-to-use",
-      title: "Travel moment",
-      body: practicalFor(page, profile, city),
+      title: "Before you go",
+      body: beforeYouGoFor(page, profile, city),
     },
     {
       id: "good-to-know",
       title: "Good to know",
-      body: goodToKnowFor(page, profile, city),
+      body: readerSafeCopy(goodToKnowFor(page, profile, city)),
     },
   ];
   editorial.audienceRewrite = {
     reviewID: REVIEW_ID,
-    standard: "desire-first-significance-second-practical-third",
+    standard: "reason-to-go-factual-hook-before-local-name",
     source: "source-owned city audience rewrite",
   };
+  if (editorial.runtimeOverride?.kind === "ba-na-hills-journey") {
+    editorial.runtimeOverride.reason =
+      "Ba Na Hills is a full journey page in the native runtime; utility phrase sections extend the reviewed place-body sections after Why go, Say it locally, What you'll get, Day-trip landmark, Full-day timing, and Good to know.";
+  }
   page.editorialImport = editorial;
-  page.context = pageOverrides[page.id]?.context
-    ?? `For ${title}, ${city.name}'s ${contextSurface(profile)} story comes through ${textureFor(page, profile, city, "context")}.`;
+  page.context = readerSafeCopy(pageOverrides[page.id]?.context
+    ?? `For ${title}, ${city.name}'s ${contextSurface(profile)} story comes through ${textureFor(page, profile, city, "context")}.`);
   const texture = textureFor(page, profile, city, "tip");
   const tipTextureSentence = upperFirst(texture);
-  page.tip = pageOverrides[page.id]?.tip ?? pick([
+  page.tip = readerSafeCopy(pageOverrides[page.id]?.tip ?? pick([
     `${target} belongs beside ${texture} around ${title}.`,
     `${title} feels clearer with ${texture} around it.`,
     `${city.name}'s ${contextSurface(profile)} scene comes through ${texture}.`,
@@ -2026,9 +2193,9 @@ function rewritePage(page) {
     `${title} carries ${texture} into the travel plan.`,
     `${target} sits inside the scene around ${title}: ${texture}.`,
     `${city.name} feels more specific when ${title} is tied to ${texture}.`,
-  ], `${page.id}:tip`);
-  page.rationale = pageOverrides[page.id]?.rationale
-    ?? `${title} brings ${city.name} into focus through ${textureFor(page, profile, city, "rationale")}.`;
+  ], `${page.id}:tip`));
+  page.rationale = readerSafeCopy(pageOverrides[page.id]?.rationale
+    ?? `${title} brings ${city.name} into focus through ${textureFor(page, profile, city, "rationale")}.`);
   return true;
 }
 
@@ -2097,10 +2264,35 @@ function rewriteCityHub(city) {
   hub.quickPhraseIDs = (hub.quickPhraseIDs || []).map((pageID) => livePageIDReplacements[pageID] || pageID);
   hub.audienceRewrite = {
     reviewID: REVIEW_ID,
-    standard: "desire-first-significance-second-practical-third",
+    standard: "reason-to-go-factual-hook-before-local-name",
   };
   city.hubEditorial = hub;
   return true;
+}
+
+function syncHandwrittenCopyFiles(source) {
+  fs.mkdirSync(handwrittenCopyDir, { recursive: true });
+  for (const city of source.cities || []) {
+    const cityID = city.id;
+    if (!cityProfiles[cityID]) continue;
+    const entries = (source.pages || [])
+      .filter((page) => page.kind !== "phrase" && page.status === "approved" && page.cityID === cityID)
+      .sort((a, b) => a.id.localeCompare(b.id))
+      .map((page) => ({
+        pageID: page.id,
+        summary: page.editorialImport?.summary || "",
+        context: page.context || "",
+        tip: page.tip || "",
+        rationale: page.rationale || "",
+        sections: page.editorialImport?.sections || [],
+      }));
+    writeJSON(path.join(handwrittenCopyDir, `${cityID}.json`), {
+      schemaVersion: 1,
+      cityID,
+      authoringStandard: "reason-to-go-factual-hook-before-local-name",
+      entries,
+    });
+  }
 }
 
 function main() {
@@ -2117,6 +2309,7 @@ function main() {
     }
   }
   alignAllPagesWithPlaces(source);
+  syncHandwrittenCopyFiles(source);
   writeJSON(sourcePath, source);
   console.log(`Rewrote ${hubCount} city hubs and ${pageCount} city noun/place pages in ${path.relative(repoRoot, sourcePath)}`);
 }

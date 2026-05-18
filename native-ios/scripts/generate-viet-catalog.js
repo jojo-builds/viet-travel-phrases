@@ -311,7 +311,10 @@ function main() {
     .filter((row) => row.status === "approved");
   const cityRecords = loadCityLibraryRecords();
   const editorialSupportRecords = loadEditorialSupportRecords();
-  const approvedRecords = [...records, ...cityRecords, ...editorialSupportRecords];
+  const cityRecordIDs = new Set(cityRecords.map((record) => record.phrase_id));
+  const cityFamilyIDs = new Set(cityRecords.map((record) => record.family_id));
+  const baseRecords = records.filter((record) => !cityRecordIDs.has(record.phrase_id) && !cityFamilyIDs.has(record.family_id));
+  const approvedRecords = [...baseRecords, ...cityRecords, ...editorialSupportRecords];
 
   const scenariosByID = new Map();
   const familiesByID = new Map();
