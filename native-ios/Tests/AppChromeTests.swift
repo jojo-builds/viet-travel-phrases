@@ -342,6 +342,16 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseCityHeroImageFadeIsStrongEnoughToHideImagePanelSeam() {
+        XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
+    }
+
+    func testBrowseCityRoutesUseShortNativeDissolveTransition() {
+        XCTAssertTrue(BrowseCollectionNativeTransition.usesCityDissolve(for: .city("danang")))
+        XCTAssertFalse(BrowseCollectionNativeTransition.usesCityDissolve(for: .category("airport")))
+        XCTAssertLessThanOrEqual(BrowseCollectionNativeTransition.cityDissolveDuration, 0.24)
+    }
+
     func testBrowseCityHeroCardKeepsImageAndCopyAreasStable() {
         XCTAssertEqual(
             BrowsePageLayout.cityHeroImageHeight + BrowsePageLayout.cityHeroCopyAreaHeight,

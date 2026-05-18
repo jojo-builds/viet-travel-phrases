@@ -108,8 +108,6 @@ struct PhraseArticleTemplateView: View {
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
-    @State private var isPhotoBackdropAtCollapsedTapPosition = false
-    @State private var lastPhotoBackdropScrollChangeDate = Date.distantPast
     @State private var presentedHeroImage: PhraseHeroImagePresentation?
 
     init(
@@ -254,28 +252,18 @@ struct PhraseArticleTemplateView: View {
                                 .id(Self.photoBackdropContentID)
                         }
                     }
-                    .simultaneousGesture(
-                        TapGesture().onEnded {
-                            togglePhotoBackdropImmersiveIfAvailable(metrics: metrics)
-                        }
-                    )
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
-                        let canToggleImmersive = offset <= metrics.collapsedTapOffset
-                        if isPhotoBackdropAtCollapsedTapPosition != canToggleImmersive {
-                            isPhotoBackdropAtCollapsedTapPosition = canToggleImmersive
-                            lastPhotoBackdropScrollChangeDate = Date()
-                        }
-
                         let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
                         if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
                             photoBackdropScrollOffset = backdropOffset
-                            lastPhotoBackdropScrollChangeDate = Date()
                         }
 
                         if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
-                            isPhotoBackdropImmersive = false
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
                         }
                     }
                     .onChange(of: scrollToTopTrigger) { _, _ in
@@ -300,6 +288,12 @@ struct PhraseArticleTemplateView: View {
                 }
                 .ignoresSafeArea(edges: .top)
             }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
             .overlay(alignment: .topLeading) {
                 if showsChrome && !isPhotoBackdropImmersive {
                     fixedBackButton
@@ -366,7 +360,7 @@ struct PhraseArticleTemplateView: View {
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
-        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -453,7 +447,8 @@ struct PhraseArticleTemplateView: View {
         .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
-        .animation(.easeInOut(duration: 0.18), value: isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
         .accessibilityIdentifier("PhraseArticle.PhotoBackdrop.Content.\(page.id)")
     }
 
@@ -780,20 +775,25 @@ struct PhraseArticleTemplateView: View {
         didApplyPhotoBackdropInitialPosition = true
     }
 
-    private func togglePhotoBackdropImmersiveIfAvailable(metrics: PhrasePhotoBackdropLayout.Metrics) {
+    private func togglePhotoBackdropImmersive(at location: CGPoint, metrics: PhrasePhotoBackdropLayout.Metrics) {
         if isPhotoBackdropImmersive {
-            isPhotoBackdropImmersive = false
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
+            }
             return
         }
 
-        guard isPhotoBackdropAtCollapsedTapPosition else {
-            return
-        }
-        guard Date().timeIntervalSince(lastPhotoBackdropScrollChangeDate) > 0.35 else {
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
             return
         }
 
-        isPhotoBackdropImmersive = true
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
+        }
     }
 
     @ViewBuilder
@@ -852,6 +852,7 @@ enum PhrasePhotoBackdropLayout {
     static let minimumBottomChromeBackdropHeight: CGFloat = 220
     static let minimumBottomChromeBackdropOffset: CGFloat = 104
     static let sheetCornerClearance: CGFloat = 44
+    static let immersiveDissolveAnimation: Animation = .easeInOut(duration: 0.18)
     private static let backdropOffsetUpdateStep: CGFloat = 16
 
     static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
@@ -867,7 +868,6 @@ enum PhrasePhotoBackdropLayout {
         let initialAnchorOffset: CGFloat
         let initialContentTop: CGFloat
         let collapsedContentTop: CGFloat
-        let collapsedTapOffset: CGFloat
         let revealImmersiveOffset: CGFloat
     }
 
@@ -882,9 +882,17 @@ enum PhrasePhotoBackdropLayout {
             initialAnchorOffset: max(collapsedContentTop - initialContentTop, 0),
             initialContentTop: initialContentTop,
             collapsedContentTop: collapsedContentTop,
-            collapsedTapOffset: 18,
             revealImmersiveOffset: 24
         )
+    }
+
+    static func isImageTap(
+        _ location: CGPoint,
+        scrollOffset: CGFloat,
+        metrics: Metrics
+    ) -> Bool {
+        let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+        return location.y >= 0 && location.y <= sheetTop
     }
 
     static func bottomChromeBackdropHeight(safeAreaBottom: CGFloat) -> CGFloat {

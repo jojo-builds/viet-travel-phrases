@@ -119,6 +119,7 @@ struct AppShellView: View {
             for: .tabBar
         )
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
         .searchable(
             text: $searchQuery,
@@ -624,6 +625,12 @@ struct AppShellView: View {
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
+            : AppPageTransition.slideFromTrailing
+    }
+
+    private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
+        BrowseCollectionNativeTransition.usesCityDissolve(for: route)
+            ? AppPageTransition.browseCityDissolve
             : AppPageTransition.slideFromTrailing
     }
 
@@ -1260,7 +1267,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollection(route)
         }
     }
@@ -1269,7 +1276,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openHomeBrowseCollection(route)
         }
     }
@@ -1278,7 +1285,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollectionFromSearch(route)
         }
     }
@@ -2811,6 +2818,29 @@ enum AppPageTransition {
         removal: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation)
     )
 
+    static let browseCityDissolve = AnyTransition.asymmetric(
+        insertion: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation),
+        removal: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation)
+    )
+}
+
+enum BrowseCollectionNativeTransition {
+    static let cityDissolveDuration: TimeInterval = 0.22
+    static let cityDissolveAnimation: Animation = .easeInOut(duration: cityDissolveDuration)
+
+    static func usesCityDissolve(for route: BrowseCollectionRoute) -> Bool {
+        guard case .city = route else {
+            return false
+        }
+
+        return true
+    }
+
+    static func animation(for route: BrowseCollectionRoute) -> Animation {
+        usesCityDissolve(for: route)
+            ? cityDissolveAnimation
+            : .snappy(duration: 0.34)
+    }
 }
 
 enum HomePhraseHeroMorphTiming {
