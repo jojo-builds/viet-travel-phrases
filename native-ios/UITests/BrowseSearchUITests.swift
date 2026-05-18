@@ -564,13 +564,13 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["Browse.NextShelf.recent"].exists)
     }
 
-    func testSearchTabOpensSearchField() {
+    func testSearchTabOpensSystemSearchField() {
         let app = XCUIApplication()
         app.launch()
 
         openSearch(in: app)
 
-        let field = searchField(in: app)
+        let field = nativeSearchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
         XCTAssertTrue(field.waitForExistence(timeout: 2))
 
@@ -587,7 +587,7 @@ final class BrowseSearchUITests: XCTestCase {
         openDock("Search", in: app)
 
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
-        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
+        XCTAssertTrue(nativeSearchField(in: app).waitForExistence(timeout: 2))
         XCTAssertFalse(
             app.keyboards.firstMatch.waitForExistence(timeout: 0.5),
             "Tapping the bottom Search tab should open discovery/results without flashing keyboard focus."
@@ -780,6 +780,10 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         return app.textFields["Search Vietnamese phrases"]
+    }
+
+    private func nativeSearchField(in app: XCUIApplication) -> XCUIElement {
+        app.searchFields["Search Vietnamese phrases"]
     }
 
     private func tapWhenVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
