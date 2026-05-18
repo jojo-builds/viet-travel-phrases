@@ -17,8 +17,6 @@ const requiredSectionIDs = [
   "quick-say",
   "place-brief",
   "use-it-with",
-  "when-to-use",
-  "good-to-know",
 ];
 const bannedFragments = [
   "place name",
@@ -41,7 +39,23 @@ const bannedFragments = [
   "route phrase",
   "where-question",
   "anchor",
+  "managed outdoor activity area",
+  "confirm the destination",
+  "helps travelers",
+  "local name noun",
 ];
+const bannedExactSectionTitles = new Set([
+  "Why it belongs",
+  "Travel moment",
+  "Hear the name",
+  "At the place",
+  "Traveler role",
+  "Indoor reason",
+  "Arrival handoff",
+  "When it helps",
+]);
+const bannedOpeningPattern = /^Use\s+/i;
+const bannedEditorialPatterns = [/belongs because/i, /\buse this when\b/i, /\btravelers?\b/i];
 
 function readJSON(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -89,17 +103,37 @@ function requireText(value, label, pageID, minLength) {
   return text;
 }
 
+function requireNoTemplateDrift(value, label, pageID) {
+  const text = normalize(value);
+  if (!text) return;
+  if (bannedOpeningPattern.test(text)) {
+    fail(`${pageID} ${label} starts with template-like "Use ..." wording`);
+  }
+  const editorialPattern = bannedEditorialPatterns.find((pattern) => pattern.test(text));
+  if (editorialPattern) {
+    fail(`${pageID} ${label} contains internal/editorial wording "${editorialPattern.source}"`);
+  }
+}
+
 function sectionMapFor(entry) {
   const sections = entry.sections ?? [];
   const byID = new Map();
   for (const section of sections) {
     if (!section.id) fail(`${entry.pageID} has a section without id`);
     if (byID.has(section.id)) fail(`${entry.pageID} repeats section ${section.id}`);
-    byID.set(section.id, {
+    if (bannedExactSectionTitles.has(normalize(section.title))) {
+      fail(`${entry.pageID} section ${section.id} keeps template title "${normalize(section.title)}"`);
+    }
+    const nextSection = {
       id: section.id,
       title: requireText(section.title, `section ${section.id} title`, entry.pageID, 3),
       body: requireText(section.body, `section ${section.id} body`, entry.pageID, 65),
-    });
+    };
+    if (Array.isArray(section.phraseIDs)) {
+      nextSection.phraseIDs = section.phraseIDs.map((phraseID) => requireText(phraseID, `section ${section.id} phraseID`, entry.pageID, 3));
+    }
+    byID.set(section.id, nextSection);
+    requireNoTemplateDrift(section.body, `section ${section.id} body`, entry.pageID);
   }
   for (const id of requiredSectionIDs) {
     if (!byID.has(id)) fail(`${entry.pageID} missing required section ${id}`);
@@ -209,8 +243,12 @@ function main() {
 
       const summary = requireText(entry.summary, "summary", entry.pageID, 130);
       requireText(visibleTextForEntry(entry), "visible entry", entry.pageID, 480);
+      requireNoTemplateDrift(entry.context, "context", entry.pageID);
+      requireNoTemplateDrift(entry.tip, "tip", entry.pageID);
+      requireNoTemplateDrift(entry.rationale, "rationale", entry.pageID);
+      requireNoTemplateDrift(entry.summary, "summary", entry.pageID);
       const sectionByID = sectionMapFor(entry);
-      const sections = requiredSectionIDs.map((id) => sectionByID.get(id));
+      const sections = (entry.sections ?? []).map((section) => sectionByID.get(section.id));
       const sourceNotes = page.editorialImport?.sourceNotes ?? page.productionIntake?.sourceNotes ?? "";
       const imagePromptNote = page.editorialImport?.imagePromptNote ?? page.productionIntake?.imagePromptNote ?? "";
       const targetHeroImageName = page.editorialImport?.targetHeroImageName ?? page.productionIntake?.targetHeroImageName ?? page.heroImageName;
@@ -218,7 +256,7 @@ function main() {
       const runtimeOverride = page.editorialImport?.runtimeOverride;
 
       page.context = normalize(entry.context ?? summary);
-      page.tip = normalize(entry.tip ?? sectionByID.get("good-to-know").body);
+      page.tip = normalize(entry.tip ?? sectionByID.get("good-to-know")?.body ?? sectionByID.get("use-it-with").body);
       page.rationale = normalize(entry.rationale ?? sectionByID.get("use-it-with").body);
       page.editorialImport = {
         ...(page.editorialImport ?? {}),

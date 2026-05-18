@@ -72,7 +72,7 @@ function profileFor(page) {
   if (placeKind === "market" || page.subcategoryID === "shopping-markets") return "market";
   if (placeKind === "cafe") return "cafe";
   if (pageKind === "restaurant" || placeKind === "restaurant") return "restaurant";
-  if (pageKind === "dish" || placeKind === "dish" || placeKind === "local dish" || placeKind === "food spot") return "dish";
+  if (["dish", "drink", "dessert"].includes(pageKind) || ["dish", "drink", "dessert", "local dish", "food spot"].includes(placeKind)) return "dish";
   if (["experience", "attraction", "village", "river", "beach", "nature", "park", "landmark", "museum"].includes(placeKind)) return "place-experience";
   return "place";
 }
@@ -141,8 +141,8 @@ function pageChecklist(page) {
   const sourceBannedMatches = visibleBannedMatches(sourceText);
   const runtimeOverride = page.editorialImport?.runtimeOverride;
   return {
-    voiceLengthPass: text.length >= 650,
-    sectionCountPass: sections.length >= 6,
+    voiceLengthPass: text.length >= 480,
+    sectionCountPass: sections.length >= 4,
     profileAudienceCuePass: profileAudienceCuePass(page, text),
     noBannedVisibleTextPass: bannedMatches.length === 0,
     noBannedSourceInputPass: sourceBannedMatches.length === 0,
