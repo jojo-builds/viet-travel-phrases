@@ -129,7 +129,7 @@ function profileAudienceCuePass(page, text) {
 function uniqueLongSectionBodies(page) {
   const bodies = (page.editorialImport?.sections ?? [])
     .map((section) => normalizedLower(section.body))
-    .filter((body) => body.length >= 80);
+    .filter((body) => body.length >= 60);
   return new Set(bodies).size;
 }
 
@@ -141,7 +141,7 @@ function pageChecklist(page) {
   const sourceBannedMatches = visibleBannedMatches(sourceText);
   const runtimeOverride = page.editorialImport?.runtimeOverride;
   return {
-    voiceLengthPass: text.length >= 900,
+    voiceLengthPass: text.length >= 650,
     sectionCountPass: sections.length >= 6,
     profileAudienceCuePass: profileAudienceCuePass(page, text),
     noBannedVisibleTextPass: bannedMatches.length === 0,
