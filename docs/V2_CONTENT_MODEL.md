@@ -200,7 +200,7 @@ Viet:
 - `content-draft/viet/canonical-pages/tier-one/_tier-one-index.json` for the current computed Tier 1 source-origin inventory
 - `content-draft/viet/canonical-pages/<lane>/<scenario>/<page-id>.json` for authored offline canonical phrase-page articles
 - `content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` for the approved practice-first live expansion lane and its page records/rationale
-- `content-draft/viet/menu/_menu-index.json`, `content-draft/viet/menu/items/**`, and `content-draft/viet/menu/menu-helper-phrases.json` for the handwritten Vietnamese menu and drink detail-page source
+- `content-draft/viet/menu/_menu-index.json`, `content-draft/viet/menu/items/**`, and `content-draft/viet/menu/menu-helper-phrases.json` for the handwritten Food Menu and Drink Menu detail-page source
   - each menu item carries text-only `howLocalsOrder` guidance so the page teaches the local ordering move, customization choice, sauce/dip/broth behavior, or drink flavor/ice/sweetness decision without creating one-off audio requirements
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only

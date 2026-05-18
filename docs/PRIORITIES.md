@@ -10,7 +10,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 3. Aim product and UX decisions at the excited pre-trip traveler first: someone planning Vietnam who wants food, cities, culture, pronunciation, and useful local phrases to make the trip feel richer. In-country utility should support that promise, not turn the app into a generic translator replacement.
 4. Prioritize the surfaces that express that audience wedge most clearly:
    - Home as a destination/culture/phrase gateway
-   - Vietnamese menu and drink menu as flagship food exploration
+   - Food Menu and Drink Menu as flagship menu exploration
    - city pages as place-first trip exploration
    - noun-first Browse/category rows for food, markets, places, and everyday objects
    - saved/practice loops for building a personal trip phrase set before arrival
@@ -33,7 +33,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 
 ## Not doing right now
 
-- subscriptions
+- account-required subscription features beyond the current Apple-native trial and monthly subscription surface
 - account sync
 - cloud-backed unlock dependency
 - competing with Google Translate, Apple Translate, or general-purpose AI as an arbitrary live translator

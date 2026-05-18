@@ -120,7 +120,7 @@ Known pre-existing test debt:
 
 - Active app root: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 - Bundle ID: `app.speaklocal.vietnam.native`
-- Product ID: `com.jojobuilds.viettravelphrases.premiumunlock`
+- Product ID: `app.speaklocal.vietnam.subscription.monthly`
 - Current language pack under active development: Viet
 - Tagalog remains a future native language-pack candidate unless Jojo explicitly reactivates that lane.
 

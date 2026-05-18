@@ -525,7 +525,7 @@ final class PhrasePageFixtureTests: XCTestCase {
                   let pageKind = metadata["pageKind"] as? String
             else { return false }
 
-            return ["place", "restaurant", "dish"].contains(pageKind)
+            return ["place", "restaurant", "dish", "drink", "dessert"].contains(pageKind)
         }
         let groupedByCity = Dictionary(grouping: cityNounPages) { page -> String in
             let metadata = page["cityMetadata"] as? [String: Any]
