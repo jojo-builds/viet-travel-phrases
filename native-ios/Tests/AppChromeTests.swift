@@ -104,6 +104,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
     }
 
+    func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
+        XCTAssertEqual(PhrasePhotoBackdropLayout.immersiveDissolveDuration, 0.18, accuracy: 0.001)
+        XCTAssertEqual(
+            AppShellTabBarVisibilityTransition.duration,
+            PhrasePhotoBackdropLayout.immersiveDissolveDuration,
+            accuracy: 0.001
+        )
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)

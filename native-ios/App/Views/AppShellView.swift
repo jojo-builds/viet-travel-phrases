@@ -377,12 +377,12 @@ struct AppShellView: View {
                 menuSectionChromeStates = states
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
-                withAnimation(.easeInOut(duration: 0.18)) {
+                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                     hidesPhotoBackdropChrome = isHidden
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self) { isVisible in
-                withAnimation(.easeInOut(duration: 0.18)) {
+                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                     showsPhotoBackdropTabBarBackground = isVisible
                 }
             }
@@ -2989,6 +2989,10 @@ private struct PhotoBackdropImmersiveImageCover: View {
 }
 
 #if canImport(UIKit)
+enum AppShellTabBarVisibilityTransition {
+    static let duration = PhrasePhotoBackdropLayout.immersiveDissolveDuration
+}
+
 private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
     let usesContentBackground: Bool
     let isHidden: Bool
@@ -3003,6 +3007,8 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
     }
 
     final class Controller: UIViewController {
+        private var lastAppliedIsHidden: Bool?
+
         var usesContentBackground = false {
             didSet {
                 guard oldValue != usesContentBackground else {
@@ -3031,20 +3037,26 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
         }
 
         private func applyAppearance() {
+            let usesContentBackground = usesContentBackground
+            let isHidden = isHidden
+
             DispatchQueue.main.async { [weak self] in
                 guard let self, let tabBar = self.findTabBar() else {
                     return
                 }
+                let targetAlpha: CGFloat = isHidden ? 0 : 1
+                let shouldAnimateVisibility = self.lastAppliedIsHidden.map { $0 != isHidden } ?? false
+                self.lastAppliedIsHidden = isHidden
 
                 let appearance = UITabBarAppearance()
-                if self.isHidden {
+                if isHidden {
                     appearance.configureWithTransparentBackground()
                     appearance.backgroundColor = .clear
                     appearance.shadowColor = .clear
                     tabBar.backgroundColor = .clear
                     tabBar.isTranslucent = true
                     tabBar.layer.shadowOpacity = 0
-                } else if self.usesContentBackground {
+                } else if usesContentBackground {
                     appearance.configureWithOpaqueBackground()
                     appearance.backgroundColor = UIColor(PhrasePageStyle.pageBackground)
                     appearance.shadowColor = nil
@@ -3057,8 +3069,20 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
 
                 tabBar.standardAppearance = appearance
                 tabBar.scrollEdgeAppearance = appearance
-                tabBar.alpha = self.isHidden ? 0 : 1
-                tabBar.isUserInteractionEnabled = !self.isHidden
+                tabBar.isUserInteractionEnabled = !isHidden
+
+                guard shouldAnimateVisibility else {
+                    tabBar.alpha = targetAlpha
+                    return
+                }
+
+                UIView.animate(
+                    withDuration: AppShellTabBarVisibilityTransition.duration,
+                    delay: 0,
+                    options: [.beginFromCurrentState, .allowUserInteraction, .curveEaseInOut]
+                ) {
+                    tabBar.alpha = targetAlpha
+                }
             }
         }
 
