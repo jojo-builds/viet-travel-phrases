@@ -11760,9 +11760,9 @@
       "targetText": "Bà Nà Hills",
       "englishText": "Ba Na Hills",
       "pronunciation": "bah na hills",
-      "context": "The full name helps when arranging transport, tickets, pickup time, and the ride back down from the hills.",
-      "tip": "Bà Nà Hills is a whole resort-style mountain area, so keep sub-stops like the Golden Bridge connected to it.",
-      "rationale": "It matters because many first-time visitors plan a Da Nang day around this one elevated destination.",
+      "context": "Keep the full name together when arranging the ride, tickets, cable car, pickup time, and return down from the hills.",
+      "tip": "Bà Nà Hills is the whole mountain outing; the Golden Bridge is one famous stop inside it.",
+      "rationale": "It gives visitors a memorable Da Nang day outside the beach-and-bridge loop, with scenery that feels higher, cooler, and more theatrical.",
       "chunks": [
         [
           "Bà",
@@ -11785,7 +11785,7 @@
         "patchID": "viet-city-handwritten-copy-2026-05-18",
         "approvedAt": "2026-05-18T00:00:00+07:00",
         "sourcePatch": "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json",
-        "summary": "Ba Na Hills is Da Nang's big mountain day-trip name: cable cars, misty ridges, French-village scenery, the Golden Bridge, and a full outing above the heat.",
+        "summary": "Ba Na Hills is Da Nang's big mountain day trip: a long cable-car climb into cooler air, forested ridges, gardens, fantasy architecture, and the Golden Bridge high above the coast.",
         "categoryIDs": [
           "city-guides",
           "danang",
@@ -11840,32 +11840,32 @@
           {
             "id": "at-glance",
             "title": "About",
-            "body": "A major mountain day-trip area above Da Nang with cable cars, views, and photo stops."
+            "body": "Ba Na Hills is the big mountain escape outside Da Nang, reached by cable car and built for a full day of views, gardens, photo stops, and cooler air above the coast."
           },
           {
             "id": "quick-say",
             "title": "Say it locally",
-            "body": "Listen for Bà Nà Hills; the Vietnamese Bà Nà is the key part to recognize."
+            "body": "The local name is Bà Nà Hills. Bà Nà is the part to recognize, and the full name is what hotels, guides, and drivers usually understand."
           },
           {
             "id": "place-brief",
             "title": "What to picture",
-            "body": "Picture misty ridges, cable cars, gardens, crowds, and cool mountain air."
+            "body": "Picture the city heat dropping away as cable cars climb over forest, then a hilltop resort world of mist, gardens, stone stairways, and the Golden Bridge's giant hands."
           },
           {
             "id": "use-it-with",
             "title": "What to expect",
-            "body": "It is one of the Da Nang nouns visitors mention to hotels, guides, and drivers."
+            "body": "Treat it as a planned day trip, not a quick stop. Tickets, cable-car lines, weather, meeting points, and the ride back down all matter more than one landmark pin."
           },
           {
             "id": "when-to-use",
-            "title": "Good moment",
-            "body": "Good before a full-day ride, when confirming tickets, pickup, and return timing."
+            "title": "Day-trip rhythm",
+            "body": "The name comes up before you leave, at the ticket area, around the cable car, and again when it is time to find the return ride."
           },
           {
             "id": "good-to-know",
             "title": "Good to know",
-            "body": "The Golden Bridge sits within the Ba Na trip, so plan both under the same outing."
+            "body": "The Golden Bridge sits within the Ba Na Hills trip, so plan it as part of the same ticket-and-cable-car outing rather than a separate Da Nang stop."
           }
         ],
         "replaceGeneratedSections": true,

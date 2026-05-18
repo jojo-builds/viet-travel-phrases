@@ -4626,10 +4626,14 @@ function normalizeTravelerSections(page, sections, profile) {
       seenPhraseKeys.add(key);
       phrases.push(phrase);
     }
+    const presentation = section.presentation === "phrase-list" && phrases.length === 0 && String(section.body || "").trim()
+      ? "plain-text"
+      : section.presentation;
     return {
       ...section,
       body: cleanFinalPunctuation(section.body || ""),
       phrases,
+      presentation,
     };
   }).filter((section) => {
     if (!sectionHasTravelerContent(section)) return false;
