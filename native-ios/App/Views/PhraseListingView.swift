@@ -252,11 +252,6 @@ struct PhraseArticleTemplateView: View {
                                 .id(Self.photoBackdropContentID)
                         }
                     }
-                    .simultaneousGesture(
-                        SpatialTapGesture().onEnded { value in
-                            togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
-                        }
-                    )
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
@@ -293,6 +288,12 @@ struct PhraseArticleTemplateView: View {
                 }
                 .ignoresSafeArea(edges: .top)
             }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
             .overlay(alignment: .topLeading) {
                 if showsChrome && !isPhotoBackdropImmersive {
                     fixedBackButton

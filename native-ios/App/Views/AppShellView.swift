@@ -118,6 +118,7 @@ struct AppShellView: View {
             for: .tabBar
         )
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
         .background {
             #if canImport(UIKit)

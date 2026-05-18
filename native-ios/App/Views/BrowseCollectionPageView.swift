@@ -103,11 +103,6 @@ struct BrowseCollectionPageView: View {
                                 .id(Self.scrollTopID)
                         }
                     }
-                    .simultaneousGesture(
-                        SpatialTapGesture().onEnded { value in
-                            togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
-                        }
-                    )
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
@@ -144,6 +139,12 @@ struct BrowseCollectionPageView: View {
                 }
                 .ignoresSafeArea(edges: .top)
             }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
         }
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)

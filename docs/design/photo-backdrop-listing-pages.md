@@ -52,7 +52,7 @@ The hub behavior lives in `BrowseCollectionPageView`:
 The shell behavior lives in `AppShellView`:
 
 - `PhrasePhotoBackdropImmersiveChromePreferenceKey` hides top/bottom chrome while the photo is immersive.
-- The root shell also applies `.persistentSystemOverlays(.hidden)` while immersive so home/status-style overlays do not remain on top of the photo.
+- The root shell also applies `.statusBarHidden(true)` and `.persistentSystemOverlays(.hidden)` while immersive so status/home-style overlays do not remain on top of the photo.
 - `PhrasePhotoBackdropTabBarBackgroundPreferenceKey` asks the shell to use a content-colored tab bar backing during normal photo-backdrop reading.
 - Photo-backdrop preferences are gated by each page's active route so inactive navigation-stack pages do not leak tab bar state.
 - `AppShellTabBarAppearanceBridge` applies the native `UITabBarAppearance` background without committing signing or project-setting changes.
