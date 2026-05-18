@@ -51,7 +51,7 @@
     {
       "pageID": "city-hue-place-minh-mang-tomb",
       "summary": "The Tomb of Minh Mang is the grand, symmetrical tomb stop, with lakes, gates, and long sightlines that make Hue's imperial planning feel deliberate.",
-      "context": "Lăng Minh Mạng is useful for routes that compare several royal tombs outside central Hue.",
+      "context": "Lăng Minh Mạng belongs on routes that compare several royal tombs outside central Hue.",
       "tip": "Ask which tomb comes before or after it on the route; drivers often group it with nearby imperial stops.",
       "rationale": "It belongs because its axial layout gives travelers a different feeling from Tu Duc's softer garden mood.",
       "sections": [
@@ -105,7 +105,7 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture red details, weathered stone, tiled roofs, and green Hue foliage around a royal compound."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It adds a precise option for travelers building a more personal tomb route around Hue."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Say it when checking ticket stops, driver routes, or whether another tomb is nearby."},
-        {"id": "good-to-know", "title": "Good to know", "body": "It is best understood as part of a cluster of royal stops rather than a standalone day plan."}
+        {"id": "good-to-know", "title": "Good to know", "body": "It makes the most sense as part of a cluster of royal stops rather than a standalone day plan."}
       ]
     },
     {
@@ -351,7 +351,7 @@
     {
       "pageID": "city-hue-place-duc-duc-tomb",
       "summary": "The Tomb of Duc Duc adds another named royal stop to Hue's Nguyen-dynasty map, especially for travelers piecing together a fuller tomb itinerary.",
-      "context": "Lăng Dục Đức is useful when asking which tombs sit near your route and which ones are quieter.",
+      "context": "Lăng Dục Đức helps separate the quieter tombs that sit near a fuller royal route.",
       "tip": "Use the full local name so it is not mistaken for Tu Duc, which sounds similar in English.",
       "rationale": "It belongs because precise tomb names help travelers navigate Hue's imperial landscape with less confusion.",
       "sections": [
@@ -375,7 +375,7 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture low tomb structures, open greenery, old stone, and a calmer road outside the center."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a more complete view of Hue's royal tomb network."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking a driver about quieter tombs or building a fuller imperial day."},
-        {"id": "good-to-know", "title": "Good to know", "body": "Plan it deliberately; deeper-route tombs work best when timing and transport are already clear."}
+        {"id": "good-to-know", "title": "Good to know", "body": "Plan it deliberately; deeper-route tombs feel smoother when timing and transport are already clear."}
       ]
     },
     {
@@ -440,12 +440,12 @@
     },
     {
       "pageID": "city-hue-place-le-ba-dang-art-center",
-      "summary": "Le Ba Dang Art Center is another Hue art name travelers may see locally, useful when a map, sign, or listing points to the center rather than the memory space.",
+      "summary": "Le Ba Dang Art Center is another Hue art name travelers may see locally, especially when a map, sign, or listing points to the center rather than the memory space.",
       "context": "Trung tâm Nghệ thuật Lê Bá Đảng helps travelers match the exact art-center wording used in local listings.",
       "tip": "If a driver or map uses a different Le Ba Dang label, compare the Vietnamese wording before heading out.",
       "rationale": "It belongs because art stops can appear under nearby or overlapping names, and travelers need the exact one in front of them.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "An art-center listing connected with Lê Bá Đảng, useful for culture plans beyond imperial sites."},
+        {"id": "at-glance", "title": "About", "body": "An art-center listing connected with Lê Bá Đảng, suited to culture plans beyond imperial sites."},
         {"id": "quick-say", "title": "Hear the name", "body": "Trung tâm Nghệ thuật Lê Bá Đảng is the local wording to recognize for the art center."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture a small gallery stop, exhibition posters, street trees, and a quieter Hue art setting."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers navigate Hue's culture listings without assuming every art label means the same entrance."},
@@ -480,12 +480,12 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture display cases, blue-and-white porcelain, delicate court objects, and quiet museum light."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives detail-loving travelers a finer-grained look at Hue's royal material culture."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for the porcelain museum or checking whether a small museum is nearby."},
-        {"id": "good-to-know", "title": "Good to know", "body": "It is a niche stop, so it works best for travelers already curious about court objects and craft."}
+        {"id": "good-to-know", "title": "Good to know", "body": "It is a niche stop, so it rewards travelers already curious about court objects and craft."}
       ]
     },
     {
       "pageID": "city-hue-place-songlab",
-      "summary": "Sống Platform - SốngLab gives Hue travelers an indoor creative stop, useful when the day needs something more contemporary than another monument route.",
+      "summary": "Sống Platform - SốngLab gives Hue travelers an indoor creative stop when the day calls for something more contemporary than another monument route.",
       "context": "Sống Platform - SốngLab appears as a culture-space name, so keeping the exact wording helps with access checks.",
       "tip": "Confirm what is currently showing or open; culture spaces can change programs more often than museums.",
       "rationale": "It belongs because modern cultural venues make Hue feel alive in the present, not only historic.",
@@ -545,7 +545,7 @@
     },
     {
       "pageID": "city-hue-place-le-loi-street",
-      "summary": "Le Loi Street is one of Hue's most practical riverside names, useful for hotels, cafes, museum stops, boat access, and walking near the Perfume River.",
+      "summary": "Le Loi Street is one of Hue's most practical riverside names, tying together hotels, cafes, museum stops, boat access, and walks near the Perfume River.",
       "context": "Đường Lê Lợi helps travelers give addresses and meeting points along the central river side.",
       "tip": "Use it with a venue or number when you can; the street covers a meaningful stretch of central Hue.",
       "rationale": "It belongs because travelers need working street names, not only attractions, to move comfortably around the city.",
@@ -555,7 +555,7 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture tree shade, river proximity, older facades, cafe signs, and steady scooter traffic."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a practical central spine for navigating Hue beyond landmark names."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when giving a hotel location, finding a cafe, or asking for a riverfront pickup."},
-        {"id": "good-to-know", "title": "Good to know", "body": "Street names work best with cross-streets, venue names, or map pins when the road is long."}
+        {"id": "good-to-know", "title": "Good to know", "body": "Street names become clearer with cross-streets, venue names, or map pins when the road is long."}
       ]
     },
     {
@@ -590,13 +590,13 @@
     },
     {
       "pageID": "city-hue-place-kim-long",
-      "summary": "Kim Long is Hue's leafy garden-house neighborhood, useful for Thien Mu routes, quiet cafes, heritage restaurants, and a calmer old-city feeling.",
+      "summary": "Kim Long is Hue's leafy garden-house neighborhood, connecting Thien Mu routes, quiet cafes, heritage restaurants, and a calmer old-city feeling.",
       "context": "Kim Long is a local area name travelers may hear around garden houses, pagodas, and riverside roads.",
       "tip": "Use it with the specific cafe, house, or restaurant you want, since it covers a broader neighborhood.",
       "rationale": "It belongs because Hue's atmosphere often lives in neighborhoods and lanes as much as in ticketed monuments.",
       "sections": [
         {"id": "at-glance", "title": "About", "body": "A leafy Hue neighborhood associated with garden houses, quiet lanes, cafes, and the road toward Thien Mu."},
-        {"id": "quick-say", "title": "Hear the name", "body": "Kim Long is already the local name, simple and useful for drivers or map searches."},
+        {"id": "quick-say", "title": "Hear the name", "body": "Kim Long is already the local name, simple to show drivers or enter in map searches."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture garden walls, old gates, trees, slower cafes, and a gentler rhythm than downtown streets."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers understand a neighborhood cluster behind several Hue food and culture stops."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking whether a venue is in Kim Long or planning a Thien Mu-side route."},
@@ -625,7 +625,7 @@
       "tip": "Use it with a specific venue or street when arranging pickup, because the area can be broad.",
       "rationale": "It belongs because travelers often need neighborhood language for real addresses, not just sightseeing lists.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A Hue neighborhood area useful for local food, market movement, hotels, and old-city directions."},
+        {"id": "at-glance", "title": "About", "body": "A Hue neighborhood area tied to local food, market movement, hotels, and old-city directions."},
         {"id": "quick-say", "title": "Hear the name", "body": "Gia Hội is the local name to show when asking about the neighborhood."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture older streets, shop signs, scooters, food stops, and everyday movement near the Citadel side."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers orient by local area names instead of only famous monuments."},
@@ -635,7 +635,7 @@
     },
     {
       "pageID": "city-hue-place-pham-ngu-lao-street",
-      "summary": "Pham Ngu Lao Street is a practical central traveler street in Hue, useful for guesthouses, casual food, evening pickups, and simple walking directions.",
+      "summary": "Pham Ngu Lao Street is a practical central traveler street in Hue, linking guesthouses, casual food, evening pickups, and simple walking directions.",
       "context": "Đường Phạm Ngũ Lão helps travelers give a clear street name around the central lodging and restaurant grid.",
       "tip": "Pair it with your hotel or a nearby cafe when telling a driver where to meet you.",
       "rationale": "It belongs because first-time travelers need practical streets that support real movement after sightseeing.",
@@ -680,7 +680,7 @@
     },
     {
       "pageID": "city-hue-place-an-cuu-market",
-      "summary": "An Cuu Market gives travelers a local market option away from the Citadel side, useful for everyday food, produce, and neighborhood errands near where they stay.",
+      "summary": "An Cuu Market gives travelers a local market option away from the Citadel side, with everyday food, produce, and neighborhood errands near where they stay.",
       "context": "Chợ An Cựu is a named market for travelers staying or moving south of the main old-city area.",
       "tip": "Use it for local shopping or food context rather than expecting a polished tourist market.",
       "rationale": "It belongs because Hue's everyday markets help visitors connect with normal city life, not only famous stops.",
@@ -720,12 +720,12 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture fruit, flower bundles, conical hats, vendor umbrellas, and a busy local morning."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It adds real market coverage beyond Dong Ba for travelers staying in different parts of town."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when checking which market is closer or asking for a neighborhood food stop."},
-        {"id": "good-to-know", "title": "Good to know", "body": "Markets work best with small cash, simple requests, and respect for vendors doing daily business."}
+        {"id": "good-to-know", "title": "Good to know", "body": "Markets feel smoother with small cash, simple requests, and respect for vendors doing daily business."}
       ]
     },
     {
       "pageID": "city-hue-place-tay-loc-market",
-      "summary": "Tay Loc Market is a Citadel-side everyday market, useful for travelers staying near the old walls who want food, produce, or small purchases nearby.",
+      "summary": "Tay Loc Market is a Citadel-side everyday market for travelers staying near the old walls who want food, produce, or small purchases nearby.",
       "context": "Chợ Tây Lộc identifies the local market near the Citadel-side area.",
       "tip": "Use it as a neighborhood market name, not as a major sightseeing attraction.",
       "rationale": "It belongs because travelers around the Citadel still need real-world food and errand points.",
@@ -755,7 +755,7 @@
     },
     {
       "pageID": "city-hue-place-truong-tien-plaza",
-      "summary": "Trang Tien Plaza Hue gives travelers a modern shopping-center reference near the central bridge area, useful for cooling down, meeting up, or finding stores.",
+      "summary": "Trang Tien Plaza Hue gives travelers a modern shopping-center reference near the central bridge area for cooling down, meeting up, or finding stores.",
       "context": "Trung tâm thương mại Trường Tiền is the local wording for the shopping center.",
       "tip": "Use it for practical errands and meetups rather than as a culture stop.",
       "rationale": "It belongs because real trips include air-conditioning, phone errands, meetups, and modern shopping breaks.",
@@ -770,7 +770,7 @@
     },
     {
       "pageID": "city-hue-place-les-jardins",
-      "summary": "Les Jardins de la Carambole gives travelers a named restaurant stop with colonial-Hue atmosphere, useful for reservations, driver drop-offs, and menu plans.",
+      "summary": "Les Jardins de la Carambole gives travelers a named restaurant stop with colonial-Hue atmosphere for reservations, driver drop-offs, and menu plans.",
       "context": "Les Jardins de la Carambole is the venue name to show when asking for the restaurant.",
       "tip": "Keep the name visible on your phone; French names can be harder to say clearly in a quick taxi moment.",
       "rationale": "It belongs because restaurant names are part of traveler confidence, especially around reservations and pickups.",
@@ -791,7 +791,7 @@
       "rationale": "It belongs because Hue's royal-food and garden-house traditions are easier to explore through named venues.",
       "sections": [
         {"id": "at-glance", "title": "About", "body": "A named restaurant in the Kim Long area, associated with a heritage-style Hue dining setting."},
-        {"id": "quick-say", "title": "Hear the name", "body": "Ancient Hue Restaurant is usually best shown exactly on your phone or map."},
+        {"id": "quick-say", "title": "Hear the name", "body": "Ancient Hue Restaurant is usually clearest when shown exactly on your phone or map."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture timber house details, garden paths, lanterns, and a more composed Hue meal setting."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a specific restaurant for garden-house dining rather than a vague royal-food idea."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when booking, asking for a table, or telling a taxi where to drop you in Kim Long."},
@@ -800,7 +800,7 @@
     },
     {
       "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
-      "summary": "Ancient Hue Gallery Cuisine is a more specific court-cuisine venue name, useful when travelers see it separately from Ancient Hue Restaurant in local listings.",
+      "summary": "Ancient Hue Gallery Cuisine is a more specific court-cuisine venue name for travelers who see it separately from Ancient Hue Restaurant in local listings.",
       "context": "Ancient Hue Gallery Cuisine should be kept exact when matching a booking, map result, or sign.",
       "tip": "Check the exact venue wording before you go, since similar Ancient Hue names can appear nearby.",
       "rationale": "It belongs because travelers need to distinguish named restaurants when a brand or complex has multiple labels.",
@@ -830,7 +830,7 @@
     },
     {
       "pageID": "city-hue-place-y-thao-garden",
-      "summary": "Y Thao Garden gives travelers a Hue garden-restaurant name with old-house texture, useful when they want food and architecture in the same stop.",
+      "summary": "Y Thao Garden gives travelers a Hue garden-restaurant name with old-house texture when they want food and architecture in the same stop.",
       "context": "Ý Thảo Garden is the venue name to use for maps, bookings, and local questions.",
       "tip": "Show the accented Vietnamese-English name so the destination is not confused with another garden venue.",
       "rationale": "It belongs because Hue's restaurant scene often overlaps with garden houses and heritage interiors.",
@@ -845,7 +845,7 @@
     },
     {
       "pageID": "city-hue-place-dai-nam-restaurant",
-      "summary": "Dai Nam Restaurant is a practical named food stop near Hue's imperial area, useful when travelers want a restaurant reference after Citadel sightseeing.",
+      "summary": "Dai Nam Restaurant is a practical named food stop near Hue's imperial area for travelers looking for a restaurant reference after Citadel sightseeing.",
       "context": "Nhà hàng Đại Nam is the local name to show when asking for the restaurant.",
       "tip": "Pair it with the nearby old-wall area if a driver needs extra context.",
       "rationale": "It belongs because travelers often need named restaurants close to major sightseeing zones.",
@@ -880,7 +880,7 @@
       "tip": "Still confirm ingredients if you avoid egg, dairy, fish sauce, or alliums; vegetarian can vary by dish.",
       "rationale": "It belongs because travelers with dietary needs deserve specific, real venues when the source supports them.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named vegetarian restaurant in Hue, useful for travelers seeking a dedicated meat-free venue."},
+        {"id": "at-glance", "title": "About", "body": "A named vegetarian restaurant in Hue for travelers seeking a dedicated meat-free venue."},
         {"id": "quick-say", "title": "Hear the name", "body": "Nhà hàng chay Liên Hoa is the local name to show for the restaurant."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture a simple vegetarian dining room, Buddhist-style decor, fresh dishes, and calm service."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives vegetarian travelers a concrete Hue dining option rather than only vocabulary support."},
@@ -890,7 +890,7 @@
     },
     {
       "pageID": "city-hue-place-song-huong-floating-restaurant",
-      "summary": "Song Huong Floating Restaurant gives travelers a named river dining option, useful when a meal plan depends on being on the Perfume River, not just near it.",
+      "summary": "Song Huong Floating Restaurant gives travelers a named river dining option when a meal plan depends on being on the Perfume River, not just near it.",
       "context": "Nhà hàng nổi Sông Hương identifies the floating restaurant connected with the Perfume River.",
       "tip": "Confirm whether your booking is on the river and where the boarding or entrance point is.",
       "rationale": "It belongs because Hue's river setting can shape the meal, pickup, timing, and traveler expectations.",
@@ -920,7 +920,7 @@
     },
     {
       "pageID": "city-hue-place-ben-trang-cafe-bistro",
-      "summary": "Ben Trang Cafe & Bistro gives travelers a riverside cafe name near central movement, useful for coffee, a pause, or a meetup close to the Perfume River.",
+      "summary": "Ben Trang Cafe & Bistro gives travelers a riverside cafe name near central movement for coffee, a pause, or a meetup close to the Perfume River.",
       "context": "Bến Trắng Cafe & Bistro is the venue name to show when asking for the riverside cafe.",
       "tip": "Use it with a nearby boat station or river reference if someone needs extra orientation.",
       "rationale": "It belongs because Hue travelers often need gentle pause points between river walks, markets, and monuments.",
@@ -950,7 +950,7 @@
     },
     {
       "pageID": "city-hue-place-mandarin-coffee-restaurant",
-      "summary": "Mandarin Coffee & Restaurant gives travelers a named cafe-restaurant on the Huong Long and Thien Mu side, useful for a quiet stop beyond downtown.",
+      "summary": "Mandarin Coffee & Restaurant gives travelers a named cafe-restaurant on the Huong Long and Thien Mu side for a quiet stop beyond downtown.",
       "context": "Mandarin Coffee & Restaurant is the venue name to show when asking around the Huong Long area.",
       "tip": "Pair it with the neighborhood or nearby route if a driver needs more context.",
       "rationale": "It belongs because cafe stops help travelers pace days that include pagodas, garden houses, and river roads.",
@@ -965,7 +965,7 @@
     },
     {
       "pageID": "city-hue-place-thanh-cafe",
-      "summary": "Thanh Cafe gives travelers a short, local cafe name in Hue, useful for a simple coffee stop when moving around Nam Giao or central neighborhoods.",
+      "summary": "Thanh Cafe gives travelers a short, local cafe name in Hue for a simple coffee stop when moving around Nam Giao or central neighborhoods.",
       "context": "Thành Cafe is the venue name to show when asking for the cafe near your route.",
       "tip": "Use a map pin with the name, since short cafe names can be easy to confuse.",
       "rationale": "It belongs because small cafe names make the city feel usable between larger sightseeing blocks.",
@@ -981,7 +981,7 @@
     {
       "pageID": "city-hue-place-de-po-cafe",
       "summary": "De Po Cafe gives travelers a memorable upstairs market coffee stop tied to Dong Ba Market, perfect for pausing above the bustle rather than leaving the area.",
-      "context": "De Po Cafe is useful when asking for the cafe on the second floor of Dong Ba Market.",
+      "context": "De Po Cafe points to the cafe on the second floor of Dong Ba Market.",
       "tip": "Use the market context with the cafe name, since that location detail is part of why it matters.",
       "rationale": "It belongs because Hue market exploration needs places to pause, regroup, and look back over the aisles.",
       "sections": [
@@ -1010,7 +1010,7 @@
     },
     {
       "pageID": "city-hue-place-kodo-cafe",
-      "summary": "KODO Cafe gives travelers a modern garden-cafe name near Huong Long, useful when a day of pagodas, tomb roads, or river routes needs an easy pause.",
+      "summary": "KODO Cafe gives travelers a modern garden-cafe name near Huong Long when a day of pagodas, tomb roads, or river routes needs an easy pause.",
       "context": "KODO Cafe is the venue name to show when asking for this cafe near Huong Long.",
       "tip": "Use the exact capitalization and a map pin; short modern names can be easy to misread locally.",
       "rationale": "It belongs because modern cafe stops help travelers pace Hue's quieter outer routes.",
@@ -1385,7 +1385,7 @@
     },
     {
       "pageID": "city-hue-place-cyclo-citadel-loop",
-      "summary": "A Citadel cyclo loop gives travelers a gentle, old-city ride around Hue's walls, useful when they want to see the scale without walking every stretch.",
+      "summary": "A Citadel cyclo loop gives travelers a gentle, old-city ride around Hue's walls when they want to see the scale without walking every stretch.",
       "context": "Xích lô quanh Kinh thành is the phrase to use when asking for a cyclo loop around the Citadel.",
       "tip": "Agree on route, time, and price before starting so the ride stays relaxed.",
       "rationale": "It belongs because Hue's walls and moats are large, and a slow ride can make their scale feel clear.",
@@ -1490,7 +1490,7 @@
     },
     {
       "pageID": "city-hue-place-toa-kham-boat-station",
-      "summary": "Toa Kham Boat Station gives travelers a central Perfume River landing name, useful for dragon boat departures, riverside meetups, and route questions.",
+      "summary": "Toa Kham Boat Station gives travelers a central Perfume River landing name for dragon boat departures, riverside meetups, and route questions.",
       "context": "Bến thuyền Tòa Khâm is the name to use when asking for the boat station by the river.",
       "tip": "Ask whether your boat leaves from this landing specifically; Hue has more than one river access point.",
       "rationale": "It belongs because river plans become much easier when travelers can name the actual landing.",
