@@ -1,6 +1,6 @@
 {
   "reviewID": "viet-city-copy-production-2026-05-17",
-  "generatedAt": "2026-05-18T07:33:59.800Z",
+  "generatedAt": "2026-05-18T07:45:33.647Z",
   "scope": "500 city noun/place pages plus 5 city hubs",
   "source": "content-draft/viet/city-library/v1.json",
   "evidenceMode": "Every row stores current copy excerpts and computed pass/fail checks; native validation must also prove source/runtime parity before the report is accepted.",
@@ -12,36 +12,36 @@
   ],
   "summary": {
     "totalPages": 500,
-    "approved": 478,
-    "fixNow": 22,
+    "approved": 498,
+    "fixNow": 2,
     "hardBlock": 0,
     "followUp": 0,
     "acceptedTemporaryRisk": 0,
     "byCity": {
       "hcmc": {
         "pages": 100,
-        "approved": 96,
-        "fixNow": 4
+        "approved": 99,
+        "fixNow": 1
       },
       "hanoi": {
         "pages": 100,
-        "approved": 98,
-        "fixNow": 2
+        "approved": 100,
+        "fixNow": 0
       },
       "danang": {
         "pages": 100,
-        "approved": 93,
-        "fixNow": 7
+        "approved": 99,
+        "fixNow": 1
       },
       "hoian": {
         "pages": 100,
-        "approved": 98,
-        "fixNow": 2
+        "approved": 100,
+        "fixNow": 0
       },
       "hue": {
         "pages": 100,
-        "approved": 93,
-        "fixNow": 7
+        "approved": 100,
+        "fixNow": 0
       }
     }
   },
@@ -76,7 +76,7 @@
         "phrasebookExcerpt": "Listen for Bảo tàng 3D Art in Paradise Đà Nẵng as one long venue title.",
         "belongingExcerpt": "It adds an easy rainy-day or heat-break option to a Da Nang sightseeing list.",
         "timingExcerpt": "Bring it up when the group wants something playful, indoors, and photo-friendly.",
-        "goodToKnowExcerpt": "The title mixes Vietnamese and English, so showing the map pin can help confirm it."
+        "goodToKnowExcerpt": "The title mixes Vietnamese and English, so the written address can help confirm it."
       }
     },
     {
@@ -109,7 +109,7 @@
         "phrasebookExcerpt": "Listen for the English title: forty-three Factory Coffee Roaster, kept as a venue title.",
         "belongingExcerpt": "It makes Da Nang feel contemporary, not only scenic, coastal, or old-town adjacent.",
         "timingExcerpt": "Use it for a planned coffee break, a quiet meet-up, or a soft landing after lunch.",
-        "goodToKnowExcerpt": "Venue branches can matter, so check the exact map pin before starting the ride."
+        "goodToKnowExcerpt": "Venue branches can matter, so check the branch address before starting the ride."
       }
     },
     {
@@ -241,7 +241,7 @@
         "phrasebookExcerpt": "Listen for Công viên Châu Á; Châu Á means Asia in Vietnamese and points to the park.",
         "belongingExcerpt": "It adds a relaxed entertainment option after beach time or central sightseeing.",
         "timingExcerpt": "Use it for ride planning, ticket questions, evening meetups, and the trip home.",
-        "goodToKnowExcerpt": "For pickups, choose a clear gate or map pin so the group does not scatter."
+        "goodToKnowExcerpt": "For pickups, choose a clear gate or nearby landmark so the group does not scatter after rides, lights, and evening crowds."
       }
     },
     {
@@ -416,10 +416,10 @@
       "placeKind": "dish",
       "profile": "dish",
       "reviewer": "city-owner:danang",
-      "status": "APPROVE",
-      "blockerLevel": "NONE",
+      "status": "FIX_NOW",
+      "blockerLevel": "SAFE_FIX_NOW",
       "checklist": {
-        "voiceLengthPass": true,
+        "voiceLengthPass": false,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
@@ -432,9 +432,11 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [],
+      "failures": [
+        "voiceLengthPass"
+      ],
       "evidence": {
-        "summaryExcerpt": "Banh mi is the quick food noun that still earns a Da Nang spot: crisp bread, herbs, fillings, street counters, and an easy meal between beach and city plans.",
+        "summaryExcerpt": "Banh mi earns its Da Nang spot through crisp bread, herbs, fillings, street counters, and an easy meal between beach and city plans.",
         "aboutExcerpt": "A crisp Vietnamese baguette sandwich that works as a quick meal or snack.",
         "phrasebookExcerpt": "Listen for bánh mì; the short phrase is useful across stalls and cafes.",
         "belongingExcerpt": "It gives first-time travelers an easy food win between bigger meals.",
@@ -566,12 +568,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Be Man Seafood gives the beach side a practical seafood destination, where the Vietnamese title matters more than simply asking for seafood near the water.",
-        "aboutExcerpt": "A named seafood restaurant for beach-side taxi rides, dinner plans, and map-pin arrivals.",
+        "summaryExcerpt": "Be Man Seafood puts the beach-side dinner scene in focus: open tables, trays of shellfish, grilled dishes, cold drinks, and sea air just off the coast road.",
+        "aboutExcerpt": "A beach-side seafood restaurant for grilled dishes, shared tables, and casual dinner plans.",
         "phrasebookExcerpt": "Listen for Hải sản Bé Mặn; the first words tell locals it is seafood.",
         "belongingExcerpt": "It helps travelers choose a specific seafood stop instead of a vague coastline request.",
         "timingExcerpt": "Use it for taxi arrival, table checks, seafood pointing, and the ride back.",
-        "goodToKnowExcerpt": "Show the map pin because beach seafood streets can have several similar options."
+        "goodToKnowExcerpt": "Beach seafood streets can have several similar options, so keep the address close."
       }
     },
     {
@@ -637,7 +639,7 @@
         "phrasebookExcerpt": "Listen for Boulevard Gelato & Coffee as an English venue title for a cafe stop.",
         "belongingExcerpt": "It adds a practical comfort stop between markets, beach walks, and sightseeing.",
         "timingExcerpt": "Use it when the group needs dessert, shade, a table, or a low-effort reset.",
-        "goodToKnowExcerpt": "For drivers, the map pin will matter more than translating the English title."
+        "goodToKnowExcerpt": "For drivers, the address will matter more than translating the English title."
       }
     },
     {
@@ -665,7 +667,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Fish-cake noodle soup is a practical Da Nang breakfast or lunch noun: warm broth, springy fish cakes, herbs, and a short stall menu that suddenly makes sense.",
+        "summaryExcerpt": "Fish-cake noodle soup is a practical Da Nang breakfast or lunch choice: warm broth, springy fish cakes, herbs, and a short stall menu that suddenly makes sense.",
         "aboutExcerpt": "A noodle soup with fish cakes, broth, herbs, and a strong breakfast-lunch role.",
         "phrasebookExcerpt": "Listen for bún chả cá; bún is noodles and chả cá is fish cake in the bowl.",
         "belongingExcerpt": "It gives first-timers a specific bowl to seek out beyond general noodle soup.",
@@ -764,10 +766,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Central Bus Station is the practical intercity stop for travelers arriving by coach or heading onward, where luggage, pickup points, and timing matter.",
-        "aboutExcerpt": "The main bus-station label for intercity coaches, shuttles, luggage, and pickups.",
+        "summaryExcerpt": "Da Nang Central Bus Station is where coach doors open onto heat, luggage, snack kiosks, waiting families, and the next road toward Hue, Hoi An, or the beach.",
+        "aboutExcerpt": "The main coach-station scene for arrivals, luggage, waiting areas, and onward roads.",
         "phrasebookExcerpt": "Listen for Bến xe Trung tâm Đà Nẵng; bến xe means bus station for pickup.",
-        "belongingExcerpt": "It keeps Da Nang usable for travelers moving by bus toward Hue or Hoi An.",
+        "belongingExcerpt": "It keeps coach arrivals visible in a city often introduced through flights and beaches.",
         "timingExcerpt": "Use it when a shuttle drops you off or a driver needs the exact pickup area.",
         "goodToKnowExcerpt": "Confirm the station and bus company details before assuming every coach uses it."
       }
@@ -863,12 +865,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Co Chu Nho is a named casual food stop that rewards keeping the Vietnamese spelling close, especially when a guide, map, or local list sends you there.",
-        "aboutExcerpt": "A named casual restaurant entry for travelers following a specific food recommendation.",
+        "summaryExcerpt": "Co Chu Nho brings a smaller Da Nang food-stop feeling: a casual dining room, local-list energy, Vietnamese spelling on the sign, and a table chosen for the meal itself.",
+        "aboutExcerpt": "A casual Da Nang restaurant stop with table-level food discovery and local-list appeal.",
         "phrasebookExcerpt": "Listen for Cô Chủ Nhỏ as a proper title, not a phrase to translate.",
-        "belongingExcerpt": "It teaches travelers to preserve restaurant titles instead of paraphrasing them.",
-        "timingExcerpt": "Use it for arrival, address checks, table questions, and confirming the right door.",
-        "goodToKnowExcerpt": "For named restaurants, showing the map pin can be kinder than repeating the title."
+        "belongingExcerpt": "It keeps casual restaurant names in the mix, so Da Nang food is not only headline dishes.",
+        "timingExcerpt": "Use it for arrival, table questions, ordering, and finding the right restaurant door.",
+        "goodToKnowExcerpt": "For smaller restaurants, the written Vietnamese title is often clearer than a loose English description."
       }
     },
     {
@@ -929,8 +931,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Cong Caphe Bach Dang is the riverfront branch label that matters when a familiar cafe chain meets Da Nang's Han River walking route.",
-        "aboutExcerpt": "A recognizable cafe branch tied to Bach Dang Street and the Han River area.",
+        "summaryExcerpt": "Cong Caphe Bach Dang turns a Han River walk into a coffee pause, with iced drinks, a recognizable cafe counter, riverfront street life, and the branch name doing real work.",
+        "aboutExcerpt": "A recognizable cafe branch tied to Bach Dang Street, iced drinks, and Han River walks.",
         "phrasebookExcerpt": "Listen for Cộng Cà Phê Bạch Đằng, with the street label at the end.",
         "belongingExcerpt": "It helps travelers choose a precise cafe meetup instead of saying only Cộng.",
         "timingExcerpt": "Use it for coffee meetups, river walks, cooling off, or waiting before dinner.",
@@ -962,10 +964,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Domestic Terminal is the airport sub-place that prevents pickup confusion when the flight is within Vietnam and the curb is not the international side.",
-        "aboutExcerpt": "The domestic-flight terminal at Da Nang Airport for travel within Vietnam.",
+        "summaryExcerpt": "Da Nang Domestic Terminal feels like the local-flight side of arrival: glass doors, quick curb movement, Vietnamese route boards, luggage, and warm city air.",
+        "aboutExcerpt": "The local-flight side of Da Nang Airport, with curb movement, luggage, and city heat.",
         "phrasebookExcerpt": "Listen for nhà ga quốc nội; quốc nội means domestic in this travel context.",
-        "belongingExcerpt": "It prevents drivers and travelers from waiting at different airport sides.",
+        "belongingExcerpt": "It makes the first airport handoff feel concrete, with the right doors and curb in mind.",
         "timingExcerpt": "Use it when sharing pickup details after a domestic flight into Da Nang.",
         "goodToKnowExcerpt": "If someone only hears airport, repeat domestic terminal to make the pickup clearer."
       }
@@ -1127,12 +1129,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Fatfish is a riverfront dining label to keep intact, especially for an evening meal where the venue title, map pin, and Han River location do the work.",
+        "summaryExcerpt": "Fatfish is a riverfront dining label to keep intact, especially for an evening meal where the venue title, address, and Han River location do the work.",
         "aboutExcerpt": "A named riverfront restaurant entry for dinner plans and evening meetups.",
         "phrasebookExcerpt": "Listen for Fatfish as an English venue title, usually kept intact.",
         "belongingExcerpt": "It gives travelers a specific evening dining point beside Da Nang's river scene.",
         "timingExcerpt": "Use it for reservations, taxi arrival, meeting friends, and the ride home.",
-        "goodToKnowExcerpt": "For proper-name restaurants, the map pin usually solves more than translation."
+        "goodToKnowExcerpt": "For proper-name restaurants, the written address usually solves more than translation."
       }
     },
     {
@@ -1259,7 +1261,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Seafood is a core Da Nang food noun, especially near the beach, where trays, tanks, grilled dishes, dipping sauces, and pointing often shape the meal.",
+        "summaryExcerpt": "Seafood is a core Da Nang food word, especially near the beach, where trays, tanks, grilled dishes, dipping sauces, and pointing often shape the meal.",
         "aboutExcerpt": "The Vietnamese word for seafood, especially important along Da Nang's beach side.",
         "phrasebookExcerpt": "Listen for hải sản; it appears on signs for seafood restaurants and stalls.",
         "belongingExcerpt": "It lets travelers recognize a whole food scene before choosing a restaurant.",
@@ -1490,7 +1492,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoa Phu Thanh is the outside-the-core adventure noun for travelers considering a managed recreation day west of Da Nang, with water, forest, and pickup logistics.",
+        "summaryExcerpt": "Hoa Phu Thanh is the outside-the-core adventure stop for travelers considering a managed recreation day west of Da Nang, with water, forest, and pickup logistics.",
         "aboutExcerpt": "An outdoor recreation area west of Da Nang, often linked with activity-style visits.",
         "phrasebookExcerpt": "Listen for Hòa Phú Thành; khu du lịch means a tourist or recreation area.",
         "belongingExcerpt": "It shows Da Nang as a base for outdoor activities beyond the central coast.",
@@ -1556,10 +1558,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang International Terminal is the airport detail that matters when the pickup depends on the overseas-arrival side, not just the general airport entrance.",
-        "aboutExcerpt": "The international-flight terminal at Da Nang Airport for overseas arrivals and departures.",
+        "summaryExcerpt": "Da Nang International Terminal is the overseas-arrival side of the city: glass frontage, luggage carts, flight boards, tropical air, and the first ride into Da Nang.",
+        "aboutExcerpt": "The overseas-arrival side of Da Nang Airport, with flight boards, luggage, and warm air.",
         "phrasebookExcerpt": "Listen for nhà ga quốc tế; quốc tế means international in this context.",
-        "belongingExcerpt": "It helps drivers and travelers meet at the same airport side after landing.",
+        "belongingExcerpt": "It gives the first airport moment a clear door, curb, and arrival atmosphere.",
         "timingExcerpt": "Use it in pickup messages, drop-off requests, and first-arrival directions.",
         "goodToKnowExcerpt": "Add flight origin or terminal wording if someone only says Da Nang Airport."
       }
@@ -1604,34 +1606,30 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
-        "noBannedSourceInputPass": false,
+        "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
         "bannedMatches": [],
-        "sourceBannedMatches": [
-          "exact venue"
-        ]
+        "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedSourceInputPass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "La Maison 1888 is a destination-restaurant title to preserve carefully, carrying resort-area arrivals, reservations, dressier dinners, and driver confirmation in one name.",
-        "aboutExcerpt": "A destination restaurant entry for planned dinners, reservations, and resort arrivals.",
+        "summaryExcerpt": "La Maison 1888 brings a dressier Da Nang dinner into view: resort roads on the Son Tra side, polished service, a careful dining room, and a meal planned before sunset.",
+        "aboutExcerpt": "A resort-side destination restaurant for polished service, careful dishes, and a planned dinner.",
         "phrasebookExcerpt": "Listen for La Maison eighteen eighty-eight as a proper venue title.",
-        "belongingExcerpt": "It prepares travelers for a named dining destination rather than casual street food.",
+        "belongingExcerpt": "It gives Da Nang a refined dinner note beside casual street food, markets, and seafood.",
         "timingExcerpt": "Use it for reservations, taxi arrival, table confirmation, and the return ride.",
-        "goodToKnowExcerpt": "Because the title is not Vietnamese, the map and reservation details are especially helpful."
+        "goodToKnowExcerpt": "Because the title is not Vietnamese, keep the restaurant and resort details together."
       }
     },
     {
@@ -1692,10 +1690,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Le Duan Night Market names a central night-stall area for shopping, casual browsing, and evening pickup, more precise than simply asking for a shopping street.",
-        "aboutExcerpt": "A named central night-market area for casual stalls, shopping, and evening walks.",
+        "summaryExcerpt": "Le Duan Night Market brings central Da Nang into a street-stall mood, with warm bulbs, clothing racks, scooters easing past, and small buys after dinner.",
+        "aboutExcerpt": "A central night-stall area for clothes racks, small buys, scooters, and evening walks.",
         "phrasebookExcerpt": "Listen for Chợ đêm Lê Duẩn; chợ đêm means night market on that street.",
-        "belongingExcerpt": "It gives travelers an exact evening shopping label instead of a vague plan.",
+        "belongingExcerpt": "It adds a compact shopping-street texture to Da Nang's after-dark options.",
         "timingExcerpt": "Use it for browsing, meeting friends, buying small items, and ride pickup.",
         "goodToKnowExcerpt": "Because it is street-based, choose a nearby pickup point before leaving the group."
       }
@@ -1791,7 +1789,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Lotte Mart Da Nang is the practical supermarket-and-mall noun for snacks, sunscreen, forgotten basics, rainy hours, and a clean pickup point when errands matter.",
+        "summaryExcerpt": "Lotte Mart Da Nang is the practical supermarket-and-mall stop for snacks, sunscreen, forgotten basics, rainy hours, and a clean pickup point when errands matter.",
         "aboutExcerpt": "A large retail stop for groceries, supplies, indoor errands, and easy pickups.",
         "phrasebookExcerpt": "Listen for Lotte Mart Đà Nẵng, with the brand kept as a proper title.",
         "belongingExcerpt": "It supports the unglamorous but real parts of travel that keep the trip smooth.",
@@ -2022,12 +2020,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mi Quang 1A gives travelers a specific noodle-shop target when mì Quảng is the plan, combining the dish cue with a simple proper title.",
-        "aboutExcerpt": "A named mì Quảng shop that turns the regional noodle dish into a destination.",
+        "summaryExcerpt": "Mi Quang 1A feels like a direct Da Nang lunch move: yellow noodles, herbs, rice crackers, quick tables, and a shop title built around the dish.",
+        "aboutExcerpt": "A mì Quảng shop where yellow noodles, herbs, and rice crackers drive the visit.",
         "phrasebookExcerpt": "Listen for Mì Quảng một A, with the dish title and number-letter ending.",
-        "belongingExcerpt": "It helps travelers ask for one specific shop instead of any noodle restaurant.",
+        "belongingExcerpt": "It connects a signature Central Vietnam dish to a concrete Da Nang lunch table.",
         "timingExcerpt": "Use it for lunch plans, taxi arrival, ordering the house dish, and pickup.",
-        "goodToKnowExcerpt": "Because the title is short, showing the exact map pin prevents mix-ups."
+        "goodToKnowExcerpt": "Because the title is short, keep the address close to avoid mix-ups."
       }
     },
     {
@@ -2093,7 +2091,7 @@
         "phrasebookExcerpt": "Listen for Cơ sở hai at the end; it marks branch two of the museum.",
         "belongingExcerpt": "It keeps travelers from going to the main museum when another facility is intended.",
         "timingExcerpt": "Use it for branch-specific exhibits, taxi directions, and meeting after a visit.",
-        "goodToKnowExcerpt": "Confirm the address with the map pin because branch wording can be easy to miss."
+        "goodToKnowExcerpt": "Confirm the address because branch wording can be easy to miss when several museum names sound close."
       }
     },
     {
@@ -2136,12 +2134,12 @@
       "placeKind": "beach",
       "profile": "place-experience",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -2152,16 +2150,14 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "My An Beach names the southern-feeling beach frontage near My An and An Thuong, giving travelers a more precise sand-and-hotel area than saying My Khe every time.",
+        "summaryExcerpt": "My An Beach has a softer southern-beach profile near An Thuong: low-rise stays, cafe streets behind the sand, umbrellas, and a quieter edge of the main coast.",
         "aboutExcerpt": "A beach stretch near Mỹ An and An Thượng on the southern side of the main coast.",
         "phrasebookExcerpt": "Listen for Biển Mỹ An; biển tells people you mean the beach stretch.",
         "belongingExcerpt": "It keeps Da Nang's beach side precise instead of flattening everything into My Khe.",
         "timingExcerpt": "Use it for hotel-area beach walks, taxi drop-offs, and meeting near the sand.",
-        "goodToKnowExcerpt": "If the destination is a hotel or cafe, pair the beach with the exact pin."
+        "goodToKnowExcerpt": "If the destination is a hotel or cafe, pair the beach with the nearby street or entrance."
       }
     },
     {
@@ -2222,10 +2218,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "My Quang Ba Mua is a named mì Quảng stop that makes the regional noodle dish easy to choose, say, and show to a driver when lunch is the plan.",
-        "aboutExcerpt": "A named mì Quảng restaurant entry for a direct Central Vietnam noodle stop.",
+        "summaryExcerpt": "My Quang Ba Mua puts Da Nang's mì Quảng craving into a clear restaurant setting: yellow noodles, herbs, rice crackers, lunch traffic, and a familiar local title.",
+        "aboutExcerpt": "A mì Quảng restaurant stop for yellow noodles, herbs, rice crackers, and quick lunch.",
         "phrasebookExcerpt": "Listen for Mỳ Quảng Bà Mua, with the noodle dish at the front of the title.",
-        "belongingExcerpt": "It gives travelers a clear way to turn a dish craving into a destination.",
+        "belongingExcerpt": "It turns a signature Da Nang dish into a restaurant travelers can actually picture.",
         "timingExcerpt": "Use it for lunch plans, branch checks, taxi arrival, and ordering the dish.",
         "goodToKnowExcerpt": "If there are multiple branches, confirm the exact one before starting the ride."
       }
@@ -2237,12 +2233,12 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -2253,16 +2249,14 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "My Quang Dung is another specific mì Quảng target, giving travelers one exact shop title when the craving is clear but a broad noodle request feels too loose.",
-        "aboutExcerpt": "A named mì Quảng shop for travelers seeking a specific Central Vietnam noodle stop.",
+        "summaryExcerpt": "My Quang Dung gives mì Quảng another Da Nang shop setting, with noodle bowls, herbs, chili, rice crackers, and a counter that feels focused on lunch.",
+        "aboutExcerpt": "A Da Nang mì Quảng shop built around noodle bowls, herbs, chili, and quick tables.",
         "phrasebookExcerpt": "Listen for Mỳ Quảng Dung; Dung is the shop identifier after the dish.",
         "belongingExcerpt": "It keeps the famous dish connected to a concrete Da Nang food destination.",
         "timingExcerpt": "Use it for lunch, taxi directions, counter ordering, and pickup after eating.",
-        "goodToKnowExcerpt": "Show the written title if pronunciation feels uncertain; it is a proper shop label."
+        "goodToKnowExcerpt": "Keep the written Vietnamese title close if pronunciation feels uncertain at the door."
       }
     },
     {
@@ -2290,12 +2284,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Nam Danh Seafood is a named Da Nang seafood stop where the Vietnamese title and map pin matter, especially around beach-side streets with many seafood signs.",
-        "aboutExcerpt": "A named seafood restaurant entry for taxi rides, casual dinner plans, and map checks.",
+        "summaryExcerpt": "Nam Danh Seafood is a named Da Nang seafood stop where the Vietnamese title and address matter, especially around beach-side streets with many seafood signs.",
+        "aboutExcerpt": "A named seafood restaurant entry for taxi rides, casual dinner plans, and address checks.",
         "phrasebookExcerpt": "Listen for Hải sản Năm Đảnh; the first words mark it as seafood dining.",
         "belongingExcerpt": "It makes Da Nang's seafood scene navigable instead of leaving it too broad.",
         "timingExcerpt": "Use it for dinner arrival, table checks, seafood pointing, and the ride back.",
-        "goodToKnowExcerpt": "Bring the map pin because seafood streets can have several similar-sounding options."
+        "goodToKnowExcerpt": "Bring the address because seafood streets can have several similar-sounding options."
       }
     },
     {
@@ -2470,12 +2464,12 @@
       "placeKind": "neighborhood",
       "profile": "street-neighborhood",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -2486,16 +2480,14 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ngu Hanh Son District is the southern Da Nang area label for Marble Mountains, Non Nuoc, resorts, beach roads, and addresses away from the center.",
+        "summaryExcerpt": "Ngu Hanh Son District is the southern Da Nang area where limestone mountains, Non Nuoc sand, resort entrances, and longer beach roads pull the city southward.",
         "aboutExcerpt": "A southern Da Nang district tied to Marble Mountains, Non Nuoc, and resort areas.",
         "phrasebookExcerpt": "Listen for Quận Ngũ Hành Sơn; quận means district in Vietnamese addresses.",
         "belongingExcerpt": "It helps travelers separate central Da Nang from the southern coast and mountains.",
         "timingExcerpt": "Use it for hotel addresses, Marble Mountains trips, and route checks southward.",
-        "goodToKnowExcerpt": "Add the exact beach, resort, or mountain stop because the district is broad."
+        "goodToKnowExcerpt": "Add the beach, resort, or mountain stop because the district covers a wide area."
       }
     },
     {
@@ -2655,7 +2647,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ốc hút is a casual Da Nang snack noun for stirred snails, lemongrass, chili, shared bowls, and evening stalls where the fun is messy and local.",
+        "summaryExcerpt": "Ốc hút is a casual Da Nang snack for stirred snails, lemongrass, chili, shared bowls, and evening stalls where the fun is messy and local.",
         "aboutExcerpt": "A casual snail snack often cooked with lemongrass, chili, sauce, and shared bowls.",
         "phrasebookExcerpt": "Listen for ốc hút; ốc is the key Vietnamese word for snails on snack menus.",
         "belongingExcerpt": "It gives adventurous eaters a real Da Nang snack beyond noodles and pancakes.",
@@ -2670,12 +2662,12 @@
       "placeKind": "beach",
       "profile": "place-experience",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -2686,11 +2678,9 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Pham Van Dong Beach gives the northern end of Da Nang's main beachfront its own label, with hotel areas, park-like beach entries, and taxi precision built in.",
+        "summaryExcerpt": "Pham Van Dong Beach gives the northern end of Da Nang's main beachfront its own profile, with palm edges, park-like entries, hotels, and brighter urban coastline.",
         "aboutExcerpt": "A named beach stretch near the northern end of Da Nang's main coastal strip.",
         "phrasebookExcerpt": "Listen for Biển Phạm Văn Đồng; biển tells people it is the beach.",
         "belongingExcerpt": "It helps travelers give a more exact coastal location than simply saying My Khe.",
@@ -2723,7 +2713,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Phap Lam Pagoda is a quieter central temple stop, bringing yellow walls, incense, trees, and a respectful pause into a day of markets, cafes, and streets.",
+        "summaryExcerpt": "Phap Lam Pagoda gives central Da Nang a calmer pocket: yellow temple walls, incense, shade trees, courtyard air, and traffic softening outside the gate.",
         "aboutExcerpt": "A central pagoda for a quieter cultural and spiritual pause inside the city.",
         "phrasebookExcerpt": "Listen for Chùa Pháp Lâm; chùa is the important temple word here.",
         "belongingExcerpt": "It adds calm and respect to a central day of museums, markets, and cafes.",
@@ -2738,34 +2728,30 @@
       "placeKind": "neighborhood",
       "profile": "street-neighborhood",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
+        "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
+        "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "Phuoc My is a beach-adjacent local area name that appears in hotel and restaurant addresses, helping travelers understand where they are beyond the beach label.",
         "aboutExcerpt": "A beach-adjacent area name often seen in hotel, cafe, and restaurant addresses.",
         "phrasebookExcerpt": "Listen for Phước Mỹ; it is an area label rather than a single attraction.",
-        "belongingExcerpt": "It helps travelers read local addresses and understand the beach-side map.",
+        "belongingExcerpt": "It helps travelers read local addresses and understand the beach-side layout.",
         "timingExcerpt": "Use it for booking addresses, taxi orientation, and locating restaurants near stays.",
-        "goodToKnowExcerpt": "Because it is broad, always add the exact venue or street when meeting someone."
+        "goodToKnowExcerpt": "Because it is broad, always add the restaurant, hotel, or street when meeting someone."
       }
     },
     {
@@ -2793,7 +2779,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Railway Station is the train-arrival noun for bags, platforms, onward rides, and the moment a Central Vietnam route turns into the city street.",
+        "summaryExcerpt": "Da Nang Railway Station is the train-arrival scene of bags, platforms, onward rides, and the moment a Central Vietnam route turns into the city street.",
         "aboutExcerpt": "The city's train station for rail arrivals, departures, luggage, and onward pickups.",
         "phrasebookExcerpt": "Listen for Ga Đà Nẵng; ga is the short Vietnamese word for station.",
         "belongingExcerpt": "It keeps train travel visible in a city often introduced through flights and beaches.",
@@ -3029,7 +3015,7 @@
         "phrasebookExcerpt": "Listen for Biển Thanh Bình; biển is the beach or sea word in Vietnamese.",
         "belongingExcerpt": "It makes the city coastline more accurate than treating all beaches as My Khe.",
         "timingExcerpt": "Use it for west-side addresses, bay walks, and taxi clarity away from the main strip.",
-        "goodToKnowExcerpt": "Show the map when using this beach name because it is less familiar to visitors."
+        "goodToKnowExcerpt": "This beach name is less familiar to visitors, so pair it with a nearby address."
       }
     },
     {
@@ -3062,7 +3048,7 @@
         "phrasebookExcerpt": "Listen for The Temptation as an English restaurant title kept intact.",
         "belongingExcerpt": "It helps travelers handle proper dining names without inventing Vietnamese descriptions.",
         "timingExcerpt": "Use it for reservations, driver confirmation, table arrival, and the ride home.",
-        "goodToKnowExcerpt": "If the title is unfamiliar, the written booking or map pin gives the clearest support."
+        "goodToKnowExcerpt": "If the title is unfamiliar, the written reservation or address gives the clearest support."
       }
     },
     {
@@ -3123,7 +3109,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Tien Sa Port is the coastal-port noun for cruise arrivals, boat logistics, and northern Da Nang pickup plans where riverfront pier language would be wrong.",
+        "summaryExcerpt": "Tien Sa Port is the coastal-port scene for cruise arrivals, boat logistics, and northern Da Nang pickup plans where riverfront pier language would be wrong.",
         "aboutExcerpt": "A Da Nang port label for cruise, boat, and northern coastal arrival logistics.",
         "phrasebookExcerpt": "Listen for Cảng Tiên Sa; cảng is the Vietnamese word for port arrivals.",
         "belongingExcerpt": "It keeps cruise or port arrivals separate from Han River sightseeing piers.",
@@ -3222,10 +3208,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Trung Vuong Theatre is a central performance venue name for tickets, event posters, evening meetups, and driver drop-offs when the show location matters.",
-        "aboutExcerpt": "A central Da Nang theatre venue used for performances, events, and evening plans.",
+        "summaryExcerpt": "Trung Vuong Theatre gives central Da Nang a show-night image: a lit entrance, event posters, people gathering outside, and the buzz before a performance.",
+        "aboutExcerpt": "A central Da Nang theatre for performances, event posters, and show-night arrivals.",
         "phrasebookExcerpt": "Listen for Nhà hát Trưng Vương; nhà hát means theatre in Vietnamese.",
-        "belongingExcerpt": "It helps travelers navigate culture events as real places with arrival logistics.",
+        "belongingExcerpt": "It adds a live-performance address to Da Nang's culture options when the plan goes beyond bridges, beaches, and food.",
         "timingExcerpt": "Use it for tickets, show arrivals, meeting points, and pickup after the event.",
         "goodToKnowExcerpt": "Confirm the event title separately; the venue name alone does not guarantee a show."
       }
@@ -3255,10 +3241,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Vincom Plaza Da Nang is the clean indoor landmark for rain, errands, shopping, simple food, and a reliable pickup point when the city day needs a reset.",
-        "aboutExcerpt": "A modern mall stop for shopping, errands, rain cover, food, and easy pickup.",
+        "summaryExcerpt": "Vincom Plaza Da Nang brings the city indoors: bright mall floors, shop windows, simple food, cool air, and a clean reset when rain or heat changes the day.",
+        "aboutExcerpt": "A modern mall stop with bright shops, simple food, cool air, and rain cover.",
         "phrasebookExcerpt": "Listen for Vincom Plaza Đà Nẵng as a brand-and-city retail title.",
-        "belongingExcerpt": "It keeps practical comfort available without pretending every stop is scenic.",
+        "belongingExcerpt": "It gives Da Nang itineraries a practical indoor pause without making it the main event.",
         "timingExcerpt": "Use it for rainy hours, errands, meetups, family breaks, and ride pickup.",
         "goodToKnowExcerpt": "Choose a specific entrance or store if meeting someone inside the mall."
       }
@@ -3293,7 +3279,7 @@
         "phrasebookExcerpt": "Listen for Đường Võ Nguyên Giáp; đường means street or road by the beach.",
         "belongingExcerpt": "It helps travelers understand why many beach-side places share similar addresses.",
         "timingExcerpt": "Use it for hotel pickups, restaurant addresses, beach-road navigation, and ride checks.",
-        "goodToKnowExcerpt": "The street is long, so a building number or map pin is essential for arrival."
+        "goodToKnowExcerpt": "The street is long, so a building number or nearby landmark is essential for arrival."
       }
     },
     {
@@ -3326,7 +3312,7 @@
         "phrasebookExcerpt": "Listen for Wonderlust as an English cafe title rather than a translated phrase.",
         "belongingExcerpt": "It makes ordinary coffee breaks part of the curated Da Nang experience.",
         "timingExcerpt": "Use it for meetups, cooling off, coffee between errands, and ride pickup.",
-        "goodToKnowExcerpt": "If pronunciation is not landing, show the English title and exact map location."
+        "goodToKnowExcerpt": "If pronunciation is not landing, keep the English title and street details visible."
       }
     },
     {
@@ -3336,27 +3322,23 @@
       "placeKind": "nature",
       "profile": "place-experience",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
-        "noBannedSourceInputPass": false,
+        "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
         "bannedMatches": [],
-        "sourceBannedMatches": [
-          "exact venue"
-        ]
+        "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedSourceInputPass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "Yen Retreat is a named nature escape outside the denser city, with lawns, water, hills, and a planned-outing feel rather than a casual downtown detour.",
         "aboutExcerpt": "A named nature-retreat style stop for quiet views, lawns, water, and slower time.",
@@ -3373,12 +3355,12 @@
       "placeKind": "neighborhood",
       "profile": "street-neighborhood",
       "reviewer": "city-owner:hanoi",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -3389,12 +3371,10 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ba Dinh District gives Hanoi its official, spacious side: mausoleum routes, broad avenues, citadel history, government buildings, and pockets of shade.",
-        "aboutExcerpt": "A central district with major official landmarks, broad roads, museums, gardens, and historic sites.",
+        "summaryExcerpt": "Ba Dinh District gives Hanoi its official, spacious side: broad avenues, shaded government streets, mausoleum routes, citadel history, and quieter neighborhood edges.",
+        "aboutExcerpt": "A central district with official landmarks, broad roads, shaded streets, museums, gardens, and historic sites.",
         "phrasebookExcerpt": "Quận Ba Đình is the district phrase to recognize when maps or drivers describe the official area.",
         "belongingExcerpt": "It connects Ba Dinh Square, Lăng Bác, One Pillar Pagoda, the citadel, and nearby museums.",
         "timingExcerpt": "Use it when planning a morning around official landmarks or confirming the district of a destination.",
@@ -3657,9 +3637,9 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Bun Cha Ta gives Hoan Kiem travelers another address-friendly bún chả stop, with grilled pork, noodles, herbs, and fried-roll possibilities close to the center.",
-        "aboutExcerpt": "A central bún chả restaurant name associated with grilled pork, noodles, herbs, and casual dining.",
-        "phrasebookExcerpt": "Bún Chả Ta is the exact name to show when asking for this restaurant near Hoan Kiem.",
+        "summaryExcerpt": "Bun Cha Ta feels like a central bún chả table: grilled pork in dipping sauce, white noodles, herbs, menu choices, and fried rolls near Hoan Kiem.",
+        "aboutExcerpt": "A central bún chả restaurant with grilled pork, noodles, herbs, dipping bowls, and casual dining.",
+        "phrasebookExcerpt": "Bún Chả Ta is the restaurant name to use for this bún chả stop near Hoan Kiem.",
         "belongingExcerpt": "It helps turn a bún chả craving into a central, searchable stop for first-time travelers.",
         "timingExcerpt": "Use it when choosing a lunch stop, confirming the address, or asking for a driver drop-off.",
         "goodToKnowExcerpt": "If you are comparing shops, keep addresses visible because bún chả names can blur quickly."
@@ -4251,8 +4231,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Cafe Giang is the Hanoi egg-coffee name many travelers learn before arrival, a compact Old Quarter stop with sweet foam and strong coffee energy.",
-        "aboutExcerpt": "A famous Hanoi cafe associated with egg coffee, compact rooms, and Old Quarter coffee culture.",
+        "summaryExcerpt": "Cafe Giang is the Hanoi egg-coffee name many travelers learn before arrival, a compact Old Quarter room with sweet foam, small cups, and strong coffee.",
+        "aboutExcerpt": "A famous Hanoi cafe associated with egg coffee, compact rooms, small cups, and Old Quarter coffee culture.",
         "phrasebookExcerpt": "Cà phê Giảng is the cafe name; cà phê trứng is the egg coffee order.",
         "belongingExcerpt": "It connects Hanoi coffee culture, egg coffee, Old Quarter walks, and pre-trip food excitement.",
         "timingExcerpt": "Use it when asking for the cafe, meeting for coffee, or choosing where to try egg coffee.",
@@ -4284,8 +4264,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Giap Bat Bus Station is a named southern bus terminal for trips where a ticket, route, or driver specifically says Bến xe Giáp Bát.",
-        "aboutExcerpt": "A named bus terminal in Hanoi, especially relevant when tickets or routes specify the southern station.",
+        "summaryExcerpt": "Giap Bat Bus Station feels like a southern Hanoi transit scene: coach buses, ticket counters, bags, loud bays, and the name Bến xe Giáp Bát.",
+        "aboutExcerpt": "A southern Hanoi bus terminal with coaches, ticket halls, luggage, route boards, and busy departure bays.",
         "phrasebookExcerpt": "Bến xe Giáp Bát is the station phrase to recognize on tickets, maps, and driver confirmations.",
         "belongingExcerpt": "It gives Hanoi transit coverage the precision needed for real bus departures and arrivals.",
         "timingExcerpt": "Use it when your ticket names Giap Bat or when asking a driver for that terminal.",
@@ -4779,8 +4759,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Lenin Park is a compact central green landmark near the Flag Tower and museum cluster, useful as a rest stop, meetup, or orientation cue.",
-        "aboutExcerpt": "A small central park near the Flag Tower and military museum area, giving the district a clear marker.",
+        "summaryExcerpt": "Lenin Park is a compact central green pocket near the Flag Tower, with statue plaza, shade trees, traffic edges, and a quick Hanoi breather.",
+        "aboutExcerpt": "A small central park near the Flag Tower and military museum area, with trees, traffic edges, and a statue plaza.",
         "phrasebookExcerpt": "Công viên Lê Nin is the local park name to recognize when reading nearby maps.",
         "belongingExcerpt": "It connects the Flag Tower, military museum, citadel area, and west-of-center walking routes.",
         "timingExcerpt": "Use it when setting a meeting point or looking for a rest near museum stops.",
@@ -5109,11 +5089,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "The Vietnam National Museum of History gives the French Quarter a grand museum stop, with ochre architecture, palms, and context close to the Opera House.",
-        "aboutExcerpt": "A national history museum near the Opera House, set in a distinctive French Quarter building.",
+        "summaryExcerpt": "The Vietnam National Museum of History gives the French Quarter ochre walls, palms, arched windows, and a quieter Hanoi museum pause near the Opera House.",
+        "aboutExcerpt": "A national history museum near the Opera House, set in a distinctive French Quarter building with ochre walls.",
         "phrasebookExcerpt": "Bảo tàng Lịch sử Quốc gia identifies the national history museum, not the military museum.",
         "belongingExcerpt": "It connects Trang Tien, the Opera House, French Quarter walks, and a culture-focused downtown day.",
-        "timingExcerpt": "Use it when asking for the national history museum or planning a museum stop near the Opera House.",
+        "timingExcerpt": "Bring up this name when planning a museum stop near the Opera House or Trang Tien.",
         "goodToKnowExcerpt": "If a driver hears only history museum, clarify quốc gia or the Opera House area."
       }
     },
@@ -5307,10 +5287,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Nuoc Ngam Bus Station is a concrete Hanoi transit name for longer-distance bus departures where ticket, taxi, and platform details all need precision.",
-        "aboutExcerpt": "A named Hanoi bus station used for some longer-distance departures and practical transit plans.",
+        "summaryExcerpt": "Nuoc Ngam Bus Station is a Hanoi terminal scene of intercity coaches, ticket windows, waiting passengers, luggage, and the written name Bến xe Nước Ngầm.",
+        "aboutExcerpt": "A Hanoi bus station with intercity coaches, ticket windows, waiting passengers, and longer-distance departures.",
         "phrasebookExcerpt": "Bến xe Nước Ngầm is the station phrase to recognize when a ticket or route names it.",
-        "belongingExcerpt": "It completes the Hanoi transit set with another specific bus terminal travelers may actually need.",
+        "belongingExcerpt": "It rounds out the Hanoi transit set with another named terminal and a concrete departure scene.",
         "timingExcerpt": "Use it when confirming a bus departure, arranging a taxi, or checking the station printed on a ticket.",
         "goodToKnowExcerpt": "Once there, ask about the correct operator and bay; the station name only gets you started."
       }
@@ -5487,12 +5467,12 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:hanoi",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -5503,13 +5483,11 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Pho Bat Dan is a specific Old Quarter pho name for a real bowl of beef broth, rice noodles, and old-center breakfast energy rather than a generic pho request.",
-        "aboutExcerpt": "A named Old Quarter pho shop associated with beef broth, rice noodles, and a specific street address.",
-        "phrasebookExcerpt": "Phở Bát Đàn is the full name to show when asking for this exact pho shop.",
+        "summaryExcerpt": "Pho Bat Dan is an Old Quarter pho shop scene: steaming beef broth, rice noodles, counter movement, simple tables, and breakfast energy on Bát Đàn.",
+        "aboutExcerpt": "A named Old Quarter pho shop with beef broth, rice noodles, counter movement, and a specific street address.",
+        "phrasebookExcerpt": "Phở Bát Đàn is the full name for this pho shop, not just a general beef-pho order.",
         "belongingExcerpt": "It connects the general love of phở bò with a concrete Hanoi address travelers can plan around.",
         "timingExcerpt": "Use it when heading to the shop, searching the map, or asking a driver for the stop.",
         "goodToKnowExcerpt": "Pho shop names can be similar, so keep Bát Đàn visible rather than saying only phở."
@@ -5573,9 +5551,9 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Pho Bo Lam is a specific beef-pho shop name for travelers comparing bowls and choosing a concrete stop instead of another broad pho suggestion.",
-        "aboutExcerpt": "A named beef-pho shop that gives travelers a specific address for a bowl of phở bò.",
-        "phrasebookExcerpt": "Phở Bò Lâm is the full name to show when you want this shop, not just beef pho.",
+        "summaryExcerpt": "Pho Bo Lam gives beef pho a shop setting: broth steam, sliced beef, herbs, simple tables, staff rhythm, and a concrete bowl to compare.",
+        "aboutExcerpt": "A named beef-pho shop with simple tables, broth steam, herbs, and a specific address for phở bò.",
+        "phrasebookExcerpt": "Phở Bò Lâm is the full shop name, separate from the general beef-pho phrase.",
         "belongingExcerpt": "It sits beside Pho Bat Dan and Pho Gia Truyen as a concrete pho option in Hanoi.",
         "timingExcerpt": "Use it when confirming the shop, checking the address, or asking someone to help with directions.",
         "goodToKnowExcerpt": "If you only want beef pho generally, phở bò is enough; add Lâm for the restaurant."
@@ -5606,8 +5584,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Phở gà lets beginners order chicken pho cleanly, a comforting bowl of rice noodles, clear broth, herbs, and chicken without decoding a long menu.",
-        "aboutExcerpt": "Chicken pho with rice noodles, broth, herbs, and chicken, often simpler to choose than a long menu.",
+        "summaryExcerpt": "Phở gà is a gentle Hanoi noodle-shop bowl: clear broth, chicken, rice noodles, herbs, lime, and the comfort of ordering without decoding a long menu.",
+        "aboutExcerpt": "Chicken pho with rice noodles, clear broth, herbs, chicken, and the rhythm of a small Hanoi noodle shop.",
         "phrasebookExcerpt": "Phở gà is the phrase to recognize when choosing chicken pho instead of phở bò.",
         "belongingExcerpt": "It gives travelers a clean pho choice and helps menus feel less intimidating on arrival.",
         "timingExcerpt": "Use it when ordering chicken pho or asking whether a shop has the chicken version.",
@@ -6698,7 +6676,7 @@
         "summaryExcerpt": "42 Nguyen Hue apartment building is the cafe-filled facade travelers notice from the walking street, with balconies, stairs, tiny shops, and a vertical Saigon feel.",
         "aboutExcerpt": "A famous old apartment building on Nguyen Hue filled with cafes, small shops, and balcony signs.",
         "phrasebookExcerpt": "Chung cư 42 Nguyễn Huệ names both the apartment building and its exact street number.",
-        "belongingExcerpt": "It turns Nguyen Hue into a hands-on exploration stop where travelers choose a floor and look around.",
+        "belongingExcerpt": "It turns Nguyen Hue into a hands-on coffee stop where travelers choose a floor, order a drink, and look around.",
         "timingExcerpt": "Use it when meeting for coffee, finding the building entrance, or planning a Nguyen Hue wander.",
         "goodToKnowExcerpt": "The building can feel vertical and slightly improvised, so allow time to find the right cafe."
       }
@@ -6827,8 +6805,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ao Dai Museum gives travelers a culture stop focused on Vietnam's iconic dress, with garden-like surroundings that make it feel more intentional than a quick downtown detour.",
-        "aboutExcerpt": "A museum dedicated to áo dài, Vietnam's elegant long dress, set away from the busiest center.",
+        "summaryExcerpt": "Ao Dai Museum carries Saigon culture into a quieter garden setting, where silk, tailoring, ceremony, and Vietnam's long dress feel far from the District 1 traffic rush.",
+        "aboutExcerpt": "A museum dedicated to áo dài, Vietnam's elegant long dress, in a quieter Saigon garden setting.",
         "phrasebookExcerpt": "Bảo tàng Áo Dài is compact enough for museum questions, taxi confirmation, and destination checks.",
         "belongingExcerpt": "It gives travelers a concrete way to connect fashion, ceremony, and Vietnamese visual culture.",
         "timingExcerpt": "Use it when planning a dedicated culture stop or explaining that you want the áo dài museum.",
@@ -6860,8 +6838,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Bach Dang Waterbus Station gives travelers the specific pier name for river boarding, clearer than the broader wharf when timing, tickets, and platforms matter.",
-        "aboutExcerpt": "A specific river pier at Bach Dang used for waterbus or boat-boarding plans.",
+        "summaryExcerpt": "Bach Dang Waterbus Station starts at the river edge: boats nudging the pier, skyline behind them, people waiting, and the Saigon River becoming a ride.",
+        "aboutExcerpt": "A river pier at Bach Dang where waterbus and boat-boarding plans meet the Saigon River.",
         "phrasebookExcerpt": "Bến tàu thủy Bạch Đằng means Bach Dang water pier, the wording behind boarding directions.",
         "belongingExcerpt": "It separates the practical boarding point from the more general Bach Dang waterfront area.",
         "timingExcerpt": "Use it when catching a waterbus, meeting for a boat ride, or confirming where boarding happens.",
@@ -6926,7 +6904,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Banh mi is the Saigon food noun travelers can use almost immediately: crisp baguette, pate or fillings, herbs, pickles, chile, sauce, and fast street-side energy.",
+        "summaryExcerpt": "Banh mi is Saigon food you can picture almost immediately: crisp baguette, pate or fillings, herbs, pickles, chile, sauce, and fast street-side energy.",
         "aboutExcerpt": "A Vietnamese baguette sandwich, common across Saigon at carts, bakeries, and famous shops.",
         "phrasebookExcerpt": "Bánh mì is short, high-value, and worth recognizing before you arrive hungry.",
         "belongingExcerpt": "It connects street food, quick lunches, famous shops, and simple ordering in one core food word.",
@@ -6941,12 +6919,12 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:hcmc",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -6957,9 +6935,7 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "Bánh mì Huỳnh Hoa is a famous shop name for travelers chasing a specific Saigon banh mi, keeping directions, ordering, and the shop itself distinct from the dish.",
         "aboutExcerpt": "A named banh mi shop in Saigon for travelers seeking a specific sandwich stop.",
@@ -7027,8 +7003,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Bánh Xèo 46A gives travelers a concrete address-like shop name for southern sizzling pancakes, turning bánh xèo from a menu idea into a real Saigon food plan.",
-        "aboutExcerpt": "A named shop tied to bánh xèo, the crisp southern sizzling pancake eaten with herbs and sauce.",
+        "summaryExcerpt": "Bánh Xèo 46A feels like a Saigon pancake stop: hot pans, crisp yellow edges, herb baskets, dipping sauce, and tables ready for a hands-on meal.",
+        "aboutExcerpt": "A shop tied to bánh xèo, the crisp southern sizzling pancake eaten with herbs and sauce.",
         "phrasebookExcerpt": "Bánh Xèo 46A combines the dish name with a number, which makes the destination easier to identify.",
         "belongingExcerpt": "It gives travelers a real way to seek out bánh xèo instead of only reading the dish name.",
         "timingExcerpt": "Use it when heading to the shop, asking for bánh xèo, or planning a specific food stop.",
@@ -7225,9 +7201,9 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Beef in betel leaves is a fragrant grill-table dish where bò lá lốt arrives as small wrapped rolls with herbs, rice paper, and dipping sauce for sharing.",
+        "summaryExcerpt": "Beef in betel leaves brings Saigon's grill-table mood into focus: smoky bò lá lốt rolls, herbs, rice paper, dipping sauce, and shared evening plates.",
         "aboutExcerpt": "A grilled dish of seasoned beef wrapped in betel leaves, often served with herbs and rice paper.",
-        "phrasebookExcerpt": "Bò lá lốt names beef, leaf, and the dish together, making it useful on menus.",
+        "phrasebookExcerpt": "Bò lá lốt names beef, leaf, and the dish together, so the menu phrase carries the whole plate.",
         "belongingExcerpt": "It gives travelers a concrete street-food dish that feels social, aromatic, and very different from phở.",
         "timingExcerpt": "Use it when ordering at a grill table, sharing snacks, or asking what the wrapped beef rolls are.",
         "goodToKnowExcerpt": "If herbs and rice paper arrive, watch the table rhythm before building your first bite."
@@ -7326,7 +7302,7 @@
       "evidence": {
         "summaryExcerpt": "Grilled pork vermicelli is a bright Saigon bowl of bún thịt nướng with noodles, herbs, peanuts, grilled pork, pickles, and fish sauce for mixing.",
         "aboutExcerpt": "A vermicelli noodle bowl with grilled pork, herbs, peanuts, pickles, and fish sauce.",
-        "phrasebookExcerpt": "Bún thịt nướng names the noodles, meat, and grilled style in one useful dish phrase.",
+        "phrasebookExcerpt": "Bún thịt nướng names the noodles, meat, and grilled style in one compact dish phrase.",
         "belongingExcerpt": "It gives travelers a fresh, filling meal that shows southern balance without feeling heavy.",
         "timingExcerpt": "Use it for lunch, a casual dinner, or when you want noodles without a hot soup.",
         "goodToKnowExcerpt": "The sauce is usually meant to be added and mixed, not left untouched on the side."
@@ -7372,34 +7348,30 @@
       "placeKind": "cafe",
       "profile": "cafe",
       "reviewer": "city-owner:hcmc",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
+        "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
+        "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "Cafe Apartment on Nguyen Hue turns coffee into a vertical adventure, with old balconies, stairwells, tiny rooms, and cafe lights stacked above the walking street.",
         "aboutExcerpt": "A vertical cafe cluster on Nguyen Hue, set inside an old apartment building with many small venues.",
-        "phrasebookExcerpt": "Chung cư cà phê Nguyễn Huệ means the Nguyen Hue cafe apartment, a useful local description.",
+        "phrasebookExcerpt": "Chung cư cà phê Nguyễn Huệ means the Nguyen Hue cafe apartment, the local phrase for the coffee cluster.",
         "belongingExcerpt": "It captures a very Saigon kind of discovery: coffee, architecture, and people-watching together.",
         "timingExcerpt": "Use it when cafe-hopping on Nguyen Hue or meeting someone at the apartment building.",
-        "goodToKnowExcerpt": "Different cafes sit on different floors, so agree on the exact venue once inside the building."
+        "goodToKnowExcerpt": "Different cafes sit on different floors, so agree on the cafe name or floor once inside the building."
       }
     },
     {
@@ -7460,8 +7432,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Pham Ngoc Thach cloth-filter coffee gives travelers a concrete way to explore cà phê vợt, the old cloth-filter method, through a named Saigon coffee stop.",
-        "aboutExcerpt": "A named coffee stop tied to cà phê vợt, Vietnam's cloth-filter coffee method.",
+        "summaryExcerpt": "Pham Ngoc Thach cloth-filter coffee feels like old Saigon in a cup, with dark coffee, steam, small stools, and the patient rhythm of cà phê vợt.",
+        "aboutExcerpt": "A coffee stop tied to cà phê vợt, Vietnam's cloth-filter coffee method.",
         "phrasebookExcerpt": "Cà phê vợt means cloth-filter coffee, while Phạm Ngọc Thạch helps identify the location.",
         "belongingExcerpt": "It gives travelers a precise language bridge between a coffee technique and a real Saigon stop.",
         "timingExcerpt": "Use it when seeking cloth-filter coffee or explaining the specific coffee experience you want.",
@@ -7627,12 +7599,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "CieL is a precise restaurant name for travelers with a saved dining plan, especially for confirming the booking, finding the entrance, or meeting there.",
-        "aboutExcerpt": "A named restaurant that works as a destination for travelers following a saved list or booking.",
+        "summaryExcerpt": "CieL adds a polished Saigon dining stop to a saved restaurant list, with a modern room, careful table setting, and a name travelers may want ready at the door.",
+        "aboutExcerpt": "A modern Saigon restaurant stop for travelers following a saved dining list or reservation.",
         "phrasebookExcerpt": "CieL is stylized, so the written name may be clearer than trying to describe it aloud.",
-        "belongingExcerpt": "It helps travelers handle one real dining plan without pretending every restaurant needs a broad lesson.",
-        "timingExcerpt": "Use it when confirming a reservation, arranging a ride, or meeting someone at the restaurant.",
-        "goodToKnowExcerpt": "Keep the saved address handy, because short restaurant names can be easy to mishear."
+        "belongingExcerpt": "It gives the restaurant list a real table-and-service moment instead of a flat name in a saved list.",
+        "timingExcerpt": "Use it when arriving for a planned meal, meeting someone at the door, or confirming the table.",
+        "goodToKnowExcerpt": "Keep the saved address handy, because short restaurant names can be easy to mishear in traffic."
       }
     },
     {
@@ -7858,12 +7830,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Cu Chi Tunnels is the major Saigon-linked day trip for travelers who want history outside the downtown core, with pickup points, tickets, and respectful pacing to consider.",
+        "summaryExcerpt": "Cu Chi Tunnels pulls a Saigon trip out toward forest paths, narrow tunnel displays, and wartime history that feels far from the downtown towers and coffee streets.",
         "aboutExcerpt": "A well-known historical site outside central HCMC, commonly visited as a day trip from Saigon.",
-        "phrasebookExcerpt": "Địa đạo Củ Chi is the Vietnamese name to recognize for tickets, tours, pickup details, and directions.",
+        "phrasebookExcerpt": "Địa đạo Củ Chi is the Vietnamese name for the tunnel site, and Củ Chi is the district name to catch.",
         "belongingExcerpt": "The site is strongly tied to HCMC travel planning even though it is not in the downtown cluster.",
-        "timingExcerpt": "Use it when booking a day trip, confirming pickup, or explaining which history site you mean.",
-        "goodToKnowExcerpt": "Because it takes planning and travel time, confirm pickup location, timing, and the exact site details."
+        "timingExcerpt": "Use it when choosing a history day from Saigon or explaining that you mean the tunnel site outside the city.",
+        "goodToKnowExcerpt": "It deserves a dedicated outing and a respectful pace, not a rushed add-on between central sights."
       }
     },
     {
@@ -7891,8 +7863,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Cục Gạch Quán gives travelers a named restaurant with an old-house, home-style feeling for a meal plan that feels more atmospheric than a quick stop.",
-        "aboutExcerpt": "A named Vietnamese restaurant associated with an old-house atmosphere and a planned meal.",
+        "summaryExcerpt": "Cục Gạch Quán brings Saigon dining into an old-house setting, with tiled floors, plants, family-style dishes, and a slower meal than the street outside.",
+        "aboutExcerpt": "A Vietnamese restaurant associated with an old-house atmosphere, family-style dishes, and a planned meal.",
         "phrasebookExcerpt": "Cục Gạch Quán is distinctive in writing, so showing the name can help more than guessing pronunciation.",
         "belongingExcerpt": "It lets travelers connect food with setting and mood, not only with famous dish names.",
         "timingExcerpt": "Use it when planning dinner, confirming a reservation, or asking for the restaurant by name.",
@@ -8122,8 +8094,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Gia Dinh Park is a practical green name near the airport side of the city, with nearby stays, family breaks, short walks, and pre-flight breathing room in mind.",
-        "aboutExcerpt": "A large park near the airport side of HCMC for walks, families, and local breaks.",
+        "summaryExcerpt": "Gia Dinh Park gives the airport side of Saigon a broad green pause, with trees, family walks, exercise groups, and a gentler rhythm before or after a flight.",
+        "aboutExcerpt": "A large park near the airport side of HCMC with trees, paths, families, and local breaks.",
         "phrasebookExcerpt": "Công viên Gia Định is the Vietnamese name to recognize for Gia Dinh Park.",
         "belongingExcerpt": "It gives airport-area travelers a real green option instead of treating the area as only transit.",
         "timingExcerpt": "Use it during an airport-side stay, before a flight, or when children need a simple outdoor break.",
@@ -8155,7 +8127,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Fresh spring rolls are an easy, visible menu win for first-time travelers: gỏi cuốn with rice paper, herbs, noodles, shrimp or pork, and dipping sauce.",
+        "summaryExcerpt": "Fresh spring rolls fit Saigon heat beautifully: gỏi cuốn with rice paper, herbs, noodles, shrimp or pork, dipping sauce, and a cool cafe-table feel.",
         "aboutExcerpt": "Fresh rice-paper rolls filled with herbs, noodles, and often shrimp or pork, served with sauce.",
         "phrasebookExcerpt": "Gỏi cuốn is the phrase to recognize when you want fresh spring rolls in Vietnam.",
         "belongingExcerpt": "It gives travelers a light, recognizable dish that still teaches real Vietnamese ingredient language.",
@@ -8188,8 +8160,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Golden Dragon Water Puppet Theater gives HCMC a specific family-friendly performance stop, helpful when travelers want water puppets without defaulting to Hanoi plans.",
-        "aboutExcerpt": "A named water-puppet theater in HCMC, often considered for families and first-time visitors.",
+        "summaryExcerpt": "Golden Dragon Water Puppet Theater brings puppets, water, music, and warm stage lights into a Saigon evening, giving families and first-timers a compact cultural show.",
+        "aboutExcerpt": "A water-puppet theater in HCMC, often considered for families and first-time visitors.",
         "phrasebookExcerpt": "Rồng Vàng means Golden Dragon, a helpful part of the full Vietnamese theater name.",
         "belongingExcerpt": "It gives travelers a specific performance option that feels cultural without needing advanced planning language.",
         "timingExcerpt": "Use it when checking show times, buying tickets, or asking a driver for the water-puppet theater.",
@@ -8401,12 +8373,12 @@
       "placeKind": "neighborhood",
       "profile": "street-neighborhood",
       "reviewer": "city-owner:hcmc",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -8417,11 +8389,9 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Japan Town Saigon is the small alley-and-restaurant cluster around Le Thanh Ton and Thai Van Lung, made for dinner plans, nightlife, and exact meeting directions.",
+        "summaryExcerpt": "Japan Town Saigon is the small District 1 alley-and-restaurant cluster around Le Thanh Ton and Thai Van Lung, with lanterns, signs, dinner plans, and nightlife.",
         "aboutExcerpt": "A compact Japanese dining and nightlife area in District 1, close to Le Thanh Ton.",
         "phrasebookExcerpt": "Khu phố Nhật means Japan Town, and Lê Thánh Tôn helps locate the central Saigon version.",
         "belongingExcerpt": "It gives travelers a social food area name that is more precise than simply saying District 1.",
@@ -8553,9 +8523,9 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Little HaNoi Egg Coffee Saigon helps travelers who know egg coffee from Hanoi find a Saigon stop for the creamy drink without leaving the city.",
+        "summaryExcerpt": "Little HaNoi Egg Coffee Saigon turns the Hanoi-style drink into a Saigon cafe stop, with creamy foam, strong coffee, small tables, and a sweet pause in the city.",
         "aboutExcerpt": "A named cafe for egg coffee in Saigon, made for curiosity about the creamy Hanoi-style drink.",
-        "phrasebookExcerpt": "Little HaNoi Egg Coffee is usually handled in English, which makes showing the name straightforward.",
+        "phrasebookExcerpt": "Little HaNoi Egg Coffee is usually handled in English, which makes the cafe name easy to recognize.",
         "belongingExcerpt": "It connects a famous Vietnamese coffee style with a specific Saigon cafe travelers can seek out.",
         "timingExcerpt": "Use it when craving egg coffee, meeting for a sweet coffee stop, or asking for the cafe.",
         "goodToKnowExcerpt": "Egg coffee is associated with Hanoi, so mention Saigon if you are clarifying the location."
@@ -8685,8 +8655,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mien Dong Bus Station is an important intercity bus-terminal name for eastern and northern routes, where exact address and pickup details can matter a lot.",
-        "aboutExcerpt": "A major intercity bus station name in HCMC, associated with many routes out of the city.",
+        "summaryExcerpt": "Mien Dong Bus Station feels like coaches, luggage piles, ticket counters, route calls, and the eastern edge of Saigon opening toward longer Vietnam journeys.",
+        "aboutExcerpt": "A major intercity bus station in HCMC, with coaches, counters, luggage, and routes out of the city.",
         "phrasebookExcerpt": "Bến xe Miền Đông means Eastern Bus Station, a key phrase for bus tickets and taxi rides.",
         "belongingExcerpt": "It gives travelers the terminal vocabulary needed for practical intercity movement from Saigon.",
         "timingExcerpt": "Use it when booking buses, confirming pickup, or telling a driver which terminal you need.",
@@ -8718,7 +8688,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mien Tay Bus Station is the practical western bus-terminal name for many Mekong Delta and westbound trips, from tickets and taxis to early departures.",
+        "summaryExcerpt": "Mien Tay Bus Station points west from Saigon toward Mekong Delta journeys, with coaches, route boards, food stalls, luggage, and early-morning departures.",
         "aboutExcerpt": "A major western bus terminal in HCMC, commonly associated with routes toward the Mekong Delta.",
         "phrasebookExcerpt": "Bến xe Miền Tây means Western Bus Station, a practical phrase for terminal directions.",
         "belongingExcerpt": "It helps travelers name the right transport hub for trips beyond Saigon, especially westbound routes.",
@@ -8751,11 +8721,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Saigon motorbike food tour is the night-out experience of riding behind a driver between food stops, helmets, pickup timing, street lights, and local dishes.",
+        "summaryExcerpt": "Saigon motorbike food tour feels like night air, helmet straps, grill smoke, small tables, and riding behind a driver from one local dish to the next.",
         "aboutExcerpt": "An evening food experience where travelers ride by motorbike between several Saigon food stops.",
         "phrasebookExcerpt": "Tour ăn tối bằng xe máy means a dinner tour by motorbike, a clear description of the format.",
         "belongingExcerpt": "It combines transportation, food discovery, and street-level energy in a way many travelers seek.",
-        "timingExcerpt": "Use it when comparing tours, confirming pickup, or explaining that dinner includes motorbike travel.",
+        "timingExcerpt": "Use it when you want dinner to feel like a moving street-level introduction to Saigon.",
         "goodToKnowExcerpt": "Comfort with motorbike traffic is personal, so check the format before committing."
       }
     },
@@ -8817,12 +8787,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Nephele is a precise restaurant name for travelers with a saved dining plan, reservation, or meetup, where exact wording matters more than broad food description.",
-        "aboutExcerpt": "A named restaurant entry suited to reservations, saved lists, and specific dinner meetups.",
+        "summaryExcerpt": "Nephele adds a small modern Saigon dining room to the restaurant list, with warm light, table service, and a saved name that points to a planned meal.",
+        "aboutExcerpt": "A restaurant suited to reservations, saved lists, and specific dinner meetups.",
         "phrasebookExcerpt": "Nephele is concise, but showing the written name can prevent mishearing during pickup or booking.",
-        "belongingExcerpt": "It helps travelers navigate restaurant-led food discovery without inventing claims about the menu.",
-        "timingExcerpt": "Use it when confirming a booking, arranging a ride, or meeting someone at the restaurant.",
-        "goodToKnowExcerpt": "For current restaurants, always keep the latest address and reservation details with the name."
+        "belongingExcerpt": "It gives restaurant-led food discovery a real dining-room scene without inventing claims about the menu.",
+        "timingExcerpt": "Use it when arriving for a booking, meeting someone for dinner, or confirming the restaurant door.",
+        "goodToKnowExcerpt": "For current restaurants, keep the latest address and reservation details with the name."
       }
     },
     {
@@ -9147,8 +9117,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Pham Ngu Lao Street is a key backpacker-area name for hotels, travel offices, bus pickups, and orientation near but not identical to Bui Vien nightlife.",
-        "aboutExcerpt": "A central backpacker-area street linked to hotels, travel offices, buses, and budget travel services.",
+        "summaryExcerpt": "Pham Ngu Lao Street carries Saigon's backpacker-area texture: guesthouses, travel desks, buses near the park, cheap eats, and Bui Vien energy close by.",
+        "aboutExcerpt": "A central backpacker-area street with guesthouses, travel offices, bus activity, food shops, and park-edge traffic.",
         "phrasebookExcerpt": "Phố Phạm Ngũ Lão is the street name to recognize in hotel and bus-pickup instructions.",
         "belongingExcerpt": "It helps travelers separate practical travel logistics from the louder nightlife reputation nearby.",
         "timingExcerpt": "Use it for hotel directions, sleeper-bus pickups, travel-office visits, or area orientation.",
@@ -9345,8 +9315,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Saigon Railway Station is the exact train-station name travelers need for departures, arrivals, taxi drop-offs, and trips that connect HCMC with the rest of Vietnam.",
-        "aboutExcerpt": "The main railway station for Saigon, used for train trips to and from other parts of Vietnam.",
+        "summaryExcerpt": "Saigon Railway Station has the feel of platforms, luggage, old station signage, waiting halls, and train trips that carry HCMC into the rest of Vietnam.",
+        "aboutExcerpt": "The main railway station for Saigon, with platforms, waiting halls, luggage, and trips across Vietnam.",
         "phrasebookExcerpt": "Ga Sài Gòn means Saigon Station, a compact phrase for tickets, taxis, and directions.",
         "belongingExcerpt": "It helps travelers handle intercity movement without confusing the train station with bus terminals.",
         "timingExcerpt": "Use it when catching a train, arriving by rail, or arranging a pickup from the station.",
@@ -9510,7 +9480,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Southern Women's Museum offers a focused look at women and southern Vietnam for travelers looking beyond the most famous war and landmark stops.",
+        "summaryExcerpt": "Southern Women's Museum adds a quieter Saigon layer through textiles, portraits, family stories, and southern women's history beyond the city's loudest landmark stops.",
         "aboutExcerpt": "A museum focused on southern Vietnamese women, history, clothing, and social life.",
         "phrasebookExcerpt": "Bảo tàng Phụ nữ Nam Bộ is the phrase to listen for when confirming the Southern Women's Museum.",
         "belongingExcerpt": "It adds a specific southern perspective to a city often introduced through only markets and war history.",
@@ -9609,8 +9579,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Tan Son Nhat International Airport is often the first Saigon name travelers need, covering arrival, pickup, terminals, domestic flights, ride-hailing, and hotel transfers.",
-        "aboutExcerpt": "HCMC's main airport, used for international arrivals, domestic connections, pickups, and transfers.",
+        "summaryExcerpt": "Tan Son Nhat International Airport is often the first humid Saigon scene travelers meet: terminal doors, luggage carts, waiting families, taxi lanes, and ride-hailing zones.",
+        "aboutExcerpt": "HCMC's main airport, where terminal doors, luggage, waiting families, and transfer plans start the trip.",
         "phrasebookExcerpt": "Sân bay Tân Sơn Nhất is the airport wording you are likely to hear in arrival conversations.",
         "belongingExcerpt": "It gives travelers confidence for the first and last city movement, before sightseeing even begins.",
         "timingExcerpt": "Use it for airport pickups, hotel transfers, domestic flights, or explaining where you just arrived.",
@@ -10010,7 +9980,7 @@
         "phrasebookExcerpt": "Biển An Bàng is the Vietnamese name to recognize or show when asking for An Bang Beach.",
         "belongingExcerpt": "It connects beach time to the same trip plan as old-town browsing, cafes, and Hoi An food stops.",
         "timingExcerpt": "Use it when booking a taxi, choosing a beach lunch area, or explaining where you want to be picked up.",
-        "goodToKnowExcerpt": "An Bang and Cua Dai are different coastal names, so show the map pin if the driver asks which beach."
+        "goodToKnowExcerpt": "An Bang and Cua Dai are different coastal names, so keep the beach name and nearby drop-off clear."
       }
     },
     {
@@ -10175,7 +10145,7 @@
         "phrasebookExcerpt": "Bến thuyền Bạch Đằng names the Bach Dang boat pier on the riverfront.",
         "belongingExcerpt": "It helps separate Hoi An's romantic river boats from beach, pier, and island-trip logistics.",
         "timingExcerpt": "Use it when finding a lantern boat area, meeting after a river ride, or pointing a driver to the riverfront.",
-        "goodToKnowExcerpt": "Show the map pin if a driver hears pier and assumes the coastal Cửa Đại side."
+        "goodToKnowExcerpt": "If a driver hears pier and thinks of Cửa Đại, say Bạch Đằng and point back to the old-town riverfront."
       }
     },
     {
@@ -10303,7 +10273,7 @@
       "failures": [],
       "evidence": {
         "summaryExcerpt": "Bánh mì Hội An is the sandwich idea, not one single shop: crusty bread, herbs, sauce, and fast counter energy that fits breakfast, snacks, and food-walk plans.",
-        "aboutExcerpt": "Hoi An's bánh mì surface for ordering the sandwich itself, separate from any one famous shop.",
+        "aboutExcerpt": "Hoi An's bánh mì dish entry for ordering the sandwich itself, separate from any one famous shop.",
         "phrasebookExcerpt": "Bánh mì Hội An is the phrase to recognize for a Hoi An-style sandwich.",
         "belongingExcerpt": "It connects dish browsing to named sandwich shops without making every meal depend on one venue.",
         "timingExcerpt": "Use it for breakfast, a quick lunch, or asking whether a stall has the Hoi An sandwich you want.",
@@ -10434,12 +10404,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "BeBe Tailor is a named Hoi An tailoring stop for fittings, fabric decisions, pickup dates, and map-pin conversations without making any claim about quality.",
-        "aboutExcerpt": "A named tailor stop in Hoi An for fittings, clothing pickup, fabric browsing, and address-based plans.",
-        "phrasebookExcerpt": "Keep BeBe Tailor as the English venue name and show it with the map pin.",
+        "summaryExcerpt": "BeBe Tailor leans into Hoi An's custom-clothing dream: fabric walls, measuring tape, lantern-lit shopfronts, and the possibility of leaving town with something made for you.",
+        "aboutExcerpt": "A named tailor stop in Hoi An for fabric browsing, fittings, custom clothing, and return visits.",
+        "phrasebookExcerpt": "Keep BeBe Tailor as the English shop name when talking about fittings or finished clothes.",
         "belongingExcerpt": "It gives travelers a concrete tailoring destination beside the broader Hoi An tailor-fitting entry.",
-        "timingExcerpt": "Use it when booking a fitting, returning for alterations, or explaining where your clothing pickup is.",
-        "goodToKnowExcerpt": "Bring or show the exact address if there are multiple shop locations or nearby tailor storefronts."
+        "timingExcerpt": "Use it when choosing fabrics, checking a fitting, returning for alterations, or picking up finished clothing.",
+        "goodToKnowExcerpt": "If there are multiple locations or nearby tailor storefronts, confirm the branch before your fitting time."
       }
     },
     {
@@ -10467,12 +10437,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoi An Bus Station is a plain but important transit name for shuttle arrivals, local departures, luggage handoffs, and getting from the edge of town into the trip.",
-        "aboutExcerpt": "The Hoi An bus-station name for arrivals, onward road travel, luggage, and transfer planning.",
+        "summaryExcerpt": "Hoi An Bus Station sits at the town's arrival edge: coaches idling, luggage in hand, shaded waiting areas, and the first short ride toward old streets or a hotel.",
+        "aboutExcerpt": "The Hoi An bus-station name for road arrivals, shaded waiting areas, luggage, and onward rides.",
         "phrasebookExcerpt": "Bến xe Hội An is the Vietnamese name to show when you mean Hoi An Bus Station.",
-        "belongingExcerpt": "It covers the practical edge of Hoi An travel that sits before food, beaches, and heritage walks.",
+        "belongingExcerpt": "It covers the arrival edge of Hoi An travel before food, beaches, and heritage walks begin.",
         "timingExcerpt": "Use it when confirming a shuttle, asking where a bus leaves, or telling a driver where to pick you up.",
-        "goodToKnowExcerpt": "Station names can be less photogenic but very helpful when luggage and timing are involved."
+        "goodToKnowExcerpt": "Station stops can feel plain, but they matter when luggage, timing, and the next ride are all happening at once."
       }
     },
     {
@@ -10665,11 +10635,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Cam Thanh basket boat names the round-boat experience in Hoi An's coconut waterways, a playful countryside activity that needs clear pickup, entrance, and return language.",
+        "summaryExcerpt": "Cam Thanh basket boat is the round-boat moment in Hoi An's coconut waterways: green channels, low palms, small docks, and a playful drift outside the old town.",
         "aboutExcerpt": "A round basket-boat experience in Cam Thanh's water-coconut area near Hoi An.",
         "phrasebookExcerpt": "Thuyền thúng Cẩm Thanh is the name to recognize for the Cam Thanh basket boat.",
-        "belongingExcerpt": "It gives a specific activity name for one of Hoi An's common village-and-waterway plans.",
-        "timingExcerpt": "Use it when booking, confirming pickup, finding the boat area, or checking the return ride.",
+        "belongingExcerpt": "It gives a specific activity name for one of Hoi An's vivid village-and-waterway plans.",
+        "timingExcerpt": "Use it when asking for the basket boats, finding the coconut-waterway area, or checking the ride back.",
         "goodToKnowExcerpt": "Use Rừng dừa Bảy Mẫu or Làng dừa Cẩm Thanh when the place matters more than the activity."
       }
     },
@@ -10845,12 +10815,12 @@
       "placeKind": "experience",
       "profile": "place-experience",
       "reviewer": "city-owner:hoian",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -10861,16 +10831,14 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "The Cham Islands snorkel boat entry helps travelers ask about the boat leg to Cù Lao Chàm, keeping pier, pickup, and return details separate from the island name itself.",
-        "aboutExcerpt": "A practical boat-trip name for getting from the Hoi An coast toward the Cham Islands.",
+        "summaryExcerpt": "The Cham Islands snorkel boat starts on the Cửa Đại coast, with bags for a day trip, life jackets, green islands ahead, and clear water waiting beyond Hoi An.",
+        "aboutExcerpt": "A coastal boat-trip name for heading from Hoi An toward Cham Islands water, snorkeling, and island time.",
         "phrasebookExcerpt": "Tàu đi Cù Lao Chàm means the boat going to the Cham Islands from the coast.",
-        "belongingExcerpt": "It turns an island wish into the actual transport step travelers must ask about.",
-        "timingExcerpt": "Use it when checking where the boat leaves, confirming pickup, or asking about the return from the islands.",
-        "goodToKnowExcerpt": "Do not assume all island boats include snorkeling; use your booking details for the exact activity."
+        "belongingExcerpt": "It turns an island wish into a specific coast-to-island trip with water, boat time, and return planning.",
+        "timingExcerpt": "Use it when asking where the boat leaves, whether snorkeling is included, or how the island return works.",
+        "goodToKnowExcerpt": "Do not assume every island boat includes snorkeling; check the operator details for the activity that day."
       }
     },
     {
@@ -10966,10 +10934,10 @@
       "evidence": {
         "summaryExcerpt": "Cocobox is a named Hoi An cafe and juice stop for a quick old-town drink, a meeting point, or a small pause between shopping, sightseeing, and heat.",
         "aboutExcerpt": "A named cafe or juice stop that can serve as a quick refreshment point in Hoi An.",
-        "phrasebookExcerpt": "Cocobox is preserved as the venue name and is easiest to show with a map pin.",
+        "phrasebookExcerpt": "Keep Cocobox as the cafe name when asking for the drink counter or meeting nearby.",
         "belongingExcerpt": "It adds a casual refreshment option to Hoi An's cafes, markets, and food discovery.",
         "timingExcerpt": "Use it when asking for the shop, meeting a friend, or grabbing a drink between old-town stops.",
-        "goodToKnowExcerpt": "If you need a specific branch or address, show the map pin rather than relying on the name alone."
+        "goodToKnowExcerpt": "If you need a specific branch or address, pair the name with the street or saved location."
       }
     },
     {
@@ -11134,7 +11102,7 @@
         "phrasebookExcerpt": "Cửa Đại is the short local name, but it needs context because it can refer to nearby beach or pier areas.",
         "belongingExcerpt": "It clarifies the geography behind Cua Dai Beach, Cua Dai Pier, and Cham Islands boat plans.",
         "timingExcerpt": "Use it when discussing the broader river-mouth area or checking whether a route goes toward the coast.",
-        "goodToKnowExcerpt": "Because the name is broad, exact navigation should use a pier, beach, venue, or map pin."
+        "goodToKnowExcerpt": "Because the name is broad, pair it with a pier, beach, venue, or river-mouth clue for navigation."
       }
     },
     {
@@ -11230,7 +11198,7 @@
       "evidence": {
         "summaryExcerpt": "The Espresso Station is a named Hoi An coffee stop for travelers who want a precise lane or cafe pin, not just the broad idea of Vietnamese coffee.",
         "aboutExcerpt": "A named specialty coffee stop in Hoi An for cafe browsing, lane-finding, and meeting plans.",
-        "phrasebookExcerpt": "Keep The Espresso Station in English and show the name visually if needed.",
+        "phrasebookExcerpt": "Keep The Espresso Station in English when asking for the cafe in a Hoi An lane.",
         "belongingExcerpt": "It gives cafe discovery a concrete stop beside broader coffee vocabulary and old-town routes.",
         "timingExcerpt": "Use it when asking for the cafe, meeting someone nearby, or choosing a coffee stop between visits.",
         "goodToKnowExcerpt": "If you only want Vietnamese phin coffee generally, use the drink wording rather than this venue name."
@@ -11360,10 +11328,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Railway Station for Hoi An helps train arrivals become Hoi An arrivals, turning the station pickup, road transfer, and hotel drop-off into a clearer conversation.",
-        "aboutExcerpt": "The station-to-Hoi An wording for travelers arriving by train at Da Nang Railway Station.",
+        "summaryExcerpt": "Da Nang Railway Station for Hoi An starts with platform noise, luggage, station doors, and the warm road south toward yellow walls, river light, and a quieter old-town stay.",
+        "aboutExcerpt": "The station-to-Hoi An wording for train arrivals, luggage, pickup curbs, and the road south.",
         "phrasebookExcerpt": "Ga Đà Nẵng đi Hội An means Da Nang Railway Station to Hoi An by transfer.",
-        "belongingExcerpt": "It makes a common regional transfer leg clear for first-time visitors.",
+        "belongingExcerpt": "It gives a common regional transfer the sensory shape of train station, curb, road, and Hoi An arrival.",
         "timingExcerpt": "Use it when arranging pickup from the station or explaining that Hoi An is your final destination.",
         "goodToKnowExcerpt": "Confirm whether pickup is at the station entrance, a nearby curb, or another meeting point."
       }
@@ -11690,12 +11658,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoi An Lune Center is a named performance venue near the old-town flow, tied to evening plans, ticket conversations, and pickup points without inventing show details.",
-        "aboutExcerpt": "A named Hoi An performance venue that can steady evening plans and ticket-related directions.",
-        "phrasebookExcerpt": "Keep Hoi An Lune Center as the venue name and show it with the booking or map.",
+        "summaryExcerpt": "Hoi An Lune Center brings an evening-performance mood to the old-town edge: theatre lights, arrival hush, bamboo-inspired architecture, and a night out beyond markets.",
+        "aboutExcerpt": "A named Hoi An performance venue for theatre lights, evening arrivals, and cultural-night plans.",
+        "phrasebookExcerpt": "Keep Hoi An Lune Center as the venue name when talking about the performance night.",
         "belongingExcerpt": "It adds a performance-night option to Hoi An's food, river, and heritage itinerary.",
-        "timingExcerpt": "Use it when asking for the venue, confirming entrance, or arranging pickup after a show.",
-        "goodToKnowExcerpt": "Do not rely on generic schedule memories; use the ticket or venue source for current show details."
+        "timingExcerpt": "Use it when asking for the venue, finding the entrance, or planning the ride back after a show.",
+        "goodToKnowExcerpt": "Schedules can change, so let the venue or reservation source carry the current performance details."
       }
     },
     {
@@ -11705,12 +11673,12 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:hoian",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -11721,16 +11689,14 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Madam Khanh is a named Hoi An bánh mì stop for travelers who saved a specific sandwich shop and need the storefront rather than the general dish.",
-        "aboutExcerpt": "A named bánh mì shop in Hoi An for saved food stops, map pins, and storefront directions.",
+        "summaryExcerpt": "Madam Khanh feels like a real Hoi An bánh mì stop: baguettes at the counter, herbs and sauce moving fast, staff calling orders, and a sandwich eaten between old-town walks.",
+        "aboutExcerpt": "A named bánh mì shop in Hoi An for a quick counter meal, saved food stop, and storefront directions.",
         "phrasebookExcerpt": "Madam Khánh is the local-name form to recognize beside the English Madam Khanh.",
         "belongingExcerpt": "It marks a specific sandwich destination while the broader bánh mì page covers the dish.",
-        "timingExcerpt": "Use it when asking for the shop, showing a map pin, ordering, or meeting nearby after a food stop.",
-        "goodToKnowExcerpt": "Use current hours and address from your map or booking notes rather than assuming old recommendations are current."
+        "timingExcerpt": "Use it when asking for the shop, ordering at the counter, or meeting nearby after a quick food stop.",
+        "goodToKnowExcerpt": "Check current hours and address before going; famous food counters can shift pace quickly during the day."
       }
     },
     {
@@ -11857,12 +11823,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoi An Memories Land is a named island-style destination across the river, tied to evening plans, tickets, entrances, and pickups without overexplaining the show or venue.",
-        "aboutExcerpt": "A named Hoi An destination associated with evening visits, tickets, and river-adjacent plans.",
+        "summaryExcerpt": "Hoi An Memories Land feels like a river-island evening scene, with lights across the water, groups arriving after dusk, and a performance-night energy beyond the old-town streets.",
+        "aboutExcerpt": "A named Hoi An river-island destination associated with evening visits and performance-night plans.",
         "phrasebookExcerpt": "Đảo Ký ức Hội An is the Vietnamese name for Hoi An Memories Land.",
         "belongingExcerpt": "It adds a ticketed evening destination to the broader Hoi An night plan.",
-        "timingExcerpt": "Use it when confirming where to go, asking for the entrance, or setting a pickup point after the visit.",
-        "goodToKnowExcerpt": "Use current ticket details for schedules, access, and show-specific information."
+        "timingExcerpt": "Use it when heading to the river-island venue, asking for the entrance, or planning the ride back after the visit.",
+        "goodToKnowExcerpt": "Let current venue information handle schedules, access, and show-specific details."
       }
     },
     {
@@ -12291,7 +12257,7 @@
         "phrasebookExcerpt": "Phin Coffee is the venue name; cà phê phin is the drink style to order.",
         "belongingExcerpt": "It connects cafe planning with Vietnamese coffee vocabulary without mixing up place and drink.",
         "timingExcerpt": "Use it when finding the cafe, meeting someone, or deciding whether you mean the venue or the coffee style.",
-        "goodToKnowExcerpt": "Show the map pin if the person hears phin as a drink rather than the cafe name."
+        "goodToKnowExcerpt": "If someone hears phin as a drink rather than the cafe name, add the cafe or street context."
       }
     },
     {
@@ -12352,11 +12318,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Thanh Ha pottery workshop turns the pottery village into a hands-on stop, with clay, wheels, terracotta shelves, and simple questions about trying, buying, or meeting after.",
-        "aboutExcerpt": "A pottery workshop entry tied to Thanh Ha for hands-on craft visits and small purchases.",
+        "summaryExcerpt": "Thanh Ha pottery workshop brings Hoi An's craft villages into your hands: damp clay, terracotta shelves, a spinning wheel, and the old-town day stretching into a village lane.",
+        "aboutExcerpt": "A Thanh Ha workshop stop for clay, pottery wheels, terracotta shelves, and small craft purchases.",
         "phrasebookExcerpt": "Xưởng gốm Thanh Hà means Thanh Ha pottery workshop in the craft village.",
         "belongingExcerpt": "It separates the activity or workshop from the broader Thanh Ha Pottery Village destination.",
-        "timingExcerpt": "Use it when asking where to try pottery, buy a small piece, or meet after a workshop.",
+        "timingExcerpt": "Use it when asking where to try the wheel, buy a small piece, or meet after a workshop.",
         "goodToKnowExcerpt": "Ask before touching tools, clay, or finished pieces; workshops may have their own flow."
       }
     },
@@ -12748,12 +12714,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoi An tailor fitting names the practical measuring, try-on, adjustment, and pickup loop behind the city's custom-clothing reputation, separate from any one shop.",
-        "aboutExcerpt": "The Hoi An tailoring task for measurements, try-ons, adjustments, and clothing pickup.",
+        "summaryExcerpt": "Hoi An tailor fitting is the in-shop ritual behind custom clothing: fabric swatches, chalk marks, pinned hems, mirrors, and the little thrill of seeing a piece take shape.",
+        "aboutExcerpt": "The Hoi An tailoring moment for measurements, try-ons, pinned hems, adjustments, and clothing pickup.",
         "phrasebookExcerpt": "Thử đồ may đo Hội An means trying on custom-made clothing in Hoi An.",
-        "belongingExcerpt": "It captures a signature Hoi An traveler workflow that spans multiple tailor shops.",
-        "timingExcerpt": "Use it when asking about a fitting, pickup time, measurements, or adjustments.",
-        "goodToKnowExcerpt": "Use a named tailor page when you need the exact shop rather than the fitting task."
+        "belongingExcerpt": "It captures a signature Hoi An craft experience that spans multiple tailor shops.",
+        "timingExcerpt": "Use it when stepping into a fitting, checking measurements, asking about alterations, or planning clothing pickup.",
+        "goodToKnowExcerpt": "Use a named tailor entry when you need the shop itself rather than the fitting task."
       }
     },
     {
@@ -13012,12 +12978,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Traditional Art Performance House is a specific Hoi An performance venue for tickets, entrance questions, and cultural evenings without assuming current schedules.",
-        "aboutExcerpt": "A named Hoi An venue for traditional art performances and ticketed cultural plans.",
+        "summaryExcerpt": "Traditional Art Performance House brings Hoi An's heritage indoors: a small stage, instruments, masks or costumes, and an evening pause from the old-town streets.",
+        "aboutExcerpt": "A named Hoi An venue for traditional art, small-stage performances, and cultural evenings.",
         "phrasebookExcerpt": "Nhà biểu diễn nghệ thuật cổ truyền Hội An identifies the Traditional Art Performance House.",
         "belongingExcerpt": "It gives Hoi An's performance culture a concrete venue name for evening plans.",
-        "timingExcerpt": "Use it when asking for the venue, confirming tickets, finding the entrance, or arranging pickup after a show.",
-        "goodToKnowExcerpt": "Schedules can change, so use the venue or ticket source for current performance details."
+        "timingExcerpt": "Use it when asking for the performance house, finding the entrance, or planning the ride back after a show.",
+        "goodToKnowExcerpt": "Schedules can change, so let the venue source carry the current performance details."
       }
     },
     {
@@ -13276,12 +13242,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Yaly Couture is a named Hoi An tailor destination for fittings, pickup dates, fabric conversations, and shop directions without making claims about quality.",
-        "aboutExcerpt": "A named Hoi An tailor stop for fabric browsing, fittings, clothing pickup, and address-based plans.",
-        "phrasebookExcerpt": "Keep Yaly Couture as the venue name and show it with the map pin.",
+        "summaryExcerpt": "Yaly Couture carries the Hoi An tailor fantasy: fabric choices, measuring tape, fitting mirrors, old-town shopfronts, and a custom piece slowly becoming real.",
+        "aboutExcerpt": "A named Hoi An tailor stop for fabric browsing, fittings, custom clothing, and return visits.",
+        "phrasebookExcerpt": "Keep Yaly Couture as the shop name when talking about fittings or finished clothes.",
         "belongingExcerpt": "It gives travelers a specific tailor destination in a city known for custom clothing.",
-        "timingExcerpt": "Use it when booking or attending a fitting, asking for the shop, or arranging pickup after alterations.",
-        "goodToKnowExcerpt": "Use current booking details for branch, timing, deposit, pickup date, and alteration expectations."
+        "timingExcerpt": "Use it when choosing fabrics, attending a fitting, asking for the shop, or returning after alterations.",
+        "goodToKnowExcerpt": "Confirm branch, timing, deposit, pickup date, and alteration expectations before the fitting."
       }
     },
     {
@@ -13390,37 +13356,30 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
-        "noBannedSourceInputPass": false,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
-        "sourceBannedMatches": [
-          "exact venue"
-        ]
+        "bannedMatches": [],
+        "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass",
-        "noBannedSourceInputPass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ancient Hue Gallery Cuisine is a more specific court-cuisine venue name for travelers who see it separately from Ancient Hue Restaurant in local listings.",
-        "aboutExcerpt": "A named Hue dining venue associated with gallery or court-cuisine style presentation.",
-        "phrasebookExcerpt": "Ancient Hue Gallery Cuisine is the exact English name to keep visible.",
-        "belongingExcerpt": "It prevents confusion when travelers compare similar Ancient Hue venue names.",
-        "timingExcerpt": "Use it when confirming a booking, checking a map pin, or showing a driver the exact venue.",
-        "goodToKnowExcerpt": "Exact naming matters here; verify the current listing before assuming it is the same restaurant."
+        "summaryExcerpt": "Ancient Hue Gallery Cuisine points to a refined Hue dining room, where court-style plating, dark timber, and a gallery-like setting make the meal feel intentional.",
+        "aboutExcerpt": "A Hue dining room associated with gallery atmosphere and court-cuisine style presentation.",
+        "phrasebookExcerpt": "Ancient Hue Gallery Cuisine is the English restaurant name to keep visible.",
+        "belongingExcerpt": "It gives travelers a specific dining scene for Hue's more composed court-cuisine side.",
+        "timingExcerpt": "Use it when choosing a slower meal built around presentation, service, and heritage atmosphere.",
+        "goodToKnowExcerpt": "Similar Ancient Hue names can appear nearby, so compare the restaurant wording before you go."
       }
     },
     {
@@ -13496,12 +13455,12 @@
       "placeKind": "restaurant",
       "profile": "restaurant",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -13512,15 +13471,13 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Ba Van Banh Loc gives travelers a specific Hue dumpling-shop name, connecting the translucent bánh bột lọc snack with a real place to ask about.",
-        "aboutExcerpt": "A named Hue food shop associated with bánh lọc, the chewy translucent dumpling.",
+        "summaryExcerpt": "Ba Van Banh Loc feels like a compact Hue dumpling counter, with banana-leaf parcels, glossy bánh bột lọc, dipping sauce, and quick snack-shop energy.",
+        "aboutExcerpt": "A Hue dumpling shop associated with bánh lọc, the chewy translucent dumpling served as a snack.",
         "phrasebookExcerpt": "Bánh lọc Bà Vân is the local name to show for the dumpling shop in Hue.",
-        "belongingExcerpt": "It turns a famous Hue snack into a real askable stop for travelers.",
-        "timingExcerpt": "Use it when asking for the shop by name or checking whether a food listing matches your map.",
+        "belongingExcerpt": "It turns a famous Hue snack into a real eating moment with texture, sauce, and shop rhythm.",
+        "timingExcerpt": "Use it when you want to try bánh lọc at a named dumpling counter rather than just read the dish name.",
         "goodToKnowExcerpt": "If you have shellfish or pork concerns, ask about fillings before ordering dumplings."
       }
     },
@@ -14059,12 +14016,12 @@
       "placeKind": "experience",
       "profile": "place-experience",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -14075,15 +14032,13 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "A Citadel cyclo loop gives travelers a gentle, old-city ride around Hue's walls when they want to see the scale without walking every stretch.",
-        "aboutExcerpt": "A cyclo ride concept around the Citadel area, focused on the old walls and surrounding streets.",
+        "summaryExcerpt": "A Citadel cyclo loop gives travelers a slow seat beside Hue's walls, with moat edges, shade, bells, traffic, and a driver pedaling through the old-city scale.",
+        "aboutExcerpt": "A slow cyclo ride around the Citadel area, focused on old walls, moat edges, and nearby streets.",
         "phrasebookExcerpt": "Xích lô quanh Kinh thành is the phrase for a cyclo around the Imperial City area.",
-        "belongingExcerpt": "It gives travelers a low-effort way to feel the Citadel's size and neighborhood edges.",
-        "timingExcerpt": "Use it when asking for a gentle ride around the old capital area rather than a point-to-point taxi.",
+        "belongingExcerpt": "It gives travelers a ride route that matches the Citadel's size and neighborhood edges.",
+        "timingExcerpt": "Use it when you want a gentle loop around the old capital area rather than a point-to-point taxi.",
         "goodToKnowExcerpt": "Confirm price and duration clearly before the ride, especially in busy tourist areas."
       }
     },
@@ -14112,11 +14067,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Dai Nam Restaurant is a practical named food stop near Hue's imperial area for travelers looking for a restaurant reference after Citadel sightseeing.",
-        "aboutExcerpt": "A listed Hue restaurant that can serve as a named meal stop near the old imperial area.",
+        "summaryExcerpt": "Dai Nam Restaurant gives travelers a real table near Hue's imperial area, with a classic restaurant doorway, menus, staff, and a meal pause after the Citadel.",
+        "aboutExcerpt": "A Hue restaurant near the old imperial area, suited to a sit-down meal after palace walking.",
         "phrasebookExcerpt": "Nhà hàng Đại Nam is the local name to use for Dai Nam Restaurant.",
-        "belongingExcerpt": "It gives travelers a concrete restaurant name for after-Citadel food planning.",
-        "timingExcerpt": "Use it when asking where to eat near the old walls or giving a driver the restaurant name.",
+        "belongingExcerpt": "It gives travelers a grounded meal stop near the old walls after palace courtyards and sun.",
+        "timingExcerpt": "Use it when you want to sit down for food near the imperial area instead of crossing town.",
         "goodToKnowExcerpt": "Check current hours and exact location, especially if you are hungry after a long Citadel walk."
       }
     },
@@ -14457,34 +14412,30 @@
       "placeKind": "neighborhood",
       "profile": "street-neighborhood",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
+        "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
+        "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "Gia Hoi is an everyday Hue area name near the old-city rhythm, helpful for food, markets, hotels, and east-of-Citadel directions nearby.",
         "aboutExcerpt": "A Hue neighborhood area tied to local food, market movement, hotels, and old-city directions.",
         "phrasebookExcerpt": "Gia Hội is the local name to show when asking about the neighborhood.",
         "belongingExcerpt": "It helps travelers orient by local area names instead of only famous monuments.",
         "timingExcerpt": "Use it when checking an address, asking about a food stop, or arranging a pickup.",
-        "goodToKnowExcerpt": "For transport, neighborhood plus exact venue is much clearer than the neighborhood alone."
+        "goodToKnowExcerpt": "For transport, Gia Hội plus a street or restaurant name is clearer than the neighborhood alone."
       }
     },
     {
@@ -14791,31 +14742,27 @@
       "placeKind": "cafe",
       "profile": "cafe",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
+        "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
+        "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass"
-      ],
+      "failures": [],
       "evidence": {
         "summaryExcerpt": "KODO Cafe gives travelers a modern garden-cafe name near Huong Long when a day of pagodas, tomb roads, or river routes needs an easy pause.",
-        "aboutExcerpt": "A listed modern garden cafe near Huong Long, useful as a break outside the busiest center.",
-        "phrasebookExcerpt": "KODO Cafe is the exact venue name to show when asking for the cafe.",
+        "aboutExcerpt": "A listed modern garden cafe near Huong Long, made for a break outside the busiest center.",
+        "phrasebookExcerpt": "KODO Cafe is the cafe name to keep with the Huong Long area when a driver asks which outer-Hue stop you mean.",
         "belongingExcerpt": "It gives travelers a named modern pause near outer-neighborhood movement.",
         "timingExcerpt": "Use it when setting a cafe meetup or asking for a coffee stop near Huong Long.",
         "goodToKnowExcerpt": "Before making it a planned break, confirm current hours and whether it fits your route."
@@ -14846,10 +14793,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "A lagoon seafood boat gives travelers language for Tam Giang's food-and-water experience, without pretending there is one fixed vendor or guaranteed setup.",
-        "aboutExcerpt": "A lagoon experience idea involving a boat, seafood, and Tam Giang water scenery.",
+        "summaryExcerpt": "A lagoon seafood boat puts Hue's Tam Giang side on the water: nets, low wooden boats, briny plates, fish traps, and a meal shaped by the wide lagoon light.",
+        "aboutExcerpt": "A Tam Giang Lagoon experience involving a boat, seafood meal, fishing scenery, and wide water.",
         "phrasebookExcerpt": "Thuyền hải sản phá Tam Giang is the phrase to show when asking about a seafood boat.",
-        "belongingExcerpt": "It gives travelers a clear way to ask about the lagoon's food-and-boat side.",
+        "belongingExcerpt": "It gives travelers a Hue-specific water-and-food scene beyond the Perfume River.",
         "timingExcerpt": "Use it when checking whether a Tam Giang trip includes a seafood boat or meal stop.",
         "goodToKnowExcerpt": "Confirm price, safety, weather, and what seafood is included before committing."
       }
@@ -14861,33 +14808,29 @@
       "placeKind": "cafe",
       "profile": "cafe",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
-        "noBannedVisibleTextPass": false,
+        "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
         "targetHeroPresent": true,
         "durableReviewEvidencePresent": true,
         "sectionBodiesDistinctEnough": true,
         "runtimeOverrideExplicit": true,
-        "bannedMatches": [
-          "exact venue"
-        ],
+        "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "noBannedVisibleTextPass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Lang Thang Coffee gives travelers a Kim Long cafe name with a wandering, garden-lane feeling, useful around quieter routes near houses and pagodas.",
-        "aboutExcerpt": "A listed cafe in the Kim Long area, suited to quieter routes and garden-house movement.",
-        "phrasebookExcerpt": "Lang Thang Coffee is the exact venue name to keep visible in Kim Long.",
-        "belongingExcerpt": "It gives travelers a named pause in a neighborhood known for gardens, houses, and softer routes.",
-        "timingExcerpt": "Use it when asking for a Kim Long cafe or setting a break near Thien Mu-side plans.",
+        "summaryExcerpt": "Lang Thang Coffee brings a Kim Long pause into the Hue day, with garden-lane calm, shade, low tables, and coffee after pagodas or old-house wandering.",
+        "aboutExcerpt": "A Kim Long cafe with garden-lane energy, coffee tables, shade, and a quieter Hue pace.",
+        "phrasebookExcerpt": "Lang Thang Coffee is the cafe name to keep with the Kim Long neighborhood.",
+        "belongingExcerpt": "It gives travelers a coffee pause in a neighborhood known for gardens, houses, and softer routes.",
+        "timingExcerpt": "Use it when you want a Kim Long coffee break near Thien Mu-side plans.",
         "goodToKnowExcerpt": "Check current hours before relying on it as the rest stop between two spread-out sights."
       }
     },
@@ -15048,11 +14991,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Les Jardins de la Carambole gives travelers a named restaurant stop with colonial-Hue atmosphere for reservations, driver drop-offs, and menu plans.",
-        "aboutExcerpt": "A named Hue restaurant often used for a planned meal, reservation, or driver drop-off.",
+        "summaryExcerpt": "Les Jardins de la Carambole feels like a garden dinner in old Hue, with colonial-house atmosphere, leafy tables, warm service, and a meal that slows the evening down.",
+        "aboutExcerpt": "A Hue restaurant with a garden-house feeling, older architecture, tables, menus, and evening warmth.",
         "phrasebookExcerpt": "Les Jardins de la Carambole is the name to show exactly as written.",
-        "belongingExcerpt": "It gives travelers a concrete restaurant name for bookings and transport, not just food categories.",
-        "timingExcerpt": "Use it when asking for a table, showing a driver the destination, or confirming a reservation.",
+        "belongingExcerpt": "It gives travelers a restaurant scene where Hue's old-house atmosphere is part of the meal.",
+        "timingExcerpt": "Use it when you want a planned dinner with a garden setting rather than a quick street-side bite.",
         "goodToKnowExcerpt": "Restaurant status can change, so verify current hours before treating it as a fixed dinner plan."
       }
     },
@@ -15510,10 +15453,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hue Northern Bus Station gives travelers the north-side terminal name, helping separate bus plans by direction, operator, and city side before departure.",
-        "aboutExcerpt": "A named bus terminal on the north side of Hue, relevant for some intercity road travel.",
+        "summaryExcerpt": "Hue Northern Bus Station is a road-travel terminal scene on the city's north side, with coach buses, luggage, ticket windows, and the practical rhythm of departures.",
+        "aboutExcerpt": "A north-side Hue bus terminal with coaches, ticket windows, luggage, and intercity road movement.",
         "phrasebookExcerpt": "Bến xe phía Bắc Huế is the local name to show for Hue Northern Bus Station.",
-        "belongingExcerpt": "It helps travelers distinguish north-side bus departures from the southern station.",
+        "belongingExcerpt": "It gives travelers a concrete north-side terminal name for Hue road departures.",
         "timingExcerpt": "Use it when asking for the correct bus station, confirming a ride, or arranging drop-off.",
         "goodToKnowExcerpt": "Bus pickup points can change by operator, so verify with your ticket or company before leaving."
       }
@@ -15642,10 +15585,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Phu Bai Airport is the arrival-and-departure name travelers need for Hue, especially when arranging pickup, drop-off, flight timing, or the ride into town.",
-        "aboutExcerpt": "Hue's airport reference for flights, pickups, drop-offs, and transport into the city.",
+        "summaryExcerpt": "Phu Bai Airport is the first Hue threshold for many travelers: luggage at the curb, warm central-Vietnam air, and the ride north toward the river city.",
+        "aboutExcerpt": "Hue's airport, where flights, luggage, pickup signs, and the road into the city come together.",
         "phrasebookExcerpt": "Sân bay Phú Bài is the local name to show when asking for Phu Bai Airport.",
-        "belongingExcerpt": "It gives travelers the essential Hue airport term before they even reach the city.",
+        "belongingExcerpt": "It gives travelers the airport name tied to Hue's actual arrival scene and first transfer.",
         "timingExcerpt": "Use it when arranging airport pickup, asking for a drop-off, or confirming a departure ride.",
         "goodToKnowExcerpt": "Leave buffer time for the road between Hue and the airport, especially in rain or traffic."
       }
@@ -15789,12 +15732,12 @@
       "placeKind": "experience",
       "profile": "place-experience",
       "reviewer": "city-owner:hue",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -15805,15 +15748,13 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "A royal court music show turns Hue heritage into an evening plan, helping travelers ask about Nhã nhạc performances rather than a vague traditional show.",
-        "aboutExcerpt": "A performance experience centered on Hue royal court music and ceremonial sound.",
+        "summaryExcerpt": "A royal court music show turns Hue heritage into sound, with formal dress, court instruments, lacquered staging, and a composed evening mood.",
+        "aboutExcerpt": "A performance centered on Hue royal court music, formal staging, instruments, and ceremonial sound.",
         "phrasebookExcerpt": "Biểu diễn nhã nhạc cung đình is the phrase for a royal court music performance.",
-        "belongingExcerpt": "It helps travelers turn Hue's music heritage into a concrete question or plan.",
-        "timingExcerpt": "Use it when asking whether a venue has court music or comparing evening performance options.",
+        "belongingExcerpt": "It gives travelers a performance profile for Hue's royal music instead of a vague heritage label.",
+        "timingExcerpt": "Use it when comparing evening performances or asking whether the program includes royal court music.",
         "goodToKnowExcerpt": "Ask about length, venue, and whether the show is live before planning the rest of the night."
       }
     },
@@ -15941,10 +15882,10 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hue Southern Bus Station helps travelers distinguish the south-side terminal from other bus points, especially when planning intercity travel or a driver drop-off.",
-        "aboutExcerpt": "A named bus terminal serving south-side or intercity travel needs around Hue.",
+        "summaryExcerpt": "Hue Southern Bus Station feels like a working road-travel edge of the city, with coaches, signs, luggage, vendors, and travelers waiting under the terminal roof.",
+        "aboutExcerpt": "A south-side Hue bus terminal with coaches, signs, waiting areas, luggage, and road-trip movement.",
         "phrasebookExcerpt": "Bến xe phía Nam Huế is the local name to show for Hue Southern Bus Station.",
-        "belongingExcerpt": "It helps travelers avoid mixing up bus terminals when leaving or arriving by road.",
+        "belongingExcerpt": "It gives travelers a concrete south-side terminal name for Hue road departures.",
         "timingExcerpt": "Use it when confirming the correct terminal for a bus, shuttle, pickup, or drop-off.",
         "goodToKnowExcerpt": "Always check the operator's station instructions; bus services can use different pickup points."
       }

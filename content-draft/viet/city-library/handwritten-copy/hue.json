@@ -630,7 +630,7 @@
         {"id": "place-brief", "title": "What to picture", "body": "Picture older streets, shop signs, scooters, food stops, and everyday movement near the Citadel side."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers orient by local area names instead of only famous monuments."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when checking an address, asking about a food stop, or arranging a pickup."},
-        {"id": "good-to-know", "title": "Good to know", "body": "For transport, neighborhood plus exact venue is much clearer than the neighborhood alone."}
+        {"id": "good-to-know", "title": "Good to know", "body": "For transport, Gia Hội plus a street or restaurant name is clearer than the neighborhood alone."}
       ]
     },
     {
@@ -770,16 +770,16 @@
     },
     {
       "pageID": "city-hue-place-les-jardins",
-      "summary": "Les Jardins de la Carambole gives travelers a named restaurant stop with colonial-Hue atmosphere for reservations, driver drop-offs, and menu plans.",
-      "context": "Les Jardins de la Carambole is the venue name to show when asking for the restaurant.",
-      "tip": "Keep the name visible on your phone; French names can be harder to say clearly in a quick taxi moment.",
-      "rationale": "It belongs because restaurant names are part of traveler confidence, especially around reservations and pickups.",
+      "summary": "Les Jardins de la Carambole feels like a garden dinner in old Hue, with colonial-house atmosphere, leafy tables, warm service, and a meal that slows the evening down.",
+      "context": "Les Jardins de la Carambole is a restaurant name to keep handy when you want that garden-and-old-house dining mood.",
+      "tip": "French names can be hard to say quickly, so let the written name carry the request if pronunciation gets fuzzy.",
+      "rationale": "It belongs because Hue meals can be about setting and pace as much as the dishes on the table.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named Hue restaurant often used for a planned meal, reservation, or driver drop-off."},
+        {"id": "at-glance", "title": "About", "body": "A Hue restaurant with a garden-house feeling, older architecture, tables, menus, and evening warmth."},
         {"id": "quick-say", "title": "Hear the name", "body": "Les Jardins de la Carambole is the name to show exactly as written."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture a garden restaurant setting, older architecture, warm evening light, and a more planned meal."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a concrete restaurant name for bookings and transport, not just food categories."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for a table, showing a driver the destination, or confirming a reservation."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture garden tables, colonial details, soft lighting, plates arriving slowly, and a composed Hue dinner."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a restaurant scene where Hue's old-house atmosphere is part of the meal."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when you want a planned dinner with a garden setting rather than a quick street-side bite."},
         {"id": "good-to-know", "title": "Good to know", "body": "Restaurant status can change, so verify current hours before treating it as a fixed dinner plan."}
       ]
     },
@@ -800,17 +800,17 @@
     },
     {
       "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
-      "summary": "Ancient Hue Gallery Cuisine is a more specific court-cuisine venue name for travelers who see it separately from Ancient Hue Restaurant in local listings.",
-      "context": "Ancient Hue Gallery Cuisine should be kept exact when matching a booking, map result, or sign.",
-      "tip": "Check the exact venue wording before you go, since similar Ancient Hue names can appear nearby.",
-      "rationale": "It belongs because travelers need to distinguish named restaurants when a brand or complex has multiple labels.",
+      "summary": "Ancient Hue Gallery Cuisine points to a refined Hue dining room, where court-style plating, dark timber, and a gallery-like setting make the meal feel intentional.",
+      "context": "Ancient Hue Gallery Cuisine is the restaurant wording to notice when a listing separates it from Ancient Hue Restaurant.",
+      "tip": "Check the restaurant wording before you go, since similar Ancient Hue names can appear nearby.",
+      "rationale": "It belongs because Hue's court-cuisine mood depends on room, menu, service, and presentation together.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named Hue dining venue associated with gallery or court-cuisine style presentation."},
-        {"id": "quick-say", "title": "Hear the name", "body": "Ancient Hue Gallery Cuisine is the exact English name to keep visible."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture refined dining rooms, court-style plating, dark timber, and subtle royal motifs."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It prevents confusion when travelers compare similar Ancient Hue venue names."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when confirming a booking, checking a map pin, or showing a driver the exact venue."},
-        {"id": "good-to-know", "title": "Good to know", "body": "Exact naming matters here; verify the current listing before assuming it is the same restaurant."}
+        {"id": "at-glance", "title": "About", "body": "A Hue dining room associated with gallery atmosphere and court-cuisine style presentation."},
+        {"id": "quick-say", "title": "Hear the name", "body": "Ancient Hue Gallery Cuisine is the English restaurant name to keep visible."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture polished tables, careful plates, dark timber, staff moving quietly, and subtle royal motifs."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a specific dining scene for Hue's more composed court-cuisine side."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when choosing a slower meal built around presentation, service, and heritage atmosphere."},
+        {"id": "good-to-know", "title": "Good to know", "body": "Similar Ancient Hue names can appear nearby, so compare the restaurant wording before you go."}
       ]
     },
     {
@@ -845,16 +845,16 @@
     },
     {
       "pageID": "city-hue-place-dai-nam-restaurant",
-      "summary": "Dai Nam Restaurant is a practical named food stop near Hue's imperial area for travelers looking for a restaurant reference after Citadel sightseeing.",
-      "context": "Nhà hàng Đại Nam is the local name to show when asking for the restaurant.",
-      "tip": "Pair it with the nearby old-wall area if a driver needs extra context.",
-      "rationale": "It belongs because travelers often need named restaurants close to major sightseeing zones.",
+      "summary": "Dai Nam Restaurant gives travelers a real table near Hue's imperial area, with a classic restaurant doorway, menus, staff, and a meal pause after the Citadel.",
+      "context": "Nhà hàng Đại Nam is the local name for a restaurant near the old-wall side of Hue.",
+      "tip": "Pair it with the nearby old-wall area if someone needs extra context for the route.",
+      "rationale": "It belongs because a long Citadel walk often needs a nearby dining room, not just another monument name.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A listed Hue restaurant that can serve as a named meal stop near the old imperial area."},
+        {"id": "at-glance", "title": "About", "body": "A Hue restaurant near the old imperial area, suited to a sit-down meal after palace walking."},
         {"id": "quick-say", "title": "Hear the name", "body": "Nhà hàng Đại Nam is the local name to use for Dai Nam Restaurant."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture a classic Hue restaurant entrance, wooden interior hints, and streets near historic walls."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a concrete restaurant name for after-Citadel food planning."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking where to eat near the old walls or giving a driver the restaurant name."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture a classic Hue restaurant entrance, wooden interior hints, menus, tables, and streets near historic walls."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a grounded meal stop near the old walls after palace courtyards and sun."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when you want to sit down for food near the imperial area instead of crossing town."},
         {"id": "good-to-know", "title": "Good to know", "body": "Check current hours and exact location, especially if you are hungry after a long Citadel walk."}
       ]
     },
@@ -905,16 +905,16 @@
     },
     {
       "pageID": "city-hue-place-ba-van-banh-loc",
-      "summary": "Ba Van Banh Loc gives travelers a specific Hue dumpling-shop name, connecting the translucent bánh bột lọc snack with a real place to ask about.",
-      "context": "Bánh lọc Bà Vân is the name to show when looking for this shop or matching a food listing.",
-      "tip": "Use the dish name for ordering, and the shop name when asking for the location.",
-      "rationale": "It belongs because Hue food discovery gets easier when iconic dishes connect to named, findable stops.",
+      "summary": "Ba Van Banh Loc feels like a compact Hue dumpling counter, with banana-leaf parcels, glossy bánh bột lọc, dipping sauce, and quick snack-shop energy.",
+      "context": "Bánh lọc Bà Vân ties a named shop to one of Hue's most recognizable chewy dumpling snacks.",
+      "tip": "Ask what fillings are inside before ordering if shrimp, pork, or spice matters to you.",
+      "rationale": "It belongs because Hue's small-dish culture becomes vivid when a famous dumpling has a real counter and serving moment.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named Hue food shop associated with bánh lọc, the chewy translucent dumpling."},
+        {"id": "at-glance", "title": "About", "body": "A Hue dumpling shop associated with bánh lọc, the chewy translucent dumpling served as a snack."},
         {"id": "quick-say", "title": "Hear the name", "body": "Bánh lọc Bà Vân is the local name to show for the dumpling shop in Hue."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture banana-leaf parcels, glossy dumplings, dipping sauce, and a compact local food counter."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It turns a famous Hue snack into a real askable stop for travelers."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for the shop by name or checking whether a food listing matches your map."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture banana-leaf parcels, glossy dumplings, dipping sauce, a small counter, and staff packing quick orders."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It turns a famous Hue snack into a real eating moment with texture, sauce, and shop rhythm."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when you want to try bánh lọc at a named dumpling counter rather than just read the dish name."},
         {"id": "good-to-know", "title": "Good to know", "body": "If you have shellfish or pork concerns, ask about fillings before ordering dumplings."}
       ]
     },
@@ -995,28 +995,28 @@
     },
     {
       "pageID": "city-hue-place-lang-thang-coffee",
-      "summary": "Lang Thang Coffee gives travelers a Kim Long cafe name with a wandering, garden-lane feeling, useful around quieter routes near houses and pagodas.",
-      "context": "Lang Thang Coffee is the venue name to show when asking for a cafe stop in Kim Long.",
+      "summary": "Lang Thang Coffee brings a Kim Long pause into the Hue day, with garden-lane calm, shade, low tables, and coffee after pagodas or old-house wandering.",
+      "context": "Lang Thang Coffee belongs to the quieter Kim Long side, where cafes sit close to garden houses and Thien Mu routes.",
       "tip": "Pair it with Kim Long if someone needs the area, since the cafe name alone may not orient them.",
-      "rationale": "It belongs because Hue cafe stops often hold the slow spaces between monuments.",
+      "rationale": "It belongs because Hue cafe stops often hold the slow spaces between incense, river roads, and monuments.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A listed cafe in the Kim Long area, suited to quieter routes and garden-house movement."},
-        {"id": "quick-say", "title": "Hear the name", "body": "Lang Thang Coffee is the exact venue name to keep visible in Kim Long."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture trees, low tables, quiet lanes, open-air calm, and a slower coffee break."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a named pause in a neighborhood known for gardens, houses, and softer routes."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for a Kim Long cafe or setting a break near Thien Mu-side plans."},
+        {"id": "at-glance", "title": "About", "body": "A Kim Long cafe with garden-lane energy, coffee tables, shade, and a quieter Hue pace."},
+        {"id": "quick-say", "title": "Hear the name", "body": "Lang Thang Coffee is the cafe name to keep with the Kim Long neighborhood."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture trees, iced coffee, low tables, quiet lanes, open-air calm, and Hue's slower afternoon light."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a coffee pause in a neighborhood known for gardens, houses, and softer routes."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when you want a Kim Long coffee break near Thien Mu-side plans."},
         {"id": "good-to-know", "title": "Good to know", "body": "Check current hours before relying on it as the rest stop between two spread-out sights."}
       ]
     },
     {
       "pageID": "city-hue-place-kodo-cafe",
       "summary": "KODO Cafe gives travelers a modern garden-cafe name near Huong Long when a day of pagodas, tomb roads, or river routes needs an easy pause.",
-      "context": "KODO Cafe is the venue name to show when asking for this cafe near Huong Long.",
+      "context": "KODO Cafe is a modern garden-cafe name near Huong Long, close to quieter outer-Hue movement.",
       "tip": "Use the exact capitalization and a map pin; short modern names can be easy to misread locally.",
       "rationale": "It belongs because modern cafe stops help travelers pace Hue's quieter outer routes.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A listed modern garden cafe near Huong Long, useful as a break outside the busiest center."},
-        {"id": "quick-say", "title": "Hear the name", "body": "KODO Cafe is the exact venue name to show when asking for the cafe."},
+        {"id": "at-glance", "title": "About", "body": "A listed modern garden cafe near Huong Long, made for a break outside the busiest center."},
+        {"id": "quick-say", "title": "Hear the name", "body": "KODO Cafe is the cafe name to keep with the Huong Long area when a driver asks which outer-Hue stop you mean."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture greenery, light wood, contemporary seating, and a calm coffee stop on a Hue route."},
         {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a named modern pause near outer-neighborhood movement."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when setting a cafe meetup or asking for a coffee stop near Huong Long."},
@@ -1370,31 +1370,31 @@
     },
     {
       "pageID": "city-hue-place-royal-court-music-show",
-      "summary": "A royal court music show turns Hue heritage into an evening plan, helping travelers ask about Nhã nhạc performances rather than a vague traditional show.",
-      "context": "Biểu diễn nhã nhạc cung đình is the phrase for asking about a court-music performance.",
-      "tip": "Pair the phrase with a venue or show time once you find one, because the phrase names the performance type.",
-      "rationale": "It belongs because travelers need a bridge from cultural tradition to a bookable or askable experience.",
+      "summary": "A royal court music show turns Hue heritage into sound, with formal dress, court instruments, lacquered staging, and a composed evening mood.",
+      "context": "Biểu diễn nhã nhạc cung đình refers to a performance of Hue royal court music, not a generic dinner show.",
+      "tip": "Pair the phrase with a venue or show time once you find one, because schedules and settings can vary.",
+      "rationale": "It belongs because Hue's imperial culture is heard through musicians, instruments, rhythm, and ceremony.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A performance experience centered on Hue royal court music and ceremonial sound."},
+        {"id": "at-glance", "title": "About", "body": "A performance centered on Hue royal court music, formal staging, instruments, and ceremonial sound."},
         {"id": "quick-say", "title": "Hear the name", "body": "Biểu diễn nhã nhạc cung đình is the phrase for a royal court music performance."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture musicians in formal dress, court instruments, lacquered staging, and a composed evening mood."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers turn Hue's music heritage into a concrete question or plan."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking whether a venue has court music or comparing evening performance options."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture musicians in formal dress, court instruments, a lacquered stage, and a composed evening mood."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a performance profile for Hue's royal music instead of a vague heritage label."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when comparing evening performances or asking whether the program includes royal court music."},
         {"id": "good-to-know", "title": "Good to know", "body": "Ask about length, venue, and whether the show is live before planning the rest of the night."}
       ]
     },
     {
       "pageID": "city-hue-place-cyclo-citadel-loop",
-      "summary": "A Citadel cyclo loop gives travelers a gentle, old-city ride around Hue's walls when they want to see the scale without walking every stretch.",
-      "context": "Xích lô quanh Kinh thành is the phrase to use when asking for a cyclo loop around the Citadel.",
+      "summary": "A Citadel cyclo loop gives travelers a slow seat beside Hue's walls, with moat edges, shade, bells, traffic, and a driver pedaling through the old-city scale.",
+      "context": "Xích lô quanh Kinh thành refers to a cyclo ride circling the Citadel area rather than a point-to-point taxi trip.",
       "tip": "Agree on route, time, and price before starting so the ride stays relaxed.",
-      "rationale": "It belongs because Hue's walls and moats are large, and a slow ride can make their scale feel clear.",
+      "rationale": "It belongs because Hue's walls and moats are large, and a slow cyclo ride makes their scale feel clear.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A cyclo ride concept around the Citadel area, focused on the old walls and surrounding streets."},
+        {"id": "at-glance", "title": "About", "body": "A slow cyclo ride around the Citadel area, focused on old walls, moat edges, and nearby streets."},
         {"id": "quick-say", "title": "Hear the name", "body": "Xích lô quanh Kinh thành is the phrase for a cyclo around the Imperial City area."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture a cyclo moving beside old walls, moat edges, shade, and slow late-afternoon traffic."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a low-effort way to feel the Citadel's size and neighborhood edges."},
-        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for a gentle ride around the old capital area rather than a point-to-point taxi."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture a cyclo driver, old walls, moat edges, shade, and slow late-afternoon traffic."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a ride route that matches the Citadel's size and neighborhood edges."},
+        {"id": "when-to-use", "title": "Travel moment", "body": "Use it when you want a gentle loop around the old capital area rather than a point-to-point taxi."},
         {"id": "good-to-know", "title": "Good to know", "body": "Confirm price and duration clearly before the ride, especially in busy tourist areas."}
       ]
     },
@@ -1415,30 +1415,30 @@
     },
     {
       "pageID": "city-hue-place-lagoon-seafood-boat",
-      "summary": "A lagoon seafood boat gives travelers language for Tam Giang's food-and-water experience, without pretending there is one fixed vendor or guaranteed setup.",
-      "context": "Thuyền hải sản phá Tam Giang is the phrase for asking about seafood boats or platforms on the lagoon.",
+      "summary": "A lagoon seafood boat puts Hue's Tam Giang side on the water: nets, low wooden boats, briny plates, fish traps, and a meal shaped by the wide lagoon light.",
+      "context": "Thuyền hải sản phá Tam Giang refers to seafood boats or platforms on the lagoon outside central Hue.",
       "tip": "Ask what is included: boat time, seafood meal, platform stop, transport, and return timing.",
-      "rationale": "It belongs because the lagoon experience is often about water, food, and local routes together.",
+      "rationale": "It belongs because the lagoon experience is often about water, seafood, fishing life, and local routes together.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A lagoon experience idea involving a boat, seafood, and Tam Giang water scenery."},
+        {"id": "at-glance", "title": "About", "body": "A Tam Giang Lagoon experience involving a boat, seafood meal, fishing scenery, and wide water."},
         {"id": "quick-say", "title": "Hear the name", "body": "Thuyền hải sản phá Tam Giang is the phrase to show when asking about a seafood boat."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture a small boat, nets, seafood platform, bowls, flat lagoon water, and golden light."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a clear way to ask about the lagoon's food-and-boat side."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture a small boat, nets, seafood platform, bowls of shellfish, flat lagoon water, and golden Hue light."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a Hue-specific water-and-food scene beyond the Perfume River."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when checking whether a Tam Giang trip includes a seafood boat or meal stop."},
         {"id": "good-to-know", "title": "Good to know", "body": "Confirm price, safety, weather, and what seafood is included before committing."}
       ]
     },
     {
       "pageID": "city-hue-place-phu-bai-airport",
-      "summary": "Phu Bai Airport is the arrival-and-departure name travelers need for Hue, especially when arranging pickup, drop-off, flight timing, or the ride into town.",
-      "context": "Sân bay Phú Bài is the airport name to use for transport between Hue and the terminal.",
+      "summary": "Phu Bai Airport is the first Hue threshold for many travelers: luggage at the curb, warm central-Vietnam air, and the ride north toward the river city.",
+      "context": "Sân bay Phú Bài names the airport serving Hue, where arrival pickups and city transfers begin.",
       "tip": "Pair the airport name with your flight time and hotel area when arranging a pickup.",
-      "rationale": "It belongs because confident arrival language makes the first hour in Hue feel smoother.",
+      "rationale": "It belongs because the first hour of Hue often starts at this curb before the city opens around the river.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "Hue's airport reference for flights, pickups, drop-offs, and transport into the city."},
+        {"id": "at-glance", "title": "About", "body": "Hue's airport, where flights, luggage, pickup signs, and the road into the city come together."},
         {"id": "quick-say", "title": "Hear the name", "body": "Sân bay Phú Bài is the local name to show when asking for Phu Bai Airport."},
         {"id": "place-brief", "title": "What to picture", "body": "Picture an airport curb, luggage, pickup signs, central-Vietnam daylight, and the ride toward Hue."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers the essential Hue airport term before they even reach the city."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers the airport name tied to Hue's actual arrival scene and first transfer."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when arranging airport pickup, asking for a drop-off, or confirming a departure ride."},
         {"id": "good-to-know", "title": "Good to know", "body": "Leave buffer time for the road between Hue and the airport, especially in rain or traffic."}
       ]
@@ -1460,30 +1460,30 @@
     },
     {
       "pageID": "city-hue-place-southern-bus-station",
-      "summary": "Hue Southern Bus Station helps travelers distinguish the south-side terminal from other bus points, especially when planning intercity travel or a driver drop-off.",
-      "context": "Bến xe phía Nam Huế is the local name for the southern bus station.",
+      "summary": "Hue Southern Bus Station feels like a working road-travel edge of the city, with coaches, signs, luggage, vendors, and travelers waiting under the terminal roof.",
+      "context": "Bến xe phía Nam Huế is the local name for the southern bus station and its coach-bus departures.",
       "tip": "Confirm your bus company and destination before heading there; not every bus uses the same station.",
-      "rationale": "It belongs because bus-station confusion can derail simple travel days if the station name is vague.",
+      "rationale": "It belongs because Hue road travel has real terminal scenes, not just abstract route names.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named bus terminal serving south-side or intercity travel needs around Hue."},
+        {"id": "at-glance", "title": "About", "body": "A south-side Hue bus terminal with coaches, signs, waiting areas, luggage, and road-trip movement."},
         {"id": "quick-say", "title": "Hear the name", "body": "Bến xe phía Nam Huế is the local name to show for Hue Southern Bus Station."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture coach buses, terminal signage, luggage, waiting areas, and a practical transport stop."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers avoid mixing up bus terminals when leaving or arriving by road."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture coach buses, terminal signage, luggage, waiting areas, vendors, and bright pavement outside."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a concrete south-side terminal name for Hue road departures."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when confirming the correct terminal for a bus, shuttle, pickup, or drop-off."},
         {"id": "good-to-know", "title": "Good to know", "body": "Always check the operator's station instructions; bus services can use different pickup points."}
       ]
     },
     {
       "pageID": "city-hue-place-northern-bus-station",
-      "summary": "Hue Northern Bus Station gives travelers the north-side terminal name, helping separate bus plans by direction, operator, and city side before departure.",
-      "context": "Bến xe phía Bắc Huế is the local name for the northern bus station.",
-      "tip": "Show the station name and your destination together to avoid being taken to the wrong terminal.",
-      "rationale": "It belongs because clear transport nouns reduce friction during less glamorous but important travel moments.",
+      "summary": "Hue Northern Bus Station is a road-travel terminal scene on the city's north side, with coach buses, luggage, ticket windows, and the practical rhythm of departures.",
+      "context": "Bến xe phía Bắc Huế is the local name for the northern bus station and its north-side terminal area.",
+      "tip": "Pair the station name with your destination so the terminal side and route are clear.",
+      "rationale": "It belongs because road travel around Hue has specific terminals with their own city-side context.",
       "sections": [
-        {"id": "at-glance", "title": "About", "body": "A named bus terminal on the north side of Hue, relevant for some intercity road travel."},
+        {"id": "at-glance", "title": "About", "body": "A north-side Hue bus terminal with coaches, ticket windows, luggage, and intercity road movement."},
         {"id": "quick-say", "title": "Hear the name", "body": "Bến xe phía Bắc Huế is the local name to show for Hue Northern Bus Station."},
-        {"id": "place-brief", "title": "What to picture", "body": "Picture buses, terminal driveways, luggage, ticket windows, and a practical edge-of-city stop."},
-        {"id": "use-it-with", "title": "Why it belongs", "body": "It helps travelers distinguish north-side bus departures from the southern station."},
+        {"id": "place-brief", "title": "What to picture", "body": "Picture buses, terminal driveways, luggage, ticket windows, waiting benches, and an edge-of-city stop."},
+        {"id": "use-it-with", "title": "Why it belongs", "body": "It gives travelers a concrete north-side terminal name for Hue road departures."},
         {"id": "when-to-use", "title": "Travel moment", "body": "Use it when asking for the correct bus station, confirming a ride, or arranging drop-off."},
         {"id": "good-to-know", "title": "Good to know", "body": "Bus pickup points can change by operator, so verify with your ticket or company before leaving."}
       ]

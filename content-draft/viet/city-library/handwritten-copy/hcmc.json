@@ -215,17 +215,17 @@
     },
     {
       "pageID": "city-hcmc-place-cu-chi-tunnels",
-      "summary": "Cu Chi Tunnels is the major Saigon-linked day trip for travelers who want history outside the downtown core, with pickup points, tickets, and respectful pacing to consider.",
-      "context": "Địa đạo Củ Chi is outside central Saigon, but it appears constantly in trip planning and tour conversations.",
+      "summary": "Cu Chi Tunnels pulls a Saigon trip out toward forest paths, narrow tunnel displays, and wartime history that feels far from the downtown towers and coffee streets.",
+      "context": "Địa đạo Củ Chi sits outside central Saigon, but the name comes up constantly when travelers imagine a history-focused day beyond District 1.",
       "tip": "Treat it as a dedicated outing, not a quick stop between District 1 sights.",
       "rationale": "It belongs because first-time HCMC travelers often decide whether to include this history-focused day trip.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A well-known historical site outside central HCMC, commonly visited as a day trip from Saigon."},
-        {"id":"quick-say","title":"Hear the name","body":"Địa đạo Củ Chi is the Vietnamese name to recognize for tickets, tours, pickup details, and directions."},
+        {"id":"quick-say","title":"Hear the name","body":"Địa đạo Củ Chi is the Vietnamese name for the tunnel site, and Củ Chi is the district name to catch."},
         {"id":"place-brief","title":"What to picture","body":"Picture forest paths, tunnel displays, guide explanations, and a more serious rhythm than city sightseeing."},
         {"id":"use-it-with","title":"Why it belongs","body":"The site is strongly tied to HCMC travel planning even though it is not in the downtown cluster."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when booking a day trip, confirming pickup, or explaining which history site you mean."},
-        {"id":"good-to-know","title":"Good to know","body":"Because it takes planning and travel time, confirm pickup location, timing, and the exact site details."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when choosing a history day from Saigon or explaining that you mean the tunnel site outside the city."},
+        {"id":"good-to-know","title":"Good to know","body":"It deserves a dedicated outing and a respectful pace, not a rushed add-on between central sights."}
       ]
     },
     {
@@ -290,14 +290,14 @@
     },
     {
       "pageID": "city-hcmc-place-ao-dai-museum",
-      "summary": "Ao Dai Museum gives travelers a culture stop focused on Vietnam's iconic dress, with garden-like surroundings that make it feel more intentional than a quick downtown detour.",
-      "context": "Bảo tàng Áo Dài is the name to use when a plan goes beyond the central landmark grid.",
-      "tip": "Because it is not a casual five-minute stop from District 1, check timing and transport before you go.",
-      "rationale": "It belongs because clothing, craft, and identity are part of understanding Vietnam before the trip.",
+      "summary": "Ao Dai Museum carries Saigon culture into a quieter garden setting, where silk, tailoring, ceremony, and Vietnam's long dress feel far from the District 1 traffic rush.",
+      "context": "Bảo tàng Áo Dài names a culture stop outside the central landmark grid, closer to a planned Saigon outing than a quick walk-by.",
+      "tip": "Leave room for the slower setting; the visit makes more sense when the city day is not packed edge to edge.",
+      "rationale": "It belongs because clothing, craft, and identity help travelers see Saigon as more than streets, markets, and food.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A museum dedicated to áo dài, Vietnam's elegant long dress, set away from the busiest center."},
+        {"id":"at-glance","title":"About","body":"A museum dedicated to áo dài, Vietnam's elegant long dress, in a quieter Saigon garden setting."},
         {"id":"quick-say","title":"Hear the name","body":"Bảo tàng Áo Dài is compact enough for museum questions, taxi confirmation, and destination checks."},
-        {"id":"place-brief","title":"What to picture","body":"Picture silk, mannequins, traditional dress details, garden paths, and a quieter cultural outing."},
+        {"id":"place-brief","title":"What to picture","body":"Picture silk panels, long dresses, shaded paths, tailored details, and the city noise falling away."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a concrete way to connect fashion, ceremony, and Vietnamese visual culture."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when planning a dedicated culture stop or explaining that you want the áo dài museum."},
         {"id":"good-to-know","title":"Good to know","body":"The trip may take more planning than central museums, so confirm location and travel time first."}
@@ -305,14 +305,14 @@
     },
     {
       "pageID": "city-hcmc-place-southern-women-museum",
-      "summary": "Southern Women's Museum offers a focused look at women and southern Vietnam for travelers looking beyond the most famous war and landmark stops.",
+      "summary": "Southern Women's Museum adds a quieter Saigon layer through textiles, portraits, family stories, and southern women's history beyond the city's loudest landmark stops.",
       "context": "Bảo tàng Phụ nữ Nam Bộ is the Vietnamese name to recognize for this specific museum.",
-      "tip": "It is a quieter, more specialized stop, so it suits travelers who like history with a clear theme.",
+      "tip": "It suits travelers who like slower rooms, regional context, and museum stops that feel grounded in everyday lives.",
       "rationale": "It belongs because Saigon culture coverage should include regional stories and women's history.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A museum focused on southern Vietnamese women, history, clothing, and social life."},
         {"id":"quick-say","title":"Hear the name","body":"Bảo tàng Phụ nữ Nam Bộ is the phrase to listen for when confirming the Southern Women's Museum."},
-        {"id":"place-brief","title":"What to picture","body":"Picture exhibit rooms, textiles, portraits, everyday objects, and a calmer local-history setting."},
+        {"id":"place-brief","title":"What to picture","body":"Picture exhibit rooms, textiles, portraits, everyday objects, and a calm local-history setting in the city."},
         {"id":"use-it-with","title":"Why it belongs","body":"It adds a specific southern perspective to a city often introduced through only markets and war history."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when choosing a quieter museum or asking for a culture stop with a strong regional focus."},
         {"id":"good-to-know","title":"Good to know","body":"The museum is more thematic than iconic, so it rewards travelers who enjoy slower context."}
@@ -365,14 +365,14 @@
     },
     {
       "pageID": "city-hcmc-place-golden-dragon-water-puppet",
-      "summary": "Golden Dragon Water Puppet Theater gives HCMC a specific family-friendly performance stop, helpful when travelers want water puppets without defaulting to Hanoi plans.",
-      "context": "Nhà hát Múa rối nước Rồng Vàng is the full Vietnamese name for tickets, taxis, and schedules.",
-      "tip": "The full name is long, so Golden Dragon plus water puppet theater is often the smoothest English cue.",
-      "rationale": "It belongs because water puppetry is a memorable cultural experience and this gives it a Saigon address.",
+      "summary": "Golden Dragon Water Puppet Theater brings puppets, water, music, and warm stage lights into a Saigon evening, giving families and first-timers a compact cultural show.",
+      "context": "Nhà hát Múa rối nước Rồng Vàng is the full Vietnamese name for this HCMC theater.",
+      "tip": "Golden Dragon plus water puppet theater is the smoothest English cue when the full Vietnamese title feels long.",
+      "rationale": "It belongs because water puppetry is a memorable cultural experience with a real Saigon stage address.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named water-puppet theater in HCMC, often considered for families and first-time visitors."},
+        {"id":"at-glance","title":"About","body":"A water-puppet theater in HCMC, often considered for families and first-time visitors."},
         {"id":"quick-say","title":"Hear the name","body":"Rồng Vàng means Golden Dragon, a helpful part of the full Vietnamese theater name."},
-        {"id":"place-brief","title":"What to picture","body":"Picture puppets moving on water, musicians nearby, warm stage lights, and a compact show format."},
+        {"id":"place-brief","title":"What to picture","body":"Picture puppets skimming over water, musicians nearby, warm stage lights, and families settling into seats."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a specific performance option that feels cultural without needing advanced planning language."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when checking show times, buying tickets, or asking a driver for the water-puppet theater."},
         {"id":"good-to-know","title":"Good to know","body":"Because the Vietnamese name is long, showing the written title can make taxi and ticket conversations easier."}
@@ -396,14 +396,14 @@
     {
       "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
       "summary": "42 Nguyen Hue apartment building is the cafe-filled facade travelers notice from the walking street, with balconies, stairs, tiny shops, and a vertical Saigon feel.",
-      "context": "Chung cư 42 Nguyễn Huệ is the address-like name that helps you find the exact building on the boulevard.",
+      "context": "Chung cư 42 Nguyễn Huệ is the address-like name for the cafe-stacked building on the boulevard.",
       "tip": "Expect a lived-in building with cafe entrances on different floors, not a polished mall layout.",
       "rationale": "It belongs because Nguyen Hue is not only a street; this building gives the walk a memorable destination.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A famous old apartment building on Nguyen Hue filled with cafes, small shops, and balcony signs."},
         {"id":"quick-say","title":"Hear the name","body":"Chung cư 42 Nguyễn Huệ names both the apartment building and its exact street number."},
-        {"id":"place-brief","title":"What to picture","body":"Picture stacked balconies, cafe lights, narrow stairs, signs on each floor, and views over the walking street."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It turns Nguyen Hue into a hands-on exploration stop where travelers choose a floor and look around."},
+        {"id":"place-brief","title":"What to picture","body":"Picture stacked balconies, cafe lights, narrow stairs, handwritten menus, iced drinks, and views over the walking street."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It turns Nguyen Hue into a hands-on coffee stop where travelers choose a floor, order a drink, and look around."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when meeting for coffee, finding the building entrance, or planning a Nguyen Hue wander."},
         {"id":"good-to-know","title":"Good to know","body":"The building can feel vertical and slightly improvised, so allow time to find the right cafe."}
       ]
@@ -530,12 +530,12 @@
     },
     {
       "pageID": "city-hcmc-place-pham-ngu-lao-street",
-      "summary": "Pham Ngu Lao Street is a key backpacker-area name for hotels, travel offices, bus pickups, and orientation near but not identical to Bui Vien nightlife.",
+      "summary": "Pham Ngu Lao Street carries Saigon's backpacker-area texture: guesthouses, travel desks, buses near the park, cheap eats, and Bui Vien energy close by.",
       "context": "Phố Phạm Ngũ Lão helps travelers identify the wider budget-travel area around District 1.",
       "tip": "Do not assume Pham Ngu Lao and Bui Vien are interchangeable; they sit close but serve different plans.",
-      "rationale": "It belongs because many travelers see this name in bookings before they understand the neighborhood.",
+      "rationale": "It belongs because many travelers see this name in bookings before they can picture the park-edge neighborhood around it.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A central backpacker-area street linked to hotels, travel offices, buses, and budget travel services."},
+        {"id":"at-glance","title":"About","body":"A central backpacker-area street with guesthouses, travel offices, bus activity, food shops, and park-edge traffic."},
         {"id":"quick-say","title":"Hear the name","body":"Phố Phạm Ngũ Lão is the street name to recognize in hotel and bus-pickup instructions."},
         {"id":"place-brief","title":"What to picture","body":"Picture guesthouses, tour desks, buses, food shops, shade trees, and traffic near the park edge."},
         {"id":"use-it-with","title":"Why it belongs","body":"It helps travelers separate practical travel logistics from the louder nightlife reputation nearby."},
@@ -575,14 +575,14 @@
     },
     {
       "pageID": "city-hcmc-place-japan-town",
-      "summary": "Japan Town Saigon is the small alley-and-restaurant cluster around Le Thanh Ton and Thai Van Lung, made for dinner plans, nightlife, and exact meeting directions.",
+      "summary": "Japan Town Saigon is the small District 1 alley-and-restaurant cluster around Le Thanh Ton and Thai Van Lung, with lanterns, signs, dinner plans, and nightlife.",
       "context": "Khu phố Nhật Lê Thánh Tôn names the area, but the nearby alley or restaurant may matter more at arrival.",
       "tip": "Pair Japan Town with Lê Thánh Tôn, Thái Văn Lung, or a saved restaurant so the driver knows the cluster.",
-      "rationale": "It belongs because many travelers hear the neighborhood nickname before knowing the street layout.",
+      "rationale": "It belongs because many travelers hear the nickname before they can picture the narrow Saigon alleys behind it.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A compact Japanese dining and nightlife area in District 1, close to Le Thanh Ton."},
         {"id":"quick-say","title":"Hear the name","body":"Khu phố Nhật means Japan Town, and Lê Thánh Tôn helps locate the central Saigon version."},
-        {"id":"place-brief","title":"What to picture","body":"Picture narrow alleys, restaurant signs, lanterns, upstairs bars, office workers, and a dense dinner scene."},
+        {"id":"place-brief","title":"What to picture","body":"Picture narrow lanes, restaurant signs, lanterns, upstairs bars, office workers, and a dense dinner scene."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a social food area name that is more precise than simply saying District 1."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when meeting for dinner, finding a bar, or explaining a saved restaurant area."},
         {"id":"good-to-know","title":"Good to know","body":"Small alleys can confuse pickups, so choose a visible corner or restaurant entrance for meeting."}
@@ -770,17 +770,17 @@
     },
     {
       "pageID": "city-hcmc-place-ciel",
-      "summary": "CieL is a precise restaurant name for travelers with a saved dining plan, especially for confirming the booking, finding the entrance, or meeting there.",
-      "context": "The name is short and stylized, so keep it as a written cue in ride-hailing or reservation contexts.",
-      "tip": "Do not over-explain the restaurant without current proof; keep the copy centered on practical arrival.",
-      "rationale": "It belongs because HCMC food discovery includes exact-name restaurants as well as dish anchors.",
+      "summary": "CieL adds a polished Saigon dining stop to a saved restaurant list, with a modern room, careful table setting, and a name travelers may want ready at the door.",
+      "context": "The name is short and stylized, so it belongs with the saved address, reservation note, and arrival plan.",
+      "tip": "Let the restaurant's current menu and booking details lead; this copy simply helps the name feel real in Saigon.",
+      "rationale": "It belongs because HCMC food discovery includes modern dining rooms as well as street dishes and market meals.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named restaurant that works as a destination for travelers following a saved list or booking."},
+        {"id":"at-glance","title":"About","body":"A modern Saigon restaurant stop for travelers following a saved dining list or reservation."},
         {"id":"quick-say","title":"Hear the name","body":"CieL is stylized, so the written name may be clearer than trying to describe it aloud."},
-        {"id":"place-brief","title":"What to picture","body":"Picture a modern dining room, a reservation check, and a specific entrance rather than a food street."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It helps travelers handle one real dining plan without pretending every restaurant needs a broad lesson."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when confirming a reservation, arranging a ride, or meeting someone at the restaurant."},
-        {"id":"good-to-know","title":"Good to know","body":"Keep the saved address handy, because short restaurant names can be easy to mishear."}
+        {"id":"place-brief","title":"What to picture","body":"Picture a modern dining room, a set table, warm staff greeting, and the small pause before sitting down."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It gives the restaurant list a real table-and-service moment instead of a flat name in a saved list."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when arriving for a planned meal, meeting someone at the door, or confirming the table."},
+        {"id":"good-to-know","title":"Good to know","body":"Keep the saved address handy, because short restaurant names can be easy to mishear in traffic."}
       ]
     },
     {
@@ -815,12 +815,12 @@
     },
     {
       "pageID": "city-hcmc-place-cuc-gach-quan",
-      "summary": "Cục Gạch Quán gives travelers a named restaurant with an old-house, home-style feeling for a meal plan that feels more atmospheric than a quick stop.",
-      "context": "The Vietnamese name is the destination; use it when arranging a ride or confirming a table.",
+      "summary": "Cục Gạch Quán brings Saigon dining into an old-house setting, with tiled floors, plants, family-style dishes, and a slower meal than the street outside.",
+      "context": "The Vietnamese name points to a restaurant where the room, table, and home-style mood matter as much as the meal.",
       "tip": "Have the written name ready, since the accents and sounds may be difficult for a first-time visitor.",
-      "rationale": "It belongs because Saigon restaurants can also be cultural settings, not just places to eat.",
+      "rationale": "It belongs because Saigon restaurants can feel like cultural settings, not just stops for food.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named Vietnamese restaurant associated with an old-house atmosphere and a planned meal."},
+        {"id":"at-glance","title":"About","body":"A Vietnamese restaurant associated with an old-house atmosphere, family-style dishes, and a planned meal."},
         {"id":"quick-say","title":"Hear the name","body":"Cục Gạch Quán is distinctive in writing, so showing the name can help more than guessing pronunciation."},
         {"id":"place-brief","title":"What to picture","body":"Picture tiled floors, family-style dishes, warm rooms, plants, and a slower dinner than street snacks."},
         {"id":"use-it-with","title":"Why it belongs","body":"It lets travelers connect food with setting and mood, not only with famous dish names."},
@@ -830,14 +830,14 @@
     },
     {
       "pageID": "city-hcmc-place-banh-xeo-46a",
-      "summary": "Bánh Xèo 46A gives travelers a concrete address-like shop name for southern sizzling pancakes, turning bánh xèo from a menu idea into a real Saigon food plan.",
-      "context": "The name links the dish with a specific shop, which helps with both directions and ordering.",
+      "summary": "Bánh Xèo 46A feels like a Saigon pancake stop: hot pans, crisp yellow edges, herb baskets, dipping sauce, and tables ready for a hands-on meal.",
+      "context": "The name links the dish with a specific shop where ordering and eating happen around the pancake itself.",
       "tip": "Remember that bánh xèo often comes with herbs, dipping sauce, and a hands-on way of eating.",
       "rationale": "It belongs because the app should connect famous dishes to actual places when the source supports it.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named shop tied to bánh xèo, the crisp southern sizzling pancake eaten with herbs and sauce."},
+        {"id":"at-glance","title":"About","body":"A shop tied to bánh xèo, the crisp southern sizzling pancake eaten with herbs and sauce."},
         {"id":"quick-say","title":"Hear the name","body":"Bánh Xèo 46A combines the dish name with a number, which makes the destination easier to identify."},
-        {"id":"place-brief","title":"What to picture","body":"Picture a large crisp pancake, herbs, lettuce, dipping sauce, and the sound of batter hitting a hot pan."},
+        {"id":"place-brief","title":"What to picture","body":"Picture a large crisp pancake at the table, herbs, lettuce, dipping sauce, staff moving past hot pans."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a real way to seek out bánh xèo instead of only reading the dish name."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when heading to the shop, asking for bánh xèo, or planning a specific food stop."},
         {"id":"good-to-know","title":"Good to know","body":"Bánh xèo can be messy in the best way, so watch how locals wrap herbs and pancake pieces."}
@@ -863,11 +863,11 @@
       "summary": "Bánh mì Huỳnh Hoa is a famous shop name for travelers chasing a specific Saigon banh mi, keeping directions, ordering, and the shop itself distinct from the dish.",
       "context": "Huỳnh Hoa is the key part of the shop name; bánh mì tells people the food you are after.",
       "tip": "Have the name written down, because accents and spelling help when the shop is busy or the street is loud.",
-      "rationale": "It belongs because banh mi is both everywhere and very specific when travelers save a famous shop.",
+      "rationale": "It belongs because banh mi is both everywhere in Saigon and very specific when travelers save a famous shop.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named banh mi shop in Saigon for travelers seeking a specific sandwich stop."},
         {"id":"quick-say","title":"Hear the name","body":"Bánh mì Huỳnh Hoa combines the food with the shop name, making the destination clearer."},
-        {"id":"place-brief","title":"What to picture","body":"Picture crusty baguettes, pate, cold cuts, herbs, pickles, sauce, and a fast-moving counter."},
+        {"id":"place-brief","title":"What to picture","body":"Picture crusty baguettes, pate, cold cuts, herbs, pickles, sauce, a small menu, and a fast-moving counter."},
         {"id":"use-it-with","title":"Why it belongs","body":"It shows how a familiar food becomes a real itinerary item when connected to a named shop."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when heading to the shop, ordering a sandwich, or telling a driver the destination."},
         {"id":"good-to-know","title":"Good to know","body":"Bánh mì alone can mean any sandwich stall, so keep Huỳnh Hoa in the plan."}
@@ -875,17 +875,17 @@
     },
     {
       "pageID": "city-hcmc-place-nephele",
-      "summary": "Nephele is a precise restaurant name for travelers with a saved dining plan, reservation, or meetup, where exact wording matters more than broad food description.",
-      "context": "Use Nephele as the destination name and pair it with the current address for smooth arrival.",
+      "summary": "Nephele adds a small modern Saigon dining room to the restaurant list, with warm light, table service, and a saved name that points to a planned meal.",
+      "context": "Nephele works as the destination name when the plan is a specific table, address, and dinner setting.",
       "tip": "Because the name is not Vietnamese-looking, written confirmation is still helpful for drivers and hosts.",
-      "rationale": "It belongs because Saigon's current food scene includes exact-name dining plans alongside classic dishes.",
+      "rationale": "It belongs because Saigon's current food scene includes modern restaurant rooms alongside classic dishes.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named restaurant entry suited to reservations, saved lists, and specific dinner meetups."},
+        {"id":"at-glance","title":"About","body":"A restaurant suited to reservations, saved lists, and specific dinner meetups."},
         {"id":"quick-say","title":"Hear the name","body":"Nephele is concise, but showing the written name can prevent mishearing during pickup or booking."},
-        {"id":"place-brief","title":"What to picture","body":"Picture a small modern dining room, warm light, a planned table, and careful arrival details."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It helps travelers navigate restaurant-led food discovery without inventing claims about the menu."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when confirming a booking, arranging a ride, or meeting someone at the restaurant."},
-        {"id":"good-to-know","title":"Good to know","body":"For current restaurants, always keep the latest address and reservation details with the name."}
+        {"id":"place-brief","title":"What to picture","body":"Picture a small modern dining room, warm light, a planned table, staff nearby, and a slower meal."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It gives restaurant-led food discovery a real dining-room scene without inventing claims about the menu."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when arriving for a booking, meeting someone for dinner, or confirming the restaurant door."},
+        {"id":"good-to-know","title":"Good to know","body":"For current restaurants, keep the latest address and reservation details with the name."}
       ]
     },
     {
@@ -896,11 +896,11 @@
       "rationale": "It belongs because coffee in Saigon is also about buildings, views, and social wandering.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A vertical cafe cluster on Nguyen Hue, set inside an old apartment building with many small venues."},
-        {"id":"quick-say","title":"Hear the name","body":"Chung cư cà phê Nguyễn Huệ means the Nguyen Hue cafe apartment, a useful local description."},
-        {"id":"place-brief","title":"What to picture","body":"Picture stacked balconies, glowing signs, narrow stairs, iced drinks, and views over the walking street."},
+        {"id":"quick-say","title":"Hear the name","body":"Chung cư cà phê Nguyễn Huệ means the Nguyen Hue cafe apartment, the local phrase for the coffee cluster."},
+        {"id":"place-brief","title":"What to picture","body":"Picture stacked balconies, glowing signs, narrow stairs, iced drinks, small menus, and views over the walking street."},
         {"id":"use-it-with","title":"Why it belongs","body":"It captures a very Saigon kind of discovery: coffee, architecture, and people-watching together."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when cafe-hopping on Nguyen Hue or meeting someone at the apartment building."},
-        {"id":"good-to-know","title":"Good to know","body":"Different cafes sit on different floors, so agree on the exact venue once inside the building."}
+        {"id":"good-to-know","title":"Good to know","body":"Different cafes sit on different floors, so agree on the cafe name or floor once inside the building."}
       ]
     },
     {
@@ -920,14 +920,14 @@
     },
     {
       "pageID": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
-      "summary": "Pham Ngoc Thach cloth-filter coffee gives travelers a concrete way to explore cà phê vợt, the old cloth-filter method, through a named Saigon coffee stop.",
-      "context": "Cà phê vợt Phạm Ngọc Thạch links the drink method with the street, making the experience easier to find.",
-      "tip": "Cloth-filter coffee is the key idea; expect tradition and process, not just a quick iced drink.",
+      "summary": "Pham Ngoc Thach cloth-filter coffee feels like old Saigon in a cup, with dark coffee, steam, small stools, and the patient rhythm of cà phê vợt.",
+      "context": "Cà phê vợt Phạm Ngọc Thạch links the drink method with the street, so the coffee counter and location stay together.",
+      "tip": "Cloth-filter coffee is the key idea; expect tradition, process, and a stronger table-side coffee moment.",
       "rationale": "It belongs because coffee technique is part of Saigon food culture and deserves a specific cue.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named coffee stop tied to cà phê vợt, Vietnam's cloth-filter coffee method."},
+        {"id":"at-glance","title":"About","body":"A coffee stop tied to cà phê vợt, Vietnam's cloth-filter coffee method."},
         {"id":"quick-say","title":"Hear the name","body":"Cà phê vợt means cloth-filter coffee, while Phạm Ngọc Thạch helps identify the location."},
-        {"id":"place-brief","title":"What to picture","body":"Picture dark coffee poured through a cloth filter, old equipment, steam, small cups, and patient brewing."},
+        {"id":"place-brief","title":"What to picture","body":"Picture dark coffee poured through a cloth filter, old equipment, steam, small cups, a counter, and patient brewing."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a precise language bridge between a coffee technique and a real Saigon stop."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when seeking cloth-filter coffee or explaining the specific coffee experience you want."},
         {"id":"good-to-know","title":"Good to know","body":"The method matters as much as the address, so listen for vợt when people discuss the coffee."}
@@ -935,14 +935,14 @@
     },
     {
       "pageID": "city-hcmc-place-little-hanoi-egg-coffee",
-      "summary": "Little HaNoi Egg Coffee Saigon helps travelers who know egg coffee from Hanoi find a Saigon stop for the creamy drink without leaving the city.",
+      "summary": "Little HaNoi Egg Coffee Saigon turns the Hanoi-style drink into a Saigon cafe stop, with creamy foam, strong coffee, small tables, and a sweet pause in the city.",
       "context": "The English name is central here; it tells both the cafe and the egg-coffee purpose.",
       "tip": "Use the full name so people do not hear only Little Hanoi and miss the coffee plan.",
       "rationale": "It belongs because travelers often arrive with food ideas from across Vietnam and look for them in Saigon.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named cafe for egg coffee in Saigon, made for curiosity about the creamy Hanoi-style drink."},
-        {"id":"quick-say","title":"Hear the name","body":"Little HaNoi Egg Coffee is usually handled in English, which makes showing the name straightforward."},
-        {"id":"place-brief","title":"What to picture","body":"Picture a thick, sweet egg-coffee foam over strong coffee in a compact city cafe."},
+        {"id":"quick-say","title":"Hear the name","body":"Little HaNoi Egg Coffee is usually handled in English, which makes the cafe name easy to recognize."},
+        {"id":"place-brief","title":"What to picture","body":"Picture a thick, sweet egg-coffee foam over strong coffee at a compact city cafe table."},
         {"id":"use-it-with","title":"Why it belongs","body":"It connects a famous Vietnamese coffee style with a specific Saigon cafe travelers can seek out."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when craving egg coffee, meeting for a sweet coffee stop, or asking for the cafe."},
         {"id":"good-to-know","title":"Good to know","body":"Egg coffee is associated with Hanoi, so mention Saigon if you are clarifying the location."}
@@ -1010,7 +1010,7 @@
     },
     {
       "pageID": "city-hcmc-place-banh-mi",
-      "summary": "Banh mi is the Saigon food noun travelers can use almost immediately: crisp baguette, pate or fillings, herbs, pickles, chile, sauce, and fast street-side energy.",
+      "summary": "Banh mi is Saigon food you can picture almost immediately: crisp baguette, pate or fillings, herbs, pickles, chile, sauce, and fast street-side energy.",
       "context": "Bánh mì is both a dish and a quick meal plan, with named shops and small carts all over the city.",
       "tip": "Pointing works well when fillings are visible; learn the name so the counter feels less intimidating.",
       "rationale": "It belongs because banh mi is one of the easiest ways for a first-time traveler to taste Saigon.",
@@ -1085,14 +1085,14 @@
     },
     {
       "pageID": "city-hcmc-place-goi-cuon",
-      "summary": "Fresh spring rolls are an easy, visible menu win for first-time travelers: gỏi cuốn with rice paper, herbs, noodles, shrimp or pork, and dipping sauce.",
-      "context": "Gỏi cuốn is helpful when you want the fresh roll rather than a fried spring roll.",
+      "summary": "Fresh spring rolls fit Saigon heat beautifully: gỏi cuốn with rice paper, herbs, noodles, shrimp or pork, dipping sauce, and a cool cafe-table feel.",
+      "context": "Gỏi cuốn is the fresh roll to look for on Saigon menus when fried spring rolls feel too heavy.",
       "tip": "The dipping sauce changes the bite, so ask or point if peanut sauce and fish sauce options appear.",
-      "rationale": "It belongs because the dish is approachable, photogenic, and common enough to use early in a trip.",
+      "rationale": "It belongs because the dish is approachable, photogenic, and easy to meet early in a Saigon food day.",
       "sections": [
         {"id":"at-glance","title":"About","body":"Fresh rice-paper rolls filled with herbs, noodles, and often shrimp or pork, served with sauce."},
         {"id":"quick-say","title":"Hear the name","body":"Gỏi cuốn is the phrase to recognize when you want fresh spring rolls in Vietnam."},
-        {"id":"place-brief","title":"What to picture","body":"Picture translucent rice paper, green herbs, pink shrimp, vermicelli, and a small bowl of dipping sauce."},
+        {"id":"place-brief","title":"What to picture","body":"Picture translucent rice paper, green herbs, pink shrimp, vermicelli, and sauce on a small Saigon table."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a light, recognizable dish that still teaches real Vietnamese ingredient language."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it for a snack, starter, cafe meal, or gentle first order when menus feel new."},
         {"id":"good-to-know","title":"Good to know","body":"Fresh rolls and fried spring rolls are different, so use gỏi cuốn when you mean the fresh version."}
@@ -1100,13 +1100,13 @@
     },
     {
       "pageID": "city-hcmc-place-bo-la-lot",
-      "summary": "Beef in betel leaves is a fragrant grill-table dish where bò lá lốt arrives as small wrapped rolls with herbs, rice paper, and dipping sauce for sharing.",
-      "context": "Bò lá lốt is the dish name to recognize at street-food stops, grill places, or shared evening meals.",
+      "summary": "Beef in betel leaves brings Saigon's grill-table mood into focus: smoky bò lá lốt rolls, herbs, rice paper, dipping sauce, and shared evening plates.",
+      "context": "Bò lá lốt is the dish to recognize at Saigon street-food stops, grill places, or shared evening meals.",
       "tip": "The leaf is part of the flavor, not packaging, and it is usually eaten with herbs and sauce.",
       "rationale": "It belongs because it adds a vivid grilled dish to Saigon food coverage beyond noodles and sandwiches.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A grilled dish of seasoned beef wrapped in betel leaves, often served with herbs and rice paper."},
-        {"id":"quick-say","title":"Hear the name","body":"Bò lá lốt names beef, leaf, and the dish together, making it useful on menus."},
+        {"id":"quick-say","title":"Hear the name","body":"Bò lá lốt names beef, leaf, and the dish together, so the menu phrase carries the whole plate."},
         {"id":"place-brief","title":"What to picture","body":"Picture dark green grilled rolls, smoky edges, fresh herbs, rice paper, and bowls of dipping sauce."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a concrete street-food dish that feels social, aromatic, and very different from phở."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when ordering at a grill table, sharing snacks, or asking what the wrapped beef rolls are."},
@@ -1148,7 +1148,7 @@
       "summary": "Sweet soup dessert is the colorful world of chè in Saigon: beans, jelly, coconut milk, fruit, ice, and cups or bowls that look playful before you know every ingredient.",
       "context": "Chè Sài Gòn helps travelers choose dessert when they see bright tubs and layered cups.",
       "tip": "Pointing is completely reasonable; many chè shops have more combinations than a beginner can decode.",
-      "rationale": "It belongs because dessert and cooling down are part of the food trip, not an afterthought.",
+      "rationale": "It belongs because dessert, texture, and cooling down are part of the Saigon food trip, not an afterthought.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A broad Vietnamese dessert category with sweet soups, drinks, jellies, beans, coconut, fruit, and ice."},
         {"id":"quick-say","title":"Hear the name","body":"Chè is the essential word to recognize when you want a sweet Vietnamese dessert cup or bowl."},
@@ -1161,12 +1161,12 @@
     {
       "pageID": "city-hcmc-place-bun-thit-nuong",
       "summary": "Grilled pork vermicelli is a bright Saigon bowl of bún thịt nướng with noodles, herbs, peanuts, grilled pork, pickles, and fish sauce for mixing.",
-      "context": "Bún thịt nướng is a direct ordering noun for a lighter meal that still feels complete.",
+      "context": "Bún thịt nướng is a direct order for a lighter meal that still feels complete.",
       "tip": "Mix the sauce through the bowl gradually so the noodles, herbs, and pork come together.",
       "rationale": "It belongs because travelers need more everyday meal names than phở, bánh mì, and cơm tấm.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A vermicelli noodle bowl with grilled pork, herbs, peanuts, pickles, and fish sauce."},
-        {"id":"quick-say","title":"Hear the name","body":"Bún thịt nướng names the noodles, meat, and grilled style in one useful dish phrase."},
+        {"id":"quick-say","title":"Hear the name","body":"Bún thịt nướng names the noodles, meat, and grilled style in one compact dish phrase."},
         {"id":"place-brief","title":"What to picture","body":"Picture cool rice noodles, charred pork, herbs, crushed peanuts, pickled vegetables, and amber sauce."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a fresh, filling meal that shows southern balance without feeling heavy."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it for lunch, a casual dinner, or when you want noodles without a hot soup."},
@@ -1280,14 +1280,14 @@
     },
     {
       "pageID": "city-hcmc-place-gia-dinh-park",
-      "summary": "Gia Dinh Park is a practical green name near the airport side of the city, with nearby stays, family breaks, short walks, and pre-flight breathing room in mind.",
-      "context": "Công viên Gia Định helps travelers staying near Tân Sơn Nhất name a park rather than only the airport.",
-      "tip": "It is most helpful if your hotel or schedule already puts you near the airport area.",
-      "rationale": "It belongs because arrival neighborhoods need friendly, usable names too, not only downtown sights.",
+      "summary": "Gia Dinh Park gives the airport side of Saigon a broad green pause, with trees, family walks, exercise groups, and a gentler rhythm before or after a flight.",
+      "context": "Công viên Gia Định names a real park near Tân Sơn Nhất, not just the airport zone around it.",
+      "tip": "It fits travelers whose hotel or schedule already puts them near the airport side of HCMC.",
+      "rationale": "It belongs because arrival neighborhoods need friendly, vivid names too, not only downtown sights.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A large park near the airport side of HCMC for walks, families, and local breaks."},
+        {"id":"at-glance","title":"About","body":"A large park near the airport side of HCMC with trees, paths, families, and local breaks."},
         {"id":"quick-say","title":"Hear the name","body":"Công viên Gia Định is the Vietnamese name to recognize for Gia Dinh Park."},
-        {"id":"place-brief","title":"What to picture","body":"Picture broad paths, trees, exercise groups, families, and city life away from the central tourist core."},
+        {"id":"place-brief","title":"What to picture","body":"Picture broad paths, shade trees, exercise groups, families, and city life away from the central tourist core."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives airport-area travelers a real green option instead of treating the area as only transit."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it during an airport-side stay, before a flight, or when children need a simple outdoor break."},
         {"id":"good-to-know","title":"Good to know","body":"If you are staying downtown, this park may not be worth a special trip by itself."}
@@ -1355,16 +1355,16 @@
     },
     {
       "pageID": "city-hcmc-place-motorbike-food-tour",
-      "summary": "Saigon motorbike food tour is the night-out experience of riding behind a driver between food stops, helmets, pickup timing, street lights, and local dishes.",
-      "context": "Tour ăn tối bằng xe máy names a dinner tour by motorbike without tying it to any one vendor.",
-      "tip": "Confirm pickup, helmet, dietary limits, and whether you are comfortable riding pillion before booking.",
+      "summary": "Saigon motorbike food tour feels like night air, helmet straps, grill smoke, small tables, and riding behind a driver from one local dish to the next.",
+      "context": "Tour ăn tối bằng xe máy names the dinner-by-motorbike format without tying it to any one vendor.",
+      "tip": "Think about comfort with riding pillion, then check pickup, helmet, and dietary details before booking.",
       "rationale": "It belongs because many first-time visitors consider motorbike food tours as a way into Saigon's street life.",
       "sections": [
         {"id":"at-glance","title":"About","body":"An evening food experience where travelers ride by motorbike between several Saigon food stops."},
         {"id":"quick-say","title":"Hear the name","body":"Tour ăn tối bằng xe máy means a dinner tour by motorbike, a clear description of the format."},
-        {"id":"place-brief","title":"What to picture","body":"Picture helmets, night traffic, small restaurants, food stalls, guides, and the city moving close around you."},
+        {"id":"place-brief","title":"What to picture","body":"Picture helmets, night traffic, grill smoke, small restaurants, food stalls, guides, and the city moving close around you."},
         {"id":"use-it-with","title":"Why it belongs","body":"It combines transportation, food discovery, and street-level energy in a way many travelers seek."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when comparing tours, confirming pickup, or explaining that dinner includes motorbike travel."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when you want dinner to feel like a moving street-level introduction to Saigon."},
         {"id":"good-to-know","title":"Good to know","body":"Comfort with motorbike traffic is personal, so check the format before committing."}
       ]
     },
@@ -1415,12 +1415,12 @@
     },
     {
       "pageID": "city-hcmc-place-tan-son-nhat-airport",
-      "summary": "Tan Son Nhat International Airport is often the first Saigon name travelers need, covering arrival, pickup, terminals, domestic flights, ride-hailing, and hotel transfers.",
-      "context": "Sân bay Quốc tế Tân Sơn Nhất is the formal name, while Sân bay Tân Sơn Nhất is common and practical.",
+      "summary": "Tan Son Nhat International Airport is often the first humid Saigon scene travelers meet: terminal doors, luggage carts, waiting families, taxi lanes, and ride-hailing zones.",
+      "context": "Sân bay Quốc tế Tân Sơn Nhất is the formal name, while Sân bay Tân Sơn Nhất is the common airport wording.",
       "tip": "Confirm domestic or international terminal before pickup; the airport name alone may not be enough.",
-      "rationale": "It belongs because arrival language shapes the first real travel moment in the city.",
+      "rationale": "It belongs because arrival language shapes the first real Saigon moment after the plane door opens.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"HCMC's main airport, used for international arrivals, domestic connections, pickups, and transfers."},
+        {"id":"at-glance","title":"About","body":"HCMC's main airport, where terminal doors, luggage, waiting families, and transfer plans start the trip."},
         {"id":"quick-say","title":"Hear the name","body":"Sân bay Tân Sơn Nhất is the airport wording you are likely to hear in arrival conversations."},
         {"id":"place-brief","title":"What to picture","body":"Picture terminal doors, taxi lines, ride-hailing zones, luggage, families waiting, and humid arrival air."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers confidence for the first and last city movement, before sightseeing even begins."},
@@ -1430,12 +1430,12 @@
     },
     {
       "pageID": "city-hcmc-place-saigon-railway-station",
-      "summary": "Saigon Railway Station is the exact train-station name travelers need for departures, arrivals, taxi drop-offs, and trips that connect HCMC with the rest of Vietnam.",
+      "summary": "Saigon Railway Station has the feel of platforms, luggage, old station signage, waiting halls, and train trips that carry HCMC into the rest of Vietnam.",
       "context": "Ga Sài Gòn is short, clear, and more precise than saying the train station in a large city.",
       "tip": "Keep your train time and carriage details separate; the station name only gets you to the right building.",
-      "rationale": "It belongs because train travel is a major Vietnam planning mode and needs simple station language.",
+      "rationale": "It belongs because train travel gives Saigon a different departure rhythm than airports, buses, or taxis.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"The main railway station for Saigon, used for train trips to and from other parts of Vietnam."},
+        {"id":"at-glance","title":"About","body":"The main railway station for Saigon, with platforms, waiting halls, luggage, and trips across Vietnam."},
         {"id":"quick-say","title":"Hear the name","body":"Ga Sài Gòn means Saigon Station, a compact phrase for tickets, taxis, and directions."},
         {"id":"place-brief","title":"What to picture","body":"Picture station signage, waiting halls, taxis outside, luggage, platforms, and travelers heading north or south."},
         {"id":"use-it-with","title":"Why it belongs","body":"It helps travelers handle intercity movement without confusing the train station with bus terminals."},
@@ -1445,12 +1445,12 @@
     },
     {
       "pageID": "city-hcmc-place-mien-dong-bus-station",
-      "summary": "Mien Dong Bus Station is an important intercity bus-terminal name for eastern and northern routes, where exact address and pickup details can matter a lot.",
-      "context": "Bến xe Miền Đông names the bus station, but travelers should watch for old and new location confusion.",
-      "tip": "Confirm the terminal address with your bus operator before leaving, especially for early departures.",
-      "rationale": "It belongs because bus travel in Vietnam depends on knowing the correct terminal, not just the city.",
+      "summary": "Mien Dong Bus Station feels like coaches, luggage piles, ticket counters, route calls, and the eastern edge of Saigon opening toward longer Vietnam journeys.",
+      "context": "Bến xe Miền Đông names the bus station, but travelers should still watch for old and new location confusion.",
+      "tip": "Match the terminal address to your bus operator before leaving, especially for early departures.",
+      "rationale": "It belongs because bus travel in Vietnam has its own terminal scenes, not just a city name on a ticket.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A major intercity bus station name in HCMC, associated with many routes out of the city."},
+        {"id":"at-glance","title":"About","body":"A major intercity bus station in HCMC, with coaches, counters, luggage, and routes out of the city."},
         {"id":"quick-say","title":"Hear the name","body":"Bến xe Miền Đông means Eastern Bus Station, a key phrase for bus tickets and taxi rides."},
         {"id":"place-brief","title":"What to picture","body":"Picture coaches, ticket counters, luggage, waiting areas, drivers calling routes, and busy terminal roads."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers the terminal vocabulary needed for practical intercity movement from Saigon."},
@@ -1460,10 +1460,10 @@
     },
     {
       "pageID": "city-hcmc-place-mien-tay-bus-station",
-      "summary": "Mien Tay Bus Station is the practical western bus-terminal name for many Mekong Delta and westbound trips, from tickets and taxis to early departures.",
-      "context": "Bến xe Miền Tây means Western Bus Station and helps distinguish it from Mien Dong.",
+      "summary": "Mien Tay Bus Station points west from Saigon toward Mekong Delta journeys, with coaches, route boards, food stalls, luggage, and early-morning departures.",
+      "context": "Bến xe Miền Tây means Western Bus Station and distinguishes it from Mien Dong.",
       "tip": "If your trip points toward the Mekong Delta, check whether this is the correct terminal before booking transport.",
-      "rationale": "It belongs because first-time travelers often connect HCMC with Delta routes by bus.",
+      "rationale": "It belongs because first-time travelers often connect HCMC with Delta routes through a real terminal scene.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A major western bus terminal in HCMC, commonly associated with routes toward the Mekong Delta."},
         {"id":"quick-say","title":"Hear the name","body":"Bến xe Miền Tây means Western Bus Station, a practical phrase for terminal directions."},
@@ -1475,12 +1475,12 @@
     },
     {
       "pageID": "city-hcmc-place-bach-dang-waterbus-station",
-      "summary": "Bach Dang Waterbus Station gives travelers the specific pier name for river boarding, clearer than the broader wharf when timing, tickets, and platforms matter.",
-      "context": "Bến tàu thủy Bạch Đằng points to the waterbus or river-boarding pier at the Bach Dang area.",
-      "tip": "Use this when boarding, and use Bach Dang Wharf when you only mean the riverfront area.",
-      "rationale": "It belongs because river experiences need exact boarding language, not just scenic waterfront names.",
+      "summary": "Bach Dang Waterbus Station starts at the river edge: boats nudging the pier, skyline behind them, people waiting, and the Saigon River becoming a ride.",
+      "context": "Bến tàu thủy Bạch Đằng points to the waterbus or river-boarding pier in the Bach Dang area.",
+      "tip": "Use the pier name when you are boarding; Bach Dang Wharf works better for the broader riverfront area.",
+      "rationale": "It belongs because river experiences start with a real pier scene, not just a scenic waterfront name.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A specific river pier at Bach Dang used for waterbus or boat-boarding plans."},
+        {"id":"at-glance","title":"About","body":"A river pier at Bach Dang where waterbus and boat-boarding plans meet the Saigon River."},
         {"id":"quick-say","title":"Hear the name","body":"Bến tàu thủy Bạch Đằng means Bach Dang water pier, the wording behind boarding directions."},
         {"id":"place-brief","title":"What to picture","body":"Picture a pier on the Saigon River, boats arriving, ticket checks, skyline views, and people waiting."},
         {"id":"use-it-with","title":"Why it belongs","body":"It separates the practical boarding point from the more general Bach Dang waterfront area."},

@@ -15,7 +15,7 @@
         {"id":"place-brief","title":"What to picture","body":"Picture pale sand, round basket boats, low beach restaurants, and a ride back toward lantern streets before evening."},
         {"id":"use-it-with","title":"Why it belongs","body":"It connects beach time to the same trip plan as old-town browsing, cafes, and Hoi An food stops."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when booking a taxi, choosing a beach lunch area, or explaining where you want to be picked up."},
-        {"id":"good-to-know","title":"Good to know","body":"An Bang and Cua Dai are different coastal names, so show the map pin if the driver asks which beach."}
+        {"id":"good-to-know","title":"Good to know","body":"An Bang and Cua Dai are different coastal names, so keep the beach name and nearby drop-off clear."}
       ]
     },
     {
@@ -90,7 +90,7 @@
         {"id":"place-brief","title":"What to picture","body":"Picture small boats, water reflections, lantern light, and yellow buildings close behind the river edge."},
         {"id":"use-it-with","title":"Why it belongs","body":"It helps separate Hoi An's romantic river boats from beach, pier, and island-trip logistics."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding a lantern boat area, meeting after a river ride, or pointing a driver to the riverfront."},
-        {"id":"good-to-know","title":"Good to know","body":"Show the map pin if a driver hears pier and assumes the coastal Cửa Đại side."}
+        {"id":"good-to-know","title":"Good to know","body":"If a driver hears pier and thinks of Cửa Đại, say Bạch Đằng and point back to the old-town riverfront."}
       ]
     },
     {
@@ -143,9 +143,9 @@
       "summary": "Bánh mì Hội An is the sandwich idea, not one single shop: crusty bread, herbs, sauce, and fast counter energy that fits breakfast, snacks, and food-walk plans.",
       "context": "Use Bánh mì Hội An when you want the sandwich generally. Named shop entries can carry the exact storefront if you are heading to Phượng or Madam Khánh.",
       "tip": "If you dislike chili, pâté, or a sauce, ask before the sandwich is assembled. Bánh mì moves fast at popular counters.",
-      "rationale": "It belongs because Hoi An travelers often arrive with sandwich shops saved, but still need the general food noun for menus and flexible ordering.",
+      "rationale": "It belongs because Hoi An travelers often arrive with sandwich shops saved, but still need the general food name for menus and flexible ordering.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"Hoi An's bánh mì surface for ordering the sandwich itself, separate from any one famous shop."},
+        {"id":"at-glance","title":"About","body":"Hoi An's bánh mì dish entry for ordering the sandwich itself, separate from any one famous shop."},
         {"id":"quick-say","title":"Hear the name","body":"Bánh mì Hội An is the phrase to recognize for a Hoi An-style sandwich."},
         {"id":"place-brief","title":"What to picture","body":"Picture baguettes, herbs, pickles, sauce, quick counter service, and a snack you can carry into the next walk."},
         {"id":"use-it-with","title":"Why it belongs","body":"It connects dish browsing to named sandwich shops without making every meal depend on one venue."},
@@ -200,32 +200,32 @@
     },
     {
       "pageID": "city-hoian-place-bebe-tailor",
-      "summary": "BeBe Tailor is a named Hoi An tailoring stop for fittings, fabric decisions, pickup dates, and map-pin conversations without making any claim about quality.",
-      "context": "Keep BeBe Tailor as the venue name. It helps when arranging a fitting, returning for clothing, or showing a driver the shop location.",
-      "tip": "Branch details and appointment times should come from your booking or map, not memory. Tailor errands go smoother when the exact address is visible.",
-      "rationale": "It belongs because tailoring is part of Hoi An's visitor identity, and named shops make the measuring-and-return loop easier to navigate.",
+      "summary": "BeBe Tailor leans into Hoi An's custom-clothing dream: fabric walls, measuring tape, lantern-lit shopfronts, and the possibility of leaving town with something made for you.",
+      "context": "Keep BeBe Tailor as the shop name when the plan turns from browsing fabrics to a fitting, a small adjustment, or a return visit for finished clothes.",
+      "tip": "Bring photos, fabric preferences, and a clear pickup day. Tailor visits feel smoother when the creative choices and timing are both clear.",
+      "rationale": "It belongs because tailoring is part of Hoi An's visitor identity, and named shops make the craft of custom clothing feel concrete rather than abstract.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named tailor stop in Hoi An for fittings, clothing pickup, fabric browsing, and address-based plans."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep BeBe Tailor as the English venue name and show it with the map pin."},
+        {"id":"at-glance","title":"About","body":"A named tailor stop in Hoi An for fabric browsing, fittings, custom clothing, and return visits."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep BeBe Tailor as the English shop name when talking about fittings or finished clothes."},
         {"id":"place-brief","title":"What to picture","body":"Picture fabric walls, measuring tape, fitting rooms, old-town shopfronts, and return visits for small adjustments."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a concrete tailoring destination beside the broader Hoi An tailor-fitting entry."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when booking a fitting, returning for alterations, or explaining where your clothing pickup is."},
-        {"id":"good-to-know","title":"Good to know","body":"Bring or show the exact address if there are multiple shop locations or nearby tailor storefronts."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when choosing fabrics, checking a fitting, returning for alterations, or picking up finished clothing."},
+        {"id":"good-to-know","title":"Good to know","body":"If there are multiple locations or nearby tailor storefronts, confirm the branch before your fitting time."}
       ]
     },
     {
       "pageID": "city-hoian-place-bus-station",
-      "summary": "Hoi An Bus Station is a plain but important transit name for shuttle arrivals, local departures, luggage handoffs, and getting from the edge of town into the trip.",
-      "context": "Bến xe Hội An means the bus station itself. Use it when the station is the destination, pickup point, or next step after arriving by road.",
-      "tip": "If you are continuing to a hotel, keep both the station name and hotel address ready. The station gets you to town; the address finishes the ride.",
-      "rationale": "It belongs because not every Hoi An arrival is scenic; practical station vocabulary helps travelers move smoothly before the romantic part begins.",
+      "summary": "Hoi An Bus Station sits at the town's arrival edge: coaches idling, luggage in hand, shaded waiting areas, and the first short ride toward old streets or a hotel.",
+      "context": "Bến xe Hội An means the bus station itself, the place where a road arrival turns into the next small move toward the old town, beach, or homestay.",
+      "tip": "Keep your hotel address ready after the station name. The bus stop gets you into Hoi An; the next ride carries you into the exact neighborhood.",
+      "rationale": "It belongs because not every Hoi An arrival begins with lanterns; some begin with bags, bus doors, local signs, and the first glimpse of town.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"The Hoi An bus-station name for arrivals, onward road travel, luggage, and transfer planning."},
+        {"id":"at-glance","title":"About","body":"The Hoi An bus-station name for road arrivals, shaded waiting areas, luggage, and onward rides."},
         {"id":"quick-say","title":"Hear the name","body":"Bến xe Hội An is the Vietnamese name to show when you mean Hoi An Bus Station."},
         {"id":"place-brief","title":"What to picture","body":"Picture coaches, shaded waiting areas, bags, local signs, and the first ride toward your hotel or old town."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It covers the practical edge of Hoi An travel that sits before food, beaches, and heritage walks."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It covers the arrival edge of Hoi An travel before food, beaches, and heritage walks begin."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when confirming a shuttle, asking where a bus leaves, or telling a driver where to pick you up."},
-        {"id":"good-to-know","title":"Good to know","body":"Station names can be less photogenic but very helpful when luggage and timing are involved."}
+        {"id":"good-to-know","title":"Good to know","body":"Station stops can feel plain, but they matter when luggage, timing, and the next ride are all happening at once."}
       ]
     },
     {
@@ -305,16 +305,16 @@
     },
     {
       "pageID": "city-hoian-place-cam-thanh-basket-boat",
-      "summary": "Cam Thanh basket boat names the round-boat experience in Hoi An's coconut waterways, a playful countryside activity that needs clear pickup, entrance, and return language.",
-      "context": "Thuyền thúng Cẩm Thanh is the activity name. It keeps the basket boat tied to the Cam Thanh area instead of sounding like any round boat in Vietnam.",
-      "tip": "Confirm what is included with the booking and where pickup happens. The phrase helps you identify the activity, not the package details.",
-      "rationale": "It belongs because basket boats are one of Hoi An's most recognizable countryside experiences, and travelers need vocabulary that separates activity from area.",
+      "summary": "Cam Thanh basket boat is the round-boat moment in Hoi An's coconut waterways: green channels, low palms, small docks, and a playful drift outside the old town.",
+      "context": "Thuyền thúng Cẩm Thanh keeps the basket boat tied to the Cam Thanh area, where the water-coconut scenery is part of the experience.",
+      "tip": "Ask where the ride starts and what the outing includes before you go. The activity can be simple, playful, or packaged with other countryside stops.",
+      "rationale": "It belongs because basket boats are one of Hoi An's most recognizable countryside scenes, and the Cam Thanh wording keeps that scene grounded.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A round basket-boat experience in Cam Thanh's water-coconut area near Hoi An."},
         {"id":"quick-say","title":"Hear the name","body":"Thuyền thúng Cẩm Thanh is the name to recognize for the Cam Thanh basket boat."},
         {"id":"place-brief","title":"What to picture","body":"Picture circular boats, green coconut channels, small docks, water light, and a slower countryside pace."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It gives a specific activity name for one of Hoi An's common village-and-waterway plans."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when booking, confirming pickup, finding the boat area, or checking the return ride."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It gives a specific activity name for one of Hoi An's vivid village-and-waterway plans."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the basket boats, finding the coconut-waterway area, or checking the ride back."},
         {"id":"good-to-know","title":"Good to know","body":"Use Rừng dừa Bảy Mẫu or Làng dừa Cẩm Thanh when the place matters more than the activity."}
       ]
     },
@@ -395,17 +395,17 @@
     },
     {
       "pageID": "city-hoian-place-cham-islands-snorkel-boat",
-      "summary": "The Cham Islands snorkel boat entry helps travelers ask about the boat leg to Cù Lao Chàm, keeping pier, pickup, and return details separate from the island name itself.",
-      "context": "Tàu đi Cù Lao Chàm means the boat to the Cham Islands. Use it when the travel step, not just the destination, is the thing you need to confirm.",
-      "tip": "Confirm the pier and return time with your booking. The phrase identifies the boat direction, but each operator may handle logistics differently.",
-      "rationale": "It belongs because island trips involve a travel chain: hotel pickup, pier, boat, island time, and return. The boat name makes that chain easier.",
+      "summary": "The Cham Islands snorkel boat starts on the Cửa Đại coast, with bags for a day trip, life jackets, green islands ahead, and clear water waiting beyond Hoi An.",
+      "context": "Tàu đi Cù Lao Chàm means the boat toward the Cham Islands, the sea-crossing step between the coastal pier and an island day.",
+      "tip": "Confirm the pier, sea conditions, and return time with your operator. Snorkeling details can change with weather, season, and the trip you chose.",
+      "rationale": "It belongs because island trips have a distinct profile: coastal departure, boat ride, clear-water activity, island time, and the ride back to Hoi An.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A practical boat-trip name for getting from the Hoi An coast toward the Cham Islands."},
+        {"id":"at-glance","title":"About","body":"A coastal boat-trip name for heading from Hoi An toward Cham Islands water, snorkeling, and island time."},
         {"id":"quick-say","title":"Hear the name","body":"Tàu đi Cù Lao Chàm means the boat going to the Cham Islands from the coast."},
         {"id":"place-brief","title":"What to picture","body":"Picture a coastal pier, small tour boats, life jackets, bags for a day trip, and green islands ahead."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It turns an island wish into the actual transport step travelers must ask about."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when checking where the boat leaves, confirming pickup, or asking about the return from the islands."},
-        {"id":"good-to-know","title":"Good to know","body":"Do not assume all island boats include snorkeling; use your booking details for the exact activity."}
+        {"id":"use-it-with","title":"Why it belongs","body":"It turns an island wish into a specific coast-to-island trip with water, boat time, and return planning."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking where the boat leaves, whether snorkeling is included, or how the island return works."},
+        {"id":"good-to-know","title":"Good to know","body":"Do not assume every island boat includes snorkeling; check the operator details for the activity that day."}
       ]
     },
     {
@@ -446,11 +446,11 @@
       "rationale": "It belongs because Hoi An's travel rhythm needs quick cafe and juice stops as much as temples, markets, and full meals.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named cafe or juice stop that can serve as a quick refreshment point in Hoi An."},
-        {"id":"quick-say","title":"Hear the name","body":"Cocobox is preserved as the venue name and is easiest to show with a map pin."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep Cocobox as the cafe name when asking for the drink counter or meeting nearby."},
         {"id":"place-brief","title":"What to picture","body":"Picture fruit, cold drinks, a bright counter, old-town walls nearby, and a small break from walking."},
         {"id":"use-it-with","title":"Why it belongs","body":"It adds a casual refreshment option to Hoi An's cafes, markets, and food discovery."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the shop, meeting a friend, or grabbing a drink between old-town stops."},
-        {"id":"good-to-know","title":"Good to know","body":"If you need a specific branch or address, show the map pin rather than relying on the name alone."}
+        {"id":"good-to-know","title":"Good to know","body":"If you need a specific branch or address, pair the name with the street or saved location."}
       ]
     },
     {
@@ -516,7 +516,7 @@
     {
       "pageID": "city-hoian-place-cua-dai-estuary",
       "summary": "Cua Dai Estuary names the river-mouth side of Hoi An, where coastal, river, beach, and island-departure language can overlap if travelers are not precise.",
-      "context": "Cửa Đại can point to the river mouth, beach side, or nearby pier context. Show the map pin when the exact destination matters.",
+      "context": "Cửa Đại can point to the river mouth, beach side, or nearby pier context, so add the beach, pier, or estuary wording when the destination matters.",
       "tip": "Use Biển Cửa Đại for the beach and Bến tàu Cửa Đại for the pier. This entry explains the broader river-meets-sea area.",
       "rationale": "It belongs because Hoi An geography is easier when travelers can separate old-town river scenes from the bigger coastal mouth.",
       "sections": [
@@ -525,7 +525,7 @@
         {"id":"place-brief","title":"What to picture","body":"Picture fishing boats, sandbars, open water, coastal roads, and the transition from river routes to sea."},
         {"id":"use-it-with","title":"Why it belongs","body":"It clarifies the geography behind Cua Dai Beach, Cua Dai Pier, and Cham Islands boat plans."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when discussing the broader river-mouth area or checking whether a route goes toward the coast."},
-        {"id":"good-to-know","title":"Good to know","body":"Because the name is broad, exact navigation should use a pier, beach, venue, or map pin."}
+        {"id":"good-to-know","title":"Good to know","body":"Because the name is broad, pair it with a pier, beach, venue, or river-mouth clue for navigation."}
       ]
     },
     {
@@ -561,12 +561,12 @@
     {
       "pageID": "city-hoian-place-espresso-station",
       "summary": "The Espresso Station is a named Hoi An coffee stop for travelers who want a precise lane or cafe pin, not just the broad idea of Vietnamese coffee.",
-      "context": "Preserve the English name and show the map pin when needed. Use it for finding the cafe, ordering coffee, or meeting nearby.",
+      "context": "Preserve the English name when looking for the narrow-lane cafe, ordering coffee, or meeting nearby.",
       "tip": "Small cafe entrances can be easy to miss in Hoi An lanes. Pair the name with your saved map rather than relying on pronunciation alone.",
       "rationale": "It belongs because Hoi An's cafe culture is part of pre-trip excitement, and named stops help travelers plan pauses between heritage and food.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named specialty coffee stop in Hoi An for cafe browsing, lane-finding, and meeting plans."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep The Espresso Station in English and show the name visually if needed."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep The Espresso Station in English when asking for the cafe in a Hoi An lane."},
         {"id":"place-brief","title":"What to picture","body":"Picture a narrow lane, espresso bar, small tables, coffee equipment, and a quiet pause from old-town walking."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives cafe discovery a concrete stop beside broader coffee vocabulary and old-town routes."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the cafe, meeting someone nearby, or choosing a coffee stop between visits."},
@@ -620,15 +620,15 @@
     },
     {
       "pageID": "city-hoian-place-from-danang-railway-station",
-      "summary": "Da Nang Railway Station for Hoi An helps train arrivals become Hoi An arrivals, turning the station pickup, road transfer, and hotel drop-off into a clearer conversation.",
-      "context": "Ga Đà Nẵng đi Hội An frames a train arrival as the start of a road transfer to Hoi An rather than a stay in Da Nang.",
+      "summary": "Da Nang Railway Station for Hoi An starts with platform noise, luggage, station doors, and the warm road south toward yellow walls, river light, and a quieter old-town stay.",
+      "context": "Ga Đà Nẵng đi Hội An frames the train station as the handoff point between a rail arrival in Da Nang and the road into Hoi An.",
       "tip": "Have your train time and Hoi An address ready. The phrase tells the direction, while the address tells the driver where the trip ends.",
-      "rationale": "It belongs because Hoi An travel often starts from nearby Da Nang infrastructure, and train travelers need a clean bridge between the two cities.",
+      "rationale": "It belongs because Hoi An travel often starts with Da Nang's station sounds and then shifts into the softer road approach toward the old town.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"The station-to-Hoi An wording for travelers arriving by train at Da Nang Railway Station."},
+        {"id":"at-glance","title":"About","body":"The station-to-Hoi An wording for train arrivals, luggage, pickup curbs, and the road south."},
         {"id":"quick-say","title":"Hear the name","body":"Ga Đà Nẵng đi Hội An means Da Nang Railway Station to Hoi An by transfer."},
         {"id":"place-brief","title":"What to picture","body":"Picture luggage outside the station, taxis or shuttles, train noise behind you, and the road south toward Hoi An."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It makes a common regional transfer leg clear for first-time visitors."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It gives a common regional transfer the sensory shape of train station, curb, road, and Hoi An arrival."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when arranging pickup from the station or explaining that Hoi An is your final destination."},
         {"id":"good-to-know","title":"Good to know","body":"Confirm whether pickup is at the station entrance, a nearby curb, or another meeting point."}
       ]
@@ -770,32 +770,32 @@
     },
     {
       "pageID": "city-hoian-place-lune-center",
-      "summary": "Hoi An Lune Center is a named performance venue near the old-town flow, tied to evening plans, ticket conversations, and pickup points without inventing show details.",
-      "context": "Keep Hoi An Lune Center as the venue name. Let your ticket or booking carry the exact performance, schedule, and seating details.",
-      "tip": "Use the venue name for navigation and the booking for everything time-sensitive. That keeps the app from overclaiming.",
+      "summary": "Hoi An Lune Center brings an evening-performance mood to the old-town edge: theatre lights, arrival hush, bamboo-inspired architecture, and a night out beyond markets.",
+      "context": "Keep Hoi An Lune Center as the venue name when the plan is a performance evening near the old-town flow.",
+      "tip": "Let the venue or your reservation handle show times and seats. The app copy should keep the mood clear without inventing performance details.",
       "rationale": "It belongs because Hoi An evenings include performances as well as markets, river walks, cafes, and dinner stops.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named Hoi An performance venue that can steady evening plans and ticket-related directions."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep Hoi An Lune Center as the venue name and show it with the booking or map."},
-        {"id":"place-brief","title":"What to picture","body":"Picture a riverside or old-town-adjacent venue, evening arrival, tickets, soft lights, and a post-show pickup."},
+        {"id":"at-glance","title":"About","body":"A named Hoi An performance venue for theatre lights, evening arrivals, and cultural-night plans."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep Hoi An Lune Center as the venue name when talking about the performance night."},
+        {"id":"place-brief","title":"What to picture","body":"Picture a riverside or old-town-adjacent venue, soft lights, people arriving, and the hush before a show."},
         {"id":"use-it-with","title":"Why it belongs","body":"It adds a performance-night option to Hoi An's food, river, and heritage itinerary."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the venue, confirming entrance, or arranging pickup after a show."},
-        {"id":"good-to-know","title":"Good to know","body":"Do not rely on generic schedule memories; use the ticket or venue source for current show details."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the venue, finding the entrance, or planning the ride back after a show."},
+        {"id":"good-to-know","title":"Good to know","body":"Schedules can change, so let the venue or reservation source carry the current performance details."}
       ]
     },
     {
       "pageID": "city-hoian-place-madam-khanh",
-      "summary": "Madam Khanh is a named Hoi An bánh mì stop for travelers who saved a specific sandwich shop and need the storefront rather than the general dish.",
-      "context": "Madam Khánh works as the shop name. Use it for finding the counter, ordering, or explaining a pickup point nearby.",
-      "tip": "Keep the general Bánh mì Hội An entry for any sandwich. Use Madam Khánh only when this specific shop is the plan.",
-      "rationale": "It belongs because Hoi An food browsing mixes famous shop names with dish names, and travelers benefit from keeping them separate.",
+      "summary": "Madam Khanh feels like a real Hoi An bánh mì stop: baguettes at the counter, herbs and sauce moving fast, staff calling orders, and a sandwich eaten between old-town walks.",
+      "context": "Madam Khánh works as the shop name when the plan is this counter, its sandwich line, and the quick meal around it.",
+      "tip": "Keep the general Bánh mì Hội An entry for any sandwich. Use Madam Khánh only when this specific counter is the meal plan.",
+      "rationale": "It belongs because Hoi An food browsing mixes famous shop names with dish names, and this one carries a real counter-and-sandwich profile.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named bánh mì shop in Hoi An for saved food stops, map pins, and storefront directions."},
+        {"id":"at-glance","title":"About","body":"A named bánh mì shop in Hoi An for a quick counter meal, saved food stop, and storefront directions."},
         {"id":"quick-say","title":"Hear the name","body":"Madam Khánh is the local-name form to recognize beside the English Madam Khanh."},
-        {"id":"place-brief","title":"What to picture","body":"Picture baguettes, herbs, fillings, a busy counter, and a quick sandwich stop between old-town plans."},
+        {"id":"place-brief","title":"What to picture","body":"Picture baguettes, herbs, fillings, sauce, staff at a busy counter, and a sandwich eaten in the rhythm of the lane."},
         {"id":"use-it-with","title":"Why it belongs","body":"It marks a specific sandwich destination while the broader bánh mì page covers the dish."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the shop, showing a map pin, ordering, or meeting nearby after a food stop."},
-        {"id":"good-to-know","title":"Good to know","body":"Use current hours and address from your map or booking notes rather than assuming old recommendations are current."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the shop, ordering at the counter, or meeting nearby after a quick food stop."},
+        {"id":"good-to-know","title":"Good to know","body":"Check current hours and address before going; famous food counters can shift pace quickly during the day."}
       ]
     },
     {
@@ -845,17 +845,17 @@
     },
     {
       "pageID": "city-hoian-place-memories-land",
-      "summary": "Hoi An Memories Land is a named island-style destination across the river, tied to evening plans, tickets, entrances, and pickups without overexplaining the show or venue.",
-      "context": "Đảo Ký ức Hội An names the destination. Use it when confirming the entrance, ride, or meeting point tied to your ticket or booking.",
-      "tip": "Let the booking handle show times and inclusions. The destination name helps with finding the entrance and arranging transport.",
-      "rationale": "It belongs because Hoi An evening planning includes ticketed venues and river-side destinations, not only open streets and markets.",
+      "summary": "Hoi An Memories Land feels like a river-island evening scene, with lights across the water, groups arriving after dusk, and a performance-night energy beyond the old-town streets.",
+      "context": "Đảo Ký ức Hội An names the island-style destination across the river, so it fits plans that move from old-town wandering into a ticketed night out.",
+      "tip": "Let the venue or reservation handle show times and inclusions. The destination name helps keep the river crossing and entrance clear.",
+      "rationale": "It belongs because Hoi An evening planning includes river-side destinations and ticketed cultural nights, not only open streets and markets.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named Hoi An destination associated with evening visits, tickets, and river-adjacent plans."},
+        {"id":"at-glance","title":"About","body":"A named Hoi An river-island destination associated with evening visits and performance-night plans."},
         {"id":"quick-say","title":"Hear the name","body":"Đảo Ký ức Hội An is the Vietnamese name for Hoi An Memories Land."},
-        {"id":"place-brief","title":"What to picture","body":"Picture an evening arrival, riverside lights, entrance checks, groups gathering, and a ride arranged for afterward."},
+        {"id":"place-brief","title":"What to picture","body":"Picture an evening arrival, river lights, groups gathering, and a lit-up destination across from the old-town glow."},
         {"id":"use-it-with","title":"Why it belongs","body":"It adds a ticketed evening destination to the broader Hoi An night plan."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when confirming where to go, asking for the entrance, or setting a pickup point after the visit."},
-        {"id":"good-to-know","title":"Good to know","body":"Use current ticket details for schedules, access, and show-specific information."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when heading to the river-island venue, asking for the entrance, or planning the ride back after the visit."},
+        {"id":"good-to-know","title":"Good to know","body":"Let current venue information handle schedules, access, and show-specific details."}
       ]
     },
     {
@@ -1050,7 +1050,7 @@
         {"id":"place-brief","title":"What to picture","body":"Picture a metal filter dripping over glass, leafy tables, iced coffee, and a pause from shopping or sightseeing."},
         {"id":"use-it-with","title":"Why it belongs","body":"It connects cafe planning with Vietnamese coffee vocabulary without mixing up place and drink."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the cafe, meeting someone, or deciding whether you mean the venue or the coffee style."},
-        {"id":"good-to-know","title":"Good to know","body":"Show the map pin if the person hears phin as a drink rather than the cafe name."}
+        {"id":"good-to-know","title":"Good to know","body":"If someone hears phin as a drink rather than the cafe name, add the cafe or street context."}
       ]
     },
     {
@@ -1070,16 +1070,16 @@
     },
     {
       "pageID": "city-hoian-place-pottery-workshop",
-      "summary": "Thanh Ha pottery workshop turns the pottery village into a hands-on stop, with clay, wheels, terracotta shelves, and simple questions about trying, buying, or meeting after.",
-      "context": "Xưởng gốm Thanh Hà points to the workshop area. Use it when you want to try pottery or find the working craft space.",
-      "tip": "Ask where to try pottery and whether pieces can be bought or carried. Workshop rules vary more than the village name suggests.",
-      "rationale": "It belongs because travelers often want craft experiences, not only village names, and pottery is one of Hoi An's clearest hands-on options.",
+      "summary": "Thanh Ha pottery workshop brings Hoi An's craft villages into your hands: damp clay, terracotta shelves, a spinning wheel, and the old-town day stretching into a village lane.",
+      "context": "Xưởng gốm Thanh Hà points to the working pottery space inside the Thanh Ha craft village, where Hoi An's handmade side feels tactile.",
+      "tip": "Ask where to try the wheel and whether small pieces can travel home safely. Workshop rules vary more than the village name suggests.",
+      "rationale": "It belongs because travelers often want to touch the craft story, not only pass shops, and pottery gives Hoi An a clay-and-terracotta texture.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A pottery workshop entry tied to Thanh Ha for hands-on craft visits and small purchases."},
+        {"id":"at-glance","title":"About","body":"A Thanh Ha workshop stop for clay, pottery wheels, terracotta shelves, and small craft purchases."},
         {"id":"quick-say","title":"Hear the name","body":"Xưởng gốm Thanh Hà means Thanh Ha pottery workshop in the craft village."},
-        {"id":"place-brief","title":"What to picture","body":"Picture wet clay, pottery wheels, terracotta pieces, workshop shelves, and hands shaping something slowly."},
+        {"id":"place-brief","title":"What to picture","body":"Picture wet clay, pottery wheels, terracotta pieces, village workshop shelves, and hands shaping something slowly."},
         {"id":"use-it-with","title":"Why it belongs","body":"It separates the activity or workshop from the broader Thanh Ha Pottery Village destination."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking where to try pottery, buy a small piece, or meet after a workshop."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking where to try the wheel, buy a small piece, or meet after a workshop."},
         {"id":"good-to-know","title":"Good to know","body":"Ask before touching tools, clay, or finished pieces; workshops may have their own flow."}
       ]
     },
@@ -1146,7 +1146,7 @@
     {
       "pageID": "city-hoian-place-reaching-out-arts-crafts",
       "summary": "Reaching Out Arts & Crafts is a named Hoi An craft shop for handmade gifts, browsing, and a specific old-town stop rather than generic souvenir language.",
-      "context": "Preserve the English title when asking for the shop or meeting nearby. It pairs naturally with Hoi An's craft and gift-browsing surface.",
+      "context": "Preserve the English title when asking for the shop or meeting nearby. It pairs naturally with Hoi An's craft and gift-browsing mood.",
       "tip": "Use current shop information for hours and address. The name helps locate the place without making quality or stock promises.",
       "rationale": "It belongs because Hoi An's shopping story should include specific craft stops, not only markets, tailors, and silk.",
       "sections": [
@@ -1250,17 +1250,17 @@
     },
     {
       "pageID": "city-hoian-place-tailor-fitting",
-      "summary": "Hoi An tailor fitting names the practical measuring, try-on, adjustment, and pickup loop behind the city's custom-clothing reputation, separate from any one shop.",
-      "context": "Thử đồ may đo Hội An names the fitting task: measurements, a try-on, pickup day, or small alteration.",
-      "tip": "Bring photos, confirm pickup time, and ask clearly about adjustments. The fitting phrase is for the task, while shop names carry exact locations.",
-      "rationale": "It belongs because tailoring is one of Hoi An's most distinctive traveler errands and needs practical language beyond shopping.",
+      "summary": "Hoi An tailor fitting is the in-shop ritual behind custom clothing: fabric swatches, chalk marks, pinned hems, mirrors, and the little thrill of seeing a piece take shape.",
+      "context": "Thử đồ may đo Hội An names the fitting moment, when measurements, try-ons, alterations, and pickup timing all meet inside a tailor shop.",
+      "tip": "Bring photos, fabric preferences, and enough time for adjustments. The fitting is both a practical errand and part of Hoi An's craft rhythm.",
+      "rationale": "It belongs because tailoring is one of Hoi An's most distinctive traveler experiences, full of fabric, measuring tape, shopfronts, and return visits.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"The Hoi An tailoring task for measurements, try-ons, adjustments, and clothing pickup."},
+        {"id":"at-glance","title":"About","body":"The Hoi An tailoring moment for measurements, try-ons, pinned hems, adjustments, and clothing pickup."},
         {"id":"quick-say","title":"Hear the name","body":"Thử đồ may đo Hội An means trying on custom-made clothing in Hoi An."},
         {"id":"place-brief","title":"What to picture","body":"Picture fabric swatches, measuring tape, fitting mirrors, pinned hems, and a return visit before leaving town."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It captures a signature Hoi An traveler workflow that spans multiple tailor shops."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking about a fitting, pickup time, measurements, or adjustments."},
-        {"id":"good-to-know","title":"Good to know","body":"Use a named tailor page when you need the exact shop rather than the fitting task."}
+        {"id":"use-it-with","title":"Why it belongs","body":"It captures a signature Hoi An craft experience that spans multiple tailor shops."},
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when stepping into a fitting, checking measurements, asking about alterations, or planning clothing pickup."},
+        {"id":"good-to-know","title":"Good to know","body":"Use a named tailor entry when you need the shop itself rather than the fitting task."}
       ]
     },
     {
@@ -1370,17 +1370,17 @@
     },
     {
       "pageID": "city-hoian-place-traditional-art-performance-house",
-      "summary": "Traditional Art Performance House is a specific Hoi An performance venue for tickets, entrance questions, and cultural evenings without assuming current schedules.",
-      "context": "Nhà biểu diễn nghệ thuật cổ truyền Hội An is the Vietnamese name. Use it when the plan is tied to this performance house.",
-      "tip": "Use current ticket or venue details for show times. The venue name helps you find the right entrance.",
+      "summary": "Traditional Art Performance House brings Hoi An's heritage indoors: a small stage, instruments, masks or costumes, and an evening pause from the old-town streets.",
+      "context": "Nhà biểu diễn nghệ thuật cổ truyền Hội An is the Vietnamese name for this performance house, not a general show request.",
+      "tip": "Let the venue handle current show times, then use the name to find the stage, entrance, and cultural-night setting.",
       "rationale": "It belongs because Hoi An culture includes performance spaces as well as museums, houses, halls, and craft workshops.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named Hoi An venue for traditional art performances and ticketed cultural plans."},
+        {"id":"at-glance","title":"About","body":"A named Hoi An venue for traditional art, small-stage performances, and cultural evenings."},
         {"id":"quick-say","title":"Hear the name","body":"Nhà biểu diễn nghệ thuật cổ truyền Hội An identifies the Traditional Art Performance House."},
         {"id":"place-brief","title":"What to picture","body":"Picture a small stage, curtains, instruments, masks or costumes, and evening streets outside."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives Hoi An's performance culture a concrete venue name for evening plans."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the venue, confirming tickets, finding the entrance, or arranging pickup after a show."},
-        {"id":"good-to-know","title":"Good to know","body":"Schedules can change, so use the venue or ticket source for current performance details."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when asking for the performance house, finding the entrance, or planning the ride back after a show."},
+        {"id":"good-to-know","title":"Good to know","body":"Schedules can change, so let the venue source carry the current performance details."}
       ]
     },
     {
@@ -1417,7 +1417,7 @@
       "pageID": "city-hoian-place-u-cafe",
       "summary": "U Cafe Hoi An is a named riverside cafe stop for a calmer drink, a ride-back plan, or a soft pause away from the most crowded old-town lanes.",
       "context": "Use U Cafe Hội An as the venue name, especially when arranging a riverside cafe visit or a return ride.",
-      "tip": "Because riverside cafes can depend on the exact address, show the map pin when asking a driver or meeting someone.",
+      "tip": "Because riverside cafes can depend on the address, add the street, river side, or saved location when asking a driver or meeting someone.",
       "rationale": "It belongs because Hoi An's cafe list should include quieter river-side pauses, not only central old-town coffee stops.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named riverside cafe stop in Hoi An for drinks, breaks, and gentle meeting plans."},
@@ -1490,17 +1490,17 @@
     },
     {
       "pageID": "city-hoian-place-yaly-couture",
-      "summary": "Yaly Couture is a named Hoi An tailor destination for fittings, pickup dates, fabric conversations, and shop directions without making claims about quality.",
-      "context": "Keep Yaly Couture as the shop name. Use it when asking where the shop is, arranging a fitting, or returning for clothing.",
-      "tip": "Use the exact address or branch from your booking. Tailor names can be familiar, but the fitting only works at the right location.",
-      "rationale": "It belongs because Hoi An's tailoring surface needs named shops alongside the general tailor-fitting task.",
+      "summary": "Yaly Couture carries the Hoi An tailor fantasy: fabric choices, measuring tape, fitting mirrors, old-town shopfronts, and a custom piece slowly becoming real.",
+      "context": "Keep Yaly Couture as the shop name when the traveler is choosing fabric, stepping into a fitting, or returning for finished clothing.",
+      "tip": "Confirm the branch and fitting time before you go. Tailor names can be familiar, but the craft moment only works at the right shop.",
+      "rationale": "It belongs because Hoi An's tailoring story needs named shops alongside the general tailor-fitting task.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named Hoi An tailor stop for fabric browsing, fittings, clothing pickup, and address-based plans."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep Yaly Couture as the venue name and show it with the map pin."},
+        {"id":"at-glance","title":"About","body":"A named Hoi An tailor stop for fabric browsing, fittings, custom clothing, and return visits."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep Yaly Couture as the shop name when talking about fittings or finished clothes."},
         {"id":"place-brief","title":"What to picture","body":"Picture fabric walls, measuring tape, fitting mirrors, old-town shopfronts, and return visits for adjustments."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives travelers a specific tailor destination in a city known for custom clothing."},
-        {"id":"when-to-use","title":"Travel moment","body":"Use it when booking or attending a fitting, asking for the shop, or arranging pickup after alterations."},
-        {"id":"good-to-know","title":"Good to know","body":"Use current booking details for branch, timing, deposit, pickup date, and alteration expectations."}
+        {"id":"when-to-use","title":"Travel moment","body":"Use it when choosing fabrics, attending a fitting, asking for the shop, or returning after alterations."},
+        {"id":"good-to-know","title":"Good to know","body":"Confirm branch, timing, deposit, pickup date, and alteration expectations before the fitting."}
       ]
     }
   ]
