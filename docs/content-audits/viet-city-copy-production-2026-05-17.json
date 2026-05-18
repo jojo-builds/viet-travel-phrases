@@ -1,6 +1,6 @@
 {
   "reviewID": "viet-city-copy-production-2026-05-17",
-  "generatedAt": "2026-05-18T07:45:33.647Z",
+  "generatedAt": "2026-05-18T07:49:10.597Z",
   "scope": "500 city noun/place pages plus 5 city hubs",
   "source": "content-draft/viet/city-library/v1.json",
   "evidenceMode": "Every row stores current copy excerpts and computed pass/fail checks; native validation must also prove source/runtime parity before the report is accepted.",
@@ -12,16 +12,16 @@
   ],
   "summary": {
     "totalPages": 500,
-    "approved": 498,
-    "fixNow": 2,
+    "approved": 500,
+    "fixNow": 0,
     "hardBlock": 0,
     "followUp": 0,
     "acceptedTemporaryRisk": 0,
     "byCity": {
       "hcmc": {
         "pages": 100,
-        "approved": 99,
-        "fixNow": 1
+        "approved": 100,
+        "fixNow": 0
       },
       "hanoi": {
         "pages": 100,
@@ -30,8 +30,8 @@
       },
       "danang": {
         "pages": 100,
-        "approved": 99,
-        "fixNow": 1
+        "approved": 100,
+        "fixNow": 0
       },
       "hoian": {
         "pages": 100,
@@ -416,10 +416,10 @@
       "placeKind": "dish",
       "profile": "dish",
       "reviewer": "city-owner:danang",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
-        "voiceLengthPass": false,
+        "voiceLengthPass": true,
         "sectionCountPass": true,
         "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
@@ -432,11 +432,9 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "voiceLengthPass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Banh mi earns its Da Nang spot through crisp bread, herbs, fillings, street counters, and an easy meal between beach and city plans.",
+        "summaryExcerpt": "Banh mi earns its Da Nang spot through crisp bread, herbs, fillings, street counters, and an easy meal between beach and city plans, especially when the day moves from sand to scooters to a quick snack.",
         "aboutExcerpt": "A crisp Vietnamese baguette sandwich that works as a quick meal or snack.",
         "phrasebookExcerpt": "Listen for bánh mì; the short phrase is useful across stalls and cafes.",
         "belongingExcerpt": "It gives first-time travelers an easy food win between bigger meals.",
@@ -766,8 +764,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Central Bus Station is where coach doors open onto heat, luggage, snack kiosks, waiting families, and the next road toward Hue, Hoi An, or the beach.",
-        "aboutExcerpt": "The main coach-station scene for arrivals, luggage, waiting areas, and onward roads.",
+        "summaryExcerpt": "Da Nang Central Bus Station is a coach-bay scene of heat, snack kiosks, waiting families, route boards, and roads branching toward Hue, Hoi An, or the beach.",
+        "aboutExcerpt": "The main coach-station scene for arrivals, waiting areas, snack counters, and onward roads.",
         "phrasebookExcerpt": "Listen for Bến xe Trung tâm Đà Nẵng; bến xe means bus station for pickup.",
         "belongingExcerpt": "It keeps coach arrivals visible in a city often introduced through flights and beaches.",
         "timingExcerpt": "Use it when a shuttle drops you off or a driver needs the exact pickup area.",
@@ -964,8 +962,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Domestic Terminal feels like the local-flight side of arrival: glass doors, quick curb movement, Vietnamese route boards, luggage, and warm city air.",
-        "aboutExcerpt": "The local-flight side of Da Nang Airport, with curb movement, luggage, and city heat.",
+        "summaryExcerpt": "Da Nang Domestic Terminal feels like the local-flight side of arrival: glass doors, Vietnamese signs, waiting families, warm city air, and the coastal pace starting outside.",
+        "aboutExcerpt": "The local-flight side of Da Nang Airport, with Vietnamese signs, route boards, warm air, and coastal city movement.",
         "phrasebookExcerpt": "Listen for nhà ga quốc nội; quốc nội means domestic in this travel context.",
         "belongingExcerpt": "It makes the first airport handoff feel concrete, with the right doors and curb in mind.",
         "timingExcerpt": "Use it when sharing pickup details after a domestic flight into Da Nang.",
@@ -1558,8 +1556,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang International Terminal is the overseas-arrival side of the city: glass frontage, luggage carts, flight boards, tropical air, and the first ride into Da Nang.",
-        "aboutExcerpt": "The overseas-arrival side of Da Nang Airport, with flight boards, luggage, and warm air.",
+        "summaryExcerpt": "Da Nang International Terminal is the overseas-arrival side of the city: glass frontage, Vietnamese signs, tropical air, waiting families, and the first glimpse of coastal Da Nang.",
+        "aboutExcerpt": "The overseas-arrival side of Da Nang Airport, with flight boards, glass doors, Vietnamese signs, and warm coastal air.",
         "phrasebookExcerpt": "Listen for nhà ga quốc tế; quốc tế means international in this context.",
         "belongingExcerpt": "It gives the first airport moment a clear door, curb, and arrival atmosphere.",
         "timingExcerpt": "Use it in pickup messages, drop-off requests, and first-arrival directions.",
@@ -4264,8 +4262,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Giap Bat Bus Station feels like a southern Hanoi transit scene: coach buses, ticket counters, bags, loud bays, and the name Bến xe Giáp Bát.",
-        "aboutExcerpt": "A southern Hanoi bus terminal with coaches, ticket halls, luggage, route boards, and busy departure bays.",
+        "summaryExcerpt": "Giap Bat Bus Station feels like a southern Hanoi coach scene: buses rumbling in the bays, route boards, bags at your feet, and the name Bến xe Giáp Bát.",
+        "aboutExcerpt": "A southern Hanoi bus station with coaches, route boards, waiting halls, and busy departure bays.",
         "phrasebookExcerpt": "Bến xe Giáp Bát is the station phrase to recognize on tickets, maps, and driver confirmations.",
         "belongingExcerpt": "It gives Hanoi transit coverage the precision needed for real bus departures and arrivals.",
         "timingExcerpt": "Use it when your ticket names Giap Bat or when asking a driver for that terminal.",
@@ -5287,8 +5285,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Nuoc Ngam Bus Station is a Hanoi terminal scene of intercity coaches, ticket windows, waiting passengers, luggage, and the written name Bến xe Nước Ngầm.",
-        "aboutExcerpt": "A Hanoi bus station with intercity coaches, ticket windows, waiting passengers, and longer-distance departures.",
+        "summaryExcerpt": "Nuoc Ngam Bus Station is a Hanoi coach-station scene of intercity buses, Vietnamese signs, waiting passengers, road noise, and the written name Bến xe Nước Ngầm.",
+        "aboutExcerpt": "A Hanoi bus station with intercity coaches, Vietnamese signs, waiting passengers, and long-distance road energy.",
         "phrasebookExcerpt": "Bến xe Nước Ngầm is the station phrase to recognize when a ticket or route names it.",
         "belongingExcerpt": "It rounds out the Hanoi transit set with another named terminal and a concrete departure scene.",
         "timingExcerpt": "Use it when confirming a bus departure, arranging a taxi, or checking the station printed on a ticket.",
@@ -7447,12 +7445,12 @@
       "placeKind": "dessert",
       "profile": "place",
       "reviewer": "city-owner:hcmc",
-      "status": "FIX_NOW",
-      "blockerLevel": "SAFE_FIX_NOW",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
       "checklist": {
         "voiceLengthPass": true,
         "sectionCountPass": true,
-        "profileAudienceCuePass": false,
+        "profileAudienceCuePass": true,
         "noBannedVisibleTextPass": true,
         "noBannedSourceInputPass": true,
         "sourceNotesPresent": true,
@@ -7463,11 +7461,9 @@
         "bannedMatches": [],
         "sourceBannedMatches": []
       },
-      "failures": [
-        "profileAudienceCuePass"
-      ],
+      "failures": [],
       "evidence": {
-        "summaryExcerpt": "Sweet soup dessert is the colorful world of chè in Saigon: beans, jelly, coconut milk, fruit, ice, and cups or bowls that look playful before you know every ingredient.",
+        "summaryExcerpt": "Sweet soup dessert is the colorful world of chè in Saigon food culture: beans, jelly, coconut milk, fruit, ice, and cups or bowls that look playful before you know every ingredient.",
         "aboutExcerpt": "A broad Vietnamese dessert category with sweet soups, drinks, jellies, beans, coconut, fruit, and ice.",
         "phrasebookExcerpt": "Chè is the essential word to recognize when you want a sweet Vietnamese dessert cup or bowl.",
         "belongingExcerpt": "It gives travelers a fun, low-pressure way to explore flavor and texture after a meal.",
@@ -8655,8 +8651,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mien Dong Bus Station feels like coaches, luggage piles, ticket counters, route calls, and the eastern edge of Saigon opening toward longer Vietnam journeys.",
-        "aboutExcerpt": "A major intercity bus station in HCMC, with coaches, counters, luggage, and routes out of the city.",
+        "summaryExcerpt": "Mien Dong Bus Station feels like coach bays, stacked bags, food stalls, route calls, and the eastern edge of Saigon opening toward longer Vietnam journeys.",
+        "aboutExcerpt": "A major intercity bus station in HCMC, with coaches, food stalls, route boards, and roads out of the city.",
         "phrasebookExcerpt": "Bến xe Miền Đông means Eastern Bus Station, a key phrase for bus tickets and taxi rides.",
         "belongingExcerpt": "It gives travelers the terminal vocabulary needed for practical intercity movement from Saigon.",
         "timingExcerpt": "Use it when booking buses, confirming pickup, or telling a driver which terminal you need.",
@@ -8688,7 +8684,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mien Tay Bus Station points west from Saigon toward Mekong Delta journeys, with coaches, route boards, food stalls, luggage, and early-morning departures.",
+        "summaryExcerpt": "Mien Tay Bus Station points west from Saigon toward Mekong Delta journeys, with coaches, route boards, food stalls, bags, and early-morning departures.",
         "aboutExcerpt": "A major western bus terminal in HCMC, commonly associated with routes toward the Mekong Delta.",
         "phrasebookExcerpt": "Bến xe Miền Tây means Western Bus Station, a practical phrase for terminal directions.",
         "belongingExcerpt": "It helps travelers name the right transport hub for trips beyond Saigon, especially westbound routes.",
@@ -9315,8 +9311,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Saigon Railway Station has the feel of platforms, luggage, old station signage, waiting halls, and train trips that carry HCMC into the rest of Vietnam.",
-        "aboutExcerpt": "The main railway station for Saigon, with platforms, waiting halls, luggage, and trips across Vietnam.",
+        "summaryExcerpt": "Saigon Railway Station has the feel of old station signage, waiting halls, train whistles, bags at your feet, and trips that carry HCMC into the rest of Vietnam.",
+        "aboutExcerpt": "The main railway station for Saigon, with waiting halls, old signage, train sounds, and trips across Vietnam.",
         "phrasebookExcerpt": "Ga Sài Gòn means Saigon Station, a compact phrase for tickets, taxis, and directions.",
         "belongingExcerpt": "It helps travelers handle intercity movement without confusing the train station with bus terminals.",
         "timingExcerpt": "Use it when catching a train, arriving by rail, or arranging a pickup from the station.",
@@ -9579,8 +9575,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Tan Son Nhat International Airport is often the first humid Saigon scene travelers meet: terminal doors, luggage carts, waiting families, taxi lanes, and ride-hailing zones.",
-        "aboutExcerpt": "HCMC's main airport, where terminal doors, luggage, waiting families, and transfer plans start the trip.",
+        "summaryExcerpt": "Tan Son Nhat International Airport is often the first humid Saigon scene travelers meet: glass doors, Vietnamese signs, waiting families, taxi lanes, and city heat.",
+        "aboutExcerpt": "HCMC's main airport, where glass doors, Vietnamese signs, waiting families, and transfer plans start the trip.",
         "phrasebookExcerpt": "Sân bay Tân Sơn Nhất is the airport wording you are likely to hear in arrival conversations.",
         "belongingExcerpt": "It gives travelers confidence for the first and last city movement, before sightseeing even begins.",
         "timingExcerpt": "Use it for airport pickups, hotel transfers, domestic flights, or explaining where you just arrived.",
@@ -10437,8 +10433,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hoi An Bus Station sits at the town's arrival edge: coaches idling, luggage in hand, shaded waiting areas, and the first short ride toward old streets or a hotel.",
-        "aboutExcerpt": "The Hoi An bus-station name for road arrivals, shaded waiting areas, luggage, and onward rides.",
+        "summaryExcerpt": "Hoi An Bus Station sits at the town's arrival edge: coaches idling, bags in hand, shaded waiting areas, and the first short ride toward old streets or a hotel.",
+        "aboutExcerpt": "The Hoi An bus-station name for road arrivals, shaded waiting areas, bags, and onward rides.",
         "phrasebookExcerpt": "Bến xe Hội An is the Vietnamese name to show when you mean Hoi An Bus Station.",
         "belongingExcerpt": "It covers the arrival edge of Hoi An travel before food, beaches, and heritage walks begin.",
         "timingExcerpt": "Use it when confirming a shuttle, asking where a bus leaves, or telling a driver where to pick you up.",
@@ -11328,8 +11324,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Da Nang Railway Station for Hoi An starts with platform noise, luggage, station doors, and the warm road south toward yellow walls, river light, and a quieter old-town stay.",
-        "aboutExcerpt": "The station-to-Hoi An wording for train arrivals, luggage, pickup curbs, and the road south.",
+        "summaryExcerpt": "Da Nang Railway Station for Hoi An starts with train noise, bags, station doors, and the warm road south toward yellow walls, river light, and a quieter old-town stay.",
+        "aboutExcerpt": "The station-to-Hoi An wording for train arrivals, bags, station doors, and the road south.",
         "phrasebookExcerpt": "Ga Đà Nẵng đi Hội An means Da Nang Railway Station to Hoi An by transfer.",
         "belongingExcerpt": "It gives a common regional transfer the sensory shape of train station, curb, road, and Hoi An arrival.",
         "timingExcerpt": "Use it when arranging pickup from the station or explaining that Hoi An is your final destination.",
@@ -15453,8 +15449,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hue Northern Bus Station is a road-travel terminal scene on the city's north side, with coach buses, luggage, ticket windows, and the practical rhythm of departures.",
-        "aboutExcerpt": "A north-side Hue bus terminal with coaches, ticket windows, luggage, and intercity road movement.",
+        "summaryExcerpt": "Hue Northern Bus Station is a road-travel scene on the city's north side, with coach buses, bags, Vietnamese signs, and the rhythm of departures.",
+        "aboutExcerpt": "A north-side Hue bus station with coaches, Vietnamese signs, bags, and intercity road movement.",
         "phrasebookExcerpt": "Bến xe phía Bắc Huế is the local name to show for Hue Northern Bus Station.",
         "belongingExcerpt": "It gives travelers a concrete north-side terminal name for Hue road departures.",
         "timingExcerpt": "Use it when asking for the correct bus station, confirming a ride, or arranging drop-off.",
@@ -15585,8 +15581,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Phu Bai Airport is the first Hue threshold for many travelers: luggage at the curb, warm central-Vietnam air, and the ride north toward the river city.",
-        "aboutExcerpt": "Hue's airport, where flights, luggage, pickup signs, and the road into the city come together.",
+        "summaryExcerpt": "Phu Bai Airport is the first Hue threshold for many travelers: glass doors, warm central-Vietnam air, waiting families, and the road north toward the river city.",
+        "aboutExcerpt": "Hue's airport, where flights, warm air, waiting signs, and the road into the city come together.",
         "phrasebookExcerpt": "Sân bay Phú Bài is the local name to show when asking for Phu Bai Airport.",
         "belongingExcerpt": "It gives travelers the airport name tied to Hue's actual arrival scene and first transfer.",
         "timingExcerpt": "Use it when arranging airport pickup, asking for a drop-off, or confirming a departure ride.",
@@ -15882,8 +15878,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hue Southern Bus Station feels like a working road-travel edge of the city, with coaches, signs, luggage, vendors, and travelers waiting under the terminal roof.",
-        "aboutExcerpt": "A south-side Hue bus terminal with coaches, signs, waiting areas, luggage, and road-trip movement.",
+        "summaryExcerpt": "Hue Southern Bus Station feels like a working road-travel edge of the city, with coaches, signs, bags, vendors, and travelers waiting under the station roof.",
+        "aboutExcerpt": "A south-side Hue bus station with coaches, signs, waiting areas, bags, and road-trip movement.",
         "phrasebookExcerpt": "Bến xe phía Nam Huế is the local name to show for Hue Southern Bus Station.",
         "belongingExcerpt": "It gives travelers a concrete south-side terminal name for Hue road departures.",
         "timingExcerpt": "Use it when confirming the correct terminal for a bus, shuttle, pickup, or drop-off.",
