@@ -9,9 +9,10 @@ const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-libra
 const authoredPagesPath = path.join(repoRoot, "native-ios", "Resources", "viet-authored-listing-pages.json");
 const browseDestinationsPath = path.join(repoRoot, "native-ios", "App", "Models", "BrowseSearchDestinations.swift");
 
-const EXPECTED_DIMENSIONS = "853 x 1844";
-const EXPECTED_CITY_DIMENSIONS = "720 x 1556";
-const PHOTO_LIKE_MIN_BYTES = 120_000;
+const EXPECTED_STANDARD_DIMENSIONS = "853 x 1844";
+const EXPECTED_BACKDROP_DIMENSIONS = "720 x 1556";
+const STANDARD_PHOTO_LIKE_MIN_BYTES = 120_000;
+const LIGHTWEIGHT_PHOTO_LIKE_MIN_BYTES = 100_000;
 const requireUniqueCityPlaceAssets = process.argv.includes("--require-unique-city-place-assets");
 const existingNonCityDimensionAllowlist = new Map([
   ["HeroVietnameseFoodMenu", "864 x 1821"],
@@ -106,6 +107,19 @@ function rasterDimensions(filePath) {
   return "";
 }
 
+function expectedDimensionsFor(heroImageName) {
+  if (heroImageName.startsWith("HeroCity") || heroImageName.startsWith("HeroCategory")) {
+    return EXPECTED_BACKDROP_DIMENSIONS;
+  }
+  return EXPECTED_STANDARD_DIMENSIONS;
+}
+
+function minPhotoBytesFor(heroImageName) {
+  return heroImageName.startsWith("HeroCategory")
+    ? LIGHTWEIGHT_PHOTO_LIKE_MIN_BYTES
+    : STANDARD_PHOTO_LIKE_MIN_BYTES;
+}
+
 function validateAsset(heroImageName, context) {
   if (isRetiredHeroName(heroImageName)) {
     fail(`${context}: ${heroImageName} is retired flat/procedural hero art`);
@@ -130,16 +144,15 @@ function validateAsset(heroImageName, context) {
   }
 
   const dimensions = rasterDimensions(raster);
-  const expectedDimensions = heroImageName.startsWith("HeroCity")
-    ? EXPECTED_CITY_DIMENSIONS
-    : EXPECTED_DIMENSIONS;
+  const expectedDimensions = expectedDimensionsFor(heroImageName);
   const allowedDimensions = existingNonCityDimensionAllowlist.get(heroImageName);
   if (dimensions !== expectedDimensions && dimensions !== allowedDimensions) {
     fail(`${context}: ${heroImageName} is ${dimensions}, expected ${expectedDimensions}`);
   }
 
   const bytes = fs.statSync(raster).size;
-  if (bytes < PHOTO_LIKE_MIN_BYTES) {
+  const minPhotoLikeBytes = minPhotoBytesFor(heroImageName);
+  if (bytes < minPhotoLikeBytes) {
     fail(`${context}: ${heroImageName} image is only ${bytes} bytes; likely flat/procedural art`);
   }
 }
