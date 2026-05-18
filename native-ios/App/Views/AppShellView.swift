@@ -37,6 +37,7 @@ struct AppShellView: View {
     @State private var didApplyLaunchSearchFocus = false
     @State private var hidesPhotoBackdropChrome = false
     @State private var showsPhotoBackdropTabBarBackground = false
+    @State private var photoBackdropImmersiveImageContext: PhrasePhotoBackdropImmersiveImageContext?
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeSourceID: String?
     @State private var requestedPracticeMode: PracticeMode?
@@ -113,7 +114,7 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
-        .toolbar(hidesSystemTabBar ? .hidden : .visible, for: .tabBar)
+        .toolbar(hidesNativeToolbarTabBar ? .hidden : .visible, for: .tabBar)
         .toolbarBackground(
             showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
             for: .tabBar
@@ -134,10 +135,16 @@ struct AppShellView: View {
         .background {
             #if canImport(UIKit)
             AppShellTabBarAppearanceBridge(
-                usesContentBackground: showsPhotoBackdropTabBarBackground && !hidesPhotoBackdropChrome
+                usesContentBackground: showsPhotoBackdropTabBarBackground && !hidesPhotoBackdropChrome,
+                isHidden: hidesSystemTabBar
             )
             .frame(width: 0, height: 0)
             #endif
+        }
+        .overlay {
+            if hidesPhotoBackdropChrome, let photoBackdropImmersiveImageContext {
+                PhotoBackdropImmersiveImageCover(context: photoBackdropImmersiveImageContext)
+            }
         }
     }
 
@@ -157,7 +164,7 @@ struct AppShellView: View {
     }
 
     private var tabBarBackgroundVisibility: Visibility {
-        if hidesSystemTabBar {
+        if hidesNativeToolbarTabBar || hidesPhotoBackdropChrome {
             return .hidden
         }
 
@@ -165,7 +172,11 @@ struct AppShellView: View {
     }
 
     private var hidesSystemTabBar: Bool {
-        hidesPhotoBackdropChrome || isPracticeMatchPresented || isPracticeThreadPresented
+        hidesPhotoBackdropChrome || hidesNativeToolbarTabBar
+    }
+
+    private var hidesNativeToolbarTabBar: Bool {
+        isPracticeMatchPresented || isPracticeThreadPresented
     }
 
     private var shellContentBody: some View {
@@ -374,6 +385,9 @@ struct AppShellView: View {
                 withAnimation(.easeInOut(duration: 0.18)) {
                     showsPhotoBackdropTabBarBackground = isVisible
                 }
+            }
+            .onPreferenceChange(PhrasePhotoBackdropImmersiveImagePreferenceKey.self) { context in
+                photoBackdropImmersiveImageContext = context
             }
             .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
                 savedTripSectionChromeStates = states
@@ -2943,9 +2957,41 @@ private extension View {
     }
 }
 
+private struct PhotoBackdropImmersiveImageCover: View {
+    let context: PhrasePhotoBackdropImmersiveImageContext
+
+    var body: some View {
+        GeometryReader { geometry in
+            let viewportSize = context.viewportSize
+            let frameHeight = max(context.imageFrameHeight, geometry.size.height)
+
+            Image(context.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    width: viewportSize.width,
+                    height: frameHeight,
+                    alignment: .top
+                )
+                .offset(y: -context.verticalFocusOffset)
+                .frame(
+                    width: geometry.size.width,
+                    height: geometry.size.height,
+                    alignment: .top
+                )
+                .clipped()
+                .ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
 #if canImport(UIKit)
 private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
     let usesContentBackground: Bool
+    let isHidden: Bool
 
     func makeUIViewController(context: Context) -> Controller {
         Controller()
@@ -2953,12 +2999,21 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
 
     func updateUIViewController(_ controller: Controller, context: Context) {
         controller.usesContentBackground = usesContentBackground
+        controller.isHidden = isHidden
     }
 
     final class Controller: UIViewController {
         var usesContentBackground = false {
             didSet {
                 guard oldValue != usesContentBackground else {
+                    return
+                }
+                applyAppearance()
+            }
+        }
+        var isHidden = false {
+            didSet {
+                guard oldValue != isHidden else {
                     return
                 }
                 applyAppearance()
@@ -2982,15 +3037,28 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
                 }
 
                 let appearance = UITabBarAppearance()
-                if self.usesContentBackground {
+                if self.isHidden {
+                    appearance.configureWithTransparentBackground()
+                    appearance.backgroundColor = .clear
+                    appearance.shadowColor = .clear
+                    tabBar.backgroundColor = .clear
+                    tabBar.isTranslucent = true
+                    tabBar.layer.shadowOpacity = 0
+                } else if self.usesContentBackground {
                     appearance.configureWithOpaqueBackground()
                     appearance.backgroundColor = UIColor(PhrasePageStyle.pageBackground)
+                    appearance.shadowColor = nil
+                    tabBar.layer.shadowOpacity = 0
                 } else {
                     appearance.configureWithDefaultBackground()
+                    appearance.shadowColor = nil
+                    tabBar.layer.shadowOpacity = 0
                 }
 
                 tabBar.standardAppearance = appearance
                 tabBar.scrollEdgeAppearance = appearance
+                tabBar.alpha = self.isHidden ? 0 : 1
+                tabBar.isUserInteractionEnabled = !self.isHidden
             }
         }
 

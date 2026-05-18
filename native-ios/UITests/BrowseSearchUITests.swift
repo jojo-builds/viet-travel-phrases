@@ -304,9 +304,9 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testVietnameseMenuDetailPhotoBackdropHidesAndRestoresContent() {
         assertPhotoBackdropHidesAndRestoresContent(
-            pageID: "viet-menu-food-pho-bo",
-            title: "Phở bò",
-            launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
+            pageID: "viet-menu-food-pho-dac-biet",
+            title: "Phở đặc biệt",
+            launchArguments: ["--detail-page", "viet-menu-food-pho-dac-biet"]
         )
 
         assertPhotoBackdropHidesAndRestoresContent(
@@ -814,6 +814,8 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 4), file: file, line: line)
         XCTAssertFalse(app.buttons[legacyLightboxButtonIdentifier].exists, file: file, line: line)
         XCTAssertTrue(app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 3), file: file, line: line)
+        let tabBar = app.tabBars.firstMatch
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2), file: file, line: line)
 
         for _ in 0..<4 where app.descendants(matching: .any)[contentIdentifier].exists {
             app.swipeDown()
@@ -827,6 +829,7 @@ final class BrowseSearchUITests: XCTestCase {
             file: file,
             line: line
         )
+        XCTAssertFalse(tabBar.exists && tabBar.isHittable, "Photo backdrop immersive mode should hide the bottom admin bar.", file: file, line: line)
 
         app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
         XCTAssertTrue(
@@ -835,6 +838,8 @@ final class BrowseSearchUITests: XCTestCase {
             file: file,
             line: line
         )
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertTrue(tabBar.isHittable, "Restoring the content sheet should restore the bottom admin bar.", file: file, line: line)
 
         for _ in 0..<2 {
             app.swipeDown()
@@ -842,6 +847,7 @@ final class BrowseSearchUITests: XCTestCase {
         }
         app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
         XCTAssertFalse(app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 1), file: file, line: line)
+        XCTAssertFalse(tabBar.exists && tabBar.isHittable, "Photo backdrop immersive mode should hide the bottom admin bar.", file: file, line: line)
         app.swipeUp()
         XCTAssertTrue(
             app.descendants(matching: .any)[contentIdentifier].waitForExistence(timeout: 2),
@@ -849,6 +855,8 @@ final class BrowseSearchUITests: XCTestCase {
             file: file,
             line: line
         )
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertTrue(tabBar.isHittable, "Swiping upward should restore the bottom admin bar.", file: file, line: line)
 
         app.terminate()
     }

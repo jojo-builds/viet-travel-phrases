@@ -342,8 +342,9 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testBrowseCityHeroImageFadeIsStrongEnoughToHideImagePanelSeam() {
-        XCTAssertGreaterThanOrEqual(BrowsePageLayout.cityHeroImageFadeHeight, 132)
+    func testBrowseCityHeroImageAndCopyAreasUseSubtleSeparator() {
+        XCTAssertEqual(BrowsePageLayout.cityHeroImageCopySeparatorHeight, 1)
+        XCTAssertLessThanOrEqual(BrowsePageLayout.cityHeroImageCopySeparatorOpacity, 0.08)
     }
 
     func testBrowseCityRoutesUseShortNativeDissolveTransition() {
@@ -1932,6 +1933,47 @@ final class AppChromeTests: XCTestCase {
                 "\(item.itemID) detail should use the photo backdrop layout"
             )
         }
+    }
+
+    func testVietnameseMenuBackdropImageUsesStablePortraitFrame() {
+        let size = CGSize(width: 393, height: 852)
+        let safeAreaInsets = EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0)
+        let menuFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: size,
+            pageID: "viet-menu-food-pho-dac-biet",
+            heroImageName: "BackdropMenuFoodPhoDacBiet"
+        )
+
+        XCTAssertEqual(menuFocusOffset, 0)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropFrameHeight(
+                for: size,
+                safeAreaInsets: safeAreaInsets,
+                pageID: "viet-menu-food-pho-dac-biet",
+                heroImageName: "BackdropMenuFoodPhoDacBiet"
+            ),
+            size.height + safeAreaInsets.bottom + menuFocusOffset,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                for: size,
+                pageID: "viet-phrase-city-danang-place-dragon-bridge",
+                heroImageName: "HeroCityDaNangDragonBridge"
+            ),
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropFrameHeight(
+                for: size,
+                safeAreaInsets: safeAreaInsets,
+                pageID: "viet-phrase-city-danang-place-dragon-bridge",
+                heroImageName: "HeroCityDaNangDragonBridge"
+            ),
+            size.height + safeAreaInsets.top + safeAreaInsets.bottom + 160,
+            accuracy: 0.001
+        )
     }
 
     func testVietnameseMenuItemsHavePlayableNameAudio() throws {
