@@ -1723,6 +1723,8 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(food.title, "Food Menu")
         XCTAssertEqual(food.mastheadImageName, "HeroVietnameseFoodMenu")
+        XCTAssertEqual(VietnameseMenuKind.food.photoBackdropImageName, "BackdropVietnameseFoodMenu")
+        XCTAssertNotNil(UIImage(named: "BackdropVietnameseFoodMenu"))
         XCTAssertEqual(food.starterTitle, "Popular dishes")
         XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
         XCTAssertEqual(food.starterItems.first?.title, "Phở bò")
@@ -1731,6 +1733,8 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(drinks.title, "Drink Menu")
         XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
+        XCTAssertEqual(VietnameseMenuKind.drink.photoBackdropImageName, "BackdropVietnameseDrinkMenu")
+        XCTAssertNotNil(UIImage(named: "BackdropVietnameseDrinkMenu"))
         XCTAssertEqual(drinks.starterTitle, "Popular drinks")
         XCTAssertEqual(drinks.starterItems.first?.pageID, "viet-menu-drink-ca-phe-sua-da")
         XCTAssertEqual(drinks.starterItems.first?.title, "Cà phê sữa đá")
