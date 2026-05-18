@@ -128,6 +128,33 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testHomePhotoBackdropUsesDedicatedMapAsset() {
+        XCTAssertEqual(HomeLayout.backdropImageName, "HomeVietnamMapBackdrop")
+        XCTAssertNotNil(UIImage(named: HomeLayout.backdropImageName))
+        XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, PhrasePhotoBackdropLayout.bottomReadingClearance)
+    }
+
+    func testHomePhotoBackdropImageTapRegionIncludesInitialVisibleImage() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let initialOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: metrics.initialAnchorOffset)
+        let visibleImageBottom = max(metrics.collapsedContentTop - initialOffset, 0)
+
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.isImageTap(
+                CGPoint(x: 196, y: max(visibleImageBottom - 24, 1)),
+                scrollOffset: initialOffset,
+                metrics: metrics
+            )
+        )
+        XCTAssertFalse(
+            PhrasePhotoBackdropLayout.isImageTap(
+                CGPoint(x: 196, y: visibleImageBottom + 24),
+                scrollOffset: initialOffset,
+                metrics: metrics
+            )
+        )
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)
@@ -312,6 +339,17 @@ final class AppChromeTests: XCTestCase {
         }
 
         XCTAssertTrue(issues.isEmpty, "Homepage phrase cards should open built-out listing pages. Missing: \(issues.joined(separator: ", "))")
+    }
+
+    func testHomepageCollectionLinksResolveToBrowseCollections() {
+        let missingRoutes = HomePageLinkRegistry.homepageCollectionRoutes
+            .filter { BrowseSearchDestinations.collectionDescriptor(for: $0) == nil }
+            .map(\.id)
+
+        XCTAssertTrue(
+            missingRoutes.isEmpty,
+            "Homepage collection links should resolve to Browse collection pages. Missing: \(missingRoutes.joined(separator: ", "))"
+        )
     }
 
     private func homepageListingPageIssue(_ pageID: String, manifest: AudioAssetManifest) -> String? {
