@@ -113,6 +113,21 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropBottomBackingStaysNearSystemToolbar() {
+        let safeAreaBottom: CGFloat = 34
+        let visibleBackingHeight = PhrasePhotoBackdropLayout.bottomChromeBackdropVisibleHeight(
+            safeAreaBottom: safeAreaBottom
+        )
+
+        XCTAssertLessThanOrEqual(visibleBackingHeight, 112)
+        XCTAssertGreaterThanOrEqual(visibleBackingHeight, 88)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(safeAreaBottom: safeAreaBottom),
+            PhrasePhotoBackdropLayout.minimumBottomChromeBackdropOffset,
+            accuracy: 0.001
+        )
+    }
+
     func testExploreCatalogUsesAppStoreStyleThreeRowGroups() {
         XCTAssertEqual(ExploreCatalogLayout.itemsPerGroup, 3)
         XCTAssertGreaterThan(ExploreCatalogLayout.fullGroupHeight, ExploreCatalogLayout.rowHeight * 3)

@@ -45,6 +45,10 @@ const bannedVisibleFragments = [
   "shown here",
   "play it aloud",
   "play the name",
+  "hear the name",
+  "why it belongs",
+  "travel moment",
+  "map pin",
   "from the app",
   "pronunciation gets noisy",
   "think in sequence",
@@ -89,6 +93,11 @@ const formulaicVisiblePatterns = [
   /\bpart of how .* becomes legible\b/i,
   /\bthis is a more deliberate restaurant plan\b/i,
   /\bcheck .* ingredients first if you avoid\b/i,
+  /\bthe traveler(?:s)?\b/i,
+  /\bmap pin\b/i,
+  /\bwhy it belongs\b/i,
+  /\btravel moment\b/i,
+  /\bhear the name\b/i,
   /\bthink in sequence:\s*arrival\b/i,
   /\btable, menu, order, drink, bill, and pickup phrases do the real work\b/i,
   /\bthe traveler(?:s)?\b/i,
@@ -221,7 +230,7 @@ function validateProfileUtility(page) {
   const text = normalizedLower(visibleEditorialText(page));
   switch (profileFor(page)) {
   case "street":
-    requireTextIncludes(page, text, [/street/, /shopfront/, /crossing/, /map pin/, /neighborhood/, /hotel edge/, /lane/], "street or neighborhood");
+    requireTextIncludes(page, text, [/street/, /shopfront/, /crossing/, /neighborhood/, /hotel edge/, /lane/, /saved place/], "street or neighborhood");
     break;
   case "transit":
     requireTextIncludes(page, text, [/arrival/, /platform/, /route board/, /luggage/, /station door/, /city light/, /sign/, /boat/, /river/, /boarding/, /water/, /pier/], "arrival or water-threshold texture");
@@ -242,8 +251,52 @@ function validateProfileUtility(page) {
     requireTextIncludes(page, text, [/view/, /entry detail/, /photo/, /local pride/, /stage/, /light/, /water/, /gate/, /courtyard/, /temple/, /visit/, /route/, /dish/, /spice/, /shared plate/, /local appetite/, /food/, /craft/, /hands/, /material/, /skill/, /museum/, /art/, /history/, /objects?/, /artifacts?/], "place significance");
     break;
   default:
-    requireTextIncludes(page, text, [/photo/, /market/, /map/, /city/, /street/, /view/, /water/, /food/, /culture/], "traveler image");
+    requireTextIncludes(page, text, [/photo/, /market/, /city/, /street/, /view/, /water/, /food/, /culture/], "traveler image");
     break;
+  }
+}
+
+function validateReasonToGoStructure(page) {
+  const sections = page.editorialImport?.sections ?? [];
+  const byID = new Map(sections.map((section) => [section.id, section]));
+  const expectedTitles = {
+    "at-glance": "Why go",
+    "place-brief": "What you'll get",
+    "quick-say": "Say it locally",
+    "use-it-with": "Worth it if",
+  };
+  for (const [sectionID, expectedTitle] of Object.entries(expectedTitles)) {
+    const section = byID.get(sectionID);
+    if (!section) {
+      fail(`${page.id} missing reason-to-go section ${sectionID}`);
+      continue;
+    }
+    if (section.title !== expectedTitle) {
+      fail(`${page.id} section ${sectionID} should be titled "${expectedTitle}", found "${section.title}"`);
+    }
+  }
+  const text = normalizedLower(visibleEditorialText(page));
+  const reasonWords = [
+    "worth",
+    "reason",
+    "history",
+    "historic",
+    "culture",
+    "craft",
+    "food",
+    "flavor",
+    "view",
+    "architecture",
+    "ritual",
+    "story",
+    "memory",
+    "market",
+    "coffee",
+    "river",
+    "beach",
+  ];
+  if (!reasonWords.some((word) => text.includes(word))) {
+    fail(`${page.id} missing a reason-to-go or factual hook cue`);
   }
 }
 
@@ -402,6 +455,7 @@ function main() {
     validateNoBannedVisibleText(`${page.id} source editorial inputs`, sourceEditorialInputText(page));
     validateNoRepeatedVisibleSentences(page.id, visibleEditorialSections(page));
     validateProfileUtility(page);
+    validateReasonToGoStructure(page);
 
     for (const section of editorial.sections ?? []) {
       const body = normalizedLower(section.body);

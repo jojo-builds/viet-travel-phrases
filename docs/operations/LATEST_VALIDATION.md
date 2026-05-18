@@ -10,6 +10,29 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current City Copy Lane Evidence
+
+Fresh evidence from the 2026-05-18 city-place reason-to-go copy pass on `feature/city-pages`:
+
+- `node native-ios/scripts/build-viet-city-copy-review-report.js`
+  - passed: `500` approved city noun/place pages, `0` fix-now, `0` hard-block, `0` follow-up, `100/100` approved in each of Ho Chi Minh City, Hanoi, Da Nang, Hoi An, and Hue
+- `node native-ios/scripts/audit-viet-city-audience-fit.js`
+  - passed: `5` city hubs plus `All Vietnam`, `500` city noun/place pages
+- `node native-ios/scripts/validate-viet-city-copy.js`
+  - passed: `5` hubs, `500` city noun pages, `500` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js`
+  - passed: `807` pages, `707` beginner, `95` intermediate, `5` advanced
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`
+  - passed: `3129` source phrases, `3121` canonical pages, `20248` relations, `0` release-blocking missing-audio rows, `5` cities, `500` city places, `807` city phrase tags, `0` banned file matches
+- `node scripts/practice/generate-viet-practice-deck.js --check`
+  - passed: `8267` items, `18` scenarios, `8` question types
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `git diff --check`
+  - passed
+
+Scope note: this was a copy/content/resource pass. No simulator or physical iPhone build was run because no Swift app behavior changed.
+
 ## Current Main Merge Sweep Evidence
 
 Current `main` evidence from the 2026-05-18 non-paywall, non-Messages merge sweep:
