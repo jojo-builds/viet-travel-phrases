@@ -49,6 +49,15 @@ enum VietnameseMenuKind: String, CaseIterable, Equatable {
         }
     }
 
+    var photoBackdropImageName: String? {
+        switch self {
+        case .food:
+            return "BackdropVietnameseFoodMenu"
+        case .drink:
+            return "BackdropVietnameseDrinkMenu"
+        }
+    }
+
     var symbolName: String {
         switch self {
         case .food:
