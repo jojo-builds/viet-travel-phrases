@@ -208,8 +208,7 @@ enum BrowsePageLayout {
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
     static let bottomChromeContentClearance: CGFloat = 48
-    static let situationIconSize: CGFloat = 48
-    static let situationCardMinHeight: CGFloat = 136
+    static let situationCardMinHeight: CGFloat = 158
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
@@ -295,43 +294,59 @@ private struct BrowseSituationCard: View {
     let destination: BrowseDestination
     let action: () -> Void
 
+    private var heroImageName: String {
+        BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
     var body: some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Image(systemName: destination.symbolName)
-                        .font(.title2.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .frame(width: BrowsePageLayout.situationIconSize, height: BrowsePageLayout.situationIconSize)
-                        .nativeGlass(
-                            cornerRadius: BrowsePageLayout.situationIconSize / 2,
-                            tint: destination.tintName.color.opacity(0.18),
-                            interactive: true
-                        )
-                }
+            ZStack(alignment: .bottomLeading) {
+                Image(heroImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: BrowsePageLayout.situationCardMinHeight,
+                        maxHeight: BrowsePageLayout.situationCardMinHeight,
+                        alignment: .top
+                    )
+                    .clipped()
+                    .accessibilityHidden(true)
 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(destination.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.8)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.18),
+                        .init(color: Color.black.opacity(0.18), location: 0.52),
+                        .init(color: Color.black.opacity(0.66), location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
 
-                    Text(destination.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.84)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .layoutPriority(1)
+                Text(destination.title)
+                    .font(.system(size: 24, weight: .black))
+                    .foregroundStyle(.white)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.72)
+                    .shadow(color: .black.opacity(0.32), radius: 8, x: 0, y: 2)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, alignment: .topLeading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, maxHeight: BrowsePageLayout.situationCardMinHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(0.74), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+            .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(destination.title). \(destination.subtitle)")
         .accessibilityIdentifier("Browse.Situation.\(destination.id)")
     }
 }

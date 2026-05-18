@@ -8,7 +8,7 @@ private struct PracticeThreadForwardRestore: Equatable {
     let focusRequest: BrowseCollectionFocusRequest?
 }
 
-enum HomeScrollTarget: Hashable {
+enum HomeScrollTarget: Hashable, Sendable {
     case top
     case essentials
     case firstDay
@@ -23,6 +23,11 @@ enum HomeScrollTarget: Hashable {
     case moneyShopping
     case helpEmergency
     case recentlyViewed
+}
+
+struct HomeScrollRestorationTarget: Equatable {
+    let target: HomeScrollTarget
+    let offsetY: CGFloat
 }
 
 struct AppShellView: View {
@@ -55,7 +60,8 @@ struct AppShellView: View {
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
-    @State private var homeScrollRestorationTarget: HomeScrollTarget?
+    @State private var homeCurrentScrollOffsetY: CGFloat = 0
+    @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
     @State private var menuSectionJumpRequestID = 0
     @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
@@ -189,6 +195,7 @@ struct AppShellView: View {
                     isSearchActive: navigation.isSearchPresented,
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     currentScrollTarget: $homeCurrentScrollTarget,
+                    currentScrollOffsetY: $homeCurrentScrollOffsetY,
                     scrollRestorationTarget: $homeScrollRestorationTarget,
                     onSearchTapped: openSearch,
                     onOpenDetail: { id, target in
@@ -684,6 +691,7 @@ struct AppShellView: View {
                 isActive: false,
                 isSearchActive: navigation.isSearchPresented,
                 currentScrollTarget: .constant(nil),
+                currentScrollOffsetY: .constant(0),
                 scrollRestorationTarget: .constant(nil),
                 onSearchTapped: openSearch,
                 onOpenDetail: { id, _ in openDetailFromHome(id) },
@@ -1191,10 +1199,15 @@ struct AppShellView: View {
             return
         }
 
-        homeScrollRestorationTarget = target
-            ?? homeScrollRestorationTarget
+        let resolvedTarget = target
+            ?? homeScrollRestorationTarget?.target
             ?? homeCurrentScrollTarget
             ?? .top
+
+        homeScrollRestorationTarget = HomeScrollRestorationTarget(
+            target: resolvedTarget,
+            offsetY: max(homeCurrentScrollOffsetY, 0)
+        )
     }
 
     private func openDetailFromHome(_ id: String) {
@@ -3229,7 +3242,12 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
 struct HomeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @Binding var currentScrollTarget: HomeScrollTarget?
-    @Binding var scrollRestorationTarget: HomeScrollTarget?
+    @Binding var currentScrollOffsetY: CGFloat
+    @Binding var scrollRestorationTarget: HomeScrollRestorationTarget?
+    @State private var scrollPosition = ScrollPosition(idType: HomeScrollTarget.self, edge: .top)
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
 
     let scrollToTopTrigger: Int
     let chromeNamespace: Namespace.ID?
@@ -3251,7 +3269,8 @@ struct HomeView: View {
         isSearchActive: Bool = false,
         heroMorphPageID: String? = nil,
         currentScrollTarget: Binding<HomeScrollTarget?>,
-        scrollRestorationTarget: Binding<HomeScrollTarget?>,
+        currentScrollOffsetY: Binding<CGFloat>,
+        scrollRestorationTarget: Binding<HomeScrollRestorationTarget?>,
         onSearchTapped: @escaping () -> Void,
         onOpenDetail: @escaping (String, HomeScrollTarget) -> Void,
         onOpenFeaturedDetail: @escaping (String, HomeScrollTarget) -> Void,
@@ -3261,6 +3280,7 @@ struct HomeView: View {
     ) {
         self.intentStore = intentStore
         self._currentScrollTarget = currentScrollTarget
+        self._currentScrollOffsetY = currentScrollOffsetY
         self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.chromeNamespace = chromeNamespace
@@ -3276,106 +3296,269 @@ struct HomeView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+        GeometryReader { geometry in
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-                        header
-                            .id(HomeScrollTarget.top)
+            ZStack(alignment: .top) {
+                photoBackdropImage(geometry: geometry)
 
-                        useNowShelf
-                            .id(HomeScrollTarget.essentials)
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
 
-                        homepagePhraseShelf("first-day", scrollTarget: .firstDay)
-                            .id(HomeScrollTarget.firstDay)
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
 
-                        cityShelf
-                            .id(HomeScrollTarget.city)
+                            Color.clear
+                                .frame(height: 1)
+                                .id(HomeScrollTarget.top)
+                                .accessibilityHidden(true)
 
-                        LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-                            homepagePhraseShelf("food-coffee", scrollTarget: .foodCoffee)
-                                .id(HomeScrollTarget.foodCoffee)
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
 
-                            practiceScenariosShelf
-                                .id(HomeScrollTarget.practice)
-
-                            homepagePhraseShelf("taxi-getting-around", scrollTarget: .gettingAround)
-                                .id(HomeScrollTarget.gettingAround)
-
-                            situationShelves
-                                .id(HomeScrollTarget.situations)
-
-                            homepagePhraseShelf("when-stuck", scrollTarget: .whenStuck)
-                                .id(HomeScrollTarget.whenStuck)
-
-                            homepagePhraseShelf("hotel-basics", scrollTarget: .hotelBasics)
-                                .id(HomeScrollTarget.hotelBasics)
-
-                            relationshipShelf
-                                .id(HomeScrollTarget.relationships)
-
-                            homepagePhraseShelf("money-shopping", scrollTarget: .moneyShopping)
-                                .id(HomeScrollTarget.moneyShopping)
-
-                            homepagePhraseShelf("help-emergency", scrollTarget: .helpEmergency)
-                                .id(HomeScrollTarget.helpEmergency)
-
-                            recentlyViewedShelf
-                                .id(HomeScrollTarget.recentlyViewed)
+                            homeContentSheet
                         }
                     }
-                    .scrollTargetLayout()
-                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+                    .scrollPosition($scrollPosition)
+                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
+                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
+                    }) { _, offsetY in
+                        currentScrollOffsetY = offsetY
+
+                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offsetY)
+                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = backdropOffset
+                        }
+
+                        if isPhotoBackdropImmersive, offsetY > metrics.revealImmersiveOffset {
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
+                        }
+                    }
+                    .onAppear {
+                        guard isActive else { return }
+                        restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                    }
+                    .onChange(of: isActive) { _, isActive in
+                        if isActive {
+                            restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                        } else if isPhotoBackdropImmersive {
+                            isPhotoBackdropImmersive = false
+                        }
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        scrollRestorationTarget = nil
+                        currentScrollTarget = .top
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+                    }
+                    .task(id: isActive) {
+                        guard isActive, scrollRestorationTarget == nil else {
+                            return
+                        }
+
+                        await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                    }
                 }
-                .scrollPosition(id: $currentScrollTarget, anchor: .top)
-                .onAppear {
-                    guard isActive else { return }
-                    restoreScrollTargetIfNeeded(with: scrollProxy)
-                }
-                .onChange(of: isActive) { _, isActive in
-                    guard isActive else { return }
-                    restoreScrollTargetIfNeeded(with: scrollProxy)
-                }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollRestorationTarget = nil
-                    currentScrollTarget = .top
-                    scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
-                }
+                .ignoresSafeArea(edges: .top)
             }
-            .ignoresSafeArea(edges: .top)
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: "home",
+                        imageName: HomeLayout.backdropImageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: "home",
+                            heroImageName: HomeLayout.backdropImageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: "home",
+                            heroImageName: HomeLayout.backdropImageName
+                        )
+                    )
+                    : nil
+            )
         }
+        .ignoresSafeArea(edges: .bottom)
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && !isPhotoBackdropImmersive
+        )
         .accessibilityIdentifier("HomeView")
         .task {
             HomeImagePreheater.preheat(HomeContent.homeScrollCriticalImageNames)
         }
     }
 
-    private var header: some View {
+    private var homeContentSheet: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
 
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 8) {
-                    ZStack {
-                        Circle().fill(Color.red)
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(.yellow)
-                    }
-                    .frame(width: 22, height: 22)
+            VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                header
 
-                    Text("SPEAKLOCAL VIETNAM")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                useNowShelf
+                    .id(HomeScrollTarget.essentials)
+
+                homepagePhraseShelf("first-day", scrollTarget: .firstDay)
+                    .id(HomeScrollTarget.firstDay)
+
+                cityShelf
+                    .id(HomeScrollTarget.city)
+
+                LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    homepagePhraseShelf("food-coffee", scrollTarget: .foodCoffee)
+                        .id(HomeScrollTarget.foodCoffee)
+
+                    practiceScenariosShelf
+                        .id(HomeScrollTarget.practice)
+
+                    homepagePhraseShelf("taxi-getting-around", scrollTarget: .gettingAround)
+                        .id(HomeScrollTarget.gettingAround)
+
+                    situationShelves
+                        .id(HomeScrollTarget.situations)
+
+                    homepagePhraseShelf("when-stuck", scrollTarget: .whenStuck)
+                        .id(HomeScrollTarget.whenStuck)
+
+                    homepagePhraseShelf("hotel-basics", scrollTarget: .hotelBasics)
+                        .id(HomeScrollTarget.hotelBasics)
+
+                    relationshipShelf
+                        .id(HomeScrollTarget.relationships)
+
+                    homepagePhraseShelf("money-shopping", scrollTarget: .moneyShopping)
+                        .id(HomeScrollTarget.moneyShopping)
+
+                    homepagePhraseShelf("help-emergency", scrollTarget: .helpEmergency)
+                        .id(HomeScrollTarget.helpEmergency)
+
+                    recentlyViewedShelf
+                        .id(HomeScrollTarget.recentlyViewed)
                 }
             }
-            .padding(.horizontal, HomeLayout.horizontalPadding)
-            .padding(.top, 10)
-            .padding(.bottom, 0)
+            .padding(.bottom, HomeLayout.photoBackdropBottomReadingClearance)
         }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .accessibilityIdentifier("Home.PhotoBackdrop.Content")
+    }
+
+    private func photoBackdropImage(geometry: GeometryProxy) -> some View {
+        HomePreparedImage(name: HomeLayout.backdropImageName)
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                    for: geometry.size,
+                    safeAreaInsets: geometry.safeAreaInsets,
+                    pageID: "home",
+                    heroImageName: HomeLayout.backdropImageName
+                ),
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .accessibilityHidden(true)
+            .accessibilityIdentifier("Home.PhotoBackdrop.Image")
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
+            safeAreaBottom: safeAreaBottom
+        )
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
+        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
+        let backdropHeight = min(
+            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
+            maximumBackdropHeight
+        )
+
+        return VStack(spacing: 0) {
+            Spacer(minLength: 0)
+
+            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+        }
+        .frame(
+            height: backdropBottom,
+            alignment: .bottom
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text("SPEAKLOCAL VIETNAM")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.horizontal, HomeLayout.horizontalPadding)
+        .padding(.bottom, -12)
     }
 
     private var useNowShelf: some View {
@@ -3487,16 +3670,74 @@ struct HomeView: View {
         .padding(.leading, HomeLayout.horizontalPadding)
     }
 
-    private func restoreScrollTargetIfNeeded(with scrollProxy: ScrollViewProxy) {
+    private func restoreScrollTargetIfNeeded(
+        scrollProxy: ScrollViewProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
         guard let target = scrollRestorationTarget else {
             return
         }
 
-        currentScrollTarget = target
-        scrollProxy.scrollTo(target, anchor: .top)
+        currentScrollTarget = target.target
+        restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
         Task { @MainActor in
-            scrollProxy.scrollTo(target, anchor: .top)
+            await Task.yield()
+            restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
             scrollRestorationTarget = nil
+        }
+    }
+
+    private func restoreScrollPosition(
+        _ target: HomeScrollRestorationTarget,
+        scrollProxy: ScrollViewProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        if target.offsetY <= 1 {
+            scrollProxy.scrollTo(target.target, anchor: .top)
+            currentScrollOffsetY = target.target == .top ? metrics.initialAnchorOffset : 0
+        } else {
+            scrollPosition.scrollTo(y: target.offsetY)
+        }
+    }
+
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled, isActive, scrollRestorationTarget == nil else {
+            return
+        }
+
+        isPhotoBackdropImmersive = false
+        currentScrollTarget = .top
+        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersive(
+        at location: CGPoint,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        if isPhotoBackdropImmersive {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
+            }
+            return
+        }
+
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
+            return
+        }
+
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
         }
     }
 }
@@ -4167,6 +4408,7 @@ private struct SavedTripRailFramePreferenceKey: PreferenceKey {
 }
 
 enum HomeLayout {
+    static let backdropImageName = "HomeVietnamMapBackdrop"
     static let horizontalPadding: CGFloat = 24
     static let sectionSpacing: CGFloat = 42
     static let cardCornerRadius: CGFloat = 22
@@ -4198,6 +4440,7 @@ enum HomeLayout {
     static let relationshipRowHeight: CGFloat = 102
     static let relationshipGroupVerticalPadding: CGFloat = 10
     static let bottomChromeContentClearance: CGFloat = 48
+    static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
         let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))
@@ -4689,7 +4932,7 @@ private enum HomeContent {
     }()
 
     static let homeScrollCriticalImageNames: [String] = {
-        cityCards.map(\.imageName) + situationCards.map(\.imageName)
+        [HomeLayout.backdropImageName] + cityCards.map(\.imageName) + situationCards.map(\.imageName)
     }()
 
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
@@ -4850,6 +5093,17 @@ enum HomePageLinkRegistry {
                 }
             )
         }
+    }
+
+    static var homepageCollectionRoutes: [BrowseCollectionRoute] {
+        [
+            .category("essentials"),
+            .category("local-greetings"),
+            .category("city-guides"),
+        ]
+        + HomeContent.homepagePhraseShelves.map(\.route)
+        + HomeContent.situationCards.map(\.route)
+        + HomeContent.cityCards.map(\.route)
     }
 
     private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
