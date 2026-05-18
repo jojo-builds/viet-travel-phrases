@@ -1,6 +1,6 @@
 {
   "reviewID": "viet-city-copy-production-2026-05-17",
-  "generatedAt": "2026-05-18T07:49:10.597Z",
+  "generatedAt": "2026-05-18T07:50:03.959Z",
   "scope": "500 city noun/place pages plus 5 city hubs",
   "source": "content-draft/viet/city-library/v1.json",
   "evidenceMode": "Every row stores current copy excerpts and computed pass/fail checks; native validation must also prove source/runtime parity before the report is accepted.",
@@ -11824,7 +11824,7 @@
         "phrasebookExcerpt": "Đảo Ký ức Hội An is the Vietnamese name for Hoi An Memories Land.",
         "belongingExcerpt": "It adds a ticketed evening destination to the broader Hoi An night plan.",
         "timingExcerpt": "Use it when heading to the river-island venue, asking for the entrance, or planning the ride back after the visit.",
-        "goodToKnowExcerpt": "Let current venue information handle schedules, access, and show-specific details."
+        "goodToKnowExcerpt": "Let current venue information handle schedules, access, and performance notes."
       }
     },
     {
