@@ -2584,7 +2584,7 @@ function applyCityEditorialImport(sections, pageRecord) {
       title: editorialSection.title,
       body: editorialSection.body,
     };
-    if (editorialSection.phraseIDs?.length) {
+    if (Array.isArray(editorialSection.phraseIDs)) {
       next.phrases = editorialSection.phraseIDs.map((phraseID) => editorialCityPhraseOption(phraseID, pageRecord.id));
     }
     if (editorialSection.id === "breakdown") {
@@ -4422,7 +4422,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
   }
   if (isNameBasedProfile(profile)) {
     const keepByProfile = {
-      place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
+      place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
       street: new Set(["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
       restaurant: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "pay-and-leave", "breakdown", "good-to-know"]),
       dish: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
@@ -4475,7 +4475,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 }
 
 const sectionOrderByProfile = {
-  place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "place-brief", "at-the-bridge", "use-it-with", "pickup-nearby", "when-to-use", "breakdown", "good-to-know", "explore-next"],
+  place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "place-brief", "use-it-with", "when-to-use", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
   restaurant: ["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
@@ -4551,6 +4551,20 @@ function phraseSection(id, title, phraseIDs, tintName = "teal") {
   };
 }
 
+function baNaJourneySection(existingByID, id, title, phraseIDs, tintName = "teal") {
+  const fallback = phraseSection(id, title, phraseIDs, tintName);
+  const existing = existingByID.get(id);
+  if (!existing) return fallback;
+  return {
+    ...fallback,
+    ...existing,
+    id,
+    title: existing.title || title,
+    phrases: Array.isArray(existing.phrases) ? existing.phrases : fallback.phrases,
+    presentation: existing.presentation || fallback.presentation,
+  };
+}
+
 function rewriteBaNaHillsJourneySections(page, sections) {
   if (!isBaNaHillsPage(page)) return sections;
 
@@ -4571,30 +4585,30 @@ function rewriteBaNaHillsJourneySections(page, sections) {
     useItWith ?? null,
     whenToUse ?? null,
     visitFlow ? { ...visitFlow, id: "journey-flow", title: "Visit flow", presentation: "plain-text" } : null,
-    phraseSection("getting-there", "Getting there", [
+    baNaJourneySection(existingByID, "getting-there", "Getting there", [
       "taxi-1",
       "v500-unde-repa-can-you-show-me-on-the-map",
       "v500-tran-please-stop-right-here",
       "ves-is-this-address-correct",
     ], "teal"),
-    phraseSection("tickets", "Tickets", [
+    baNaJourneySection(existingByID, "tickets", "Tickets", [
       "v500-time-date-book-two-tickets-please",
       "v500-time-date-book-one-ticket-please",
       "v500-sigh-acti-where-can-i-buy-tickets",
     ], "orange"),
-    phraseSection("cable-car", "Cable car", [
+    baNaJourneySection(existingByID, "cable-car", "Cable car", [
       "ves-where-cable-car",
     ], "teal"),
-    phraseSection("photos", "Photos", [
+    baNaJourneySection(existingByID, "photos", "Photos", [
       "ves-take-photo-for-me",
     ], "purple"),
-    phraseSection("getting-back", "Getting back", [
+    baNaJourneySection(existingByID, "getting-back", "Getting back", [
       "v500-unde-repa-can-you-show-me-on-the-map",
       "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
     goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
-    phraseSection("food-cash", "Food & cash", [
+    baNaJourneySection(existingByID, "food-cash", "Food & cash", [
       "store-1",
       "airport-4",
     ], "green"),

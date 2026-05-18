@@ -301,17 +301,75 @@
         {
           "id": "use-it-with",
           "title": "What to expect",
-          "body": "Treat it as a planned day trip, not a quick stop. Tickets, cable-car lines, weather, meeting points, and the ride back down all matter more than one landmark pin."
+          "body": "Give it room in the itinerary. Ba Na Hills feels best as a full outing above Da Nang, with time for the cable car, changing weather, viewpoints, gardens, and the ride back down.",
+          "phraseIDs": []
         },
         {
           "id": "when-to-use",
-          "title": "Day-trip rhythm",
-          "body": "The name comes up before you leave, at the ticket area, around the cable car, and again when it is time to find the return ride."
+          "title": "How the day flows",
+          "body": "Most visits have a natural arc: the ride out from Da Nang, the cable car climb, time for gardens and bridge photos, then a clear return plan before heading back down.",
+          "phraseIDs": []
+        },
+        {
+          "id": "getting-there",
+          "title": "Ride from Da Nang",
+          "body": "The outing starts before the mountain, usually with a hotel pickup, private driver, or tour bus leaving the city for the foothills.",
+          "phraseIDs": [
+            "taxi-1",
+            "v500-unde-repa-can-you-show-me-on-the-map",
+            "ves-is-this-address-correct",
+            "v500-tran-please-stop-right-here"
+          ]
+        },
+        {
+          "id": "tickets",
+          "title": "Tickets & entry",
+          "body": "The first real pause is the ticket or scan-in area before the cable car, with people choosing ticket counts, checking QR codes, and moving toward the platform.",
+          "phraseIDs": [
+            "v500-time-date-book-two-tickets-please",
+            "v500-time-date-book-one-ticket-please",
+            "v500-sigh-acti-where-can-i-buy-tickets"
+          ]
+        },
+        {
+          "id": "cable-car",
+          "title": "Find the cable car",
+          "body": "The cable car is the transition into Ba Na Hills: forest below, long views, platform queues, and the moment the day starts to feel high above Da Nang.",
+          "phraseIDs": [
+            "ves-where-cable-car"
+          ]
+        },
+        {
+          "id": "photos",
+          "title": "Photos & viewpoints",
+          "body": "The Golden Bridge and garden viewpoints are made for slowing down, passing phones around, and catching the mountain light before the mist changes.",
+          "phraseIDs": [
+            "ves-take-photo-for-me"
+          ]
+        },
+        {
+          "id": "getting-back",
+          "title": "Return ride",
+          "body": "By late afternoon, the day turns practical again: finding the driver, matching the pickup point, or asking staff for a taxi back toward Da Nang.",
+          "phraseIDs": [
+            "v500-unde-repa-can-you-show-me-on-the-map",
+            "ves-is-this-address-correct",
+            "ves-call-taxi-for-me"
+          ]
         },
         {
           "id": "good-to-know",
           "title": "Good to know",
           "body": "The Golden Bridge sits within the Ba Na Hills trip, so plan it as part of the same ticket-and-cable-car outing rather than a separate Da Nang stop."
+        },
+        {
+          "id": "food-cash",
+          "title": "Water & cash",
+          "body": "A hilltop outing runs smoother when water, snacks, and cash questions stay simple around kiosks, restaurants, and ATMs.",
+          "phraseIDs": [
+            "store-1",
+            "airport-4"
+          ]
         }
       ]
     },

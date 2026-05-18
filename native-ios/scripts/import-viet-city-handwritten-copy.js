@@ -124,11 +124,15 @@ function sectionMapFor(entry) {
     if (bannedExactSectionTitles.has(normalize(section.title))) {
       fail(`${entry.pageID} section ${section.id} keeps template title "${normalize(section.title)}"`);
     }
-    byID.set(section.id, {
+    const nextSection = {
       id: section.id,
       title: requireText(section.title, `section ${section.id} title`, entry.pageID, 3),
       body: requireText(section.body, `section ${section.id} body`, entry.pageID, 65),
-    });
+    };
+    if (Array.isArray(section.phraseIDs)) {
+      nextSection.phraseIDs = section.phraseIDs.map((phraseID) => requireText(phraseID, `section ${section.id} phraseID`, entry.pageID, 3));
+    }
+    byID.set(section.id, nextSection);
     requireNoTemplateDrift(section.body, `section ${section.id} body`, entry.pageID);
   }
   for (const id of requiredSectionIDs) {
