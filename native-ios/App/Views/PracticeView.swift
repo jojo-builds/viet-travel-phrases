@@ -3721,6 +3721,76 @@ struct PracticeMatchSource: Identifiable, Equatable {
     }
 }
 
+private struct PracticeMatchAtmosphere {
+    let imageName: String
+    let tint: Color
+    let glow: Color
+    let surface: Color
+}
+
+private extension PracticeMatchSource {
+    var atmosphere: PracticeMatchAtmosphere {
+        switch id {
+        case "topic:food-drinks":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryFood",
+                tint: Color(red: 0.92, green: 0.34, blue: 0.16),
+                glow: Color(red: 1.0, green: 0.66, blue: 0.22),
+                surface: Color(red: 1.0, green: 0.96, blue: 0.91)
+            )
+        case "topic:first-day":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryFirstDay",
+                tint: Color(red: 0.86, green: 0.49, blue: 0.12),
+                glow: Color(red: 1.0, green: 0.72, blue: 0.24),
+                surface: Color(red: 1.0, green: 0.97, blue: 0.91)
+            )
+        case "topic:airport":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryAirport",
+                tint: Color(red: 0.68, green: 0.18, blue: 0.16),
+                glow: Color(red: 0.94, green: 0.32, blue: 0.30),
+                surface: Color(red: 0.98, green: 0.95, blue: 0.94)
+            )
+        case "topic:taxi-directions":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryGettingAround",
+                tint: Color(red: 0.12, green: 0.48, blue: 0.33),
+                glow: Color(red: 0.34, green: 0.78, blue: 0.46),
+                surface: Color(red: 0.94, green: 0.98, blue: 0.95)
+            )
+        case "topic:shopping-markets":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryNumbersMoney",
+                tint: Color(red: 0.84, green: 0.50, blue: 0.10),
+                glow: Color(red: 1.0, green: 0.70, blue: 0.24),
+                surface: Color(red: 1.0, green: 0.97, blue: 0.90)
+            )
+        case "topic:emergency":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryEmergency",
+                tint: Color(red: 0.76, green: 0.16, blue: 0.18),
+                glow: Color(red: 1.0, green: 0.28, blue: 0.28),
+                surface: Color(red: 0.99, green: 0.94, blue: 0.94)
+            )
+        case "topic:danang-city":
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCityDanang",
+                tint: Color(red: 0.12, green: 0.42, blue: 0.64),
+                glow: Color(red: 0.32, green: 0.72, blue: 0.86),
+                surface: Color(red: 0.94, green: 0.98, blue: 1.0)
+            )
+        default:
+            return PracticeMatchAtmosphere(
+                imageName: "HeroCategoryEssentials",
+                tint: tint.color,
+                glow: Color(red: 1.0, green: 0.46, blue: 0.30),
+                surface: Color(red: 0.98, green: 0.96, blue: 0.95)
+            )
+        }
+    }
+}
+
 enum PracticeMatchRoundMode: String, CaseIterable, Equatable {
     case phraseToMeaning
     case imageToPhrase
@@ -4931,10 +5001,14 @@ private struct PracticeMatchRoundView: View {
                     Button(action: onHint) {
                         Label("Need a hint?", systemImage: "lightbulb.fill")
                             .font(.subheadline.weight(.bold))
-                            .foregroundStyle(Color(red: 0.80, green: 0.52, blue: 0.08))
+                            .foregroundStyle(Color(red: 0.72, green: 0.44, blue: 0.05))
                             .padding(.horizontal, 16)
                             .frame(height: 38)
-                            .nativeGlass(cornerRadius: 19, tint: Color.yellow.opacity(0.4), interactive: true)
+                            .nativeGlass(
+                                cornerRadius: 19,
+                                tint: session.source.atmosphere.glow.opacity(0.34),
+                                interactive: true
+                            )
                     }
                     .buttonStyle(.plain)
                     .frame(maxWidth: .infinity)
@@ -4949,24 +5023,162 @@ private struct PracticeMatchRoundView: View {
                 .padding(.horizontal, PracticeLayout.horizontalPadding)
                 .padding(.bottom, 12)
                 .background {
-                    UnevenRoundedRectangle(
-                        cornerRadii: RectangleCornerRadii(
-                            topLeading: 30,
-                            bottomLeading: 0,
-                            bottomTrailing: 0,
-                            topTrailing: 30
-                        ),
-                        style: .continuous
-                    )
-                        .fill(PhrasePageStyle.pageBackground)
-                        .ignoresSafeArea(edges: .bottom)
+                    PracticeMatchSheetBackground(source: session.source, isComplete: false)
                 }
                 .transition(.opacity)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .background(Color.black.opacity(0.08).ignoresSafeArea())
+        .background {
+            PracticeMatchAtmosphereBackground(
+                source: session.source,
+                isComplete: session.isRoundComplete
+            )
+        }
         .accessibilityIdentifier("Practice.Match.Round")
+    }
+}
+
+private struct PracticeMatchAtmosphereBackground: View {
+    let source: PracticeMatchSource
+    let isComplete: Bool
+
+    var body: some View {
+        GeometryReader { proxy in
+            ZStack {
+                Image(source.atmosphere.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: proxy.size.width, height: proxy.size.height)
+                    .clipped()
+                    .blur(radius: isComplete ? 10 : 18)
+                    .saturation(isComplete ? 1.08 : 0.92)
+                    .opacity(isComplete ? 0.88 : 0.66)
+
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .opacity(isComplete ? 0.22 : 0.36)
+
+                LinearGradient(
+                    colors: [
+                        Color.black.opacity(isComplete ? 0.34 : 0.18),
+                        source.atmosphere.surface.opacity(isComplete ? 0.08 : 0.32),
+                        Color.black.opacity(isComplete ? 0.18 : 0.05),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+
+                RadialGradient(
+                    colors: [
+                        source.atmosphere.glow.opacity(isComplete ? 0.34 : 0.18),
+                        Color.clear,
+                    ],
+                    center: .topTrailing,
+                    startRadius: 8,
+                    endRadius: max(proxy.size.width, proxy.size.height) * 0.8
+                )
+
+                if isComplete {
+                    PracticeMatchCelebrationField(tint: source.atmosphere.glow)
+                }
+            }
+            .frame(width: proxy.size.width, height: proxy.size.height)
+        }
+        .ignoresSafeArea()
+    }
+}
+
+private struct PracticeMatchCelebrationField: View {
+    let tint: Color
+
+    private struct Particle: Identifiable {
+        let id: Int
+        let x: CGFloat
+        let y: CGFloat
+        let size: CGFloat
+        let opacity: Double
+    }
+
+    private static let particles: [Particle] = [
+        Particle(id: 0, x: 0.14, y: 0.16, size: 5, opacity: 0.56),
+        Particle(id: 1, x: 0.30, y: 0.12, size: 3, opacity: 0.42),
+        Particle(id: 2, x: 0.77, y: 0.17, size: 6, opacity: 0.58),
+        Particle(id: 3, x: 0.89, y: 0.27, size: 4, opacity: 0.50),
+        Particle(id: 4, x: 0.20, y: 0.38, size: 4, opacity: 0.36),
+        Particle(id: 5, x: 0.66, y: 0.36, size: 5, opacity: 0.44),
+        Particle(id: 6, x: 0.82, y: 0.48, size: 3, opacity: 0.40),
+        Particle(id: 7, x: 0.11, y: 0.58, size: 6, opacity: 0.34),
+        Particle(id: 8, x: 0.44, y: 0.62, size: 4, opacity: 0.30),
+        Particle(id: 9, x: 0.72, y: 0.70, size: 5, opacity: 0.32),
+    ]
+
+    var body: some View {
+        GeometryReader { proxy in
+            ForEach(Self.particles) { particle in
+                Circle()
+                    .fill(particle.id.isMultiple(of: 2) ? tint : Color.white)
+                    .frame(width: particle.size, height: particle.size)
+                    .position(
+                        x: proxy.size.width * particle.x,
+                        y: proxy.size.height * particle.y
+                    )
+                    .opacity(particle.opacity)
+                    .shadow(color: tint.opacity(0.36), radius: 8, x: 0, y: 0)
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct PracticeMatchSheetBackground: View {
+    let source: PracticeMatchSource
+    let isComplete: Bool
+
+    private var shape: UnevenRoundedRectangle {
+        UnevenRoundedRectangle(
+            cornerRadii: RectangleCornerRadii(
+                topLeading: 32,
+                bottomLeading: 0,
+                bottomTrailing: 0,
+                topTrailing: 32
+            ),
+            style: .continuous
+        )
+    }
+
+    var body: some View {
+        ZStack {
+            Image(source.atmosphere.imageName)
+                .resizable()
+                .scaledToFill()
+                .blur(radius: 24)
+                .saturation(0.92)
+                .opacity(isComplete ? 0.22 : 0.14)
+                .clipShape(shape)
+
+            shape
+                .fill(.regularMaterial)
+
+            shape
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            source.atmosphere.surface.opacity(isComplete ? 0.58 : 0.72),
+                            Color.white.opacity(isComplete ? 0.30 : 0.46),
+                            PhrasePageStyle.pageBackground.opacity(isComplete ? 0.54 : 0.64),
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+
+            shape
+                .stroke(.white.opacity(0.54), lineWidth: 0.8)
+        }
+        .shadow(color: source.atmosphere.tint.opacity(0.14), radius: 28, x: 0, y: -10)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
@@ -4987,12 +5199,11 @@ private struct PracticeMatchRoundHeader: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(session.canReturnToPreviousRound ? Color.primary : Color.secondary.opacity(0.55))
                         .frame(width: 44, height: 44)
-                        .background(.white.opacity(0.72), in: Circle())
-                        .overlay {
-                            Circle()
-                                .stroke(.white.opacity(0.86), lineWidth: 1)
-                        }
-                        .shadow(color: .black.opacity(0.045), radius: 10, x: 0, y: 5)
+                        .nativeGlass(
+                            in: Circle(),
+                            tint: .white,
+                            interactive: session.canReturnToPreviousRound
+                        )
                 }
                 .frame(width: 44, height: 44)
                 .contentShape(Circle())
@@ -5024,11 +5235,11 @@ private struct PracticeMatchRoundHeader: View {
                     }
                     .padding(.horizontal, 12)
                     .frame(height: 34)
-                    .background(.white.opacity(0.76), in: Capsule(style: .continuous))
-                    .overlay {
-                        Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.9), lineWidth: 1)
-                    }
+                    .nativeGlass(
+                        in: Capsule(style: .continuous),
+                        tint: session.source.atmosphere.surface,
+                        interactive: true
+                    )
                 }
                 .buttonStyle(.plain)
                 .popover(isPresented: $isTopicPopoverPresented, arrowEdge: .top) {
@@ -5052,12 +5263,7 @@ private struct PracticeMatchRoundHeader: View {
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
                         .frame(width: 44, height: 44)
-                        .background(.white.opacity(0.72), in: Circle())
-                        .overlay {
-                            Circle()
-                                .stroke(.white.opacity(0.86), lineWidth: 1)
-                        }
-                        .shadow(color: .black.opacity(0.045), radius: 10, x: 0, y: 5)
+                        .nativeGlass(in: Circle(), tint: .white, interactive: true)
                 }
                 .frame(width: 44, height: 44)
                 .contentShape(Circle())
@@ -5069,7 +5275,8 @@ private struct PracticeMatchRoundHeader: View {
 
             PracticeMatchProgressDots(
                 matchedCount: session.matchedPairIDs.count,
-                totalCount: PracticeMatchRound.pairCount
+                totalCount: PracticeMatchRound.pairCount,
+                tint: session.source.atmosphere.tint
             )
 
             Text(session.round.mode.badgeLabel)
@@ -5077,12 +5284,12 @@ private struct PracticeMatchRoundHeader: View {
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 10)
                 .frame(height: 22)
-                .background(Color.black.opacity(0.05), in: Capsule(style: .continuous))
+                .background(session.source.atmosphere.tint.opacity(0.08), in: Capsule(style: .continuous))
                 .accessibilityIdentifier("Practice.Match.ModeBadge")
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
-        .nativeGlass(cornerRadius: 28)
+        .nativeGlass(cornerRadius: 28, tint: session.source.atmosphere.surface)
     }
 }
 
@@ -5121,13 +5328,13 @@ private struct PracticeMatchTopicPopover: View {
                         if source.id == currentSourceID {
                             Image(systemName: "checkmark")
                                 .font(.subheadline.weight(.black))
-                                .foregroundStyle(.red)
+                                .foregroundStyle(source.atmosphere.tint)
                         }
                     }
                     .padding(8)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(
-                        source.id == currentSourceID ? Color.red.opacity(0.08) : Color.clear,
+                        source.id == currentSourceID ? source.atmosphere.tint.opacity(0.10) : Color.clear,
                         in: RoundedRectangle(cornerRadius: 14, style: .continuous)
                     )
                 }
@@ -5144,12 +5351,13 @@ private struct PracticeMatchTopicPopover: View {
 private struct PracticeMatchProgressDots: View {
     let matchedCount: Int
     let totalCount: Int
+    let tint: Color
 
     var body: some View {
         HStack(spacing: 8) {
             ForEach(0..<totalCount, id: \.self) { index in
                 Circle()
-                    .fill(index < matchedCount ? Color.red : Color.black.opacity(0.13))
+                    .fill(index < matchedCount ? tint : Color.black.opacity(0.13))
                     .frame(width: 8, height: 8)
                     .overlay {
                         Circle()
@@ -5224,6 +5432,8 @@ private struct PracticeMatchBoardView: View {
             }
         }
         .frame(height: boardHeight)
+        .animation(.spring(response: 0.30, dampingFraction: 0.84), value: session.matchedPairIDs)
+        .animation(.easeInOut(duration: 0.18), value: session.hintedPairID)
         .accessibilityIdentifier("Practice.Match.Board")
     }
 
@@ -5275,17 +5485,21 @@ private struct PracticeMatchCardButton: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: height)
-            .background(background, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background {
+                cardSurface
+            }
             .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(stroke, lineWidth: state == .normal ? 1 : 1.35)
             }
-            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .offset(x: state == .incorrect ? -4 : 0)
+            .scaleEffect(cardScale)
+            .shadow(color: shadowColor, radius: shadowRadius, x: 0, y: shadowY)
             .animation(
                 state == .incorrect
                     ? .linear(duration: 0.08).repeatCount(4, autoreverses: true)
-                    : .easeOut(duration: 0.16),
+                    : .spring(response: 0.24, dampingFraction: 0.82),
                 value: state
             )
         }
@@ -5299,7 +5513,7 @@ private struct PracticeMatchCardButton: View {
     }
 
     private var textColor: Color {
-        state == .matched ? .primary.opacity(0.68) : .primary
+        state == .matched ? .primary.opacity(0.78) : .primary
     }
 
     @ViewBuilder
@@ -5308,6 +5522,7 @@ private struct PracticeMatchCardButton: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.headline.weight(.black))
                 .foregroundStyle(.green)
+                .shadow(color: .green.opacity(0.22), radius: 6, x: 0, y: 2)
         } else if state == .hinted {
             Image(systemName: "lightbulb.fill")
                 .font(.headline.weight(.black))
@@ -5315,27 +5530,59 @@ private struct PracticeMatchCardButton: View {
         }
     }
 
-    private var background: Color {
+    @ViewBuilder
+    private var cardSurface: some View {
+        let shape = RoundedRectangle(cornerRadius: 16, style: .continuous)
+
+        shape
+            .fill(.ultraThinMaterial)
+
+        shape
+            .fill(
+                LinearGradient(
+                    colors: backgroundColors,
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+    }
+
+    private var backgroundColors: [Color] {
         switch state {
         case .normal:
-            return .white.opacity(0.80)
+            return [
+                Color.white.opacity(0.86),
+                Color.white.opacity(0.66),
+            ]
         case .selected:
-            return Color.red.opacity(0.08)
+            return [
+                card.item.tint.color.opacity(0.16),
+                Color.white.opacity(0.78),
+            ]
         case .matched:
-            return Color.green.opacity(0.12)
+            return [
+                Color.green.opacity(0.18),
+                Color.white.opacity(0.60),
+            ]
         case .incorrect:
-            return Color.red.opacity(0.10)
+            return [
+                Color.red.opacity(0.18),
+                Color.white.opacity(0.72),
+            ]
         case .hinted:
-            return Color.yellow.opacity(0.18)
+            return [
+                Color.yellow.opacity(0.24),
+                Color.white.opacity(0.72),
+            ]
         }
     }
 
     private var stroke: Color {
         switch state {
         case .normal:
-            return Color.black.opacity(0.07)
+            return Color.white.opacity(0.70)
         case .selected:
-            return Color.red.opacity(0.48)
+            return card.item.tint.color.opacity(0.48)
         case .matched:
             return Color.green.opacity(0.48)
         case .incorrect:
@@ -5343,6 +5590,53 @@ private struct PracticeMatchCardButton: View {
         case .hinted:
             return Color.orange.opacity(0.44)
         }
+    }
+
+    private var cardScale: CGFloat {
+        switch state {
+        case .selected:
+            return 1.024
+        case .matched:
+            return 0.992
+        case .incorrect:
+            return 1.0
+        case .hinted:
+            return 1.012
+        case .normal:
+            return 1.0
+        }
+    }
+
+    private var shadowColor: Color {
+        switch state {
+        case .selected:
+            return card.item.tint.color.opacity(0.18)
+        case .matched:
+            return Color.green.opacity(0.12)
+        case .incorrect:
+            return Color.red.opacity(0.16)
+        case .hinted:
+            return Color.orange.opacity(0.14)
+        case .normal:
+            return Color.black.opacity(0.045)
+        }
+    }
+
+    private var shadowRadius: CGFloat {
+        switch state {
+        case .selected:
+            return 16
+        case .matched, .hinted:
+            return 11
+        case .incorrect:
+            return 9
+        case .normal:
+            return 8
+        }
+    }
+
+    private var shadowY: CGFloat {
+        state == .selected ? 8 : 5
     }
 }
 
@@ -5512,6 +5806,15 @@ private struct PracticeMatchConnectionLayer: View {
                     )
                     context.stroke(
                         path,
+                        with: .color(visual.color.opacity(0.22)),
+                        style: StrokeStyle(
+                            lineWidth: visual.lineWidth + 5,
+                            lineCap: .round,
+                            dash: visual.dash
+                        )
+                    )
+                    context.stroke(
+                        path,
                         with: .color(visual.color),
                         style: StrokeStyle(
                             lineWidth: visual.lineWidth,
@@ -5532,8 +5835,8 @@ private struct PracticeMatchConnectionLayer: View {
         if session.matchedPairIDs.contains(pairID) {
             return PracticeMatchConnectionVisual(
                 shouldDraw: true,
-                color: .green.opacity(0.70),
-                lineWidth: 2.2,
+                color: .green.opacity(0.72),
+                lineWidth: 2.4,
                 dash: []
             )
         }
@@ -5541,9 +5844,9 @@ private struct PracticeMatchConnectionLayer: View {
         if session.hintedPairID == pairID {
             return PracticeMatchConnectionVisual(
                 shouldDraw: true,
-                color: .orange.opacity(0.64),
-                lineWidth: 1.8,
-                dash: [4, 6]
+                color: .orange.opacity(0.66),
+                lineWidth: 2.0,
+                dash: [5, 7]
             )
         }
 
@@ -5565,15 +5868,19 @@ private struct PracticeMatchConnectionVisual {
 
 private struct PracticeMatchHintNotice: View {
     var body: some View {
-        Label("Hint used. We revealed one match.", systemImage: "lightbulb.fill")
+        Label("One pair is softly highlighted.", systemImage: "lightbulb.fill")
             .font(.subheadline.weight(.bold))
             .foregroundStyle(Color(red: 0.70, green: 0.46, blue: 0.08))
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
-                Color.yellow.opacity(0.18),
+                .ultraThinMaterial,
                 in: RoundedRectangle(cornerRadius: 18, style: .continuous)
             )
+            .overlay {
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .stroke(Color.yellow.opacity(0.28), lineWidth: 1)
+            }
     }
 }
 
@@ -5586,6 +5893,8 @@ private struct PracticeMatchCompletionView: View {
     let onPreviousRound: () -> Void
     let onSelectSource: (PracticeMatchSource) -> Void
     let onContinue: () -> Void
+
+    @State private var rewardPulse = false
 
     var body: some View {
         VStack(spacing: 14) {
@@ -5600,25 +5909,14 @@ private struct PracticeMatchCompletionView: View {
                 onSelectSource: onSelectSource
             )
 
-            ZStack {
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [Color.red.opacity(0.18), Color.orange.opacity(0.16)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .frame(width: 92, height: 92)
-
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 56, weight: .black))
-                    .foregroundStyle(.green)
-            }
+            PracticeMatchRewardIcon(
+                tint: session.source.atmosphere.glow,
+                isActive: rewardPulse
+            )
             .padding(.top, 4)
 
             VStack(spacing: 6) {
-                Text("Nice match")
+                Text("Nice match!")
                     .font(.system(size: 27, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
 
@@ -5653,7 +5951,14 @@ private struct PracticeMatchCompletionView: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .background(
+                        LinearGradient(
+                            colors: [Color.red, Color(red: 1.0, green: 0.31, blue: 0.20)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        in: RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    )
             }
             .buttonStyle(.plain)
             .accessibilityIdentifier("Practice.Match.Continue")
@@ -5663,19 +5968,54 @@ private struct PracticeMatchCompletionView: View {
         .padding(.horizontal, PracticeLayout.horizontalPadding)
         .padding(.bottom, 12)
         .background {
-            UnevenRoundedRectangle(
-                cornerRadii: RectangleCornerRadii(
-                    topLeading: 30,
-                    bottomLeading: 0,
-                    bottomTrailing: 0,
-                    topTrailing: 30
-                ),
-                style: .continuous
-            )
-                .fill(PhrasePageStyle.pageBackground)
-                .ignoresSafeArea(edges: .bottom)
+            PracticeMatchSheetBackground(source: session.source, isComplete: true)
+        }
+        .onAppear {
+            withAnimation(.spring(response: 0.46, dampingFraction: 0.70).delay(0.04)) {
+                rewardPulse = true
+            }
         }
         .accessibilityIdentifier("Practice.Match.Complete")
+    }
+}
+
+private struct PracticeMatchRewardIcon: View {
+    let tint: Color
+    let isActive: Bool
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(tint.opacity(0.22))
+                .frame(width: 102, height: 102)
+                .scaleEffect(isActive ? 1.12 : 0.84)
+                .opacity(isActive ? 0.52 : 0.22)
+
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color.green.opacity(0.96),
+                            Color(red: 0.60, green: 0.84, blue: 0.32),
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(width: 76, height: 76)
+                .overlay {
+                    Circle()
+                        .stroke(.white.opacity(0.78), lineWidth: 2)
+                }
+                .shadow(color: Color.green.opacity(0.32), radius: 18, x: 0, y: 8)
+
+            Image(systemName: "checkmark")
+                .font(.system(size: 34, weight: .black, design: .rounded))
+                .foregroundStyle(.white)
+                .scaleEffect(isActive ? 1.0 : 0.72)
+        }
+        .animation(.spring(response: 0.46, dampingFraction: 0.70), value: isActive)
+        .accessibilityHidden(true)
     }
 }
 
