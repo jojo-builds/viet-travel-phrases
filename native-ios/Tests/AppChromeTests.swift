@@ -1905,16 +1905,32 @@ final class AppChromeTests: XCTestCase {
     func testVietnameseMenuItemsUseUniqueImageAssetNames() {
         let items = VietnameseMenuCatalog.allItems
         let imageNames = items.map(\.menuImageName)
+        let backdropImageNames = items.map(\.menuBackdropImageName)
 
         XCTAssertEqual(items.count, 355)
         XCTAssertEqual(Set(imageNames).count, items.count)
+        XCTAssertEqual(Set(backdropImageNames).count, items.count)
         XCTAssertEqual(VietnameseMenuImages.assetName(forItemID: "food-pho-bo"), "HeroMenuFoodPhoBo")
         XCTAssertEqual(VietnameseMenuImages.assetName(forItemID: "drink-ca-phe-sua-da"), "HeroMenuDrinkCaPheSuaDa")
+        XCTAssertEqual(VietnameseMenuImages.backdropAssetName(forItemID: "food-pho-bo"), "BackdropMenuFoodPhoBo")
+        XCTAssertEqual(VietnameseMenuImages.backdropAssetName(forItemID: "drink-ca-phe-sua-da"), "BackdropMenuDrinkCaPheSuaDa")
     }
 
     func testVietnameseMenuImageAssetsExistForEveryItem() {
         for item in VietnameseMenuCatalog.allItems {
             XCTAssertNotNil(UIImage(named: item.menuImageName), "Missing menu image asset for \(item.itemID): \(item.menuImageName)")
+            XCTAssertNotNil(UIImage(named: item.menuBackdropImageName), "Missing menu backdrop image asset for \(item.itemID): \(item.menuBackdropImageName)")
+        }
+    }
+
+    func testVietnameseMenuDetailPagesUsePhotoBackdropImages() {
+        for item in VietnameseMenuCatalog.allItems {
+            let detail = try! XCTUnwrap(PhraseDetailPage.page(withID: item.detailPageID))
+            XCTAssertEqual(detail.heroImageName, item.menuBackdropImageName, "\(item.itemID) detail should use the portrait backdrop asset")
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: detail.id, heroImageName: detail.heroImageName),
+                "\(item.itemID) detail should use the photo backdrop layout"
+            )
         }
     }
 

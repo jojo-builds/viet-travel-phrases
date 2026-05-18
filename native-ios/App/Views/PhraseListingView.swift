@@ -570,7 +570,7 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var usesPhotoBackdropLayout: Bool {
-        PhrasePhotoBackdropLayout.supportsCityListingPage(
+        PhrasePhotoBackdropLayout.supportsListingPage(
             pageID: page.id,
             heroImageName: page.heroImageName
         )
@@ -862,6 +862,20 @@ enum PhrasePhotoBackdropLayout {
 
         let isCityPage = pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
         return isCityPage && heroImageName.hasPrefix("HeroCity")
+    }
+
+    static func supportsMenuListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        let isMenuPage = pageID.hasPrefix("viet-menu-")
+        return isMenuPage && heroImageName.hasPrefix("BackdropMenu")
+    }
+
+    static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
+        supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
+            || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
     }
 
     struct Metrics {

@@ -108,6 +108,7 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
     var id: String { itemID }
     var detailPageID: String { "viet-menu-\(itemID)" }
     var menuImageName: String { VietnameseMenuImages.assetName(forItemID: itemID) }
+    var menuBackdropImageName: String { VietnameseMenuImages.backdropAssetName(forItemID: itemID) }
 
     var kind: VietnameseMenuKind? {
         VietnameseMenuKind(rawValue: menuType)
@@ -205,7 +206,15 @@ struct VietnameseMenuSection: Identifiable, Equatable {
 
 enum VietnameseMenuImages {
     static func assetName(forItemID itemID: String) -> String {
-        "HeroMenu" + itemID
+        "HeroMenu" + pascalCaseIdentifier(forItemID: itemID)
+    }
+
+    static func backdropAssetName(forItemID itemID: String) -> String {
+        "BackdropMenu" + pascalCaseIdentifier(forItemID: itemID)
+    }
+
+    private static func pascalCaseIdentifier(forItemID itemID: String) -> String {
+        itemID
             .split(separator: "-")
             .map { component in
                 component.prefix(1).uppercased() + component.dropFirst()
@@ -1089,7 +1098,7 @@ enum VietnameseMenuCatalog {
     }
 
     private static func heroImageName(for item: VietnameseMenuItem, kind: VietnameseMenuKind) -> String {
-        item.kind == nil ? kind.heroImageName : item.menuImageName
+        item.kind == nil ? kind.heroImageName : item.menuBackdropImageName
     }
 
     private static func categoryOrder(for kind: VietnameseMenuKind) -> [String] {
