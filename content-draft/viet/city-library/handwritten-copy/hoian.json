@@ -155,9 +155,9 @@
     },
     {
       "pageID": "city-hoian-place-banh-mi-phuong",
-      "summary": "Banh Mi Phuong is a named Hoi An sandwich stop travelers often save before the trip, useful as a storefront name separate from the general bánh mì dish.",
+      "summary": "Banh Mi Phuong is a named Hoi An sandwich stop travelers often save before the trip, a storefront name separate from the general bánh mì dish.",
       "context": "Bánh mì Phượng works as a shop name. Use it for finding the counter, asking for the storefront, or meeting nearby after ordering.",
-      "tip": "Keep expectations practical: location, order, and pickup. The app should not need to rank the sandwich for the name to be useful.",
+      "tip": "Keep expectations practical: location, order, and pickup. The app can carry the sandwich name without ranking the meal.",
       "rationale": "It belongs because a first-time Hoi An food list often mixes famous venues with dish nouns, and travelers need to keep those two things distinct.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named bánh mì storefront in Hoi An for food plans, map pins, quick meals, and meetup points."},
@@ -262,7 +262,7 @@
       "pageID": "city-hoian-place-cam-nam",
       "summary": "Cam Nam is a close river-crossing neighborhood with a more local feel, tied to small food stops, island lanes, and the simple pleasure of stepping outside the old-town flow.",
       "context": "Cẩm Nam helps when a plan crosses the river for local food or a quieter address. It pairs naturally with chè bắp and riverside directions.",
-      "tip": "Use the neighborhood with the dish or venue you want. Cẩm Nam is useful, but it covers more than a single stall or lane.",
+      "tip": "Use the neighborhood with the dish or venue you want. Cẩm Nam covers more than a single stall or lane.",
       "rationale": "It belongs because Cam Nam gives travelers a practical way to discover Hoi An beyond the prettiest streets while staying close to the center.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A river-crossing neighborhood near central Hoi An for local food, small lanes, and quieter walks."},
@@ -320,7 +320,7 @@
     },
     {
       "pageID": "city-hoian-place-cam-thanh-coconut-village",
-      "summary": "Cam Thanh Coconut Village is the local destination behind many Hoi An coconut-waterway outings, useful even when the activity changes from boat ride to photo stop or village walk.",
+      "summary": "Cam Thanh Coconut Village is the local destination behind many Hoi An coconut-waterway outings, whether the activity becomes a boat ride, photo stop, or village walk.",
       "context": "Làng dừa Cẩm Thanh names the coconut village. Use it when you want the destination, then add the basket-boat phrase if that is the activity.",
       "tip": "Drivers may understand Cẩm Thanh, but the full village name helps when you are matching a booking or tour description.",
       "rationale": "It belongs because the coconut village is a destination in its own right, not only a background label for basket-boat photos.",
@@ -365,7 +365,7 @@
     },
     {
       "pageID": "city-hoian-place-cargo-club",
-      "summary": "Cargo Club is a named old-town dining and cafe stop, useful as a riverside meeting point or meal plan without needing the app to promise menu details or rankings.",
+      "summary": "Cargo Club is a named old-town dining and cafe stop that can double as a riverside meeting point or meal plan without needing the app to promise menu details or rankings.",
       "context": "Preserve Cargo Club as the venue name. Pair it with your map or the river area when asking for a table, pickup, or where to meet.",
       "tip": "Use the current menu and booking details for anything specific. The venue name is most helpful for navigation and plans.",
       "rationale": "It belongs because Hoi An travelers often organize meals around recognizable venue names, especially near the old-town riverfront.",
@@ -790,7 +790,7 @@
       "tip": "Keep the general Bánh mì Hội An entry for any sandwich. Use Madam Khánh only when this specific shop is the plan.",
       "rationale": "It belongs because Hoi An food browsing mixes famous shop names with dish names, and travelers benefit from keeping them separate.",
       "sections": [
-        {"id":"at-glance","title":"About","body":"A named bánh mì shop in Hoi An, useful as a saved food stop and map destination."},
+        {"id":"at-glance","title":"About","body":"A named bánh mì shop in Hoi An for saved food stops, map pins, and storefront directions."},
         {"id":"quick-say","title":"Hear the name","body":"Madam Khánh is the local-name form to recognize beside the English Madam Khanh."},
         {"id":"place-brief","title":"What to picture","body":"Picture baguettes, herbs, fillings, a busy counter, and a quick sandwich stop between old-town plans."},
         {"id":"use-it-with","title":"Why it belongs","body":"It marks a specific sandwich destination while the broader bánh mì page covers the dish."},
@@ -860,7 +860,7 @@
     },
     {
       "pageID": "city-hoian-place-metiseko",
-      "summary": "Metiseko is a named Hoi An boutique stop for fabric, clothing, and gift browsing, useful as a shop name without turning the app into a shopping endorsement.",
+      "summary": "Metiseko is a named Hoi An boutique stop for fabric, clothing, and gift browsing, framed as a shop name without turning the app into a shopping endorsement.",
       "context": "Keep Metiseko as the brand and shop name. Use it when asking for the shop, sizes, fabric, or a nearby meeting point.",
       "tip": "Use the current shop address if you are going there. The name helps, but exact branch or doorway details should come from your map.",
       "rationale": "It belongs because Hoi An shopping includes named boutiques and textile stops alongside tailors, silk, markets, and craft villages.",
@@ -995,7 +995,7 @@
     },
     {
       "pageID": "city-hoian-place-nguyen-thai-hoc-street",
-      "summary": "Nguyen Thai Hoc Street is a useful old-town grid name for houses, cafes, walking routes, and addresses that need more precision than simply saying near the old town.",
+      "summary": "Nguyen Thai Hoc Street is an old-town grid name for houses, cafes, walking routes, and addresses that need more precision than simply saying near the old town.",
       "context": "Phố Nguyễn Thái Học helps when an address or meeting point is on this old-town street. It keeps directions specific inside the heritage core.",
       "tip": "Old-town streets can feel similar at first. Use the street name with a house, cafe, or cross-street when meeting someone.",
       "rationale": "It belongs because travelers need real street names to move through Hoi An confidently after the first romantic impression fades into turns and lanes.",
@@ -1048,7 +1048,7 @@
         {"id":"at-glance","title":"About","body":"A named Hoi An cafe stop that can also remind travelers of Vietnamese phin coffee."},
         {"id":"quick-say","title":"Hear the name","body":"Phin Coffee is the venue name; cà phê phin is the drink style to order."},
         {"id":"place-brief","title":"What to picture","body":"Picture a metal filter dripping over glass, leafy tables, iced coffee, and a pause from shopping or sightseeing."},
-        {"id":"use-it-with","title":"Why it belongs","body":"It connects cafe planning with a useful Vietnamese coffee idea without mixing up place and drink."},
+        {"id":"use-it-with","title":"Why it belongs","body":"It connects cafe planning with Vietnamese coffee vocabulary without mixing up place and drink."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the cafe, meeting someone, or deciding whether you mean the venue or the coffee style."},
         {"id":"good-to-know","title":"Good to know","body":"Show the map pin if the person hears phin as a drink rather than the cafe name."}
       ]
@@ -1151,7 +1151,7 @@
       "rationale": "It belongs because Hoi An's shopping story should include specific craft stops, not only markets, tailors, and silk.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named craft shop in Hoi An for handmade items, gifts, and old-town browsing."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep Reaching Out Arts & Crafts as the English venue name."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep Reaching Out Arts & Crafts as the English venue name for the shop."},
         {"id":"place-brief","title":"What to picture","body":"Picture ceramics, textiles, small handmade objects, a quiet shop table, and old-town light outside."},
         {"id":"use-it-with","title":"Why it belongs","body":"It adds a specific handmade-gift stop to Hoi An's craft and shopping map."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the shop, asking about gifts, or meeting after browsing nearby."},
@@ -1175,7 +1175,7 @@
     },
     {
       "pageID": "city-hoian-place-roastery",
-      "summary": "Hoi An Roastery is a named cafe stop where the branch or map pin matters for coffee plans, old-town pauses, and meeting points.",
+      "summary": "Hoi An Roastery is a named cafe stop where the branch or map pin matters for coffee plans, old-town pauses, and meeting points between walks.",
       "context": "Use Hoi An Roastery as the cafe name, then match it to the branch or address you already have.",
       "tip": "If several locations appear, show the exact pin. The name is recognizable, but the branch choice makes the plan work.",
       "rationale": "It belongs because cafe stops shape Hoi An travel days, and branch-aware names prevent small navigation mistakes.",
@@ -1357,7 +1357,7 @@
       "pageID": "city-hoian-place-trade-ceramics-museum",
       "summary": "The Museum of Trade Ceramics connects Hoi An's old merchant streets to bowls, jars, ships, and trade routes, making the town's port history easier to picture.",
       "context": "Bảo tàng Gốm sứ Mậu dịch is the Vietnamese title. Use it when you want the ceramics museum specifically, not any old-town museum.",
-      "tip": "The title is long but useful. Show it on screen when asking for the museum or choosing between heritage stops.",
+      "tip": "The title is long, so show it on screen when asking for the museum or choosing between heritage stops.",
       "rationale": "It belongs because ceramics are a tangible way to understand Hoi An as a trading port, not only a beautiful walking district.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A themed Hoi An museum focused on trade ceramics and the town's port-history context."},
@@ -1436,7 +1436,7 @@
       "rationale": "It belongs because travelers may see market in both names, and clear copy prevents a restaurant plan from becoming a market detour.",
       "sections": [
         {"id":"at-glance","title":"About","body":"A named Hoi An restaurant concept, distinct from the public Hoi An Market."},
-        {"id":"quick-say","title":"Hear the name","body":"Keep Vy's Market Restaurant as the English venue name."},
+        {"id":"quick-say","title":"Hear the name","body":"Keep Vy's Market Restaurant as the English venue name for the dining stop."},
         {"id":"place-brief","title":"What to picture","body":"Picture indoor food counters, bowls, herbs, shared choices, and a restaurant setting rather than a wet market."},
         {"id":"use-it-with","title":"Why it belongs","body":"It gives food browsing a specific venue while clarifying that it is not Chợ Hội An."},
         {"id":"when-to-use","title":"Travel moment","body":"Use it when finding the restaurant, choosing a meal stop, or setting a meeting point after eating."},
