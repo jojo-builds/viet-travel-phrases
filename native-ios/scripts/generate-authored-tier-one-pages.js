@@ -2034,7 +2034,7 @@ function cityLibraryPhraseOption(pageRecord, detailPageID = null) {
 }
 
 const cityRestaurantPlaceKinds = new Set(["restaurant", "cafe"]);
-const cityDishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const cityDishPlaceKinds = new Set(["local dish", "food spot", "dish", "drink", "dessert"]);
 const cityAttractionPlaceKinds = new Set([
   "attraction",
   "beach",
@@ -2060,6 +2060,7 @@ function cityPageKind(pageRecord, place) {
   if (pageRecord.kind !== "place") return pageRecord.kind;
   const placeKind = String(place.kind ?? "").trim().toLowerCase();
   if (cityRestaurantPlaceKinds.has(placeKind)) return "restaurant";
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (cityDishPlaceKinds.has(placeKind)) return "dish";
   return "place";
 }
@@ -2076,6 +2077,7 @@ function cityContentRole(pageRecord, place) {
   if (pageRecord.contentRole) return pageRecord.contentRole;
   if (place.contentRole) return place.contentRole;
   const placeKind = cityPlaceKind(place);
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (placeKind === "dish") return "dish";
   if (placeKind === "cafe") return "cafe";
   if (placeKind === "restaurant") {
@@ -2083,6 +2085,10 @@ function cityContentRole(pageRecord, place) {
     return sourceIDs.has("michelin-vietnam") ? "fine-dining" : "everyday";
   }
   return "";
+}
+
+function isCityDishLikePageKind(pageKind) {
+  return ["dish", "drink", "dessert"].includes(String(pageKind ?? "").trim().toLowerCase());
 }
 
 function phraseOptionByID(phraseID, tintName = "teal") {
@@ -2204,6 +2210,8 @@ function splitLongCityChunk(chunk) {
 
 function cityRecognitionGloss(pageKind, placeKind) {
   if (pageKind === "restaurant") return "restaurant name";
+  if (pageKind === "drink") return "drink name";
+  if (pageKind === "dessert") return "dessert name";
   if (pageKind === "dish") return "dish name";
   if (placeKind === "street") return "street name";
   return "local name";
@@ -2285,7 +2293,7 @@ function shouldUseCityRecognitionGloss(vietnamese, english) {
 }
 
 function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null, options = {}) {
-  if (pageKind === "dish" && normalizeAudioText(pageRecord.targetText) === normalizeAudioText("Cao lầu ở Hội An")) {
+  if (isCityDishLikePageKind(pageKind) && normalizeAudioText(pageRecord.targetText) === normalizeAudioText("Cao lầu ở Hội An")) {
     return [
       { id: `${pageRecord.id}-chunk-1`, vietnamese: "Cao lầu", english: "dish name", audioKey: null },
       { id: `${pageRecord.id}-chunk-2`, vietnamese: "ở Hội An", english: "in Hội An", audioKey: authoredBreakdownAudioKey("ở Hội An") },
@@ -2484,17 +2492,17 @@ function genericAttractionGettingThereOptions() {
 
 function genericAttractionVisitOptions() {
   return compactPhraseOptions([
-    phraseOptionByID("v500-time-date-book-two-tickets-please", "purple"),
-    phraseOptionByID("v500-sigh-acti-where-is-the-entrance", "teal"),
+    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
     phraseOptionByID("ves-take-photo-for-me", "teal"),
-    phraseOptionByID("ves-call-taxi-for-me", "orange"),
+    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
   ], 4);
 }
 
 function genericAttractionPickupOptions() {
   return compactPhraseOptions([
-    phraseOptionByID("directions-8", "teal"),
-    phraseOptionByID("v900-dire-navi-is-this-the-correct-pickup-point", "teal"),
+    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
     phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
     phraseOptionByID("ves-call-taxi-for-me", "orange"),
   ], 4);
@@ -2679,7 +2687,13 @@ function cityPlaceBrief(city, place, pageRecord, pageKind, placeKind, contentRol
     return `${place.vietnameseName} is a restaurant in ${city.shortTitle}.`;
   }
 
-  if (pageKind === "dish") {
+  if (isCityDishLikePageKind(pageKind)) {
+    if (contentRole === "drink") {
+      return `${place.vietnameseName} is a local drink in ${city.shortTitle}.`;
+    }
+    if (contentRole === "dessert") {
+      return `${place.vietnameseName} is a local dessert in ${city.shortTitle}.`;
+    }
     return `${place.vietnameseName} is a local dish in ${city.shortTitle}.`;
   }
 
@@ -2734,7 +2748,7 @@ function cityWhenToUseBody(pageRecord, city, place, pageKind, placeKind) {
     return "Payment, receipt, cash/card, and ride-back sentences.";
   }
 
-  if (pageKind === "dish") {
+  if (isCityDishLikePageKind(pageKind)) {
     return "Nearby, ordering, and dish-finding sentences.";
   }
 
@@ -2807,6 +2821,8 @@ function cityPageForRecord(pageRecord, context) {
     place: "Say it slowly, then show the map, ticket, address, or pickup note if needed.",
     restaurant: "Show the restaurant on your map first; then order, ask about the menu, pay, or get a ride back.",
     dish: "Start with the dish name, then use the ordering and ingredient phrases when you need to ask where to get it or what is inside.",
+    drink: "Start with the drink name, then use the ordering, ice, sweetness, and ingredient phrases when needed.",
+    dessert: "Start with the dessert name, then use the ordering, toppings, ice, sweetness, and ingredient phrases when needed.",
   };
   const samePlaceOptions = linkedCityPhraseOptions(samePlacePhraseRows, 8);
   const attractionPlaceKind = isCityAttractionPlaceKind(placeKind);
@@ -2899,7 +2915,7 @@ function cityPageForRecord(pageRecord, context) {
       },
       {
         id: "quick-say",
-        title: pageKind === "phrase" ? "Quick say" : (pageKind === "dish" ? "Order it" : "Say it"),
+        title: pageKind === "phrase" ? "Quick say" : (isCityDishLikePageKind(pageKind) ? "Order it" : "Say it"),
         body: quickBodyByKind[pageKind] ?? quickBodyByKind.phrase,
         phrases: [selfOption],
       },
@@ -2953,7 +2969,7 @@ function cityPageForRecord(pageRecord, context) {
         phrases: restaurantGettingBackOptions,
       }
     );
-  } else if (!derivedPlacePhrase && pageKind === "dish") {
+  } else if (!derivedPlacePhrase && isCityDishLikePageKind(pageKind)) {
     sections.push(
       {
         id: "place-brief",
@@ -3061,9 +3077,11 @@ function cityPageForRecord(pageRecord, context) {
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
     heroImageName: pageRecord.editorialImport?.heroImageName ?? pageRecord.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
     iconName: pageKind === "restaurant" ? "fork.knife"
+      : pageKind === "drink" ? "cup.and.saucer.fill"
+      : pageKind === "dessert" ? "birthday.cake.fill"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
-    tintName: pageKind === "restaurant" ? "green" : pageKind === "dish" ? "orange" : "teal",
+    tintName: pageKind === "restaurant" ? "green" : pageKind === "drink" ? "blue" : pageKind === "dessert" ? "pink" : pageKind === "dish" ? "orange" : "teal",
     categoryIDs: Array.from(new Set([
       "city-guides",
       pageRecord.cityID,
@@ -3077,6 +3095,8 @@ function cityPageForRecord(pageRecord, context) {
       derivedPlacePhrase ? "derived-place-phrases" : null,
       pageKind === "restaurant" ? "restaurants" : null,
       pageKind === "dish" ? "local-dishes" : null,
+      pageKind === "drink" ? "local-drinks" : null,
+      pageKind === "dessert" ? "local-desserts" : null,
       ...editorialCategoryIDs,
     ].filter(Boolean))),
     audioKey: authoredPhraseAudioKey(pageRecord.targetText, phrase.audioKey),
@@ -3104,7 +3124,7 @@ function cityPageForRecord(pageRecord, context) {
 }
 
 function cityFallbackHeroImageName(pageKind) {
-  if (pageKind === "place" || pageKind === "restaurant" || pageKind === "dish") {
+  if (pageKind === "place" || pageKind === "restaurant" || isCityDishLikePageKind(pageKind)) {
     return "HeroNeutralMasthead";
   }
   return null;
@@ -3672,7 +3692,7 @@ function authoredPageProfile(page) {
   const placeKind = meta.placeKind || "";
   if (pageKind === "phrase" && meta.derivedPlacePhrase) return "derived-place-phrase";
   if (pageKind === "restaurant") return "restaurant";
-  if (pageKind === "dish") return "dish";
+  if (isCityDishLikePageKind(pageKind)) return "dish";
   if (pageKind === "place" && placeKind === "street") return "street";
   if (pageKind === "place") return "place";
   if (!pageKind && /\bđường\b/i.test(page.title || "")) return "street";
@@ -3878,22 +3898,29 @@ function cleanTravelerSectionTitle(title, page) {
     if (sectionIDTitle) return sectionIDTitle;
   }
   if (isNameBasedProfile(profile)) {
+    const contentRole = page.cityMetadata?.contentRole || "";
+    const hearTitle = profile === "street"
+      ? "Hear the street"
+      : profile === "dish" && contentRole === "drink" ? "Hear the drink"
+      : profile === "dish" && contentRole === "dessert" ? "Hear the dessert"
+      : profile === "dish" ? "Hear the dish"
+      : "Hear the name";
     const byID = {
       "at-glance": "About",
-      "quick-say": profile === "street" ? "Hear the street" : profile === "dish" ? "Hear the dish" : "Hear the name",
+      "quick-say": hearTitle,
       "breakdown": profile === "restaurant" ? "Name guide" : "What the name means",
       "journey-flow": "Visit flow",
       "key-phrases": "Common phrases",
       "show-driver": profile === "street" ? "Tell the driver" : "Show driver",
-      "place-brief": profile === "street" ? "Driver phrases" : profile === "restaurant" ? "Getting there" : profile === "dish" ? "Order it" : "Getting there",
+      "place-brief": "What to picture",
       "table-menu": "Table & menu",
       "before-you-go": profile === "restaurant" ? "Order" : "Before you go",
       "menu-dietary": profile === "restaurant" ? "Drinks" : "Ingredients and diet",
       "inside-the-place": profile === "restaurant" ? "Getting back" : "At the place",
       "how-to-order": profile === "dish" ? "Adjust it" : "How to order",
       "ingredients-diet": "Diet / allergy",
-      "use-it-with": profile === "street" ? "Find it nearby" : profile === "restaurant" ? "Order and pay" : profile === "dish" ? "Ask what’s inside" : "At the place",
-      "when-to-use": profile === "street" ? "If it looks wrong" : profile === "restaurant" ? "Pay" : profile === "dish" ? "Find it nearby" : "Meeting or pickup",
+      "use-it-with": "Why it belongs",
+      "when-to-use": "Trip cues",
       "explore-next": `More ${page.title || "place"} phrases`,
     };
     const sectionIDTitle = byID[page.__currentSectionID];
@@ -4547,8 +4574,8 @@ function rewriteBaNaHillsJourneySections(page, sections) {
       "ves-take-photo-for-me",
     ], "purple"),
     phraseSection("getting-back", "Getting back", [
-      "directions-8",
-      "v900-dire-navi-is-this-the-correct-pickup-point",
+      "v500-unde-repa-can-you-show-me-on-the-map",
+      "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
     goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,

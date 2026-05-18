@@ -30,8 +30,8 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
+    @State private var isSystemSearchPresented = false
     @State private var searchFocusRequestID = 0
-    @State private var isSearchFieldFocused = false
     @State private var searchReturnFocusRequestID = 0
     @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
     @State private var didApplyLaunchSearchFocus = false
@@ -63,6 +63,7 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
     private let launchPracticeEntryContext: PracticeEntryContext
@@ -112,7 +113,7 @@ struct AppShellView: View {
                 .navigationTitle("Search")
             }
         }
-        .toolbar(hidesPhotoBackdropChrome ? .hidden : .visible, for: .tabBar)
+        .toolbar(hidesSystemTabBar ? .hidden : .visible, for: .tabBar)
         .toolbarBackground(
             showsPhotoBackdropTabBarBackground ? PhrasePageStyle.pageBackground : Color.clear,
             for: .tabBar
@@ -120,6 +121,16 @@ struct AppShellView: View {
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
         .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
+        .searchable(
+            text: $searchQuery,
+            isPresented: systemSearchPresentation,
+            placement: .automatic,
+            prompt: "Search Vietnamese phrases"
+        )
+        .searchFocused($isSearchFieldFocused)
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled()
+        .tabViewSearchActivation(.searchTabSelection)
         .background {
             #if canImport(UIKit)
             AppShellTabBarAppearanceBridge(
@@ -146,11 +157,15 @@ struct AppShellView: View {
     }
 
     private var tabBarBackgroundVisibility: Visibility {
-        if hidesPhotoBackdropChrome {
+        if hidesSystemTabBar {
             return .hidden
         }
 
         return showsPhotoBackdropTabBarBackground ? .visible : .automatic
+    }
+
+    private var hidesSystemTabBar: Bool {
+        hidesPhotoBackdropChrome || isPracticeMatchPresented || isPracticeThreadPresented
     }
 
     private var shellContentBody: some View {
@@ -298,6 +313,7 @@ struct AppShellView: View {
                         isFieldFocused: isSearchFieldFocused,
                         returnFocusRequest: searchReturnFocusRequest,
                         onClose: closeSearch,
+                        onDismissSearchFocus: dismissSearchFieldFocus,
                         onPrepareReturnFocus: prepareSearchReturnFocus,
                         onOpenDetail: openDetailFromSearch,
                         onOpenCollection: openBrowseCollectionFromSearch,
@@ -410,7 +426,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -433,7 +449,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(browseCollectionTransition(for: renderedCollection.route))
+                .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -454,6 +470,29 @@ struct AppShellView: View {
             },
             set: { tab in
                 selectSystemTab(tab)
+            }
+        )
+    }
+
+    private var systemSearchPresentation: Binding<Bool> {
+        Binding(
+            get: {
+                navigation.isSearchPresented && isSystemSearchPresented
+            },
+            set: { isPresented in
+                if isPresented {
+                    isSystemSearchPresented = true
+                    if !navigation.isSearchPresented {
+                        openSearch(prefilledQuery: nil, focusField: false)
+                    }
+                } else {
+                    cancelSearchFocus()
+                    if navigation.isSearchPresented {
+                        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+                            navigation.goBack()
+                        }
+                    }
+                }
             }
         )
     }
@@ -739,6 +778,7 @@ struct AppShellView: View {
                 isFieldFocused: isSearchFieldFocused,
                 returnFocusRequest: searchReturnFocusRequest,
                 onClose: closeSearch,
+                onDismissSearchFocus: dismissSearchFieldFocus,
                 onPrepareReturnFocus: prepareSearchReturnFocus,
                 onOpenDetail: openDetailFromSearch,
                 onOpenCollection: openBrowseCollectionFromSearch,
@@ -1444,6 +1484,7 @@ struct AppShellView: View {
             searchQuery = prefilledQuery
         }
 
+        isSystemSearchPresented = true
         if !focusField {
             isSearchFieldFocused = false
         }
@@ -1454,6 +1495,8 @@ struct AppShellView: View {
 
         if focusField {
             focusSearchField()
+        } else {
+            defocusSearchFieldAfterPresentation(requiresPresented: true, delays: [260_000_000])
         }
     }
 
@@ -1473,9 +1516,42 @@ struct AppShellView: View {
         }
     }
 
+    private func defocusSearchFieldAfterPresentation(requiresPresented: Bool, delays: [UInt64]) {
+        searchFocusRequestID += 1
+        let requestID = searchFocusRequestID
+
+        Task { @MainActor in
+            for delay in delays {
+                try? await Task.sleep(nanoseconds: delay)
+
+                guard
+                    requestID == searchFocusRequestID,
+                    navigation.isSearchPresented,
+                    !requiresPresented || isSystemSearchPresented
+                else {
+                    return
+                }
+
+                isSearchFieldFocused = false
+                #if canImport(UIKit)
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                #endif
+            }
+        }
+    }
+
+    private func dismissSearchFieldFocus() {
+        searchFocusRequestID += 1
+        isSearchFieldFocused = false
+        #if canImport(UIKit)
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        #endif
+    }
+
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
+        isSystemSearchPresented = true
         isSearchFieldFocused = true
 
         Task { @MainActor in
@@ -1495,15 +1571,23 @@ struct AppShellView: View {
         }
         didApplyLaunchSearchFocus = true
 
-        guard launchSearchShouldFocus, navigation.isSearchPresented else {
+        guard navigation.isSearchPresented else {
             return
         }
 
-        focusSearchField()
+        if launchSearchShouldFocus {
+            focusSearchField()
+        } else {
+            defocusSearchFieldAfterPresentation(
+                requiresPresented: false,
+                delays: [260_000_000, 520_000_000, 900_000_000]
+            )
+        }
     }
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
+        isSystemSearchPresented = false
         isSearchFieldFocused = false
     }
 
@@ -4356,8 +4440,8 @@ private enum HomeContent {
         ),
         HomePhraseShelfDefinition(
             id: "food-coffee",
-            title: "Food & coffee",
-            subtitle: "Menu, water, coffee, spice, allergies, and paying.",
+            title: "Eating Out",
+            subtitle: "Tables, ordering, allergies, and paying.",
             route: .category("food"),
             sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
             pageIDs: [
@@ -4486,7 +4570,7 @@ private enum HomeContent {
         ),
         HomeSituationCard(
             id: "food-shopping",
-            title: "Food and shopping",
+            title: "Eating out and shopping",
             subtitle: "Restaurants, markets, items, prices",
             imageName: "HomeSituationFoodShopping",
             route: .category("food")
@@ -4972,7 +5056,7 @@ private struct HomePracticeStarter: Identifiable {
         ),
         HomePracticeStarter(
             id: "food-drinks",
-            title: "Food & drinks",
+            title: "Eating Out",
             subtitle: "Order, ask, pay",
             symbolName: "takeoutbag.and.cup.and.straw.fill",
             tint: .orange,

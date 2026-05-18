@@ -199,11 +199,11 @@ final class BrowseSearchUITests: XCTestCase {
     func testFoodCollectionStartsWithCoffeeNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
 
-        XCTAssertTrue(app.staticTexts["Food & coffee"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Coffee, dishes, and drinks"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Local dishes"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Order & adjust"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Black coffee, milk coffee, tea, and water"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Eating Out"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Quick orders"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Order dishes"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Adjust the order"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Coffee, tea, water, and adjustments"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Cà phê đen"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Black coffee"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-2"].waitForExistence(timeout: 2))
@@ -214,7 +214,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testVietnameseFoodMenuSectionRailScrollsToCategory() {
         let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
-        XCTAssertTrue(app.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
         let popularRail = app.buttons["VietnameseMenu.SectionRail.popular"]
         let scrollAnchor: XCUIElement
         if popularRail.waitForExistence(timeout: 2) {
@@ -233,7 +233,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testVietnameseMenuSectionHeadersHideCountsAndHelperSubtitles() {
         let food = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
-        XCTAssertTrue(food.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        XCTAssertTrue(food.staticTexts["Food Menu"].waitForExistence(timeout: 4))
         tapHorizontalCard(food.buttons["VietnameseMenu.SectionRail.noodle-soups"], app: food, scrollAnchor: food.buttons["VietnameseMenu.SectionRail.popular"])
         XCTAssertTrue(food.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"].waitForExistence(timeout: 3))
         XCTAssertFalse(food.staticTexts["26"].exists)
@@ -242,7 +242,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         let drinks = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu"])
 
-        XCTAssertTrue(drinks.staticTexts["Vietnamese drinks"].waitForExistence(timeout: 4))
+        XCTAssertTrue(drinks.staticTexts["Drink Menu"].waitForExistence(timeout: 4))
         tapHorizontalCard(drinks.buttons["VietnameseMenu.SectionRail.coffee"], app: drinks, scrollAnchor: drinks.buttons["VietnameseMenu.SectionRail.popular"])
         XCTAssertTrue(drinks.staticTexts["VietnameseMenu.SectionTitle.coffee"].waitForExistence(timeout: 3))
         XCTAssertFalse(drinks.staticTexts["14"].exists)
@@ -253,7 +253,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testVietnameseMenuRowSaveAddsItemToSavedTrip() {
         let app = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu", "--reset-demo-state"])
 
-        XCTAssertTrue(app.staticTexts["Vietnamese drinks"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Drink Menu"].waitForExistence(timeout: 4))
         tapHorizontalCard(
             app.buttons["VietnameseMenu.SectionRail.coffee"],
             app: app,
@@ -278,7 +278,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff() {
         let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
-        XCTAssertTrue(app.staticTexts["Vietnamese menu"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"].exists)
 
         for _ in 0..<4 where !app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"].exists {
@@ -561,13 +561,13 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.buttons["Browse.NextShelf.recent"].exists)
     }
 
-    func testSearchTabOpensSearchField() {
+    func testSearchTabOpensSystemSearchField() {
         let app = XCUIApplication()
         app.launch()
 
         openSearch(in: app)
 
-        let field = searchField(in: app)
+        let field = nativeSearchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
         XCTAssertTrue(field.waitForExistence(timeout: 2))
 
@@ -584,7 +584,7 @@ final class BrowseSearchUITests: XCTestCase {
         openDock("Search", in: app)
 
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
-        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
+        XCTAssertTrue(nativeSearchField(in: app).waitForExistence(timeout: 2))
         XCTAssertFalse(
             app.keyboards.firstMatch.waitForExistence(timeout: 0.5),
             "Tapping the bottom Search tab should open discovery/results without flashing keyboard focus."
@@ -782,6 +782,10 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         return app.textFields["Search Vietnamese phrases"]
+    }
+
+    private func nativeSearchField(in app: XCUIApplication) -> XCUIElement {
+        app.searchFields["Search Vietnamese phrases"]
     }
 
     private func tapWhenVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {

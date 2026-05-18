@@ -7,7 +7,7 @@
     "releasedOrLegacy": "com.jojobuilds.viettravelphrases",
     "nativeDevelopment": "app.speaklocal.vietnam.native"
   },
-  "premiumProductID": "com.jojobuilds.viettravelphrases.premiumunlock",
+  "premiumProductID": "app.speaklocal.vietnam.subscription.monthly",
   "paths": {
     "contentDraft": "content-draft/viet",
     "currentNativeResources": "native-ios/Resources",

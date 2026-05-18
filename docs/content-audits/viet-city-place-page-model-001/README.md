@@ -4,6 +4,8 @@ Research date: 2026-05-03
 Assignment: define the SpeakLocal Vietnam city/place page model, audit current city/place outputs, and recommend validator rules.
 Owner lane: Research / Product Strategy
 
+Current status note, 2026-05-18: keep this file as historical model research. The live city library has since moved from the 750-page flat model described here to 807 city-library runtime pages, including 500 approved city noun/place pages and 307 city-library phrase pages. Use `docs/content-audits/viet-city-copy-audience-drift-2026-05-18.md` and `docs/content-audits/viet-city-pages-cleanup-2026-05-18.md` for current city-copy counts and audience-alignment guidance.
+
 ## Executive Takeaway
 
 SpeakLocal should split the current city-guide article model into explicit page kinds instead of treating every city item as either a generic `phrase` page or generic `place` page.

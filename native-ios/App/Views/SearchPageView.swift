@@ -13,13 +13,13 @@ struct SearchPageView: View {
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
-    @FocusState private var isInlineSearchFieldFocused: Bool
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
     let isFieldFocused: Bool
     let returnFocusRequest: SearchReturnFocusRequest?
     let onClose: () -> Void
+    var onDismissSearchFocus: () -> Void = {}
     var onPrepareReturnFocus: (String) -> Void = { _ in }
     var onOpenDetail: (String) -> Void = { _ in }
     var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
@@ -31,6 +31,7 @@ struct SearchPageView: View {
         isFieldFocused: Bool = false,
         returnFocusRequest: SearchReturnFocusRequest? = nil,
         onClose: @escaping () -> Void,
+        onDismissSearchFocus: @escaping () -> Void = {},
         onPrepareReturnFocus: @escaping (String) -> Void = { _ in },
         onOpenDetail: @escaping (String) -> Void = { _ in },
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
@@ -44,6 +45,7 @@ struct SearchPageView: View {
         self.isFieldFocused = isFieldFocused
         self.returnFocusRequest = returnFocusRequest
         self.onClose = onClose
+        self.onDismissSearchFocus = onDismissSearchFocus
         self.onPrepareReturnFocus = onPrepareReturnFocus
         self.onOpenDetail = onOpenDetail
         self.onOpenCollection = onOpenCollection
@@ -67,23 +69,22 @@ struct SearchPageView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
                             header(results: searchResults, mode: headerMode)
-                                .searchKeyboardDismissArea(dismissInlineSearchFocus)
-                            searchField
+                                .searchFocusDismissArea(onDismissSearchFocus)
 
                             if searchResults.query.isEmpty {
                                 if effectiveFieldFocused {
                                     focusedContent
-                                        .searchKeyboardDismissArea(dismissInlineSearchFocus)
+                                        .searchFocusDismissArea(onDismissSearchFocus)
                                 } else {
                                     defaultContent
-                                        .searchKeyboardDismissArea(dismissInlineSearchFocus)
+                                        .searchFocusDismissArea(onDismissSearchFocus)
                                 }
                             } else if searchResults.hasResults {
                                 resultsContent(results: searchResults)
-                                    .searchKeyboardDismissArea(dismissInlineSearchFocus)
+                                    .searchFocusDismissArea(onDismissSearchFocus)
                             } else {
                                 recoveryContent
-                                    .searchKeyboardDismissArea(dismissInlineSearchFocus)
+                                    .searchFocusDismissArea(onDismissSearchFocus)
                             }
                         }
                         .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
@@ -106,16 +107,12 @@ struct SearchPageView: View {
         .accessibilityIdentifier("SearchPageView")
         .onAppear {
             refreshSearchResultsIfNeeded()
-            applyInlineSearchFocusIfNeeded()
         }
         .onChange(of: trimmedQuery) { _, nextQuery in
             if searchResults.query != nextQuery {
                 selectedFilter = .all
             }
             scheduleSearchResultsRefresh(for: nextQuery)
-        }
-        .onChange(of: isFieldFocused) { _, _ in
-            applyInlineSearchFocusIfNeeded()
         }
         .onDisappear {
             searchRefreshTask?.cancel()
@@ -124,7 +121,7 @@ struct SearchPageView: View {
     }
 
     private var effectiveFieldFocused: Bool {
-        isFieldFocused || isInlineSearchFieldFocused
+        isFieldFocused
     }
 
     private var trimmedQuery: String {
@@ -158,31 +155,6 @@ struct SearchPageView: View {
 
             searchResults = SearchPageResults(query: nextQuery)
         }
-    }
-
-    private func applyInlineSearchFocusIfNeeded() {
-        guard isFieldFocused else {
-            dismissInlineSearchFocus()
-            return
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 80_000_000)
-            guard isFieldFocused else {
-                dismissInlineSearchFocus()
-                return
-            }
-
-            isInlineSearchFieldFocused = true
-        }
-    }
-
-    private func dismissInlineSearchFocus() {
-        guard isInlineSearchFieldFocused else {
-            return
-        }
-
-        isInlineSearchFieldFocused = false
     }
 
     private func applyReturnFocusIfNeeded(_ request: SearchReturnFocusRequest?, scrollProxy: ScrollViewProxy) {
@@ -259,48 +231,6 @@ struct SearchPageView: View {
                     .lineSpacing(3)
                     .padding(.top, 10)
             }
-        }
-    }
-
-    private var searchField: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.subheadline.weight(.bold))
-                .foregroundStyle(.secondary)
-                .frame(width: 20)
-                .accessibilityHidden(true)
-
-            TextField("Search Vietnamese phrases", text: $query)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .submitLabel(.search)
-                .focused($isInlineSearchFieldFocused)
-                .onSubmit(dismissInlineSearchFocus)
-                .accessibilityIdentifier("Search Vietnamese phrases")
-
-            if !query.isEmpty {
-                Button {
-                    query = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .frame(width: 28, height: 28)
-                        .contentShape(Circle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Clear search")
-                .accessibilityIdentifier("Search.InlineClear")
-            }
-        }
-        .padding(.horizontal, 14)
-        .frame(height: 50)
-        .frame(maxWidth: .infinity)
-        .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(Color.black.opacity(0.06), lineWidth: 1)
-                .allowsHitTesting(false)
         }
     }
 
@@ -521,7 +451,7 @@ struct SearchPageView: View {
 
 }
 
-private struct SearchKeyboardDismissArea: ViewModifier {
+private struct SearchFocusDismissArea: ViewModifier {
     let dismiss: () -> Void
 
     func body(content: Content) -> some View {
@@ -534,8 +464,8 @@ private struct SearchKeyboardDismissArea: ViewModifier {
 }
 
 private extension View {
-    func searchKeyboardDismissArea(_ dismiss: @escaping () -> Void) -> some View {
-        modifier(SearchKeyboardDismissArea(dismiss: dismiss))
+    func searchFocusDismissArea(_ dismiss: @escaping () -> Void) -> some View {
+        modifier(SearchFocusDismissArea(dismiss: dismiss))
     }
 }
 

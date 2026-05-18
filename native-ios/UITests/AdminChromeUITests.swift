@@ -258,7 +258,7 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.city-guides"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-city.png")
 
-        for _ in 0..<3 where !app.staticTexts["Food & coffee"].exists {
+        for _ in 0..<3 where !app.staticTexts["Eating Out"].exists {
             app.swipeUp()
         }
         XCTAssertTrue(app.buttons["HomeShelf.Header.category.food"].waitForExistence(timeout: 3))
@@ -309,7 +309,7 @@ final class AdminChromeUITests: XCTestCase {
         assertHomePracticeStarterVisible(app: app, id: "food-drinks")
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-practice-starters-food.png")
 
-        XCTAssertTrue(app.staticTexts["Food & drinks"].exists)
+        XCTAssertTrue(app.staticTexts["Eating Out"].exists)
     }
 
     func testHomeExploreByCityShowsAllCityGuides() {

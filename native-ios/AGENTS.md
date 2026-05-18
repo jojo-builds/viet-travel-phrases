@@ -71,7 +71,7 @@ Design rules Jojo has locked in:
 - Homepage phrase shelves should be friendly labels over existing Browse routes, not duplicate category IDs:
   - `Use now` -> `.category("essentials")`
   - `First hour in Vietnam` -> `.category("first-day")`
-  - `Food & coffee` -> `.category("food")`
+  - `Eating Out` -> `.category("food")`
   - `When you don't understand` -> `.category("polite-repair")`
   - `Taxi & getting around` -> `.category("getting-around")`
   - `Hotel basics` -> `.category("hotel")`

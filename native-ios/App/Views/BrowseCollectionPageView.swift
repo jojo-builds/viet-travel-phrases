@@ -218,7 +218,9 @@ struct BrowseCollectionPageView: View {
                 .padding(.bottom, 10)
                 .accessibilityHidden(true)
 
-            BrowseCollectionHeaderCopy(descriptor: descriptor)
+            BrowseCollectionHeaderCopy(
+                descriptor: descriptor
+            )
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 26)
 

@@ -16,18 +16,18 @@ enum VietnameseMenuKind: String, CaseIterable, Equatable {
     var title: String {
         switch self {
         case .food:
-            return "Vietnamese menu"
+            return "Food Menu"
         case .drink:
-            return "Vietnamese drinks"
+            return "Drink Menu"
         }
     }
 
     var subtitle: String {
         switch self {
         case .food:
-            return "Browse noodle soups, rice plates, and street snacks. Tap a dish to hear it and know what to order."
+            return "Browse noodle soups, rice plates, and street snacks. Tap a dish to hear it and recognize what to order."
         case .drink:
-            return "Browse Vietnamese coffee, tea, smoothies, juice, and cold drinks. Tap a drink to hear it and order with confidence."
+            return "Browse coffee, tea, smoothies, juice, and cold drinks. Tap a drink to hear it and order with confidence."
         }
     }
 

@@ -109,7 +109,7 @@ Use TestFlight only when the goal is Apple-side behavior that cannot be proven l
 Before a durable purchase test:
 
 - confirm the bundle ID is `com.jojobuilds.viettravelphrases`
-- confirm the product ID is `com.jojobuilds.viettravelphrases.premiumunlock`
+- confirm the product ID is `app.speaklocal.vietnam.subscription.monthly`
 - confirm App Store Connect metadata and sandbox-account readiness
 - archive/export from the native Xcode project or the agreed native release path
 - record the exact build number, device model, iOS version, and Apple-side product state
