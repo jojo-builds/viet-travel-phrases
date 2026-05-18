@@ -2045,7 +2045,7 @@ struct ExploreCatalogSection: View {
         "arrivals-routes": PhraseCategory(id: "arrivals-routes", title: "Arrivals and routes", symbolName: "car.fill", tintName: .blue),
         "landmarks-attractions": PhraseCategory(id: "landmarks-attractions", title: "Landmarks and attractions", symbolName: "signpost.right.fill", tintName: .teal),
         "neighborhoods-streets": PhraseCategory(id: "neighborhoods-streets", title: "Neighborhoods and streets", symbolName: "map.fill", tintName: .teal),
-        "food-coffee": PhraseCategory(id: "food-coffee", title: "Food and coffee", symbolName: "fork.knife", tintName: .green),
+        "food-coffee": PhraseCategory(id: "food-coffee", title: "Food and cafes", symbolName: "fork.knife", tintName: .green),
         "shopping-markets": PhraseCategory(id: "shopping-markets", title: "Shopping and markets", symbolName: "bag.fill", tintName: .orange),
         "practical-help-near-places": PhraseCategory(id: "practical-help-near-places", title: "Nearby help", symbolName: "cross.case.fill", tintName: .blue),
     ]

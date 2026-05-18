@@ -73,7 +73,7 @@ Rules:
 - Homepage phrase shelves should reuse existing Browse routes when they are genuinely close instead of creating duplicate category IDs. Current homepage shelf routing contract:
   - `Essentials` -> `.category("essentials")`
   - `First Day in Vietnam` -> `.category("first-day")`
-  - `Food & coffee` -> `.category("food")`
+  - `Eating Out` -> `.category("food")`
   - `When you don't understand` -> `.category("polite-repair")`
   - `Taxi & getting around` -> `.category("getting-around")`
   - `Hotel basics` -> `.category("hotel")`
