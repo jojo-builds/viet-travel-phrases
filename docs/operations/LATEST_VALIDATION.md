@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-18
+Last updated: 2026-05-19
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -35,6 +35,41 @@ Scope note: this was a copy/content/resource pass. No simulator or physical iPho
 
 ## Current Main Merge Sweep Evidence
 
+Current `main` evidence from the 2026-05-19 non-paywall, non-Messages merge sweep:
+
+- validated app-code commit installed on Jojo's iPhone: `c1902f28` (`Align hero asset validation with category backdrops`)
+- merged lanes: `feature/browse-page`, `feature/city-pages`, `feature/homepage-design`, `feature/menu-section`, `feature/practice-area`
+- explicitly skipped lanes: `feature/paywall`, `feature/messages-section`, `archive/messages-section-20260516`
+- synced clean non-paywall, non-Messages feature lanes back to `c1902f28`
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `node native-ios/scripts/validate-viet-city-copy.js`
+  - passed: `5` hubs, `500` city noun pages, `500` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js`
+  - passed: `807` pages, `707` beginner, `95` intermediate, `5` advanced
+- `node native-ios/scripts/validate-viet-hero-image-assets.js`
+  - passed: `500` approved city-library places and `524` active premium hero assets checked
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js`
+  - passed: `355` handwritten Vietnamese menu item pages and `15` ready helper phrases
+- `node native-ios/scripts/validate-vietnamese-menu-images.js`
+  - passed: `355` menu image pairs, `710` images, `0` issues
+- `node scripts/practice/generate-viet-practice-deck.js --check`
+  - passed: `8267` items, `18` scenarios, `8` question types
+- XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/AppChromeTests` plus `SpeakLocalNativeTests/PracticeNativeMVPTests`
+  - passed: `155` tests, `0` failures
+- Physical iPhone Debug build/install/launch from `main`
+  - build passed
+  - install passed
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
+## Previous Main Merge Sweep Evidence
+
 Current `main` evidence from the 2026-05-18 non-paywall, non-Messages merge sweep:
 
 - validated app-code commit installed on Jojo's iPhone: `705eb21f` (`Preserve generated city editorial phrase rows`)
@@ -68,7 +103,7 @@ Known validation caveat from this pass:
 
 - A broad pre-fix selected UI run failed in `BrowseSearchUITests` on photo-backdrop city hub proof/test-expectation cases and older menu-scroll assertions. `PracticeUITests` passed in that same run. The fixed AppChrome regression was rerun and passed afterward.
 
-## Previous Main Merge Sweep Evidence
+## Older Main Merge Sweep Evidence
 
 Current `main` evidence from the non-paywall, non-Messages merge sweep:
 
