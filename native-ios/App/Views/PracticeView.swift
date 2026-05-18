@@ -4326,6 +4326,7 @@ private struct PracticeMatchRootView: View {
             if let activeSession {
                 PracticeMatchRoundView(
                     session: activeSession,
+                    intentStore: intentStore,
                     sourceOptions: sourceOptions,
                     topContentClearance: topContentClearance,
                     onClose: closeActiveSession,
@@ -4870,6 +4871,7 @@ private struct PracticeMatchSavedEmptyCard: View {
 
 private struct PracticeMatchRoundView: View {
     let session: PracticeMatchActiveSession
+    @ObservedObject var intentStore: LocalUserIntentStore
     let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
     let onClose: () -> Void
@@ -4885,6 +4887,7 @@ private struct PracticeMatchRoundView: View {
             if session.isRoundComplete {
                 PracticeMatchCompletionView(
                     session: session,
+                    intentStore: intentStore,
                     sourceOptions: sourceOptions,
                     topContentClearance: topContentClearance,
                     onClose: onClose,
@@ -5176,12 +5179,16 @@ private struct PracticeMatchBoardView: View {
     let onSelectPrompt: (PracticeMatchCard) -> Void
     let onSelectAnswer: (PracticeMatchCard) -> Void
 
-    private let cardHeight: CGFloat = 64
-    private let cardSpacing: CGFloat = 10
     private let columnSpacing: CGFloat = 16
+    private var cardHeight: CGFloat { session.round.mode.requiresImage ? 86 : 64 }
+    private var cardSpacing: CGFloat { session.round.mode.requiresImage ? 12 : 10 }
+    private var boardHeight: CGFloat {
+        CGFloat(PracticeMatchRound.pairCount) * cardHeight
+            + CGFloat(PracticeMatchRound.pairCount - 1) * cardSpacing
+    }
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             PracticeMatchConnectionLayer(
                 session: session,
                 cardHeight: cardHeight,
@@ -5216,6 +5223,7 @@ private struct PracticeMatchBoardView: View {
                 }
             }
         }
+        .frame(height: boardHeight)
         .accessibilityIdentifier("Practice.Match.Board")
     }
 
@@ -5272,6 +5280,7 @@ private struct PracticeMatchCardButton: View {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .stroke(stroke, lineWidth: state == .normal ? 1 : 1.35)
             }
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .offset(x: state == .incorrect ? -4 : 0)
             .animation(
                 state == .incorrect
@@ -5352,8 +5361,8 @@ private struct PracticeMatchCardContent: View {
                     .foregroundStyle(textColor)
                     .lineLimit(2)
                     .minimumScaleFactor(0.68)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                 AudioSpeakerButton(
                     tint: card.item.tint,
@@ -5371,9 +5380,9 @@ private struct PracticeMatchCardContent: View {
                 .foregroundStyle(textColor)
                 .lineLimit(2)
                 .minimumScaleFactor(0.68)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 10)
-                .frame(maxWidth: .infinity, minHeight: height)
+                .multilineTextAlignment(.leading)
+                .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
         case .audio:
             PracticeMatchAudioPrompt(
                 tint: card.item.tint,
@@ -5439,6 +5448,8 @@ private struct PracticeMatchImagePrompt: View {
     let tint: AccentTint
     let height: CGFloat
 
+    private var imageSize: CGFloat { max(height - 8, 52) }
+
     var body: some View {
         Group {
             if let imageName {
@@ -5455,9 +5466,11 @@ private struct PracticeMatchImagePrompt: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: max(height - 12, 44))
+        .frame(width: imageSize, height: imageSize)
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 3)
+        .frame(maxWidth: .infinity)
+        .frame(height: imageSize)
         .accessibilityHidden(true)
     }
 }
@@ -5566,6 +5579,7 @@ private struct PracticeMatchHintNotice: View {
 
 private struct PracticeMatchCompletionView: View {
     let session: PracticeMatchActiveSession
+    @ObservedObject var intentStore: LocalUserIntentStore
     let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
     let onClose: () -> Void
@@ -5623,39 +5637,7 @@ private struct PracticeMatchCompletionView: View {
                     .padding(.bottom, 4)
 
                 ForEach(session.round.pairs) { pair in
-                    HStack(spacing: 9) {
-                        Text(pair.item.vietnamese)
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.72)
-
-                        AudioSpeakerButton(tint: pair.item.tint, size: 24, audioKey: pair.item.audioKey)
-                            .frame(width: 28)
-
-                        Spacer(minLength: 8)
-
-                        if let imageName = pair.item.imageName {
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 38, height: 38)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .accessibilityHidden(true)
-                        } else {
-                            Rectangle()
-                                .fill(Color.black.opacity(0.10))
-                                .frame(width: 22, height: 1)
-                        }
-
-                        Text(pair.item.english)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.72)
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
+                    PracticeMatchCompletionRow(pair: pair, intentStore: intentStore)
 
                     if pair.id != session.round.pairs.last?.id {
                         Divider()
@@ -5694,6 +5676,99 @@ private struct PracticeMatchCompletionView: View {
                 .ignoresSafeArea(edges: .bottom)
         }
         .accessibilityIdentifier("Practice.Match.Complete")
+    }
+}
+
+private struct PracticeMatchCompletionRow: View {
+    let pair: PracticeMatchPair
+    @ObservedObject var intentStore: LocalUserIntentStore
+
+    var body: some View {
+        HStack(spacing: 10) {
+            PracticeMatchSummaryThumbnail(item: pair.item)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(pair.item.vietnamese)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.76)
+
+                Text(pair.item.english)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.76)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            HStack(spacing: 4) {
+                AudioSpeakerButton(
+                    tint: pair.item.tint,
+                    size: 26,
+                    audioKey: pair.item.audioKey,
+                    accessibilityIdentifier: "Practice.Match.Complete.Audio.\(pair.item.pageID)"
+                )
+                .frame(width: 34, height: 34)
+
+                PracticeMatchSaveButton(
+                    isSaved: intentStore.isPageSaved(pair.item.pageID),
+                    pageID: pair.item.pageID,
+                    onTap: { intentStore.toggleSavedPage(pair.item.pageID) }
+                )
+            }
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 9)
+    }
+}
+
+private struct PracticeMatchSummaryThumbnail: View {
+    let item: PracticeMatchItem
+
+    var body: some View {
+        Group {
+            if let imageName = item.imageName {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                ZStack {
+                    item.tint.color.opacity(0.14)
+
+                    Image(systemName: item.symbolName)
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(item.tint.color)
+                }
+            }
+        }
+        .frame(width: 48, height: 48)
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(Color.black.opacity(0.06), lineWidth: 1)
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+private struct PracticeMatchSaveButton: View {
+    let isSaved: Bool
+    let pageID: String
+    let onTap: () -> Void
+
+    var body: some View {
+        Button(action: onTap) {
+            Image(systemName: isSaved ? "heart.fill" : "heart")
+                .font(.subheadline.weight(.black))
+                .foregroundStyle(.red)
+                .frame(width: 34, height: 34)
+                .background(.white.opacity(0.72), in: Circle())
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isSaved ? "Remove from Saved" : "Save to My Trip")
+        .accessibilityIdentifier("Practice.Match.Complete.Save.\(pageID)")
     }
 }
 
