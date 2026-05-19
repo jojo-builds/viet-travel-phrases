@@ -421,6 +421,10 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseCityHeroCardsCropPortraitImagesAroundVisualCenter() {
+        XCTAssertEqual(BrowsePageLayout.cityHeroImageAlignment, .center)
+    }
+
     func testPlaybackSpeedPreferenceMapsToGlobalRates() {
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.5x"), 0.5, accuracy: 0.001)
         XCTAssertEqual(AudioPlaybackPreference.rate(for: "0.75x"), 0.75, accuracy: 0.001)
