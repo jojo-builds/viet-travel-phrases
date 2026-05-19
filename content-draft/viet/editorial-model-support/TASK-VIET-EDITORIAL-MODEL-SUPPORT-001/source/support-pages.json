@@ -66,13 +66,13 @@
       "exploreNextBody": "Go next to drink, bill, taxi, or recommendation phrases that complete the restaurant visit.",
       "rationale": "Required by EP-001 as a live restaurant interaction row. It is a full canonical phrase page because the row is visible and playable in future imports.",
       "relatedPhraseIDs": [
-        "vpe-one-item-please-cho-toi-mot-tra-da",
+        "v900-food-drin-one-iced-tea-please",
         "coffee-7",
         "ves-call-taxi-for-me",
         "ves-popular-dish-here"
       ],
       "explorePhraseIDs": [
-        "vpe-one-item-please-cho-toi-mot-tra-da",
+        "v900-food-drin-one-iced-tea-please",
         "coffee-7",
         "ves-call-taxi-for-me",
         "v900-food-drin-what-do-you-recommend"
@@ -229,7 +229,7 @@
       "explorePhraseIDs": [
         "ves-popular-dish-here",
         "coffee-7",
-        "vpe-one-item-please-cho-toi-mot-tra-da",
+        "v900-food-drin-one-iced-tea-please",
         "ves-drop-me-off-here"
       ]
     },
@@ -1055,13 +1055,11 @@
       "rationale": "Required by EP-008 as a full canonical support target for area-route handling.",
       "relatedPhraseIDs": [
         "ves-what-time-come-back",
-        "v500-unde-repa-can-you-show-me-on-the-map",
         "repair-5",
         "ves-call-taxi-for-me"
       ],
       "explorePhraseIDs": [
         "ves-what-time-come-back",
-        "v500-unde-repa-can-you-show-me-on-the-map",
         "repair-5",
         "ves-call-taxi-for-me"
       ]
@@ -1339,13 +1337,13 @@
         "city-danang-place-nguyen-van-linh-street",
         "city-danang-near-nguyen-van-linh-street",
         "ves-is-this-nguyen-van-linh-street",
-        "ves-can-you-show-me-politeness"
+        "repair-show-me"
       ],
       "explorePhraseIDs": [
         "city-danang-place-nguyen-van-linh-street",
         "city-danang-near-nguyen-van-linh-street",
         "ves-is-this-nguyen-van-linh-street",
-        "ves-can-you-show-me-politeness"
+        "repair-show-me"
       ]
     },
     {
@@ -1410,13 +1408,13 @@
         "ves-to-nguyen-van-linh-street",
         "city-danang-near-nguyen-van-linh-street",
         "ves-not-right-place",
-        "ves-can-you-show-me-politeness"
+        "repair-show-me"
       ],
       "explorePhraseIDs": [
         "ves-to-nguyen-van-linh-street",
         "city-danang-near-nguyen-van-linh-street",
         "ves-not-right-place",
-        "ves-can-you-show-me-politeness"
+        "repair-show-me"
       ]
     },
     {
@@ -1768,157 +1766,6 @@
         "ves-not-right-place",
         "repair-5",
         "taxi-1"
-      ]
-    },
-    {
-      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-      "status": "approved",
-      "phraseID": "ves-can-you-show-me-politeness",
-      "familyID": "ves-can-you-show-me-politeness",
-      "scenarioID": "understanding-repair",
-      "supportModel": "street-pronouncer",
-      "supportFamily": "show-me",
-      "requiredForPatchIDs": [
-        "EP-016"
-      ],
-      "difficulty": "beginner",
-      "targetText": "Anh/chị chỉ giúp tôi được không?",
-      "englishText": "Can you show me?",
-      "canonicalTargetText": "Anh/chị chỉ giúp tôi được không?",
-      "pronunciation": "anh or chee, chee zoop toy duoc khong",
-      "accessTier": "premium",
-      "variantRole": "say-first",
-      "audioStatus": "planned",
-      "iconName": "hand.point.up.left.fill",
-      "tintName": "blue",
-      "categoryIDs": [
-        "street-pronouncer",
-        "show-me"
-      ],
-      "searchAliases": [
-        "can you show me",
-        "please show me",
-        "point it out"
-      ],
-      "context": "Use this after a near-here or street question when pointing would be clearer than another sentence.",
-      "youMayHear": "Ở đây. / Bên kia. / Đi thẳng.",
-      "chunks": [
-        {
-          "vietnamese": "Anh/chị",
-          "english": "polite you for a man or woman"
-        },
-        {
-          "vietnamese": "chỉ",
-          "english": "show / point"
-        },
-        {
-          "vietnamese": "giúp tôi",
-          "english": "help me"
-        },
-        {
-          "vietnamese": "được không",
-          "english": "is it possible?"
-        },
-        {
-          "vietnamese": "Anh/chị chỉ giúp tôi được không?",
-          "english": "Can you show me?"
-        }
-      ],
-      "atGlance": "This is the polite show-me phrase for street pages. It turns a confusing spoken answer into a point, map, or gesture.",
-      "quickSay": "Ask while showing your map. The other person can point to the street, direction, or exact spot.",
-      "breakdownBody": "Chỉ means show or point. Anh/chị keeps the request polite when you do not know which relationship word to choose.",
-      "useItWithTitle": "After a street question",
-      "useItWith": "Use it after asking if Nguyễn Văn Linh Street is near here or after a yes/no street check.",
-      "whenToUse": "Use it when you need a visible answer: pointing, map help, a sign, or a direction.",
-      "goodToKnow": "This phrase is useful when listening is hard. It keeps the interaction friendly and practical.",
-      "exploreNextBody": "Go next to near-here, driver sentence, and repeat/write-it-down pages.",
-      "rationale": "Required by EP-016 as a full canonical support page for street-pronouncer recovery.",
-      "relatedPhraseIDs": [
-        "city-danang-near-nguyen-van-linh-street",
-        "ves-to-nguyen-van-linh-street",
-        "repair-1",
-        "repair-2"
-      ],
-      "explorePhraseIDs": [
-        "city-danang-near-nguyen-van-linh-street",
-        "ves-to-nguyen-van-linh-street",
-        "repair-1",
-        "repair-2"
-      ]
-    },
-    {
-      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-      "status": "approved",
-      "phraseID": "ves-do-you-speak-english-anh",
-      "familyID": "ves-do-you-speak-english-anh",
-      "scenarioID": "social-small-talk",
-      "supportModel": "politeness-tone-cleanup",
-      "supportFamily": "relationship-follow-up",
-      "requiredForPatchIDs": [
-        "EP-020"
-      ],
-      "difficulty": "beginner",
-      "targetText": "Anh nói tiếng Anh không?",
-      "englishText": "Do you speak English?",
-      "canonicalTargetText": "Anh nói tiếng Anh không?",
-      "pronunciation": "anh noy tyeng anh khong",
-      "accessTier": "premium",
-      "variantRole": "say-first",
-      "audioStatus": "planned",
-      "iconName": "bubble.left.and.bubble.right.fill",
-      "tintName": "green",
-      "categoryIDs": [
-        "politeness-tone-cleanup",
-        "relationship-follow-up"
-      ],
-      "searchAliases": [
-        "do you speak English older man",
-        "Anh speak English"
-      ],
-      "context": "Use this after greeting an older man or male service worker when you need to check whether English is possible.",
-      "youMayHear": "Có. / Một chút. / Không.",
-      "chunks": [
-        {
-          "vietnamese": "Anh",
-          "english": "older man / respectful male address"
-        },
-        {
-          "vietnamese": "nói",
-          "english": "speak"
-        },
-        {
-          "vietnamese": "tiếng Anh",
-          "english": "English"
-        },
-        {
-          "vietnamese": "không",
-          "english": "question ending"
-        },
-        {
-          "vietnamese": "Anh nói tiếng Anh không?",
-          "english": "Do you speak English?"
-        }
-      ],
-      "atGlance": "This is the relationship-specific follow-up behind Dạ, chào anh. It keeps the tone warm while checking language help.",
-      "quickSay": "Use it after Chào anh or Dạ, chào anh if you need English help from an older man or male-presenting helper.",
-      "breakdownBody": "Anh is the respectful address word here. The rest asks whether he speaks English.",
-      "useItWithTitle": "After greeting",
-      "useItWith": "Use it with greeting and repair pages, not place or restaurant templates.",
-      "whenToUse": "Use it at hotel desks, shops, rides, or cafes when the greeting has already opened the exchange.",
-      "goodToKnow": "If the person says một chút, meaning a little, keep the next sentence short and show your phone or map.",
-      "exploreNextBody": "Go next to the flexible anh/chị English-help page, repeat, and write-it-down pages.",
-      "rationale": "Required by EP-020 as a tone-cleanup path for a relationship-specific greeting page.",
-      "relatedPhraseIDs": [
-        "acknowledge-da-chao-anh",
-        "hello-chao-anh",
-        "repair-english-help",
-        "repair-1"
-      ],
-      "explorePhraseIDs": [
-        "acknowledge-da-chao-anh",
-        "hello-chao-anh",
-        "repair-english-help",
-        "repair-2"
       ]
     }
   ]

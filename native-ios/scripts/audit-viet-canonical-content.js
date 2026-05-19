@@ -228,18 +228,6 @@ function sourceIndex() {
       index.set(`phrase:${page.id}`, path.relative(repoRoot, cityPath));
     }
   }
-  const practiceRoot = path.join(repoRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
-  const manifestPath = path.join(practiceRoot, "manifest.json");
-  if (fs.existsSync(manifestPath)) {
-    const manifest = readJSON(manifestPath);
-    for (const shardPath of manifest.sourceShards ?? []) {
-      const fullPath = path.join(practiceRoot, shardPath);
-      const shard = readJSON(fullPath);
-      for (const page of shard.pages ?? []) {
-        index.set(`phrase:${page.phraseID}`, path.relative(repoRoot, fullPath));
-      }
-    }
-  }
   return index;
 }
 
@@ -262,7 +250,6 @@ function sourceLane(page, authored, sourcePath) {
   const tierRole = authored?.tierRole;
   if (tierRole) return tierRole;
   if (sourcePath.includes("city-library")) return "city-library";
-  if (sourcePath.includes("practice-expansion")) return "practice-expansion";
   if (sourcePath.includes("canonical-pages/catalog-promoted")) return "catalog-promoted";
   if (sourcePath.includes("canonical-pages/tier-one")) return "tier1";
   if (Number(page.is_authored) === 0) return "catalog-built";
@@ -338,8 +325,9 @@ function pageIssues(page, sections, breakdownRows, phraseRows, authored, sourceP
     && sectionKeys.has("related-phrases")
     && !sectionKeys.has("quick-say")
     && !sectionKeys.has("at-glance");
-  const isLikelyReplyPage = page.id.includes("vpe-likely-replies")
-    || sections.some((section) => section.section_key === "at-glance" && /^You may hear$/i.test(String(section.title ?? "")));
+  const isLikelyReplyPage = sections.some((section) =>
+    section.section_key === "at-glance" && /^You may hear$/i.test(String(section.title ?? ""))
+  );
   const requiredKeysForPage = isDerivedPlacePhrasePage
     ? new Set(["breakdown", "related-phrases", "good-to-know"])
     : requiredSectionKeys;

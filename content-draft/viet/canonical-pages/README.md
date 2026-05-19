@@ -9,7 +9,6 @@ Product rule: every canonical phrase page should be a full traveler-facing artic
 - `tier-one/` contains the original high-value starter family pages and their meaningful child phrase pages. The name describes source origin, not page quality.
 - `catalog-promoted/` contains phrase catalog rows promoted into full authored canonical pages. These pages are equal in product status to `tier-one/`.
 - `../city-library/` contributes city and place phrase pages into the same canonical graph.
-- `../practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/source/` contributes practice-oriented phrase pages into the same canonical graph.
 
 The lane metadata lives in `_source-lanes.json`.
 

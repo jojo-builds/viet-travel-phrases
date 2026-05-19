@@ -41,7 +41,7 @@ const expectedBodies = new Map([
 ]);
 const expectedRows = new Map([
   ["quick-say", ["city-danang-place-ba-na-hills"]],
-  ["getting-there", ["taxi-1", "v500-unde-repa-can-you-show-me-on-the-map", "v500-tran-please-stop-right-here", "ves-is-this-address-correct"]],
+  ["getting-there", ["taxi-1", "repair-5", "transport-stop-here-clearer", "ves-is-this-address-correct"]],
   ["tickets", ["v500-time-date-book-two-tickets-please", "v500-time-date-book-one-ticket-please", "v500-sigh-acti-where-can-i-buy-tickets"]],
   ["cable-car", ["ves-where-cable-car"]],
   ["photos", ["ves-take-photo-for-me"]],

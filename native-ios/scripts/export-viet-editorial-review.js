@@ -162,17 +162,6 @@ function buildSourceIndex() {
     add(`family:${page.id}`, cityPath);
   }
 
-  const practiceRoot = path.join(repoRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
-  const practiceManifest = readJSON(path.join(practiceRoot, "manifest.json"));
-  for (const shardPath of practiceManifest?.sourceShards ?? []) {
-    const fullPath = path.join(practiceRoot, shardPath);
-    const shard = readJSON(fullPath);
-    for (const page of shard?.pages ?? []) {
-      add(`phrase:${page.phraseID ?? page.id}`, fullPath);
-      add(`family:${page.familyID ?? page.id}`, fullPath);
-    }
-  }
-
   return index;
 }
 
@@ -207,7 +196,6 @@ function contentRoleFrom(page, categories) {
 function sourceLaneFor(page, sourcePath) {
   if (page?.tierRole) return page.tierRole;
   if (sourcePath.includes("city-library")) return "city-v1";
-  if (sourcePath.includes("practice-expansion")) return "practice-expansion";
   if (sourcePath.includes("catalog-promoted")) return "catalog-promoted";
   if (sourcePath.includes("tier-one")) return "tier1";
   return "unknown";

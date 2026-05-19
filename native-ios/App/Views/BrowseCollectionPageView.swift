@@ -508,6 +508,7 @@ private struct BrowseCollectionSubcategoryRail: View {
             .padding(.bottom, 2)
         }
         .scrollClipDisabled()
+        .frame(height: BrowseCollectionLayout.subcategoryCardHeight + 6)
     }
 }
 

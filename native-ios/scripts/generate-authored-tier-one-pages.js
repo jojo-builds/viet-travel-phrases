@@ -23,8 +23,6 @@ const catalogPromotedSourceRoot = path.join(canonicalPagesRoot, "catalog-promote
 const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
 const editorialSupportRoot = path.join(familyRoot, "content-draft", "viet", "editorial-model-support", "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001");
 const editorialSupportManifestPath = path.join(editorialSupportRoot, "manifest.json");
-const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
-const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
 const editorialPilotImportScriptPath = path.join(root, "scripts", "import-viet-editorial-pilot.js");
 const breakdownAuditExportPath = path.join(familyRoot, "content-draft", "viet", "breakdown-audit", "audit", "rendered-breakdown-audit.json");
@@ -1308,6 +1306,7 @@ const exactRawBreakdownMeanings = new Map(Object.entries({
   "này": "this",
   "có": "have / yes",
   "cô": "aunt-age woman / respectful female address",
+  "tôi": "I / me",
   "tỏi": "garlic",
   "bơ": "butter",
   "bỏ": "leave out / remove",
@@ -2409,7 +2408,7 @@ function derivedPlacePhraseOptions(pageRecord, relatedRecords, placePage, placeK
     );
   } else if (samePlaceOptions.length < 2) {
     supplemental.push(
-      phraseOptionByID("ves-can-you-show-me-politeness", "teal"),
+      phraseOptionByID("repair-show-me", "teal"),
       phraseOptionByID("ves-not-right-place", "orange"),
       phraseOptionByID("ves-call-taxi-for-me", "orange")
     );
@@ -2492,26 +2491,26 @@ function linkedCityPhraseOptionsByIntent(records, intent, count = 4) {
 function genericAttractionGettingThereOptions() {
   return compactPhraseOptions([
     phraseOptionByID("taxi-1", "orange"),
-    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
-    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
+    phraseOptionByID("repair-5", "teal"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
     phraseOptionByID("ves-is-this-address-correct", "teal"),
   ], 4);
 }
 
 function genericAttractionVisitOptions() {
   return compactPhraseOptions([
-    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
+    phraseOptionByID("repair-5", "teal"),
     phraseOptionByID("ves-is-this-address-correct", "teal"),
     phraseOptionByID("ves-take-photo-for-me", "teal"),
-    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
   ], 4);
 }
 
 function genericAttractionPickupOptions() {
   return compactPhraseOptions([
-    phraseOptionByID("v500-unde-repa-can-you-show-me-on-the-map", "teal"),
+    phraseOptionByID("repair-5", "teal"),
     phraseOptionByID("ves-is-this-address-correct", "teal"),
-    phraseOptionByID("v500-tran-please-stop-right-here", "orange"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
     phraseOptionByID("ves-call-taxi-for-me", "orange"),
   ], 4);
 }
@@ -2856,9 +2855,10 @@ function cityPageForRecord(pageRecord, context) {
     phraseOptionByID("v900-food-drin-what-do-you-recommend", "green"),
   ], 4);
   const restaurantDrinkOptions = compactPhraseOptions([
-    phraseOptionByID("vpe-one-item-please-cho-toi-mot-tra-da", "green"),
     phraseOptionByID("store-1", "green"),
-  ], 2);
+    phraseOptionByID("coffee-2", "green"),
+    phraseOptionByID("coffee-1", "green"),
+  ], 3);
   const restaurantPayOptions = compactPhraseOptions([
     phraseOptionByID("coffee-7", "green"),
     phraseOptionByID("store-6", "green"),
@@ -3159,202 +3159,6 @@ function loadCityLibraryPages() {
     pageRecords,
     placePageByPlaceID,
   }));
-}
-
-function loadPracticeExpansionManifest() {
-  if (!fs.existsSync(practiceExpansionManifestPath)) {
-    return null;
-  }
-  return JSON.parse(fs.readFileSync(practiceExpansionManifestPath, "utf8"));
-}
-
-function loadPracticeExpansionRecords() {
-  const manifest = loadPracticeExpansionManifest();
-  if (!manifest) {
-    return [];
-  }
-
-  const shards = manifest.sourceShards ?? [];
-  return shards.flatMap((relativePath) => {
-    const shardPath = path.join(practiceExpansionRoot, relativePath);
-    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
-    return (shard.pages ?? []).map((page) => ({
-      ...page,
-      sourceShard: relativePath,
-    }));
-  })
-    .filter((page) => page.status === "approved")
-    .sort((a, b) => a.id.localeCompare(b.id));
-}
-
-function practiceExpansionPageID(record) {
-  return `viet-family-${record.phraseID}`;
-}
-
-function practiceExpansionPhraseOption(record, detailPageID = null) {
-  const phrase = phraseByID.get(record.phraseID);
-  if (!phrase) {
-    throw new Error(`Missing practice expansion phrase in catalog: ${record.phraseID}`);
-  }
-  return phraseOption(phrase, detailPageID, record.tintName ?? tintForScenario(record.scenarioID));
-}
-
-function practiceExpansionBreakdownTokens(record) {
-  const chunks = [...(record.chunks ?? [])];
-  const finalMatches = chunks.length > 0
-    && normalizeAudioText(chunks[chunks.length - 1].vietnamese) === normalizeAudioText(record.targetText);
-  if (!finalMatches) {
-    chunks.push({
-      id: `${record.id}-full`,
-      vietnamese: record.targetText,
-      english: record.englishText,
-    });
-  }
-
-  return chunks.map((chunk, index) => ({
-    id: chunk.id ?? `${record.id}-chunk-${index + 1}`,
-    vietnamese: chunk.vietnamese,
-    english: chunk.english,
-    audioKey: authoredBreakdownAudioKey(chunk.vietnamese),
-  }));
-}
-
-function findPracticeExpansionRelatedRecords(record, pageRecords) {
-  const relatedIDs = new Set(record.relatedPhraseIDs ?? []);
-  const explicit = pageRecords.filter((candidate) => relatedIDs.has(candidate.phraseID));
-  const sameFamily = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && candidate.expansionFamily === record.expansionFamily
-  ));
-  const sameScenario = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && candidate.scenarioID === record.scenarioID
-    && candidate.expansionFamily !== record.expansionFamily
-  ));
-  const buckets = new Set(record.practiceBuckets ?? []);
-  const sharedBucket = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && (candidate.practiceBuckets ?? []).some((bucket) => buckets.has(bucket))
-  ));
-
-  const seen = new Set();
-  return [...explicit, ...sameFamily, ...sameScenario, ...sharedBucket]
-    .filter((candidate) => {
-      if (seen.has(candidate.phraseID)) return false;
-      seen.add(candidate.phraseID);
-      return true;
-    });
-}
-
-function practiceExpansionOptions(records, count = 4) {
-  return records.slice(0, count).map((record) =>
-    practiceExpansionPhraseOption(record, practiceExpansionPageID(record))
-  );
-}
-
-function practiceExpansionPageForRecord(record, context) {
-  const phrase = phraseByID.get(record.phraseID);
-  if (!phrase) {
-    throw new Error(`Cannot build practice expansion page ${record.id}; missing catalog phrase ${record.phraseID}`);
-  }
-
-  const related = findPracticeExpansionRelatedRecords(record, context.pageRecords);
-  const comparisonRecords = related.filter((candidate) => candidate.expansionFamily === record.expansionFamily);
-  const nextStepRecords = related.filter((candidate) => candidate.expansionFamily !== record.expansionFamily);
-  const selfOption = practiceExpansionPhraseOption(record, null);
-  const comparisonOptions = practiceExpansionOptions(comparisonRecords, 3);
-  const nextStepOptions = practiceExpansionOptions(nextStepRecords.length ? nextStepRecords : related, 3);
-  const taughtPageIDs = new Set([
-    practiceExpansionPageID(record),
-    ...comparisonOptions.map((option) => option.detailPageID).filter(Boolean),
-    ...nextStepOptions.map((option) => option.detailPageID).filter(Boolean),
-  ]);
-  const exploreOptions = practiceExpansionOptions(
-    related.filter((candidate) => !taughtPageIDs.has(practiceExpansionPageID(candidate))),
-    6
-  );
-
-  const sections = [
-    {
-      id: "at-glance",
-      title: "At a glance",
-      body: record.atGlance,
-    },
-    {
-      id: "quick-say",
-      title: "Quick say",
-      body: record.quickSay,
-      phrases: [selfOption],
-    },
-    {
-      id: "breakdown",
-      title: "Break it down",
-      body: record.breakdownBody,
-      breakdown: practiceExpansionBreakdownTokens(record),
-    },
-    {
-      id: "practice-pairs",
-      title: "Practice the contrast",
-      body: record.practicePairBody,
-      phrases: comparisonOptions.length ? comparisonOptions : nextStepOptions,
-    },
-    {
-      id: "when-to-use",
-      title: "When to use it",
-      body: record.whenToUse,
-      phrases: nextStepOptions,
-    },
-    {
-      id: "good-to-know",
-      title: "Good to know",
-      body: record.goodToKnow,
-    },
-    {
-      id: "explore-next",
-      title: "Explore next",
-      body: record.exploreNextBody,
-      phrases: exploreOptions.length ? exploreOptions : nextStepOptions,
-    },
-  ];
-
-  return {
-    id: practiceExpansionPageID(record),
-    familyID: record.familyID,
-    phraseID: record.phraseID,
-    tierRole: "practice-expansion",
-    depth: "deep",
-    title: record.targetText,
-    englishTitle: record.englishText,
-    pronunciation: record.pronunciation,
-    summary: record.englishText,
-    iconName: record.iconName ?? symbolForScenario(record.scenarioID),
-    tintName: record.tintName ?? tintForScenario(record.scenarioID),
-    categoryIDs: Array.from(new Set([
-      record.scenarioID,
-      ...(record.categoryIDs ?? []),
-      ...(record.practiceBuckets ?? []).map((bucket) => `practice-${bucket}`),
-      `difficulty-${record.difficulty}`,
-    ])),
-    audioKey: authoredPhraseAudioKey(record.targetText, phrase.audioKey),
-    practiceMetadata: {
-      taskID: record.taskID,
-      expansionFamily: record.expansionFamily,
-      difficulty: record.difficulty,
-      practiceBuckets: record.practiceBuckets ?? [],
-      rationale: record.rationale,
-      sourceShard: record.sourceShard,
-    },
-    sections: withSectionPresentations(sections),
-    examples: [selfOption],
-  };
-}
-
-function loadPracticeExpansionPages() {
-  const pageRecords = loadPracticeExpansionRecords();
-  if (pageRecords.length === 0) {
-    return [];
-  }
-  return pageRecords.map((record) => practiceExpansionPageForRecord(record, { pageRecords }));
 }
 
 function loadEditorialSupportManifest() {
@@ -3712,12 +3516,8 @@ function phraseRoleForPage(page, profile) {
   if (profile === "derived-place-phrase") return "derived_place_question";
   if (isNameBasedProfile(profile)) return "name_only";
 
-  const phraseID = String(page.phraseID || page.familyID || page.id || "");
   const summary = String(page.summary || "");
-  if (
-    phraseID.startsWith("vpe-likely-replies-")
-    || /something you may hear back/i.test(summary)
-  ) {
+  if (/something you may hear back/i.test(summary)) {
     return "traveler_may_hear";
   }
 
@@ -4009,9 +3809,10 @@ function curatedNameSectionPhrases(page, section, profile) {
     }
     if (section.id === "menu-dietary") {
       return compactPhraseOptions([
-        phraseOptionByID("vpe-one-item-please-cho-toi-mot-tra-da", "green"),
         phraseOptionByID("store-1", "green"),
-      ], 2);
+        phraseOptionByID("coffee-2", "green"),
+        phraseOptionByID("coffee-5", "green"),
+      ], 3);
     }
     if (section.id === "when-to-use") {
       return compactPhraseOptions([
@@ -4128,14 +3929,14 @@ function mayHearLaneSupportOptions(page, sectionID) {
         "store-6",
         "store-7",
         "airport-4",
-        "vpe-help-action-anh-chi-giup-toi-doi-sang-tien-mat-duoc-khong",
+        "v500-mone-numb-pric-where-can-i-exchange-money",
       ];
     }
     if (titleKey === "cong doi roi") {
       return [
         "v500-airp-bord-arri-where-is-gate-10",
-        "vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong",
-        "vpe-where-place-cong-len-may-bay-o-dau",
+        "v900-airp-bord-arri-where-is-the-departure-hall",
+        "v900-airp-bord-arri-i-think-i-went-to-the-wrong-terminal",
       ];
     }
     if (titleKey === "co phong khac") {
@@ -4165,9 +3966,9 @@ function mayHearLaneSupportOptions(page, sectionID) {
     if (categoryIDs.has("food-drink")) {
       return [
         "ves-whats-in-this-dish",
-        "vpe-food-has-co-thit-heo-khong",
-        "vpe-food-has-co-hai-san-khong",
-        "vpe-food-has-co-dau-phong-khong",
+        "v900-food-drin-does-this-contain-fish-sauce",
+        "v500-food-drin-does-this-contain-shrimp",
+        "food-premium-has-peanuts",
         "food-vegetarian",
       ];
     }
@@ -4238,7 +4039,7 @@ function isTableAvailabilityReplyPage(page) {
 function isIngredientQuestionPage(page) {
   const id = String(page.phraseID || page.familyID || page.id || "");
   const english = String(page.englishTitle || page.summary || "");
-  return id.includes("vpe-food-has-") || /^does it have\b/i.test(english);
+  return /does (this|it) (have|contain)\b/i.test(english) || id.includes("food-has");
 }
 
 function isTaxiRideHelpPage(page) {
@@ -4282,14 +4083,12 @@ function tableAvailabilityNextPhrases() {
 
 function ingredientQuestionOptions(limit = 8) {
   return compactPhraseOptions([
-    phraseOptionByID("vpe-food-has-co-hai-san-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-ot-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-bo-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-ga-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-heo-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-bot-ngot-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-ca-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-bo-khong", "green"),
+    phraseOptionByID("food-premium-has-peanuts", "green"),
+    phraseOptionByID("v500-food-drin-does-this-contain-shrimp", "green"),
+    phraseOptionByID("v900-food-drin-does-this-contain-fish-sauce", "green"),
+    phraseOptionByID("food-15", "green"),
+    phraseOptionByID("food-vegetarian", "green"),
+    phraseOptionByID("food-peanut-allergy", "red"),
   ], limit);
 }
 
@@ -4298,10 +4097,10 @@ function taxiRideHelpOptions(limit = 7) {
     phraseOptionByID("ves-call-taxi-for-me", "orange"),
     phraseOptionByID("v900-tran-please-take-me-to-this-address", "green"),
     phraseOptionByID("directions-8", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong", "green"),
+    phraseOptionByID("v900-dire-navi-is-this-the-correct-pickup-point", "green"),
     phraseOptionByID("ves-drop-me-off-here", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-doi-toi-mot-chut-duoc-khong", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong", "orange"),
+    phraseOptionByID("v500-tran-please-call-the-driver", "green"),
+    phraseOptionByID("v900-phon-inte-powe-can-you-help-me-book-a-grab", "orange"),
     phraseOptionByID("v500-unde-repa-can-you-write-the-address", "teal"),
   ], limit);
 }
@@ -4311,7 +4110,7 @@ function doctorComingSupportOptions(limit = 6) {
     phraseOptionByID("problems-6", "red"),
     phraseOptionByID("health-2", "red"),
     phraseOptionByID("health-3", "red"),
-    phraseOptionByID("vpe-likely-replies-goi-cap-cuu-ngay", "red"),
+    phraseOptionByID("v900-emer-safe-please-call-emergency-services", "red"),
     phraseOptionByID("help-need-help-direct", "red"),
     phraseOptionByID("polite-2", "green"),
   ], limit);
@@ -4587,8 +4386,8 @@ function rewriteBaNaHillsJourneySections(page, sections) {
     visitFlow ? { ...visitFlow, id: "journey-flow", title: "Visit flow", presentation: "plain-text" } : null,
     baNaJourneySection(existingByID, "getting-there", "Getting there", [
       "taxi-1",
-      "v500-unde-repa-can-you-show-me-on-the-map",
-      "v500-tran-please-stop-right-here",
+      "repair-5",
+      "transport-stop-here-clearer",
       "ves-is-this-address-correct",
     ], "teal"),
     baNaJourneySection(existingByID, "tickets", "Tickets", [
@@ -4603,7 +4402,7 @@ function rewriteBaNaHillsJourneySections(page, sections) {
       "ves-take-photo-for-me",
     ], "purple"),
     baNaJourneySection(existingByID, "getting-back", "Getting back", [
-      "v500-unde-repa-can-you-show-me-on-the-map",
+      "repair-5",
       "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
@@ -4962,7 +4761,6 @@ function main() {
   const catalogPromotedPhraseIDs = loadCatalogPromotedPhraseIDs();
   const cityLibraryPages = loadCityLibraryPages();
   const editorialSupportPages = loadEditorialSupportPages();
-  const practiceExpansionPages = loadPracticeExpansionPages();
   const catalogPromotedPageIDByPhraseID = new Map(catalogPromotedPages.map((page) => [page.phraseID, page.id]));
   const taskCatalogPromotedPhraseIDs = new Set([...catalogPromotedPhraseIDs]
     .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${catalogPromotedTaskID}`)));
@@ -5032,7 +4830,7 @@ function main() {
   }, null, 2)}\n`);
 
   const allPages = applySourceReasonToGoCityEditorial(
-    sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages])
+    sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages])
   );
   validateBreakdownAuditForGeneration(allPages);
   const audioAudit = collectAudioAudit(allPages);
@@ -5042,14 +4840,12 @@ function main() {
       catalogPromotedSource: path.relative(root, catalogPromotedSourceRoot),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
       editorialSupportSource: fs.existsSync(editorialSupportManifestPath) ? path.relative(root, editorialSupportRoot) : null,
-      practiceExpansionSource: fs.existsSync(practiceExpansionManifestPath) ? path.relative(root, practiceExpansionRoot) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
       catalogPromotedPageCount: catalogPromotedPages.length,
       cityLibraryPageCount: cityLibraryPages.length,
       editorialSupportPageCount: editorialSupportPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       generatedAt: new Date().toISOString(),
     },
     pages: allPages,
@@ -5061,7 +4857,6 @@ function main() {
       generatedAt: bundle.metadata.generatedAt,
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: audioAudit.required.length,
       missingAudioCount: audioAudit.missing.length,
     },
@@ -5082,7 +4877,6 @@ function main() {
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
       editorialSupportPageCount: editorialSupportPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: finalAudioAudit.required.length,
       missingAudioCount: finalAudioAudit.missing.length,
     },
@@ -5096,7 +4890,6 @@ function main() {
   console.log(`Catalog-promoted authored pages: ${catalogPromotedPages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
   console.log(`Editorial model support pages: ${editorialSupportPages.length}`);
-  console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
   if (importedEditorialPilot) {
     console.log("Applied approved editorial pilot imports");

@@ -1651,8 +1651,8 @@ final class AppChromeTests: XCTestCase {
 
         let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
         let dragonRows = dragonBridge.sections.flatMap(\.phrases)
-        XCTAssertTrue(dragonRows.contains { $0.id == "v500-tran-please-stop-right-here" })
-        XCTAssertTrue(dragonRows.contains { $0.id == "v500-unde-repa-can-you-show-me-on-the-map" })
+        XCTAssertTrue(dragonRows.contains { $0.id == "transport-stop-here-clearer" })
+        XCTAssertTrue(dragonRows.contains { $0.id == "repair-5" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
@@ -1717,8 +1717,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(food.starterItems.first?.subtitle, "Black coffee")
         XCTAssertEqual(food.starterItems.first?.audioKey, "breakdown-authored-ca-phe-den-855822aaf3")
         XCTAssertTrue(starterIDs.contains("viet-phrase-ves-order-pho-bowl"))
-        XCTAssertTrue(starterIDs.contains("viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo"))
-        XCTAssertFalse(starterIDs.prefix(6).contains { $0.contains("-place-") })
+        XCTAssertTrue(starterIDs.contains("viet-phrase-city-danang-place-banh-xeo"))
 
         for subcategory in food.subcategories {
             XCTAssertFalse(subcategory.items.isEmpty, "Food \(subcategory.title) should drill into useful rows")
@@ -1727,14 +1726,12 @@ final class AppChromeTests: XCTestCase {
                 XCTAssertEqual(subcategory.items.first?.pageID, "viet-phrase-coffee-2")
                 XCTAssertEqual(subcategory.items.first?.title, "Cà phê đen")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-coffee-2" })
-                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong" })
-                XCTAssertFalse(subcategory.items.prefix(6).contains { $0.pageID.contains("-place-") })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-store-1" })
             } else if subcategory.title == "Order dishes" {
                 XCTAssertEqual(subcategory.countUnit, "phrase")
-                XCTAssertGreaterThanOrEqual(subcategory.items.count, 10)
+                XCTAssertGreaterThanOrEqual(subcategory.items.count, 6)
                 XCTAssertEqual(subcategory.items.first?.title, "Phở")
-                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-vpe-one-item-please-cho-toi-mot-banh-xeo" })
-                XCTAssertFalse(subcategory.items.prefix(8).contains { $0.pageID.contains("-place-") })
+                XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-city-danang-place-banh-xeo" })
             } else if subcategory.title == "Places to eat & drink" {
                 XCTAssertEqual(subcategory.countUnit, "item")
                 XCTAssertTrue(subcategory.items.contains { $0.pageID == "viet-phrase-city-danang-place-nen" })

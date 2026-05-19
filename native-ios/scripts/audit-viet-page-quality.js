@@ -127,8 +127,8 @@ function articleIssues(page, relationshipWordsEligiblePageIDs) {
     && sectionKeys.has("related-phrases")
     && !sectionKeys.has("quick-say")
     && !sectionKeys.has("at-glance");
-  const isLikelyReplyPage = page.id.includes("vpe-likely-replies")
-    || /(^|\/ )at-glance( \/|$)/.test(String(page.section_keys ?? "")) && /\bYou may hear\b/i.test(String(page.section_text ?? ""));
+  const isLikelyReplyPage = /(^|\/ )at-glance( \/|$)/.test(String(page.section_keys ?? ""))
+    && /\bYou may hear\b/i.test(String(page.section_text ?? ""));
 
   if (Number(page.section_count) === 0) {
     issues.push("missing article sections");
