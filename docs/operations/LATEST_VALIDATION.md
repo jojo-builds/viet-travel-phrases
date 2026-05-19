@@ -37,8 +37,8 @@ Scope note: this was a copy/content/resource pass. No simulator or physical iPho
 
 Current `main` evidence from the late 2026-05-19 non-paywall, non-Messages merge sweep:
 
-- validated app-code commit installed on Jojo's iPhone: `d06f7304` (`Merge glass-static-area`)
-- merged lanes: `feature/city-pages`, `feature/menu-section`, `feature/browse-page`, `feature/glass-static-area`
+- validated app-code commit installed on Jojo's iPhone: `a3619e55` (`Merge practice-area`)
+- merged lanes: `feature/city-pages`, `feature/menu-section`, `feature/browse-page`, `feature/glass-static-area`, `feature/practice-area`
 - explicitly skipped lanes: `feature/paywall`, `feature/messages-section`, `archive/messages-section-20260516`
 - synced clean non-paywall, non-Messages feature lanes after the sweep
 
