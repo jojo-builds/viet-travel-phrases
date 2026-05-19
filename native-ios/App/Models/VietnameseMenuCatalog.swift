@@ -25,7 +25,7 @@ enum VietnameseMenuKind: String, CaseIterable, Equatable {
     var subtitle: String {
         switch self {
         case .food:
-            return "Browse noodle soups, rice plates, and street snacks. Tap a dish to hear it and recognize what to order."
+            return "Browse khai vị, noodle bowls, rice plates, shared hot pots, chay dishes, and sweets. Tap a dish to hear it and recognize what to order."
         case .drink:
             return "Browse coffee, tea, smoothies, juice, and cold drinks. Tap a drink to hear it and order with confidence."
         }
@@ -256,7 +256,9 @@ enum VietnameseMenuCatalog {
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
-        let rowsByCategory = Dictionary(grouping: items(for: kind), by: \.category)
+        let rowsByCategory = Dictionary(grouping: items(for: kind)) { item in
+            presentationCategoryTitle(for: item, kind: kind)
+        }
         let order = categoryOrder(for: kind)
         let sortedTitles = rowsByCategory.keys.sorted { lhs, rhs in
             let lhsIndex = order.firstIndex(of: lhs) ?? Int.max
@@ -1114,18 +1116,18 @@ enum VietnameseMenuCatalog {
         switch kind {
         case .food:
             return [
+                "Khai vị & snacks",
                 "Noodle soups",
-                "Dry noodles & vermicelli",
-                "Rice & sticky rice",
-                "Rolls, appetizers & street snacks",
-                "Bánh mì, bread & buns",
+                "Vermicelli bowls",
+                "Rice & clay pot",
+                "Bánh mì & buns",
+                "Seafood",
                 "Pork",
                 "Chicken & duck",
                 "Beef & goat",
-                "Seafood",
-                "Vegetarian",
-                "Soups, hot pots & family-style",
-                "Desserts & sweets",
+                "Canh & lẩu",
+                "Tofu & chay",
+                "Desserts",
             ]
         case .drink:
             return [
@@ -1167,29 +1169,29 @@ enum VietnameseMenuCatalog {
 
     private static func categorySubtitle(for title: String) -> String {
         switch title {
+        case "Khai vị & snacks":
+            return "cuốn, gỏi, bites"
         case "Noodle soups":
-            return "phở, bún, mì"
-        case "Dry noodles & vermicelli":
-            return "bún, noodles"
-        case "Rice & sticky rice":
-            return "cơm, xôi"
-        case "Rolls, appetizers & street snacks":
-            return "rolls, snacks"
-        case "Bánh mì, bread & buns":
-            return "bread, buns"
+            return "phở, bún, cháo"
+        case "Vermicelli bowls", "Dry noodles & vermicelli":
+            return "bún, mì khô"
+        case "Rice & clay pot", "Rice & sticky rice":
+            return "cơm, xôi, niêu"
+        case "Bánh mì & buns", "Bánh mì, bread & buns":
+            return "bánh mì, bao"
         case "Pork":
             return "grilled, braised"
         case "Chicken & duck":
             return "grilled, roasted"
         case "Beef & goat":
-            return "stews, grilled"
+            return "bò, bê, dê"
         case "Seafood":
             return "fish, shrimp, crab"
-        case "Vegetarian":
+        case "Canh & lẩu", "Soups, hot pots & family-style":
+            return "soups, shared pots"
+        case "Tofu & chay", "Vegetarian":
             return "tofu, greens"
-        case "Soups, hot pots & family-style":
-            return "soups, hot pot"
-        case "Desserts & sweets":
+        case "Desserts", "Desserts & sweets":
             return "chè, sweets"
         case "Coffee":
             return "iced, black, milk"
@@ -1208,18 +1210,26 @@ enum VietnameseMenuCatalog {
 
     private static func categorySymbolName(for title: String, kind: VietnameseMenuKind) -> String {
         switch title {
+        case "Khai vị & snacks":
+            return "menucard.fill"
         case "Noodle soups":
             return "takeoutbag.and.cup.and.straw.fill"
-        case "Rice & sticky rice":
-            return "bowl.fill"
+        case "Vermicelli bowls":
+            return "fork.knife"
+        case "Rice & clay pot", "Rice & sticky rice":
+            return "fork.knife"
         case "Pork":
             return "fork.knife"
         case "Chicken & duck":
             return "bird.fill"
         case "Seafood":
             return "fish.fill"
-        case "Vegetarian":
+        case "Canh & lẩu":
+            return "flame.fill"
+        case "Tofu & chay", "Vegetarian":
             return "leaf.fill"
+        case "Desserts":
+            return "sparkles"
         case "Coffee":
             return "cup.and.saucer.fill"
         case "Tea":
@@ -1235,13 +1245,13 @@ enum VietnameseMenuCatalog {
 
     private static func categoryTintName(for title: String, kind: VietnameseMenuKind) -> AccentTint {
         switch title {
-        case "Noodle soups", "Tea", "Vegetarian":
+        case "Noodle soups", "Tea", "Tofu & chay", "Vegetarian":
             return .green
-        case "Seafood", "Water, soda & other drinks":
+        case "Seafood", "Canh & lẩu", "Water, soda & other drinks":
             return .blue
-        case "Smoothies":
+        case "Khai vị & snacks", "Smoothies":
             return .orange
-        case "Juices & fresh drinks":
+        case "Desserts", "Juices & fresh drinks":
             return .red
         default:
             return kind.tintName
@@ -1251,14 +1261,30 @@ enum VietnameseMenuCatalog {
     private static func featuredImageName(for title: String, items: [VietnameseMenuItem]) -> String {
         let preferredItemID: String?
         switch title {
+        case "Khai vị & snacks":
+            preferredItemID = "food-goi-cuon"
+        case "Noodle soups":
+            preferredItemID = "food-pho-bo"
+        case "Vermicelli bowls":
+            preferredItemID = "food-bun-cha"
+        case "Rice & clay pot":
+            preferredItemID = "food-com-tam-suon"
+        case "Bánh mì & buns":
+            preferredItemID = "food-banh-mi-dac-biet"
         case "Seafood":
             preferredItemID = "food-tom-rang-muoi"
         case "Pork":
             preferredItemID = "food-suon-nuong"
         case "Chicken & duck":
             preferredItemID = "food-ga-nuong-muoi-ot"
-        case "Vegetarian":
+        case "Beef & goat":
+            preferredItemID = "food-bo-luc-lac"
+        case "Canh & lẩu":
+            preferredItemID = "food-lau-thai"
+        case "Tofu & chay", "Vegetarian":
             preferredItemID = "food-dau-hu-chien-gion"
+        case "Desserts":
+            preferredItemID = "food-che-ba-mau"
         case "Coffee":
             preferredItemID = "drink-ca-phe-sua-da"
         case "Tea":
@@ -1276,6 +1302,64 @@ enum VietnameseMenuCatalog {
         }
 
         return items.first(where: \.popular)?.menuImageName ?? items.first?.menuImageName ?? VietnameseMenuKind.food.heroImageName
+    }
+
+    private static func presentationCategoryTitle(for item: VietnameseMenuItem, kind: VietnameseMenuKind) -> String {
+        guard kind == .food else {
+            return item.category
+        }
+
+        switch item.itemID {
+        case
+            "food-bun-mang-vit",
+            "food-pho-chay",
+            "food-bun-bo-hue-chay",
+            "food-bun-rieu-chay",
+            "food-hu-tieu-chay",
+            "food-chao-suon",
+            "food-chao-vit":
+            return "Noodle soups"
+        case
+            "food-mi-xao-chay",
+            "food-bun-dau-chay":
+            return "Vermicelli bowls"
+        case
+            "food-com-chay",
+            "food-com-chien-chay":
+            return "Rice & clay pot"
+        case
+            "food-goi-cuon-chay",
+            "food-cha-gio-chay",
+            "food-banh-xeo-chay":
+            return "Khai vị & snacks"
+        case
+            "food-lau-de",
+            "food-bo-nhung-dam",
+            "food-canh-chua-chay",
+            "food-lau-nam-chay":
+            return "Canh & lẩu"
+        default:
+            break
+        }
+
+        switch item.category {
+        case "Rolls, appetizers & street snacks":
+            return "Khai vị & snacks"
+        case "Dry noodles & vermicelli":
+            return "Vermicelli bowls"
+        case "Rice & sticky rice":
+            return "Rice & clay pot"
+        case "Bánh mì, bread & buns":
+            return "Bánh mì & buns"
+        case "Soups, hot pots & family-style":
+            return "Canh & lẩu"
+        case "Vegetarian":
+            return "Tofu & chay"
+        case "Desserts & sweets":
+            return "Desserts"
+        default:
+            return item.category
+        }
     }
 
     private static func slug(_ value: String) -> String {

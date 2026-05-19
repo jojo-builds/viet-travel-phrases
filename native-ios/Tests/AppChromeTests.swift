@@ -1784,8 +1784,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(food.starterTitle, "Popular dishes")
         XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
         XCTAssertEqual(food.starterItems.first?.title, "Phở bò")
-        XCTAssertEqual(food.subcategories.first?.title, "Noodle soups")
-        XCTAssertEqual(food.subcategories.first?.phraseCount, 26)
+        XCTAssertEqual(food.subcategories.first?.title, "Khai vị & snacks")
+        XCTAssertEqual(food.subcategories.first?.phraseCount, 32)
 
         XCTAssertEqual(drinks.title, "Drink Menu")
         XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
@@ -1804,23 +1804,45 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(foodSections.map(\.id), [
             "popular",
+            "khai-vi-and-snacks",
             "noodle-soups",
-            "dry-noodles-and-vermicelli",
-            "rice-and-sticky-rice",
-            "rolls-appetizers-and-street-snacks",
-            "banh-mi-bread-and-buns",
+            "vermicelli-bowls",
+            "rice-and-clay-pot",
+            "banh-mi-and-buns",
+            "seafood",
             "pork",
             "chicken-and-duck",
             "beef-and-goat",
-            "seafood",
-            "vegetarian",
-            "soups-hot-pots-and-family-style",
-            "desserts-and-sweets",
+            "canh-and-lau",
+            "tofu-and-chay",
+            "desserts",
         ])
         XCTAssertEqual(foodSections.first?.items.map(\.itemID), ["food-pho-bo", "food-pho-ga", "food-bun-bo-hue", "food-bun-rieu-cua", "food-hu-tieu-nam-vang"])
         XCTAssertEqual(foodSections.first?.featuredImageName, "HeroMenuFoodPhoBo")
         XCTAssertEqual(foodSections.first { $0.id == "seafood" }?.featuredImageName, "HeroMenuFoodTomRangMuoi")
+        XCTAssertEqual(
+            Dictionary(uniqueKeysWithValues: foodSections.dropFirst().map { ($0.id, $0.itemCount) }),
+            [
+                "khai-vi-and-snacks": 32,
+                "noodle-soups": 33,
+                "vermicelli-bowls": 21,
+                "rice-and-clay-pot": 28,
+                "banh-mi-and-buns": 16,
+                "seafood": 26,
+                "pork": 19,
+                "chicken-and-duck": 19,
+                "beef-and-goat": 18,
+                "canh-and-lau": 24,
+                "tofu-and-chay": 7,
+                "desserts": 26,
+            ]
+        )
         XCTAssertEqual(foodSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 269)
+        XCTAssertEqual(Set(foodSections.dropFirst().flatMap { $0.items }.map(\.itemID)).count, 269)
+        XCTAssertTrue(foodSections.first { $0.id == "khai-vi-and-snacks" }?.items.contains { $0.itemID == "food-banh-xeo-chay" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "noodle-soups" }?.items.contains { $0.itemID == "food-bun-mang-vit" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "canh-and-lau" }?.items.contains { $0.itemID == "food-bo-nhung-dam" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "tofu-and-chay" }?.items.contains { $0.itemID == "food-dau-hu-kho-nam" } == true)
 
         XCTAssertEqual(drinkSections.map(\.id), [
             "popular",

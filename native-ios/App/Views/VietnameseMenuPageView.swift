@@ -631,12 +631,22 @@ private struct VietnameseMenuSectionBlock: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: VietnameseMenuLayout.sectionTitleToRowsSpacing) {
-            Text(section.title)
-                .font(.title2.weight(.black))
-                .foregroundStyle(.primary)
-                .lineLimit(2)
-                .fixedSize(horizontal: false, vertical: true)
-                .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
+            VStack(alignment: .leading, spacing: 5) {
+                Text(section.title)
+                    .font(.title2.weight(.black))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
+
+                if !section.subtitle.isEmpty {
+                    Text(section.subtitle)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
 
             VStack(spacing: 0) {
                 ForEach(section.items) { item in
