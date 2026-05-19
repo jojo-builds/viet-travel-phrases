@@ -43,6 +43,7 @@
 		B2652114653119239ABAB769 /* PracticeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */; };
 		B34399CF6C5B98FB4862E2E9 /* PhraseListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C570403C2E33918DCE587ED /* PhraseListingView.swift */; };
 		B4BB1FA3BE7357CB5035A731 /* PhrasePageFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B189AFA376CC8968DD854D /* PhrasePageFixtureTests.swift */; };
+		B5527E65B3B401A6D99AC0AD /* SharedBackdropImagePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE84225C5DACBD7E06E4ED6 /* SharedBackdropImagePool.swift */; };
 		C4C600F7409B278D59D894D6 /* vietnamese-menu-copy.json in Resources */ = {isa = PBXBuildFile; fileRef = 24EC2F047D513684836BB72F /* vietnamese-menu-copy.json */; };
 		C4CCD078FF1A029730CCD5FD /* PhraseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEE5135C3DD53993304618 /* PhraseDetailView.swift */; };
 		C69456802442B60E166F758C /* PracticeScenarioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84F197AE0DEC49C85AFD39 /* PracticeScenarioBuilder.swift */; };
@@ -118,6 +119,7 @@
 		C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManifest.swift; sourceTree = "<group>"; };
 		CAFC680CFAC8603E5527F4D7 /* SpeakLocalNativeTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SpeakLocalNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5DC51F9A3B05551FE7460F /* AdminChromeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChromeUITests.swift; sourceTree = "<group>"; };
+		CFE84225C5DACBD7E06E4ED6 /* SharedBackdropImagePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBackdropImagePool.swift; sourceTree = "<group>"; };
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
 		EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePageView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				95965F71E19D6B246BAFF9F4 /* PracticeScenarioModels.swift */,
 				ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */,
 				8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */,
+				CFE84225C5DACBD7E06E4ED6 /* SharedBackdropImagePool.swift */,
 				4D3723F574BB0F2BBDADECC7 /* VietnameseMenuCatalog.swift */,
 				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
 			);
@@ -440,6 +443,7 @@
 				823A89032E506F7A15CE8A3A /* PracticeStoryTranscriptView.swift in Sources */,
 				347FD2205654329BE96CC306 /* PracticeView.swift in Sources */,
 				A30C181500B74F4B11C30E70 /* SearchPageView.swift in Sources */,
+				B5527E65B3B401A6D99AC0AD /* SharedBackdropImagePool.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
 				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
 				7A3C2A4210802EBC0319FAA7 /* VietnameseMenuCatalog.swift in Sources */,

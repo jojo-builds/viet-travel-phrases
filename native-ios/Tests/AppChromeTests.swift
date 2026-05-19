@@ -175,9 +175,109 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
-    func testHomePhotoBackdropUsesDedicatedMapAsset() {
-        XCTAssertEqual(HomeLayout.backdropImageName, "HomeVietnamMapBackdrop")
-        XCTAssertNotNil(UIImage(named: HomeLayout.backdropImageName))
+    func testSharedBackdropPoolUsesTwentyUniqueExistingAppAssets() {
+        let imageNames = SharedBackdropImagePool.vietnamForwardAssetNames
+
+        XCTAssertEqual(imageNames.count, 20)
+        XCTAssertEqual(Set(imageNames).count, imageNames.count)
+        XCTAssertTrue(imageNames.contains(SharedBackdropImagePool.fallbackImageName))
+        XCTAssertEqual(SharedBackdropImagePool.fallbackImageName, "HomeVietnamMapBackdrop")
+
+        for imageName in imageNames {
+            XCTAssertNotNil(
+                UIImage(named: imageName, in: Bundle.main, compatibleWith: nil),
+                "Missing shared backdrop asset: \(imageName)"
+            )
+        }
+    }
+
+    func testSharedBackdropPoolRoundRobinAdvancesAndWrapsInIsolatedDefaults() {
+        let isolatedDefaults = isolatedBackdropDefaults(named: #function)
+        let defaults = isolatedDefaults.defaults
+        defer { defaults.removePersistentDomain(forName: isolatedDefaults.suiteName) }
+        let imageNames = SharedBackdropImagePool.vietnamForwardAssetNames
+
+        XCTAssertEqual(
+            SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults),
+            imageNames[0]
+        )
+        XCTAssertEqual(
+            SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults),
+            imageNames[1]
+        )
+
+        defaults.set(
+            imageNames.count - 1,
+            forKey: SharedBackdropImagePool.storageKey(for: .home)
+        )
+        XCTAssertEqual(
+            SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults),
+            imageNames[imageNames.count - 1]
+        )
+        XCTAssertEqual(
+            SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults),
+            imageNames[0]
+        )
+    }
+
+    func testSharedBackdropPoolKeepsSurfaceSequencesIsolated() {
+        let isolatedDefaults = isolatedBackdropDefaults(named: #function)
+        let defaults = isolatedDefaults.defaults
+        defer { defaults.removePersistentDomain(forName: isolatedDefaults.suiteName) }
+        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
+        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
+
+        XCTAssertEqual(
+            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
+            SharedBackdropImagePool.vietnamForwardAssetNames[0]
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
+            2
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
+            1
+        )
+    }
+
+    func testSharedBackdropPreheatCandidatesUseSelectedImagePlusNextTwo() {
+        let candidates = SharedBackdropImagePool.preheatCandidateImageNames(
+            selectedImageName: "HeroCityHoianPlaceAnBangBeach"
+        )
+
+        XCTAssertEqual(candidates.count, SharedBackdropImagePool.preheatLookaheadCount + 1)
+        XCTAssertEqual(candidates[0], "HeroCityHoianPlaceAnBangBeach")
+        XCTAssertEqual(candidates[1], "HeroCityHuePlacePerfumeRiver")
+        XCTAssertEqual(candidates[2], "HeroCityHuePlaceIncenseVillageWorkshop")
+    }
+
+    func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {
+        XCTAssertTrue(
+            HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
+                previousRoute: .browse,
+                currentRoute: .home
+            )
+        )
+        XCTAssertTrue(
+            HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
+                previousRoute: .search,
+                currentRoute: .home
+            )
+        )
+        XCTAssertFalse(
+            HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
+                previousRoute: .home,
+                currentRoute: .home
+            )
+        )
+        XCTAssertFalse(
+            HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
+                previousRoute: .home,
+                currentRoute: .detailPage("viet-family-xin-chao")
+            )
+        )
+
         XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, PhrasePhotoBackdropLayout.bottomReadingClearance)
     }
 
@@ -2472,6 +2572,13 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertTrue(uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha))
         return (red, green, blue, alpha)
+    }
+
+    private func isolatedBackdropDefaults(named testName: String) -> (defaults: UserDefaults, suiteName: String) {
+        let suiteName = "SharedBackdropImagePoolTests.\(testName).\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+        return (defaults, suiteName)
     }
 }
 
