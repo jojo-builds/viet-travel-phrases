@@ -416,7 +416,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Start here"].waitForExistence(timeout: 2))
-        XCTAssertTrue(matchingStaticText(app: app, containing: "airport to beach").waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "river bridges").waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
