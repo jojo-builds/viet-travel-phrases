@@ -51,6 +51,8 @@ struct AppShellView: View {
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
+    @State private var isPracticeOverlayPresented = false
+    @State private var practiceOverlayResetTrigger = 0
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
@@ -180,7 +182,7 @@ struct AppShellView: View {
     }
 
     private var hidesNativeToolbarTabBar: Bool {
-        isPracticeMatchPresented || isPracticeThreadPresented
+        (isPracticeMatchPresented && !isPracticeOverlayPresented) || isPracticeThreadPresented
     }
 
     private var shellContentBody: some View {
@@ -347,6 +349,26 @@ struct AppShellView: View {
                 }
 
                 forwardPreviewPage(width: pageWidth)
+
+                if isPracticeOverlayPresented {
+                    PracticeView(
+                        intentStore: intentStore,
+                        startRequest: practiceStartRequest,
+                        isActive: true,
+                        scrollToTopTrigger: practiceOverlayResetTrigger,
+                        topContentClearance: 0,
+                        presentationStyle: .pullUpOverlay,
+                        onOpenDetail: openDetailFromPractice,
+                        onBrowseTapped: openBrowseAll,
+                        onDismiss: dismissPracticeOverlay,
+                        onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                        onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
+                        onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
+                        onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
+                    )
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .zIndex(AppChromeLayout.searchPageLayerZIndex + 2)
+                }
             }
             .appShellChromeOverlays(
                 currentRoute: navigation.currentRoute,
@@ -1308,6 +1330,9 @@ struct AppShellView: View {
     }
 
     private func openBrowseAll() {
+        if isPracticeOverlayPresented {
+            dismissPracticeOverlay(resetStartRequest: true)
+        }
         openBrowse()
     }
 
@@ -1349,8 +1374,10 @@ struct AppShellView: View {
         if !preservingStartRequest {
             clearPracticeStartRequest()
         }
-        withAnimation(.snappy(duration: 0.34)) {
-            navigation.openPractice()
+
+        practiceOverlayResetTrigger += 1
+        withAnimation(.spring(response: 0.34, dampingFraction: 0.88)) {
+            isPracticeOverlayPresented = true
         }
     }
 
@@ -1430,8 +1457,31 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         clearPracticeStartRequest()
         prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
+        pendingPracticeMatchReturnFocus = nil
+
+        if isPracticeOverlayPresented {
+            dismissPracticeOverlay(resetStartRequest: false)
+            return
+        }
+
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
+        }
+    }
+
+    private func dismissPracticeOverlay() {
+        dismissPracticeOverlay(resetStartRequest: true)
+    }
+
+    private func dismissPracticeOverlay(resetStartRequest: Bool) {
+        if resetStartRequest {
+            clearPracticeStartRequest()
+        }
+
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.92)) {
+            isPracticeOverlayPresented = false
+            isPracticeMatchPresented = false
+            isPracticeThreadPresented = false
         }
     }
 
