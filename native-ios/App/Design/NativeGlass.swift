@@ -278,7 +278,6 @@ enum AppChromeLayout {
     static let contentPageLayerZIndex: Double = 0
     static let searchPageLayerZIndex: Double = 200
     static let chromeSeparationLayerZIndex: Double = 360
-    static let menuSectionBackdropLayerZIndex: Double = 365
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
     static let topAdminHorizontalPadding: CGFloat = 24
@@ -289,12 +288,19 @@ enum AppChromeLayout {
     static let menuSectionChromeRowSpacing: CGFloat = 8
     static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing
     static let menuSectionBackdropHeight: CGFloat = 92
-    static let menuSectionBackdropAllowsHitTesting = false
     static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
+
+    static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
+        if showsMenuSectionChrome {
+            return max(topSeparationHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
+        }
+
+        return topSeparationHeight
+    }
 }
 
 enum ChromeSeparationEdge {
@@ -303,6 +309,7 @@ enum ChromeSeparationEdge {
 
 struct ChromeSeparationGradient: View {
     let edge: ChromeSeparationEdge
+    var extendsBehindMenuSectionChrome = false
 
     var body: some View {
         LinearGradient(
@@ -310,45 +317,26 @@ struct ChromeSeparationGradient: View {
             startPoint: .top,
             endPoint: .bottom
         )
-        .frame(height: AppChromeLayout.topSeparationHeight)
+        .frame(height: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: extendsBehindMenuSectionChrome))
         .ignoresSafeArea(edges: .top)
         .allowsHitTesting(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     private var gradientStops: [Gradient.Stop] {
-        [
-            .init(color: Color(.systemBackground).opacity(0.96), location: 0),
-            .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
-            .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
-            .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
-        ]
-    }
-}
-
-struct MenuSectionChromeBackdropGradient: View {
-    var body: some View {
-        VStack(spacing: 0) {
-            Color.clear
-                .frame(height: AppChromeLayout.menuSectionBackdropTopOffset)
-
-            LinearGradient(
-                gradient: Gradient(stops: gradientStops),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: AppChromeLayout.menuSectionBackdropHeight)
+        guard extendsBehindMenuSectionChrome else {
+            return [
+                .init(color: Color(.systemBackground).opacity(0.96), location: 0),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
+            ]
         }
-        .frame(maxWidth: .infinity, alignment: .top)
-        .ignoresSafeArea(edges: .top)
-        .allowsHitTesting(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
-        .accessibilityHidden(true)
-    }
 
-    private var gradientStops: [Gradient.Stop] {
-        [
-            .init(color: Color(.systemBackground).opacity(0.94), location: 0),
-            .init(color: Color(.systemBackground).opacity(0.76), location: 0.34),
-            .init(color: PhrasePageStyle.pageBackground.opacity(0.36), location: 0.72),
+        return [
+            .init(color: Color(.systemBackground).opacity(0.97), location: 0),
+            .init(color: Color(.systemBackground).opacity(0.95), location: 0.24),
+            .init(color: Color(.systemBackground).opacity(0.84), location: 0.52),
+            .init(color: PhrasePageStyle.pageBackground.opacity(0.30), location: 0.78),
             .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
         ]
     }
