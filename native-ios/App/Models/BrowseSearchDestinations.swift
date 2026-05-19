@@ -623,7 +623,7 @@ enum BrowseSearchDestinations {
         BrowseDestination(
             id: VietnameseMenuKind.food.routeID,
             title: "Food Menu",
-            subtitle: "Appetizers, mains, street snacks, and regional specialties",
+            subtitle: "Khai vị, bowls, mains, lẩu, and regional specialties",
             categoryIDs: ["food-drink"],
             symbolName: "fork.knife",
             tintName: .orange,
