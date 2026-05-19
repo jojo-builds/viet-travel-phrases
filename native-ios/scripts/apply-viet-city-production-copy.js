@@ -31,8 +31,8 @@ const hubEditorialByCityID = {
   },
   danang: {
     reviewStatus: "handwritten-reviewed",
-    subtitle: "Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips.",
-    intro: "Da Nang is practical and scenic at the same time: airport to beach, riverfront to bridges, markets to seafood, then out toward mountain or heritage trips. These city names help travelers talk about the exact side of town they mean.",
+    subtitle: "Beach mornings, Han River nights, seafood markets, Son Tra, and central Vietnam day trips.",
+    intro: "Da Nang is the central Vietnam city for beach time, seafood, river bridges, and easy day trips. A first day can move from the airport to My Khe, across the Han River after dark, then toward Son Tra, Marble Mountains, Hoi An, or Ba Na Hills. Learn these names before you land so maps, drivers, and saved plans feel familiar.",
     signatureMoments: [
       "land quickly and find the right beach or river route",
       "use bridge, market, and street names with drivers",
