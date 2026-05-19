@@ -248,7 +248,7 @@ private struct DetailSectionCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
     }
 }
 

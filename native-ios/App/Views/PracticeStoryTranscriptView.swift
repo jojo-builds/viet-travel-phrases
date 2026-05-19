@@ -110,7 +110,7 @@ private struct PracticeStoryRecoveryLine: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.white.opacity(0.46), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityIdentifier("Practice.Story.Recovery.\(turn.stepID)")
         }
     }
@@ -349,15 +349,15 @@ private struct PracticeStoryDefinitionCallout: View {
             PracticeStoryDefinitionPopover(token: token)
 
             PracticeStoryDefinitionCalloutTail()
-                .fill(Color(.secondarySystemBackground).opacity(0.98))
+                .fill(PhrasePageStyle.cardFill)
                 .frame(width: 28, height: 16)
                 .overlay {
                     PracticeStoryDefinitionCalloutTail()
-                        .stroke(.white.opacity(0.78), lineWidth: 1)
+                        .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                 }
                 .offset(y: -1)
         }
-        .shadow(color: .black.opacity(0.07), radius: 12, x: 0, y: 6)
+        .softAmbientCardShadow()
         .accessibilityElement(children: .contain)
     }
 }
@@ -380,10 +380,10 @@ private struct PracticeStoryDefinitionPopover: View {
         }
         .padding(16)
         .frame(minWidth: 172, maxWidth: 260, alignment: .leading)
-        .background(Color(.secondarySystemBackground).opacity(0.98), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(.white.opacity(0.78), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
         }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("Practice.Story.DefinitionPopover.\(token.id)")
@@ -552,10 +552,10 @@ private struct PracticeStoryTypingBubble: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 13)
-            .background(Color.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(.white.opacity(0.68), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Waiting for reply")
@@ -707,7 +707,7 @@ struct PracticeStoryComposer: View {
         .padding(.vertical, 9)
         .frame(minHeight: 56)
         .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.38), in: shape)
+        .background(Color(.systemBackground).opacity(0.42), in: shape)
         .nativeGlass(cornerRadius: 24, tint: .white, interactive: true)
         .overlay {
             shape
@@ -717,7 +717,7 @@ struct PracticeStoryComposer: View {
             shape
                 .stroke(Color(.separator).opacity(0.18), lineWidth: 0.7)
         }
-        .shadow(color: .black.opacity(0.035), radius: 10, x: 0, y: 5)
+        .softAmbientCardShadow()
     }
 
     private func focusSelectedChoice(with scrollProxy: ScrollViewProxy, animated: Bool) {
@@ -782,7 +782,7 @@ private struct PracticeStoryChoiceChip: View {
                             lineWidth: isSelected ? 2 : 1
                         )
                 }
-                .shadow(color: .black.opacity(isSelected ? 0.04 : 0.02), radius: isSelected ? 8 : 6, x: 0, y: isSelected ? 4 : 2)
+                .softAmbientCardShadow()
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")

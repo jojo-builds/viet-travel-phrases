@@ -1011,7 +1011,7 @@ struct AppShellView: View {
                     .background(.white.opacity(0.42), in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .contentShape(Capsule(style: .continuous))
@@ -1072,7 +1072,7 @@ struct AppShellView: View {
                     .background(.white.opacity(0.42), in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .contentShape(Capsule(style: .continuous))
@@ -3342,9 +3342,8 @@ struct HomeView: View {
                     }) { _, offsetY in
                         currentScrollOffsetY = offsetY
 
-                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offsetY)
-                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = backdropOffset
+                        if abs(offsetY - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = offsetY
                         }
 
                         if isPhotoBackdropImmersive, offsetY > metrics.revealImmersiveOffset {
@@ -3495,7 +3494,7 @@ struct HomeView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -3527,25 +3526,23 @@ struct HomeView: View {
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
-            safeAreaBottom: safeAreaBottom
-        )
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
-        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
-        let backdropHeight = min(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
-            maximumBackdropHeight
-        )
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
-            Spacer(minLength: 0)
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
 
-            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
         }
         .frame(
-            height: backdropBottom,
-            alignment: .bottom
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
@@ -4139,7 +4136,7 @@ private struct SavedTripPracticeCard: View {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.white.opacity(0.82))
                         .frame(width: 54, height: 54)
-                        .shadow(color: Color.red.opacity(0.14), radius: 10, x: 0, y: 7)
+                        .softAmbientCardShadow()
 
                     Image(systemName: "heart.fill")
                         .font(.system(size: 24, weight: .black))
@@ -4195,10 +4192,10 @@ private struct SavedTripPracticeCard: View {
         )
         .overlay {
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(.white.opacity(0.82), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                 .allowsHitTesting(false)
         }
-        .shadow(color: Color.red.opacity(0.045), radius: 18, x: 0, y: 10)
+        .softAmbientCardShadow()
     }
 }
 
@@ -4238,16 +4235,16 @@ private struct SavedTripSectionImageCard: View {
                 }
                 .padding(.horizontal, 12)
                 .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
-                .background(.white.opacity(0.96))
+                .background(PhrasePageStyle.imageCaptionFill)
             }
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .softAmbientCardShadow()
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -4452,7 +4449,7 @@ enum HomeLayout {
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 102
     static let relationshipGroupVerticalPadding: CGFloat = 10
-    static let bottomChromeContentClearance: CGFloat = 48
+    static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
@@ -5233,9 +5230,9 @@ private struct HomeFeaturedPhraseCarousel: View {
         ScrollView(.horizontal, showsIndicators: false) {
             carouselContent
                 .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 3)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.featurePhraseCardHeight)
+        .frame(height: HomeLayout.featurePhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
     }
@@ -5323,12 +5320,12 @@ private struct HomeFeaturedPhraseCard: View {
             .padding(.top, 22)
             .padding(.bottom, 14)
             .frame(width: HomeLayout.featurePhraseCardWidth, height: HomeLayout.featurePhraseCardHeight, alignment: .topLeading)
-            .background(.white.opacity(0.64), in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 32)
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
@@ -5356,6 +5353,7 @@ private struct HomeQuickPhraseCard: View {
                             .lineLimit(2)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.66)
+                            .frame(height: 44, alignment: .bottom)
 
                         Text(item.subtitle)
                             .font(.caption)
@@ -5363,6 +5361,7 @@ private struct HomeQuickPhraseCard: View {
                             .lineLimit(1)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.78)
+                            .frame(height: 18, alignment: .top)
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -5471,9 +5470,9 @@ private struct HomePracticeStarterRail: View {
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: 144)
+        .frame(height: 138 + PhrasePageStyle.cardShadowBleedPadding)
         .scrollClipDisabled()
         .accessibilityIdentifier("HomePracticeStarterRail")
     }
@@ -5638,9 +5637,9 @@ private struct HomeCityRail: View {
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 4)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.cityCardHeight + 4)
+        .frame(height: HomeLayout.cityCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .accessibilityIdentifier("HomeCityRail")
     }
 }
@@ -5684,24 +5683,24 @@ private struct HomeCityCardView: View {
 private extension View {
     func homeGlassCard(cornerRadius: CGFloat) -> some View {
         self
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: cornerRadius)
     }
 
     func homeStaticImageCard(cornerRadius: CGFloat) -> some View {
         self
-            .background(.white.opacity(0.82), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(0.055), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.022), radius: 7, x: 0, y: 3)
+            .softAmbientCardShadow()
     }
 }
 
@@ -5732,9 +5731,9 @@ private struct HomeRoutePhraseShelf: View {
                     }
                 }
                 .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 2)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
             }
-            .frame(height: HomeLayout.quickPhraseCardHeight)
+            .frame(height: HomeLayout.quickPhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
             .scrollClipDisabled()
         }
         .padding(.leading, HomeLayout.horizontalPadding)
