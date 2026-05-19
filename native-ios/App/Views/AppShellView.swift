@@ -3217,15 +3217,11 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
             }
             .overlay(alignment: .top) {
                 if !isPracticeThreadPresented && !hidesPhotoBackdropChrome {
-                    ChromeSeparationGradient(edge: .top)
+                    ChromeSeparationGradient(
+                        edge: .top,
+                        extendsBehindMenuSectionChrome: showsMenuSectionChrome
+                    )
                         .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
-                }
-            }
-            .overlay(alignment: .top) {
-                if !isPracticeThreadPresented, !hidesPhotoBackdropChrome, showsMenuSectionChrome {
-                    MenuSectionChromeBackdropGradient()
-                        .transition(.opacity)
-                        .zIndex(AppChromeLayout.menuSectionBackdropLayerZIndex)
                 }
             }
             .overlay(alignment: .top) {

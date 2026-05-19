@@ -48,8 +48,6 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
         XCTAssertGreaterThan(AppChromeLayout.searchPageLayerZIndex, AppChromeLayout.contentPageLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.chromeSeparationLayerZIndex, AppChromeLayout.searchPageLayerZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
-        XCTAssertLessThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminControlLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
     }
@@ -62,7 +60,7 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertLessThanOrEqual(
             AppChromeLayout.pinnedAudioSpeedBackdropHeight,
-            AppChromeLayout.topSeparationHeight
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
         )
     }
 
@@ -85,23 +83,31 @@ final class AppChromeTests: XCTestCase {
             + AppChromeLayout.menuSectionChromeHeight
 
         XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
-        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topSeparationHeight)
+        XCTAssertLessThanOrEqual(
+            stackedChromeHeight,
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
+        )
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
     }
 
-    func testMenuSectionBackdropFadeStartsAtSectionRowAndExtendsBehindContent() {
+    func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
         let sectionRowY = AppChromeLayout.topAdminTopPadding
             + AppChromeLayout.topAdminControlSize
             + AppChromeLayout.menuSectionChromeRowSpacing
         let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+        let menuBackdropHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
 
         XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropHeight, AppChromeLayout.menuSectionChromeHeight)
+        XCTAssertEqual(
+            menuBackdropHeight,
+            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight
+        )
+        XCTAssertGreaterThan(menuBackdropHeight, AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false))
         XCTAssertGreaterThan(
-            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight,
+            menuBackdropHeight,
             sectionRowBottomY + 32
         )
-        XCTAssertFalse(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
+        XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
