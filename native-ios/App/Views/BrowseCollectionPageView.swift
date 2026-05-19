@@ -991,7 +991,7 @@ private struct BrowseCityFilterPill: View {
                 }
                 .overlay {
                     Capsule(style: .continuous)
-                        .stroke(isSelected ? tintName.color.opacity(0.58) : Color.black.opacity(0.08), lineWidth: 1)
+                        .stroke(isSelected ? tintName.color.opacity(0.58) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
                 }
                 .contentShape(Capsule(style: .continuous))
         }

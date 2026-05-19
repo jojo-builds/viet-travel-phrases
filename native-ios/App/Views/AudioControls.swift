@@ -97,11 +97,11 @@ struct PlaybackDockView: View {
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                    }
                     .softInteractiveControlShadow()
-            }
-            .overlay {
-                Capsule(style: .continuous)
-                    .stroke(.white.opacity(0.58), lineWidth: 1)
             }
             .nativeGlass(cornerRadius: 39)
 
@@ -122,6 +122,10 @@ struct PlaybackDockView: View {
             ZStack {
                 Circle()
                     .fill(.white.opacity(0.48))
+                    .overlay {
+                        Circle()
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                    }
                     .softInteractiveControlShadow()
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
@@ -151,7 +155,7 @@ struct PlaybackDockView: View {
                     .fill(.white.opacity(0.46))
                     .overlay {
                         Circle()
-                            .stroke(.white.opacity(0.76), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
                     .softInteractiveControlShadow()
 
@@ -160,9 +164,8 @@ struct PlaybackDockView: View {
                     .frame(width: 70, height: 70)
                     .overlay {
                         Circle()
-                            .stroke(.white.opacity(0.74), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
-                    .softInteractiveControlShadow()
 
                 Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
@@ -276,7 +279,7 @@ struct AudioSpeedSegmentedControl: View {
 
                 if index < speeds.count - 1 {
                     Rectangle()
-                        .fill(Color.black.opacity(0.08))
+                        .fill(Color.black.opacity(AppSurfaceDepth.controlDividerOpacity))
                         .frame(width: 1, height: metrics.dividerHeight)
                 }
             }
@@ -287,11 +290,11 @@ struct AudioSpeedSegmentedControl: View {
         .background {
             Capsule(style: .continuous)
                 .fill(.ultraThinMaterial)
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                }
                 .softInteractiveControlShadow()
-        }
-        .overlay {
-            Capsule(style: .continuous)
-                .stroke(.white.opacity(0.66), lineWidth: 1)
         }
         .nativeGlass(cornerRadius: metrics.cornerRadius, interactive: true)
         .accessibilityElement(children: .contain)

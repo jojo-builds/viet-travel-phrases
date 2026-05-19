@@ -353,7 +353,7 @@ private struct PracticeStoryDefinitionCallout: View {
                 .frame(width: 28, height: 16)
                 .overlay {
                     PracticeStoryDefinitionCalloutTail()
-                        .stroke(.white.opacity(0.78), lineWidth: 1)
+                        .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
                 }
                 .offset(y: -1)
         }
@@ -383,7 +383,7 @@ private struct PracticeStoryDefinitionPopover: View {
         .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(.white.opacity(0.78), lineWidth: 1)
+                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
         }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("Practice.Story.DefinitionPopover.\(token.id)")
@@ -555,7 +555,7 @@ private struct PracticeStoryTypingBubble: View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(.white.opacity(0.68), lineWidth: 1)
+                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Waiting for reply")

@@ -219,7 +219,7 @@ private struct PracticeMessagesThreadBackButton: View {
         )
         .overlay {
             RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
-                .stroke(.white.opacity(0.78), lineWidth: 1)
+                .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
         }
         .softInteractiveControlShadow()
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
@@ -623,7 +623,7 @@ struct PracticeStoryCompletionSurface: View {
             .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(.white.opacity(0.74), lineWidth: 1)
+                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
             }
 
             VStack(spacing: 10) {

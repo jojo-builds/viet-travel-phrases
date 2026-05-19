@@ -49,7 +49,7 @@ struct NativeGlass<S: Shape>: ViewModifier {
                 .background(.ultraThinMaterial, in: shape)
                 .overlay {
                     shape
-                        .stroke(.white.opacity(0.46), lineWidth: 0.8)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 0.8)
                 }
                 .shadow(
                     color: .black.opacity(AppSurfaceDepth.cardOpacity),
@@ -231,9 +231,11 @@ enum AppSurfaceDepth {
     static let cardRadius: CGFloat = 12
     static let cardYOffset: CGFloat = 6
     static let imageCardOpacity = cardOpacity
-    static let controlOpacity = 0.08
-    static let controlRadius: CGFloat = 8
-    static let controlYOffset: CGFloat = 4
+    static let controlOpacity = 0.045
+    static let controlRadius: CGFloat = 14
+    static let controlYOffset: CGFloat = 6
+    static let controlStrokeOpacity = 0.46
+    static let controlDividerOpacity = 0.08
     static let sheetOpacity = 0.06
     static let sheetRadius: CGFloat = 36
     static let sheetYOffset: CGFloat = -14

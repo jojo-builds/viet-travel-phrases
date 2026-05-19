@@ -2501,7 +2501,7 @@ private struct PracticeBuildSourceColumn: View {
 private struct PracticeBuildDivider: View {
     var body: some View {
         Rectangle()
-            .fill(Color.black.opacity(0.08))
+            .fill(Color.black.opacity(AppSurfaceDepth.controlDividerOpacity))
             .frame(width: 1)
             .padding(.horizontal, 10)
             .padding(.vertical, 8)
@@ -5228,7 +5228,7 @@ private struct PracticeMatchRoundHeader: View {
                         .background(PhrasePageStyle.elevatedCardFill, in: Circle())
                         .overlay {
                             Circle()
-                                .stroke(.white.opacity(0.82), lineWidth: 1)
+                                .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                         }
                         .softAmbientCardShadow()
                 }
@@ -5267,7 +5267,7 @@ private struct PracticeMatchRoundHeader: View {
                     .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.86), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
                     .softAmbientCardShadow()
                 }
@@ -5285,7 +5285,7 @@ private struct PracticeMatchRoundHeader: View {
                         .background(PhrasePageStyle.elevatedCardFill, in: Circle())
                         .overlay {
                             Circle()
-                                .stroke(.white.opacity(0.82), lineWidth: 1)
+                                .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                         }
                         .softAmbientCardShadow()
                 }

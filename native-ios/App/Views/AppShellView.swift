@@ -1011,7 +1011,7 @@ struct AppShellView: View {
                     .background(.white.opacity(0.42), in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .contentShape(Capsule(style: .continuous))
@@ -1072,7 +1072,7 @@ struct AppShellView: View {
                     .background(.white.opacity(0.42), in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(.white.opacity(0.66), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .contentShape(Capsule(style: .continuous))
