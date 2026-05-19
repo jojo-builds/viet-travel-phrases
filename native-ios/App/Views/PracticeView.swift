@@ -4452,6 +4452,7 @@ private struct PracticeMatchRootView: View {
         .onDisappear {
             onPresentationChanged(false)
         }
+        .accessibilityHidden(!isActive)
         .toolbar(isPresentingMatch ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("Practice.Match.Root")
     }

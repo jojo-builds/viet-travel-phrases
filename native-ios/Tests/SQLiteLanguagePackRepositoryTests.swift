@@ -113,7 +113,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(report.audio.releaseBlockingMissingAudioAuditRows, 0)
     }
 
-    func testSQLiteCityPagesUsePremiumHeroFallbacks() throws {
+    func testSQLiteCityPagesUsePremiumHeroImages() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let cityHeroNames = try repository.loadCityPageHeroImageNames()
         let report = try loadBundledReport()
@@ -124,7 +124,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "HeroMyKheBeach",
             "HeroNguyenVanLinhStreet",
         ])
-        let allowedHeroNames = Set([
+        let allowedSharedHeroNames = Set([
             "HeroCompactPhraseMasthead",
             "HeroCityDanang",
             "HeroCityHanoi",
@@ -136,19 +136,23 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         ])
 
         XCTAssertEqual(cityHeroNames.count, report.validation.cityLibraryPageCount)
-        XCTAssertEqual(cityHeroNames["city-hcmc-place-anan-saigon"], "HeroCityHcmc")
+        XCTAssertEqual(cityHeroNames["city-hcmc-place-anan-saigon"], "HeroCityHcmcPlaceAnanSaigon")
         XCTAssertEqual(cityHeroNames["city-hcmc-where-anan-saigon"], "HeroCompactPhraseMasthead")
 
         let invalidHeroRows = cityHeroNames.filter { _, heroName in
-            heroName.isEmpty
+            let isCityPlaceHero = heroName.range(
+                of: "^HeroCity[A-Za-z]+Place[A-Za-z0-9]+$",
+                options: .regularExpression
+            ) != nil
+
+            return heroName.isEmpty
                 || retiredHeroNames.contains(heroName)
-                || heroName.range(of: "^HeroCity[A-Za-z]+Place", options: .regularExpression) != nil
-                || !allowedHeroNames.contains(heroName)
+                || (!allowedSharedHeroNames.contains(heroName) && !isCityPlaceHero)
         }
 
         XCTAssertTrue(
             invalidHeroRows.isEmpty,
-            "City pages should use city/compact/premium hero images only: \(invalidHeroRows)"
+            "City pages should use compact, city-level, or asset-backed place hero images only: \(invalidHeroRows)"
         )
     }
 

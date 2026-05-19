@@ -1686,8 +1686,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         enableSQLiteRuntimeForTesting()
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let examples: [(pageID: String, tokenText: String, expectedAudioKey: String?)] = [
-            ("viet-family-food-coffee-black", "Cho tôi", "breakdown-authored-cho-toi-18c6fe1018"),
-            ("viet-phrase-hotel-quiet-room", "Cho tôi", nil),
+            ("viet-family-food-coffee-black", "cho", "breakdown-taxi-1-first"),
+            ("viet-family-food-coffee-black", "tôi", "breakdown-v500-heal-phar-i-feel-dizzy-first"),
+            ("viet-phrase-hotel-quiet-room", "cho", nil),
         ]
 
         for example in examples {
