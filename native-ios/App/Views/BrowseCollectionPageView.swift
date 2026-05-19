@@ -576,7 +576,7 @@ private struct BrowseCollectionSubcategoryCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 2 : 1)
+                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 2 : 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 20, interactive: true)
@@ -822,7 +822,7 @@ private struct BrowseCityImageFilterCard: View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? tintName.color.opacity(0.50) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()
@@ -991,7 +991,7 @@ private struct BrowseCityFilterPill: View {
                 }
                 .overlay {
                     Capsule(style: .continuous)
-                        .stroke(isSelected ? tintName.color.opacity(0.58) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                        .stroke(isSelected ? tintName.color.opacity(0.58) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                 }
                 .contentShape(Capsule(style: .continuous))
         }

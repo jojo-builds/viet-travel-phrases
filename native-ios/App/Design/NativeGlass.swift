@@ -208,6 +208,7 @@ enum PhrasePageStyle {
     static let cardShadowBleedPadding: CGFloat = 24
     static let cardFillOpacity = 0.98
     static let cardStrokeOpacity = 0.035
+    static let cardEdgeStrokeOpacity = 0.72
 
     static var cardFill: Color {
         Color(.systemBackground).opacity(cardFillOpacity)
@@ -227,14 +228,14 @@ enum PhrasePageStyle {
 }
 
 enum AppSurfaceDepth {
-    static let cardOpacity = 0.04
-    static let cardRadius: CGFloat = 12
+    static let cardOpacity = 0.045
+    static let cardRadius: CGFloat = 14
     static let cardYOffset: CGFloat = 6
     static let imageCardOpacity = cardOpacity
     static let controlOpacity = 0.045
     static let controlRadius: CGFloat = 14
     static let controlYOffset: CGFloat = 6
-    static let controlStrokeOpacity = 0.46
+    static let controlStrokeOpacity = 0.72
     static let controlDividerOpacity = 0.08
     static let sheetOpacity = 0.06
     static let sheetRadius: CGFloat = 36
@@ -430,14 +431,14 @@ enum SearchPageHeaderMode: Equatable {
 
 private struct PhraseListCard: ViewModifier {
     let cornerRadius: CGFloat
-    let strokeOpacity: Double
+    let edgeStrokeOpacity: Double
 
     func body(content: Content) -> some View {
         content
             .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(strokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(edgeStrokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()
@@ -447,9 +448,9 @@ private struct PhraseListCard: ViewModifier {
 extension View {
     func phraseListCard(
         cornerRadius: CGFloat = PhrasePageStyle.listCardCornerRadius,
-        strokeOpacity: Double = PhrasePageStyle.cardStrokeOpacity
+        edgeStrokeOpacity: Double = PhrasePageStyle.cardEdgeStrokeOpacity
     ) -> some View {
-        modifier(PhraseListCard(cornerRadius: cornerRadius, strokeOpacity: strokeOpacity))
+        modifier(PhraseListCard(cornerRadius: cornerRadius, edgeStrokeOpacity: edgeStrokeOpacity))
     }
 }
 

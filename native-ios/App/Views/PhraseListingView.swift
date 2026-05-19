@@ -1420,7 +1420,7 @@ private struct MenuChipFlow: View {
                     .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                            .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .accessibilityIdentifier("MenuDetail.Chip.\(sectionID).\(chip.normalizedMenuChipIdentifier)")

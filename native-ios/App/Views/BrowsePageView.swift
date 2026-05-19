@@ -340,7 +340,7 @@ private struct BrowseSituationCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
@@ -455,7 +455,7 @@ private struct BrowseCityHeroCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 30, interactive: true)
@@ -576,7 +576,7 @@ private struct BrowsePhraseFamilyCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)

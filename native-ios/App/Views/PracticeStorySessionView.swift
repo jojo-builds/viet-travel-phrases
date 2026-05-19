@@ -623,7 +623,7 @@ struct PracticeStoryCompletionSurface: View {
             .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
 
             VStack(spacing: 10) {

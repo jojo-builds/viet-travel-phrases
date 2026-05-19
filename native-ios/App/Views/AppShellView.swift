@@ -4196,7 +4196,7 @@ private struct SavedTripPracticeCard: View {
         )
         .overlay {
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                 .allowsHitTesting(false)
         }
         .softAmbientCardShadow()
@@ -4245,7 +4245,7 @@ private struct SavedTripSectionImageCard: View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()
@@ -5327,7 +5327,7 @@ private struct HomeFeaturedPhraseCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 32)
@@ -5690,7 +5690,7 @@ private extension View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: cornerRadius)
@@ -5701,7 +5701,7 @@ private extension View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()

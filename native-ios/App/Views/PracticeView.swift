@@ -2752,7 +2752,7 @@ private struct PracticeCityPathChip: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
         }
@@ -3052,14 +3052,14 @@ private struct PracticeAnswerOptionButton: View {
 
     private var optionStroke: Color {
         guard hasAnswered else {
-            return Color.black.opacity(PhrasePageStyle.cardStrokeOpacity)
+            return .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity)
         }
 
         if option.isCorrect {
             return .green.opacity(0.32)
         }
 
-        return isSelected ? .red.opacity(0.28) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity)
+        return isSelected ? .red.opacity(0.28) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity)
     }
 }
 
@@ -3109,7 +3109,7 @@ private struct PracticeFeedbackCard: View {
         .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
         }
     }
 
@@ -4864,7 +4864,7 @@ private struct PracticeMatchSourceCard: View {
             )
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
         }
@@ -5394,7 +5394,7 @@ private struct PracticeMatchTopicPickerOverlay: View {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
         }
@@ -5634,7 +5634,7 @@ private struct PracticeMatchCardButton: View {
     private var stroke: Color {
         switch state {
         case .normal:
-            return Color.black.opacity(PhrasePageStyle.cardStrokeOpacity)
+            return .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity)
         case .selected:
             return card.item.tint.color.opacity(0.48)
         case .matched:
@@ -5980,7 +5980,7 @@ private struct PracticeMatchCompletionView: View {
             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .padding(.horizontal, 12)
@@ -6103,7 +6103,7 @@ private struct PracticeMatchSummaryThumbnail: View {
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
         }
         .accessibilityHidden(true)
     }
