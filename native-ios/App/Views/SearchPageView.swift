@@ -9,6 +9,7 @@ struct SearchReturnFocusRequest: Equatable {
 }
 
 struct SearchPageView: View {
+    @Environment(\.dismissSearch) private var dismissSystemSearch
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
@@ -69,22 +70,22 @@ struct SearchPageView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
                             header(results: searchResults, mode: headerMode)
-                                .searchFocusDismissArea(onDismissSearchFocus)
+                                .searchFocusDismissArea(dismissSearchFromContent)
 
                             if searchResults.query.isEmpty {
                                 if effectiveFieldFocused {
                                     focusedContent
-                                        .searchFocusDismissArea(onDismissSearchFocus)
+                                        .searchFocusDismissArea(dismissSearchFromContent)
                                 } else {
                                     defaultContent
-                                        .searchFocusDismissArea(onDismissSearchFocus)
+                                        .searchFocusDismissArea(dismissSearchFromContent)
                                 }
                             } else if searchResults.hasResults {
                                 resultsContent(results: searchResults)
-                                    .searchFocusDismissArea(onDismissSearchFocus)
+                                    .searchFocusDismissArea(dismissSearchFromContent)
                             } else {
                                 recoveryContent
-                                    .searchFocusDismissArea(onDismissSearchFocus)
+                                    .searchFocusDismissArea(dismissSearchFromContent)
                             }
                         }
                         .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
@@ -103,6 +104,12 @@ struct SearchPageView: View {
                     }
                 }
             }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                TapGesture().onEnded {
+                    dismissSearchFromContent()
+                }
+            )
         }
         .accessibilityIdentifier("SearchPageView")
         .onAppear {
@@ -168,6 +175,11 @@ struct SearchPageView: View {
                 scrollProxy.scrollTo(request.scrollID, anchor: .center)
             }
         }
+    }
+
+    private func dismissSearchFromContent() {
+        onDismissSearchFocus()
+        dismissSystemSearch()
     }
 
     private static func phraseResultScrollID(for pageID: String) -> String {

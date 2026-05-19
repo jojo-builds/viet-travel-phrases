@@ -35,7 +35,7 @@ struct AppShellView: View {
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
     @State private var searchQuery: String
-    @State private var isSystemSearchPresented = false
+    @State private var isSearchPresentationActive = false
     @State private var searchFocusRequestID = 0
     @State private var searchReturnFocusRequestID = 0
     @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
@@ -128,14 +128,14 @@ struct AppShellView: View {
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
         .searchable(
             text: $searchQuery,
-            isPresented: systemSearchPresentation,
+            isPresented: $isSearchPresentationActive,
             placement: .automatic,
             prompt: "Search Vietnamese phrases"
         )
         .searchFocused($isSearchFieldFocused)
         .textInputAutocapitalization(.never)
         .autocorrectionDisabled()
-        .tabViewSearchActivation(.searchTabSelection)
+        .tabViewSearchActivation(.automatic)
         .background {
             #if canImport(UIKit)
             AppShellTabBarAppearanceBridge(
@@ -492,29 +492,6 @@ struct AppShellView: View {
             },
             set: { tab in
                 selectSystemTab(tab)
-            }
-        )
-    }
-
-    private var systemSearchPresentation: Binding<Bool> {
-        Binding(
-            get: {
-                navigation.isSearchPresented && isSystemSearchPresented
-            },
-            set: { isPresented in
-                if isPresented {
-                    isSystemSearchPresented = true
-                    if !navigation.isSearchPresented {
-                        openSearch(prefilledQuery: nil, focusField: false)
-                    }
-                } else {
-                    cancelSearchFocus()
-                    if navigation.isSearchPresented {
-                        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
-                            navigation.goBack()
-                        }
-                    }
-                }
             }
         )
     }
@@ -1527,8 +1504,8 @@ struct AppShellView: View {
             searchQuery = prefilledQuery
         }
 
-        isSystemSearchPresented = true
         if !focusField {
+            isSearchPresentationActive = false
             isSearchFieldFocused = false
         }
 
@@ -1538,8 +1515,6 @@ struct AppShellView: View {
 
         if focusField {
             focusSearchField()
-        } else {
-            defocusSearchFieldAfterPresentation(requiresPresented: true, delays: [260_000_000])
         }
     }
 
@@ -1559,32 +1534,9 @@ struct AppShellView: View {
         }
     }
 
-    private func defocusSearchFieldAfterPresentation(requiresPresented: Bool, delays: [UInt64]) {
-        searchFocusRequestID += 1
-        let requestID = searchFocusRequestID
-
-        Task { @MainActor in
-            for delay in delays {
-                try? await Task.sleep(nanoseconds: delay)
-
-                guard
-                    requestID == searchFocusRequestID,
-                    navigation.isSearchPresented,
-                    !requiresPresented || isSystemSearchPresented
-                else {
-                    return
-                }
-
-                isSearchFieldFocused = false
-                #if canImport(UIKit)
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                #endif
-            }
-        }
-    }
-
     private func dismissSearchFieldFocus() {
         searchFocusRequestID += 1
+        isSearchPresentationActive = false
         isSearchFieldFocused = false
         #if canImport(UIKit)
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -1594,7 +1546,7 @@ struct AppShellView: View {
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
-        isSystemSearchPresented = true
+        isSearchPresentationActive = true
         isSearchFieldFocused = true
 
         Task { @MainActor in
@@ -1621,16 +1573,13 @@ struct AppShellView: View {
         if launchSearchShouldFocus {
             focusSearchField()
         } else {
-            defocusSearchFieldAfterPresentation(
-                requiresPresented: false,
-                delays: [260_000_000, 520_000_000, 900_000_000]
-            )
+            dismissSearchFieldFocus()
         }
     }
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
-        isSystemSearchPresented = false
+        isSearchPresentationActive = false
         isSearchFieldFocused = false
     }
 

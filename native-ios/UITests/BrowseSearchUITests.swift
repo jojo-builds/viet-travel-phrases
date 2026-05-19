@@ -627,14 +627,32 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(field.waitForExistence(timeout: 3))
         field.tap()
 
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Quick suggestions"].waitForExistence(timeout: 2))
 
         let title = app.staticTexts["Search.Title"]
         XCTAssertTrue(title.waitForExistence(timeout: 2))
         title.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 
+        XCTAssertTrue(waitForKeyboardDismissal(in: app))
         XCTAssertTrue(app.staticTexts["Suggested needs"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Quick suggestions"].exists)
+    }
+
+    func testSearchCloseButtonDismissesKeyboardWithoutLeavingSearch() {
+        let app = launchApp()
+        openSearch(in: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 3))
+        field.tap()
+
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 2))
+        tapSystemSearchCloseButton(near: field, in: app)
+
+        XCTAssertTrue(waitForKeyboardDismissal(in: app))
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Suggested needs"].waitForExistence(timeout: 2))
     }
 
     func testSearchQueryLaunchShowsResultsWithoutKeyboard() {
@@ -814,6 +832,39 @@ final class BrowseSearchUITests: XCTestCase {
 
     private func nativeSearchField(in app: XCUIApplication) -> XCUIElement {
         app.searchFields["Search Vietnamese phrases"]
+    }
+
+    private func waitForKeyboardDismissal(in app: XCUIApplication, timeout: TimeInterval = 2) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            if app.keyboards.count == 0 {
+                return true
+            }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+        return app.keyboards.count == 0
+    }
+
+    private func tapSystemSearchCloseButton(
+        near field: XCUIElement,
+        in app: XCUIApplication,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        XCTAssertTrue(field.exists, "Search field must exist before tapping the native close button.", file: file, line: line)
+
+        let closeX = min(
+            app.frame.maxX - 38,
+            field.frame.maxX + max(44, (app.frame.maxX - field.frame.maxX) * 0.55)
+        )
+        let closeY = field.frame.midY
+        app.coordinate(
+            withNormalizedOffset: CGVector(
+                dx: closeX / max(app.frame.width, 1),
+                dy: closeY / max(app.frame.height, 1)
+            )
+        )
+        .tap()
     }
 
     private func tapWhenVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
