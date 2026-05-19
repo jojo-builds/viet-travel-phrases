@@ -22,13 +22,6 @@
       "path": "../city-library",
       "qualityContract": "canonical-full-depth",
       "description": "City, landmark, neighborhood, and place phrase pages compiled into the same canonical graph."
-    },
-    {
-      "id": "practice-expansion",
-      "sourceRole": "practice-expansion",
-      "path": "../practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/source",
-      "qualityContract": "canonical-full-depth",
-      "description": "Practice-oriented phrase pages and rows compiled into the same canonical graph."
     }
   ]
 }

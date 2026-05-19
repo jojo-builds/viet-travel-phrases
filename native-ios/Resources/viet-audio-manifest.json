@@ -315,10 +315,6 @@
     "fileName": "health-pharmacy-clearer.mp3",
     "text": "Nhà thuốc gần nhất ở đâu?"
   },
-  "help-1": {
-    "fileName": "help-1.mp3",
-    "text": "Anh/chị giúp tôi với"
-  },
   "help-2": {
     "fileName": "help-2.mp3",
     "text": "Gọi khách sạn giúp tôi"
@@ -979,10 +975,6 @@
     "fileName": "v500-airp-bord-arri-where-are-the-restrooms.mp3",
     "text": "Nhà vệ sinh ở đâu?"
   },
-  "v500-airp-bord-arri-where-do-i-meet-the-driver": {
-    "fileName": "v500-airp-bord-arri-where-do-i-meet-the-driver.mp3",
-    "text": "Tôi gặp tài xế ở đâu?"
-  },
   "v500-airp-bord-arri-where-do-i-sign": {
     "fileName": "v500-airp-bord-arri-where-do-i-sign.mp3",
     "text": "Tôi ký ở đâu?"
@@ -1163,10 +1155,6 @@
     "fileName": "v500-food-drin-does-this-contain-shrimp.mp3",
     "text": "Cái này có chứa tôm không?"
   },
-  "v500-food-drin-does-this-have-egg-or-peanuts": {
-    "fileName": "v500-food-drin-does-this-have-egg-or-peanuts.mp3",
-    "text": "Cái này có trứng hay đậu phộng không?"
-  },
   "v500-food-drin-i-am-allergic-to-fish-sauce": {
     "fileName": "v500-food-drin-i-am-allergic-to-fish-sauce.mp3",
     "text": "Tôi bị dị ứng với nước mắm"
@@ -1270,10 +1258,6 @@
   "v500-heal-phar-i-need-a-hospital": {
     "fileName": "v500-heal-phar-i-need-a-hospital.mp3",
     "text": "Tôi cần một bệnh viện"
-  },
-  "v500-heal-phar-where-is-the-pharmacy": {
-    "fileName": "v500-heal-phar-where-is-the-pharmacy.mp3",
-    "text": "Hiệu thuốc ở đâu?"
   },
   "v500-hote-acco-can-i-change-rooms": {
     "fileName": "v500-hote-acco-can-i-change-rooms.mp3",
@@ -1598,10 +1582,6 @@
   "v500-prob-help-can-you-contact-the-driver": {
     "fileName": "v500-prob-help-can-you-contact-the-driver.mp3",
     "text": "Bạn có thể liên hệ với tài xế được không?"
-  },
-  "v500-prob-help-can-you-help-me": {
-    "fileName": "v500-prob-help-can-you-help-me.mp3",
-    "text": "Bạn có thể giúp tôi được không?"
   },
   "v500-prob-help-can-you-help-me-contact-my-hotel": {
     "fileName": "v500-prob-help-can-you-help-me-contact-my-hotel.mp3",
@@ -1935,10 +1915,6 @@
     "fileName": "v500-tran-please-open-the-trunk.mp3",
     "text": "Vui lòng mở cốp xe"
   },
-  "v500-tran-please-stop-right-here": {
-    "fileName": "v500-tran-please-stop-right-here.mp3",
-    "text": "Xin dừng lại ở đây"
-  },
   "v500-tran-please-take-me-to-this-hotel": {
     "fileName": "v500-tran-please-take-me-to-this-hotel.mp3",
     "text": "Vui lòng đưa tôi đến khách sạn này"
@@ -1971,10 +1947,6 @@
     "fileName": "v500-unde-repa-can-you-show-me-a-picture.mp3",
     "text": "Bạn có thể cho tôi xem một bức ảnh được không?"
   },
-  "v500-unde-repa-can-you-show-me-on-the-map": {
-    "fileName": "v500-unde-repa-can-you-show-me-on-the-map.mp3",
-    "text": "Bạn có thể chỉ cho tôi trên bản đồ được không?"
-  },
   "v500-unde-repa-can-you-spell-the-name": {
     "fileName": "v500-unde-repa-can-you-spell-the-name.mp3",
     "text": "Bạn có thể đánh vần tên được không?"
@@ -1994,10 +1966,6 @@
   "v500-unde-repa-do-you-mean-this-one": {
     "fileName": "v500-unde-repa-do-you-mean-this-one.mp3",
     "text": "Ý bạn là cái này phải không?"
-  },
-  "v500-unde-repa-how-much-did-you-say": {
-    "fileName": "v500-unde-repa-how-much-did-you-say.mp3",
-    "text": "Bạn đã nói bao nhiêu?"
   },
   "v500-unde-repa-i-dont-understand-this-word": {
     "fileName": "v500-unde-repa-i-dont-understand-this-word.mp3",
@@ -2070,10 +2038,6 @@
   "v500-unde-repa-please-type-it-into-my-phone": {
     "fileName": "v500-unde-repa-please-type-it-into-my-phone.mp3",
     "text": "Hãy gõ nó vào điện thoại của tôi."
-  },
-  "v500-unde-repa-sorry-i-dont-speak-vietnamese": {
-    "fileName": "v500-unde-repa-sorry-i-dont-speak-vietnamese.mp3",
-    "text": "Xin lỗi, tôi không nói được tiếng Việt"
   },
   "v500-unde-repa-thank-you-for-understanding": {
     "fileName": "v500-unde-repa-thank-you-for-understanding.mp3",
@@ -2830,10 +2794,6 @@
   "v900-hote-acco-i-was-charged-for-something-i-did-not-use": {
     "fileName": "v900-hote-acco-i-was-charged-for-something-i-did-not-use.mp3",
     "text": "Tôi đã bị tính phí cho thứ mà tôi không sử dụng"
-  },
-  "v900-hote-acco-id-like-to-check-in-please": {
-    "fileName": "v900-hote-acco-id-like-to-check-in-please.mp3",
-    "text": "Tôi muốn nhận phòng, vui lòng"
   },
   "v900-hote-acco-is-this-room-available-tonight": {
     "fileName": "v900-hote-acco-is-this-room-available-tonight.mp3",
@@ -3675,10 +3635,6 @@
     "fileName": "v900-unde-repa-can-you-say-it-in-a-simpler-way.mp3",
     "text": "Bạn có thể nói nó một cách đơn giản hơn?"
   },
-  "v900-unde-repa-could-you-speak-a-little-slower-please": {
-    "fileName": "v900-unde-repa-could-you-speak-a-little-slower-please.mp3",
-    "text": "Bạn có thể nói chậm lại một chút được không?"
-  },
   "v900-unde-repa-do-you-mean-today-or-tomorrow": {
     "fileName": "v900-unde-repa-do-you-mean-today-or-tomorrow.mp3",
     "text": "Ý bạn là hôm nay hay ngày mai?"
@@ -3823,14 +3779,6 @@
     "fileName": "breakdown-ban-40ffd8d0f1.mp3",
     "text": "Bạn"
   },
-  "breakdown-v500-unde-repa-how-much-did-you-say-first": {
-    "fileName": "breakdown-ban-40ffd8d0f1.mp3",
-    "text": "Bạn"
-  },
-  "breakdown-v500-unde-repa-can-you-show-me-on-the-map-first": {
-    "fileName": "breakdown-ban-40ffd8d0f1.mp3",
-    "text": "Bạn"
-  },
   "breakdown-v500-unde-repa-can-you-spell-the-name-first": {
     "fileName": "breakdown-ban-40ffd8d0f1.mp3",
     "text": "Bạn"
@@ -3952,10 +3900,6 @@
     "text": "Bạn"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-first": {
-    "fileName": "breakdown-ban-40ffd8d0f1.mp3",
-    "text": "Bạn"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-first": {
     "fileName": "breakdown-ban-40ffd8d0f1.mp3",
     "text": "Bạn"
   },
@@ -4460,10 +4404,6 @@
     "text": "Cái"
   },
   "breakdown-v500-food-drin-does-this-contain-peanuts-first": {
-    "fileName": "breakdown-cai-81f8ada6fa.mp3",
-    "text": "Cái"
-  },
-  "breakdown-v500-food-drin-does-this-have-egg-or-peanuts-first": {
     "fileName": "breakdown-cai-81f8ada6fa.mp3",
     "text": "Cái"
   },
@@ -5459,10 +5399,6 @@
     "fileName": "breakdown-co-the-cham-vao-no-duoc-khong-2da5757067.mp3",
     "text": "có thể chạm vào nó được không?"
   },
-  "breakdown-v500-unde-repa-can-you-show-me-on-the-map-rest": {
-    "fileName": "breakdown-co-the-chi-cho-toi-tren-ban-do-duoc-khong-e25f673165.mp3",
-    "text": "có thể chỉ cho tôi trên bản đồ được không?"
-  },
   "breakdown-v900-dire-navi-can-you-point-out-a-nearby-landmark-rest": {
     "fileName": "breakdown-co-the-chi-ra-mot-diem-moc-gan-do-khong-8635a427f0.mp3",
     "text": "có thể chỉ ra một điểm mốc gần đó không?"
@@ -5911,10 +5847,6 @@
     "fileName": "breakdown-co-the-nhan-tin-cho-toi-duoc-khong-35d026daaa.mp3",
     "text": "có thể nhắn tin cho tôi được không?"
   },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-rest": {
-    "fileName": "breakdown-co-the-noi-cham-lai-mot-chut-duoc-khong-a3230f291d.mp3",
-    "text": "có thể nói chậm lại một chút được không?"
-  },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-rest": {
     "fileName": "breakdown-co-the-noi-no-mot-cach-don-gian-hon-31fba2473c.mp3",
     "text": "có thể nói nó một cách đơn giản hơn?"
@@ -6202,10 +6134,6 @@
   "breakdown-v900-airp-bord-arri-i-made-a-mistake-on-the-form-rest": {
     "fileName": "breakdown-da-mac-loi-trong-bieu-mau-aabd7c9df6.mp3",
     "text": "đã mắc lỗi trong biểu mẫu"
-  },
-  "breakdown-v500-unde-repa-how-much-did-you-say-rest": {
-    "fileName": "breakdown-da-noi-bao-nhieu-b27e0b2baa.mp3",
-    "text": "đã nói bao nhiêu?"
   },
   "breakdown-v900-tran-i-paid-in-the-app-already-rest": {
     "fileName": "breakdown-da-thanh-toan-trong-ung-dung-roi-ff473e4e5f.mp3",
@@ -6687,10 +6615,6 @@
     "fileName": "breakdown-dung-hien-thi-mot-tuyen-duong-khac-1f5f298cad.mp3",
     "text": "dụng hiển thị một tuyến đường khác"
   },
-  "breakdown-v500-tran-please-stop-right-here-rest": {
-    "fileName": "breakdown-dung-lai-o-day-f572506e13.mp3",
-    "text": "dừng lại ở đây"
-  },
   "breakdown-bathroom-use-rest": {
     "fileName": "breakdown-dung-nha-ve-sinh-duoc-khong-ac0d173b47.mp3",
     "text": "dùng nhà vệ sinh được không?"
@@ -7122,10 +7046,6 @@
   "breakdown-v500-unde-repa-i-understand-a-little-rest": {
     "fileName": "breakdown-hieu-mot-chut-08e6cf52b7.mp3",
     "text": "hiểu một chút"
-  },
-  "breakdown-v500-heal-phar-where-is-the-pharmacy-subject": {
-    "fileName": "breakdown-hieu-thuoc-a7f9a20acf.mp3",
-    "text": "Hiệu thuốc"
   },
   "breakdown-v900-heal-phar-is-there-a-pharmacy-nearby-rest": {
     "fileName": "breakdown-hieu-thuoc-nao-gan-day-khong-7fa3f9c517.mp3",
@@ -7635,10 +7555,6 @@
     "fileName": "breakdown-loi-vao-phia-sau-787512c846.mp3",
     "text": "Lối vào phía sau"
   },
-  "breakdown-v500-unde-repa-sorry-i-dont-speak-vietnamese-rest": {
-    "fileName": "breakdown-loi-toi-khong-noi-duoc-tieng-viet-84dc5f6245.mp3",
-    "text": "lỗi, tôi không nói được tiếng Việt"
-  },
   "breakdown-v500-unde-repa-please-show-me-where-to-tap-rest": {
     "fileName": "breakdown-long-chi-cho-toi-noi-de-nhan-9be151f11b.mp3",
     "text": "lòng chỉ cho tôi nơi để nhấn"
@@ -7967,10 +7883,6 @@
     "fileName": "breakdown-muon-huy-thoi-gian-luu-tru-cua-minh-53a6ec20e4.mp3",
     "text": "muốn hủy thời gian lưu trú của mình"
   },
-  "breakdown-v900-hote-acco-id-like-to-check-in-please-rest": {
-    "fileName": "breakdown-muon-nhan-phong-vui-long-612f58c90e.mp3",
-    "text": "muốn nhận phòng, vui lòng"
-  },
   "breakdown-v900-food-drin-id-like-it-to-go-please-rest": {
     "fileName": "breakdown-muon-no-di-lam-on-e056052d02.mp3",
     "text": "muốn nó đi, làm ơn."
@@ -8086,10 +7998,6 @@
   "breakdown-v900-hote-acco-is-this-room-available-tonight-rest": {
     "fileName": "breakdown-nay-co-trong-toi-nay-khong-8f02888679.mp3",
     "text": "này có trống tối nay không?"
-  },
-  "breakdown-v500-food-drin-does-this-have-egg-or-peanuts-rest": {
-    "fileName": "breakdown-nay-co-trung-hay-dau-phong-khong-1b54bb9974.mp3",
-    "text": "này có trứng hay đậu phộng không?"
   },
   "breakdown-v500-food-drin-this-tastes-spoiled-rest": {
     "fileName": "breakdown-nay-co-vi-hu-hong-ac661e41e5.mp3",
@@ -9571,10 +9479,6 @@
     "fileName": "breakdown-toi-9c76fc1a7e.mp3",
     "text": "Tôi"
   },
-  "breakdown-v900-hote-acco-id-like-to-check-in-please-first": {
-    "fileName": "breakdown-toi-9c76fc1a7e.mp3",
-    "text": "Tôi"
-  },
   "breakdown-v900-hote-acco-can-i-have-a-non-smoking-room-first": {
     "fileName": "breakdown-toi-9c76fc1a7e.mp3",
     "text": "Tôi"
@@ -10038,10 +9942,6 @@
   "breakdown-v900-dire-navi-where-do-i-meet-the-tour-group-subject": {
     "fileName": "breakdown-toi-gap-nhom-du-lich-9c33de06f2.mp3",
     "text": "Tôi gặp nhóm du lịch"
-  },
-  "breakdown-v500-airp-bord-arri-where-do-i-meet-the-driver-subject": {
-    "fileName": "breakdown-toi-gap-tai-xe-595f9f5b3e.mp3",
-    "text": "Tôi gặp tài xế"
   },
   "breakdown-store-7-rest": {
     "fileName": "breakdown-toi-hoa-don-f79db2aa3f.mp3",
@@ -10527,19 +10427,11 @@
     "fileName": "breakdown-xin-7c7f730969.mp3",
     "text": "Xin"
   },
-  "breakdown-v500-unde-repa-sorry-i-dont-speak-vietnamese-first": {
-    "fileName": "breakdown-xin-7c7f730969.mp3",
-    "text": "Xin"
-  },
   "breakdown-v500-unde-repa-please-be-patient-with-me-first": {
     "fileName": "breakdown-xin-7c7f730969.mp3",
     "text": "Xin"
   },
   "breakdown-v500-tran-please-let-me-out-here-first": {
-    "fileName": "breakdown-xin-7c7f730969.mp3",
-    "text": "Xin"
-  },
-  "breakdown-v500-tran-please-stop-right-here-first": {
     "fileName": "breakdown-xin-7c7f730969.mp3",
     "text": "Xin"
   },
@@ -10660,10 +10552,6 @@
     "text": "Bạn"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-1": {
-    "fileName": "breakdown-ban-40ffd8d0f1.mp3",
-    "text": "Bạn"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-1": {
     "fileName": "breakdown-ban-40ffd8d0f1.mp3",
     "text": "Bạn"
   },
@@ -11627,10 +11515,6 @@
     "fileName": "breakdown-chai-353fd54120.mp3",
     "text": "chai"
   },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-5": {
-    "fileName": "breakdown-cham-a0bfc6f4ab.mp3",
-    "text": "chậm"
-  },
   "breakdown-v500-mone-numb-pric-i-only-have-this-much-piece-2": {
     "fileName": "breakdown-chi-cb2c335da3.mp3",
     "text": "chỉ"
@@ -11783,10 +11667,6 @@
     "fileName": "breakdown-chut-dedcd806e8.mp3",
     "text": "chút"
   },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-8": {
-    "fileName": "breakdown-chut-dedcd806e8.mp3",
-    "text": "chút"
-  },
   "breakdown-v900-sigh-acti-id-like-to-book-a-tour-piece-5": {
     "fileName": "breakdown-chuyen-f9b7b0b166.mp3",
     "text": "chuyến"
@@ -11860,10 +11740,6 @@
     "text": "có"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-2": {
-    "fileName": "breakdown-co-44092dbc1f.mp3",
-    "text": "có"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-2": {
     "fileName": "breakdown-co-44092dbc1f.mp3",
     "text": "có"
   },
@@ -12207,10 +12083,6 @@
     "fileName": "breakdown-duoc-4c144474b5.mp3",
     "text": "được"
   },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-9": {
-    "fileName": "breakdown-duoc-4c144474b5.mp3",
-    "text": "được"
-  },
   "breakdown-v900-hote-acco-can-i-stay-one-more-night-piece-10": {
     "fileName": "breakdown-duoc-4c144474b5.mp3",
     "text": "được"
@@ -12527,10 +12399,6 @@
     "fileName": "breakdown-khong-f01e0f7978.mp3",
     "text": "không?"
   },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-10": {
-    "fileName": "breakdown-khong-f01e0f7978.mp3",
-    "text": "không?"
-  },
   "breakdown-v900-tran-is-there-an-airport-fee-piece-5": {
     "fileName": "breakdown-khong-f01e0f7978.mp3",
     "text": "không?"
@@ -12636,10 +12504,6 @@
     "text": "lại"
   },
   "breakdown-v500-airp-bord-arri-i-will-stay-for-five-days-piece-4": {
-    "fileName": "breakdown-lai-6bc63b6dd7.mp3",
-    "text": "lại"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-6": {
     "fileName": "breakdown-lai-6bc63b6dd7.mp3",
     "text": "lại"
   },
@@ -12896,10 +12760,6 @@
     "text": "một"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-6": {
-    "fileName": "breakdown-mot-c826fcda31.mp3",
-    "text": "một"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-7": {
     "fileName": "breakdown-mot-c826fcda31.mp3",
     "text": "một"
   },
@@ -13296,10 +13156,6 @@
     "text": "nó"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-4": {
-    "fileName": "breakdown-noi-00e6e20119.mp3",
-    "text": "nói"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-4": {
     "fileName": "breakdown-noi-00e6e20119.mp3",
     "text": "nói"
   },
@@ -13724,10 +13580,6 @@
     "text": "thể"
   },
   "breakdown-v900-unde-repa-can-you-say-it-in-a-simpler-way-piece-3": {
-    "fileName": "breakdown-the-2b9da1f3ae.mp3",
-    "text": "thể"
-  },
-  "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-3": {
     "fileName": "breakdown-the-2b9da1f3ae.mp3",
     "text": "thể"
   },
@@ -17410,5 +17262,13 @@
   "menu-order-cho-toi-mot-ly-tra-lai-1fcd8bb0b1": {
     "fileName": "menu-order-cho-toi-mot-ly-tra-lai-1fcd8bb0b1.mp3",
     "text": "Cho tôi một ly trà lài."
+  },
+  "breakdown-health-1-subject": {
+    "fileName": "breakdown-hieu-thuoc-a7f9a20acf.mp3",
+    "text": "Hiệu thuốc"
+  },
+  "breakdown-repair-slower-polite-piece-5": {
+    "fileName": "breakdown-cham-a0bfc6f4ab.mp3",
+    "text": "chậm"
   }
 }

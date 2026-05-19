@@ -49,9 +49,9 @@ const expectedSectionOrder = [
 ];
 const expectedRows = new Map([
   ["quick-say", ["city-danang-place-dragon-bridge"]],
-  ["getting-there", ["taxi-1", "v500-unde-repa-can-you-show-me-on-the-map"]],
+  ["getting-there", ["taxi-1", "repair-5"]],
   ["at-the-bridge", ["ves-take-photo-for-me"]],
-  ["pickup-nearby", ["v500-tran-please-stop-right-here", "directions-8", "v900-dire-navi-is-this-the-correct-pickup-point"]],
+  ["pickup-nearby", ["transport-stop-here-clearer", "directions-8", "v900-dire-navi-is-this-the-correct-pickup-point"]],
   ["explore-next", ["airport-4", "ves-call-taxi-for-me"]],
 ]);
 const retiredAttractionPhraseIDs = [

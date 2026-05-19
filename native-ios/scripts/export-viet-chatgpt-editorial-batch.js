@@ -528,7 +528,6 @@ function buildLookupData() {
 function sourceLaneFor(page, sourcePath) {
   if (page?.tierRole) return page.tierRole;
   if (sourcePath.includes("city-library")) return "city-v1";
-  if (sourcePath.includes("practice-expansion")) return "practice-expansion";
   if (sourcePath.includes("catalog-promoted")) return "catalog-promoted";
   if (sourcePath.includes("tier-one")) return "tier1";
   return "unknown";

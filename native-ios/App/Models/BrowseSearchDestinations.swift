@@ -568,8 +568,8 @@ enum BrowseSearchDestinations {
             tintName: .orange,
             sampleQuery: "restaurant ordering",
             preferredPageIDs: [
-                "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
                 "viet-family-food-coffee-black",
+                "viet-family-food-coffee-milk",
                 "viet-family-ves-order-pho-bowl",
             ]
         ),
@@ -604,7 +604,7 @@ enum BrowseSearchDestinations {
                 "viet-family-v900-emer-safe-please-call-emergency-services",
                 "viet-family-health-doctor",
                 "viet-family-emergency-hospital",
-                "viet-family-vpe-take-me-place-cho-toi-den-don-cong-an",
+                "viet-family-emergency-police-station",
             ]
         ),
         BrowseDestination(
@@ -1293,18 +1293,18 @@ enum BrowseSearchDestinations {
                         "viet-family-city-danang-where-airport",
                         "viet-phrase-airport-3",
                         "viet-phrase-airport-4",
-                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
+                        "viet-phrase-hotel-9",
                     ], subcategoryIDs: ["arrivals-routes"]),
                     CitySituationCardSpec(id: "getting-around", title: "Getting around", subtitle: "Taxi, Grab, streets, drop-off", symbolName: "car.fill", tintName: .green, preferredPageIDs: [
-                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-taxi-duoc-khong",
-                        "viet-phrase-vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong",
-                        "viet-phrase-v500-tran-please-stop-right-here",
+                        "viet-phrase-hotel-9",
+                        "viet-phrase-v900-phon-inte-powe-can-you-help-me-book-a-grab",
+                        "viet-phrase-transport-stop-here-clearer",
                         "viet-family-city-danang-place-nguyen-van-linh-street",
                         "viet-family-city-danang-place-bach-dang-street",
                     ], subcategoryIDs: ["arrivals-routes", "neighborhoods-streets"]),
                     CitySituationCardSpec(id: "beach-day", title: "Beach day", subtitle: "My Khe, chairs, drinks, bathroom", symbolName: "beach.umbrella.fill", tintName: .blue, preferredPageIDs: [
                         "viet-family-city-danang-place-my-khe",
-                        "viet-phrase-v500-tran-please-stop-right-here",
+                        "viet-phrase-transport-stop-here-clearer",
                         "viet-phrase-ves-take-photo-for-me",
                         "viet-phrase-bath-1",
                     ], subcategoryIDs: ["landmarks-attractions", "food-coffee", "practical-help-near-places"]),
@@ -1447,7 +1447,7 @@ enum BrowseSearchDestinations {
             case "danang":
                 return [
                     "city-danang-to-airport",
-                    "v500-tran-please-stop-right-here",
+                    "transport-stop-here-clearer",
                     "directions-8",
                     "ves-call-taxi-for-me",
                 ]
@@ -1947,14 +1947,12 @@ enum BrowseSearchDestinations {
             ),
         ])
         let followUpRows = pageItems(forOpenablePageIDs: [
-            "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
             "viet-family-food-coffee-black",
             "viet-family-food-coffee-milk",
             "viet-family-food-coffee-bac-xiu",
-            "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-it-duong",
             "viet-family-v900-food-drin-one-hot-coffee-please",
-            "viet-family-vpe-one-item-please-cho-toi-mot-tra-da",
             "viet-family-food-bottled-water",
+            "viet-family-service-water",
             "viet-family-v900-food-drin-one-sugarcane-juice-please",
             "viet-family-v900-food-drin-one-fresh-coconut-please",
         ])
@@ -1994,7 +1992,7 @@ enum BrowseSearchDestinations {
                 audioKey: nil
             ),
             (
-                pageID: "viet-family-vpe-one-item-please-cho-toi-mot-banh-xeo",
+                pageID: "viet-family-city-danang-place-banh-xeo",
                 title: "Bánh xèo",
                 subtitle: "Crispy savory pancake",
                 audioKey: nil
@@ -2006,13 +2004,10 @@ enum BrowseSearchDestinations {
             "viet-family-ves-order-bun-bo-hue-bowl",
             "viet-family-ves-order-bun-cha-portion",
             "viet-family-ves-order-cao-lau-portion",
-            "viet-family-vpe-one-item-please-cho-toi-mot-banh-xeo",
-            "viet-family-vpe-one-item-please-cho-toi-mot-pho-bo",
-            "viet-family-vpe-one-item-please-cho-toi-mot-pho-ga",
-            "viet-family-vpe-one-item-please-cho-toi-mot-banh-mi-chay",
-            "viet-family-vpe-one-item-please-cho-toi-mot-goi-cuon",
-            "viet-family-vpe-one-item-please-cho-toi-mot-do-chay",
-            "viet-family-vpe-one-item-please-cho-toi-mot-com-trang",
+            "viet-family-city-danang-place-banh-xeo",
+            "viet-family-city-hanoi-place-pho-bo",
+            "viet-family-food-vegetarian",
+            "viet-family-food-one-portion",
         ])
 
         return Array(uniquePhraseItems(nounRows + followUpRows).prefix(12))
@@ -2763,14 +2758,13 @@ enum BrowseSearchDestinations {
         switch collectionID {
         case "food", "food-coffee":
             return [
-                "viet-family-vpe-one-item-please-cho-toi-mot-ca-phe-den",
                 "viet-family-food-coffee-black",
                 "viet-family-food-coffee-milk",
                 "viet-family-food-coffee-bac-xiu",
                 "viet-family-ves-order-pho-bowl",
                 "viet-family-v500-food-drin-id-like-a-b-nh-m-please",
                 "viet-family-ves-order-bun-bo-hue-bowl",
-                "viet-family-vpe-one-item-please-cho-toi-mot-banh-xeo",
+                "viet-family-city-danang-place-banh-xeo",
             ]
         case "landmarks-attractions":
             return [

@@ -50,10 +50,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval in a future import task; linked restaurant interaction rows now resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, cho tôi một phần bún chả.", "phraseID": "ves-order-bun-cha-portion", "detailPageID": "viet-family-ves-order-bun-cha-portion", "source": "created-support", "status": "resolved"},
-        {"slot": "inside-the-place", "vietnamese": "Cho tôi trà đá.", "phraseID": "vpe-one-item-please-cho-toi-mot-tra-da", "detailPageID": "viet-family-vpe-one-item-please-cho-toi-mot-tra-da", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "inside-the-place", "vietnamese": "Tính tiền giúp tôi.", "phraseID": "coffee-7", "detailPageID": "viet-family-food-pay-now", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "leaving", "vietnamese": "Gọi giúp tôi taxi được không?", "phraseID": "ves-call-taxi-for-me", "detailPageID": "viet-family-ves-call-taxi-for-me", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, cho tôi một phần bún chả.",
+          "phraseID": "ves-order-bun-cha-portion",
+          "detailPageID": "viet-family-ves-order-bun-cha-portion",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "inside-the-place",
+          "vietnamese": "Làm ơn cho một ly trà đá",
+          "phraseID": "v900-food-drin-one-iced-tea-please",
+          "detailPageID": "viet-family-v900-food-drin-one-iced-tea-please",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "inside-the-place",
+          "vietnamese": "Tính tiền giúp tôi.",
+          "phraseID": "coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "leaving",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "phraseID": "ves-call-taxi-for-me",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -65,10 +93,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval in a future import task; restaurant ordering, recommendation, bill, and drop-off rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, cho tôi một tô phở.", "phraseID": "ves-order-pho-bowl", "detailPageID": "viet-family-ves-order-pho-bowl", "source": "created-support", "status": "resolved"},
-        {"slot": "inside-the-place", "vietnamese": "Có món nào nổi tiếng không?", "phraseID": "ves-popular-dish-here", "detailPageID": "viet-family-ves-popular-dish-here", "source": "created-support", "status": "resolved"},
-        {"slot": "inside-the-place", "vietnamese": "Tính tiền giúp tôi.", "phraseID": "coffee-7", "detailPageID": "viet-family-food-pay-now", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "leaving", "vietnamese": "Cho tôi xuống ở đây được không?", "phraseID": "ves-drop-me-off-here", "detailPageID": "viet-family-ves-drop-me-off-here", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, cho tôi một tô phở.",
+          "phraseID": "ves-order-pho-bowl",
+          "detailPageID": "viet-family-ves-order-pho-bowl",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "inside-the-place",
+          "vietnamese": "Có món nào nổi tiếng không?",
+          "phraseID": "ves-popular-dish-here",
+          "detailPageID": "viet-family-ves-popular-dish-here",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "inside-the-place",
+          "vietnamese": "Tính tiền giúp tôi.",
+          "phraseID": "coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "leaving",
+          "vietnamese": "Cho tôi xuống ở đây được không?",
+          "phraseID": "ves-drop-me-off-here",
+          "detailPageID": "viet-family-ves-drop-me-off-here",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -80,10 +136,38 @@
       "blockerReason": "Pilot proposes changing canonical Vietnamese from Cao lầu ở Hội An to Cao lầu. Jojo approval or a title-preserving rewrite is required before import.",
       "recommendedNextAction": "Do not import yet. Decide whether the canonical page should remain city-specific or whether a separate Cao lầu dish page should exist.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, cho tôi một phần cao lầu.", "phraseID": "ves-order-cao-lau-portion", "detailPageID": "viet-family-ves-order-cao-lau-portion", "source": "created-support", "status": "resolved"},
-        {"slot": "ingredients", "vietnamese": "Món này có gì?", "phraseID": "ves-whats-in-this-dish", "detailPageID": "viet-family-ves-whats-in-this-dish", "source": "created-support", "status": "resolved"},
-        {"slot": "diet", "vietnamese": "Tôi không ăn thịt lợn.", "phraseID": "v900-food-drin-i-do-not-eat-pork", "detailPageID": "viet-family-v900-food-drin-i-do-not-eat-pork", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "nearby", "vietnamese": "Ở đâu có cao lầu ngon?", "phraseID": "ves-where-has-good-cao-lau", "detailPageID": "viet-family-ves-where-has-good-cao-lau", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, cho tôi một phần cao lầu.",
+          "phraseID": "ves-order-cao-lau-portion",
+          "detailPageID": "viet-family-ves-order-cao-lau-portion",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "ingredients",
+          "vietnamese": "Món này có gì?",
+          "phraseID": "ves-whats-in-this-dish",
+          "detailPageID": "viet-family-ves-whats-in-this-dish",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "diet",
+          "vietnamese": "Tôi không ăn thịt lợn.",
+          "phraseID": "v900-food-drin-i-do-not-eat-pork",
+          "detailPageID": "viet-family-v900-food-drin-i-do-not-eat-pork",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "nearby",
+          "vietnamese": "Ở đâu có cao lầu ngon?",
+          "phraseID": "ves-where-has-good-cao-lau",
+          "detailPageID": "viet-family-ves-where-has-good-cao-lau",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -95,10 +179,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval in a future import task; dish order, spice, ingredient, and payment rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, cho tôi một tô bún bò Huế.", "phraseID": "ves-order-bun-bo-hue-bowl", "detailPageID": "viet-family-ves-order-bun-bo-hue-bowl", "source": "created-support", "status": "resolved"},
-        {"slot": "spice", "vietnamese": "Không cay quá nhé.", "phraseID": "ves-not-too-spicy", "detailPageID": "viet-family-ves-not-too-spicy", "source": "created-support", "status": "resolved"},
-        {"slot": "ingredients", "vietnamese": "Món này có gì?", "phraseID": "ves-whats-in-this-dish", "detailPageID": "viet-family-ves-whats-in-this-dish", "source": "created-support", "status": "resolved"},
-        {"slot": "pay", "vietnamese": "Tính tiền giúp tôi.", "phraseID": "coffee-7", "detailPageID": "viet-family-food-pay-now", "source": "existing-canonical", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, cho tôi một tô bún bò Huế.",
+          "phraseID": "ves-order-bun-bo-hue-bowl",
+          "detailPageID": "viet-family-ves-order-bun-bo-hue-bowl",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "spice",
+          "vietnamese": "Không cay quá nhé.",
+          "phraseID": "ves-not-too-spicy",
+          "detailPageID": "viet-family-ves-not-too-spicy",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "ingredients",
+          "vietnamese": "Món này có gì?",
+          "phraseID": "ves-whats-in-this-dish",
+          "detailPageID": "viet-family-ves-whats-in-this-dish",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "pay",
+          "vietnamese": "Tính tiền giúp tôi.",
+          "phraseID": "coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
+          "source": "existing-canonical",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -107,14 +219,45 @@
       "phraseID": "city-danang-place-ba-na-hills",
       "modelGroup": "place-journey-navigation",
       "readiness": "ready_for_jojo_approval",
-      "sourceEvidenceIDs": ["vietnam-travel-ba-na-hills", "sunworld-ba-na-cable-car"],
+      "sourceEvidenceIDs": [
+        "vietnam-travel-ba-na-hills",
+        "sunworld-ba-na-cable-car"
+      ],
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval using stable attraction/cable-car journey facts only; no prices, hours, schedules, or current policies.",
       "visibleRows": [
-        {"slot": "ticket", "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.", "phraseID": "ves-two-tickets-ba-na-hills", "detailPageID": "viet-family-ves-two-tickets-ba-na-hills", "source": "created-support", "status": "resolved"},
-        {"slot": "cable-car", "vietnamese": "Cáp treo ở đâu?", "phraseID": "ves-where-cable-car", "detailPageID": "viet-family-ves-where-cable-car", "source": "created-support", "status": "resolved"},
-        {"slot": "photo", "vietnamese": "Bạn chụp giúp tôi được không?", "phraseID": "ves-take-photo-for-me", "detailPageID": "viet-family-ves-take-photo-for-me", "source": "created-support", "status": "resolved"},
-        {"slot": "return", "vietnamese": "Gọi giúp tôi taxi được không?", "phraseID": "ves-call-taxi-for-me", "detailPageID": "viet-family-ves-call-taxi-for-me", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "ticket",
+          "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+          "phraseID": "ves-two-tickets-ba-na-hills",
+          "detailPageID": "viet-family-ves-two-tickets-ba-na-hills",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "cable-car",
+          "vietnamese": "Cáp treo ở đâu?",
+          "phraseID": "ves-where-cable-car",
+          "detailPageID": "viet-family-ves-where-cable-car",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "photo",
+          "vietnamese": "Bạn chụp giúp tôi được không?",
+          "phraseID": "ves-take-photo-for-me",
+          "detailPageID": "viet-family-ves-take-photo-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "return",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "phraseID": "ves-call-taxi-for-me",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -126,10 +269,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; landmark, drop-off, where-question, and photo rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Cầu Rồng", "phraseID": "city-danang-place-dragon-bridge", "detailPageID": "viet-family-city-danang-place-dragon-bridge", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "drop-off", "vietnamese": "Cho tôi xuống gần Cầu Rồng.", "phraseID": "ves-drop-near-dragon-bridge", "detailPageID": "viet-family-ves-drop-near-dragon-bridge", "source": "created-support", "status": "resolved"},
-        {"slot": "where", "vietnamese": "Cầu Rồng ở đâu?", "phraseID": "city-danang-where-dragon-bridge", "detailPageID": "viet-family-city-danang-where-dragon-bridge", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "photo", "vietnamese": "Bạn chụp giúp tôi được không?", "phraseID": "ves-take-photo-for-me", "detailPageID": "viet-family-ves-take-photo-for-me", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Cầu Rồng",
+          "phraseID": "city-danang-place-dragon-bridge",
+          "detailPageID": "viet-family-city-danang-place-dragon-bridge",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "drop-off",
+          "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
+          "phraseID": "ves-drop-near-dragon-bridge",
+          "detailPageID": "viet-family-ves-drop-near-dragon-bridge",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "where",
+          "vietnamese": "Cầu Rồng ở đâu?",
+          "phraseID": "city-danang-where-dragon-bridge",
+          "detailPageID": "viet-family-city-danang-where-dragon-bridge",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "photo",
+          "vietnamese": "Bạn chụp giúp tôi được không?",
+          "phraseID": "ves-take-photo-for-me",
+          "detailPageID": "viet-family-ves-take-photo-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -138,14 +309,45 @@
       "phraseID": "city-danang-place-marble-mountains",
       "modelGroup": "place-journey-navigation",
       "readiness": "ready_for_jojo_approval",
-      "sourceEvidenceIDs": ["danang-fantasticity-marble-mountains", "vietnam-travel-marble-mountains"],
+      "sourceEvidenceIDs": [
+        "danang-fantasticity-marble-mountains",
+        "vietnam-travel-marble-mountains"
+      ],
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval using stable entrance/cave/pagoda visitor-flow facts only; no prices, hours, or policy details.",
       "visibleRows": [
-        {"slot": "ticket", "vietnamese": "Một vé vào Ngũ Hành Sơn.", "phraseID": "city-danang-ticket-marble-mountains", "detailPageID": "viet-family-city-danang-ticket-marble-mountains", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "entrance", "vietnamese": "Lối vào ở đâu?", "phraseID": "v500-sigh-acti-where-is-the-entrance", "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "driver", "vietnamese": "Tài xế chờ ở đâu?", "phraseID": "ves-where-driver-waits", "detailPageID": "viet-family-ves-where-driver-waits", "source": "created-support", "status": "resolved"},
-        {"slot": "return", "vietnamese": "Gọi giúp tôi taxi được không?", "phraseID": "ves-call-taxi-for-me", "detailPageID": "viet-family-ves-call-taxi-for-me", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "ticket",
+          "vietnamese": "Một vé vào Ngũ Hành Sơn.",
+          "phraseID": "city-danang-ticket-marble-mountains",
+          "detailPageID": "viet-family-city-danang-ticket-marble-mountains",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "entrance",
+          "vietnamese": "Lối vào ở đâu?",
+          "phraseID": "v500-sigh-acti-where-is-the-entrance",
+          "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "driver",
+          "vietnamese": "Tài xế chờ ở đâu?",
+          "phraseID": "ves-where-driver-waits",
+          "detailPageID": "viet-family-ves-where-driver-waits",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "return",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "phraseID": "ves-call-taxi-for-me",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -157,10 +359,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; area-route support now has exact-stop, wait, and return-time rows.",
       "visibleRows": [
-        {"slot": "route", "vietnamese": "Đi bán đảo Sơn Trà.", "phraseID": "city-danang-go-son-tra", "detailPageID": "viet-family-city-danang-go-son-tra", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "specific-stop", "vietnamese": "Chùa Linh Ứng ở đâu?", "phraseID": "city-danang-where-linh-ung", "detailPageID": "viet-family-city-danang-where-linh-ung", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "wait", "vietnamese": "Anh chờ tôi ở đây được không?", "phraseID": "ves-can-you-wait-here", "detailPageID": "viet-family-ves-can-you-wait-here", "source": "created-support", "status": "resolved"},
-        {"slot": "return-time", "vietnamese": "Mấy giờ quay lại?", "phraseID": "ves-what-time-come-back", "detailPageID": "viet-family-ves-what-time-come-back", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "route",
+          "vietnamese": "Đi bán đảo Sơn Trà.",
+          "phraseID": "city-danang-go-son-tra",
+          "detailPageID": "viet-family-city-danang-go-son-tra",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "specific-stop",
+          "vietnamese": "Chùa Linh Ứng ở đâu?",
+          "phraseID": "city-danang-where-linh-ung",
+          "detailPageID": "viet-family-city-danang-where-linh-ung",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "wait",
+          "vietnamese": "Anh chờ tôi ở đây được không?",
+          "phraseID": "ves-can-you-wait-here",
+          "detailPageID": "viet-family-ves-can-you-wait-here",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "return-time",
+          "vietnamese": "Mấy giờ quay lại?",
+          "phraseID": "ves-what-time-come-back",
+          "detailPageID": "viet-family-ves-what-time-come-back",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -172,10 +402,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; street-only, driver, confirmation, and drop-off rows resolve.",
       "visibleRows": [
-        {"slot": "street-only", "vietnamese": "Đường Bạch Đằng", "phraseID": "city-danang-place-bach-dang-street", "detailPageID": "viet-family-city-danang-place-bach-dang-street", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "taxi", "vietnamese": "Cho tôi đến đường Bạch Đằng.", "phraseID": "ves-to-bach-dang-street", "detailPageID": "viet-family-ves-to-bach-dang-street", "source": "created-support", "status": "resolved"},
-        {"slot": "confirm", "vietnamese": "Đây có phải đường Bạch Đằng không?", "phraseID": "ves-is-this-bach-dang-street", "detailPageID": "viet-family-ves-is-this-bach-dang-street", "source": "created-support", "status": "resolved"},
-        {"slot": "drop-off", "vietnamese": "Cho tôi xuống ở đây được không?", "phraseID": "ves-drop-me-off-here", "detailPageID": "viet-family-ves-drop-me-off-here", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "street-only",
+          "vietnamese": "Đường Bạch Đằng",
+          "phraseID": "city-danang-place-bach-dang-street",
+          "detailPageID": "viet-family-city-danang-place-bach-dang-street",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "taxi",
+          "vietnamese": "Cho tôi đến đường Bạch Đằng.",
+          "phraseID": "ves-to-bach-dang-street",
+          "detailPageID": "viet-family-ves-to-bach-dang-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "confirm",
+          "vietnamese": "Đây có phải đường Bạch Đằng không?",
+          "phraseID": "ves-is-this-bach-dang-street",
+          "detailPageID": "viet-family-ves-is-this-bach-dang-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "drop-off",
+          "vietnamese": "Cho tôi xuống ở đây được không?",
+          "phraseID": "ves-drop-me-off-here",
+          "detailPageID": "viet-family-ves-drop-me-off-here",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -187,10 +445,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; street-only, driver, confirmation, and wrong-place rows resolve.",
       "visibleRows": [
-        {"slot": "street-only", "vietnamese": "Đường Nguyễn Văn Linh", "phraseID": "city-danang-place-nguyen-van-linh-street", "detailPageID": "viet-family-city-danang-place-nguyen-van-linh-street", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "taxi", "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.", "phraseID": "ves-to-nguyen-van-linh-street", "detailPageID": "viet-family-ves-to-nguyen-van-linh-street", "source": "created-support", "status": "resolved"},
-        {"slot": "confirm", "vietnamese": "Đây có phải đường Nguyễn Văn Linh không?", "phraseID": "ves-is-this-nguyen-van-linh-street", "detailPageID": "viet-family-ves-is-this-nguyen-van-linh-street", "source": "created-support", "status": "resolved"},
-        {"slot": "wrong-place", "vietnamese": "Hình như không đúng chỗ.", "phraseID": "ves-not-right-place", "detailPageID": "viet-family-ves-not-right-place", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "street-only",
+          "vietnamese": "Đường Nguyễn Văn Linh",
+          "phraseID": "city-danang-place-nguyen-van-linh-street",
+          "detailPageID": "viet-family-city-danang-place-nguyen-van-linh-street",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "taxi",
+          "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
+          "phraseID": "ves-to-nguyen-van-linh-street",
+          "detailPageID": "viet-family-ves-to-nguyen-van-linh-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "confirm",
+          "vietnamese": "Đây có phải đường Nguyễn Văn Linh không?",
+          "phraseID": "ves-is-this-nguyen-van-linh-street",
+          "detailPageID": "viet-family-ves-is-this-nguyen-van-linh-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "wrong-place",
+          "vietnamese": "Hình như không đúng chỗ.",
+          "phraseID": "ves-not-right-place",
+          "detailPageID": "viet-family-ves-not-right-place",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -202,10 +488,38 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; street-only, driver, confirmation, and pickup-location rows resolve.",
       "visibleRows": [
-        {"slot": "street-only", "vietnamese": "Đường Võ Nguyên Giáp", "phraseID": "city-danang-place-vo-nguyen-giap-street", "detailPageID": "viet-family-city-danang-place-vo-nguyen-giap-street", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "taxi", "vietnamese": "Cho tôi đến đường Võ Nguyên Giáp.", "phraseID": "ves-to-vo-nguyen-giap-street", "detailPageID": "viet-family-ves-to-vo-nguyen-giap-street", "source": "created-support", "status": "resolved"},
-        {"slot": "confirm", "vietnamese": "Đây có phải đường Võ Nguyên Giáp không?", "phraseID": "ves-is-this-vo-nguyen-giap-street", "detailPageID": "viet-family-ves-is-this-vo-nguyen-giap-street", "source": "created-support", "status": "resolved"},
-        {"slot": "pickup", "vietnamese": "Tôi đang ở đường Võ Nguyên Giáp.", "phraseID": "ves-im-on-vo-nguyen-giap-street", "detailPageID": "viet-family-ves-im-on-vo-nguyen-giap-street", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "street-only",
+          "vietnamese": "Đường Võ Nguyên Giáp",
+          "phraseID": "city-danang-place-vo-nguyen-giap-street",
+          "detailPageID": "viet-family-city-danang-place-vo-nguyen-giap-street",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "taxi",
+          "vietnamese": "Cho tôi đến đường Võ Nguyên Giáp.",
+          "phraseID": "ves-to-vo-nguyen-giap-street",
+          "detailPageID": "viet-family-ves-to-vo-nguyen-giap-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "confirm",
+          "vietnamese": "Đây có phải đường Võ Nguyên Giáp không?",
+          "phraseID": "ves-is-this-vo-nguyen-giap-street",
+          "detailPageID": "viet-family-ves-is-this-vo-nguyen-giap-street",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "pickup",
+          "vietnamese": "Tôi đang ở đường Võ Nguyên Giáp.",
+          "phraseID": "ves-im-on-vo-nguyen-giap-street",
+          "detailPageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -214,13 +528,36 @@
       "phraseID": "city-danang-go-ba-na-hills",
       "modelGroup": "driver-ready-phrase",
       "readiness": "ready_with_title_preserving_import",
-      "sourceEvidenceIDs": ["vietnam-travel-ba-na-hills"],
+      "sourceEvidenceIDs": [
+        "vietnam-travel-ba-na-hills"
+      ],
       "blockerReason": "Pilot proposes changing canonical Vietnamese from Đi Bà Nà Hills to Cho tôi đi Bà Nà Hills. Future import must preserve the existing title and use the full sentence as a linked Quick Say row.",
       "recommendedNextAction": "Ready only for a title-preserving import variant after Jojo approval.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Cho tôi đi Bà Nà Hills.", "phraseID": "ves-take-me-to-ba-na-hills", "detailPageID": "viet-family-ves-take-me-to-ba-na-hills", "source": "created-support", "status": "resolved"},
-        {"slot": "confirm", "vietnamese": "Địa chỉ này đúng không?", "phraseID": "ves-is-this-address-correct", "detailPageID": "viet-family-ves-is-this-address-correct", "source": "created-support", "status": "resolved"},
-        {"slot": "return", "vietnamese": "Gọi giúp tôi taxi được không?", "phraseID": "ves-call-taxi-for-me", "detailPageID": "viet-family-ves-call-taxi-for-me", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Cho tôi đi Bà Nà Hills.",
+          "phraseID": "ves-take-me-to-ba-na-hills",
+          "detailPageID": "viet-family-ves-take-me-to-ba-na-hills",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "confirm",
+          "vietnamese": "Địa chỉ này đúng không?",
+          "phraseID": "ves-is-this-address-correct",
+          "detailPageID": "viet-family-ves-is-this-address-correct",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "return",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "phraseID": "ves-call-taxi-for-me",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -229,13 +566,37 @@
       "phraseID": "city-danang-where-ba-na-hills",
       "modelGroup": "direction-question-with-recovery",
       "readiness": "ready_for_jojo_approval",
-      "sourceEvidenceIDs": ["vietnam-travel-ba-na-hills", "sunworld-ba-na-cable-car"],
+      "sourceEvidenceIDs": [
+        "vietnam-travel-ba-na-hills",
+        "sunworld-ba-na-cable-car"
+      ],
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; follow-up and recovery rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Bà Nà Hills ở đâu?", "phraseID": "city-danang-where-ba-na-hills", "detailPageID": "viet-family-city-danang-where-ba-na-hills", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "follow-up", "vietnamese": "Cáp treo ở đâu?", "phraseID": "ves-where-cable-car", "detailPageID": "viet-family-ves-where-cable-car", "source": "created-support", "status": "resolved"},
-        {"slot": "repair", "vietnamese": "Làm ơn nói lại.", "phraseID": "repair-1", "detailPageID": "viet-family-repair-repeat", "source": "existing-canonical", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Bà Nà Hills ở đâu?",
+          "phraseID": "city-danang-where-ba-na-hills",
+          "detailPageID": "viet-family-city-danang-where-ba-na-hills",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "follow-up",
+          "vietnamese": "Cáp treo ở đâu?",
+          "phraseID": "ves-where-cable-car",
+          "detailPageID": "viet-family-ves-where-cable-car",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "repair",
+          "vietnamese": "Làm ơn nói lại.",
+          "phraseID": "repair-1",
+          "detailPageID": "viet-family-repair-repeat",
+          "source": "existing-canonical",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -244,13 +605,37 @@
       "phraseID": "city-danang-ticket-marble-mountains",
       "modelGroup": "ticket-counter",
       "readiness": "ready_with_title_preserving_import",
-      "sourceEvidenceIDs": ["danang-fantasticity-marble-mountains", "vietnam-travel-marble-mountains"],
+      "sourceEvidenceIDs": [
+        "danang-fantasticity-marble-mountains",
+        "vietnam-travel-marble-mountains"
+      ],
       "blockerReason": "Pilot proposes changing canonical Vietnamese from Một vé vào Ngũ Hành Sơn to Dạ, cho tôi một vé vào Ngũ Hành Sơn. Future import must preserve the current title and use the polite sentence as a linked Quick Say row.",
       "recommendedNextAction": "Ready only for a title-preserving import variant after Jojo approval.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.", "phraseID": "ves-one-ticket-marble-mountains-polite", "detailPageID": "viet-family-ves-one-ticket-marble-mountains-polite", "source": "created-support", "status": "resolved"},
-        {"slot": "variant", "vietnamese": "Hai vé vào Ngũ Hành Sơn.", "phraseID": "ves-two-tickets-marble-mountains", "detailPageID": "viet-family-ves-two-tickets-marble-mountains", "source": "created-support", "status": "resolved"},
-        {"slot": "next", "vietnamese": "Lối vào ở đâu?", "phraseID": "v500-sigh-acti-where-is-the-entrance", "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance", "source": "existing-canonical", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+          "phraseID": "ves-one-ticket-marble-mountains-polite",
+          "detailPageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "variant",
+          "vietnamese": "Hai vé vào Ngũ Hành Sơn.",
+          "phraseID": "ves-two-tickets-marble-mountains",
+          "detailPageID": "viet-family-ves-two-tickets-marble-mountains",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "next",
+          "vietnamese": "Lối vào ở đâu?",
+          "phraseID": "v500-sigh-acti-where-is-the-entrance",
+          "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance",
+          "source": "existing-canonical",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -262,9 +647,30 @@
       "blockerReason": "Pilot proposes changing canonical Vietnamese from Đi cầu Rồng to Cho tôi đi Cầu Rồng. Future import must preserve the existing title and use the full sentence as a linked Quick Say row.",
       "recommendedNextAction": "Ready only for a title-preserving import variant after Jojo approval.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Cho tôi đi Cầu Rồng.", "phraseID": "ves-take-me-to-dragon-bridge", "detailPageID": "viet-family-ves-take-me-to-dragon-bridge", "source": "created-support", "status": "resolved"},
-        {"slot": "place-only", "vietnamese": "Cầu Rồng", "phraseID": "city-danang-place-dragon-bridge", "detailPageID": "viet-family-city-danang-place-dragon-bridge", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "drop-off", "vietnamese": "Cho tôi xuống gần Cầu Rồng.", "phraseID": "ves-drop-near-dragon-bridge", "detailPageID": "viet-family-ves-drop-near-dragon-bridge", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Cho tôi đi Cầu Rồng.",
+          "phraseID": "ves-take-me-to-dragon-bridge",
+          "detailPageID": "viet-family-ves-take-me-to-dragon-bridge",
+          "source": "created-support",
+          "status": "resolved"
+        },
+        {
+          "slot": "place-only",
+          "vietnamese": "Cầu Rồng",
+          "phraseID": "city-danang-place-dragon-bridge",
+          "detailPageID": "viet-family-city-danang-place-dragon-bridge",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "drop-off",
+          "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
+          "phraseID": "ves-drop-near-dragon-bridge",
+          "detailPageID": "viet-family-ves-drop-near-dragon-bridge",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -276,9 +682,30 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; near-here, show-me, and driver rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Đường Nguyễn Văn Linh gần đây không?", "phraseID": "city-danang-near-nguyen-van-linh-street", "detailPageID": "viet-family-city-danang-near-nguyen-van-linh-street", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "show", "vietnamese": "Anh/chị chỉ giúp tôi được không?", "phraseID": "ves-can-you-show-me-politeness", "detailPageID": "viet-family-ves-can-you-show-me-politeness", "source": "created-support", "status": "resolved"},
-        {"slot": "driver", "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.", "phraseID": "ves-to-nguyen-van-linh-street", "detailPageID": "viet-family-ves-to-nguyen-van-linh-street", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Đường Nguyễn Văn Linh gần đây không?",
+          "phraseID": "city-danang-near-nguyen-van-linh-street",
+          "detailPageID": "viet-family-city-danang-near-nguyen-van-linh-street",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "show",
+          "vietnamese": "Chỉ cho tôi được không?",
+          "phraseID": "repair-show-me",
+          "detailPageID": "viet-family-repair-show-me",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "driver",
+          "vietnamese": "Cho tôi đến đường Nguyễn Văn Linh.",
+          "phraseID": "ves-to-nguyen-van-linh-street",
+          "detailPageID": "viet-family-ves-to-nguyen-van-linh-street",
+          "source": "created-support",
+          "status": "resolved"
+        }
       ]
     },
     {
@@ -290,9 +717,30 @@
       "blockerReason": "",
       "recommendedNextAction": "Ready for Jojo approval; relationship greeting and English-help follow-up rows resolve.",
       "visibleRows": [
-        {"slot": "quick-say", "vietnamese": "Dạ, chào anh", "phraseID": "acknowledge-da-chao-anh", "detailPageID": "viet-family-acknowledge-da-chao-anh", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "simple", "vietnamese": "Chào anh", "phraseID": "hello-chao-anh", "detailPageID": "viet-family-hello-chao-anh", "source": "existing-canonical", "status": "resolved"},
-        {"slot": "follow-up", "vietnamese": "Anh nói tiếng Anh không?", "phraseID": "ves-do-you-speak-english-anh", "detailPageID": "viet-family-ves-do-you-speak-english-anh", "source": "created-support", "status": "resolved"}
+        {
+          "slot": "quick-say",
+          "vietnamese": "Dạ, chào anh",
+          "phraseID": "acknowledge-da-chao-anh",
+          "detailPageID": "viet-family-acknowledge-da-chao-anh",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "simple",
+          "vietnamese": "Chào anh",
+          "phraseID": "hello-chao-anh",
+          "detailPageID": "viet-family-hello-chao-anh",
+          "source": "existing-canonical",
+          "status": "resolved"
+        },
+        {
+          "slot": "follow-up",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
+          "phraseID": "repair-english-help",
+          "detailPageID": "viet-family-repair-english-help",
+          "source": "existing-canonical",
+          "status": "resolved"
+        }
       ]
     }
   ]
