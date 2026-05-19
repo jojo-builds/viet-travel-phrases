@@ -193,16 +193,24 @@ struct BrowseCollectionPageView: View {
                 selectedSubcategoryID: selectedSubcategoryID,
                 fallbackImageName: descriptor.mastheadImageName,
                 onSelect: { subcategory in
-                    selectedSubcategoryID = selectedSubcategoryID == subcategory.id ? nil : subcategory.id
+                    selectCategorySubcategory(subcategory, scrollProxy: scrollProxy)
                 }
             )
 
-            BrowseCollectionStarterSection(
-                title: starterTitle,
-                items: starterItems,
-                onOpenDetail: onOpenDetail
-            )
-            .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            if descriptor.subcategories.isEmpty {
+                BrowseCollectionStarterSection(
+                    title: descriptor.starterTitle,
+                    items: descriptor.starterItems,
+                    onOpenDetail: onOpenDetail
+                )
+                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            } else {
+                BrowseCollectionSubcategorySections(
+                    subcategories: descriptor.subcategories,
+                    onOpenDetail: onOpenDetail
+                )
+                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            }
 
             if descriptor.hasMessageSection {
                 BrowseCollectionMessageSection(
@@ -222,13 +230,11 @@ struct BrowseCollectionPageView: View {
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
 
-            if selectedSubcategory == nil {
-                BrowseCollectionExploreSection(
-                    shelves: descriptor.exploreShelves,
-                    onOpenDetail: onOpenDetail,
-                    onOpenCollection: onOpenCollection
-                )
-            }
+            BrowseCollectionExploreSection(
+                shelves: descriptor.exploreShelves,
+                onOpenDetail: onOpenDetail,
+                onOpenCollection: onOpenCollection
+            )
         }
     }
 
@@ -246,7 +252,7 @@ struct BrowseCollectionPageView: View {
                 descriptor: descriptor
             )
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
-            .padding(.bottom, 26)
+            .padding(.bottom, 18)
 
             collectionSections(scrollProxy: scrollProxy)
                 .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
@@ -319,20 +325,6 @@ struct BrowseCollectionPageView: View {
     private static let scrollTopID = "BrowseCollectionTop"
     private static let photoBackdropInitialID = "BrowseCollectionPhotoBackdropInitial"
 
-    private var selectedSubcategory: BrowseCollectionSubcategory? {
-        descriptor.subcategories.first { $0.id == selectedSubcategoryID }
-    }
-
-    private var starterTitle: String {
-        selectedSubcategory.map {
-            $0.countUnit == "item" ? $0.title : "\($0.title) phrases"
-        } ?? descriptor.starterTitle
-    }
-
-    private var starterItems: [BrowseSearchPhraseItem] {
-        selectedSubcategory?.items ?? descriptor.starterItems
-    }
-
     private var usesPhotoBackdropLayout: Bool {
         descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
     }
@@ -384,6 +376,17 @@ struct BrowseCollectionPageView: View {
         }
     }
 
+    private func selectCategorySubcategory(_ subcategory: BrowseCollectionSubcategory, scrollProxy: ScrollViewProxy) {
+        guard !subcategory.items.isEmpty else {
+            return
+        }
+
+        selectedSubcategoryID = subcategory.id
+        withAnimation(.snappy(duration: 0.28)) {
+            scrollProxy.scrollTo(BrowseCategorySubcategoryScrollID.group(subcategory.id), anchor: .top)
+        }
+    }
+
     @MainActor
     private func restoreFocusIfNeeded(_ scrollProxy: ScrollViewProxy) async {
         guard
@@ -416,6 +419,12 @@ private enum BrowseCollectionLayout {
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
+}
+
+private enum BrowseCategorySubcategoryScrollID {
+    static func group(_ id: String) -> String {
+        "BrowseCategorySubcategoryGroup.\(id)"
+    }
 }
 
 private extension BrowseSearchPhraseItem {
@@ -502,6 +511,28 @@ private struct BrowseCollectionSubcategoryRail: View {
     }
 }
 
+private struct BrowseCollectionSubcategorySections: View {
+    let subcategories: [BrowseCollectionSubcategory]
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+            ForEach(subcategories) { subcategory in
+                BrowseCollectionStarterSection(
+                    title: sectionTitle(for: subcategory),
+                    items: subcategory.items,
+                    onOpenDetail: onOpenDetail
+                )
+                .id(BrowseCategorySubcategoryScrollID.group(subcategory.id))
+            }
+        }
+    }
+
+    private func sectionTitle(for subcategory: BrowseCollectionSubcategory) -> String {
+        subcategory.countUnit == "item" ? subcategory.title : "\(subcategory.title) phrases"
+    }
+}
+
 private struct BrowseCollectionSubcategoryCard: View {
     let subcategory: BrowseCollectionSubcategory
     let isSelected: Bool
@@ -509,7 +540,9 @@ private struct BrowseCollectionSubcategoryCard: View {
     let onSelect: () -> Void
 
     private var imageName: String? {
-        subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName ?? fallbackImageName
+        subcategory.imageName
+            ?? subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+            ?? fallbackImageName
     }
 
     var body: some View {

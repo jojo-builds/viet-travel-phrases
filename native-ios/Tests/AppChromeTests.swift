@@ -1412,7 +1412,7 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
-    func testAirportCollectionSubcategoryFiltersExposeSimAndCashLanes() {
+    func testAirportCollectionSubcategoryCardsExposeSimAndCashLanes() {
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
 
         XCTAssertEqual(
@@ -1421,6 +1421,20 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertTrue(airport.subcategories.allSatisfy { !$0.items.isEmpty })
         XCTAssertTrue(airport.subcategories.allSatisfy { $0.phraseCount == $0.items.count })
+        XCTAssertEqual(
+            airport.subcategories.compactMap(\.imageName),
+            [
+                "HeroCityHcmcPlaceTanSonNhatAirport",
+                "HeroCityHanoiPlaceNoiBaiAirport",
+                "HeroCityDanangPlaceCentralBusStation",
+                "HeroCityHcmcPlaceNguyenHueWalkingStreet",
+                "HeroCityHcmcPlaceBenThanhMarket",
+            ]
+        )
+        XCTAssertEqual(Set(airport.subcategories.compactMap(\.imageName)).count, airport.subcategories.count)
+        for imageName in airport.subcategories.compactMap(\.imageName) {
+            XCTAssertNotNil(UIImage(named: imageName), "Missing Airport subcategory image asset: \(imageName)")
+        }
         XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Phone, Internet & Power" })
         XCTAssertTrue(airport.exploreShelves.contains { $0.title == "Payment & numbers" })
         XCTAssertEqual(
@@ -1500,20 +1514,35 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
     }
 
-    func testVisibleCategorySubcategoryFiltersArePopulated() {
+    func testVisibleCategorySubcategorySectionsArePopulated() {
         for route in BrowseSearchDestinations.visibleCategoryCollectionRoutes where route != .category("city-guides") {
             let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: route))
-            XCTAssertFalse(descriptor.subcategories.isEmpty, "\(route.id) should expose traveler filters")
+            XCTAssertFalse(descriptor.subcategories.isEmpty, "\(route.id) should expose traveler sections")
 
             for subcategory in descriptor.subcategories {
-                XCTAssertFalse(subcategory.items.isEmpty, "\(route.id) \(subcategory.title) filter should show phrase rows")
+                XCTAssertFalse(subcategory.items.isEmpty, "\(route.id) \(subcategory.title) section should show phrase rows")
                 XCTAssertGreaterThanOrEqual(
                     subcategory.phraseCount,
                     subcategory.items.count,
-                    "\(route.id) \(subcategory.title) phrase count should cover the visible filter rows"
+                    "\(route.id) \(subcategory.title) phrase count should cover the visible section rows"
                 )
             }
         }
+    }
+
+    func testCategoryHeroOverridesEnablePhotoBackdropForPhrasePages() {
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.supportsListingPage(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: "HeroCategoryAirport"
+            )
+        )
+        XCTAssertFalse(
+            PhrasePhotoBackdropLayout.supportsListingPage(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: "HeroCompactPhraseMasthead"
+            )
+        )
     }
 
     func testDaNangCityDescriptorUsesTravelModeHubInsteadOfPhraseFeed() {
