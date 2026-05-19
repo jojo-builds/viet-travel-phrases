@@ -417,6 +417,8 @@ struct BrowseCollectionPageView: View {
             return
         }
 
+        isPhotoBackdropImmersive = false
+
         try? await Task.sleep(nanoseconds: BrowseCollectionLayout.focusRestoreDelayNanoseconds)
         guard !Task.isCancelled else {
             return
