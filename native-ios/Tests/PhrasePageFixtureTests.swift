@@ -797,7 +797,7 @@ final class PhrasePageFixtureTests: XCTestCase {
         enableSQLiteRuntimeForTesting()
         _ = try VietSQLiteLanguagePackRepository.bundled()
 
-        let pageID = "viet-phrase-city-hcmc-where-post-office"
+        let pageID = "viet-phrase-city-hcmc-where-ben-thanh"
         let sections = ExploreCatalogSection.sections(forPageID: pageID)
 
         XCTAssertEqual(ExploreCatalogSection.browseTitle(forPageID: pageID), "More Ho Chi Minh City phrases")
@@ -805,7 +805,7 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertFalse(sections.contains { $0.category.id == "city-guides" })
         XCTAssertTrue(sections.allSatisfy { section in
             section.items.allSatisfy { item in
-                item.categoryIDs.contains("hcmc") || item.categoryIDs.contains("landmarks-attractions")
+                item.categoryIDs.contains("hcmc") || item.categoryIDs.contains("shopping-markets")
             }
         })
     }
@@ -1379,7 +1379,6 @@ final class PhrasePageFixtureTests: XCTestCase {
             (
                 "no peanuts",
                 [
-                    "viet-phrase-vpe-food-without-khong-dau-phong",
                     "viet-phrase-food-peanut-allergy",
                     "viet-phrase-food-premium-has-peanuts",
                     "viet-phrase-v500-food-drin-does-this-contain-peanuts",
@@ -1388,7 +1387,6 @@ final class PhrasePageFixtureTests: XCTestCase {
             (
                 "does this have peanuts",
                 [
-                    "viet-phrase-vpe-food-has-co-dau-phong-khong",
                     "viet-phrase-food-premium-has-peanuts",
                     "viet-phrase-v500-food-drin-does-this-contain-peanuts",
                 ]
@@ -1423,7 +1421,6 @@ final class PhrasePageFixtureTests: XCTestCase {
                 [
                     "viet-phrase-problems-3",
                     "viet-phrase-repair-slower-polite",
-                    "viet-phrase-v900-unde-repa-could-you-speak-a-little-slower-please",
                 ]
             ),
             (
@@ -1689,8 +1686,9 @@ final class PhrasePageFixtureTests: XCTestCase {
         enableSQLiteRuntimeForTesting()
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let examples: [(pageID: String, tokenText: String, expectedAudioKey: String?)] = [
-            ("viet-family-food-coffee-black", "Cho tôi", "breakdown-authored-cho-toi-18c6fe1018"),
-            ("viet-phrase-hotel-quiet-room", "Cho tôi", nil),
+            ("viet-family-food-coffee-black", "cho", "breakdown-taxi-1-first"),
+            ("viet-family-food-coffee-black", "tôi", "breakdown-v500-heal-phar-i-feel-dizzy-first"),
+            ("viet-phrase-hotel-quiet-room", "cho", nil),
         ]
 
         for example in examples {

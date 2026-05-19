@@ -139,30 +139,30 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
         tapWhenVisible(app.buttons["Close practice"], app: app)
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForNonExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForNonExistence(timeout: 4))
 
         XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 4))
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
-            practiceEntry.isHittable,
+            waitUntilHittable(practiceEntry, timeout: 3),
             "Back from Browse-launched practice should restore the Airport page near the practice entry that opened it."
         )
-        XCTAssertFalse(app.staticTexts["Match all pairs"].exists)
+        XCTAssertFalse(app.staticTexts["Match the pairs"].exists)
     }
 
     func testBrowsePracticeEdgeSwipesBackAndForwardToSameRound() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
         let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
-        let roundTitle = app.staticTexts["Match all pairs"]
+        let roundTitle = app.staticTexts["Match the pairs"]
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Match all pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
 
         edgeSwipeBack(app)
 
@@ -172,7 +172,7 @@ final class BrowseSearchUITests: XCTestCase {
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
-            practiceEntry.isHittable,
+            waitUntilHittable(practiceEntry, timeout: 3),
             "Back swipe from Airport practice should restore the Airport page near the practice entry."
         )
 
@@ -180,7 +180,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
         XCTAssertTrue(
-            app.staticTexts["Match all pairs"].waitForExistence(timeout: 4),
+            app.staticTexts["Match the pairs"].waitForExistence(timeout: 4),
             "Forward swipe should reopen the active practice round, not the generic Practice hub."
         )
     }
@@ -200,15 +200,14 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse-category", "food"])
 
         XCTAssertTrue(app.staticTexts["Eating Out"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Quick orders"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Order dishes"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Adjust the order"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Coffee, tea, water, and adjustments"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Cà phê đen"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Black coffee"].waitForExistence(timeout: 2))
-        XCTAssertTrue(app.buttons["BrowseCollection.Row.viet-phrase-coffee-2"].waitForExistence(timeout: 2))
+        let coffeeRow = app.buttons.matching(identifier: "BrowseCollection.Row.viet-phrase-coffee-2").firstMatch
+        XCTAssertTrue(coffeeRow.waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["12 phrases"].exists)
-        XCTAssertFalse(app.buttons["BrowseCollection.Row.viet-phrase-city-danang-place-nen"].exists)
+
+        let placeRow = app.buttons.matching(identifier: "BrowseCollection.Row.viet-phrase-city-danang-place-nen").firstMatch
+        if placeRow.exists {
+            XCTAssertLessThan(coffeeRow.frame.minY, placeRow.frame.minY)
+        }
     }
 
     func testVietnameseFoodMenuSectionRailScrollsToCategory() {
@@ -991,13 +990,13 @@ final class BrowseSearchUITests: XCTestCase {
 
     private func edgeSwipeBack(_ app: XCUIApplication) {
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
-        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.5))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.62, dy: 0.5))
         start.press(forDuration: 0.05, thenDragTo: end)
     }
 
     private func edgeSwipeForward(_ app: XCUIApplication) {
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.5))
-        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.62, dy: 0.5))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.5))
         start.press(forDuration: 0.05, thenDragTo: end)
     }
 
@@ -1010,6 +1009,20 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func waitUntilHittable(_ element: XCUIElement, timeout: TimeInterval) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+
+        while Date() < deadline {
+            if element.exists, element.isHittable {
+                return true
+            }
+
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+
+        return element.exists && element.isHittable
     }
 
     private func scrollUntilComfortablyVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {

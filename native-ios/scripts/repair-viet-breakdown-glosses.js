@@ -10,14 +10,6 @@ const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "c
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredResourcePath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
-const practiceExpansionRoot = path.join(
-  repoRoot,
-  "content-draft",
-  "viet",
-  "practice-expansion",
-  "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001"
-);
-const practiceManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 
 const exactGlosses = new Map(Object.entries({
   "a": "polite yes / opener",
@@ -1055,18 +1047,11 @@ function collectJSONFiles(dir) {
   return files;
 }
 
-function practiceSourceFiles() {
-  if (!fs.existsSync(practiceManifestPath)) return [];
-  const manifest = JSON.parse(fs.readFileSync(practiceManifestPath, "utf8"));
-  return (manifest.sourceShards ?? []).map((item) => path.join(practiceExpansionRoot, item));
-}
-
 function allSourceFiles() {
   return [
     ...collectJSONFiles(tierOnePagesRoot),
     ...collectJSONFiles(catalogPromotedPagesRoot),
     cityLibraryPath,
-    ...practiceSourceFiles(),
     authoredResourcePath,
   ].filter((filePath) => fs.existsSync(filePath));
 }

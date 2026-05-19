@@ -96,14 +96,14 @@
           "audioKey": "problems-4"
         },
         {
-          "id": "help-1",
-          "vietnamese": "Anh/chị giúp tôi với",
-          "english": "Can you help me?",
-          "pronunciation": "anh chee zoop toy voy",
+          "id": "help-need-help-direct",
+          "vietnamese": "Giúp tôi với",
+          "english": "I need help",
+          "pronunciation": "zoop toy voy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-help-1",
-          "audioKey": "help-1"
+          "detailPageID": "viet-family-help-need-help",
+          "audioKey": "help-need-help-direct"
         }
       ]
     },

@@ -1,501 +1,483 @@
 priority,pageID,title,englishTitle,intent,sectionID,kind,audioKey,text
-p0,viet-family-city-hanoi-place-water-puppet-theatre,Nhà hát Múa rối Thăng Long,Thang Long Water Puppet Theatre,landmark_micro_place,hero,hero,audio-authored-nha-hat-mua-roi-thang-long-bee079cc3d,Nhà hát Múa rối Thăng Long
-p0,viet-family-city-hue-place-walking-street,Phố đi bộ Huế,Hue Walking Street,street,hero,hero,audio-authored-pho-di-bo-hue-a8bcc9ad7d,Phố đi bộ Huế
-p1,viet-family-city-danang-place-ba-na-hills,Bà Nà Hills,Ba Na Hills,macro_attraction_journey,getting-there,phrase,audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0,Cho tôi đi Bà Nà Hills.
-p1,viet-family-city-danang-place-ba-na-hills,Bà Nà Hills,Ba Na Hills,macro_attraction_journey,tickets,phrase,audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b,"Dạ, cho tôi hai vé lên Bà Nà Hills."
+p0,viet-family-city-danang-place-3d-art-in-paradise,Bảo tàng 3D Art in Paradise Đà Nẵng,3D Art in Paradise Da Nang,landmark_micro_place,hero,hero,audio-authored-bao-tang-3d-art-in-paradise-da-nang-876cffcc8a,Bảo tàng 3D Art in Paradise Đà Nẵng
+p0,viet-family-city-danang-place-43-factory,43 Factory Coffee Roaster,43 Factory Coffee Roaster,restaurant,hero,hero,audio-authored-43-factory-coffee-roaster-4247b0ac7c,43 Factory Coffee Roaster
+p0,viet-family-city-danang-place-an-thuong-street-area,Khu An Thượng,An Thuong Area,landmark_micro_place,hero,hero,audio-authored-khu-an-thuong-8c285b8ac8,Khu An Thượng
+p0,viet-family-city-danang-place-ba-na-cable-car,Cáp treo Bà Nà,Ba Na cable car,landmark_micro_place,hero,hero,audio-authored-cap-treo-ba-na-d3523e4c50,Cáp treo Bà Nà
+p0,viet-family-city-danang-place-bac-my-an-market,Chợ Bắc Mỹ An,Bac My An Market,landmark_micro_place,hero,hero,audio-authored-cho-bac-my-an-9fa3d7ba23,Chợ Bắc Mỹ An
+p0,viet-family-city-danang-place-banh-mi,Bánh mì ở Đà Nẵng,Banh mi,dish,hero,hero,audio-authored-banh-mi-o-da-nang-1d20249b49,Bánh mì ở Đà Nẵng
+p0,viet-family-city-danang-place-banh-trang-cuon-thit-heo,Bánh tráng cuốn thịt heo ở Đà Nẵng,Pork rice-paper rolls,dish,hero,hero,audio-authored-banh-trang-cuon-thit-heo-o-da-nang-455a3cc309,Bánh tráng cuốn thịt heo ở Đà Nẵng
+p0,viet-family-city-danang-place-banh-xeo,Bánh xèo ở Đà Nẵng,Banh xeo,dish,hero,hero,audio-authored-banh-xeo-o-da-nang-2735c00c8e,Bánh xèo ở Đà Nẵng
+p0,viet-family-city-danang-place-banh-xeo-ba-duong,Bánh xèo Bà Dưỡng,Banh Xeo Ba Duong,restaurant,hero,hero,audio-authored-banh-xeo-ba-duong-7d597481a3,Bánh xèo Bà Dưỡng
+p0,viet-family-city-danang-place-be-man,Hải sản Bé Mặn,Be Man Seafood,restaurant,hero,hero,audio-authored-hai-san-be-man-b0b8dce551,Hải sản Bé Mặn
+p0,viet-family-city-danang-place-bep-cuon,Bếp Cuốn Đà Nẵng,Bep Cuon Da Nang,restaurant,hero,hero,audio-authored-bep-cuon-da-nang-b61b13e0b1,Bếp Cuốn Đà Nẵng
+p0,viet-family-city-danang-place-boulevard-gelato-coffee,Boulevard Gelato & Coffee,Boulevard Gelato & Coffee,restaurant,hero,hero,audio-authored-boulevard-gelato-coffee-8e47e93407,Boulevard Gelato & Coffee
+p0,viet-family-city-danang-place-bun-cha-ca,Bún chả cá ở Đà Nẵng,Fish-cake noodle soup,dish,hero,hero,audio-authored-bun-cha-ca-o-da-nang-705aba09b0,Bún chả cá ở Đà Nẵng
+p0,viet-family-city-danang-place-bun-cha-ca-hon,Bún Chả Cá Hờn,Bun Cha Ca Hon,restaurant,hero,hero,audio-authored-bun-cha-ca-hon-38a7c8337d,Bún Chả Cá Hờn
+p0,viet-family-city-danang-place-central-bus-station,Bến xe Trung tâm Đà Nẵng,Da Nang Central Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-trung-tam-da-nang-463e92a995,Bến xe Trung tâm Đà Nẵng
+p0,viet-family-city-danang-place-co-chu-nho,Cô Chủ Nhỏ,Co Chu Nho,restaurant,hero,hero,audio-authored-co-chu-nho-6c047e6fd2,Cô Chủ Nhỏ
+p0,viet-family-city-danang-place-cong-caphe-bach-dang,Cộng Cà Phê Bạch Đằng,Cong Caphe Bach Dang,restaurant,hero,hero,audio-authored-cong-ca-phe-bach-dang-2c652cc1dc,Cộng Cà Phê Bạch Đằng
+p0,viet-family-city-danang-place-domestic-terminal,Nhà ga quốc nội Đà Nẵng,Da Nang Domestic Terminal,landmark_micro_place,hero,hero,audio-authored-nha-ga-quoc-noi-da-nang-40e993a6ef,Nhà ga quốc nội Đà Nẵng
+p0,viet-family-city-danang-place-dong-dinh-museum,Bảo tàng Đồng Đình,Dong Dinh Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-dong-dinh-cf5f1ba634,Bảo tàng Đồng Đình
+p0,viet-family-city-danang-place-dragon-bridge-fire-show,Màn phun lửa Cầu Rồng,Dragon Bridge fire show,landmark_micro_place,hero,hero,audio-authored-man-phun-lua-cau-rong-ef0acea405,Màn phun lửa Cầu Rồng
+p0,viet-family-city-danang-place-dragon-carp-statue,Tượng Cá Chép Hóa Rồng,Dragon Carp Statue,landmark_micro_place,hero,hero,audio-authored-tuong-ca-chep-hoa-rong-62ee5b668d,Tượng Cá Chép Hóa Rồng
+p0,viet-family-city-danang-place-fatfish,Fatfish,Fatfish Restaurant & Lounge Bar,restaurant,hero,hero,audio-authored-fatfish-77bacaf1d7,Fatfish
+p0,viet-family-city-danang-place-fine-arts-museum,Bảo tàng Mỹ thuật Đà Nẵng,Da Nang Fine Arts Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-my-thuat-da-nang-4bed4b335b,Bảo tàng Mỹ thuật Đà Nẵng
+p0,viet-family-city-danang-place-hai-chau-district,Quận Hải Châu,Hai Chau District,landmark_micro_place,hero,hero,audio-authored-quan-hai-chau-e9dfcd0d86,Quận Hải Châu
+p0,viet-family-city-danang-place-hai-san,Hải sản ở Đà Nẵng,Seafood,dish,hero,hero,audio-authored-hai-san-o-da-nang-62e0fef87b,Hải sản ở Đà Nẵng
+p0,viet-family-city-danang-place-hai-van-pass,Đèo Hải Vân,Hai Van Pass,landmark_micro_place,hero,hero,audio-authored-deo-hai-van-906d42d44f,Đèo Hải Vân
+p0,viet-family-city-danang-place-hai-van-pass-ride,Chuyến đi đèo Hải Vân,Hai Van Pass ride,landmark_micro_place,hero,hero,audio-authored-chuyen-di-deo-hai-van-e9f100d753,Chuyến đi đèo Hải Vân
+p0,viet-family-city-danang-place-han-river-cruise,Du thuyền sông Hàn,Han River cruise,landmark_micro_place,hero,hero,audio-authored-du-thuyen-song-han-a698e03c72,Du thuyền sông Hàn
+p0,viet-family-city-danang-place-hoa-phu-thanh,Khu du lịch Hòa Phú Thành,Hoa Phu Thanh,landmark_micro_place,hero,hero,audio-authored-khu-du-lich-hoa-phu-thanh-9b26365673,Khu du lịch Hòa Phú Thành
+p0,viet-family-city-danang-place-hoa-trung-lake,Hồ Hòa Trung,Hoa Trung Lake,landmark_micro_place,hero,hero,audio-authored-ho-hoa-trung-7b6b9f09bc,Hồ Hòa Trung
+p0,viet-family-city-danang-place-international-terminal,Nhà ga quốc tế Đà Nẵng,Da Nang International Terminal,landmark_micro_place,hero,hero,audio-authored-nha-ga-quoc-te-da-nang-2231356082,Nhà ga quốc tế Đà Nẵng
+p0,viet-family-city-danang-place-la-maison-1888,La Maison 1888,La Maison 1888,restaurant,hero,hero,audio-authored-la-maison-1888-e109142809,La Maison 1888
+p0,viet-family-city-danang-place-lady-buddha,Tượng Phật Bà,Lady Buddha,landmark_micro_place,hero,hero,audio-authored-tuong-phat-ba-6f1d35528b,Tượng Phật Bà
+p0,viet-family-city-danang-place-le-duan-night-market,Chợ đêm Lê Duẩn,Le Duan Night Market,landmark_micro_place,hero,hero,audio-authored-cho-dem-le-duan-eaf5cb9e06,Chợ đêm Lê Duẩn
+p0,viet-family-city-danang-place-long-coffee,Cà phê Long,Long Coffee,restaurant,hero,hero,audio-authored-ca-phe-long-30c899cf1d,Cà phê Long
+p0,viet-family-city-danang-place-lotte-mart,Lotte Mart Đà Nẵng,Lotte Mart Da Nang,landmark_micro_place,hero,hero,audio-authored-lotte-mart-da-nang-eb7f601cf1,Lotte Mart Đà Nẵng
+p0,viet-family-city-danang-place-madame-lan,Madame Lân,Madame Lan,restaurant,hero,hero,audio-authored-madame-lan-3930d35e6e,Madame Lân
+p0,viet-family-city-danang-place-marble-mountain-cave-walk,Hang động Ngũ Hành Sơn,Marble Mountain cave walk,landmark_micro_place,hero,hero,audio-authored-hang-dong-ngu-hanh-son-58d9755154,Hang động Ngũ Hành Sơn
+p0,viet-family-city-danang-place-mi-quang,Mì Quảng ở Đà Nẵng,Mi Quang,dish,hero,hero,audio-authored-mi-quang-o-da-nang-188b3dbe53,Mì Quảng ở Đà Nẵng
+p0,viet-family-city-danang-place-mi-quang-1a,Mì Quảng 1A,Mi Quang 1A,restaurant,hero,hero,audio-authored-mi-quang-1a-8af2ad413c,Mì Quảng 1A
+p0,viet-family-city-danang-place-museum,Bảo tàng Đà Nẵng,Da Nang Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-da-nang-eaa89bfef5,Bảo tàng Đà Nẵng
+p0,viet-family-city-danang-place-museum-branch-2,Bảo tàng Đà Nẵng - Cơ sở 2,Da Nang Museum Branch 2,landmark_micro_place,hero,hero,audio-authored-bao-tang-da-nang-co-so-2-951c024450,Bảo tàng Đà Nẵng - Cơ sở 2
+p0,viet-family-city-danang-place-my-an,Mỹ An,My An,landmark_micro_place,hero,hero,audio-authored-my-an-437ea4d5bf,Mỹ An
+p0,viet-family-city-danang-place-my-an-beach,Biển Mỹ An,My An Beach,landmark_micro_place,hero,hero,audio-authored-bien-my-an-a41f98c3ff,Biển Mỹ An
+p0,viet-family-city-danang-place-my-quang-ba-mua,Mỳ Quảng Bà Mua,My Quang Ba Mua,restaurant,hero,hero,audio-authored-my-quang-ba-mua-8f26fdbf01,Mỳ Quảng Bà Mua
+p0,viet-family-city-danang-place-my-quang-dung,Mỳ Quảng Dung,My Quang Dung,restaurant,hero,hero,audio-authored-my-quang-dung-b91de2295d,Mỳ Quảng Dung
+p0,viet-family-city-danang-place-nam-danh-seafood,Hải sản Năm Đảnh,Nam Danh Seafood,restaurant,hero,hero,audio-authored-hai-san-nam-danh-dbc1a5691a,Hải sản Năm Đảnh
+p0,viet-family-city-danang-place-nam-house,Nam House Cafe,Nam House Cafe,restaurant,hero,hero,audio-authored-nam-house-cafe-e65ac9bcaf,Nam House Cafe
+p0,viet-family-city-danang-place-nam-o-fish-sauce-village,Làng nghề nước mắm Nam Ô,Nam O fish sauce village,landmark_micro_place,hero,hero,audio-authored-lang-nghe-nuoc-mam-nam-o-23793e30b2,Làng nghề nước mắm Nam Ô
+p0,viet-family-city-danang-place-nem-lui,Nem lụi ở Đà Nẵng,Lemongrass pork skewers,dish,hero,hero,audio-authored-nem-lui-o-da-nang-325247474b,Nem lụi ở Đà Nẵng
+p0,viet-family-city-danang-place-ngu-hanh-son-district,Quận Ngũ Hành Sơn,Ngu Hanh Son District,landmark_micro_place,hero,hero,audio-authored-quan-ngu-hanh-son-d55385b987,Quận Ngũ Hành Sơn
+p0,viet-family-city-danang-place-nguyen-hien-dinh-tuong-theatre,Nhà hát Tuồng Nguyễn Hiển Dĩnh,Nguyen Hien Dinh Tuong Theatre,landmark_micro_place,hero,hero,audio-authored-nha-hat-tuong-nguyen-hien-dinh-6337af832b,Nhà hát Tuồng Nguyễn Hiển Dĩnh
+p0,viet-family-city-danang-place-oc-hut,Ốc hút ở Đà Nẵng,Stirred snails,dish,hero,hero,audio-authored-oc-hut-o-da-nang-ae29f3d644,Ốc hút ở Đà Nẵng
+p0,viet-family-city-danang-place-pham-van-dong-beach,Biển Phạm Văn Đồng,Pham Van Dong Beach,landmark_micro_place,hero,hero,audio-authored-bien-pham-van-dong-d234057fbf,Biển Phạm Văn Đồng
+p0,viet-family-city-danang-place-phap-lam-pagoda,Chùa Pháp Lâm,Phap Lam Pagoda,landmark_micro_place,hero,hero,audio-authored-chua-phap-lam-6f78b1e733,Chùa Pháp Lâm
+p0,viet-family-city-danang-place-phuoc-my,Phước Mỹ,Phuoc My,landmark_micro_place,hero,hero,audio-authored-phuoc-my-6e4ade9d9e,Phước Mỹ
+p0,viet-family-city-danang-place-reply-1988,Reply 1988 Cafe,Reply 1988 Cafe,restaurant,hero,hero,audio-authored-reply-1988-cafe-0c64588b36,Reply 1988 Cafe
+p0,viet-family-city-danang-place-six-on-six,Six On Six Cafe,Six On Six Cafe,restaurant,hero,hero,audio-authored-six-on-six-cafe-0d62e89fe4,Six On Six Cafe
+p0,viet-family-city-danang-place-son-tra-district,Quận Sơn Trà,Son Tra District,landmark_micro_place,hero,hero,audio-authored-quan-son-tra-7a12e0ce3c,Quận Sơn Trà
+p0,viet-family-city-danang-place-son-tra-wildlife-drive,Chuyến đi Sơn Trà,Son Tra wildlife drive,landmark_micro_place,hero,hero,audio-authored-chuyen-di-son-tra-d5f8699ecd,Chuyến đi Sơn Trà
+p0,viet-family-city-danang-place-thanh-binh-beach,Biển Thanh Bình,Thanh Binh Beach,landmark_micro_place,hero,hero,audio-authored-bien-thanh-binh-2022104318,Biển Thanh Bình
+p0,viet-family-city-danang-place-the-temptation,The Temptation,The Temptation,restaurant,hero,hero,audio-authored-the-temptation-bbabc3ab34,The Temptation
+p0,viet-family-city-danang-place-thuan-phuoc-bridge,Cầu Thuận Phước,Thuan Phuoc Bridge,landmark_micro_place,hero,hero,audio-authored-cau-thuan-phuoc-40ea6cc699,Cầu Thuận Phước
+p0,viet-family-city-danang-place-tran-hung-dao-street,Đường Trần Hưng Đạo,Tran Hung Dao Street,street,hero,hero,audio-authored-duong-tran-hung-dao-e13d01ef78,Đường Trần Hưng Đạo
+p0,viet-family-city-danang-place-trung-vuong-theatre,Nhà hát Trưng Vương,Trung Vuong Theatre,landmark_micro_place,hero,hero,audio-authored-nha-hat-trung-vuong-cc201fd184,Nhà hát Trưng Vương
+p0,viet-family-city-danang-place-vincom-plaza,Vincom Plaza Đà Nẵng,Vincom Plaza Da Nang,landmark_micro_place,hero,hero,audio-authored-vincom-plaza-da-nang-7648164f7d,Vincom Plaza Đà Nẵng
+p0,viet-family-city-danang-place-wonderlust,Wonderlust,Wonderlust,restaurant,hero,hero,audio-authored-wonderlust-7637acac6b,Wonderlust
+p0,viet-family-city-danang-place-yen-retreat,Yên Retreat,Yen Retreat,landmark_micro_place,hero,hero,audio-authored-yen-retreat-78096a7742,Yên Retreat
+p0,viet-family-city-hanoi-place-ba-dinh-district,Quận Ba Đình,Ba Dinh District,landmark_micro_place,hero,hero,audio-authored-quan-ba-dinh-3ed7a434d7,Quận Ba Đình
+p0,viet-family-city-hanoi-place-banh-cuon,Bánh cuốn ở Hà Nội,Steamed rice rolls,dish,hero,hero,audio-authored-banh-cuon-o-ha-noi-378f1ae66c,Bánh cuốn ở Hà Nội
+p0,viet-family-city-hanoi-place-bay-mau-lake,Hồ Bảy Mẫu,Bay Mau Lake,landmark_micro_place,hero,hero,audio-authored-ho-bay-mau-9dc538e3d5,Hồ Bảy Mẫu
+p0,viet-family-city-hanoi-place-botanical-garden,Vườn Bách Thảo Hà Nội,Hanoi Botanical Garden,landmark_micro_place,hero,hero,audio-authored-vuon-bach-thao-ha-noi-a5342f444f,Vườn Bách Thảo Hà Nội
+p0,viet-family-city-hanoi-place-bun-cha,Bún chả ở Hà Nội,Bun cha,dish,hero,hero,audio-authored-bun-cha-o-ha-noi-66cb5aa2a2,Bún chả ở Hà Nội
+p0,viet-family-city-hanoi-place-bun-cha-ta,Bún Chả Ta,Bun Cha Ta,restaurant,hero,hero,audio-authored-bun-cha-ta-ab2e0bb937,Bún Chả Ta
+p0,viet-family-city-hanoi-place-bun-thang,Bún thang ở Hà Nội,Bun thang,dish,hero,hero,audio-authored-bun-thang-o-ha-noi-a2e5803e77,Bún thang ở Hà Nội
+p0,viet-family-city-hanoi-place-cha-ca,Chả cá ở Hà Nội,Turmeric dill fish,dish,hero,hero,audio-authored-cha-ca-o-ha-noi-8140292a96,Chả cá ở Hà Nội
+p0,viet-family-city-hanoi-place-cho-buoi-market,Chợ Bưởi,Buoi Market,landmark_micro_place,hero,hero,audio-authored-cho-buoi-e95f248da9,Chợ Bưởi
+p0,viet-family-city-hanoi-place-coffee-hop,Đi cà phê Hà Nội,Hanoi coffee hop,landmark_micro_place,hero,hero,audio-authored-di-ca-phe-ha-noi-47d46ef059,Đi cà phê Hà Nội
+p0,viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong,Cộng Cà Phê,Cong Ca Phe,restaurant,hero,hero,audio-authored-cong-ca-phe-895252c279,Cộng Cà Phê
+p0,viet-family-city-hanoi-place-cyclo-old-quarter,Xích lô phố cổ,Old Quarter cyclo ride,landmark_micro_place,hero,hero,audio-authored-xich-lo-pho-co-1bb46ac90a,Xích lô phố cổ
+p0,viet-family-city-hanoi-place-dinh-cafe,Cà phê Đinh,Dinh Cafe,restaurant,hero,hero,audio-authored-ca-phe-dinh-bc73975585,Cà phê Đinh
+p0,viet-family-city-hanoi-place-dong-da,Đống Đa,Dong Da,landmark_micro_place,hero,hero,audio-authored-dong-da-dd67e27775,Đống Đa
+p0,viet-family-city-hanoi-place-french-quarter,Khu phố Pháp,French Quarter,landmark_micro_place,hero,hero,audio-authored-khu-pho-phap-51e3d23d4d,Khu phố Pháp
+p0,viet-family-city-hanoi-place-french-quarter-walk,Đi bộ khu phố Pháp,French Quarter walk,landmark_micro_place,hero,hero,audio-authored-di-bo-khu-pho-phap-7190c0d7f4,Đi bộ khu phố Pháp
+p0,viet-family-city-hanoi-place-gia,Gia,Gia,restaurant,hero,hero,audio-authored-gia-3592ea0599,Gia
+p0,viet-family-city-hanoi-place-gia-lam-station,Ga Gia Lâm,Gia Lam Railway Station,landmark_micro_place,hero,hero,audio-authored-ga-gia-lam-d7fb1b3c93,Ga Gia Lâm
+p0,viet-family-city-hanoi-place-giap-bat-bus-station,Bến xe Giáp Bát,Giap Bat Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-giap-bat-66d0a75a58,Bến xe Giáp Bát
+p0,viet-family-city-hanoi-place-hang-da-market,Chợ Hàng Da,Hang Da Market,landmark_micro_place,hero,hero,audio-authored-cho-hang-da-d60aebbfd3,Chợ Hàng Da
+p0,viet-family-city-hanoi-place-hanoi-flag-tower,Cột cờ Hà Nội,Hanoi Flag Tower,landmark_micro_place,hero,hero,audio-authored-cot-co-ha-noi-a87a460e4d,Cột cờ Hà Nội
+p0,viet-family-city-hanoi-place-hanoi-railway-station,Ga Hà Nội,Hanoi Railway Station,landmark_micro_place,hero,hero,audio-authored-ga-ha-noi-a11702cd37,Ga Hà Nội
+p0,viet-family-city-hanoi-place-hibana-by-koki,Hibana by Koki,Hibana by Koki,restaurant,hero,hero,audio-authored-hibana-by-koki-68a5fc457c,Hibana by Koki
+p0,viet-family-city-hanoi-place-ho-chi-minh-museum,Bảo tàng Hồ Chí Minh,Ho Chi Minh Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-ho-chi-minh-7d71b9b494,Bảo tàng Hồ Chí Minh
+p0,viet-family-city-hanoi-place-hom-market,Chợ Hôm,Hom Market,landmark_micro_place,hero,hero,audio-authored-cho-hom-f8cbd8bb33,Chợ Hôm
+p0,viet-family-city-hanoi-place-lam-cafe,Cà phê Lâm,Lam Cafe,restaurant,hero,hero,audio-authored-ca-phe-lam-dfb3dc8726,Cà phê Lâm
+p0,viet-family-city-hanoi-place-lamai-garden,Lamai Garden,Lamai Garden,restaurant,hero,hero,audio-authored-lamai-garden-2ce211bf78,Lamai Garden
+p0,viet-family-city-hanoi-place-lenin-park,Công viên Lê Nin,Lenin Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-le-nin-6910d92d14,Công viên Lê Nin
+p0,viet-family-city-hanoi-place-literature-museum,Bảo tàng Văn học Việt Nam,Vietnam Literature Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-van-hoc-viet-nam-29744d12f4,Bảo tàng Văn học Việt Nam
+p0,viet-family-city-hanoi-place-loading-t-cafe,Loading T Cafe,Loading T Cafe,restaurant,hero,hero,audio-authored-loading-t-cafe-91fb1a5cab,Loading T Cafe
+p0,viet-family-city-hanoi-place-manzi-art-space,Manzi,Manzi Art Space,landmark_micro_place,hero,hero,audio-authored-manzi-118b6d6977,Manzi
+p0,viet-family-city-hanoi-place-mien-luon,Miến lươn ở Hà Nội,Eel glass noodles,dish,hero,hero,audio-authored-mien-luon-o-ha-noi-b6cedbb285,Miến lươn ở Hà Nội
+p0,viet-family-city-hanoi-place-mien-luon-chan-cam,Miến lươn Chân Cầm,Mien Luon Chan Cam,restaurant,hero,hero,audio-authored-mien-luon-chan-cam-0f0cc906ac,Miến lươn Chân Cầm
+p0,viet-family-city-hanoi-place-my-dinh-bus-station,Bến xe Mỹ Đình,My Dinh Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-my-dinh-495c7e0cea,Bến xe Mỹ Đình
+p0,viet-family-city-hanoi-place-nang-cafe,Cà phê Năng,Nang Cafe,restaurant,hero,hero,audio-authored-ca-phe-nang-82e38b746b,Cà phê Năng
+p0,viet-family-city-hanoi-place-national-museum-history,Bảo tàng Lịch sử Quốc gia,Vietnam National Museum of History,landmark_micro_place,hero,hero,audio-authored-bao-tang-lich-su-quoc-gia-d96ec5434b,Bảo tàng Lịch sử Quốc gia
+p0,viet-family-city-hanoi-place-nem-cua-be,Nem cua bể ở Hà Nội,Crab spring rolls,dish,hero,hero,audio-authored-nem-cua-be-o-ha-noi-6048dce9ae,Nem cua bể ở Hà Nội
+p0,viet-family-city-hanoi-place-ngoc-son-temple,Đền Ngọc Sơn,Ngoc Son Temple,landmark_micro_place,hero,hero,audio-authored-den-ngoc-son-6070b099c4,Đền Ngọc Sơn
+p0,viet-family-city-hanoi-place-nguyen-huu-huan-street,Phố Nguyễn Hữu Huân,Nguyen Huu Huan Street,street,hero,hero,audio-authored-pho-nguyen-huu-huan-d56193a748,Phố Nguyễn Hữu Huân
+p0,viet-family-city-hanoi-place-night-market-walk,Đi chợ đêm phố cổ,Old Quarter night market walk,landmark_micro_place,hero,hero,audio-authored-di-cho-dem-pho-co-0bdc13573f,Đi chợ đêm phố cổ
+p0,viet-family-city-hanoi-place-nuoc-ngam-bus-station,Bến xe Nước Ngầm,Nuoc Ngam Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-nuoc-ngam-fc33c31e56,Bến xe Nước Ngầm
+p0,viet-family-city-hanoi-place-old-quarter-walking-tour,Tuyến đi bộ Phố cổ,Old Quarter walking route,landmark_micro_place,hero,hero,audio-authored-tuyen-di-bo-pho-co-aa9ed519ba,Tuyến đi bộ Phố cổ
+p0,viet-family-city-hanoi-place-one-pillar-pagoda,Chùa Một Cột,One Pillar Pagoda,landmark_micro_place,hero,hero,audio-authored-chua-mot-cot-d841a22f60,Chùa Một Cột
+p0,viet-family-city-hanoi-place-pho-bo,Phở bò ở Hà Nội,Beef pho,dish,hero,hero,audio-authored-pho-bo-o-ha-noi-62f37b66d5,Phở bò ở Hà Nội
+p0,viet-family-city-hanoi-place-pho-bo-lam,Phở Bò Lâm,Pho Bo Lam,restaurant,hero,hero,audio-authored-pho-bo-lam-71b163df96,Phở Bò Lâm
+p0,viet-family-city-hanoi-place-pho-ga,Phở gà ở Hà Nội,Chicken pho,dish,hero,hero,audio-authored-pho-ga-o-ha-noi-0e185d8411,Phở gà ở Hà Nội
+p0,viet-family-city-hanoi-place-pho-gia-truyen,Phở Gia Truyền,Pho Gia Truyen,restaurant,hero,hero,audio-authored-pho-gia-truyen-7cae7913c2,Phở Gia Truyền
+p0,viet-family-city-hanoi-place-quang-ba-flower-market,Chợ hoa Quảng Bá,Quang Ba Flower Market,landmark_micro_place,hero,hero,audio-authored-cho-hoa-quang-ba-6678a34472,Chợ hoa Quảng Bá
+p0,viet-family-city-hanoi-place-red-river,Sông Hồng,Red River,landmark_micro_place,hero,hero,audio-authored-song-hong-4bb7c94d1e,Sông Hồng
+p0,viet-family-city-hanoi-place-street-food-walk,Đi bộ ăn vặt Hà Nội,Hanoi street-food walk,landmark_micro_place,hero,hero,audio-authored-di-bo-an-vat-ha-noi-8ff5e76134,Đi bộ ăn vặt Hà Nội
+p0,viet-family-city-hanoi-place-the-note-coffee,The Note Coffee,The Note Coffee,restaurant,hero,hero,audio-authored-the-note-coffee-3b7fa9e7fa,The Note Coffee
+p0,viet-family-city-hanoi-place-thong-nhat-park,Công viên Thống Nhất,Thong Nhat Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-thong-nhat-10832406d7,Công viên Thống Nhất
+p0,viet-family-city-hanoi-place-trang-tien-plaza,Tràng Tiền Plaza,Trang Tien Plaza,landmark_micro_place,hero,hero,audio-authored-trang-tien-plaza-abcdb2846e,Tràng Tiền Plaza
+p0,viet-family-city-hanoi-place-trang-tien-street,Phố Tràng Tiền,Trang Tien Street,street,hero,hero,audio-authored-pho-trang-tien-d3acb6b03c,Phố Tràng Tiền
+p0,viet-family-city-hanoi-place-trieu-viet-vuong-coffee-street,Phố cà phê Triệu Việt Vương,Trieu Viet Vuong Coffee Street,street,hero,hero,audio-authored-pho-ca-phe-trieu-viet-vuong-85fc3c798e,Phố cà phê Triệu Việt Vương
+p0,viet-family-city-hanoi-place-turtle-tower,Tháp Rùa,Turtle Tower,landmark_micro_place,hero,hero,audio-authored-thap-rua-4d7d98dc57,Tháp Rùa
+p0,viet-family-city-hanoi-place-udam,Ưu Đàm,Uu Dam,restaurant,hero,hero,audio-authored-uu-dam-a262dbb9b3,Ưu Đàm
+p0,viet-family-city-hanoi-place-vietnam-art-gallery,Vietnam Art Gallery,Vietnam Art Gallery,landmark_micro_place,hero,hero,audio-authored-vietnam-art-gallery-8e2b081508,Vietnam Art Gallery
+p0,viet-family-city-hanoi-place-vietnam-circus,Rạp Xiếc Trung ương,Vietnam Central Circus,landmark_micro_place,hero,hero,audio-authored-rap-xiec-trung-uong-81994aa3ad,Rạp Xiếc Trung ương
+p0,viet-family-city-hanoi-place-vietnam-fine-arts-museum,Bảo tàng Mỹ thuật Việt Nam,Vietnam Fine Arts Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-my-thuat-viet-nam-169ff31d43,Bảo tàng Mỹ thuật Việt Nam
+p0,viet-family-city-hanoi-place-vietnam-military-history-museum,Bảo tàng Lịch sử Quân sự Việt Nam,Vietnam Military History Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-lich-su-quan-su-viet-nam-3f2035de01,Bảo tàng Lịch sử Quân sự Việt Nam
+p0,viet-family-city-hanoi-place-vietnam-national-tuong-theatre,Nhà hát Tuồng Việt Nam,Vietnam National Tuong Theatre,landmark_micro_place,hero,hero,audio-authored-nha-hat-tuong-viet-nam-fa1c45bd3b,Nhà hát Tuồng Việt Nam
+p0,viet-family-city-hanoi-place-weekend-night-market,Chợ đêm phố cổ Hà Nội,Hanoi Weekend Night Market,landmark_micro_place,hero,hero,audio-authored-cho-dem-pho-co-ha-noi-30a6c46265,Chợ đêm phố cổ Hà Nội
+p0,viet-family-city-hanoi-place-west-lake-loop,Vòng Hồ Tây,West Lake loop,landmark_micro_place,hero,hero,audio-authored-vong-ho-tay-e7508384b6,Vòng Hồ Tây
+p0,viet-family-city-hanoi-place-womens-museum,Bảo tàng Phụ nữ Việt Nam,Vietnamese Women's Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-phu-nu-viet-nam-d7c2fc5a1f,Bảo tàng Phụ nữ Việt Nam
+p0,viet-family-city-hanoi-place-xoi-xeo,Xôi xéo ở Hà Nội,Sticky rice with mung bean,dish,hero,hero,audio-authored-xoi-xeo-o-ha-noi-04e158b92d,Xôi xéo ở Hà Nội
+p0,viet-family-city-hanoi-place-yen-so-park,Công viên Yên Sở,Yen So Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-yen-so-db67277cbf,Công viên Yên Sở
+p0,viet-family-city-hcmc-place-42-nguyen-hue-apartment,Chung cư 42 Nguyễn Huệ,42 Nguyen Hue apartment building,restaurant,hero,hero,audio-authored-chung-cu-42-nguyen-hue-360354e46d,Chung cư 42 Nguyễn Huệ
+p0,viet-family-city-hcmc-place-akuna,Akuna,Akuna,restaurant,hero,hero,audio-authored-akuna-f0751e1ac8,Akuna
+p0,viet-family-city-hcmc-place-an-dong-market,Chợ An Đông,An Dong Market,landmark_micro_place,hero,hero,audio-authored-cho-an-dong-28e56c0db8,Chợ An Đông
+p0,viet-family-city-hcmc-place-ao-dai-museum,Bảo tàng Áo Dài,Ao Dai Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-ao-dai-759595cf89,Bảo tàng Áo Dài
+p0,viet-family-city-hcmc-place-bach-dang-waterbus-station,Bến tàu thủy Bạch Đằng,Bach Dang Waterbus Station,landmark_micro_place,hero,hero,audio-authored-ben-tau-thuy-bach-dang-7d66283361,Bến tàu thủy Bạch Đằng
+p0,viet-family-city-hcmc-place-banh-mi,Bánh mì ở Thành phố Hồ Chí Minh,Banh mi,dish,hero,hero,audio-authored-banh-mi-o-thanh-pho-ho-chi-minh-bef8ba92a6,Bánh mì ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-banh-mi-huynh-hoa,Bánh mì Huỳnh Hoa,Banh Mi Huynh Hoa,restaurant,hero,hero,audio-authored-banh-mi-huynh-hoa-f18e062918,Bánh mì Huỳnh Hoa
+p0,viet-family-city-hcmc-place-banh-xeo,Bánh xèo ở Thành phố Hồ Chí Minh,Southern sizzling pancake,dish,hero,hero,audio-authored-banh-xeo-o-thanh-pho-ho-chi-minh-766c86fdfb,Bánh xèo ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-banh-xeo-46a,Bánh xèo 46A,Banh Xeo 46A,restaurant,hero,hero,audio-authored-banh-xeo-46a-022ae05492,Bánh xèo 46A
+p0,viet-family-city-hcmc-place-ben-thanh-metro-station,Ga Bến Thành,Ben Thanh Metro Station,landmark_micro_place,hero,hero,audio-authored-ga-ben-thanh-cb1e6c7694,Ga Bến Thành
+p0,viet-family-city-hcmc-place-bep-me-in,Bếp Mẹ Ỉn,Bep Me In,restaurant,hero,hero,audio-authored-bep-me-in-d91765ab8f,Bếp Mẹ Ỉn
+p0,viet-family-city-hcmc-place-bo-la-lot,Bò lá lốt ở Thành phố Hồ Chí Minh,Beef in betel leaves,dish,hero,hero,audio-authored-bo-la-lot-o-thanh-pho-ho-chi-minh-cb56c4fc0d,Bò lá lốt ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-bot-chien,Bột chiên ở Thành phố Hồ Chí Minh,Fried rice-flour cakes,dish,hero,hero,audio-authored-bot-chien-o-thanh-pho-ho-chi-minh-3e269a670e,Bột chiên ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-bun-thit-nuong,Bún thịt nướng ở Thành phố Hồ Chí Minh,Grilled pork vermicelli,dish,hero,hero,audio-authored-bun-thit-nuong-o-thanh-pho-ho-chi-minh-8b83f4f4f2,Bún thịt nướng ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-cafe-apartment-nguyen-hue,Chung cư cà phê Nguyễn Huệ,Cafe Apartment on Nguyen Hue,restaurant,hero,hero,audio-authored-chung-cu-ca-phe-nguyen-hue-1dc569b92f,Chung cư cà phê Nguyễn Huệ
+p0,viet-family-city-hcmc-place-cafe-hop-nguyen-hue,Đi cà phê Nguyễn Huệ,Nguyen Hue cafe hop,landmark_micro_place,hero,hero,audio-authored-di-ca-phe-nguyen-hue-6163312445,Đi cà phê Nguyễn Huệ
+p0,viet-family-city-hcmc-place-cafe-vot-pham-ngoc-thach,Cà phê vợt Phạm Ngọc Thạch,Pham Ngoc Thach cloth-filter coffee,restaurant,hero,hero,audio-authored-ca-phe-vot-pham-ngoc-thach-0fc7817606,Cà phê vợt Phạm Ngọc Thạch
+p0,viet-family-city-hcmc-place-cheo-leo-cafe,Cà phê Cheo Leo,Cheo Leo Cafe,restaurant,hero,hero,audio-authored-ca-phe-cheo-leo-82473e61ba,Cà phê Cheo Leo
+p0,viet-family-city-hcmc-place-cho-lon-walking-route,Đi bộ Chợ Lớn,Cho Lon walking route,landmark_micro_place,hero,hero,audio-authored-di-bo-cho-lon-8034f7f69f,Đi bộ Chợ Lớn
+p0,viet-family-city-hcmc-place-ciel,CieL,CieL,restaurant,hero,hero,audio-authored-ciel-60ea67bff7,CieL
+p0,viet-family-city-hcmc-place-city-hall,Trụ sở UBND Thành phố,Ho Chi Minh City Hall,landmark_micro_place,hero,hero,audio-authored-tru-so-ubnd-thanh-pho-67803e039d,Trụ sở UBND Thành phố
+p0,viet-family-city-hcmc-place-coco-dining,Coco Dining,Coco Dining,restaurant,hero,hero,audio-authored-coco-dining-2112cf326b,Coco Dining
+p0,viet-family-city-hcmc-place-com-tam,Cơm tấm ở Thành phố Hồ Chí Minh,Broken rice,dish,hero,hero,audio-authored-com-tam-o-thanh-pho-ho-chi-minh-81edec0974,Cơm tấm ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-com-tam-ba-ghien,Cơm tấm Ba Ghiền,Com Tam Ba Ghien,restaurant,hero,hero,audio-authored-com-tam-ba-ghien-e287c8bf43,Cơm tấm Ba Ghiền
+p0,viet-family-city-hcmc-place-cong-ca-phe-dong-khoi,Cộng Cà Phê Đồng Khởi,Cong Ca Phe Dong Khoi,restaurant,hero,hero,audio-authored-cong-ca-phe-dong-khoi-757820768b,Cộng Cà Phê Đồng Khởi
+p0,viet-family-city-hcmc-place-cu-chi-day-trip,Đi Củ Chi trong ngày,Cu Chi day trip,landmark_micro_place,hero,hero,audio-authored-di-cu-chi-trong-ngay-4084e64bde,Đi Củ Chi trong ngày
+p0,viet-family-city-hcmc-place-cu-chi-tunnels,Địa đạo Củ Chi,Cu Chi Tunnels,landmark_micro_place,hero,hero,audio-authored-dia-dao-cu-chi-7fd05e2e91,Địa đạo Củ Chi
+p0,viet-family-city-hcmc-place-cuc-gach-quan,Cục Gạch Quán,Cuc Gach Quan,restaurant,hero,hero,audio-authored-cuc-gach-quan-27044c65c5,Cục Gạch Quán
+p0,viet-family-city-hcmc-place-district-3,Quận 3,District 3,landmark_micro_place,hero,hero,audio-authored-quan-3-6ad010875f,Quận 3
+p0,viet-family-city-hcmc-place-dong-khoi-landmark-walk,Đi bộ Đồng Khởi,Dong Khoi landmark walk,landmark_micro_place,hero,hero,audio-authored-di-bo-dong-khoi-e217e08f80,Đi bộ Đồng Khởi
+p0,viet-family-city-hcmc-place-fito-museum,Bảo tàng Y học Cổ truyền Việt Nam,FITO Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-y-hoc-co-truyen-viet-nam-993c364190,Bảo tàng Y học Cổ truyền Việt Nam
+p0,viet-family-city-hcmc-place-gia-dinh-park,Công viên Gia Định,Gia Dinh Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-gia-dinh-2735344d76,Công viên Gia Định
+p0,viet-family-city-hcmc-place-goi-cuon,Gỏi cuốn ở Thành phố Hồ Chí Minh,Fresh spring rolls,dish,hero,hero,audio-authored-goi-cuon-o-thanh-pho-ho-chi-minh-d6ece127e1,Gỏi cuốn ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-golden-dragon-water-puppet,Nhà hát Múa rối nước Rồng Vàng,Golden Dragon Water Puppet Theater,landmark_micro_place,hero,hero,audio-authored-nha-hat-mua-roi-nuoc-rong-vang-e2d3b098e6,Nhà hát Múa rối nước Rồng Vàng
+p0,viet-family-city-hcmc-place-history-museum,Bảo tàng Lịch sử Thành phố Hồ Chí Minh,Museum of Vietnamese History,landmark_micro_place,hero,hero,audio-authored-bao-tang-lich-su-thanh-pho-ho-chi-minh-752959991b,Bảo tàng Lịch sử Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-ho-chi-minh-city-museum,Bảo tàng Thành phố Hồ Chí Minh,Ho Chi Minh City Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-thanh-pho-ho-chi-minh-b73d6ad34d,Bảo tàng Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-hu-tieu,Hủ tiếu ở Thành phố Hồ Chí Minh,Hu tieu,dish,hero,hero,audio-authored-hu-tieu-o-thanh-pho-ho-chi-minh-cd92eff357,Hủ tiếu ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-japan-town,Khu phố Nhật Lê Thánh Tôn,Japan Town Saigon,landmark_micro_place,hero,hero,audio-authored-khu-pho-nhat-le-thanh-ton-a8232351fc,Khu phố Nhật Lê Thánh Tôn
+p0,viet-family-city-hcmc-place-le-van-tam-park,Công viên Lê Văn Tám,Le Van Tam Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-le-van-tam-4d9c7ed5f7,Công viên Lê Văn Tám
+p0,viet-family-city-hcmc-place-little-hanoi-egg-coffee,Little HaNoi Egg Coffee,Little HaNoi Egg Coffee Saigon,restaurant,hero,hero,audio-authored-little-hanoi-egg-coffee-f056ea17b9,Little HaNoi Egg Coffee
+p0,viet-family-city-hcmc-place-long-trieu,Long Triều,Long Trieu,restaurant,hero,hero,audio-authored-long-trieu-609fea9696,Long Triều
+p0,viet-family-city-hcmc-place-lusine-thao-dien,L'Usine Thảo Điền,L'Usine Thao Dien,restaurant,hero,hero,audio-authored-l-usine-thao-dien-35e487f149,L'Usine Thảo Điền
+p0,viet-family-city-hcmc-place-mariamman-temple,Đền Mariamman,Mariamman Hindu Temple,landmark_micro_place,hero,hero,audio-authored-den-mariamman-ecdb56da2f,Đền Mariamman
+p0,viet-family-city-hcmc-place-mien-dong-bus-station,Bến xe Miền Đông,Mien Dong Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-mien-dong-f354e60e21,Bến xe Miền Đông
+p0,viet-family-city-hcmc-place-mien-tay-bus-station,Bến xe Miền Tây,Mien Tay Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-mien-tay-8d9b686d78,Bến xe Miền Tây
+p0,viet-family-city-hcmc-place-motorbike-food-tour,Tour ăn tối bằng xe máy,Saigon motorbike food tour,landmark_micro_place,hero,hero,audio-authored-tour-an-toi-bang-xe-may-6413c47c9f,Tour ăn tối bằng xe máy
+p0,viet-family-city-hcmc-place-municipal-theatre-square,Công trường Lam Sơn,Lam Son Square,landmark_micro_place,hero,hero,audio-authored-cong-truong-lam-son-1077f7b06a,Công trường Lam Sơn
+p0,viet-family-city-hcmc-place-nephele,Nephele,Nephele,restaurant,hero,hero,audio-authored-nephele-495e5abf78,Nephele
+p0,viet-family-city-hcmc-place-nhieu-loc-canal,Kênh Nhiêu Lộc - Thị Nghè,Nhieu Loc - Thi Nghe Canal,landmark_micro_place,hero,hero,audio-authored-kenh-nhieu-loc-thi-nghe-19682d65d7,Kênh Nhiêu Lộc - Thị Nghè
+p0,viet-family-city-hcmc-place-oc,Ốc Sài Gòn ở Thành phố Hồ Chí Minh,Saigon snails and seafood,dish,hero,hero,audio-authored-oc-sai-gon-o-thanh-pho-ho-chi-minh-0091ddb6f2,Ốc Sài Gòn ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-opera-a-o-show,À Ố Show,A O Show at Saigon Opera House,landmark_micro_place,hero,hero,audio-authored-a-o-show-e2c4e99abc,À Ố Show
+p0,viet-family-city-hcmc-place-pha-lau,Phá lấu ở Thành phố Hồ Chí Minh,Pha lau,dish,hero,hero,audio-authored-pha-lau-o-thanh-pho-ho-chi-minh-37a27e4ef6,Phá lấu ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-pho-nam,Phở Sài Gòn ở Thành phố Hồ Chí Minh,Southern pho,dish,hero,hero,audio-authored-pho-sai-gon-o-thanh-pho-ho-chi-minh-07c73304c9,Phở Sài Gòn ở Thành phố Hồ Chí Minh
+p0,viet-family-city-hcmc-place-rex-hotel-rooftop,Sân thượng khách sạn Rex,Rex Hotel rooftop,landmark_micro_place,hero,hero,audio-authored-san-thuong-khach-san-rex-c738d60ad6,Sân thượng khách sạn Rex
+p0,viet-family-city-hcmc-place-russian-market,Chợ Nga,Russian Market,landmark_micro_place,hero,hero,audio-authored-cho-nga-fe0dcff5dc,Chợ Nga
+p0,viet-family-city-hcmc-place-saigon-railway-station,Ga Sài Gòn,Saigon Railway Station,landmark_micro_place,hero,hero,audio-authored-ga-sai-gon-4dda0633fe,Ga Sài Gòn
+p0,viet-family-city-hcmc-place-saigon-river-boat,Đi thuyền sông Sài Gòn,Saigon River boat ride,landmark_micro_place,hero,hero,audio-authored-di-thuyen-song-sai-gon-7f6884874f,Đi thuyền sông Sài Gòn
+p0,viet-family-city-hcmc-place-saigon-skydeck,Saigon Skydeck,Saigon Skydeck,landmark_micro_place,hero,hero,audio-authored-saigon-skydeck-98f2aef0fe,Saigon Skydeck
+p0,viet-family-city-hcmc-place-saigon-square,Saigon Square,Saigon Square,landmark_micro_place,hero,hero,audio-authored-saigon-square-bf0ff38beb,Saigon Square
+p0,viet-family-city-hcmc-place-southern-women-museum,Bảo tàng Phụ nữ Nam Bộ,Southern Women's Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-phu-nu-nam-bo-d8a9b28f8a,Bảo tàng Phụ nữ Nam Bộ
+p0,viet-family-city-hcmc-place-street-food-evening,Ăn vặt Sài Gòn buổi tối,Saigon street-food evening,landmark_micro_place,hero,hero,audio-authored-an-vat-sai-gon-buoi-toi-d2537ad213,Ăn vặt Sài Gòn buổi tối
+p0,viet-family-city-hcmc-place-takashimaya-saigon-centre,Saigon Centre,Takashimaya Saigon Centre,landmark_micro_place,hero,hero,audio-authored-saigon-centre-f9062a6cfd,Saigon Centre
+p0,viet-family-city-hcmc-place-thien-hau-pagoda,Chùa Bà Thiên Hậu,Thien Hau Pagoda,landmark_micro_place,hero,hero,audio-authored-chua-ba-thien-hau-e9ed3e2400,Chùa Bà Thiên Hậu
+p0,viet-family-city-hcmc-place-thu-thiem-riverfront,Bờ sông Thủ Thiêm,Thu Thiem riverfront,landmark_micro_place,hero,hero,audio-authored-bo-song-thu-thiem-caf94f7580,Bờ sông Thủ Thiêm
+p0,viet-family-city-hcmc-place-ton-duc-thang-museum,Bảo tàng Tôn Đức Thắng,Ton Duc Thang Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-ton-duc-thang-d0f1a429f7,Bảo tàng Tôn Đức Thắng
+p0,viet-family-city-hcmc-place-vincom-dong-khoi,Vincom Đồng Khởi,Vincom Center Dong Khoi,landmark_micro_place,hero,hero,audio-authored-vincom-dong-khoi-4e8e7288cc,Vincom Đồng Khởi
+p0,viet-family-city-hcmc-place-vinhomes-central-park,Công viên Vinhomes Central Park,Vinhomes Central Park,landmark_micro_place,hero,hero,audio-authored-cong-vien-vinhomes-central-park-a1270efe0f,Công viên Vinhomes Central Park
+p0,viet-family-city-hcmc-place-workshop-coffee,The Workshop Coffee,The Workshop Coffee,restaurant,hero,hero,audio-authored-the-workshop-coffee-98f3701621,The Workshop Coffee
+p0,viet-family-city-hoian-place-an-hoi-bridge,Cầu An Hội,An Hoi Bridge,landmark_micro_place,hero,hero,audio-authored-cau-an-hoi-5e632805c6,Cầu An Hội
+p0,viet-family-city-hoian-place-ancient-town-ticket-booth,Quầy vé phố cổ Hội An,Hoi An Ancient Town ticket booth,landmark_micro_place,hero,hero,audio-authored-quay-ve-pho-co-hoi-an-bc4c17278c,Quầy vé phố cổ Hội An
+p0,viet-family-city-hoian-place-bach-dang-boat-pier,Bến thuyền Bạch Đằng,Bach Dang boat pier,landmark_micro_place,hero,hero,audio-authored-ben-thuyen-bach-dang-79c57a32c1,Bến thuyền Bạch Đằng
+p0,viet-family-city-hoian-place-bach-dang-street,Đường Bạch Đằng ở Hội An,Bach Dang Street,street,hero,hero,audio-authored-duong-bach-dang-o-hoi-an-16c6498a72,Đường Bạch Đằng ở Hội An
+p0,viet-family-city-hoian-place-bale-well,Giếng Bà Lễ,Bale Well,restaurant,hero,hero,audio-authored-gieng-ba-le-57d1fd28b2,Giếng Bà Lễ
+p0,viet-family-city-hoian-place-banh-dap-hen-xao,Bánh đập hến xào ở Hội An,Cracked rice paper and clams,dish,hero,hero,audio-authored-banh-dap-hen-xao-o-hoi-an-c55ec9a18f,Bánh đập hến xào ở Hội An
+p0,viet-family-city-hoian-place-banh-mi,Bánh mì Hội An,Banh mi in Hoi An,dish,hero,hero,audio-authored-banh-mi-hoi-an-9e36daaef4,Bánh mì Hội An
+p0,viet-family-city-hoian-place-banh-xeo,Bánh xèo Hội An,Hoi An banh xeo,dish,hero,hero,audio-authored-banh-xeo-hoi-an-4cd6207170,Bánh xèo Hội An
+p0,viet-family-city-hoian-place-bebe-tailor,BeBe Tailor,BeBe Tailor,landmark_micro_place,hero,hero,audio-authored-bebe-tailor-ab808f483f,BeBe Tailor
+p0,viet-family-city-hoian-place-bus-station,Bến xe Hội An,Hoi An Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-hoi-an-c02d36e91e,Bến xe Hội An
+p0,viet-family-city-hoian-place-cam-kim-island,Cẩm Kim,Cam Kim Island,landmark_micro_place,hero,hero,audio-authored-cam-kim-14257e5d2e,Cẩm Kim
+p0,viet-family-city-hoian-place-cam-pho,Cẩm Phô,Cam Pho,landmark_micro_place,hero,hero,audio-authored-cam-pho-330c9ae017,Cẩm Phô
+p0,viet-family-city-hoian-place-cam-thanh,Cẩm Thanh,Cam Thanh,landmark_micro_place,hero,hero,audio-authored-cam-thanh-c71c7d9717,Cẩm Thanh
+p0,viet-family-city-hoian-place-cam-thanh-basket-boat,Thuyền thúng Cẩm Thanh,Cam Thanh basket boat,landmark_micro_place,hero,hero,audio-authored-thuyen-thung-cam-thanh-d3a7bfe4cc,Thuyền thúng Cẩm Thanh
+p0,viet-family-city-hoian-place-cantonese-assembly-hall,Hội quán Quảng Đông,Cantonese Assembly Hall,landmark_micro_place,hero,hero,audio-authored-hoi-quan-quang-dong-4a329f750c,Hội quán Quảng Đông
+p0,viet-family-city-hoian-place-cargo-club,Cargo Club,Cargo Club,restaurant,hero,hero,audio-authored-cargo-club-f6e95b0fa6,Cargo Club
+p0,viet-family-city-hoian-place-cham-islands-snorkel-boat,Tàu đi Cù Lao Chàm,Cham Islands snorkel boat,landmark_micro_place,hero,hero,audio-authored-tau-di-cu-lao-cham-9382231d9a,Tàu đi Cù Lao Chàm
+p0,viet-family-city-hoian-place-chuc-thanh-pagoda,Chùa Chúc Thánh,Chuc Thanh Pagoda,landmark_micro_place,hero,hero,audio-authored-chua-chuc-thanh-95eb0e91cf,Chùa Chúc Thánh
+p0,viet-family-city-hoian-place-cocobox,Cocobox,Cocobox,restaurant,hero,hero,audio-authored-cocobox-1c558a54fc,Cocobox
+p0,viet-family-city-hoian-place-cooking-class,Lớp học nấu ăn Hội An,Hoi An cooking class,landmark_micro_place,hero,hero,audio-authored-lop-hoc-nau-an-hoi-an-6fc044c6e7,Lớp học nấu ăn Hội An
+p0,viet-family-city-hoian-place-countryside-bicycle-loop,Đạp xe vùng quê Hội An,Hoi An countryside bicycle loop,landmark_micro_place,hero,hero,audio-authored-dap-xe-vung-que-hoi-an-3ed4d695c8,Đạp xe vùng quê Hội An
+p0,viet-family-city-hoian-place-cua-dai-estuary,Cửa Đại,Cua Dai Estuary,landmark_micro_place,hero,hero,audio-authored-cua-dai-a01117cdd5,Cửa Đại
+p0,viet-family-city-hoian-place-cua-dai-pier,Bến tàu Cửa Đại,Cua Dai Pier,landmark_micro_place,hero,hero,audio-authored-ben-tau-cua-dai-cf857ce770,Bến tàu Cửa Đại
+p0,viet-family-city-hoian-place-duc-an-old-house,Nhà cổ Đức An,Duc An Old House,landmark_micro_place,hero,hero,audio-authored-nha-co-duc-an-a9a0801fb7,Nhà cổ Đức An
+p0,viet-family-city-hoian-place-espresso-station,The Espresso Station,The Espresso Station,restaurant,hero,hero,audio-authored-the-espresso-station-fc187b07c7,The Espresso Station
+p0,viet-family-city-hoian-place-folk-culture-museum,Bảo tàng Văn hóa Dân gian,Museum of Folk Culture,landmark_micro_place,hero,hero,audio-authored-bao-tang-van-hoa-dan-gian-946c331ac6,Bảo tàng Văn hóa Dân gian
+p0,viet-family-city-hoian-place-from-danang-airport,Sân bay Đà Nẵng đi Hội An,Da Nang Airport for Hoi An,landmark_micro_place,hero,hero,audio-authored-san-bay-da-nang-di-hoi-an-9b7990eb31,Sân bay Đà Nẵng đi Hội An
+p0,viet-family-city-hoian-place-from-danang-railway-station,Ga Đà Nẵng đi Hội An,Da Nang Railway Station for Hoi An,landmark_micro_place,hero,hero,audio-authored-ga-da-nang-di-hoi-an-f83c0dc62d,Ga Đà Nẵng đi Hội An
+p0,viet-family-city-hoian-place-hainan-assembly-hall,Hội quán Hải Nam,Hainan Assembly Hall,landmark_micro_place,hero,hero,audio-authored-hoi-quan-hai-nam-7915e9b9cc,Hội quán Hải Nam
+p0,viet-family-city-hoian-place-handicraft-workshop,Xưởng thủ công mỹ nghệ Hội An,Hoi An Handicraft Workshop,landmark_micro_place,hero,hero,audio-authored-xuong-thu-cong-my-nghe-hoi-an-f808fed33a,Xưởng thủ công mỹ nghệ Hội An
+p0,viet-family-city-hoian-place-history-culture-museum,Bảo tàng Lịch sử - Văn hóa Hội An,Museum of History and Culture,landmark_micro_place,hero,hero,audio-authored-bao-tang-lich-su-van-hoa-hoi-an-90693c6b85,Bảo tàng Lịch sử - Văn hóa Hội An
+p0,viet-family-city-hoian-place-lantern-boat,Thuyền hoa đăng Hội An,Lantern boat ride,landmark_micro_place,hero,hero,audio-authored-thuyen-hoa-dang-hoi-an-f1c955ece2,Thuyền hoa đăng Hội An
+p0,viet-family-city-hoian-place-lantern-making-class,Lớp làm lồng đèn Hội An,Lantern-making class,landmark_micro_place,hero,hero,audio-authored-lop-lam-long-den-hoi-an-41d4111f7a,Lớp làm lồng đèn Hội An
+p0,viet-family-city-hoian-place-lune-center,Hoi An Lune Center,Hoi An Lune Center,landmark_micro_place,hero,hero,audio-authored-hoi-an-lune-center-8c9bc56508,Hoi An Lune Center
+p0,viet-family-city-hoian-place-madam-khanh,Madam Khánh,Madam Khanh,restaurant,hero,hero,audio-authored-madam-khanh-c0a2705b1a,Madam Khánh
+p0,viet-family-city-hoian-place-mai-fish,Mai Fish,Mai Fish,restaurant,hero,hero,audio-authored-mai-fish-5b7538cc61,Mai Fish
+p0,viet-family-city-hoian-place-mango-mango,Mango Mango,Mango Mango,restaurant,hero,hero,audio-authored-mango-mango-ad48376856,Mango Mango
+p0,viet-family-city-hoian-place-metiseko,Metiseko,Metiseko,landmark_micro_place,hero,hero,audio-authored-metiseko-86a3894de0,Metiseko
+p0,viet-family-city-hoian-place-mi-quang,Mì Quảng ở Hội An,Mi Quang in Hoi An,dish,hero,hero,audio-authored-mi-quang-o-hoi-an-fba1f89d0d,Mì Quảng ở Hội An
+p0,viet-family-city-hoian-place-minh-an-ward,Phường Minh An,Minh An Ward,landmark_micro_place,hero,hero,audio-authored-phuong-minh-an-e72b278356,Phường Minh An
+p0,viet-family-city-hoian-place-museum,Bảo tàng Hội An,Hoi An Museum,landmark_micro_place,hero,hero,audio-authored-bao-tang-hoi-an-f5a8846ee7,Bảo tàng Hội An
+p0,viet-family-city-hoian-place-nguyen-phuc-chu-street,Phố Nguyễn Phúc Chu,Nguyen Phuc Chu Street,street,hero,hero,audio-authored-pho-nguyen-phuc-chu-6b3c0e3d88,Phố Nguyễn Phúc Chu
+p0,viet-family-city-hoian-place-nguyen-thai-hoc-street,Phố Nguyễn Thái Học,Nguyen Thai Hoc Street,street,hero,hero,audio-authored-pho-nguyen-thai-hoc-18be85f898,Phố Nguyễn Thái Học
+p0,viet-family-city-hoian-place-nu-eatery,Nu Eatery,Nu Eatery,restaurant,hero,hero,audio-authored-nu-eatery-562bb6277c,Nu Eatery
+p0,viet-family-city-hoian-place-phin-coffee,Phin Coffee,Phin Coffee,restaurant,hero,hero,audio-authored-phin-coffee-b4b99b15af,Phin Coffee
+p0,viet-family-city-hoian-place-phung-hung-old-house,Nhà cổ Phùng Hưng,Phung Hung Old House,landmark_micro_place,hero,hero,audio-authored-nha-co-phung-hung-5f837cab79,Nhà cổ Phùng Hưng
+p0,viet-family-city-hoian-place-pottery-workshop,Xưởng gốm Thanh Hà,Thanh Ha pottery workshop,landmark_micro_place,hero,hero,audio-authored-xuong-gom-thanh-ha-e07087625f,Xưởng gốm Thanh Hà
+p0,viet-family-city-hoian-place-quan-thang-old-house,Nhà cổ Quân Thắng,Quan Thang Old House,landmark_micro_place,hero,hero,audio-authored-nha-co-quan-thang-cc1f0cdc47,Nhà cổ Quân Thắng
+p0,viet-family-city-hoian-place-reaching-out-arts-crafts,Reaching Out Arts & Crafts,Reaching Out Arts & Crafts,landmark_micro_place,hero,hero,audio-authored-reaching-out-arts-crafts-3fb0ff6bd8,Reaching Out Arts & Crafts
+p0,viet-family-city-hoian-place-rice-fields,Cánh đồng Hội An,Hoi An rice fields,landmark_micro_place,hero,hero,audio-authored-canh-dong-hoi-an-3e025339c2,Cánh đồng Hội An
+p0,viet-family-city-hoian-place-roastery,Hoi An Roastery,Hoi An Roastery,restaurant,hero,hero,audio-authored-hoi-an-roastery-b733295fc0,Hoi An Roastery
+p0,viet-family-city-hoian-place-rosies-cafe,Rosie's Cafe,Rosie's Cafe,restaurant,hero,hero,audio-authored-rosie-s-cafe-2553122f97,Rosie's Cafe
+p0,viet-family-city-hoian-place-sa-huynh-culture-museum,Bảo tàng Văn hóa Sa Huỳnh,Museum of Sa Huynh Culture,landmark_micro_place,hero,hero,audio-authored-bao-tang-van-hoa-sa-huynh-d6a0312d33,Bảo tàng Văn hóa Sa Huỳnh
+p0,viet-family-city-hoian-place-silk-village,Làng lụa Hội An,Hoi An Silk Village,landmark_micro_place,hero,hero,audio-authored-lang-lua-hoi-an-a89288fcda,Làng lụa Hội An
+p0,viet-family-city-hoian-place-streets-restaurant-cafe,STREETS Restaurant Cafe,STREETS Restaurant Cafe,restaurant,hero,hero,audio-authored-streets-restaurant-cafe-77b77d831e,STREETS Restaurant Cafe
+p0,viet-family-city-hoian-place-tailor-fitting,Thử đồ may đo Hội An,Hoi An tailor fitting,landmark_micro_place,hero,hero,audio-authored-thu-do-may-do-hoi-an-cc381aff41,Thử đồ may đo Hội An
+p0,viet-family-city-hoian-place-the-field,The Field Hội An,The Field Hoi An,restaurant,hero,hero,audio-authored-the-field-hoi-an-2226f7eea4,The Field Hội An
+p0,viet-family-city-hoian-place-tra-nhieu-village,Làng Trà Nhiêu,Tra Nhieu Village,landmark_micro_place,hero,hero,audio-authored-lang-tra-nhieu-a463fc3f27,Làng Trà Nhiêu
+p0,viet-family-city-hoian-place-trade-ceramics-museum,Bảo tàng Gốm sứ Mậu dịch,Museum of Trade Ceramics,landmark_micro_place,hero,hero,audio-authored-bao-tang-gom-su-mau-dich-c9aec0398e,Bảo tàng Gốm sứ Mậu dịch
+p0,viet-family-city-hoian-place-traditional-art-performance-house,Nhà biểu diễn nghệ thuật cổ truyền Hội An,Traditional Art Performance House,landmark_micro_place,hero,hero,audio-authored-nha-bieu-dien-nghe-thuat-co-truyen-hoi-an-8c246f3dcc,Nhà biểu diễn nghệ thuật cổ truyền Hội An
+p0,viet-family-city-hoian-place-trieu-chau-assembly-hall,Hội quán Triều Châu,Trieu Chau Assembly Hall,landmark_micro_place,hero,hero,audio-authored-hoi-quan-trieu-chau-216e538850,Hội quán Triều Châu
+p0,viet-family-city-hoian-place-u-cafe,U Cafe Hội An,U Cafe Hoi An,restaurant,hero,hero,audio-authored-u-cafe-hoi-an-43440aea51,U Cafe Hội An
+p0,viet-family-city-hoian-place-vys-market,Vy's Market Restaurant,Vy's Market Restaurant,restaurant,hero,hero,audio-authored-vy-s-market-restaurant-dac72448cd,Vy's Market Restaurant
+p0,viet-family-city-hoian-place-white-rose-dumplings,Bánh bao bánh vạc ở Hội An,White rose dumplings,dish,hero,hero,audio-authored-banh-bao-banh-vac-o-hoi-an-f524112955,Bánh bao bánh vạc ở Hội An
+p0,viet-family-city-hoian-place-white-rose-restaurant,Nhà hàng White Rose,White Rose Restaurant,restaurant,hero,hero,audio-authored-nha-hang-white-rose-2e744a0a3b,Nhà hàng White Rose
+p0,viet-family-city-hoian-place-wonton,Hoành thánh Hội An,Hoi An wonton,dish,hero,hero,audio-authored-hoanh-thanh-hoi-an-feeaa60db4,Hoành thánh Hội An
+p0,viet-family-city-hoian-place-yaly-couture,Yaly Couture,Yaly Couture,landmark_micro_place,hero,hero,audio-authored-yaly-couture-c6e18fb83d,Yaly Couture
+p0,viet-family-city-hue-place-an-hien-garden-house,Nhà vườn An Hiên,An Hien Garden House,landmark_micro_place,hero,hero,audio-authored-nha-vuon-an-hien-6a20e15242,Nhà vườn An Hiên
+p0,viet-family-city-hue-place-ancient-hue-gallery-cuisine,Ancient Hue Gallery Cuisine,Ancient Hue Gallery Cuisine,restaurant,hero,hero,audio-authored-ancient-hue-gallery-cuisine-7e864bf179,Ancient Hue Gallery Cuisine
+p0,viet-family-city-hue-place-ancient-hue-restaurant,Ancient Hue Restaurant,Ancient Hue Restaurant,restaurant,hero,hero,audio-authored-ancient-hue-restaurant-baa53a0c0b,Ancient Hue Restaurant
+p0,viet-family-city-hue-place-ancient-space-restaurant,Không gian xưa,Ancient Space Restaurant,restaurant,hero,hero,audio-authored-khong-gian-xua-9084c7cbd1,Không gian xưa
+p0,viet-family-city-hue-place-ba-van-banh-loc,Bánh lọc Bà Vân,Ba Van Banh Loc,restaurant,hero,hero,audio-authored-banh-loc-ba-van-22e18add94,Bánh lọc Bà Vân
+p0,viet-family-city-hue-place-bach-ma-national-park,Vườn quốc gia Bạch Mã,Bach Ma National Park,landmark_micro_place,hero,hero,audio-authored-vuon-quoc-gia-bach-ma-27c4253971,Vườn quốc gia Bạch Mã
+p0,viet-family-city-hue-place-banh-beo,Bánh bèo ở Huế,Banh beo,dish,hero,hero,audio-authored-banh-beo-o-hue-6b6176fed0,Bánh bèo ở Huế
+p0,viet-family-city-hue-place-banh-bot-loc,Bánh bột lọc ở Huế,Banh bot loc,dish,hero,hero,audio-authored-banh-bot-loc-o-hue-bbde11227d,Bánh bột lọc ở Huế
+p0,viet-family-city-hue-place-banh-khoai,Bánh khoái ở Huế,Banh khoai,dish,hero,hero,audio-authored-banh-khoai-o-hue-7ab209aa2e,Bánh khoái ở Huế
+p0,viet-family-city-hue-place-banh-nam,Bánh nậm ở Huế,Banh nam,dish,hero,hero,audio-authored-banh-nam-o-hue-89d3cf2a4d,Bánh nậm ở Huế
+p0,viet-family-city-hue-place-bao-quoc-pagoda,Chùa Báo Quốc,Bao Quoc Pagoda,landmark_micro_place,hero,hero,audio-authored-chua-bao-quoc-a1cdb04deb,Chùa Báo Quốc
+p0,viet-family-city-hue-place-ben-ngu-market,Chợ Bến Ngự,Ben Ngu Market,landmark_micro_place,hero,hero,audio-authored-cho-ben-ngu-1bc5bb8868,Chợ Bến Ngự
+p0,viet-family-city-hue-place-ben-trang-cafe-bistro,Bến Trắng Cafe & Bistro,Ben Trang Cafe & Bistro,restaurant,hero,hero,audio-authored-ben-trang-cafe-bistro-24ca011364,Bến Trắng Cafe & Bistro
+p0,viet-family-city-hue-place-bun-hen,Bún hến ở Huế,Bun hen,dish,hero,hero,audio-authored-bun-hen-o-hue-82bc9ee6a6,Bún hến ở Huế
+p0,viet-family-city-hue-place-bun-thit-nuong,Bún thịt nướng ở Huế,Bun thit nuong,dish,hero,hero,audio-authored-bun-thit-nuong-o-hue-b541c9870b,Bún thịt nướng ở Huế
+p0,viet-family-city-hue-place-chu-van-an-street,Đường Chu Văn An,Chu Van An Street,street,hero,hero,audio-authored-duong-chu-van-an-d1c0667867,Đường Chu Văn An
+p0,viet-family-city-hue-place-com-am-phu,Cơm âm phủ ở Huế,Com am phu,dish,hero,hero,audio-authored-com-am-phu-o-hue-50b9ed03ff,Cơm âm phủ ở Huế
+p0,viet-family-city-hue-place-com-hen,Cơm hến ở Huế,Com hen,dish,hero,hero,audio-authored-com-hen-o-hue-7e7d6b93df,Cơm hến ở Huế
+p0,viet-family-city-hue-place-cyclo-citadel-loop,Xích lô quanh Kinh thành,Citadel cyclo loop,landmark_micro_place,hero,hero,audio-authored-xich-lo-quanh-kinh-thanh-5fae9f6fb9,Xích lô quanh Kinh thành
+p0,viet-family-city-hue-place-dai-nam-restaurant,Nhà hàng Đại Nam,Dai Nam Restaurant,restaurant,hero,hero,audio-authored-nha-hang-dai-nam-a95993814b,Nhà hàng Đại Nam
+p0,viet-family-city-hue-place-de-po-cafe,De Po Cafe,De Po Cafe,restaurant,hero,hero,audio-authored-de-po-cafe-154c4baf52,De Po Cafe
+p0,viet-family-city-hue-place-diem-phung-thi-art-center,Trung tâm Nghệ thuật Điềm Phùng Thị,Diem Phung Thi Art Center,landmark_micro_place,hero,hero,audio-authored-trung-tam-nghe-thuat-diem-phung-thi-d61233b3a0,Trung tâm Nghệ thuật Điềm Phùng Thị
+p0,viet-family-city-hue-place-dien-tho-palace,Cung Diên Thọ,Dien Tho Palace,landmark_micro_place,hero,hero,audio-authored-cung-dien-tho-0b05b9219e,Cung Diên Thọ
+p0,viet-family-city-hue-place-duc-duc-tomb,Lăng Dục Đức,Tomb of Duc Duc,landmark_micro_place,hero,hero,audio-authored-lang-duc-duc-ddd3d3ed7d,Lăng Dục Đức
+p0,viet-family-city-hue-place-duyet-thi-duong-theater,Duyệt Thị Đường,Duyet Thi Duong Royal Theater,landmark_micro_place,hero,hero,audio-authored-duyet-thi-duong-21554393b0,Duyệt Thị Đường
+p0,viet-family-city-hue-place-flag-tower,Kỳ Đài Huế,Hue Flag Tower,landmark_micro_place,hero,hero,audio-authored-ky-dai-hue-d8d1dcdfff,Kỳ Đài Huế
+p0,viet-family-city-hue-place-forbidden-purple-city,Tử Cấm Thành,Forbidden Purple City,landmark_micro_place,hero,hero,audio-authored-tu-cam-thanh-b1e536359b,Tử Cấm Thành
+p0,viet-family-city-hue-place-gia-hoi,Gia Hội,Gia Hoi,landmark_micro_place,hero,hero,audio-authored-gia-hoi-d7ccce0c9f,Gia Hội
+p0,viet-family-city-hue-place-hon-chen-temple,Điện Hòn Chén,Hon Chen Temple,landmark_micro_place,hero,hero,audio-authored-dien-hon-chen-7aad2ea1fe,Điện Hòn Chén
+p0,viet-family-city-hue-place-incense-village-workshop,Trải nghiệm làm hương Thủy Xuân,Incense village workshop,landmark_micro_place,hero,hero,audio-authored-trai-nghiem-lam-huong-thuy-xuan-7f0ae35498,Trải nghiệm làm hương Thủy Xuân
+p0,viet-family-city-hue-place-khong-gian-hoai-co-coffee,Không Gian Hoài Cổ Coffee,Khong Gian Hoai Co Coffee,restaurant,hero,hero,audio-authored-khong-gian-hoai-co-coffee-cb278c9627,Không Gian Hoài Cổ Coffee
+p0,viet-family-city-hue-place-kim-long,Kim Long,Kim Long,landmark_micro_place,hero,hero,audio-authored-kim-long-ac4ffbd95d,Kim Long
+p0,viet-family-city-hue-place-kodo-cafe,KODO Cafe,KODO Cafe,restaurant,hero,hero,audio-authored-kodo-cafe-e88f79b2e8,KODO Cafe
+p0,viet-family-city-hue-place-lagoon-seafood-boat,Thuyền hải sản phá Tam Giang,Lagoon seafood boat,landmark_micro_place,hero,hero,audio-authored-thuyen-hai-san-pha-tam-giang-c9379666f5,Thuyền hải sản phá Tam Giang
+p0,viet-family-city-hue-place-lang-thang-coffee,Lang Thang Coffee,Lang Thang Coffee,restaurant,hero,hero,audio-authored-lang-thang-coffee-d8507e03d8,Lang Thang Coffee
+p0,viet-family-city-hue-place-lap-an-lagoon,Đầm Lập An,Lap An Lagoon,landmark_micro_place,hero,hero,audio-authored-dam-lap-an-30f6911073,Đầm Lập An
+p0,viet-family-city-hue-place-le-ba-dang-art-center,Trung tâm Nghệ thuật Lê Bá Đảng,Le Ba Dang Art Center,landmark_micro_place,hero,hero,audio-authored-trung-tam-nghe-thuat-le-ba-dang-17bd479233,Trung tâm Nghệ thuật Lê Bá Đảng
+p0,viet-family-city-hue-place-le-ba-dang-memory-space,Không gian lưu niệm Lê Bá Đảng,Le Ba Dang Memory Space,landmark_micro_place,hero,hero,audio-authored-khong-gian-luu-niem-le-ba-dang-d7b188a31f,Không gian lưu niệm Lê Bá Đảng
+p0,viet-family-city-hue-place-lien-hoa-vegetarian,Nhà hàng chay Liên Hoa,Lien Hoa Vegetarian Restaurant,restaurant,hero,hero,audio-authored-nha-hang-chay-lien-hoa-d680e569f6,Nhà hàng chay Liên Hoa
+p0,viet-family-city-hue-place-long-an-palace,Điện Long An,Long An Palace,landmark_micro_place,hero,hero,audio-authored-dien-long-an-5383c56ddd,Điện Long An
+p0,viet-family-city-hue-place-mandarin-coffee-restaurant,Mandarin Coffee & Restaurant,Mandarin Coffee & Restaurant,restaurant,hero,hero,audio-authored-mandarin-coffee-restaurant-aa4844e963,Mandarin Coffee & Restaurant
+p0,viet-family-city-hue-place-museum-commissioned-porcelains,Bảo tàng Đồ sứ ký kiểu thời Nguyễn,Museum of Nguyen Dynasty Commissioned Porcelains,landmark_micro_place,hero,hero,audio-authored-bao-tang-do-su-ky-kieu-thoi-nguyen-0525fc7b81,Bảo tàng Đồ sứ ký kiểu thời Nguyễn
+p0,viet-family-city-hue-place-nam-giao-esplanade,Đàn Nam Giao,Nam Giao Esplanade,landmark_micro_place,hero,hero,audio-authored-dan-nam-giao-9a875c1c61,Đàn Nam Giao
+p0,viet-family-city-hue-place-ngo-mon-gate,Ngọ Môn,Ngo Mon Gate,landmark_micro_place,hero,hero,audio-authored-ngo-mon-6c840d79fa,Ngọ Môn
+p0,viet-family-city-hue-place-ngu-binh-mountain,Núi Ngự Bình,Ngu Binh Mountain,landmark_micro_place,hero,hero,audio-authored-nui-ngu-binh-5cce2f7983,Núi Ngự Bình
+p0,viet-family-city-hue-place-nha-nhac-royal-court-music,Nhã nhạc cung đình Huế,Hue Royal Court Music,landmark_micro_place,hero,hero,audio-authored-nha-nhac-cung-dinh-hue-bd7c3977a2,Nhã nhạc cung đình Huế
+p0,viet-family-city-hue-place-nine-dynastic-urns,Cửu Đỉnh,Nine Dynastic Urns,landmark_micro_place,hero,hero,audio-authored-cuu-dinh-008664bc21,Cửu Đỉnh
+p0,viet-family-city-hue-place-northern-bus-station,Bến xe phía Bắc Huế,Hue Northern Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-phia-bac-hue-96704ab0b0,Bến xe phía Bắc Huế
+p0,viet-family-city-hue-place-perfume-river-dragon-boat,Thuyền rồng sông Hương,Perfume River dragon boat,landmark_micro_place,hero,hero,audio-authored-thuyen-rong-song-huong-f40c5fdab0,Thuyền rồng sông Hương
+p0,viet-family-city-hue-place-pham-ngu-lao-street,Đường Phạm Ngũ Lão,Pham Ngu Lao Street,street,hero,hero,audio-authored-duong-pham-ngu-lao-2a9bf094e6,Đường Phạm Ngũ Lão
+p0,viet-family-city-hue-place-phu-hau-market,Chợ Phú Hậu,Phu Hau Market,landmark_micro_place,hero,hero,audio-authored-cho-phu-hau-2bd5476a84,Chợ Phú Hậu
+p0,viet-family-city-hue-place-royal-court-music-show,Biểu diễn nhã nhạc cung đình,Royal court music show,landmark_micro_place,hero,hero,audio-authored-bieu-dien-nha-nhac-cung-dinh-4a85e0f238,Biểu diễn nhã nhạc cung đình
+p0,viet-family-city-hue-place-ru-cha-mangrove,Rú Chá,Ru Cha Mangrove Forest,landmark_micro_place,hero,hero,audio-authored-ru-cha-934be79fec,Rú Chá
+p0,viet-family-city-hue-place-song-huong-floating-restaurant,Nhà hàng nổi Sông Hương,Song Huong Floating Restaurant,restaurant,hero,hero,audio-authored-nha-hang-noi-song-huong-fcd90dd18d,Nhà hàng nổi Sông Hương
+p0,viet-family-city-hue-place-songlab,Sống Platform - SốngLab,Sống Platform - SốngLab,landmark_micro_place,hero,hero,audio-authored-song-platform-songlab-861a7f39ab,Sống Platform - SốngLab
+p0,viet-family-city-hue-place-southern-bus-station,Bến xe phía Nam Huế,Hue Southern Bus Station,landmark_micro_place,hero,hero,audio-authored-ben-xe-phia-nam-hue-b399b8acc6,Bến xe phía Nam Huế
+p0,viet-family-city-hue-place-tam-giang-lagoon,Phá Tam Giang,Tam Giang Lagoon,landmark_micro_place,hero,hero,audio-authored-pha-tam-giang-343547805c,Phá Tam Giang
+p0,viet-family-city-hue-place-tay-loc-market,Chợ Tây Lộc,Tay Loc Market,landmark_micro_place,hero,hero,audio-authored-cho-tay-loc-f5dbcc6001,Chợ Tây Lộc
+p0,viet-family-city-hue-place-thai-hoa-palace,Điện Thái Hòa,Thai Hoa Palace,landmark_micro_place,hero,hero,audio-authored-dien-thai-hoa-1cba9b3903,Điện Thái Hòa
+p0,viet-family-city-hue-place-thanh-cafe,Thành Cafe,Thanh Cafe,restaurant,hero,hero,audio-authored-thanh-cafe-9837be313a,Thành Cafe
+p0,viet-family-city-hue-place-the-mieu-temple,Thế Miếu,The Mieu Temple,landmark_micro_place,hero,hero,audio-authored-the-mieu-b3bafedfc4,Thế Miếu
+p0,viet-family-city-hue-place-thieu-tri-tomb,Lăng Thiệu Trị,Tomb of Thieu Tri,landmark_micro_place,hero,hero,audio-authored-lang-thieu-tri-d212a890da,Lăng Thiệu Trị
+p0,viet-family-city-hue-place-thuy-bieu-village,Làng Thủy Biều,Thuy Bieu Village,landmark_micro_place,hero,hero,audio-authored-lang-thuy-bieu-71b287589a,Làng Thủy Biều
+p0,viet-family-city-hue-place-tinh-gia-vien,Tịnh Gia Viên,Tinh Gia Vien Restaurant,restaurant,hero,hero,audio-authored-tinh-gia-vien-3a23bff5aa,Tịnh Gia Viên
+p0,viet-family-city-hue-place-toa-kham-boat-station,Bến thuyền Tòa Khâm,Toa Kham Boat Station,landmark_micro_place,hero,hero,audio-authored-ben-thuyen-toa-kham-9f9ca5affd,Bến thuyền Tòa Khâm
+p0,viet-family-city-hue-place-truong-tien-plaza,Trung tâm thương mại Trường Tiền,Trang Tien Plaza Hue,landmark_micro_place,hero,hero,audio-authored-trung-tam-thuong-mai-truong-tien-ac4e00d7b6,Trung tâm thương mại Trường Tiền
+p0,viet-family-city-hue-place-vy-da,Vỹ Dạ,Vy Da,landmark_micro_place,hero,hero,audio-authored-vy-da-46aa4028d1,Vỹ Dạ
+p0,viet-family-city-hue-place-y-thao-garden,Ý Thảo Garden,Y Thao Garden,restaurant,hero,hero,audio-authored-y-thao-garden-d671a76e48,Ý Thảo Garden
+p1,viet-family-city-danang-place-3d-art-in-paradise,Bảo tàng 3D Art in Paradise Đà Nẵng,3D Art in Paradise Da Nang,landmark_micro_place,use-it-with,phrase,audio-authored-dia-chi-nay-dung-khong-620d046937,Địa chỉ này đúng không?
+p1,viet-family-city-danang-place-3d-art-in-paradise,Bảo tàng 3D Art in Paradise Đà Nẵng,3D Art in Paradise Da Nang,landmark_micro_place,use-it-with,phrase,audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127,Bạn chụp giúp tôi được không?
 p1,viet-family-city-danang-place-ba-na-hills,Bà Nà Hills,Ba Na Hills,macro_attraction_journey,cable-car,phrase,audio-authored-cap-treo-o-dau-8548abeeca,Cáp treo ở đâu?
-p1,viet-family-city-danang-place-ba-na-hills,Bà Nà Hills,Ba Na Hills,macro_attraction_journey,photos,phrase,audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127,Bạn chụp giúp tôi được không?
-p1,viet-family-city-danang-place-bach-dang-street,Đường Bạch Đằng,Bach Dang Street,street,show-driver,phrase,audio-authored-cho-toi-den-duong-bach-dang-b8999db078,Cho tôi đến đường Bạch Đằng.
-p1,viet-family-city-danang-place-bach-dang-street,Đường Bạch Đằng,Bach Dang Street,street,confirm,phrase,audio-authored-day-co-phai-duong-bach-dang-khong-9bf71e32a9,Đây có phải đường Bạch Đằng không?
-p1,viet-family-city-danang-place-dragon-bridge,Cầu Rồng,Dragon Bridge,landmark_micro_place,pickup-nearby,phrase,audio-authored-cho-toi-xuong-gan-cau-rong-858bbe4abc,Cho tôi xuống gần Cầu Rồng.
-p1,viet-family-city-danang-place-marble-mountains,Ngũ Hành Sơn,Marble Mountains,macro_attraction_journey,key-phrases,phrase,audio-authored-tai-xe-cho-o-dau-0b819e85a5,Tài xế chờ ở đâu?
-p1,viet-family-city-danang-place-nguyen-van-linh-street,Đường Nguyễn Văn Linh,Nguyen Van Linh Street,street,show-driver,phrase,audio-authored-cho-toi-den-duong-nguyen-van-linh-492eadfaa8,Cho tôi đến đường Nguyễn Văn Linh.
-p1,viet-family-city-danang-place-nguyen-van-linh-street,Đường Nguyễn Văn Linh,Nguyen Van Linh Street,street,confirm,phrase,audio-authored-day-co-phai-duong-nguyen-van-linh-khong-ac81b9008c,Đây có phải đường Nguyễn Văn Linh không?
-p1,viet-family-city-danang-place-vo-nguyen-giap-street,Đường Võ Nguyên Giáp,Vo Nguyen Giap Street,street,show-driver,phrase,audio-authored-cho-toi-den-duong-vo-nguyen-giap-101f4d1608,Cho tôi đến đường Võ Nguyên Giáp.
-p1,viet-family-city-danang-place-vo-nguyen-giap-street,Đường Võ Nguyên Giáp,Vo Nguyen Giap Street,street,confirm,phrase,audio-authored-day-co-phai-duong-vo-nguyen-giap-khong-d2fc0ab90a,Đây có phải đường Võ Nguyên Giáp không?
+p1,viet-family-city-danang-place-bach-dang-street,Đường Bạch Đằng,Bach Dang Street,street,place-brief,phrase,audio-authored-duong-bach-dang-o-dau-7accb753ff,Đường Bạch Đằng ở đâu?
 p1,viet-family-city-hanoi-place-hang-gai-street,Phố Hàng Gai,Hang Gai Street,street,place-brief,phrase,audio-authored-pho-hang-gai-o-dau-6464750f35,Phố Hàng Gai ở đâu?
-p1,viet-family-city-hanoi-place-water-puppet-theatre,Nhà hát Múa rối Thăng Long,Thang Long Water Puppet Theatre,landmark_micro_place,place-brief,phrase,audio-authored-di-nha-hat-mua-roi-thang-long-6e49722b28,Đi Nhà hát Múa rối Thăng Long
-p1,viet-family-city-hanoi-place-water-puppet-theatre,Nhà hát Múa rối Thăng Long,Thang Long Water Puppet Theatre,landmark_micro_place,place-brief,phrase,audio-authored-nha-hat-mua-roi-thang-long-o-dau-a04b797640,Nhà hát Múa rối Thăng Long ở đâu?
 p1,viet-family-city-hcmc-place-dong-khoi-street,Đường Đồng Khởi,Dong Khoi Street,street,place-brief,phrase,audio-authored-duong-dong-khoi-o-dau-85f0b0c280,Đường Đồng Khởi ở đâu?
 p1,viet-family-city-hue-place-walking-street,Phố đi bộ Huế,Hue Walking Street,street,place-brief,phrase,audio-authored-di-pho-di-bo-hue-639ec583b5,Đi phố đi bộ Huế
 p1,viet-family-city-hue-place-walking-street,Phố đi bộ Huế,Hue Walking Street,street,place-brief,phrase,audio-authored-pho-di-bo-hue-o-dau-255aae3009,Phố đi bộ Huế ở đâu?
-p2,viet-family-city-danang-place-nen,Nén Đà Nẵng,Nén Đà Nẵng,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2,Cho tôi xuống gần nhà hàng Nén Đà Nẵng.
-p2,viet-family-city-danang-place-nen,Nén Đà Nẵng,Nén Đà Nẵng,restaurant,menu-dietary,phrase,audio-authored-cho-toi-tra-da-6b39f7e1ae,Cho tôi trà đá
+p2,viet-family-city-danang-place-bun-cha-ca,Bún chả cá ở Đà Nẵng,Fish-cake noodle soup,dish,place-brief,phrase,audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2,"Dạ, cho tôi một phần bún chả."
+p2,viet-family-city-danang-place-nen,Nén Đà Nẵng,Nen Da Nang,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-nen-da-nang-1d452a36b2,Cho tôi xuống gần nhà hàng Nén Đà Nẵng.
 p2,viet-family-city-hanoi-place-bun-cha-huong-lien,Bún chả Hương Liên,Bun Cha Huong Lien,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-bun-cha-huong-lien-d22fc78377,Cho tôi xuống gần nhà hàng Bún chả Hương Liên.
-p2,viet-family-city-hanoi-place-bun-cha-huong-lien,Bún chả Hương Liên,Bun Cha Huong Lien,restaurant,before-you-go,phrase,audio-authored-da-cho-toi-mot-phan-bun-cha-dbdee039d2,"Dạ, cho tôi một phần bún chả."
 p2,viet-family-city-hanoi-place-cha-ca-thang-long,Chả cá Thăng Long,Cha Ca Thang Long,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-cha-ca-thang-long-a27ee5242f,Cho tôi xuống gần nhà hàng Chả cá Thăng Long.
-p2,viet-family-city-hanoi-place-giang-cafe,Cà phê Giảng,Giang Cafe,restaurant,place-brief,phrase,audio-authored-dung-o-ca-phe-giang-9ed36d9bae,Dừng ở Cà phê Giảng
+p2,viet-family-city-hanoi-place-giang-cafe,Cà phê Giảng,Cafe Giang,restaurant,place-brief,phrase,audio-authored-dung-o-ca-phe-giang-9ed36d9bae,Dừng ở Cà phê Giảng
 p2,viet-family-city-hanoi-place-pho-bat-dan,Phở Bát Đàn,Pho Bat Dan,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-pho-bat-dan-dde984ba81,Cho tôi xuống gần nhà hàng Phở Bát Đàn.
-p2,viet-family-city-hanoi-place-pho-bat-dan,Phở Bát Đàn,Pho Bat Dan,restaurant,before-you-go,phrase,audio-authored-da-cho-toi-mot-to-pho-5e65b6808d,"Dạ, cho tôi một tô phở."
+p2,viet-family-city-hanoi-place-pho-bo,Phở bò ở Hà Nội,Beef pho,dish,place-brief,phrase,audio-authored-da-cho-toi-mot-to-pho-5e65b6808d,"Dạ, cho tôi một tô phở."
 p2,viet-family-city-hanoi-place-tam-vi,Tầm Vị,Tam Vi,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-tam-vi-60fd4cc368,Cho tôi xuống gần nhà hàng Tầm Vị.
 p2,viet-family-city-hcmc-place-anan-saigon,Anăn Sài Gòn,Anan Saigon,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-anan-sai-gon-6183ddc907,Cho tôi xuống gần nhà hàng Anăn Sài Gòn.
 p2,viet-family-city-hoian-place-banh-mi-phuong,Bánh mì Phượng,Banh Mi Phuong,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67,Cho tôi xuống gần nhà hàng Bánh mì Phượng.
 p2,viet-family-city-hoian-place-cao-lau-city,Cao lầu ở Hội An,Cao lau in Hoi An,dish,place-brief,phrase,audio-authored-da-cho-toi-mot-phan-cao-lau-71867ac448,"Dạ, cho tôi một phần cao lầu."
-p2,viet-family-city-hoian-place-cao-lau-city,Cao lầu ở Hội An,Cao lau in Hoi An,dish,how-to-order,phrase,audio-authored-khong-cay-qua-nhe-ecc42633de,Không cay quá nhé.
-p2,viet-family-city-hoian-place-cao-lau-city,Cao lầu ở Hội An,Cao lau in Hoi An,dish,ingredients-diet,phrase,audio-authored-mon-nay-co-gi-919c3d8876,Món này có gì?
 p2,viet-family-city-hoian-place-faifo-coffee,Faifo Coffee,Faifo Coffee,restaurant,place-brief,phrase,audio-authored-dung-o-faifo-coffee-7681bd356b,Dừng ở Faifo Coffee
 p2,viet-family-city-hoian-place-morning-glory,Morning Glory Hội An,Morning Glory Hoi An,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f,Cho tôi xuống gần nhà hàng Morning Glory Hội An.
 p2,viet-family-city-hoian-place-reach-out-tea-house,Reaching Out Tea House,Reaching Out Tea House,restaurant,place-brief,phrase,audio-authored-dung-o-reaching-out-tea-house-78d411e6a4,Dừng ở Reaching Out Tea House
 p2,viet-family-city-hue-place-bun-bo-city,Bún bò Huế,Bun bo Hue,dish,place-brief,phrase,audio-authored-da-cho-toi-mot-to-bun-bo-hue-f624687fc3,"Dạ, cho tôi một tô bún bò Huế."
 p2,viet-family-city-hue-place-les-jardins,Les Jardins de la Carambole,Les Jardins de la Carambole,restaurant,place-brief,phrase,audio-authored-cho-toi-xuong-gan-nha-hang-les-jardins-de-la-carambole-f4b64e6c5c,Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.
 p2,viet-family-transport-destination,Cho tôi tới đây,Take me here,practical_flow,explore-next,phrase,audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d,Gọi giúp tôi taxi được không?
-p2,viet-family-transport-destination,Cho tôi tới đây,Take me here,practical_flow,explore-next,phrase,audio-authored-giup-toi-tim-diem-don-duoc-khong-e4ade1fbec,Giúp tôi tìm điểm đón được không?
 p2,viet-family-transport-destination,Cho tôi tới đây,Take me here,practical_flow,explore-next,phrase,audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9,Cho tôi xuống ở đây được không?
-p2,viet-family-transport-destination,Cho tôi tới đây,Take me here,practical_flow,explore-next,phrase,audio-authored-doi-toi-mot-chut-duoc-khong-2d2e618a9c,Đợi tôi một chút được không?
 p2,viet-family-ves-can-you-wait-here,Anh chờ tôi ở đây được không?,Can you wait for me here?,practical_flow,hero,hero,audio-authored-anh-cho-toi-o-day-duoc-khong-ec56a2d762,Anh chờ tôi ở đây được không?
 p2,viet-family-ves-can-you-wait-here,Anh chờ tôi ở đây được không?,Can you wait for me here?,practical_flow,explore-next,phrase,audio-authored-may-gio-quay-lai-10be0e986d,Mấy giờ quay lại?
-p2,viet-family-ves-drop-near-dragon-bridge,Cho tôi xuống gần Cầu Rồng.,Let me off near Dragon Bridge.,practical_flow,explore-next,phrase,audio-authored-cho-toi-di-cau-rong-31d5036c87,Cho tôi đi Cầu Rồng.
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,hero,hero,audio-authored-co-anh-the-khong-d2c05c9038,Có ảnh thẻ không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,practice-pairs,phrase,audio-authored-co-cho-ngoi-canh-loi-di-khong-b5df58923c,Có chỗ ngồi cạnh lối đi không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,practice-pairs,phrase,audio-authored-co-cho-ngoi-gan-cua-so-khong-fc05857660,Có chỗ ngồi gần cửa sổ không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,practice-pairs,phrase,audio-authored-co-ma-dat-cho-khong-13efde4ace,Có mã đặt chỗ không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-nuoc-khong-da-khong-4602de495a,Có nước không đá không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-phieu-dat-phong-khong-66d79accac,Có phiếu đặt phòng không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-ao-mua-khong-d31a1649fc,Có áo mưa không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-ao-thun-khong-2217cbd0f3,Có áo thun không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-ba-lo-nho-khong-f7450b1860,Có ba lô nhỏ không?
-p2,viet-family-vpe-have-item-co-anh-the-khong,Có ảnh thẻ không?,Do you have passport photos?,practical_flow,explore-next,phrase,audio-authored-co-ban-chai-danh-rang-khong-eed2847467,Có bàn chải đánh răng không?
-p2,viet-family-vpe-have-item-co-ban-chai-danh-rang-khong,Có bàn chải đánh răng không?,Do you have a toothbrush?,practical_flow,practice-pairs,phrase,audio-authored-co-dau-goi-khong-8a6140ede3,Có dầu gội không?
-p2,viet-family-vpe-have-item-co-ban-chai-danh-rang-khong,Có bàn chải đánh răng không?,Do you have a toothbrush?,practical_flow,practice-pairs,phrase,audio-authored-co-kem-danh-rang-khong-76ad1cd65f,Có kem đánh răng không?
-p2,viet-family-vpe-have-item-co-ban-chai-danh-rang-khong,Có bàn chải đánh răng không?,Do you have a toothbrush?,practical_flow,explore-next,phrase,audio-authored-co-nuoc-rua-tay-khong-fd4d83bafc,Có nước rửa tay không?
-p2,viet-family-vpe-have-item-co-ban-chai-danh-rang-khong,Có bàn chải đánh răng không?,Do you have a toothbrush?,practical_flow,explore-next,phrase,audio-authored-co-o-che-mua-khong-51420f7719,Có ô che mưa không?
-p2,viet-family-vpe-have-item-co-ban-sao-ho-chieu-khong,Có bản sao hộ chiếu không?,Do you have a passport copy?,practical_flow,hero,hero,audio-authored-co-ban-sao-ho-chieu-khong-f26e33f14f,Có bản sao hộ chiếu không?
-p2,viet-family-vpe-have-item-co-chia-khoa-phong-khong,Có chìa khóa phòng không?,Do you have the room key?,practical_flow,hero,hero,audio-authored-co-chia-khoa-phong-khong-774d44ea3e,Có chìa khóa phòng không?
-p2,viet-family-vpe-have-item-co-chia-khoa-phong-khong,Có chìa khóa phòng không?,Do you have the room key?,practical_flow,explore-next,phrase,audio-authored-co-may-say-toc-khong-f54ad7710d,Có máy sấy tóc không?
-p2,viet-family-vpe-have-item-co-khan-tam-khong,Có khăn tắm không?,Do you have a bath towel?,practical_flow,hero,hero,audio-authored-co-khan-tam-khong-a1229e5d3e,Có khăn tắm không?
-p2,viet-family-vpe-have-item-co-phong-doi-khong,Có phòng đôi không?,Do you have a double room?,practical_flow,hero,hero,audio-authored-co-phong-doi-khong-7fd356727b,Có phòng đôi không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong,Giúp tôi bật đồng hồ tính tiền được không?,Can you help me turn on the meter?,practical_flow,practice-pairs,phrase,audio-authored-giup-toi-doi-sang-the-duoc-khong-1f4674dfa8,Giúp tôi đổi sang thẻ được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong,Giúp tôi bật đồng hồ tính tiền được không?,Can you help me turn on the meter?,practical_flow,practice-pairs,phrase,audio-authored-giup-toi-doi-sang-tien-mat-duoc-khong-bee6448c0f,Giúp tôi đổi sang tiền mặt được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong,Giúp tôi bật đồng hồ tính tiền được không?,Can you help me turn on the meter?,practical_flow,practice-pairs,phrase,audio-authored-gui-vi-tri-cho-toi-duoc-khong-8eb51fe6ec,Gửi vị trí cho tôi được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong,Giúp tôi bật đồng hồ tính tiền được không?,Can you help me turn on the meter?,practical_flow,explore-next,phrase,audio-authored-giup-toi-ket-noi-wi-fi-duoc-khong-fb9bdf8560,Giúp tôi kết nối Wi-Fi được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-bat-dong-ho-tinh-tien-duoc-khong,Giúp tôi bật đồng hồ tính tiền được không?,Can you help me turn on the meter?,practical_flow,explore-next,phrase,audio-authored-giup-toi-kiem-tra-sim-nay-duoc-khong-8ec8338f4f,Giúp tôi kiểm tra SIM này được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-doi-phong-duoc-khong,Giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,hero,hero,audio-authored-giup-toi-doi-phong-duoc-khong-a059eae198,Giúp tôi đổi phòng được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-doi-phong-duoc-khong,Giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-giup-toi-goi-quan-ly-duoc-khong-1c1f007637,Giúp tôi gọi quản lý được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong,Giúp tôi gọi dọn phòng được không?,Can you help me call housekeeping?,practical_flow,hero,hero,audio-authored-giup-toi-goi-don-phong-duoc-khong-334f73a003,Giúp tôi gọi dọn phòng được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong,Giúp tôi gọi dọn phòng được không?,Can you help me call housekeeping?,practical_flow,practice-pairs,phrase,audio-authored-giup-toi-mang-them-khan-duoc-khong-c4c73e9bc1,Giúp tôi mang thêm khăn được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong,Giúp tôi gọi dọn phòng được không?,Can you help me call housekeeping?,practical_flow,explore-next,phrase,audio-authored-giup-toi-mang-them-nuoc-duoc-khong-0bec9ad929,Giúp tôi mang thêm nước được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-goi-don-phong-duoc-khong,Giúp tôi gọi dọn phòng được không?,Can you help me call housekeeping?,practical_flow,explore-next,phrase,audio-authored-giup-toi-xac-nhan-dat-tour-duoc-khong-f5616d4cb8,Giúp tôi xác nhận đặt tour được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-dat-phong-duoc-khong,Giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-giup-toi-sac-dien-thoai-duoc-khong-fbd0a58ad8,Giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-kiem-tra-dat-phong-duoc-khong,Giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-giup-toi-sua-wi-fi-duoc-khong-b38176fbf1,Giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong,Giúp tôi xác nhận cổng ra được không?,Can you help me confirm the gate?,practical_flow,explore-next,phrase,audio-authored-giup-toi-xoa-mon-nay-khoi-hoa-don-duoc-khong-53fea13677,Giúp tôi xóa món này khỏi hóa đơn được không?
-p2,viet-family-vpe-near-place-bai-dau-xe-gan-day-khong,bãi đậu xe gần đây không?,Is the parking lot nearby?,practical_flow,practice-pairs,phrase,audio-authored-ben-pha-gan-day-khong-1682a203af,bến phà gần đây không?
-p2,viet-family-vpe-near-place-bai-dau-xe-gan-day-khong,bãi đậu xe gần đây không?,Is the parking lot nearby?,practical_flow,practice-pairs,phrase,audio-authored-diem-ban-sim-gan-day-khong-1ed06d1554,điểm bán SIM gần đây không?
-p2,viet-family-vpe-near-place-bai-dau-xe-gan-day-khong,bãi đậu xe gần đây không?,Is the parking lot nearby?,practical_flow,practice-pairs,phrase,audio-authored-khu-am-thuc-gan-day-khong-7ef188e6bd,khu ẩm thực gần đây không?
-p2,viet-family-vpe-near-place-bai-dau-xe-gan-day-khong,bãi đậu xe gần đây không?,Is the parking lot nearby?,practical_flow,explore-next,phrase,audio-authored-tram-xang-gan-day-khong-3bcc267dc2,trạm xăng gần đây không?
-p2,viet-family-vpe-near-place-bai-dau-xe-gan-day-khong,bãi đậu xe gần đây không?,Is the parking lot nearby?,practical_flow,explore-next,phrase,audio-authored-van-phong-du-lich-gan-day-khong-5ea010a3fc,văn phòng du lịch gần đây không?
-p2,viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong,bãi gửi xe máy gần đây không?,Is motorbike parking nearby?,practical_flow,practice-pairs,phrase,audio-authored-cua-khoi-hanh-gan-day-khong-a29ee313ab,cửa khởi hành gần đây không?
-p2,viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong,bãi gửi xe máy gần đây không?,Is motorbike parking nearby?,practical_flow,practice-pairs,phrase,audio-authored-khu-kiem-tra-an-ninh-gan-day-khong-05886402cd,khu kiểm tra an ninh gần đây không?
-p2,viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong,bãi gửi xe máy gần đây không?,Is motorbike parking nearby?,practical_flow,practice-pairs,phrase,audio-authored-phong-cau-nguyen-gan-day-khong-148ef69de0,phòng cầu nguyện gần đây không?
-p2,viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong,bãi gửi xe máy gần đây không?,Is motorbike parking nearby?,practical_flow,explore-next,phrase,audio-authored-quay-hoan-thue-gan-day-khong-f4c152cbfc,quầy hoàn thuế gần đây không?
-p2,viet-family-vpe-near-place-bai-gui-xe-may-gan-day-khong,bãi gửi xe máy gần đây không?,Is motorbike parking nearby?,practical_flow,explore-next,phrase,audio-authored-tram-y-te-gan-day-khong-e5dd15b0a3,trạm y tế gần đây không?
-p2,viet-family-vpe-near-place-ben-pha-gan-day-khong,bến phà gần đây không?,Is the ferry pier nearby?,practical_flow,practice-pairs,phrase,audio-authored-cua-hang-dien-thoai-gan-day-khong-928760b2a1,cửa hàng điện thoại gần đây không?
-p2,viet-family-vpe-near-place-ben-pha-gan-day-khong,bến phà gần đây không?,Is the ferry pier nearby?,practical_flow,practice-pairs,phrase,audio-authored-phong-thay-do-gan-day-khong-b447cac825,phòng thay đồ gần đây không?
-p2,viet-family-vpe-near-place-ben-pha-gan-day-khong,bến phà gần đây không?,Is the ferry pier nearby?,practical_flow,explore-next,phrase,audio-authored-quay-thanh-toan-gan-day-khong-25de6073da,quầy thanh toán gần đây không?
-p2,viet-family-vpe-near-place-ben-tau-gan-day-khong,bến tàu gần đây không?,Is the boat pier nearby?,practical_flow,practice-pairs,phrase,audio-authored-loi-vao-gan-day-khong-3a181084ed,lối vào gần đây không?
-p2,viet-family-vpe-near-place-ben-tau-gan-day-khong,bến tàu gần đây không?,Is the boat pier nearby?,practical_flow,explore-next,phrase,audio-authored-thang-may-gan-day-khong-3a5c5997a7,thang máy gần đây không?
-p2,viet-family-vpe-near-place-cho-dau-taxi-gan-day-khong,chỗ đậu taxi gần đây không?,Is the taxi stand nearby?,practical_flow,hero,hero,audio-authored-cho-dau-taxi-gan-day-khong-c03a844a40,chỗ đậu taxi gần đây không?
-p2,viet-family-vpe-near-place-cho-gui-hanh-ly-gan-day-khong,chỗ gửi hành lý gần đây không?,Is luggage storage nearby?,practical_flow,hero,hero,audio-authored-cho-gui-hanh-ly-gan-day-khong-127709437a,chỗ gửi hành lý gần đây không?
-p2,viet-family-vpe-near-place-cho-gui-hanh-ly-gan-day-khong,chỗ gửi hành lý gần đây không?,Is luggage storage nearby?,practical_flow,explore-next,phrase,audio-authored-phong-kham-gan-day-khong-ca70a081f5,phòng khám gần đây không?
-p2,viet-family-vpe-near-place-cong-len-may-bay-gan-day-khong,cổng lên máy bay gần đây không?,Is the boarding gate nearby?,practical_flow,practice-pairs,phrase,audio-authored-cua-hai-quan-gan-day-khong-fe60482210,cửa hải quan gần đây không?
-p2,viet-family-vpe-near-place-cong-len-may-bay-gan-day-khong,cổng lên máy bay gần đây không?,Is the boarding gate nearby?,practical_flow,explore-next,phrase,audio-authored-tram-sac-gan-day-khong-bfab4830ef,trạm sạc gần đây không?
-p2,viet-family-vpe-near-place-cua-khoi-hanh-gan-day-khong,cửa khởi hành gần đây không?,Is the departure door nearby?,practical_flow,practice-pairs,phrase,audio-authored-duong-mot-chieu-gan-day-khong-8f94e0e90e,đường một chiều gần đây không?
-p2,viet-family-vpe-near-place-cua-khoi-hanh-gan-day-khong,cửa khởi hành gần đây không?,Is the departure door nearby?,practical_flow,practice-pairs,phrase,audio-authored-hem-nay-gan-day-khong-29a4f163e4,hẻm này gần đây không?
-p2,viet-family-vpe-near-place-cua-khoi-hanh-gan-day-khong,cửa khởi hành gần đây không?,Is the departure door nearby?,practical_flow,explore-next,phrase,audio-authored-nga-tu-gan-day-khong-d8b05540cd,ngã tư gần đây không?
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,hero,hero,audio-authored-toi-can-anh-the-dcf1e361cc,Tôi cần ảnh thẻ
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,practice-pairs,phrase,audio-authored-toi-can-cho-ngoi-canh-loi-di-2536fe186b,Tôi cần chỗ ngồi cạnh lối đi
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,practice-pairs,phrase,audio-authored-toi-can-cho-ngoi-gan-cua-so-ed306d67ce,Tôi cần chỗ ngồi gần cửa sổ
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,practice-pairs,phrase,audio-authored-toi-can-ma-dat-cho-221774fc74,Tôi cần mã đặt chỗ
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-nuoc-khong-da-86d89a651d,Tôi cần nước không đá
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-phieu-dat-phong-ee7f6c183c,Tôi cần phiếu đặt phòng
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-ao-mua-523e6e4f6f,Tôi cần áo mưa
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-ao-thun-49ae9e1bab,Tôi cần áo thun
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-ba-lo-nho-828431635d,Tôi cần ba lô nhỏ
-p2,viet-family-vpe-need-item-toi-can-anh-the,Tôi cần ảnh thẻ,I need passport photos.,practical_flow,explore-next,phrase,audio-authored-toi-can-ban-chai-danh-rang-d3cb67e969,Tôi cần bàn chải đánh răng
-p2,viet-family-vpe-need-item-toi-can-ban-chai-danh-rang,Tôi cần bàn chải đánh răng,I need a toothbrush.,practical_flow,practice-pairs,phrase,audio-authored-toi-can-dau-goi-17f93c62c2,Tôi cần dầu gội
-p2,viet-family-vpe-need-item-toi-can-ban-chai-danh-rang,Tôi cần bàn chải đánh răng,I need a toothbrush.,practical_flow,practice-pairs,phrase,audio-authored-toi-can-kem-danh-rang-4524bdc6c6,Tôi cần kem đánh răng
-p2,viet-family-vpe-need-item-toi-can-ban-chai-danh-rang,Tôi cần bàn chải đánh răng,I need a toothbrush.,practical_flow,explore-next,phrase,audio-authored-toi-can-nuoc-rua-tay-f32d29844a,Tôi cần nước rửa tay
-p2,viet-family-vpe-need-item-toi-can-ban-chai-danh-rang,Tôi cần bàn chải đánh răng,I need a toothbrush.,practical_flow,explore-next,phrase,audio-authored-toi-can-o-che-mua-d09a2ba0d9,Tôi cần ô che mưa
-p2,viet-family-vpe-need-item-toi-can-ban-sao-ho-chieu,Tôi cần bản sao hộ chiếu,I need a passport copy.,practical_flow,hero,hero,audio-authored-toi-can-ban-sao-ho-chieu-39bc42b456,Tôi cần bản sao hộ chiếu
-p2,viet-family-vpe-need-item-toi-can-chia-khoa-phong,Tôi cần chìa khóa phòng,I need the room key.,practical_flow,hero,hero,audio-authored-toi-can-chia-khoa-phong-dbaa87bcf2,Tôi cần chìa khóa phòng
-p2,viet-family-vpe-need-item-toi-can-chia-khoa-phong,Tôi cần chìa khóa phòng,I need the room key.,practical_flow,explore-next,phrase,audio-authored-toi-can-may-say-toc-82cf2a1e09,Tôi cần máy sấy tóc
-p2,viet-family-vpe-need-item-toi-can-khan-tam,Tôi cần khăn tắm,I need a bath towel.,practical_flow,hero,hero,audio-authored-toi-can-khan-tam-959af64116,Tôi cần khăn tắm
-p2,viet-family-vpe-need-item-toi-can-phong-doi,Tôi cần phòng đôi,I need a double room.,practical_flow,hero,hero,audio-authored-toi-can-phong-doi-a2e92a2715,Tôi cần phòng đôi
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,hero,hero,audio-authored-cho-toi-anh-the-6aab1bc73e,Cho tôi ảnh thẻ
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,practice-pairs,phrase,audio-authored-cho-toi-cho-ngoi-canh-loi-di-4c39092795,Cho tôi chỗ ngồi cạnh lối đi
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,practice-pairs,phrase,audio-authored-cho-toi-cho-ngoi-gan-cua-so-a0fe1624a2,Cho tôi chỗ ngồi gần cửa sổ
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,practice-pairs,phrase,audio-authored-cho-toi-ma-dat-cho-133e15573c,Cho tôi mã đặt chỗ
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-nuoc-khong-da-268016731f,Cho tôi nước không đá
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-phieu-dat-phong-fce23af9eb,Cho tôi phiếu đặt phòng
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-ao-mua-3dd41edff2,Cho tôi áo mưa
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-ao-thun-4906a3e1dc,Cho tôi áo thun
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-ba-lo-nho-7859ff1ce2,Cho tôi ba lô nhỏ
-p2,viet-family-vpe-one-item-please-cho-toi-mot-anh-the,Cho tôi ảnh thẻ,"Passport photos, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-ban-chai-danh-rang-1165853a38,Cho tôi bàn chải đánh răng
-p2,viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang,Cho tôi bàn chải đánh răng,"A toothbrush, please.",practical_flow,practice-pairs,phrase,audio-authored-cho-toi-dau-goi-c9c138944b,Cho tôi dầu gội
-p2,viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang,Cho tôi bàn chải đánh răng,"A toothbrush, please.",practical_flow,practice-pairs,phrase,audio-authored-cho-toi-kem-danh-rang-59a68c181d,Cho tôi kem đánh răng
-p2,viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang,Cho tôi bàn chải đánh răng,"A toothbrush, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-nuoc-rua-tay-b3c979257d,Cho tôi nước rửa tay
-p2,viet-family-vpe-one-item-please-cho-toi-mot-ban-chai-danh-rang,Cho tôi bàn chải đánh răng,"A toothbrush, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-o-che-mua-0171a307ed,Cho tôi ô che mưa
-p2,viet-family-vpe-one-item-please-cho-toi-mot-ban-sao-ho-chieu,Cho tôi bản sao hộ chiếu,"A passport copy, please.",practical_flow,hero,hero,audio-authored-cho-toi-ban-sao-ho-chieu-94a883886c,Cho tôi bản sao hộ chiếu
-p2,viet-family-vpe-one-item-please-cho-toi-mot-chia-khoa-phong,Cho tôi chìa khóa phòng,"The room key, please.",practical_flow,hero,hero,audio-authored-cho-toi-chia-khoa-phong-e7343574b7,Cho tôi chìa khóa phòng
-p2,viet-family-vpe-one-item-please-cho-toi-mot-chia-khoa-phong,Cho tôi chìa khóa phòng,"The room key, please.",practical_flow,explore-next,phrase,audio-authored-cho-toi-may-say-toc-632bfedf9e,Cho tôi máy sấy tóc
-p2,viet-family-vpe-one-item-please-cho-toi-mot-khan-tam,Cho tôi khăn tắm,"A bath towel, please.",practical_flow,hero,hero,audio-authored-cho-toi-khan-tam-982f6daf32,Cho tôi khăn tắm
-p2,viet-family-vpe-one-item-please-cho-toi-mot-phong-doi,Cho tôi phòng đôi,"A double room, please.",practical_flow,hero,hero,audio-authored-cho-toi-phong-doi-f2e7d8f748,Cho tôi phòng đôi
-p2,viet-family-vpe-polite-request-da-cho-toi-chia-khoa-phong,"Dạ, cho tôi chìa khóa phòng","Respectfully, please give me the room key.",practical_flow,practice-pairs,phrase,audio-authored-da-cho-toi-may-say-toc-9f371c01fa,"Dạ, cho tôi máy sấy tóc"
-p2,viet-family-vpe-polite-request-da-cho-toi-chia-khoa-phong,"Dạ, cho tôi chìa khóa phòng","Respectfully, please give me the room key.",practical_flow,practice-pairs,phrase,audio-authored-lam-on-cho-toi-da-7d27a9bb6f,Làm ơn cho tôi đá
-p2,viet-family-vpe-polite-request-da-cho-toi-chia-khoa-phong,"Dạ, cho tôi chìa khóa phòng","Respectfully, please give me the room key.",practical_flow,practice-pairs,phrase,audio-authored-lam-on-cho-toi-nuoc-loc-8335f06c5c,Làm ơn cho tôi nước lọc
-p2,viet-family-vpe-polite-request-da-cho-toi-chia-khoa-phong,"Dạ, cho tôi chìa khóa phòng","Respectfully, please give me the room key.",practical_flow,explore-next,phrase,audio-authored-lam-on-cho-toi-nuoc-nong-fd319453c4,Làm ơn cho tôi nước nóng
-p2,viet-family-vpe-polite-request-da-cho-toi-chia-khoa-phong,"Dạ, cho tôi chìa khóa phòng","Respectfully, please give me the room key.",practical_flow,explore-next,phrase,audio-authored-lam-on-cho-toi-nuoc-suoi-a2553e3b02,Làm ơn cho tôi nước suối
-p2,viet-family-vpe-polite-request-da-cho-toi-khan-tam,"Dạ, cho tôi khăn tắm","Respectfully, please give me a bath towel.",practical_flow,hero,hero,audio-authored-da-cho-toi-khan-tam-1b020451a9,"Dạ, cho tôi khăn tắm"
-p2,viet-family-vpe-polite-request-da-cho-toi-may-say-toc,"Dạ, cho tôi máy sấy tóc","Respectfully, please give me a hair dryer.",practical_flow,practice-pairs,phrase,audio-authored-lam-on-cho-toi-khan-giay-e5123da39c,Làm ơn cho tôi khăn giấy
-p2,viet-family-vpe-polite-request-da-cho-toi-phong-doi,"Dạ, cho tôi phòng đôi","Respectfully, please give me a double room.",practical_flow,hero,hero,audio-authored-da-cho-toi-phong-doi-87bfb663cb,"Dạ, cho tôi phòng đôi"
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong,Anh giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-chi-giup-toi-chi-duong-duoc-khong-c29e302055,Chị giúp tôi chỉ đường được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong,Anh giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-chi-giup-toi-doc-so-nay-duoc-khong-e5ad6e9af0,Chị giúp tôi đọc số này được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong,Anh giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-chi-giup-toi-goi-taxi-duoc-khong-d3ead8994d,Chị giúp tôi gọi taxi được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong,Anh giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-chi-giup-toi-goi-xe-cong-nghe-duoc-khong-a0e1f8bbec,Chị giúp tôi gọi xe công nghệ được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-doi-phong-duoc-khong,Anh giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-chi-giup-toi-viet-dia-chi-duoc-khong-6bce3ec052,Chị giúp tôi viết địa chỉ được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-kiem-tra-dat-phong-duoc-khong,Anh giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-anh-giup-toi-sac-dien-thoai-duoc-khong-5ff2f9d770,Anh giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-pronoun-help-anh-giup-toi-kiem-tra-dat-phong-duoc-khong,Anh giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-anh-giup-toi-sua-wi-fi-duoc-khong-61c5fd4297,Anh giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,hero,hero,audio-authored-chi-giup-toi-doi-phong-duoc-khong-7267a69a45,Chị giúp tôi đổi phòng được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-co-giup-toi-chi-duong-duoc-khong-c64c0a4c58,Cô giúp tôi chỉ đường được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-co-giup-toi-doc-so-nay-duoc-khong-7dc7987354,Cô giúp tôi đọc số này được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-co-giup-toi-goi-taxi-duoc-khong-51e4af25d0,Cô giúp tôi gọi taxi được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-co-giup-toi-goi-xe-cong-nghe-duoc-khong-c9259019b0,Cô giúp tôi gọi xe công nghệ được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-doi-phong-duoc-khong,Chị giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-co-giup-toi-viet-dia-chi-duoc-khong-006295ab76,Cô giúp tôi viết địa chỉ được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-kiem-tra-dat-phong-duoc-khong,Chị giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-chi-giup-toi-sac-dien-thoai-duoc-khong-c2ea23a12b,Chị giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-pronoun-help-chi-giup-toi-kiem-tra-dat-phong-duoc-khong,Chị giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-chi-giup-toi-sua-wi-fi-duoc-khong-0722cd9479,Chị giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,hero,hero,audio-authored-chu-giup-toi-doi-phong-duoc-khong-6531c0da33,Chú giúp tôi đổi phòng được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-em-giup-toi-chi-duong-duoc-khong-a538bbfa2e,Em giúp tôi chỉ đường được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-em-giup-toi-doc-so-nay-duoc-khong-3c0e6fdd6d,Em giúp tôi đọc số này được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,practice-pairs,phrase,audio-authored-em-giup-toi-goi-taxi-duoc-khong-d6a5828121,Em giúp tôi gọi taxi được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-em-giup-toi-goi-xe-cong-nghe-duoc-khong-506da86d00,Em giúp tôi gọi xe công nghệ được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-doi-phong-duoc-khong,Chú giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,explore-next,phrase,audio-authored-em-giup-toi-viet-dia-chi-duoc-khong-c36be47194,Em giúp tôi viết địa chỉ được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-goi-taxi-duoc-khong,Chú giúp tôi gọi taxi được không?,Can you help me call a taxi?,practical_flow,hero,hero,audio-authored-chu-giup-toi-goi-taxi-duoc-khong-22bd3c255c,Chú giúp tôi gọi taxi được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-goi-xe-cong-nghe-duoc-khong,Chú giúp tôi gọi xe công nghệ được không?,Can you help me call a ride-share car?,practical_flow,hero,hero,audio-authored-chu-giup-toi-goi-xe-cong-nghe-duoc-khong-b152bd823f,Chú giúp tôi gọi xe công nghệ được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-kiem-tra-dat-phong-duoc-khong,Chú giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-chu-giup-toi-sac-dien-thoai-duoc-khong-6738784c6a,Chú giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-pronoun-help-chu-giup-toi-kiem-tra-dat-phong-duoc-khong,Chú giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-chu-giup-toi-sua-wi-fi-duoc-khong-d4a51e6b8f,Chú giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-pronoun-help-co-giup-toi-doi-phong-duoc-khong,Cô giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,hero,hero,audio-authored-co-giup-toi-doi-phong-duoc-khong-4afcc55549,Cô giúp tôi đổi phòng được không?
-p2,viet-family-vpe-pronoun-help-co-giup-toi-kiem-tra-dat-phong-duoc-khong,Cô giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-co-giup-toi-sac-dien-thoai-duoc-khong-9714b6f404,Cô giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-pronoun-help-co-giup-toi-kiem-tra-dat-phong-duoc-khong,Cô giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-co-giup-toi-sua-wi-fi-duoc-khong-50165915ab,Cô giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-pronoun-help-em-giup-toi-doi-phong-duoc-khong,Em giúp tôi đổi phòng được không?,Can you help me change rooms?,practical_flow,hero,hero,audio-authored-em-giup-toi-doi-phong-duoc-khong-de2a4edf85,Em giúp tôi đổi phòng được không?
-p2,viet-family-vpe-pronoun-help-em-giup-toi-kiem-tra-dat-phong-duoc-khong,Em giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,practice-pairs,phrase,audio-authored-em-giup-toi-sac-dien-thoai-duoc-khong-0d2a26ce16,Em giúp tôi sạc điện thoại được không?
-p2,viet-family-vpe-pronoun-help-em-giup-toi-kiem-tra-dat-phong-duoc-khong,Em giúp tôi kiểm tra đặt phòng được không?,Can you help me check my reservation?,practical_flow,explore-next,phrase,audio-authored-em-giup-toi-sua-wi-fi-duoc-khong-051539fa81,Em giúp tôi sửa Wi-Fi được không?
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,hero,hero,audio-authored-dung-o-atm-a95b6a2479,Dừng ở ATM
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-ben-tau-6656868d29,Dừng ở bến tàu
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-ben-xe-7e2004c1d4,Dừng ở bến xe
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cua-ra-54c5ba6b1c,Dừng ở cửa ra
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-ga-tau-f10a95c7bd,Dừng ở ga tàu
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-san-bay-eb95bb0d80,Dừng ở sân bay
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-bai-bien-06ab190042,Dừng ở bãi biển
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-bai-dau-xe-bfb7d28f4e,Dừng ở bãi đậu xe
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-bai-gui-xe-may-84226e2b71,Dừng ở bãi gửi xe máy
-p2,viet-family-vpe-stop-at-place-dung-o-atm,Dừng ở ATM,Stop at an ATM.,practical_flow,explore-next,phrase,audio-authored-dung-o-ban-huong-dan-5296dabbf0,Dừng ở bàn hướng dẫn
-p2,viet-family-vpe-stop-at-place-dung-o-bai-bien,Dừng ở bãi biển,Stop at the beach.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-bao-tang-8d8d47aa07,Dừng ở bảo tàng
-p2,viet-family-vpe-stop-at-place-dung-o-bai-bien,Dừng ở bãi biển,Stop at the beach.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-chua-553c0d70b6,Dừng ở chùa
-p2,viet-family-vpe-stop-at-place-dung-o-bai-bien,Dừng ở bãi biển,Stop at the beach.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-nha-tho-e848cf1ee1,Dừng ở nhà thờ
-p2,viet-family-vpe-stop-at-place-dung-o-bai-bien,Dừng ở bãi biển,Stop at the beach.,practical_flow,explore-next,phrase,audio-authored-dung-o-pho-di-bo-ae36a4bd63,Dừng ở phố đi bộ
-p2,viet-family-vpe-stop-at-place-dung-o-bai-bien,Dừng ở bãi biển,Stop at the beach.,practical_flow,explore-next,phrase,audio-authored-dung-o-trung-tam-thuong-mai-46379ab492,Dừng ở trung tâm thương mại
-p2,viet-family-vpe-stop-at-place-dung-o-bai-dau-xe,Dừng ở bãi đậu xe,Stop at the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-ben-pha-120f567078,Dừng ở bến phà
-p2,viet-family-vpe-stop-at-place-dung-o-bai-dau-xe,Dừng ở bãi đậu xe,Stop at the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-diem-ban-sim-49c3df906f,Dừng ở điểm bán SIM
-p2,viet-family-vpe-stop-at-place-dung-o-bai-dau-xe,Dừng ở bãi đậu xe,Stop at the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-khu-am-thuc-01a51e4cb0,Dừng ở khu ẩm thực
-p2,viet-family-vpe-stop-at-place-dung-o-bai-dau-xe,Dừng ở bãi đậu xe,Stop at the parking lot.,practical_flow,explore-next,phrase,audio-authored-dung-o-tram-xang-fbd230cf7c,Dừng ở trạm xăng
-p2,viet-family-vpe-stop-at-place-dung-o-bai-dau-xe,Dừng ở bãi đậu xe,Stop at the parking lot.,practical_flow,explore-next,phrase,audio-authored-dung-o-van-phong-du-lich-98bf09bb42,Dừng ở văn phòng du lịch
-p2,viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may,Dừng ở bãi gửi xe máy,Stop at motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cua-khoi-hanh-1dffeacb0d,Dừng ở cửa khởi hành
-p2,viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may,Dừng ở bãi gửi xe máy,Stop at motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-khu-kiem-tra-an-ninh-2d6b412629,Dừng ở khu kiểm tra an ninh
-p2,viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may,Dừng ở bãi gửi xe máy,Stop at motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-phong-cau-nguyen-f2f8e1f7fe,Dừng ở phòng cầu nguyện
-p2,viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may,Dừng ở bãi gửi xe máy,Stop at motorbike parking.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-hoan-thue-bd6bbaaaa1,Dừng ở quầy hoàn thuế
-p2,viet-family-vpe-stop-at-place-dung-o-bai-gui-xe-may,Dừng ở bãi gửi xe máy,Stop at motorbike parking.,practical_flow,explore-next,phrase,audio-authored-dung-o-tram-y-te-ca478d68d4,Dừng ở trạm y tế
-p2,viet-family-vpe-stop-at-place-dung-o-ban-huong-dan,Dừng ở bàn hướng dẫn,Stop at the help desk.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cay-nuoc-nong-94d51347b6,Dừng ở cây nước nóng
-p2,viet-family-vpe-stop-at-place-dung-o-ban-huong-dan,Dừng ở bàn hướng dẫn,Stop at the help desk.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-may-in-5b8224927c,Dừng ở máy in
-p2,viet-family-vpe-stop-at-place-dung-o-ban-huong-dan,Dừng ở bàn hướng dẫn,Stop at the help desk.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-may-photocopy-40eeaaeb63,Dừng ở máy photocopy
-p2,viet-family-vpe-stop-at-place-dung-o-ban-huong-dan,Dừng ở bàn hướng dẫn,Stop at the help desk.,practical_flow,explore-next,phrase,audio-authored-dung-o-phong-y-te-8a3d2ecf43,Dừng ở phòng y tế
-p2,viet-family-vpe-stop-at-place-dung-o-ban-huong-dan,Dừng ở bàn hướng dẫn,Stop at the help desk.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-giu-do-80ff08c779,Dừng ở quầy giữ đồ
-p2,viet-family-vpe-stop-at-place-dung-o-bao-tang,Dừng ở bảo tàng,Stop at the museum.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-buu-dien-6518f4b2a3,Dừng ở bưu điện
-p2,viet-family-vpe-stop-at-place-dung-o-ben-pha,Dừng ở bến phà,Stop at the ferry pier.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cua-hang-dien-thoai-4a2bd19d20,Dừng ở cửa hàng điện thoại
-p2,viet-family-vpe-stop-at-place-dung-o-ben-pha,Dừng ở bến phà,Stop at the ferry pier.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-phong-thay-do-daa5a1a104,Dừng ở phòng thay đồ
-p2,viet-family-vpe-stop-at-place-dung-o-ben-pha,Dừng ở bến phà,Stop at the ferry pier.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-thanh-toan-61c52e7da1,Dừng ở quầy thanh toán
-p2,viet-family-vpe-stop-at-place-dung-o-ben-tau,Dừng ở bến tàu,Stop at the boat pier.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-loi-vao-ecf6f96732,Dừng ở lối vào
-p2,viet-family-vpe-stop-at-place-dung-o-ben-tau,Dừng ở bến tàu,Stop at the boat pier.,practical_flow,explore-next,phrase,audio-authored-dung-o-thang-may-a7a7c5e28a,Dừng ở thang máy
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,hero,hero,audio-authored-dung-o-benh-vien-0af372485a,Dừng ở bệnh viện
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cho-eee0d82e72,Dừng ở chợ
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-don-cong-an-0999e63363,Dừng ở đồn công an
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-khach-san-5104b24211,Dừng ở khách sạn
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,explore-next,phrase,audio-authored-dung-o-nha-hang-57437480bc,Dừng ở nhà hàng
-p2,viet-family-vpe-stop-at-place-dung-o-benh-vien,Dừng ở bệnh viện,Stop at the hospital.,practical_flow,explore-next,phrase,audio-authored-dung-o-quan-ca-phe-15d8667bb0,Dừng ở quán cà phê
-p2,viet-family-vpe-stop-at-place-dung-o-buu-dien,Dừng ở bưu điện,Stop at the post office.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cong-len-may-bay-8c386c5532,Dừng ở cổng lên máy bay
-p2,viet-family-vpe-stop-at-place-dung-o-buu-dien,Dừng ở bưu điện,Stop at the post office.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-khu-lay-hanh-ly-66f3cabbd0,Dừng ở khu lấy hành lý
-p2,viet-family-vpe-stop-at-place-dung-o-buu-dien,Dừng ở bưu điện,Stop at the post office.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-may-ban-ve-968f9dfdc5,Dừng ở máy bán vé
-p2,viet-family-vpe-stop-at-place-dung-o-buu-dien,Dừng ở bưu điện,Stop at the post office.,practical_flow,explore-next,phrase,audio-authored-dung-o-ngan-hang-074d735d8b,Dừng ở ngân hàng
-p2,viet-family-vpe-stop-at-place-dung-o-buu-dien,Dừng ở bưu điện,Stop at the post office.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-ve-2354f0e0bd,Dừng ở quầy vé
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,hero,hero,audio-authored-dung-o-cau-2f8b966d01,Dừng ở cầu
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cong-vien-ccca6b68fb,Dừng ở công viên
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-hieu-kinh-thuoc-67739e71cd,Dừng ở hiệu kính thuốc
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-ho-7cc7de6657,Dừng ở hồ
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,explore-next,phrase,audio-authored-dung-o-song-5df424ad8b,Dừng ở sông
-p2,viet-family-vpe-stop-at-place-dung-o-cau,Dừng ở cầu,Stop at the bridge.,practical_flow,explore-next,phrase,audio-authored-dung-o-tiem-giat-ui-58fcadecab,Dừng ở tiệm giặt ủi
-p2,viet-family-vpe-stop-at-place-dung-o-cay-nuoc-nong,Dừng ở cây nước nóng,Stop at a hot-water dispenser.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-diem-hen-05e5455e53,Dừng ở điểm hẹn
-p2,viet-family-vpe-stop-at-place-dung-o-cay-nuoc-nong,Dừng ở cây nước nóng,Stop at a hot-water dispenser.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-nha-thuoc-b9f9c5e219,Dừng ở nhà thuốc
-p2,viet-family-vpe-stop-at-place-dung-o-cay-nuoc-nong,Dừng ở cây nước nóng,Stop at a hot-water dispenser.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-nha-ve-sinh-0946783e44,Dừng ở nhà vệ sinh
-p2,viet-family-vpe-stop-at-place-dung-o-cay-nuoc-nong,Dừng ở cây nước nóng,Stop at a hot-water dispenser.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-dat-tour-45683d9d88,Dừng ở quầy đặt tour
-p2,viet-family-vpe-stop-at-place-dung-o-cay-nuoc-nong,Dừng ở cây nước nóng,Stop at a hot-water dispenser.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-le-tan-250ce0dcaa,Dừng ở quầy lễ tân
-p2,viet-family-vpe-stop-at-place-dung-o-cho,Dừng ở chợ,Stop at the market.,practical_flow,explore-next,phrase,audio-authored-dung-o-sieu-thi-6416d259c4,Dừng ở siêu thị
-p2,viet-family-vpe-stop-at-place-dung-o-cho-dau-taxi,Dừng ở chỗ đậu taxi,Stop at the taxi stand.,practical_flow,hero,hero,audio-authored-dung-o-cho-dau-taxi-ef44f478bb,Dừng ở chỗ đậu taxi
-p2,viet-family-vpe-stop-at-place-dung-o-cho-gui-hanh-ly,Dừng ở chỗ gửi hành lý,Stop at luggage storage.,practical_flow,hero,hero,audio-authored-dung-o-cho-gui-hanh-ly-b05b032964,Dừng ở chỗ gửi hành lý
-p2,viet-family-vpe-stop-at-place-dung-o-cho-gui-hanh-ly,Dừng ở chỗ gửi hành lý,Stop at luggage storage.,practical_flow,explore-next,phrase,audio-authored-dung-o-phong-kham-b16ba3842b,Dừng ở phòng khám
-p2,viet-family-vpe-stop-at-place-dung-o-cho-ngoi,Dừng ở chỗ ngồi,Stop at a seat.,practical_flow,hero,hero,audio-authored-dung-o-cho-ngoi-99e80b26f8,Dừng ở chỗ ngồi
-p2,viet-family-vpe-stop-at-place-dung-o-cho-ngoi,Dừng ở chỗ ngồi,Stop at a seat.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-duong-chinh-bcffb7f184,Dừng ở đường chính
-p2,viet-family-vpe-stop-at-place-dung-o-cho-ngoi,Dừng ở chỗ ngồi,Stop at a seat.,practical_flow,explore-next,phrase,audio-authored-dung-o-loi-sang-duong-75c3dbad12,Dừng ở lối sang đường
-p2,viet-family-vpe-stop-at-place-dung-o-cho-ngoi,Dừng ở chỗ ngồi,Stop at a seat.,practical_flow,explore-next,phrase,audio-authored-dung-o-pho-co-748115fcd2,Dừng ở phố cổ
-p2,viet-family-vpe-stop-at-place-dung-o-cong-len-may-bay,Dừng ở cổng lên máy bay,Stop at the boarding gate.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-cua-hai-quan-3ad52316da,Dừng ở cửa hải quan
-p2,viet-family-vpe-stop-at-place-dung-o-cong-len-may-bay,Dừng ở cổng lên máy bay,Stop at the boarding gate.,practical_flow,explore-next,phrase,audio-authored-dung-o-tram-sac-2a0b24a660,Dừng ở trạm sạc
-p2,viet-family-vpe-stop-at-place-dung-o-cong-vien,Dừng ở công viên,Stop at the park.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-phong-cho-566fa8774e,Dừng ở phòng chờ
-p2,viet-family-vpe-stop-at-place-dung-o-cong-vien,Dừng ở công viên,Stop at the park.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-quay-an-ninh-092ccbe35f,Dừng ở quầy an ninh
-p2,viet-family-vpe-stop-at-place-dung-o-cong-vien,Dừng ở công viên,Stop at the park.,practical_flow,explore-next,phrase,audio-authored-dung-o-tiem-cat-toc-e7da794e9d,Dừng ở tiệm cắt tóc
-p2,viet-family-vpe-stop-at-place-dung-o-cua-hang-dien-thoai,Dừng ở cửa hàng điện thoại,Stop at the phone shop.,practical_flow,explore-next,phrase,audio-authored-dung-o-thung-rac-1505cb31b3,Dừng ở thùng rác
-p2,viet-family-vpe-stop-at-place-dung-o-cua-hang-dien-thoai,Dừng ở cửa hàng điện thoại,Stop at the phone shop.,practical_flow,explore-next,phrase,audio-authored-dung-o-voi-nuoc-7a58b7aa84,Dừng ở vòi nước
-p2,viet-family-vpe-stop-at-place-dung-o-cua-hang-tien-loi,Dừng ở cửa hàng tiện lợi,Stop at a convenience store.,practical_flow,hero,hero,audio-authored-dung-o-cua-hang-tien-loi-0396252b0c,Dừng ở cửa hàng tiện lợi
-p2,viet-family-vpe-stop-at-place-dung-o-cua-hang-tien-loi,Dừng ở cửa hàng tiện lợi,Stop at a convenience store.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-diem-don-xe-30ba456b3c,Dừng ở điểm đón xe
-p2,viet-family-vpe-stop-at-place-dung-o-cua-hang-tien-loi,Dừng ở cửa hàng tiện lợi,Stop at a convenience store.,practical_flow,explore-next,phrase,audio-authored-dung-o-tram-xe-buyt-7cef3a7e3c,Dừng ở trạm xe buýt
-p2,viet-family-vpe-stop-at-place-dung-o-cua-khoi-hanh,Dừng ở cửa khởi hành,Stop at the departure door.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-duong-mot-chieu-91bece16dc,Dừng ở đường một chiều
-p2,viet-family-vpe-stop-at-place-dung-o-cua-khoi-hanh,Dừng ở cửa khởi hành,Stop at the departure door.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-hem-nay-b768d067f1,Dừng ở hẻm này
-p2,viet-family-vpe-stop-at-place-dung-o-cua-khoi-hanh,Dừng ở cửa khởi hành,Stop at the departure door.,practical_flow,explore-next,phrase,audio-authored-dung-o-nga-tu-37c17f8032,Dừng ở ngã tư
-p2,viet-family-vpe-stop-at-place-dung-o-cua-ra,Dừng ở cửa ra,Stop at the exit.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-quay-doi-tien-5c5ad86585,Dừng ở quầy đổi tiền
-p2,viet-family-vpe-stop-at-place-dung-o-cua-ra,Dừng ở cửa ra,Stop at the exit.,practical_flow,explore-next,phrase,audio-authored-dung-o-quay-thong-tin-bded698234,Dừng ở quầy thông tin
-p2,viet-family-vpe-stop-at-place-dung-o-hieu-kinh-thuoc,Dừng ở hiệu kính thuốc,Stop at an optical shop.,practical_flow,practice-pairs,phrase,audio-authored-dung-o-khu-vuc-hut-thuoc-83a74b702e,Dừng ở khu vực hút thuốc
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-dau-xe,Cho tôi đến bãi đậu xe,Please take me to the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-ben-pha-cdb8b16836,Cho tôi đến bến phà
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-dau-xe,Cho tôi đến bãi đậu xe,Please take me to the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-diem-ban-sim-a09b20cfaa,Cho tôi đến điểm bán SIM
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-dau-xe,Cho tôi đến bãi đậu xe,Please take me to the parking lot.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-khu-am-thuc-b1eb5256b6,Cho tôi đến khu ẩm thực
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-dau-xe,Cho tôi đến bãi đậu xe,Please take me to the parking lot.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-tram-xang-c5943ed757,Cho tôi đến trạm xăng
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-dau-xe,Cho tôi đến bãi đậu xe,Please take me to the parking lot.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-van-phong-du-lich-cf9254a956,Cho tôi đến văn phòng du lịch
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-gui-xe-may,Cho tôi đến bãi gửi xe máy,Please take me to motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-cua-khoi-hanh-b4b6d06954,Cho tôi đến cửa khởi hành
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-gui-xe-may,Cho tôi đến bãi gửi xe máy,Please take me to motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-khu-kiem-tra-an-ninh-72df81c4ce,Cho tôi đến khu kiểm tra an ninh
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-gui-xe-may,Cho tôi đến bãi gửi xe máy,Please take me to motorbike parking.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-phong-cau-nguyen-34fd5dd3b5,Cho tôi đến phòng cầu nguyện
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-gui-xe-may,Cho tôi đến bãi gửi xe máy,Please take me to motorbike parking.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-quay-hoan-thue-b7525cd99d,Cho tôi đến quầy hoàn thuế
-p2,viet-family-vpe-take-me-place-cho-toi-den-bai-gui-xe-may,Cho tôi đến bãi gửi xe máy,Please take me to motorbike parking.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-tram-y-te-4b4a7a19da,Cho tôi đến trạm y tế
-p2,viet-family-vpe-take-me-place-cho-toi-den-ben-pha,Cho tôi đến bến phà,Please take me to the ferry pier.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-cua-hang-dien-thoai-ab15186eb1,Cho tôi đến cửa hàng điện thoại
-p2,viet-family-vpe-take-me-place-cho-toi-den-ben-pha,Cho tôi đến bến phà,Please take me to the ferry pier.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-phong-thay-do-0821b1d2e9,Cho tôi đến phòng thay đồ
-p2,viet-family-vpe-take-me-place-cho-toi-den-ben-pha,Cho tôi đến bến phà,Please take me to the ferry pier.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-quay-thanh-toan-2da55f87d8,Cho tôi đến quầy thanh toán
-p2,viet-family-vpe-take-me-place-cho-toi-den-ben-tau,Cho tôi đến bến tàu,Please take me to the boat pier.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-loi-vao-52eea21a10,Cho tôi đến lối vào
-p2,viet-family-vpe-take-me-place-cho-toi-den-ben-tau,Cho tôi đến bến tàu,Please take me to the boat pier.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-thang-may-085f9445b3,Cho tôi đến thang máy
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,hero,hero,audio-authored-cho-toi-den-cau-239a6ef30b,Cho tôi đến cầu
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-cong-vien-4f154ddeae,Cho tôi đến công viên
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-hieu-kinh-thuoc-a54700ec44,Cho tôi đến hiệu kính thuốc
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-ho-8822cea565,Cho tôi đến hồ
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-song-5277ccc89b,Cho tôi đến sông
-p2,viet-family-vpe-take-me-place-cho-toi-den-cau,Cho tôi đến cầu,Please take me to the bridge.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-tiem-giat-ui-0907e09251,Cho tôi đến tiệm giặt ủi
-p2,viet-family-vpe-take-me-place-cho-toi-den-cho-dau-taxi,Cho tôi đến chỗ đậu taxi,Please take me to the taxi stand.,practical_flow,hero,hero,audio-authored-cho-toi-den-cho-dau-taxi-bf30c04dc9,Cho tôi đến chỗ đậu taxi
-p2,viet-family-vpe-take-me-place-cho-toi-den-cho-gui-hanh-ly,Cho tôi đến chỗ gửi hành lý,Please take me to luggage storage.,practical_flow,hero,hero,audio-authored-cho-toi-den-cho-gui-hanh-ly-391e096d5a,Cho tôi đến chỗ gửi hành lý
-p2,viet-family-vpe-take-me-place-cho-toi-den-cho-gui-hanh-ly,Cho tôi đến chỗ gửi hành lý,Please take me to luggage storage.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-phong-kham-5aec661bef,Cho tôi đến phòng khám
-p2,viet-family-vpe-take-me-place-cho-toi-den-cong-len-may-bay,Cho tôi đến cổng lên máy bay,Please take me to the boarding gate.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-cua-hai-quan-8a6fc9584f,Cho tôi đến cửa hải quan
-p2,viet-family-vpe-take-me-place-cho-toi-den-cong-len-may-bay,Cho tôi đến cổng lên máy bay,Please take me to the boarding gate.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-tram-sac-b531bb22cc,Cho tôi đến trạm sạc
-p2,viet-family-vpe-take-me-place-cho-toi-den-cua-khoi-hanh,Cho tôi đến cửa khởi hành,Please take me to the departure door.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-duong-mot-chieu-9140f73844,Cho tôi đến đường một chiều
-p2,viet-family-vpe-take-me-place-cho-toi-den-cua-khoi-hanh,Cho tôi đến cửa khởi hành,Please take me to the departure door.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-hem-nay-e529b3e2cf,Cho tôi đến hẻm này
-p2,viet-family-vpe-take-me-place-cho-toi-den-cua-khoi-hanh,Cho tôi đến cửa khởi hành,Please take me to the departure door.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-nga-tu-c9cf6ecef9,Cho tôi đến ngã tư
-p2,viet-family-vpe-take-me-place-cho-toi-den-cua-ra,Cho tôi đến cửa ra,Please take me to the exit.,practical_flow,practice-pairs,phrase,audio-authored-cho-toi-den-quay-doi-tien-a60cb66029,Cho tôi đến quầy đổi tiền
-p2,viet-family-vpe-take-me-place-cho-toi-den-cua-ra,Cho tôi đến cửa ra,Please take me to the exit.,practical_flow,explore-next,phrase,audio-authored-cho-toi-den-quay-thong-tin-76b0d7e88b,Cho tôi đến quầy thông tin
-p2,viet-family-vpe-where-place-bai-dau-xe-o-dau,bãi đậu xe ở đâu?,Where is the parking lot?,practical_flow,practice-pairs,phrase,audio-authored-diem-ban-sim-o-dau-8df99fe3fa,điểm bán SIM ở đâu?
-p2,viet-family-vpe-where-place-bai-dau-xe-o-dau,bãi đậu xe ở đâu?,Where is the parking lot?,practical_flow,practice-pairs,phrase,audio-authored-khu-am-thuc-o-dau-c23b0eeaad,khu ẩm thực ở đâu?
-p2,viet-family-vpe-where-place-bai-dau-xe-o-dau,bãi đậu xe ở đâu?,Where is the parking lot?,practical_flow,explore-next,phrase,audio-authored-tram-xang-o-dau-4b2e349107,trạm xăng ở đâu?
-p2,viet-family-vpe-where-place-bai-dau-xe-o-dau,bãi đậu xe ở đâu?,Where is the parking lot?,practical_flow,explore-next,phrase,audio-authored-van-phong-du-lich-o-dau-383555f6d7,văn phòng du lịch ở đâu?
-p2,viet-family-vpe-where-place-bai-gui-xe-may-o-dau,bãi gửi xe máy ở đâu?,Where is motorbike parking?,practical_flow,practice-pairs,phrase,audio-authored-cua-khoi-hanh-o-dau-05ee84280c,cửa khởi hành ở đâu?
-p2,viet-family-vpe-where-place-bai-gui-xe-may-o-dau,bãi gửi xe máy ở đâu?,Where is motorbike parking?,practical_flow,practice-pairs,phrase,audio-authored-khu-kiem-tra-an-ninh-o-dau-4c1a284ce8,khu kiểm tra an ninh ở đâu?
-p2,viet-family-vpe-where-place-bai-gui-xe-may-o-dau,bãi gửi xe máy ở đâu?,Where is motorbike parking?,practical_flow,practice-pairs,phrase,audio-authored-phong-cau-nguyen-o-dau-9d81d91c67,phòng cầu nguyện ở đâu?
-p2,viet-family-vpe-where-place-bai-gui-xe-may-o-dau,bãi gửi xe máy ở đâu?,Where is motorbike parking?,practical_flow,explore-next,phrase,audio-authored-quay-hoan-thue-o-dau-45cf4d64bd,quầy hoàn thuế ở đâu?
-p2,viet-family-vpe-where-place-bai-gui-xe-may-o-dau,bãi gửi xe máy ở đâu?,Where is motorbike parking?,practical_flow,explore-next,phrase,audio-authored-tram-y-te-o-dau-347967c52c,trạm y tế ở đâu?
-p2,viet-family-vpe-where-place-ben-pha-o-dau,bến phà ở đâu?,Where is the ferry pier?,practical_flow,practice-pairs,phrase,audio-authored-cua-hang-dien-thoai-o-dau-8b89b39da2,cửa hàng điện thoại ở đâu?
-p2,viet-family-vpe-where-place-ben-pha-o-dau,bến phà ở đâu?,Where is the ferry pier?,practical_flow,practice-pairs,phrase,audio-authored-phong-thay-do-o-dau-4ab788956d,phòng thay đồ ở đâu?
-p2,viet-family-vpe-where-place-ben-pha-o-dau,bến phà ở đâu?,Where is the ferry pier?,practical_flow,explore-next,phrase,audio-authored-quay-thanh-toan-o-dau-dae6912781,quầy thanh toán ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,hero,hero,audio-authored-ben-tau-o-dau-ed68346b23,bến tàu ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,practice-pairs,phrase,audio-authored-cua-ra-o-dau-405fd984bb,cửa ra ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,practice-pairs,phrase,audio-authored-ga-tau-o-dau-c2dc251d81,ga tàu ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,practice-pairs,phrase,audio-authored-quay-doi-tien-o-dau-607f2d3f0c,quầy đổi tiền ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,explore-next,phrase,audio-authored-quay-thong-tin-o-dau-2088f02020,quầy thông tin ở đâu?
-p2,viet-family-vpe-where-place-ben-tau-o-dau,bến tàu ở đâu?,Where is the boat pier?,practical_flow,explore-next,phrase,audio-authored-san-bay-o-dau-2a5de35d1b,sân bay ở đâu?
-p2,viet-family-vpe-where-place-ben-xe-o-dau,bến xe ở đâu?,Where is the bus station?,practical_flow,hero,hero,audio-authored-ben-xe-o-dau-f46c18d694,bến xe ở đâu?
-p2,viet-family-vpe-where-place-cho-dau-taxi-o-dau,chỗ đậu taxi ở đâu?,Where is the taxi stand?,practical_flow,hero,hero,audio-authored-cho-dau-taxi-o-dau-5c18116f6c,chỗ đậu taxi ở đâu?
-p2,viet-family-vpe-where-place-cho-gui-hanh-ly-o-dau,chỗ gửi hành lý ở đâu?,Where is luggage storage?,practical_flow,hero,hero,audio-authored-cho-gui-hanh-ly-o-dau-c1266da72d,chỗ gửi hành lý ở đâu?
-p2,viet-family-vpe-where-place-cho-gui-hanh-ly-o-dau,chỗ gửi hành lý ở đâu?,Where is luggage storage?,practical_flow,explore-next,phrase,audio-authored-phong-kham-o-dau-d9b1c2f28b,phòng khám ở đâu?
-p2,viet-family-vpe-where-place-cong-len-may-bay-o-dau,cổng lên máy bay ở đâu?,Where is the boarding gate?,practical_flow,practice-pairs,phrase,audio-authored-cua-hai-quan-o-dau-05fd85cfce,cửa hải quan ở đâu?
-p2,viet-family-vpe-where-place-cong-len-may-bay-o-dau,cổng lên máy bay ở đâu?,Where is the boarding gate?,practical_flow,explore-next,phrase,audio-authored-tram-sac-o-dau-5a1c20b2df,trạm sạc ở đâu?
-p2,viet-family-vpe-where-place-cua-khoi-hanh-o-dau,cửa khởi hành ở đâu?,Where is the departure door?,practical_flow,practice-pairs,phrase,audio-authored-duong-mot-chieu-o-dau-fedd3647a9,đường một chiều ở đâu?
-p2,viet-family-vpe-where-place-cua-khoi-hanh-o-dau,cửa khởi hành ở đâu?,Where is the departure door?,practical_flow,practice-pairs,phrase,audio-authored-hem-nay-o-dau-ed51585869,hẻm này ở đâu?
-p2,viet-family-vpe-where-place-cua-khoi-hanh-o-dau,cửa khởi hành ở đâu?,Where is the departure door?,practical_flow,explore-next,phrase,audio-authored-nga-tu-o-dau-add0feeaa4,ngã tư ở đâu?
+p2,viet-family-ves-where-driver-waits,Tài xế chờ ở đâu?,Where does the driver wait?,practical_flow,hero,hero,audio-authored-tai-xe-cho-o-dau-0b819e85a5,Tài xế chờ ở đâu?
 p3,viet-family-city-danang-eat-near-con-market,Ăn gần Chợ Cồn,Eat near Con Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-con-f1db95e14e,Ăn gần Chợ Cồn
 p3,viet-family-city-danang-eat-near-han-market,Ăn gần Chợ Hàn,Eat near Han Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-han-877a7ad8a8,Ăn gần Chợ Hàn
-p3,viet-family-city-danang-eat-near-han-river,Ăn gần Sông Hàn,Eat near Han River,derived_place_phrase,hero,hero,audio-authored-an-gan-song-han-b25ee72aa9,Ăn gần Sông Hàn
 p3,viet-family-city-danang-go-han-market,Đi Chợ Hàn,Go to Han Market,derived_place_phrase,related-phrases,phrase,audio-authored-co-nha-thuoc-gan-cho-han-khong-ff450fcc4c,Có nhà thuốc gần chợ Hàn không?
-p3,viet-family-city-danang-go-love-bridge,Đi Cầu Tình Yêu,Go to Love Bridge,derived_place_phrase,hero,hero,audio-authored-di-cau-tinh-yeu-b2b30ff532,Đi Cầu Tình Yêu
-p3,viet-family-city-danang-go-love-bridge,Đi Cầu Tình Yêu,Go to Love Bridge,derived_place_phrase,related-phrases,phrase,audio-authored-cau-tinh-yeu-dae5912687,Cầu Tình Yêu
-p3,viet-family-city-danang-go-love-bridge,Đi Cầu Tình Yêu,Go to Love Bridge,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-cau-tinh-yeu-85bdca9f7a,Dừng ở Cầu Tình Yêu
-p3,viet-family-city-danang-go-love-bridge,Đi Cầu Tình Yêu,Go to Love Bridge,derived_place_phrase,related-phrases,phrase,audio-authored-cau-tinh-yeu-o-dau-18267e6d25,Cầu Tình Yêu ở đâu?
-p3,viet-family-city-danang-go-man-thai-beach,Đi Biển Mân Thái,Go to Man Thai Beach,derived_place_phrase,hero,hero,audio-authored-di-bien-man-thai-70756346a8,Đi Biển Mân Thái
-p3,viet-family-city-danang-go-man-thai-beach,Đi Biển Mân Thái,Go to Man Thai Beach,derived_place_phrase,related-phrases,phrase,audio-authored-bien-man-thai-397d136a26,Biển Mân Thái
-p3,viet-family-city-danang-go-man-thai-beach,Đi Biển Mân Thái,Go to Man Thai Beach,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-bien-man-thai-b4e8ca1ada,Dừng ở Biển Mân Thái
-p3,viet-family-city-danang-go-man-thai-beach,Đi Biển Mân Thái,Go to Man Thai Beach,derived_place_phrase,related-phrases,phrase,audio-authored-bien-man-thai-o-dau-90bc2fbab1,Biển Mân Thái ở đâu?
-p3,viet-family-city-danang-go-marble-mountains,Đi Ngũ Hành Sơn,Go to Marble Mountains,derived_place_phrase,hero,hero,audio-authored-di-ngu-hanh-son-c46a771980,Đi Ngũ Hành Sơn
-p3,viet-family-city-danang-go-marble-mountains,Đi Ngũ Hành Sơn,Go to Marble Mountains,derived_place_phrase,related-phrases,phrase,audio-authored-ngu-hanh-son-7cd09d8626,Ngũ Hành Sơn
-p3,viet-family-city-danang-go-marble-mountains,Đi Ngũ Hành Sơn,Go to Marble Mountains,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-ngu-hanh-son-d265ed4878,Dừng ở Ngũ Hành Sơn
-p3,viet-family-city-danang-go-marble-mountains,Đi Ngũ Hành Sơn,Go to Marble Mountains,derived_place_phrase,related-phrases,phrase,audio-authored-mot-ve-vao-ngu-hanh-son-56b84cbd10,Một vé vào Ngũ Hành Sơn
-p3,viet-family-city-danang-go-marble-mountains,Đi Ngũ Hành Sơn,Go to Marble Mountains,derived_place_phrase,related-phrases,phrase,audio-authored-tu-day-den-ngu-hanh-son-bao-lau-0aae469b3c,Từ đây đến Ngũ Hành Sơn bao lâu?
-p3,viet-family-city-danang-go-nam-o-reef,Đi Rạn Nam Ô,Go to Nam O Reef,derived_place_phrase,hero,hero,audio-authored-di-ran-nam-o-8d018d624f,Đi Rạn Nam Ô
-p3,viet-family-city-danang-go-nam-o-reef,Đi Rạn Nam Ô,Go to Nam O Reef,derived_place_phrase,related-phrases,phrase,audio-authored-ran-nam-o-f3cbae8893,Rạn Nam Ô
-p3,viet-family-city-danang-go-nam-o-reef,Đi Rạn Nam Ô,Go to Nam O Reef,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-ran-nam-o-40e78f4f19,Dừng ở Rạn Nam Ô
 p3,viet-family-city-danang-go-nen,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,derived_place_phrase,hero,hero,audio-authored-cho-toi-den-nha-hang-nen-da-nang-252b38c56d,Cho tôi đến nhà hàng Nén Đà Nẵng.
-p3,viet-family-city-danang-go-nen,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-nen-da-nang-762c6e4180,Nén Đà Nẵng
 p3,viet-family-city-danang-go-nen,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-toi-co-dat-ban-o-nen-da-nang-fd3465f873,Tôi có đặt bàn ở Nén Đà Nẵng
 p3,viet-family-city-danang-go-nen,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-nha-hang-nen-da-nang-o-dau-d7632fcda8,Nhà hàng Nén Đà Nẵng ở đâu?
 p3,viet-family-city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,derived_place_phrase,hero,hero,audio-authored-di-duong-nguyen-van-linh-1041762d59,Đi Đường Nguyễn Văn Linh
-p3,viet-family-city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-nguyen-van-linh-2fa0fcb186,Đường Nguyễn Văn Linh
 p3,viet-family-city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-nguyen-van-linh-gan-day-khong-63a70d6a49,Đường Nguyễn Văn Linh gần đây không?
 p3,viet-family-city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-duong-nguyen-van-linh-ea7a5b650b,Dừng ở Đường Nguyễn Văn Linh
 p3,viet-family-city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-nguyen-van-linh-o-dau-04b68ce6df,Đường Nguyễn Văn Linh ở đâu?
-p3,viet-family-city-danang-go-non-nuoc-beach,Đi Biển Non Nước,Go to Non Nuoc Beach,derived_place_phrase,hero,hero,audio-authored-di-bien-non-nuoc-a140778278,Đi Biển Non Nước
-p3,viet-family-city-danang-go-non-nuoc-beach,Đi Biển Non Nước,Go to Non Nuoc Beach,derived_place_phrase,related-phrases,phrase,audio-authored-bien-non-nuoc-6554d5ecf2,Biển Non Nước
-p3,viet-family-city-danang-go-non-nuoc-beach,Đi Biển Non Nước,Go to Non Nuoc Beach,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-bien-non-nuoc-b025d8b0b9,Dừng ở Biển Non Nước
-p3,viet-family-city-danang-go-non-nuoc-stone-village,Đi Làng đá Non Nước,Go to Non Nuoc Stone Carving Village,derived_place_phrase,hero,hero,audio-authored-di-lang-da-non-nuoc-5b6ccbe02d,Đi Làng đá Non Nước
-p3,viet-family-city-danang-go-non-nuoc-stone-village,Đi Làng đá Non Nước,Go to Non Nuoc Stone Carving Village,derived_place_phrase,related-phrases,phrase,audio-authored-lang-da-non-nuoc-8642dec883,Làng đá Non Nước
-p3,viet-family-city-danang-go-non-nuoc-stone-village,Đi Làng đá Non Nước,Go to Non Nuoc Stone Carving Village,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-lang-da-non-nuoc-b6397f3722,Dừng ở Làng đá Non Nước
-p3,viet-family-city-danang-go-non-nuoc-stone-village,Đi Làng đá Non Nước,Go to Non Nuoc Stone Carving Village,derived_place_phrase,related-phrases,phrase,audio-authored-lang-da-non-nuoc-o-dau-5a10e84c93,Làng đá Non Nước ở đâu?
 p3,viet-family-city-danang-go-railway-station,Đi Ga Đà Nẵng,Go to Da Nang Railway Station,derived_place_phrase,hero,hero,audio-authored-di-ga-da-nang-749edddb8f,Đi Ga Đà Nẵng
-p3,viet-family-city-danang-go-railway-station,Đi Ga Đà Nẵng,Go to Da Nang Railway Station,derived_place_phrase,related-phrases,phrase,audio-authored-ga-da-nang-47d24faee3,Ga Đà Nẵng
 p3,viet-family-city-danang-go-railway-station,Đi Ga Đà Nẵng,Go to Da Nang Railway Station,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-ga-da-nang-e93d73ac2e,Dừng ở Ga Đà Nẵng
-p3,viet-family-city-danang-go-son-tra,Đi bán đảo Sơn Trà,Go to Son Tra Peninsula,derived_place_phrase,hero,hero,audio-authored-di-ban-dao-son-tra-cb78470305,Đi bán đảo Sơn Trà
-p3,viet-family-city-danang-go-son-tra,Đi bán đảo Sơn Trà,Go to Son Tra Peninsula,derived_place_phrase,related-phrases,phrase,audio-authored-ban-dao-son-tra-2364c7b9ad,Bán đảo Sơn Trà
-p3,viet-family-city-danang-go-son-tra,Đi bán đảo Sơn Trà,Go to Son Tra Peninsula,derived_place_phrase,related-phrases,phrase,audio-authored-anh-chi-chi-giup-toi-duoc-khong-8f310cf83e,Anh/chị chỉ giúp tôi được không?
-p3,viet-family-city-danang-go-son-tra,Đi bán đảo Sơn Trà,Go to Son Tra Peninsula,derived_place_phrase,related-phrases,phrase,audio-authored-hinh-nhu-khong-dung-cho-b63d5ef9e3,Hình như không đúng chỗ.
 p3,viet-family-city-danang-go-son-tra-night-market,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,derived_place_phrase,hero,hero,audio-authored-di-cho-dem-son-tra-c36bdcba5f,Đi Chợ đêm Sơn Trà
-p3,viet-family-city-danang-go-son-tra-night-market,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-son-tra-21d84be110,Chợ đêm Sơn Trà
 p3,viet-family-city-danang-go-son-tra-night-market,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-son-tra-o-dau-d0f887c351,Chợ đêm Sơn Trà ở đâu?
 p3,viet-family-city-danang-go-son-tra-night-market,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-son-tra-gan-day-khong-93857776a2,Chợ đêm Sơn Trà gần đây không?
 p3,viet-family-city-danang-go-tien-sa-port,Đi Cảng Tiên Sa,Go to Tien Sa Port,derived_place_phrase,hero,hero,audio-authored-di-cang-tien-sa-c6af75b73b,Đi Cảng Tiên Sa
-p3,viet-family-city-danang-go-tien-sa-port,Đi Cảng Tiên Sa,Go to Tien Sa Port,derived_place_phrase,related-phrases,phrase,audio-authored-cang-tien-sa-00a20c3b42,Cảng Tiên Sa
-p3,viet-family-city-danang-go-tran-thi-ly-bridge,Đi Cầu Trần Thị Lý,Go to Tran Thi Ly Bridge,derived_place_phrase,hero,hero,audio-authored-di-cau-tran-thi-ly-6c95b65488,Đi Cầu Trần Thị Lý
-p3,viet-family-city-danang-go-tran-thi-ly-bridge,Đi Cầu Trần Thị Lý,Go to Tran Thi Ly Bridge,derived_place_phrase,related-phrases,phrase,audio-authored-cau-tran-thi-ly-c3efadb5bf,Cầu Trần Thị Lý
+p3,viet-family-city-danang-go-tien-sa-port,Đi Cảng Tiên Sa,Go to Tien Sa Port,derived_place_phrase,related-phrases,phrase,audio-authored-hinh-nhu-khong-dung-cho-b63d5ef9e3,Hình như không đúng chỗ.
 p3,viet-family-city-danang-go-vo-nguyen-giap-street,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,derived_place_phrase,hero,hero,audio-authored-di-duong-vo-nguyen-giap-3438c8ea1b,Đi Đường Võ Nguyên Giáp
-p3,viet-family-city-danang-go-vo-nguyen-giap-street,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-vo-nguyen-giap-63dd6840e9,Đường Võ Nguyên Giáp
 p3,viet-family-city-danang-go-vo-nguyen-giap-street,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-vo-nguyen-giap-gan-day-khong-8d519813c0,Đường Võ Nguyên Giáp gần đây không?
 p3,viet-family-city-danang-go-vo-nguyen-giap-street,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-vo-nguyen-giap-o-dau-f4d3cdd20c,Đường Võ Nguyên Giáp ở đâu?
-p3,viet-family-city-danang-where-bach-dang-street,Đường Bạch Đằng ở đâu?,Where is Bach Dang Street?,derived_place_phrase,hero,hero,audio-authored-duong-bach-dang-o-dau-7accb753ff,Đường Bạch Đằng ở đâu?
+p3,viet-family-city-danang-place-kem-bo,Kem bơ ở Đà Nẵng,Avocado ice cream,simple_phrase,hero,hero,audio-authored-kem-bo-o-da-nang-3f263bc088,Kem bơ ở Đà Nẵng
 p3,viet-family-city-hanoi-eat-near-dong-xuan-market,Ăn gần Chợ Đồng Xuân,Eat near Dong Xuan Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-dong-xuan-081dd9e648,Ăn gần Chợ Đồng Xuân
 p3,viet-family-city-hanoi-go-noi-bai-airport,Đi Sân bay Nội Bài,Go to Noi Bai Airport,derived_place_phrase,hero,hero,audio-authored-di-san-bay-noi-bai-aec73cbb92,Đi Sân bay Nội Bài
-p3,viet-family-city-hanoi-go-noi-bai-airport,Đi Sân bay Nội Bài,Go to Noi Bai Airport,derived_place_phrase,related-phrases,phrase,audio-authored-san-bay-noi-bai-d05e004837,Sân bay Nội Bài
 p3,viet-family-city-hanoi-go-noi-bai-airport,Đi Sân bay Nội Bài,Go to Noi Bai Airport,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-san-bay-noi-bai-4172210010,Dừng ở Sân bay Nội Bài
 p3,viet-family-city-hanoi-go-noi-bai-airport,Đi Sân bay Nội Bài,Go to Noi Bai Airport,derived_place_phrase,related-phrases,phrase,audio-authored-san-bay-noi-bai-o-dau-12b39dc9ab,Sân bay Nội Bài ở đâu?
-p3,viet-family-city-hanoi-go-opera-house,Đi Nhà hát Lớn Hà Nội,Go to Hanoi Opera House,derived_place_phrase,hero,hero,audio-authored-di-nha-hat-lon-ha-noi-b9b01df8d8,Đi Nhà hát Lớn Hà Nội
-p3,viet-family-city-hanoi-go-opera-house,Đi Nhà hát Lớn Hà Nội,Go to Hanoi Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-nha-hat-lon-ha-noi-bef24cb33c,Nhà hát Lớn Hà Nội
-p3,viet-family-city-hanoi-go-opera-house,Đi Nhà hát Lớn Hà Nội,Go to Hanoi Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-nha-hat-lon-ha-noi-3bdee2b150,Dừng ở Nhà hát Lớn Hà Nội
-p3,viet-family-city-hanoi-go-opera-house,Đi Nhà hát Lớn Hà Nội,Go to Hanoi Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-nha-hat-lon-ha-noi-o-dau-33f01f5b9d,Nhà hát Lớn Hà Nội ở đâu?
 p3,viet-family-city-hanoi-go-phan-dinh-phung-street,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,derived_place_phrase,hero,hero,audio-authored-di-pho-phan-dinh-phung-fc15d0a6a7,Đi Phố Phan Đình Phùng
-p3,viet-family-city-hanoi-go-phan-dinh-phung-street,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-phan-dinh-phung-96cad2143a,Phố Phan Đình Phùng
 p3,viet-family-city-hanoi-go-phan-dinh-phung-street,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-pho-phan-dinh-phung-23e02f2531,Dừng ở Phố Phan Đình Phùng
 p3,viet-family-city-hanoi-go-phan-dinh-phung-street,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-phan-dinh-phung-o-dau-32d3e3590c,Phố Phan Đình Phùng ở đâu?
 p3,viet-family-city-hanoi-go-pho-bat-dan,Cho tôi đến nhà hàng Phở Bát Đàn.,Please take me to Phở Bát Đàn restaurant.,derived_place_phrase,hero,hero,audio-authored-cho-toi-den-nha-hang-pho-bat-dan-c2a63e3ef7,Cho tôi đến nhà hàng Phở Bát Đàn.
-p3,viet-family-city-hanoi-go-pho-bat-dan,Cho tôi đến nhà hàng Phở Bát Đàn.,Please take me to Phở Bát Đàn restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-pho-bat-dan-5484f2c6ca,Phở Bát Đàn
 p3,viet-family-city-hanoi-go-pho-bat-dan,Cho tôi đến nhà hàng Phở Bát Đàn.,Please take me to Phở Bát Đàn restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-pho-bat-dan-o-dau-83990a6d09,Phở Bát Đàn ở đâu?
-p3,viet-family-city-hanoi-go-quan-thanh-temple,Đi Đền Quán Thánh,Go to Quan Thanh Temple,derived_place_phrase,hero,hero,audio-authored-di-den-quan-thanh-f738323459,Đi Đền Quán Thánh
-p3,viet-family-city-hanoi-go-quan-thanh-temple,Đi Đền Quán Thánh,Go to Quan Thanh Temple,derived_place_phrase,related-phrases,phrase,audio-authored-den-quan-thanh-fbed2afa89,Đền Quán Thánh
-p3,viet-family-city-hanoi-go-quan-thanh-temple,Đi Đền Quán Thánh,Go to Quan Thanh Temple,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-den-quan-thanh-d75028cf67,Dừng ở Đền Quán Thánh
-p3,viet-family-city-hanoi-go-quan-thanh-temple,Đi Đền Quán Thánh,Go to Quan Thanh Temple,derived_place_phrase,related-phrases,phrase,audio-authored-den-quan-thanh-o-dau-bea72de726,Đền Quán Thánh ở đâu?
-p3,viet-family-city-hanoi-go-st-joseph-cathedral,Đi Nhà thờ Lớn Hà Nội,Go to St. Joseph Cathedral,derived_place_phrase,hero,hero,audio-authored-di-nha-tho-lon-ha-noi-247ebb1e21,Đi Nhà thờ Lớn Hà Nội
-p3,viet-family-city-hanoi-go-st-joseph-cathedral,Đi Nhà thờ Lớn Hà Nội,Go to St. Joseph Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-nha-tho-lon-ha-noi-b724787e93,Nhà thờ Lớn Hà Nội
-p3,viet-family-city-hanoi-go-st-joseph-cathedral,Đi Nhà thờ Lớn Hà Nội,Go to St. Joseph Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-nha-tho-lon-ha-noi-7137d00e3d,Dừng ở Nhà thờ Lớn Hà Nội
-p3,viet-family-city-hanoi-go-st-joseph-cathedral,Đi Nhà thờ Lớn Hà Nội,Go to St. Joseph Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-nha-tho-lon-ha-noi-o-dau-e4c23d3864,Nhà thờ Lớn Hà Nội ở đâu?
 p3,viet-family-city-hanoi-go-ta-hien,Đi phố Tạ Hiện,Go to Ta Hien Street,derived_place_phrase,hero,hero,audio-authored-di-pho-ta-hien-a89d38c003,Đi phố Tạ Hiện
-p3,viet-family-city-hanoi-go-ta-hien,Đi phố Tạ Hiện,Go to Ta Hien Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-ta-hien-fb695b0958,Phố Tạ Hiện
 p3,viet-family-city-hanoi-go-ta-hien,Đi phố Tạ Hiện,Go to Ta Hien Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-pho-ta-hien-61af86caad,Dừng ở Phố Tạ Hiện
 p3,viet-family-city-hanoi-go-ta-hien,Đi phố Tạ Hiện,Go to Ta Hien Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-ta-hien-o-dau-ba823123b6,Phố Tạ Hiện ở đâu?
 p3,viet-family-city-hanoi-go-tam-vi,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,derived_place_phrase,hero,hero,audio-authored-cho-toi-den-nha-hang-tam-vi-79e56b48fc,Cho tôi đến nhà hàng Tầm Vị.
-p3,viet-family-city-hanoi-go-tam-vi,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-tam-vi-1336abffcd,Tầm Vị
 p3,viet-family-city-hanoi-go-tam-vi,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-toi-co-dat-ban-o-tam-vi-f7c3384972,Tôi có đặt bàn ở Tầm Vị
 p3,viet-family-city-hanoi-go-tam-vi,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-tam-vi-o-dau-b1adc2cdb6,Tầm Vị ở đâu?
 p3,viet-family-city-hanoi-go-tay-ho,Đi Tây Hồ,Go to Tay Ho,derived_place_phrase,hero,hero,audio-authored-di-tay-ho-9f562eeb0d,Đi Tây Hồ
-p3,viet-family-city-hanoi-go-tay-ho,Đi Tây Hồ,Go to Tay Ho,derived_place_phrase,related-phrases,phrase,audio-authored-tay-ho-e1feb07783,Tây Hồ
 p3,viet-family-city-hanoi-go-tay-ho,Đi Tây Hồ,Go to Tay Ho,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-tay-ho-1c049299a3,Dừng ở Tây Hồ
 p3,viet-family-city-hanoi-go-tay-ho,Đi Tây Hồ,Go to Tay Ho,derived_place_phrase,related-phrases,phrase,audio-authored-tay-ho-o-dau-9ce491d8b4,Tây Hồ ở đâu?
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,hero,hero,audio-authored-di-van-mieu-de37adea24,Đi Văn Miếu
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,related-phrases,phrase,audio-authored-van-mieu-1cb0b15574,Văn Miếu
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-van-mieu-5b51993006,Dừng ở Văn Miếu
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,related-phrases,phrase,audio-authored-mot-ve-vao-van-mieu-aac798dc88,Một vé vào Văn Miếu
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,related-phrases,phrase,audio-authored-van-mieu-o-dau-467a58709b,Văn Miếu ở đâu?
-p3,viet-family-city-hanoi-go-temple-literature,Đi Văn Miếu,Go to the Temple of Literature,derived_place_phrase,related-phrases,phrase,audio-authored-tu-day-den-van-mieu-bao-lau-2be8e5e02d,Từ đây đến Văn Miếu bao lâu?
 p3,viet-family-city-hanoi-go-train-street,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,derived_place_phrase,hero,hero,audio-authored-di-pho-duong-tau-ha-noi-64a1647db8,Đi Phố đường tàu Hà Nội
-p3,viet-family-city-hanoi-go-train-street,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-duong-tau-ha-noi-ee65be1d03,Phố đường tàu Hà Nội
 p3,viet-family-city-hanoi-go-train-street,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-pho-duong-tau-ha-noi-9b7192ef4b,Dừng ở Phố đường tàu Hà Nội
 p3,viet-family-city-hanoi-go-train-street,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-duong-tau-ha-noi-o-dau-101315f206,Phố đường tàu Hà Nội ở đâu?
-p3,viet-family-city-hanoi-go-tran-quoc-pagoda,Đi Chùa Trấn Quốc,Go to Tran Quoc Pagoda,derived_place_phrase,hero,hero,audio-authored-di-chua-tran-quoc-db0f109d65,Đi Chùa Trấn Quốc
-p3,viet-family-city-hanoi-go-tran-quoc-pagoda,Đi Chùa Trấn Quốc,Go to Tran Quoc Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-chua-tran-quoc-cfe2d77d7b,Chùa Trấn Quốc
-p3,viet-family-city-hanoi-go-tran-quoc-pagoda,Đi Chùa Trấn Quốc,Go to Tran Quoc Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-chua-tran-quoc-80f7e33b1c,Dừng ở Chùa Trấn Quốc
-p3,viet-family-city-hanoi-go-tran-quoc-pagoda,Đi Chùa Trấn Quốc,Go to Tran Quoc Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-chua-tran-quoc-o-dau-f5506d41ba,Chùa Trấn Quốc ở đâu?
-p3,viet-family-city-hanoi-go-truc-bach-lake,Đi Hồ Trúc Bạch,Go to Truc Bach Lake,derived_place_phrase,hero,hero,audio-authored-di-ho-truc-bach-0778c81e98,Đi Hồ Trúc Bạch
-p3,viet-family-city-hanoi-go-truc-bach-lake,Đi Hồ Trúc Bạch,Go to Truc Bach Lake,derived_place_phrase,related-phrases,phrase,audio-authored-ho-truc-bach-2d9fcbf59f,Hồ Trúc Bạch
-p3,viet-family-city-hanoi-go-truc-bach-lake,Đi Hồ Trúc Bạch,Go to Truc Bach Lake,derived_place_phrase,related-phrases,phrase,audio-authored-ho-truc-bach-o-dau-330ab1e8e0,Hồ Trúc Bạch ở đâu?
-p3,viet-family-city-hanoi-go-west-lake,Đi Hồ Tây,Go to West Lake,derived_place_phrase,hero,hero,audio-authored-di-ho-tay-10f0de25e7,Đi Hồ Tây
-p3,viet-family-city-hanoi-go-west-lake,Đi Hồ Tây,Go to West Lake,derived_place_phrase,related-phrases,phrase,audio-authored-ho-tay-e93d0b9507,Hồ Tây
+p3,viet-family-city-hanoi-place-bia-hoi,Bia hơi Hà Nội,Fresh beer,simple_phrase,hero,hero,audio-authored-bia-hoi-ha-noi-0a7fd939d7,Bia hơi Hà Nội
+p3,viet-family-city-hanoi-place-egg-coffee,Cà phê trứng ở Hà Nội,Egg coffee,simple_phrase,hero,hero,audio-authored-ca-phe-trung-o-ha-noi-cd9b2dbc5c,Cà phê trứng ở Hà Nội
 p3,viet-family-city-hcmc-binh-tay-far,Chợ Bình Tây xa không?,Is Binh Tay Market far?,derived_place_phrase,hero,hero,audio-authored-cho-binh-tay-xa-khong-0499415dd3,Chợ Bình Tây xa không?
 p3,viet-family-city-hcmc-eat-near-anan-saigon,Ăn gần Anăn Sài Gòn,Eat near Anan Saigon,derived_place_phrase,hero,hero,audio-authored-an-gan-anan-sai-gon-31374474ed,Ăn gần Anăn Sài Gòn
-p3,viet-family-city-hcmc-eat-near-bach-dang-wharf,Ăn gần Bến Bạch Đằng,Eat near Bach Dang Wharf,derived_place_phrase,hero,hero,audio-authored-an-gan-ben-bach-dang-7a3611cec8,Ăn gần Bến Bạch Đằng
 p3,viet-family-city-hcmc-eat-near-ben-thanh-market,Ăn gần Chợ Bến Thành,Eat near Ben Thanh Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-ben-thanh-2ab5f289f9,Ăn gần Chợ Bến Thành
 p3,viet-family-city-hcmc-eat-near-binh-tay-market,Ăn gần Chợ Bình Tây,Eat near Binh Tay Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-binh-tay-da98d2858c,Ăn gần Chợ Bình Tây
-p3,viet-family-city-hcmc-eat-near-central-post-office,Ăn gần Bưu điện Thành phố,Eat near Central Post Office,derived_place_phrase,hero,hero,audio-authored-an-gan-buu-dien-thanh-pho-aa67f2225e,Ăn gần Bưu điện Thành phố
 p3,viet-family-city-hcmc-eat-near-district-1,Ăn gần Quận 1,Eat near District 1,derived_place_phrase,hero,hero,audio-authored-an-gan-quan-1-cc70494074,Ăn gần Quận 1
 p3,viet-family-city-hcmc-go-anan-saigon,Cho tôi đến nhà hàng Anăn Sài Gòn.,Please take me to Anăn Sài Gòn restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-anan-sai-gon-gan-day-khong-fe9746aa3c,Anăn Sài Gòn gần đây không?
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,hero,hero,audio-authored-di-dinh-doc-lap-ffe331e6db,Đi Dinh Độc Lập
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,related-phrases,phrase,audio-authored-dinh-doc-lap-1772cc060a,Dinh Độc Lập
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-dinh-doc-lap-00ff7f01f1,Dừng ở Dinh Độc Lập
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,related-phrases,phrase,audio-authored-mot-ve-vao-dinh-doc-lap-3694b08e5b,Một vé vào Dinh Độc Lập
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,related-phrases,phrase,audio-authored-toi-muon-den-dinh-doc-lap-4721c55c6e,Tôi muốn đến Dinh Độc Lập
-p3,viet-family-city-hcmc-go-independence-palace,Đi Dinh Độc Lập,Go to Independence Palace,derived_place_phrase,related-phrases,phrase,audio-authored-dinh-doc-lap-o-dau-8cdff0e827,Dinh Độc Lập ở đâu?
-p3,viet-family-city-hcmc-go-jade-emperor-pagoda,Đi Chùa Ngọc Hoàng,Go to Jade Emperor Pagoda,derived_place_phrase,hero,hero,audio-authored-di-chua-ngoc-hoang-2253e39eb1,Đi Chùa Ngọc Hoàng
-p3,viet-family-city-hcmc-go-jade-emperor-pagoda,Đi Chùa Ngọc Hoàng,Go to Jade Emperor Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-chua-ngoc-hoang-44ffea01a3,Chùa Ngọc Hoàng
-p3,viet-family-city-hcmc-go-jade-emperor-pagoda,Đi Chùa Ngọc Hoàng,Go to Jade Emperor Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-chua-ngoc-hoang-95f4b0d26d,Dừng ở Chùa Ngọc Hoàng
-p3,viet-family-city-hcmc-go-jade-emperor-pagoda,Đi Chùa Ngọc Hoàng,Go to Jade Emperor Pagoda,derived_place_phrase,related-phrases,phrase,audio-authored-chua-ngoc-hoang-o-dau-e5f739e803,Chùa Ngọc Hoàng ở đâu?
-p3,viet-family-city-hcmc-go-landmark-81,Đi Landmark 81,Go to Landmark 81,derived_place_phrase,hero,hero,audio-authored-di-landmark-81-6f8c52e19c,Đi Landmark 81
-p3,viet-family-city-hcmc-go-landmark-81,Đi Landmark 81,Go to Landmark 81,derived_place_phrase,related-phrases,phrase,audio-authored-landmark-81-23977f8a15,Landmark 81
-p3,viet-family-city-hcmc-go-landmark-81,Đi Landmark 81,Go to Landmark 81,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-landmark-81-133cdefc4c,Dừng ở Landmark 81
-p3,viet-family-city-hcmc-go-landmark-81,Đi Landmark 81,Go to Landmark 81,derived_place_phrase,related-phrases,phrase,audio-authored-landmark-81-o-dau-1b89a21ced,Landmark 81 ở đâu?
 p3,viet-family-city-hcmc-go-le-thanh-ton-street,Đi Đường Lê Thánh Tôn,Go to Le Thanh Ton Street,derived_place_phrase,hero,hero,audio-authored-di-duong-le-thanh-ton-32224dd281,Đi Đường Lê Thánh Tôn
-p3,viet-family-city-hcmc-go-le-thanh-ton-street,Đi Đường Lê Thánh Tôn,Go to Le Thanh Ton Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-le-thanh-ton-da11debdb4,Đường Lê Thánh Tôn
 p3,viet-family-city-hcmc-go-le-thanh-ton-street,Đi Đường Lê Thánh Tôn,Go to Le Thanh Ton Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-duong-le-thanh-ton-903b634e21,Dừng ở Đường Lê Thánh Tôn
 p3,viet-family-city-hcmc-go-nguyen-trai-street,Đi Đường Nguyễn Trãi,Go to Nguyen Trai Street,derived_place_phrase,hero,hero,audio-authored-di-duong-nguyen-trai-ef9d860e6c,Đi Đường Nguyễn Trãi
-p3,viet-family-city-hcmc-go-nguyen-trai-street,Đi Đường Nguyễn Trãi,Go to Nguyen Trai Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-nguyen-trai-02c6b2e488,Đường Nguyễn Trãi
 p3,viet-family-city-hcmc-go-nguyen-trai-street,Đi Đường Nguyễn Trãi,Go to Nguyen Trai Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-duong-nguyen-trai-810ac12f79,Dừng ở Đường Nguyễn Trãi
-p3,viet-family-city-hcmc-go-notre-dame,Đi Nhà thờ Đức Bà Sài Gòn,Go to Saigon Notre-Dame Cathedral,derived_place_phrase,hero,hero,audio-authored-di-nha-tho-duc-ba-sai-gon-275ed2930a,Đi Nhà thờ Đức Bà Sài Gòn
-p3,viet-family-city-hcmc-go-notre-dame,Đi Nhà thờ Đức Bà Sài Gòn,Go to Saigon Notre-Dame Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-nha-tho-duc-ba-sai-gon-65fbc315f7,Nhà thờ Đức Bà Sài Gòn
-p3,viet-family-city-hcmc-go-notre-dame,Đi Nhà thờ Đức Bà Sài Gòn,Go to Saigon Notre-Dame Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-nha-tho-duc-ba-sai-gon-647afbcd46,Dừng ở Nhà thờ Đức Bà Sài Gòn
-p3,viet-family-city-hcmc-go-notre-dame,Đi Nhà thờ Đức Bà Sài Gòn,Go to Saigon Notre-Dame Cathedral,derived_place_phrase,related-phrases,phrase,audio-authored-nha-tho-duc-ba-sai-gon-o-dau-725bb5e1cf,Nhà thờ Đức Bà Sài Gòn ở đâu?
-p3,viet-family-city-hcmc-go-opera-house,Đi Nhà hát Thành phố,Go to Saigon Opera House,derived_place_phrase,hero,hero,audio-authored-di-nha-hat-thanh-pho-d3112bb255,Đi Nhà hát Thành phố
-p3,viet-family-city-hcmc-go-opera-house,Đi Nhà hát Thành phố,Go to Saigon Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-nha-hat-thanh-pho-ce9596ab88,Nhà hát Thành phố
-p3,viet-family-city-hcmc-go-opera-house,Đi Nhà hát Thành phố,Go to Saigon Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-nha-hat-thanh-pho-bf139c0758,Dừng ở Nhà hát Thành phố
-p3,viet-family-city-hcmc-go-opera-house,Đi Nhà hát Thành phố,Go to Saigon Opera House,derived_place_phrase,related-phrases,phrase,audio-authored-nha-hat-thanh-pho-o-dau-afa728f5c4,Nhà hát Thành phố ở đâu?
 p3,viet-family-city-hcmc-go-pasteur-street,Đi Đường Pasteur,Go to Pasteur Street,derived_place_phrase,hero,hero,audio-authored-di-duong-pasteur-06f740c791,Đi Đường Pasteur
-p3,viet-family-city-hcmc-go-pasteur-street,Đi Đường Pasteur,Go to Pasteur Street,derived_place_phrase,related-phrases,phrase,audio-authored-duong-pasteur-67fc5488cf,Đường Pasteur
 p3,viet-family-city-hcmc-go-pasteur-street,Đi Đường Pasteur,Go to Pasteur Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-duong-pasteur-c7b28db040,Dừng ở Đường Pasteur
 p3,viet-family-city-hcmc-go-pham-ngu-lao-street,Đi Phố Phạm Ngũ Lão,Go to Pham Ngu Lao Street,derived_place_phrase,hero,hero,audio-authored-di-pho-pham-ngu-lao-5b513ecafe,Đi Phố Phạm Ngũ Lão
-p3,viet-family-city-hcmc-go-pham-ngu-lao-street,Đi Phố Phạm Ngũ Lão,Go to Pham Ngu Lao Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-pham-ngu-lao-98f8f45da5,Phố Phạm Ngũ Lão
 p3,viet-family-city-hcmc-go-pham-ngu-lao-street,Đi Phố Phạm Ngũ Lão,Go to Pham Ngu Lao Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-pho-pham-ngu-lao-e517964405,Dừng ở Phố Phạm Ngũ Lão
 p3,viet-family-city-hcmc-go-pho-hoa-pasteur,Cho tôi đến nhà hàng Phở Hòa Pasteur.,Please take me to Phở Hòa Pasteur restaurant.,derived_place_phrase,hero,hero,audio-authored-cho-toi-den-nha-hang-pho-hoa-pasteur-6d60ef6f68,Cho tôi đến nhà hàng Phở Hòa Pasteur.
-p3,viet-family-city-hcmc-go-pho-hoa-pasteur,Cho tôi đến nhà hàng Phở Hòa Pasteur.,Please take me to Phở Hòa Pasteur restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-pho-hoa-pasteur-8a55612d65,Phở Hòa Pasteur
 p3,viet-family-city-hcmc-go-pho-hoa-pasteur,Cho tôi đến nhà hàng Phở Hòa Pasteur.,Please take me to Phở Hòa Pasteur restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-pho-hoa-pasteur-o-dau-5eb3dcb7e8,Phở Hòa Pasteur ở đâu?
-p3,viet-family-city-hcmc-go-saigon-river,Đi Sông Sài Gòn,Go to Saigon River,derived_place_phrase,hero,hero,audio-authored-di-song-sai-gon-c9429e52c7,Đi Sông Sài Gòn
-p3,viet-family-city-hcmc-go-saigon-river,Đi Sông Sài Gòn,Go to Saigon River,derived_place_phrase,related-phrases,phrase,audio-authored-song-sai-gon-76ad5580da,Sông Sài Gòn
-p3,viet-family-city-hcmc-go-saigon-river,Đi Sông Sài Gòn,Go to Saigon River,derived_place_phrase,related-phrases,phrase,audio-authored-song-sai-gon-o-dau-37528758e2,Sông Sài Gòn ở đâu?
 p3,viet-family-city-hcmc-go-tan-son-nhat-airport,Đi Sân bay Tân Sơn Nhất,Go to Tan Son Nhat Airport,derived_place_phrase,hero,hero,audio-authored-di-san-bay-tan-son-nhat-4360f3fa57,Đi Sân bay Tân Sơn Nhất
-p3,viet-family-city-hcmc-go-tan-son-nhat-airport,Đi Sân bay Tân Sơn Nhất,Go to Tan Son Nhat Airport,derived_place_phrase,related-phrases,phrase,audio-authored-san-bay-tan-son-nhat-eece10f965,Sân bay Tân Sơn Nhất
 p3,viet-family-city-hcmc-go-tan-son-nhat-airport,Đi Sân bay Tân Sơn Nhất,Go to Tan Son Nhat Airport,derived_place_phrase,related-phrases,phrase,audio-authored-san-bay-tan-son-nhat-o-dau-4821b02591,Sân bay Tân Sơn Nhất ở đâu?
-p3,viet-family-city-hcmc-go-tao-dan-park,Đi Công viên Tao Đàn,Go to Tao Dan Park,derived_place_phrase,hero,hero,audio-authored-di-cong-vien-tao-dan-05d2ca6c3d,Đi Công viên Tao Đàn
-p3,viet-family-city-hcmc-go-tao-dan-park,Đi Công viên Tao Đàn,Go to Tao Dan Park,derived_place_phrase,related-phrases,phrase,audio-authored-cong-vien-tao-dan-5bef9b2155,Công viên Tao Đàn
-p3,viet-family-city-hcmc-go-tao-dan-park,Đi Công viên Tao Đàn,Go to Tao Dan Park,derived_place_phrase,related-phrases,phrase,audio-authored-cong-vien-tao-dan-o-dau-c216a087b7,Công viên Tao Đàn ở đâu?
 p3,viet-family-city-hcmc-go-thao-dien,Đi Thảo Điền,Go to Thao Dien,derived_place_phrase,hero,hero,audio-authored-di-thao-dien-f3e165f472,Đi Thảo Điền
-p3,viet-family-city-hcmc-go-thao-dien,Đi Thảo Điền,Go to Thao Dien,derived_place_phrase,related-phrases,phrase,audio-authored-thao-dien-7bbac64f94,Thảo Điền
-p3,viet-family-city-hcmc-go-turtle-lake,Đi Hồ Con Rùa,Go to Turtle Lake,derived_place_phrase,hero,hero,audio-authored-di-ho-con-rua-cdefc6abe1,Đi Hồ Con Rùa
-p3,viet-family-city-hcmc-go-turtle-lake,Đi Hồ Con Rùa,Go to Turtle Lake,derived_place_phrase,related-phrases,phrase,audio-authored-ho-con-rua-05c5dc7f57,Hồ Con Rùa
-p3,viet-family-city-hcmc-go-turtle-lake,Đi Hồ Con Rùa,Go to Turtle Lake,derived_place_phrase,related-phrases,phrase,audio-authored-ho-con-rua-o-dau-23d570c98b,Hồ Con Rùa ở đâu?
-p3,viet-family-city-hcmc-go-war-remnants-museum,Đi Bảo tàng Chứng tích Chiến tranh,Go to War Remnants Museum,derived_place_phrase,hero,hero,audio-authored-di-bao-tang-chung-tich-chien-tranh-8dd16cb68c,Đi Bảo tàng Chứng tích Chiến tranh
-p3,viet-family-city-hcmc-go-war-remnants-museum,Đi Bảo tàng Chứng tích Chiến tranh,Go to War Remnants Museum,derived_place_phrase,related-phrases,phrase,audio-authored-bao-tang-chung-tich-chien-tranh-2b98ad2fdc,Bảo tàng Chứng tích Chiến tranh
-p3,viet-family-city-hcmc-go-war-remnants-museum,Đi Bảo tàng Chứng tích Chiến tranh,Go to War Remnants Museum,derived_place_phrase,related-phrases,phrase,audio-authored-bao-tang-chung-tich-chien-tranh-o-dau-2c7524d041,Bảo tàng Chứng tích Chiến tranh ở đâu?
-p3,viet-family-city-hcmc-go-zoo-botanical-gardens,Đi Thảo Cầm Viên Sài Gòn,Go to Saigon Zoo and Botanical Gardens,derived_place_phrase,hero,hero,audio-authored-di-thao-cam-vien-sai-gon-bab5b74bd4,Đi Thảo Cầm Viên Sài Gòn
-p3,viet-family-city-hcmc-go-zoo-botanical-gardens,Đi Thảo Cầm Viên Sài Gòn,Go to Saigon Zoo and Botanical Gardens,derived_place_phrase,related-phrases,phrase,audio-authored-thao-cam-vien-sai-gon-d9cacc4157,Thảo Cầm Viên Sài Gòn
-p3,viet-family-city-hcmc-go-zoo-botanical-gardens,Đi Thảo Cầm Viên Sài Gòn,Go to Saigon Zoo and Botanical Gardens,derived_place_phrase,related-phrases,phrase,audio-authored-thao-cam-vien-sai-gon-o-dau-5c612fd528,Thảo Cầm Viên Sài Gòn ở đâu?
 p3,viet-family-city-hcmc-near-binh-tay-market,Chợ Bình Tây gần đây không?,Is Binh Tay Market near here?,derived_place_phrase,hero,hero,audio-authored-cho-binh-tay-gan-day-khong-0443e728c0,Chợ Bình Tây gần đây không?
 p3,viet-family-city-hcmc-near-district-1,Quận 1 gần đây không?,Is District 1 near here?,derived_place_phrase,hero,hero,audio-authored-quan-1-gan-day-khong-cac5063d07,Quận 1 gần đây không?
 p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,hero,hero,audio-authored-o-day-co-cao-lau-khong-a4556ef6fb,Ở đây có cao lầu không?
-p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,related-phrases,phrase,audio-authored-cao-lau-o-hoi-an-60088f31fc,Cao lầu ở Hội An
 p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,related-phrases,phrase,audio-authored-an-cao-lau-o-dau-560d9e6f49,Ăn cao lầu ở đâu?
+p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,related-phrases,phrase,audio-authored-cho-toi-cao-lau-ab019a52e2,Cho tôi cao lầu
+p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,related-phrases,phrase,audio-authored-o-dau-co-cao-lau-9bb550ad37,Ở đâu có cao lầu?
+p3,viet-family-city-hoian-atm-cao-lau-city,Ở đây có cao lầu không?,Do you have cao lau here?,derived_place_phrase,related-phrases,phrase,audio-authored-toi-muon-an-cao-lau-o-hoi-an-f70cc5e0b9,Tôi muốn ăn cao lầu ở Hội An
+p3,viet-family-city-hoian-eat-near-an-hoi-island,Ăn gần Đảo An Hội,Eat near An Hoi Island,derived_place_phrase,hero,hero,audio-authored-an-gan-dao-an-hoi-f28c97fe87,Ăn gần Đảo An Hội
+p3,viet-family-city-hoian-eat-near-ancient-town,Ăn gần Phố cổ Hội An,Eat near Hoi An Ancient Town,derived_place_phrase,hero,hero,audio-authored-an-gan-pho-co-hoi-an-f957116c2e,Ăn gần Phố cổ Hội An
+p3,viet-family-city-hoian-go-ancient-town,Đi phố cổ Hội An,Go to Hoi An Ancient Town,derived_place_phrase,related-phrases,phrase,audio-authored-pho-co-hoi-an-gan-day-khong-59789659cf,Phố cổ Hội An gần đây không?
+p3,viet-family-city-hoian-go-morning-glory,Cho tôi đến nhà hàng Morning Glory Hội An.,Please take me to Morning Glory Hội An restaurant.,derived_place_phrase,hero,hero,audio-authored-cho-toi-den-nha-hang-morning-glory-hoi-an-319dbe3a8b,Cho tôi đến nhà hàng Morning Glory Hội An.
+p3,viet-family-city-hoian-go-morning-glory,Cho tôi đến nhà hàng Morning Glory Hội An.,Please take me to Morning Glory Hội An restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-toi-co-dat-ban-o-morning-glory-hoi-an-a2be3e72df,Tôi có đặt bàn ở Morning Glory Hội An
+p3,viet-family-city-hoian-go-morning-glory,Cho tôi đến nhà hàng Morning Glory Hội An.,Please take me to Morning Glory Hội An restaurant.,derived_place_phrase,related-phrases,phrase,audio-authored-morning-glory-hoi-an-o-dau-e29baeec87,Morning Glory Hội An ở đâu?
+p3,viet-family-city-hoian-go-reach-out-tea-house,Đi Reaching Out Tea House,Go to Reaching Out Tea House,derived_place_phrase,hero,hero,audio-authored-di-reaching-out-tea-house-703ef21a07,Đi Reaching Out Tea House
+p3,viet-family-city-hoian-go-reach-out-tea-house,Đi Reaching Out Tea House,Go to Reaching Out Tea House,derived_place_phrase,related-phrases,phrase,audio-authored-reaching-out-tea-house-o-dau-9b461d9e88,Reaching Out Tea House ở đâu?
+p3,viet-family-city-hoian-go-tran-phu-street,Đi Phố Trần Phú,Go to Tran Phu Street,derived_place_phrase,hero,hero,audio-authored-di-pho-tran-phu-0957b3bca1,Đi Phố Trần Phú
+p3,viet-family-city-hoian-go-tran-phu-street,Đi Phố Trần Phú,Go to Tran Phu Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-tran-phu-o-dau-db15bc256a,Phố Trần Phú ở đâu?
+p3,viet-family-city-hoian-near-night-market,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,derived_place_phrase,hero,hero,audio-authored-cho-dem-hoi-an-gan-day-khong-b6c4ec65e8,Chợ đêm Hội An gần đây không?
+p3,viet-family-city-hoian-near-night-market,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,derived_place_phrase,related-phrases,phrase,audio-authored-di-cho-dem-hoi-an-20458c4184,Đi chợ đêm Hội An
+p3,viet-family-city-hoian-near-night-market,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-cho-dem-hoi-an-1d0d80e598,Dừng ở Chợ đêm Hội An
+p3,viet-family-city-hoian-near-night-market,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-hoi-an-o-dau-51847b5dd3,Chợ đêm Hội An ở đâu?
+p3,viet-family-city-hoian-place-mot-herbal-drink,Nước Mót ở Hội An,Mot herbal drink,simple_phrase,hero,hero,audio-authored-nuoc-mot-o-hoi-an-da0c9569f2,Nước Mót ở Hội An
+p3,viet-family-city-hue-atm-bun-bo-city,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,derived_place_phrase,hero,hero,audio-authored-o-day-co-bun-bo-hue-khong-9932ce4ab2,Ở đây có bún bò Huế không?
+p3,viet-family-city-hue-atm-bun-bo-city,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,derived_place_phrase,related-phrases,phrase,audio-authored-an-bun-bo-hue-o-dau-e9709dc7ad,Ăn bún bò Huế ở đâu?
+p3,viet-family-city-hue-atm-bun-bo-city,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,derived_place_phrase,related-phrases,phrase,audio-authored-tim-bun-bo-hue-o-dau-2de4ea1518,Tìm bún bò Huế ở đâu?
+p3,viet-family-city-hue-atm-bun-bo-city,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,derived_place_phrase,related-phrases,phrase,audio-authored-cho-toi-bun-bo-hue-f9baf6ac96,Cho tôi bún bò Huế
+p3,viet-family-city-hue-atm-bun-bo-city,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,derived_place_phrase,related-phrases,phrase,audio-authored-o-dau-co-bun-bo-hue-6e3219b3f3,Ở đâu có bún bò Huế?
+p3,viet-family-city-hue-bun-bo,Tôi muốn ăn bún bò Huế,I want to eat bun bo Hue,derived_place_phrase,hero,hero,audio-authored-toi-muon-an-bun-bo-hue-5c5f5ccf1f,Tôi muốn ăn bún bò Huế
+p3,viet-family-city-hue-eat-near-an-cuu-market,Ăn gần Chợ An Cựu,Eat near An Cuu Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-an-cuu-fe0ed70903,Ăn gần Chợ An Cựu
+p3,viet-family-city-hue-eat-near-bao-vinh-ancient-town,Ăn gần Phố cổ Bao Vinh,Eat near Bao Vinh Ancient Town,derived_place_phrase,hero,hero,audio-authored-an-gan-pho-co-bao-vinh-bc52fa8066,Ăn gần Phố cổ Bao Vinh
+p3,viet-family-city-hue-eat-near-dong-ba-bun-bo,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,derived_place_phrase,hero,hero,audio-authored-an-gan-bun-bo-o-cho-dong-ba-4f19bbe03d,Ăn gần Bún bò ở chợ Đông Ba
+p3,viet-family-city-hue-eat-near-dong-ba-bun-bo,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,derived_place_phrase,related-phrases,phrase,audio-authored-bun-bo-cho-dong-ba-o-hue-9f9e5730d8,Bún bò chợ Đông Ba ở Huế
+p3,viet-family-city-hue-eat-near-dong-ba-bun-bo,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,derived_place_phrase,related-phrases,phrase,audio-authored-toi-muon-tim-bun-bo-o-cho-dong-ba-6a80605aab,Tôi muốn tìm bún bò ở chợ Đông Ba
+p3,viet-family-city-hue-eat-near-dong-ba-bun-bo,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,derived_place_phrase,related-phrases,phrase,audio-authored-bun-bo-o-cho-dong-ba-o-cho-nao-28554209a3,Bún bò ở chợ Đông Ba ở chỗ nào?
+p3,viet-family-city-hue-eat-near-dong-ba-market,Ăn gần Chợ Đông Ba,Eat near Dong Ba Market,derived_place_phrase,hero,hero,audio-authored-an-gan-cho-dong-ba-245b10880b,Ăn gần Chợ Đông Ba
+p3,viet-family-city-hue-go-nguyen-dinh-chieu-street,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,derived_place_phrase,hero,hero,audio-authored-di-pho-di-bo-nguyen-dinh-chieu-da21a38d23,Đi Phố đi bộ Nguyễn Đình Chiểu
+p3,viet-family-city-hue-go-nguyen-dinh-chieu-street,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-di-bo-nguyen-dinh-chieu-gan-day-khong-f91f88d2ba,Phố đi bộ Nguyễn Đình Chiểu gần đây không?
+p3,viet-family-city-hue-go-nguyen-dinh-chieu-street,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-pho-di-bo-nguyen-dinh-chieu-97fd25f6e8,Dừng ở Phố đi bộ Nguyễn Đình Chiểu
+p3,viet-family-city-hue-go-nguyen-dinh-chieu-street,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,derived_place_phrase,related-phrases,phrase,audio-authored-pho-di-bo-nguyen-dinh-chieu-o-dau-11f8892859,Phố đi bộ Nguyễn Đình Chiểu ở đâu?
+p3,viet-family-city-hue-go-night-market,Đi Chợ đêm Huế,Go to Hue Night Market,derived_place_phrase,hero,hero,audio-authored-di-cho-dem-hue-c6f0b56294,Đi Chợ đêm Huế
+p3,viet-family-city-hue-go-night-market,Đi Chợ đêm Huế,Go to Hue Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-cho-dem-hue-9fdfc2e991,Dừng ở Chợ đêm Huế
+p3,viet-family-city-hue-go-night-market,Đi Chợ đêm Huế,Go to Hue Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-hue-o-dau-b671c6e9ee,Chợ đêm Huế ở đâu?
+p3,viet-family-city-hue-go-night-market,Đi Chợ đêm Huế,Go to Hue Night Market,derived_place_phrase,related-phrases,phrase,audio-authored-cho-dem-hue-gan-day-khong-ef23eec0b4,Chợ đêm Huế gần đây không?
+p3,viet-family-city-hue-go-phu-bai-airport,Đi Sân bay Phú Bài,Go to Phu Bai Airport,derived_place_phrase,hero,hero,audio-authored-di-san-bay-phu-bai-0b6cb48b86,Đi Sân bay Phú Bài
+p3,viet-family-city-hue-go-phu-bai-airport,Đi Sân bay Phú Bài,Go to Phu Bai Airport,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-san-bay-phu-bai-239a867946,Dừng ở Sân bay Phú Bài
+p3,viet-family-city-hue-go-phu-bai-airport,Đi Sân bay Phú Bài,Go to Phu Bai Airport,derived_place_phrase,related-phrases,phrase,audio-authored-san-bay-phu-bai-o-dau-9e32a12323,Sân bay Phú Bài ở đâu?
+p3,viet-family-city-hue-go-railway-station,Đi Ga Huế,Go to Hue Railway Station,derived_place_phrase,hero,hero,audio-authored-di-ga-hue-0398aa0b7b,Đi Ga Huế
+p3,viet-family-city-hue-go-railway-station,Đi Ga Huế,Go to Hue Railway Station,derived_place_phrase,related-phrases,phrase,audio-authored-dung-o-ga-hue-7f2f73305a,Dừng ở Ga Huế
+p3,viet-family-city-hue-go-railway-station,Đi Ga Huế,Go to Hue Railway Station,derived_place_phrase,related-phrases,phrase,audio-authored-ga-hue-o-dau-8d7e17b9fa,Ga Huế ở đâu?
+p3,viet-family-city-hue-near-dong-ba,Chợ Đông Ba gần đây không?,Is Dong Ba Market near here?,derived_place_phrase,hero,hero,audio-authored-cho-dong-ba-gan-day-khong-15313f1d0b,Chợ Đông Ba gần đây không?
+p3,viet-family-city-hue-place-che-hue,Chè Huế,Hue sweet soup,simple_phrase,hero,hero,audio-authored-che-hue-558ddf411f,Chè Huế
+p3,viet-family-city-hue-place-me-xung,Mè xửng ở Huế,Me xung sesame candy,simple_phrase,hero,hero,audio-authored-me-xung-o-hue-fe6f74cb1d,Mè xửng ở Huế

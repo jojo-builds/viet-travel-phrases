@@ -10925,7 +10925,7 @@
             "title": "Recovery",
             "body": "If the answer is unclear, show the map and ask: Đây có phải đường Nguyễn Văn Linh không?",
             "phraseIDs": [
-              "ves-can-you-show-me-politeness",
+              "repair-show-me",
               "ves-to-nguyen-van-linh-street"
             ]
           },
@@ -19557,9 +19557,9 @@
           },
           {
             "slot": "map",
-            "vietnamese": "Bạn có thể chỉ cho tôi trên bản đồ được không?",
+            "vietnamese": "Chỉ trên bản đồ giúp tôi được không?",
             "english": "Can you show me on the map?",
-            "phraseID": "v500-unde-repa-can-you-show-me-on-the-map"
+            "phraseID": "repair-5"
           },
           {
             "slot": "wait",
@@ -23634,9 +23634,9 @@
           },
           {
             "slot": "inside-the-place",
-            "vietnamese": "Cho tôi trà đá.",
+            "vietnamese": "Làm ơn cho một ly trà đá",
             "english": "Iced tea, please",
-            "phraseID": "vpe-one-item-please-cho-toi-mot-tra-da"
+            "phraseID": "v900-food-drin-one-iced-tea-please"
           },
           {
             "slot": "inside-the-place",
@@ -58016,42 +58016,6 @@
       ],
       "sourceIDs": [
         "vt-hue"
-      ],
-      "status": "approved",
-      "pageKind": "phrase",
-      "placeKind": "dish",
-      "contentRole": "dish"
-    },
-    {
-      "id": "city-hue-bun-bo-dong-ba",
-      "kind": "phrase",
-      "cityID": "hue",
-      "subcategoryID": "food-coffee",
-      "placeID": "hue-dong-ba-bun-bo",
-      "difficulty": "beginner",
-      "spokenChunks": 5,
-      "targetText": "Bún bò ở chợ Đông Ba",
-      "englishText": "Bun bo at Dong Ba Market",
-      "pronunciation": "boon bo uh chuh dong ba",
-      "context": "Use this when you want Hue's noodle soup inside Dong Ba Market and need to say the food and place together.",
-      "tip": "Ở chợ Đông Ba keeps the food tied to Dong Ba Market, which is clearer than asking for bun bo across the whole city.",
-      "rationale": "Dong Ba Market bun bo is a documented food anchor and gives beginners a real city-specific food phrase without relying on an unsupported named stall.",
-      "chunks": [
-        [
-          "Bún bò",
-          "beef noodle soup"
-        ],
-        [
-          "ở",
-          "at / in"
-        ],
-        [
-          "chợ Đông Ba",
-          "Dong Ba Market"
-        ]
-      ],
-      "sourceIDs": [
-        "vietnam-airlines-hue-bun-bo"
       ],
       "status": "approved",
       "pageKind": "phrase",

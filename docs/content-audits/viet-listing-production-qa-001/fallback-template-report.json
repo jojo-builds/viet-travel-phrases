@@ -1,14 +1,13 @@
 {
   "byIntent": {
-    "simple_phrase": 1759,
-    "practical_flow": 512,
-    "derived_place_phrase": 601,
-    "landmark_micro_place": 113,
+    "simple_phrase": 730,
+    "practical_flow": 233,
+    "derived_place_phrase": 306,
+    "landmark_micro_place": 315,
+    "restaurant": 98,
     "macro_attraction_journey": 2,
-    "street": 19,
-    "restaurant": 13,
-    "dish": 2,
-    "traveler_may_hear": 49
+    "street": 28,
+    "dish": 46
   },
   "pagesWithGenericBrowseTitleRisk": [
     {
@@ -1180,7 +1179,6 @@
       ],
       "renderedSections": [
         "Break it down",
-        "Other ways",
         "Common follow-ups",
         "Good to know",
         "Next phrases"

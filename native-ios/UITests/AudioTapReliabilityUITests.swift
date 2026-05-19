@@ -10,8 +10,8 @@ final class AudioTapReliabilityUITests: XCTestCase {
         verifyBreakdownAudioCard(
             pageID: "viet-family-food-coffee-black",
             title: "Cho tôi cà phê đen đá",
-            audioIdentifier: "Breakdown.Audio.viet-phrase-coffee-2:breakdown:breakdown:coffee-2-piece-1",
-            audioLabel: "Play Cho tôi",
+            audioIdentifier: "Breakdown.Audio.viet-phrase-coffee-2:breakdown:breakdown:chunk-1",
+            audioLabel: "Play cho",
             repetitions: 20
         )
         verifyBreakdownAudioCard(
@@ -25,7 +25,7 @@ final class AudioTapReliabilityUITests: XCTestCase {
             pageID: "viet-phrase-hotel-quiet-room",
             title: "Cho tôi phòng yên tĩnh được không?",
             audioIdentifier: "Breakdown.Audio.viet-phrase-hotel-quiet-room:breakdown:breakdown:chunk-1",
-            audioLabel: "Play Cho tôi",
+            audioLabel: "Play cho",
             repetitions: 8
         )
     }

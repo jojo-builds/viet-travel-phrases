@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-06T00:54:15.568Z",
-  "pageCount": 3070,
+  "generatedAt": "2026-05-19T11:00:32.674Z",
+  "pageCount": 1758,
   "issueCounts": {
     "BLOCKER": 0,
-    "MAJOR": 0,
-    "MINOR": 7,
+    "MAJOR": 65,
+    "MINOR": 139,
     "INFO": 3
   },
   "fixedProbeCount": 17,
@@ -15,7 +15,7 @@
     "sayThis": 0,
     "renderedHidden": 2
   },
-  "missingAudioPriorityCount": 500,
-  "heroImageFollowUpCount": 142,
-  "verdict": "NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL"
+  "missingAudioPriorityCount": 482,
+  "heroImageFollowUpCount": 0,
+  "verdict": "NOT_PRODUCTION_READY_YET"
 }

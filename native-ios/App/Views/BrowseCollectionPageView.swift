@@ -196,6 +196,15 @@ struct BrowseCollectionPageView: View {
                 }
             )
 
+            if !descriptor.hasMessageSection, !prefersNounRowsBeforePracticeEntry, !descriptor.subcategories.isEmpty {
+                BrowseCollectionMessageEntryCard(
+                    descriptor: descriptor,
+                    onPractice: { onPractice(descriptor.practiceAction) }
+                )
+                .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
+                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+            }
+
             if descriptor.subcategories.isEmpty {
                 BrowseCollectionStarterSection(
                     title: descriptor.starterTitle,
@@ -203,10 +212,28 @@ struct BrowseCollectionPageView: View {
                     onOpenDetail: onOpenDetail
                 )
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+
+                if !descriptor.hasMessageSection {
+                    BrowseCollectionMessageEntryCard(
+                        descriptor: descriptor,
+                        onPractice: { onPractice(descriptor.practiceAction) }
+                    )
+                    .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
+                    .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
+                }
             } else {
                 BrowseCollectionSubcategorySections(
                     subcategories: descriptor.subcategories,
-                    onOpenDetail: onOpenDetail
+                    onOpenDetail: onOpenDetail,
+                    afterFirstSection: {
+                        if !descriptor.hasMessageSection, prefersNounRowsBeforePracticeEntry {
+                            BrowseCollectionMessageEntryCard(
+                                descriptor: descriptor,
+                                onPractice: { onPractice(descriptor.practiceAction) }
+                            )
+                            .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
+                        }
+                    }
                 )
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
@@ -220,13 +247,6 @@ struct BrowseCollectionPageView: View {
                 )
                 .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
-            } else {
-                BrowseCollectionMessageEntryCard(
-                    descriptor: descriptor,
-                    onPractice: { onPractice(descriptor.practiceAction) }
-                )
-                .id(BrowseCollectionFocusRequest.practiceEntryScrollTargetID)
-                .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
 
             BrowseCollectionExploreSection(
@@ -235,6 +255,10 @@ struct BrowseCollectionPageView: View {
                 onOpenCollection: onOpenCollection
             )
         }
+    }
+
+    private var prefersNounRowsBeforePracticeEntry: Bool {
+        descriptor.route == .category("food")
     }
 
     private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
@@ -398,8 +422,18 @@ struct BrowseCollectionPageView: View {
             return
         }
 
+        restoreFocus(scrollProxy, target: focusRequest.target)
+        try? await Task.sleep(nanoseconds: BrowseCollectionLayout.focusRestoreRetryDelayNanoseconds)
+        guard !Task.isCancelled, self.focusRequest == focusRequest else {
+            return
+        }
+        restoreFocus(scrollProxy, target: focusRequest.target)
+    }
+
+    @MainActor
+    private func restoreFocus(_ scrollProxy: ScrollViewProxy, target: BrowseCollectionFocusRequest.Target) {
         withAnimation(.snappy(duration: BrowseCollectionLayout.focusRestoreAnimationDuration)) {
-            scrollProxy.scrollTo(focusRequest.target.scrollTargetID, anchor: .center)
+            scrollProxy.scrollTo(target.scrollTargetID, anchor: .center)
         }
     }
 }
@@ -409,6 +443,7 @@ private enum BrowseCollectionLayout {
     static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
     static let bottomChromeContentClearance: CGFloat = 128
     static let focusRestoreDelayNanoseconds: UInt64 = 520_000_000
+    static let focusRestoreRetryDelayNanoseconds: UInt64 = 420_000_000
     static let focusRestoreAnimationDuration: TimeInterval = 0.24
     static let cityFilterCardSpacing: CGFloat = 12
     static let cityFilterCardHeight: CGFloat = 166
@@ -505,22 +540,28 @@ private struct BrowseCollectionSubcategoryRail: View {
             .padding(.bottom, 2)
         }
         .scrollClipDisabled()
+        .frame(height: BrowseCollectionLayout.subcategoryCardHeight + 6)
     }
 }
 
-private struct BrowseCollectionSubcategorySections: View {
+private struct BrowseCollectionSubcategorySections<AfterFirstSection: View>: View {
     let subcategories: [BrowseCollectionSubcategory]
     let onOpenDetail: (String) -> Void
+    @ViewBuilder let afterFirstSection: () -> AfterFirstSection
 
     var body: some View {
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
-            ForEach(subcategories) { subcategory in
+            ForEach(Array(subcategories.enumerated()), id: \.element.id) { index, subcategory in
                 BrowseCollectionStarterSection(
                     title: sectionTitle(for: subcategory),
                     items: subcategory.items,
                     onOpenDetail: onOpenDetail
                 )
                 .id(BrowseCategorySubcategoryScrollID.group(subcategory.id))
+
+                if index == 0 {
+                    afterFirstSection()
+                }
             }
         }
     }

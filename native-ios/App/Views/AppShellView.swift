@@ -191,10 +191,8 @@ struct AppShellView: View {
                 HomeView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
-                    chromeNamespace: chromeNamespace,
                     isActive: navigation.currentRoute == .home,
                     isSearchActive: navigation.isSearchPresented,
-                    heroMorphPageID: homePhraseHeroMorphPageID,
                     currentScrollTarget: $homeCurrentScrollTarget,
                     currentScrollOffsetY: $homeCurrentScrollOffsetY,
                     scrollRestorationTarget: $homeScrollRestorationTarget,
@@ -668,7 +666,6 @@ struct AppShellView: View {
             HomeView(
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
-                chromeNamespace: chromeNamespace,
                 isActive: false,
                 isSearchActive: navigation.isSearchPresented,
                 currentScrollTarget: .constant(nil),
@@ -1451,7 +1448,7 @@ struct AppShellView: View {
         )
         browseCollectionFocusRequest = request
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             if browseCollectionFocusRequest == request {
                 browseCollectionFocusRequest = nil
             }
@@ -3212,10 +3209,8 @@ struct HomeView: View {
     @State private var photoBackdropScrollOffset: CGFloat = 0
 
     let scrollToTopTrigger: Int
-    let chromeNamespace: Namespace.ID?
     let isActive: Bool
     let isSearchActive: Bool
-    let heroMorphPageID: String?
     var onSearchTapped: () -> Void
     var onOpenDetail: (String, HomeScrollTarget) -> Void
     var onOpenFeaturedDetail: (String, HomeScrollTarget) -> Void
@@ -3226,10 +3221,8 @@ struct HomeView: View {
     init(
         intentStore: LocalUserIntentStore,
         scrollToTopTrigger: Int = 0,
-        chromeNamespace: Namespace.ID? = nil,
         isActive: Bool = true,
         isSearchActive: Bool = false,
-        heroMorphPageID: String? = nil,
         currentScrollTarget: Binding<HomeScrollTarget?>,
         currentScrollOffsetY: Binding<CGFloat>,
         scrollRestorationTarget: Binding<HomeScrollRestorationTarget?>,
@@ -3245,10 +3238,8 @@ struct HomeView: View {
         self._currentScrollOffsetY = currentScrollOffsetY
         self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
-        self.chromeNamespace = chromeNamespace
         self.isActive = isActive
         self.isSearchActive = isSearchActive
-        self.heroMorphPageID = heroMorphPageID
         self.onSearchTapped = onSearchTapped
         self.onOpenDetail = onOpenDetail
         self.onOpenFeaturedDetail = onOpenFeaturedDetail
@@ -3529,8 +3520,6 @@ struct HomeView: View {
         ) {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.useNowFeaturePhraseCardItems,
-                heroMorphPageID: heroMorphPageID,
-                chromeNamespace: chromeNamespace,
                 visibilityRoute: .home,
                 onOpenDetail: { onOpenFeaturedDetail($0, .essentials) },
                 isSaved: { intentStore.isPageSaved($0) },
@@ -3559,8 +3548,6 @@ struct HomeView: View {
             HomeShelf(title: "Recently viewed", subtitle: "Pick up where you left off") {
                 HomeFeaturedPhraseCarousel(
                     items: items,
-                    heroMorphPageID: heroMorphPageID,
-                    chromeNamespace: chromeNamespace,
                     onOpenDetail: { onOpenFeaturedDetail($0, .recentlyViewed) },
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) }
@@ -5150,8 +5137,6 @@ private struct HomeShelf<Content: View>: View {
 
 private struct HomeFeaturedPhraseCarousel: View {
     let items: [HomeFeaturePhraseItem]
-    let heroMorphPageID: String?
-    let chromeNamespace: Namespace.ID?
     let visibilityRoute: AppRoute?
     let onOpenDetail: (String) -> Void
     let isSaved: (String) -> Bool
@@ -5159,16 +5144,12 @@ private struct HomeFeaturedPhraseCarousel: View {
 
     init(
         items: [HomeFeaturePhraseItem],
-        heroMorphPageID: String?,
-        chromeNamespace: Namespace.ID?,
         visibilityRoute: AppRoute? = nil,
         onOpenDetail: @escaping (String) -> Void,
         isSaved: @escaping (String) -> Bool,
         onToggleSaved: @escaping (String) -> Void
     ) {
         self.items = items
-        self.heroMorphPageID = heroMorphPageID
-        self.chromeNamespace = chromeNamespace
         self.visibilityRoute = visibilityRoute
         self.onOpenDetail = onOpenDetail
         self.isSaved = isSaved
@@ -5177,24 +5158,12 @@ private struct HomeFeaturedPhraseCarousel: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            carouselContent
+            carouselItems
                 .padding(.trailing, HomeLayout.horizontalPadding)
                 .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
         .frame(height: HomeLayout.featurePhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
-        .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
-    }
-
-    @ViewBuilder
-    private var carouselContent: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: 14) {
-                carouselItems
-            }
-        } else {
-            carouselItems
-        }
     }
 
     private var carouselItems: some View {
@@ -5203,23 +5172,18 @@ private struct HomeFeaturedPhraseCarousel: View {
                 HomeFeaturedPhraseCard(
                     item: item,
                     isSaved: isSaved(item.pageID),
-                    isHeroMorphSource: heroMorphPageID == item.morphPageID,
-                    chromeNamespace: chromeNamespace,
                     visibilityRoute: item.id == items.first?.id ? visibilityRoute : nil,
                     onOpenDetail: onOpenDetail,
                     onToggleSaved: { onToggleSaved(item.pageID) }
                 )
             }
         }
-        .scrollTargetLayout()
     }
 }
 
 private struct HomeFeaturedPhraseCard: View {
     let item: HomeFeaturePhraseItem
     let isSaved: Bool
-    let isHeroMorphSource: Bool
-    let chromeNamespace: Namespace.ID?
     let visibilityRoute: AppRoute?
     let onOpenDetail: (String) -> Void
     let onToggleSaved: () -> Void
@@ -5235,18 +5199,13 @@ private struct HomeFeaturedPhraseCard: View {
                         englishTitle: item.englishTitle,
                         pronunciation: item.pronunciation,
                         titleSize: 42,
-                        pronunciationLineLimit: 1,
-                        morphPageID: item.morphPageID,
-                        morphNamespace: chromeNamespace,
-                        isMorphActive: isHeroMorphSource,
-                        isMorphSource: true
+                        pronunciationLineLimit: 1
                     )
                     .padding(.trailing, 48)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityIdentifier("HomeFeaturedPhrase.Open.\(item.pageID)")
-                .zIndex(isHeroMorphSource ? 4 : 0)
 
                 Spacer(minLength: 0)
 
@@ -5256,14 +5215,6 @@ private struct HomeFeaturedPhraseCard: View {
                     onToggleSaved: onToggleSaved,
                     visibilityRoute: visibilityRoute
                 )
-                .homePhraseHeroMorph(
-                    HomePhraseHeroMorphID.player(item.morphPageID),
-                    namespace: chromeNamespace,
-                    isActive: isHeroMorphSource,
-                    isSource: true,
-                    anchor: .topLeading
-                )
-                .zIndex(isHeroMorphSource ? 3 : 0)
             }
             .padding(.horizontal, 18)
             .padding(.top, 22)

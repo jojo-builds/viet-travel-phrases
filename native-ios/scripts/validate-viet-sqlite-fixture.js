@@ -129,7 +129,7 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-hello-da-chao-anh-chi",
   "viet-family-food-to-go",
   "viet-phrase-coffee-6",
-  "viet-phrase-help-1",
+  "viet-family-help-need-help",
   "viet-phrase-polite-2",
   "viet-phrase-polite-3",
   "viet-phrase-polite-5",
@@ -140,13 +140,13 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-repair-number-amount",
   "viet-phrase-time-1",
   "viet-phrase-time-2",
-  "viet-phrase-vpe-food-without-khong-da",
-  "viet-phrase-vpe-food-without-khong-duong",
-  "viet-phrase-vpe-likely-replies-di-thang",
-  "viet-phrase-vpe-likely-replies-gan-day",
-  "viet-phrase-vpe-likely-replies-re-phai",
-  "viet-phrase-vpe-likely-replies-re-trai",
-  "viet-phrase-ves-can-you-show-me-politeness",
+  "viet-phrase-v500-food-drin-no-ice-please",
+  "viet-phrase-coffee-5",
+  "viet-phrase-v500-tran-please-go-straight",
+  "viet-phrase-v900-tran-please-turn-right-here",
+  "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
+  "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
+  "viet-phrase-repair-show-me",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
@@ -309,7 +309,19 @@ function main() {
     ),
     'cities', (SELECT count(*) FROM city),
     'cityPlaces', (SELECT count(*) FROM city_place),
-    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
+    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag),
+    'cityReadyAudioPhraseRows', (
+      SELECT count(*)
+      FROM phrase p
+      JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+      WHERE p.audio_status = 'ready'
+    ),
+    'cityPlannedAudioPhraseRows', (
+      SELECT count(*)
+      FROM phrase p
+      JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+      WHERE p.audio_status = 'planned'
+    )
   );`));
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : { cities: [], places: [], pages: [] };
   const cityLibraryPages = (cityLibrary.pages ?? []).filter((page) => page.status === "approved");
@@ -379,7 +391,11 @@ function main() {
   assertEqual(counts.plannedMissingAudioAuditRows, plannedAudioQueueRows, "planned missing audio queue rows");
   assertTrue(counts.plannedMissingAudioPhraseRows <= plannedAudioSourcePhraseCount, "planned phrase missing audio rows must be deduped by normalized expected text");
   assertZero(counts.duplicatedPlannedMissingAudioTexts, "duplicated planned missing audio normalized text rows");
-  assertTrue(plannedAudioSourcePhraseCount >= cityLibraryPages.length, "planned source phrases should include at least the city-library pages");
+  assertEqual(
+    counts.cityReadyAudioPhraseRows + counts.cityPlannedAudioPhraseRows,
+    cityLibraryPages.length,
+    "city-library pages should have ready or planned audio"
+  );
   assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
   assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");

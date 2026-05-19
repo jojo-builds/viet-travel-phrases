@@ -156,10 +156,10 @@ final class PracticeScenarioModeTests: XCTestCase {
                 ]
             ),
             (
-                "viet-phrase-v500-food-drin-does-this-have-egg-or-peanuts",
-                "Cái này có trứng hay đậu phộng không?",
+                "viet-phrase-food-15",
+                "Món này có trứng hay đậu phộng không?",
                 [
-                    ("Cái", "item / classifier"),
+                    ("Món", "dish"),
                     ("này", "this"),
                     ("có", "have / there is"),
                     ("trứng", "egg"),
@@ -1240,12 +1240,12 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Đây là thẻ hành lý của tôi",
                 "Tôi cần báo cáo hành lý thất lạc",
-                "Bạn có thể giúp tôi được không?",
+                "Giúp tôi với",
             ],
             english: [
                 "Here is my baggage tag",
                 "I need to report lost luggage",
-                "Can you help me?",
+                "I need help",
             ]
         )
 
@@ -1450,7 +1450,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             vietnamese: [
                 "Tôi bị dị ứng đậu phộng",
                 "Ít cay thôi",
-                "Cái này có trứng hay đậu phộng không?",
+                "Món này có trứng hay đậu phộng không?",
             ],
             english: [
                 "I am allergic to peanuts",
@@ -1862,7 +1862,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             visibleEnglish,
             [
                 "Can I have an interpreter?",
-                "Can you help me?",
+                "I need help",
                 "Can you speak a little slower?",
             ]
         )
@@ -1896,7 +1896,7 @@ final class PracticeScenarioModeTests: XCTestCase {
             Array(visibleRetryEnglish.prefix(2)),
             [
                 "Can I try another card?",
-                "Can you help me?",
+                "I need help",
             ]
         )
     }
@@ -1990,7 +1990,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Here is my baggage tag",
                     "I need to report lost luggage",
-                    "Can you help me?",
+                    "I need help",
                 ],
                 forbiddenTopEnglish: [
                     "Where is baggage claim?",
@@ -2242,7 +2242,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Please say that again",
                     "Can you speak a little slower?",
-                    "Can you help me?",
+                    "I need help",
                 ],
                 forbiddenTopEnglish: [
                     "Can I pay by card?",
@@ -2312,7 +2312,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "Can I try another card?",
                     "Can I pay by card?",
-                    "Can you help me?",
+                    "I need help",
                 ],
                 forbiddenTopEnglish: [
                     "Do you have a smaller size?",
@@ -2438,7 +2438,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 expectedTopEnglish: [
                     "I'm just looking",
                     "I'm looking for a gift",
-                    "Can you help me?",
+                    "I need help",
                 ],
                 forbiddenTopEnglish: [
                     "Respectful hello, sir.",
@@ -2502,7 +2502,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "baggage claim",
                 nextStepID: "airport-story-baggage-belt",
                 nextLocalMeaningFragment: "baggage tag",
-                expectedNextTopEnglishFragments: ["baggage tag", "lost luggage", "help me"],
+                expectedNextTopEnglishFragments: ["baggage tag", "lost luggage", "help"],
                 forbiddenNextTopEnglishFragments: ["Grab", "passport"]
             ),
             MessageTransitionContract(
@@ -2574,7 +2574,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "Wi-Fi password",
                 nextStepID: "hotel-wifi-problem",
                 nextLocalMeaningFragment: "Wi-Fi working",
-                expectedNextTopEnglishFragments: ["Wi-Fi is not working", "password is not working", "help me"],
+                expectedNextTopEnglishFragments: ["Wi-Fi is not working", "password is not working", "help"],
                 forbiddenNextTopEnglishFragments: ["check-out", "luggage"]
             ),
             MessageTransitionContract(
@@ -2709,7 +2709,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "pay by card",
                 nextStepID: "pay-card-retry",
                 nextLocalMeaningFragment: "card did not work",
-                expectedNextTopEnglishFragments: ["another card", "help me"],
+                expectedNextTopEnglishFragments: ["another card", "help"],
                 forbiddenNextTopEnglishFragments: ["smaller size", "doctor"]
             ),
             MessageTransitionContract(
@@ -2790,7 +2790,7 @@ final class PracticeScenarioModeTests: XCTestCase {
                 selectedEnglishFragment: "auntie",
                 nextStepID: "greeting-respect-woman",
                 nextLocalMeaningFragment: "look at",
-                expectedNextTopEnglishFragments: ["just looking", "gift", "help me"],
+                expectedNextTopEnglishFragments: ["just looking", "gift", "help"],
                 forbiddenNextTopEnglishFragments: ["sir", "sit here"]
             ),
             MessageTransitionContract(
