@@ -200,7 +200,7 @@ struct BrowseCollectionPageView: View {
                 }
             )
 
-            if !descriptor.hasMessageSection, !prefersNounRowsBeforePracticeEntry, !descriptor.subcategories.isEmpty {
+            if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor), !prefersNounRowsBeforePracticeEntry, !descriptor.subcategories.isEmpty {
                 BrowseCollectionMessageEntryCard(
                     descriptor: descriptor,
                     onPractice: { onPractice(descriptor.practiceAction) }
@@ -217,7 +217,7 @@ struct BrowseCollectionPageView: View {
                 )
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                if !descriptor.hasMessageSection {
+                if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor) {
                     BrowseCollectionMessageEntryCard(
                         descriptor: descriptor,
                         onPractice: { onPractice(descriptor.practiceAction) }
@@ -230,7 +230,7 @@ struct BrowseCollectionPageView: View {
                     subcategories: descriptor.subcategories,
                     onOpenDetail: onOpenDetail,
                     afterFirstSection: {
-                        if !descriptor.hasMessageSection, prefersNounRowsBeforePracticeEntry {
+                        if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor), prefersNounRowsBeforePracticeEntry {
                             BrowseCollectionMessageEntryCard(
                                 descriptor: descriptor,
                                 onPractice: { onPractice(descriptor.practiceAction) }
@@ -242,7 +242,7 @@ struct BrowseCollectionPageView: View {
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
 
-            if descriptor.hasMessageSection {
+            if BrowseCollectionLayoutPolicy.hasMessageSection(descriptor) {
                 BrowseCollectionMessageSection(
                     descriptor: descriptor,
                     onStartScenario: { scenarioID in
@@ -281,8 +281,10 @@ struct BrowseCollectionPageView: View {
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 18)
 
-            collectionSections(scrollProxy: scrollProxy)
-                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+            VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+                collectionSections(scrollProxy: scrollProxy)
+            }
+            .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
         }
         .background {
             UnevenRoundedRectangle(
@@ -444,7 +446,7 @@ struct BrowseCollectionPageView: View {
     }
 }
 
-private enum BrowseCollectionLayout {
+enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
     static let bottomChromeContentClearance: CGFloat = 128
@@ -1347,9 +1349,9 @@ private struct BrowseCollectionMessageEntryCard: View {
     }
 }
 
-private extension BrowseCollectionDescriptor {
-    var hasMessageSection: Bool {
-        false
+enum BrowseCollectionLayoutPolicy {
+    static func hasMessageSection(_ descriptor: BrowseCollectionDescriptor) -> Bool {
+        !descriptor.messageScenarioIDs.isEmpty
     }
 }
 
