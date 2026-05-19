@@ -650,7 +650,7 @@ private struct SearchPhraseRow: View {
         .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(Color.black.opacity(0.04), lineWidth: 1)
+                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
         }
         .accessibilityElement(children: .contain)
     }

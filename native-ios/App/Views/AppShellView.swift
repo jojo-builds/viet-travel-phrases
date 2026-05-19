@@ -4196,7 +4196,7 @@ private struct SavedTripPracticeCard: View {
         )
         .overlay {
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(.white.opacity(0.82), lineWidth: 1)
+                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
                 .allowsHitTesting(false)
         }
         .softAmbientCardShadow()
@@ -5327,7 +5327,7 @@ private struct HomeFeaturedPhraseCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 32)
@@ -5690,7 +5690,7 @@ private extension View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: cornerRadius)

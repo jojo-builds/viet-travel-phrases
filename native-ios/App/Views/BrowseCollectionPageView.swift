@@ -576,7 +576,7 @@ private struct BrowseCollectionSubcategoryCard: View {
             .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : .white.opacity(0.64), lineWidth: isSelected ? 2 : 1)
+                    .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 2 : 1)
             }
             .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 20, interactive: true)
