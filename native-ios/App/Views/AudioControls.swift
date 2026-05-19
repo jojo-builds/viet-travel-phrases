@@ -97,7 +97,7 @@ struct PlaybackDockView: View {
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
-                    .softAmbientCardShadow()
+                    .softInteractiveControlShadow()
                     .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
             }
             .overlay {
@@ -123,7 +123,7 @@ struct PlaybackDockView: View {
             ZStack {
                 Circle()
                     .fill(.white.opacity(0.48))
-                    .softAmbientCardShadow(opacity: 0.045, radius: 12, y: 6)
+                    .softInteractiveControlShadow()
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
                     .font(.system(size: 22, weight: .semibold))
@@ -154,7 +154,7 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.76), lineWidth: 1)
                     }
-                    .softAmbientCardShadow()
+                    .softInteractiveControlShadow()
                     .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
 
                 Circle()
@@ -164,7 +164,7 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.74), lineWidth: 1)
                     }
-                    .softAmbientCardShadow(opacity: 0.045, radius: 14, y: 7)
+                    .softInteractiveControlShadow()
 
                 Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
@@ -288,8 +288,8 @@ struct AudioSpeedSegmentedControl: View {
         .frame(height: metrics.controlHeight)
         .background {
             Capsule(style: .continuous)
-                .fill(.white.opacity(0.42))
-                .softAmbientCardShadow(opacity: 0.045, radius: 12, y: 6)
+                .fill(.ultraThinMaterial)
+                .softInteractiveControlShadow()
         }
         .overlay {
             Capsule(style: .continuous)

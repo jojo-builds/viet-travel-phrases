@@ -46,9 +46,14 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(background.green, 1, accuracy: 0.001)
         XCTAssertEqual(background.blue, 1, accuracy: 0.001)
         XCTAssertEqual(background.alpha, 1, accuracy: 0.001)
-        XCTAssertEqual(AppSurfaceDepth.cardOpacity, 0.06, accuracy: 0.001)
-        XCTAssertEqual(AppSurfaceDepth.cardRadius, 16, accuracy: 0.001)
-        XCTAssertEqual(AppSurfaceDepth.cardYOffset, 8, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardOpacity, 0.04, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardRadius, 12, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardYOffset, 6, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.imageCardOpacity, AppSurfaceDepth.cardOpacity, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlOpacity, 0.08, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlRadius, 8, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlYOffset, 4, accuracy: 0.001)
+        XCTAssertEqual(PhrasePageStyle.cardShadowBleedPadding, 24, accuracy: 0.001)
         XCTAssertLessThan(PhrasePageStyle.cardStrokeOpacity, 0.05)
     }
 

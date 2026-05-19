@@ -372,12 +372,12 @@ private struct BrowseCityHeroRail: View {
                 }
                 .scrollTargetLayout()
                 .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-                .padding(.bottom, 4)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
             }
             .scrollTargetBehavior(.viewAligned)
             .scrollClipDisabled()
         }
-        .frame(height: BrowsePageLayout.cityHeroCardHeight + 4)
+        .frame(height: BrowsePageLayout.cityHeroCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .accessibilityIdentifier("Browse.CityHeroRail")
     }
 }

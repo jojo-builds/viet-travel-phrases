@@ -399,7 +399,7 @@ struct VietnameseMenuPageView: View {
                     }
                     .padding(.leading, VietnameseMenuLayout.horizontalPadding)
                     .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
-                    .padding(.bottom, 2)
+                    .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
                     .scrollTargetLayout()
                 }
                 .scrollTargetBehavior(.viewAligned)
@@ -411,7 +411,7 @@ struct VietnameseMenuPageView: View {
                 }
             }
         }
-        .frame(height: VietnameseMenuLayout.sectionCardHeight)
+        .frame(height: VietnameseMenuLayout.sectionCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .background {
             GeometryReader { proxy in
                 Color.clear.preference(
@@ -616,7 +616,7 @@ private struct VietnameseMenuSectionImageCard: View {
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
+            .softAmbientCardShadow()
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)

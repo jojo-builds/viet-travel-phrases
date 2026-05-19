@@ -5542,7 +5542,7 @@ private struct PracticeMatchCardButton: View {
             .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .offset(x: state == .incorrect ? -4 : 0)
             .scaleEffect(cardScale)
-            .shadow(color: shadowColor, radius: shadowRadius, x: 0, y: shadowY)
+            .softAmbientCardShadow()
             .animation(
                 state == .incorrect
                     ? .linear(duration: 0.08).repeatCount(4, autoreverses: true)
@@ -5654,37 +5654,6 @@ private struct PracticeMatchCardButton: View {
         }
     }
 
-    private var shadowColor: Color {
-        switch state {
-        case .selected:
-            return card.item.tint.color.opacity(0.18)
-        case .matched:
-            return Color.green.opacity(0.12)
-        case .incorrect:
-            return Color.red.opacity(0.16)
-        case .hinted:
-            return Color.orange.opacity(0.14)
-        case .normal:
-            return Color.black.opacity(0.045)
-        }
-    }
-
-    private var shadowRadius: CGFloat {
-        switch state {
-        case .selected:
-            return 16
-        case .matched, .hinted:
-            return 11
-        case .incorrect:
-            return 9
-        case .normal:
-            return 8
-        }
-    }
-
-    private var shadowY: CGFloat {
-        state == .selected ? 8 : 5
-    }
 }
 
 private struct PracticeMatchCardContent: View {
@@ -5809,7 +5778,7 @@ private struct PracticeMatchImagePrompt: View {
         }
         .frame(width: imageSize, height: imageSize)
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity, radius: 12, y: 6)
+        .softAmbientCardShadow()
         .frame(maxWidth: .infinity)
         .frame(height: imageSize)
         .accessibilityHidden(true)
@@ -6006,7 +5975,7 @@ private struct PracticeMatchCompletionView: View {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
                     .stroke(.white.opacity(0.44), lineWidth: 1)
             }
-            .softAmbientCardShadow(opacity: 0.10, radius: 28, y: 12)
+            .softAmbientCardShadow()
             .padding(.horizontal, 12)
             .padding(.bottom, 12)
         }

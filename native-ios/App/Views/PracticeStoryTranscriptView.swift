@@ -782,7 +782,7 @@ private struct PracticeStoryChoiceChip: View {
                             lineWidth: isSelected ? 2 : 1
                         )
                 }
-                .softAmbientCardShadow(opacity: isSelected ? 0.055 : 0.035, radius: isSelected ? 14 : 10, y: isSelected ? 7 : 4)
+                .softAmbientCardShadow()
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")

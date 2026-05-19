@@ -205,6 +205,7 @@ enum PhrasePageStyle {
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
     static let bottomChromeContentClearance: CGFloat = 116
+    static let cardShadowBleedPadding: CGFloat = 24
     static let cardFillOpacity = 0.98
     static let cardStrokeOpacity = 0.035
 
@@ -226,10 +227,13 @@ enum PhrasePageStyle {
 }
 
 enum AppSurfaceDepth {
-    static let cardOpacity = 0.06
-    static let cardRadius: CGFloat = 16
-    static let cardYOffset: CGFloat = 8
-    static let imageCardOpacity = 0.055
+    static let cardOpacity = 0.04
+    static let cardRadius: CGFloat = 12
+    static let cardYOffset: CGFloat = 6
+    static let imageCardOpacity = cardOpacity
+    static let controlOpacity = 0.08
+    static let controlRadius: CGFloat = 8
+    static let controlYOffset: CGFloat = 4
     static let sheetOpacity = 0.06
     static let sheetRadius: CGFloat = 36
     static let sheetYOffset: CGFloat = -14
@@ -250,6 +254,15 @@ extension View {
             radius: AppSurfaceDepth.sheetRadius,
             x: 0,
             y: AppSurfaceDepth.sheetYOffset
+        )
+    }
+
+    func softInteractiveControlShadow() -> some View {
+        shadow(
+            color: .black.opacity(AppSurfaceDepth.controlOpacity),
+            radius: AppSurfaceDepth.controlRadius,
+            x: 0,
+            y: AppSurfaceDepth.controlYOffset
         )
     }
 }

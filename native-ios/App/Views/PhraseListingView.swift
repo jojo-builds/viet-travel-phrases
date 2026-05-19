@@ -1040,17 +1040,8 @@ struct PhotoBackdropBottomChromeBacking: View {
     let height: CGFloat
 
     var body: some View {
-        LinearGradient(
-            gradient: Gradient(stops: [
-                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.58), location: 0.24),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.96), location: 0.58),
-                .init(color: PhrasePageStyle.pageBackground, location: 1),
-            ]),
-            startPoint: .top,
-            endPoint: .bottom
-        )
-        .frame(height: height)
+        Color.clear
+            .frame(height: height)
     }
 }
 
@@ -1797,7 +1788,7 @@ private struct SituationCard: View {
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
         .phraseListCard(strokeOpacity: 0.05)
-        .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
+        .softAmbientCardShadow()
     }
 
     private var cardSummary: some View {

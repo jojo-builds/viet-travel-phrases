@@ -4143,7 +4143,7 @@ private struct SavedTripPracticeCard: View {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.white.opacity(0.82))
                         .frame(width: 54, height: 54)
-                        .softAmbientCardShadow(opacity: 0.055)
+                        .softAmbientCardShadow()
 
                     Image(systemName: "heart.fill")
                         .font(.system(size: 24, weight: .black))
@@ -4202,7 +4202,7 @@ private struct SavedTripPracticeCard: View {
                 .stroke(.white.opacity(0.82), lineWidth: 1)
                 .allowsHitTesting(false)
         }
-        .softAmbientCardShadow(opacity: 0.055)
+        .softAmbientCardShadow()
     }
 }
 
@@ -4251,7 +4251,7 @@ private struct SavedTripSectionImageCard: View {
                     .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
+            .softAmbientCardShadow()
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -5237,9 +5237,9 @@ private struct HomeFeaturedPhraseCarousel: View {
         ScrollView(.horizontal, showsIndicators: false) {
             carouselContent
                 .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 3)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.featurePhraseCardHeight)
+        .frame(height: HomeLayout.featurePhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .scrollTargetBehavior(.viewAligned)
         .scrollClipDisabled()
     }
@@ -5360,6 +5360,7 @@ private struct HomeQuickPhraseCard: View {
                             .lineLimit(2)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.66)
+                            .frame(height: 44, alignment: .bottom)
 
                         Text(item.subtitle)
                             .font(.caption)
@@ -5367,6 +5368,7 @@ private struct HomeQuickPhraseCard: View {
                             .lineLimit(1)
                             .multilineTextAlignment(.center)
                             .minimumScaleFactor(0.78)
+                            .frame(height: 18, alignment: .top)
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -5475,9 +5477,9 @@ private struct HomePracticeStarterRail: View {
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: 144)
+        .frame(height: 138 + PhrasePageStyle.cardShadowBleedPadding)
         .scrollClipDisabled()
         .accessibilityIdentifier("HomePracticeStarterRail")
     }
@@ -5642,9 +5644,9 @@ private struct HomeCityRail: View {
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 4)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.cityCardHeight + 4)
+        .frame(height: HomeLayout.cityCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .accessibilityIdentifier("HomeCityRail")
     }
 }
@@ -5705,7 +5707,7 @@ private extension View {
                     .stroke(Color.black.opacity(0.055), lineWidth: 1)
                     .allowsHitTesting(false)
             }
-            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
+            .softAmbientCardShadow()
     }
 }
 
@@ -5736,9 +5738,9 @@ private struct HomeRoutePhraseShelf: View {
                     }
                 }
                 .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 2)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
             }
-            .frame(height: HomeLayout.quickPhraseCardHeight)
+            .frame(height: HomeLayout.quickPhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
             .scrollClipDisabled()
         }
         .padding(.leading, HomeLayout.horizontalPadding)

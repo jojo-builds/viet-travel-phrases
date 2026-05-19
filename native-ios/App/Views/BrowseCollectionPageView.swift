@@ -765,7 +765,7 @@ private struct BrowseCityFilterSection: View {
                             .id(Self.filterScrollID(filter.id))
                         }
                     }
-                    .padding(.bottom, 2)
+                    .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
                     .scrollTargetLayout()
                 }
                 .scrollTargetBehavior(.viewAligned)
@@ -781,7 +781,7 @@ private struct BrowseCityFilterSection: View {
                 }
             }
         }
-        .frame(height: BrowseCollectionLayout.cityFilterCardHeight)
+        .frame(height: BrowseCollectionLayout.cityFilterCardHeight + PhrasePageStyle.cardShadowBleedPadding)
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
@@ -828,7 +828,7 @@ private struct BrowseCityImageFilterCard: View {
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
+            .softAmbientCardShadow()
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)
