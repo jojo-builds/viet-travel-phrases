@@ -2547,7 +2547,7 @@ enum BrowseSearchDestinations {
         case "hanoi":
             return "Old Quarter lanes, lakes, northern food, coffee stops, and calm cultural landmarks."
         case "danang":
-            return "Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."
+            return "Beach mornings, Han River nights, seafood markets, Son Tra, and central Vietnam day trips."
         case "hoian":
             return "Ancient Town walks, lantern streets, tailor stops, cafes, markets, and countryside routes."
         case "hue":
@@ -2564,7 +2564,7 @@ enum BrowseSearchDestinations {
         case "hanoi":
             return "Hanoi comes into focus through shaded lakes, old lanes, temple courtyards, coffee shops, northern dishes, and streets that carry the city one turn at a time."
         case "danang":
-            return "Da Nang comes into focus through river bridges, beach roads, seafood, markets, mountain day trips, and modern nights along the Han River."
+            return "Da Nang is the central Vietnam city for beach time, seafood, river bridges, and easy day trips. A first day can move from the airport to My Khe, across the Han River after dark, then toward Son Tra, Marble Mountains, Hoi An, or Ba Na Hills. Learn these names before you land so maps, drivers, and saved plans feel familiar."
         case "hoian":
             return "Hoi An comes into focus through yellow walls, lantern streets, river boats, old houses, tailor stops, markets, beaches, and villages beyond the Ancient Town."
         case "hue":

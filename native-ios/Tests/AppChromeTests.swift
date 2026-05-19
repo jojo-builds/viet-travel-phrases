@@ -1576,15 +1576,16 @@ final class AppChromeTests: XCTestCase {
         let cityHub = try! XCTUnwrap(danang.cityHub)
 
         XCTAssertEqual(danang.title, "Da Nang")
-        XCTAssertEqual(danang.subtitle, "Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips.")
+        XCTAssertEqual(danang.subtitle, "Beach mornings, Han River nights, seafood markets, Son Tra, and central Vietnam day trips.")
         XCTAssertEqual(danang.mastheadImageName, "HeroCityDanang")
         XCTAssertEqual(danang.starterTitle, "Names to know")
         XCTAssertEqual(danang.practiceTitle, "Da Nang day")
         XCTAssertEqual(danang.practiceSubtitle, "Beach roads, bridge names, seafood, markets, and mountain trips.")
         XCTAssertFalse(danang.practiceSubtitle.localizedCaseInsensitiveContains("phrase loop"))
         XCTAssertEqual(cityHub.introTitle, "Start here")
-        XCTAssertTrue(cityHub.introText.contains("river bridges"))
-        XCTAssertTrue(cityHub.introText.contains("mountain day trips"))
+        XCTAssertTrue(cityHub.introText.contains("beach time"))
+        XCTAssertTrue(cityHub.introText.contains("My Khe"))
+        XCTAssertTrue(cityHub.introText.contains("saved plans"))
 
         XCTAssertEqual(
             cityHub.situations.map(\.title),

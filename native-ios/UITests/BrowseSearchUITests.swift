@@ -425,9 +425,10 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse-city", "danang"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Beach mornings, Han River nights, seafood markets, Son Tra, and central Vietnam day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Start here"].waitForExistence(timeout: 2))
-        XCTAssertTrue(matchingStaticText(app: app, containing: "river bridges").waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "beach time").waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "saved plans").waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
@@ -442,6 +443,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Say first"].exists)
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
+    }
+
+    func testDaNangCityRowSaveAddsItemToSavedTrip() {
+        let app = launchApp(arguments: ["--browse-city", "danang", "--reset-demo-state"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        let landmarksFilter = app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"]
+        XCTAssertTrue(landmarksFilter.waitForExistence(timeout: 2))
+        tapWhenVisible(landmarksFilter, app: app)
+
+        let saveButton = app.buttons["BrowseCollection.Save.viet-phrase-city-danang-place-dragon-bridge"]
+        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
+        tapWhenVisible(saveButton, app: app)
+        XCTAssertEqual(saveButton.label, "Remove from Saved")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        let savedBridge = app.buttons["SavedTrip.Row.viet-phrase-city-danang-place-dragon-bridge"]
+        scrollUntilHittable(savedBridge, app: app)
+        XCTAssertTrue(app.staticTexts["Cầu Rồng"].exists)
+        XCTAssertTrue(app.staticTexts["Dragon Bridge"].exists)
     }
 
     func testCityFilterSelectionStaysOnCollection() {
