@@ -32,8 +32,6 @@ struct BrowsePageView: View {
                         compactBrowseHeader
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
 
-                        situationChips
-
                         phraseFamilies
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
                     }
@@ -113,12 +111,11 @@ struct BrowsePageView: View {
 
     private var menuGuideShelf: some View {
         BrowseShelf(title: "Menu guides") {
-            BrowseTwoColumnGrid(
-                items: BrowseSearchDestinations.menuGuides,
-                spacing: 12
-            ) { destination in
-                BrowseStartHereCard(destination: destination, actionLabel: "Browse") {
-                    open(destination: destination)
+            VStack(spacing: BrowsePageLayout.menuGuideCardSpacing) {
+                ForEach(BrowseSearchDestinations.menuGuides) { destination in
+                    BrowseMenuGuideCard(destination: destination) {
+                        open(destination: destination)
+                    }
                 }
             }
             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
@@ -131,7 +128,9 @@ struct BrowsePageView: View {
                 items: BrowseSearchDestinations.startHere,
                 spacing: 12
             ) { destination in
-                BrowseStartHereCard(destination: destination) { open(destination: destination) }
+                BrowseStartHereCard(destination: destination) {
+                    open(destination: destination)
+                }
             }
             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
         }
@@ -163,26 +162,6 @@ struct BrowsePageView: View {
         .accessibilityIdentifier("Browse.CompactSearch")
     }
 
-    private var situationChips: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
-                Text("Situations")
-                    .font(.headline.weight(.bold))
-                    .padding(.leading, BrowsePageLayout.horizontalPadding)
-                    .padding(.trailing, 4)
-
-                ForEach(BrowseSearchDestinations.situations.prefix(5)) { situation in
-                    BrowseSituationChip(destination: situation) {
-                        open(destination: situation)
-                    }
-                }
-            }
-            .padding(.trailing, BrowsePageLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .scrollClipDisabled()
-    }
-
     private var phraseFamilies: some View {
         BrowseShelf(title: "Phrase families") {
             BrowseTwoColumnGrid(
@@ -209,6 +188,9 @@ enum BrowsePageLayout {
     static let cardCornerRadius: CGFloat = 22
     static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let situationCardMinHeight: CGFloat = 158
+    static let menuGuideCardHeight: CGFloat = 260
+    static let menuGuideCopyHeight: CGFloat = 98
+    static let menuGuideCardSpacing: CGFloat = 14
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
     static let cityHeroImageAlignment: Alignment = .center
@@ -466,6 +448,110 @@ private struct BrowseCityHeroCard: View {
     }
 }
 
+private struct BrowseMenuGuideCard: View {
+    let destination: BrowseDestination
+    let action: () -> Void
+
+    private var menuKind: VietnameseMenuKind? {
+        VietnameseMenuKind.kind(forRouteID: destination.id)
+    }
+
+    private var imageName: String {
+        menuKind?.heroImageName
+            ?? BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName
+            ?? "HeroVietnamMasthead"
+    }
+
+    private var imageAlignment: Alignment {
+        switch menuKind {
+        case .food, .drink:
+            return .top
+        case nil:
+            return .center
+        }
+    }
+
+    private var imageVerticalOffset: CGFloat {
+        switch menuKind {
+        case .drink:
+            return -112
+        case .food, nil:
+            return 0
+        }
+    }
+
+    var body: some View {
+        Button(action: action) {
+            ZStack(alignment: .bottomLeading) {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: BrowsePageLayout.menuGuideCardHeight,
+                        maxHeight: BrowsePageLayout.menuGuideCardHeight,
+                        alignment: imageAlignment
+                    )
+                    .offset(y: imageVerticalOffset)
+                    .clipped()
+                    .accessibilityHidden(true)
+
+                menuCopyPanel
+            }
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.menuGuideCardHeight, maxHeight: BrowsePageLayout.menuGuideCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                    .allowsHitTesting(false)
+            }
+            .softAmbientCardShadow()
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(destination.title). \(destination.subtitle)")
+        .accessibilityIdentifier("Browse.MenuGuideCard.\(destination.id)")
+    }
+
+    private var menuCopyPanel: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(destination.title)
+                .font(.title3.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+
+            Text(destination.subtitle)
+                .font(.callout)
+                .foregroundStyle(.primary.opacity(0.82))
+                .lineSpacing(1.5)
+                .lineLimit(2)
+                .minimumScaleFactor(0.82)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 12)
+        .padding(.bottom, 14)
+        .frame(
+            maxWidth: .infinity,
+            minHeight: BrowsePageLayout.menuGuideCopyHeight,
+            maxHeight: BrowsePageLayout.menuGuideCopyHeight,
+            alignment: .topLeading
+        )
+        .background {
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+
+                Rectangle()
+                    .fill(Color(.systemBackground).opacity(0.56))
+            }
+            .allowsHitTesting(false)
+        }
+    }
+}
+
 private struct BrowseStartHereCard: View {
     let destination: BrowseDestination
     var actionLabel = "Start"
@@ -504,31 +590,6 @@ private struct BrowseStartHereCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.StartHereCard.\(destination.id)")
-    }
-}
-
-private struct BrowseSituationChip: View {
-    let destination: BrowseDestination
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 5) {
-                Image(systemName: destination.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(destination.tintName.color)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21, tint: destination.tintName.color.opacity(0.18), interactive: true)
-
-                Text(destination.title == "Getting Around" ? "Transport" : destination.title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-            }
-            .frame(width: 74, height: 86)
-        }
-        .buttonStyle(.plain)
     }
 }
 
