@@ -1506,7 +1506,7 @@ struct AppShellView: View {
             isSearchFieldFocused = false
         }
 
-        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+        withoutRouteAnimation {
             navigation.openSearch()
         }
 
