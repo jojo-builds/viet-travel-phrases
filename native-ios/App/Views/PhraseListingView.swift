@@ -262,9 +262,8 @@ struct PhraseArticleTemplateView: View {
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
-                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
-                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = backdropOffset
+                        if abs(offset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = offset
                         }
 
                         if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
@@ -380,25 +379,23 @@ struct PhraseArticleTemplateView: View {
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
-            safeAreaBottom: safeAreaBottom
-        )
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
-        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
-        let backdropHeight = min(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
-            maximumBackdropHeight
-        )
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
-            Spacer(minLength: 0)
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
 
-            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
         }
         .frame(
-            height: backdropBottom,
-            alignment: .bottom
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
@@ -486,7 +483,7 @@ struct PhraseArticleTemplateView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -920,13 +917,9 @@ struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
 
 enum PhrasePhotoBackdropLayout {
     static let bottomReadingClearance: CGFloat = 332
-    static let minimumBottomChromeBackdropHeight: CGFloat = 196
-    static let minimumBottomChromeBackdropOffset: CGFloat = 92
-    static let sheetCornerClearance: CGFloat = 44
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     private static let standardBackdropVerticalOverscan: CGFloat = 160
-    private static let backdropOffsetUpdateStep: CGFloat = 16
 
     static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
         guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
@@ -1013,44 +1006,24 @@ enum PhrasePhotoBackdropLayout {
         let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
         return location.y >= 0 && location.y <= sheetTop
     }
-
-    static func bottomChromeBackdropHeight(safeAreaBottom: CGFloat) -> CGFloat {
-        max(safeAreaBottom + 162, minimumBottomChromeBackdropHeight)
-    }
-
-    static func bottomChromeBackdropOffset(safeAreaBottom: CGFloat) -> CGFloat {
-        max(safeAreaBottom + 58, minimumBottomChromeBackdropOffset)
-    }
-
-    static func bottomChromeBackdropVisibleHeight(safeAreaBottom: CGFloat) -> CGFloat {
-        bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom)
-            - bottomChromeBackdropOffset(safeAreaBottom: safeAreaBottom)
-    }
-
-    static func quantizedBackdropOffset(for offset: CGFloat) -> CGFloat {
-        guard offset > 0 else {
-            return 0
-        }
-
-        return (offset / backdropOffsetUpdateStep).rounded() * backdropOffsetUpdateStep
-    }
 }
 
 struct PhotoBackdropBottomChromeBacking: View {
     let height: CGFloat
+    let topCornerRadius: CGFloat
 
     var body: some View {
-        LinearGradient(
-            gradient: Gradient(stops: [
-                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.34), location: 0.30),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.62),
-                .init(color: PhrasePageStyle.pageBackground, location: 1),
-            ]),
-            startPoint: .top,
-            endPoint: .bottom
+        UnevenRoundedRectangle(
+            cornerRadii: RectangleCornerRadii(
+                topLeading: topCornerRadius,
+                bottomLeading: 0,
+                bottomTrailing: 0,
+                topTrailing: topCornerRadius
+            ),
+            style: .continuous
         )
-        .frame(height: height)
+        .fill(PhrasePageStyle.pageBackground)
+            .frame(height: height)
     }
 }
 
@@ -1444,10 +1417,10 @@ private struct MenuChipFlow: View {
                     .foregroundStyle(.primary)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
-                    .background(.white.opacity(0.78), in: Capsule(style: .continuous))
+                    .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(Color.black.opacity(0.06), lineWidth: 1)
+                            .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .accessibilityIdentifier("MenuDetail.Chip.\(sectionID).\(chip.normalizedMenuChipIdentifier)")
@@ -1796,8 +1769,7 @@ private struct SituationCard: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
-        .phraseListCard(strokeOpacity: 0.05)
-        .shadow(color: .black.opacity(0.025), radius: 8, x: 0, y: 4)
+        .phraseListCard()
     }
 
     private var cardSummary: some View {
@@ -2009,7 +1981,7 @@ private struct BreakdownTokenCard: View {
         .padding(.vertical, 12)
         .frame(width: width)
         .frame(minHeight: 112)
-        .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: 16)
     }
 }
 

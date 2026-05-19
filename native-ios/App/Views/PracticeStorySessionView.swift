@@ -219,9 +219,9 @@ private struct PracticeMessagesThreadBackButton: View {
         )
         .overlay {
             RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
-                .stroke(.white.opacity(0.78), lineWidth: 1)
+                .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
         }
-        .shadow(color: .black.opacity(0.035), radius: 7, y: 3)
+        .softInteractiveControlShadow()
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
         .onTapGesture(perform: action)
         .accessibilityElement()
@@ -565,7 +565,7 @@ private struct PracticeStoryHeader: View {
                 .font(.headline.weight(.bold))
                 .foregroundStyle(scenario.id.tint.color)
                 .frame(width: 44, height: 44)
-                .background(.white.opacity(0.62), in: Circle())
+                .background(PhrasePageStyle.glassCardFill, in: Circle())
                 .overlay {
                     Circle().stroke(.white.opacity(0.7), lineWidth: 1)
                 }
@@ -606,7 +606,7 @@ struct PracticeStoryCompletionSurface: View {
                     .font(.system(size: 34, weight: .bold))
                     .foregroundStyle(.green)
                     .frame(width: 64, height: 64)
-                    .background(.white.opacity(0.7), in: Circle())
+                    .background(PhrasePageStyle.elevatedCardFill, in: Circle())
 
                 Text("Conversation complete")
                     .font(.system(size: 34, weight: .black, design: .rounded))
@@ -620,10 +620,10 @@ struct PracticeStoryCompletionSurface: View {
             }
             .padding(20)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(.white.opacity(0.74), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
 
             VStack(spacing: 10) {
@@ -645,7 +645,7 @@ struct PracticeStoryCompletionSurface: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(.primary)
-                .background(.white.opacity(0.62), in: Capsule())
+                .background(PhrasePageStyle.glassCardFill, in: Capsule())
 
                 Button(action: onBrowseTapped) {
                     Label("Browse phrases", systemImage: "magnifyingglass")
