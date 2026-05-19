@@ -448,11 +448,18 @@ private enum BrowseCollectionLayout {
     static let focusRestoreRetryDelayNanoseconds: UInt64 = 420_000_000
     static let focusRestoreAnimationDuration: TimeInterval = 0.24
     static let cityFilterCardSpacing: CGFloat = 12
+    static let cityFilterCardPeekWidth: CGFloat = 42
     static let cityFilterCardHeight: CGFloat = 166
     static let cityFilterImageHeight: CGFloat = 108
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
+
+    static func cityFilterCardWidth(availableWidth: CGFloat) -> CGFloat {
+        let visiblePeekWidth = min(cityFilterCardPeekWidth, max(28, availableWidth * 0.11))
+        let twoCardsWithPeek = (availableWidth - cityFilterCardSpacing * 2 - visiblePeekWidth) / 2
+        return max(118, min(178, twoCardsWithPeek))
+    }
 }
 
 private enum BrowseCategorySubcategoryScrollID {
@@ -787,7 +794,7 @@ private struct BrowseCityFilterSection: View {
 
     private var imageFilterRail: some View {
         GeometryReader { proxy in
-            let cardWidth = max(154, (proxy.size.width - BrowseCollectionLayout.cityFilterCardSpacing) / 2)
+            let cardWidth = BrowseCollectionLayout.cityFilterCardWidth(availableWidth: proxy.size.width)
 
             ScrollViewReader { filterScrollProxy in
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -825,12 +832,26 @@ private struct BrowseCityFilterSection: View {
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
-        filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+        if let preferredImageName = Self.preferredFilterImageNames[filter.id],
+           UIImage(named: preferredImageName) != nil {
+            return preferredImageName
+        }
+
+        return filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
     }
 
     private static func filterScrollID(_ filterID: String) -> String {
         "BrowseCollection.CityFilter.ScrollTarget.\(filterID)"
     }
+
+    private static let preferredFilterImageNames: [String: String] = [
+        "danang.browse.landmarks": "HeroCityDanangPlaceGoldenBridge",
+        "danang.browse.restaurants": "HeroCityDanangPlaceNen",
+        "danang.browse.tours": "HeroCityDanangPlaceBaNaCableCar",
+        "hanoi.browse.beaches-nature": "HeroCityHanoiPlaceHoanKiemLake",
+        "hcmc.browse.cafes": "HeroCityHcmcPlaceLittleHanoiEggCoffee",
+        "hue.browse.cafes": "HeroCityHuePlaceLangThangCoffee",
+    ]
 }
 
 private enum BrowseCityBrowseScrollID {
@@ -879,9 +900,7 @@ private struct BrowseCityImageFilterCard: View {
     @ViewBuilder
     private var cityImage: some View {
         if let imageName {
-            Image(imageName)
-                .resizable()
-                .scaledToFill()
+            BrowseFocusedAssetImage(imageName: imageName)
                 .frame(height: BrowseCollectionLayout.cityFilterImageHeight)
                 .frame(maxWidth: .infinity)
                 .clipped()
@@ -972,9 +991,7 @@ private struct BrowseCityNounRow: View {
     @ViewBuilder
     private var thumbnail: some View {
         if let imageName = item.resolvedImageName {
-            Image(imageName)
-                .resizable()
-                .scaledToFill()
+            BrowseFocusedAssetImage(imageName: imageName)
                 .frame(
                     width: BrowseCollectionLayout.cityNounThumbnailSize,
                     height: BrowseCollectionLayout.cityNounThumbnailSize
@@ -1010,6 +1027,72 @@ private struct BrowseCityNounRow: View {
                 .nativeGlass(cornerRadius: 18, interactive: false)
         }
     }
+}
+
+private struct BrowseFocusedAssetImage: View {
+    let imageName: String
+
+    var body: some View {
+        GeometryReader { proxy in
+            let containerSize = proxy.size
+
+            if let image = UIImage(named: imageName) {
+                let imageSize = image.size
+                let scale = max(
+                    containerSize.width / imageSize.width,
+                    containerSize.height / imageSize.height
+                )
+                let scaledSize = CGSize(
+                    width: imageSize.width * scale,
+                    height: imageSize.height * scale
+                )
+                let offset = Self.offset(
+                    focus: Self.focusPoint(for: imageName),
+                    scaledSize: scaledSize,
+                    containerSize: containerSize
+                )
+
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: scaledSize.width, height: scaledSize.height)
+                    .offset(offset)
+                    .frame(width: containerSize.width, height: containerSize.height)
+                    .clipped()
+            } else {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: containerSize.width, height: containerSize.height)
+                    .clipped()
+            }
+        }
+    }
+
+    private static func offset(
+        focus: UnitPoint,
+        scaledSize: CGSize,
+        containerSize: CGSize
+    ) -> CGSize {
+        let maxX = max((scaledSize.width - containerSize.width) / 2, 0)
+        let maxY = max((scaledSize.height - containerSize.height) / 2, 0)
+        let rawX = scaledSize.width * (0.5 - focus.x)
+        let rawY = scaledSize.height * (0.5 - focus.y)
+
+        return CGSize(
+            width: min(max(rawX, -maxX), maxX),
+            height: min(max(rawY, -maxY), maxY)
+        )
+    }
+
+    private static func focusPoint(for imageName: String) -> UnitPoint {
+        focusedImages[imageName] ?? .center
+    }
+
+    private static let focusedImages: [String: UnitPoint] = [
+        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
+        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
+    ]
 }
 
 private struct BrowseCityFilterPill: View {
