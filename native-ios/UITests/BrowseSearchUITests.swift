@@ -140,8 +140,8 @@ final class BrowseSearchUITests: XCTestCase {
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
-        tapWhenVisible(app.buttons["Close practice"], app: app)
-        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForNonExistence(timeout: 4))
+        closePractice(app)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
 
         XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 4))
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
@@ -150,38 +150,49 @@ final class BrowseSearchUITests: XCTestCase {
             waitUntilHittable(practiceEntry, timeout: 3),
             "Back from Browse-launched practice should restore the Airport page near the practice entry that opened it."
         )
-        XCTAssertFalse(app.staticTexts["Match the pairs"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Match.Root"].exists)
     }
 
-    func testBrowsePracticeEdgeSwipesBackAndForwardToSameRound() {
+    func testBrowsePracticeOpensAsPullUpCardOverCurrentCollection() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
         let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
-        let roundTitle = app.staticTexts["Match the pairs"]
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
+
+        let roundTitle = app.staticTexts["Match the pairs"].firstMatch
+        XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
+        XCTAssertTrue(
+            app.descendants(matching: .any)["BrowseCollection.category.airport"].exists,
+            "Practice should float over the current Browse collection instead of replacing it."
+        )
+
+        closePractice(app)
+
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 3))
+    }
+
+    func testBrowsePracticeOverlayKeepsCollectionInPlaceThroughDismissal() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
+        let roundTitle = app.staticTexts["Match the pairs"].firstMatch
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].exists)
 
-        edgeSwipeBack(app)
-
+        closePractice(app)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
-        XCTAssertTrue(roundTitle.waitForNonExistence(timeout: 4))
 
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
             waitUntilHittable(practiceEntry, timeout: 3),
-            "Back swipe from Airport practice should restore the Airport page near the practice entry."
-        )
-
-        edgeSwipeForward(app)
-
-        XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
-        XCTAssertTrue(
-            app.staticTexts["Match the pairs"].waitForExistence(timeout: 4),
-            "Forward swipe should reopen the active practice round, not the generic Practice hub."
+            "Closing Airport practice should leave the Airport page near the practice entry that opened it."
         )
     }
 
@@ -762,6 +773,18 @@ final class BrowseSearchUITests: XCTestCase {
         app.launchArguments = arguments
         app.launch()
         return app
+    }
+
+    private func closePractice(_ app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        let closeButton = app.buttons["Close practice"].firstMatch
+        XCTAssertTrue(closeButton.waitForExistence(timeout: 3), file: file, line: line)
+        app.coordinate(
+            withNormalizedOffset: CGVector(
+                dx: closeButton.frame.midX / app.frame.width,
+                dy: closeButton.frame.midY / app.frame.height
+            )
+        )
+        .tap()
     }
 
     private func openSearch(in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {

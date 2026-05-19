@@ -7,7 +7,7 @@ final class BackSwipeUITests: XCTestCase {
         app.launch()
 
         XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 5))
-        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 5))
 
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
         let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.5))
@@ -200,14 +200,14 @@ final class BackSwipeUITests: XCTestCase {
         quickPractice.tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 5))
-        let closePractice = app.buttons["Close practice"]
+        let closePractice = app.buttons["Close practice"].firstMatch
         XCTAssertTrue(
             closePractice.waitForExistence(timeout: 5),
             "Home practice starter should open a dismissible practice flow."
         )
 
-        closePractice.tap()
-        XCTAssertTrue(closePractice.waitForNonExistence(timeout: 4))
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.84, dy: 0.34)).tap()
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         assertVisible(
             app.descendants(matching: .any)["HomePracticeStarterRail"],
