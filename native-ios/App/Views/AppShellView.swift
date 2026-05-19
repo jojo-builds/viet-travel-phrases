@@ -59,6 +59,7 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
+    @State private var browseDetailHeroImageOverrides: [String: String] = [:]
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
@@ -230,7 +231,7 @@ struct AppShellView: View {
                 BrowsePageView(
                     intentStore: intentStore,
                     scrollToTopTrigger: navigation.browseScrollToTopTrigger,
-                    onOpenDetail: openDetailFromBrowse,
+                    onOpenDetail: { openDetailFromBrowse($0) },
                     onOpenCollection: openBrowseCollection,
                     onSearchTapped: openSearch,
                     onSearchQuery: openSearchQuery
@@ -440,7 +441,7 @@ struct AppShellView: View {
                     sectionJumpRequest: menuSectionJumpRequest,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
-                    onOpenDetail: openDetailFromBrowse,
+                    onOpenDetail: { openDetailFromBrowse($0) },
                     isActive: isActive
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -462,7 +463,9 @@ struct AppShellView: View {
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
                     isActive: isActive,
-                    onOpenDetail: openDetailFromBrowse,
+                    onOpenDetail: { pageID in
+                        openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
+                    },
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
@@ -620,6 +623,7 @@ struct AppShellView: View {
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
+                    heroImageNameOverride: browseDetailHeroImageOverrides[renderedPage.pageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
@@ -704,7 +708,7 @@ struct AppShellView: View {
             BrowsePageView(
                 intentStore: intentStore,
                 scrollToTopTrigger: 0,
-                onOpenDetail: openDetailFromBrowse,
+                onOpenDetail: { openDetailFromBrowse($0) },
                 onOpenCollection: openBrowseCollection,
                 onSearchTapped: openSearch,
                 onSearchQuery: openSearchQuery
@@ -718,7 +722,7 @@ struct AppShellView: View {
                     sectionJumpRequest: nil,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
-                    onOpenDetail: openDetailFromBrowse,
+                    onOpenDetail: { openDetailFromBrowse($0) },
                     isActive: false
                 )
             } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
@@ -728,7 +732,9 @@ struct AppShellView: View {
                     scrollToTopRoute: nil,
                     focusRequest: nil,
                     isActive: false,
-                    onOpenDetail: openDetailFromBrowse,
+                    onOpenDetail: { pageID in
+                        openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
+                    },
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
@@ -787,6 +793,7 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
+                    heroImageNameOverride: browseDetailHeroImageOverrides[detailPageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(detailPageID) },
@@ -1264,7 +1271,13 @@ struct AppShellView: View {
         }
     }
 
-    private func openDetailFromBrowse(_ id: String) {
+    private func openDetailFromBrowse(_ id: String, heroImageName: String? = nil) {
+        if let heroImageName, heroImageName.hasPrefix("HeroCategory") {
+            browseDetailHeroImageOverrides[id] = heroImageName
+        } else {
+            browseDetailHeroImageOverrides[id] = nil
+        }
+
         openDetail(id, source: .browse)
     }
 
@@ -1277,6 +1290,10 @@ struct AppShellView: View {
     }
 
     private func openDetail(_ id: String, source: UserIntentSource) {
+        if source != .browse {
+            browseDetailHeroImageOverrides[id] = nil
+        }
+
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {

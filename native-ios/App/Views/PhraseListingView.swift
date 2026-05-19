@@ -20,6 +20,7 @@ struct PhraseListingView: View {
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -39,6 +40,7 @@ struct PhraseListingView: View {
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -57,6 +59,7 @@ struct PhraseListingView: View {
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -78,6 +81,7 @@ struct PhraseListingView: View {
             isSaved: isSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
+            heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -100,6 +104,7 @@ struct PhraseArticleTemplateView: View {
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -124,6 +129,7 @@ struct PhraseArticleTemplateView: View {
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -142,6 +148,7 @@ struct PhraseArticleTemplateView: View {
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -224,7 +231,7 @@ struct PhraseArticleTemplateView: View {
 
     private var photoBackdropBody: some View {
         GeometryReader { geometry in
-            let imageName = page.heroImageName ?? PhrasePageStyle.heroImageName
+            let imageName = heroImageName
             let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
 
             ZStack(alignment: .top) {
@@ -546,7 +553,7 @@ struct PhraseArticleTemplateView: View {
 
     @ViewBuilder
     private var heroImage: some View {
-        let imageName = page.heroImageName ?? PhrasePageStyle.heroImageName
+        let imageName = heroImageName
         let masthead = HeroMastheadImage(
             imageName: imageName,
             height: heroImageHeight
@@ -587,7 +594,7 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var usesCompactPhraseHero: Bool {
-        page.heroImageName == "HeroCompactPhraseMasthead"
+        effectiveHeroImageName == "HeroCompactPhraseMasthead"
     }
 
     private var usesVietnameseMenuDetailFit: Bool {
@@ -596,7 +603,7 @@ struct PhraseArticleTemplateView: View {
 
     private var usesCityNounDetailFit: Bool {
         (page.id.hasPrefix("viet-family-city-") || page.id.hasPrefix("viet-phrase-city-"))
-            && page.heroImageName != nil
+            && effectiveHeroImageName != nil
             && !usesCompactPhraseHero
     }
 
@@ -607,12 +614,20 @@ struct PhraseArticleTemplateView: View {
     private var usesPhotoBackdropLayout: Bool {
         PhrasePhotoBackdropLayout.supportsListingPage(
             pageID: page.id,
-            heroImageName: page.heroImageName
+            heroImageName: effectiveHeroImageName
         )
     }
 
     private var supportsHeroImageLightbox: Bool {
-        usesImageDetailFit && page.heroImageName != nil && !usesPhotoBackdropLayout
+        usesImageDetailFit && effectiveHeroImageName != nil && !usesPhotoBackdropLayout
+    }
+
+    private var effectiveHeroImageName: String? {
+        heroImageNameOverride ?? page.heroImageName
+    }
+
+    private var heroImageName: String {
+        effectiveHeroImageName ?? PhrasePageStyle.heroImageName
     }
 
     private var shouldShowHeroPlaybackDock: Bool {
@@ -931,9 +946,18 @@ enum PhrasePhotoBackdropLayout {
         return isMenuPage && heroImageName.hasPrefix("BackdropMenu")
     }
 
+    static func supportsCategoryListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        return !pageID.hasPrefix("viet-menu-") && heroImageName.hasPrefix("HeroCategory")
+    }
+
     static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
         supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
+            || supportsCategoryListingPage(pageID: pageID, heroImageName: heroImageName)
     }
 
     static func backdropFrameHeight(
