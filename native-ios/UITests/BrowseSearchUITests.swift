@@ -133,78 +133,76 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     func testBrowsePracticeBackReturnsToCollectionPracticeFocus() {
-        let app = launchApp(arguments: ["--browse-category", "airport"])
-        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
+        let app = launchApp(arguments: ["--browse-category", "first-day"])
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.first-day"
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
         closePractice(app)
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
 
-        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.first-day"].waitForExistence(timeout: 4))
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
         XCTAssertTrue(
             waitUntilHittable(practiceEntry, timeout: 3),
-            "Back from Browse-launched practice should restore the Airport page near the practice entry that opened it."
+            "Back from Browse-launched practice should restore the collection near the practice entry that opened it."
         )
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Match.Root"].exists)
     }
 
     func testBrowsePracticeOpensAsPullUpCardOverCurrentCollection() {
-        let app = launchApp(arguments: ["--browse-category", "airport"])
-        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
+        let app = launchApp(arguments: ["--browse-category", "first-day"])
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.first-day"
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         let roundTitle = app.staticTexts["Match the pairs"].firstMatch
         XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
         XCTAssertTrue(
-            app.descendants(matching: .any)["BrowseCollection.category.airport"].exists,
+            app.descendants(matching: .any)["BrowseCollection.category.first-day"].exists,
             "Practice should float over the current Browse collection instead of replacing it."
         )
 
         closePractice(app)
 
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].waitForExistence(timeout: 3))
     }
 
     func testBrowsePracticeOverlayKeepsCollectionInPlaceThroughDismissal() {
-        let app = launchApp(arguments: ["--browse-category", "airport"])
-        let practiceEntryID = "BrowseCollection.PracticeEntry.category.airport"
+        let app = launchApp(arguments: ["--browse-category", "first-day"])
+        let practiceEntryID = "BrowseCollection.PracticeEntry.category.first-day"
         let roundTitle = app.staticTexts["Match the pairs"].firstMatch
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].waitForExistence(timeout: 4))
         tapWhenComfortablyVisible(identifier: practiceEntryID, app: app)
 
         XCTAssertTrue(roundTitle.waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.airport"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.first-day"].exists)
 
         closePractice(app)
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].waitForExistence(timeout: 4))
 
         let practiceEntry = app.buttons.matching(identifier: practiceEntryID).firstMatch
         XCTAssertTrue(practiceEntry.waitForExistence(timeout: 3))
-        XCTAssertTrue(
-            waitUntilHittable(practiceEntry, timeout: 3),
-            "Closing Airport practice should leave the Airport page near the practice entry that opened it."
-        )
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].exists)
     }
 
-    func testFoodCollectionShowsPracticeEntryInsteadOfMessageSection() {
+    func testFoodCollectionUsesMessageSectionAfterNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
-        let practiceEntryID = "BrowseCollection.PracticeEntry.category.food"
+        let messageSection = app.descendants(matching: .any)["BrowseCollection.Messages.category.food"]
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.food"].waitForExistence(timeout: 4))
-        scrollUntilHittable(app.buttons[practiceEntryID], app: app)
+        scrollUntilExists(messageSection, app: app)
 
-        XCTAssertTrue(app.buttons[practiceEntryID].waitForExistence(timeout: 2))
-        XCTAssertFalse(app.staticTexts["Quick conversations"].exists)
+        XCTAssertTrue(messageSection.waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Quick conversations"].exists)
+        XCTAssertFalse(app.buttons["BrowseCollection.PracticeEntry.category.food"].exists)
     }
 
     func testFoodCollectionStartsWithCoffeeNounRows() {
@@ -425,9 +423,10 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse-city", "danang"])
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Beach roads, river bridges, markets, Son Tra, and easy central Vietnam day trips."].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Beach mornings, Han River nights, seafood markets, Son Tra, and central Vietnam day trips."].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Start here"].waitForExistence(timeout: 2))
-        XCTAssertTrue(matchingStaticText(app: app, containing: "river bridges").waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "beach time").waitForExistence(timeout: 2))
+        XCTAssertTrue(matchingStaticText(app: app, containing: "saved plans").waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Play phrase audio"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"].waitForExistence(timeout: 2))
@@ -442,6 +441,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Say first"].exists)
         XCTAssertFalse(app.staticTexts["Start in Da Nang"].exists)
         XCTAssertFalse(app.staticTexts["City phrases in a quick practice loop."].exists)
+    }
+
+    func testDaNangCityRowSaveAddsItemToSavedTrip() {
+        let app = launchApp(arguments: ["--browse-city", "danang", "--reset-demo-state"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        let landmarksFilter = app.buttons["BrowseCollection.CityFilter.danang.browse.landmarks"]
+        XCTAssertTrue(landmarksFilter.waitForExistence(timeout: 2))
+        tapWhenVisible(landmarksFilter, app: app)
+
+        let saveButton = app.buttons["BrowseCollection.Save.viet-phrase-city-danang-place-dragon-bridge"]
+        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
+        tapWhenVisible(saveButton, app: app)
+        XCTAssertEqual(saveButton.label, "Remove from Saved")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        let savedBridge = app.buttons["SavedTrip.Row.viet-phrase-city-danang-place-dragon-bridge"]
+        scrollUntilHittable(savedBridge, app: app)
+        XCTAssertTrue(app.staticTexts["Cầu Rồng"].exists)
+        XCTAssertTrue(app.staticTexts["Dragon Bridge"].exists)
     }
 
     func testCityFilterSelectionStaysOnCollection() {
@@ -526,6 +547,22 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["SIM card phrases"].waitForExistence(timeout: 3))
         XCTAssertTrue(matchingStaticText(app: app, text: "SIM").waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
+    }
+
+    func testAirportCollectionKeepsFirstSectionCloseToSubcategoryRail() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        let arrivalFilter = app.buttons["BrowseCollection.Subcategory.airport.arrival"]
+        let arrivalTitle = app.staticTexts["Arrival phrases"]
+
+        XCTAssertTrue(arrivalFilter.waitForExistence(timeout: 3))
+        XCTAssertTrue(arrivalTitle.waitForExistence(timeout: 3))
+        XCTAssertLessThanOrEqual(
+            arrivalTitle.frame.minY - arrivalFilter.frame.maxY,
+            96,
+            "The first phrase section should sit under the subcategory rail with normal section spacing, not a screen-sized blank gap."
+        )
     }
 
     func testAirportArrivalFilterFromBrowseRemainsInteractive() {
@@ -1032,6 +1069,17 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func scrollUntilExists(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<8 {
+            if element.waitForExistence(timeout: 1) {
+                return
+            }
+            app.swipeUp()
+        }
+
+        XCTFail("Element did not exist after scrolling: \(element)", file: file, line: line)
     }
 
     private func waitUntilHittable(_ element: XCUIElement, timeout: TimeInterval) -> Bool {

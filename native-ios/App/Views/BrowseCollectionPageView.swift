@@ -6,6 +6,8 @@ struct BrowseCollectionPageView: View {
     let scrollToTopRoute: BrowseCollectionRoute?
     let focusRequest: BrowseCollectionFocusRequest?
     var isActive: Bool = true
+    var isSaved: (String) -> Bool = { _ in false }
+    var onToggleSaved: (String) -> Void = { _ in }
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onPractice: (BrowseCollectionPracticeAction) -> Void
@@ -181,6 +183,8 @@ struct BrowseCollectionPageView: View {
                 selectedCityCardID: selectedCityCardID,
                 onOpenDetail: onOpenDetail,
                 onOpenCollection: onOpenCollection,
+                isSaved: isSaved,
+                onToggleSaved: onToggleSaved,
                 onSelectCityCard: { filter in
                     selectCityBrowseGroup(filter, scrollProxy: scrollProxy)
                 },
@@ -196,7 +200,7 @@ struct BrowseCollectionPageView: View {
                 }
             )
 
-            if !descriptor.hasMessageSection, !prefersNounRowsBeforePracticeEntry, !descriptor.subcategories.isEmpty {
+            if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor), !prefersNounRowsBeforePracticeEntry, !descriptor.subcategories.isEmpty {
                 BrowseCollectionMessageEntryCard(
                     descriptor: descriptor,
                     onPractice: { onPractice(descriptor.practiceAction) }
@@ -213,7 +217,7 @@ struct BrowseCollectionPageView: View {
                 )
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
 
-                if !descriptor.hasMessageSection {
+                if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor) {
                     BrowseCollectionMessageEntryCard(
                         descriptor: descriptor,
                         onPractice: { onPractice(descriptor.practiceAction) }
@@ -226,7 +230,7 @@ struct BrowseCollectionPageView: View {
                     subcategories: descriptor.subcategories,
                     onOpenDetail: onOpenDetail,
                     afterFirstSection: {
-                        if !descriptor.hasMessageSection, prefersNounRowsBeforePracticeEntry {
+                        if !BrowseCollectionLayoutPolicy.hasMessageSection(descriptor), prefersNounRowsBeforePracticeEntry {
                             BrowseCollectionMessageEntryCard(
                                 descriptor: descriptor,
                                 onPractice: { onPractice(descriptor.practiceAction) }
@@ -238,7 +242,7 @@ struct BrowseCollectionPageView: View {
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
 
-            if descriptor.hasMessageSection {
+            if BrowseCollectionLayoutPolicy.hasMessageSection(descriptor) {
                 BrowseCollectionMessageSection(
                     descriptor: descriptor,
                     onStartScenario: { scenarioID in
@@ -277,8 +281,10 @@ struct BrowseCollectionPageView: View {
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 18)
 
-            collectionSections(scrollProxy: scrollProxy)
-                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+            VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
+                collectionSections(scrollProxy: scrollProxy)
+            }
+            .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
         }
         .background {
             UnevenRoundedRectangle(
@@ -440,7 +446,7 @@ struct BrowseCollectionPageView: View {
     }
 }
 
-private enum BrowseCollectionLayout {
+enum BrowseCollectionLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = HomeLayout.sectionSpacing
     static let bottomChromeContentClearance: CGFloat = 128
@@ -675,6 +681,8 @@ private struct BrowseCityHubContent: View {
 
     let onOpenDetail: (String) -> Void
     let onOpenCollection: (BrowseCollectionRoute) -> Void
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
     let onSelectCityCard: (BrowseCollectionSubcategory) -> Void
     let onPractice: () -> Void
 
@@ -735,7 +743,9 @@ private struct BrowseCityHubContent: View {
                         filters: cityBrowseFilters,
                         selectedFilterID: selectedCityCardID,
                         onSelectFilter: onSelectCityCard,
-                        onOpenDetail: onOpenDetail
+                        onOpenDetail: onOpenDetail,
+                        isSaved: isSaved,
+                        onToggleSaved: onToggleSaved
                     )
                 }
             }
@@ -769,6 +779,8 @@ private struct BrowseCityFilterSection: View {
     let selectedFilterID: String?
     let onSelectFilter: (BrowseCollectionSubcategory) -> Void
     let onOpenDetail: (String) -> Void
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
 
     private var visibleFilters: [BrowseCollectionSubcategory] {
         filters.filter { !$0.items.isEmpty }
@@ -783,7 +795,9 @@ private struct BrowseCityFilterSection: View {
                     ForEach(visibleFilters) { filter in
                         BrowseCityNounGroupSection(
                             filter: filter,
-                            onOpenDetail: onOpenDetail
+                            onOpenDetail: onOpenDetail,
+                            isSaved: isSaved,
+                            onToggleSaved: onToggleSaved
                         )
                         .id(BrowseCityBrowseScrollID.group(filter.id))
                     }
@@ -922,6 +936,8 @@ private struct BrowseCityImageFilterCard: View {
 private struct BrowseCityNounGroupSection: View {
     let filter: BrowseCollectionSubcategory
     let onOpenDetail: (String) -> Void
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -933,7 +949,12 @@ private struct BrowseCityNounGroupSection: View {
 
             VStack(spacing: 0) {
                 ForEach(filter.items) { item in
-                    BrowseCityNounRow(item: item, onOpenDetail: onOpenDetail)
+                    BrowseCityNounRow(
+                        item: item,
+                        isSaved: isSaved(item.pageID),
+                        onOpenDetail: onOpenDetail,
+                        onToggleSaved: { onToggleSaved(item.pageID) }
+                    )
 
                     if item.id != filter.items.last?.id {
                         Divider().padding(.leading, 86)
@@ -950,42 +971,59 @@ private struct BrowseCityNounGroupSection: View {
 
 private struct BrowseCityNounRow: View {
     let item: BrowseSearchPhraseItem
+    let isSaved: Bool
     let onOpenDetail: (String) -> Void
+    let onToggleSaved: () -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            HStack(spacing: 14) {
-                thumbnail
+        HStack(spacing: 10) {
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                HStack(spacing: 14) {
+                    thumbnail
 
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(item.title)
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.74)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.74)
 
-                    Text(item.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .layoutPriority(1)
-
-                Spacer(minLength: 0)
-
-                trailingControl
             }
+            .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
             .contentShape(Rectangle())
+            .accessibilityIdentifier("BrowseCollection.Row.\(item.pageID)")
+
+            trailingControl
+
+            Button(action: onToggleSaved) {
+                Image(systemName: isSaved ? "heart.fill" : "heart")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.red)
+                    .frame(width: 44, height: 44)
+                    .background(Color.white.opacity(0.001), in: Circle())
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .frame(width: 44, height: 44)
+            .contentShape(Circle())
+            .accessibilityLabel(isSaved ? "Remove from Saved" : "Save to My Trip")
+            .accessibilityIdentifier("BrowseCollection.Save.\(item.pageID)")
+            .zIndex(2)
         }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("BrowseCollection.Row.\(item.pageID)")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
     }
 
     @ViewBuilder
@@ -1018,7 +1056,7 @@ private struct BrowseCityNounRow: View {
     @ViewBuilder
     private var trailingControl: some View {
         if AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
-            AudioSpeakerButton(tint: item.tintName, audioKey: item.audioKey)
+            AudioSpeakerButton(tint: item.tintName, size: 44, audioKey: item.audioKey)
         } else {
             Image(systemName: "chevron.right")
                 .font(.headline.weight(.semibold))
@@ -1311,9 +1349,9 @@ private struct BrowseCollectionMessageEntryCard: View {
     }
 }
 
-private extension BrowseCollectionDescriptor {
-    var hasMessageSection: Bool {
-        false
+enum BrowseCollectionLayoutPolicy {
+    static func hasMessageSection(_ descriptor: BrowseCollectionDescriptor) -> Bool {
+        !descriptor.messageScenarioIDs.isEmpty
     }
 }
 

@@ -500,6 +500,8 @@ struct AppShellView: View {
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
                     isActive: isActive,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
                     onOpenDetail: { pageID in
                         openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
                     },
@@ -749,6 +751,8 @@ struct AppShellView: View {
                     scrollToTopRoute: nil,
                     focusRequest: nil,
                     isActive: false,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
                     onOpenDetail: { pageID in
                         openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
                     },
