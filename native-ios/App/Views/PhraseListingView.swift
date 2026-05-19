@@ -916,7 +916,7 @@ struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
 }
 
 enum PhrasePhotoBackdropLayout {
-    static let bottomReadingClearance: CGFloat = 332
+    static let bottomReadingClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance + BrowseCollectionLayout.bottomChromeContentClearance
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     private static let standardBackdropVerticalOverscan: CGFloat = 160
