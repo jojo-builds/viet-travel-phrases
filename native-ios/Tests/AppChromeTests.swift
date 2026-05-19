@@ -145,10 +145,34 @@ final class AppChromeTests: XCTestCase {
         let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
 
         XCTAssertEqual(visibleSheetTop, metrics.initialContentTop, accuracy: 0.001)
-        XCTAssertGreaterThan(
+        XCTAssertEqual(
             PhrasePhotoBackdropLayout.bottomReadingClearance,
-            PhrasePageStyle.bottomChromeContentClearance
+            PhrasePageStyle.bottomChromeContentClearance + BrowseCollectionLayout.bottomChromeContentClearance,
+            accuracy: 0.001
         )
+        XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
+    }
+
+    func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+        let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let hanoi = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hanoi")))
+
+        XCTAssertTrue(BrowseCollectionLayoutPolicy.hasMessageSection(airport))
+        XCTAssertTrue(BrowseCollectionLayoutPolicy.hasMessageSection(hotel))
+        XCTAssertFalse(BrowseCollectionLayoutPolicy.hasMessageSection(hanoi))
+
+        for route in BrowseSearchDestinations.visibleCategoryCollectionRoutes {
+            guard let descriptor = BrowseSearchDestinations.collectionDescriptor(for: route) else {
+                continue
+            }
+
+            XCTAssertEqual(
+                BrowseCollectionLayoutPolicy.hasMessageSection(descriptor),
+                !descriptor.messageScenarioIDs.isEmpty,
+                "\(route.id) should use one uniform message-section policy"
+            )
+        }
     }
 
     func testHomePhotoBackdropUsesDedicatedMapAsset() {
