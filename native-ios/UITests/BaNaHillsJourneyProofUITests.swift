@@ -54,12 +54,12 @@ final class ListingProductionQAProofUITests: XCTestCase {
 
     private let representativePages: [(label: String, pageID: String, title: String)] = [
         ("understand", "viet-family-repair-understand", "Tôi không hiểu"),
-        ("table-available", "viet-family-vpe-likely-replies-ban-nay-con-trong", "Bàn này còn trống"),
+        ("hotel-check-in", "viet-family-hotel-check-in", "Cho tôi nhận phòng nhé"),
         ("ba-na-hills", "viet-phrase-city-danang-place-ba-na-hills", "Bà Nà Hills"),
         ("dragon-bridge", "viet-phrase-city-danang-place-dragon-bridge", "Cầu Rồng"),
         ("nguyen-van-linh", "viet-phrase-city-danang-place-nguyen-van-linh-street", "Đường Nguyễn Văn Linh"),
         ("anan-saigon", "viet-phrase-city-hcmc-place-anan-saigon", "Anăn Sài Gòn"),
-        ("post-office-where", "viet-phrase-city-hcmc-where-post-office", "Bưu điện Thành phố ở đâu?"),
+        ("post-office-place", "viet-phrase-city-hcmc-place-post-office", "Bưu điện Thành phố"),
     ]
 
     func testCaptureListingProductionQARepresentativeProof() {
@@ -100,7 +100,7 @@ final class ListingProductionQADiverse20ProofUITests: XCTestCase {
 
     private let diversePages: [(label: String, pageID: String, title: String, intent: String)] = [
         ("understand", "viet-family-repair-understand", "Tôi không hiểu", "simple_phrase"),
-        ("table-available", "viet-family-vpe-likely-replies-ban-nay-con-trong", "Bàn này còn trống", "traveler_may_hear"),
+        ("hotel-check-in", "viet-family-hotel-check-in", "Cho tôi nhận phòng nhé", "practical_flow"),
         ("ba-na-hills", "viet-family-city-danang-place-ba-na-hills", "Bà Nà Hills", "macro_attraction_journey"),
         ("marble-mountains", "viet-family-city-danang-place-marble-mountains", "Ngũ Hành Sơn", "macro_attraction_journey"),
         ("dragon-bridge", "viet-family-city-danang-place-dragon-bridge", "Cầu Rồng", "landmark_micro_place"),
@@ -113,7 +113,7 @@ final class ListingProductionQADiverse20ProofUITests: XCTestCase {
         ("pho-bat-dan", "viet-family-city-hanoi-place-pho-bat-dan", "Phở Bát Đàn", "restaurant"),
         ("bun-bo-hue", "viet-family-city-hue-place-bun-bo-city", "Bún bò Huế", "dish"),
         ("cao-lau", "viet-family-city-hoian-place-cao-lau-city", "Cao lầu ở Hội An", "dish"),
-        ("post-office-where", "viet-family-city-hcmc-where-post-office", "Bưu điện Thành phố ở đâu?", "derived_place_phrase"),
+        ("post-office-place", "viet-family-city-hcmc-place-post-office", "Bưu điện Thành phố", "landmark_micro_place"),
         ("nen-where", "viet-family-city-danang-where-nen", "Nhà hàng Nén Đà Nẵng ở đâu?", "derived_place_phrase"),
         ("bathroom-where", "viet-family-bathroom-where", "Nhà vệ sinh ở đâu?", "practical_flow"),
         ("hotel-reservation", "viet-family-hotel-reservation", "Tôi có đặt phòng", "practical_flow"),
@@ -161,22 +161,22 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
 
     private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [
         (
-            "garlic-ingredient",
-            "viet-family-vpe-food-has-co-toi-khong",
-            "Có tỏi không?",
-            ["Other ingredients", "More ingredient questions", "tỏi", "garlic"]
+            "peanut-ingredient",
+            "viet-phrase-food-premium-has-peanuts",
+            "Cái này có đậu phộng không?",
+            ["Break it down", "đậu phộng", "peanuts"]
         ),
         (
             "taxi-help",
-            "viet-family-vpe-pronoun-help-anh-giup-toi-goi-taxi-duoc-khong",
-            "Anh giúp tôi gọi taxi được không?",
-            ["Getting a ride", "More ride phrases"]
+            "viet-phrase-hotel-9",
+            "Gọi taxi giúp tôi được không?",
+            ["Break it down", "taxi"]
         ),
         (
-            "doctor-coming",
-            "viet-family-vpe-likely-replies-bac-si-dang-den",
-            "Bác sĩ đang đến",
-            ["You may hear", "Related replies", "Stay nearby"]
+            "emergency-services",
+            "viet-phrase-v900-emer-safe-please-call-emergency-services",
+            "Vui lòng gọi dịch vụ khẩn cấp",
+            ["Break it down", "emergency"]
         ),
         (
             "marble-mountains-hero",
@@ -330,8 +330,8 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
 
     private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [
         ("excuse-sorry", "viet-excuse-sorry", "Xin lỗi", ["Break it down", "Common follow-ups", "Good to know", "Next phrases"]),
-        ("cash-only", "viet-family-vpe-likely-replies-chi-nhan-tien-mat", "Chỉ nhận tiền mặt", ["You may hear", "Related replies", "Can I pay by card?", "nearest ATM"]),
-        ("gate-changed", "viet-family-vpe-likely-replies-cong-doi-roi", "Cổng đổi rồi", ["You may hear", "confirm the new gate", "Where is the boarding gate?"]),
+        ("cash", "viet-family-transport-cash", "Tôi trả bằng tiền mặt", ["Break it down", "Common follow-ups"]),
+        ("gate", "viet-phrase-v500-airp-bord-arri-where-is-gate-10", "Cổng 10 ở đâu?", ["Break it down", "Good to know"]),
         ("atm-cathedral", "viet-family-city-danang-atm-cathedral", "Có ATM gần Nhà thờ Con Gà Đà Nẵng không?", ["Break it down", "Related phrases", "Tip"]),
         ("vo-nguyen-giap", "viet-family-city-danang-place-vo-nguyen-giap-street", "Đường Võ Nguyên Giáp", ["About", "Hear the street", "Driver phrases", "Confirm"]),
         ("hang-bac", "viet-family-city-hanoi-place-hang-bac-street", "Phố Hàng Bạc", ["About", "Hear the street", "Driver phrases", "Good to know"]),

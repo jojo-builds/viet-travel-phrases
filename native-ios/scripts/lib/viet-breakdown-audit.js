@@ -1021,12 +1021,21 @@ function appFacingTokenID(pageID, token, index, isFinal) {
   return isFinal ? `${pageID}-breakdown-full` : `${pageID}-breakdown-piece-${index + 1}`;
 }
 
+function appFacingTokenEnglish(vietnamese, english) {
+  const cleanVietnamese = normalizeDisplayText(vietnamese);
+  const cleanEnglish = normalizeDisplayText(english);
+  if (cleanVietnamese === "tôi" && cleanEnglish.toLocaleLowerCase("vi") === "me") {
+    return "I / me";
+  }
+  return cleanEnglish;
+}
+
 function appFacingBreakdownTokens(entry, audioKeyForToken) {
   const tokens = Array.isArray(entry.tokens) ? entry.tokens : [];
   return tokens.map((token, index) => {
     const isFinal = index === tokens.length - 1;
     const vietnamese = normalizeDisplayText(token.vietnamese);
-    const english = normalizeDisplayText(token.english);
+    const english = appFacingTokenEnglish(vietnamese, token.english);
     const audioKey = Object.prototype.hasOwnProperty.call(token, "audioKey")
       ? token.audioKey
       : (audioKeyForToken ? audioKeyForToken(vietnamese, { isFinal, token, index }) : null);

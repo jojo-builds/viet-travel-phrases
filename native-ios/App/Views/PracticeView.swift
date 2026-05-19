@@ -3463,7 +3463,7 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-polite-2",
                 "viet-phrase-polite-5",
                 "viet-phrase-polite-7",
-                "viet-phrase-v500-prob-help-can-you-help-me",
+                "viet-family-help-need-help",
                 "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
                 "viet-phrase-problems-3",
                 "viet-phrase-bath-1",
@@ -3563,7 +3563,7 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
                 "viet-phrase-taxi-7",
                 "viet-phrase-v500-tran-are-you-my-driver",
                 "viet-phrase-v500-tran-please-follow-the-map",
-                "viet-phrase-v500-tran-please-stop-right-here",
+                "viet-phrase-transport-stop-here-clearer",
                 "viet-phrase-v500-tran-please-wait-here",
                 "viet-phrase-v900-tran-can-you-pick-me-up-here",
             ],
@@ -3607,11 +3607,11 @@ private struct PracticeMatchTopicSpec: Identifiable, Equatable {
             tint: .red,
             pageIDs: [
                 "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
-                "viet-phrase-v500-prob-help-can-you-help-me",
+                "viet-family-help-need-help",
                 "viet-phrase-v500-emer-safe-please-call-the-police",
                 "viet-phrase-v500-emer-safe-please-call-an-ambulance",
                 "viet-phrase-v500-heal-phar-i-need-a-hospital",
-                "viet-phrase-v500-heal-phar-where-is-the-pharmacy",
+                "viet-phrase-health-1",
                 "viet-phrase-v500-emer-safe-i-need-first-aid",
             ],
             categoryIDs: [
@@ -4014,7 +4014,7 @@ struct PracticeMatchSnapshot {
         "viet-phrase-polite-2",
         "viet-phrase-polite-5",
         "viet-phrase-polite-7",
-        "viet-phrase-v500-prob-help-can-you-help-me",
+        "viet-family-help-need-help",
         "viet-phrase-v500-unde-repa-can-you-repeat-the-last-part",
         "viet-phrase-problems-3",
         "viet-phrase-bath-1",
@@ -4452,6 +4452,7 @@ private struct PracticeMatchRootView: View {
         .onDisappear {
             onPresentationChanged(false)
         }
+        .accessibilityHidden(!isActive)
         .toolbar(isPresentingMatch ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("Practice.Match.Root")
     }

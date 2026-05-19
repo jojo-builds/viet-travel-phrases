@@ -199,7 +199,6 @@ Viet:
 - `content-draft/viet/relation-authoring-notes.md`
 - `content-draft/viet/canonical-pages/tier-one/_tier-one-index.json` for the current computed Tier 1 source-origin inventory
 - `content-draft/viet/canonical-pages/<lane>/<scenario>/<page-id>.json` for authored offline canonical phrase-page articles
-- `content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` for the approved practice-first live expansion lane and its page records/rationale
 - `content-draft/viet/menu/_menu-index.json`, `content-draft/viet/menu/items/**`, and `content-draft/viet/menu/menu-helper-phrases.json` for the handwritten Food Menu and Drink Menu detail-page source
   - each menu item carries text-only `howLocalsOrder` guidance so the page teaches the local ordering move, customization choice, sauce/dip/broth behavior, or drink flavor/ice/sweetness decision without creating one-off audio requirements
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
@@ -208,7 +207,7 @@ Viet:
 Viet Tier 1 listing-page quality standard:
 
 - Use the installed `speaklocal-listing-pages` skill for authoring and review.
-- Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, and practice-expansion pages all compile into one full-depth canonical phrase graph.
+- Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, editorial-support, and menu-owned pages compile into one full-depth canonical phrase graph.
 - Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
 - Each page should carry phrase-specific explanation, useful variants, tone/register guidance, positively framed local/cultural/travel notes, canonical links, and audio-backed rows.
 - Avoid visible internal terms such as `repair` when they are not traveler-friendly; for example, use "When You Don't Understand" in UI copy instead of "Understanding Repair."

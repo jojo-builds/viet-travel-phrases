@@ -188,7 +188,7 @@ final class PracticeNativeMVPTests: XCTestCase {
             practicePageIDs: [
                 "viet-phrase-ves-call-taxi-for-me",
                 "viet-phrase-taxi-1",
-                "viet-phrase-v500-tran-please-stop-right-here",
+                "viet-phrase-transport-stop-here-clearer",
                 "viet-phrase-v500-tran-please-wait-here",
                 "viet-phrase-v500-tran-are-you-my-driver",
             ],

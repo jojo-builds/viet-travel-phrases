@@ -1471,7 +1471,7 @@ struct AppShellView: View {
         )
         browseCollectionFocusRequest = request
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             if browseCollectionFocusRequest == request {
                 browseCollectionFocusRequest = nil
             }

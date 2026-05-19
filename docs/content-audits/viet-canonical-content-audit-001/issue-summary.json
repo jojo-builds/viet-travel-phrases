@@ -1,46 +1,55 @@
 {
   "taskID": "TASK-VIET-CANONICAL-CONTENT-AUDIT-001",
-  "generatedAt": "2026-05-06T00:54:16.040Z",
+  "generatedAt": "2026-05-19T10:36:33.444Z",
   "databasePath": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
-  "canonicalPageCount": 3070,
-  "sourcePhraseCount": 3078,
+  "canonicalPageCount": 1758,
+  "sourcePhraseCount": 1765,
   "duplicateCanonicalGroups": 0,
-  "missingAudioRows": 2126,
+  "missingAudioRows": 680,
   "releaseBlockingMissingAudioRows": 0,
   "missingAudioRowsWithExactReusableAssets": 0,
   "missingAudioRowsWithExactTargetUsages": 0,
   "sqliteReportGeneratedCounts": {
     "languagePacks": 1,
     "scenarios": 19,
-    "clusters": 3059,
-    "clusterMembers": 3078,
-    "phrases": 3078,
-    "pages": 3070,
-    "aliases": 3962,
-    "pageCategories": 19015,
-    "pagePracticeSeeds": 3070,
-    "pagePracticeSteps": 4899,
-    "sections": 11337,
-    "sectionItems": 32103,
-    "breakdownTokens": 11414,
-    "relations": 20410,
-    "searchDocuments": 3078,
-    "audioAssets": 3756,
-    "audioUsages": 10779,
-    "audioTextDedupeRows": 2343,
-    "missingAudioAuditRows": 2126
+    "clusters": 1747,
+    "clusterMembers": 1765,
+    "phrases": 1765,
+    "pages": 1758,
+    "aliases": 2638,
+    "pageCategories": 8791,
+    "pagePracticeSeeds": 1758,
+    "pagePracticeSteps": 2608,
+    "sections": 7040,
+    "sectionItems": 15810,
+    "breakdownTokens": 6900,
+    "relations": 8317,
+    "searchDocuments": 1765,
+    "audioAssets": 4318,
+    "audioUsages": 13756,
+    "audioTextDedupeRows": 2919,
+    "missingAudioAuditRows": 680
   },
   "verdictCounts": {
-    "PASS": 3070
+    "FAIL": 500,
+    "NEEDS_REVIEW": 7,
+    "PASS": 1251
   },
   "sourceLaneCounts": {
-    "catalog-promoted": 779,
-    "child": 14,
-    "city-v1": 750,
-    "editorial-model-support": 32,
-    "practice-expansion": 1350,
+    "catalog-promoted": 770,
+    "child": 13,
+    "city-v1": 806,
+    "editorial-model-support": 24,
     "tier1": 145
   },
-  "issueCounts": {},
-  "severityCounts": {}
+  "issueCounts": {
+    "missing_breakdown": 500,
+    "missing_breakdown_tokens": 500,
+    "single_card_multiword_breakdown": 7,
+    "three_text_only_sections": 181
+  },
+  "severityCounts": {
+    "must_fix": 1181,
+    "needs_authored_review": 7
+  }
 }

@@ -9,7 +9,7 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Hear the name",
+        "title": "Say it locally",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
           "city-danang-place-dragon-bridge"
@@ -17,59 +17,37 @@
         "supportPhraseIDs": []
       },
       {
-        "stepID": "getting-there",
-        "title": "Getting there",
-        "sourceSectionID": "getting-there",
+        "stepID": "use-it-with",
+        "title": "Worth it if",
+        "sourceSectionID": "use-it-with",
         "primaryPhraseIDs": [
-          "city-danang-go-dragon-bridge"
+          "repair-5"
         ],
         "supportPhraseIDs": [
-          "city-danang-where-dragon-bridge"
+          "ves-is-this-address-correct",
+          "ves-take-photo-for-me",
+          "transport-stop-here-clearer"
         ]
       },
       {
-        "stepID": "at-the-bridge",
-        "title": "At the bridge",
-        "sourceSectionID": "at-the-bridge",
+        "stepID": "when-to-use",
+        "title": "Before you go",
+        "sourceSectionID": "when-to-use",
         "primaryPhraseIDs": [
-          "ves-take-photo-for-me"
+          "ves-call-taxi-for-me"
         ],
         "supportPhraseIDs": []
-      },
-      {
-        "stepID": "pickup-nearby",
-        "title": "Meeting or pickup",
-        "sourceSectionID": "pickup-nearby",
-        "primaryPhraseIDs": [
-          "ves-drop-near-dragon-bridge"
-        ],
-        "supportPhraseIDs": [
-          "city-danang-stop-dragon-bridge"
-        ]
-      },
-      {
-        "stepID": "explore-next",
-        "title": "More Cầu Rồng phrases",
-        "sourceSectionID": "explore-next",
-        "primaryPhraseIDs": [
-          "city-danang-atm-dragon-bridge"
-        ],
-        "supportPhraseIDs": [
-          "city-danang-eat-near-dragon-bridge"
-        ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-dragon-bridge",
-      "city-danang-go-dragon-bridge",
-      "ves-take-photo-for-me",
-      "ves-drop-near-dragon-bridge",
-      "city-danang-atm-dragon-bridge"
+      "repair-5",
+      "ves-call-taxi-for-me"
     ],
     "secondaryPracticePhraseIDs": [
-      "city-danang-where-dragon-bridge",
-      "city-danang-stop-dragon-bridge",
-      "city-danang-eat-near-dragon-bridge"
+      "ves-is-this-address-correct",
+      "ves-take-photo-for-me",
+      "transport-stop-here-clearer"
     ],
     "practiceSourcePageID": "viet-family-city-danang-place-dragon-bridge"
   },
@@ -83,10 +61,32 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Hear the name",
+        "title": "Say it locally",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
           "city-danang-place-ba-na-hills"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "use-it-with",
+        "title": "Worth it if",
+        "sourceSectionID": "use-it-with",
+        "primaryPhraseIDs": [
+          "repair-5"
+        ],
+        "supportPhraseIDs": [
+          "ves-is-this-address-correct",
+          "ves-take-photo-for-me",
+          "transport-stop-here-clearer"
+        ]
+      },
+      {
+        "stepID": "when-to-use",
+        "title": "Before you go",
+        "sourceSectionID": "when-to-use",
+        "primaryPhraseIDs": [
+          "ves-call-taxi-for-me"
         ],
         "supportPhraseIDs": []
       },
@@ -95,22 +95,21 @@
         "title": "Getting there",
         "sourceSectionID": "getting-there",
         "primaryPhraseIDs": [
-          "ves-take-me-to-ba-na-hills"
+          "taxi-1"
         ],
-        "supportPhraseIDs": [
-          "city-danang-go-ba-na-hills",
-          "city-danang-where-ba-na-hills",
-          "city-danang-stop-ba-na-hills"
-        ]
+        "supportPhraseIDs": []
       },
       {
         "stepID": "tickets",
         "title": "Tickets",
         "sourceSectionID": "tickets",
         "primaryPhraseIDs": [
-          "ves-two-tickets-ba-na-hills"
+          "v500-time-date-book-two-tickets-please"
         ],
-        "supportPhraseIDs": []
+        "supportPhraseIDs": [
+          "v500-time-date-book-one-ticket-please",
+          "v500-sigh-acti-where-can-i-buy-tickets"
+        ]
       },
       {
         "stepID": "cable-car",
@@ -120,41 +119,22 @@
           "ves-where-cable-car"
         ],
         "supportPhraseIDs": []
-      },
-      {
-        "stepID": "photos",
-        "title": "Photos",
-        "sourceSectionID": "photos",
-        "primaryPhraseIDs": [
-          "ves-take-photo-for-me"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "getting-back",
-        "title": "Getting back",
-        "sourceSectionID": "getting-back",
-        "primaryPhraseIDs": [
-          "directions-8"
-        ],
-        "supportPhraseIDs": [
-          "ves-call-taxi-for-me"
-        ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-ba-na-hills",
-      "ves-take-me-to-ba-na-hills",
-      "ves-two-tickets-ba-na-hills",
-      "ves-where-cable-car",
-      "ves-take-photo-for-me",
-      "directions-8"
+      "repair-5",
+      "ves-call-taxi-for-me",
+      "taxi-1",
+      "v500-time-date-book-two-tickets-please",
+      "ves-where-cable-car"
     ],
     "secondaryPracticePhraseIDs": [
-      "city-danang-go-ba-na-hills",
-      "city-danang-where-ba-na-hills",
-      "city-danang-stop-ba-na-hills",
-      "ves-call-taxi-for-me"
+      "ves-is-this-address-correct",
+      "ves-take-photo-for-me",
+      "transport-stop-here-clearer",
+      "v500-time-date-book-one-ticket-please",
+      "v500-sigh-acti-where-can-i-buy-tickets"
     ],
     "practiceSourcePageID": "viet-family-city-danang-place-ba-na-hills"
   },
@@ -168,7 +148,7 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Hear the street",
+        "title": "Say it locally",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
           "city-danang-place-nguyen-van-linh-street"
@@ -176,65 +156,25 @@
         "supportPhraseIDs": []
       },
       {
-        "stepID": "show-driver",
-        "title": "Tell the driver",
-        "sourceSectionID": "show-driver",
-        "primaryPhraseIDs": [
-          "ves-to-nguyen-van-linh-street"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
         "stepID": "place-brief",
-        "title": "Driver phrases",
+        "title": "What you'll get",
         "sourceSectionID": "place-brief",
         "primaryPhraseIDs": [
           "city-danang-go-nguyen-van-linh-street"
         ],
         "supportPhraseIDs": [
-          "city-danang-near-nguyen-van-linh-street",
-          "city-danang-stop-nguyen-van-linh-street"
-        ]
-      },
-      {
-        "stepID": "confirm",
-        "title": "Confirm",
-        "sourceSectionID": "confirm",
-        "primaryPhraseIDs": [
-          "ves-is-this-nguyen-van-linh-street"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "use-it-with",
-        "title": "Find it nearby",
-        "sourceSectionID": "use-it-with",
-        "primaryPhraseIDs": [
+          "city-danang-stop-nguyen-van-linh-street",
           "city-danang-where-nguyen-van-linh-street"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "wrong-place",
-        "title": "Wrong place",
-        "sourceSectionID": "wrong-place",
-        "primaryPhraseIDs": [
-          "ves-not-right-place"
-        ],
-        "supportPhraseIDs": []
+        ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-nguyen-van-linh-street",
-      "ves-to-nguyen-van-linh-street",
-      "city-danang-go-nguyen-van-linh-street",
-      "ves-is-this-nguyen-van-linh-street",
-      "city-danang-where-nguyen-van-linh-street",
-      "ves-not-right-place"
+      "city-danang-go-nguyen-van-linh-street"
     ],
     "secondaryPracticePhraseIDs": [
-      "city-danang-near-nguyen-van-linh-street",
-      "city-danang-stop-nguyen-van-linh-street"
+      "city-danang-stop-nguyen-van-linh-street",
+      "city-danang-where-nguyen-van-linh-street"
     ],
     "practiceSourcePageID": "viet-family-city-danang-place-nguyen-van-linh-street"
   },
@@ -248,7 +188,7 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Hear the name",
+        "title": "Say it locally",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
           "city-hcmc-place-anan-saigon"
@@ -257,7 +197,7 @@
       },
       {
         "stepID": "place-brief",
-        "title": "Getting there",
+        "title": "What you'll get",
         "sourceSectionID": "place-brief",
         "primaryPhraseIDs": [
           "city-hcmc-go-anan-saigon"
@@ -269,39 +209,8 @@
         ]
       },
       {
-        "stepID": "table-menu",
-        "title": "Table & menu",
-        "sourceSectionID": "table-menu",
-        "primaryPhraseIDs": [
-          "food-need-table"
-        ],
-        "supportPhraseIDs": [
-          "food-menu"
-        ]
-      },
-      {
-        "stepID": "before-you-go",
-        "title": "Order",
-        "sourceSectionID": "before-you-go",
-        "primaryPhraseIDs": [
-          "v900-food-drin-what-do-you-recommend"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "menu-dietary",
-        "title": "Drinks",
-        "sourceSectionID": "menu-dietary",
-        "primaryPhraseIDs": [
-          "vpe-one-item-please-cho-toi-mot-tra-da"
-        ],
-        "supportPhraseIDs": [
-          "store-1"
-        ]
-      },
-      {
         "stepID": "when-to-use",
-        "title": "Pay",
+        "title": "Before you go",
         "sourceSectionID": "when-to-use",
         "primaryPhraseIDs": [
           "coffee-7"
@@ -316,17 +225,12 @@
     "primaryPracticePhraseIDs": [
       "city-hcmc-place-anan-saigon",
       "city-hcmc-go-anan-saigon",
-      "food-need-table",
-      "v900-food-drin-what-do-you-recommend",
-      "vpe-one-item-please-cho-toi-mot-tra-da",
       "coffee-7"
     ],
     "secondaryPracticePhraseIDs": [
       "city-hcmc-stop-anan-saigon",
       "city-hcmc-where-anan",
       "city-hcmc-where-anan-saigon",
-      "food-menu",
-      "store-1",
       "store-6",
       "taxi-7",
       "store-7"

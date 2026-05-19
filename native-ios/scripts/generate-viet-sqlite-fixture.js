@@ -1682,8 +1682,7 @@ function main() {
     }
     return (targetKind === "phrase" && plannedAudioPhraseIDs.has(targetID))
       || (targetKind === "phrase_page" && plannedAudioCanonicalPageIDs.has(targetID))
-      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"))
-      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:viet-practice-expansion-"));
+      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"));
   }
 
   function addAudioUsage({ usageKind, targetKind, targetID, expectedText, audioKey, isPrimary, sourcePath }) {

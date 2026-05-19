@@ -92,14 +92,14 @@
       "body": "Dạ, chào chị for an older woman. Dạ, chào chú for an uncle-age man. Dạ, chào ông for an elderly man.",
       "phrases": [
         {
-          "id": "ves-do-you-speak-english-anh",
-          "vietnamese": "Anh nói tiếng Anh không?",
+          "id": "repair-english-help",
+          "vietnamese": "Anh/chị nói tiếng Anh không?",
           "english": "Do you speak English?",
-          "pronunciation": "anh noy tyeng anh khong",
+          "pronunciation": "anh chee noy tyeng anh khong",
           "symbolName": "text.bubble.fill",
           "tintName": "blue",
-          "detailPageID": "viet-family-ves-do-you-speak-english-anh",
-          "audioKey": "audio-authored-anh-noi-tieng-anh-khong-38b15123ba"
+          "detailPageID": "viet-family-repair-english-help",
+          "audioKey": "repair-english-help"
         }
       ]
     },

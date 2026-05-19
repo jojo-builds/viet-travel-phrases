@@ -13,7 +13,8 @@ This is a static approximation of rendered listing content after renderer-level 
 A simple recovery phrase for when Vietnamese is too fast or unclear.
 
 ### Break it down
-- Tôi không = I do not
+- Tôi = I / me
+- không = no / not
 - hiểu = understand
 - Tôi không hiểu = I don’t understand
 
@@ -31,30 +32,36 @@ Keep your tone curious. A sharp tone can make a clarification question sound lik
 - Anh/chị nói tiếng Anh không? — Do you speak English?
 - Hãy nói từ từ nhé — Please say it slowly
 
-## Bàn này còn trống
+## Hotel check-in
 
-- Page ID: `viet-family-vpe-likely-replies-ban-nay-con-trong`
-- Intent: `traveler_may_hear`
-- Hero: Bàn này còn trống / This table is available
-- Practice CTA: Practice this phrase
-
-### You may hear
-Staff may use this when a table is open.
+- Page ID: `viet-family-hotel-check-in`
+- Intent: `practical_flow`
+- Hero: Cho tôi nhận phòng / I’d like to check in
+- Practice CTA: Practice this situation
 
 ### Break it down
-- Bàn = table
-- này = this
-- còn trống = still available / open
-- Bàn này còn trống = This table is available
+- cho = to / for
+- tôi = I / me
+- nhận phòng = check in
+- Cho tôi nhận phòng = I’d like to check in
 
-### Say next
-- Cho tôi bàn cho hai người nhé — A table for two, please
-- Có phải đợi bàn không? — Is there a wait for a table?
-- Cho tôi xem thực đơn được không? — Can I see the menu?
-- Tính tiền giúp tôi — Please let me pay
+### Other ways
+- Cho tôi nhận phòng nhé — I’d like to check in, please
+
+### Common follow-ups
+- Tôi có đặt phòng — I have a reservation
+- Mấy giờ trả phòng? — What time is check-out?
+- Cho tôi trả phòng — I’d like to check out
 
 ### Good to know
-To ask first, use the question form: “Bàn này còn trống không?”
+Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
+
+### Next phrases
+- Phòng này nóng quá — This room is too hot
+- Máy lạnh không chạy — The air conditioner isn’t working
+- Cho tôi thêm khăn — More towels please
+- Giữ hành lý giúp tôi — Please hold my luggage
+- Cửa không khóa — The door does not lock
 
 ## Bà Nà Hills
 
@@ -64,22 +71,33 @@ To ask first, use the question form: “Bàn này còn trống không?”
 - Practice CTA: Practice this trip
 
 ### About
-Bà Nà Hills is a mountain resort and day-trip attraction outside Da Nang, known for the cable car and Golden Bridge.
+Ba Na Hills is worth knowing because it gives Da Nang a specific landmark scene: views, local pride, history, and city light, alongside Da Nang's seafood-and-mountain day.
 
-### Hear the name
+### Say it locally
+Say Bà Nà Hills for Ba Na Hills. The local name is easier to remember once it sits beside local pride, history, city light, and landmark memory, alongside Da Nang's seafood-and-mountain day.
 - Bà Nà Hills — Ba Na Hills
 
-### Visit flow
-Pickup → Tickets → Cable car → Photos → Food/drinks → Return ride
+### What you'll get
+At Ba Na Hills, you get architecture, views, local pride, and history in visual form: misty hill station approach with cable cars and forested ridges light, with history, city light, landmark memory, and architecture, alongside Da Nang's seafood-and-mountain day.
+
+### Worth it if
+Worth it if Ba Na Hills gives your itinerary a clearer image: architecture, views, local pride, and history, alongside Da Nang's seafood-and-mountain day.
+- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
+- Địa chỉ này đúng không? — Is this address correct?
+- Bạn chụp giúp tôi được không? — Can you take a photo for me?
+- Cho tôi xuống ngay đây — Please stop right here
+
+### Before you go
+Ba Na Hills works best when the name is tied to the reason for going, not memorized as an abstract label. Picture misty hill station approach with cable cars and forested ridges light with city light, landmark memory, architecture, and views, alongside Da Nang's seafood-and-mountain day.
+- Gọi giúp tôi taxi được không? — Can you call me a taxi?
 
 ### Getting there
-- Cho tôi đi Bà Nà Hills. — Please take me to Ba Na Hills.
-- Đi Bà Nà Hills — Go to Ba Na Hills
-- Bà Nà Hills ở đâu? — Where is Ba Na Hills?
-- Dừng ở Bà Nà Hills — Stop at Ba Na Hills
+- Cho tôi tới đây — Take me here
 
 ### Tickets
-- Dạ, cho tôi hai vé lên Bà Nà Hills. — Two tickets to Ba Na Hills, please.
+- Xin cho hai vé — Two tickets, please
+- Xin một vé — One ticket, please
+- Tôi có thể mua vé ở đâu? — Where can I buy tickets?
 
 ### Cable car
 - Cáp treo ở đâu? — Where is the cable car?
@@ -88,20 +106,16 @@ Pickup → Tickets → Cable car → Photos → Food/drinks → Return ride
 - Bạn chụp giúp tôi được không? — Can you take a photo for me?
 
 ### Getting back
-- Điểm đón ở đâu? — Where is the pickup point?
+- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
+- Địa chỉ này đúng không? — Is this address correct?
 - Gọi giúp tôi taxi được không? — Can you call me a taxi?
 
 ### Good to know
-Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm the return pickup point.
+Bà Nà Hills points back to Misty hill station approach with cable cars and forested ridges light, where Ba Na Hills feels specific rather than abstract.
 
 ### Food & cash
-- Ăn gần Bà Nà Hills — Eat near Ba Na Hills
-- Có ATM gần Bà Nà Hills không? — Is there an ATM near Ba Na Hills?
-
-### Name guide
-- Bà Nà = local name
-- Hills = English word in the attraction name
-- Bà Nà Hills = Ba Na Hills
+- Cho tôi chai nước — A bottle of water please
+- ATM gần nhất ở đâu? — Where is the nearest ATM?
 
 ## Cầu Rồng
 
@@ -110,34 +124,29 @@ Ticket rules, hours, and pickup details can change. Keep your ticket or booking 
 - Hero: Cầu Rồng / Dragon Bridge
 - Practice CTA: Practice this place
 
-### About
-Cầu Rồng is Dragon Bridge in Vietnamese, literally “dragon bridge.” It is one of Da Nang’s main river landmarks.
+### Why go
+Dragon Bridge is worth knowing because it gives Da Nang one of its clearest visual signatures: a dragon-shaped bridge stretching across the Han River between the city center and the beach side.
 
-### Hear the name
+### Say it locally
+Say Cầu Rồng for Dragon Bridge. Cầu means bridge, and Rồng means dragon, so the local name matches exactly what you are looking at.
 - Cầu Rồng — Dragon Bridge
 
-### Getting there
-- Đi cầu Rồng — Go to Dragon Bridge
-- Cầu Rồng ở đâu? — Where is Dragon Bridge?
+### What you'll get
+At Dragon Bridge, expect river light, traffic moving through the dragon body, skyline views, and a place that makes Da Nang feel like a city built around bridges rather than only beaches.
 
-### At the bridge
+### Worth it if
+Worth it if you want a central evening walk, a riverfront meeting point, or a simple landmark that helps the city layout make sense.
+- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
+- Địa chỉ này đúng không? — Is this address correct?
 - Bạn chụp giúp tôi được không? — Can you take a photo for me?
+- Cho tôi xuống ngay đây — Please stop right here
 
-### Meeting or pickup
-- Cho tôi xuống gần Cầu Rồng. — Let me off near Dragon Bridge.
-- Dừng ở Cầu Rồng — Stop at Dragon Bridge
-
-### What the name means
-- Cầu = bridge
-- Rồng = dragon
-- Cầu Rồng = Dragon Bridge
+### Before you go
+Before you go, connect Dragon Bridge with the Han River and the beach road. It is a useful name for walking plans, ride routes, and recognizing the center of Da Nang.
+- Gọi giúp tôi taxi được không? — Can you call me a taxi?
 
 ### Good to know
-For pickup, confirm which side of the bridge or nearby landmark is easiest to meet at.
-
-### More Cầu Rồng phrases
-- Có ATM gần cầu Rồng không? — Is there an ATM near Dragon Bridge?
-- Ăn gần Cầu Rồng — Eat near Dragon Bridge
+Good to know: Cầu Rồng is literal and visual. If the dragon shape is the reason for the stop, the Vietnamese name reinforces it instead of feeling like a label to memorize.
 
 ## Đường Nguyễn Văn Linh
 
@@ -146,36 +155,27 @@ For pickup, confirm which side of the bridge or nearby landmark is easiest to me
 - Hero: Đường Nguyễn Văn Linh / Nguyen Van Linh Street
 - Practice CTA: Practice this street
 
-### About
-Đường Nguyễn Văn Linh means Nguyen Van Linh Street.
+### Why go
+Nguyen Van Linh Street is worth recognizing because streets shape how Da Nang feels on the ground: crossings, cafe edges, neighborhood movement, and street signs, alongside coastal Da Nang.
 
-### Hear the street
-- Đường Nguyễn Văn Linh — Nguyen Van Linh Street
-
-### Tell the driver
-- Cho tôi đến đường Nguyễn Văn Linh. — Please take me to Nguyen Van Linh Street.
-
-### Driver phrases
+### What you'll get
+At Nguyen Van Linh Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: broad city avenue with motorbikes and planted median, motion blur, with shopfronts, scooters, crossings, and cafe edges, alongside coastal Da Nang.
 - Đi Đường Nguyễn Văn Linh — Go to Nguyen Van Linh Street
-- Đường Nguyễn Văn Linh gần đây không? — Is Nguyen Van Linh Street near here?
 - Dừng ở Đường Nguyễn Văn Linh — Stop at Nguyen Van Linh Street
-
-### Confirm
-- Đây có phải đường Nguyễn Văn Linh không? — Is this Nguyen Van Linh Street?
-
-### Find it nearby
 - Đường Nguyễn Văn Linh ở đâu? — Where is Nguyen Van Linh Street?
 
-### Wrong place
-- Hình như không đúng chỗ. — I think this is not the right place.
+### Say it locally
+Say Đường Nguyễn Văn Linh for Nguyen Van Linh Street. The local name is easier to remember once it sits beside cafe edges, neighborhood movement, street signs, and shopfronts, alongside coastal Da Nang.
+- Đường Nguyễn Văn Linh — Nguyen Van Linh Street
 
-### What the name means
-- Đường = street
-- Nguyễn Văn Linh = name to keep together
-- Đường Nguyễn Văn Linh = Nguyen Van Linh Street
+### Worth it if
+Worth it if the street helps you understand the neighborhood before you are there: scooters, crossings, cafe edges, and neighborhood movement, alongside coastal Da Nang.
+
+### Before you go
+Nguyen Van Linh Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture broad city avenue with motorbikes and planted median, motion blur with street signs, shopfronts, scooters, and crossings, alongside coastal Da Nang.
 
 ### Good to know
-Full sentences are usually easier for drivers than spelling the street name.
+Đường Nguyễn Văn Linh belongs in the same image as shopfronts, scooters, crossings, and cafe edges, alongside coastal Da Nang, with Nguyen Van Linh Street rooted in Da Nang.
 
 ## Anăn Sài Gòn
 
@@ -184,45 +184,32 @@ Full sentences are usually easier for drivers than spelling the street name.
 - Hero: Anăn Sài Gòn / Anan Saigon
 - Practice CTA: Practice ordering here
 
-### About
-Anăn Sài Gòn is a restaurant in Saigon / Ho Chi Minh City.
+### Why go
+Anan Saigon is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.
 
-### Hear the name
-- Anăn Sài Gòn — Anan Saigon
-
-### Getting there
+### What you'll get
+At Anan Saigon, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: contemporary Vietnamese restaurant table with herbs and small plates, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.
 - Cho tôi đến nhà hàng Anăn Sài Gòn. — Please take me to Anăn Sài Gòn restaurant.
 - Cho tôi xuống gần nhà hàng Anăn Sài Gòn. — Let me off near Anăn Sài Gòn restaurant.
 - Nhà hàng Anăn Sài Gòn ở đâu? — Where is Anan Saigon restaurant?
 - Anăn Sài Gòn ở đâu? — Where is Anan Saigon?
 
-### Table & menu
-- Cho tôi bàn cho hai người nhé — A table for two, please
-- Cho tôi xem thực đơn được không? — Can I see the menu?
+### Say it locally
+Say Anăn Sài Gòn for Anan Saigon. The local name is easier to remember once it sits beside tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy.
+- Anăn Sài Gòn — Anan Saigon
 
-### Order
-- Bạn đề xuất món gì? — What do you recommend?
+### Worth it if
+Worth it if the meal itself should be one of the day's memories: drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy.
 
-### Drinks
-- Cho tôi trà đá — Iced tea, please.
-- Cho tôi chai nước — A bottle of water please
-
-### Pay
+### Before you go
+Anan Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture contemporary Vietnamese restaurant table with herbs and small plates with tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy.
 - Tính tiền giúp tôi — Please let me pay
 - Tôi quẹt thẻ được không? — Can I pay by card?
 - Tôi trả bằng tiền mặt — I’ll pay cash
 - Cho tôi hóa đơn — Please give me the receipt
 
-### Getting back
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
-
-### Name guide
-- Anăn Sài = restaurant name
-- Gòn = restaurant name
-- Anăn Sài Gòn = Anan Saigon
-
 ### Good to know
-Details can change. Keep the map pin or booking screen handy.
+Anăn Sài Gòn feels less abstract when it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy and the scene of Anan Saigon.
 
 ## Bún chả Hương Liên
 
@@ -231,45 +218,31 @@ Details can change. Keep the map pin or booking screen handy.
 - Hero: Bún chả Hương Liên / Bun Cha Huong Lien
 - Practice CTA: Practice ordering here
 
-### About
-Bún chả Hương Liên is a Hanoi restaurant known for bún chả: grilled pork, noodles, herbs, and dipping sauce.
+### Why go
+Bun Cha Huong Lien is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Hanoi's steam-and-herb food streets.
 
-### Hear the name
-- Bún chả Hương Liên — Bun Cha Huong Lien
-
-### Getting there
+### What you'll get
+At Bun Cha Huong Lien, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Hanoi bun cha shop table with grilled pork, noodles, herbs, with tables, house dishes, menu details, and staff rhythm, alongside Hanoi's steam-and-herb food streets.
 - Cho tôi đến nhà hàng Bún chả Hương Liên. — Please take me to Bún chả Hương Liên restaurant.
 - Cho tôi xuống gần nhà hàng Bún chả Hương Liên. — Let me off near Bún chả Hương Liên restaurant.
 - Bún chả Hương Liên ở đâu? — Where is Bun Cha Huong Lien?
 
-### Table & menu
-- Cho tôi bàn cho hai người nhé — A table for two, please
-- Cho tôi xem thực đơn được không? — Can I see the menu?
+### Say it locally
+Say Bún chả Hương Liên for Bun Cha Huong Lien. The local name is easier to remember once it sits beside staff rhythm, drinks, evening meal energy, and tables, alongside Hanoi's steam-and-herb food streets.
+- Bún chả Hương Liên — Bun Cha Huong Lien
 
-### Order
-- Dạ, cho tôi một phần bún chả. — One portion of bun cha, please.
-- Bạn đề xuất món gì? — What do you recommend?
+### Worth it if
+Worth it if the meal itself should be one of the day's memories: house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
 
-### Drinks
-- Cho tôi trà đá — Iced tea, please.
-- Cho tôi chai nước — A bottle of water please
-
-### Pay
+### Before you go
+Bun Cha Huong Lien works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hanoi bun cha shop table with grilled pork, noodles, herbs with staff rhythm, drinks, evening meal energy, and tables, alongside Hanoi's steam-and-herb food streets.
 - Tính tiền giúp tôi — Please let me pay
 - Tôi quẹt thẻ được không? — Can I pay by card?
 - Tôi trả bằng tiền mặt — I’ll pay cash
 - Cho tôi hóa đơn — Please give me the receipt
 
-### Getting back
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
-
-### Name guide
-- Bún chả = dish name
-- Hương Liên = restaurant name
-- Bún chả Hương Liên = Bun Cha Huong Lien
-
 ### Good to know
-Details can change. Keep the map pin or booking screen handy.
+The scene around Bun Cha Huong Lien stays vivid when Bún chả Hương Liên sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Hanoi's steam-and-herb food streets.
 
 ## Phở Bát Đàn
 
@@ -278,45 +251,31 @@ Details can change. Keep the map pin or booking screen handy.
 - Hero: Phở Bát Đàn / Pho Bat Dan
 - Practice CTA: Practice ordering here
 
-### About
-Phở Bát Đàn is a Hanoi pho restaurant.
+### Why go
+Pho Bat Dan is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Hanoi's steam-and-herb food streets.
 
-### Hear the name
-- Phở Bát Đàn — Pho Bat Dan
-
-### Getting there
+### What you'll get
+At Pho Bat Dan, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop, with tables, house dishes, menu details, and staff rhythm, alongside Hanoi's steam-and-herb food streets.
 - Cho tôi đến nhà hàng Phở Bát Đàn. — Please take me to Phở Bát Đàn restaurant.
 - Cho tôi xuống gần nhà hàng Phở Bát Đàn. — Let me off near Phở Bát Đàn restaurant.
 - Phở Bát Đàn ở đâu? — Where is Pho Bat Dan?
 
-### Table & menu
-- Cho tôi bàn cho hai người nhé — A table for two, please
-- Cho tôi xem thực đơn được không? — Can I see the menu?
+### Say it locally
+Say Phở Bát Đàn for Pho Bat Dan. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
+- Phở Bát Đàn — Pho Bat Dan
 
-### Order
-- Dạ, cho tôi một tô phở. — One bowl of pho, please.
-- Bạn đề xuất món gì? — What do you recommend?
+### Worth it if
+Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside Hanoi's steam-and-herb food streets.
 
-### Drinks
-- Cho tôi trà đá — Iced tea, please.
-- Cho tôi chai nước — A bottle of water please
-
-### Pay
+### Before you go
+Pho Bat Dan works best when the name is tied to the reason for going, not memorized as an abstract label. Picture steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop with house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
 - Tính tiền giúp tôi — Please let me pay
 - Tôi quẹt thẻ được không? — Can I pay by card?
 - Tôi trả bằng tiền mặt — I’ll pay cash
 - Cho tôi hóa đơn — Please give me the receipt
 
-### Getting back
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
-
-### Name guide
-- Phở = pho / noodle soup
-- Bát Đàn = restaurant name
-- Phở Bát Đàn = Pho Bat Dan
-
 ### Good to know
-Details can change. Keep the map pin or booking screen handy.
+Phở Bát Đàn belongs with Steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop, giving Pho Bat Dan a specific travel scene before the trip begins.
 
 ## Bún bò Huế
 
@@ -325,35 +284,26 @@ Details can change. Keep the map pin or booking screen handy.
 - Hero: Bún bò Huế / Bun bo Hue
 - Practice CTA: Practice ordering this
 
-### About
-Bún bò Huế is a spicy beef noodle soup from Huế.
+### Why go
+Bun bo Hue is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory.
 
-### Hear the dish
-- Bún bò Huế — Bun bo Hue
-
-### Order it
+### What you'll get
+At Bun bo Hue, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop, with steam, texture, small meal rituals, and flavor, alongside Hue river-city memory.
 - Dạ, cho tôi một tô bún bò Huế. — One bowl of bun bo Hue, please.
 - Cho tôi một phần — One portion please
 
-### Adjust it
-- Không cay nhé — Not spicy please
-- Không cay quá nhé. — Not too spicy, please.
+### Say it locally
+Say Bún bò Huế for Bun bo Hue. The local name is easier to remember once it sits beside texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
+- Bún bò Huế — Bun bo Hue
 
-### Diet / allergy
-- Món này có gì? — What is in this dish?
-- Tôi bị dị ứng đậu phộng — I am allergic to peanuts
-- Tôi ăn chay — I am vegetarian
-- Tôi không ăn thịt bò — I do not eat beef
-- Tôi không ăn thịt lợn — I do not eat pork
-- Tôi không ăn hải sản — I do not eat seafood
+### Worth it if
+Worth it if you want a food memory rather than only a label: texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
 
-### What the name means
-- Bún bò = beef noodle part of the dish name
-- Huế = Hue style / city name in the dish
-- Bún bò Huế = Bun bo Hue
+### Before you go
+Bun bo Hue works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop with texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
 
 ### Good to know
-Ask about ingredients before ordering if you avoid pork, beef, seafood, peanuts, or spice.
+Bún bò Huế feels like something heard in Hue, with Bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop around it.
 
 ## Cao lầu
 
@@ -362,58 +312,57 @@ Ask about ingredients before ordering if you avoid pork, beef, seafood, peanuts,
 - Hero: Cao lầu ở Hội An / Cao lau in Hoi An
 - Practice CTA: Practice ordering this
 
-### About
-Cao lầu is a Hội An noodle dish with pork, herbs, broth, and chewy noodles.
+### Why go
+Cao lau in Hoi An is worth trying because it turns Hoi An into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside lantern-street Hoi An.
 
-### Hear the dish
-- Cao lầu ở Hội An — Cao lau in Hoi An
-
-### Order it
+### What you'll get
+At Cao lau in Hoi An, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light, with herbs, sauce, steam, and texture, alongside lantern-street Hoi An.
 - Dạ, cho tôi một phần cao lầu. — One portion of cao lau, please.
 - Cho tôi một phần — One portion please
 
-### Adjust it
-- Không cay nhé — Not spicy please
-- Không cay quá nhé. — Not too spicy, please.
+### Say it locally
+Say Cao lầu ở Hội An for Cao lau in Hoi An. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside lantern-street Hoi An.
+- Cao lầu ở Hội An — Cao lau in Hoi An
 
-### Diet / allergy
-- Món này có gì? — What is in this dish?
-- Tôi bị dị ứng đậu phộng — I am allergic to peanuts
-- Tôi ăn chay — I am vegetarian
-- Tôi không ăn thịt bò — I do not eat beef
-- Tôi không ăn thịt lợn — I do not eat pork
-- Tôi không ăn hải sản — I do not eat seafood
+### Worth it if
+Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside lantern-street Hoi An.
 
-### What the name means
-- Cao lầu = dish name
-- ở Hội An = in Hội An
-- Cao lầu ở Hội An = Cao lau in Hoi An
+### Before you go
+Cao lau in Hoi An works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light with flavor, herbs, sauce, and steam, alongside lantern-street Hoi An.
 
 ### Good to know
-Ask about ingredients before ordering if you avoid pork, beef, seafood, peanuts, or spice.
+Cao lầu ở Hội An feels like something heard in Hoi An, with Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light around it.
 
-## Bưu điện Thành phố ở đâu?
+## Bưu điện Thành phố
 
-- Page ID: `viet-family-city-hcmc-where-post-office`
-- Intent: `derived_place_phrase`
-- Hero: Bưu điện Thành phố ở đâu? / Where is the Central Post Office?
-- Practice CTA: Practice this phrase
+- Page ID: `viet-family-city-hcmc-place-post-office`
+- Intent: `landmark_micro_place`
+- Hero: Bưu điện Thành phố / Saigon Central Post Office
+- Practice CTA: Practice this place
 
-### Break it down
-- Bưu điện = post office
-- Thành phố = city
-- ở đâu = where?
-- Bưu điện Thành phố ở đâu? = Where is the Central Post Office?
+### Why go
+Saigon Central Post Office is worth knowing because it gives Saigon a specific landmark scene: architecture, views, local pride, and history, alongside Saigon street energy.
 
-### Related phrases
-- Bưu điện Thành phố — Central Post Office
-- Đi Bưu điện Thành phố — Go to Central Post Office
-- Dừng ở Bưu điện Thành phố — Stop at Central Post Office
-- Cho tôi đến Bưu điện Thành phố — Please take me to the Central Post Office
-- Có ATM gần Bưu điện Thành phố không? — Is there an ATM near Central Post Office?
+### What you'll get
+At Saigon Central Post Office, you get architecture, views, local pride, and history in visual form: yellow Saigon Central Post Office facade with pedestrians and scooters, with city light, landmark memory, architecture, and views, alongside Saigon street energy.
 
-### Tip
-Keep the map pin, ticket, or meeting point visible if the answer comes fast.
+### Say it locally
+Say Bưu điện Thành phố for Saigon Central Post Office. The local name is easier to remember once it sits beside views, local pride, history, and city light, alongside Saigon street energy.
+- Bưu điện Thành phố — Saigon Central Post Office
+
+### Worth it if
+Worth it if Saigon Central Post Office gives your itinerary a clearer image: landmark memory, architecture, views, and local pride, alongside Saigon street energy.
+- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
+- Địa chỉ này đúng không? — Is this address correct?
+- Bạn chụp giúp tôi được không? — Can you take a photo for me?
+- Cho tôi xuống ngay đây — Please stop right here
+
+### Before you go
+Saigon Central Post Office works best when the name is tied to the reason for going, not memorized as an abstract label. Picture yellow Saigon Central Post Office facade with pedestrians and scooters with landmark memory, architecture, views, and local pride, alongside Saigon street energy.
+- Gọi giúp tôi taxi được không? — Can you call me a taxi?
+
+### Good to know
+Bưu điện Thành phố keeps its setting close: Yellow Saigon Central Post Office facade with pedestrians and scooters, surrounded by local pride, history, city light, and landmark memory, alongside Saigon street energy.
 
 ## Hotel check-in
 
@@ -423,7 +372,8 @@ Keep the map pin, ticket, or meeting point visible if the answer comes fast.
 - Practice CTA: Practice this situation
 
 ### Break it down
-- Cho tôi = for me / please
+- cho = to / for
+- tôi = I / me
 - nhận phòng = check in
 - Cho tôi nhận phòng = I’d like to check in
 
@@ -453,9 +403,9 @@ Stay calm and specific. A direct phrase plus the room number is usually more eff
 - Practice CTA: Practice this situation
 
 ### Break it down
-- Nhập cảnh = immigration
-- ở đâu? = where?
-- Nhập cảnh ở đâu? = Where is immigration
+- Nhập cảnh = immigration / enter the country
+- ở đâu? = where
+- Nhập cảnh ở đâu? = Where is immigration?
 
 ### Common follow-ups
 - Lấy hành lý ở đâu? — Where is baggage claim?
@@ -480,8 +430,8 @@ Airport staff may answer by pointing. Follow the gesture first, then ask again i
 
 ### Break it down
 - Khu đón = pickup area
-- ở đâu? = where?
-- Khu đón ở đâu? = Where is the pickup area
+- ở đâu? = where
+- Khu đón ở đâu? = Where is the pickup area?
 
 ### Other ways
 - Tôi gặp tài xế ở đâu? — Where do I meet the driver?

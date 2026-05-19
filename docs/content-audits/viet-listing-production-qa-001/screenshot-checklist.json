@@ -14,11 +14,11 @@
     "notes": "Use launch args in the iOS simulator and capture rendered proof."
   },
   {
-    "label": "Bàn này còn trống",
-    "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
+    "label": "Hotel check-in",
+    "pageID": "viet-family-hotel-check-in",
     "launchArguments": [
       "--detail-page",
-      "viet-family-vpe-likely-replies-ban-nay-con-trong"
+      "viet-family-hotel-check-in"
     ],
     "requiredProof": [
       "top",
@@ -140,11 +140,11 @@
     "notes": "Use launch args in the iOS simulator and capture rendered proof."
   },
   {
-    "label": "Bưu điện Thành phố ở đâu?",
-    "pageID": "viet-family-city-hcmc-where-post-office",
+    "label": "Bưu điện Thành phố",
+    "pageID": "viet-family-city-hcmc-place-post-office",
     "launchArguments": [
       "--detail-page",
-      "viet-family-city-hcmc-where-post-office"
+      "viet-family-city-hcmc-place-post-office"
     ],
     "requiredProof": [
       "top",
