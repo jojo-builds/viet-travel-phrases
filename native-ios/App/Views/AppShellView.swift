@@ -30,6 +30,12 @@ struct HomeScrollRestorationTarget: Equatable {
     let offsetY: CGFloat
 }
 
+enum HomeBackdropActivationPolicy {
+    static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
+        previousRoute != .home && currentRoute == .home
+    }
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -65,6 +71,8 @@ struct AppShellView: View {
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
+    @State private var homeBackdropImageName: String
+    @State private var homeBackdropActivationToken: Int
     @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
     @State private var menuSectionJumpRequestID = 0
     @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
@@ -92,6 +100,13 @@ struct AppShellView: View {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
         _searchQuery = State(initialValue: initialSearchQuery)
         _requestedPracticeScenarioID = State(initialValue: initialPracticeScenarioID)
+        let startsOnHome = initialRoute == .home
+        _homeBackdropImageName = State(
+            initialValue: startsOnHome
+                ? SharedBackdropImagePool.nextImageName(for: .home)
+                : SharedBackdropImagePool.fallbackImageName
+        )
+        _homeBackdropActivationToken = State(initialValue: startsOnHome ? 1 : 0)
         self.launchPracticeMode = initialPracticeMode
         self.launchPracticeEntryContext = initialPracticeEntryContext
         self.launchDetailScrollTarget = initialDetailScrollTarget
@@ -192,6 +207,8 @@ struct AppShellView: View {
             ZStack {
                 HomeView(
                     intentStore: intentStore,
+                    backdropImageName: homeBackdropImageName,
+                    backdropActivationToken: homeBackdropActivationToken,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
                     isActive: navigation.currentRoute == .home,
                     isSearchActive: navigation.isSearchPresented,
@@ -551,6 +568,7 @@ struct AppShellView: View {
     }
 
     private func openPrimarySystemTab(_ tab: AppSystemTab) {
+        let previousRoute = navigation.currentRoute
         withoutRouteAnimation {
             cancelInteractiveChromeState()
             cancelSearchFocus()
@@ -577,6 +595,7 @@ struct AppShellView: View {
                 break
             }
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     @ViewBuilder
@@ -687,6 +706,8 @@ struct AppShellView: View {
         case .home:
             HomeView(
                 intentStore: intentStore,
+                backdropImageName: homeBackdropImageName,
+                backdropActivationToken: homeBackdropActivationToken,
                 scrollToTopTrigger: 0,
                 isActive: false,
                 isSearchActive: navigation.isSearchPresented,
@@ -1213,6 +1234,18 @@ struct AppShellView: View {
         )
     }
 
+    private func activateHomeBackdropIfNeeded(from previousRoute: AppRoute, to currentRoute: AppRoute) {
+        guard HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
+            previousRoute: previousRoute,
+            currentRoute: currentRoute
+        ) else {
+            return
+        }
+
+        homeBackdropImageName = SharedBackdropImagePool.nextImageName(for: .home)
+        homeBackdropActivationToken += 1
+    }
+
     private func openDetailFromHome(_ id: String) {
         openDetail(id, source: .home)
     }
@@ -1337,12 +1370,14 @@ struct AppShellView: View {
     }
 
     private func openHome() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openHome()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         searchQuery = ""
     }
 
@@ -1437,6 +1472,7 @@ struct AppShellView: View {
     }
 
     private func returnFromPracticeThreadToOrigin(_ scenarioID: PracticeScenarioID?) {
+        let previousRoute = navigation.currentRoute
         let focusRequest = pendingPracticeThreadReturnFocus
         pendingPracticeThreadReturnFocus = nil
         if let scenarioID {
@@ -1450,9 +1486,11 @@ struct AppShellView: View {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     private func returnFromPracticeMatchToOrigin() {
+        let previousRoute = navigation.currentRoute
         let focusRequest = pendingPracticeMatchReturnFocus
         cancelInteractiveChromeState()
         clearPracticeStartRequest()
@@ -1467,6 +1505,7 @@ struct AppShellView: View {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     private func dismissPracticeOverlay() {
@@ -1506,11 +1545,13 @@ struct AppShellView: View {
     }
 
     private func goBack() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         preparePracticeMatchFocusRestoreIfNeeded()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     private func preparePracticeMatchFocusRestoreIfNeeded() {
@@ -1522,11 +1563,13 @@ struct AppShellView: View {
     }
 
     private func goForward() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         let shouldFocusSearch = navigation.forwardPreviewRoute == .search
         withAnimation(.snappy(duration: 0.34)) {
             navigateForwardInState()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         if shouldFocusSearch {
             focusSearchField()
         }
@@ -1574,11 +1617,13 @@ struct AppShellView: View {
     }
 
     private func closeSearch() {
+        let previousRoute = navigation.currentRoute
         cancelSearchFocus()
         cancelInteractiveChromeState()
         withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
             navigation.goBack()
         }
+        activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     private func dismissSearchFieldFocus() {
@@ -1706,6 +1751,7 @@ struct AppShellView: View {
             }
 
             withoutRouteAnimation {
+                let previousRoute = navigation.currentRoute
                 switch direction {
                 case .back:
                     preparePracticeMatchFocusRestoreIfNeeded()
@@ -1713,6 +1759,7 @@ struct AppShellView: View {
                 case .forward:
                     navigateForwardInState()
                 }
+                activateHomeBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
                 interactiveDrag = nil
             }
         }
@@ -3258,6 +3305,8 @@ struct HomeView: View {
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
 
+    let backdropImageName: String
+    let backdropActivationToken: Int
     let scrollToTopTrigger: Int
     let isActive: Bool
     let isSearchActive: Bool
@@ -3270,6 +3319,8 @@ struct HomeView: View {
 
     init(
         intentStore: LocalUserIntentStore,
+        backdropImageName: String = SharedBackdropImagePool.fallbackImageName,
+        backdropActivationToken: Int = 0,
         scrollToTopTrigger: Int = 0,
         isActive: Bool = true,
         isSearchActive: Bool = false,
@@ -3284,6 +3335,8 @@ struct HomeView: View {
         onBrowseAllTapped: @escaping () -> Void
     ) {
         self.intentStore = intentStore
+        self.backdropImageName = backdropImageName
+        self.backdropActivationToken = backdropActivationToken
         self._currentScrollTarget = currentScrollTarget
         self._currentScrollOffsetY = currentScrollOffsetY
         self._scrollRestorationTarget = scrollRestorationTarget
@@ -3380,7 +3433,7 @@ struct HomeView: View {
                 value: isActive && isPhotoBackdropImmersive
                     ? PhrasePhotoBackdropImmersiveImageContext(
                         pageID: "home",
-                        imageName: HomeLayout.backdropImageName,
+                        imageName: backdropImageName,
                         viewportSize: geometry.size,
                         safeAreaTop: geometry.safeAreaInsets.top,
                         safeAreaBottom: geometry.safeAreaInsets.bottom,
@@ -3388,12 +3441,12 @@ struct HomeView: View {
                             for: geometry.size,
                             safeAreaInsets: geometry.safeAreaInsets,
                             pageID: "home",
-                            heroImageName: HomeLayout.backdropImageName
+                            heroImageName: backdropImageName
                         ),
                         verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
                             for: geometry.size,
                             pageID: "home",
-                            heroImageName: HomeLayout.backdropImageName
+                            heroImageName: backdropImageName
                         )
                     )
                     : nil
@@ -3411,8 +3464,14 @@ struct HomeView: View {
             value: isActive && !isPhotoBackdropImmersive
         )
         .accessibilityIdentifier("HomeView")
-        .task {
-            HomeImagePreheater.preheat(HomeContent.homeScrollCriticalImageNames)
+        .task(id: backdropActivationToken) {
+            guard isActive else {
+                return
+            }
+
+            HomeImagePreheater.preheat(
+                HomeContent.homeScrollCriticalImageNames(backdropImageName: backdropImageName)
+            )
         }
     }
 
@@ -3493,7 +3552,7 @@ struct HomeView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        HomePreparedImage(name: HomeLayout.backdropImageName)
+        HomePreparedImage(name: backdropImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -3501,12 +3560,13 @@ struct HomeView: View {
                     for: geometry.size,
                     safeAreaInsets: geometry.safeAreaInsets,
                     pageID: "home",
-                    heroImageName: HomeLayout.backdropImageName
+                    heroImageName: backdropImageName
                 ),
                 alignment: .top
             )
             .clipped()
             .ignoresSafeArea()
+            .accessibilityLabel("Home backdrop")
             .accessibilityHidden(true)
             .accessibilityIdentifier("Home.PhotoBackdrop.Image")
     }
@@ -4404,7 +4464,6 @@ private struct SavedTripRailFramePreferenceKey: PreferenceKey {
 }
 
 enum HomeLayout {
-    static let backdropImageName = "HomeVietnamMapBackdrop"
     static let horizontalPadding: CGFloat = 24
     static let sectionSpacing: CGFloat = 42
     static let cardCornerRadius: CGFloat = 22
@@ -4927,9 +4986,11 @@ private enum HomeContent {
         }
     }()
 
-    static let homeScrollCriticalImageNames: [String] = {
-        [HomeLayout.backdropImageName] + cityCards.map(\.imageName) + situationCards.map(\.imageName)
-    }()
+    static func homeScrollCriticalImageNames(backdropImageName: String) -> [String] {
+        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
+            + cityCards.map(\.imageName)
+            + situationCards.map(\.imageName)
+    }
 
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
