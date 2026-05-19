@@ -98,7 +98,6 @@ struct PlaybackDockView: View {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
                     .softInteractiveControlShadow()
-                    .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
             }
             .overlay {
                 Capsule(style: .continuous)
@@ -155,7 +154,6 @@ struct PlaybackDockView: View {
                             .stroke(.white.opacity(0.76), lineWidth: 1)
                     }
                     .softInteractiveControlShadow()
-                    .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
 
                 Circle()
                     .fill(.white.opacity(0.82))

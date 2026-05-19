@@ -438,6 +438,7 @@ private struct PhraseListCard: ViewModifier {
                     .stroke(Color.black.opacity(strokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
+            .softAmbientCardShadow()
     }
 }
 

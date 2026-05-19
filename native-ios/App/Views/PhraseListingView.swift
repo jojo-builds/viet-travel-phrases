@@ -1420,7 +1420,7 @@ private struct MenuChipFlow: View {
                     .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
-                            .stroke(Color.black.opacity(0.06), lineWidth: 1)
+                            .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
                             .allowsHitTesting(false)
                     }
                     .accessibilityIdentifier("MenuDetail.Chip.\(sectionID).\(chip.normalizedMenuChipIdentifier)")
@@ -1769,8 +1769,7 @@ private struct SituationCard: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
-        .phraseListCard(strokeOpacity: 0.05)
-        .softAmbientCardShadow()
+        .phraseListCard()
     }
 
     private var cardSummary: some View {
@@ -1982,7 +1981,7 @@ private struct BreakdownTokenCard: View {
         .padding(.vertical, 12)
         .frame(width: width)
         .frame(minHeight: 112)
-        .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: 16)
     }
 }
 

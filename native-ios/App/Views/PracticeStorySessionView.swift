@@ -221,7 +221,7 @@ private struct PracticeMessagesThreadBackButton: View {
             RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous)
                 .stroke(.white.opacity(0.78), lineWidth: 1)
         }
-        .softAmbientCardShadow(opacity: 0.045, radius: 12, y: 6)
+        .softInteractiveControlShadow()
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
         .onTapGesture(perform: action)
         .accessibilityElement()

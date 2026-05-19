@@ -4245,7 +4245,7 @@ private struct SavedTripSectionImageCard: View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()
@@ -5701,7 +5701,7 @@ private extension View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(0.055), lineWidth: 1)
+                    .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()

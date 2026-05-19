@@ -2315,7 +2315,7 @@ private struct PracticeScenarioPrimaryCard: View {
         }
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .phraseListCard(cornerRadius: 28, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: 28)
         .accessibilityIdentifier("Practice.Scenario.Primary")
     }
 }
@@ -2648,7 +2648,7 @@ private struct PracticeCityModeCard: View {
             .opacity(promptCount == 0 ? 0.56 : 1)
         }
         .padding(18)
-        .phraseListCard(cornerRadius: 24, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: 24)
         .accessibilityIdentifier("Practice.City.\(mode.rawValue)")
     }
 
@@ -3128,7 +3128,7 @@ private struct PracticeScenarioStickyActionBar: View {
             .buttonStyle(.plain)
             .foregroundStyle(.white)
             .background(Color.red, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: .red.opacity(0.06), radius: 7, x: 0, y: 3)
+            .softInteractiveControlShadow()
             .accessibilityIdentifier("Practice.ContinueButton")
         }
         .padding(8)
@@ -6096,7 +6096,7 @@ private struct PracticeMatchSummaryThumbnail: View {
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(Color.black.opacity(0.06), lineWidth: 1)
+                .stroke(Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: 1)
         }
         .accessibilityHidden(true)
     }

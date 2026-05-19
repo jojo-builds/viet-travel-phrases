@@ -822,7 +822,7 @@ private struct BrowseCityImageFilterCard: View {
             .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(PhrasePageStyle.cardStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
             .softAmbientCardShadow()

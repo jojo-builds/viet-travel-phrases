@@ -717,7 +717,7 @@ struct PracticeStoryComposer: View {
             shape
                 .stroke(Color(.separator).opacity(0.18), lineWidth: 0.7)
         }
-        .softAmbientCardShadow(opacity: 0.045, radius: 14, y: 7)
+        .softAmbientCardShadow()
     }
 
     private func focusSelectedChoice(with scrollProxy: ScrollViewProxy, animated: Bool) {
