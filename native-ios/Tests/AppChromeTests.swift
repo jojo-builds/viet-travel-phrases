@@ -39,6 +39,27 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testNativeSurfaceStyleUsesWhiteCanvasAndSoftDepthTokens() {
+        let background = rgbaComponents(for: PhrasePageStyle.pageBackground)
+
+        XCTAssertEqual(background.red, 1, accuracy: 0.001)
+        XCTAssertEqual(background.green, 1, accuracy: 0.001)
+        XCTAssertEqual(background.blue, 1, accuracy: 0.001)
+        XCTAssertEqual(background.alpha, 1, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardOpacity, 0.045, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardRadius, 14, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardYOffset, 6, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.imageCardOpacity, AppSurfaceDepth.cardOpacity, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlOpacity, 0.045, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlRadius, 14, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlYOffset, 6, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlStrokeOpacity, 0.72, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.controlDividerOpacity, 0.08, accuracy: 0.001)
+        XCTAssertEqual(PhrasePageStyle.cardShadowBleedPadding, 24, accuracy: 0.001)
+        XCTAssertEqual(PhrasePageStyle.cardEdgeStrokeOpacity, 0.72, accuracy: 0.001)
+        XCTAssertLessThan(PhrasePageStyle.cardStrokeOpacity, 0.05)
+    }
+
     func testOnlyTopAdminAndAppSpecificChromeStayLayeredAboveContent() {
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
         XCTAssertLessThan(
@@ -48,8 +69,6 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
         XCTAssertGreaterThan(AppChromeLayout.searchPageLayerZIndex, AppChromeLayout.contentPageLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.chromeSeparationLayerZIndex, AppChromeLayout.searchPageLayerZIndex)
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
-        XCTAssertLessThan(AppChromeLayout.menuSectionBackdropLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminHitTestLayerZIndex, AppChromeLayout.chromeSeparationLayerZIndex)
         XCTAssertGreaterThan(AppChromeLayout.topAdminControlLayerZIndex, AppChromeLayout.topAdminHitTestLayerZIndex)
     }
@@ -62,7 +81,7 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertLessThanOrEqual(
             AppChromeLayout.pinnedAudioSpeedBackdropHeight,
-            AppChromeLayout.topSeparationHeight
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
         )
     }
 
@@ -85,23 +104,31 @@ final class AppChromeTests: XCTestCase {
             + AppChromeLayout.menuSectionChromeHeight
 
         XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
-        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topSeparationHeight)
+        XCTAssertLessThanOrEqual(
+            stackedChromeHeight,
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
+        )
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
     }
 
-    func testMenuSectionBackdropFadeStartsAtSectionRowAndExtendsBehindContent() {
+    func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
         let sectionRowY = AppChromeLayout.topAdminTopPadding
             + AppChromeLayout.topAdminControlSize
             + AppChromeLayout.menuSectionChromeRowSpacing
         let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+        let menuBackdropHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
 
         XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionBackdropHeight, AppChromeLayout.menuSectionChromeHeight)
+        XCTAssertEqual(
+            menuBackdropHeight,
+            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight
+        )
+        XCTAssertGreaterThan(menuBackdropHeight, AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false))
         XCTAssertGreaterThan(
-            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight,
+            menuBackdropHeight,
             sectionRowBottomY + 32
         )
-        XCTAssertFalse(AppChromeLayout.menuSectionBackdropAllowsHitTesting)
+        XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
@@ -113,18 +140,14 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testPhotoBackdropBottomBackingStaysNearSystemToolbar() {
-        let safeAreaBottom: CGFloat = 34
-        let visibleBackingHeight = PhrasePhotoBackdropLayout.bottomChromeBackdropVisibleHeight(
-            safeAreaBottom: safeAreaBottom
-        )
+    func testPhotoBackdropContentFoundationStartsAtVisibleSheetTop() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
 
-        XCTAssertLessThanOrEqual(visibleBackingHeight, 112)
-        XCTAssertGreaterThanOrEqual(visibleBackingHeight, 88)
-        XCTAssertEqual(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(safeAreaBottom: safeAreaBottom),
-            PhrasePhotoBackdropLayout.minimumBottomChromeBackdropOffset,
-            accuracy: 0.001
+        XCTAssertEqual(visibleSheetTop, metrics.initialContentTop, accuracy: 0.001)
+        XCTAssertGreaterThan(
+            PhrasePhotoBackdropLayout.bottomReadingClearance,
+            PhrasePageStyle.bottomChromeContentClearance
         )
     }
 
@@ -136,7 +159,7 @@ final class AppChromeTests: XCTestCase {
 
     func testHomePhotoBackdropImageTapRegionIncludesInitialVisibleImage() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
-        let initialOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: metrics.initialAnchorOffset)
+        let initialOffset = metrics.initialAnchorOffset
         let visibleImageBottom = max(metrics.collapsedContentTop - initialOffset, 0)
 
         XCTAssertTrue(
@@ -672,8 +695,11 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testSearchPageResultsUseSystemTabBarScaleBottomClearance() {
-        XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 40)
-        XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 64)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(HomeLayout.bottomChromeContentClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(BrowsePageLayout.bottomChromeContentClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 100)
+        XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 132)
     }
 
     func testSearchPageUsesCompactHeaderForQueryResults() {

@@ -204,9 +204,8 @@ struct VietnameseMenuPageView: View {
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offset in
-                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offset)
-                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = backdropOffset
+                        if abs(offset - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = offset
                         }
 
                         if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
@@ -318,7 +317,7 @@ struct VietnameseMenuPageView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -350,25 +349,23 @@ struct VietnameseMenuPageView: View {
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
-            safeAreaBottom: safeAreaBottom
-        )
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
-        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
-        let backdropHeight = min(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
-            maximumBackdropHeight
-        )
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
-            Spacer(minLength: 0)
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
 
-            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
         }
         .frame(
-            height: backdropBottom,
-            alignment: .bottom
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
@@ -399,7 +396,7 @@ struct VietnameseMenuPageView: View {
                     }
                     .padding(.leading, VietnameseMenuLayout.horizontalPadding)
                     .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
-                    .padding(.bottom, 2)
+                    .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
                     .scrollTargetLayout()
                 }
                 .scrollTargetBehavior(.viewAligned)
@@ -411,7 +408,7 @@ struct VietnameseMenuPageView: View {
                 }
             }
         }
-        .frame(height: VietnameseMenuLayout.sectionCardHeight)
+        .frame(height: VietnameseMenuLayout.sectionCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .background {
             GeometryReader { proxy in
                 Color.clear.preference(
@@ -607,16 +604,16 @@ private struct VietnameseMenuSectionImageCard: View {
                     .minimumScaleFactor(0.72)
                     .padding(.horizontal, 14)
                     .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
-                    .background(.white.opacity(0.96))
+                    .background(PhrasePageStyle.imageCaptionFill)
             }
             .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
+                    .stroke(isSelected ? tintName.color.opacity(0.50) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .softAmbientCardShadow()
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)
