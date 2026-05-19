@@ -211,6 +211,7 @@ enum BrowsePageLayout {
     static let situationCardMinHeight: CGFloat = 158
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
+    static let cityHeroImageAlignment: Alignment = .center
     static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
     static let cityHeroImageCopySeparatorHeight: CGFloat = 1
     static let cityHeroImageCopySeparatorOpacity: Double = 0.06
@@ -411,7 +412,7 @@ private struct BrowseCityHeroCard: View {
                     Image(imageName)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: .top)
+                        .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: BrowsePageLayout.cityHeroImageAlignment)
                         .clipped()
 
                     Color.white.opacity(0.98)

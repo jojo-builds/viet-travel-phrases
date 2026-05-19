@@ -211,6 +211,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
     let tintName: AccentTint
     let phraseCount: Int
     let countUnit: String
+    let imageName: String?
     let items: [BrowseSearchPhraseItem]
     let targetRoute: BrowseCollectionRoute?
 
@@ -222,6 +223,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
         tintName: AccentTint,
         phraseCount: Int,
         countUnit: String = "phrase",
+        imageName: String? = nil,
         items: [BrowseSearchPhraseItem],
         targetRoute: BrowseCollectionRoute? = nil
     ) {
@@ -232,6 +234,7 @@ struct BrowseCollectionSubcategory: Identifiable, Equatable {
         self.tintName = tintName
         self.phraseCount = phraseCount
         self.countUnit = countUnit
+        self.imageName = imageName
         self.items = items
         self.targetRoute = targetRoute
     }
@@ -1794,6 +1797,7 @@ enum BrowseSearchDestinations {
                 symbolName: spec.symbolName,
                 tintName: tintName,
                 phraseCount: max(phraseCount, rows.count),
+                imageName: subcategoryImageName(for: collectionID, specID: spec.id),
                 items: rows
             )
         }
@@ -2584,6 +2588,10 @@ enum BrowseSearchDestinations {
         let symbolName: String
     }
 
+    private static func subcategoryImageName(for collectionID: String, specID: String) -> String? {
+        subcategoryCardImages["\(collectionID).\(specID)"]
+    }
+
     private struct CategoryEntityGroupSpec {
         let id: String
         let title: String
@@ -2864,6 +2872,45 @@ enum BrowseSearchDestinations {
             CollectionSubcategorySpec(id: "polite-basics", title: "Polite basics", subtitle: "Please, sorry, and thank you", categoryIDs: ["polite-basics"], terms: [], symbolName: "hand.wave.fill"),
             CollectionSubcategorySpec(id: "get-help", title: "Get help", subtitle: "Ask for backup when stuck", categoryIDs: ["problems-help"], terms: [], symbolName: "ellipsis.bubble.fill"),
         ],
+    ]
+
+    private static let subcategoryCardImages: [String: String] = [
+        "airport.arrival": "HeroCityHcmcPlaceTanSonNhatAirport",
+        "airport.baggage": "HeroCityHanoiPlaceNoiBaiAirport",
+        "airport.transport": "HeroCityDanangPlaceCentralBusStation",
+        "airport.sim-card": "HeroCityHcmcPlaceNguyenHueWalkingStreet",
+        "airport.cash": "HeroCityHcmcPlaceBenThanhMarket",
+        "hotel.check-in": "HeroCityHcmcPlaceRexHotelRooftop",
+        "hotel.luggage": "HeroCityHanoiPlaceNoiBaiAirport",
+        "hotel.room-help": "HomeScenarioHotel",
+        "hotel.checkout": "HeroCityHcmcPlaceDongKhoiStreet",
+        "food.ordering": "BackdropMenuFoodBunRieuCua",
+        "food.allergies": "HeroMenuFoodGoiCuonChay",
+        "food.paying": "HeroCityHcmcPlaceBenThanhMarket",
+        "food.drinks": "BackdropMenuDrinkCaPheSuaDa",
+        "first-day.airport": "HeroCityHcmcPlaceTanSonNhatAirport",
+        "first-day.hotel": "HeroCityHcmcPlaceRexHotelRooftop",
+        "first-day.transport": "HeroCityDanangPlaceCentralBusStation",
+        "questions.directions": "HeroCityDanangPlaceDragonBridge",
+        "questions.time": "HeroCityHanoiPlaceTrainStreet",
+        "questions.clarify": "HeroCityHanoiPlaceTheNoteCoffee",
+        "numbers-money.payment": "HeroCityHcmcPlaceBenThanhMarket",
+        "numbers-money.shopping": "HeroCityHanoiPlaceDongXuanMarket",
+        "shopping.prices": "HeroCityHcmcPlaceBenThanhMarket",
+        "shopping.sizes": "HeroCityHcmcPlaceRussianMarket",
+        "shopping.payment": "HeroCityHanoiPlaceTrangTienPlaza",
+        "shopping.receipts": "HeroCityHanoiPlaceDongXuanMarket",
+        "getting-around.taxi": "HeroCityHcmcPlaceBachDangWaterbusStation",
+        "getting-around.bus-train": "HeroCityDanangPlaceCentralBusStation",
+        "getting-around.directions": "HeroCityDanangPlaceDragonBridge",
+        "getting-around.maps": "HeroCityHoianPlaceTranPhuStreet",
+        "emergency.help": "HeroCityHcmcPlacePasteurStreet",
+        "emergency.health": "HeroCityHcmcPlaceLeVanTamPark",
+        "emergency.safety": "HeroCityHcmcPlaceBuiVienStreet",
+        "emergency.problems": "HeroCityHanoiPlaceNoiBaiAirport",
+        "polite-repair.clarify": "HeroCityHanoiPlaceTheNoteCoffee",
+        "polite-repair.polite-basics": "HeroCityHanoiPlaceDinhCafe",
+        "polite-repair.get-help": "HeroCityHcmcPlacePasteurStreet",
     ]
 
     private static let categoryMastheadImages: [String: String] = [

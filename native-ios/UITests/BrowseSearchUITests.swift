@@ -484,7 +484,7 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse"])
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
-        scrollUntilHittable(app.buttons["Browse.City.danang"], app: app)
+        scrollUntilComfortablyVisible(app.buttons["Browse.City.danang"], app: app)
         captureBrowseCityHeroFadeProofIfRequested(app: app, name: "city-rail-01-danang-hoian.png")
 
         let targets = [
@@ -959,6 +959,45 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Element was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func scrollUntilComfortablyVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        for _ in 0..<10 {
+            if element.waitForExistence(timeout: 1),
+               isComfortablyVisible(element, in: app),
+               isVerticallyClearOfChrome(element, in: app) {
+                return
+            }
+
+            if element.exists {
+                let appFrame = app.windows.firstMatch.frame
+                let frame = element.frame
+                if frame.minY >= appFrame.maxY - 140 {
+                    smallSwipeUp(app)
+                    continue
+                }
+                if frame.maxY <= appFrame.minY + 120 {
+                    app.swipeDown()
+                    continue
+                }
+            }
+
+            smallSwipeUp(app)
+        }
+
+        XCTFail("Element was not comfortably visible: \(element)", file: file, line: line)
+    }
+
+    private func isVerticallyClearOfChrome(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        let frame = element.frame
+        let appFrame = app.windows.firstMatch.frame
+
+        guard !frame.isNull, !frame.isInfinite, !frame.isEmpty else {
+            return false
+        }
+
+        return frame.minY >= appFrame.minY + 24
+            && frame.maxY <= appFrame.maxY - 140
     }
 
     private func captureCityHubFlowProofIfRequested(name: String, app: XCUIApplication) {

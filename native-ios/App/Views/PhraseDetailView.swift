@@ -13,6 +13,7 @@ struct PhraseDetailView: View {
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onToggleSaved: (() -> Void)?
@@ -31,6 +32,7 @@ struct PhraseDetailView: View {
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
         onToggleSaved: (() -> Void)? = nil,
@@ -48,6 +50,7 @@ struct PhraseDetailView: View {
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -70,6 +73,7 @@ struct PhraseDetailView: View {
             isSaved: isSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
+            heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
