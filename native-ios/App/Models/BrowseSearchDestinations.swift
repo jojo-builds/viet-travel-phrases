@@ -623,7 +623,7 @@ enum BrowseSearchDestinations {
         BrowseDestination(
             id: VietnameseMenuKind.food.routeID,
             title: "Food Menu",
-            subtitle: "Khai vị, bowls, mains, lẩu",
+            subtitle: "Khai vị, bowls, mains, lẩu, and regional specialties",
             categoryIDs: ["food-drink"],
             symbolName: "fork.knife",
             tintName: .orange,
@@ -632,7 +632,7 @@ enum BrowseSearchDestinations {
         BrowseDestination(
             id: VietnameseMenuKind.drink.routeID,
             title: "Drink Menu",
-            subtitle: "Coffee, tea, smoothies, juice",
+            subtitle: "Hot and iced coffee, teas, smoothies, juice, and bottled water",
             categoryIDs: ["food-drink"],
             symbolName: "cup.and.saucer.fill",
             tintName: .teal,
