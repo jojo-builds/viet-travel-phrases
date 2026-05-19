@@ -131,18 +131,14 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testPhotoBackdropBottomBackingStaysNearSystemToolbar() {
-        let safeAreaBottom: CGFloat = 34
-        let visibleBackingHeight = PhrasePhotoBackdropLayout.bottomChromeBackdropVisibleHeight(
-            safeAreaBottom: safeAreaBottom
-        )
+    func testPhotoBackdropContentFoundationStartsAtVisibleSheetTop() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
 
-        XCTAssertLessThanOrEqual(visibleBackingHeight, 112)
-        XCTAssertGreaterThanOrEqual(visibleBackingHeight, 88)
-        XCTAssertEqual(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(safeAreaBottom: safeAreaBottom),
-            PhrasePhotoBackdropLayout.minimumBottomChromeBackdropOffset,
-            accuracy: 0.001
+        XCTAssertEqual(visibleSheetTop, metrics.initialContentTop, accuracy: 0.001)
+        XCTAssertGreaterThan(
+            PhrasePhotoBackdropLayout.bottomReadingClearance,
+            PhrasePageStyle.bottomChromeContentClearance
         )
     }
 
@@ -154,7 +150,7 @@ final class AppChromeTests: XCTestCase {
 
     func testHomePhotoBackdropImageTapRegionIncludesInitialVisibleImage() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
-        let initialOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: metrics.initialAnchorOffset)
+        let initialOffset = metrics.initialAnchorOffset
         let visibleImageBottom = max(metrics.collapsedContentTop - initialOffset, 0)
 
         XCTAssertTrue(

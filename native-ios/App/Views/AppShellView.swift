@@ -3346,9 +3346,8 @@ struct HomeView: View {
                     }) { _, offsetY in
                         currentScrollOffsetY = offsetY
 
-                        let backdropOffset = PhrasePhotoBackdropLayout.quantizedBackdropOffset(for: offsetY)
-                        if abs(backdropOffset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = backdropOffset
+                        if abs(offsetY - photoBackdropScrollOffset) >= 1 {
+                            photoBackdropScrollOffset = offsetY
                         }
 
                         if isPhotoBackdropImmersive, offsetY > metrics.revealImmersiveOffset {
@@ -3531,25 +3530,23 @@ struct HomeView: View {
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let backdropBottom = geometry.size.height + PhrasePhotoBackdropLayout.bottomChromeBackdropOffset(
-            safeAreaBottom: safeAreaBottom
-        )
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let roundedSheetClearance = PhrasePhotoBackdropLayout.sheetCornerClearance
-        let maximumBackdropHeight = max(backdropBottom - sheetTop - roundedSheetClearance, 0)
-        let backdropHeight = min(
-            PhrasePhotoBackdropLayout.bottomChromeBackdropHeight(safeAreaBottom: safeAreaBottom),
-            maximumBackdropHeight
-        )
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
-            Spacer(minLength: 0)
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
 
-            PhotoBackdropBottomChromeBacking(height: backdropHeight)
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
         }
         .frame(
-            height: backdropBottom,
-            alignment: .bottom
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
