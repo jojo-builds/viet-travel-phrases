@@ -269,7 +269,7 @@ struct BrowseCollectionPageView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -576,12 +576,12 @@ private struct BrowseCollectionSubcategoryCard: View {
                 alignment: .bottomLeading
             )
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(isSelected ? subcategory.tintName.color.opacity(0.72) : .white.opacity(0.64), lineWidth: isSelected ? 2 : 1)
             }
-            .shadow(color: .black.opacity(0.04), radius: 9, x: 0, y: 5)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 20, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
@@ -819,16 +819,16 @@ private struct BrowseCityImageFilterCard: View {
                     .minimumScaleFactor(0.72)
                     .padding(.horizontal, 14)
                     .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
-                    .background(.white.opacity(0.96))
+                    .background(PhrasePageStyle.imageCaptionFill)
             }
             .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -990,7 +990,7 @@ private struct BrowseCityFilterPill: View {
                 .frame(height: 38)
                 .background {
                     Capsule(style: .continuous)
-                        .fill(isSelected ? tintName.color.opacity(0.16) : Color(.secondarySystemBackground).opacity(0.92))
+                        .fill(isSelected ? tintName.color.opacity(0.16) : PhrasePageStyle.cardFill)
                 }
                 .overlay {
                     Capsule(style: .continuous)

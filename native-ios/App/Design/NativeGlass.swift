@@ -51,7 +51,12 @@ struct NativeGlass<S: Shape>: ViewModifier {
                     shape
                         .stroke(.white.opacity(0.46), lineWidth: 0.8)
                 }
-                .shadow(color: .black.opacity(0.03), radius: 8, x: 0, y: 4)
+                .shadow(
+                    color: .black.opacity(AppSurfaceDepth.cardOpacity),
+                    radius: AppSurfaceDepth.cardRadius,
+                    x: 0,
+                    y: AppSurfaceDepth.cardYOffset
+                )
         }
     }
 }
@@ -183,7 +188,7 @@ struct PhraseHeroCopyStack: View {
 }
 
 enum PhrasePageStyle {
-    static let pageBackground = Color(red: 0.96, green: 0.97, blue: 0.98)
+    static let pageBackground = Color(.systemBackground)
     static let heroImageName = "HeroVietnamMasthead"
     static let heroImageHeight: CGFloat = 276
     static let heroImageVerticalOffset: CGFloat = -112
@@ -199,9 +204,54 @@ enum PhrasePageStyle {
     static let articleSectionsTopPadding: CGFloat = 28
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
-    static let bottomChromeContentClearance: CGFloat = 48
-    static let cardFillOpacity = 0.72
-    static let cardStrokeOpacity = 0.06
+    static let bottomChromeContentClearance: CGFloat = 116
+    static let cardFillOpacity = 0.98
+    static let cardStrokeOpacity = 0.035
+
+    static var cardFill: Color {
+        Color(.systemBackground).opacity(cardFillOpacity)
+    }
+
+    static var elevatedCardFill: Color {
+        Color(.systemBackground).opacity(0.98)
+    }
+
+    static var glassCardFill: Color {
+        Color(.systemBackground).opacity(0.62)
+    }
+
+    static var imageCaptionFill: Color {
+        Color(.systemBackground).opacity(0.98)
+    }
+}
+
+enum AppSurfaceDepth {
+    static let cardOpacity = 0.06
+    static let cardRadius: CGFloat = 16
+    static let cardYOffset: CGFloat = 8
+    static let imageCardOpacity = 0.055
+    static let sheetOpacity = 0.06
+    static let sheetRadius: CGFloat = 36
+    static let sheetYOffset: CGFloat = -14
+}
+
+extension View {
+    func softAmbientCardShadow(
+        opacity: Double = AppSurfaceDepth.cardOpacity,
+        radius: CGFloat = AppSurfaceDepth.cardRadius,
+        y: CGFloat = AppSurfaceDepth.cardYOffset
+    ) -> some View {
+        shadow(color: .black.opacity(opacity), radius: radius, x: 0, y: y)
+    }
+
+    func softLiftedSheetShadow() -> some View {
+        shadow(
+            color: .black.opacity(AppSurfaceDepth.sheetOpacity),
+            radius: AppSurfaceDepth.sheetRadius,
+            x: 0,
+            y: AppSurfaceDepth.sheetYOffset
+        )
+    }
 }
 
 enum AppChromeLayout {
@@ -306,7 +356,7 @@ enum SearchPageLayout {
     static let contentSpacing: CGFloat = 20
     static let resultGroupSpacing: CGFloat = 12
     static let resultGroupTopPadding: CGFloat = 10
-    static let resultsBottomClearance: CGFloat = 48
+    static let resultsBottomClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let resultsZIndex: Double = 0
 
     static func headerMode(query: String, isFieldFocused _: Bool) -> SearchPageHeaderMode {
@@ -369,7 +419,7 @@ private struct PhraseListCard: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .background(.white.opacity(PhrasePageStyle.cardFillOpacity), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(Color.black.opacity(strokeOpacity), lineWidth: 1)

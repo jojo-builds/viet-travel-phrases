@@ -3499,7 +3499,7 @@ struct HomeView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -4143,7 +4143,7 @@ private struct SavedTripPracticeCard: View {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.white.opacity(0.82))
                         .frame(width: 54, height: 54)
-                        .shadow(color: Color.red.opacity(0.14), radius: 10, x: 0, y: 7)
+                        .softAmbientCardShadow(opacity: 0.055)
 
                     Image(systemName: "heart.fill")
                         .font(.system(size: 24, weight: .black))
@@ -4202,7 +4202,7 @@ private struct SavedTripPracticeCard: View {
                 .stroke(.white.opacity(0.82), lineWidth: 1)
                 .allowsHitTesting(false)
         }
-        .shadow(color: Color.red.opacity(0.045), radius: 18, x: 0, y: 10)
+        .softAmbientCardShadow(opacity: 0.055)
     }
 }
 
@@ -4242,16 +4242,16 @@ private struct SavedTripSectionImageCard: View {
                 }
                 .padding(.horizontal, 12)
                 .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
-                .background(.white.opacity(0.96))
+                .background(PhrasePageStyle.imageCaptionFill)
             }
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(isSelected ? item.tintName.color.opacity(0.58) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
             .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -4456,7 +4456,7 @@ enum HomeLayout {
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 102
     static let relationshipGroupVerticalPadding: CGFloat = 10
-    static let bottomChromeContentClearance: CGFloat = 48
+    static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
@@ -5327,12 +5327,12 @@ private struct HomeFeaturedPhraseCard: View {
             .padding(.top, 22)
             .padding(.bottom, 14)
             .frame(width: HomeLayout.featurePhraseCardWidth, height: HomeLayout.featurePhraseCardHeight, alignment: .topLeading)
-            .background(.white.opacity(0.64), in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 32)
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
@@ -5688,24 +5688,24 @@ private struct HomeCityCardView: View {
 private extension View {
     func homeGlassCard(cornerRadius: CGFloat) -> some View {
         self
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.72), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: cornerRadius)
     }
 
     func homeStaticImageCard(cornerRadius: CGFloat) -> some View {
         self
-            .background(.white.opacity(0.82), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                     .stroke(Color.black.opacity(0.055), lineWidth: 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.022), radius: 7, x: 0, y: 3)
+            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
     }
 }
 

@@ -486,7 +486,7 @@ struct PhraseArticleTemplateView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -1043,8 +1043,8 @@ struct PhotoBackdropBottomChromeBacking: View {
         LinearGradient(
             gradient: Gradient(stops: [
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.34), location: 0.30),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.82), location: 0.62),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.58), location: 0.24),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.96), location: 0.58),
                 .init(color: PhrasePageStyle.pageBackground, location: 1),
             ]),
             startPoint: .top,
@@ -1444,7 +1444,7 @@ private struct MenuChipFlow: View {
                     .foregroundStyle(.primary)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
-                    .background(.white.opacity(0.78), in: Capsule(style: .continuous))
+                    .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
                             .stroke(Color.black.opacity(0.06), lineWidth: 1)
@@ -1797,7 +1797,7 @@ private struct SituationCard: View {
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
         .phraseListCard(strokeOpacity: 0.05)
-        .shadow(color: .black.opacity(0.025), radius: 8, x: 0, y: 4)
+        .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
     }
 
     private var cardSummary: some View {

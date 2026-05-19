@@ -647,7 +647,7 @@ private struct SearchPhraseRow: View {
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .background(.white.opacity(0.48), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(Color.black.opacity(0.04), lineWidth: 1)

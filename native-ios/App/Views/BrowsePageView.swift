@@ -207,7 +207,7 @@ enum BrowsePageLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
-    static let bottomChromeContentClearance: CGFloat = 48
+    static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let situationCardMinHeight: CGFloat = 158
     static let cityHeroCardHeight: CGFloat = 368
     static let cityHeroImageHeight: CGFloat = 216
@@ -337,12 +337,12 @@ private struct BrowseSituationCard: View {
             }
             .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, maxHeight: BrowsePageLayout.situationCardMinHeight)
             .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.74), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
@@ -452,12 +452,12 @@ private struct BrowseCityHeroCard: View {
             }
             .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .stroke(.white.opacity(0.78), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.035), radius: 12, x: 0, y: 7)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 30, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
@@ -573,12 +573,12 @@ private struct BrowsePhraseFamilyCard: View {
             }
             .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.phraseFamilyCardHeight, maxHeight: BrowsePageLayout.phraseFamilyCardHeight)
             .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.76), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.03), radius: 10, x: 0, y: 5)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
             .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }

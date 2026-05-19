@@ -318,7 +318,7 @@ struct VietnameseMenuPageView: View {
             )
             .fill(PhrasePageStyle.pageBackground)
         }
-        .shadow(color: .black.opacity(0.16), radius: 28, x: 0, y: -12)
+        .softLiftedSheetShadow()
         .opacity(isPhotoBackdropImmersive ? 0 : 1)
         .allowsHitTesting(!isPhotoBackdropImmersive)
         .accessibilityHidden(isPhotoBackdropImmersive)
@@ -607,16 +607,16 @@ private struct VietnameseMenuSectionImageCard: View {
                     .minimumScaleFactor(0.72)
                     .padding(.horizontal, 14)
                     .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
-                    .background(.white.opacity(0.96))
+                    .background(PhrasePageStyle.imageCaptionFill)
             }
             .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .background(.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
                     .stroke(isSelected ? tintName.color.opacity(0.50) : Color.black.opacity(0.06), lineWidth: isSelected ? 1.5 : 1)
                     .allowsHitTesting(false)
             }
-            .shadow(color: .black.opacity(0.025), radius: 7, x: 0, y: 4)
+            .softAmbientCardShadow(opacity: AppSurfaceDepth.imageCardOpacity)
             .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         }
         .buttonStyle(.plain)

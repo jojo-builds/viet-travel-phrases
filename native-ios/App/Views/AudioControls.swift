@@ -97,7 +97,7 @@ struct PlaybackDockView: View {
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
-                    .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+                    .softAmbientCardShadow()
                     .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
             }
             .overlay {
@@ -123,7 +123,7 @@ struct PlaybackDockView: View {
             ZStack {
                 Circle()
                     .fill(.white.opacity(0.48))
-                    .shadow(color: .black.opacity(0.035), radius: 6, x: 0, y: 3)
+                    .softAmbientCardShadow(opacity: 0.045, radius: 12, y: 6)
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
                     .font(.system(size: 22, weight: .semibold))
@@ -154,7 +154,7 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.76), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.045), radius: 12, x: 0, y: 7)
+                    .softAmbientCardShadow()
                     .shadow(color: .white.opacity(0.45), radius: 5, x: 0, y: -3)
 
                 Circle()
@@ -164,7 +164,7 @@ struct PlaybackDockView: View {
                         Circle()
                             .stroke(.white.opacity(0.74), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.035), radius: 8, x: 0, y: 5)
+                    .softAmbientCardShadow(opacity: 0.045, radius: 14, y: 7)
 
                 Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
@@ -289,7 +289,7 @@ struct AudioSpeedSegmentedControl: View {
         .background {
             Capsule(style: .continuous)
                 .fill(.white.opacity(0.42))
-                .shadow(color: .black.opacity(0.035), radius: 7, x: 0, y: 4)
+                .softAmbientCardShadow(opacity: 0.045, radius: 12, y: 6)
         }
         .overlay {
             Capsule(style: .continuous)

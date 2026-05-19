@@ -39,6 +39,19 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testNativeSurfaceStyleUsesWhiteCanvasAndSoftDepthTokens() {
+        let background = rgbaComponents(for: PhrasePageStyle.pageBackground)
+
+        XCTAssertEqual(background.red, 1, accuracy: 0.001)
+        XCTAssertEqual(background.green, 1, accuracy: 0.001)
+        XCTAssertEqual(background.blue, 1, accuracy: 0.001)
+        XCTAssertEqual(background.alpha, 1, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardOpacity, 0.06, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardRadius, 16, accuracy: 0.001)
+        XCTAssertEqual(AppSurfaceDepth.cardYOffset, 8, accuracy: 0.001)
+        XCTAssertLessThan(PhrasePageStyle.cardStrokeOpacity, 0.05)
+    }
+
     func testOnlyTopAdminAndAppSpecificChromeStayLayeredAboveContent() {
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
         XCTAssertLessThan(
@@ -672,8 +685,11 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testSearchPageResultsUseSystemTabBarScaleBottomClearance() {
-        XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 40)
-        XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 64)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(HomeLayout.bottomChromeContentClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(BrowsePageLayout.bottomChromeContentClearance, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 100)
+        XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 132)
     }
 
     func testSearchPageUsesCompactHeaderForQueryResults() {
