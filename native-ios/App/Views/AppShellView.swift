@@ -3409,7 +3409,9 @@ struct HomeView: View {
                     .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
                         max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
                     }) { _, offsetY in
-                        currentScrollOffsetY = offsetY
+                        if shouldPublishHomeScrollOffset(offsetY) {
+                            currentScrollOffsetY = offsetY
+                        }
 
                         if abs(offsetY - photoBackdropScrollOffset) >= 1 {
                             photoBackdropScrollOffset = offsetY
@@ -3771,6 +3773,11 @@ struct HomeView: View {
             restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
             scrollRestorationTarget = nil
         }
+    }
+
+    private func shouldPublishHomeScrollOffset(_ offsetY: CGFloat) -> Bool {
+        offsetY <= 0
+            || abs(offsetY - currentScrollOffsetY) >= HomeLayout.shellScrollOffsetPublishStride
     }
 
     private func restoreScrollPosition(
@@ -4526,6 +4533,7 @@ enum HomeLayout {
     static let relationshipGroupVerticalPadding: CGFloat = 10
     static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
+    static let shellScrollOffsetPublishStride: CGFloat = 4
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
         let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))
@@ -5091,9 +5099,11 @@ private enum HomeContent {
 
 private enum HomeImagePreheater {
     #if canImport(UIKit)
+    private static let maxPreheatedImageCount = 10
     private static let lock = NSLock()
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
+    private static var preheatedImageOrder = [String]()
 
     static func preheat(_ imageNames: [String]) {
         let uniqueImageNames = Array(Set(imageNames)).sorted()
@@ -5112,6 +5122,8 @@ private enum HomeImagePreheater {
                     if let preparedImage = UIImage(named: imageName)?.preparingForDisplay() {
                         lock.lock()
                         preheatedImages[imageName] = preparedImage
+                        preheatedImageOrder.append(imageName)
+                        trimPreheatedImagesIfNeeded()
                         lock.unlock()
                     }
                 }
@@ -5123,6 +5135,14 @@ private enum HomeImagePreheater {
         lock.lock()
         defer { lock.unlock() }
         return preheatedImages[imageName]
+    }
+
+    private static func trimPreheatedImagesIfNeeded() {
+        while preheatedImageOrder.count > maxPreheatedImageCount {
+            let evictedImageName = preheatedImageOrder.removeFirst()
+            preheatedImages[evictedImageName] = nil
+            preheatedImageNames.remove(evictedImageName)
+        }
     }
     #else
     static func preheat(_ imageNames: [String]) {}

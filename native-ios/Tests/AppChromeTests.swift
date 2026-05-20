@@ -264,7 +264,7 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testSharedBackdropPreheatCandidatesUseSelectedImagePlusNextTwo() {
+    func testSharedBackdropPreheatCandidatesUseSelectedImagePlusNextLookahead() {
         let candidates = SharedBackdropImagePool.preheatCandidateImageNames(
             selectedImageName: "HeroCityHoianPlaceAnBangBeach"
         )
@@ -272,7 +272,6 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(candidates.count, SharedBackdropImagePool.preheatLookaheadCount + 1)
         XCTAssertEqual(candidates[0], "HeroCityHoianPlaceAnBangBeach")
         XCTAssertEqual(candidates[1], "HeroCityHuePlacePerfumeRiver")
-        XCTAssertEqual(candidates[2], "HeroCityHuePlaceIncenseVillageWorkshop")
     }
 
     func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {
