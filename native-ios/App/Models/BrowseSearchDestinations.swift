@@ -609,8 +609,8 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "local-greetings",
-            title: "Local greetings",
-            subtitle: "Relationship-aware hellos",
+            title: "Respectful hellos",
+            subtitle: "Choose the right hello for who you are speaking to",
             categoryIDs: ["local-greetings", "greetings", "polite-basics"],
             symbolName: "bubble.left.and.bubble.right.fill",
             tintName: .green,
@@ -666,8 +666,8 @@ enum BrowseSearchDestinations {
     static let phraseFamilies: [BrowseDestination] = [
         BrowseDestination(
             id: "greetings",
-            title: "Greetings",
-            subtitle: "Say hello and start conversations.",
+            title: "Hello basics",
+            subtitle: "Simple ways to start conversations.",
             categoryIDs: ["greetings", "local-greetings"],
             symbolName: "text.bubble.fill",
             tintName: .green,
