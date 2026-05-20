@@ -179,6 +179,40 @@ final class AdminChromeUITests: XCTestCase {
         )
     }
 
+    func testHomePhotoBackdropHidesAndRestoresContent() {
+        let app = launchApp(arguments: ["--reset-demo-state"])
+        assertHomeVisible(in: app)
+
+        let content = app.descendants(matching: .any)["Home.PhotoBackdrop.Content"]
+        XCTAssertTrue(content.waitForExistence(timeout: 3))
+        let tabBar = app.tabBars.firstMatch
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2))
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertFalse(
+            content.waitForExistence(timeout: 1),
+            "Tapping the visible Home backdrop should hide the content sheet."
+        )
+        XCTAssertFalse(tabBar.exists && tabBar.isHittable, "Home immersive mode should hide the bottom admin bar.")
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertTrue(
+            content.waitForExistence(timeout: 2),
+            "Tapping the immersive Home backdrop should restore the content sheet."
+        )
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2))
+        XCTAssertTrue(tabBar.isHittable, "Restoring Home content should restore the bottom admin bar.")
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertFalse(content.waitForExistence(timeout: 1))
+        app.swipeUp()
+        XCTAssertTrue(
+            content.waitForExistence(timeout: 2),
+            "Swiping upward should restore the Home content sheet."
+        )
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2))
+    }
+
     func testBottomChromeControlsWinEdgeBiasedTapsOverDenseDetailContent() {
         verifyDockTapFromDenseDetail("Browse", point: .center) { app in
             XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
