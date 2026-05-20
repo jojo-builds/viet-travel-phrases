@@ -7,7 +7,7 @@ enum SharedBackdropImagePool {
     }
 
     static let fallbackImageName = "HomeVietnamMapBackdrop"
-    static let preheatLookaheadCount = 2
+    static let preheatLookaheadCount = 1
 
     static let vietnamForwardAssetNames = [
         "HomeVietnamMapBackdrop",
