@@ -215,6 +215,23 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropScrollStateIsQuantizedButStillRevealsImmersiveThreshold() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.scrollState(for: 15, metrics: metrics).displayOffset,
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.scrollState(for: 16, metrics: metrics).displayOffset,
+            16,
+            accuracy: 0.001
+        )
+        XCTAssertFalse(PhrasePhotoBackdropLayout.scrollState(for: 24, metrics: metrics).hasPassedRevealThreshold)
+        XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
+    }
+
     func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
@@ -311,6 +328,20 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(candidates.count, SharedBackdropImagePool.preheatLookaheadCount + 1)
         XCTAssertEqual(candidates[0], "HeroCityHoianPlaceAnBangBeach")
         XCTAssertEqual(candidates[1], "HeroCityHuePlacePerfumeRiver")
+    }
+
+    func testHomeBackdropPreheatPolicyOnlyWarmsBackdropPoolImages() {
+        let selectedImageName = "HeroCityHoianPlaceAnBangBeach"
+        let imageNames = HomeBackdropPreheatPolicy.imageNames(backdropImageName: selectedImageName)
+
+        XCTAssertEqual(
+            imageNames,
+            SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: selectedImageName)
+        )
+        XCTAssertEqual(imageNames.first, selectedImageName)
+        XCTAssertFalse(imageNames.contains("HomeCityDaNang"))
+        XCTAssertFalse(imageNames.contains("HomeSituationArrival"))
+        XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 3)
     }
 
     func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {
@@ -1527,6 +1558,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(BrowseSearchDestinations.menuGuides.map(\.id), [VietnameseMenuKind.food.routeID, VietnameseMenuKind.drink.routeID])
         XCTAssertFalse(BrowseSearchDestinations.cityShortcuts.isEmpty)
         XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
+    }
+
+    func testBrowseTopLevelGreetingCardsHaveDistinctJobs() {
+        let localHellos = try! XCTUnwrap(BrowseSearchDestinations.situations.first { $0.id == "local-greetings" })
+        let helloBasics = try! XCTUnwrap(BrowseSearchDestinations.phraseFamilies.first { $0.id == "greetings" })
+
+        XCTAssertEqual(localHellos.title, "Respectful hellos")
+        XCTAssertEqual(localHellos.subtitle, "Choose the right hello for who you are speaking to")
+        XCTAssertEqual(helloBasics.title, "Hello basics")
+        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
     }
 
     func testBrowseSearchDestinationsUseCanonicalCityIDs() {

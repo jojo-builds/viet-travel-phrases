@@ -30,6 +30,30 @@ struct HomeScrollRestorationTarget: Equatable {
     let offsetY: CGFloat
 }
 
+private struct HomePhotoBackdropScrollState: Equatable {
+    let displayOffset: CGFloat
+    let restorationOffset: CGFloat
+    let hasPassedRevealThreshold: Bool
+
+    init(rawOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) {
+        let offset = max(rawOffset, 0)
+        displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(offset)
+        restorationOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(
+            offset,
+            stride: HomeLayout.shellScrollOffsetPublishStride
+        )
+        hasPassedRevealThreshold = offset > metrics.revealImmersiveOffset
+    }
+}
+
+enum HomeBackdropPreheatPolicy {
+    static let maxRetainedPreparedImages = 3
+
+    static func imageNames(backdropImageName: String) -> [String] {
+        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
+    }
+}
+
 enum HomeBackdropActivationPolicy {
     static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
         previousRoute != .home && currentRoute == .home
@@ -3478,18 +3502,21 @@ struct HomeView: View {
                         }
                     }
                     .scrollPosition($scrollPosition)
-                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
-                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
-                    }) { _, offsetY in
-                        if shouldPublishHomeScrollOffset(offsetY) {
-                            currentScrollOffsetY = offsetY
+                    .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
+                        HomePhotoBackdropScrollState(
+                            rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if currentScrollOffsetY != scrollState.restorationOffset {
+                            currentScrollOffsetY = scrollState.restorationOffset
                         }
 
-                        if abs(offsetY - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = offsetY
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
                         }
 
-                        if isPhotoBackdropImmersive, offsetY > metrics.revealImmersiveOffset {
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
@@ -3574,7 +3601,7 @@ struct HomeView: View {
             }
 
             HomeImagePreheater.preheat(
-                HomeContent.homeScrollCriticalImageNames(backdropImageName: backdropImageName)
+                HomeBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
             )
         }
     }
@@ -3845,11 +3872,6 @@ struct HomeView: View {
             restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
             scrollRestorationTarget = nil
         }
-    }
-
-    private func shouldPublishHomeScrollOffset(_ offsetY: CGFloat) -> Bool {
-        offsetY <= 0
-            || abs(offsetY - currentScrollOffsetY) >= HomeLayout.shellScrollOffsetPublishStride
     }
 
     private func restoreScrollPosition(
@@ -5096,12 +5118,6 @@ private enum HomeContent {
         }
     }()
 
-    static func homeScrollCriticalImageNames(backdropImageName: String) -> [String] {
-        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
-            + cityCards.map(\.imageName)
-            + situationCards.map(\.imageName)
-    }
-
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
         case "hoian":
@@ -5171,31 +5187,50 @@ private enum HomeContent {
 
 private enum HomeImagePreheater {
     #if canImport(UIKit)
-    private static let maxPreheatedImageCount = 10
+    private static let maxPreheatedImageCount = HomeBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
     private static var preheatedImageOrder = [String]()
+    private static var preheatGeneration = 0
 
     static func preheat(_ imageNames: [String]) {
-        let uniqueImageNames = Array(Set(imageNames)).sorted()
+        let uniqueImageNames = imageNames.reduce(into: [String]()) { result, imageName in
+            guard !result.contains(imageName) else {
+                return
+            }
+
+            result.append(imageName)
+        }
         lock.lock()
         let pendingImageNames = uniqueImageNames.filter { !preheatedImageNames.contains($0) }
-        pendingImageNames.forEach { preheatedImageNames.insert($0) }
-        lock.unlock()
-
         guard !pendingImageNames.isEmpty else {
+            lock.unlock()
             return
         }
 
+        preheatGeneration += 1
+        let generation = preheatGeneration
+        pendingImageNames.forEach { preheatedImageNames.insert($0) }
+        lock.unlock()
+
         Task.detached(priority: .utility) {
             for imageName in pendingImageNames {
+                guard isCurrentPreheatGeneration(generation) else {
+                    releasePendingReservations(pendingImageNames)
+                    return
+                }
+
                 autoreleasepool {
                     if let preparedImage = UIImage(named: imageName)?.preparingForDisplay() {
                         lock.lock()
-                        preheatedImages[imageName] = preparedImage
-                        preheatedImageOrder.append(imageName)
-                        trimPreheatedImagesIfNeeded()
+                        if generation == preheatGeneration {
+                            preheatedImages[imageName] = preparedImage
+                            preheatedImageOrder.append(imageName)
+                            trimPreheatedImagesIfNeeded()
+                        } else {
+                            releasePendingReservation(imageName)
+                        }
                         lock.unlock()
                     }
                 }
@@ -5207,6 +5242,24 @@ private enum HomeImagePreheater {
         lock.lock()
         defer { lock.unlock() }
         return preheatedImages[imageName]
+    }
+
+    private static func isCurrentPreheatGeneration(_ generation: Int) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        return generation == preheatGeneration
+    }
+
+    private static func releasePendingReservations(_ imageNames: [String]) {
+        lock.lock()
+        defer { lock.unlock() }
+        imageNames.forEach(releasePendingReservation)
+    }
+
+    private static func releasePendingReservation(_ imageName: String) {
+        if preheatedImages[imageName] == nil {
+            preheatedImageNames.remove(imageName)
+        }
     }
 
     private static func trimPreheatedImagesIfNeeded() {
