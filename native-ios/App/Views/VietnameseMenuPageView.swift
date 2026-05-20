@@ -201,14 +201,17 @@ struct VietnameseMenuPageView: View {
                                 .id(Self.scrollTopID)
                         }
                     }
-                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
-                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
-                    }) { _, offset in
-                        if abs(offset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = offset
+                    .onScrollGeometryChange(for: PhrasePhotoBackdropLayout.ScrollState.self, of: { scrollGeometry in
+                        PhrasePhotoBackdropLayout.scrollState(
+                            for: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
                         }
 
-                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
