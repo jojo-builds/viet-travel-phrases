@@ -6,6 +6,38 @@ enum PracticePresentationStyle: Equatable {
     case pullUpOverlay
 }
 
+enum PracticeMatchSnapshotLoadPolicy {
+    static func shouldLoadSnapshot(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldHandleStartRequest(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
+enum PracticeMatchPresentationPolicy {
+    static func usesPullUpRoundCard(for style: PracticePresentationStyle) -> Bool {
+        switch style {
+        case .route, .pullUpOverlay:
+            return true
+        }
+    }
+
+    static func showsDirectStartCard(
+        style: PracticePresentationStyle,
+        hasRequestedStart: Bool,
+        hasActiveSession: Bool
+    ) -> Bool {
+        style == .pullUpOverlay && hasRequestedStart && !hasActiveSession
+    }
+}
+
+enum PracticeMatchPullUpMetrics {
+    static let backdropOpacity: Double = 0.34
+    static let sheetHorizontalBackgroundPadding: CGFloat = 0
+}
+
 struct PracticeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @StateObject private var progressStore: LocalPracticeProgressStore
@@ -3706,6 +3738,16 @@ struct PracticeMatchSource: Identifiable, Equatable {
     let tint: AccentTint
     let items: [PracticeMatchItem]
 
+    static let placeholder = PracticeMatchSource(
+        id: "loading",
+        kind: .quick,
+        title: "Practice",
+        subtitle: "Preparing practice rounds.",
+        symbolName: "bolt.fill",
+        tint: .red,
+        items: []
+    )
+
     var itemCountLabel: String {
         "\(items.count) practice-ready"
     }
@@ -4434,20 +4476,20 @@ private struct PracticeMatchRootView: View {
             }
         }
         .task {
-            reloadSnapshot()
+            reloadSnapshotIfNeeded()
         }
         .onChange(of: isActive) { _, active in
             guard active else { return }
-            reloadSnapshot()
+            reloadSnapshotIfNeeded()
         }
         .onChange(of: isPresentingMatch) { _, isPresented in
             onPresentationChanged(isPresented)
         }
         .onChange(of: intentStore.savedPageIDs) { _, _ in
-            reloadSnapshot()
+            reloadSnapshotIfNeeded()
         }
         .onChange(of: intentStore.practicePageIDs) { _, _ in
-            reloadSnapshot()
+            reloadSnapshotIfNeeded()
         }
         .onChange(of: requestedMode) { _, _ in
             startRequestedModeIfPossible()
@@ -4469,7 +4511,6 @@ private struct PracticeMatchRootView: View {
             onPresentationChanged(false)
         }
         .accessibilityHidden(!isActive)
-        .toolbar(isPresentingMatch ? .hidden : .visible, for: .tabBar)
         .accessibilityIdentifier("Practice.Match.Root")
     }
 
@@ -4480,10 +4521,26 @@ private struct PracticeMatchRootView: View {
             topContentClearance: presentationStyle == .route ? topContentClearance : 0,
             onStartSource: { startSource($0, dismissalTarget: .hub) },
             onBrowseTapped: onBrowseTapped,
-            onRetry: reloadSnapshot
+            onRetry: reloadSnapshotIfNeeded
         )
 
-        if presentationStyle == .pullUpOverlay {
+        if PracticeMatchPresentationPolicy.showsDirectStartCard(
+            style: presentationStyle,
+            hasRequestedStart: requestedKey != nil,
+            hasActiveSession: activeSession != nil
+        ) {
+            PracticeMatchPullUpCard(
+                initialDetent: .medium,
+                onDismiss: onDismiss
+            ) {
+                PracticeMatchDirectStartCard(
+                    state: loadState,
+                    requestedSourceTitle: requestedSourceTitle,
+                    onRetry: reloadSnapshotIfNeeded,
+                    onDismiss: onDismiss
+                )
+            }
+        } else if presentationStyle == .pullUpOverlay {
             PracticeMatchPullUpCard(
                 initialDetent: .medium,
                 onDismiss: onDismiss
@@ -4501,6 +4558,22 @@ private struct PracticeMatchRootView: View {
 
     private var sourceOptions: [PracticeMatchSource] {
         loadState.snapshot?.topicSources.filter(\.canStart) ?? []
+    }
+
+    private var requestedSourceTitle: String? {
+        guard let snapshot = loadState.snapshot else {
+            return nil
+        }
+
+        return snapshot.source(sourceID: requestedSourceID, mode: requestedMode).title
+    }
+
+    private func reloadSnapshotIfNeeded() {
+        guard PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: isActive) else {
+            return
+        }
+
+        reloadSnapshot()
     }
 
     private func reloadSnapshot() {
@@ -4534,6 +4607,9 @@ private struct PracticeMatchRootView: View {
     }
 
     private func startRequestedModeIfPossible() {
+        guard PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: isActive) else {
+            return
+        }
         guard let requestKey = requestedKey else {
             return
         }
@@ -4710,6 +4786,113 @@ private struct PracticeMatchRootView: View {
         withAnimation(.easeInOut(duration: 0.22)) {
             activeSession = session
         }
+    }
+}
+
+private struct PracticeMatchDirectStartCard: View {
+    let state: PracticeMatchDataState
+    let requestedSourceTitle: String?
+    let onRetry: () -> Void
+    let onDismiss: () -> Void
+
+    var body: some View {
+        VStack(spacing: 0) {
+            PracticeMatchSheetHandle()
+                .padding(.top, 12)
+
+            HStack {
+                Spacer(minLength: 0)
+
+                Button(action: onDismiss) {
+                    Image(systemName: "xmark")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .frame(width: 44, height: 44)
+                        .background(PhrasePageStyle.elevatedCardFill, in: Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                        }
+                        .softAmbientCardShadow()
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close practice")
+                .accessibilityIdentifier("Practice.Match.DirectStart.Close")
+            }
+            .padding(.horizontal, PracticeLayout.horizontalPadding + AppBackSwipeGesturePolicy.edgeStartWidth)
+            .padding(.top, 12)
+
+            Spacer(minLength: 0)
+
+            VStack(spacing: 14) {
+                switch state {
+                case .loading:
+                    ProgressView()
+                        .tint(.red)
+                        .scaleEffect(1.1)
+
+                    Text("Preparing practice rounds...")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text("Getting the cards ready.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+
+                case .failed(let message):
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.orange)
+
+                    Text("Practice is unavailable")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text(message)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+
+                    Button("Retry", action: onRetry)
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.red)
+
+                case .loaded:
+                    Image(systemName: "square.stack.3d.up.slash")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.red)
+
+                    Text("Not enough practice-ready items")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+
+                    Text(unavailableMessage)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .frame(maxWidth: 290)
+            .padding(.horizontal, PracticeLayout.horizontalPadding)
+            .accessibilityIdentifier("Practice.Match.DirectStart.Status")
+
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            PracticeMatchSheetBackground(
+                source: PracticeMatchSource.placeholder,
+                isComplete: false
+            )
+        }
+    }
+
+    private var unavailableMessage: String {
+        if let requestedSourceTitle {
+            return "\(requestedSourceTitle) needs at least four playable items."
+        }
+
+        return "This round needs at least four playable items."
     }
 }
 
@@ -5011,10 +5194,10 @@ private struct PracticeMatchRoundView: View {
     @State private var isTopicPickerPresented = false
 
     var body: some View {
-        if presentationStyle == .pullUpOverlay {
+        if PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: presentationStyle) {
             PracticeMatchPullUpCard(
                 initialDetent: .medium,
-                onDismiss: onDismiss
+                onDismiss: pullUpDismissAction
             ) {
                 roundContent(topHandlePadding: 12)
             }
@@ -5032,6 +5215,10 @@ private struct PracticeMatchRoundView: View {
         }
     }
 
+    private var pullUpDismissAction: () -> Void {
+        presentationStyle == .route ? onClose : onDismiss
+    }
+
     private func roundContent(topHandlePadding: CGFloat) -> some View {
         VStack(spacing: 0) {
             if session.isRoundComplete {
@@ -5041,6 +5228,12 @@ private struct PracticeMatchRoundView: View {
                     topContentClearance: presentationStyle == .route ? topContentClearance : 0,
                     onContinue: onContinue
                 )
+                    .background {
+                        PracticeMatchAtmosphereBackground(
+                            source: session.source,
+                            isComplete: true
+                        )
+                    }
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
                 ZStack(alignment: .top) {
@@ -5099,6 +5292,7 @@ private struct PracticeMatchRoundView: View {
                     }
                     .padding(.horizontal, PracticeLayout.horizontalPadding)
                     .padding(.bottom, 12)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .background {
                         PracticeMatchSheetBackground(source: session.source, isComplete: false)
                     }
@@ -5173,10 +5367,14 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
             let downwardDrag = max(0, dragTranslation)
 
             ZStack(alignment: .bottom) {
-                Color.black.opacity(0.001)
+                Color.black.opacity(PracticeMatchPullUpMetrics.backdropOpacity)
                     .ignoresSafeArea()
+                    .contentShape(Rectangle())
+                    .onTapGesture(perform: onDismiss)
+                    .accessibilityIdentifier("Practice.Match.Backdrop")
 
                 content()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .frame(width: proxy.size.width, height: height, alignment: .top)
                     .clipShape(cardShape)
                     .contentShape(cardShape)
@@ -5209,7 +5407,7 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
             .frame(width: proxy.size.width, height: proxy.size.height, alignment: .bottom)
             .contentShape(Rectangle())
         }
-        .ignoresSafeArea(edges: .bottom)
+        .ignoresSafeArea(edges: [.horizontal, .bottom])
     }
 
     private var cardShape: UnevenRoundedRectangle {
@@ -5477,7 +5675,7 @@ private struct PracticeMatchSheetBackground: View {
                 .stroke(.white.opacity(0.54), lineWidth: 0.8)
         }
         .shadow(color: Color.black.opacity(0.10), radius: 30, x: 0, y: -10)
-        .padding(.horizontal, 8)
+        .padding(.horizontal, PracticeMatchPullUpMetrics.sheetHorizontalBackgroundPadding)
         .ignoresSafeArea(edges: .bottom)
     }
 }
