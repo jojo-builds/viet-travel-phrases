@@ -29,10 +29,10 @@ struct BrowsePageView: View {
 
                         startHereShelf
 
-                        compactBrowseHeader
+                        phraseFamilies
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
 
-                        phraseFamilies
+                        compactSearchHeader
                             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
                     }
                     .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
@@ -136,12 +136,12 @@ struct BrowsePageView: View {
         }
     }
 
-    private var compactBrowseHeader: some View {
+    private var compactSearchHeader: some View {
         Button {
             onSearchTapped()
         } label: {
             HStack(spacing: 14) {
-                Text("Browse")
+                Text("Search")
                     .font(.system(size: 28, weight: .black, design: .serif))
                     .foregroundStyle(.primary)
 
