@@ -894,6 +894,19 @@ struct PhrasePhotoBackdropTabBarBackgroundPreferenceKey: PreferenceKey {
     }
 }
 
+struct PhrasePhotoBackdropTopChromeStylePreferenceKey: PreferenceKey {
+    static var defaultValue: ChromeSeparationGradientStyle = .light
+
+    static func reduce(
+        value: inout ChromeSeparationGradientStyle,
+        nextValue: () -> ChromeSeparationGradientStyle
+    ) {
+        if nextValue() == .darkPhoto {
+            value = .darkPhoto
+        }
+    }
+}
+
 struct PhrasePhotoBackdropImmersiveImageContext: Equatable {
     let pageID: String
     let imageName: String
@@ -919,6 +932,7 @@ enum PhrasePhotoBackdropLayout {
     static let bottomReadingClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance + BrowseCollectionLayout.bottomChromeContentClearance
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
+    static let topChromeContentThresholdPadding: CGFloat = 12
     private static let standardBackdropVerticalOverscan: CGFloat = 160
 
     static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
@@ -1005,6 +1019,19 @@ enum PhrasePhotoBackdropLayout {
     ) -> Bool {
         let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
         return location.y >= 0 && location.y <= sheetTop
+    }
+
+    static func topChromeStyle(
+        sheetTop: CGFloat,
+        safeAreaTop: CGFloat,
+        topChromeBackdropHeight: CGFloat
+    ) -> ChromeSeparationGradientStyle {
+        let contentReachesTopChrome = sheetTop <= max(
+            safeAreaTop,
+            topChromeBackdropHeight + topChromeContentThresholdPadding
+        )
+
+        return contentReachesTopChrome ? .light : .darkPhoto
     }
 }
 

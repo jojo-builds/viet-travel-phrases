@@ -48,6 +48,7 @@ struct AppShellView: View {
     @State private var didApplyLaunchSearchFocus = false
     @State private var hidesPhotoBackdropChrome = false
     @State private var showsPhotoBackdropTabBarBackground = false
+    @State private var photoBackdropTopChromeStyle = ChromeSeparationGradientStyle.light
     @State private var photoBackdropImmersiveImageContext: PhrasePhotoBackdropImmersiveImageContext?
     @State private var practiceStartRequestID = 0
     @State private var requestedPracticeSourceID: String?
@@ -141,6 +142,7 @@ struct AppShellView: View {
         .toolbar(hidesNativeToolbarTabBar ? .hidden : .visible, for: .tabBar)
         .toolbarBackground(Color.clear, for: .tabBar)
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .toolbarColorScheme(.light, for: .tabBar)
         .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
         .searchable(
@@ -181,7 +183,11 @@ struct AppShellView: View {
 
     private var shellContent: some View {
         shellContentBody
-            .preferredColorScheme(.light)
+            .environment(\.colorScheme, .light)
+    }
+
+    private var effectivePhotoBackdropTopChromeStyle: ChromeSeparationGradientStyle {
+        hidesPhotoBackdropChrome ? .light : photoBackdropTopChromeStyle
     }
 
     private var tabBarBackgroundVisibility: Visibility {
@@ -392,6 +398,7 @@ struct AppShellView: View {
                 isSearchPresented: navigation.isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
+                topChromeStyle: effectivePhotoBackdropTopChromeStyle,
                 isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -426,6 +433,11 @@ struct AppShellView: View {
             .onPreferenceChange(PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self) { isVisible in
                 withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                     showsPhotoBackdropTabBarBackground = isVisible
+                }
+            }
+            .onPreferenceChange(PhrasePhotoBackdropTopChromeStylePreferenceKey.self) { style in
+                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                    photoBackdropTopChromeStyle = style
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveImagePreferenceKey.self) { context in
@@ -2985,6 +2997,7 @@ private extension View {
         isSearchPresented: Bool,
         isPracticeThreadPresented: Bool,
         hidesPhotoBackdropChrome: Bool,
+        topChromeStyle: ChromeSeparationGradientStyle,
         isPracticeMatchPresented: Bool,
         showsStaticBackButton: Bool,
         showsMenuSectionChrome: Bool,
@@ -3000,6 +3013,7 @@ private extension View {
                 isSearchPresented: isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
+                topChromeStyle: topChromeStyle,
                 isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -3217,6 +3231,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
     let isSearchPresented: Bool
     let isPracticeThreadPresented: Bool
     let hidesPhotoBackdropChrome: Bool
+    let topChromeStyle: ChromeSeparationGradientStyle
     let isPracticeMatchPresented: Bool
     let showsStaticBackButton: Bool
     let showsMenuSectionChrome: Bool
@@ -3266,7 +3281,8 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
                 if !isPracticeThreadPresented && !hidesPhotoBackdropChrome {
                     ChromeSeparationGradient(
                         edge: .top,
-                        extendsBehindMenuSectionChrome: showsMenuSectionChrome
+                        extendsBehindMenuSectionChrome: showsMenuSectionChrome,
+                        style: topChromeStyle
                     )
                         .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
                 }
@@ -3358,6 +3374,12 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geometry in
             let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+            let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+            let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
+                sheetTop: sheetTop,
+                safeAreaTop: geometry.safeAreaInsets.top,
+                topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+            )
 
             ZStack(alignment: .top) {
                 photoBackdropImage(geometry: geometry)
@@ -3456,6 +3478,10 @@ struct HomeView: View {
                         )
                     )
                     : nil
+            )
+            .preference(
+                key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+                value: isActive && !isPhotoBackdropImmersive ? topChromeStyle : .light
             )
         }
         .ignoresSafeArea(edges: .bottom)

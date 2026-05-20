@@ -307,9 +307,15 @@ enum ChromeSeparationEdge {
     case top
 }
 
+enum ChromeSeparationGradientStyle: Equatable {
+    case light
+    case darkPhoto
+}
+
 struct ChromeSeparationGradient: View {
     let edge: ChromeSeparationEdge
     var extendsBehindMenuSectionChrome = false
+    var style: ChromeSeparationGradientStyle = .light
 
     var body: some View {
         LinearGradient(
@@ -323,6 +329,15 @@ struct ChromeSeparationGradient: View {
     }
 
     private var gradientStops: [Gradient.Stop] {
+        if style == .darkPhoto {
+            return [
+                .init(color: Color.black.opacity(0.68), location: 0),
+                .init(color: Color.black.opacity(0.48), location: 0.34),
+                .init(color: Color.black.opacity(0.18), location: 0.72),
+                .init(color: Color.black.opacity(0), location: 1),
+            ]
+        }
+
         guard extendsBehindMenuSectionChrome else {
             return [
                 .init(color: Color(.systemBackground).opacity(0.96), location: 0),

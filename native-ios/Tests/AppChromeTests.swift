@@ -153,6 +153,29 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
     }
 
+    func testPhotoBackdropTopChromeTurnsDarkOnlyWhileImageIsUnderStatusArea() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
+        let topChromeHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.topChromeStyle(
+                sheetTop: visibleSheetTop,
+                safeAreaTop: 59,
+                topChromeBackdropHeight: topChromeHeight
+            ),
+            .darkPhoto
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.topChromeStyle(
+                sheetTop: topChromeHeight + PhrasePhotoBackdropLayout.topChromeContentThresholdPadding,
+                safeAreaTop: 59,
+                topChromeBackdropHeight: topChromeHeight
+            ),
+            .light
+        )
+    }
+
     func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
