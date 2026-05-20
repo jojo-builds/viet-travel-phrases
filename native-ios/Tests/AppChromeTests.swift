@@ -1521,6 +1521,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
     }
 
+    func testBrowseTopLevelGreetingCardsHaveDistinctJobs() {
+        let localHellos = try! XCTUnwrap(BrowseSearchDestinations.situations.first { $0.id == "local-greetings" })
+        let helloBasics = try! XCTUnwrap(BrowseSearchDestinations.phraseFamilies.first { $0.id == "greetings" })
+
+        XCTAssertEqual(localHellos.title, "Respectful hellos")
+        XCTAssertEqual(localHellos.subtitle, "Choose the right hello for who you are speaking to")
+        XCTAssertEqual(helloBasics.title, "Hello basics")
+        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
+    }
+
     func testBrowseSearchDestinationsUseCanonicalCityIDs() {
         XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "hcmc" })
         XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "danang" })
