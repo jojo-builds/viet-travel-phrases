@@ -758,8 +758,19 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testBrowseCompactSearchFocusesFieldForTyping() {
         let app = launchApp(arguments: ["--browse"])
+        let startHere = app.staticTexts["Start here"]
+        let phraseFamilies = app.staticTexts["Phrase families"]
+        let compactSearch = app.buttons["Browse.CompactSearch"]
 
-        tapWhenVisible(app.buttons["Browse.CompactSearch"], app: app)
+        scrollUntilExists(startHere, app: app)
+        scrollUntilExists(phraseFamilies, app: app)
+        scrollUntilExists(compactSearch, app: app)
+
+        XCTAssertEqual(compactSearch.label, "Search")
+        XCTAssertLessThan(startHere.frame.minY, phraseFamilies.frame.minY)
+        XCTAssertLessThan(phraseFamilies.frame.minY, compactSearch.frame.minY)
+
+        tapWhenVisible(compactSearch, app: app)
 
         let field = searchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
