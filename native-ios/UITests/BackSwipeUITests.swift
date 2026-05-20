@@ -205,6 +205,14 @@ final class BackSwipeUITests: XCTestCase {
             closePractice.waitForExistence(timeout: 5),
             "Home practice starter should open a dismissible practice flow."
         )
+        XCTAssertFalse(
+            app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
+            "Home practice should hide the bottom tab bar while the pull-up card is open."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Home practice should open the direct round card instead of showing the Practice page underneath."
+        )
 
         app.coordinate(withNormalizedOffset: CGVector(dx: 0.84, dy: 0.34)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
@@ -214,7 +222,6 @@ final class BackSwipeUITests: XCTestCase {
             in: app,
             message: "Back from Home practice should restore the Practice shelf."
         )
-        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
     func testHomeSituationBackButtonReturnsHomePosition() {

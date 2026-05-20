@@ -344,6 +344,45 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
     }
 
+    func testPracticeMatchPresentationUsesOnePullUpCardContract() {
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
+        XCTAssertTrue(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .pullUpOverlay,
+                hasRequestedStart: true,
+                hasActiveSession: false
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .pullUpOverlay,
+                hasRequestedStart: true,
+                hasActiveSession: true
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .route,
+                hasRequestedStart: true,
+                hasActiveSession: false
+            )
+        )
+    }
+
+    func testPracticeMatchSnapshotLoadPolicySkipsInactiveRoutes() {
+        XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: false))
+        XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: false))
+        XCTAssertTrue(PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: true))
+        XCTAssertTrue(PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: true))
+    }
+
+    func testPracticePullUpBackdropDimsAndSheetBleedsToScreenEdges() {
+        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.30)
+        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertEqual(PracticeMatchPullUpMetrics.sheetHorizontalBackgroundPadding, 0)
+    }
+
     func testMissedPromptsReappearInMissedReview() throws {
         let store = isolatedProgressStore()
         let firstSnapshot = try PracticeDeckSnapshot.load(

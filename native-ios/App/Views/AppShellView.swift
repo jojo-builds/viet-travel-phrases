@@ -36,6 +36,31 @@ enum HomeBackdropActivationPolicy {
     }
 }
 
+enum AppShellTabBarVisibilityPolicy {
+    static func hidesNativeToolbarTabBar(
+        isPracticeOverlayPresented: Bool,
+        isPracticeMatchPresented: Bool,
+        isPracticeThreadPresented: Bool
+    ) -> Bool {
+        (isPracticeMatchPresented && !isPracticeOverlayPresented) || isPracticeThreadPresented
+    }
+
+    static func hidesRenderedSystemTabBar(
+        isPracticeOverlayPresented: Bool,
+        isPracticeMatchPresented: Bool,
+        isPracticeThreadPresented: Bool,
+        hidesPhotoBackdropChrome: Bool
+    ) -> Bool {
+        hidesPhotoBackdropChrome
+            || isPracticeOverlayPresented
+            || hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: isPracticeOverlayPresented,
+                isPracticeMatchPresented: isPracticeMatchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented
+            )
+    }
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -64,6 +89,7 @@ struct AppShellView: View {
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
     @State private var isPracticeMatchPresented = false
+    @State private var tabBarVisibilityRefreshID = 0
     @State private var homePhraseHeroRoutePageID: String?
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
@@ -161,6 +187,7 @@ struct AppShellView: View {
                 usesContentBackground: showsPhotoBackdropTabBarBackground && !hidesPhotoBackdropChrome,
                 isHidden: hidesSystemTabBar
             )
+            .id(tabBarVisibilityRefreshID)
             .frame(width: 0, height: 0)
             #endif
         }
@@ -199,11 +226,20 @@ struct AppShellView: View {
     }
 
     private var hidesSystemTabBar: Bool {
-        hidesPhotoBackdropChrome || hidesNativeToolbarTabBar
+        AppShellTabBarVisibilityPolicy.hidesRenderedSystemTabBar(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            isPracticeMatchPresented: isPracticeMatchPresented,
+            isPracticeThreadPresented: isPracticeThreadPresented,
+            hidesPhotoBackdropChrome: hidesPhotoBackdropChrome
+        )
     }
 
     private var hidesNativeToolbarTabBar: Bool {
-        (isPracticeMatchPresented && !isPracticeOverlayPresented) || isPracticeThreadPresented
+        AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            isPracticeMatchPresented: isPracticeMatchPresented,
+            isPracticeThreadPresented: isPracticeThreadPresented
+        )
     }
 
     private var shellContentBody: some View {
@@ -240,7 +276,7 @@ struct AppShellView: View {
                     },
                     onBrowseAllTapped: openBrowseAll
                 )
-                .allowsHitTesting(navigation.currentRoute == .home && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .home && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .home)
                 .navigationPageMotion(
                     route: .home,
@@ -259,7 +295,7 @@ struct AppShellView: View {
                     onSearchTapped: openSearch,
                     onSearchQuery: openSearchQuery
                 )
-                .allowsHitTesting(navigation.currentRoute == .browse && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .browse && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .browse)
                 .navigationPageMotion(
                     route: .browse,
@@ -278,7 +314,7 @@ struct AppShellView: View {
                     onBrowseTapped: openBrowseAll,
                     onStartSavedPractice: { openPractice(.practiceSource("saved")) }
                 )
-                .allowsHitTesting(navigation.currentRoute == .saved && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .saved && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .saved)
                 .navigationPageMotion(
                     route: .saved,
@@ -304,7 +340,7 @@ struct AppShellView: View {
                     onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                     onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
-                .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .practice && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .practice)
                 .navigationPageMotion(
                     route: .practice,
@@ -331,7 +367,7 @@ struct AppShellView: View {
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
                     onDetailTapped: openDetail
                 )
-                .allowsHitTesting(navigation.currentRoute == .phrasePage && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .phrasePage)
                 .navigationPageMotion(
                     route: .phrasePage,
@@ -399,7 +435,7 @@ struct AppShellView: View {
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
                 topChromeStyle: effectivePhotoBackdropTopChromeStyle,
-                isPracticeMatchPresented: isPracticeMatchPresented,
+                isPracticeMatchPresented: isPracticeMatchPresented || isPracticeOverlayPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
                 canGoForward: navigation.canGoForward,
@@ -493,7 +529,7 @@ struct AppShellView: View {
                     onOpenDetail: { openDetailFromBrowse($0) },
                     isActive: isActive
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
@@ -520,7 +556,7 @@ struct AppShellView: View {
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
@@ -627,7 +663,7 @@ struct AppShellView: View {
                     isActive: isActive,
                     onBackTapped: goBack
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
@@ -659,7 +695,7 @@ struct AppShellView: View {
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
                     onDetailTapped: openDetail
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
@@ -888,6 +924,10 @@ struct AppShellView: View {
 
     private var isPreviewingForwardPage: Bool {
         interactiveDrag?.direction == .forward && navigation.forwardPreviewRoute != nil
+    }
+
+    private var allowsBasePageHitTesting: Bool {
+        !isPracticeOverlayPresented && !isPreviewingForwardPage
     }
 
     private var showsStaticBackButton: Bool {
@@ -1534,10 +1574,36 @@ struct AppShellView: View {
         }
 
         withAnimation(.spring(response: 0.28, dampingFraction: 0.92)) {
-            isPracticeOverlayPresented = false
             isPracticeMatchPresented = false
             isPracticeThreadPresented = false
+            isPracticeOverlayPresented = false
         }
+        refreshTabBarVisibilitySoon()
+    }
+
+    private func refreshTabBarVisibilitySoon() {
+        restoreSystemTabBarVisibility()
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 220_000_000)
+            tabBarVisibilityRefreshID += 1
+            restoreSystemTabBarVisibility()
+        }
+    }
+
+    private func restoreSystemTabBarVisibility() {
+        #if canImport(UIKit)
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        for window in scenes.flatMap(\.windows) {
+            guard let tabBar = window.rootViewController?.findDescendantTabBar() else {
+                continue
+            }
+
+            tabBar.isHidden = false
+            tabBar.alpha = 1
+            tabBar.isUserInteractionEnabled = true
+        }
+        #endif
     }
 
     private func prepareBrowseCollectionFocusRestoreIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
@@ -3126,12 +3192,17 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
             applyAppearance()
         }
 
-        private func applyAppearance() {
+        private func applyAppearance(retryCount: Int = 3) {
             let usesContentBackground = usesContentBackground
             let isHidden = isHidden
 
             DispatchQueue.main.async { [weak self] in
                 guard let self, let tabBar = self.findTabBar() else {
+                    if retryCount > 0 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+                            self?.applyAppearance(retryCount: retryCount - 1)
+                        }
+                    }
                     return
                 }
                 let targetAlpha: CGFloat = isHidden ? 0 : 1
@@ -3161,6 +3232,7 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
 
                 tabBar.standardAppearance = appearance
                 tabBar.scrollEdgeAppearance = appearance
+                tabBar.isHidden = false
                 tabBar.isUserInteractionEnabled = !isHidden
 
                 guard shouldAnimateVisibility else {

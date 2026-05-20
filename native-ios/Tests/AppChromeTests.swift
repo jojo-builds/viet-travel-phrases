@@ -27,6 +27,45 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(DockItemKind.practice.title, "Practice")
     }
 
+    func testPracticeOverlayHidesRenderedTabBarWithoutTearingDownNativeToolbar() {
+        XCTAssertFalse(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertFalse(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: true,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesRenderedSystemTabBar(
+                isPracticeOverlayPresented: true,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false,
+                hidesPhotoBackdropChrome: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: true,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: true
+            )
+        )
+    }
+
     func testPlayableAudioTintsUseOneConsistentActionColor() {
         let expected = rgbaComponents(for: AccentTint.red.audioColor)
 

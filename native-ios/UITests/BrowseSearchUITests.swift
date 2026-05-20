@@ -166,6 +166,14 @@ final class BrowseSearchUITests: XCTestCase {
             app.descendants(matching: .any)["BrowseCollection.category.first-day"].exists,
             "Practice should float over the current Browse collection instead of replacing it."
         )
+        XCTAssertFalse(
+            app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
+            "Browse-launched practice should hide the bottom tab bar while the pull-up card is open."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Browse-launched practice should skip the full Practice hub while opening a direct round."
+        )
 
         closePractice(app)
 
