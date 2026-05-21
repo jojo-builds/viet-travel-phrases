@@ -119,6 +119,19 @@ enum HomeBackdropPreheatPolicy {
     }
 }
 
+enum AdminBackdropImagePreheatPlan {
+    static func pendingImageNames(
+        requestedImageNames: [String],
+        reservedImageNames: Set<String>
+    ) -> [String] {
+        var seenImageNames = Set<String>()
+
+        return requestedImageNames.filter { imageName in
+            seenImageNames.insert(imageName).inserted && !reservedImageNames.contains(imageName)
+        }
+    }
+}
+
 enum AdminPhotoBackdropSurfaceLayout {
     static func sheetTop(scrollOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) -> CGFloat {
         max(metrics.collapsedContentTop - scrollOffset, 0)
@@ -504,39 +517,27 @@ enum AdminBackdropImagePreheater {
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
     private static var preheatedImageOrder = [String]()
-    private static var preheatGeneration = 0
 
     static func preheat(_ imageNames: [String]) {
-        let uniqueImageNames = imageNames.reduce(into: [String]()) { result, imageName in
-            guard !result.contains(imageName) else {
-                return
-            }
-
-            result.append(imageName)
-        }
         lock.lock()
-        let pendingImageNames = uniqueImageNames.filter { !preheatedImageNames.contains($0) }
+        let pendingImageNames = AdminBackdropImagePreheatPlan.pendingImageNames(
+            requestedImageNames: imageNames,
+            reservedImageNames: preheatedImageNames
+        )
         guard !pendingImageNames.isEmpty else {
             lock.unlock()
             return
         }
 
-        preheatGeneration += 1
-        let generation = preheatGeneration
         pendingImageNames.forEach { preheatedImageNames.insert($0) }
         lock.unlock()
 
         Task.detached(priority: .utility) {
             for imageName in pendingImageNames {
-                guard isCurrentPreheatGeneration(generation) else {
-                    releasePendingReservations(pendingImageNames)
-                    return
-                }
-
                 autoreleasepool {
                     let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
                     lock.lock()
-                    if generation == preheatGeneration, let preparedImage {
+                    if let preparedImage {
                         preheatedImages[imageName] = preparedImage
                         preheatedImageOrder.append(imageName)
                         trimPreheatedImagesIfNeeded()
@@ -553,18 +554,6 @@ enum AdminBackdropImagePreheater {
         lock.lock()
         defer { lock.unlock() }
         return preheatedImages[imageName]
-    }
-
-    private static func isCurrentPreheatGeneration(_ generation: Int) -> Bool {
-        lock.lock()
-        defer { lock.unlock() }
-        return generation == preheatGeneration
-    }
-
-    private static func releasePendingReservations(_ imageNames: [String]) {
-        lock.lock()
-        defer { lock.unlock() }
-        imageNames.forEach(releasePendingReservation)
     }
 
     private static func releasePendingReservation(_ imageName: String) {
