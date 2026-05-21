@@ -261,7 +261,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
         XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
         XCTAssertEqual(
-            BrowseCollectionLayout.subcategoryJumpViewportAnchorY,
+            BrowseCollectionLayout.sectionJumpViewportAnchorY,
             AppChromeLayout.menuSectionJumpViewportAnchorY,
             accuracy: 0.001
         )
