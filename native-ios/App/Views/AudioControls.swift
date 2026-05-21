@@ -82,18 +82,18 @@ struct PlaybackDockView: View {
                     favoriteButton
                 } else {
                     Color.clear
-                        .frame(width: 54, height: 54)
+                        .frame(width: PlaybackDockLayout.sideButtonSize, height: PlaybackDockLayout.sideButtonSize)
                         .accessibilityHidden(true)
                 }
 
-                Spacer(minLength: 88)
+                Spacer(minLength: PlaybackDockLayout.centerSpacing)
 
                 AudioSpeedSegmentedControl()
             }
-            .padding(.leading, 16)
-            .padding(.trailing, 12)
+            .padding(.leading, PlaybackDockLayout.leadingPadding)
+            .padding(.trailing, PlaybackDockLayout.trailingPadding)
             .frame(maxWidth: .infinity)
-            .frame(height: 78)
+            .frame(height: PlaybackDockLayout.capsuleHeight)
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
@@ -103,15 +103,15 @@ struct PlaybackDockView: View {
                     }
                     .softInteractiveControlShadow()
             }
-            .nativeGlass(cornerRadius: 39)
+            .nativeGlass(cornerRadius: PlaybackDockLayout.capsuleCornerRadius)
 
             if playableAudioKey != nil {
                 raisedPlayButton
-                    .offset(x: -52, y: -3)
+                    .offset(x: PlaybackDockLayout.playOffsetX, y: PlaybackDockLayout.playOffsetY)
             }
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 108)
+        .frame(height: PlaybackDockLayout.dockHeight)
         .background(playerVisibilityReporter)
     }
 
@@ -129,14 +129,14 @@ struct PlaybackDockView: View {
                     .softInteractiveControlShadow()
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.system(size: PlaybackDockLayout.favoriteIconSize, weight: .semibold))
                     .foregroundStyle(.red)
             }
-            .frame(width: 54, height: 54)
+            .frame(width: PlaybackDockLayout.sideButtonSize, height: PlaybackDockLayout.sideButtonSize)
             .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: 27, interactive: true)
+        .nativeGlass(cornerRadius: PlaybackDockLayout.sideButtonCornerRadius, interactive: true)
         .accessibilityLabel(isSaved ? "Unsave phrase page" : "Save phrase page")
     }
 
@@ -161,22 +161,22 @@ struct PlaybackDockView: View {
 
                 Circle()
                     .fill(.white.opacity(0.82))
-                    .frame(width: 70, height: 70)
+                    .frame(width: PlaybackDockLayout.playInnerCircleSize, height: PlaybackDockLayout.playInnerCircleSize)
                     .overlay {
                         Circle()
                             .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
 
                 Image(systemName: "play.fill")
-                    .font(.system(size: 29, weight: .bold))
+                    .font(.system(size: PlaybackDockLayout.playIconSize, weight: .bold))
                     .foregroundStyle(Color.red)
                     .offset(x: 3)
             }
-            .frame(width: 96, height: 96)
+            .frame(width: PlaybackDockLayout.playButtonSize, height: PlaybackDockLayout.playButtonSize)
             .contentShape(Circle())
         }
         .buttonStyle(.plain)
-        .nativeGlass(cornerRadius: 48, tint: .white, interactive: true)
+        .nativeGlass(cornerRadius: PlaybackDockLayout.playButtonCornerRadius, tint: .white, interactive: true)
         .accessibilityLabel("Play phrase audio")
     }
 
@@ -204,6 +204,28 @@ struct PlaybackDockView: View {
     }
 }
 
+enum PlaybackDockLayout {
+    static let leadingPadding: CGFloat = 12
+    static let trailingPadding: CGFloat = 10
+    static let sideButtonSize: CGFloat = 50
+    static let sideButtonCornerRadius: CGFloat = sideButtonSize / 2
+    static let favoriteIconSize: CGFloat = 21
+    static let centerSpacing: CGFloat = 72
+    static let capsuleHeight: CGFloat = 72
+    static let capsuleCornerRadius: CGFloat = capsuleHeight / 2
+    static let dockHeight: CGFloat = 100
+    static let playButtonSize: CGFloat = 88
+    static let playButtonCornerRadius: CGFloat = playButtonSize / 2
+    static let playInnerCircleSize: CGFloat = 64
+    static let playIconSize: CGFloat = 27
+    static let playOffsetX: CGFloat = -46
+    static let playOffsetY: CGFloat = -3
+
+    static func minimumWidth(speedControlWidth: CGFloat) -> CGFloat {
+        leadingPadding + sideButtonSize + centerSpacing + speedControlWidth + trailingPadding
+    }
+}
+
 struct AudioSpeedControlMetrics {
     let textSize: CGFloat
     let textHeight: CGFloat
@@ -218,17 +240,17 @@ struct AudioSpeedControlMetrics {
     let cornerRadius: CGFloat
 
     static let regular = AudioSpeedControlMetrics(
-        textSize: 14,
-        textHeight: 29,
-        underlineWidth: 22,
-        underlineHeight: 4,
-        itemWidth: 48,
-        itemHeight: 42,
-        dividerHeight: 34,
-        horizontalPadding: 5,
-        verticalPadding: 4,
-        controlHeight: 52,
-        cornerRadius: 26
+        textSize: 13.5,
+        textHeight: 27,
+        underlineWidth: 20,
+        underlineHeight: 3.5,
+        itemWidth: 44,
+        itemHeight: 39,
+        dividerHeight: 32,
+        horizontalPadding: 4.5,
+        verticalPadding: 3.5,
+        controlHeight: 48,
+        cornerRadius: 24
     )
 
     static let topAdmin = AudioSpeedControlMetrics(
@@ -244,6 +266,12 @@ struct AudioSpeedControlMetrics {
         controlHeight: AppChromeLayout.topAdminControlSize,
         cornerRadius: AppChromeLayout.topAdminControlCornerRadius
     )
+
+    func minimumControlWidth(itemCount: Int) -> CGFloat {
+        horizontalPadding * 2
+            + itemWidth * CGFloat(itemCount)
+            + CGFloat(max(0, itemCount - 1))
+    }
 }
 
 struct AudioSpeedSegmentedControl: View {

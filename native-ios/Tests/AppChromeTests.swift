@@ -237,6 +237,16 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPlaybackDockFitsInsideHomeFeatureCardPadding() {
+        let usableCardWidth = HomeLayout.featurePhraseCardWidth - 36
+        let speedControlWidth = AudioSpeedControlMetrics.regular.minimumControlWidth(
+            itemCount: AudioPlaybackPreference.speeds.count
+        )
+        let minimumDockWidth = PlaybackDockLayout.minimumWidth(speedControlWidth: speedControlWidth)
+
+        XCTAssertLessThanOrEqual(minimumDockWidth, usableCardWidth)
+    }
+
     func testMenuSectionChromeFitsBelowTopAdminRow() {
         let stackedChromeHeight = AppChromeLayout.topAdminTopPadding
             + AppChromeLayout.topAdminControlSize
