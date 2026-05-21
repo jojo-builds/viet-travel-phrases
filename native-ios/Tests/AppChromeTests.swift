@@ -236,6 +236,43 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
     }
 
+    func testAdminPhotoBackdropRestingSheetUsesRealInitialScrollOffset() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let naturalState = AdminPhotoBackdropScrollState(rawOffset: 0, metrics: metrics)
+        let restingState = AdminPhotoBackdropScrollState(rawOffset: metrics.initialAnchorOffset, metrics: metrics)
+        let restingSheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+            scrollOffset: restingState.displayOffset,
+            metrics: metrics
+        )
+        let pulledDownState = AdminPhotoBackdropScrollState(
+            rawOffset: metrics.initialAnchorOffset - 160,
+            metrics: metrics
+        )
+        let pulledDownSheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+            scrollOffset: pulledDownState.displayOffset,
+            metrics: metrics
+        )
+
+        XCTAssertEqual(naturalState.displayOffset, 0, accuracy: 0.001)
+        XCTAssertEqual(
+            restingState.displayOffset,
+            PhrasePhotoBackdropLayout.quantizedScrollOffset(metrics.initialAnchorOffset),
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            restingSheetTop,
+            metrics.initialContentTop,
+            accuracy: PhrasePhotoBackdropLayout.scrollGeometryUpdateStride
+        )
+        XCTAssertGreaterThan(pulledDownSheetTop, restingSheetTop)
+        XCTAssertLessThanOrEqual(pulledDownSheetTop, metrics.collapsedContentTop)
+        XCTAssertEqual(
+            AdminPhotoBackdropSurfaceLayout.bottomChromeOcclusionHeight(safeAreaBottom: 34),
+            PhrasePageStyle.bottomChromeContentClearance + 34,
+            accuracy: 0.001
+        )
+    }
+
     func testCityPlacePhotoBackdropDetailPagesHaveExtraBottomScrollClearance() {
         let cityPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-city-hcmc-place-lusine-thao-dien"))
         let menuPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
@@ -440,6 +477,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
+    func testAdminBackdropPreheatPolicyOnlyWarmsSelectedRootImage() {
+        let selectedImageName = "HeroCityHoianPlaceAnBangBeach"
+        let imageNames = AdminBackdropPreheatPolicy.imageNames(backdropImageName: selectedImageName)
+
+        XCTAssertEqual(imageNames, [selectedImageName])
+        XCTAssertFalse(imageNames.contains("HeroCityHuePlacePerfumeRiver"))
+        XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
     func testAdminRootBackdropSurfacesMapToSharedPoolCursor() {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
@@ -499,6 +545,33 @@ final class AppChromeTests: XCTestCase {
             AdminRootPhotoBackdropActivationPolicy.targetSurface(
                 previousRoute: .search,
                 currentRoute: .detailPage("viet-family-xin-chao")
+            )
+        )
+    }
+
+    func testAdminRootBackdropRefreshPolicyKeepsNonHomeRootImagesStable() {
+        XCTAssertTrue(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .home,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHoianPlaceAnBangBeach", activationToken: 3)
+            )
+        )
+        XCTAssertTrue(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .browse,
+                currentState: .fallback
+            )
+        )
+        XCTAssertFalse(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .browse,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHoianPlaceAnBangBeach", activationToken: 1)
+            )
+        )
+        XCTAssertFalse(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .practice,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHuePlacePerfumeRiver", activationToken: 2)
             )
         )
     }
