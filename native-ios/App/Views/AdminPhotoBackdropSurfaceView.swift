@@ -413,7 +413,15 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             scrollOffset: scrollOffset,
             metrics: metrics
         )
-        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
         let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
@@ -427,7 +435,7 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             )
         }
         .frame(
-            height: geometry.size.height + safeAreaBottom,
+            height: backingFrameHeight,
             alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)

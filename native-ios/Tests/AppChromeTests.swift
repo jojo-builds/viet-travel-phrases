@@ -325,6 +325,36 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropBottomBackingOverscansNativeTabSamplingArea() {
+        let viewportHeight: CGFloat = 852
+        let safeAreaBottom: CGFloat = 34
+        let sheetTop: CGFloat = 540
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backingHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+
+        XCTAssertGreaterThan(
+            PhrasePhotoBackdropLayout.bottomChromeBackingOverscan,
+            AppChromeLayout.bottomAdminHitTestEnvelopeHeight
+        )
+        XCTAssertEqual(
+            backingFrameHeight,
+            viewportHeight + safeAreaBottom + PhrasePhotoBackdropLayout.bottomChromeBackingOverscan,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            backingHeight + sheetTop,
+            backingFrameHeight,
+            accuracy: 0.001
+        )
+    }
+
     func testAdminPhotoBackdropRestingSheetUsesRealInitialScrollOffset() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let naturalState = AdminPhotoBackdropScrollState(rawOffset: 0, metrics: metrics)

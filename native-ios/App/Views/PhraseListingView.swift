@@ -419,7 +419,15 @@ struct PhraseArticleTemplateView: View {
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
         let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
@@ -433,7 +441,7 @@ struct PhraseArticleTemplateView: View {
             )
         }
         .frame(
-            height: geometry.size.height + safeAreaBottom,
+            height: backingFrameHeight,
             alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
@@ -1010,6 +1018,7 @@ enum PhrasePhotoBackdropLayout {
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     static let sheetTopCornerRadius: CGFloat = 34
+    static let bottomChromeBackingOverscan: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let topChromeContentThresholdPadding: CGFloat = 12
     static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
@@ -1148,6 +1157,21 @@ enum PhrasePhotoBackdropLayout {
 
     static func bottomChromeBackingTopCornerRadius(sheetTop: CGFloat) -> CGFloat {
         sheetTop > 1 ? sheetTopCornerRadius : 0
+    }
+
+    static func bottomChromeBackingFrameHeight(
+        viewportHeight: CGFloat,
+        safeAreaBottom: CGFloat
+    ) -> CGFloat {
+        max(viewportHeight + safeAreaBottom + bottomChromeBackingOverscan, 0)
+    }
+
+    static func bottomChromeBackingHeight(
+        viewportHeight: CGFloat,
+        safeAreaBottom: CGFloat,
+        sheetTop: CGFloat
+    ) -> CGFloat {
+        max(bottomChromeBackingFrameHeight(viewportHeight: viewportHeight, safeAreaBottom: safeAreaBottom) - sheetTop, 0)
     }
 }
 
