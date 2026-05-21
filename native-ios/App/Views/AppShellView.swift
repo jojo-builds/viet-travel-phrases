@@ -80,6 +80,24 @@ enum AppShellTabBarVisibilityPolicy {
     }
 }
 
+enum AppShellPracticeOverlayChromePolicy {
+    static func topChromeStyle(
+        isPracticeOverlayPresented: Bool,
+        hidesPhotoBackdropChrome: Bool,
+        photoBackdropTopChromeStyle: ChromeSeparationGradientStyle
+    ) -> ChromeSeparationGradientStyle {
+        if isPracticeOverlayPresented {
+            return .darkPhoto
+        }
+
+        return hidesPhotoBackdropChrome ? .light : photoBackdropTopChromeStyle
+    }
+
+    static func preferredSystemColorScheme(isPracticeOverlayPresented: Bool) -> ColorScheme? {
+        isPracticeOverlayPresented ? .dark : nil
+    }
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -200,6 +218,7 @@ struct AppShellView: View {
         .toolbarBackground(Color.clear, for: .tabBar)
         .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
         .toolbarColorScheme(.light, for: .tabBar)
+        .preferredColorScheme(preferredSystemColorScheme)
         .statusBarHidden(hidesPhotoBackdropChrome)
         .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
         .searchable(
@@ -253,8 +272,18 @@ struct AppShellView: View {
             .environment(\.colorScheme, .light)
     }
 
-    private var effectivePhotoBackdropTopChromeStyle: ChromeSeparationGradientStyle {
-        hidesPhotoBackdropChrome ? .light : photoBackdropTopChromeStyle
+    private var effectiveTopChromeStyle: ChromeSeparationGradientStyle {
+        AppShellPracticeOverlayChromePolicy.topChromeStyle(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
+            photoBackdropTopChromeStyle: photoBackdropTopChromeStyle
+        )
+    }
+
+    private var preferredSystemColorScheme: ColorScheme? {
+        AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
+            isPracticeOverlayPresented: isPracticeOverlayPresented
+        )
     }
 
     private var tabBarBackgroundVisibility: Visibility {
@@ -523,7 +552,7 @@ struct AppShellView: View {
                 isSearchPresented: navigation.isSearchPresented,
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
-                topChromeStyle: effectivePhotoBackdropTopChromeStyle,
+                topChromeStyle: effectiveTopChromeStyle,
                 isPracticeMatchPresented: isPracticeMatchPresented || isPracticeOverlayPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,

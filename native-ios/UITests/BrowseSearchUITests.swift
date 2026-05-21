@@ -201,6 +201,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].exists)
     }
 
+    func testSavedPracticeOpensAsPullUpCardOverSavedTrip() {
+        let app = launchApp(arguments: ["--saved", "--reset-demo-state", "--seed-returning-user-shelves"])
+
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 8))
+        tapWhenVisible(app.buttons["SavedTrip.Practice.Start"], app: app)
+
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].exists)
+        XCTAssertFalse(
+            app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
+            "Saved-launched practice should hide the bottom tab bar while the pull-up card is open."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Saved-launched practice should skip the full Practice hub while opening a direct round."
+        )
+
+        closePractice(app)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 4))
+    }
+
     func testFoodCollectionUsesMessageSectionAfterNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
         let messageSection = app.descendants(matching: .any)["BrowseCollection.Messages.category.food"]
