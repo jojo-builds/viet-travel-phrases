@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import SQLite3
 
 enum VietSQLiteLanguagePackTable: String, CaseIterable {
@@ -65,6 +66,21 @@ struct VietSQLitePhraseCatalogSnapshot: Equatable {
     let catalogItems: [PhraseCatalogItem]
 }
 
+enum VietSQLiteRuntimeDiagnostics {
+    private static let logger = Logger(
+        subsystem: "app.speaklocal.vietnam.native",
+        category: "SQLiteRuntime"
+    )
+
+    static func reportFallback(surface: String, reason: String) {
+        logger.error("SQLite fallback for \(surface, privacy: .public): \(reason, privacy: .public)")
+    }
+
+    static func reportFallback(surface: String, error: Error) {
+        reportFallback(surface: surface, reason: String(describing: error))
+    }
+}
+
 private struct VietSQLitePracticeCandidateRow {
     let phraseID: String
     let pageID: String
@@ -105,6 +121,7 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case missingPreviewPhrase(id: String)
     case missingCanonicalPage(id: String)
     case missingPhrase(id: String)
+    case invalidJSONColumn(name: String, value: String)
 
     var errorDescription: String? {
         switch self {
@@ -128,6 +145,8 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
             return "SQLite canonical phrase page is missing: \(id)"
         case .missingPhrase(let id):
             return "SQLite phrase is missing: \(id)"
+        case .invalidJSONColumn(let name, let value):
+            return "SQLite JSON column \(name) could not be decoded: \(value)"
         }
     }
 }
@@ -302,6 +321,119 @@ final class VietSQLiteLanguagePackRepository {
             scenarioCategories: try loadScenarioCategories(),
             catalogItems: try loadCatalogItems()
         )
+    }
+
+    func loadVietnameseMenuPayload() throws -> VietnameseMenuPayload {
+        VietnameseMenuPayload(
+            helperPhrases: try loadVietnameseMenuHelperPhrases(),
+            items: try loadVietnameseMenuItems()
+        )
+    }
+
+    func loadVietnameseMenuHelperPhrases() throws -> [VietnameseMenuHelperPhraseDefinition] {
+        let sql = """
+        SELECT
+          id,
+          vietnamese,
+          english,
+          pronunciation,
+          audio_key,
+          detail_page_id,
+          audio_status,
+          applies_to_json
+        FROM vietnamese_menu_helper_phrase
+        ORDER BY sort_order, id;
+        """
+
+        return try rows(sql) { statement in
+            VietnameseMenuHelperPhraseDefinition(
+                id: Self.stringColumn(statement, index: 0),
+                vietnamese: Self.stringColumn(statement, index: 1),
+                english: Self.stringColumn(statement, index: 2),
+                pronunciation: Self.stringColumn(statement, index: 3),
+                audioKey: Self.optionalStringColumn(statement, index: 4),
+                detailPageID: Self.optionalStringColumn(statement, index: 5),
+                audioStatus: Self.stringColumn(statement, index: 6),
+                appliesTo: try Self.jsonStringArrayColumn(statement, index: 7, name: "vietnamese_menu_helper_phrase.applies_to_json")
+            )
+        }
+    }
+
+    func loadVietnameseMenuItems() throws -> [VietnameseMenuItem] {
+        let sql = """
+        SELECT
+          item_id,
+          menu_type,
+          category,
+          subcategory,
+          popular,
+          vietnamese_item,
+          english_translation,
+          romanized_no_tones,
+          sound_out,
+          notes,
+          at_a_glance,
+          what_it_is,
+          usually_includes_json,
+          how_to_enjoy,
+          how_locals_order,
+          worth_knowing,
+          regional_association,
+          origin_posture,
+          traveler_caution,
+          good_to_know,
+          common_options_json,
+          quick_say_vietnamese,
+          quick_say_english,
+          quick_say_sound_out,
+          order_line_vietnamese,
+          order_line_english,
+          order_line_pronunciation,
+          order_line_audio_policy,
+          helper_phrase_ids_json,
+          editorial_review_status,
+          editorial_review_reviewed_by,
+          editorial_review_reviewed_at,
+          editorial_review_checks_json,
+          editorial_review_review_note
+        FROM vietnamese_menu_item
+        ORDER BY sort_order, item_id;
+        """
+
+        return try rows(sql) { statement in
+            let orderLine = Self.vietnameseMenuOrderLine(statement: statement)
+            let editorialReview = try Self.vietnameseMenuEditorialReview(statement: statement)
+
+            return VietnameseMenuItem(
+                itemID: Self.stringColumn(statement, index: 0),
+                menuType: Self.stringColumn(statement, index: 1),
+                category: Self.stringColumn(statement, index: 2),
+                subcategory: Self.stringColumn(statement, index: 3),
+                popular: sqlite3_column_int(statement, 4) != 0,
+                vietnameseItem: Self.stringColumn(statement, index: 5),
+                englishTranslation: Self.stringColumn(statement, index: 6),
+                romanizedNoTones: Self.stringColumn(statement, index: 7),
+                soundOut: Self.stringColumn(statement, index: 8),
+                notes: Self.stringColumn(statement, index: 9),
+                atAGlance: Self.stringColumn(statement, index: 10),
+                whatItIs: Self.optionalStringColumn(statement, index: 11),
+                usuallyIncludes: try Self.jsonStringArrayColumn(statement, index: 12, name: "vietnamese_menu_item.usually_includes_json"),
+                howToEnjoy: Self.optionalStringColumn(statement, index: 13),
+                howLocalsOrder: Self.optionalStringColumn(statement, index: 14),
+                worthKnowing: Self.optionalStringColumn(statement, index: 15),
+                regionalAssociation: Self.optionalStringColumn(statement, index: 16),
+                originPosture: Self.optionalStringColumn(statement, index: 17),
+                travelerCaution: Self.optionalStringColumn(statement, index: 18),
+                goodToKnow: Self.stringColumn(statement, index: 19),
+                commonOptions: try Self.jsonStringArrayColumn(statement, index: 20, name: "vietnamese_menu_item.common_options_json"),
+                quickSayVietnamese: Self.stringColumn(statement, index: 21),
+                quickSayEnglish: Self.stringColumn(statement, index: 22),
+                quickSaySoundOut: Self.stringColumn(statement, index: 23),
+                orderLine: orderLine,
+                helperPhraseIDs: try Self.jsonStringArrayColumn(statement, index: 28, name: "vietnamese_menu_item.helper_phrase_ids_json"),
+                editorialReview: editorialReview
+            )
+        }
     }
 
     func loadScenarioCategories() throws -> [PhraseCategory] {
@@ -1404,6 +1536,61 @@ final class VietSQLiteLanguagePackRepository {
         return value.isEmpty ? nil : value
     }
 
+    private static func jsonStringArrayColumn(
+        _ statement: OpaquePointer,
+        index: Int32,
+        name: String
+    ) throws -> [String] {
+        let value = stringColumn(statement, index: index)
+        guard let data = value.data(using: .utf8) else {
+            throw VietSQLiteLanguagePackRepositoryError.invalidJSONColumn(name: name, value: value)
+        }
+
+        do {
+            return try JSONDecoder().decode([String].self, from: data)
+        } catch {
+            throw VietSQLiteLanguagePackRepositoryError.invalidJSONColumn(name: name, value: value)
+        }
+    }
+
+    private static func vietnameseMenuOrderLine(statement: OpaquePointer) -> VietnameseMenuOrderLine? {
+        guard
+            let vietnamese = optionalStringColumn(statement, index: 24),
+            let english = optionalStringColumn(statement, index: 25),
+            let pronunciation = optionalStringColumn(statement, index: 26),
+            let audioPolicy = optionalStringColumn(statement, index: 27)
+        else {
+            return nil
+        }
+
+        return VietnameseMenuOrderLine(
+            vietnamese: vietnamese,
+            english: english,
+            pronunciation: pronunciation,
+            audioPolicy: audioPolicy
+        )
+    }
+
+    private static func vietnameseMenuEditorialReview(
+        statement: OpaquePointer
+    ) throws -> VietnameseMenuEditorialReview? {
+        guard let status = optionalStringColumn(statement, index: 29) else {
+            return nil
+        }
+
+        return VietnameseMenuEditorialReview(
+            status: status,
+            reviewedBy: optionalStringColumn(statement, index: 30),
+            reviewedAt: optionalStringColumn(statement, index: 31),
+            checks: try jsonStringArrayColumn(
+                statement,
+                index: 32,
+                name: "vietnamese_menu_item.editorial_review_checks_json"
+            ),
+            reviewNote: optionalStringColumn(statement, index: 33)
+        )
+    }
+
     private static func sectionPresentation(_ value: String) -> SectionPresentation {
         if value == "warning-callout" {
             return .tipCallout
@@ -1688,11 +1875,16 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func catalogSnapshot() -> VietSQLitePhraseCatalogSnapshot? {
-        guard isEnabled, let repository = repository() else {
+        guard isEnabled, let repository = repository(surface: "PhraseCatalog.catalogSnapshot") else {
             return nil
         }
 
-        return try? repository.loadCatalogSnapshot()
+        do {
+            return try repository.loadCatalogSnapshot()
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "PhraseCatalog.catalogSnapshot", error: error)
+            return nil
+        }
     }
 
     static func canonicalPageID(for pageIDOrAlias: String) -> String? {
@@ -1719,6 +1911,25 @@ enum VietSQLitePhraseGraphRuntime {
 
         cachedSearchResultsByKey[cacheKey] = results
         return results
+    }
+
+    static func vietnameseMenuPayload() -> VietnameseMenuPayload? {
+        if let cachedVietnameseMenuPayload {
+            return cachedVietnameseMenuPayload
+        }
+
+        guard isEnabled, let repository = repository(surface: "VietnameseMenuCatalog") else {
+            return nil
+        }
+
+        do {
+            let payload = try repository.loadVietnameseMenuPayload()
+            cachedVietnameseMenuPayload = payload
+            return payload
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "VietnameseMenuCatalog", error: error)
+            return nil
+        }
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
@@ -1754,12 +1965,21 @@ enum VietSQLitePhraseGraphRuntime {
         return ((try? repository.canOpenPage(pageIDOrAlias: pageID)) ?? false)
     }
 
-    private static func repository() -> VietSQLiteLanguagePackRepository? {
+    private static func repository(surface: String = "VietSQLitePhraseGraphRuntime") -> VietSQLiteLanguagePackRepository? {
         if let cachedRepository {
             return cachedRepository
         }
 
-        cachedRepository = try? VietSQLiteLanguagePackRepository.bundled()
+        do {
+            cachedRepository = try VietSQLiteLanguagePackRepository.bundled()
+        } catch {
+            if !hasReportedRepositoryOpenFailure {
+                VietSQLiteRuntimeDiagnostics.reportFallback(surface: surface, error: error)
+                hasReportedRepositoryOpenFailure = true
+            }
+            return nil
+        }
+
         return cachedRepository
     }
 
@@ -1770,6 +1990,8 @@ enum VietSQLitePhraseGraphRuntime {
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
     private static var cachedDetailPagesByID: [String: PhraseDetailPage] = [:]
     private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
+    private static var cachedVietnameseMenuPayload: VietnameseMenuPayload?
+    private static var hasReportedRepositoryOpenFailure = false
 
 #if DEBUG
     static func setEnabledForTesting(_ enabled: Bool) {
@@ -1777,6 +1999,8 @@ enum VietSQLitePhraseGraphRuntime {
         cachedRepository = nil
         cachedDetailPagesByID.removeAll()
         cachedSearchResultsByKey.removeAll()
+        cachedVietnameseMenuPayload = nil
+        hasReportedRepositoryOpenFailure = false
         PhraseCatalog.resetCacheForTesting()
     }
 
@@ -1785,6 +2009,8 @@ enum VietSQLitePhraseGraphRuntime {
         cachedRepository = nil
         cachedDetailPagesByID.removeAll()
         cachedSearchResultsByKey.removeAll()
+        cachedVietnameseMenuPayload = nil
+        hasReportedRepositoryOpenFailure = false
         PhraseCatalog.resetCacheForTesting()
     }
 

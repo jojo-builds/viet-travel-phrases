@@ -23,6 +23,7 @@ targets:
           - viet-authored-audio-audit.json
           - viet-authored-listing-pages.json
           - viet-phrase-catalog.json
+          - vietnamese-menu-copy.json
       - path: Resources/Audio
         type: folder
         buildPhase: resources

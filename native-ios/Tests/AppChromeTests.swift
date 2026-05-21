@@ -198,6 +198,35 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
     }
 
+    func testCityPlacePhotoBackdropDetailPagesHaveExtraBottomScrollClearance() {
+        let cityPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-city-hcmc-place-lusine-thao-dien"))
+        let menuPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.supportsCityListingPage(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            )
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance + PhrasePhotoBackdropLayout.cityDetailBottomScrollLift,
+            accuracy: 0.001
+        )
+        XCTAssertGreaterThanOrEqual(PhrasePhotoBackdropLayout.cityDetailBottomScrollLift, 128)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: menuPage.id,
+                heroImageName: menuPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance,
+            accuracy: 0.001
+        )
+    }
+
     func testPhotoBackdropTopChromeTurnsDarkOnlyWhileImageIsUnderStatusArea() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
@@ -2115,6 +2144,70 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(drinks.starterItems.first?.title, "Cà phê sữa đá")
         XCTAssertEqual(drinks.subcategories.first?.title, "Coffee")
         XCTAssertEqual(drinks.subcategories.first?.phraseCount, 14)
+    }
+
+    func testLusineReviewBackedMenuPicksResolveAndLink() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        XCTAssertEqual(
+            picks.map(\.title),
+            [
+                "Eggs Benedict",
+                "Premium Pho",
+                "Squid ink crab pasta",
+                "Crispy chicken salad",
+                "Salt caramel coffee",
+                "Avocado toast",
+            ]
+        )
+        XCTAssertEqual(
+            LocationMenuPicksCatalog.picks(forPageID: "viet-phrase-city-hcmc-place-lusine-thao-dien").map(\.id),
+            picks.map(\.id)
+        )
+        XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: "viet-menu-food-pho-bo").isEmpty)
+        XCTAssertTrue(picks.allSatisfy { !$0.proof.localizedCaseInsensitiveContains("guest signal") })
+
+        let premiumPho = try XCTUnwrap(picks.first { $0.id == "lusine-premium-pho" })
+        XCTAssertEqual(premiumPho.detailPageID, "viet-menu-food-pho-dac-biet")
+        XCTAssertNotNil(VietnameseMenuCatalog.detailItem(withPageID: premiumPho.detailPageID))
+        XCTAssertNil(LocationMenuPicksCatalog.detailPage(withID: premiumPho.detailPageID))
+
+        let eggs = try XCTUnwrap(picks.first { $0.id == "lusine-eggs-benedict" })
+        let eggsDetail = try XCTUnwrap(LocationMenuPicksCatalog.detailPage(withID: eggs.detailPageID))
+        XCTAssertEqual(eggsDetail.title, "Eggs Benedict")
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(eggs.detailPageID))
+        XCTAssertNotNil(PhraseDetailPage.page(withID: eggs.detailPageID))
+    }
+
+    func testLusineLocationMenuPicksUseExistingAssetsAndSavedTripRows() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        for pick in picks {
+            XCTAssertNotNil(UIImage(named: pick.imageName), "Missing location menu pick image: \(pick.imageName)")
+
+            guard pick.linkedMenuItemID == nil else {
+                continue
+            }
+
+            let detail = try XCTUnwrap(PhraseDetailPage.page(withID: pick.detailPageID))
+            let heroImageName = try XCTUnwrap(detail.heroImageName)
+            XCTAssertNotNil(UIImage(named: heroImageName), "Missing location menu detail image: \(heroImageName)")
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: detail.id, heroImageName: heroImageName),
+                "\(pick.id) should open with the same photo-backdrop feel as menu item pages"
+            )
+        }
+
+        let snapshot = SavedTripSnapshot.make(
+            savedPageIDs: [
+                "viet-menu-lusine-thao-dien-eggs-benedict",
+                "viet-menu-lusine-thao-dien-salt-caramel-coffee",
+            ]
+        )
+
+        XCTAssertEqual(snapshot.sections.map(\.kind), [.food, .drinks])
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .food })?.items.first?.title, "Eggs Benedict")
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .drinks })?.items.first?.title, "Salt caramel coffee")
     }
 
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
