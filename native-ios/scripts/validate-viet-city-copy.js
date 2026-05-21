@@ -6,6 +6,8 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..", "..");
 const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredPagesPath = path.join(repoRoot, "native-ios", "Resources", "viet-authored-listing-pages.json");
+const catalogPath = path.join(repoRoot, "native-ios", "Resources", "viet-phrase-catalog.json");
+const audioManifestPath = path.join(repoRoot, "native-ios", "Resources", "viet-audio-manifest.json");
 const reviewReportPath = path.join(repoRoot, "docs", "content-audits", "viet-city-copy-production-2026-05-17.json");
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
@@ -382,7 +384,7 @@ function reviewRowsByPageID(reviewReport) {
 }
 
 function validateRuntimeSectionParity(sourcePage, runtimePage) {
-  if (sourcePage.id === "city-danang-place-ba-na-hills") {
+  if (sourcePage.editorialImport?.runtimeOverride?.kind === "ba-na-hills-journey") {
     validateRuntimeOverride(sourcePage, runtimePage);
     return;
   }
@@ -406,6 +408,70 @@ function validateRuntimeSectionParity(sourcePage, runtimePage) {
       if (!editorialSectionIDs.has(runtimeSection.id)) {
         fail(`${runtimePage.id} has generated fallback section ${runtimeSection.id} mixed into reviewed city copy`);
       }
+    }
+  }
+}
+
+function isUsefulPhraseSection(section) {
+  return section.id === "quick-say" && normalize(section.title) === "Useful Phrases";
+}
+
+function validateSourceMode(page) {
+  const sourceMode = normalize(page.editorialImport?.sourceMode);
+  if (!sourceMode) return;
+  if (!["expanded-detail", "mobile-first"].includes(sourceMode)) {
+    fail(`${page.id} must declare one city copy source mode`);
+  }
+}
+
+function validateUsefulPhraseSource(page, section, catalogPhraseByID, audioManifest) {
+  if (!isUsefulPhraseSection(section)) return;
+  if (page.editorialImport?.sourceMode !== "expanded-detail") {
+    fail(`${page.id} Useful Phrases requires expanded-detail source mode`);
+  }
+  if (normalize(section.body)) {
+    fail(`${page.id} Useful Phrases must render as phrase rows, not prose`);
+  }
+  const phraseIDs = section.phraseIDs ?? [];
+  if (!Array.isArray(phraseIDs) || phraseIDs.length < 2) {
+    fail(`${page.id} Useful Phrases needs at least two canonical phrase IDs`);
+    return;
+  }
+  for (const phraseID of phraseIDs) {
+    const phrase = catalogPhraseByID.get(phraseID);
+    if (!phrase) {
+      fail(`${page.id} Useful Phrases references missing phrase ${phraseID}`);
+      continue;
+    }
+    if (phrase.cityLibraryKind) {
+      fail(`${page.id} Useful Phrases must use reusable audio-backed phrase IDs, not city-generated phrase ${phraseID}`);
+    }
+    if (phrase.audioStatus !== "ready" || !phrase.audioKey || !audioManifest[phrase.audioKey]) {
+      fail(`${page.id} Useful Phrases phrase ${phraseID} has no ready bundled audio`);
+    }
+  }
+}
+
+function validateUsefulPhraseRuntime(sourcePage, runtimePage, audioManifest) {
+  const sourceSection = (sourcePage.editorialImport?.sections ?? []).find(isUsefulPhraseSection);
+  if (!sourceSection) return;
+  const runtimeSection = (runtimePage.sections ?? []).find((section) => section.id === sourceSection.id);
+  if (!runtimeSection) {
+    fail(`${runtimePage.id} missing Useful Phrases runtime section`);
+    return;
+  }
+  if (runtimeSection.presentation !== "phrase-list") {
+    fail(`${runtimePage.id} Useful Phrases must render as phrase-list`);
+  }
+  if (normalize(runtimeSection.body)) {
+    fail(`${runtimePage.id} Useful Phrases runtime body must be empty so prose is not mixed with phrase cards`);
+  }
+  if ((runtimeSection.phrases ?? []).length !== (sourceSection.phraseIDs ?? []).length) {
+    fail(`${runtimePage.id} Useful Phrases runtime phrase count does not match source phrase IDs`);
+  }
+  for (const phrase of runtimeSection.phrases ?? []) {
+    if (!phrase.audioKey || !audioManifest[phrase.audioKey]) {
+      fail(`${runtimePage.id} Useful Phrases runtime phrase ${phrase.id} has no bundled audio`);
     }
   }
 }
@@ -448,6 +514,9 @@ function validateRuntimeOverride(sourcePage, runtimePage) {
 function main() {
   const source = readJSON(sourcePath);
   const authored = fs.existsSync(authoredPagesPath) ? readJSON(authoredPagesPath) : { pages: [] };
+  const catalog = readJSON(catalogPath);
+  const catalogPhraseByID = new Map((catalog.phrases ?? []).map((phrase) => [phrase.id, phrase]));
+  const audioManifest = readJSON(audioManifestPath);
   const reviewReport = fs.existsSync(reviewReportPath) ? readJSON(reviewReportPath) : null;
   const reviewRows = reviewReport ? reviewRowsByPageID(reviewReport) : new Map();
   const cities = source.cities ?? [];
@@ -504,6 +573,7 @@ function main() {
     if (!Array.isArray(editorial.sections) || editorial.sections.length < 4) {
       fail(`${page.id} needs at least 4 authored editorial sections`);
     }
+    validateSourceMode(page);
     if (!editorial.targetHeroImageName) {
       fail(`${page.id} missing editorialImport.targetHeroImageName`);
     } else if (targetHeroNames.has(editorial.targetHeroImageName)) {
@@ -521,7 +591,8 @@ function main() {
 
     for (const section of editorial.sections ?? []) {
       const body = normalizedLower(section.body);
-      if (body.length < 55) {
+      validateUsefulPhraseSource(page, section, catalogPhraseByID, audioManifest);
+      if (!isUsefulPhraseSection(section) && body.length < 55) {
         fail(`${page.id} section ${section.id} is too thin`);
       }
       if (body.length >= 80) {
@@ -540,6 +611,7 @@ function main() {
         fail(`${runtimePage.id} runtime summary does not match source editorial summary`);
       }
       validateRuntimeSectionParity(page, runtimePage);
+      validateUsefulPhraseRuntime(page, runtimePage, audioManifest);
       validateNoBannedVisibleText(runtimePage.id, authoredRuntimeText(runtimePage));
     }
   }

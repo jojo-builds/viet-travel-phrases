@@ -406,6 +406,57 @@ function main() {
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");
   assertZero(sqliteValue(`
     SELECT count(*)
+    FROM page_section
+    WHERE title = 'Useful Phrases'
+      AND (
+        presentation != 'phrase-list'
+        OR trim(COALESCE(body, '')) != ''
+      );
+  `), "city Useful Phrases sections must be phrase cards without prose bodies");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.title = 'Useful Phrases'
+      AND (
+        SELECT count(*)
+        FROM page_section_item psi
+        WHERE psi.section_id = ps.id
+          AND psi.item_kind IN ('phrase', 'authored_phrase')
+      ) < 2;
+  `), "city Useful Phrases sections need at least two phrase rows");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    LEFT JOIN audio_usage au
+      ON (
+        psi.item_kind = 'phrase'
+        AND au.target_kind = 'phrase'
+        AND au.target_id = psi.target_id
+        AND au.is_primary = 1
+      )
+      OR (
+        psi.item_kind = 'authored_phrase'
+        AND au.target_kind = 'authored_phrase'
+        AND au.target_id = psi.target_id
+      )
+    LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+    WHERE ps.title = 'Useful Phrases'
+      AND psi.item_kind IN ('phrase', 'authored_phrase')
+      AND aa.id IS NULL;
+  `), "city Useful Phrases rows must have bundled audio");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    JOIN phrase p ON p.id = psi.target_id
+    JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+    JOIN page_category pc ON pc.page_id = pp.id AND pc.category_id = 'derived-place-phrases'
+    WHERE ps.title = 'Useful Phrases'
+      AND psi.item_kind = 'phrase';
+  `), "city Useful Phrases must not use derived place phrase rows hidden by the app");
+  assertZero(sqliteValue(`
+    SELECT count(*)
     FROM city_place
     WHERE COALESCE(place_kind, '') = '';
   `), "city places missing place_kind");
@@ -620,6 +671,7 @@ function main() {
     JOIN page_section ps ON ps.page_id = pp.id
     JOIN page_section_item psi ON psi.section_id = ps.id
     WHERE ps.section_key IN ('quick-say', 'standard-way')
+      AND ps.title != 'Useful Phrases'
       AND psi.item_kind = 'phrase'
       AND NOT (
         (psi.note = pp.id AND psi.title_override = pp.title)

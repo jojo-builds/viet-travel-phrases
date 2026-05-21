@@ -103,6 +103,16 @@ function requireText(value, label, pageID, minLength) {
   return text;
 }
 
+function requireOptionalBody(value, label, pageID) {
+  const text = normalize(value);
+  if (!text) return "";
+  const banned = containsBannedText(text);
+  if (banned) {
+    fail(`${pageID} ${label} contains banned wording "${banned}"`);
+  }
+  return text;
+}
+
 function requireNoTemplateDrift(value, label, pageID) {
   const text = normalize(value);
   if (!text) return;
@@ -118,19 +128,34 @@ function requireNoTemplateDrift(value, label, pageID) {
 function sectionMapFor(entry) {
   const sections = entry.sections ?? [];
   const byID = new Map();
+  const bodyOwners = new Map();
   for (const section of sections) {
     if (!section.id) fail(`${entry.pageID} has a section without id`);
     if (byID.has(section.id)) fail(`${entry.pageID} repeats section ${section.id}`);
     if (bannedExactSectionTitles.has(normalize(section.title))) {
       fail(`${entry.pageID} section ${section.id} keeps template title "${normalize(section.title)}"`);
     }
+    const phraseIDs = Array.isArray(section.phraseIDs)
+      ? section.phraseIDs.map((phraseID) => requireText(phraseID, `section ${section.id} phraseID`, entry.pageID, 3))
+      : [];
+    const body = phraseIDs.length > 0
+      ? requireOptionalBody(section.body, `section ${section.id} body`, entry.pageID)
+      : requireText(section.body, `section ${section.id} body`, entry.pageID, 65);
+    const bodyKey = normalize(body).toLowerCase();
+    if (bodyKey) {
+      const previousOwner = bodyOwners.get(bodyKey);
+      if (previousOwner) {
+        fail(`${entry.pageID} repeats section body in ${previousOwner} and ${section.id}`);
+      }
+      bodyOwners.set(bodyKey, section.id);
+    }
     const nextSection = {
       id: section.id,
       title: requireText(section.title, `section ${section.id} title`, entry.pageID, 3),
-      body: requireText(section.body, `section ${section.id} body`, entry.pageID, 65),
+      body,
     };
-    if (Array.isArray(section.phraseIDs)) {
-      nextSection.phraseIDs = section.phraseIDs.map((phraseID) => requireText(phraseID, `section ${section.id} phraseID`, entry.pageID, 3));
+    if (phraseIDs.length > 0) {
+      nextSection.phraseIDs = phraseIDs;
     }
     byID.set(section.id, nextSection);
     requireNoTemplateDrift(section.body, `section ${section.id} body`, entry.pageID);
@@ -252,8 +277,8 @@ function main() {
       const sourceNotes = page.editorialImport?.sourceNotes ?? page.productionIntake?.sourceNotes ?? "";
       const imagePromptNote = page.editorialImport?.imagePromptNote ?? page.productionIntake?.imagePromptNote ?? "";
       const targetHeroImageName = page.editorialImport?.targetHeroImageName ?? page.productionIntake?.targetHeroImageName ?? page.heroImageName;
+      const sourceMode = normalize(entry.sourceMode ?? "");
       if (!targetHeroImageName) fail(`${entry.pageID} is missing target hero image name`);
-      const runtimeOverride = page.editorialImport?.runtimeOverride;
 
       page.context = normalize(entry.context ?? summary);
       page.tip = normalize(entry.tip ?? sectionByID.get("good-to-know")?.body ?? sectionByID.get("use-it-with").body);
@@ -284,8 +309,13 @@ function main() {
           source: path.relative(repoRoot, filePath),
         },
       };
-      if (runtimeOverride) {
-        page.editorialImport.runtimeOverride = runtimeOverride;
+      if (sourceMode) {
+        page.editorialImport.sourceMode = sourceMode;
+      } else {
+        delete page.editorialImport.sourceMode;
+      }
+      if (!entry.runtimeOverride) {
+        delete page.editorialImport.runtimeOverride;
       }
       importedEntries.push({ ...entry, sections });
     }

@@ -2392,6 +2392,64 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .drinks })?.items.first?.title, "Salt caramel coffee")
     }
 
+    func testCalibratedCityMenuPicksResolveInlineAndStayCapped() throws {
+        let expected: [String: (sectionID: String, itemIDs: [String])] = [
+            "viet-family-city-danang-place-bac-my-an-market": ("at-glance", ["food-kem-bo"]),
+            "viet-family-city-danang-place-con-market": ("place-brief", ["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"]),
+            "viet-family-city-danang-place-han-market": ("place-brief", ["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"]),
+            "viet-family-city-danang-place-helio-night-market": ("use-it-with", ["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"]),
+            "viet-family-city-danang-place-son-tra-night-market": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"]),
+            "viet-family-city-hanoi-place-dinh-cafe": ("place-brief", ["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-giang-cafe": ("at-glance", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-the-note-coffee": ("at-glance", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
+            "viet-family-city-hoian-place-bale-well": ("at-glance", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
+            "viet-family-city-hoian-place-banh-mi-phuong": ("at-glance", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
+            "viet-family-city-hoian-place-madam-khanh": ("at-glance", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
+            "viet-family-city-hoian-place-morning-glory": ("at-glance", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
+            "viet-family-city-hue-place-tam-giang-lagoon": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"]),
+        ]
+
+        for (pageID, expectation) in expected {
+            let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+            let aliasPageID = pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-")
+
+            XCTAssertEqual(
+                LocationMenuPicksCatalog.picks(forPageID: aliasPageID).map(\.id),
+                picks.map(\.id),
+                "\(aliasPageID) should share the same menu bridge as its family page"
+            )
+            XCTAssertLessThanOrEqual(picks.count, 4, "\(pageID) should keep the food bridge compact")
+            XCTAssertEqual(picks.map(\.linkedMenuItemID), expectation.itemIDs.map(Optional.some))
+            XCTAssertEqual(
+                LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id),
+                picks.map(\.id),
+                "\(pageID) should render the menu bridge directly after the food-related section"
+            )
+            XCTAssertTrue(LocationMenuPicksCatalog.trailingPicks(forPageID: pageID).isEmpty)
+
+            for pick in picks {
+                let linkedMenuItemID = try XCTUnwrap(pick.linkedMenuItemID)
+                let item = try XCTUnwrap(VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID })
+                XCTAssertEqual(pick.title, item.vietnameseItem)
+                XCTAssertEqual(pick.subtitle, item.englishTranslation)
+                XCTAssertEqual(pick.detailPageID, item.detailPageID)
+                XCTAssertNotNil(VietnameseMenuCatalog.detailItem(withPageID: pick.detailPageID))
+                XCTAssertNotNil(pick.audioKey, "\(pick.title) should use existing exact menu-name audio")
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing menu pick image: \(pick.imageName)")
+            }
+        }
+
+        for pageID in [
+            "viet-family-city-danang-place-cham-museum",
+            "viet-family-city-danang-place-dragon-bridge",
+            "viet-family-city-hue-place-bach-ma-national-park",
+            "viet-family-city-hue-place-thuy-xuan-incense-village",
+            "viet-family-city-hue-place-vong-canh-hill",
+        ] {
+            XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty, "\(pageID) should not force food rows")
+        }
+    }
+
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
         let foodSections = VietnameseMenuCatalog.sections(for: .food)
         let drinkSections = VietnameseMenuCatalog.sections(for: .drink)
