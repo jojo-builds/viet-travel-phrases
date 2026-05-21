@@ -571,7 +571,7 @@ struct AppShellView: View {
                         onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                         onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                     )
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .transition(.opacity)
                     .zIndex(AppChromeLayout.searchPageLayerZIndex + 2)
                 }
             }

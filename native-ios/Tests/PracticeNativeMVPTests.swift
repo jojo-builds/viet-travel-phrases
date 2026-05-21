@@ -373,19 +373,29 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertTrue(
             PracticeMatchPresentationPolicy.showsHubLayer(
                 style: .pullUpOverlay,
-                hasActiveSession: false
+                hasActiveSession: false,
+                hasRequestedStart: true
             )
         )
         XCTAssertFalse(
             PracticeMatchPresentationPolicy.showsHubLayer(
                 style: .pullUpOverlay,
-                hasActiveSession: true
+                hasActiveSession: true,
+                hasRequestedStart: true
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: false,
+                hasRequestedStart: false
             )
         )
         XCTAssertTrue(
             PracticeMatchPresentationPolicy.showsHubLayer(
                 style: .route,
-                hasActiveSession: true
+                hasActiveSession: true,
+                hasRequestedStart: false
             )
         )
     }
