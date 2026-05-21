@@ -28,10 +28,10 @@ Fresh command evidence from this pass:
 - XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/AppChromeTests` plus `SpeakLocalNativeTests/PracticeNativeMVPTests`
   - passed: `181` tests, `0` failures
   - note: the MCP call timed out during the cold isolated-DerivedData run, but the underlying `xcodebuild` completed and the log ended with `TEST EXECUTE SUCCEEDED`
-- Physical iPhone Debug build/install from `main`
+- Physical iPhone Debug build/install/launch from `main`
   - build passed
   - install passed
-  - launch was blocked because the phone was locked
+  - launch passed after the phone was unlocked
   - signing scan stayed clean; personal signing remained local and was not written to repo files
 
 ## Previous City Copy Lane Evidence
