@@ -52,8 +52,35 @@ enum PracticeMatchPresentationPolicy {
 }
 
 enum PracticeMatchPullUpMetrics {
-    static let backdropOpacity: Double = 0.34
+    static let backdropOpacity: Double = 0.46
     static let sheetHorizontalBackgroundPadding: CGFloat = 0
+
+    static func backdropOpacity(
+        dragTranslation: CGFloat,
+        cardHeight: CGFloat
+    ) -> Double {
+        let fadeDistance = max(420, cardHeight * 0.72)
+        let progress = min(max(dragTranslation / fadeDistance, 0), 1)
+
+        return backdropOpacity * Double(1 - progress)
+    }
+}
+
+struct PracticeOverlayBackdropOpacityPreferenceKey: PreferenceKey {
+    static var defaultValue: Double = 0
+
+    static func reduce(value: inout Double, nextValue: () -> Double) {
+        value = max(value, nextValue())
+    }
+}
+
+enum PracticeMatchHubLayout {
+    static func topPadding(usesPhotoBackdrop: Bool, topContentClearance: CGFloat) -> CGFloat {
+        let basePadding: CGFloat = usesPhotoBackdrop ? 18 : 22
+        let contentClearance = usesPhotoBackdrop ? 0 : topContentClearance
+
+        return basePadding + contentClearance
+    }
 }
 
 enum PracticeMatchPullUpDismissalPolicy {
@@ -62,9 +89,9 @@ enum PracticeMatchPullUpDismissalPolicy {
         predictedTranslation: CGFloat,
         cardHeight: CGFloat
     ) -> Bool {
-        let committedDistance = max(190, cardHeight * 0.32)
-        let fastSwipeDistance = max(140, cardHeight * 0.22)
-        let predictedDistance = max(240, cardHeight * 0.42)
+        let committedDistance = max(420, cardHeight * 0.68)
+        let fastSwipeDistance = max(130, cardHeight * 0.20)
+        let predictedDistance = max(460, cardHeight * 0.78)
 
         return translation >= committedDistance
             || (translation >= fastSwipeDistance && predictedTranslation >= predictedDistance)
@@ -5171,8 +5198,6 @@ private struct PracticeMatchHubView: View {
                 PracticeErrorCard(message: message, onRetry: onRetry)
             case .loaded(let snapshot):
                 PracticeMatchQuickSection(
-                    quickSource: snapshot.quickSource,
-                    practiceSource: snapshot.practiceSource,
                     savedSource: snapshot.savedSource,
                     onStartSource: onStartSource,
                     onBrowseTapped: onBrowseTapped
@@ -5185,7 +5210,10 @@ private struct PracticeMatchHubView: View {
             }
         }
         .padding(.horizontal, PracticeLayout.horizontalPadding)
-        .padding(.top, (usesPhotoBackdrop ? 18 : 22) + topContentClearance)
+        .padding(.top, PracticeMatchHubLayout.topPadding(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            topContentClearance: topContentClearance
+        ))
         .padding(.bottom, HomeLayout.bottomChromeContentClearance)
     }
 }
@@ -5207,37 +5235,12 @@ private struct PracticeMatchHero: View {
 }
 
 private struct PracticeMatchQuickSection: View {
-    let quickSource: PracticeMatchSource
-    let practiceSource: PracticeMatchSource
     let savedSource: PracticeMatchSource
     let onStartSource: (PracticeMatchSource) -> Void
     let onBrowseTapped: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            PracticeMatchSourceCard(
-                source: quickSource,
-                title: "Quick practice",
-                subtitle: "Start with common Vietnam phrases.",
-                actionTitle: "Start",
-                onTap: { onStartSource(quickSource) }
-            )
-
-            if practiceSource.canStart {
-                PracticeMatchSourceCard(
-                    source: practiceSource,
-                    title: practiceSource.title,
-                    subtitle: practiceSource.subtitle,
-                    actionTitle: "Start",
-                    onTap: { onStartSource(practiceSource) }
-                )
-            } else {
-                PracticeMatchPracticeEmptyCard(
-                    practiceCount: practiceSource.items.count,
-                    onBrowseTapped: onBrowseTapped
-                )
-            }
-
             if savedSource.canStart {
                 PracticeMatchSourceCard(
                     source: savedSource,
@@ -5620,9 +5623,13 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
         GeometryReader { proxy in
             let height = detent.height(for: proxy.size, safeAreaInsets: proxy.safeAreaInsets)
             let downwardDrag = max(0, dragTranslation)
+            let backdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: downwardDrag,
+                cardHeight: height
+            )
 
             ZStack(alignment: .bottom) {
-                Color.black.opacity(PracticeMatchPullUpMetrics.backdropOpacity)
+                Color.black.opacity(backdropOpacity)
                     .ignoresSafeArea()
                     .contentShape(Rectangle())
                     .onTapGesture(perform: onDismiss)
@@ -5639,6 +5646,10 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
             }
             .frame(width: proxy.size.width, height: proxy.size.height, alignment: .bottom)
             .contentShape(Rectangle())
+            .preference(
+                key: PracticeOverlayBackdropOpacityPreferenceKey.self,
+                value: backdropOpacity
+            )
         }
         .ignoresSafeArea(edges: [.horizontal, .bottom])
     }

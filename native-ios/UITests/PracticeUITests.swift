@@ -10,17 +10,19 @@ final class PracticeUITests: XCTestCase {
         let app = launchPracticeApp()
 
         XCTAssertTrue(app.staticTexts["Practice"].waitForExistence(timeout: 4))
-        XCTAssertTrue(app.staticTexts["Quick practice"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["Practice Saved"].waitForExistence(timeout: 8))
+        XCTAssertFalse(app.staticTexts["Quick practice"].exists)
+        XCTAssertFalse(app.staticTexts["My practice phrases"].exists)
         scrollUntilStaticTextExists("Practice by topic", in: app)
         XCTAssertFalse(app.staticTexts["Messages"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Contacts"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
     }
 
-    func testQuickPracticeOpensSingleFourPairMatchRound() {
-        let app = launchPracticeApp()
+    func testPracticeSavedOpensSingleFourPairMatchRound() {
+        let app = launchPracticeApp(extraArguments: ["--seed-returning-user-shelves"])
 
-        tapStaticText("Quick practice", in: app)
+        tapStaticText("Practice Saved", in: app)
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
@@ -33,6 +35,7 @@ final class PracticeUITests: XCTestCase {
         let app = launchPracticeApp()
 
         scrollUntilStaticTextExists("Practice by topic", in: app)
+        scrollUntilStaticTextIsHittable("Essentials", in: app)
         tapStaticText("Essentials", in: app)
 
         let sheet = app.otherElements["Practice.Match.Round"].firstMatch
@@ -53,8 +56,8 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["Practice Saved"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.staticTexts["6 practice-ready"].exists)
-        XCTAssertTrue(app.staticTexts["My practice phrases"].exists)
-        XCTAssertTrue(app.staticTexts["5 practice-ready"].exists)
+        XCTAssertFalse(app.staticTexts["Quick practice"].exists)
+        XCTAssertFalse(app.staticTexts["My practice phrases"].exists)
 
         tapStaticText("Practice Saved", in: app)
 
@@ -94,5 +97,18 @@ final class PracticeUITests: XCTestCase {
         }
 
         XCTFail("Static text did not appear: \(title)", file: file, line: line)
+    }
+
+    private func scrollUntilStaticTextIsHittable(_ title: String, in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        let text = app.staticTexts[title]
+        for _ in 0..<5 {
+            if text.waitForExistence(timeout: 1), text.isHittable {
+                return
+            }
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(text.waitForExistence(timeout: 1), file: file, line: line)
+        XCTAssertTrue(text.isHittable, file: file, line: line)
     }
 }
