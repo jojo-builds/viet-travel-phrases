@@ -114,6 +114,25 @@ Do not block a safe improvement because of an adjacent follow-up. If the copy/im
 
 Do not send routine review back to Jojo when agent review can answer it. Ask Jojo only for true product, brand, legal/licensing, or language-correctness decisions that the repo, stable sources, and focused reviewer passes cannot resolve.
 
+## Bug Hunt RCA Cards
+
+For bug hunts, symptom reports, repeated regressions, freezes, jitter,
+performance complaints, and unclear-cause tasks, use
+`docs/task-cards/TEMPLATE-BUG-HUNT-RCA.md` and
+`orchestrator/playbooks/root-cause-analysis.md`.
+
+RCA is required for those symptom tasks and optional elsewhere. It does not
+replace `superpowers:systematic-debugging`, simulator proof, focused tests,
+review gates, or phone builds. It gives the worker a compact result receipt:
+symptom, reproduction/evidence, Five Whys, root cause, fix strategy, regression
+guard, validation, feature preservation, and follow-ups.
+
+Hard rule: do not let a task fix the symptom by deleting, hiding, disabling, or
+narrowing existing product behavior unless Jojo explicitly approved that
+removal. If the apparent fix requires removing a route, shelf, control, content
+surface, audio affordance, animation, navigation path, generated resource, or
+test, the worker must stop and escalate.
+
 ## Pre-Jojo Visual QA Gate
 
 Before Jojo is asked to visually test a user-facing change, send it through `Tester / QA` when practical.

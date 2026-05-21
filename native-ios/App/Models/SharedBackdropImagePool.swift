@@ -1,8 +1,12 @@
 import Foundation
 
 enum SharedBackdropImagePool {
-    enum Surface: String {
+    enum Surface: String, CaseIterable {
         case home
+        case browse
+        case saved
+        case practice
+        case search
         case sharedPage
     }
 

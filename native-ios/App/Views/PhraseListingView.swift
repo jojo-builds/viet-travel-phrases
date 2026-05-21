@@ -282,14 +282,17 @@ struct PhraseArticleTemplateView: View {
                                 .id(Self.photoBackdropContentID)
                         }
                     }
-                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
-                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
-                    }) { _, offset in
-                        if abs(offset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = offset
+                    .onScrollGeometryChange(for: PhrasePhotoBackdropLayout.ScrollState.self, of: { scrollGeometry in
+                        PhrasePhotoBackdropLayout.scrollState(
+                            for: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
                         }
 
-                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
@@ -977,6 +980,7 @@ enum PhrasePhotoBackdropLayout {
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     static let topChromeContentThresholdPadding: CGFloat = 12
+    static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
 
     static func bottomReadingClearance(pageID: String, heroImageName: String?) -> CGFloat {
@@ -1062,6 +1066,31 @@ enum PhrasePhotoBackdropLayout {
             collapsedContentTop: collapsedContentTop,
             revealImmersiveOffset: 24
         )
+    }
+
+    struct ScrollState: Equatable {
+        let displayOffset: CGFloat
+        let hasPassedRevealThreshold: Bool
+    }
+
+    static func scrollState(for rawOffset: CGFloat, metrics: Metrics) -> ScrollState {
+        let offset = max(rawOffset, 0)
+        return ScrollState(
+            displayOffset: quantizedScrollOffset(offset),
+            hasPassedRevealThreshold: offset > metrics.revealImmersiveOffset
+        )
+    }
+
+    static func quantizedScrollOffset(
+        _ rawOffset: CGFloat,
+        stride: CGFloat = scrollGeometryUpdateStride
+    ) -> CGFloat {
+        let offset = max(rawOffset, 0)
+        guard stride > 0 else {
+            return offset
+        }
+
+        return floor(offset / stride) * stride
     }
 
     static func isImageTap(

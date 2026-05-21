@@ -19,6 +19,9 @@ struct SearchPageView: View {
 
     let isFieldFocused: Bool
     let returnFocusRequest: SearchReturnFocusRequest?
+    let photoBackdropState: AdminRootPhotoBackdropState
+    let isPhotoBackdropActive: Bool
+    let isPhotoBackdropVisible: Bool
     let onClose: () -> Void
     var onDismissSearchFocus: () -> Void = {}
     var onPrepareReturnFocus: (String) -> Void = { _ in }
@@ -31,6 +34,9 @@ struct SearchPageView: View {
         query: Binding<String> = .constant(""),
         isFieldFocused: Bool = false,
         returnFocusRequest: SearchReturnFocusRequest? = nil,
+        photoBackdropState: AdminRootPhotoBackdropState = .fallback,
+        isPhotoBackdropActive: Bool = false,
+        isPhotoBackdropVisible: Bool = false,
         onClose: @escaping () -> Void,
         onDismissSearchFocus: @escaping () -> Void = {},
         onPrepareReturnFocus: @escaping (String) -> Void = { _ in },
@@ -45,6 +51,9 @@ struct SearchPageView: View {
         )
         self.isFieldFocused = isFieldFocused
         self.returnFocusRequest = returnFocusRequest
+        self.photoBackdropState = photoBackdropState
+        self.isPhotoBackdropActive = isPhotoBackdropActive
+        self.isPhotoBackdropVisible = isPhotoBackdropVisible
         self.onClose = onClose
         self.onDismissSearchFocus = onDismissSearchFocus
         self.onPrepareReturnFocus = onPrepareReturnFocus
@@ -62,45 +71,51 @@ struct SearchPageView: View {
                 isFieldFocused: effectiveFieldFocused
             )
 
-            ZStack {
-                PhrasePageStyle.pageBackground
-                    .ignoresSafeArea()
+            Group {
+                if isPhotoBackdropVisible {
+                    AdminPhotoBackdropSurfaceView(
+                        surface: .search,
+                        backdropImageName: photoBackdropState.imageName,
+                        activationToken: photoBackdropState.activationToken,
+                        isActive: isPhotoBackdropActive,
+                        isVisible: isPhotoBackdropVisible,
+                        allowsImmersiveToggle: !effectiveFieldFocused,
+                        proxyRefreshID: returnFocusRequest?.id ?? 0,
+                        onScrollProxyReady: { scrollProxy in
+                            applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
+                        }
+                    ) { _ in
+                        searchContent(
+                            results: searchResults,
+                            headerMode: headerMode,
+                            topMastheadBleed: topMastheadBleed,
+                            usesPhotoBackdrop: true
+                        )
+                    }
+                } else {
+                    ZStack {
+                        PhrasePageStyle.pageBackground
+                            .ignoresSafeArea()
 
-                ScrollViewReader { scrollProxy in
-                    ScrollView {
-                        LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                            header(results: searchResults, mode: headerMode)
-                                .searchFocusDismissArea(dismissSearchFromContent)
-
-                            if searchResults.query.isEmpty {
-                                if effectiveFieldFocused {
-                                    focusedContent
-                                        .searchFocusDismissArea(dismissSearchFromContent)
-                                } else {
-                                    defaultContent
-                                        .searchFocusDismissArea(dismissSearchFromContent)
-                                }
-                            } else if searchResults.hasResults {
-                                resultsContent(results: searchResults)
-                                    .searchFocusDismissArea(dismissSearchFromContent)
-                            } else {
-                                recoveryContent
-                                    .searchFocusDismissArea(dismissSearchFromContent)
+                        ScrollViewReader { scrollProxy in
+                            ScrollView {
+                                searchContent(
+                                    results: searchResults,
+                                    headerMode: headerMode,
+                                    topMastheadBleed: topMastheadBleed,
+                                    usesPhotoBackdrop: false
+                                )
+                            }
+                            .scrollDismissesKeyboard(.interactively)
+                            .ignoresSafeArea(edges: .top)
+                            .zIndex(SearchPageLayout.resultsZIndex)
+                            .onAppear {
+                                applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
+                            }
+                            .onChange(of: returnFocusRequest) { _, request in
+                                applyReturnFocusIfNeeded(request, scrollProxy: scrollProxy)
                             }
                         }
-                        .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
-                        .padding(.horizontal, SearchPageLayout.horizontalPadding)
-                        .padding(.bottom, SearchPageLayout.resultsBottomClearance)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .scrollDismissesKeyboard(.interactively)
-                    .ignoresSafeArea(edges: .top)
-                    .zIndex(SearchPageLayout.resultsZIndex)
-                    .onAppear {
-                        applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
-                    }
-                    .onChange(of: returnFocusRequest) { _, request in
-                        applyReturnFocusIfNeeded(request, scrollProxy: scrollProxy)
                     }
                 }
             }
@@ -125,6 +140,41 @@ struct SearchPageView: View {
             searchRefreshTask?.cancel()
             searchRefreshTask = nil
         }
+    }
+
+    private func searchContent(
+        results: SearchPageResults,
+        headerMode: SearchPageHeaderMode,
+        topMastheadBleed: CGFloat,
+        usesPhotoBackdrop: Bool
+    ) -> some View {
+        LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
+            header(results: results, mode: headerMode, usesPhotoBackdrop: usesPhotoBackdrop)
+                .searchFocusDismissArea(dismissSearchFromContent)
+
+            if results.query.isEmpty {
+                if effectiveFieldFocused {
+                    focusedContent
+                        .searchFocusDismissArea(dismissSearchFromContent)
+                } else {
+                    defaultContent
+                        .searchFocusDismissArea(dismissSearchFromContent)
+                }
+            } else if results.hasResults {
+                resultsContent(results: results)
+                    .searchFocusDismissArea(dismissSearchFromContent)
+            } else {
+                recoveryContent
+                    .searchFocusDismissArea(dismissSearchFromContent)
+            }
+        }
+        .padding(
+            .top,
+            usesPhotoBackdrop ? 10 : headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed)
+        )
+        .padding(.horizontal, SearchPageLayout.horizontalPadding)
+        .padding(.bottom, SearchPageLayout.resultsBottomClearance)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var effectiveFieldFocused: Bool {
@@ -206,9 +256,13 @@ struct SearchPageView: View {
         #endif
     }
 
-    private func header(results: SearchPageResults, mode: SearchPageHeaderMode) -> some View {
+    private func header(
+        results: SearchPageResults,
+        mode: SearchPageHeaderMode,
+        usesPhotoBackdrop: Bool
+    ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            if mode.showsMasthead {
+            if mode.showsMasthead && !usesPhotoBackdrop {
                 HeroMastheadImage()
                     .padding(.horizontal, -SearchPageLayout.horizontalPadding)
             }
@@ -345,6 +399,8 @@ struct SearchPageView: View {
             }
 
             LazyVStack(spacing: 14) {
+                SearchBrowseAllRecoveryCard(onBrowseTapped: onBrowseTapped)
+
                 ForEach(BrowseSearchDestinations.recoveryActions) { action in
                     SearchRecoveryCard(action: action) {
                         if let pageID = action.openablePageID {
@@ -354,8 +410,6 @@ struct SearchPageView: View {
                         }
                     }
                 }
-
-                SearchBrowseAllRecoveryCard(onBrowseTapped: onBrowseTapped)
             }
         }
     }
@@ -513,7 +567,7 @@ private struct SearchPageResults {
             return "Search"
         }
 
-        return hasResults ? "Results for \(query)" : "No exact phrase yet"
+        return hasResults ? "Results for \(query)" : "Search nearby phrases"
     }
 
     var headerSubtitle: String {
@@ -521,7 +575,7 @@ private struct SearchPageResults {
             return "Find phrases by English, Vietnamese, situation, or what you want to do next."
         }
 
-        return hasResults ? "Here are the most helpful matches." : "Try these close matches or browse by situation."
+        return hasResults ? "Here are the most helpful matches." : "Try a related traveler need or browse by situation."
     }
 }
 

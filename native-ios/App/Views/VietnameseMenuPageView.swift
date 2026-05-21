@@ -201,14 +201,17 @@ struct VietnameseMenuPageView: View {
                                 .id(Self.scrollTopID)
                         }
                     }
-                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
-                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
-                    }) { _, offset in
-                        if abs(offset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = offset
+                    .onScrollGeometryChange(for: PhrasePhotoBackdropLayout.ScrollState.self, of: { scrollGeometry in
+                        PhrasePhotoBackdropLayout.scrollState(
+                            for: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
                         }
 
-                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
@@ -570,7 +573,7 @@ private enum VietnameseMenuLayout {
     static let sectionCardHeight: CGFloat = 166
     static let sectionImageHeight: CGFloat = 108
     static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
-    static let sectionJumpViewportAnchorY: CGFloat = 0.19
+    static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
     static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
     static let glassRailRevealY: CGFloat = 72
 

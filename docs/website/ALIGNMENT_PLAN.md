@@ -12,17 +12,17 @@ Align the website to the current SpeakLocal product split without inventing a se
 - SpeakLocal is a family of destination-specific travel phrasebook apps plus a supporting website.
 - The website is a phone-forward, responsive gateway into the app.
 - The website should feel aligned with the app in structure and flow, not like a disconnected marketing site.
-- For each destination, the website should expose the same starter/free phrase layer that the app exposes for that destination.
+- For each destination, the website can expose an approved starter preview phrase layer that aligns with the app's curated content for that destination.
 - Destination articles should reinforce and route back into those same starter phrases.
 - The app remains the fuller searchable/playable phrase library travelers keep and use.
-- Premium stays app-first for now.
+- Subscription stays app-first for now.
 - Do not introduce website premium, login/account architecture, cross-platform entitlement sync, or code-redemption flow in the current direction.
 - Short-term website success means stronger clarity, repeat usefulness, and app conversion, not a separate web revenue system.
 
 Durable framing:
 
-- free = get by
-- premium = do not get stuck
+- trial = experience the curated Vietnam companion before paying
+- paid subscription = keep the full food, place, phrase, audio, practice, and trip-support library for the journey
 
 ## Verified live and workflow truth
 

@@ -104,14 +104,17 @@ struct BrowseCollectionPageView: View {
                                 .id(Self.scrollTopID)
                         }
                     }
-                    .onScrollGeometryChange(for: CGFloat.self, of: { scrollGeometry in
-                        max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0)
-                    }) { _, offset in
-                        if abs(offset - photoBackdropScrollOffset) >= 1 {
-                            photoBackdropScrollOffset = offset
+                    .onScrollGeometryChange(for: PhrasePhotoBackdropLayout.ScrollState.self, of: { scrollGeometry in
+                        PhrasePhotoBackdropLayout.scrollState(
+                            for: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
                         }
 
-                        if isPhotoBackdropImmersive, offset > metrics.revealImmersiveOffset {
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
@@ -410,7 +413,10 @@ struct BrowseCollectionPageView: View {
 
         selectedSubcategoryID = subcategory.id
         withAnimation(.snappy(duration: 0.28)) {
-            scrollProxy.scrollTo(BrowseCategorySubcategoryScrollID.group(subcategory.id), anchor: .top)
+            scrollProxy.scrollTo(
+                BrowseCategorySubcategoryScrollID.group(subcategory.id),
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.subcategoryJumpViewportAnchorY)
+            )
         }
     }
 
@@ -460,6 +466,7 @@ enum BrowseCollectionLayout {
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
+    static let subcategoryJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
 
     static func cityFilterCardWidth(availableWidth: CGFloat) -> CGFloat {
         let visiblePeekWidth = min(cityFilterCardPeekWidth, max(28, availableWidth * 0.11))
@@ -567,12 +574,18 @@ private struct BrowseCollectionSubcategorySections<AfterFirstSection: View>: Vie
     var body: some View {
         VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
             ForEach(Array(subcategories.enumerated()), id: \.element.id) { index, subcategory in
-                BrowseCollectionStarterSection(
-                    title: sectionTitle(for: subcategory),
-                    items: subcategory.items,
-                    onOpenDetail: onOpenDetail
-                )
-                .id(BrowseCategorySubcategoryScrollID.group(subcategory.id))
+                VStack(alignment: .leading, spacing: 0) {
+                    Color.clear
+                        .frame(width: 1, height: 1)
+                        .id(BrowseCategorySubcategoryScrollID.group(subcategory.id))
+                        .accessibilityHidden(true)
+
+                    BrowseCollectionStarterSection(
+                        title: sectionTitle(for: subcategory),
+                        items: subcategory.items,
+                        onOpenDetail: onOpenDetail
+                    )
+                }
 
                 if index == 0 {
                     afterFirstSection()
@@ -791,7 +804,7 @@ private struct BrowseCityFilterSection: View {
             VStack(alignment: .leading, spacing: 18) {
                 imageFilterRail
 
-                VStack(alignment: .leading, spacing: 18) {
+                LazyVStack(alignment: .leading, spacing: 18) {
                     ForEach(visibleFilters) { filter in
                         BrowseCityNounGroupSection(
                             filter: filter,
@@ -947,7 +960,7 @@ private struct BrowseCityNounGroupSection: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.82)
 
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(filter.items) { item in
                     BrowseCityNounRow(
                         item: item,

@@ -31,7 +31,7 @@ These are designed to feel like a modern independent travel brand, not an EdTech
 ### Option 2: Soft Landing
 - **Tagline:** Language tools for smoother arrivals.
 - **Brand voice:** Calm, grounded, confidence-building. It reduces travel stress without sounding corny or academic.
-- **What it feels like:** Walking out of the airport without panic, knowing exactly what to say next.
+- **What it feels like:** Walking out of the airport with a few useful phrases already in mind.
 
 ### Option 3: Side Street Sayings
 - **Tagline:** Learn the phrases tourists actually need.
@@ -41,7 +41,7 @@ These are designed to feel like a modern independent travel brand, not an EdTech
 ### Option 4: Check-In Phrases
 - **Tagline:** Talk your way into a better trip.
 - **Brand voice:** Travel-native, practical, quietly premium. It treats language as part of trip quality, not a school subject.
-- **What it feels like:** Better hotels, smoother check-ins, easier meals, fewer awkward moments.
+- **What it feels like:** Better hotels, smoother check-ins, easier meals, and more natural local moments.
 
 ### Option 5: Open Tab Travel
 - **Tagline:** The language layer for real-world travel.
@@ -191,16 +191,16 @@ Why it builds credibility: field observation + design logic + evidence of though
 # Part 2: Permanent Content Pillars
 These pillars scale across Vietnamese, Thai, Japanese, Indonesian, Korean, Spanish, and beyond.
 
-## Pillar 1: The Friction Point
+## Pillar 1: The Trip Moment
 ### Description
-This pillar captures the exact moments where travel breaks down because language fails: transport, food, payments, check-in, directions, allergies, misunderstandings. It turns pain into clarity and makes the brand immediately useful.
+This pillar captures the exact moments where curated local language makes the trip richer and easier: transport, food, payments, check-in, directions, allergies, and clarification. It turns uncertainty into practical confidence without making fear the hook.
 
 ### 5 content angles
 1. “What tourists think they need to say vs what they actually need”
-2. Real micro-failures: ordering, paying, confirming, clarifying
-3. Airport-to-hotel survival phrases
-4. The most expensive misunderstanding on a trip
-5. Phrase sets for stressful moments: taxis, medical, dietary, timing
+2. Real micro-moments: ordering, paying, confirming, clarifying
+3. Airport-to-hotel arrival phrases
+4. The phrase that makes a confusing travel moment easier
+5. Phrase sets for useful moments: taxis, dietary needs, timing, hotel desks
 
 ### Strongest platform
 **X** for fast insight and shareability. Strong secondary use on TikTok/Shorts as mini scenarios.
@@ -234,7 +234,7 @@ This pillar shows the difference between textbook language and usable local spee
 **TikTok / YouTube Shorts** for spoken comparison. X works as a strong supporting platform for written contrast posts.
 
 ### Download connection
-This pillar makes the product feel smarter than a generic phrase list. Users download when they believe the app helps them sound less awkward and get better results from locals.
+This pillar makes the product feel smarter than a generic phrase list. Users download when they believe the app helps them sound more natural and get better results from locals.
 
 ### Example post
 > Textbook-style travel language is often too clean.

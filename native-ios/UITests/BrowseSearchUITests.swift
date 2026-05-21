@@ -166,6 +166,14 @@ final class BrowseSearchUITests: XCTestCase {
             app.descendants(matching: .any)["BrowseCollection.category.first-day"].exists,
             "Practice should float over the current Browse collection instead of replacing it."
         )
+        XCTAssertFalse(
+            app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
+            "Browse-launched practice should hide the bottom tab bar while the pull-up card is open."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Browse-launched practice should skip the full Practice hub while opening a direct round."
+        )
 
         closePractice(app)
 
@@ -549,6 +557,31 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
     }
 
+    func testEssentialsSubcategoryJumpClearsTopAdminChrome() {
+        let app = launchApp(arguments: ["--browse-category", "essentials"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.essentials"].waitForExistence(timeout: 4))
+        let firstFilter = app.buttons["BrowseCollection.Subcategory.essentials.polite-basics"]
+        XCTAssertTrue(firstFilter.waitForExistence(timeout: 2))
+
+        tapHorizontalCard(
+            app.buttons["BrowseCollection.Subcategory.essentials.gratitude"],
+            app: app,
+            scrollAnchor: firstFilter
+        )
+
+        let sectionTitle = app.staticTexts["Gratitude phrases"]
+        XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
+
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        XCTAssertTrue(backButton.waitForExistence(timeout: 2))
+        XCTAssertGreaterThan(
+            sectionTitle.frame.minY,
+            backButton.frame.maxY + 16,
+            "Subcategory jumps should leave the section label below the top admin chrome."
+        )
+    }
+
     func testAirportCollectionKeepsFirstSectionCloseToSubcategoryRail() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
 
@@ -711,6 +744,27 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertEqual(app.keyboards.count, 0)
     }
 
+    func testSearchNeverFramesNoMatchAsExactPhraseSearch() {
+        let app = launchApp(arguments: ["--search-query", "zzzzzz"])
+
+        XCTAssertTrue(app.staticTexts["Search nearby phrases"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.staticTexts["No exact phrase yet"].exists)
+    }
+
+    func testSearchFieldUsesLoosePhrasebookResultsForNoisyKnownTokens() {
+        let app = launchApp()
+        openSearch(in: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 4))
+        field.tap()
+        field.typeText("asdf bridge random")
+
+        XCTAssertTrue(app.staticTexts["Results for asdf bridge random"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Dragon Bridge"].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.staticTexts["No exact phrase yet"].exists)
+    }
+
     func testBackFromSearchResultRestoresResultScrollPosition() {
         let app = launchApp(arguments: ["--search-query", "hotel"])
         let resultRows = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "SearchResult."))
@@ -758,8 +812,19 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testBrowseCompactSearchFocusesFieldForTyping() {
         let app = launchApp(arguments: ["--browse"])
+        let startHere = app.staticTexts["Start here"]
+        let phraseFamilies = app.staticTexts["Phrase families"]
+        let compactSearch = app.buttons["Browse.CompactSearch"]
 
-        tapWhenVisible(app.buttons["Browse.CompactSearch"], app: app)
+        scrollUntilExists(startHere, app: app)
+        scrollUntilExists(phraseFamilies, app: app)
+        scrollUntilExists(compactSearch, app: app)
+
+        XCTAssertEqual(compactSearch.label, "Search")
+        XCTAssertLessThan(startHere.frame.minY, phraseFamilies.frame.minY)
+        XCTAssertLessThan(phraseFamilies.frame.minY, compactSearch.frame.minY)
+
+        tapWhenVisible(compactSearch, app: app)
 
         let field = searchField(in: app)
         XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))

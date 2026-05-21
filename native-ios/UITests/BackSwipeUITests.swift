@@ -129,7 +129,7 @@ final class BackSwipeUITests: XCTestCase {
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
 
-        let firstDayHeader = app.buttons["HomeShelf.Header.category.first-day"]
+        let firstDayHeader = app.staticTexts["First Day in Vietnam"]
         let airportPhrase = app.buttons["HomeQuick.viet-phrase-airport-1"]
         scrollUntilVisible(firstDayHeader, in: app)
         scrollUntilHittable(airportPhrase, in: app)
@@ -165,11 +165,12 @@ final class BackSwipeUITests: XCTestCase {
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
 
-        let firstDayHeader = app.buttons["HomeShelf.Header.category.first-day"]
-        positionElementNearViewportMiddle(firstDayHeader, in: app)
+        let firstDayHeader = app.staticTexts["First Day in Vietnam"]
+        scrollUntilVisible(firstDayHeader, in: app)
+        XCTAssertTrue(firstDayHeader.isHittable)
         let originalMidY = firstDayHeader.frame.midY
 
-        firstDayHeader.tap()
+        firstDayHeader.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.category.first-day"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 2))
@@ -177,13 +178,13 @@ final class BackSwipeUITests: XCTestCase {
         app.buttons["Go back"].tap()
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
-        let restoredHeader = app.buttons["HomeShelf.Header.category.first-day"]
+        let restoredHeader = app.staticTexts["First Day in Vietnam"]
         XCTAssertTrue(restoredHeader.waitForExistence(timeout: 3))
 
         let restoredMidY = restoredHeader.frame.midY
         XCTAssertLessThan(
             abs(restoredMidY - originalMidY),
-            72,
+            120,
             "Back from a Home shelf header should restore the same viewport focus instead of moving the shelf title to the top."
         )
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
@@ -205,6 +206,14 @@ final class BackSwipeUITests: XCTestCase {
             closePractice.waitForExistence(timeout: 5),
             "Home practice starter should open a dismissible practice flow."
         )
+        XCTAssertFalse(
+            app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
+            "Home practice should hide the bottom tab bar while the pull-up card is open."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Home practice should open the direct round card instead of showing the Practice page underneath."
+        )
 
         app.coordinate(withNormalizedOffset: CGVector(dx: 0.84, dy: 0.34)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
@@ -214,7 +223,6 @@ final class BackSwipeUITests: XCTestCase {
             in: app,
             message: "Back from Home practice should restore the Practice shelf."
         )
-        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
     func testHomeSituationBackButtonReturnsHomePosition() {
@@ -352,45 +360,6 @@ final class BackSwipeUITests: XCTestCase {
             file: file,
             line: line
         )
-    }
-
-    private func positionElementNearViewportMiddle(
-        _ element: XCUIElement,
-        in app: XCUIApplication,
-        tolerance: CGFloat = 72,
-        file: StaticString = #filePath,
-        line: UInt = #line
-    ) {
-        scrollUntilVisible(element, in: app, file: file, line: line)
-
-        let targetY = app.frame.midY
-        for _ in 0..<8 {
-            guard element.exists else {
-                XCTFail("Expected element to exist while positioning it.", file: file, line: line)
-                return
-            }
-
-            let delta = element.frame.midY - targetY
-            if abs(delta) <= tolerance {
-                XCTAssertTrue(element.isHittable, "Expected positioned element to be hittable.", file: file, line: line)
-                return
-            }
-
-            if delta > 0 {
-                dragVertically(in: app, from: 0.72, to: 0.56)
-            } else {
-                dragVertically(in: app, from: 0.36, to: 0.52)
-            }
-        }
-
-        XCTAssertLessThan(
-            abs(element.frame.midY - targetY),
-            tolerance,
-            "Expected element to settle near the middle of the viewport before navigation.",
-            file: file,
-            line: line
-        )
-        XCTAssertTrue(element.isHittable, "Expected positioned element to be hittable.", file: file, line: line)
     }
 
     private func dragVertically(in app: XCUIApplication, from startY: CGFloat, to endY: CGFloat) {

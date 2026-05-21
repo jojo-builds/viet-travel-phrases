@@ -27,6 +27,45 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(DockItemKind.practice.title, "Practice")
     }
 
+    func testPracticeOverlayHidesRenderedTabBarWithoutTearingDownNativeToolbar() {
+        XCTAssertFalse(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertFalse(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: true,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesRenderedSystemTabBar(
+                isPracticeOverlayPresented: true,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: false,
+                hidesPhotoBackdropChrome: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: true,
+                isPracticeThreadPresented: false
+            )
+        )
+        XCTAssertTrue(
+            AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: false,
+                isPracticeMatchPresented: false,
+                isPracticeThreadPresented: true
+            )
+        )
+    }
+
     func testPlayableAudioTintsUseOneConsistentActionColor() {
         let expected = rgbaComponents(for: AccentTint.red.audioColor)
 
@@ -109,6 +148,12 @@ final class AppChromeTests: XCTestCase {
             AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
         )
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+        XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
+        XCTAssertEqual(
+            BrowseCollectionLayout.subcategoryJumpViewportAnchorY,
+            AppChromeLayout.menuSectionJumpViewportAnchorY,
+            accuracy: 0.001
+        )
     }
 
     func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
@@ -205,6 +250,23 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropScrollStateIsQuantizedButStillRevealsImmersiveThreshold() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.scrollState(for: 15, metrics: metrics).displayOffset,
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.scrollState(for: 16, metrics: metrics).displayOffset,
+            16,
+            accuracy: 0.001
+        )
+        XCTAssertFalse(PhrasePhotoBackdropLayout.scrollState(for: 24, metrics: metrics).hasPassedRevealThreshold)
+        XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
+    }
+
     func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
@@ -279,13 +341,32 @@ final class AppChromeTests: XCTestCase {
         _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
         _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
 
-        XCTAssertEqual(
-            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
-            SharedBackdropImagePool.vietnamForwardAssetNames[0]
-        )
+        for surface in [SharedBackdropImagePool.Surface.browse, .saved, .practice, .search, .sharedPage] {
+            XCTAssertEqual(
+                SharedBackdropImagePool.nextImageName(for: surface, defaults: defaults),
+                SharedBackdropImagePool.vietnamForwardAssetNames[0],
+                "\(surface.rawValue) should have an independent backdrop cursor"
+            )
+        }
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
             2
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .browse)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .saved)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .practice)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .search)),
+            1
         )
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
@@ -301,6 +382,78 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(candidates.count, SharedBackdropImagePool.preheatLookaheadCount + 1)
         XCTAssertEqual(candidates[0], "HeroCityHoianPlaceAnBangBeach")
         XCTAssertEqual(candidates[1], "HeroCityHuePlacePerfumeRiver")
+    }
+
+    func testHomeBackdropPreheatPolicyOnlyWarmsBackdropPoolImages() {
+        let selectedImageName = "HeroCityHoianPlaceAnBangBeach"
+        let imageNames = HomeBackdropPreheatPolicy.imageNames(backdropImageName: selectedImageName)
+
+        XCTAssertEqual(
+            imageNames,
+            SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: selectedImageName)
+        )
+        XCTAssertEqual(imageNames.first, selectedImageName)
+        XCTAssertFalse(imageNames.contains("HomeCityDaNang"))
+        XCTAssertFalse(imageNames.contains("HomeSituationArrival"))
+        XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
+    func testAdminRootBackdropSurfacesMapToIndependentPoolSurfaces() {
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .saved), .saved)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .practice), .practice)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .search), .search)
+        XCTAssertNil(AdminRootPhotoBackdropSurface.surface(for: .browseCollection(.category("airport"))))
+        XCTAssertNil(AdminRootPhotoBackdropSurface.surface(for: .detailPage("viet-family-xin-chao")))
+
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.home.poolSurface, .home)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.browse.poolSurface, .browse)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.saved.poolSurface, .saved)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.practice.poolSurface, .practice)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.search.poolSurface, .search)
+    }
+
+    func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .home,
+                currentRoute: .browse
+            ),
+            .browse
+        )
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .saved
+            ),
+            .saved
+        )
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .practice,
+                currentRoute: .search
+            ),
+            .search
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .browse
+            )
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .browseCollection(.category("airport"))
+            )
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .search,
+                currentRoute: .detailPage("viet-family-xin-chao")
+            )
+        )
     }
 
     func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {
@@ -1519,6 +1672,16 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(BrowseSearchDestinations.suggestedNeeds.isEmpty)
     }
 
+    func testBrowseTopLevelGreetingCardsHaveDistinctJobs() {
+        let localHellos = try! XCTUnwrap(BrowseSearchDestinations.situations.first { $0.id == "local-greetings" })
+        let helloBasics = try! XCTUnwrap(BrowseSearchDestinations.phraseFamilies.first { $0.id == "greetings" })
+
+        XCTAssertEqual(localHellos.title, "Respectful hellos")
+        XCTAssertEqual(localHellos.subtitle, "Choose the right hello for who you are speaking to")
+        XCTAssertEqual(helloBasics.title, "Hello basics")
+        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
+    }
+
     func testBrowseSearchDestinationsUseCanonicalCityIDs() {
         XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "hcmc" })
         XCTAssertNotNil(BrowseSearchDestinations.cityShortcuts.first { $0.id == "danang" })
@@ -2159,16 +2322,16 @@ final class AppChromeTests: XCTestCase {
         let boKhoBanhMi = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bo-kho-banh-mi"))
         let caRiDe = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-ca-ri-de"))
 
-        XCTAssertTrue(bunBoXao.sections.first?.body.contains("nước chấm") == true)
+        XCTAssertTrue(bunBoXao.sections.first?.body.contains("fish-sauce dip") == true)
         XCTAssertTrue(bunBoXao.sections.first { $0.id == "worth-knowing" }?.body.contains("fish sauce balanced with lime") == true)
-        XCTAssertEqual(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "stir-fried beef", "fresh herbs", "nước chấm", "peanuts or fried shallots"])
+        XCTAssertEqual(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "stir-fried beef", "fresh herbs", "fish-sauce dip", "peanuts or fried shallots"])
         XCTAssertFalse(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips.contains("egg noodles") == true)
 
         XCTAssertTrue(bunDau.sections.first?.body.contains("shrimp-paste sauce") == true)
         XCTAssertEqual(bunDau.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fried tofu", "fresh herbs", "mắm tôm", "pork optional"])
 
         XCTAssertTrue(bunChaCa.sections.first?.body.contains("fish cakes") == true)
-        XCTAssertEqual(bunChaCa.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fish cakes", "fresh herbs", "nước chấm or light broth", "fried shallots"])
+        XCTAssertEqual(bunChaCa.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fish cakes", "fresh herbs", "fish-sauce dip or light broth", "fried shallots"])
         XCTAssertFalse(bunChaCa.sections.first?.body.localizedCaseInsensitiveContains("grilled pork") == true)
         XCTAssertFalse(bunChaCa.sections.first { $0.id == "worth-knowing" }?.body.localizedCaseInsensitiveContains("Hanoi") == true)
 

@@ -32,6 +32,9 @@
 /native-ios/**/*.xcuserstate
 /native-ios/**/*.xcuserdata/
 
+# Local orchestrator generated artifacts
+/orchestrator/artifacts/
+
 # Local parallel feature worktrees
 /.worktrees/
 
