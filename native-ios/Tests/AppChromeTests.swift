@@ -334,39 +334,43 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testSharedBackdropPoolKeepsSurfaceSequencesIsolated() {
+    func testSharedBackdropPoolUsesOneCursorAcrossAdminRootSurfaces() {
         let isolatedDefaults = isolatedBackdropDefaults(named: #function)
         let defaults = isolatedDefaults.defaults
         defer { defaults.removePersistentDomain(forName: isolatedDefaults.suiteName) }
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
+        let imageNames = SharedBackdropImagePool.vietnamForwardAssetNames
+        let adminRootSurfaces: [SharedBackdropImagePool.Surface] = [
+            .home,
+            .browse,
+            .saved,
+            .practice,
+            .search,
+        ]
 
-        for surface in [SharedBackdropImagePool.Surface.browse, .saved, .practice, .search, .sharedPage] {
+        for (offset, surface) in adminRootSurfaces.enumerated() {
             XCTAssertEqual(
                 SharedBackdropImagePool.nextImageName(for: surface, defaults: defaults),
-                SharedBackdropImagePool.vietnamForwardAssetNames[0],
-                "\(surface.rawValue) should have an independent backdrop cursor"
+                imageNames[offset],
+                "\(surface.rawValue) should advance the shared admin-root cursor"
             )
         }
+
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
-            2
+            adminRootSurfaces.count
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .browse)),
+            Set(adminRootSurfaces.map { SharedBackdropImagePool.storageKey(for: $0) }).count,
             1
         )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .saved)),
-            1
+
+        XCTAssertNotEqual(
+            SharedBackdropImagePool.storageKey(for: .sharedPage),
+            SharedBackdropImagePool.storageKey(for: .home)
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .practice)),
-            1
-        )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .search)),
-            1
+            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
+            imageNames[0]
         )
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
@@ -398,7 +402,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
-    func testAdminRootBackdropSurfacesMapToIndependentPoolSurfaces() {
+    func testAdminRootBackdropSurfacesMapToSharedPoolCursor() {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .saved), .saved)
@@ -412,6 +416,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.saved.poolSurface, .saved)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.practice.poolSurface, .practice)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.search.poolSurface, .search)
+
+        let adminRootPoolKeys = Set(AdminRootPhotoBackdropSurface.allCases.map {
+            SharedBackdropImagePool.storageKey(for: $0.poolSurface)
+        })
+        XCTAssertEqual(adminRootPoolKeys.count, 1)
     }
 
     func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
