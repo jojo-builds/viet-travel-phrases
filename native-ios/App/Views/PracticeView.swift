@@ -3990,6 +3990,75 @@ enum PracticeMatchCardContentKind {
     case image
 }
 
+struct PracticeMatchSnapshotCacheKey: Hashable {
+    let practicePageIDs: [String]
+    let savedPageIDs: [String]
+}
+
+enum PracticeMatchSnapshotCache {
+    private static let lock = NSLock()
+    private static let cacheLimit = 4
+    private static var snapshots: [PracticeMatchSnapshotCacheKey: PracticeMatchSnapshot] = [:]
+    private static var snapshotKeys: [PracticeMatchSnapshotCacheKey] = []
+    private static var inFlightKeys = Set<PracticeMatchSnapshotCacheKey>()
+
+    static func snapshot(for key: PracticeMatchSnapshotCacheKey) -> PracticeMatchSnapshot? {
+        lock.lock()
+        defer { lock.unlock() }
+
+        guard let snapshot = snapshots[key] else {
+            return nil
+        }
+
+        touch(key)
+        return snapshot
+    }
+
+    static func beginLoading(_ key: PracticeMatchSnapshotCacheKey) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+
+        guard snapshots[key] == nil, !inFlightKeys.contains(key) else {
+            return false
+        }
+
+        inFlightKeys.insert(key)
+        return true
+    }
+
+    static func store(_ snapshot: PracticeMatchSnapshot, for key: PracticeMatchSnapshotCacheKey) {
+        lock.lock()
+        defer { lock.unlock() }
+
+        snapshots[key] = snapshot
+        inFlightKeys.remove(key)
+        touch(key)
+
+        while snapshotKeys.count > cacheLimit {
+            snapshots.removeValue(forKey: snapshotKeys.removeFirst())
+        }
+    }
+
+    static func finishLoading(_ key: PracticeMatchSnapshotCacheKey) {
+        lock.lock()
+        defer { lock.unlock() }
+        inFlightKeys.remove(key)
+    }
+
+    static func clearForTesting() {
+        lock.lock()
+        defer { lock.unlock() }
+        snapshots.removeAll()
+        snapshotKeys.removeAll()
+        inFlightKeys.removeAll()
+    }
+
+    private static func touch(_ key: PracticeMatchSnapshotCacheKey) {
+        snapshotKeys.removeAll { $0 == key }
+        snapshotKeys.append(key)
+    }
+}
+
 struct PracticeMatchSnapshot {
     let quickSource: PracticeMatchSource
     let practiceSource: PracticeMatchSource
@@ -4726,14 +4795,29 @@ private struct PracticeMatchRootView: View {
     }
 
     private func reloadSnapshot() {
-        loadGeneration += 1
-        let generation = loadGeneration
         let practicePageIDs = intentStore.practicePageIDs
         let savedPageIDs = intentStore.savedPageIDs
+        let cacheKey = PracticeMatchSnapshotCacheKey(
+            practicePageIDs: practicePageIDs,
+            savedPageIDs: savedPageIDs
+        )
+
+        if let snapshot = PracticeMatchSnapshotCache.snapshot(for: cacheKey) {
+            loadState = .loaded(snapshot)
+            startRequestedModeIfPossible()
+            return
+        }
 
         if loadState.snapshot == nil {
             loadState = .loading
         }
+
+        guard PracticeMatchSnapshotCache.beginLoading(cacheKey) else {
+            return
+        }
+
+        loadGeneration += 1
+        let generation = loadGeneration
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -4741,12 +4825,14 @@ private struct PracticeMatchRootView: View {
                     practicePageIDs: practicePageIDs,
                     savedPageIDs: savedPageIDs
                 )
+                PracticeMatchSnapshotCache.store(snapshot, for: cacheKey)
                 DispatchQueue.main.async {
                     guard generation == loadGeneration else { return }
                     loadState = .loaded(snapshot)
                     startRequestedModeIfPossible()
                 }
             } catch {
+                PracticeMatchSnapshotCache.finishLoading(cacheKey)
                 DispatchQueue.main.async {
                     guard generation == loadGeneration else { return }
                     loadState = .failed(error.localizedDescription)
