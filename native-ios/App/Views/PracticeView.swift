@@ -3454,11 +3454,33 @@ private struct MeloBundleImage: View {
     }
 
     private static func image(named imageName: String) -> UIImage? {
+        MeloBundleImageCache.image(named: imageName)
+    }
+}
+
+private enum MeloBundleImageCache {
+    private static let cache: NSCache<NSString, UIImage> = {
+        let cache = NSCache<NSString, UIImage>()
+        cache.countLimit = 3
+        return cache
+    }()
+
+    static func image(named imageName: String) -> UIImage? {
+        let key = imageName as NSString
+        if let cachedImage = cache.object(forKey: key) {
+            return cachedImage
+        }
+
         guard let url = Bundle.main.url(forResource: imageName, withExtension: "png") else {
             return nil
         }
 
-        return UIImage(contentsOfFile: url.path)
+        guard let image = UIImage(contentsOfFile: url.path) else {
+            return nil
+        }
+
+        cache.setObject(image, forKey: key)
+        return image
     }
 }
 
@@ -4003,7 +4025,10 @@ struct PracticeMatchSnapshot {
             )
         }
 
-        let savedItems = try SavedTripPracticeCatalog.items(for: savedPageIDs).compactMap { item -> PracticeMatchItem? in
+        let savedItems = try SavedTripPracticeCatalog.items(
+            for: savedPageIDs,
+            repository: repository
+        ).compactMap { item -> PracticeMatchItem? in
             guard let playableAudioKey = item.audioKey,
                   AudioSpeakerButton.isPlayableAudioKey(playableAudioKey)
             else {

@@ -1,4 +1,7 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
@@ -483,12 +486,63 @@ private enum BrowseCategorySubcategoryScrollID {
 
 private extension BrowseSearchPhraseItem {
     var resolvedImageName: String? {
-        guard let imageName, UIImage(named: imageName) != nil else {
+        guard let imageName, BrowseImageAssetCache.exists(imageName) else {
             return nil
         }
 
         return imageName
     }
+}
+
+private enum BrowseImageAssetCache {
+    #if canImport(UIKit)
+    private static let lock = NSLock()
+    private static var existenceByName: [String: Bool] = [:]
+    private static var sizeByName: [String: CGSize] = [:]
+
+    static func exists(_ imageName: String) -> Bool {
+        lock.lock()
+        if let cached = existenceByName[imageName] {
+            lock.unlock()
+            return cached
+        }
+        lock.unlock()
+
+        let image = UIImage(named: imageName)
+        lock.lock()
+        existenceByName[imageName] = image != nil
+        if let image {
+            sizeByName[imageName] = image.size
+        }
+        lock.unlock()
+        return image != nil
+    }
+
+    static func size(for imageName: String) -> CGSize? {
+        lock.lock()
+        if let cached = sizeByName[imageName] {
+            lock.unlock()
+            return cached
+        }
+        lock.unlock()
+
+        guard let image = UIImage(named: imageName) else {
+            lock.lock()
+            existenceByName[imageName] = false
+            lock.unlock()
+            return nil
+        }
+
+        lock.lock()
+        existenceByName[imageName] = true
+        sizeByName[imageName] = image.size
+        lock.unlock()
+        return image.size
+    }
+    #else
+    static func exists(_ imageName: String) -> Bool { true }
+    static func size(for imageName: String) -> CGSize? { nil }
+    #endif
 }
 
 private struct BrowseCollectionHeader: View {
@@ -860,7 +914,7 @@ private struct BrowseCityFilterSection: View {
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
         if let preferredImageName = Self.preferredFilterImageNames[filter.id],
-           UIImage(named: preferredImageName) != nil {
+           BrowseImageAssetCache.exists(preferredImageName) {
             return preferredImageName
         }
 
@@ -1087,8 +1141,7 @@ private struct BrowseFocusedAssetImage: View {
         GeometryReader { proxy in
             let containerSize = proxy.size
 
-            if let image = UIImage(named: imageName) {
-                let imageSize = image.size
+            if let imageSize = BrowseImageAssetCache.size(for: imageName) {
                 let scale = max(
                     containerSize.width / imageSize.width,
                     containerSize.height / imageSize.height
@@ -1103,7 +1156,7 @@ private struct BrowseFocusedAssetImage: View {
                     containerSize: containerSize
                 )
 
-                Image(uiImage: image)
+                Image(imageName)
                     .resizable()
                     .scaledToFill()
                     .frame(width: scaledSize.width, height: scaledSize.height)
