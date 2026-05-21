@@ -10,6 +10,7 @@ const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet",
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
+const menuCopyPath = path.join(nativeRoot, "Resources", "vietnamese-menu-copy.json");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
@@ -310,6 +311,9 @@ function main() {
     'cities', (SELECT count(*) FROM city),
     'cityPlaces', (SELECT count(*) FROM city_place),
     'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag),
+    'vietnameseMenuItems', (SELECT count(*) FROM vietnamese_menu_item),
+    'vietnameseMenuHelperPhrases', (SELECT count(*) FROM vietnamese_menu_helper_phrase),
+    'readyVietnameseMenuHelperPhrases', (SELECT count(*) FROM vietnamese_menu_helper_phrase WHERE audio_status = 'ready'),
     'cityReadyAudioPhraseRows', (
       SELECT count(*)
       FROM phrase p
@@ -325,6 +329,7 @@ function main() {
   );`));
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : { cities: [], places: [], pages: [] };
   const cityLibraryPages = (cityLibrary.pages ?? []).filter((page) => page.status === "approved");
+  const menuPayload = readJSON(menuCopyPath);
 
   assertEqual(sqliteValue("PRAGMA integrity_check;"), "ok", "SQLite integrity check");
   assertEqual(sqliteValue("PRAGMA foreign_key_check;"), "", "SQLite foreign key check");
@@ -416,6 +421,58 @@ function main() {
     WHERE page_kind IN ('restaurant', 'dish')
       AND COALESCE(content_role, '') = '';
   `), "restaurant/dish city pages missing content_role");
+  assertEqual(counts.vietnameseMenuItems, (menuPayload.items ?? []).length, "Vietnamese menu item table count");
+  assertEqual(counts.vietnameseMenuHelperPhrases, (menuPayload.helperPhrases ?? []).length, "Vietnamese menu helper phrase table count");
+  assertEqual(
+    counts.readyVietnameseMenuHelperPhrases,
+    (menuPayload.helperPhrases ?? []).filter((phrase) => phrase.audioStatus === "ready").length,
+    "ready Vietnamese menu helper phrase count"
+  );
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM vietnamese_menu_item
+    WHERE COALESCE(menu_type, '') = ''
+       OR COALESCE(category, '') = ''
+       OR COALESCE(vietnamese_item, '') = ''
+       OR COALESCE(english_translation, '') = ''
+       OR COALESCE(at_a_glance, '') = ''
+       OR COALESCE(usually_includes_json, '') = ''
+       OR COALESCE(good_to_know, '') = ''
+       OR COALESCE(common_options_json, '') = ''
+       OR COALESCE(quick_say_vietnamese, '') = ''
+       OR COALESCE(quick_say_english, '') = ''
+       OR COALESCE(quick_say_sound_out, '') = '';
+  `), "Vietnamese menu items missing required runtime fields");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM vietnamese_menu_helper_phrase
+    WHERE COALESCE(vietnamese, '') = ''
+       OR COALESCE(english, '') = ''
+       OR COALESCE(pronunciation, '') = ''
+       OR COALESCE(audio_status, '') = ''
+       OR COALESCE(applies_to_json, '') = '';
+  `), "Vietnamese menu helper phrases missing required runtime fields");
+  const menuHelperIDs = new Set(JSON.parse(sqliteValue("SELECT json_group_array(id) FROM vietnamese_menu_helper_phrase;")) ?? []);
+  const menuReferenceRows = JSON.parse(sqliteValue(`
+    SELECT json_group_array(json_object(
+      'itemID', item_id,
+      'helperPhraseIDsJSON', helper_phrase_ids_json
+    ))
+    FROM vietnamese_menu_item;
+  `)) ?? [];
+  const unresolvedMenuHelperReferences = [];
+  for (const row of menuReferenceRows) {
+    for (const helperPhraseID of JSON.parse(row.helperPhraseIDsJSON || "[]")) {
+      if (!menuHelperIDs.has(helperPhraseID)) {
+        unresolvedMenuHelperReferences.push(`${row.itemID}:${helperPhraseID}`);
+      }
+    }
+  }
+  assertEqual(
+    unresolvedMenuHelperReferences.slice(0, 10).join("\n"),
+    "",
+    `Vietnamese menu helper phrase references must resolve (${unresolvedMenuHelperReferences.length} unresolved)`
+  );
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -1127,6 +1184,8 @@ function main() {
 
   assertEqual(report.countParity.phrases.actual, report.countParity.phrases.expected, "report phrase count");
   assertEqual(report.countParity.canonicalPhrasePages.actual, report.countParity.canonicalPhrasePages.expected, "report canonical page count");
+  assertEqual(report.generatedCounts.vietnameseMenuItems, counts.vietnameseMenuItems, "report Vietnamese menu item count");
+  assertEqual(report.generatedCounts.vietnameseMenuHelperPhrases, counts.vietnameseMenuHelperPhrases, "report Vietnamese menu helper phrase count");
   assertEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, report.countParity.phrases.expected, "report resolved phrase count");
   assertEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups.length, 0, "unresolved duplicate phrase groups");
   assertEqual(report.validation.duplicateCanonicalPageGroupCount, 0, "report duplicate page groups");
@@ -1145,6 +1204,8 @@ function main() {
   assertEqual(report.validation.badBreakdownGlossCount, 0, "report bad breakdown gloss count");
   assertEqual(report.validation.duplicateBreakdownGlossCount, 0, "report duplicate breakdown gloss count");
   assertEqual(report.validation.bannedUserFacingMatchCount, 0, "report banned wording count");
+  assertEqual(report.validation.vietnameseMenuItemCount, counts.vietnameseMenuItems, "report validation Vietnamese menu item count");
+  assertEqual(report.validation.vietnameseMenuHelperPhraseCount, counts.vietnameseMenuHelperPhrases, "report validation Vietnamese menu helper phrase count");
 
   console.log(JSON.stringify({
     ok: true,

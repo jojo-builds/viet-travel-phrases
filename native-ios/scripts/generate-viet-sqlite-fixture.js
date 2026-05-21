@@ -10,6 +10,7 @@ const repoRoot = path.resolve(nativeRoot, "..");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
+const menuCopyPath = path.join(nativeRoot, "Resources", "vietnamese-menu-copy.json");
 const xcodeProjectPath = path.join(nativeRoot, "project.yml");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
@@ -65,6 +66,7 @@ const sourcePaths = {
   catalog: catalogPath,
   authoredPages: authoredPagesPath,
   audioManifest: audioManifestPath,
+  vietnameseMenuCopy: menuCopyPath,
   xcodeProject: xcodeProjectPath,
   schema: schemaPath,
   cityLibrary: cityLibraryPath,
@@ -104,6 +106,10 @@ function stableID(parts) {
 
 function relative(filePath) {
   return path.relative(repoRoot, filePath).replaceAll(path.sep, "/");
+}
+
+function jsonText(value) {
+  return JSON.stringify(value ?? []);
 }
 
 function csvCell(value) {
@@ -232,11 +238,12 @@ function main() {
   const catalog = readJSON(catalogPath);
   const authoredBundle = readJSON(authoredPagesPath);
   const audioManifest = readJSON(audioManifestPath);
+  const menuPayload = readJSON(menuCopyPath);
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : null;
   const xcodeProject = fs.readFileSync(xcodeProjectPath, "utf8");
   const schema = fs.readFileSync(schemaPath, "utf8");
   const inputHash = sha256(
-    [catalogPath, authoredPagesPath, audioManifestPath, schemaPath, ...(cityLibrary ? [cityLibraryPath] : [])]
+    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, ...(cityLibrary ? [cityLibraryPath] : [])]
       .map((filePath) => `${relative(filePath)}\n${sha256(fs.readFileSync(filePath))}`)
       .join("\n")
   );
@@ -550,6 +557,57 @@ function main() {
     spoken_chunks: Number(page.spokenChunks ?? 0),
     source_ids: (page.sourceIDs ?? []).join("|"),
     rationale: page.rationale,
+  }));
+  const menuHelperPhraseRows = (menuPayload.helperPhrases ?? []).map((phrase, index) => ({
+    id: phrase.id,
+    language_pack_id: languagePackID,
+    vietnamese: phrase.vietnamese,
+    english: phrase.english,
+    pronunciation: phrase.pronunciation,
+    audio_key: phrase.audioKey ?? null,
+    detail_page_id: phrase.detailPageID ?? null,
+    audio_status: phrase.audioStatus,
+    applies_to_json: jsonText(phrase.appliesTo),
+    sort_order: index,
+  }));
+  const menuItemRows = (menuPayload.items ?? []).map((item, index) => ({
+    item_id: item.itemID,
+    language_pack_id: languagePackID,
+    menu_type: item.menuType,
+    category: item.category,
+    subcategory: item.subcategory ?? "",
+    popular: item.popular ? 1 : 0,
+    vietnamese_item: item.vietnameseItem,
+    english_translation: item.englishTranslation,
+    romanized_no_tones: item.romanizedNoTones,
+    sound_out: item.soundOut,
+    notes: item.notes ?? "",
+    at_a_glance: item.atAGlance,
+    what_it_is: item.whatItIs ?? null,
+    usually_includes_json: jsonText(item.usuallyIncludes),
+    how_to_enjoy: item.howToEnjoy ?? null,
+    how_locals_order: item.howLocalsOrder ?? null,
+    worth_knowing: item.worthKnowing ?? null,
+    regional_association: item.regionalAssociation ?? null,
+    origin_posture: item.originPosture ?? null,
+    traveler_caution: item.travelerCaution ?? null,
+    good_to_know: item.goodToKnow,
+    common_options_json: jsonText(item.commonOptions),
+    quick_say_vietnamese: item.quickSayVietnamese,
+    quick_say_english: item.quickSayEnglish,
+    quick_say_sound_out: item.quickSaySoundOut,
+    order_line_vietnamese: item.orderLine?.vietnamese ?? null,
+    order_line_english: item.orderLine?.english ?? null,
+    order_line_pronunciation: item.orderLine?.pronunciation ?? null,
+    order_line_audio_policy: item.orderLine?.audioPolicy ?? null,
+    helper_phrase_ids_json: jsonText(item.helperPhraseIDs),
+    editorial_review_status: item.editorialReview?.status ?? null,
+    editorial_review_reviewed_by: item.editorialReview?.reviewedBy ?? null,
+    editorial_review_reviewed_at: item.editorialReview?.reviewedAt ?? null,
+    editorial_review_checks_json: jsonText(item.editorialReview?.checks),
+    editorial_review_review_note: item.editorialReview?.reviewNote ?? null,
+    source_path: relative(menuCopyPath),
+    sort_order: index,
   }));
 
   const sectionRows = [];
@@ -1948,6 +2006,8 @@ function main() {
     insertRows("audio_usage", ["id", "audio_asset_id", "usage_kind", "target_kind", "target_id", "expected_text", "normalized_expected_text", "is_primary", "source_path"], audioUsageRows),
     insertRows("audio_text_dedupe", ["language_pack_id", "normalized_text", "preferred_audio_asset_id", "duplicate_count"], audioTextDedupeRows),
     insertRows("missing_audio_audit", ["id", "language_pack_id", "target_kind", "target_id", "expected_text", "normalized_expected_text", "source_path", "reason", "severity", "release_blocking", "suggested_audio_key", "created_at"], missingAudioRows),
+    insertRows("vietnamese_menu_helper_phrase", ["id", "language_pack_id", "vietnamese", "english", "pronunciation", "audio_key", "detail_page_id", "audio_status", "applies_to_json", "sort_order"], menuHelperPhraseRows),
+    insertRows("vietnamese_menu_item", ["item_id", "language_pack_id", "menu_type", "category", "subcategory", "popular", "vietnamese_item", "english_translation", "romanized_no_tones", "sound_out", "notes", "at_a_glance", "what_it_is", "usually_includes_json", "how_to_enjoy", "how_locals_order", "worth_knowing", "regional_association", "origin_posture", "traveler_caution", "good_to_know", "common_options_json", "quick_say_vietnamese", "quick_say_english", "quick_say_sound_out", "order_line_vietnamese", "order_line_english", "order_line_pronunciation", "order_line_audio_policy", "helper_phrase_ids_json", "editorial_review_status", "editorial_review_reviewed_by", "editorial_review_reviewed_at", "editorial_review_checks_json", "editorial_review_review_note", "source_path", "sort_order"], menuItemRows),
     insertRows("search_document", ["rowid", "id", "language_pack_id", "target_kind", "target_id", "title_text", "target_text", "accentless_target_text", "pronunciation_text", "english_text", "alias_text", "category_text", "related_text", "priority_tier", "is_canonical_page"], searchRows),
   ].filter(Boolean);
 
@@ -1996,7 +2056,9 @@ function main() {
     'audioAssets', (SELECT count(*) FROM audio_asset),
     'audioUsages', (SELECT count(*) FROM audio_usage),
     'audioTextDedupeRows', (SELECT count(*) FROM audio_text_dedupe),
-    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit)
+    'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
+    'vietnameseMenuHelperPhrases', (SELECT count(*) FROM vietnamese_menu_helper_phrase),
+    'vietnameseMenuItems', (SELECT count(*) FROM vietnamese_menu_item)
   );`));
 
   const authoredPagesOrAliases = authoredPages.filter((page) => {
@@ -2545,6 +2607,8 @@ function main() {
       cityCount: cityRows.length,
       cityPlaceCount: cityPlaceRows.length,
       cityTagCount: phraseCityTagRows.length,
+      vietnameseMenuItemCount: menuItemRows.length,
+      vietnameseMenuHelperPhraseCount: menuHelperPhraseRows.length,
     },
     unresolvedReferences: {
       detailPageIDCount: unresolvedDetailPageRefs.length,

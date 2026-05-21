@@ -35,6 +35,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertNil(Bundle.main.url(forResource: "viet-phrase-catalog", withExtension: "json"))
         XCTAssertNil(Bundle.main.url(forResource: "viet-authored-listing-pages", withExtension: "json"))
         XCTAssertNil(Bundle.main.url(forResource: "viet-authored-audio-audit", withExtension: "json"))
+        XCTAssertNil(Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json"))
     }
 
     func testSQLiteSanityCountsMatchGeneratedReport() throws {
@@ -54,6 +55,34 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(snapshot.counts.pages, report.generatedCounts.pages)
         XCTAssertEqual(snapshot.counts.aliases, report.generatedCounts.aliases)
         XCTAssertEqual(snapshot.counts.searchDocuments, report.generatedCounts.searchDocuments)
+    }
+
+    func testSQLiteIncludesCityAndVietnameseMenuRuntimeSurfaces() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let report = try loadBundledReport()
+        let menuPayload = try repository.loadVietnameseMenuPayload()
+        let phoBo = try XCTUnwrap(menuPayload.items.first { $0.itemID == "food-pho-bo" })
+
+        XCTAssertEqual(report.validation.cityCount, 5)
+        XCTAssertGreaterThan(report.validation.cityPlaceCount, 0)
+        XCTAssertGreaterThan(report.validation.cityTagCount, 0)
+        XCTAssertEqual(menuPayload.items.count, report.generatedCounts.vietnameseMenuItems)
+        XCTAssertEqual(menuPayload.helperPhrases?.count, report.generatedCounts.vietnameseMenuHelperPhrases)
+        XCTAssertEqual(phoBo.vietnameseItem, "Phở bò")
+        XCTAssertEqual(phoBo.englishTranslation, "Beef noodle soup")
+        XCTAssertTrue(phoBo.usuallyIncludes.contains("beef broth"))
+        XCTAssertTrue(phoBo.helperPhraseIDs?.contains("menu-not-spicy") == true)
+    }
+
+    func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        let report = try loadBundledReport()
+
+        XCTAssertNil(Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json"))
+        XCTAssertEqual(VietnameseMenuCatalog.allItems.count, report.generatedCounts.vietnameseMenuItems)
+        XCTAssertEqual(VietnameseMenuCatalog.helperPhrases.count, report.generatedCounts.vietnameseMenuHelperPhrases)
+        XCTAssertEqual(VietnameseMenuCatalog.detailPage(withID: "viet-menu-food-pho-bo")?.title, "Phở bò")
     }
 
     func testSQLitePreviewMapsRepresentativePhraseTowardExistingAppConcepts() throws {
@@ -484,11 +513,16 @@ private struct VietSQLiteFixtureReport: Decodable {
         let pages: Int
         let aliases: Int
         let searchDocuments: Int
+        let vietnameseMenuHelperPhrases: Int
+        let vietnameseMenuItems: Int
     }
 
     struct Validation: Decodable {
         let integrityCheck: String
+        let cityCount: Int
         let cityLibraryPageCount: Int
+        let cityPlaceCount: Int
+        let cityTagCount: Int
     }
 
     struct Audio: Decodable {
