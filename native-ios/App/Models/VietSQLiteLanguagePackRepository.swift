@@ -1858,6 +1858,7 @@ enum VietSQLitePhraseGraphRuntime {
     static let environmentVariable = "SPEAKLOCAL_USE_SQLITE_GRAPH"
     static let disabledLaunchArgument = "--disable-sqlite-phrase-graph"
     static let disabledEnvironmentVariable = "SPEAKLOCAL_DISABLE_SQLITE_GRAPH"
+    private static let canonicalPageIDCacheLimit = 512
     private static let detailPageCacheLimit = 96
     private static let searchResultCacheLimit = 32
     private static let cacheLock = NSLock()
@@ -1891,11 +1892,17 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func canonicalPageID(for pageIDOrAlias: String) -> String? {
+        if let cachedResult = cachedCanonicalPageID(for: pageIDOrAlias) {
+            return cachedResult
+        }
+
         guard isEnabled, let repository = repository() else {
             return nil
         }
 
-        return try? repository.canonicalPageID(forPageIDOrAlias: pageIDOrAlias)
+        let canonicalPageID = try? repository.canonicalPageID(forPageIDOrAlias: pageIDOrAlias)
+        storeCachedCanonicalPageID(canonicalPageID, for: pageIDOrAlias)
+        return canonicalPageID
     }
 
     static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
@@ -1961,11 +1968,7 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func canOpenPage(_ pageID: String) -> Bool {
-        guard isEnabled, let repository = repository() else {
-            return false
-        }
-
-        return ((try? repository.canOpenPage(pageIDOrAlias: pageID)) ?? false)
+        canonicalPageID(for: pageID) != nil
     }
 
     private static func repository(surface: String = "VietSQLitePhraseGraphRuntime") -> VietSQLiteLanguagePackRepository? {
@@ -2004,6 +2007,31 @@ enum VietSQLitePhraseGraphRuntime {
 
         touchCacheKey(key, in: &cachedSearchResultKeys)
         return results
+    }
+
+    private static func cachedCanonicalPageID(for key: String) -> String?? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let cachedResult = cachedCanonicalPageIDsByAlias[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedCanonicalPageIDKeys)
+        return .some(cachedResult.value)
+    }
+
+    private static func storeCachedCanonicalPageID(_ value: String?, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedCanonicalPageIDsByAlias[key] = CachedCanonicalPageID(value)
+        touchCacheKey(key, in: &cachedCanonicalPageIDKeys)
+        trimCache(
+            keys: &cachedCanonicalPageIDKeys,
+            limit: canonicalPageIDCacheLimit,
+            removeValue: { cachedCanonicalPageIDsByAlias.removeValue(forKey: $0) }
+        )
     }
 
     private static func storeCachedSearchResults(_ results: [PhraseSearchResult], for key: String) {
@@ -2059,7 +2087,31 @@ enum VietSQLitePhraseGraphRuntime {
         }
     }
 
+    private enum CachedCanonicalPageID {
+        case found(String)
+        case missing
+
+        init(_ value: String?) {
+            if let value {
+                self = .found(value)
+            } else {
+                self = .missing
+            }
+        }
+
+        var value: String? {
+            switch self {
+            case .found(let value):
+                return value
+            case .missing:
+                return nil
+            }
+        }
+    }
+
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
+    private static var cachedCanonicalPageIDsByAlias: [String: CachedCanonicalPageID] = [:]
+    private static var cachedCanonicalPageIDKeys: [String] = []
     private static var cachedDetailPagesByID: [String: PhraseDetailPage] = [:]
     private static var cachedDetailPageKeys: [String] = []
     private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
@@ -2070,6 +2122,12 @@ enum VietSQLitePhraseGraphRuntime {
 #if DEBUG
     static var detailPageCacheLimitForTesting: Int { detailPageCacheLimit }
     static var searchResultCacheLimitForTesting: Int { searchResultCacheLimit }
+
+    static var cachedCanonicalPageIDCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedCanonicalPageIDsByAlias.count
+    }
 
     static var cachedDetailPageCountForTesting: Int {
         cacheLock.lock()
@@ -2104,6 +2162,8 @@ enum VietSQLitePhraseGraphRuntime {
     private static func clearCachesForTesting() {
         cacheLock.lock()
         defer { cacheLock.unlock() }
+        cachedCanonicalPageIDsByAlias.removeAll()
+        cachedCanonicalPageIDKeys.removeAll()
         cachedDetailPagesByID.removeAll()
         cachedDetailPageKeys.removeAll()
         cachedSearchResultsByKey.removeAll()

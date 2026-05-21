@@ -5,6 +5,11 @@ import UIKit
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
+    override func tearDown() {
+        PracticeMatchSnapshotCache.clearForTesting()
+        super.tearDown()
+    }
+
     func testSystemTabsMapRoutesToAppleTabBarDestinations() {
         XCTAssertEqual(AppSystemTab(route: .home), .home)
         XCTAssertEqual(AppSystemTab(route: .browse), .browse)
@@ -64,6 +69,35 @@ final class AppChromeTests: XCTestCase {
                 isPracticeThreadPresented: true
             )
         )
+    }
+
+    func testSearchReturnFocusPolicyAppliesEachRequestOnce() {
+        XCTAssertTrue(SearchReturnFocusPolicy.shouldApply(requestID: 7, lastAppliedRequestID: nil))
+        XCTAssertFalse(SearchReturnFocusPolicy.shouldApply(requestID: 7, lastAppliedRequestID: 7))
+        XCTAssertTrue(SearchReturnFocusPolicy.shouldApply(requestID: 8, lastAppliedRequestID: 7))
+    }
+
+    func testAdminBackdropPreheatPlanDeduplicatesAgainstReservedImages() {
+        let pendingNames = AdminBackdropImagePreheatPlan.pendingImageNames(
+            requestedImageNames: ["HeroCityHuePlacePerfumeRiver", "HeroCityHuePlacePerfumeRiver", "HeroCityHanoiPlaceLongBienBridge"],
+            reservedImageNames: Set(["HeroCityHanoiPlaceLongBienBridge"])
+        )
+
+        XCTAssertEqual(pendingNames, ["HeroCityHuePlacePerfumeRiver"])
+    }
+
+    func testPracticeMatchSnapshotCacheTracksInFlightLoads() {
+        let key = PracticeMatchSnapshotCacheKey(
+            practicePageIDs: ["viet-thank-you"],
+            savedPageIDs: ["viet-excuse-sorry"]
+        )
+
+        XCTAssertTrue(PracticeMatchSnapshotCache.beginLoading(key))
+        XCTAssertFalse(PracticeMatchSnapshotCache.beginLoading(key))
+
+        PracticeMatchSnapshotCache.finishLoading(key)
+
+        XCTAssertTrue(PracticeMatchSnapshotCache.beginLoading(key))
     }
 
     func testPracticeOverlayUsesDarkTopAndStatusChrome() {

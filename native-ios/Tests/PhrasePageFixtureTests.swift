@@ -1715,6 +1715,15 @@ final class PhrasePageFixtureTests: XCTestCase {
         XCTAssertTrue(manifest.hasPlayableEntry(for: xinChaoAudioKey, matchingText: "Xin"))
     }
 
+    func testSQLiteCanonicalPageIDLookupsAreCached() throws {
+        enableSQLiteRuntimeForTesting()
+
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedCanonicalPageIDCountForTesting, 0)
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.canonicalPageID(for: "viet-thank-you"), "viet-phrase-polite-2")
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.canonicalPageID(for: "viet-thank-you"), "viet-phrase-polite-2")
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedCanonicalPageIDCountForTesting, 1)
+    }
+
     func testAudioPlaybackServiceConfiguresSessionBeforeFirstPlayback() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         var events: [String] = []

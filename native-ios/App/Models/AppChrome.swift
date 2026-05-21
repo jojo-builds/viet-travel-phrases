@@ -157,7 +157,7 @@ final class LocalUserIntentStore: ObservableObject {
         }
 
         var pages = recentPages.filter { page in
-            Self.canonicalPageID(forOpenablePageID: page.pageID) != canonicalPageID
+            page.pageID != canonicalPageID
         }
         pages.insert(
             RecentPhrasePage(pageID: canonicalPageID, openedAt: Date(), source: source),
@@ -204,15 +204,16 @@ final class LocalUserIntentStore: ObservableObject {
             return ids
         }
 
-        let filteredIDs = ids.filter { id in
-            Self.canonicalPageID(forOpenablePageID: id) != canonicalPageID
+        let canonicalIDs = Self.canonicalizedPageIDs(ids)
+        let filteredIDs = canonicalIDs.filter { id in
+            id != canonicalPageID
         }
 
-        if filteredIDs.count != ids.count {
+        if filteredIDs.count != canonicalIDs.count {
             return filteredIDs
         }
 
-        return [canonicalPageID] + Self.canonicalizedPageIDs(ids)
+        return [canonicalPageID] + canonicalIDs
     }
 
     private func persist<T: Encodable>(_ value: T, key: String) {
@@ -236,9 +237,7 @@ final class LocalUserIntentStore: ObservableObject {
             return false
         }
 
-        return ids.contains { id in
-            Self.canonicalPageID(forOpenablePageID: id) == canonicalPageID
-        }
+        return ids.contains(canonicalPageID)
     }
 
     private static func canonicalizedRecentPages(_ pages: [RecentPhrasePage]) -> [RecentPhrasePage] {

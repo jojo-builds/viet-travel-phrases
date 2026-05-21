@@ -8,12 +8,20 @@ struct SearchReturnFocusRequest: Equatable {
     let scrollID: String
 }
 
+enum SearchReturnFocusPolicy {
+    static func shouldApply(requestID: Int, lastAppliedRequestID: Int?) -> Bool {
+        requestID != lastAppliedRequestID
+    }
+}
+
 struct SearchPageView: View {
     @Environment(\.dismissSearch) private var dismissSystemSearch
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
+    @State private var returnFocusTask: Task<Void, Never>?
+    @State private var appliedReturnFocusRequestID: Int?
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
@@ -139,6 +147,8 @@ struct SearchPageView: View {
         .onDisappear {
             searchRefreshTask?.cancel()
             searchRefreshTask = nil
+            returnFocusTask?.cancel()
+            returnFocusTask = nil
         }
     }
 
@@ -215,12 +225,24 @@ struct SearchPageView: View {
     }
 
     private func applyReturnFocusIfNeeded(_ request: SearchReturnFocusRequest?, scrollProxy: ScrollViewProxy) {
-        guard let request else {
+        guard
+            let request,
+            SearchReturnFocusPolicy.shouldApply(
+                requestID: request.id,
+                lastAppliedRequestID: appliedReturnFocusRequestID
+            )
+        else {
             return
         }
 
-        Task { @MainActor in
+        appliedReturnFocusRequestID = request.id
+        returnFocusTask?.cancel()
+        returnFocusTask = Task { @MainActor in
             try? await Task.sleep(nanoseconds: 120_000_000)
+            guard !Task.isCancelled else {
+                return
+            }
+
             withAnimation(.snappy(duration: 0.24)) {
                 scrollProxy.scrollTo(request.scrollID, anchor: .center)
             }
