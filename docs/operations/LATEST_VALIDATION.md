@@ -10,6 +10,38 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Main Merge Sweep Evidence
+
+Current `main` evidence from the 2026-05-21 non-paywall/non-messages merge sweep:
+
+- validated app/content commit on `main`: `c6c795b3a` (`Reconcile merged city detail phrase rows`)
+- merged lanes: `feature/admin-photo-backdrop-polish`, `feature/city-pages`, `feature/practice-area`, `feature/homepage-design`
+- explicitly skipped lanes: `feature/paywall`, `feature/messages-section`, `archive/messages-section-20260516`, and old `integration/*` worktrees
+- merge reconciliation preserved Ba Na Hills journey utility rows, Dragon Bridge map/stop rows, city generated resources, and the homepage playback dock fit checkpoint
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `node native-ios/scripts/validate-viet-city-copy.js`
+  - passed: `5` hubs, `500` city noun pages, `500` unique target heroes
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`
+  - passed: `19` scenarios, `1747` clusters, `1765` phrases, `1758` pages, `0` release-blocking missing-audio rows, `8325` relations
+- `node native-ios/scripts/validate-tier-one-listing-pages.js`
+  - passed: `150` strong Tier 1 families, `0` failing rows
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js`
+  - passed: `355` handwritten Vietnamese menu item pages and `15` ready helper phrases
+- XcodeBuildMCP simulator regression test
+  - passed: `SpeakLocalNativeTests/AppChromeTests/testEntityDetailPagesHideGeneratedPlaceTemplateRows`
+- XcodeBuildMCP simulator focused tests, `SpeakLocalNativeTests/AppChromeTests` plus `SpeakLocalNativeTests/PracticeNativeMVPTests`
+  - passed: `189` tests, `0` failures
+- XcodeBuildMCP simulator build/install/launch from `main`
+  - passed on booted `iPhone 17 Pro` simulator
+
+No physical iPhone build was run in this pass because the request only asked to merge lanes to `main`.
+
 ## Current Main Thermal Bug Hunt Evidence
 
 Current `main` evidence from the 2026-05-21 native thermal bug hunt:
