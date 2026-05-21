@@ -275,6 +275,7 @@ enum AppChromeLayout {
     static let chromeSeparationLayerZIndex: Double = 360
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
+    static let bottomAdminHitTestLayerZIndex: Double = 430
     static let topAdminHorizontalPadding: CGFloat = 24
     static let topAdminTopPadding: CGFloat = 10
     static let topAdminControlSize: CGFloat = 47
@@ -288,6 +289,7 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
+    static let bottomAdminHitTestEnvelopeHeight: CGFloat = PhrasePageStyle.bottomChromeContentClearance
 
     static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
         if showsMenuSectionChrome {

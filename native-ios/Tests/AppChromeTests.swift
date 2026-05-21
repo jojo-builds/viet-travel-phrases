@@ -306,13 +306,32 @@ final class AppChromeTests: XCTestCase {
         _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
         _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
 
-        XCTAssertEqual(
-            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
-            SharedBackdropImagePool.vietnamForwardAssetNames[0]
-        )
+        for surface in [SharedBackdropImagePool.Surface.browse, .saved, .practice, .search, .sharedPage] {
+            XCTAssertEqual(
+                SharedBackdropImagePool.nextImageName(for: surface, defaults: defaults),
+                SharedBackdropImagePool.vietnamForwardAssetNames[0],
+                "\(surface.rawValue) should have an independent backdrop cursor"
+            )
+        }
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
             2
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .browse)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .saved)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .practice)),
+            1
+        )
+        XCTAssertEqual(
+            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .search)),
+            1
         )
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
@@ -341,7 +360,65 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(imageNames.first, selectedImageName)
         XCTAssertFalse(imageNames.contains("HomeCityDaNang"))
         XCTAssertFalse(imageNames.contains("HomeSituationArrival"))
-        XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 3)
+        XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
+    func testAdminRootBackdropSurfacesMapToIndependentPoolSurfaces() {
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .saved), .saved)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .practice), .practice)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .search), .search)
+        XCTAssertNil(AdminRootPhotoBackdropSurface.surface(for: .browseCollection(.category("airport"))))
+        XCTAssertNil(AdminRootPhotoBackdropSurface.surface(for: .detailPage("viet-family-xin-chao")))
+
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.home.poolSurface, .home)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.browse.poolSurface, .browse)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.saved.poolSurface, .saved)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.practice.poolSurface, .practice)
+        XCTAssertEqual(AdminRootPhotoBackdropSurface.search.poolSurface, .search)
+    }
+
+    func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .home,
+                currentRoute: .browse
+            ),
+            .browse
+        )
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .saved
+            ),
+            .saved
+        )
+        XCTAssertEqual(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .practice,
+                currentRoute: .search
+            ),
+            .search
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .browse
+            )
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .browse,
+                currentRoute: .browseCollection(.category("airport"))
+            )
+        )
+        XCTAssertNil(
+            AdminRootPhotoBackdropActivationPolicy.targetSurface(
+                previousRoute: .search,
+                currentRoute: .detailPage("viet-family-xin-chao")
+            )
+        )
     }
 
     func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {

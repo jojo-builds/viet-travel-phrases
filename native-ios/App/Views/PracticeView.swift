@@ -50,6 +50,8 @@ struct PracticeView: View {
     let scrollToTopTrigger: Int
     let topContentClearance: CGFloat
     let presentationStyle: PracticePresentationStyle
+    let photoBackdropState: AdminRootPhotoBackdropState
+    let isPhotoBackdropVisible: Bool
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
     var onDismiss: () -> Void
@@ -87,6 +89,8 @@ struct PracticeView: View {
         scrollToTopTrigger: Int = 0,
         topContentClearance: CGFloat = 0,
         presentationStyle: PracticePresentationStyle = .route,
+        photoBackdropState: AdminRootPhotoBackdropState = .fallback,
+        isPhotoBackdropVisible: Bool = false,
         progressStore: LocalPracticeProgressStore = LocalPracticeProgressStore(),
         messageStore: LocalPracticeMessageStore = LocalPracticeMessageStore(),
         onOpenDetail: @escaping (String) -> Void,
@@ -105,6 +109,8 @@ struct PracticeView: View {
         self.scrollToTopTrigger = scrollToTopTrigger
         self.topContentClearance = topContentClearance
         self.presentationStyle = presentationStyle
+        self.photoBackdropState = photoBackdropState
+        self.isPhotoBackdropVisible = isPhotoBackdropVisible
         self.onOpenDetail = onOpenDetail
         self.onBrowseTapped = onBrowseTapped
         self.onDismiss = onDismiss
@@ -126,6 +132,8 @@ struct PracticeView: View {
             requestedMode: startRequest?.mode ?? initialMode,
             topContentClearance: topContentClearance,
             presentationStyle: presentationStyle,
+            photoBackdropState: photoBackdropState,
+            isPhotoBackdropVisible: isPhotoBackdropVisible,
             onBrowseTapped: onBrowseTapped,
             onDismiss: onDismiss,
             onCloseToOrigin: onCloseMatchToOrigin,
@@ -4430,6 +4438,8 @@ private struct PracticeMatchRootView: View {
     let requestedMode: PracticeMode?
     let topContentClearance: CGFloat
     let presentationStyle: PracticePresentationStyle
+    let photoBackdropState: AdminRootPhotoBackdropState
+    let isPhotoBackdropVisible: Bool
     let onBrowseTapped: () -> Void
     let onDismiss: () -> Void
     let onCloseToOrigin: () -> Void
@@ -4443,7 +4453,7 @@ private struct PracticeMatchRootView: View {
 
     var body: some View {
         ZStack {
-            if presentationStyle == .route {
+            if presentationStyle == .route && !usesPhotoBackdrop {
                 PhrasePageStyle.pageBackground
                     .ignoresSafeArea()
             } else {
@@ -4519,6 +4529,7 @@ private struct PracticeMatchRootView: View {
         let hub = PracticeMatchHubView(
             state: loadState,
             topContentClearance: presentationStyle == .route ? topContentClearance : 0,
+            usesPhotoBackdrop: usesPhotoBackdrop,
             onStartSource: { startSource($0, dismissalTarget: .hub) },
             onBrowseTapped: onBrowseTapped,
             onRetry: reloadSnapshotIfNeeded
@@ -4547,6 +4558,17 @@ private struct PracticeMatchRootView: View {
             ) {
                 hub
             }
+        } else if usesPhotoBackdrop {
+            AdminPhotoBackdropSurfaceView(
+                surface: .practice,
+                backdropImageName: photoBackdropState.imageName,
+                activationToken: photoBackdropState.activationToken,
+                isActive: isActive && activeSession == nil,
+                isVisible: isPhotoBackdropVisible && activeSession == nil,
+                scrollToTopTrigger: scrollToTopTrigger
+            ) { _ in
+                hub
+            }
         } else {
             hub
         }
@@ -4554,6 +4576,10 @@ private struct PracticeMatchRootView: View {
 
     private var isPresentingMatch: Bool {
         isActive && activeSession != nil
+    }
+
+    private var usesPhotoBackdrop: Bool {
+        presentationStyle == .route && isPhotoBackdropVisible && activeSession == nil
     }
 
     private var sourceOptions: [PracticeMatchSource] {
@@ -4899,40 +4925,52 @@ private struct PracticeMatchDirectStartCard: View {
 private struct PracticeMatchHubView: View {
     let state: PracticeMatchDataState
     let topContentClearance: CGFloat
+    let usesPhotoBackdrop: Bool
     let onStartSource: (PracticeMatchSource) -> Void
     let onBrowseTapped: () -> Void
     let onRetry: () -> Void
 
+    @ViewBuilder
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 22) {
-                PracticeMatchHero()
-
-                switch state {
-                case .loading:
-                    PracticeLoadingCard()
-                case .failed(let message):
-                    PracticeErrorCard(message: message, onRetry: onRetry)
-                case .loaded(let snapshot):
-                    PracticeMatchQuickSection(
-                        quickSource: snapshot.quickSource,
-                        practiceSource: snapshot.practiceSource,
-                        savedSource: snapshot.savedSource,
-                        onStartSource: onStartSource,
-                        onBrowseTapped: onBrowseTapped
-                    )
-
-                    PracticeMatchTopicList(
-                        sources: snapshot.topicSources,
-                        onStartSource: onStartSource
-                    )
+        Group {
+            if usesPhotoBackdrop {
+                contentStack
+            } else {
+                ScrollView(.vertical, showsIndicators: false) {
+                    contentStack
                 }
             }
-            .padding(.horizontal, PracticeLayout.horizontalPadding)
-            .padding(.top, 22 + topContentClearance)
-            .padding(.bottom, HomeLayout.bottomChromeContentClearance)
         }
         .accessibilityIdentifier("Practice.Match.Hub")
+    }
+
+    private var contentStack: some View {
+        VStack(alignment: .leading, spacing: 22) {
+            PracticeMatchHero()
+
+            switch state {
+            case .loading:
+                PracticeLoadingCard()
+            case .failed(let message):
+                PracticeErrorCard(message: message, onRetry: onRetry)
+            case .loaded(let snapshot):
+                PracticeMatchQuickSection(
+                    quickSource: snapshot.quickSource,
+                    practiceSource: snapshot.practiceSource,
+                    savedSource: snapshot.savedSource,
+                    onStartSource: onStartSource,
+                    onBrowseTapped: onBrowseTapped
+                )
+
+                PracticeMatchTopicList(
+                    sources: snapshot.topicSources,
+                    onStartSource: onStartSource
+                )
+            }
+        }
+        .padding(.horizontal, PracticeLayout.horizontalPadding)
+        .padding(.top, (usesPhotoBackdrop ? 18 : 22) + topContentClearance)
+        .padding(.bottom, HomeLayout.bottomChromeContentClearance)
     }
 }
 

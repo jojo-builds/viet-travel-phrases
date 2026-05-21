@@ -4,53 +4,66 @@ struct BrowsePageView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
+    var usesPhotoBackdrop = false
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
     var onSearchQuery: (String) -> Void
 
+    @ViewBuilder
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+        if usesPhotoBackdrop {
+            contentStack
+                .accessibilityIdentifier("BrowsePageView")
+        } else {
+            ZStack(alignment: .bottom) {
+                PhrasePageStyle.pageBackground
+                    .ignoresSafeArea()
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
-                        header
-                            .id(Self.scrollTopID)
-
-                        situationGrid
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        menuGuideShelf
-
-                        cityShortcuts
-
-                        startHereShelf
-
-                        phraseFamilies
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        compactSearchHeader
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        contentStack
                     }
-                    .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    }
                 }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
-                }
+                .ignoresSafeArea(edges: .top)
             }
-            .ignoresSafeArea(edges: .top)
+            .accessibilityIdentifier("BrowsePageView")
         }
-        .accessibilityIdentifier("BrowsePageView")
     }
 
     private static let scrollTopID = "BrowsePageTop"
 
+    private var contentStack: some View {
+        VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
+            header
+                .id(Self.scrollTopID)
+
+            situationGrid
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+            menuGuideShelf
+
+            cityShortcuts
+
+            startHereShelf
+
+            phraseFamilies
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+            compactSearchHeader
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+        }
+        .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
+    }
+
     private var header: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
+            if !usesPhotoBackdrop {
+                HeroMastheadImage()
+            }
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {

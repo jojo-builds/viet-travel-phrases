@@ -257,24 +257,126 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(tabBar.waitForExistence(timeout: 2))
     }
 
+    func testBrowseRootPhotoBackdropHidesAndRestoresContent() {
+        let app = launchApp(arguments: ["--browse", "--reset-demo-state"])
+        assertRootPhotoBackdropHidesAndRestoresContent(
+            in: app,
+            contentIdentifier: "Browse.PhotoBackdrop.Content"
+        )
+    }
+
+    func testSavedRootPhotoBackdropHidesAndRestoresContent() {
+        let app = launchApp(arguments: ["--saved", "--seed-returning-user-shelves"])
+        assertRootPhotoBackdropHidesAndRestoresContent(
+            in: app,
+            contentIdentifier: "Saved.PhotoBackdrop.Content"
+        )
+    }
+
+    func testPracticeRootPhotoBackdropHidesAndRestoresContent() {
+        let app = launchApp(arguments: ["--practice", "--reset-demo-state"])
+        assertRootPhotoBackdropHidesAndRestoresContent(
+            in: app,
+            contentIdentifier: "Practice.PhotoBackdrop.Content"
+        )
+    }
+
+    func testSearchRootPhotoBackdropHidesAndRestoresContent() {
+        let app = launchApp(arguments: ["--search", "--reset-demo-state"])
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+        assertRootPhotoBackdropHidesAndRestoresContent(
+            in: app,
+            contentIdentifier: "Search.PhotoBackdrop.Content"
+        )
+    }
+
+    func testSearchFocusedBackdropTapDoesNotEnterImmersiveMode() {
+        let app = launchApp(arguments: ["--search", "--search-focused", "--reset-demo-state"])
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+        let content = app.descendants(matching: .any)["Search.PhotoBackdrop.Content"]
+        XCTAssertTrue(content.waitForExistence(timeout: 3))
+        let searchField = searchField(in: app)
+        XCTAssertTrue(searchField.waitForExistence(timeout: 2))
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertTrue(
+            content.waitForExistence(timeout: 1),
+            "Tapping Search's visible photo while focused should not hide the search surface."
+        )
+
+        searchField.tap()
+        searchField.typeText("hotel")
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+    }
+
+    func testSearchRootFieldFocusesFromNormalBackdropSurface() {
+        let app = launchApp(arguments: ["--search", "--reset-demo-state"])
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 3))
+        XCTAssertFalse(
+            app.keyboards.firstMatch.waitForExistence(timeout: 0.5),
+            "Search should not focus until the user taps the visible search field."
+        )
+
+        let searchField = searchField(in: app)
+        XCTAssertTrue(searchField.waitForExistence(timeout: 2))
+        searchField.tap()
+        searchField.typeText("hotel")
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+    }
+
+    func testSearchBrowseAllActivatesBrowsePhotoBackdrop() {
+        let app = launchApp(arguments: ["--search-query", "zzzzzz", "--reset-demo-state"])
+        var didTapBrowseAll = false
+        for _ in 0..<8 {
+            let browseAll = app.descendants(matching: .any)["Search.BrowseAllSituations"]
+            if browseAll.waitForExistence(timeout: 1), browseAll.isHittable {
+                browseAll.tap()
+                didTapBrowseAll = true
+                break
+            }
+            app.swipeUp()
+        }
+        XCTAssertTrue(didTapBrowseAll, "Search recovery Browse-all button should scroll into a tappable position.")
+        XCTAssertTrue(
+            app.descendants(matching: .any)["Browse.PhotoBackdrop.Content"].waitForExistence(timeout: 3),
+            "Direct Search recovery navigation should land on Browse with the root photo backdrop active."
+        )
+    }
+
+    func testSavedBackdropKeepsSectionRailJumpUsable() {
+        let app = launchApp(arguments: ["--saved", "--seed-returning-user-shelves"])
+        let content = app.descendants(matching: .any)["Saved.PhotoBackdrop.Content"]
+        XCTAssertTrue(content.waitForExistence(timeout: 3))
+
+        for _ in 0..<3 where !app.staticTexts["Foods"].exists && !app.staticTexts["Food"].exists {
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(
+            app.staticTexts["Foods"].exists || app.staticTexts["Food"].exists || app.staticTexts["Saved"].exists,
+            "Saved should remain scrollable and readable inside the backdrop sheet."
+        )
+    }
+
     func testBottomChromeControlsWinEdgeBiasedTapsOverDenseDetailContent() {
         verifyDockTapFromDenseDetail("Browse", point: .center) { app in
-            XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+            XCTAssertTrue(app.staticTexts["Browse"].waitForExistence(timeout: 3))
         }
         verifyDockTapFromDenseDetail("Browse", point: .leadingEdge) { app in
-            XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+            XCTAssertTrue(app.staticTexts["Browse"].waitForExistence(timeout: 3))
         }
         verifyDockTapFromDenseDetail("Browse", point: .trailingEdge) { app in
-            XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+            XCTAssertTrue(app.staticTexts["Browse"].waitForExistence(timeout: 3))
         }
         verifyDockTapFromDenseDetail("Home", point: .trailingEdge) { app in
             XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
         }
         verifyDockTapFromDenseDetail("Saved", point: .leadingEdge) { app in
-            XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+            XCTAssertTrue(app.staticTexts["Saved"].waitForExistence(timeout: 3))
         }
-        verifyDockTapFromDenseDetail("Messages", point: .bottomEdge) { app in
-            XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+        verifyDockTapFromDenseDetail("Practice", point: .bottomEdge) { app in
+            XCTAssertTrue(app.staticTexts["Practice"].waitForExistence(timeout: 3))
         }
 
         let app = launchDenseDetail()
@@ -484,6 +586,42 @@ final class AdminChromeUITests: XCTestCase {
         )
     }
 
+    private func assertRootPhotoBackdropHidesAndRestoresContent(
+        in app: XCUIApplication,
+        contentIdentifier: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let content = app.descendants(matching: .any)[contentIdentifier]
+        XCTAssertTrue(content.waitForExistence(timeout: 3), file: file, line: line)
+        let tabBar = app.tabBars.firstMatch
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2), file: file, line: line)
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertFalse(
+            content.waitForExistence(timeout: 1),
+            "Tapping the visible admin backdrop should hide the content sheet.",
+            file: file,
+            line: line
+        )
+        XCTAssertFalse(
+            tabBar.exists && tabBar.isHittable,
+            "Admin immersive mode should hide the bottom admin bar.",
+            file: file,
+            line: line
+        )
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.18)).tap()
+        XCTAssertTrue(
+            content.waitForExistence(timeout: 2),
+            "Tapping the immersive admin backdrop should restore the content sheet.",
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertTrue(tabBar.isHittable, "Restoring content should restore the bottom admin bar.", file: file, line: line)
+    }
+
     private func openOrigin(in app: XCUIApplication, title: String, iteration: Int) {
         tapSearchOrigin(in: app, title: title, iteration: iteration)
     }
@@ -524,6 +662,10 @@ final class AdminChromeUITests: XCTestCase {
     }
 
     private func systemTabCoordinate(_ title: String, in app: XCUIApplication) -> XCUICoordinate {
+        app.coordinate(withNormalizedOffset: CGVector(dx: systemTabNormalizedX(title), dy: 0.94))
+    }
+
+    private func systemTabNormalizedX(_ title: String) -> CGFloat {
         let normalizedX: CGFloat
         switch title {
         case "Home":
@@ -540,7 +682,7 @@ final class AdminChromeUITests: XCTestCase {
             normalizedX = 0.5
         }
 
-        return app.coordinate(withNormalizedOffset: CGVector(dx: normalizedX, dy: 0.94))
+        return normalizedX
     }
 
     private func searchField(in app: XCUIApplication) -> XCUIElement {
@@ -705,7 +847,15 @@ final class AdminChromeUITests: XCTestCase {
         assertion: (XCUIApplication) -> Void
     ) {
         let app = launchDenseDetail()
-        openDock(title, in: app)
+        let normalizedX = systemTabNormalizedX(title) + ((point.offset.dx - 0.5) * 0.12)
+        let normalizedY = 0.94 + ((point.offset.dy - 0.5) * 0.06)
+        app.coordinate(
+            withNormalizedOffset: CGVector(
+                dx: max(0.04, min(0.96, normalizedX)),
+                dy: max(0.88, min(0.98, normalizedY))
+            )
+        )
+        .tap()
         assertion(app)
         XCTAssertFalse(app.staticTexts["Hello, older brother / slightly older man"].isHittable)
     }
