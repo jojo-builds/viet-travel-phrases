@@ -153,6 +153,36 @@ Step lists are allowed only when the order is a real safety requirement, such as
 - Manual worker launch prompts should be no more than repo path, task ID, and an instruction to read `.agent/CODEX_MANUAL_TASK_PROMPT.txt` plus the assigned task's `spec.md`.
 - Do not paste the full task body into chat unless the repo files are unavailable.
 
+## Bug Hunt Root Cause Analysis
+
+For bug hunts, symptom reports, repeated regressions, freezes, jitter,
+performance complaints, and unclear-cause tasks, include a Root Cause Analysis
+requirement. Use `docs/task-cards/TEMPLATE-BUG-HUNT-RCA.md` for lightweight task
+cards and `orchestrator/playbooks/root-cause-analysis.md` as the worker
+playbook.
+
+RCA is required for symptom tasks and optional elsewhere. It does not replace
+`superpowers:systematic-debugging`, focused validation, simulator proof, review
+gates, or phone builds.
+
+The task result must include a compact RCA receipt:
+
+- symptom in user-visible language;
+- reproduction or evidence;
+- Five Whys summary, with each why evidence-backed or marked as hypothesis;
+- root cause tied to code, data, state, lifecycle, route, generated resource, or workflow;
+- fix strategy: root-cause fix, mitigation, blocker, or follow-up;
+- regression guard;
+- validation;
+- feature preservation proof;
+- follow-ups.
+
+Hard rule: do not fix the symptom by deleting, hiding, disabling, or narrowing
+existing product behavior unless Jojo explicitly approved that removal. If the
+apparent fix requires removing a route, shelf, control, content surface, audio
+affordance, animation, navigation path, generated resource, or test, the worker
+must stop and escalate.
+
 ## What To Include
 
 Include enough context for the worker to make good decisions:
