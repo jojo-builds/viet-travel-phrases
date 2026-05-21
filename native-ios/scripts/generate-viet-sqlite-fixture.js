@@ -38,9 +38,6 @@ const greetingCategoryIDs = new Set(["greetings", "polite-basics"]);
 const baNaJourneyPageID = "viet-phrase-city-danang-place-ba-na-hills";
 const dragonBridgeLandmarkPageID = "viet-phrase-city-danang-place-dragon-bridge";
 const approvedQuickSayShortcutPairs = [
-  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
-  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
-  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
   ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
   ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
   ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],
@@ -268,6 +265,17 @@ function main() {
     return phrase;
   });
   const authoredPages = authoredBundle.pages ?? [];
+  const handwrittenCityArticlePageIDs = authoredPages
+    .filter((page) => page.tierRole === "city-v1")
+    .filter((page) => page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed")
+    .flatMap((page) => [
+      page.id,
+      String(page.id ?? "").replace(/^viet-family-/, "viet-phrase-"),
+    ])
+    .filter(Boolean);
+  const handwrittenCityArticlePageIDSQL = handwrittenCityArticlePageIDs.length
+    ? handwrittenCityArticlePageIDs.map(sqlValue).join(", ")
+    : "''";
   const cityLibraryPages = (cityLibrary?.pages ?? []).filter((page) => page.status === "approved");
   const cityLibraryPageByPhraseID = new Map(cityLibraryPages.map((page) => [page.id, page]));
   const cityLibraryPhraseIDs = new Set(cityLibraryPages.map((page) => page.id));
@@ -1674,8 +1682,7 @@ function main() {
     }
     return (targetKind === "phrase" && plannedAudioPhraseIDs.has(targetID))
       || (targetKind === "phrase_page" && plannedAudioCanonicalPageIDs.has(targetID))
-      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"))
-      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:viet-practice-expansion-"));
+      || (targetKind === "authored_phrase" && String(targetID ?? "").startsWith("authored:city-"));
   }
 
   function addAudioUsage({ usageKind, targetKind, targetID, expectedText, audioKey, isPrimary, sourcePath }) {
@@ -2122,6 +2129,7 @@ function main() {
         ) THEN 0 ELSE 1 END AS text_only
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
+      WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
     ),
     runs AS (
       SELECT
@@ -2218,6 +2226,7 @@ function main() {
     LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
     LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
+      AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND (
         has_breakdown = 0
         OR has_context_copy = 0
@@ -2337,7 +2346,11 @@ function main() {
           'phrase ending',
           'word',
           'action',
+          'question marker',
           'question ending',
+          'give / provide',
+          'street / sugar',
+          'water / country',
           'place / service',
           'main phrase piece',
           'extra detail',

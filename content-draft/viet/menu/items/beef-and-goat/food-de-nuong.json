@@ -1,0 +1,68 @@
+{
+  "itemID": "food-de-nuong",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Dê nướng",
+  "englishTranslation": "Grilled goat",
+  "romanizedNoTones": "De nuong",
+  "soundOut": "yay noong",
+  "notes": "",
+  "atAGlance": "Dê nướng is grilled goat with smoky edges, usually with satay, herbs, cucumber, and rice paper or muối tiêu chanh, a lime-pepper salt dip.",
+  "whatItIs": "Dê nướng is grilled goat, often smoky and herbal, served with herbs, cucumber, rice paper, and lime-pepper salt or a fermented dip depending on the shop.",
+  "usuallyIncludes": [
+    "grilled goat",
+    "fresh herbs",
+    "cucumber",
+    "rice paper optional",
+    "lime-pepper salt or fermented dip"
+  ],
+  "howToEnjoy": "Wrap goat with herbs and rice paper if served, or eat with cucumber and dipping salt. Goat can be bold, so fresh herbs matter.",
+  "howLocalsOrder": "Order dê nướng as a shared grill plate. Ask for extra rice paper, extra herbs, or less chili before the seasoning is finished.",
+  "worthKnowing": "Goat restaurants in Vietnam are often social, shared-table places; grilled goat is meant to be eaten slowly with herbs and dips.",
+  "goodToKnow": "Grilled goat is usually a shared plate. Herbs, rice paper, cucumber, and dipping salt or fermented dip keep the smoky meat bright.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "less spicy",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần dê nướng.",
+    "english": "I’d like one order of grilled goat.",
+    "pronunciation": "chaw toy moht fuhn yay noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Dê nướng was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

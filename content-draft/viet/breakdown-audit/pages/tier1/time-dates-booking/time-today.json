@@ -1,0 +1,29 @@
+{
+  "pageID": "viet-family-time-today",
+  "phraseText": "Hôm nay",
+  "englishTitle": "Today",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.283Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-time-today",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hôm nay",
+      "english": "today",
+      "keepTogetherReason": "fixed time phrase",
+      "audioKey": "time-2"
+    }
+  ]
+}

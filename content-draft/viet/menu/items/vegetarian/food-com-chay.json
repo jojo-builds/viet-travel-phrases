@@ -1,0 +1,65 @@
+{
+  "itemID": "food-com-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm chay",
+  "englishTranslation": "Vegetarian rice plate",
+  "romanizedNoTones": "Com chay",
+  "soundOut": "kum chai",
+  "notes": "",
+  "atAGlance": "Cơm chay is vegetarian rice plate, usually with rice, tofu, mock meats or vegetables, pickles, and soup.",
+  "whatItIs": "Cơm chay is a vegetarian rice plate with rice, tofu, vegetables, mushrooms, mock meats, pickles, and sometimes soup. The exact set changes by stall.",
+  "usuallyIncludes": [
+    "rice",
+    "tofu or mock meat",
+    "vegetables",
+    "pickles",
+    "soup optional"
+  ],
+  "howToEnjoy": "Treat it like a rice plate: mix bites of rice, vegetables, tofu, and pickles. Ask about egg, fish sauce, or meat stock if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order cơm chay and ask what comes in the plate. Ask for no fish sauce, no egg, or no meat stock before the plate is assembled if needed.",
+  "worthKnowing": "Vietnamese chay rice plates can be temple-simple or mock-meat heavy; the word chay is the start, not the whole dietary conversation.",
+  "goodToKnow": "Mixed restaurants may use shared seasonings, so ask if you need strict vegetarian or vegan boundaries.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "no egg",
+    "extra vegetables"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about fish sauce, egg, and shared utensils if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chay.",
+    "english": "I’d like one order of vegetarian rice plate.",
+    "pronunciation": "chaw toy moht fuhn kum chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

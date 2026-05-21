@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-tom-rim",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm tôm rim",
+  "englishTranslation": "Rice with caramelized shrimp",
+  "romanizedNoTones": "Com tom rim",
+  "soundOut": "kum tom reem",
+  "notes": "",
+  "atAGlance": "Cơm tôm rim is rice with shrimp simmered in a sticky salty-sweet fish-sauce caramel. It is small, punchy, and rice-hungry.",
+  "whatItIs": "Cơm tôm rim is rice with shrimp simmered until glossy in a sweet-salty fish-sauce caramel. The shrimp may be shell-on, which gives the glaze deeper seafood flavor.",
+  "usuallyIncludes": [
+    "rice",
+    "caramelized shrimp",
+    "fish-sauce glaze",
+    "garlic",
+    "pickles or greens"
+  ],
+  "howToEnjoy": "Spoon the shrimp glaze into the rice a little at a time, and check whether the shells are meant to be peeled. Pickles or cucumber help cut the sweetness.",
+  "howLocalsOrder": "Order cơm tôm rim when you want a savory shrimp rice plate. Ask whether the shrimp still have shells, and ask for extra rice if the glaze is rich.",
+  "worthKnowing": "Rim means simmered down until concentrated; on shrimp it creates a sticky, salty-sweet coating that Vietnamese rice is perfect for catching.",
+  "goodToKnow": "Rim means simmered down until the fish-sauce caramel braise clings. This is not a saucy curry or soup.",
+  "commonOptions": [
+    "extra rice",
+    "ask about shells",
+    "less spicy",
+    "extra pickles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains shrimp and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm tôm rim.",
+    "english": "I’d like one order of rice with caramelized shrimp.",
+    "pronunciation": "chaw toy moht fuhn kum tom reem",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm tôm rim was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

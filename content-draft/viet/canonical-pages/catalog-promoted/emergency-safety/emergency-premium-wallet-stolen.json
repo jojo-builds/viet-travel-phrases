@@ -47,26 +47,20 @@
         {
           "id": "chunk-1",
           "vietnamese": "Ví của tôi",
-          "english": "my / mine",
+          "english": "my wallet",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đã bị đánh",
-          "english": "my wallet was stolen",
+          "vietnamese": "đã bị đánh cắp",
+          "english": "was stolen",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cắp",
-          "english": "urgent",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "Ví của tôi đã bị đánh cắp.",
           "english": "My wallet was stolen",
-          "audioKey": null
+          "audioKey": "emergency-premium-wallet-stolen"
         }
       ]
     },

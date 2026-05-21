@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-social-food-good",
+  "phraseText": "Đồ ăn ngon quá",
+  "englishTitle": "The food is so good",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-social-food-good",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đồ",
+      "english": "thing / item"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ngon",
+      "english": "tasty / good"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đồ ăn ngon quá",
+      "english": "The food is so good",
+      "audioKey": "smalltalk-5"
+    }
+  ]
+}

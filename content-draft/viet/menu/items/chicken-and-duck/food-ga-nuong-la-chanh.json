@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-nuong-la-chanh",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà nướng lá chanh",
+  "englishTranslation": "Grilled chicken with lime leaves",
+  "romanizedNoTones": "Ga nuong la chanh",
+  "soundOut": "gah noong lah chan",
+  "notes": "",
+  "atAGlance": "Gà nướng lá chanh is grilled chicken with lime leaf, usually with charred skin, citrusy lá chanh, and dipping salt.",
+  "whatItIs": "Gà nướng lá chanh is grilled chicken scented with lime leaves, usually served with herbs and lime-pepper salt. The leaf gives a bright citrus aroma.",
+  "usuallyIncludes": [
+    "grilled chicken",
+    "lime leaves",
+    "chili-salt marinade",
+    "dipping salt",
+    "herbs or cucumber"
+  ],
+  "howToEnjoy": "Eat the grilled chicken with herbs and a light dip of lime-pepper salt. Too much dip can cover the lime-leaf fragrance.",
+  "howLocalsOrder": "Order gà nướng lá chanh when you want fragrant grilled chicken. Ask for less chili, extra herbs, or dipping salt on the side.",
+  "worthKnowing": "Lá chanh, lime leaf, is a key Vietnamese chicken aroma; it makes the dish smell fresh before you even bite.",
+  "goodToKnow": "Ask for no chili if you want Gà nướng lá chanh mild.",
+  "commonOptions": [
+    "less spicy",
+    "dipping salt on the side",
+    "extra herbs",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà nướng lá chanh.",
+    "english": "I’d like one order of grilled chicken with lime leaves.",
+    "pronunciation": "chaw toy moht fuhn gah noong lah chan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà nướng lá chanh was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

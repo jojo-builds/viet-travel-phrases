@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-da-xay",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê đá xay",
+  "englishTranslation": "Blended iced coffee",
+  "romanizedNoTones": "Ca phe da xay",
+  "soundOut": "kah fay dah sai",
+  "notes": "",
+  "atAGlance": "Cà phê đá xay belongs to Vietnam’s newer café style, blending coffee, ice, and milk into a cold shake while keeping a roasted coffee edge.",
+  "whatItIs": "Cà phê đá xay is a café-style coffee frappe or blended coffee drink. Expect blended iced coffee, creamy and milkshake-like, with coffee flavor under the ice and sweetness.",
+  "usuallyIncludes": [
+    "coffee",
+    "ice",
+    "milk or cream",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Treat it like dessert coffee and ask for less sugar if you want the coffee flavor clearer.",
+  "howLocalsOrder": "Cà phê đá xay is ordered by temperature, milk, and sweetness. Ask for less sugar or less milk before the cup is mixed, because Vietnamese coffee shops often build sweetness directly into the drink.",
+  "worthKnowing": "In Vietnam, Cà phê đá xay belongs to Vietnam’s newer café scene, where phin flavor meets blender-drink texture.",
+  "goodToKnow": "Often sweet, cold, and filling.",
+  "commonOptions": [
+    "less sugar",
+    "more coffee",
+    "no whipped cream",
+    "takeaway"
+  ],
+  "regionalAssociation": "modern Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê đá xay.",
+    "english": "I’d like one glass of blended iced coffee.",
+    "pronunciation": "chaw toy moht lee kah fay dah sai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê đá xay was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

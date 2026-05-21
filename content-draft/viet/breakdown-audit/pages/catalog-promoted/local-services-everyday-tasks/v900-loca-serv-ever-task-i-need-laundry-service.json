@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-i-need-laundry-service",
+  "phraseText": "Tôi cần dịch vụ giặt ủi",
+  "englishTitle": "I need laundry service",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.323Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-i-need-laundry-service",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "dịch",
+      "english": "translate / service"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vụ",
+      "english": "service"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "giặt ủi",
+      "english": "laundry",
+      "keepTogetherReason": "compound service term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần dịch vụ giặt ủi",
+      "english": "I need laundry service",
+      "audioKey": "v900-loca-serv-ever-task-i-need-laundry-service"
+    }
+  ]
+}

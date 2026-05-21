@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-tam-suon",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm tấm sườn",
+  "englishTranslation": "Broken rice with grilled pork chop",
+  "romanizedNoTones": "Com tam suon",
+  "soundOut": "kum tahm swoon",
+  "notes": "",
+  "atAGlance": "Cơm tấm sườn is a classic southern broken-rice plate with grilled pork chop, scallion oil, pickles, cucumber, and a sweet-savory nước mắm dressing.",
+  "whatItIs": "Cơm tấm sườn is a broken-rice plate with grilled pork chop, pickles, scallion oil, and fish-sauce dressing. It is smoky, savory, and built like a complete meal.",
+  "usuallyIncludes": [
+    "broken rice",
+    "grilled pork chop",
+    "scallion oil",
+    "pickles and cucumber",
+    "nước mắm dressing"
+  ],
+  "howToEnjoy": "Spoon nước mắm over the broken rice gradually, then cut the grilled pork into bites with pickles and scallion oil. The fish-sauce dressing should brighten the plate without soaking it.",
+  "howLocalsOrder": "Order cơm tấm sườn for the classic grilled pork broken-rice plate. Ask for the fish-sauce dressing on the side if you want to control the sweet-savory nước mắm, or add a fried egg if you want a fuller plate.",
+  "worthKnowing": "Cơm tấm grew from broken rice grains that were once humble, practical food in southern Vietnam and Saigon. Today it is a beloved everyday plate because smoky pork, scallion oil, and nước mắm turn those grains into comfort food.",
+  "goodToKnow": "The small bowl is usually sweet-savory nước mắm dressing. Pour it over the rice and pork a little at a time so the grains stay glossy, not flooded.",
+  "commonOptions": [
+    "nước mắm on the side",
+    "add fried egg",
+    "extra pickles",
+    "less spicy"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm tấm sườn.",
+    "english": "I’d like one order of broken rice with grilled pork chop.",
+    "pronunciation": "chaw toy moht fuhn kum tahm swoon",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm tấm sườn was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

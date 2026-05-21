@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-emergency-6",
+  "phraseText": "Túi của tôi bị lấy mất",
+  "englishTitle": "My bag was stolen",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.299Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-emergency-6",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Túi",
+      "english": "bag"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "mất",
+      "english": "takes / lose"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Túi của tôi bị lấy mất",
+      "english": "My bag was stolen",
+      "audioKey": "emergency-6"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-is-it-closed-on-mondays",
+  "phraseText": "Nó có đóng cửa vào thứ Hai không?",
+  "englishTitle": "Is it closed on Mondays?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-is-it-closed-on-mondays",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "vietnamese": "đóng cửa",
+      "english": "close / closed / closing",
+      "keepTogetherReason": "compound business-hours verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "vietnamese": "thứ Hai",
+      "english": "Monday",
+      "keepTogetherReason": "weekday name"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó có đóng cửa vào thứ Hai không?",
+      "english": "Is it closed on Mondays?",
+      "audioKey": "v900-time-date-book-is-it-closed-on-mondays"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hanoi-place-truc-bach-lake",
+  "phraseText": "Hồ Trúc Bạch",
+  "englishTitle": "Truc Bach Lake",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.367Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-place-truc-bach-lake",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hồ Trúc Bạch",
+      "english": "Truc Bach Lake",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

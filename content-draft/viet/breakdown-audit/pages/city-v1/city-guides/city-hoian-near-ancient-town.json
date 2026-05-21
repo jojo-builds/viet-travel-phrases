@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hoian-near-ancient-town",
+  "phraseText": "Phố cổ Hội An gần đây không?",
+  "englishTitle": "Is Hoi An Ancient Town near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-near-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố cổ Hội An",
+      "english": "Hoi An Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố cổ Hội An gần đây không?",
+      "english": "Is Hoi An Ancient Town near here?",
+      "audioKey": "audio-authored-pho-co-hoi-an-gan-day-khong-59789659cf"
+    }
+  ]
+}

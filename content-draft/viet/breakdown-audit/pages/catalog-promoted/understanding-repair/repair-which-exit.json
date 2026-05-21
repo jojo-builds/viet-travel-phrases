@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-repair-premium-which-exit",
+  "phraseText": "Đó là lối ra nào?",
+  "englishTitle": "Which exit is it?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.355Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-premium-which-exit",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lối ra",
+      "english": "exit",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nào?",
+      "english": "which / any"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đó là lối ra nào?",
+      "english": "Which exit is it?",
+      "audioKey": "repair-premium-which-exit"
+    }
+  ]
+}

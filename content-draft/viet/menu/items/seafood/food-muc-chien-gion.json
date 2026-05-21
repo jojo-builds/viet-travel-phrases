@@ -1,0 +1,65 @@
+{
+  "itemID": "food-muc-chien-gion",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mực chiên giòn",
+  "englishTranslation": "Crispy fried squid",
+  "romanizedNoTones": "Muc chien gion",
+  "soundOut": "mook chee-en yawn",
+  "notes": "",
+  "atAGlance": "Mực chiên giòn is crispy fried squid, usually with tender rings or pieces, golden coating, and lime-pepper salt dip or ginger fish sauce.",
+  "whatItIs": "Mực chiên giòn is crispy fried squid, usually served hot with lime-pepper salt, chili, or a light dip. The outside should crackle before the squid turns chewy.",
+  "usuallyIncludes": [
+    "squid",
+    "crispy coating",
+    "lime-pepper salt",
+    "chili optional",
+    "herbs optional"
+  ],
+  "howToEnjoy": "Eat it hot before the coating softens. Dip lightly so the squid stays crisp and does not turn salty.",
+  "howLocalsOrder": "Order mực chiên giòn as a shared snack or seafood plate. Ask for no chili or extra lime-pepper salt before the plate arrives.",
+  "worthKnowing": "Vietnamese seafood shops often judge fried squid by timing: crisp coating, tender squid, and no rubbery chew.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "no chili",
+    "lime-pepper salt",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần mực chiên giòn.",
+    "english": "I’d like one order of crispy fried squid.",
+    "pronunciation": "chaw toy moht fuhn mook chee-en yawn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Mực chiên giòn was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

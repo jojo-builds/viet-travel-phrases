@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+  "phraseText": "ATM đã giữ thẻ của tôi",
+  "englishTitle": "The ATM kept my card",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-mone-numb-pric-the-atm-kept-my-card",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giữ",
+      "english": "keep / hold"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "ATM đã giữ thẻ của tôi",
+      "english": "The ATM kept my card",
+      "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
+    }
+  ]
+}

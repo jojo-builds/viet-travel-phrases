@@ -1,0 +1,67 @@
+{
+  "itemID": "food-nom-bo-kho",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nộm bò khô",
+  "englishTranslation": "Green papaya salad with dried beef",
+  "romanizedNoTones": "Nom bo kho",
+  "soundOut": "nohm baw koh",
+  "notes": "",
+  "atAGlance": "Nộm bò khô is dried beef salad, usually with green papaya, herbs, peanuts, and tangy dressing.",
+  "whatItIs": "Nộm bò khô is northern-style green papaya salad with dried beef, herbs, peanuts, and a tart-sweet dressing. It is chewy, crunchy, tangy, and snacky.",
+  "usuallyIncludes": [
+    "green papaya",
+    "dried beef",
+    "peanuts",
+    "herbs",
+    "fish-sauce-lime dressing"
+  ],
+  "howToEnjoy": "Mix the dried beef through the papaya so each bite gets chew, crunch, herbs, and dressing. Ask for less chili before it is tossed.",
+  "howLocalsOrder": "Order nộm bò khô as a snack plate. Ask for no peanuts or less spice before the vendor adds peanuts and chili.",
+  "worthKnowing": "Nộm is the northern word travelers often see for salad; this one is more street-snack than leafy salad.",
+  "goodToKnow": "This Hanoi-style snack is about dried beef, green papaya, herbs, peanuts, and chili. Ask for less spice or no peanuts before mixing.",
+  "commonOptions": [
+    "less spicy",
+    "no peanuts",
+    "extra dried beef",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nộm bò khô.",
+    "english": "I’d like one order of green papaya salad with dried beef.",
+    "pronunciation": "chaw toy moht fuhn nohm baw koh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Nộm bò khô was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

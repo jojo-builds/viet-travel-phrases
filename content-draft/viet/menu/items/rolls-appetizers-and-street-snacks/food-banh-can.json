@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-can",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh căn",
+  "englishTranslation": "Mini crispy rice pancakes",
+  "romanizedNoTones": "Banh can",
+  "soundOut": "bahn kan",
+  "notes": "",
+  "atAGlance": "Bánh căn is small griddled rice cakes, usually with quail egg or seafood, herbs, and sweet-sour fish-sauce dip.",
+  "whatItIs": "Bánh căn are small south-central rice pancakes cooked in clay molds, often with quail egg, seafood, scallions, and fish-sauce dip. They are softer and more custardy than bánh khọt.",
+  "usuallyIncludes": [
+    "rice batter",
+    "quail egg or seafood",
+    "scallions",
+    "herbs",
+    "fish-sauce dip"
+  ],
+  "howToEnjoy": "Dip the small cakes into the fish-sauce dip while they are warm, adding herbs and pickles if served. Ask about egg or seafood before ordering if either matters.",
+  "howLocalsOrder": "Order bánh căn by portion size and topping. Ask for no chili in the fish-sauce dip or a seafood-free version before the cakes go into the molds.",
+  "worthKnowing": "Bánh căn is a south-central snack, especially around Đà Lạt, Nha Trang, and Phan Rang, where tiny clay-mold pancakes become a whole meal of dips and herbs.",
+  "goodToKnow": "Quail egg, shrimp, or pork may be cooked into the little cakes; ask before ordering if you need a plain or vegetarian set.",
+  "commonOptions": [
+    "no chili",
+    "ask about seafood",
+    "extra herbs",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh căn.",
+    "english": "I’d like one order of mini crispy rice pancakes.",
+    "pronunciation": "chaw toy moht fuhn bahn kan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh căn was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "pageID": "viet-hello-chao-chi",
+  "phraseText": "Chào chị",
+  "englishTitle": "Hello to an older woman",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.333Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-chao-chi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chị",
+      "english": "older woman / respectful female address"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chào chị",
+      "english": "Hello to an older woman",
+      "audioKey": "breakdown-viet-hello-chi-full"
+    }
+  ]
+}

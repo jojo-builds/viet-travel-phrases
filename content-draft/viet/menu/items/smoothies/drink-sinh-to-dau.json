@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-dau",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố dâu",
+  "englishTranslation": "Strawberry smoothie",
+  "romanizedNoTones": "Sinh to dau",
+  "soundOut": "sing toh zow",
+  "notes": "",
+  "atAGlance": "Sinh tố dâu is strawberry smoothie, pink, creamy, sweet-tart, and a common fruit-café order in Vietnam.",
+  "whatItIs": "Sinh tố dâu is strawberries blended with ice, milk, and sometimes condensed milk. Expect strawberry smoothie that is creamy, pink, sweet-tart, and often café-style rather than street-classic.",
+  "usuallyIncludes": [
+    "strawberry",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar or less ice before blending; drink it while the fruit is cold and bright.",
+  "howLocalsOrder": "Sinh tố dâu is blended to order, so ask for less sugar, less condensed milk, or less ice before the fruit hits the blender. The best version should taste like strawberry, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố dâu often hints at Đà Lạt fruit culture because the cool highlands are famous for strawberries.",
+  "goodToKnow": "Usually sweeter and milkier than a fruit juice.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố dâu.",
+    "english": "I’d like one glass of strawberry smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh zow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố dâu was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

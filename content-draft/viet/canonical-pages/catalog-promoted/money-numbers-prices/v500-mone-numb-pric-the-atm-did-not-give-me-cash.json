@@ -46,27 +46,33 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "ATM không đưa",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "ATM",
+          "english": "ATM",
+          "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tiền mặt cho",
-          "english": "price / money",
+          "vietnamese": "không đưa",
+          "english": "did not give",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
+          "vietnamese": "tiền mặt",
+          "english": "cash",
+          "audioKey": "breakdown-authored-tien-mat-16c6e89498"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "cho tôi",
+          "english": "for me / please",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "chunk-5",
           "vietnamese": "ATM không đưa tiền mặt cho tôi",
           "english": "The ATM did not give me cash",
-          "audioKey": null
+          "audioKey": "v500-mone-numb-pric-the-atm-did-not-give-me-cash"
         }
       ]
     },

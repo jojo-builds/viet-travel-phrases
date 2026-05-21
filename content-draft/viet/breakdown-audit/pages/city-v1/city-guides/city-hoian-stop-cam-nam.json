@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hoian-stop-cam-nam",
+  "phraseText": "Dừng ở Cẩm Nam",
+  "englishTitle": "Stop at Cam Nam",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-cam-nam",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Cẩm Nam",
+      "english": "Cam Nam",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Cẩm Nam",
+      "english": "Stop at Cam Nam",
+      "audioKey": "audio-authored-dung-o-cam-nam-41b3a8c608"
+    }
+  ]
+}

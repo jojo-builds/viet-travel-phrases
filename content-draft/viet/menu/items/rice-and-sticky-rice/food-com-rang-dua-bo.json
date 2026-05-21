@@ -1,0 +1,66 @@
+{
+  "itemID": "food-com-rang-dua-bo",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm rang dưa bò",
+  "englishTranslation": "Fried rice with beef and pickled mustard greens",
+  "romanizedNoTones": "Com rang dua bo",
+  "soundOut": "kum rang yoo-uh baw",
+  "notes": "",
+  "atAGlance": "Cơm rang dưa bò is fried rice with beef and pickled mustard greens, usually with egg, garlic, scallions, and a tangy wok flavor.",
+  "whatItIs": "Cơm rang dưa bò is northern-style fried rice with beef and dưa chua, pickled mustard greens. The sour greens cut through the beef and make the rice taste brighter.",
+  "usuallyIncludes": [
+    "fried rice",
+    "beef",
+    "pickled mustard greens",
+    "egg",
+    "scallions"
+  ],
+  "howToEnjoy": "Eat it hot so the tangy dưa chua and beef stay lively. The pickled greens are the point, so taste before adding chili.",
+  "howLocalsOrder": "Order cơm rang dưa bò when you want beef fried rice with a northern sour kick. Ask for less oil, no chili, or extra pickled mustard greens before cooking.",
+  "worthKnowing": "Dưa bò is a useful phrase: it points to beef paired with pickled mustard greens, a beloved northern comfort flavor.",
+  "goodToKnow": "Dưa chua, pickled mustard greens, gives the rice its northern sour-savory snap; ask for extra dưa if you like that brightness.",
+  "commonOptions": [
+    "less oil",
+    "extra pickled greens",
+    "no chili",
+    "extra egg"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm rang dưa bò.",
+    "english": "I’d like one order of fried rice with beef and pickled mustard greens.",
+    "pronunciation": "chaw toy moht fuhn kum rang yoo-uh baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm rang dưa bò was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

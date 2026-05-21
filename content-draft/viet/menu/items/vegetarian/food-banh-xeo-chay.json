@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-xeo-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh xèo chay",
+  "englishTranslation": "Vegetarian crispy pancake",
+  "romanizedNoTones": "Banh xeo chay",
+  "soundOut": "bahn say-oh chai",
+  "notes": "",
+  "atAGlance": "Bánh xèo chay is a vegetarian turmeric-rice pancake eaten by tearing pieces into rice paper or lettuce with herbs, then dipping in a vegetarian soy-lime dip.",
+  "whatItIs": "Bánh xèo chay keeps the crisp pancake and wrap-and-dip ritual of bánh xèo, but swaps meat and shrimp for mushrooms, tofu, bean sprouts, or vegetables.",
+  "usuallyIncludes": [
+    "turmeric rice batter",
+    "mushroom filling or tofu",
+    "bean sprouts",
+    "rice paper or lettuce",
+    "herbs and vegetarian dip"
+  ],
+  "howToEnjoy": "Tear a crisp piece, wrap it with rice paper or lettuce and herbs, then dip lightly. Ask whether the dip is vegetarian before you start if that matters.",
+  "howLocalsOrder": "Order bánh xèo chay and make the vegetarian request clear for both filling and dip. Ask for extra rice paper, extra herbs, or no fish sauce before the plate arrives.",
+  "worthKnowing": "The local eating move is the same as bánh xèo: crisp pancake plus herbs, rice paper or lettuce, and a bright dip in one hands-on bite.",
+  "goodToKnow": "Ask whether the dip is vegetarian; some mixed stalls use fish sauce even when the pancake filling is meat-free.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra rice paper",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the dip is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh xèo chay.",
+    "english": "I’d like one order of vegetarian crispy pancake.",
+    "pronunciation": "chaw toy moht fuhn bahn say-oh chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh xèo chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

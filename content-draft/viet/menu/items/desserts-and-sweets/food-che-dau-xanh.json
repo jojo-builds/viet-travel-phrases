@@ -1,0 +1,62 @@
+{
+  "itemID": "food-che-dau-xanh",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè đậu xanh",
+  "englishTranslation": "Mung bean sweet soup",
+  "romanizedNoTones": "Che dau xanh",
+  "soundOut": "cheh dow sanh",
+  "notes": "",
+  "atAGlance": "Chè đậu xanh is mung bean sweet soup or pudding, often soft, lightly sweet, and rounded with coconut milk. It is simple comfort rather than a flashy dessert.",
+  "whatItIs": "Chè đậu xanh is a mung bean chè, served warm, chilled, or over ice depending on the shop.",
+  "usuallyIncludes": [
+    "mung beans",
+    "sugar",
+    "coconut milk optional",
+    "ice optional"
+  ],
+  "howToEnjoy": "Stir if coconut milk is added, then taste before asking for more sweetness or ice.",
+  "howLocalsOrder": "Order chè đậu xanh warm for softness or cold for refreshment. Ask less coconut milk if you want the mung bean flavor cleaner.",
+  "worthKnowing": "Mung bean sweets are common across Vietnam because they are filling, gentle, and easy to pair with coconut.",
+  "goodToKnow": "Đậu xanh means mung bean. Ask for less coconut if you want the bean flavor cleaner.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô chè đậu xanh.",
+    "english": "I’d like one bowl of mung bean sweet soup.",
+    "pronunciation": "chaw toy moht toh cheh dow sanh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè đậu xanh was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

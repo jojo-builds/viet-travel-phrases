@@ -1,0 +1,65 @@
+{
+  "itemID": "food-chuoi-nep-nuong",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chuối nếp nướng",
+  "englishTranslation": "Grilled banana with sticky rice",
+  "romanizedNoTones": "Chuoi nep nuong",
+  "soundOut": "choo-ee nep noong",
+  "notes": "",
+  "atAGlance": "Chuối nếp nướng is grilled banana wrapped in sticky rice, usually served with coconut sauce, peanuts, and sesame. It is smoky, chewy, and sweet.",
+  "whatItIs": "Chuối nếp nướng is banana wrapped in sticky rice, grilled, then topped with coconut sauce and crunch.",
+  "usuallyIncludes": [
+    "banana",
+    "sticky rice",
+    "coconut sauce",
+    "peanuts",
+    "sesame"
+  ],
+  "howToEnjoy": "Eat it warm: smoky banana and sticky rice first, then coconut sauce, peanuts, and sesame for richness and crunch.",
+  "howLocalsOrder": "Order chuối nếp nướng when you want a warm grilled dessert. Ask for no peanuts or coconut sauce on the side before it is topped.",
+  "worthKnowing": "This is a street sweet where smoke, coconut, banana, and chewy rice all matter. In Vietnam, sweets often prize texture as much as sugar: beans, jellies, sticky rice, coconut milk, shaved ice, or fruit can share one bowl.",
+  "goodToKnow": "The grilled wrapper gives a toasty edge while the coconut sauce makes it dessert-rich.",
+  "commonOptions": [
+    "no peanuts",
+    "coconut sauce on the side",
+    "less sweet",
+    "one portion"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Often contains peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chuối nếp nướng.",
+    "english": "I’d like one order of grilled banana with sticky rice.",
+    "pronunciation": "chaw toy moht fuhn choo-ee nep noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chuối nếp nướng was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

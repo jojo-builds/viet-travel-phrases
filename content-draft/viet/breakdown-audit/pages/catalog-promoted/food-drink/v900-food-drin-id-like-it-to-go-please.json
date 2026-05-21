@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-id-like-it-to-go-please",
+  "phraseText": "Tôi muốn nó đi, làm ơn.",
+  "englishTitle": "I'd like it to go, please.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.307Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-id-like-it-to-go-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muốn",
+      "english": "want"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đi,",
+      "english": "go"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "làm ơn.",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi muốn nó đi, làm ơn.",
+      "english": "I'd like it to go, please.",
+      "audioKey": "v900-food-drin-id-like-it-to-go-please"
+    }
+  ]
+}

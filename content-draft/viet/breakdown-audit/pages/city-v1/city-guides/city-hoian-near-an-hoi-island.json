@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hoian-near-an-hoi-island",
+  "phraseText": "Đảo An Hội gần đây không?",
+  "englishTitle": "Is An Hoi Island near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.379Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-near-an-hoi-island",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đảo An Hội",
+      "english": "An Hoi Island",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đảo An Hội gần đây không?",
+      "english": "Is An Hoi Island near here?",
+      "audioKey": "audio-authored-dao-an-hoi-gan-day-khong-e7a068e081"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-danang-eat-near-bach-dang-street",
+  "phraseText": "Ăn gần Đường Bạch Đằng",
+  "englishTitle": "Eat near Bach Dang Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-eat-near-bach-dang-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Đường Bạch Đằng",
+      "english": "Bach Dang Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Đường Bạch Đằng",
+      "english": "Eat near Bach Dang Street",
+      "audioKey": "audio-authored-an-gan-duong-bach-dang-4e990bdd8b"
+    }
+  ]
+}

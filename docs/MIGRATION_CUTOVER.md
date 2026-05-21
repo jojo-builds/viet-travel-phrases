@@ -1,68 +1,57 @@
 # Migration Cutover
 
-## Current cutover state
+## Current State
 
-The app-family repo now lives physically at the canonical family path:
+SpeakLocal development is MacBook-only now.
 
-- `E:\AI\SpeakLocal-App-Family`
+The canonical working root is:
 
-The old Viet-named path now exists only as a compatibility junction:
+- `/Users/jojolim/Developer/products/speaklocal/app-family`
 
-- `E:\AI\Viet-Travel-Phrases` -> `E:\AI\SpeakLocal-App-Family`
+The active app product surface is:
 
-The pre-cutover broken recursive tree was preserved for safety at:
+- `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
 
-- `E:\AI\VTP-recursive-recovery-20260421-150452`
+Do not treat any Windows path as a live workspace. Older Windows paths may remain in archived notes for historical lookup only.
 
-## Path map
+## Historical Context
 
-- canonical family path:
-  - `E:\AI\SpeakLocal-App-Family`
-- older Windows desktop-agent workspace path:
-  - archived only; do not use as an active startup path on this Mac
-- compatibility alias:
-  - `E:\AI\Viet-Travel-Phrases`
-- compatibility workspace alias:
-  - archived only; do not use as an active startup path on this Mac
+Earlier repo recovery work used Windows paths such as `E:\AI\SpeakLocal-App-Family`. That was a temporary migration state, not the current development setup.
 
-## What changed
+Those paths are now archive context only:
 
-- Promoted `E:\AI\SpeakLocal-App-Family` to the real physical git working tree.
-- Recreated `E:\AI\Viet-Travel-Phrases` as a compatibility-only junction back to the family root.
-- Preserved the pre-cutover broken tree as a safety archive instead of deleting it in place.
-- Preserved the rescued git working state, workflow surfaces, and release-sensitive implementation surface.
+- do not start new work from them
+- do not copy commands from them into current task specs
+- do not use them as canonical roots in docs, scripts, or agent instructions
 
-## Why this was done
+## Operating Rule
 
-- The repo now has one real implementation root and one compatibility alias.
-- Git, queue tooling, app validation, and website validation all resolve from the family path.
-- Future sessions can start from the canonical family root without lexical-path ambiguity.
+New work starts from the Mac repo root and uses the native iOS app:
 
-## Rollback
+1. Open `/Users/jojolim/Developer/products/speaklocal/app-family`.
+2. Use `native-ios/` for all app implementation, simulator testing, iPhone builds, and SwiftUI/Liquid Glass work.
+3. Use feature worktrees under `.worktrees/` only for parallel lanes.
+4. Keep `main` as the source for Jojo's phone build unless he explicitly asks to test a feature branch.
 
-If an emergency rollback is ever required:
+## Workflow Normalization
 
-1. stop work and preserve the current family-root state
-2. use the full backup at `E:\AI\Shared\Backups\speaklocal-repo-rescue\20260421-143045`
-3. use the archived pre-cutover tree at `E:\AI\VTP-recursive-recovery-20260421-150452` only for forensic comparison, not as the preferred restore target
+Broad sessions should start from:
 
-## Operating rule
+- `AGENTS.md`
+- `docs/DECISIONS.md`
+- `docs/PRIORITIES.md`
+- `docs/operations/README.md`
 
-- new work should start from the family path
-- old Viet-named paths are compatibility-only
+Native app sessions should also read:
 
-## Workflow normalization after cutover
+- `native-ios/AGENTS.md`
+- `docs/operations/TESTING_RUNBOOK.md`
 
-- Treat the family path as both startup authority and physical git root.
-- Broad manual sessions should start from:
-  - `AGENTS.md`
-  - `docs/DECISIONS.md`
-  - `docs/PRIORITIES.md`
-  - `docs/operations/README.md`
-- Repo-local queue runs should start from:
-  - `AGENTS.md`
-  - `.agent/README.md`
-  - `.agent/QUEUE_START.md`
-  - `.agent/AUTOMATION.md`
-- `docs/START_SESSION.md`, `docs/CURRENT_STATE.md`, and `docs/NEXT_STEPS.md` may exist only as compatibility pointers for older references. They must not become maintained duplicate truth surfaces again.
-- Git should resolve the working tree to `E:\AI\SpeakLocal-App-Family` from both the canonical path and the legacy compatibility alias.
+Repo-local queue runs should start from:
+
+- `AGENTS.md`
+- `.agent/README.md`
+- `.agent/QUEUE_START.md`
+- `.agent/AUTOMATION.md`
+
+`docs/START_SESSION.md`, `docs/CURRENT_STATE.md`, and `docs/NEXT_STEPS.md` may exist only as compatibility pointers for older references. They must not become maintained duplicate truth surfaces again.

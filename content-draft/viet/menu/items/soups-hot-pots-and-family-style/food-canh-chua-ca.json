@@ -1,0 +1,62 @@
+{
+  "itemID": "food-canh-chua-ca",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Canh chua cá",
+  "englishTranslation": "Sweet-and-sour fish soup",
+  "romanizedNoTones": "Canh chua ca",
+  "soundOut": "kan choo-ah kah",
+  "notes": "",
+  "atAGlance": "Canh chua cá is tamarind-sour fish soup with tomato, pineapple, okra, bạc hà stem, herbs, and a sweet-sour broth eaten with rice.",
+  "whatItIs": "Canh chua cá is Vietnamese sour fish soup, usually family-style, with tamarind brightness and vegetables that make the broth lively.",
+  "usuallyIncludes": [
+    "fish",
+    "tamarind broth",
+    "pineapple",
+    "tomato",
+    "okra and herbs"
+  ],
+  "howToEnjoy": "Eat it with plain rice and spoon broth over the rice. Watch for fish bones.",
+  "howLocalsOrder": "Order Canh chua cá as a shared sour soup for rice, with fish in tamarind broth, pineapple, tomato, and herbs. Ask small or large, and expect the bright sourness to balance salty braised dishes on the table.",
+  "worthKnowing": "This kind of sour soup is especially loved in southern and Mekong-style meals, where sweet, sour, salty, and herbal flavors share the table.",
+  "goodToKnow": "Canh chua means sour soup. The sourness should be refreshing and balanced, not creamy or heavy.",
+  "commonOptions": [
+    "with rice",
+    "less chili",
+    "ask about bones",
+    "share bowl"
+  ],
+  "regionalAssociation": "southern Vietnam and the Mekong Delta",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain fish bones.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh chua cá.",
+    "english": "I’d like one bowl of sweet-and-sour fish soup.",
+    "pronunciation": "chaw toy moht toh kan choo-ah kah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Canh chua cá was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

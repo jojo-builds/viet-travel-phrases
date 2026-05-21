@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-danang-place-cham-museum",
+  "phraseText": "Bảo tàng Điêu khắc Chăm",
+  "englishTitle": "Museum of Cham Sculpture",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.360Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-place-cham-museum",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bảo tàng Điêu khắc Chăm",
+      "english": "Museum of Cham Sculpture",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

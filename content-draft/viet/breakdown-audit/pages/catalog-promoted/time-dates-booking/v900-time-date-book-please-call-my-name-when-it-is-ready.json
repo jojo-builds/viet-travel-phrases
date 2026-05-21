@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-please-call-my-name-when-it-is-ready",
+  "phraseText": "Hãy gọi tên tôi khi nó sẵn sàng",
+  "englishTitle": "Please call my name when it is ready",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-please-call-my-name-when-it-is-ready",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tên",
+      "english": "name"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khi",
+      "english": "when"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "sẵn",
+      "english": "ready / available"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "sàng",
+      "english": "morning"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hãy gọi tên tôi khi nó sẵn sàng",
+      "english": "Please call my name when it is ready",
+      "audioKey": "v900-time-date-book-please-call-my-name-when-it-is-ready"
+    }
+  ]
+}

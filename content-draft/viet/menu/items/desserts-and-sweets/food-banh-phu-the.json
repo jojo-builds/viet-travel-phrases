@@ -1,0 +1,61 @@
+{
+  "itemID": "food-banh-phu-the",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh phu thê",
+  "englishTranslation": "Husband-and-wife cake",
+  "romanizedNoTones": "Banh phu the",
+  "soundOut": "bahn foo tay",
+  "notes": "",
+  "atAGlance": "Bánh phu thê is a translucent chewy cake with mung bean and coconut, often wrapped for weddings or gifts.",
+  "whatItIs": "Bánh phu thê is a chewy sweet cake with a mung bean center, often connected to wedding customs.",
+  "usuallyIncludes": [
+    "tapioca-like wrapper",
+    "mung bean",
+    "coconut",
+    "sugar"
+  ],
+  "howToEnjoy": "Eat it as a small chewy wedding-style sweet, often with mung bean inside and coconut or pandan fragrance. The texture is the main event.",
+  "howLocalsOrder": "Order bánh phu thê by piece or box. Ask for one piece if you want the symbolic wedding cake experience without buying a full pack.",
+  "worthKnowing": "The name means husband-and-wife cake, so it often appears in wedding and gift contexts rather than everyday dessert menus.",
+  "goodToKnow": "The name means husband-and-wife cake. It is symbolic as much as snackable.",
+  "commonOptions": [
+    "one piece",
+    "gift box",
+    "pack to go",
+    "small portion"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh phu thê.",
+    "english": "I’d like one order of husband-and-wife cake.",
+    "pronunciation": "chaw toy moht fuhn bahn foo tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh phu thê was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

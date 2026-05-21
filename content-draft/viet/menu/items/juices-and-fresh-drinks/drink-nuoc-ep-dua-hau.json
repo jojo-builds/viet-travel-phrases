@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-dua-hau",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép dưa hấu",
+  "englishTranslation": "Watermelon juice",
+  "romanizedNoTones": "Nuoc ep dua hau",
+  "soundOut": "nook ep yoo-uh how",
+  "notes": "",
+  "atAGlance": "Nước ép dưa hấu is watermelon juice for humid days, light, juicy, softly sweet, and usually best when freshly blended.",
+  "whatItIs": "Nước ép dưa hấu is fresh watermelon pressed or blended into juice. Expect watermelon juice that is light, juicy, icy, and softly sweet.",
+  "usuallyIncludes": [
+    "watermelon",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for no sugar if the fruit is ripe.",
+  "howLocalsOrder": "Nước ép dưa hấu is usually made or poured cold, so ask for no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép dưa hấu is a cooling drink for humid days when you want refreshment without cream or caffeine.",
+  "goodToKnow": "Best cold and freshly blended.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép dưa hấu.",
+    "english": "I’d like one glass of watermelon juice.",
+    "pronunciation": "chaw toy moht lee nook ep yoo-uh how",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép dưa hấu was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

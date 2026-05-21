@@ -1,0 +1,59 @@
+{
+  "itemID": "drink-ruou-nep",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Rượu nếp",
+  "englishTranslation": "Sticky rice wine",
+  "romanizedNoTones": "Ruou nep",
+  "soundOut": "roo-uh nep",
+  "notes": "",
+  "atAGlance": "Rượu nếp is sticky-rice liquor, warm with grain aroma, sweet at first, and stronger than many visitors expect.",
+  "whatItIs": "Rượu nếp is rice liquor made from glutinous rice. Expect sticky-rice liquor with warm grain aroma, sweetness, and a strong alcoholic finish.",
+  "usuallyIncludes": [
+    "alcohol",
+    "glass or bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Sip slowly in small pours, ideally with food.",
+  "howLocalsOrder": "Rượu nếp is a small-glass or shared-bottle order, not a casual soft drink. Ask about strength and order with food; say no alcohol clearly if you are avoiding it.",
+  "worthKnowing": "In Vietnam, Rượu nếp belongs to Vietnam’s rice-liquor culture, where aroma, strength, and sharing matter more than a large glass.",
+  "goodToKnow": "Alcoholic and can be strong.",
+  "commonOptions": [
+    "small glass",
+    "bottle",
+    "share size",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly rượu nếp.",
+    "english": "I’d like one glass of sticky rice wine.",
+    "pronunciation": "chaw toy moht lee roo-uh nep",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Rượu nếp was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

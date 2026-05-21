@@ -1,0 +1,64 @@
+{
+  "itemID": "food-ca-hap-gung",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá hấp gừng",
+  "englishTranslation": "Steamed fish with ginger",
+  "romanizedNoTones": "Ca hap gung",
+  "soundOut": "kah hup goong",
+  "notes": "",
+  "atAGlance": "Cá hấp gừng is fish steamed with ginger, usually with scallion, soy or fish sauce, herbs, and clean broth.",
+  "whatItIs": "Cá hấp gừng is steamed fish with ginger, scallions, herbs, and a light soy or fish-sauce seasoning. The fish stays delicate, so freshness matters.",
+  "usuallyIncludes": [
+    "steamed fish",
+    "ginger",
+    "scallions",
+    "soy or fish-sauce seasoning",
+    "herbs"
+  ],
+  "howToEnjoy": "Lift the fish carefully and watch for bones, then use ginger, scallion, and the light seasoning sparingly. Rice helps catch the juices.",
+  "howLocalsOrder": "Order cá hấp gừng when you want fish steamed rather than fried. Ask if it comes whole, whether bones remain, and for less chili if the seasoning is spicy.",
+  "worthKnowing": "Hấp means steamed, a useful word when you want seafood that tastes clean and gentle.",
+  "goodToKnow": "Ask about bones before ordering whole fish, and eat it hot while the ginger aroma is still clean.",
+  "commonOptions": [
+    "ask about bones",
+    "less spicy",
+    "with rice",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá hấp gừng.",
+    "english": "I’d like one order of steamed fish with ginger.",
+    "pronunciation": "chaw toy moht fuhn kah hup goong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cá hấp gừng was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "itemID": "food-vit-om-sau",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Vịt om sấu",
+  "englishTranslation": "Duck stewed with dracontomelon fruit",
+  "romanizedNoTones": "Vit om sau",
+  "soundOut": "veet om sow",
+  "notes": "",
+  "atAGlance": "Vịt om sấu is northern duck simmered with tart sấu fruit, giving the broth a sour lift that cuts through the richness of duck.",
+  "whatItIs": "Vịt om sấu is a northern duck stew or hot-pot-style dish where sour sấu fruit balances rich duck broth.",
+  "usuallyIncludes": [
+    "duck",
+    "sấu fruit",
+    "taro or vegetables",
+    "herbs",
+    "vermicelli optional"
+  ],
+  "howToEnjoy": "Eat it as a shared dish with herbs, noodles, or rice. The sour broth should feel refreshing, not sharp.",
+  "howLocalsOrder": "Vịt om sấu is northern duck stew sharpened by sour sấu fruit. Ask whether it comes with vermicelli and extra herbs, then use the sour broth to cut the duck richness.",
+  "worthKnowing": "Vịt om sấu is especially associated with northern home cooking and summer duck dishes, when tart sấu fruit is prized for making rich duck broth feel bright and refreshing.",
+  "goodToKnow": "Sấu is a tart northern fruit often translated awkwardly as dracontomelon. Think sour, fruity brightness rather than lemon.",
+  "commonOptions": [
+    "with vermicelli",
+    "extra herbs",
+    "less sour",
+    "share pot"
+  ],
+  "regionalAssociation": "northern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains duck and may include bones.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần vịt om sấu.",
+    "english": "I’d like one order of duck stewed with dracontomelon fruit.",
+    "pronunciation": "chaw toy moht fuhn veet om sow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Vịt om sấu was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "itemID": "food-goi-ga-xe-phay",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi gà xé phay",
+  "englishTranslation": "Shredded chicken salad",
+  "romanizedNoTones": "Goi ga xe phay",
+  "soundOut": "goy gah seh fai",
+  "notes": "",
+  "atAGlance": "Gỏi gà xé phay is shredded chicken salad, usually with cabbage, rau răm, onion, peanuts, and tart fish-sauce dressing.",
+  "whatItIs": "Gỏi gà xé phay is shredded chicken salad with cabbage or banana blossom, rau răm, onion, peanuts, fried shallots, and fish-sauce-lime dressing.",
+  "usuallyIncludes": [
+    "shredded chicken",
+    "cabbage",
+    "rau răm",
+    "onion",
+    "peanuts and bright dressing"
+  ],
+  "howToEnjoy": "Toss lightly and eat with herbs in every bite. Peanuts and fried shallots add crunch; ask for them out if allergies matter.",
+  "howLocalsOrder": "Order gỏi gà xé phay as a shared chicken salad. Ask for no peanuts, less onion, or less chili before it is dressed.",
+  "worthKnowing": "In Vietnamese chicken salad, xé phay tells you the chicken is shredded by hand, which helps the herbs and dressing cling to it.",
+  "goodToKnow": "Ask for no chili if you want Gỏi gà xé phay mild.",
+  "commonOptions": [
+    "no peanuts",
+    "less onion",
+    "less spicy",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi gà xé phay.",
+    "english": "I’d like one order of shredded chicken salad.",
+    "pronunciation": "chaw toy moht fuhn goy gah seh fai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Gỏi gà xé phay was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "itemID": "food-banh-mi-xiu-mai",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì xíu mại",
+  "englishTranslation": "Meatball bánh mì",
+  "romanizedNoTones": "Banh mi xiu mai",
+  "soundOut": "bahn mee see-ew my",
+  "notes": "",
+  "atAGlance": "Bánh mì xíu mại is a meatball bánh mì, often saucier than the cold-cut versions. The pork meatballs and tomato-like sauce make the bread softer and more comforting.",
+  "whatItIs": "Bánh mì xíu mại is a meatball bánh mì, often with soft pork meatballs in tomato-forward xíu mại gravy, plus herbs, pickles, and bread for soaking up the juices.",
+  "usuallyIncludes": [
+    "baguette",
+    "pork meatballs",
+    "tomato-rich xíu mại sauce",
+    "pickles",
+    "cilantro"
+  ],
+  "howToEnjoy": "Use the bread to catch the tomato-pork juices, and eat before the baguette softens too much. Ask for no chili before the meatballs are spooned in.",
+  "howLocalsOrder": "Order bánh mì xíu mại when you want the saucy meatball version. Ask for extra bread, no chili, or xíu mại in a bowl if the shop offers it.",
+  "worthKnowing": "Xíu mại in Vietnam usually points to soft pork meatballs, often tomato-bright and spoonable rather than dim sum. With bánh mì, it turns the French-influenced loaf into a Vietnamese comfort food for soaking, scooping, and quick breakfasts.",
+  "goodToKnow": "This one can be messy in a good way. Eat it sitting down if the bread is filled with tomato-pork xíu mại sauce rather than dry toppings.",
+  "commonOptions": [
+    "no chili",
+    "extra bread",
+    "extra pickles",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "Usually contains pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì xíu mại.",
+    "english": "I’d like one xíu mại bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee see-ew my",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit",
+      "copy hygiene fix"
+    ],
+    "reviewNote": "Bánh mì xíu mại was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

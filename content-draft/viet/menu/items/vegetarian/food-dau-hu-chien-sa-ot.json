@@ -1,0 +1,65 @@
+{
+  "itemID": "food-dau-hu-chien-sa-ot",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Đậu hũ chiên sả ớt",
+  "englishTranslation": "Tofu fried with lemongrass and chili",
+  "romanizedNoTones": "Dau hu chien sa ot",
+  "soundOut": "dow hoo chee-en sah uht",
+  "notes": "",
+  "atAGlance": "Đậu hũ chiên sả ớt is fried tofu with lemongrass and chili, usually with crisp tofu, sả, chili, garlic, and rice.",
+  "whatItIs": "Đậu hũ chiên sả ớt is fried tofu tossed with lemongrass, chili, garlic, and savory seasoning. It is crisp-edged, fragrant, and made for rice.",
+  "usuallyIncludes": [
+    "fried tofu",
+    "lemongrass",
+    "chili",
+    "garlic",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice so the lemongrass-chili bits season the grains. Ask for less chili if you want the tofu and sả aroma to lead.",
+  "howLocalsOrder": "Order đậu hũ chiên sả ớt when you want a vegetarian-friendly wok dish, then ask for no fish sauce if strict chay seasoning matters.",
+  "worthKnowing": "Sả ớt gives tofu one of Vietnam’s most recognizable savory aromas: citrusy lemongrass with chili warmth.",
+  "goodToKnow": "Ask about fish sauce if the tofu is cooked at a mixed rice stall; lemongrass and chili are vegetarian, but seasoning varies.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "less spicy",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about fish sauce if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần đậu hũ chiên sả ớt.",
+    "english": "I’d like one order of tofu fried with lemongrass and chili.",
+    "pronunciation": "chaw toy moht fuhn dow hoo chee-en sah uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Đậu hũ chiên sả ớt was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

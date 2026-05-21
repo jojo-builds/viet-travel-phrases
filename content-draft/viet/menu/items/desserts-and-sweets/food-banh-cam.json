@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-cam",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh cam",
+  "englishTranslation": "Sesame ball",
+  "romanizedNoTones": "Banh cam",
+  "soundOut": "bahn kahm",
+  "notes": "",
+  "atAGlance": "Bánh cam is a fried sesame ball with a crisp chewy shell and sweet mung bean filling. It is snacky, round, and best fresh.",
+  "whatItIs": "Bánh cam is a Vietnamese sesame ball, a fried glutinous rice pastry with sweet filling.",
+  "usuallyIncludes": [
+    "glutinous rice shell",
+    "mung bean filling",
+    "sesame",
+    "fried crust"
+  ],
+  "howToEnjoy": "Eat while fresh so the sesame shell stays crisp around the mung bean center. Bite carefully; the inside can be warm.",
+  "howLocalsOrder": "Order bánh cam by piece at a snack stall. Ask for freshly fried ones if you see a batch coming out.",
+  "worthKnowing": "This is a familiar shape across Chinese-Vietnamese and Southeast Asian snack worlds, but local fillings and texture vary.",
+  "goodToKnow": "The outside should be crisp-chewy while the filling stays soft. Freshness matters.",
+  "commonOptions": [
+    "one piece",
+    "pack to go",
+    "fresh batch",
+    "small portion"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh cam.",
+    "english": "I’d like one order of sesame ball.",
+    "pronunciation": "chaw toy moht fuhn bahn kahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh cam was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

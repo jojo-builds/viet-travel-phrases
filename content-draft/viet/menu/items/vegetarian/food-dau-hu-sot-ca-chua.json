@@ -1,0 +1,64 @@
+{
+  "itemID": "food-dau-hu-sot-ca-chua",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Đậu hũ sốt cà chua",
+  "englishTranslation": "Tofu in tomato sauce",
+  "romanizedNoTones": "Dau hu sot ca chua",
+  "soundOut": "dow hoo sot kah choo-ah",
+  "notes": "",
+  "atAGlance": "Đậu hũ sốt cà chua is tofu in tomato sauce, usually with fried tofu, tomato gravy, scallion, and rice.",
+  "whatItIs": "Đậu hũ sốt cà chua is fried tofu simmered in tomato gravy with scallions, garlic, and light seasoning. It is soft, tangy, and made for rice.",
+  "usuallyIncludes": [
+    "fried tofu",
+    "tomato gravy",
+    "scallions",
+    "garlic",
+    "rice"
+  ],
+  "howToEnjoy": "Spoon the tomato gravy over rice and eat while the tofu edges are still slightly firm. Ask about fish sauce if you need strict vegetarian seasoning.",
+  "howLocalsOrder": "Order đậu hũ sốt cà chua for a gentle tofu rice dish. Ask for no fish sauce if the tomato gravy needs to be fully vegetarian.",
+  "worthKnowing": "This is homestyle Vietnamese comfort food: simple tofu, bright tomato, and rice doing quiet work together.",
+  "goodToKnow": "Ask whether the tomato sauce uses fish sauce or meat stock at mixed family-style restaurants.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the tomato sauce is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần đậu hũ sốt cà chua.",
+    "english": "I’d like one order of tofu in tomato sauce.",
+    "pronunciation": "chaw toy moht fuhn dow hoo sot kah choo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Đậu hũ sốt cà chua was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

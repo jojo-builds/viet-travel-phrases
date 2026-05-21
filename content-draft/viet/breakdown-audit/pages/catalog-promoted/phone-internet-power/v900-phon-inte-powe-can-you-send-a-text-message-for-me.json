@@ -1,0 +1,71 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-can-you-send-a-text-message-for-me",
+  "phraseText": "Bạn có thể gửi tin nhắn văn bản cho tôi được không?",
+  "englishTitle": "Can you send a text message for me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.331Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-can-you-send-a-text-message-for-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gửi",
+      "english": "send"
+    },
+    {
+      "vietnamese": "tin nhắn",
+      "english": "message / text message",
+      "keepTogetherReason": "compound message noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "văn bản",
+      "english": "writing / document",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể gửi tin nhắn văn bản cho tôi được không?",
+      "english": "Can you send a text message for me?",
+      "audioKey": "v900-phon-inte-powe-can-you-send-a-text-message-for-me"
+    }
+  ]
+}

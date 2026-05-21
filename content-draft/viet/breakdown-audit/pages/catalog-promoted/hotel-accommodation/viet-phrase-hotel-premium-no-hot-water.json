@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-hotel-premium-no-hot-water",
+  "phraseText": "Ở đây không có nước nóng.",
+  "englishTitle": "There is no hot water.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:56:18.743Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-hotel-premium-no-hot-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nước nóng.",
+      "english": "hot water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ở đây không có nước nóng.",
+      "english": "There is no hot water.",
+      "audioKey": "hotel-premium-no-hot-water"
+    }
+  ]
+}

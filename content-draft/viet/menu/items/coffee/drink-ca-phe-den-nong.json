@@ -1,0 +1,59 @@
+{
+  "itemID": "drink-ca-phe-den-nong",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê đen nóng",
+  "englishTranslation": "Hot black coffee",
+  "romanizedNoTones": "Ca phe den nong",
+  "soundOut": "kah fay den nawng",
+  "notes": "",
+  "atAGlance": "Cà phê đen nóng is a small hot cup of Vietnamese robusta, smoky, concentrated, and meant for slow sipping rather than quick gulping.",
+  "whatItIs": "Cà phê đen nóng is phin-brewed black coffee served hot, usually small but intense. Expect hot black robusta coffee with smoky bitterness, a compact cup, and a lingering roasted finish.",
+  "usuallyIncludes": [
+    "robusta coffee",
+    "phin filter"
+  ],
+  "howToEnjoy": "Sip it slowly rather than treating it like a large drip coffee.",
+  "howLocalsOrder": "Cà phê đen nóng is the plain hot coffee order, so ask for sugar separately if you want it. Sip it slowly; Vietnamese robusta is strong even without milk.",
+  "worthKnowing": "In Vietnam, cà phê đen nóng is the most direct way to taste Vietnamese robusta without milk, ice, or dessert flavors in the way.",
+  "goodToKnow": "Ask for sugar separately if you do not want it sweetened.",
+  "commonOptions": [
+    "sugar on the side",
+    "stronger",
+    "with ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê đen nóng.",
+    "english": "I’d like one glass of hot black coffee.",
+    "pronunciation": "chaw toy moht lee kah fay den nawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê đen nóng was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

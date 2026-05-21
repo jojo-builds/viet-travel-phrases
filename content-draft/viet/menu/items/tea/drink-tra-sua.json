@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-tra-sua",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Trà sữa",
+  "englishTranslation": "Milk tea",
+  "romanizedNoTones": "Tra sua",
+  "soundOut": "chah soo-uh",
+  "notes": "",
+  "atAGlance": "Trà sữa is Vietnam’s youth-café milk tea lane, creamy, sweet, tannic, and ordered by sugar, ice, and toppings.",
+  "whatItIs": "Trà sữa is tea mixed with milk or creamer, often served cold. Expect milk tea that is creamy, sweet, tannic, and often richer than a simple tea order.",
+  "usuallyIncludes": [
+    "tea",
+    "milk",
+    "sugar",
+    "ice"
+  ],
+  "howToEnjoy": "Customize sugar and ice before it is made; toppings may change the drink into a snack.",
+  "howLocalsOrder": "Order trà sữa by sweetness and ice first, toppings second. Ask for less sugar and less ice before the cup is sealed, especially with pearls.",
+  "worthKnowing": "Trà sữa is a youth-café milk tea lane, separate from plain table tea; sugar level, ice level, and toppings are the main decisions.",
+  "goodToKnow": "Ask for less sugar if you do not want it dessert-sweet.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà sữa.",
+    "english": "I’d like one glass of milk tea.",
+    "pronunciation": "chaw toy moht lee chah soo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Trà sữa was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

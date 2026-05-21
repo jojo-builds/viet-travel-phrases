@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-is-it-past-the-traffic-light",
+  "phraseText": "Có vượt qua đèn giao thông không?",
+  "englishTitle": "Is it past the traffic light?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.297Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-is-it-past-the-traffic-light",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vượt qua",
+      "english": "go past / pass",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đèn",
+      "english": "light"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "giao",
+      "english": "traffic / deliver"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "thông",
+      "english": "information / through"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có vượt qua đèn giao thông không?",
+      "english": "Is it past the traffic light?",
+      "audioKey": "v900-dire-navi-is-it-past-the-traffic-light"
+    }
+  ]
+}

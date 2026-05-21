@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-danang-stop-han-market",
+  "phraseText": "Dừng ở chợ Hàn",
+  "englishTitle": "Stop at Han Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.362Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-stop-han-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chợ Hàn",
+      "english": "Han Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở chợ Hàn",
+      "english": "Stop at Han Market",
+      "audioKey": "audio-authored-dung-o-cho-han-db6f463ef8"
+    }
+  ]
+}

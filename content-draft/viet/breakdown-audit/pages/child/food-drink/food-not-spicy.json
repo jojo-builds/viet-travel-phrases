@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-food-not-spicy-clearer",
+  "phraseText": "Ít cay thôi",
+  "englishTitle": "Less spicy, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-food-not-spicy-clearer",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ít cay",
+      "english": "less spicy",
+      "keepTogetherReason": "compound food phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thôi",
+      "english": "just / only"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ít cay thôi",
+      "english": "Less spicy, please",
+      "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
+    }
+  ]
+}

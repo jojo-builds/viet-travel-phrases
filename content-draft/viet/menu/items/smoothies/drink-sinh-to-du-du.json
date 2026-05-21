@@ -1,0 +1,64 @@
+{
+  "itemID": "drink-sinh-to-du-du",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố đu đủ",
+  "englishTranslation": "Papaya smoothie",
+  "romanizedNoTones": "Sinh to du du",
+  "soundOut": "sing toh doo doo",
+  "notes": "",
+  "atAGlance": "Sinh tố đu đủ turns papaya into a mellow orange smoothie, tropical, soft, and gently musky when the fruit is ripe.",
+  "whatItIs": "Sinh tố đu đủ is ripe papaya blended with ice and milk. Expect papaya smoothie that is mellow, soft, musky-sweet, and creamy.",
+  "usuallyIncludes": [
+    "papaya",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Choose it when you want something gentle, not tart.",
+  "howLocalsOrder": "Order sinh tố đu đủ when you want a creamy, gentle fruit drink. Ask for less sugar or no condensed milk if you want the papaya flavor less sweet.",
+  "worthKnowing": "At Vietnamese smoothie stalls, papaya shows the softer side of tropical fruit drinks: mellow, musky-sweet, soothing, and less flashy than mango.",
+  "goodToKnow": "Ask for less sugar if you prefer papaya’s natural sweetness.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố đu đủ.",
+    "english": "I’d like one glass of papaya smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh doo doo",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Sinh tố đu đủ was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

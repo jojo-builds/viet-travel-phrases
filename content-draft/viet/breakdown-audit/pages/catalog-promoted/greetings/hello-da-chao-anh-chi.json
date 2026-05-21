@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-hello-da-chao-anh-chi",
+  "phraseText": "Dạ, chào anh/chị",
+  "englishTitle": "Hello, sir or ma'am",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.334Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-hello-da-chao-anh-chi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dạ,",
+      "english": "respectful yes / opener"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "chào",
+      "english": "hello / greet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "anh/chị",
+      "english": "sir or ma'am",
+      "keepTogetherReason": "slash address form"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dạ, chào anh/chị",
+      "english": "Hello, sir or ma'am",
+      "audioKey": "audio-phrase-da-chao-anh-chi"
+    }
+  ]
+}

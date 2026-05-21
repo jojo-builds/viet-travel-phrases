@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-family-city-hue-atm-dong-ba-bun-bo",
+  "phraseText": "Gần hàng bún bò ở chợ Đông Ba có ATM không?",
+  "englishTitle": "Is there an ATM near the bun bo stall at Dong Ba Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.383Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-atm-dong-ba-bun-bo",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hàng",
+      "english": "shop / goods"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bún bò ở chợ Đông Ba",
+      "english": "Bun bo at Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Gần hàng bún bò ở chợ Đông Ba có ATM không?",
+      "english": "Is there an ATM near the bun bo stall at Dong Ba Market?",
+      "audioKey": "audio-authored-gan-hang-bun-bo-o-cho-dong-ba-co-atm-khong-3cd7739f93"
+    }
+  ]
+}

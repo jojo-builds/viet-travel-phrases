@@ -1,0 +1,1194 @@
+{
+  "food-pho-tai": {
+    "atAGlance": "Phở tái is beef phở with very thin rare beef slices that finish cooking in the hot broth. It is clean, aromatic, and more tender than the well-done beef version.",
+    "usuallyIncludes": ["beef broth", "rice noodles", "rare beef", "onion", "herbs and lime"],
+    "goodToKnow": "If rare beef makes you nervous, order phở chín instead. The broth should still be hot enough to soften the beef at the table.",
+    "commonOptions": ["well-done beef", "extra herbs", "bean sprouts", "no chili"],
+    "whatItIs": "Phở tái is beef phở with thin rare beef slices added just before serving, so the hot broth finishes them in the bowl. It gives you tender beef without making the soup heavy.",
+    "howToEnjoy": "Let the beef sit in the broth for a moment, then taste before adding chili or lime. Choose phở chín if you want fully cooked beef from the start.",
+    "worthKnowing": "Tái means rare or lightly cooked. Knowing tái versus chín helps you read many beef phở menus."
+  },
+  "food-pho-chin": {
+    "atAGlance": "Phở chín is beef phở with cooked beef slices, rice noodles, herbs, and clear fragrant broth. It is the safer choice if you want phở without rare meat.",
+    "usuallyIncludes": ["beef broth", "rice noodles", "well-done beef", "onion", "herbs and lime"],
+    "goodToKnow": "Chín means cooked or well-done here. You still season the bowl at the table with herbs, lime, bean sprouts, or chili.",
+    "commonOptions": ["rare beef", "extra herbs", "bean sprouts", "no chili"],
+    "whatItIs": "Phở chín is beef phở with cooked beef slices, clear broth, rice noodles, onion, herbs, and lime. It keeps the classic phở flavor while avoiding rare meat.",
+    "howToEnjoy": "Taste the broth first, then add herbs, lime, bean sprouts, or chili little by little. The cooked beef is already ready to eat.",
+    "worthKnowing": "Chín means cooked. If a menu lists tái and chín, it is asking whether you want rare beef or well-done beef."
+  },
+  "food-pho-tai-nam": {
+    "atAGlance": "Phở tái nạm gives you two beef textures in one bowl: tender rare beef and richer brisket. It is still a clean broth dish, but the meat feels fuller than plain phở tái.",
+    "usuallyIncludes": ["beef broth", "rice noodles", "rare beef", "brisket", "herbs and lime"],
+    "goodToKnow": "Nạm is brisket, so this bowl has more chew and beef depth. Taste the broth before adding chili sauce or lime.",
+    "commonOptions": ["extra brisket", "extra herbs", "bean sprouts", "no chili"],
+    "whatItIs": "Phở tái nạm combines rare beef with brisket in the same bowl. The rare beef stays tender, while nạm brings a deeper beef flavor and more chew.",
+    "howToEnjoy": "Taste both beef cuts before changing the broth. Add lime or chili only after you know how rich the brisket makes the bowl.",
+    "worthKnowing": "Combination phở names often list the cuts. Learning tái and nạm makes a long phở menu much easier to decode."
+  },
+  "food-pho-bo-vien": {
+    "atAGlance": "Phở bò viên is beef phở with springy beef meatballs, clear broth, rice noodles, herbs, and lime. It is a good choice when you want texture without rare slices.",
+    "usuallyIncludes": ["beef broth", "rice noodles", "beef meatballs", "onion", "herbs and lime"],
+    "goodToKnow": "Bò viên are bouncy beef meatballs. The texture is firmer than sliced beef and easy to recognize in a mixed phở menu.",
+    "commonOptions": ["extra meatballs", "extra herbs", "bean sprouts", "no chili"],
+    "whatItIs": "Phở bò viên is phở with beef meatballs instead of sliced beef. The meatballs are springy and mild, while the broth still carries the phở aroma.",
+    "howToEnjoy": "Slice or bite the meatballs with noodles and herbs. Add chili sauce slowly so the beef broth stays clear.",
+    "worthKnowing": "Bò viên appears across noodle soups and street snacks. In phở, it is the easiest beef topping for travelers who do not want rare meat."
+  },
+  "food-pho-dac-biet": {
+    "atAGlance": "Phở đặc biệt is the special combination bowl, usually with several beef cuts such as rare beef, brisket, meatballs, tendon, or tripe depending on the shop.",
+    "usuallyIncludes": ["beef broth", "rice noodles", "mixed beef cuts", "onion", "herbs and lime"],
+    "goodToKnow": "Đặc biệt means special, not one fixed recipe. Ask what is included if tendon, tripe, or rare beef matters.",
+    "commonOptions": ["no tripe", "no tendon", "extra herbs", "no chili"],
+    "whatItIs": "Phở đặc biệt is the house combination phở. It lets a shop show several beef textures in one bowl, from tender slices to chewier cuts.",
+    "howToEnjoy": "Taste each beef cut before adding condiments. If you are cautious, ask what meats come in the special bowl before ordering.",
+    "worthKnowing": "On Vietnamese menus, đặc biệt usually means the fuller house version. It can be delicious, but it is not always the safest first order for texture-sensitive eaters.",
+    "travelerCaution": "May include tendon, tripe, meatballs, brisket, and rare beef."
+  },
+  "food-bun-rieu-cua": {
+    "atAGlance": "Bún riêu cua is crab-and-tomato vermicelli soup with a tangy red broth, soft crab mixture, tofu, herbs, and sometimes snails or pork blood cubes. It is bright, savory, and a little rustic.",
+    "usuallyIncludes": ["rice vermicelli", "crab-tomato broth", "tofu", "herbs", "shrimp paste optional"],
+    "goodToKnow": "The sourness usually comes from tomato and tamarind or vinegar-like seasoning, not cream. Ask what toppings are included if you avoid shellfish or pork.",
+    "commonOptions": ["extra herbs", "no shrimp paste", "less chili", "no pork blood"],
+    "whatItIs": "Bún riêu cua is a crab-and-tomato vermicelli soup with tangy broth, tofu, herbs, and often shrimp paste or extra pork-side toppings. It tastes brighter and more rustic than phở.",
+    "howToEnjoy": "Add herbs first, then chili or shrimp paste carefully. The broth already has sour tomato lift, so do not drown it before tasting.",
+    "worthKnowing": "Riêu cua points to the crab mixture in the soup. The bowl can include shellfish, pork, tofu, and shrimp paste depending on the shop.",
+    "travelerCaution": "May include shellfish, shrimp paste, pork, snails, or pork blood depending on the shop."
+  },
+  "food-bun-mam": {
+    "atAGlance": "Bún mắm is a Mekong-style noodle soup with fermented fish broth, rice vermicelli, seafood, pork, eggplant, herbs, and a deep salty aroma. It is bold on purpose.",
+    "usuallyIncludes": ["rice vermicelli", "fermented fish broth", "seafood", "pork", "eggplant and herbs"],
+    "goodToKnow": "This is one of the strongest-flavored soups on a Vietnamese menu. If fermented fish sounds like too much, choose bún riêu or phở first.",
+    "commonOptions": ["extra herbs", "less chili", "no pork", "ask what seafood"],
+    "whatItIs": "Bún mắm is rice vermicelli in fermented fish broth with seafood, pork, eggplant, herbs, and a powerful savory aroma. It is one of the boldest soups in the menu set.",
+    "howToEnjoy": "Smell and sip before adding chili. Herbs and vegetables are not decoration; they freshen the fermented fish broth.",
+    "worthKnowing": "Bún mắm is strongly associated with southern and Mekong Delta cooking. The fermented fish base is the identity, not a flaw.",
+    "regionalAssociation": "southern Vietnam and the Mekong Delta",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains fermented fish broth and often seafood or pork."
+  },
+  "food-bun-thang": {
+    "atAGlance": "Bún thang is a delicate Hanoi noodle soup layered with shredded chicken, egg ribbons, pork sausage, herbs, and clear broth. It is refined rather than fiery.",
+    "usuallyIncludes": ["rice vermicelli", "clear chicken broth", "shredded chicken", "egg ribbons", "pork sausage"],
+    "goodToKnow": "The bowl can include pork sausage, egg, and dried-shrimp flavor. It is not just chicken soup.",
+    "commonOptions": ["extra herbs", "less pepper", "no pork sausage", "ask about shrimp"],
+    "whatItIs": "Bún thang is a Hanoi soup where thin rice vermicelli sits under careful strips of chicken, egg, pork sausage, herbs, and clear broth.",
+    "howToEnjoy": "Keep the first spoonful gentle. Add chili only after tasting the broth, because the pleasure is in the layered clean flavors.",
+    "worthKnowing": "Bún thang is associated with Hanoi cooking and a more delicate soup style than many southern or central bowls.",
+    "regionalAssociation": "Hanoi",
+    "originPosture": "regional-association",
+    "travelerCaution": "May include pork, egg, and dried shrimp."
+  },
+  "food-bun-oc": {
+    "atAGlance": "Bún ốc is snail vermicelli soup, often Hanoi-style, with a tomato-bright broth, herbs, and chewy river snails. It is tangy, clean, and more about texture than richness.",
+    "usuallyIncludes": ["rice vermicelli", "snails", "tomato broth", "herbs", "chili optional"],
+    "goodToKnow": "Ốc means snails. If texture matters, ask before ordering; the snails should be chewy rather than soft like clams.",
+    "commonOptions": ["extra herbs", "less chili", "no shrimp paste", "ask about snails"],
+    "whatItIs": "Bún ốc is snail vermicelli soup with a tangy tomato-leaning broth, herbs, and chewy snails. It is a classic example of texture doing as much work as flavor.",
+    "howToEnjoy": "Try the snails with broth and herbs before adding extra chili. If chewy seafood textures are not your thing, choose another soup.",
+    "worthKnowing": "Bún ốc is especially associated with Hanoi-style street eating, though you may see versions elsewhere.",
+    "regionalAssociation": "Hanoi and northern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains snails and may include shrimp paste."
+  },
+  "food-bun-sua": {
+    "atAGlance": "Bún sứa is a coastal jellyfish noodle soup, especially familiar around Nha Trang and central beach towns. The broth is light; the jellyfish adds a crisp springy bite.",
+    "usuallyIncludes": ["rice vermicelli", "jellyfish", "light seafood broth", "herbs", "fish cake optional"],
+    "goodToKnow": "Sứa means jellyfish. Order this when you want a seafood texture you probably do not see often on American menus.",
+    "commonOptions": ["extra herbs", "less chili", "ask what seafood", "no shrimp paste"],
+    "whatItIs": "Bún sứa is a light coastal noodle soup with jellyfish, herbs, and seafood broth. The jellyfish gives a crisp springy texture rather than a strong fish flavor.",
+    "howToEnjoy": "Eat the jellyfish with herbs and broth in the same bite. Add chili slowly so the light seafood flavor stays visible.",
+    "worthKnowing": "Bún sứa is especially tied to central coastal cities such as Nha Trang. For travelers, the main surprise is the texture.",
+    "regionalAssociation": "central coast and Nha Trang",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains jellyfish and seafood broth."
+  },
+  "food-hu-tieu-my-tho": {
+    "atAGlance": "Hủ tiếu Mỹ Tho is a Mekong Delta rice-noodle soup from the Mỹ Tho style, known for clear broth, chewy noodles, pork, shrimp, herbs, and fried garlic.",
+    "usuallyIncludes": ["rice noodles", "clear pork broth", "pork", "shrimp", "fried garlic"],
+    "goodToKnow": "Some shops offer it dry-style with broth on the side. Ask nước or khô if the menu gives you both options.",
+    "commonOptions": ["soup style", "dry style", "extra herbs", "no shrimp"],
+    "whatItIs": "Hủ tiếu Mỹ Tho is a Mekong Delta rice-noodle soup with clear broth, chewy noodles, pork, shrimp, fried garlic, and herbs. It is lighter than phở but still satisfying.",
+    "howToEnjoy": "Ask whether the shop serves it soup-style or dry-style. In dry-style, broth comes separately and the sauce coats the noodles.",
+    "worthKnowing": "Mỹ Tho is a Mekong Delta city, and the name signals a southern rice-noodle style rather than a random topping.",
+    "regionalAssociation": "Mỹ Tho and the Mekong Delta",
+    "originPosture": "regional-association",
+    "travelerCaution": "Often contains pork and shrimp."
+  },
+  "food-banh-canh-cua": {
+    "atAGlance": "Bánh canh cua is thick tapioca-style noodle soup with crab, a glossy savory broth, herbs, and pepper. The noodles are chewy and spoonable, closer to udon texture than phở.",
+    "usuallyIncludes": ["thick tapioca noodles", "crab", "savory broth", "scallions", "pepper"],
+    "goodToKnow": "The broth can be slightly thick from the noodles. Ask about crab shell pieces if you want the easiest version to eat.",
+    "commonOptions": ["extra crab", "quail egg", "less pepper", "ask about shells"],
+    "whatItIs": "Bánh canh cua is crab soup with thick chewy noodles, glossy savory broth, scallions, pepper, and crab sweetness. The noodles are part of the comfort.",
+    "howToEnjoy": "Use a spoon and chopsticks together. Add pepper or chili after tasting because the crab broth can be delicate.",
+    "worthKnowing": "Bánh canh noodles are much thicker than phở noodles. That chew is intentional and helps the broth feel almost stew-like.",
+    "travelerCaution": "Contains crab."
+  },
+  "food-banh-canh-cha-ca": {
+    "atAGlance": "Bánh canh chả cá is thick noodle soup with springy fish cakes and a light seafood broth. It is gentler than crab bánh canh but still has the chewy noodle texture.",
+    "usuallyIncludes": ["thick tapioca noodles", "fish cakes", "seafood broth", "scallions", "pepper"],
+    "goodToKnow": "Chả cá means fish cake here. The fish is usually formed into slices or patties, not a whole fillet.",
+    "commonOptions": ["extra fish cake", "less pepper", "extra herbs", "no chili"],
+    "whatItIs": "Bánh canh chả cá pairs thick chewy noodles with fish cakes and a light seafood broth. It is springy, gentle, and easier than many shellfish-heavy soups.",
+    "howToEnjoy": "Taste a fish cake with broth before adding lime or chili. The fish cake texture should be bouncy, not flaky.",
+    "worthKnowing": "Chả cá can mean fish cake in many everyday menu contexts, not only the famous Hanoi turmeric fish dish."
+  },
+  "food-banh-canh-gio-heo": {
+    "atAGlance": "Bánh canh giò heo is thick noodle soup with pork knuckle, scallions, pepper, and a rich pork broth. It is heavier and more collagen-rich than the seafood versions.",
+    "usuallyIncludes": ["thick tapioca noodles", "pork knuckle", "pork broth", "scallions", "pepper"],
+    "goodToKnow": "Giò heo means pork knuckle. Expect bones and skin; ask for an easier cut if that is not what you want.",
+    "commonOptions": ["extra herbs", "less pepper", "ask for leaner pork", "no chili"],
+    "whatItIs": "Bánh canh giò heo is thick noodle soup with pork knuckle, pork broth, scallions, and pepper. It is rich, chewy, and more rustic than a light chicken soup.",
+    "howToEnjoy": "Expect bones, skin, and tender pork. Ask for leaner pieces if you want less collagen and easier eating.",
+    "worthKnowing": "Giò heo means pork knuckle. That tells you to expect a richer texture before you order.",
+    "travelerCaution": "Contains pork knuckle with bones and skin."
+  },
+  "food-chao-long": {
+    "atAGlance": "Cháo lòng is pork offal rice porridge with ginger, herbs, pepper, and soft rice. It is warming and traditional, but more adventurous than chicken porridge.",
+    "usuallyIncludes": ["rice porridge", "pork offal", "ginger", "scallions", "pepper"],
+    "goodToKnow": "Lòng means offal or organs. If you want the gentle porridge experience without organs, choose cháo gà.",
+    "commonOptions": ["no offal", "extra ginger", "less pepper", "with fried dough"],
+    "whatItIs": "Cháo lòng is rice porridge with pork offal, ginger, scallions, herbs, and pepper. It is soft and warming, but the toppings are more adventurous than chicken porridge.",
+    "howToEnjoy": "Add pepper, herbs, and ginger to brighten the bowl. Choose cháo gà if you want gentle porridge without offal.",
+    "worthKnowing": "Lòng means offal. This is a useful word to recognize if organ meats are a yes or no for you.",
+    "travelerCaution": "Contains pork offal."
+  },
+  "food-chao-hai-san": {
+    "atAGlance": "Cháo hải sản is seafood rice porridge with soft rice, ginger, scallions, pepper, and whatever seafood the shop uses. It is gentle in texture but not always simple for allergies.",
+    "usuallyIncludes": ["rice porridge", "seafood", "ginger", "scallions", "pepper"],
+    "goodToKnow": "Hải sản means seafood. Ask what seafood is inside if shellfish matters.",
+    "commonOptions": ["extra ginger", "less pepper", "ask what seafood", "with fried dough"],
+    "whatItIs": "Cháo hải sản is seafood congee: soft rice porridge with ginger, herbs, pepper, and seafood such as shrimp, squid, fish, or clams depending on the kitchen.",
+    "howToEnjoy": "Eat it hot and add pepper slowly. The ginger is there to keep the seafood flavor clean.",
+    "worthKnowing": "Cháo is comfort food, but hải sản turns it into a seafood order. That word matters for shellfish allergies.",
+    "travelerCaution": "Contains seafood and may include shellfish."
+  },
+  "food-mi-quang-ga": {
+    "atAGlance": "Mì Quảng gà is a Quảng Nam-style chicken noodle bowl with wide turmeric rice noodles, shallow chicken broth, herbs, peanuts, and a crisp rice cracker. It is a central-Vietnam dish, not a soup.",
+    "goodToKnow": "The broth is intentionally shallow and concentrated. Mix before adding lime or chili so the turmeric broth coats the noodles.",
+    "whatItIs": "Mì Quảng gà is a central-Vietnam noodle bowl with wide turmeric rice noodles, chicken, herbs, peanuts, rice cracker, and shallow broth. It should look half-dry compared with soup.",
+    "howToEnjoy": "Break some rice cracker into the bowl, mix the shallow broth through the noodles, then add lime or chili. Do not expect the broth to cover everything.",
+    "worthKnowing": "Mì Quảng is associated with Quảng Nam and central Vietnam. Its shallow broth, turmeric noodles, herbs, peanuts, and rice cracker are the signature.",
+    "regionalAssociation": "Quảng Nam and central Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Often contains peanuts."
+  },
+  "food-mi-quang-tom-thit": {
+    "atAGlance": "Mì Quảng tôm thịt is the shrimp-and-pork version of Quảng-style turmeric noodles, with herbs, peanuts, rice cracker, and just enough broth to stain the noodles golden.",
+    "goodToKnow": "This commonly includes both shellfish and pork. Ask before ordering if either one matters.",
+    "whatItIs": "Mì Quảng tôm thịt is the shrimp-and-pork version of Mì Quảng, with turmeric rice noodles, herbs, peanuts, rice cracker, and shallow broth.",
+    "howToEnjoy": "Mix before judging the sauce level. The broth is meant to coat the noodles, not fill the bowl like phở.",
+    "worthKnowing": "Tôm thịt means shrimp and pork. It is delicious if both work for you, but it matters for shellfish and pork avoiders.",
+    "regionalAssociation": "Quảng Nam and central Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains shrimp, pork, and often peanuts."
+  },
+  "food-com-ga-xoi-mo": {
+    "atAGlance": "Cơm gà xối mỡ is crispy fried chicken over rice, often with chicken-fat fragrance, pickles, cucumber, and a dipping sauce. It is about crisp skin against hot rice.",
+    "usuallyIncludes": ["rice", "crispy fried chicken", "pickles", "cucumber", "dipping sauce"],
+    "goodToKnow": "Xối mỡ points to hot fat/oil poured over the chicken for crispness. It is not a sticky-rice dish.",
+    "commonOptions": ["extra rice", "less sauce", "fried egg", "extra pickles"],
+    "whatItIs": "Cơm gà xối mỡ is a fried-chicken rice plate where the chicken is crisped with hot fat or oil, then served with rice and pickled sides.",
+    "howToEnjoy": "Use the dipping sauce lightly so the chicken skin stays crisp. Pickles and cucumber cut the richness.",
+    "worthKnowing": "This is one of the more familiar bridge dishes for Americans: fried chicken and rice, but with Vietnamese dipping sauce and pickles."
+  },
+  "food-com-ga-hoi-an": {
+    "atAGlance": "Cơm gà Hội An is Hội An chicken rice: turmeric-tinted rice, shredded or chopped chicken, herbs, onion, chili-lime seasoning, and often a small side broth.",
+    "usuallyIncludes": ["turmeric rice", "chicken", "herbs", "onion", "chili-lime seasoning"],
+    "goodToKnow": "This is not plain chicken on rice. The rice, herbs, and chili-lime onion mixture are what make it taste like Hội An.",
+    "commonOptions": ["less chili", "extra herbs", "side broth", "extra chicken"],
+    "whatItIs": "Cơm gà Hội An is Hội An chicken rice with turmeric-tinted rice, chicken, herbs, onion, and a bright chili-lime seasoning. The rice is as important as the chicken.",
+    "howToEnjoy": "Mix some herbs and onion through the rice, then add chili-lime seasoning carefully. Ask for less chili if you want the chicken and rice to stay gentle.",
+    "worthKnowing": "The Hội An name matters: this is tied to the old-town chicken-rice style, not a generic chicken-and-rice plate.",
+    "regionalAssociation": "Hội An",
+    "originPosture": "regional-association"
+  },
+  "food-com-tam-bi-cha-suon": {
+    "atAGlance": "Cơm tấm bì chả sườn is a loaded broken-rice plate: grilled pork chop, shredded pork skin, steamed egg meatloaf, pickles, scallion oil, and fish-sauce dressing.",
+    "usuallyIncludes": ["broken rice", "grilled pork chop", "shredded pork skin", "egg meatloaf", "fish-sauce dressing"],
+    "goodToKnow": "Bì is shredded pork skin and chả is egg meatloaf. The plate is meant to be mixed bite by bite with pickles and nước mắm.",
+    "commonOptions": ["fried egg", "extra pork chop", "more pickles", "sauce on the side"],
+    "whatItIs": "Cơm tấm bì chả sườn is a southern broken-rice plate with grilled pork chop, shredded pork skin, egg meatloaf, pickles, scallion oil, and fish-sauce dressing.",
+    "howToEnjoy": "Spoon nước mắm over part of the rice, then build bites with pork chop, bì, chả, and pickles. Keep some rice plain if the sauce feels strong.",
+    "worthKnowing": "Cơm tấm is strongly associated with southern Vietnam and Saigon eating. Bì and chả are classic add-ons, not random extras.",
+    "regionalAssociation": "southern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains pork, egg, and fish sauce."
+  },
+  "food-com-tam-suon-bi-cha-trung": {
+    "atAGlance": "Cơm tấm sườn bì chả trứng is the maximal broken-rice plate: pork chop, shredded pork skin, egg meatloaf, fried egg, pickles, scallion oil, and nước mắm.",
+    "usuallyIncludes": ["broken rice", "grilled pork chop", "shredded pork skin", "egg meatloaf", "fried egg"],
+    "goodToKnow": "Order this when you want the full cơm tấm experience. It is rich, salty-sweet, and balanced by pickles rather than by a salad.",
+    "commonOptions": ["sauce on the side", "extra pickles", "no fried egg", "extra rice"],
+    "whatItIs": "Cơm tấm sườn bì chả trứng is a full broken-rice combo with grilled pork chop, shredded pork skin, egg meatloaf, fried egg, pickles, scallion oil, and nước mắm.",
+    "howToEnjoy": "Use the sauce like seasoning, not soup. The best bites balance smoky pork, egg, pickles, and rice.",
+    "worthKnowing": "This is the loaded cơm tấm order. It tells you a lot about southern Vietnam rice-plate culture in one plate, even though shop versions still vary.",
+    "regionalAssociation": "southern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains pork, egg, and fish sauce."
+  },
+  "food-com-thit-kho-trung": {
+    "atAGlance": "Cơm thịt kho trứng is rice with caramel-braised pork and egg, usually in a salty-sweet fish-sauce braise. The rice is there to soak up the dark sauce.",
+    "usuallyIncludes": ["rice", "braised pork", "egg", "caramel fish-sauce braise", "pickles or greens"],
+    "goodToKnow": "This is the rice-plate version of a family-style braise. Ask for more rice rather than more sauce if the flavor is too intense.",
+    "commonOptions": ["extra rice", "extra egg", "pickles", "sauce on the side"],
+    "whatItIs": "Cơm thịt kho trứng is rice served with caramel-braised pork and egg. The braising liquid is fish sauce, caramelized sugar, pepper, and often coconut water.",
+    "howToEnjoy": "Let the rice catch the braise, then use pickles or greens for contrast. The sauce is supposed to be intense.",
+    "worthKnowing": "Thịt kho trứng is tied to home-style southern and family cooking, including Tết meals in many households.",
+    "regionalAssociation": "southern Vietnam and family meals",
+    "originPosture": "cultural-context",
+    "travelerCaution": "Contains pork, egg, and fish sauce."
+  },
+  "food-com-nieu-ca-kho": {
+    "atAGlance": "Cơm niêu cá kho pairs clay-pot rice with caramelized fish. The fish sauce, caramel, pepper, and rice are the point: salty-sweet sauce against plain rice.",
+    "usuallyIncludes": ["clay-pot rice", "caramelized fish", "fish-sauce caramel", "pepper", "pickles or greens"],
+    "goodToKnow": "Cơm niêu means clay-pot rice, often prized for hot fluffy rice and crisp edges. Watch for fish bones in cá kho.",
+    "commonOptions": ["extra rice", "ask about bones", "less pepper", "share size"],
+    "whatItIs": "Cơm niêu cá kho is clay-pot rice with caramelized fish. It puts two comforts together: hot rice and fish braised in fish-sauce caramel.",
+    "howToEnjoy": "Use the rice to soften the salty-sweet fish sauce caramel. Ask about bones before ordering if you want an easier plate.",
+    "worthKnowing": "Cơm niêu means clay-pot rice; cá kho is the braised fish. Together, they read more like a sit-down comfort meal than a quick rice plate.",
+    "travelerCaution": "May contain fish bones and fish sauce."
+  },
+  "food-xoi-man": {
+    "atAGlance": "Xôi mặn is savory sticky rice with assorted toppings such as Chinese sausage, shredded pork, egg, fried shallots, and pâté-like spreads depending on the vendor.",
+    "usuallyIncludes": ["sticky rice", "savory toppings", "fried shallots", "pork or sausage", "egg optional"],
+    "goodToKnow": "It is dense for its size. Treat it as a portable breakfast or snack that eats more like a small meal.",
+    "commonOptions": ["takeaway", "extra fried shallots", "no pâté", "extra egg"],
+    "whatItIs": "Xôi mặn is savory sticky rice with assorted toppings such as Chinese sausage, shredded pork, egg, fried shallots, and rich sauces depending on the vendor.",
+    "howToEnjoy": "Eat while warm and take small bites; sticky rice is filling. Ask what toppings are inside if pork or pâté matters.",
+    "worthKnowing": "Xôi is common for breakfast and takeaway snacks. Mặn means savory, so this is the salty/topping-heavy side of sticky rice.",
+    "travelerCaution": "May include pork sausage, pâté, or egg depending on the vendor."
+  },
+  "food-banh-mi-dac-biet": {
+    "atAGlance": "Bánh mì đặc biệt is the house special sandwich, usually combining pâté, cold cuts or pork, pickled carrot and daikon, cucumber, cilantro, chili, and sauce in a crisp baguette.",
+    "usuallyIncludes": ["baguette", "pâté", "cold cuts or pork", "pickles", "cilantro and chili"],
+    "goodToKnow": "Đặc biệt means special, so fillings vary by shop. Ask what meats are inside if pork, pâté, or processed meat matters.",
+    "commonOptions": ["no chili", "extra pickles", "no pâté", "toasted bread"],
+    "whatItIs": "Bánh mì đặc biệt is the house special Vietnamese sandwich, usually layered with pâté, cold cuts or pork, pickles, cucumber, cilantro, chili, and sauce.",
+    "howToEnjoy": "Eat it while the baguette is crisp. Ask for no chili, no pâté, or extra pickles before the sandwich is assembled.",
+    "worthKnowing": "Đặc biệt means special. On bánh mì menus, it often means the shop’s fullest combination rather than one fixed national recipe.",
+    "travelerCaution": "Often contains pork and pâté."
+  },
+  "food-banh-mi-pate": {
+    "atAGlance": "Bánh mì pate puts rich liver pâté at the center of the sandwich, sharpened by pickles, herbs, chili, and a crisp Vietnamese baguette.",
+    "usuallyIncludes": ["baguette", "pâté", "pickles", "cilantro", "chili optional"],
+    "goodToKnow": "Pâté is common in Vietnamese bánh mì culture. If liver flavor is not for you, choose grilled pork, chicken, or egg instead.",
+    "commonOptions": ["no chili", "extra pickles", "less pâté", "toasted bread"],
+    "whatItIs": "Bánh mì pate is a Vietnamese baguette sandwich where pâté is the main rich layer, balanced by pickles, herbs, chili, and crisp bread.",
+    "howToEnjoy": "Choose it if you like liver pâté. Ask for less pâté or a different filling if you want a lighter sandwich.",
+    "worthKnowing": "Pâté is part of Vietnam’s bakery and bánh mì culture, a French-influenced ingredient made local through herbs, pickles, and street-service bread.",
+    "travelerCaution": "Contains liver pâté."
+  },
+  "food-banh-mi-xiu-mai": {
+    "atAGlance": "Bánh mì xíu mại is a meatball bánh mì, often saucier than the cold-cut versions. The pork meatballs and tomato-like sauce make the bread softer and more comforting.",
+    "usuallyIncludes": ["baguette", "pork meatballs", "savory tomato sauce", "pickles", "cilantro"],
+    "goodToKnow": "This one can be messy in a good way. Eat it sitting down if the bread is filled with sauce rather than dry toppings.",
+    "commonOptions": ["no chili", "extra sauce", "extra pickles", "toasted bread"],
+    "whatItIs": "Bánh mì xíu mại is meatball bánh mì, usually pork meatballs with a savory tomato-like sauce tucked into or served beside bread.",
+    "howToEnjoy": "Use the bread to catch the meatball sauce. If it is very saucy, it is easier to eat at a table than while walking.",
+    "worthKnowing": "Xíu mại in Vietnam often points to soft pork meatballs, not Chinese siu mai dumplings as many Americans may picture.",
+    "travelerCaution": "Usually contains pork."
+  },
+  "food-banh-mi-chay": {
+    "atAGlance": "Bánh mì chay is vegetarian bánh mì, often filled with tofu, mushrooms, mock meat, pickles, herbs, and chili. The sauce decides whether it tastes bright or rich.",
+    "usuallyIncludes": ["baguette", "tofu or mushrooms", "pickles", "cilantro", "vegetarian sauce"],
+    "goodToKnow": "Chay means vegetarian, but strict vegetarians should still ask about fish sauce, egg, and dairy because house sauces vary.",
+    "commonOptions": ["no chili", "no fish sauce", "extra pickles", "toasted bread"],
+    "whatItIs": "Bánh mì chay is vegetarian bánh mì with tofu, mushrooms, mock meat, pickles, herbs, chili, and a vegetarian sauce depending on the shop.",
+    "howToEnjoy": "Ask for no chili and no fish sauce if you need it strict. The bread, pickles, and sauce carry the flavor more than meat does.",
+    "worthKnowing": "Chay is the key vegetarian word, but house sauces can vary. It is worth confirming fish sauce if strict vegetarian eating matters.",
+    "travelerCaution": "Ask about fish sauce, egg, or dairy if strict vegetarian."
+  },
+  "food-banh-bao": {
+    "atAGlance": "Bánh bao is a soft steamed bun with a sealed savory filling inside slightly sweet dough. It is warm, portable, and closer to a filled bun than a sandwich.",
+    "usuallyIncludes": ["steamed bun", "savory filling", "soft dough", "egg optional", "pork optional"],
+    "goodToKnow": "Do not ask for this toasted like bánh mì. The point is the soft steamed dough and hidden filling.",
+    "commonOptions": ["warm", "takeaway", "ask what filling", "no egg"],
+    "whatItIs": "Bánh bao is a Vietnamese steamed bun, often with pork, egg, mushroom, or other savory filling sealed inside fluffy dough.",
+    "howToEnjoy": "Eat it warm and split carefully if you want to check the filling first. The bun can be more filling than it looks.",
+    "worthKnowing": "Bánh bao sits in Vietnam’s bakery and snack world, but it is steamed rather than baked or toasted.",
+    "travelerCaution": "May contain pork and egg."
+  },
+  "food-banh-bao-xa-xiu": {
+    "atAGlance": "Bánh bao xá xíu is a steamed bun filled with sweet-savory barbecue pork. The soft dough and saucy pork are the appeal.",
+    "usuallyIncludes": ["steamed bun", "xá xíu pork", "sweet-salty glaze", "soft dough"],
+    "goodToKnow": "Xá xíu means char siu-style pork. This is a pork bun, not a crisp baguette sandwich.",
+    "commonOptions": ["warm", "takeaway", "extra filling", "share size"],
+    "whatItIs": "Bánh bao xá xíu is a soft steamed bun filled with sweet-salty barbecue pork.",
+    "howToEnjoy": "Eat warm while the dough is soft. If pork is a no, choose bánh bao chay instead.",
+    "worthKnowing": "Xá xíu reflects Chinese-Vietnamese roast-pork flavor inside a Vietnamese snack-counter bun.",
+    "travelerCaution": "Contains pork."
+  },
+  "food-banh-bao-chay": {
+    "atAGlance": "Bánh bao chay is a vegetarian steamed bun, usually filled with mushrooms, vegetables, tofu, or mock meat depending on the shop.",
+    "usuallyIncludes": ["steamed bun", "vegetarian filling", "mushrooms or vegetables", "soft dough"],
+    "goodToKnow": "Chay signals vegetarian, but ask about egg or dairy if strict. The bun should be steamed, soft, and warm.",
+    "commonOptions": ["warm", "takeaway", "ask about egg", "extra filling"],
+    "whatItIs": "Bánh bao chay is the vegetarian version of a steamed bun: soft dough around a savory plant-based filling.",
+    "howToEnjoy": "Eat it warm and check the filling if strict vegetarian details matter.",
+    "worthKnowing": "Chay is the useful menu word here. It tells you this is not the pork-and-egg steamed bun lane.",
+    "travelerCaution": "Ask about egg or dairy if strict vegetarian."
+  },
+  "food-thit-kho-tau": {
+    "atAGlance": "Thịt kho tàu is southern-style caramel-braised pork belly and eggs, simmered with fish sauce, caramelized sugar, and often coconut water until the sauce turns glossy and deep.",
+    "usuallyIncludes": ["pork belly", "eggs", "coconut water", "fish sauce caramel", "black pepper"],
+    "goodToKnow": "This is family-meal food, not just a restaurant pork plate. The sauce is salty-sweet and intense, so plain rice and pickles matter.",
+    "commonOptions": ["extra rice", "extra egg", "pickled greens", "less fatty pork"],
+    "whatItIs": "Thịt kho tàu is pork belly and eggs braised in fish sauce, caramelized sugar, pepper, and often coconut water until the pork turns tender and the sauce turns dark.",
+    "howToEnjoy": "Eat it with plain rice and something pickled or fresh. The braise is concentrated, so the rice is not optional in practice.",
+    "worthKnowing": "In southern Vietnam, thịt kho tàu is strongly tied to home cooking and Tết tables. Coconut water is one reason the southern version tastes rounder and gently sweet.",
+    "regionalAssociation": "southern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains pork, egg, and fish sauce."
+  },
+  "food-thit-kho-tieu": {
+    "atAGlance": "Thịt kho tiêu is pork braised with fish sauce caramel and plenty of black pepper. It is darker, sharper, and less sweet-feeling than the coconut-water egg version.",
+    "usuallyIncludes": ["pork", "fish sauce caramel", "black pepper", "garlic", "scallions"],
+    "goodToKnow": "Tiêu means pepper. Order rice with it because the peppery caramel sauce is too concentrated to eat alone.",
+    "commonOptions": ["extra rice", "less pepper", "pickled greens", "leaner pork"],
+    "whatItIs": "Thịt kho tiêu is pork braised in fish-sauce caramel with black pepper. It is darker, pepperier, and more rice-hungry than a simple pork plate.",
+    "howToEnjoy": "Spoon a small amount of sauce onto rice, then add more only if you want the peppery salty-sweet flavor stronger.",
+    "worthKnowing": "Kho dishes are Vietnamese braises, often built from fish sauce and caramelized sugar. Tiêu tells you this one leans into pepper.",
+    "travelerCaution": "Contains pork and fish sauce."
+  },
+  "food-suon-ram-man": {
+    "atAGlance": "Sườn ram mặn is pork ribs simmered or tossed in a salty fish-sauce caramel until the edges turn sticky. It is made for rice.",
+    "usuallyIncludes": ["pork ribs", "fish sauce caramel", "garlic", "black pepper", "scallions"],
+    "goodToKnow": "Mặn means salty or savory here. The sauce should cling to the ribs, not behave like a loose gravy.",
+    "commonOptions": ["extra rice", "less pepper", "pickled greens", "share plate"],
+    "whatItIs": "Sườn ram mặn is pork ribs cooked in a salty fish-sauce caramel until sticky and glossy. It is more about deep seasoning than barbecue smoke.",
+    "howToEnjoy": "Eat with rice and pickles or greens. The sauce is meant to season rice, not sit unused on the plate.",
+    "worthKnowing": "Ram and kho-style dishes show how Vietnamese home cooking turns fish sauce, sugar, garlic, and pepper into a glossy braise.",
+    "travelerCaution": "Contains pork ribs and fish sauce."
+  },
+  "food-heo-quay": {
+    "atAGlance": "Heo quay is roast pork with crisp skin, rich meat, and a salty-sweet dipping sauce. The crackling is the reason people order it.",
+    "usuallyIncludes": ["roast pork", "crisp skin", "dipping sauce", "pickles optional", "rice optional"],
+    "goodToKnow": "Ask for skin-on pieces if you want the classic texture. Pickles, herbs, or rice cut through the richness.",
+    "commonOptions": ["skin-on pieces", "with rice", "extra pickles", "share plate"],
+    "whatItIs": "Heo quay is roast pork with crackling skin and rich meat, usually eaten with rice, herbs, pickles, or dipping sauce.",
+    "howToEnjoy": "Look for crisp skin and balance it with rice or pickles. If the skin matters to you, ask for skin-on pieces.",
+    "worthKnowing": "Heo quay is common in rice plates, noodle pairings, and shared meals. The crisp skin is the main difference from ordinary roasted pork.",
+    "travelerCaution": "Contains pork and may include fatty skin-on pieces."
+  },
+  "food-ba-roi-chien-nuoc-mam": {
+    "atAGlance": "Ba rọi chiên nước mắm is pork belly fried until crisp, then tossed in garlic fish-sauce glaze. It is salty, sticky, crunchy, and built for sharing with rice.",
+    "goodToKnow": "Nước mắm is fish sauce, but here it becomes a glaze with sugar and garlic. It is not a dipping sauce on the side.",
+    "commonOptions": ["extra rice", "less garlic", "less chili", "share plate"],
+    "whatItIs": "Ba rọi chiên nước mắm is fried pork belly tossed in garlic fish-sauce glaze. It is crisp-edged, salty-sweet, and much richer than grilled lean pork.",
+    "howToEnjoy": "Eat with rice while the pork is still crisp. Ask for less chili if the glaze is spicy.",
+    "worthKnowing": "Nước mắm means fish sauce; in this dish it becomes a sticky glaze with sugar and garlic.",
+    "travelerCaution": "Contains pork belly and fish sauce."
+  },
+  "food-ca-kho-to": {
+    "atAGlance": "Cá kho tộ is fish simmered in a clay pot with fish sauce, caramelized sugar, pepper, and sometimes pork fat until the sauce turns dark and glossy.",
+    "usuallyIncludes": ["fish", "fish sauce caramel", "black pepper", "clay pot", "rice on the side"],
+    "goodToKnow": "The sauce is fish-sauce caramel: salty, sweet, peppery, and concentrated. Eat it with plain rice and ask about bones if you prefer easier pieces.",
+    "commonOptions": ["extra rice", "ask about bones", "less pepper", "share clay pot"],
+    "whatItIs": "Cá kho tộ is fish braised in a clay pot with fish sauce, caramelized sugar, black pepper, and sometimes pork fat until the sauce is glossy and intense.",
+    "howToEnjoy": "Eat it with plain rice. The sauce is too concentrated to treat like a light dip, and fish bones may be present.",
+    "worthKnowing": "Cá kho tộ is closely tied to southern comfort food and family meals. The clay pot and fish-sauce caramel are what make it different from generic fish in sauce.",
+    "regionalAssociation": "southern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "May contain fish bones and fish sauce."
+  },
+  "food-cha-ca-la-vong": {
+    "atAGlance": "Chả cá Lã Vọng is Hanoi-style turmeric fish cooked with dill and scallions, then eaten with vermicelli, peanuts, herbs, and a pungent dipping sauce.",
+    "usuallyIncludes": ["turmeric fish", "dill", "scallions", "rice vermicelli", "peanuts"],
+    "goodToKnow": "This is not fish cake. The famous version is about hot turmeric-marinated fish and dill at the table.",
+    "commonOptions": ["nước chấm", "mắm tôm", "extra dill", "no peanuts"],
+    "whatItIs": "Chả cá Lã Vọng is a Hanoi fish dish, often made with turmeric-marinated fish, dill, scallions, vermicelli, peanuts, herbs, and either mắm tôm or a milder nước chấm.",
+    "howToEnjoy": "Build bites with fish, dill, noodles, peanuts, and sauce. If mắm tôm is too strong, ask whether nước chấm is available.",
+    "worthKnowing": "The Lã Vọng name points to a famous Hanoi dish tradition. Dill is not a garnish here; it is central to the flavor.",
+    "regionalAssociation": "Hanoi",
+    "originPosture": "regional-association",
+    "travelerCaution": "May contain peanuts and shrimp paste."
+  },
+  "food-lau-mam": {
+    "atAGlance": "Lẩu mắm is Mekong Delta fermented-fish hot pot with seafood, pork, eggplant, and piles of greens. It is a shared-table dish with a deep mắm broth.",
+    "usuallyIncludes": ["fermented fish broth", "seafood", "pork", "eggplant", "wild greens"],
+    "goodToKnow": "The broth has a strong aroma by design. Order it when the table wants a bold regional hot pot, not a neutral soup.",
+    "commonOptions": ["extra greens", "less chili", "ask what seafood", "no pork"],
+    "whatItIs": "Lẩu mắm is a hot pot built on fermented fish broth, usually with river fish or seafood, pork, vegetables, and Mekong-style greens cooked at the table.",
+    "howToEnjoy": "Cook greens and seafood in stages so the pot stays fresh. Rice noodles or rice help balance the salty fermented broth.",
+    "worthKnowing": "This is one of the clearest Mekong Delta flavors on a menu. The mắm broth is the cultural signal, not a background stock.",
+    "regionalAssociation": "Mekong Delta",
+    "originPosture": "regional-association",
+    "travelerCaution": "Strong fermented fish aroma; often contains seafood and pork."
+  },
+  "food-vit-om-sau": {
+    "atAGlance": "Vịt om sấu is northern duck simmered with tart sấu fruit, giving the broth a sour lift that cuts through the richness of duck.",
+    "usuallyIncludes": ["duck", "sấu fruit", "taro or vegetables", "herbs", "vermicelli optional"],
+    "goodToKnow": "Sấu is a tart northern fruit often translated awkwardly as dracontomelon. Think sour, fruity brightness rather than lemon.",
+    "commonOptions": ["with vermicelli", "extra herbs", "less sour", "share pot"],
+    "whatItIs": "Vịt om sấu is a northern duck stew or hot-pot-style dish where sour sấu fruit balances rich duck broth.",
+    "howToEnjoy": "Eat it as a shared dish with herbs, noodles, or rice. The sour broth should feel refreshing, not sharp.",
+    "worthKnowing": "Vịt om sấu is especially associated with northern home cooking and summer duck dishes, when sấu fruit is prized.",
+    "regionalAssociation": "northern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains duck and may include bones."
+  },
+  "food-lau-ga-la-e": {
+    "atAGlance": "Lẩu gà lá é is chicken hot pot with peppery lá é herb, often linked with Đà Lạt and Phú Yên. The herb goes in fresh so the broth smells bright.",
+    "usuallyIncludes": ["chicken", "lá é herb", "sour bamboo shoots", "mushrooms", "noodles"],
+    "goodToKnow": "Lá é is often translated as lemon basil, but its peppery herbal aroma is the point. Add it late so it stays fragrant.",
+    "commonOptions": ["extra lá é", "less chili", "with noodles", "share pot"],
+    "whatItIs": "Lẩu gà lá é is a chicken hot pot scented with lá é, a peppery Vietnamese herb, often with mushrooms or bamboo shoots.",
+    "howToEnjoy": "Cook the chicken and vegetables first, then add lá é near the end. The fresh herb should perfume the bowl.",
+    "worthKnowing": "Travelers often meet this dish around Đà Lạt, though the herb and style also connect to Phú Yên.",
+    "regionalAssociation": "Đà Lạt and Phú Yên",
+    "originPosture": "regional-association"
+  },
+  "food-bo-cuon-la-lot": {
+    "atAGlance": "Bò cuốn lá lốt is seasoned beef wrapped in lá lốt leaves and grilled until smoky. It is often eaten with herbs, rice paper, noodles, and dipping sauce.",
+    "usuallyIncludes": ["seasoned beef", "lá lốt leaves", "herbs", "rice paper optional", "dipping sauce"],
+    "goodToKnow": "Lá lốt is piper lolot, often called wild betel leaf in English. It gives the beef a peppery herbal aroma.",
+    "commonOptions": ["extra herbs", "rice paper", "less chili", "share plate"],
+    "whatItIs": "Bò cuốn lá lốt is grilled beef wrapped in aromatic lá lốt leaves. The leaf is not decoration; it perfumes the meat.",
+    "howToEnjoy": "Wrap with herbs and noodles if served, then dip lightly. The smoky leaf and beef should stay clear.",
+    "worthKnowing": "This is a southern-style shared snack people remember because the grilled leaf aroma is so distinctive.",
+    "regionalAssociation": "southern Vietnam",
+    "originPosture": "regional-association"
+  },
+  "food-bo-tai-chanh": {
+    "atAGlance": "Bò tái chanh is rare beef cured with lime, tossed with herbs, onion, peanuts, and bright dressing. It is a shared appetizer, not a cooked steak plate.",
+    "usuallyIncludes": ["rare beef", "lime", "herbs", "onion", "peanuts"],
+    "goodToKnow": "Tái means rare. The lime changes the beef texture, but cautious travelers should treat it as rare beef.",
+    "commonOptions": ["no peanuts", "less chili", "extra herbs", "share plate"],
+    "whatItIs": "Bò tái chanh is lime-cured rare beef salad with herbs, onion, peanuts, and a sweet-sour-salty dressing.",
+    "howToEnjoy": "Eat it as a shared starter with herbs and crunchy toppings. Ask for no peanuts or less chili before it is mixed.",
+    "worthKnowing": "This is beer-food and appetizer territory: bright, punchy, and meant to wake up the table.",
+    "travelerCaution": "Contains rare beef and often peanuts."
+  },
+  "food-so-huyet-rang-me": {
+    "atAGlance": "Sò huyết rang me is blood cockles tossed in tamarind sauce until sweet, sour, salty, and sticky. It is shell-picking seafood-table food.",
+    "usuallyIncludes": ["blood cockles", "tamarind sauce", "garlic", "chili optional", "shells"],
+    "goodToKnow": "Blood cockles can sound intense in English. The menu point is the briny shellfish and tangy tamarind glaze.",
+    "commonOptions": ["less chili", "share plate", "with rice", "extra tamarind sauce"],
+    "whatItIs": "Sò huyết rang me is tamarind-glazed blood cockles served in the shell. The sauce is sticky and bright, not a plain seafood dip.",
+    "howToEnjoy": "Pick the cockles from the shell and use the tamarind sauce sparingly. Order at busy seafood spots where turnover is high.",
+    "worthKnowing": "This is a classic sweet-sour shellfish order for a Vietnamese seafood table.",
+    "travelerCaution": "Contains shellfish; consider seafood freshness and doneness."
+  },
+  "food-be-thui": {
+    "atAGlance": "Bê thui is tender veal, often linked with Quảng Nam/Cầu Mống style, served with herbs, rice paper, and pungent mắm nêm dipping sauce.",
+    "usuallyIncludes": ["veal", "herbs", "rice paper optional", "mắm nêm", "roasted sesame optional"],
+    "goodToKnow": "Bê means veal. The dipping sauce is often fermented anchovy sauce, stronger than nước chấm.",
+    "commonOptions": ["extra herbs", "rice paper", "milder sauce", "share plate"],
+    "whatItIs": "Bê thui is lightly roasted or prepared veal served for wrapping or dipping with herbs and mắm nêm.",
+    "howToEnjoy": "Wrap with herbs and rice paper if served, then dip carefully. Mắm nêm is salty, fermented, and powerful.",
+    "worthKnowing": "Bê thui is strongly associated with Quảng Nam and Cầu Mống-style veal.",
+    "regionalAssociation": "Quảng Nam",
+    "originPosture": "regional-association",
+    "travelerCaution": "Contains veal and often fermented anchovy sauce."
+  },
+  "food-canh-chua-ca": {
+    "atAGlance": "Canh chua cá is tamarind-sour fish soup with tomato, pineapple, okra, bạc hà stem, herbs, and a sweet-sour broth eaten with rice.",
+    "usuallyIncludes": ["fish", "tamarind broth", "pineapple", "tomato", "okra and herbs"],
+    "goodToKnow": "Canh chua means sour soup. The sourness should be refreshing and balanced, not creamy or heavy.",
+    "commonOptions": ["with rice", "less chili", "ask about bones", "share bowl"],
+    "whatItIs": "Canh chua cá is Vietnamese sour fish soup, usually family-style, with tamarind brightness and vegetables that make the broth lively.",
+    "howToEnjoy": "Eat it with plain rice and spoon broth over the rice. Watch for fish bones.",
+    "worthKnowing": "This kind of sour soup is especially loved in southern and Mekong-style meals, where sweet, sour, salty, and herbal flavors share the table.",
+    "regionalAssociation": "southern Vietnam and the Mekong Delta",
+    "originPosture": "regional-association",
+    "travelerCaution": "May contain fish bones."
+  },
+  "food-canh-chua-tom": {
+    "atAGlance": "Canh chua tôm is tamarind-sour shrimp soup with pineapple, tomato, okra, herbs, and a bright broth that is usually eaten with rice.",
+    "usuallyIncludes": ["shrimp", "tamarind broth", "pineapple", "tomato", "okra and herbs"],
+    "goodToKnow": "This is a shared soup, not a noodle soup. The sweet-sour broth is there to wake up rice and other dishes.",
+    "commonOptions": ["with rice", "less chili", "extra herbs", "share bowl"],
+    "whatItIs": "Canh chua tôm is the shrimp version of Vietnamese sour soup, with tamarind brightness, vegetables, and herbs.",
+    "howToEnjoy": "Spoon the broth over rice and eat shrimp with the vegetables. Add chili only after tasting the sour balance.",
+    "worthKnowing": "Canh chua often appears in family meals beside braised fish or pork, so the soup adds freshness to richer dishes.",
+    "travelerCaution": "Contains shrimp."
+  },
+  "food-bun-dau-chay": {
+    "atAGlance": "Bún đậu chay is a vegetarian take on the bún đậu platter: rice vermicelli, fried tofu, herbs, vegetables, and a vegetarian dipping sauce.",
+    "usuallyIncludes": ["rice vermicelli", "fried tofu", "fresh herbs", "vegetarian dipping sauce", "vegetables"],
+    "goodToKnow": "The standard non-vegetarian platter often centers mắm tôm and pork. Chay should move it into tofu and vegetarian sauce.",
+    "commonOptions": ["extra tofu", "more herbs", "no fish sauce", "share plate"],
+    "whatItIs": "Bún đậu chay keeps the platter format of bún đậu but swaps the meat and shrimp paste emphasis for tofu, herbs, noodles, and vegetarian dipping sauce.",
+    "howToEnjoy": "Build bites with tofu, noodles, and herbs, then dip lightly. Ask no fish sauce if strict vegetarian.",
+    "worthKnowing": "This is useful for vegetarians because it names the chay version of a dish that otherwise often includes shrimp paste and pork.",
+    "travelerCaution": "Confirm the dipping sauce is vegetarian if strict."
+  },
+  "food-che-ba-mau": {
+    "atAGlance": "Chè ba màu is the classic three-color dessert cup: beans, pandan jelly, coconut milk, and crushed ice layered so every spoonful changes texture.",
+    "usuallyIncludes": ["mung beans", "red beans", "pandan jelly", "coconut milk", "crushed ice"],
+    "goodToKnow": "This is as much about texture as sweetness. Stir lightly if you want the coconut milk to reach every layer.",
+    "commonOptions": ["less sweet", "less ice", "extra coconut milk", "takeaway cup"],
+    "whatItIs": "Chè ba màu means three-color chè, usually a layered cup of beans, jellies, coconut milk, and ice.",
+    "howToEnjoy": "Dig down through the layers before stirring everything together. The contrast between creamy, chewy, icy, and soft is the point.",
+    "worthKnowing": "Chè is Vietnam’s broad dessert-drink world, and ba màu is one of the easiest first cups for Americans to understand visually."
+  },
+  "food-che-thai": {
+    "atAGlance": "Chè Thái is a fruit-and-jelly dessert with coconut milk, often durian, jackfruit, longan, lychee, and colorful jellies. It is creamy, fragrant, and loud in a good way.",
+    "usuallyIncludes": ["coconut milk", "fruit", "jellies", "durian optional", "crushed ice"],
+    "goodToKnow": "Ask about durian if the aroma worries you. Some cups include it by default; others keep it optional.",
+    "commonOptions": ["no durian", "less sweet", "less ice", "extra fruit"],
+    "whatItIs": "Chè Thái is a rich fruit chè inspired by Thai-style dessert flavors, with coconut milk and mixed tropical fruit or jellies.",
+    "howToEnjoy": "Stir enough to chill the coconut milk, then take small spoonfuls so the fruit and jelly textures stay distinct.",
+    "worthKnowing": "This is one of the more dessert-like chè cups: creamy, fruity, icy, and sometimes durian-forward.",
+    "travelerCaution": "May contain durian and dairy-style additions depending on the shop."
+  },
+  "food-che-khuc-bach": {
+    "atAGlance": "Chè khúc bạch is a chilled dessert with soft milk-jelly cubes, lychee or longan, syrup, and sliced almonds. It is lighter and cleaner than coconut-heavy chè.",
+    "usuallyIncludes": ["milk jelly", "lychee or longan", "clear syrup", "almonds", "ice"],
+    "goodToKnow": "The cubes should be silky and lightly creamy, not chewy like tapioca. It is a good choice when you want a cooler, gentler dessert.",
+    "commonOptions": ["less sweet", "extra lychee", "no almonds", "less ice"],
+    "whatItIs": "Chè khúc bạch is a modern chilled chè with creamy jelly cubes, fruit, syrup, and almonds.",
+    "howToEnjoy": "Eat it cold and keep the syrup light. The best bites pair a jelly cube with lychee or longan.",
+    "worthKnowing": "Compared with bean-based chè, khúc bạch feels closer to panna cotta in syrup, which makes it approachable as a first chilled chè.",
+    "travelerCaution": "Usually contains dairy and almonds."
+  },
+  "food-che-troi-nuoc": {
+    "atAGlance": "Chè trôi nước is warm glutinous rice balls filled with mung bean and served in ginger syrup, often with coconut milk and sesame.",
+    "usuallyIncludes": ["glutinous rice balls", "mung bean filling", "ginger syrup", "coconut milk optional", "sesame"],
+    "goodToKnow": "This is a warm dessert, not an iced cup. The ginger syrup is part of the comfort.",
+    "commonOptions": ["extra ginger", "less sweet", "coconut milk", "takeaway bowl"],
+    "whatItIs": "Chè trôi nước is a warm Vietnamese sweet of chewy rice balls in ginger syrup, with a soft mung-bean center.",
+    "howToEnjoy": "Cut or bite carefully; the rice balls are chewy and can be hot inside. Spoon ginger syrup with each bite.",
+    "worthKnowing": "The dessert is tied to family and festival-style sweets, so it feels more ceremonial than a quick iced chè."
+  },
+  "food-banh-da-lon": {
+    "atAGlance": "Bánh da lợn is a layered steamed cake, usually pandan-green and mung-bean-yellow, with a chewy tapioca-rice texture and gentle coconut sweetness.",
+    "usuallyIncludes": ["tapioca-rice batter", "pandan", "mung bean", "coconut milk", "steamed layers"],
+    "goodToKnow": "The name means pig-skin cake because of the layered texture, not because it contains pork.",
+    "commonOptions": ["takeaway", "share pieces", "less sweet", "ask about coconut"],
+    "whatItIs": "Bánh da lợn is a chewy layered steamed cake made with pandan, mung bean, coconut milk, and starches.",
+    "howToEnjoy": "Eat it in small pieces and notice the chew. It is more springy than fluffy.",
+    "worthKnowing": "For Americans, the useful cue is texture: this is a soft, chewy steamed sweet, not a baked cake.",
+    "travelerCaution": "Usually contains coconut milk."
+  },
+  "food-banh-pia": {
+    "atAGlance": "Bánh pía is a flaky southern pastry, often from Sóc Trăng, filled with mung bean, salted egg yolk, and sometimes durian.",
+    "usuallyIncludes": ["flaky pastry", "mung bean filling", "salted egg yolk", "durian optional"],
+    "goodToKnow": "Ask about durian before buying if the aroma is a concern. The pastry can be rich and sweet-salty.",
+    "commonOptions": ["no durian", "boxed gift", "single pastry", "share pieces"],
+    "whatItIs": "Bánh pía is a layered pastry with a dense sweet filling, commonly mung bean plus salted egg yolk and sometimes durian.",
+    "howToEnjoy": "Cut it into small wedges. It is richer than it looks and works well with tea.",
+    "worthKnowing": "Bánh pía is strongly associated with Sóc Trăng and southern gift/snack culture.",
+    "regionalAssociation": "Sóc Trăng and southern Vietnam",
+    "originPosture": "regional-association",
+    "travelerCaution": "May contain durian and salted egg yolk."
+  },
+  "food-sua-chua-nep-cam": {
+    "atAGlance": "Sữa chua nếp cẩm is yogurt with fermented black sticky rice. It is tangy, creamy, gently boozy-smelling, and chewy from the rice.",
+    "usuallyIncludes": ["yogurt", "black sticky rice", "fermented rice syrup", "ice optional"],
+    "goodToKnow": "The black sticky rice brings a fermented aroma and chew. It is dessert, not just a yogurt cup.",
+    "commonOptions": ["less sweet", "more sticky rice", "less ice", "takeaway cup"],
+    "whatItIs": "Sữa chua nếp cẩm combines tart yogurt with sweet fermented black sticky rice.",
+    "howToEnjoy": "Stir lightly so the yogurt and rice meet without losing all the chewy rice pockets.",
+    "worthKnowing": "This is a good example of Vietnamese desserts using fermentation and texture, not only sugar.",
+    "travelerCaution": "Contains dairy."
+  },
+  "food-kem-bo": {
+    "atAGlance": "Kem bơ is avocado ice cream or avocado cream, famously associated with Đà Lạt-style dessert shops. It is creamy, green, and richer than a fruit smoothie.",
+    "usuallyIncludes": ["avocado", "ice cream", "condensed milk", "coconut optional"],
+    "goodToKnow": "Bơ means avocado here, not butter. Expect dessert creaminess rather than a savory avocado flavor.",
+    "commonOptions": ["less sweet", "extra ice cream", "no coconut", "takeaway cup"],
+    "whatItIs": "Kem bơ is a cold avocado dessert, often blended avocado topped with ice cream or coconut.",
+    "howToEnjoy": "Eat it while cold and stir just enough to mix the avocado with the ice cream.",
+    "worthKnowing": "Đà Lạt is especially known for avocado desserts, and kem bơ is the easy order to remember.",
+    "regionalAssociation": "Đà Lạt",
+    "originPosture": "regional-association",
+    "travelerCaution": "Usually contains dairy."
+  },
+  "food-tau-hu-nuoc-duong": {
+    "atAGlance": "Tàu hũ nước đường is soft tofu pudding in ginger sugar syrup. It is silky, warm or chilled, and gentler than many coconut-heavy desserts.",
+    "usuallyIncludes": ["soft tofu pudding", "ginger syrup", "sugar syrup", "coconut optional"],
+    "goodToKnow": "This is dessert tofu, not savory tofu. The texture should be very soft and spoonable.",
+    "commonOptions": ["warm", "cold", "extra ginger", "less sweet"],
+    "whatItIs": "Tàu hũ nước đường is silken tofu pudding served with sweet ginger syrup.",
+    "howToEnjoy": "Spoon carefully so the tofu stays silky. Ginger syrup gives the dessert its warmth.",
+    "worthKnowing": "It is a useful gentle dessert when you want something sweet but not icy, fried, or heavy."
+  },
+  "food-chuoi-nep-nuong": {
+    "atAGlance": "Chuối nếp nướng is grilled banana wrapped in sticky rice, usually served with coconut sauce, peanuts, and sesame. It is smoky, chewy, and sweet.",
+    "usuallyIncludes": ["banana", "sticky rice", "coconut sauce", "peanuts", "sesame"],
+    "goodToKnow": "The grilled wrapper gives a toasty edge while the coconut sauce makes it dessert-rich.",
+    "commonOptions": ["extra coconut sauce", "no peanuts", "share pieces", "takeaway"],
+    "whatItIs": "Chuối nếp nướng is banana wrapped in sticky rice, grilled, then topped with coconut sauce and crunch.",
+    "howToEnjoy": "Eat it warm if possible, while the sticky rice still has a grilled edge.",
+    "worthKnowing": "This is a street sweet where smoke, coconut, banana, and chewy rice all matter.",
+    "travelerCaution": "Often contains peanuts."
+  },
+  "drink-tra-bi-dao": {
+    "atAGlance": "Trà bí đao is winter melon tea, a dark, cooling herbal-style drink that tastes lightly sweet and earthy rather than fruity.",
+    "usuallyIncludes": ["winter melon tea", "ice", "sugar optional"],
+    "goodToKnow": "Bí đao is winter melon, not peach. Ask for less sweet if it is poured from a pre-sweetened batch.",
+    "commonOptions": ["less sweet", "no ice", "cold bottle", "takeaway"],
+    "whatItIs": "Trà bí đao is a winter melon drink, often served cold from a bottle, can, or café dispenser.",
+    "howToEnjoy": "Drink it cold with food or on a hot day. It is usually smoother and earthier than citrus tea.",
+    "worthKnowing": "This belongs to Vietnam’s cooling-drink habit, where herbal and gourd-based drinks sit beside tea and juice."
+  },
+  "drink-tra-vai": {
+    "atAGlance": "Trà vải is lychee tea: black or green tea brightened with sweet lychee fruit and ice. It is floral, sweet, and easy in modern cafés.",
+    "usuallyIncludes": ["tea", "lychee", "ice", "sugar optional"],
+    "goodToKnow": "Vải means lychee. Ask for less sugar before it is mixed if you want the tea to lead.",
+    "commonOptions": ["less sweet", "no ice", "extra lychee", "takeaway"],
+    "whatItIs": "Trà vải is fruit tea with lychee, usually served cold and sweetened.",
+    "howToEnjoy": "Stir before drinking so the lychee syrup and tea balance out. Eat the fruit if pieces are included.",
+    "worthKnowing": "Fruit teas are a modern café lane in Vietnam, useful when you want something lighter than milk tea."
+  },
+  "drink-tra-atiso": {
+    "atAGlance": "Trà atisô is artichoke tea, strongly associated with Đà Lạt. It can be earthy, slightly sweet, and served hot or iced.",
+    "usuallyIncludes": ["artichoke tea", "hot water or ice", "sugar optional"],
+    "goodToKnow": "Atisô means artichoke. It is more herbal than floral, and many packaged versions are pre-sweetened.",
+    "commonOptions": ["hot", "iced", "less sweet", "takeaway"],
+    "whatItIs": "Trà atisô is artichoke tea, often from Đà Lạt-style café and gift-shop culture.",
+    "howToEnjoy": "Try it hot if you want the herbal flavor clear, or iced if you want it as a cooling drink.",
+    "worthKnowing": "Đà Lạt is known for artichokes and highland produce, which is why atisô shows up on Vietnamese tea shelves.",
+    "regionalAssociation": "Đà Lạt",
+    "originPosture": "regional-association"
+  },
+  "drink-tra-hoa-cuc": {
+    "atAGlance": "Trà hoa cúc is chrysanthemum tea, a light floral drink often served hot or chilled with gentle sweetness.",
+    "usuallyIncludes": ["chrysanthemum tea", "hot water or ice", "sugar optional"],
+    "goodToKnow": "Hoa cúc means chrysanthemum. It is floral and soothing, not a fruit tea.",
+    "commonOptions": ["hot", "iced", "less sweet", "takeaway"],
+    "whatItIs": "Trà hoa cúc is chrysanthemum tea, usually a mild floral drink rather than a strong caffeine hit.",
+    "howToEnjoy": "Order hot for a calmer cup or iced for a light cooling drink. Ask less sweet if it is café-made.",
+    "worthKnowing": "Floral and herbal teas are common comfort drinks in Vietnam, especially when people want something gentler than coffee."
+  },
+  "drink-chanh-muoi": {
+    "atAGlance": "Chanh muối is salted preserved lime drink, mixed with water, sugar, and ice. It is salty-sour-sweet and deeply refreshing in hot weather.",
+    "usuallyIncludes": ["salted preserved lime", "water", "sugar", "ice"],
+    "goodToKnow": "This is not ordinary lemonade. The preserved lime gives it a briny, almost sports-drink quality.",
+    "commonOptions": ["less sweet", "less salty", "no ice", "takeaway"],
+    "whatItIs": "Chanh muối is a drink made from salted preserved lime, balanced with sugar and water.",
+    "howToEnjoy": "Stir well before drinking. The salty lime settles and can taste too strong if you sip the bottom first.",
+    "worthKnowing": "It is one of Vietnam’s best hot-weather drinks because salt, sourness, sweetness, and ice all work together."
+  },
+  "drink-nuoc-dua": {
+    "atAGlance": "Nước dừa is fresh coconut water, often served straight from the coconut or over ice. It is lightly sweet, clean, and naturally refreshing.",
+    "usuallyIncludes": ["fresh coconut water", "coconut flesh optional", "ice optional"],
+    "goodToKnow": "This is usually not a mixed sugar drink. Ask for no ice if you want the pure coconut flavor.",
+    "commonOptions": ["no ice", "with coconut flesh", "whole coconut", "takeaway cup"],
+    "whatItIs": "Nước dừa is coconut water, one of the simplest fresh drinks to order in Vietnam.",
+    "howToEnjoy": "Drink it cold and scrape the soft coconut flesh if it is served in the shell.",
+    "worthKnowing": "Fresh coconut water is common in hot coastal and city settings because it feels hydrating without being heavy."
+  },
+  "drink-nuoc-yen": {
+    "atAGlance": "Nước yến is bird’s nest drink, usually a sweet bottled or canned drink with soft strands suspended in syrupy liquid.",
+    "usuallyIncludes": ["bird’s nest drink", "sugar syrup", "soft strands", "bottle or can"],
+    "goodToKnow": "It is more of a packaged wellness-style drink than a fresh juice. The texture may surprise you.",
+    "commonOptions": ["cold bottle", "no ice", "takeaway", "ask before opening"],
+    "whatItIs": "Nước yến is a sweet bird’s nest beverage, sold chilled in bottles or cans at shops and cafés.",
+    "howToEnjoy": "Drink it cold if you like the texture. If floating strands make you hesitant, choose tea or juice instead.",
+    "worthKnowing": "Bird’s nest drinks are tied to East and Southeast Asian wellness traditions, so the appeal is as much perceived nourishment as flavor.",
+    "travelerCaution": "Contains bird’s nest and a noticeable suspended texture."
+  },
+  "drink-sua-bap": {
+    "atAGlance": "Sữa bắp is sweet corn milk, a creamy yellow drink made from corn and milk or plant-based milk depending on the shop.",
+    "usuallyIncludes": ["corn", "milk", "sugar", "ice optional"],
+    "goodToKnow": "Bắp means corn. It is sweet and creamy, closer to a dessert drink than plain milk.",
+    "commonOptions": ["cold", "less sweet", "no ice", "takeaway bottle"],
+    "whatItIs": "Sữa bắp is corn milk, often homemade or bottled, with a soft corn sweetness.",
+    "howToEnjoy": "Drink it cold as a snack drink. Ask about dairy if that matters.",
+    "worthKnowing": "Vietnamese milk drinks can lean snack-like: soy, corn, yogurt, and nutty flavors all sit beside soda and water.",
+    "travelerCaution": "May contain dairy."
+  },
+  "drink-sua-dau-nanh": {
+    "atAGlance": "Sữa đậu nành is soy milk, served hot or cold, lightly sweetened, and often sold as a breakfast or street-side drink.",
+    "usuallyIncludes": ["soy milk", "sugar optional", "ice optional"],
+    "goodToKnow": "It may be pre-sweetened. Ask ít đường if you want it less sweet.",
+    "commonOptions": ["hot", "cold", "less sweet", "takeaway bottle"],
+    "whatItIs": "Sữa đậu nành is Vietnamese soy milk, a familiar but locally common everyday drink.",
+    "howToEnjoy": "Drink hot in the morning or cold with ice. It pairs well with bakery snacks.",
+    "worthKnowing": "Soy milk is part of Vietnam’s everyday street-drink landscape, not just a dairy alternative."
+  },
+  "drink-ruou-de": {
+    "atAGlance": "Rượu đế is strong Vietnamese rice liquor, usually clear and poured in small shots. It is not a casual soft drink.",
+    "usuallyIncludes": ["rice liquor", "small glass", "shared bottle"],
+    "goodToKnow": "Rượu means alcohol. Ask before accepting a pour if you are avoiding strong liquor.",
+    "commonOptions": ["small glass", "with food", "share bottle", "no alcohol"],
+    "whatItIs": "Rượu đế is a traditional strong rice spirit, often served with food in small pours.",
+    "howToEnjoy": "Sip carefully and eat with it. Strength can vary, especially with homemade or local bottles.",
+    "worthKnowing": "This belongs to Vietnam’s rice-liquor culture, not the beer or soda lane.",
+    "travelerCaution": "Alcoholic and can be strong."
+  },
+  "drink-nuoc-khoang-co-ga": {
+    "atAGlance": "Nước khoáng có ga is sparkling mineral water. It is the useful order when you want bubbles without soda sweetness.",
+    "usuallyIncludes": ["sparkling mineral water", "bottle", "ice optional"],
+    "goodToKnow": "Có ga means carbonated. If you want still water, ask for nước khoáng không ga or nước suối.",
+    "commonOptions": ["cold bottle", "no ice", "with lime", "takeaway"],
+    "whatItIs": "Nước khoáng có ga is carbonated mineral water, usually served bottled.",
+    "howToEnjoy": "Order it cold and ask for no ice if you want the bottle sealed and simple.",
+    "worthKnowing": "Knowing có ga versus không ga helps you avoid accidentally ordering sparkling or still water."
+  },
+  "drink-sinh-to-bo": {
+    "atAGlance": "Sinh tố bơ is avocado smoothie, usually blended with condensed milk, ice, and sometimes fresh milk. It is creamy, rich, and dessert-like.",
+    "usuallyIncludes": ["avocado", "condensed milk", "ice", "milk optional"],
+    "goodToKnow": "Bơ means avocado here. Ask for less condensed milk if you want the avocado flavor to lead.",
+    "commonOptions": ["less sweet", "less condensed milk", "no ice", "takeaway"],
+    "whatItIs": "Sinh tố bơ is a thick avocado smoothie, one of Vietnam’s most beloved creamy fruit drinks.",
+    "howToEnjoy": "Drink it cold before the ice melts. It is filling enough to feel like a snack.",
+    "worthKnowing": "Avocado is treated as a dessert fruit in Vietnam, so this will taste sweeter than many American avocado dishes.",
+    "travelerCaution": "Usually contains dairy or condensed milk."
+  },
+  "drink-sinh-to-mang-cau": {
+    "atAGlance": "Sinh tố mãng cầu is soursop smoothie, creamy but tangy, usually blended with ice and milk or condensed milk.",
+    "usuallyIncludes": ["soursop", "ice", "condensed milk", "sugar optional"],
+    "goodToKnow": "Mãng cầu has a bright tartness under the creaminess. Ask less sweet if you want that fruit tang to show.",
+    "commonOptions": ["less sweet", "less milk", "more ice", "takeaway"],
+    "whatItIs": "Sinh tố mãng cầu is a soursop smoothie, thicker and more fragrant than many simple fruit juices.",
+    "howToEnjoy": "Drink it cold and expect a sweet-tart tropical flavor rather than a plain vanilla-like smoothie.",
+    "worthKnowing": "Soursop is common in Vietnamese drink shops and gives a tart, creamy texture that may be new if you usually order mango or berry smoothies.",
+    "travelerCaution": "Usually contains dairy or condensed milk."
+  },
+  "drink-sinh-to-rau-ma": {
+    "atAGlance": "Sinh tố rau má is pennywort smoothie or blended pennywort, grassy, green, and cooling rather than dessert-creamy.",
+    "usuallyIncludes": ["pennywort", "water or ice", "sugar optional", "mung bean optional"],
+    "goodToKnow": "Rau má tastes herbal and grassy. Some shops blend it with mung bean or milk to make it softer.",
+    "commonOptions": ["less sweet", "no milk", "with mung bean", "takeaway"],
+    "whatItIs": "Sinh tố rau má is a green pennywort drink, sometimes blended like a smoothie and sometimes served more like fresh juice.",
+    "howToEnjoy": "Order it cold and expect herbal refreshment. If you want creamy, ask whether mung bean or milk is added.",
+    "worthKnowing": "Rau má is part of Vietnam’s cooling-drink habit, where herbal greens are used for refreshment."
+  },
+  "drink-sinh-to-chanh-day": {
+    "atAGlance": "Sinh tố chanh dây is passion fruit smoothie, bright and tart with ice, sugar, and sometimes milk. It is sharper than mango or avocado.",
+    "usuallyIncludes": ["passion fruit", "ice", "sugar", "milk optional"],
+    "goodToKnow": "Chanh dây means passion fruit. Ask for less sugar if you like the tart edge.",
+    "commonOptions": ["less sweet", "no milk", "more ice", "takeaway"],
+    "whatItIs": "Sinh tố chanh dây is a passion fruit smoothie or blended drink with a vivid sweet-sour flavor.",
+    "howToEnjoy": "Drink it cold and stir if the pulp separates. The seeds and tartness are part of the fruit.",
+    "worthKnowing": "Passion fruit is common in Vietnamese cafés, and it gives a drink that feels refreshing rather than heavy."
+  },
+  "food-che-dau-xanh": {
+    "atAGlance": "Chè đậu xanh is mung bean sweet soup or pudding, often soft, lightly sweet, and rounded with coconut milk. It is simple comfort rather than a flashy dessert.",
+    "usuallyIncludes": ["mung beans", "sugar", "coconut milk optional", "ice optional"],
+    "goodToKnow": "Đậu xanh means mung bean. Ask for less coconut if you want the bean flavor cleaner.",
+    "whatItIs": "Chè đậu xanh is a mung bean chè, served warm, chilled, or over ice depending on the shop.",
+    "howToEnjoy": "Stir if coconut milk is added, then taste before asking for more sweetness or ice.",
+    "worthKnowing": "Mung bean sweets are common across Vietnam because they are filling, gentle, and easy to pair with coconut."
+  },
+  "food-che-dau-do": {
+    "atAGlance": "Chè đậu đỏ is red bean sweet soup, usually soft beans in syrup with coconut milk or ice. It is earthy, sweet, and filling.",
+    "usuallyIncludes": ["red beans", "sugar syrup", "coconut milk optional", "ice optional"],
+    "goodToKnow": "The beans should be tender but still recognizable. Ask for less sweet if you want it lighter.",
+    "whatItIs": "Chè đậu đỏ is red bean chè, a bean-based dessert that can be served warm or cold.",
+    "howToEnjoy": "Eat it slowly like a small bowl, not a drink. Coconut milk makes it richer.",
+    "worthKnowing": "Bean-based chè may surprise Americans because beans move from savory territory into dessert."
+  },
+  "food-che-dau-den": {
+    "atAGlance": "Chè đậu đen is black bean sweet soup, often served with syrup, coconut milk, and ice. It tastes deeper and earthier than red bean chè.",
+    "usuallyIncludes": ["black beans", "sugar syrup", "coconut milk optional", "ice"],
+    "goodToKnow": "It is a cooling dessert on hot days. The beans give it more chew and body than a simple pudding.",
+    "whatItIs": "Chè đậu đen is black bean chè, a sweet bean dessert that is usually spooned cold or over ice.",
+    "howToEnjoy": "Stir in coconut milk if served, then spoon beans and syrup together.",
+    "worthKnowing": "Black bean chè is a classic example of Vietnamese sweets caring about texture and refreshment as much as sugar."
+  },
+  "food-che-bap": {
+    "atAGlance": "Chè bắp is sweet corn pudding, usually made with tender corn, sticky rice or tapioca body, coconut milk, and gentle sweetness.",
+    "usuallyIncludes": ["sweet corn", "coconut milk", "tapioca or sticky rice", "sugar"],
+    "goodToKnow": "Bắp means corn. Expect a soft spoon dessert, not a corn drink.",
+    "whatItIs": "Chè bắp is corn chè, a creamy-sweet bowl where corn flavor stays visible.",
+    "howToEnjoy": "Eat warm or chilled depending on the shop. Coconut milk and a little salt can make the corn taste sweeter.",
+    "worthKnowing": "Corn shows up in Vietnamese desserts more naturally than many Americans expect."
+  },
+  "food-che-chuoi": {
+    "atAGlance": "Chè chuối is banana coconut pudding with soft banana, coconut milk, tapioca pearls, and often peanuts or sesame on top.",
+    "usuallyIncludes": ["banana", "coconut milk", "tapioca pearls", "peanuts optional", "sesame"],
+    "goodToKnow": "The banana is usually cooked until soft and fragrant. Ask no peanuts if needed.",
+    "whatItIs": "Chè chuối is a banana-and-coconut chè, creamy and spoonable rather than icy.",
+    "howToEnjoy": "Eat it warm or chilled and get banana, coconut, and tapioca in the same spoonful.",
+    "worthKnowing": "This is a friendly first chè for travelers because banana and coconut feel familiar while the texture is Vietnamese.",
+    "travelerCaution": "Often contains peanuts."
+  },
+  "food-che-suong-sa-hat-luu": {
+    "atAGlance": "Chè sương sa hạt lựu is a jelly dessert with agar, coconut milk, and faux pomegranate-seed cubes that pop with chewy texture.",
+    "usuallyIncludes": ["agar jelly", "faux pomegranate seeds", "coconut milk", "ice", "syrup"],
+    "goodToKnow": "Hạt lựu means pomegranate seeds, but these are usually colorful starch jellies, not real pomegranate.",
+    "whatItIs": "Chè sương sa hạt lựu is a chilled jelly-and-coconut dessert where color and chew do most of the work.",
+    "howToEnjoy": "Stir lightly and scoop across the jellies so you get more than one texture at once.",
+    "worthKnowing": "This is a texture-first dessert, a good reminder that Vietnamese sweets often prize chew and coolness."
+  },
+  "food-suong-sao": {
+    "atAGlance": "Sương sáo is grass jelly, a dark herbal jelly served with syrup, ice, or milk. It is cooling, lightly bitter, and very soft.",
+    "usuallyIncludes": ["grass jelly", "syrup", "ice", "milk optional"],
+    "goodToKnow": "The flavor is herbal rather than fruity. Choose it when you want something cooling and not too rich.",
+    "whatItIs": "Sương sáo is grass jelly, usually cut into cubes or strips and served as a light dessert or drink topping.",
+    "howToEnjoy": "Eat it cold with syrup or milk. The soft jelly texture is the main event.",
+    "worthKnowing": "Grass jelly sits between drink and dessert in Vietnam, especially on hot days."
+  },
+  "food-banh-flan": {
+    "atAGlance": "Bánh flan is Vietnamese caramel flan, usually silky custard with dark caramel and sometimes crushed ice or coffee.",
+    "usuallyIncludes": ["egg custard", "caramel", "crushed ice optional", "coffee optional"],
+    "goodToKnow": "Some shops serve flan with coffee poured over ice. Ask if you want it plain.",
+    "whatItIs": "Bánh flan is caramel custard adopted into Vietnam’s dessert-counter culture.",
+    "howToEnjoy": "Eat it cold and spoon caramel with each bite. Coffee makes it more bitter and grown-up.",
+    "worthKnowing": "This is one of the most familiar desserts for Americans, but Vietnamese shops often serve it colder and more casual."
+  },
+  "food-rau-cau-dua": {
+    "atAGlance": "Rau câu dừa is coconut jelly, often layered with clear coconut water jelly and creamy coconut milk jelly.",
+    "usuallyIncludes": ["coconut jelly", "coconut water", "coconut milk", "agar"],
+    "goodToKnow": "Rau câu means agar jelly. It should be clean, cool, and sliceable.",
+    "whatItIs": "Rau câu dừa is a coconut agar dessert with a firm, refreshing jelly texture.",
+    "howToEnjoy": "Eat cold in small pieces. It is lighter than ice cream and cleaner than coconut pudding.",
+    "worthKnowing": "Agar jellies are common in Vietnamese sweets because they hold shape and stay refreshing in heat."
+  },
+  "food-kem-dua": {
+    "atAGlance": "Kem dừa is coconut ice cream, often served in a coconut shell or cup with coconut flakes, peanuts, or jelly toppings.",
+    "usuallyIncludes": ["coconut ice cream", "coconut flakes", "peanuts optional", "jelly optional"],
+    "goodToKnow": "Ask no peanuts if needed. The best versions taste like coconut, not just vanilla with coconut bits.",
+    "whatItIs": "Kem dừa is a coconut ice-cream dessert, usually more tropical and textural than a plain scoop.",
+    "howToEnjoy": "Eat before it melts and mix in toppings slowly so the coconut flavor stays clear.",
+    "worthKnowing": "Coconut desserts are a strong through-line in Vietnamese sweets, from chè to ice cream.",
+    "travelerCaution": "Often contains dairy and peanuts."
+  },
+  "food-banh-chuoi-nuong": {
+    "atAGlance": "Bánh chuối nướng is baked banana cake, often dense, coconut-rich, and caramelized at the edges.",
+    "usuallyIncludes": ["banana", "coconut milk", "bread or starch base", "sugar"],
+    "goodToKnow": "This is not fluffy American banana bread. Expect a moist, custardy texture.",
+    "whatItIs": "Bánh chuối nướng is a baked banana dessert where ripe banana and coconut create a dense slice.",
+    "howToEnjoy": "Eat at room temperature or slightly warm. It pairs well with tea or coffee.",
+    "worthKnowing": "Vietnamese banana sweets often lean soft, sticky, and coconut-rich rather than cake-like."
+  },
+  "food-banh-bo": {
+    "atAGlance": "Bánh bò is honeycomb cake, a chewy steamed or baked rice cake with airy tunnels and gentle coconut sweetness.",
+    "usuallyIncludes": ["rice flour", "tapioca starch", "coconut milk", "yeast or leavening"],
+    "goodToKnow": "The honeycomb texture is the point. It should bounce a little when you bite it.",
+    "whatItIs": "Bánh bò is a Vietnamese honeycomb cake, usually chewy and lightly sweet rather than fluffy.",
+    "howToEnjoy": "Eat it as a snack cake. Notice the springy texture more than frosting or richness.",
+    "worthKnowing": "For Americans, bánh bò is useful as a texture lesson: cake can mean chewy, steamed, and coconut-scented."
+  },
+  "food-banh-cam": {
+    "atAGlance": "Bánh cam is a fried sesame ball with a crisp chewy shell and sweet mung bean filling. It is snacky, round, and best fresh.",
+    "usuallyIncludes": ["glutinous rice shell", "mung bean filling", "sesame", "fried crust"],
+    "goodToKnow": "The outside should be crisp-chewy while the filling stays soft. Freshness matters.",
+    "whatItIs": "Bánh cam is a Vietnamese sesame ball, a fried glutinous rice pastry with sweet filling.",
+    "howToEnjoy": "Eat while the shell still has crunch. It is richer than it looks.",
+    "worthKnowing": "This is a familiar shape across Chinese-Vietnamese and Southeast Asian snack worlds, but local fillings and texture vary."
+  },
+  "food-banh-com": {
+    "atAGlance": "Bánh cốm is green young-rice cake, usually sticky and fragrant with mung bean filling. It is closely tied to Hanoi gift culture.",
+    "usuallyIncludes": ["young green rice", "mung bean filling", "sugar", "pandan-like aroma"],
+    "goodToKnow": "Cốm means young green rice flakes. The texture is sticky and chewy, not fluffy cake.",
+    "whatItIs": "Bánh cốm is a sweet green rice cake with mung bean inside.",
+    "howToEnjoy": "Eat in small pieces with tea. The rice fragrance is subtle, so do not expect a loud dessert.",
+    "worthKnowing": "Bánh cốm is especially associated with Hanoi, where cốm is a seasonal and gift-worthy flavor.",
+    "regionalAssociation": "Hanoi",
+    "originPosture": "regional-association"
+  },
+  "food-banh-phu-the": {
+    "atAGlance": "Bánh phu thê is a translucent chewy cake with mung bean and coconut, often wrapped for weddings or gifts.",
+    "usuallyIncludes": ["tapioca-like wrapper", "mung bean", "coconut", "sugar"],
+    "goodToKnow": "The name means husband-and-wife cake. It is symbolic as much as snackable.",
+    "whatItIs": "Bánh phu thê is a chewy sweet cake with a mung bean center, often connected to wedding customs.",
+    "howToEnjoy": "Unwrap and eat in small bites. The texture is sticky and translucent, not bread-like.",
+    "worthKnowing": "This is a dessert with cultural meaning; the name points to marriage and pairing."
+  },
+  "food-trai-cay-dia": {
+    "atAGlance": "Trái cây dĩa is a mixed fruit plate, usually fresh cut fruit served cold with salt-chili dip, yogurt, or syrup depending on the shop.",
+    "usuallyIncludes": ["fresh fruit", "ice optional", "salt-chili dip optional", "yogurt optional"],
+    "goodToKnow": "Dĩa means plate. Ask what fruit is included if you are avoiding durian, jackfruit, or anything very ripe.",
+    "whatItIs": "Trái cây dĩa is a plate of cut fruit, a simple cooling dessert or snack.",
+    "howToEnjoy": "Use salt-chili dip lightly if it comes with the fruit. It can make mango, guava, or pineapple pop.",
+    "worthKnowing": "Fresh fruit is an everyday Vietnam dessert move, especially when you want something lighter than chè."
+  },
+  "food-com-suon-nuong": {
+    "atAGlance": "Cơm sườn nướng is rice with a grilled pork chop, pickles, cucumber, scallion oil, and nước mắm. It is the straightforward cousin of cơm tấm.",
+    "usuallyIncludes": ["rice", "grilled pork chop", "pickles", "scallion oil", "fish-sauce dressing"],
+    "goodToKnow": "Sườn here usually means pork chop or cutlet, not American barbecue ribs.",
+    "whatItIs": "Cơm sườn nướng is a grilled-pork-chop rice plate with Vietnamese pickles and fish-sauce dressing.",
+    "howToEnjoy": "Spoon sauce onto part of the rice, then build bites with pork, rice, and pickles.",
+    "worthKnowing": "This is one of the easiest Vietnamese lunch plates for travelers because the format is familiar but the sauce and pickles make it local.",
+    "travelerCaution": "Contains pork and fish sauce."
+  },
+  "food-com-ca-kho-to": {
+    "atAGlance": "Cơm cá kho tộ is rice with clay-pot caramelized fish. The dark fish-sauce caramel is meant to season the rice.",
+    "usuallyIncludes": ["rice", "caramelized fish", "fish-sauce caramel", "black pepper", "pickles or greens"],
+    "goodToKnow": "Ask about bones if you prefer easier fish pieces. The sauce should be intense, not mild.",
+    "whatItIs": "Cơm cá kho tộ is the rice-plate version of cá kho tộ, fish braised in fish sauce, caramelized sugar, and pepper.",
+    "howToEnjoy": "Use plain rice to soften the salty-sweet sauce. Add pickles or greens for contrast.",
+    "worthKnowing": "This is a comfort-food order, especially in southern-style meals where braised fish and rice belong together.",
+    "travelerCaution": "May contain fish bones and fish sauce."
+  },
+  "food-com-tom-rim": {
+    "atAGlance": "Cơm tôm rim is rice with shrimp simmered in a sticky salty-sweet fish-sauce caramel. It is small, punchy, and rice-hungry.",
+    "usuallyIncludes": ["rice", "caramelized shrimp", "fish-sauce glaze", "garlic", "pickles or greens"],
+    "goodToKnow": "Rim means simmered down until the sauce clings. This is not a saucy curry or soup.",
+    "whatItIs": "Cơm tôm rim is a shrimp rice plate where the shrimp are cooked until the glaze turns glossy and concentrated.",
+    "howToEnjoy": "Eat shrimp with rice in the same bite. The rice is there to carry the glaze.",
+    "worthKnowing": "Rim and kho dishes are good menu clues for salty-sweet Vietnamese braises and glazes.",
+    "travelerCaution": "Contains shrimp and fish sauce."
+  },
+  "food-com-bo-xao-hanh-tay": {
+    "atAGlance": "Cơm bò xào hành tây is rice with beef stir-fried with onions, garlic, and wok seasoning. It is a hot-wok comfort plate, not a stew.",
+    "usuallyIncludes": ["rice", "stir-fried beef", "onion", "garlic", "savory stir-fry sauce"],
+    "goodToKnow": "Hành tây means onion. Order this when you want beef-and-rice with a familiar sautéed-onion flavor.",
+    "whatItIs": "Cơm bò xào hành tây is a beef-and-onion stir-fry served over rice.",
+    "howToEnjoy": "Let the stir-fry sauce season the rice. Ask for less onion only before the dish is cooked.",
+    "worthKnowing": "This is a practical traveler order: easy to understand, filling, and still Vietnamese in seasoning."
+  },
+  "drink-tra-xanh": {
+    "atAGlance": "Trà xanh is green tea, usually light, grassy, and served hot or iced depending on the place.",
+    "usuallyIncludes": ["green tea", "hot water or ice", "sugar optional"],
+    "goodToKnow": "If you want unsweetened tea, ask before ordering bottled or café versions.",
+    "whatItIs": "Trà xanh is green tea, one of the simplest non-coffee drinks to recognize.",
+    "howToEnjoy": "Drink it plain with food or iced on a hot day. Sugar changes the drink quickly.",
+    "worthKnowing": "Tea can mean plain meal tea or a sweet café drink, so xanh helps anchor this as green tea."
+  },
+  "drink-tra-sen": {
+    "atAGlance": "Trà sen is lotus tea, a fragrant tea with a soft floral aroma rather than fruit sweetness.",
+    "usuallyIncludes": ["tea", "lotus scent", "hot water or ice", "sugar optional"],
+    "goodToKnow": "Sen means lotus. Choose it for aroma, not for a sugary drink.",
+    "whatItIs": "Trà sen is tea scented with lotus, a classic Vietnamese flavor cue.",
+    "howToEnjoy": "Try it lightly sweet or plain so the lotus aroma stays clear.",
+    "worthKnowing": "Lotus is culturally important in Vietnam, and lotus tea is one of the gentler ways to taste that association."
+  },
+  "drink-tra-lai": {
+    "atAGlance": "Trà lài is jasmine tea, floral and lighter than milk tea or fruit tea.",
+    "usuallyIncludes": ["jasmine tea", "hot water or ice", "sugar optional"],
+    "goodToKnow": "Lài means jasmine. It should smell floral without tasting like perfume.",
+    "whatItIs": "Trà lài is jasmine-scented tea, served hot or cold.",
+    "howToEnjoy": "Drink plain with food or lightly sweetened as a café tea.",
+    "worthKnowing": "Jasmine tea is an easy bridge for travelers who want something aromatic but not creamy."
+  },
+  "drink-tra-gung": {
+    "atAGlance": "Trà gừng is ginger tea, warm, spicy, and soothing rather than dessert-like.",
+    "usuallyIncludes": ["ginger", "tea or hot water", "sugar or honey optional"],
+    "goodToKnow": "Gừng means ginger. It can feel sharp if the ginger is strong.",
+    "whatItIs": "Trà gừng is ginger tea, often ordered hot for comfort.",
+    "howToEnjoy": "Sip hot and ask less sweet if you want the ginger bite to stay clear.",
+    "worthKnowing": "Ginger drinks are part comfort, part home-remedy habit in Vietnam."
+  },
+  "drink-tra-tac": {
+    "atAGlance": "Trà tắc is kumquat iced tea, bright, sweet-tart, and especially good with salty snacks.",
+    "usuallyIncludes": ["tea", "kumquat", "ice", "sugar"],
+    "goodToKnow": "Tắc is kumquat. It tastes sharper and more aromatic than ordinary lemon tea.",
+    "whatItIs": "Trà tắc is iced tea mixed with kumquat juice.",
+    "howToEnjoy": "Stir before drinking and ask less sugar if you want more tartness.",
+    "worthKnowing": "Kumquat shows up across Vietnamese drinks because it gives citrus brightness without tasting exactly like lime."
+  },
+  "drink-tra-chanh": {
+    "atAGlance": "Trà chanh is lemon or lime tea, a bright iced tea often served sweet and cold.",
+    "usuallyIncludes": ["tea", "lemon or lime", "ice", "sugar"],
+    "goodToKnow": "It is usually sweeter than plain tea. Ask less sweet before it is mixed.",
+    "whatItIs": "Trà chanh is citrus iced tea, a familiar but useful café and street-side order.",
+    "howToEnjoy": "Drink cold with snacks or on a hot afternoon. Stir if the citrus syrup settles.",
+    "worthKnowing": "Trà chanh is part of casual hangout drink culture, especially for a cheap, bright, non-coffee order."
+  },
+  "drink-tra-dao": {
+    "atAGlance": "Trà đào is peach tea, usually iced, sweet, fragrant, and sometimes served with peach slices.",
+    "usuallyIncludes": ["tea", "peach", "ice", "sugar optional"],
+    "goodToKnow": "Ask less sweet if you want tea rather than peach syrup to lead.",
+    "whatItIs": "Trà đào is iced peach tea, common in modern cafés.",
+    "howToEnjoy": "Stir and eat the peach slices if included. It is closer to a fruit tea than a plain brewed tea.",
+    "worthKnowing": "Fruit teas are a modern café staple in Vietnam, useful for travelers who want familiar flavors with local ordering words."
+  },
+  "drink-tra-sua": {
+    "atAGlance": "Trà sữa is milk tea, sweet, creamy, and often customizable with sugar, ice, and toppings.",
+    "usuallyIncludes": ["tea", "milk", "sugar", "ice"],
+    "goodToKnow": "This is dessert-like compared with plain tea. Ask sugar and ice levels before it is sealed.",
+    "whatItIs": "Trà sữa is milk tea, Vietnam’s common bubble-tea style café order even without pearls.",
+    "howToEnjoy": "Choose sweetness and ice before ordering. Add pearls only if you want chew.",
+    "worthKnowing": "Milk tea belongs to youth café culture more than traditional meal tea."
+  },
+  "drink-tra-sua-tran-chau": {
+    "atAGlance": "Trà sữa trân châu is bubble milk tea with tapioca pearls. It is creamy, sweet, cold, and chewy.",
+    "usuallyIncludes": ["tea", "milk", "tapioca pearls", "ice", "sugar"],
+    "goodToKnow": "Trân châu means pearls. Ask for less sugar or fewer pearls if you want it lighter.",
+    "whatItIs": "Trà sữa trân châu is milk tea with chewy tapioca pearls.",
+    "howToEnjoy": "Use the wide straw for pearls and stir before drinking. The toppings make it filling.",
+    "worthKnowing": "This is a dessert drink, not a light tea."
+  },
+  "drink-tra-o-long": {
+    "atAGlance": "Trà ô long is oolong tea, usually smoother and more rounded than green tea.",
+    "usuallyIncludes": ["oolong tea", "hot water or ice", "sugar optional"],
+    "goodToKnow": "Ô long is oolong. It can be plain, bottled, or used as a base for fruit tea.",
+    "whatItIs": "Trà ô long is oolong tea, a good middle lane between green tea and darker tea.",
+    "howToEnjoy": "Drink plain if you want the tea aroma, or ask less sweet in café versions.",
+    "worthKnowing": "Oolong is common in bottled and café drinks, so it is a useful word to recognize."
+  },
+  "drink-nuoc-cam": {
+    "atAGlance": "Nước cam is orange juice, usually fresh-squeezed or poured over ice. It is sweet, citrusy, and easy to order.",
+    "whatItIs": "Nước cam is orange juice, a familiar order with Vietnamese pronunciation value.",
+    "howToEnjoy": "Ask no ice or less sugar before it is served if you want a cleaner juice.",
+    "worthKnowing": "Fresh juice stalls may add sugar or ice by default, so the helper phrases matter."
+  },
+  "drink-nuoc-chanh": {
+    "atAGlance": "Nước chanh is Vietnamese limeade, usually lime juice, sugar, water, and ice. It is sharper than orange juice and very refreshing.",
+    "usuallyIncludes": ["lime", "water", "sugar", "ice"],
+    "whatItIs": "Nước chanh is limeade, one of the simplest hot-weather drinks to order.",
+    "howToEnjoy": "Stir well and ask less sugar if you like a tart edge.",
+    "worthKnowing": "Chanh usually points to lime in Vietnam, even when English menus say lemon."
+  },
+  "drink-nuoc-ep-dua-hau": {
+    "atAGlance": "Nước ép dưa hấu is watermelon juice, light, watery-sweet, and best cold.",
+    "whatItIs": "Nước ép dưa hấu is pressed or blended watermelon juice.",
+    "howToEnjoy": "Ask for no added sugar if you want the fruit to stay clean.",
+    "worthKnowing": "Watermelon juice is a good low-acid choice when citrus feels too sharp."
+  },
+  "drink-nuoc-ep-thom": {
+    "atAGlance": "Nước ép thơm is pineapple juice, bright, tropical, and often sweet-tart over ice.",
+    "whatItIs": "Nước ép thơm is pineapple juice; thơm is a southern word travelers may also see as dứa.",
+    "howToEnjoy": "Ask less sugar if the pineapple is already sweet.",
+    "worthKnowing": "Vietnamese menus may use thơm or dứa for pineapple, so both words are worth learning."
+  },
+  "drink-nuoc-ep-oi": {
+    "atAGlance": "Nước ép ổi is guava juice, fragrant, slightly thick, and less sharp than passion fruit or lime.",
+    "whatItIs": "Nước ép ổi is guava juice, often blended or pressed with ice.",
+    "howToEnjoy": "Ask less sugar to keep the guava’s floral flavor clear.",
+    "worthKnowing": "Guava is common in Vietnam with salt-chili as fruit and as a mild juice."
+  },
+  "drink-nuoc-ep-ca-rot": {
+    "atAGlance": "Nước ép cà rốt is carrot juice, earthy-sweet and often served cold with ice.",
+    "whatItIs": "Nước ép cà rốt is fresh carrot juice, a simple non-citrus option.",
+    "howToEnjoy": "Ask whether sugar is added. Carrot already brings natural sweetness.",
+    "worthKnowing": "Vegetable juices are common enough at Vietnamese juice stalls, especially in city cafés."
+  },
+  "drink-nuoc-ep-tao": {
+    "atAGlance": "Nước ép táo is apple juice, familiar, light, and often served over ice.",
+    "whatItIs": "Nước ép táo is apple juice, useful when you want a mild fruit drink.",
+    "howToEnjoy": "Ask no ice if you want the flavor less diluted.",
+    "worthKnowing": "Táo means apple and is easy to use when pointing at a juice menu."
+  },
+  "drink-nuoc-ep-can-tay": {
+    "atAGlance": "Nước ép cần tây is celery juice, green, crisp, and more wellness-style than sweet dessert drink.",
+    "whatItIs": "Nước ép cần tây is celery juice, often ordered for freshness rather than sweetness.",
+    "howToEnjoy": "Ask whether apple, pineapple, or sugar is added if you want it pure.",
+    "worthKnowing": "Some Vietnamese juice shops blend celery with fruit to soften the grassy flavor."
+  },
+  "drink-nuoc-ep-coc": {
+    "atAGlance": "Nước ép cóc is ambarella juice, tart, green, and tropical with a flavor many Americans have not tried.",
+    "whatItIs": "Nước ép cóc is juice from ambarella, also called June plum in some English contexts.",
+    "howToEnjoy": "Ask less sugar if you like sour fruit. Salt-chili can also appear around cóc as a snack fruit.",
+    "worthKnowing": "Cóc is a useful Vietnam fruit word because it appears in juice, pickled fruit, and street snacks."
+  },
+  "drink-nuoc-ep-chanh-day": {
+    "atAGlance": "Nước ép chanh dây is passion fruit juice, vivid, aromatic, seedy, and sweet-tart over ice.",
+    "whatItIs": "Nước ép chanh dây is passion fruit juice, sharper and more perfumed than many familiar juices.",
+    "howToEnjoy": "Stir before drinking and expect seeds or pulp unless strained.",
+    "worthKnowing": "Passion fruit is common in Vietnamese cafés because it makes drinks taste bright without needing dairy."
+  },
+  "drink-rau-ma": {
+    "atAGlance": "Rau má is pennywort juice, green, grassy, and cooling. It is more herbal than fruity.",
+    "usuallyIncludes": ["pennywort", "water", "ice", "sugar optional"],
+    "whatItIs": "Rau má is a fresh green drink made from pennywort leaves.",
+    "howToEnjoy": "Drink it cold and ask less sugar if you want the herbal flavor clear.",
+    "worthKnowing": "Rau má is part of Vietnam’s cooling-drink culture, often treated as refreshing and restorative."
+  },
+  "drink-nuoc-sam": {
+    "atAGlance": "Nước sâm is a sweet herbal drink, usually dark, cooling, and made from a mix of roots, leaves, or dried ingredients.",
+    "usuallyIncludes": ["herbal infusion", "sugar", "ice", "dried roots or leaves"],
+    "whatItIs": "Nước sâm is Vietnamese herbal drink, not ginseng soda in the American sense.",
+    "howToEnjoy": "Drink cold and expect an herbal sweetness. Ask less sweet if it is mixed to order.",
+    "worthKnowing": "Nước sâm belongs to the same cooling-drink world as winter melon tea and pennywort."
+  },
+  "drink-nuoc-nha-dam": {
+    "atAGlance": "Nước nha đam is aloe vera drink, usually sweet, cold, and full of soft aloe cubes.",
+    "usuallyIncludes": ["aloe vera", "sugar syrup", "water", "ice"],
+    "whatItIs": "Nước nha đam is an aloe drink where the texture of aloe pieces is part of the appeal.",
+    "howToEnjoy": "Drink cold and expect chew. If texture in drinks bothers you, choose juice instead.",
+    "worthKnowing": "Vietnamese drinks often include edible textures, from aloe cubes to basil seeds and jellies."
+  },
+  "drink-sam-bo-luong": {
+    "atAGlance": "Sâm bổ lượng is a sweet herbal dessert drink with dried longan, seaweed, lotus seed, jujube, or other cooling ingredients depending on the shop.",
+    "usuallyIncludes": ["herbal syrup", "dried longan", "lotus seed optional", "seaweed optional", "ice"],
+    "whatItIs": "Sâm bổ lượng sits between drink and dessert, with spoonable herbal ingredients in sweet syrup.",
+    "howToEnjoy": "Use a spoon and straw if pieces are included. The textures are part of the drink.",
+    "worthKnowing": "This is not a simple juice; it reflects a cooling tonic-dessert tradition.",
+    "travelerCaution": "Ingredients vary widely by shop."
+  },
+  "drink-nuoc-la-han-qua": {
+    "atAGlance": "Nước la hán quả is monk fruit herbal drink, usually dark, lightly sweet, and cooling.",
+    "usuallyIncludes": ["monk fruit", "herbal infusion", "ice", "sugar optional"],
+    "whatItIs": "Nước la hán quả is a monk fruit drink, often served as a cooling herbal refreshment.",
+    "howToEnjoy": "Drink cold and ask less sweet if it is brewed with extra sugar.",
+    "worthKnowing": "La hán quả is prized for natural sweetness, so the drink can feel sweet even before added sugar."
+  },
+  "drink-nuoc-suoi": {
+    "atAGlance": "Nước suối is bottled water, the safest simple ask when you want sealed drinking water.",
+    "usuallyIncludes": ["bottled water", "sealed bottle", "ice optional"],
+    "goodToKnow": "Ask lạnh if you want it cold, or không đá if you do not want ice.",
+    "whatItIs": "Nước suối means bottled drinking water in everyday ordering.",
+    "howToEnjoy": "Ask for a sealed bottle if that matters. Ice may be offered separately.",
+    "worthKnowing": "For travelers, nước suối is often the easiest water word to use at cafés, shops, and stalls."
+  },
+  "drink-nuoc-loc": {
+    "atAGlance": "Nước lọc is plain drinking water. In restaurants it may mean filtered water rather than a sealed bottle.",
+    "usuallyIncludes": ["drinking water", "glass or pitcher", "ice optional"],
+    "goodToKnow": "Ask for nước suối if you specifically want bottled water.",
+    "whatItIs": "Nước lọc means plain filtered water.",
+    "howToEnjoy": "Use it when you want table water. Ask bottled if you need sealed water.",
+    "worthKnowing": "The distinction between nước lọc and nước suối is useful for American travelers."
+  },
+  "drink-nuoc-khoang": {
+    "atAGlance": "Nước khoáng is mineral water, usually bottled and sometimes still or sparkling depending on the label.",
+    "usuallyIncludes": ["mineral water", "bottle", "ice optional"],
+    "goodToKnow": "Ask có ga for sparkling or không ga for still if the menu is unclear.",
+    "whatItIs": "Nước khoáng means mineral water.",
+    "howToEnjoy": "Order cold or no ice depending on what you trust and prefer.",
+    "worthKnowing": "Khoáng tells you it is mineral water, while có ga tells you whether it has bubbles."
+  },
+  "drink-nuoc-khoang-khong-ga": {
+    "atAGlance": "Nước khoáng không ga is still mineral water: bottled mineral water without carbonation.",
+    "usuallyIncludes": ["still mineral water", "bottle", "ice optional"],
+    "goodToKnow": "Không ga means not carbonated. It is the still-water counterpart to có ga.",
+    "whatItIs": "Nước khoáng không ga is still bottled mineral water.",
+    "howToEnjoy": "Ask for it cold or sealed if that matters.",
+    "worthKnowing": "Không ga is a useful phrase anywhere sparkling water might be offered."
+  },
+  "drink-soda-chanh": {
+    "atAGlance": "Soda chanh is lime soda, fizzy, sweet-sour, and usually served over ice.",
+    "usuallyIncludes": ["soda water", "lime", "sugar syrup", "ice"],
+    "goodToKnow": "It can be sweeter than sparkling water. Ask less sugar if you want sharper lime.",
+    "whatItIs": "Soda chanh is a made-to-order lime soda, not just a canned soft drink.",
+    "howToEnjoy": "Stir before drinking so syrup and lime do not sit at the bottom.",
+    "worthKnowing": "Soda chanh is a familiar bridge drink: Vietnamese limeade with bubbles."
+  },
+  "drink-soda-chanh-day": {
+    "atAGlance": "Soda chanh dây is passion fruit soda, fizzy, tropical, and sweet-tart.",
+    "usuallyIncludes": ["soda water", "passion fruit", "sugar syrup", "ice"],
+    "goodToKnow": "Expect pulp or seeds unless the café strains it.",
+    "whatItIs": "Soda chanh dây is passion fruit mixed with soda water and syrup.",
+    "howToEnjoy": "Stir well and ask less sweet if you want the passion fruit tartness.",
+    "worthKnowing": "Passion fruit is a common Vietnamese café flavor because it stays bright in iced drinks."
+  },
+  "drink-soda-bac-ha": {
+    "atAGlance": "Soda bạc hà is mint soda, usually green, sweet, fizzy, and cooling.",
+    "usuallyIncludes": ["soda water", "mint syrup", "ice", "lime optional"],
+    "goodToKnow": "Bạc hà means mint. This is syrupy and refreshing, not herbal tea.",
+    "whatItIs": "Soda bạc hà is mint-flavored soda made with syrup and soda water.",
+    "howToEnjoy": "Stir before drinking. Ask less syrup if you want it less sweet.",
+    "worthKnowing": "Vietnamese café sodas are often mixed drinks, so syrup level matters."
+  },
+  "drink-nuoc-ngot": {
+    "atAGlance": "Nước ngọt means soft drink, usually a canned or bottled soda.",
+    "usuallyIncludes": ["soft drink", "can or bottle", "ice optional"],
+    "goodToKnow": "Ask what kind if the server offers nước ngọt without naming a brand.",
+    "whatItIs": "Nước ngọt is the general Vietnamese term for soda or soft drink.",
+    "howToEnjoy": "Ask cold or no ice if you care how it is served.",
+    "worthKnowing": "Ngọt means sweet, which helps explain why this phrase covers sodas."
+  },
+  "drink-nuoc-tang-luc": {
+    "atAGlance": "Nước tăng lực is energy drink, usually a chilled can or bottle.",
+    "usuallyIncludes": ["energy drink", "can or bottle", "ice optional"],
+    "goodToKnow": "Tăng lực means energy. Ask what brand if the menu does not say.",
+    "whatItIs": "Nước tăng lực is the Vietnamese order for an energy drink.",
+    "howToEnjoy": "Order cold and expect a sweet canned drink rather than fresh juice.",
+    "worthKnowing": "Convenience stores and cafés often stock energy drinks beside soda and bottled water."
+  },
+  "drink-sua-tuoi": {
+    "atAGlance": "Sữa tươi is fresh milk, usually served cold or used in café drinks.",
+    "usuallyIncludes": ["fresh milk", "carton or glass", "ice optional"],
+    "goodToKnow": "Ask whether it is sweetened if you want plain milk.",
+    "whatItIs": "Sữa tươi means fresh milk.",
+    "howToEnjoy": "Drink cold or use the phrase when a coffee shop offers fresh-milk versions.",
+    "worthKnowing": "Fresh milk is different from condensed milk, which is much sweeter and common in Vietnamese coffee."
+  },
+  "drink-sua-chua-uong": {
+    "atAGlance": "Sữa chua uống is drinking yogurt, tangy, sweet, and usually bottled or served cold.",
+    "usuallyIncludes": ["drinking yogurt", "bottle or cup", "sugar"],
+    "goodToKnow": "It is more snack drink than plain milk. Ask cold if buying from a shop.",
+    "whatItIs": "Sữa chua uống is yogurt drink, a sweet-tart dairy drink.",
+    "howToEnjoy": "Drink chilled and treat it like a small snack.",
+    "worthKnowing": "Vietnamese dairy drinks often sit beside juice and soda as quick cooling options.",
+    "travelerCaution": "Contains dairy."
+  }
+}

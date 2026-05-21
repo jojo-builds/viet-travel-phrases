@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-how-many-people-are-ahead-of-me",
+  "phraseText": "Có bao nhiêu người đang ở phía trước tôi?",
+  "englishTitle": "How many people are ahead of me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-how-many-people-are-ahead-of-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "người",
+      "english": "person"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đang ở",
+      "english": "am staying at / am at",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phía",
+      "english": "side / direction"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trước",
+      "english": "before / front"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "tôi?",
+      "english": "I / me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có bao nhiêu người đang ở phía trước tôi?",
+      "english": "How many people are ahead of me?",
+      "audioKey": "v900-time-date-book-how-many-people-are-ahead-of-me"
+    }
+  ]
+}

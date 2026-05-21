@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-bot-loc",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bột lọc",
+  "englishTranslation": "Clear tapioca dumplings with shrimp and pork",
+  "romanizedNoTones": "Banh bot loc",
+  "soundOut": "bahn boht lawk",
+  "notes": "",
+  "atAGlance": "Bánh bột lọc is translucent tapioca dumplings, usually with shrimp and pork, chewy wrapper, banana leaf, and fish sauce.",
+  "whatItIs": "Bánh bột lọc are chewy translucent tapioca dumplings, often filled with shrimp and pork, sometimes wrapped in banana leaf, and eaten with a fish-sauce dip.",
+  "usuallyIncludes": [
+    "tapioca wrapper",
+    "shrimp",
+    "pork",
+    "banana leaf optional",
+    "fish-sauce dip"
+  ],
+  "howToEnjoy": "Peel the banana leaf if needed, then spoon the fish-sauce dip lightly over the dumplings. The pleasure is the chewy wrapper against salty shrimp and pork.",
+  "howLocalsOrder": "Order bánh bột lọc when you want a chewy Huế-style snack. Ask if it contains shrimp or pork before ordering, and request no chili in the fish-sauce dip if needed.",
+  "worthKnowing": "This central Vietnamese dumpling is loved for texture; the wrapper should be pleasantly chewy, not just a container.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "no chili",
+    "ask about shrimp",
+    "extra fish-sauce dip",
+    "pack to go"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh bột lọc.",
+    "english": "I’d like one order of clear tapioca dumplings with shrimp and pork.",
+    "pronunciation": "chaw toy moht fuhn bahn boht lawk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh bột lọc was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

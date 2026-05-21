@@ -329,6 +329,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.english_title,
           pp.icon_name,
           pp.tint_name,
+          pp.hero_image_name,
           aa.source_manifest_key,
           COALESCE(
             (
@@ -367,7 +368,7 @@ final class VietSQLiteLanguagePackRepository {
 
         return try rows(sql) { statement in
             let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray
-            let categoryIDs = Self.stringColumn(statement, index: 6)
+            let categoryIDs = Self.stringColumn(statement, index: 7)
                 .split(separator: "|")
                 .map(String.init)
 
@@ -573,6 +574,7 @@ final class VietSQLiteLanguagePackRepository {
           pp.english_title,
           pp.icon_name,
           pp.tint_name,
+          pp.hero_image_name,
           aa.source_manifest_key,
           COALESCE(
             (
@@ -614,7 +616,7 @@ final class VietSQLiteLanguagePackRepository {
             try self.bindText(cityID, to: 1, in: statement, sql: sql)
             try self.bindInt(limit, to: 2, in: statement, sql: sql)
         }) { statement in
-            let categoryIDs = Self.stringColumn(statement, index: 6)
+            let categoryIDs = Self.stringColumn(statement, index: 7)
                 .split(separator: "|")
                 .map(String.init)
 
@@ -625,13 +627,14 @@ final class VietSQLiteLanguagePackRepository {
                 categoryIDs: categoryIDs.isEmpty ? ["city-guides"] : categoryIDs,
                 symbolName: Self.stringColumn(statement, index: 3),
                 tintName: AccentTint(rawValue: Self.stringColumn(statement, index: 4)) ?? .gray,
-                audioKey: Self.optionalStringColumn(statement, index: 5),
-                cityID: Self.stringColumn(statement, index: 7),
-                cityName: Self.stringColumn(statement, index: 8),
-                subcategoryID: Self.stringColumn(statement, index: 9),
-                subcategoryTitle: Self.stringColumn(statement, index: 10),
-                pageKind: Self.stringColumn(statement, index: 11),
-                placeKind: Self.stringColumn(statement, index: 12)
+                audioKey: Self.optionalStringColumn(statement, index: 6),
+                cityID: Self.stringColumn(statement, index: 8),
+                cityName: Self.stringColumn(statement, index: 9),
+                subcategoryID: Self.stringColumn(statement, index: 10),
+                subcategoryTitle: Self.stringColumn(statement, index: 11),
+                pageKind: Self.stringColumn(statement, index: 12),
+                placeKind: Self.stringColumn(statement, index: 13),
+                imageName: Self.optionalStringColumn(statement, index: 5)
             )
         }
     }
@@ -787,15 +790,12 @@ final class VietSQLiteLanguagePackRepository {
 
         let strictResults = try results(for: ftsQueries, perQueryLimit: limit * 4)
         let looseResults = try results(for: looseFTSQueries, perQueryLimit: limit * 3)
-        let defaultResults = (strictResults + looseResults).isEmpty
-            ? try results(for: Self.uniqueFTSQueries(for: SearchQueryExpander.defaultFallbackQueries), perQueryLimit: limit * 2)
-            : []
-        let rawResults = strictResults + looseResults + defaultResults
+        let rawResults = strictResults + looseResults
 
         let primaryRankingQueries = ([query] + SearchQueryExpander.looseRankingQueries(for: query))
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
-        let normalizedQueries = (expandedQueries + looseQueries + (defaultResults.isEmpty ? [] : SearchQueryExpander.defaultFallbackQueries))
+        let normalizedQueries = (expandedQueries + looseQueries)
             .map(Self.searchComparableText)
             .filter { !$0.isEmpty }
         var seenPageIDs = Set<String>()
@@ -811,6 +811,10 @@ final class VietSQLiteLanguagePackRepository {
                 primaryScore: Self.searchIdentityScore(
                     for: identityText,
                     normalizedQueries: primaryRankingQueries
+                ) + SearchQueryExpander.contextualRankingBoost(
+                    for: query,
+                    resultTitle: result.title,
+                    resultSubtitle: result.subtitle
                 ),
                 secondaryScore: Self.searchIdentityScore(
                     for: identityText,
@@ -1700,19 +1704,46 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
+        let cacheKey = searchCacheKey(query: query, limit: limit)
+        if let cachedResults = cachedSearchResultsByKey[cacheKey] {
+            return cachedResults
+        }
+
         guard isEnabled, let repository = repository() else {
             return nil
         }
 
-        return try? repository.search(query, limit: limit)
+        guard let results = try? repository.search(query, limit: limit) else {
+            return nil
+        }
+
+        cachedSearchResultsByKey[cacheKey] = results
+        return results
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
+        if let cachedPage = cachedDetailPagesByID[pageID] {
+            return cachedPage
+        }
+
         guard isEnabled, let repository = repository() else {
             return nil
         }
 
-        return try? repository.loadPhraseDetailPage(pageID: pageID)
+        if
+            let canonicalPageID = try? repository.canonicalPageID(forPageIDOrAlias: pageID),
+            let cachedPage = cachedDetailPagesByID[canonicalPageID] {
+            cachedDetailPagesByID[pageID] = cachedPage
+            return cachedPage
+        }
+
+        guard let page = try? repository.loadPhraseDetailPage(pageID: pageID) else {
+            return nil
+        }
+
+        cachedDetailPagesByID[pageID] = page
+        cachedDetailPagesByID[page.id] = page
+        return page
     }
 
     static func canOpenPage(_ pageID: String) -> Bool {
@@ -1732,18 +1763,28 @@ enum VietSQLitePhraseGraphRuntime {
         return cachedRepository
     }
 
+    private static func searchCacheKey(query: String, limit: Int) -> String {
+        "\(limit)|\(query.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current).lowercased())"
+    }
+
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
+    private static var cachedDetailPagesByID: [String: PhraseDetailPage] = [:]
+    private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
 
 #if DEBUG
     static func setEnabledForTesting(_ enabled: Bool) {
         isEnabledOverride = enabled
         cachedRepository = nil
+        cachedDetailPagesByID.removeAll()
+        cachedSearchResultsByKey.removeAll()
         PhraseCatalog.resetCacheForTesting()
     }
 
     static func resetTestingOverrides() {
         isEnabledOverride = nil
         cachedRepository = nil
+        cachedDetailPagesByID.removeAll()
+        cachedSearchResultsByKey.removeAll()
         PhraseCatalog.resetCacheForTesting()
     }
 

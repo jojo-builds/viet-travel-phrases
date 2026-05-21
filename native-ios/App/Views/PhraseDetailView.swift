@@ -7,11 +7,13 @@ struct PhraseDetailView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onToggleSaved: (() -> Void)?
@@ -24,11 +26,13 @@ struct PhraseDetailView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
         onToggleSaved: (() -> Void)? = nil,
@@ -40,11 +44,13 @@ struct PhraseDetailView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -61,11 +67,13 @@ struct PhraseDetailView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
+            isActive: isActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
+            heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -91,7 +99,7 @@ struct PhraseDetailView: View {
 
                             if !page.examples.isEmpty {
                                 VStack(alignment: .leading, spacing: 10) {
-                                    Text("Practice it")
+                                    Text("Try it in context")
                                         .font(.headline.weight(.bold))
 
                                     VStack(spacing: 0) {
@@ -144,13 +152,6 @@ struct PhraseDetailView: View {
                     .padding(.top, 6)
                     .offset(y: -24)
                 }
-            }
-
-            if showsChrome {
-                bottomChrome
-                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                    .padding(.bottom, AppChromeLayout.bottomPadding)
-                    .offset(y: AppChromeLayout.bottomOffset)
             }
         }
     }
@@ -215,45 +216,6 @@ struct PhraseDetailView: View {
         .background(PhrasePageStyle.pageBackground)
     }
 
-    @ViewBuilder
-    private var bottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                bottomChromeContent
-            }
-        } else {
-            bottomChromeContent
-        }
-    }
-
-    private var bottomChromeContent: some View {
-        let selectedDockItem = AppChrome(route: .detailPage(page.id)).selectedDockItem
-
-        return HStack(spacing: AppChromeLayout.bottomSpacing) {
-            HStack(spacing: AppChromeLayout.dockItemSpacing) {
-                ForEach(AppChrome(route: .detailPage(page.id)).primaryDockItems, id: \.self) { item in
-                    DetailDockItem(kind: item, selected: item == selectedDockItem)
-                }
-            }
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-
-            Button {
-                onSearchTapped()
-            } label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.title2.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
-        }
-    }
-
 }
 
 private struct DetailSectionView: View {
@@ -279,14 +241,81 @@ private struct DetailSectionCard: View {
             Text(section.title)
                 .font(.headline.weight(.bold))
 
-            Text(section.body)
+            DetailDefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: PhrasePageStyle.compactCardCornerRadius)
+    }
+}
+
+private struct DetailDefinedBodyText: View {
+    let text: String
+    let definitions: [PhraseInlineDefinition]
+    @State private var selectedDefinition: PhraseInlineDefinition?
+
+    var body: some View {
+        Text(attributedText)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                if definitions.count == 1 {
+                    selectedDefinition = definitions[0]
+                }
+            }
+            .environment(\.openURL, OpenURLAction { url in
+                guard url.scheme == "speaklocal-definition",
+                      let id = url.host(),
+                      let definition = definitions.first(where: { $0.id == id })
+                else {
+                    return .systemAction
+                }
+
+                selectedDefinition = definition
+                return .handled
+            })
+            .popover(item: $selectedDefinition) { definition in
+                DetailDefinitionPopover(definition: definition)
+                    .presentationCompactAdaptation(.popover)
+            }
+    }
+
+    private var attributedText: AttributedString {
+        var attributed = AttributedString(text)
+        for definition in definitions {
+            var searchStart = attributed.startIndex
+            while let range = attributed[searchStart...].range(
+                of: definition.vietnamese,
+                options: [.caseInsensitive, .diacriticInsensitive]
+            ) {
+                attributed[range].foregroundColor = .red
+                attributed[range].font = .body.weight(.semibold)
+                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
+                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
+                searchStart = range.upperBound
+            }
+        }
+        return attributed
+    }
+}
+
+private struct DetailDefinitionPopover: View {
+    let definition: PhraseInlineDefinition
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(definition.vietnamese)
+                .font(.headline.weight(.black))
+                .foregroundStyle(.red)
+
+            Text(definition.english)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .padding(14)
+        .presentationCompactAdaptation(.popover)
     }
 }
 
@@ -355,19 +384,19 @@ private struct DetailExampleRow: View {
                 Button {
                     onOpenDetail?(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 11)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(alignment: .center, spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -386,34 +415,12 @@ private struct DetailExampleRow: View {
             .layoutPriority(1)
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
 
 enum DetailPhraseRowLayout {
     static let secondaryLineLimit = 2
-}
-
-private struct DetailDockItem: View {
-    let kind: DockItemKind
-    let selected: Bool
-
-    var body: some View {
-        VStack(spacing: 3) {
-            Image(systemName: kind.symbolName)
-                .font(.system(size: 18, weight: .semibold))
-            Text(kind.title)
-                .font(.caption2.weight(.semibold))
-        }
-        .foregroundStyle(selected ? .red : .secondary)
-        .frame(width: 52, height: 50)
-    }
 }
 
 #Preview {

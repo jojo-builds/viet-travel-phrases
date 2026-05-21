@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-tra-xanh",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà xanh",
+  "englishTranslation": "Green tea",
+  "romanizedNoTones": "Tra xanh",
+  "soundOut": "chah sanh",
+  "notes": "",
+  "atAGlance": "Trà xanh is green tea, grassy, lightly bitter, and clean when plain, but often sweetened on bottled or café menus.",
+  "whatItIs": "Trà xanh is green tea served hot, iced, bottled, or café-style depending on the shop. Expect green tea that can taste grassy, lightly bitter, and clean, especially when served plain.",
+  "usuallyIncludes": [
+    "green tea",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask whether it is sweetened if that matters; plain trà xanh and café trà xanh can taste very different.",
+  "howLocalsOrder": "Trà xanh is ordered by temperature and sweetness. Ask for less sugar or less ice before the glass is made, because Vietnamese tea drinks can arrive sweeter and icier than expected.",
+  "worthKnowing": "In Vietnam, Trà xanh helps you distinguish green tea from lotus, jasmine, peach, milk tea, and bottled sweet tea on Vietnamese menus.",
+  "goodToKnow": "Ask for no sugar if you want it unsweetened.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà xanh.",
+    "english": "I’d like one glass of green tea.",
+    "pronunciation": "chaw toy moht lee chah sanh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà xanh was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

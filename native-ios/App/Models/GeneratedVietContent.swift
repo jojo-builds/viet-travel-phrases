@@ -333,6 +333,9 @@ enum SearchQueryExpander {
         "bridge": ["bridge", "cầu", "dragon bridge", "golden bridge"],
         "cab": ["taxi", "grab", "ride"],
         "car": ["taxi", "grab", "ride", "driver"],
+        "charge": ["charge phone", "charging", "charger", "sạc điện thoại"],
+        "charger": ["charger", "charging", "charge phone", "sạc điện thoại"],
+        "charging": ["charging", "charger", "charge phone", "sạc điện thoại"],
         "hcmc": ["saigon", "ho chi minh city"],
         "hello": ["hello", "chào", "xin chào"],
         "help": ["please help me", "can you help me", "emergency"],
@@ -347,6 +350,101 @@ enum SearchQueryExpander {
         "toilet": ["bathroom", "toilet", "restroom", "nhà vệ sinh"],
         "ve": ["ticket", "vé"],
     ]
+
+    static func contextualRankingBoost(
+        for query: String,
+        resultTitle: String,
+        resultSubtitle: String
+    ) -> Int {
+        let normalizedQuery = normalize(query)
+        guard !normalizedQuery.isEmpty else {
+            return 0
+        }
+
+        let resultText = normalize("\(resultTitle) \(resultSubtitle)")
+        var boost = 0
+
+        for rule in recoverableObjectRules where rule.matches(normalizedQuery) {
+            if matchesAny(rule.matchTerms, in: resultText)
+                && matchesAny(recoveryResultTerms, in: resultText) {
+                boost += 7_500
+            }
+        }
+
+        boost += contextualBoost(
+            query: normalizedQuery,
+            resultText: resultText,
+            queryTerms: ["charge", "charging", "charger", "battery", "pin"],
+            resultTerms: ["charge", "charging", "charger", "sac", "sạc"],
+            amount: 7_000
+        )
+
+        boost += contextualBoost(
+            query: normalizedQuery,
+            resultText: resultText,
+            queryTerms: ["taxi", "cab", "grab", "ride", "driver", "pickup", "pick up"],
+            resultTerms: ["taxi", "grab", "driver", "pickup", "pick up", "đón", "don", "tài xế", "tai xe"],
+            amount: 5_500
+        )
+
+        if matchesAny(["restaurant"], in: normalizedQuery)
+            && matchesAny(["reservation", "booking", "booked", "table"], in: normalizedQuery) {
+            boost += contextualBoost(
+                query: normalizedQuery,
+                resultText: resultText,
+                queryTerms: ["restaurant"],
+                resultTerms: ["restaurant", "table", "reservation", "booking", "bàn", "ban"],
+                amount: 5_500
+            )
+        }
+
+        boost += contextualBoost(
+            query: normalizedQuery,
+            resultText: resultText,
+            queryTerms: ["sim", "data"],
+            resultTerms: ["sim", "data"],
+            amount: 4_800
+        )
+
+        boost += contextualBoost(
+            query: normalizedQuery,
+            resultText: resultText,
+            queryTerms: ["cash", "atm", "money"],
+            resultTerms: ["cash", "atm", "money", "tiền mặt", "tien mat"],
+            amount: 4_800
+        )
+
+        return boost
+    }
+
+    private static let recoveryResultTerms: [String] = [
+        "cancel",
+        "do not have",
+        "forgot",
+        "lost",
+        "missing",
+        "report",
+        "stolen",
+        "took",
+        "mất",
+        "mat",
+        "bị mất",
+        "bi mat",
+    ]
+
+    private static func contextualBoost(
+        query: String,
+        resultText: String,
+        queryTerms: [String],
+        resultTerms: [String],
+        amount: Int
+    ) -> Int {
+        guard matchesAny(queryTerms, in: query), matchesAny(resultTerms, in: resultText) else {
+            return 0
+        }
+
+        return amount
+    }
 
     private static func isLooseSearchToken(_ token: String) -> Bool {
         guard !looseStopwords.contains(token) else {

@@ -11,7 +11,7 @@ const audioAuditPath = path.join(resourcesRoot, "viet-authored-audio-audit.json"
 
 const fixedRepresentatives = [
   { label: "Tôi không hiểu", pageID: "viet-family-repair-understand", expectedIntent: "simple_phrase" },
-  { label: "Bàn này còn trống", pageID: "viet-family-vpe-likely-replies-ban-nay-con-trong", expectedIntent: "traveler_may_hear" },
+  { label: "Hotel check-in", pageID: "viet-family-hotel-check-in", expectedIntent: "practical_flow" },
   { label: "Bà Nà Hills", pageID: "viet-family-city-danang-place-ba-na-hills", expectedIntent: "macro_attraction_journey" },
   { label: "Cầu Rồng", pageID: "viet-family-city-danang-place-dragon-bridge", expectedIntent: "landmark_micro_place" },
   { label: "Đường Nguyễn Văn Linh", pageID: "viet-family-city-danang-place-nguyen-van-linh-street", expectedIntent: "street" },
@@ -20,7 +20,7 @@ const fixedRepresentatives = [
   { label: "Phở Bát Đàn", pageID: "viet-family-city-hanoi-place-pho-bat-dan", expectedIntent: "restaurant" },
   { label: "Bún bò Huế", pageID: "viet-family-city-hue-place-bun-bo-city", expectedIntent: "dish" },
   { label: "Cao lầu", pageID: "viet-family-city-hoian-place-cao-lau-city", expectedIntent: "dish" },
-  { label: "Bưu điện Thành phố ở đâu?", pageID: "viet-family-city-hcmc-where-post-office", expectedIntent: "derived_place_phrase" },
+  { label: "Bưu điện Thành phố", pageID: "viet-family-city-hcmc-place-post-office", expectedIntent: "landmark_micro_place" },
   { label: "Hotel check-in", pageID: "viet-family-hotel-check-in", expectedIntent: "practical_flow" },
   { label: "Airport arrival", pageID: "viet-family-airport-immigration", expectedIntent: "practical_flow" },
   { label: "Taxi/Grab pickup", pageID: "viet-family-airport-pickup", expectedIntent: "practical_flow" },
@@ -231,7 +231,7 @@ function phraseRows(sections) {
 
 function isIngredientQuestionPage(page) {
   const id = String(page.phraseID || page.familyID || page.id || "");
-  return id.includes("vpe-food-has-") || /^does it have\b/i.test(String(page.englishTitle || page.summary || ""));
+  return id.includes("food-has") || /^does (this|it) (have|contain)\b/i.test(String(page.englishTitle || page.summary || ""));
 }
 
 function isTaxiRideHelpPage(page) {
@@ -290,7 +290,7 @@ function classifyIntent(page) {
   const categories = new Set(page.categoryIDs ?? []);
   const sectionTitles = new Set((page.sections ?? []).map((section) => section.title));
 
-  if (categories.has("practice-likely-replies") || page.id.includes("vpe-likely-replies-")) return "traveler_may_hear";
+  if (categories.has("practice-likely-replies")) return "traveler_may_hear";
   if (categories.has("derived-place-phrases")) return "derived_place_phrase";
   if (categories.has("place-kind-street")) return "street";
   if (categories.has("city-page-kind-restaurant") || categories.has("restaurants")) return "restaurant";

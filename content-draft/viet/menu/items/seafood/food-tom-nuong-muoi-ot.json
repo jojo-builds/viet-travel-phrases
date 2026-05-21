@@ -1,0 +1,65 @@
+{
+  "itemID": "food-tom-nuong-muoi-ot",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Tôm nướng muối ớt",
+  "englishTranslation": "Grilled shrimp with chili salt",
+  "romanizedNoTones": "Tom nuong muoi ot",
+  "soundOut": "tom noong moo-ee uht",
+  "notes": "",
+  "atAGlance": "Tôm nướng muối ớt is salt-chili grilled shrimp, usually with smoky shells, chili-salt rub, lime, herbs, and a dipping salt.",
+  "whatItIs": "Tôm nướng muối ớt is shrimp grilled with chili salt, garlic or lemongrass, and smoke. It is a shell-on, peel-and-dip seafood order more than a rice-paper dish.",
+  "usuallyIncludes": [
+    "shrimp",
+    "chili-salt rub",
+    "lime",
+    "fresh herbs",
+    "dipping salt"
+  ],
+  "howToEnjoy": "Peel if needed, squeeze lime, and dip lightly in salt so the grilled shrimp sweetness stays clear. Ask for less chili before the shrimp hits the grill.",
+  "howLocalsOrder": "Order tôm nướng muối ớt as a shared grilled shrimp plate. Ask whether shells remain, and request less chili before the chili-salt rub goes on.",
+  "worthKnowing": "Salt-chili grilling is common at seafood shops because the crust gives smoky heat without drowning the shrimp.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about shells",
+    "less spicy",
+    "lime-pepper salt",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần tôm nướng muối ớt.",
+    "english": "I’d like one order of grilled shrimp with chili salt.",
+    "pronunciation": "chaw toy moht fuhn tom noong moo-ee uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix"
+    ],
+    "reviewNote": "Tôm nướng muối ớt was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

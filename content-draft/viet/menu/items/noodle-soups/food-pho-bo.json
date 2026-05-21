@@ -1,0 +1,63 @@
+{
+  "itemID": "food-pho-bo",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Phở bò",
+  "englishTranslation": "Beef noodle soup",
+  "romanizedNoTones": "Pho bo",
+  "soundOut": "fuh baw",
+  "notes": "",
+  "atAGlance": "Phở bò is Vietnam’s best-known noodle soup: clear, fragrant beef broth, soft rice noodles, and thin slices of beef finished with herbs. It feels light, comforting, and deeply satisfying.",
+  "whatItIs": "Phở bò is beef noodle soup with clear, fragrant broth, flat rice noodles, thin slices of beef, onion, herbs, and lime. The best bowls taste clean first, then deepen with beef sweetness and warm spice.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "sliced beef",
+    "herbs",
+    "lime"
+  ],
+  "howToEnjoy": "Taste the broth first, then add herbs, lime, bean sprouts, or chili a little at a time. Keep the seasoning balanced so the broth still leads.",
+  "howLocalsOrder": "A simple phở bò order usually gets you the classic beef bowl, but shops may ask which cut you want. If you are unsure, rare beef tastes brighter, while well-done beef feels more familiar.",
+  "worthKnowing": "Phở is one of Vietnam’s signature noodle soups, with northern and southern styles differing in broth sweetness, herb plates, and condiments.",
+  "goodToKnow": "Herbs, lime, chili, and bean sprouts usually arrive on the side. Add them little by little so the broth stays balanced.",
+  "commonOptions": [
+    "extra herbs",
+    "chili",
+    "bean sprouts",
+    "less spicy",
+    "no MSG"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "regional-variation",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở bò.",
+    "english": "I’d like one bowl of beef noodle soup.",
+    "pronunciation": "chaw toy moht toh fuh baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-built-around-cleanup",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở bò was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Removed built-around and generic phrasing after Swift copy-audit failure."
+  }
+}

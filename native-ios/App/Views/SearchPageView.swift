@@ -3,19 +3,28 @@ import SwiftUI
 import UIKit
 #endif
 
+struct SearchReturnFocusRequest: Equatable {
+    let id: Int
+    let scrollID: String
+}
+
 struct SearchPageView: View {
+    @Environment(\.dismissSearch) private var dismissSystemSearch
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
     @State private var searchRefreshTask: Task<Void, Never>?
-    @FocusState private var localSearchFieldFocused: Bool
 
     private static let queryRefreshDelay: UInt64 = 90_000_000
 
     let isFieldFocused: Bool
-    let chromeNamespace: Namespace.ID?
-    let showsChrome: Bool
+    let returnFocusRequest: SearchReturnFocusRequest?
+    let photoBackdropState: AdminRootPhotoBackdropState
+    let isPhotoBackdropActive: Bool
+    let isPhotoBackdropVisible: Bool
     let onClose: () -> Void
+    var onDismissSearchFocus: () -> Void = {}
+    var onPrepareReturnFocus: (String) -> Void = { _ in }
     var onOpenDetail: (String) -> Void = { _ in }
     var onOpenCollection: (BrowseCollectionRoute) -> Void = { _ in }
     var onSearchQuery: (String) -> Void = { _ in }
@@ -24,9 +33,13 @@ struct SearchPageView: View {
     init(
         query: Binding<String> = .constant(""),
         isFieldFocused: Bool = false,
-        chromeNamespace: Namespace.ID? = nil,
-        showsChrome: Bool = true,
+        returnFocusRequest: SearchReturnFocusRequest? = nil,
+        photoBackdropState: AdminRootPhotoBackdropState = .fallback,
+        isPhotoBackdropActive: Bool = false,
+        isPhotoBackdropVisible: Bool = false,
         onClose: @escaping () -> Void,
+        onDismissSearchFocus: @escaping () -> Void = {},
+        onPrepareReturnFocus: @escaping (String) -> Void = { _ in },
         onOpenDetail: @escaping (String) -> Void = { _ in },
         onOpenCollection: @escaping (BrowseCollectionRoute) -> Void = { _ in },
         onSearchQuery: @escaping (String) -> Void = { _ in },
@@ -37,9 +50,13 @@ struct SearchPageView: View {
             initialValue: SearchPageResults(query: query.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines))
         )
         self.isFieldFocused = isFieldFocused
-        self.chromeNamespace = chromeNamespace
-        self.showsChrome = showsChrome
+        self.returnFocusRequest = returnFocusRequest
+        self.photoBackdropState = photoBackdropState
+        self.isPhotoBackdropActive = isPhotoBackdropActive
+        self.isPhotoBackdropVisible = isPhotoBackdropVisible
         self.onClose = onClose
+        self.onDismissSearchFocus = onDismissSearchFocus
+        self.onPrepareReturnFocus = onPrepareReturnFocus
         self.onOpenDetail = onOpenDetail
         self.onOpenCollection = onOpenCollection
         self.onSearchQuery = onSearchQuery
@@ -54,47 +71,69 @@ struct SearchPageView: View {
                 isFieldFocused: effectiveFieldFocused
             )
 
-            ZStack(alignment: .bottom) {
-                PhrasePageStyle.pageBackground
-                    .ignoresSafeArea()
+            Group {
+                if isPhotoBackdropVisible {
+                    AdminPhotoBackdropSurfaceView(
+                        surface: .search,
+                        backdropImageName: photoBackdropState.imageName,
+                        activationToken: photoBackdropState.activationToken,
+                        isActive: isPhotoBackdropActive,
+                        isVisible: isPhotoBackdropVisible,
+                        allowsImmersiveToggle: !effectiveFieldFocused,
+                        proxyRefreshID: returnFocusRequest?.id ?? 0,
+                        onScrollProxyReady: { scrollProxy in
+                            applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
+                        }
+                    ) { _ in
+                        searchContent(
+                            results: searchResults,
+                            headerMode: headerMode,
+                            topMastheadBleed: topMastheadBleed,
+                            usesPhotoBackdrop: true
+                        )
+                    }
+                } else {
+                    ZStack {
+                        PhrasePageStyle.pageBackground
+                            .ignoresSafeArea()
 
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
-                        header(results: searchResults, mode: headerMode)
-
-                        if searchResults.query.isEmpty {
-                            if effectiveFieldFocused {
-                                focusedContent
-                            } else {
-                                defaultContent
+                        ScrollViewReader { scrollProxy in
+                            ScrollView {
+                                searchContent(
+                                    results: searchResults,
+                                    headerMode: headerMode,
+                                    topMastheadBleed: topMastheadBleed,
+                                    usesPhotoBackdrop: false
+                                )
                             }
-                        } else if searchResults.hasResults {
-                            resultsContent(results: searchResults)
-                        } else {
-                            recoveryContent
+                            .scrollDismissesKeyboard(.interactively)
+                            .ignoresSafeArea(edges: .top)
+                            .zIndex(SearchPageLayout.resultsZIndex)
+                            .onAppear {
+                                applyReturnFocusIfNeeded(returnFocusRequest, scrollProxy: scrollProxy)
+                            }
+                            .onChange(of: returnFocusRequest) { _, request in
+                                applyReturnFocusIfNeeded(request, scrollProxy: scrollProxy)
+                            }
                         }
                     }
-                    .padding(.top, headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed))
-                    .padding(.horizontal, SearchPageLayout.horizontalPadding)
-                    .padding(.bottom, SearchPageLayout.resultsBottomClearance)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .scrollDismissesKeyboard(.interactively)
-                .ignoresSafeArea(edges: .top)
-                .zIndex(SearchPageLayout.resultsZIndex)
-
-                if showsChrome {
-                    searchBottomChrome
-                        .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                        .padding(.bottom, AppChromeLayout.bottomPadding)
-                        .offset(y: AppChromeLayout.bottomOffset)
-                        .zIndex(SearchPageLayout.pinnedChromeZIndex)
                 }
             }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                TapGesture().onEnded {
+                    dismissSearchFromContent()
+                }
+            )
         }
         .accessibilityIdentifier("SearchPageView")
-        .onAppear(perform: refreshSearchResultsIfNeeded)
+        .onAppear {
+            refreshSearchResultsIfNeeded()
+        }
         .onChange(of: trimmedQuery) { _, nextQuery in
+            if searchResults.query != nextQuery {
+                selectedFilter = .all
+            }
             scheduleSearchResultsRefresh(for: nextQuery)
         }
         .onDisappear {
@@ -103,8 +142,43 @@ struct SearchPageView: View {
         }
     }
 
+    private func searchContent(
+        results: SearchPageResults,
+        headerMode: SearchPageHeaderMode,
+        topMastheadBleed: CGFloat,
+        usesPhotoBackdrop: Bool
+    ) -> some View {
+        LazyVStack(alignment: .leading, spacing: SearchPageLayout.contentSpacing) {
+            header(results: results, mode: headerMode, usesPhotoBackdrop: usesPhotoBackdrop)
+                .searchFocusDismissArea(dismissSearchFromContent)
+
+            if results.query.isEmpty {
+                if effectiveFieldFocused {
+                    focusedContent
+                        .searchFocusDismissArea(dismissSearchFromContent)
+                } else {
+                    defaultContent
+                        .searchFocusDismissArea(dismissSearchFromContent)
+                }
+            } else if results.hasResults {
+                resultsContent(results: results)
+                    .searchFocusDismissArea(dismissSearchFromContent)
+            } else {
+                recoveryContent
+                    .searchFocusDismissArea(dismissSearchFromContent)
+            }
+        }
+        .padding(
+            .top,
+            usesPhotoBackdrop ? 10 : headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed)
+        )
+        .padding(.horizontal, SearchPageLayout.horizontalPadding)
+        .padding(.bottom, SearchPageLayout.resultsBottomClearance)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private var effectiveFieldFocused: Bool {
-        isFieldFocused || localSearchFieldFocused
+        isFieldFocused
     }
 
     private var trimmedQuery: String {
@@ -140,6 +214,36 @@ struct SearchPageView: View {
         }
     }
 
+    private func applyReturnFocusIfNeeded(_ request: SearchReturnFocusRequest?, scrollProxy: ScrollViewProxy) {
+        guard let request else {
+            return
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 120_000_000)
+            withAnimation(.snappy(duration: 0.24)) {
+                scrollProxy.scrollTo(request.scrollID, anchor: .center)
+            }
+        }
+    }
+
+    private func dismissSearchFromContent() {
+        onDismissSearchFocus()
+        dismissSystemSearch()
+    }
+
+    private static func phraseResultScrollID(for pageID: String) -> String {
+        "SearchResult.\(pageID)"
+    }
+
+    private static func collectionResultScrollID(for route: BrowseCollectionRoute) -> String {
+        "Search.Collection.\(route.id)"
+    }
+
+    private static func cityResultScrollID(for cityID: String) -> String {
+        "Search.City.\(cityID)"
+    }
+
     private var currentWindowTopSafeAreaInset: CGFloat {
         #if canImport(UIKit)
         UIApplication.shared.connectedScenes
@@ -152,9 +256,13 @@ struct SearchPageView: View {
         #endif
     }
 
-    private func header(results: SearchPageResults, mode: SearchPageHeaderMode) -> some View {
+    private func header(
+        results: SearchPageResults,
+        mode: SearchPageHeaderMode,
+        usesPhotoBackdrop: Bool
+    ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            if mode.showsMasthead {
+            if mode.showsMasthead && !usesPhotoBackdrop {
                 HeroMastheadImage()
                     .padding(.horizontal, -SearchPageLayout.horizontalPadding)
             }
@@ -244,23 +352,15 @@ struct SearchPageView: View {
         VStack(alignment: .leading, spacing: 24) {
             resultFilters
 
-            if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
-                SearchSection(title: "Results") {
-                    LazyVStack(spacing: 10) {
-                        ForEach(results.phraseResults) { item in
-                            SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
-                        }
-                    }
-                    .padding(14)
-                    .phraseListCard(cornerRadius: 24)
-                }
-            }
-
             if selectedFilter.includesCategories, !results.collectionResults.isEmpty {
                 SearchSection(title: "Browse matches") {
                     LazyVStack(spacing: 12) {
                         ForEach(results.collectionResults.prefix(3)) { match in
-                            SearchCollectionCard(match: match, onOpenCollection: onOpenCollection)
+                            SearchCollectionCard(match: match) { route in
+                                onPrepareReturnFocus(Self.collectionResultScrollID(for: match.descriptor.route))
+                                onOpenCollection(route)
+                            }
+                            .id(Self.collectionResultScrollID(for: match.descriptor.route))
                         }
                     }
                 }
@@ -268,7 +368,23 @@ struct SearchPageView: View {
 
             if selectedFilter.includesCities, !results.cityResults.isEmpty {
                 SearchSection(title: "Cities") {
-                    cityShortcutRow(cities: results.cityResults)
+                    cityShortcutRow(cities: results.cityResults, recordsReturnFocus: true)
+                }
+            }
+
+            if selectedFilter.includesPhrases, !results.phraseResults.isEmpty {
+                SearchSection(title: "Results") {
+                    LazyVStack(spacing: 10) {
+                        ForEach(results.phraseResults) { item in
+                            SearchPhraseRow(item: item) { pageID in
+                                onPrepareReturnFocus(Self.phraseResultScrollID(for: pageID))
+                                onOpenDetail(pageID)
+                            }
+                            .id(Self.phraseResultScrollID(for: item.pageID))
+                        }
+                    }
+                    .padding(14)
+                    .phraseListCard(cornerRadius: 24)
                 }
             }
 
@@ -283,6 +399,8 @@ struct SearchPageView: View {
             }
 
             LazyVStack(spacing: 14) {
+                SearchBrowseAllRecoveryCard(onBrowseTapped: onBrowseTapped)
+
                 ForEach(BrowseSearchDestinations.recoveryActions) { action in
                     SearchRecoveryCard(action: action) {
                         if let pageID = action.openablePageID {
@@ -292,8 +410,6 @@ struct SearchPageView: View {
                         }
                     }
                 }
-
-                SearchBrowseAllRecoveryCard(onBrowseTapped: onBrowseTapped)
             }
         }
     }
@@ -318,13 +434,17 @@ struct SearchPageView: View {
         }
     }
 
-    private func cityShortcutRow(cities: [BrowseCityShortcut]) -> some View {
+    private func cityShortcutRow(cities: [BrowseCityShortcut], recordsReturnFocus: Bool = false) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(cities) { city in
                         SearchCityCard(city: city) {
+                            if recordsReturnFocus {
+                                onPrepareReturnFocus(Self.cityResultScrollID(for: city.id))
+                            }
                             onOpenCollection(city.collectionRoute)
                         }
+                        .id(Self.cityResultScrollID(for: city.id))
                     }
                 }
             .padding(.bottom, 2)
@@ -341,7 +461,11 @@ struct SearchPageView: View {
         return SearchSection(title: "Likely next") {
             LazyVStack(spacing: 10) {
                 ForEach(items) { item in
-                    SearchPhraseRow(item: item, onOpenDetail: onOpenDetail)
+                    SearchPhraseRow(item: item) { pageID in
+                        onPrepareReturnFocus(Self.phraseResultScrollID(for: pageID))
+                        onOpenDetail(pageID)
+                    }
+                    .id(Self.phraseResultScrollID(for: item.pageID))
                 }
             }
         }
@@ -391,48 +515,23 @@ struct SearchPageView: View {
         return ["taxi", "bathroom", "thank you"]
     }
 
-    @ViewBuilder
-    private var searchBottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                searchBottomChromeContent
-            }
-        } else {
-            searchBottomChromeContent
-        }
+}
+
+private struct SearchFocusDismissArea: ViewModifier {
+    let dismiss: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                TapGesture().onEnded(dismiss)
+            )
     }
+}
 
-    private var searchBottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            Button {
-                onClose()
-            } label: {
-                Image(systemName: "house.fill")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.red)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-
-            HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.red)
-
-                TextField("Search Vietnamese phrases", text: $query)
-                    .font(.body.weight(.semibold))
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .focused($localSearchFieldFocused)
-            }
-            .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-        }
+private extension View {
+    func searchFocusDismissArea(_ dismiss: @escaping () -> Void) -> some View {
+        modifier(SearchFocusDismissArea(dismiss: dismiss))
     }
 }
 
@@ -468,7 +567,7 @@ private struct SearchPageResults {
             return "Search"
         }
 
-        return hasResults ? "Results for \(query)" : "No exact phrase yet"
+        return hasResults ? "Results for \(query)" : "Search nearby phrases"
     }
 
     var headerSubtitle: String {
@@ -476,7 +575,7 @@ private struct SearchPageResults {
             return "Find phrases by English, Vietnamese, situation, or what you want to do next."
         }
 
-        return hasResults ? "Here are the most helpful matches." : "Try these close matches or browse by situation."
+        return hasResults ? "Here are the most helpful matches." : "Try a related traveler need or browse by situation."
     }
 }
 
@@ -566,10 +665,6 @@ private struct SearchPromptRow: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -608,10 +703,6 @@ private struct SearchPhraseRow: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -622,10 +713,10 @@ private struct SearchPhraseRow: View {
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .background(.white.opacity(0.48), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(Color.black.opacity(0.04), lineWidth: 1)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
         }
         .accessibilityElement(children: .contain)
     }
@@ -701,16 +792,12 @@ private struct SearchCollectionCard: View {
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    HStack(spacing: 8) {
-                        Text("Open in Browse")
-                            .font(.caption.weight(.black))
-                        Image(systemName: "chevron.right")
-                            .font(.caption2.weight(.black))
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 12)
-                    .frame(height: 32)
-                    .background(Color.red, in: Capsule())
+                    Text("Open in Browse")
+                        .font(.caption.weight(.black))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .frame(height: 32)
+                        .background(Color.red, in: Capsule())
                 }
                 .layoutPriority(1)
             }
@@ -747,10 +834,6 @@ private struct SearchSituationCard: View {
                         .nativeGlass(cornerRadius: 23, tint: destination.tintName.color.opacity(0.16), interactive: true)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
 
                 Text(destination.title)
@@ -833,18 +916,13 @@ private struct SearchRecoveryCard: View {
                         .background(action.tintName.color.opacity(0.09), in: Capsule())
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.red)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21, interactive: true)
             }
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .phraseListCard(cornerRadius: 24)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("Search.Recovery.\(action.id)")
     }
 }
 
@@ -871,10 +949,6 @@ private struct SearchBrowseAllRecoveryCard: View {
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.red)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 22)

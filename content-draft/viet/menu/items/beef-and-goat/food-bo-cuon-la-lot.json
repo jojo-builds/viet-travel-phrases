@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bo-cuon-la-lot",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bò cuốn lá lốt",
+  "englishTranslation": "Beef wrapped in betel leaves",
+  "romanizedNoTones": "Bo cuon la lot",
+  "soundOut": "baw kwun lah loht",
+  "notes": "",
+  "atAGlance": "Bò cuốn lá lốt is seasoned beef wrapped in lá lốt leaves and grilled until smoky. It is often eaten with herbs, rice paper, noodles, and sweet-sour fish-sauce dip.",
+  "whatItIs": "Bò cuốn lá lốt is grilled beef wrapped in aromatic lá lốt leaves. The leaf is not decoration; it perfumes the meat.",
+  "usuallyIncludes": [
+    "seasoned beef",
+    "lá lốt leaves",
+    "herbs",
+    "rice paper optional",
+    "sweet-sour fish-sauce dip"
+  ],
+  "howToEnjoy": "Wrap with herbs and noodles if served, then dip lightly in the sweet-sour fish-sauce dip. The smoky leaf and beef should stay clear.",
+  "howLocalsOrder": "Bò cuốn lá lốt is ordered for the smoky betel-leaf aroma around the beef. Locals wrap it with herbs or rice paper, so ask for extra herbs rather than extra seasoning first.",
+  "worthKnowing": "This southern-style shared snack is memorable because lá lốt perfumes the beef as it grills. The leaf’s peppery aroma is the signature, especially when wrapped with herbs and rice paper.",
+  "goodToKnow": "Lá lốt is piper lolot, often called wild betel leaf in English. It gives the beef a peppery herbal aroma.",
+  "commonOptions": [
+    "extra herbs",
+    "rice paper",
+    "less chili",
+    "share plate"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò cuốn lá lốt.",
+    "english": "I’d like one order of beef wrapped in betel leaves.",
+    "pronunciation": "chaw toy moht fuhn baw kwun lah loht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bò cuốn lá lốt was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

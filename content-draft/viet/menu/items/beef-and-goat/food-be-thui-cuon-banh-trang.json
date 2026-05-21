@@ -1,0 +1,67 @@
+{
+  "itemID": "food-be-thui-cuon-banh-trang",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bê thui cuốn bánh tráng",
+  "englishTranslation": "Roasted veal with rice paper rolls",
+  "romanizedNoTones": "Be thui cuon banh trang",
+  "soundOut": "bay too-ee kwun bahn chang",
+  "notes": "",
+  "atAGlance": "Bê thui cuốn bánh tráng is rare veal wrapped at the table, usually with rice paper, herbs, green banana, star fruit, and fermented mắm nêm, a funky fermented anchovy dip.",
+  "whatItIs": "Bê thui cuốn bánh tráng is the roll-it-yourself version of Quảng Nam-style veal: rice paper, herbs, green banana, star fruit, and mắm nêm around tender slices of veal.",
+  "usuallyIncludes": [
+    "veal",
+    "rice paper",
+    "fresh herbs",
+    "green banana or star fruit",
+    "mắm nêm"
+  ],
+  "howToEnjoy": "Layer veal, herbs, green banana or star fruit, and noodles if served into rice paper, then dip lightly in mắm nêm. The fresh sour pieces keep the veal bright.",
+  "howLocalsOrder": "Order bê thui cuốn bánh tráng when you want the full wrapping setup. Ask for extra rice paper, extra herbs, or fish-sauce dip if fermented mắm nêm is too strong.",
+  "worthKnowing": "This is central Vietnamese roll culture at its clearest: meat is only one part of the bite; herbs, sour fruit, rice paper, and fermented dip complete it.",
+  "goodToKnow": "Build the roll before judging the veal: herbs, green banana or star fruit, rice paper, and a careful touch of mắm nêm are what make the bite complete.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "fish-sauce dip instead of mắm nêm",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bê thui cuốn bánh tráng.",
+    "english": "I’d like one order of roasted veal with rice paper rolls.",
+    "pronunciation": "chaw toy moht fuhn bay too-ee kwun bahn chang",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Bê thui cuốn bánh tráng was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

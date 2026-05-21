@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v900-tran-which-bus-goes-to-the-city-center",
+  "phraseText": "Xe buýt nào đi vào trung tâm thành phố?",
+  "englishTitle": "Which bus goes to the city center?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-which-bus-goes-to-the-city-center",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xe buýt",
+      "english": "bus",
+      "keepTogetherReason": "compound vehicle term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nào",
+      "english": "which / any"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "trung tâm thành phố?",
+      "english": "city center / downtown",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xe buýt nào đi vào trung tâm thành phố?",
+      "english": "Which bus goes to the city center?",
+      "audioKey": "v900-tran-which-bus-goes-to-the-city-center"
+    }
+  ]
+}

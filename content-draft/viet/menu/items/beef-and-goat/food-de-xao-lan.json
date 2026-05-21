@@ -1,0 +1,64 @@
+{
+  "itemID": "food-de-xao-lan",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Dê xào lăn",
+  "englishTranslation": "Goat stir-fried with curry and coconut",
+  "romanizedNoTones": "De xao lan",
+  "soundOut": "yay sow lan",
+  "notes": "",
+  "atAGlance": "Dê xào lăn is goat stir-fried with curry-like aromatics, usually with coconut milk or spices, herbs, and rice crackers in some versions.",
+  "whatItIs": "Dê xào lăn is goat stir-fried with curry aromatics, coconut, lemongrass, peanuts, herbs, and sometimes rice crackers. It is rich, fragrant, and made for sharing.",
+  "usuallyIncludes": [
+    "goat",
+    "curry and lemongrass aroma",
+    "coconut richness",
+    "peanuts or sesame",
+    "herbs"
+  ],
+  "howToEnjoy": "Scoop the curry-scented goat with rice crackers or eat with rice if served. Add herbs and peanuts lightly so the coconut-spice flavor stays clear.",
+  "howLocalsOrder": "Order dê xào lăn as a shared goat plate. Ask for no peanuts, less chili, or rice crackers on the side before it lands.",
+  "worthKnowing": "Xào lăn points to a curry-coconut stir-fry style, common with goat and sometimes beef or seafood.",
+  "goodToKnow": "Xào lăn often means a fragrant curry-leaning stir-fry with coconut richness. It should taste nutty, herbal, and aromatic rather than like a plain garlic stir-fry.",
+  "commonOptions": [
+    "no peanuts",
+    "less spicy",
+    "rice crackers",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần dê xào lăn.",
+    "english": "I’d like one order of goat stir-fried with curry and coconut.",
+    "pronunciation": "chaw toy moht fuhn yay sow lan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Dê xào lăn was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

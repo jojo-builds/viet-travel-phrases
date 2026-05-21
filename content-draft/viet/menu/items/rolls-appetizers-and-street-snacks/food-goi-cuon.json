@@ -1,0 +1,62 @@
+{
+  "itemID": "food-goi-cuon",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Gỏi cuốn",
+  "englishTranslation": "Fresh spring rolls",
+  "romanizedNoTones": "Goi cuon",
+  "soundOut": "goy kwun",
+  "notes": "",
+  "atAGlance": "Gỏi cuốn are fresh spring rolls wrapped in rice paper with herbs, noodles, and a light filling. They are cool, clean, and great as a starter or snack.",
+  "whatItIs": "Gỏi cuốn are fresh rice-paper rolls with herbs, noodles, and a light filling such as shrimp, pork, or tofu. They are cool, clean, and a gentle way into Vietnamese flavors.",
+  "usuallyIncludes": [
+    "rice paper",
+    "fresh spring rolls",
+    "rice vermicelli",
+    "herbs",
+    "peanut sauce or fish-sauce dip"
+  ],
+  "howToEnjoy": "Dip, do not soak. Peanut sauce is richer; fish-sauce dip is lighter, salty-sweet, and brighter.",
+  "howLocalsOrder": "Gỏi cuốn is ordered by the plate or by the roll, then matched with the dip you want. If peanuts are a problem, ask before choosing peanut-hoisin; fish-sauce dip is the brighter fish-sauce-lime option.",
+  "worthKnowing": "These rolls are often called fresh spring rolls in English, which helps distinguish them from fried chả giò or nem rán. In Vietnam, snacks like this depend on rice paper, herbs, peanut-hoisin dip or fish-sauce-lime dip, and stall texture; the same name can shift by region.",
+  "goodToKnow": "Peanut-hoisin dip and fish-sauce-lime dip change the flavor. Peanut sauce is richer; fish-sauce dip is lighter, salty, sweet, and bright.",
+  "commonOptions": [
+    "peanut sauce",
+    "fish-sauce dip",
+    "more herbs",
+    "no chili"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "name-and-menu-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi cuốn.",
+    "english": "I’d like one order of fresh spring rolls.",
+    "pronunciation": "chaw toy moht fuhn goy kwun",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Gỏi cuốn was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

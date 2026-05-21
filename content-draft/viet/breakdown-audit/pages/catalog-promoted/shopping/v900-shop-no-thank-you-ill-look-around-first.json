@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-shop-no-thank-you-ill-look-around-first",
+  "phraseText": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+  "englishTitle": "No thank you, I’ll look around first",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-no-thank-you-ill-look-around-first",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không,",
+      "english": "no"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cảm ơn,",
+      "english": "thank you",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "vietnamese": "xem xét",
+      "english": "look around / consider",
+      "keepTogetherReason": "compound consideration verb"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "xung quanh",
+      "english": "around",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "trước",
+      "english": "before / front"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+      "english": "No thank you, I’ll look around first",
+      "audioKey": "v900-shop-no-thank-you-ill-look-around-first"
+    }
+  ]
+}

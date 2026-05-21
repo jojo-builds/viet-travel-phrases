@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-can-tay",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép cần tây",
+  "englishTranslation": "Celery juice",
+  "romanizedNoTones": "Nuoc ep can tay",
+  "soundOut": "nook ep kun tay",
+  "notes": "",
+  "atAGlance": "Nước ép cần tây is celery juice from Vietnam’s health-drink café lane, green, herbal, lightly bitter, and best ordered with sugar in mind.",
+  "whatItIs": "Nước ép cần tây is celery pressed into a cold juice, sometimes mixed with apple or pineapple. Expect celery juice that is green, herbal, lightly bitter, and very fresh.",
+  "usuallyIncludes": [
+    "celery",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask what it is mixed with if you want to avoid extra sweetness.",
+  "howLocalsOrder": "Nước ép cần tây is usually made or poured cold, so ask for no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép cần tây fits the health-drink side of Vietnamese juice stalls and modern cafés.",
+  "goodToKnow": "Expect a vegetal flavor.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép cần tây.",
+    "english": "I’d like one glass of celery juice.",
+    "pronunciation": "chaw toy moht lee nook ep kun tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép cần tây was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

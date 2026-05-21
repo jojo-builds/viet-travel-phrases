@@ -59,15 +59,10 @@ struct AccessGateView: View {
         }
 
         #if DEBUG
-        return isRunningUITests && !hasAnyForcedSubscriptionState
+        return SubscriptionTestEnvironment.isRunningUITests(launchEnvironment) && !hasAnyForcedSubscriptionState
         #else
         return false
         #endif
-    }
-
-    private var isRunningUITests: Bool {
-        launchEnvironment["XCTestConfigurationFilePath"] != nil ||
-            launchEnvironment["XCInjectBundleInto"] != nil
     }
 
     private var hasAnyForcedSubscriptionState: Bool {
@@ -87,6 +82,33 @@ struct AccessGateView: View {
 
     private func hasLaunchArgument(_ argument: String) -> Bool {
         launchArguments.contains(argument)
+    }
+}
+
+enum SubscriptionTestEnvironment {
+    static func isRunningUITests(_ environment: [String: String]) -> Bool {
+        guard hasXCTestEnvironment(environment) else {
+            return false
+        }
+
+        return !isRunningHostedUnitTests(environment)
+    }
+
+    private static func hasXCTestEnvironment(_ environment: [String: String]) -> Bool {
+        environment["XCTestConfigurationFilePath"] != nil ||
+            environment["XCInjectBundleInto"] != nil
+    }
+
+    private static func isRunningHostedUnitTests(_ environment: [String: String]) -> Bool {
+        let testHints = [
+            environment["XCTestConfigurationFilePath"],
+            environment["XCInjectBundleInto"],
+        ].compactMap { $0 }
+
+        return testHints.contains { hint in
+            hint.contains("SpeakLocalNativeTests") &&
+                !hint.contains("SpeakLocalNativeUITests")
+        }
     }
 }
 

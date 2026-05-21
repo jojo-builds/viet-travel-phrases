@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v500-loca-serv-ever-task-how-much-per-page",
+  "phraseText": "Bao nhiêu một trang?",
+  "englishTitle": "How much per page?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.322Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-loca-serv-ever-task-how-much-per-page",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "trang?",
+      "english": "page / white"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bao nhiêu một trang?",
+      "english": "How much per page?",
+      "audioKey": "v500-loca-serv-ever-task-how-much-per-page"
+    }
+  ]
+}

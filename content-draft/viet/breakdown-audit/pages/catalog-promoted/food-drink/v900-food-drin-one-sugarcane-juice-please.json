@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+  "phraseText": "Xin cho một ly nước mía",
+  "englishTitle": "One sugarcane juice, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.309Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một ly",
+      "english": "one glass",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nước mía",
+      "english": "sugarcane juice",
+      "keepTogetherReason": "compound drink term"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin cho một ly nước mía",
+      "english": "One sugarcane juice, please",
+      "audioKey": "v900-food-drin-one-sugarcane-juice-please"
+    }
+  ]
+}

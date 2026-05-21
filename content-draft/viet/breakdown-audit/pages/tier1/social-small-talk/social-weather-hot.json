@@ -1,0 +1,43 @@
+{
+  "pageID": "viet-family-social-weather-hot",
+  "phraseText": "Thời tiết nóng quá",
+  "englishTitle": "The weather is so hot",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.285Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-social-weather-hot",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Thời tiết",
+      "english": "weather",
+      "keepTogetherReason": "compound weather term"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nóng",
+      "english": "hot"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "quá",
+      "english": "too / very"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thời tiết nóng quá",
+      "english": "The weather is so hot",
+      "audioKey": "smalltalk-6"
+    }
+  ]
+}

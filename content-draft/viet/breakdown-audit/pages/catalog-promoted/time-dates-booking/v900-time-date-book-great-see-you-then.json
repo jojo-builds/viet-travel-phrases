@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-great-see-you-then",
+  "phraseText": "Tuyệt vời, gặp bạn sau nhé",
+  "englishTitle": "Great, see you then",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.346Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-great-see-you-then",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tuyệt vời,",
+      "english": "great",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gặp",
+      "english": "meet"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sau",
+      "english": "after / behind"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhé",
+      "english": "soft polite ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tuyệt vời, gặp bạn sau nhé",
+      "english": "Great, see you then",
+      "audioKey": "v900-time-date-book-great-see-you-then"
+    }
+  ]
+}

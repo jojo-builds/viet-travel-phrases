@@ -1,0 +1,67 @@
+{
+  "itemID": "food-com-bo-luc-lac",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm bò lúc lắc",
+  "englishTranslation": "Shaking beef with rice",
+  "romanizedNoTones": "Com bo luc lac",
+  "soundOut": "kum baw look lak",
+  "notes": "",
+  "atAGlance": "Cơm bò lúc lắc is rice with shaking beef, usually with seared beef cubes, tomato, greens, onion, and lime-pepper salt.",
+  "whatItIs": "Cơm bò lúc lắc is rice topped with seared beef cubes, onion or bell pepper, lettuce, tomato, and a lime-pepper salt dip. The beef should taste hot from the wok and slightly caramelized.",
+  "usuallyIncludes": [
+    "rice",
+    "shaking beef cubes",
+    "onion and bell pepper",
+    "lime-pepper salt",
+    "pickles or salad"
+  ],
+  "howToEnjoy": "Dip the beef cubes lightly in lime-pepper salt, then eat with rice, tomato, and greens. Too much dip can hide the seared beef flavor.",
+  "howLocalsOrder": "Order cơm bò lúc lắc when you want shaking beef as a rice plate. Ask for less pepper, less onion, or lime-pepper salt on the side before the wok order lands.",
+  "worthKnowing": "Lúc lắc refers to the shaking motion of the beef in the wok, a useful phrase to recognize on Vietnamese menus.",
+  "goodToKnow": "Lime-pepper salt is for the beef cubes, while the rice catches the wok juices. Ask for onion or pepper changes before the beef hits the pan.",
+  "commonOptions": [
+    "lime-pepper salt on the side",
+    "less onion",
+    "extra rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm bò lúc lắc.",
+    "english": "I’d like one order of shaking beef with rice.",
+    "pronunciation": "chaw toy moht fuhn kum baw look lak",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm bò lúc lắc was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

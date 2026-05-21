@@ -46,33 +46,27 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ứng dụng sẽ",
+          "vietnamese": "Ứng dụng",
           "english": "app",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không chấp nhận",
-          "english": "yes/no question",
+          "vietnamese": "sẽ không chấp nhận",
+          "english": "will not accept",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thẻ",
-          "english": "can / able to",
+          "vietnamese": "thẻ của tôi",
+          "english": "my card",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Ứng dụng sẽ không chấp nhận thẻ của tôi",
           "english": "The app will not accept my card",
-          "audioKey": null
+          "audioKey": "v900-phon-inte-powe-the-app-will-not-accept-my-card"
         }
       ]
     },

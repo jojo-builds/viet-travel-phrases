@@ -1,0 +1,62 @@
+{
+  "itemID": "drink-sam-bo-luong",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sâm bổ lượng",
+  "englishTranslation": "Sweet herbal dessert drink",
+  "romanizedNoTones": "Sam bo luong",
+  "soundOut": "sum baw loo-ung",
+  "notes": "",
+  "atAGlance": "Sâm bổ lượng is a sweet herbal dessert drink, cooling, chewy, and full of longan, seaweed, barley, or other spoonable textures.",
+  "whatItIs": "Sâm bổ lượng is a sweet herbal drink with mixed ingredients such as longan, lotus seed, seaweed, or jelly. Expect herbal dessert drink with longan-like sweetness, seaweed or jelly textures, and a cooling finish.",
+  "usuallyIncludes": [
+    "herbal syrup",
+    "dried longan",
+    "lotus seed optional",
+    "seaweed optional",
+    "ice"
+  ],
+  "howToEnjoy": "Use the spoon or wide straw if it comes with pieces; it drinks partly like dessert.",
+  "howLocalsOrder": "Sâm bổ lượng is an herbal sweet drink, so ask for less sugar if you want the roots, longan, monk fruit, or cooling herbs to come through. Less ice keeps the flavor from turning watery.",
+  "worthKnowing": "In Vietnam, Sâm bổ lượng is part of the Chinese-Vietnamese herbal sweet tradition, especially visible in southern cities.",
+  "goodToKnow": "Expect bits and textures in the cup.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ingredients vary widely by shop.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sâm bổ lượng.",
+    "english": "I’d like one glass of sweet herbal dessert drink.",
+    "pronunciation": "chaw toy moht lee sum baw loo-ung",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sâm bổ lượng was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

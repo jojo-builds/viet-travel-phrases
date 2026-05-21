@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-where-is-the-line",
+  "phraseText": "Đường dây ở đâu?",
+  "englishTitle": "Where is the line?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-where-is-the-line",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Đường dây",
+      "english": "line",
+      "keepTogetherReason": "compound line noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đường dây ở đâu?",
+      "english": "Where is the line?",
+      "audioKey": "v500-time-date-book-where-is-the-line"
+    }
+  ]
+}

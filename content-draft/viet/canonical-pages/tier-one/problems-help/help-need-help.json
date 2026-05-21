@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Giúp tôi với when you need \"I need help\". This is for when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Use the rows below to pick the warmer, safer, or more direct version.",
+      "body": "Say Giúp tôi với when you need \"I need help\". This is for when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
       "presentation": "plain-text"
     },
     {
@@ -35,7 +35,7 @@
         {
           "id": "help-need-help-direct-piece-2",
           "vietnamese": "với",
-          "english": "with / to",
+          "english": "please / with",
           "audioKey": "breakdown-authored-voi-25e5621456"
         },
         {
@@ -64,24 +64,6 @@
         }
       ],
       "presentation": "phrase-list"
-    },
-    {
-      "id": "natural-variations",
-      "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
-      "phrases": [
-        {
-          "id": "help-1",
-          "vietnamese": "Anh/chị giúp tôi với",
-          "english": "Can you help me?",
-          "pronunciation": "anh chee zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-1",
-          "audioKey": "help-1"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
     },
     {
       "id": "why-it-matters",

@@ -1,0 +1,19 @@
+{
+  "appID": "turkish",
+  "languagePackID": "turkish",
+  "displayName": "SpeakLocal Turkey",
+  "status": "future-planning",
+  "bundleIdentifiers": {
+    "plannedOrLegacy": null,
+    "nativeDevelopment": null
+  },
+  "premiumProductID": null,
+  "paths": {
+    "contentDraft": "content-draft/turkish",
+    "targetLanguagePack": "native-ios/Resources/LanguagePacks/turkish"
+  },
+  "notes": [
+    "Turkish is a future prep lane, not a runtime-ready native pack.",
+    "This file reserves the native app-config shape so future language work does not invent a second app surface."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "pageID": "viet-phrase-transport-premium-wait-here",
+  "phraseText": "Xin hãy đợi ở đây, tôi đang tới.",
+  "englishTitle": "Please wait here, I am coming.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.348Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-transport-premium-wait-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đợi",
+      "english": "wait"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đây,",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đang",
+      "english": "currently / am"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "tới.",
+      "english": "to / arrive"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy đợi ở đây, tôi đang tới.",
+      "english": "Please wait here, I am coming.",
+      "audioKey": "transport-premium-wait-here"
+    }
+  ]
+}

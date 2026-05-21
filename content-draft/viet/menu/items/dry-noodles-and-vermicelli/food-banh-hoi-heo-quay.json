@@ -1,0 +1,65 @@
+{
+  "itemID": "food-banh-hoi-heo-quay",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh hỏi heo quay",
+  "englishTranslation": "Fine rice vermicelli sheets with roasted pork",
+  "romanizedNoTones": "Banh hoi heo quay",
+  "soundOut": "bahn hoy heh-oh kway",
+  "notes": "",
+  "atAGlance": "Bánh hỏi heo quay is fine woven rice noodles with roast pork, usually with crackling heo quay, scallion oil, herbs, and fish sauce.",
+  "whatItIs": "Bánh hỏi heo quay pairs fine woven rice-noodle sheets with roast pork and crackling, scallion oil, herbs, and fish-sauce dip. The joy is delicate noodles against crisp pork skin.",
+  "usuallyIncludes": [
+    "fine rice vermicelli sheets",
+    "roasted pork",
+    "scallion oil",
+    "fresh herbs",
+    "rice paper and fish-sauce dip"
+  ],
+  "howToEnjoy": "Build small bites with bánh hỏi, roast pork, herbs, and rice paper if served, then dip lightly in the fish-sauce dip. Keep the crackling dry enough to stay crisp.",
+  "howLocalsOrder": "Order bánh hỏi heo quay for a shareable plate of crackling pork and fine noodle sheets. Ask for extra rice paper or herbs if you want to eat it the local wrap-and-dip way.",
+  "worthKnowing": "This is the richer cousin of grilled-pork bánh hỏi, often chosen for parties or family tables because the pork skin brings crunch.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh hỏi heo quay.",
+    "english": "I’d like one order of fine rice vermicelli sheets with roasted pork.",
+    "pronunciation": "chaw toy moht fuhn bahn hoy heh-oh kway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Bánh hỏi heo quay was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

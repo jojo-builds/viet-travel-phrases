@@ -1,0 +1,65 @@
+{
+  "itemID": "food-banh-da-lon",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh da lợn",
+  "englishTranslation": "Layered pandan and mung bean cake",
+  "romanizedNoTones": "Banh da lon",
+  "soundOut": "bahn zah luhn",
+  "notes": "",
+  "atAGlance": "Bánh da lợn is a layered steamed cake, usually pandan-green and mung-bean-yellow, with a chewy tapioca-rice texture and gentle coconut sweetness.",
+  "whatItIs": "Bánh da lợn is a chewy layered steamed cake made with pandan, mung bean, coconut milk, and starches.",
+  "usuallyIncludes": [
+    "tapioca-rice batter",
+    "pandan",
+    "mung bean",
+    "coconut milk",
+    "steamed layers"
+  ],
+  "howToEnjoy": "Eat it as a chewy layered cake, often by the piece or takeaway box. The fun is the pandan, mung bean, and coconut layers pulling apart softly.",
+  "howLocalsOrder": "Order bánh da lợn by piece or box. Ask for a small portion if you just want to try the chewy pandan-coconut texture.",
+  "worthKnowing": "Bánh da lợn is a texture-first Vietnamese sweet, steamed in chewy pandan and mung-bean layers rather than baked like a Western cake.",
+  "goodToKnow": "The name means pig-skin cake because of the layered texture, not because it contains pork.",
+  "commonOptions": [
+    "one piece",
+    "pack to go",
+    "small portion",
+    "less sweet"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Usually contains coconut milk.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh da lợn.",
+    "english": "I’d like one order of layered pandan and mung bean cake.",
+    "pronunciation": "chaw toy moht fuhn bahn zah luhn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh da lợn was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

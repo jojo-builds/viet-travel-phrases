@@ -1,0 +1,66 @@
+{
+  "itemID": "food-lau-thai",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Lẩu Thái",
+  "englishTranslation": "Thai-style hot pot",
+  "romanizedNoTones": "Lau Thai",
+  "soundOut": "low tie",
+  "notes": "",
+  "atAGlance": "Lẩu Thái is Vietnamese Thai-style hot pot, usually with sour-spicy broth, seafood or meat, greens, and noodles.",
+  "whatItIs": "Lẩu Thái is Thai-style hot pot as adapted in Vietnam: sour-spicy broth with lemongrass, lime leaf, tomato, pineapple, seafood or meat, greens, mushrooms, and noodles.",
+  "usuallyIncludes": [
+    "sour-spicy broth",
+    "seafood or meat",
+    "greens",
+    "mushrooms",
+    "noodles"
+  ],
+  "howToEnjoy": "Cook seafood or meat first, add greens in waves, and save noodles for later so they do not turn soft. Ask for less spicy before the broth is set.",
+  "howLocalsOrder": "Order lẩu Thái by table size and choose seafood, meat, or mixed toppings if asked. Ask for less spice if you want sour lemongrass flavor without heavy heat.",
+  "worthKnowing": "Vietnamese lẩu Thái is popular for group meals because the sour-spicy broth wakes up seafood, beef, vegetables, and noodles.",
+  "goodToKnow": "Choose portion size first, then protein and spice level. Ask for less spice before the broth is set if you want sour lemongrass flavor with less heat.",
+  "commonOptions": [
+    "less spicy",
+    "seafood",
+    "extra greens",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu Thái.",
+    "english": "I’d like one order of Thai-style hot pot.",
+    "pronunciation": "chaw toy moht noy low tie",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Lẩu Thái was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

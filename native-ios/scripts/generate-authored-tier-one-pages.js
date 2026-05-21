@@ -4,6 +4,12 @@ const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const {
+  applyReviewedBreakdownOverride,
+  loadBreakdownAuditLedger,
+  renderBreakdownAuditExport,
+  validateBreakdownAuditCoverage,
+} = require("./lib/viet-breakdown-audit");
 
 const root = path.resolve(__dirname, "..");
 const familyRoot = path.resolve(root, "..");
@@ -17,14 +23,13 @@ const catalogPromotedSourceRoot = path.join(canonicalPagesRoot, "catalog-promote
 const cityLibraryPath = path.join(familyRoot, "content-draft", "viet", "city-library", "v1.json");
 const editorialSupportRoot = path.join(familyRoot, "content-draft", "viet", "editorial-model-support", "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001");
 const editorialSupportManifestPath = path.join(editorialSupportRoot, "manifest.json");
-const practiceExpansionRoot = path.join(familyRoot, "content-draft", "viet", "practice-expansion", "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001");
-const practiceExpansionManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 const catalogPromotedTaskID = "TASK-VIET-2000-FULL-LISTING-PAGES-001";
-const breakdownRepairScriptPath = path.join(root, "scripts", "repair-viet-breakdown-glosses.js");
 const editorialPilotImportScriptPath = path.join(root, "scripts", "import-viet-editorial-pilot.js");
+const breakdownAuditExportPath = path.join(familyRoot, "content-draft", "viet", "breakdown-audit", "audit", "rendered-breakdown-audit.json");
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const audioManifest = JSON.parse(fs.readFileSync(audioManifestPath, "utf8"));
+const breakdownAuditLedger = loadBreakdownAuditLedger({ repoRoot: familyRoot });
 
 const phraseByID = new Map(catalog.phrases.map((phrase) => [phrase.id, phrase]));
 const familyByID = new Map(catalog.families.map((family) => [family.id, family]));
@@ -1066,7 +1071,9 @@ const preferredBreakdownChunks = new Set([
   "the sim",
   "thi thuc",
   "chong mat",
+  "cho mot qua",
   "thuc don",
+  "dua tuoi",
   "tien mat",
   "tieng anh",
   "thit bo",
@@ -1172,7 +1179,9 @@ const breakdownMeanings = new Map(Object.entries({
   "xin vui long": "please",
   "cho": "for",
   "cho hoi": "excuse me / may I ask",
+  "cho mot qua": "give me one",
   "cho toi": "can I have",
+  "dua tuoi": "fresh coconut",
   "mot": "one",
   "hai": "two",
   "hãy": "please / soft command",
@@ -1297,6 +1306,7 @@ const exactRawBreakdownMeanings = new Map(Object.entries({
   "này": "this",
   "có": "have / yes",
   "cô": "aunt-age woman / respectful female address",
+  "tôi": "I / me",
   "tỏi": "garlic",
   "bơ": "butter",
   "bỏ": "leave out / remove",
@@ -2023,7 +2033,18 @@ function cityLibraryPhraseOption(pageRecord, detailPageID = null) {
 }
 
 const cityRestaurantPlaceKinds = new Set(["restaurant", "cafe"]);
-const cityDishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const cityDishPlaceKinds = new Set(["local dish", "food spot", "dish", "drink", "dessert"]);
+const cityAttractionPlaceKinds = new Set([
+  "attraction",
+  "beach",
+  "landmark",
+  "museum",
+  "nature",
+  "park",
+  "river",
+  "village",
+  "experience",
+]);
 
 function cityPlaceKind(place) {
   const explicitKind = String(place.placeKind ?? "").trim();
@@ -2038,6 +2059,7 @@ function cityPageKind(pageRecord, place) {
   if (pageRecord.kind !== "place") return pageRecord.kind;
   const placeKind = String(place.kind ?? "").trim().toLowerCase();
   if (cityRestaurantPlaceKinds.has(placeKind)) return "restaurant";
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (cityDishPlaceKinds.has(placeKind)) return "dish";
   return "place";
 }
@@ -2046,10 +2068,15 @@ function isDerivedCityPlacePhrase(pageRecord, pageKind) {
   return pageKind === "phrase" && pageRecord.kind === "phrase" && Boolean(pageRecord.placeID);
 }
 
+function isCityAttractionPlaceKind(placeKind) {
+  return cityAttractionPlaceKinds.has(String(placeKind ?? "").trim().toLowerCase());
+}
+
 function cityContentRole(pageRecord, place) {
-  if (pageRecord.contentRole) return pageRecord.contentRole;
-  if (place.contentRole) return place.contentRole;
+  if (pageRecord.contentRole) return cleanCityContentRole(pageRecord.contentRole);
+  if (place.contentRole) return cleanCityContentRole(place.contentRole);
   const placeKind = cityPlaceKind(place);
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (placeKind === "dish") return "dish";
   if (placeKind === "cafe") return "cafe";
   if (placeKind === "restaurant") {
@@ -2057,6 +2084,18 @@ function cityContentRole(pageRecord, place) {
     return sourceIDs.has("michelin-vietnam") ? "fine-dining" : "everyday";
   }
   return "";
+}
+
+function cleanCityContentRole(role) {
+  return role === "dish-anchor" ? "dish" : role;
+}
+
+function cleanCityCategoryID(categoryID) {
+  return categoryID === "content-role-dish-anchor" ? "content-role-dish" : categoryID;
+}
+
+function isCityDishLikePageKind(pageKind) {
+  return ["dish", "drink", "dessert"].includes(String(pageKind ?? "").trim().toLowerCase());
 }
 
 function phraseOptionByID(phraseID, tintName = "teal") {
@@ -2178,6 +2217,8 @@ function splitLongCityChunk(chunk) {
 
 function cityRecognitionGloss(pageKind, placeKind) {
   if (pageKind === "restaurant") return "restaurant name";
+  if (pageKind === "drink") return "drink name";
+  if (pageKind === "dessert") return "dessert name";
   if (pageKind === "dish") return "dish name";
   if (placeKind === "street") return "street name";
   return "local name";
@@ -2259,7 +2300,7 @@ function shouldUseCityRecognitionGloss(vietnamese, english) {
 }
 
 function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null, options = {}) {
-  if (pageKind === "dish" && normalizeAudioText(pageRecord.targetText) === normalizeAudioText("Cao lầu ở Hội An")) {
+  if (isCityDishLikePageKind(pageKind) && normalizeAudioText(pageRecord.targetText) === normalizeAudioText("Cao lầu ở Hội An")) {
     return [
       { id: `${pageRecord.id}-chunk-1`, vietnamese: "Cao lầu", english: "dish name", audioKey: null },
       { id: `${pageRecord.id}-chunk-2`, vietnamese: "ở Hội An", english: "in Hội An", audioKey: authoredBreakdownAudioKey("ở Hội An") },
@@ -2367,7 +2408,7 @@ function derivedPlacePhraseOptions(pageRecord, relatedRecords, placePage, placeK
     );
   } else if (samePlaceOptions.length < 2) {
     supplemental.push(
-      phraseOptionByID("ves-can-you-show-me-politeness", "teal"),
+      phraseOptionByID("repair-show-me", "teal"),
       phraseOptionByID("ves-not-right-place", "orange"),
       phraseOptionByID("ves-call-taxi-for-me", "orange")
     );
@@ -2447,6 +2488,43 @@ function linkedCityPhraseOptionsByIntent(records, intent, count = 4) {
   return linkedCityPhraseOptions(rankedCityPhraseRows(records, intent, count), count);
 }
 
+function genericAttractionGettingThereOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("taxi-1", "orange"),
+    phraseOptionByID("repair-5", "teal"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
+  ], 4);
+}
+
+function genericAttractionVisitOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("repair-5", "teal"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
+    phraseOptionByID("ves-take-photo-for-me", "teal"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
+  ], 4);
+}
+
+function genericAttractionPickupOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("repair-5", "teal"),
+    phraseOptionByID("ves-is-this-address-correct", "teal"),
+    phraseOptionByID("transport-stop-here-clearer", "orange"),
+    phraseOptionByID("ves-call-taxi-for-me", "orange"),
+  ], 4);
+}
+
+function genericAttractionExploreOptions() {
+  return compactPhraseOptions([
+    phraseOptionByID("sight-1", "purple"),
+    phraseOptionByID("v500-time-date-book-one-ticket-please", "purple"),
+    phraseOptionByID("v500-sigh-acti-where-can-i-buy-tickets", "purple"),
+    phraseOptionByID("v500-sigh-acti-where-is-the-exit", "teal"),
+    phraseOptionByID("airport-4", "teal"),
+  ], 5);
+}
+
 function specificFoodOrderOptionForText(value) {
   const text = String(value ?? "").toLowerCase();
   if (/bún chả|bun cha/i.test(text)) return phraseOptionByID("ves-order-bun-cha-portion", "green");
@@ -2488,6 +2566,7 @@ function applyCityEditorialImport(sections, pageRecord) {
   const nextSections = editorialImport.replaceGeneratedSections === true
     ? []
     : sections.map((section) => ({ ...section }));
+  const generatedSectionByID = new Map(sections.map((section) => [section.id, section]));
   const shouldReplaceGeneratedSections = editorialImport.replaceGeneratedSections === true;
   const insertBeforeIndex = () => {
     const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
@@ -2495,12 +2574,16 @@ function applyCityEditorialImport(sections, pageRecord) {
   };
 
   for (const editorialSection of editorialImport.sections) {
+    const generatedSection = shouldReplaceGeneratedSections
+      ? generatedSectionByID.get(editorialSection.id)
+      : null;
     const next = {
+      ...(generatedSection ? { ...generatedSection } : {}),
       id: editorialSection.id,
       title: editorialSection.title,
       body: editorialSection.body,
     };
-    if (editorialSection.phraseIDs?.length) {
+    if (Array.isArray(editorialSection.phraseIDs)) {
       next.phrases = editorialSection.phraseIDs.map((phraseID) => editorialCityPhraseOption(phraseID, pageRecord.id));
     }
     if (editorialSection.id === "breakdown") {
@@ -2601,6 +2684,7 @@ function cityPlaceTypeLabel(placeKind) {
     port: "port",
     village: "village",
     dish: "local dish",
+    experience: "experience",
   };
   return labels[placeKind] ?? "place";
 }
@@ -2610,7 +2694,13 @@ function cityPlaceBrief(city, place, pageRecord, pageKind, placeKind, contentRol
     return `${place.vietnameseName} is a restaurant in ${city.shortTitle}.`;
   }
 
-  if (pageKind === "dish") {
+  if (isCityDishLikePageKind(pageKind)) {
+    if (contentRole === "drink") {
+      return `${place.vietnameseName} is a local drink in ${city.shortTitle}.`;
+    }
+    if (contentRole === "dessert") {
+      return `${place.vietnameseName} is a local dessert in ${city.shortTitle}.`;
+    }
     return `${place.vietnameseName} is a local dish in ${city.shortTitle}.`;
   }
 
@@ -2665,7 +2755,7 @@ function cityWhenToUseBody(pageRecord, city, place, pageKind, placeKind) {
     return "Payment, receipt, cash/card, and ride-back sentences.";
   }
 
-  if (pageKind === "dish") {
+  if (isCityDishLikePageKind(pageKind)) {
     return "Nearby, ordering, and dish-finding sentences.";
   }
 
@@ -2738,9 +2828,23 @@ function cityPageForRecord(pageRecord, context) {
     place: "Say it slowly, then show the map, ticket, address, or pickup note if needed.",
     restaurant: "Show the restaurant on your map first; then order, ask about the menu, pay, or get a ride back.",
     dish: "Start with the dish name, then use the ordering and ingredient phrases when you need to ask where to get it or what is inside.",
+    drink: "Start with the drink name, then use the ordering, ice, sweetness, and ingredient phrases when needed.",
+    dessert: "Start with the dessert name, then use the ordering, toppings, ice, sweetness, and ingredient phrases when needed.",
   };
   const samePlaceOptions = linkedCityPhraseOptions(samePlacePhraseRows, 8);
-  const placeActionOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "place-action", 4);
+  const attractionPlaceKind = isCityAttractionPlaceKind(placeKind);
+  const placeActionOptions = attractionPlaceKind
+    ? genericAttractionGettingThereOptions()
+    : linkedCityPhraseOptionsByIntent(placePhraseRows, "place-action", 4);
+  const placeVisitOptions = attractionPlaceKind
+    ? genericAttractionVisitOptions()
+    : placeActionOptions;
+  const placePickupOptions = attractionPlaceKind
+    ? genericAttractionPickupOptions()
+    : linkedCityPhraseOptionsByIntent(relatedRecords.filter((record) => record.kind === "phrase"), "place-action", 3);
+  const placeExploreOptions = attractionPlaceKind
+    ? genericAttractionExploreOptions()
+    : linkedCityPhraseOptions(relatedRecords, 5);
   const restaurantWalkInOptions = linkedCityPhraseOptionsByIntent(placePhraseRows, "restaurant-walk-in", 4);
   const restaurantTableMenuOptions = compactPhraseOptions([
     phraseOptionByID("food-need-table", "green"),
@@ -2751,9 +2855,10 @@ function cityPageForRecord(pageRecord, context) {
     phraseOptionByID("v900-food-drin-what-do-you-recommend", "green"),
   ], 4);
   const restaurantDrinkOptions = compactPhraseOptions([
-    phraseOptionByID("vpe-one-item-please-cho-toi-mot-tra-da", "green"),
     phraseOptionByID("store-1", "green"),
-  ], 2);
+    phraseOptionByID("coffee-2", "green"),
+    phraseOptionByID("coffee-1", "green"),
+  ], 3);
   const restaurantPayOptions = compactPhraseOptions([
     phraseOptionByID("coffee-7", "green"),
     phraseOptionByID("store-6", "green"),
@@ -2818,7 +2923,7 @@ function cityPageForRecord(pageRecord, context) {
       },
       {
         id: "quick-say",
-        title: pageKind === "phrase" ? "Quick say" : (pageKind === "dish" ? "Order it" : "Say it"),
+        title: pageKind === "phrase" ? "Quick say" : (isCityDishLikePageKind(pageKind) ? "Order it" : "Say it"),
         body: quickBodyByKind[pageKind] ?? quickBodyByKind.phrase,
         phrases: [selfOption],
       },
@@ -2872,7 +2977,7 @@ function cityPageForRecord(pageRecord, context) {
         phrases: restaurantGettingBackOptions,
       }
     );
-  } else if (!derivedPlacePhrase && pageKind === "dish") {
+  } else if (!derivedPlacePhrase && isCityDishLikePageKind(pageKind)) {
     sections.push(
       {
         id: "place-brief",
@@ -2908,21 +3013,25 @@ function cityPageForRecord(pageRecord, context) {
       {
         id: "place-brief",
         title: "Getting there",
-        body: cityPlaceWhatItIsBody(city, place, pageRecord, pageKind, placeKind, contentRole),
+        body: attractionPlaceKind
+          ? "Use the place name with your map or ticket screen, then use a reusable ride phrase."
+          : cityPlaceWhatItIsBody(city, place, pageRecord, pageKind, placeKind, contentRole),
         phrases: placeActionOptions,
       },
       {
         id: "use-it-with",
         title: "At the place",
-        body: "Direction, ticket, photo, and pickup sentences.",
-        phrases: placeActionOptions,
+        body: attractionPlaceKind
+          ? "Ticket, entrance, photo, and return-ride phrases that work at many attractions."
+          : "Direction, ticket, photo, and pickup sentences.",
+        phrases: placeVisitOptions,
       },
       {
         id: "when-to-use",
         title: "Meeting or pickup",
         presentation: "plain-text",
         body: cityWhenToUseBody(pageRecord, city, place, pageKind, placeKind),
-        phrases: linkedCityPhraseOptionsByIntent(relatedRecords.filter((record) => record.kind === "phrase"), "place-action", 3),
+        phrases: placePickupOptions,
       }
     );
   } else if (!derivedPlacePhrase) {
@@ -2953,7 +3062,7 @@ function cityPageForRecord(pageRecord, context) {
         id: "explore-next",
         title: "Explore next",
         body: `Next helpful phrases around ${city.shortTitle}.`,
-        phrases: linkedCityPhraseOptions(relatedRecords, 5),
+        phrases: placeExploreOptions,
       }
     );
   }
@@ -2962,7 +3071,7 @@ function cityPageForRecord(pageRecord, context) {
   if (derivedPlacePhrase) {
     authoredSections = compactDerivedPlacePhraseSections(authoredSections, sections);
   }
-  const editorialCategoryIDs = pageRecord.editorialImport?.categoryIDs ?? [];
+  const editorialCategoryIDs = (pageRecord.editorialImport?.categoryIDs ?? []).map(cleanCityCategoryID);
 
   return {
     id: cityPageID(pageRecord.id),
@@ -2976,9 +3085,11 @@ function cityPageForRecord(pageRecord, context) {
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
     heroImageName: pageRecord.editorialImport?.heroImageName ?? pageRecord.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
     iconName: pageKind === "restaurant" ? "fork.knife"
+      : pageKind === "drink" ? "cup.and.saucer.fill"
+      : pageKind === "dessert" ? "birthday.cake.fill"
       : pageKind === "dish" ? "takeoutbag.and.cup.and.straw.fill"
         : pageRecord.kind === "place" ? "mappin.and.ellipse" : "map.fill",
-    tintName: pageKind === "restaurant" ? "green" : pageKind === "dish" ? "orange" : "teal",
+    tintName: pageKind === "restaurant" ? "green" : pageKind === "drink" ? "blue" : pageKind === "dessert" ? "pink" : pageKind === "dish" ? "orange" : "teal",
     categoryIDs: Array.from(new Set([
       "city-guides",
       pageRecord.cityID,
@@ -2992,6 +3103,8 @@ function cityPageForRecord(pageRecord, context) {
       derivedPlacePhrase ? "derived-place-phrases" : null,
       pageKind === "restaurant" ? "restaurants" : null,
       pageKind === "dish" ? "local-dishes" : null,
+      pageKind === "drink" ? "local-drinks" : null,
+      pageKind === "dessert" ? "local-desserts" : null,
       ...editorialCategoryIDs,
     ].filter(Boolean))),
     audioKey: authoredPhraseAudioKey(pageRecord.targetText, phrase.audioKey),
@@ -3008,8 +3121,10 @@ function cityPageForRecord(pageRecord, context) {
       placeID: pageRecord.placeID,
       placeName: place.englishName,
       sourceIDs: pageRecord.sourceIDs ?? [],
-      rationale: pageRecord.rationale,
+      rationale: cleanTravelerBody(pageRecord.rationale),
       editorialImportPatchID: pageRecord.editorialImport?.patchID ?? null,
+      editorialReviewStatus: pageRecord.editorialImport?.reviewStatus ?? null,
+      targetHeroImageName: pageRecord.editorialImport?.targetHeroImageName ?? pageRecord.productionIntake?.targetHeroImageName ?? null,
     },
     sections: withSectionPresentations(authoredSections),
     examples: [selfOption],
@@ -3017,7 +3132,7 @@ function cityPageForRecord(pageRecord, context) {
 }
 
 function cityFallbackHeroImageName(pageKind) {
-  if (pageKind === "place" || pageKind === "restaurant" || pageKind === "dish") {
+  if (pageKind === "place" || pageKind === "restaurant" || isCityDishLikePageKind(pageKind)) {
     return "HeroNeutralMasthead";
   }
   return null;
@@ -3044,202 +3159,6 @@ function loadCityLibraryPages() {
     pageRecords,
     placePageByPlaceID,
   }));
-}
-
-function loadPracticeExpansionManifest() {
-  if (!fs.existsSync(practiceExpansionManifestPath)) {
-    return null;
-  }
-  return JSON.parse(fs.readFileSync(practiceExpansionManifestPath, "utf8"));
-}
-
-function loadPracticeExpansionRecords() {
-  const manifest = loadPracticeExpansionManifest();
-  if (!manifest) {
-    return [];
-  }
-
-  const shards = manifest.sourceShards ?? [];
-  return shards.flatMap((relativePath) => {
-    const shardPath = path.join(practiceExpansionRoot, relativePath);
-    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
-    return (shard.pages ?? []).map((page) => ({
-      ...page,
-      sourceShard: relativePath,
-    }));
-  })
-    .filter((page) => page.status === "approved")
-    .sort((a, b) => a.id.localeCompare(b.id));
-}
-
-function practiceExpansionPageID(record) {
-  return `viet-family-${record.phraseID}`;
-}
-
-function practiceExpansionPhraseOption(record, detailPageID = null) {
-  const phrase = phraseByID.get(record.phraseID);
-  if (!phrase) {
-    throw new Error(`Missing practice expansion phrase in catalog: ${record.phraseID}`);
-  }
-  return phraseOption(phrase, detailPageID, record.tintName ?? tintForScenario(record.scenarioID));
-}
-
-function practiceExpansionBreakdownTokens(record) {
-  const chunks = [...(record.chunks ?? [])];
-  const finalMatches = chunks.length > 0
-    && normalizeAudioText(chunks[chunks.length - 1].vietnamese) === normalizeAudioText(record.targetText);
-  if (!finalMatches) {
-    chunks.push({
-      id: `${record.id}-full`,
-      vietnamese: record.targetText,
-      english: record.englishText,
-    });
-  }
-
-  return chunks.map((chunk, index) => ({
-    id: chunk.id ?? `${record.id}-chunk-${index + 1}`,
-    vietnamese: chunk.vietnamese,
-    english: chunk.english,
-    audioKey: authoredBreakdownAudioKey(chunk.vietnamese),
-  }));
-}
-
-function findPracticeExpansionRelatedRecords(record, pageRecords) {
-  const relatedIDs = new Set(record.relatedPhraseIDs ?? []);
-  const explicit = pageRecords.filter((candidate) => relatedIDs.has(candidate.phraseID));
-  const sameFamily = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && candidate.expansionFamily === record.expansionFamily
-  ));
-  const sameScenario = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && candidate.scenarioID === record.scenarioID
-    && candidate.expansionFamily !== record.expansionFamily
-  ));
-  const buckets = new Set(record.practiceBuckets ?? []);
-  const sharedBucket = pageRecords.filter((candidate) => (
-    candidate.phraseID !== record.phraseID
-    && (candidate.practiceBuckets ?? []).some((bucket) => buckets.has(bucket))
-  ));
-
-  const seen = new Set();
-  return [...explicit, ...sameFamily, ...sameScenario, ...sharedBucket]
-    .filter((candidate) => {
-      if (seen.has(candidate.phraseID)) return false;
-      seen.add(candidate.phraseID);
-      return true;
-    });
-}
-
-function practiceExpansionOptions(records, count = 4) {
-  return records.slice(0, count).map((record) =>
-    practiceExpansionPhraseOption(record, practiceExpansionPageID(record))
-  );
-}
-
-function practiceExpansionPageForRecord(record, context) {
-  const phrase = phraseByID.get(record.phraseID);
-  if (!phrase) {
-    throw new Error(`Cannot build practice expansion page ${record.id}; missing catalog phrase ${record.phraseID}`);
-  }
-
-  const related = findPracticeExpansionRelatedRecords(record, context.pageRecords);
-  const comparisonRecords = related.filter((candidate) => candidate.expansionFamily === record.expansionFamily);
-  const nextStepRecords = related.filter((candidate) => candidate.expansionFamily !== record.expansionFamily);
-  const selfOption = practiceExpansionPhraseOption(record, null);
-  const comparisonOptions = practiceExpansionOptions(comparisonRecords, 3);
-  const nextStepOptions = practiceExpansionOptions(nextStepRecords.length ? nextStepRecords : related, 3);
-  const taughtPageIDs = new Set([
-    practiceExpansionPageID(record),
-    ...comparisonOptions.map((option) => option.detailPageID).filter(Boolean),
-    ...nextStepOptions.map((option) => option.detailPageID).filter(Boolean),
-  ]);
-  const exploreOptions = practiceExpansionOptions(
-    related.filter((candidate) => !taughtPageIDs.has(practiceExpansionPageID(candidate))),
-    6
-  );
-
-  const sections = [
-    {
-      id: "at-glance",
-      title: "At a glance",
-      body: record.atGlance,
-    },
-    {
-      id: "quick-say",
-      title: "Quick say",
-      body: record.quickSay,
-      phrases: [selfOption],
-    },
-    {
-      id: "breakdown",
-      title: "Break it down",
-      body: record.breakdownBody,
-      breakdown: practiceExpansionBreakdownTokens(record),
-    },
-    {
-      id: "practice-pairs",
-      title: "Practice the contrast",
-      body: record.practicePairBody,
-      phrases: comparisonOptions.length ? comparisonOptions : nextStepOptions,
-    },
-    {
-      id: "when-to-use",
-      title: "When to use it",
-      body: record.whenToUse,
-      phrases: nextStepOptions,
-    },
-    {
-      id: "good-to-know",
-      title: "Good to know",
-      body: record.goodToKnow,
-    },
-    {
-      id: "explore-next",
-      title: "Explore next",
-      body: record.exploreNextBody,
-      phrases: exploreOptions.length ? exploreOptions : nextStepOptions,
-    },
-  ];
-
-  return {
-    id: practiceExpansionPageID(record),
-    familyID: record.familyID,
-    phraseID: record.phraseID,
-    tierRole: "practice-expansion",
-    depth: "deep",
-    title: record.targetText,
-    englishTitle: record.englishText,
-    pronunciation: record.pronunciation,
-    summary: record.englishText,
-    iconName: record.iconName ?? symbolForScenario(record.scenarioID),
-    tintName: record.tintName ?? tintForScenario(record.scenarioID),
-    categoryIDs: Array.from(new Set([
-      record.scenarioID,
-      ...(record.categoryIDs ?? []),
-      ...(record.practiceBuckets ?? []).map((bucket) => `practice-${bucket}`),
-      `difficulty-${record.difficulty}`,
-    ])),
-    audioKey: authoredPhraseAudioKey(record.targetText, phrase.audioKey),
-    practiceMetadata: {
-      taskID: record.taskID,
-      expansionFamily: record.expansionFamily,
-      difficulty: record.difficulty,
-      practiceBuckets: record.practiceBuckets ?? [],
-      rationale: record.rationale,
-      sourceShard: record.sourceShard,
-    },
-    sections: withSectionPresentations(sections),
-    examples: [selfOption],
-  };
-}
-
-function loadPracticeExpansionPages() {
-  const pageRecords = loadPracticeExpansionRecords();
-  if (pageRecords.length === 0) {
-    return [];
-  }
-  return pageRecords.map((record) => practiceExpansionPageForRecord(record, { pageRecords }));
 }
 
 function loadEditorialSupportManifest() {
@@ -3565,6 +3484,7 @@ function cleanTravelerBody(body) {
     .replace(/\banchors the dish to\b/g, "keeps the dish tied to")
     .replace(/\banchor rows\b/g, "main rows")
     .replace(/\banchor word\b/g, "main word")
+    .replace(/\banchoring\b/g, "tying")
     .replace(/\banchors\b/g, "reference points")
     .replace(/\banchor\b/g, "reference point")
     .replace(/\bthe place name\b/g, "the map pin")
@@ -3585,7 +3505,7 @@ function authoredPageProfile(page) {
   const placeKind = meta.placeKind || "";
   if (pageKind === "phrase" && meta.derivedPlacePhrase) return "derived-place-phrase";
   if (pageKind === "restaurant") return "restaurant";
-  if (pageKind === "dish") return "dish";
+  if (isCityDishLikePageKind(pageKind)) return "dish";
   if (pageKind === "place" && placeKind === "street") return "street";
   if (pageKind === "place") return "place";
   if (!pageKind && /\bđường\b/i.test(page.title || "")) return "street";
@@ -3596,12 +3516,8 @@ function phraseRoleForPage(page, profile) {
   if (profile === "derived-place-phrase") return "derived_place_question";
   if (isNameBasedProfile(profile)) return "name_only";
 
-  const phraseID = String(page.phraseID || page.familyID || page.id || "");
   const summary = String(page.summary || "");
-  if (
-    phraseID.startsWith("vpe-likely-replies-")
-    || /something you may hear back/i.test(summary)
-  ) {
+  if (/something you may hear back/i.test(summary)) {
     return "traveler_may_hear";
   }
 
@@ -3612,12 +3528,49 @@ function isNameBasedProfile(profile) {
   return ["place", "restaurant", "dish", "street"].includes(profile);
 }
 
+function preservesHandwrittenCityEditorial(page) {
+  return page.tierRole === "city-v1"
+    && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
+}
+
+function authoredCitySectionBody(page, sectionID) {
+  const body = cleanTravelerBody((page.sections || []).find((section) => section.id === sectionID)?.body || "");
+  if (!body) return "";
+  if (/^(say it slowly|show the restaurant|start with the dish name|map, arrival|first-ordering sentences|short spice|ingredient, allergy)/i.test(body)) return "";
+  if (/^(direction, ticket|use the place name with|ticket, entrance|pickup areas can be split)/i.test(body)) return "";
+  return body;
+}
+
+function isGenericNameAboutBody(body, page, profile) {
+  const text = normalizeAudioText(body || "");
+  const title = normalizeAudioText(page.title || "");
+  const english = normalizeAudioText(page.englishTitle || page.summary || "");
+  const city = normalizeAudioText(page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName || "");
+  if (!text || !title) return true;
+  if (profile === "restaurant" && text === normalizeAudioText(`${page.title || ""} is a restaurant${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (profile === "dish" && text === normalizeAudioText(`${page.title || ""} is a local dish${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (text === normalizeAudioText(`${page.title || ""} is ${page.englishTitle || page.summary || ""}${city ? ` in ${page.cityMetadata?.cityShortTitle || page.cityMetadata?.cityName}` : ""}.`)) return true;
+  if (text === normalizeAudioText(`${page.title || ""} means ${page.englishTitle || page.summary || ""}.`)) return true;
+  return Boolean(english && text === english);
+}
+
+function authoredCityAboutBody(page, profile) {
+  const atGlance = authoredCitySectionBody(page, "at-glance");
+  if (atGlance && !isGenericNameAboutBody(atGlance, page, profile)) return atGlance;
+
+  const summary = cleanTravelerBody(page.summary || "");
+  if (summary && !isGenericNameAboutBody(summary, page, profile)) return summary;
+  return "";
+}
+
 function adultNameAboutBody(page, profile) {
   const meta = page.cityMetadata || {};
   const city = meta.cityShortTitle || meta.cityName || "";
   const where = city ? ` in ${city}` : "";
   const title = page.title || page.vietnamese || "";
   const english = page.englishTitle || page.summary || "";
+  const authoredBody = authoredCityAboutBody(page, profile);
+  if (authoredBody) return authoredBody;
 
   if (/bà nà hills/i.test(title)) {
     return "Bà Nà Hills is a mountain resort and day-trip attraction outside Da Nang, known for the cable car and Golden Bridge.";
@@ -3754,22 +3707,29 @@ function cleanTravelerSectionTitle(title, page) {
     if (sectionIDTitle) return sectionIDTitle;
   }
   if (isNameBasedProfile(profile)) {
+    const contentRole = page.cityMetadata?.contentRole || "";
+    const hearTitle = profile === "street"
+      ? "Hear the street"
+      : profile === "dish" && contentRole === "drink" ? "Hear the drink"
+      : profile === "dish" && contentRole === "dessert" ? "Hear the dessert"
+      : profile === "dish" ? "Hear the dish"
+      : "Hear the name";
     const byID = {
       "at-glance": "About",
-      "quick-say": profile === "street" ? "Hear the street" : profile === "dish" ? "Hear the dish" : "Hear the name",
+      "quick-say": hearTitle,
       "breakdown": profile === "restaurant" ? "Name guide" : "What the name means",
       "journey-flow": "Visit flow",
       "key-phrases": "Common phrases",
       "show-driver": profile === "street" ? "Tell the driver" : "Show driver",
-      "place-brief": profile === "street" ? "Driver phrases" : profile === "restaurant" ? "Getting there" : profile === "dish" ? "Order it" : "Getting there",
+      "place-brief": "What to picture",
       "table-menu": "Table & menu",
       "before-you-go": profile === "restaurant" ? "Order" : "Before you go",
       "menu-dietary": profile === "restaurant" ? "Drinks" : "Ingredients and diet",
       "inside-the-place": profile === "restaurant" ? "Getting back" : "At the place",
       "how-to-order": profile === "dish" ? "Adjust it" : "How to order",
       "ingredients-diet": "Diet / allergy",
-      "use-it-with": profile === "street" ? "Find it nearby" : profile === "restaurant" ? "Order and pay" : profile === "dish" ? "Ask what’s inside" : "At the place",
-      "when-to-use": profile === "street" ? "If it looks wrong" : profile === "restaurant" ? "Pay" : profile === "dish" ? "Find it nearby" : "Meeting or pickup",
+      "use-it-with": "Why it belongs",
+      "when-to-use": "Trip cues",
       "explore-next": `More ${page.title || "place"} phrases`,
     };
     const sectionIDTitle = byID[page.__currentSectionID];
@@ -3849,9 +3809,10 @@ function curatedNameSectionPhrases(page, section, profile) {
     }
     if (section.id === "menu-dietary") {
       return compactPhraseOptions([
-        phraseOptionByID("vpe-one-item-please-cho-toi-mot-tra-da", "green"),
         phraseOptionByID("store-1", "green"),
-      ], 2);
+        phraseOptionByID("coffee-2", "green"),
+        phraseOptionByID("coffee-5", "green"),
+      ], 3);
     }
     if (section.id === "when-to-use") {
       return compactPhraseOptions([
@@ -3968,14 +3929,14 @@ function mayHearLaneSupportOptions(page, sectionID) {
         "store-6",
         "store-7",
         "airport-4",
-        "vpe-help-action-anh-chi-giup-toi-doi-sang-tien-mat-duoc-khong",
+        "v500-mone-numb-pric-where-can-i-exchange-money",
       ];
     }
     if (titleKey === "cong doi roi") {
       return [
         "v500-airp-bord-arri-where-is-gate-10",
-        "vpe-help-action-anh-chi-giup-toi-xac-nhan-cong-ra-duoc-khong",
-        "vpe-where-place-cong-len-may-bay-o-dau",
+        "v900-airp-bord-arri-where-is-the-departure-hall",
+        "v900-airp-bord-arri-i-think-i-went-to-the-wrong-terminal",
       ];
     }
     if (titleKey === "co phong khac") {
@@ -4005,9 +3966,9 @@ function mayHearLaneSupportOptions(page, sectionID) {
     if (categoryIDs.has("food-drink")) {
       return [
         "ves-whats-in-this-dish",
-        "vpe-food-has-co-thit-heo-khong",
-        "vpe-food-has-co-hai-san-khong",
-        "vpe-food-has-co-dau-phong-khong",
+        "v900-food-drin-does-this-contain-fish-sauce",
+        "v500-food-drin-does-this-contain-shrimp",
+        "food-premium-has-peanuts",
         "food-vegetarian",
       ];
     }
@@ -4078,7 +4039,7 @@ function isTableAvailabilityReplyPage(page) {
 function isIngredientQuestionPage(page) {
   const id = String(page.phraseID || page.familyID || page.id || "");
   const english = String(page.englishTitle || page.summary || "");
-  return id.includes("vpe-food-has-") || /^does it have\b/i.test(english);
+  return /does (this|it) (have|contain)\b/i.test(english) || id.includes("food-has");
 }
 
 function isTaxiRideHelpPage(page) {
@@ -4122,14 +4083,12 @@ function tableAvailabilityNextPhrases() {
 
 function ingredientQuestionOptions(limit = 8) {
   return compactPhraseOptions([
-    phraseOptionByID("vpe-food-has-co-hai-san-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-ot-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-bo-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-ga-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-thit-heo-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-bot-ngot-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-ca-khong", "green"),
-    phraseOptionByID("vpe-food-has-co-bo-khong", "green"),
+    phraseOptionByID("food-premium-has-peanuts", "green"),
+    phraseOptionByID("v500-food-drin-does-this-contain-shrimp", "green"),
+    phraseOptionByID("v900-food-drin-does-this-contain-fish-sauce", "green"),
+    phraseOptionByID("food-15", "green"),
+    phraseOptionByID("food-vegetarian", "green"),
+    phraseOptionByID("food-peanut-allergy", "red"),
   ], limit);
 }
 
@@ -4138,10 +4097,10 @@ function taxiRideHelpOptions(limit = 7) {
     phraseOptionByID("ves-call-taxi-for-me", "orange"),
     phraseOptionByID("v900-tran-please-take-me-to-this-address", "green"),
     phraseOptionByID("directions-8", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-tim-diem-don-duoc-khong", "green"),
+    phraseOptionByID("v900-dire-navi-is-this-the-correct-pickup-point", "green"),
     phraseOptionByID("ves-drop-me-off-here", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-doi-toi-mot-chut-duoc-khong", "green"),
-    phraseOptionByID("vpe-help-action-anh-chi-giup-toi-goi-xe-cong-nghe-duoc-khong", "orange"),
+    phraseOptionByID("v500-tran-please-call-the-driver", "green"),
+    phraseOptionByID("v900-phon-inte-powe-can-you-help-me-book-a-grab", "orange"),
     phraseOptionByID("v500-unde-repa-can-you-write-the-address", "teal"),
   ], limit);
 }
@@ -4151,7 +4110,7 @@ function doctorComingSupportOptions(limit = 6) {
     phraseOptionByID("problems-6", "red"),
     phraseOptionByID("health-2", "red"),
     phraseOptionByID("health-3", "red"),
-    phraseOptionByID("vpe-likely-replies-goi-cap-cuu-ngay", "red"),
+    phraseOptionByID("v900-emer-safe-please-call-emergency-services", "red"),
     phraseOptionByID("help-need-help-direct", "red"),
     phraseOptionByID("polite-2", "green"),
   ], limit);
@@ -4262,10 +4221,10 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
   }
   if (isNameBasedProfile(profile)) {
     const keepByProfile = {
-      place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
+      place: new Set(["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "place-brief", "use-it-with", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
       street: new Set(["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"]),
-      restaurant: new Set(["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"]),
-      dish: new Set(["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
+      restaurant: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "pay-and-leave", "breakdown", "good-to-know"]),
+      dish: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
   }
@@ -4315,7 +4274,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 }
 
 const sectionOrderByProfile = {
-  place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "getting-there", "place-brief", "at-the-bridge", "use-it-with", "pickup-nearby", "when-to-use", "breakdown", "good-to-know", "explore-next"],
+  place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "place-brief", "use-it-with", "when-to-use", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
   restaurant: ["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
@@ -4391,43 +4350,66 @@ function phraseSection(id, title, phraseIDs, tintName = "teal") {
   };
 }
 
+function baNaJourneySection(existingByID, id, title, phraseIDs, tintName = "teal") {
+  const fallback = phraseSection(id, title, phraseIDs, tintName);
+  const existing = existingByID.get(id);
+  if (!existing) return fallback;
+  return {
+    ...fallback,
+    ...existing,
+    id,
+    title: existing.title || title,
+    phrases: Array.isArray(existing.phrases) ? existing.phrases : fallback.phrases,
+    presentation: existing.presentation || fallback.presentation,
+  };
+}
+
 function rewriteBaNaHillsJourneySections(page, sections) {
   if (!isBaNaHillsPage(page)) return sections;
 
   const existingByID = new Map(sections.map((section) => [section.id, section]));
   const about = existingByID.get("at-glance");
   const hearName = existingByID.get("quick-say");
+  const placeBrief = existingByID.get("place-brief");
+  const useItWith = existingByID.get("use-it-with");
+  const whenToUse = existingByID.get("when-to-use");
   const visitFlow = existingByID.get("journey-flow");
   const nameGuide = existingByID.get("breakdown");
   const goodToKnow = existingByID.get("good-to-know");
 
   return [
     about ? { ...about, id: "at-glance", title: "About" } : null,
-    hearName ? { ...hearName, id: "quick-say", title: "Hear the name" } : null,
+    hearName ? { ...hearName, id: "quick-say", title: "Say it locally" } : null,
+    placeBrief ?? null,
+    useItWith ?? null,
+    whenToUse ?? null,
     visitFlow ? { ...visitFlow, id: "journey-flow", title: "Visit flow", presentation: "plain-text" } : null,
-    phraseSection("getting-there", "Getting there", [
-      "ves-take-me-to-ba-na-hills",
-      "city-danang-go-ba-na-hills",
-      "city-danang-where-ba-na-hills",
-      "city-danang-stop-ba-na-hills",
+    baNaJourneySection(existingByID, "getting-there", "Getting there", [
+      "taxi-1",
+      "repair-5",
+      "transport-stop-here-clearer",
+      "ves-is-this-address-correct",
     ], "teal"),
-    phraseSection("tickets", "Tickets", [
-      "ves-two-tickets-ba-na-hills",
+    baNaJourneySection(existingByID, "tickets", "Tickets", [
+      "v500-time-date-book-two-tickets-please",
+      "v500-time-date-book-one-ticket-please",
+      "v500-sigh-acti-where-can-i-buy-tickets",
     ], "orange"),
-    phraseSection("cable-car", "Cable car", [
+    baNaJourneySection(existingByID, "cable-car", "Cable car", [
       "ves-where-cable-car",
     ], "teal"),
-    phraseSection("photos", "Photos", [
+    baNaJourneySection(existingByID, "photos", "Photos", [
       "ves-take-photo-for-me",
     ], "purple"),
-    phraseSection("getting-back", "Getting back", [
-      "directions-8",
+    baNaJourneySection(existingByID, "getting-back", "Getting back", [
+      "repair-5",
+      "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
     goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
-    phraseSection("food-cash", "Food & cash", [
-      "city-danang-eat-near-ba-na-hills",
-      "city-danang-atm-ba-na-hills",
+    baNaJourneySection(existingByID, "food-cash", "Food & cash", [
+      "store-1",
+      "airport-4",
     ], "green"),
     nameGuide ? { ...nameGuide, id: "breakdown", title: "Name guide" } : null,
   ].filter(Boolean).filter(sectionHasTravelerContent);
@@ -4435,6 +4417,8 @@ function rewriteBaNaHillsJourneySections(page, sections) {
 
 function sectionPhraseFilter(page, section, profile, phrase) {
   if (!isNameBasedProfile(profile)) return true;
+  const attractionPlace = profile === "place" && isCityAttractionPlaceKind(page.cityMetadata?.placeKind);
+  if (attractionPlace && ["use-it-with", "when-to-use", "explore-next"].includes(section.id)) return true;
   if (section.id === "explore-next") return optionMatchesPageName(phrase, page);
   if (profile === "street" && ["place-brief", "use-it-with", "when-to-use"].includes(section.id)) {
     return optionMatchesPageName(phrase, page);
@@ -4455,10 +4439,14 @@ function normalizeTravelerSections(page, sections, profile) {
       seenPhraseKeys.add(key);
       phrases.push(phrase);
     }
+    const presentation = section.presentation === "phrase-list" && phrases.length === 0 && String(section.body || "").trim()
+      ? "plain-text"
+      : section.presentation;
     return {
       ...section,
       body: cleanFinalPunctuation(section.body || ""),
       phrases,
+      presentation,
     };
   }).filter((section) => {
     if (!sectionHasTravelerContent(section)) return false;
@@ -4638,23 +4626,44 @@ function sanitizeAuthoredPage(page) {
   const profile = authoredPageProfile(page);
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
+  const preserveCityEditorial = preservesHandwrittenCityEditorial(page);
   const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
-    title: cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
-    body: isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
+    title: preserveCityEditorial
+      ? cleanFinalPunctuation(section.title || "")
+      : cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
+    body: preserveCityEditorial
+      ? cleanFinalPunctuation(section.body || "")
+      : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,
       english: cleanTravelerBody(phrase.english),
     })),
-    breakdown: curatedSectionBreakdown(page, section).map((token) => ({
-      ...token,
-      english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
-    })),
+    breakdown: section.id === "breakdown"
+      ? applyReviewedBreakdownOverride({
+        page,
+        existingBreakdown: curatedSectionBreakdown(page, section).map((token) => ({
+          ...token,
+          english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+        })),
+        ledger: breakdownAuditLedger,
+        audioKeyForToken: (text, { isFinal } = {}) => (
+          isFinal
+            ? authoredPhraseAudioKey(text, page.audioKey)
+            : authoredBreakdownAudioKey(text)
+        ),
+      })
+      : curatedSectionBreakdown(page, section).map((token) => ({
+        ...token,
+        english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+      })),
   })), profile));
 
   return {
     ...page,
-    summary: profile === "derived-place-phrase"
+    summary: preserveCityEditorial
+      ? cleanFinalPunctuation(page.summary || "")
+      : profile === "derived-place-phrase"
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
       : isNameBasedProfile(profile)
       ? cleanFinalPunctuation(adultNameAboutBody(page, profile))
@@ -4670,15 +4679,47 @@ function sanitizeAuthoredPages(pages) {
   return pages.map(sanitizeAuthoredPage);
 }
 
-function runBreakdownGlossRepair() {
-  if (!fs.existsSync(breakdownRepairScriptPath)) {
-    return false;
-  }
-  execFileSync(process.execPath, [breakdownRepairScriptPath], {
-    cwd: familyRoot,
-    stdio: "inherit",
+function sourceReasonToGoCityPagesByRuntimeID() {
+  const library = loadCityLibrary();
+  if (!library) return new Map();
+  const entries = (library.pages ?? [])
+    .filter((page) => page.status === "approved")
+    .filter((page) => page.kind !== "phrase")
+    .filter((page) => page.editorialImport?.audienceRewrite?.standard === "reason-to-go-factual-hook-before-local-name")
+    .filter((page) => page.editorialImport?.runtimeOverride?.kind !== "ba-na-hills-journey")
+    .map((page) => [cityPageID(page.id), page]);
+  return new Map(entries);
+}
+
+function applySourceReasonToGoCityEditorial(pages) {
+  const sourceByRuntimeID = sourceReasonToGoCityPagesByRuntimeID();
+  if (sourceByRuntimeID.size === 0) return pages;
+
+  return pages.map((page) => {
+    const sourcePage = sourceByRuntimeID.get(page.id);
+    const sourceSections = sourcePage?.editorialImport?.sections ?? [];
+    if (!sourcePage || sourceSections.length === 0) return page;
+
+    const existingSectionsByID = new Map((page.sections ?? []).map((section) => [section.id, section]));
+    const sections = sourceSections.map((section) => ({
+      ...(existingSectionsByID.get(section.id) ?? {}),
+      id: section.id,
+      title: section.title,
+      body: section.body,
+    }));
+
+    return {
+      ...page,
+      summary: cleanFinalPunctuation(sourcePage.editorialImport.summary || page.summary || ""),
+      sections: withSectionPresentations(sections),
+      cityMetadata: {
+        ...(page.cityMetadata ?? {}),
+        rationale: cleanTravelerBody(sourcePage.rationale),
+        editorialAudienceRewriteReviewID: sourcePage.editorialImport.audienceRewrite.reviewID,
+        editorialAudienceRewriteStandard: sourcePage.editorialImport.audienceRewrite.standard,
+      },
+    };
   });
-  return true;
 }
 
 function runEditorialPilotImport() {
@@ -4692,6 +4733,27 @@ function runEditorialPilotImport() {
   return true;
 }
 
+function writeBreakdownAuditExport(pages) {
+  fs.mkdirSync(path.dirname(breakdownAuditExportPath), { recursive: true });
+  fs.writeFileSync(breakdownAuditExportPath, `${JSON.stringify(
+    renderBreakdownAuditExport({ pages, ledger: breakdownAuditLedger }),
+    null,
+    2
+  )}\n`);
+}
+
+function validateBreakdownAuditForGeneration(pages) {
+  const report = validateBreakdownAuditCoverage({
+    pages,
+    ledger: breakdownAuditLedger,
+    requireAllReviewed: process.argv.includes("--require-breakdown-audit-complete"),
+  });
+  if (!report.ok) {
+    throw new Error(`Breakdown audit validation failed:\n${report.errors.slice(0, 40).join("\n")}`);
+  }
+  return report;
+}
+
 function main() {
   removeGeneratedSources();
 
@@ -4699,7 +4761,6 @@ function main() {
   const catalogPromotedPhraseIDs = loadCatalogPromotedPhraseIDs();
   const cityLibraryPages = loadCityLibraryPages();
   const editorialSupportPages = loadEditorialSupportPages();
-  const practiceExpansionPages = loadPracticeExpansionPages();
   const catalogPromotedPageIDByPhraseID = new Map(catalogPromotedPages.map((page) => [page.phraseID, page.id]));
   const taskCatalogPromotedPhraseIDs = new Set([...catalogPromotedPhraseIDs]
     .filter((phraseID) => phraseByID.get(phraseID)?.notes?.includes(`task=${catalogPromotedTaskID}`)));
@@ -4768,7 +4829,10 @@ function main() {
     inventory,
   }, null, 2)}\n`);
 
-  const allPages = sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages, ...practiceExpansionPages]);
+  const allPages = applySourceReasonToGoCityEditorial(
+    sanitizeAuthoredPages([...pages, ...childPages, ...catalogPromotedPages, ...cityLibraryPages, ...editorialSupportPages])
+  );
+  validateBreakdownAuditForGeneration(allPages);
   const audioAudit = collectAudioAudit(allPages);
   const bundle = {
     metadata: {
@@ -4776,14 +4840,12 @@ function main() {
       catalogPromotedSource: path.relative(root, catalogPromotedSourceRoot),
       cityLibrarySource: fs.existsSync(cityLibraryPath) ? path.relative(root, cityLibraryPath) : null,
       editorialSupportSource: fs.existsSync(editorialSupportManifestPath) ? path.relative(root, editorialSupportRoot) : null,
-      practiceExpansionSource: fs.existsSync(practiceExpansionManifestPath) ? path.relative(root, practiceExpansionRoot) : null,
       tierOneFamilyCount: starterFamilies.length,
       resourceMainPageCount: pages.length,
       childPageCount: childPages.length,
       catalogPromotedPageCount: catalogPromotedPages.length,
       cityLibraryPageCount: cityLibraryPages.length,
       editorialSupportPageCount: editorialSupportPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       generatedAt: new Date().toISOString(),
     },
     pages: allPages,
@@ -4795,7 +4857,6 @@ function main() {
       generatedAt: bundle.metadata.generatedAt,
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: audioAudit.required.length,
       missingAudioCount: audioAudit.missing.length,
     },
@@ -4803,11 +4864,12 @@ function main() {
     missing: audioAudit.missing,
   }, null, 2)}\n`);
 
-  const repairedBreakdowns = runBreakdownGlossRepair();
   const importedEditorialPilot = runEditorialPilotImport();
   const finalBundle = JSON.parse(fs.readFileSync(outputPath, "utf8"));
-  finalBundle.pages = sanitizeAuthoredPages(finalBundle.pages ?? []);
+  finalBundle.pages = applySourceReasonToGoCityEditorial(sanitizeAuthoredPages(finalBundle.pages ?? []));
+  validateBreakdownAuditForGeneration(finalBundle.pages ?? []);
   fs.writeFileSync(outputPath, `${JSON.stringify(finalBundle, null, 2)}\n`);
+  writeBreakdownAuditExport(finalBundle.pages ?? []);
   const finalAudioAudit = collectAudioAudit(finalBundle.pages ?? []);
   fs.writeFileSync(auditPath, `${JSON.stringify({
     metadata: {
@@ -4815,7 +4877,6 @@ function main() {
       tierOneFamilyCount: starterFamilies.length,
       cityLibraryPageCount: cityLibraryPages.length,
       editorialSupportPageCount: editorialSupportPages.length,
-      practiceExpansionPageCount: practiceExpansionPages.length,
       requiredAudioCount: finalAudioAudit.required.length,
       missingAudioCount: finalAudioAudit.missing.length,
     },
@@ -4829,11 +4890,7 @@ function main() {
   console.log(`Catalog-promoted authored pages: ${catalogPromotedPages.length}`);
   console.log(`City library pages: ${cityLibraryPages.length}`);
   console.log(`Editorial model support pages: ${editorialSupportPages.length}`);
-  console.log(`Practice expansion pages: ${practiceExpansionPages.length}`);
   console.log(`Missing assigned audio: ${finalAudioAudit.missing.length}`);
-  if (repairedBreakdowns) {
-    console.log("Repaired breakdown captions after generation");
-  }
   if (importedEditorialPilot) {
     console.log("Applied approved editorial pilot imports");
   }

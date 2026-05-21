@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-is-this-translation-correct",
+  "phraseText": "Bản dịch này có đúng không?",
+  "englishTitle": "Is this translation correct?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-is-this-translation-correct",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bản dịch",
+      "english": "translation",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đúng không?",
+      "english": "is that correct?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bản dịch này có đúng không?",
+      "english": "Is this translation correct?",
+      "audioKey": "v500-unde-repa-is-this-translation-correct"
+    }
+  ]
+}

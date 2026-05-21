@@ -1,5 +1,13 @@
 # V2 Baseline
 
+## Product audience baseline
+
+- SpeakLocal v2 is a native curated destination travel companion for the excited pre-trip traveler, not a general translator and not an academic language-learning app.
+- The primary user is planning or seriously considering a Vietnam trip and wants the country to feel more vivid and less intimidating before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases.
+- The app should still work in-country, but that utility is the payoff for pre-trip preparation. Google Translate, Apple Translate, and general-purpose AI own arbitrary live translation; SpeakLocal should own curated Vietnam discovery plus practical phrase readiness.
+- For Vietnam, the strongest app signals should be food and coffee, city/place exploration, menu and drink vocabulary, things to do, noun-first browse paths, culturally respectful phrase hubs, audio-first pronunciation, and saved/practice loops that help the traveler build a personal trip phrase set.
+- Arrival, transport, repair, health, and emergency flows remain important, but they should be presented as reachable support surfaces rather than the emotional lead of the product.
+
 ## What now exists
 
 - Shared shell implementation now verified in repo across Viet and Tagalog:
@@ -15,9 +23,8 @@
 - Device-proof note:
   - the shared shell behavior is now implemented and locally validated in repo truth, but the small-iPhone physical walkthrough and native purchase proof still remain open in `docs/operations/*`
 - A real family premium seam:
-  - app registry product IDs
-  - `expo-iap` plugin wired in Expo config
-  - iOS one-time purchase / restore adapter
+  - native app config product IDs
+  - native StoreKit subscription / restore adapter
   - StoreKit entitlement sync plus on-device persistence
   - dev validation unlock only when the real store path is unavailable
 - A real Viet content boundary on top of that seam:
@@ -63,13 +70,12 @@ For the fuller schema details, see `docs/V2_CONTENT_MODEL.md`.
 
 Tagalog now inherits automatically:
 
-- the generated-pack builder path
+- the native resource generation pattern
 - the family-aware phrase schema
 - starter vs premium filtering behavior
 - the grouped scenario UI
-- the website-preview export tooling
-- the `expo-iap` plugin and shared premium provider seam
-- the `$4.99` one-time unlock surface
+- native StoreKit premium-provider expectations
+- the `7-day free trial, then $4.99/month` subscription surface
 - the `SpeakLocal Philippines` build name
 
 Tagalog still needs separate work for:

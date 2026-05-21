@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-chanh-day",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố chanh dây",
+  "englishTranslation": "Passion fruit smoothie",
+  "romanizedNoTones": "Sinh to chanh day",
+  "soundOut": "sing toh chan zay",
+  "notes": "",
+  "atAGlance": "Sinh tố chanh dây blends passion fruit into a tart, floral smoothie that keeps its bright tropical perfume even with milk and ice.",
+  "whatItIs": "Sinh tố chanh dây is passion fruit blended with ice, sugar, and sometimes milk. Expect passion fruit smoothie that is tart, floral, bright, and fragrant through the straw.",
+  "usuallyIncludes": [
+    "passion fruit",
+    "ice",
+    "sugar",
+    "milk optional"
+  ],
+  "howToEnjoy": "Keep some sugar unless you love sharp sour drinks; passion fruit can be intense.",
+  "howLocalsOrder": "Sinh tố chanh dây has natural tartness, so ask for less sugar only if you enjoy a sharper fruit taste. Less ice makes the smoothie thicker and more fragrant.",
+  "worthKnowing": "In Vietnam, Sinh tố chanh dây captures Vietnam’s love of bright tropical acidity, especially in hot-weather café drinks.",
+  "goodToKnow": "Seeds or pulp may be part of the texture.",
+  "commonOptions": [
+    "less sweet",
+    "no milk",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố chanh dây.",
+    "english": "I’d like one glass of passion fruit smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh chan zay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố chanh dây was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

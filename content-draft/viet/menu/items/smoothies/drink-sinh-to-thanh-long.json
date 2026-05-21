@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-sinh-to-thanh-long",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố thanh long",
+  "englishTranslation": "Dragon fruit smoothie",
+  "romanizedNoTones": "Sinh to thanh long",
+  "soundOut": "sing toh tanh lawng",
+  "notes": "",
+  "atAGlance": "Sinh tố thanh long turns dragon fruit into a pale, speckled smoothie, mild, cooling, and gentle beside stronger tropical fruits.",
+  "whatItIs": "Sinh tố thanh long is dragon fruit blended with ice and sometimes milk. Expect dragon fruit smoothie that is mild, refreshing, lightly sweet, and often beautifully pink or white.",
+  "usuallyIncludes": [
+    "dragon fruit",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar if you want the gentle fruit flavor to stay clean.",
+  "howLocalsOrder": "Order sinh tố thanh long when you want a mild, cooling smoothie. Ask whether it is red or white dragon fruit if color and flavor matter.",
+  "worthKnowing": "Thanh long, dragon fruit, is one of the most visible fruits in Vietnamese markets; smoothies can be mild white-flesh or brighter pink-flesh versions.",
+  "goodToKnow": "Milder than mango or passion fruit.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố thanh long.",
+    "english": "I’d like one glass of dragon fruit smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh tanh lawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Sinh tố thanh long was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

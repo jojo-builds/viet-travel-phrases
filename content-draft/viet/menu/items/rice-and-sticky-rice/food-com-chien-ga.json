@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-chien-ga",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên gà",
+  "englishTranslation": "Chicken fried rice",
+  "romanizedNoTones": "Com chien ga",
+  "soundOut": "kum chee-en gah",
+  "notes": "",
+  "atAGlance": "Cơm chiên gà is chicken fried rice, usually with egg, chicken, scallion, vegetables, and soy-seasoned rice.",
+  "whatItIs": "Cơm chiên gà is chicken fried rice with egg, scallions, garlic, and small pieces of chicken. It is a steady, filling order when you want familiar flavors in a Vietnamese shop.",
+  "usuallyIncludes": [
+    "fried rice",
+    "chicken",
+    "egg",
+    "scallions",
+    "vegetables"
+  ],
+  "howToEnjoy": "Eat it while the rice is hot and separate-grained. A little chili or soy-lime seasoning is enough; the chicken and wok aroma should stay in front.",
+  "howLocalsOrder": "Order cơm chiên gà when you want a simple chicken fried rice. Ask for less oil, no chili, or a fried egg before the wok starts.",
+  "worthKnowing": "Fried rice in Vietnam is often cooked quickly to order, so oil level, chili, and egg are the easiest adjustments to request.",
+  "goodToKnow": "Order this when you want something straightforward and filling. The best versions taste of hot wok, egg, chicken, and scallion rather than a separate condiment.",
+  "commonOptions": [
+    "less oil",
+    "no chili",
+    "extra egg",
+    "extra chicken"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên gà.",
+    "english": "I’d like one order of chicken fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm chiên gà was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-xoi-xeo",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xôi xéo",
+  "englishTranslation": "Sticky rice with mung bean and fried shallots",
+  "romanizedNoTones": "Xoi xeo",
+  "soundOut": "soy say-oh",
+  "notes": "",
+  "atAGlance": "Xôi xéo is yellow sticky rice with mung bean, usually with fried shallots, chicken fat or oil, and optional toppings.",
+  "whatItIs": "Xôi xéo is sticky rice topped with shaved mung bean paste, fried shallots, and oil. It is nutty, savory, and especially associated with northern breakfasts.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "mung bean paste",
+    "fried shallots",
+    "scallion oil",
+    "salted seasoning"
+  ],
+  "howToEnjoy": "Eat it warm while the mung bean is soft and the fried shallots are crisp. Mix gently so every bite gets rice, bean, and shallot.",
+  "howLocalsOrder": "Order xôi xéo at morning stalls when you want a northern-style sticky rice packet. Ask for extra fried shallots or pack to go before it is wrapped.",
+  "worthKnowing": "The name is a Hanoi breakfast signal for many Vietnamese people, even though you can find versions elsewhere.",
+  "goodToKnow": "Ask for no chili if you want Xôi xéo mild.",
+  "commonOptions": [
+    "extra fried shallots",
+    "extra mung bean",
+    "pack to go",
+    "less oil"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi xéo.",
+    "english": "I’d like one order of sticky rice with mung bean and fried shallots.",
+    "pronunciation": "chaw toy moht fuhn soy say-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Xôi xéo was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

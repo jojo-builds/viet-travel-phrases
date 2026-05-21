@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-mi-chay",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì chay",
+  "englishTranslation": "Vegetarian bánh mì",
+  "romanizedNoTones": "Banh mi chay",
+  "soundOut": "bahn mee chai",
+  "notes": "",
+  "atAGlance": "Bánh mì chay is vegetarian bánh mì, usually with tofu, mushrooms, mock meat, pickles, cucumber, cilantro, chili, and vegetarian seasoning.",
+  "whatItIs": "Bánh mì chay keeps the crisp baguette, pickles, herbs, and chili of bánh mì but uses tofu, mushrooms, or mock meat instead of pork. Strict vegetarians should still ask about fish sauce or pâté at mixed stalls.",
+  "usuallyIncludes": [
+    "baguette",
+    "tofu or mock meat",
+    "mushrooms optional",
+    "pickles and cucumber",
+    "cilantro"
+  ],
+  "howToEnjoy": "Eat it fresh while the bread is crisp. If you are strict vegetarian, ask about nước mắm and pâté before the sandwich is assembled.",
+  "howLocalsOrder": "Order bánh mì chay and repeat that it is vegetarian if the stall also sells meat sandwiches. Ask for no fish sauce and no pâté if you need the vegetarian boundary to be clear.",
+  "worthKnowing": "Bánh mì chay shows the sandwich’s Vietnamese flexibility: the French-influenced loaf stays, but Buddhist vegetarian habits and tofu or mushroom fillings make it work on meat-free days.",
+  "goodToKnow": "Chay means vegetarian, but strict vegetarians should still ask about fish sauce, egg, and dairy because Maggi-style soy seasoning, chili, or pâté spreads vary.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "no chili",
+    "extra pickles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "Ask about fish sauce, egg, or dairy if strict vegetarian.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì chay.",
+    "english": "I’d like one vegetarian bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì chay was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

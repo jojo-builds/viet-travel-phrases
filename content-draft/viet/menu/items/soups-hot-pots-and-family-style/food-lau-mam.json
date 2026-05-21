@@ -1,0 +1,63 @@
+{
+  "itemID": "food-lau-mam",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu mắm",
+  "englishTranslation": "Fermented fish hot pot",
+  "romanizedNoTones": "Lau mam",
+  "soundOut": "low mahm",
+  "notes": "",
+  "atAGlance": "Lẩu mắm is Mekong Delta fermented-fish hot pot with seafood, pork, eggplant, and piles of greens. It is a shared-table dish with a deep mắm broth.",
+  "whatItIs": "Lẩu mắm is a hot pot built on fermented fish broth, usually with river fish or seafood, pork, vegetables, and Mekong-style greens cooked at the table.",
+  "usuallyIncludes": [
+    "fermented fish broth",
+    "seafood",
+    "pork",
+    "eggplant",
+    "wild greens"
+  ],
+  "howToEnjoy": "Cook greens and seafood in stages so the pot stays fresh. Rice noodles or rice help balance the salty fermented broth.",
+  "howLocalsOrder": "Lẩu mắm is for people who want the deep fermented-fish broth, not a neutral hot pot. Ask what seafood, pork, and wild greens are included, then order rice noodles or vegetables for the table.",
+  "worthKnowing": "This is one of the clearest Mekong Delta flavors on a menu. The mắm broth is the cultural signal, not a background stock.",
+  "goodToKnow": "The broth has a strong aroma by design. Order it when the table wants a bold regional hot pot, not a neutral soup.",
+  "commonOptions": [
+    "extra greens",
+    "less chili",
+    "ask what seafood",
+    "no pork"
+  ],
+  "regionalAssociation": "Mekong Delta",
+  "originPosture": "regional-association",
+  "travelerCaution": "Strong fermented fish aroma; often contains seafood and pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu mắm.",
+    "english": "I’d like one order of fermented fish hot pot.",
+    "pronunciation": "chaw toy moht noy low mahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-see-menu"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Lẩu mắm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

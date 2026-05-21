@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-smalltalk-nice-to-meet-you",
+  "phraseText": "Rất vui được gặp bạn",
+  "englishTitle": "Nice to meet you",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-smalltalk-nice-to-meet-you",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Rất",
+      "english": "very"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vui",
+      "english": "glad / happy"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gặp",
+      "english": "meet"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Rất vui được gặp bạn",
+      "english": "Nice to meet you",
+      "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
+    }
+  ]
+}

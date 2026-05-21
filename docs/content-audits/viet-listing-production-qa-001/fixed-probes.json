@@ -22,23 +22,24 @@
     "status": "PASS"
   },
   {
-    "label": "Bàn này còn trống",
-    "pageID": "viet-family-vpe-likely-replies-ban-nay-con-trong",
-    "title": "Bàn này còn trống",
-    "englishTitle": "This table is available",
-    "expectedIntent": "traveler_may_hear",
-    "detectedIntent": "traveler_may_hear",
+    "label": "Hotel check-in",
+    "pageID": "viet-family-hotel-check-in",
+    "title": "Cho tôi nhận phòng",
+    "englishTitle": "I’d like to check in",
+    "expectedIntent": "practical_flow",
+    "detectedIntent": "practical_flow",
     "practice": {
-      "kind": "phrase_audio_review",
-      "cta": "Practice this phrase",
-      "surfacePolicy": "saved_or_recent_only",
-      "scenarioEligible": false
+      "kind": "practical_flow_scenario",
+      "cta": "Practice this situation",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
     },
     "renderedSections": [
-      "You may hear",
       "Break it down",
-      "Say next",
-      "Good to know"
+      "Other ways",
+      "Common follow-ups",
+      "Good to know",
+      "Next phrases"
     ],
     "status": "PASS"
   },
@@ -57,18 +58,19 @@
     },
     "renderedSections": [
       "About",
-      "Hear the name",
-      "Visit flow",
+      "Say it locally",
+      "What you'll get",
+      "Worth it if",
+      "Before you go",
       "Getting there",
       "Tickets",
       "Cable car",
       "Photos",
       "Getting back",
       "Good to know",
-      "Food & cash",
-      "Name guide"
+      "Food & cash"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Cầu Rồng",
@@ -84,14 +86,12 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the name",
-      "Getting there",
-      "At the bridge",
-      "Meeting or pickup",
-      "What the name means",
-      "Good to know",
-      "More Cầu Rồng phrases"
+      "Why go",
+      "Say it locally",
+      "What you'll get",
+      "Worth it if",
+      "Before you go",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -109,17 +109,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the street",
-      "Tell the driver",
-      "Driver phrases",
-      "Confirm",
-      "Find it nearby",
-      "Wrong place",
-      "What the name means",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Anăn Sài Gòn",
@@ -135,18 +132,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the name",
-      "Getting there",
-      "Table & menu",
-      "Order",
-      "Drinks",
-      "Pay",
-      "Getting back",
-      "Name guide",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Bún chả Hương Liên",
@@ -162,18 +155,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the name",
-      "Getting there",
-      "Table & menu",
-      "Order",
-      "Drinks",
-      "Pay",
-      "Getting back",
-      "Name guide",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Phở Bát Đàn",
@@ -189,18 +178,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the name",
-      "Getting there",
-      "Table & menu",
-      "Order",
-      "Drinks",
-      "Pay",
-      "Getting back",
-      "Name guide",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Bún bò Huế",
@@ -216,15 +201,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the dish",
-      "Order it",
-      "Adjust it",
-      "Diet / allergy",
-      "What the name means",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Cao lầu",
@@ -240,35 +224,37 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Hear the dish",
-      "Order it",
-      "Adjust it",
-      "Diet / allergy",
-      "What the name means",
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
       "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
-    "label": "Bưu điện Thành phố ở đâu?",
-    "pageID": "viet-family-city-hcmc-where-post-office",
-    "title": "Bưu điện Thành phố ở đâu?",
-    "englishTitle": "Where is the Central Post Office?",
-    "expectedIntent": "derived_place_phrase",
-    "detectedIntent": "derived_place_phrase",
+    "label": "Bưu điện Thành phố",
+    "pageID": "viet-family-city-hcmc-place-post-office",
+    "title": "Bưu điện Thành phố",
+    "englishTitle": "Saigon Central Post Office",
+    "expectedIntent": "landmark_micro_place",
+    "detectedIntent": "landmark_micro_place",
     "practice": {
-      "kind": "phrase_audio_review",
-      "cta": "Practice this phrase",
-      "surfacePolicy": "saved_or_recent_only",
-      "scenarioEligible": false
+      "kind": "place_visit_mini_scenario",
+      "cta": "Practice this place",
+      "surfacePolicy": "recommended_when_relevant",
+      "scenarioEligible": true
     },
     "renderedSections": [
-      "Break it down",
-      "Related phrases",
-      "Tip"
+      "Why go",
+      "What you'll get",
+      "Say it locally",
+      "Worth it if",
+      "Before you go",
+      "Good to know"
     ],
-    "status": "PASS"
+    "status": "FAIL"
   },
   {
     "label": "Hotel check-in",

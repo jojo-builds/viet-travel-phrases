@@ -1,0 +1,64 @@
+{
+  "itemID": "food-khoai-tay-chien",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Khoai tây chiên",
+  "englishTranslation": "French fries",
+  "romanizedNoTones": "Khoai tay chien",
+  "soundOut": "kwai tay chee-en",
+  "notes": "",
+  "atAGlance": "Khoai tây chiên is fried potatoes: salty, crisp, familiar, and often ordered as a snack or side at cafés and casual restaurants.",
+  "whatItIs": "Khoai tây chiên are fries, usually served hot with salt, chili powder, ketchup, or mayonnaise-style dip depending on the stall or cafe.",
+  "usuallyIncludes": [
+    "potatoes",
+    "salt",
+    "crisp fried edges",
+    "ketchup or chili sauce if served"
+  ],
+  "howToEnjoy": "Eat while crisp and ask for chili separately if you want a mild order. This is familiar, but Vietnamese stalls may season more boldly than expected.",
+  "howLocalsOrder": "Order khoai tây chiên as a side or snack. Ask for no chili, less salt, or to-go before the fries are packed.",
+  "worthKnowing": "This is not uniquely Vietnamese, but it appears on cafe, snack, and beer-food menus where seasoning and dips vary by shop.",
+  "goodToKnow": "This is the familiar fries order. It is useful for picky eaters, kids, or a quick snack, but it is not where the menu shows its deepest Vietnamese flavor.",
+  "commonOptions": [
+    "no chili",
+    "less salt",
+    "ketchup",
+    "pack to go"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần khoai tây chiên.",
+    "english": "I’d like one order of french fries.",
+    "pronunciation": "chaw toy moht fuhn kwai tay chee-en",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Khoai tây chiên was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-ga-xoi-mo",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm gà xối mỡ",
+  "englishTranslation": "Fried chicken rice",
+  "romanizedNoTones": "Com ga xoi mo",
+  "soundOut": "kum gah soy muh",
+  "notes": "",
+  "atAGlance": "Cơm gà xối mỡ is crispy fried chicken over rice, often with chicken-fat fragrance, pickles, cucumber, and a muối tiêu chanh, a lime-pepper salt dip. It is about crisp skin against hot rice.",
+  "whatItIs": "Cơm gà xối mỡ is fried or oil-crisped chicken over rice, often with pickles, cucumber, scallion oil, and a light broth or lime-pepper salt on the side.",
+  "usuallyIncludes": [
+    "rice",
+    "crispy fried chicken",
+    "pickles",
+    "cucumber",
+    "muối tiêu chanh, a lime-pepper salt dip"
+  ],
+  "howToEnjoy": "Eat the chicken skin while it is still crisp, then use pickles and cucumber to cut the richness. Lime-pepper salt is for small dips, not for covering the rice.",
+  "howLocalsOrder": "Order cơm gà xối mỡ when you want crispy chicken with rice. Ask for extra pickles, less oil, or lime-pepper salt on the side if you want more control.",
+  "worthKnowing": "Cơm gà xối mỡ is a useful bridge dish for travelers: fried chicken and rice feel familiar, while the chicken-fat aroma, pickles, and lime-pepper salt make it distinctly Vietnamese.",
+  "goodToKnow": "Xối mỡ points to hot fat/oil poured over the chicken for crispness. It is not a sticky-rice dish.",
+  "commonOptions": [
+    "extra pickles",
+    "lime-pepper salt on the side",
+    "less oil",
+    "extra rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm gà xối mỡ.",
+    "english": "I’d like one order of fried chicken rice.",
+    "pronunciation": "chaw toy moht fuhn kum gah soy muh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm gà xối mỡ was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

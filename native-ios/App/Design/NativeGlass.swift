@@ -22,10 +22,8 @@ extension AccentTint {
 
     var audioColor: Color {
         switch self {
-        case .red, .blue, .purple:
+        case .red, .orange, .green, .blue, .purple, .teal:
             return Color(red: 0.93, green: 0.12, blue: 0.15)
-        case .orange, .green, .teal:
-            return Color(red: 0.82, green: 0.53, blue: 0.08)
         case .gray:
             return Color(red: 0.42, green: 0.42, blue: 0.42)
         }
@@ -38,22 +36,22 @@ struct NativeGlass<S: Shape>: ViewModifier {
     var interactive = false
 
     func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            if interactive {
-                content
-                    .glassEffect(.regular.tint(tint.opacity(0.20)).interactive(), in: shape)
-            } else {
-                content
-                    .glassEffect(.regular.tint(tint.opacity(0.14)), in: shape)
-            }
+        if #available(iOS 26.0, *), interactive {
+            content
+                .glassEffect(.regular.tint(tint.opacity(0.44)).interactive(), in: shape)
         } else {
             content
                 .background(.ultraThinMaterial, in: shape)
                 .overlay {
                     shape
-                        .stroke(.white.opacity(0.46), lineWidth: 0.8)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 0.8)
                 }
-                .shadow(color: .black.opacity(0.07), radius: 16, x: 0, y: 8)
+                .shadow(
+                    color: .black.opacity(AppSurfaceDepth.cardOpacity),
+                    radius: AppSurfaceDepth.cardRadius,
+                    x: 0,
+                    y: AppSurfaceDepth.cardYOffset
+                )
         }
     }
 }
@@ -71,56 +69,6 @@ extension View {
         modifier(NativeGlass(shape: shape, tint: tint, interactive: interactive))
     }
 
-    @ViewBuilder
-    func nativeGlassMorphID(_ id: String, namespace: Namespace.ID?) -> some View {
-        if #available(iOS 26.0, *), let namespace {
-            glassEffectID(id, in: namespace)
-        } else {
-            self
-        }
-    }
-
-    @ViewBuilder
-    func chromeMorph(_ id: String, namespace: Namespace.ID?, isSource: Bool) -> some View {
-        if let namespace {
-            matchedGeometryEffect(
-                id: id,
-                in: namespace,
-                properties: .frame,
-                anchor: .center,
-                isSource: isSource
-            )
-        } else {
-            self
-        }
-    }
-
-    @ViewBuilder
-    func chromeIconMorph(_ id: String, namespace: Namespace.ID?, isSource: Bool) -> some View {
-        if let namespace {
-            matchedGeometryEffect(
-                id: id,
-                in: namespace,
-                properties: .position,
-                anchor: .center,
-                isSource: isSource
-            )
-        } else {
-            self
-        }
-    }
-}
-
-enum AppChromeMorphID {
-    static let dock = "app.chrome.dock"
-    static let dockSelection = "app.chrome.dock.selection"
-    static let search = "app.chrome.search"
-    static let searchIcon = "app.chrome.search.icon"
-    static let searchDismissKeyboard = "app.chrome.search.dismissKeyboard"
-
-    static func dockItem(_ item: DockItemKind) -> String {
-        "app.chrome.dock.\(item.title)"
-    }
 }
 
 enum HomePhraseHeroMorphID {
@@ -235,7 +183,7 @@ struct PhraseHeroCopyStack: View {
 }
 
 enum PhrasePageStyle {
-    static let pageBackground = Color(red: 0.96, green: 0.97, blue: 0.98)
+    static let pageBackground = Color(.systemBackground)
     static let heroImageName = "HeroVietnamMasthead"
     static let heroImageHeight: CGFloat = 276
     static let heroImageVerticalOffset: CGFloat = -112
@@ -248,214 +196,124 @@ enum PhrasePageStyle {
     static let headerToContentSpacing: CGFloat = 12
     static let headerToLeadInSpacing: CGFloat = 8
     static let leadInToContentSpacing: CGFloat = 16
+    static let articleSectionsTopPadding: CGFloat = 28
     static let listCardCornerRadius: CGFloat = 22
     static let compactCardCornerRadius: CGFloat = 20
-    static let bottomChromeContentClearance: CGFloat = 224
-    static let cardFillOpacity = 0.72
-    static let cardStrokeOpacity = 0.06
+    static let bottomChromeContentClearance: CGFloat = 116
+    static let cardShadowBleedPadding: CGFloat = 24
+    static let cardFillOpacity = 0.98
+    static let cardStrokeOpacity = 0.035
+    static let cardEdgeStrokeOpacity = 0.72
+
+    static var cardFill: Color {
+        Color(.systemBackground).opacity(cardFillOpacity)
+    }
+
+    static var elevatedCardFill: Color {
+        Color(.systemBackground).opacity(0.98)
+    }
+
+    static var glassCardFill: Color {
+        Color(.systemBackground).opacity(0.62)
+    }
+
+    static var imageCaptionFill: Color {
+        Color(.systemBackground).opacity(0.98)
+    }
+}
+
+enum AppSurfaceDepth {
+    static let cardOpacity = 0.045
+    static let cardRadius: CGFloat = 14
+    static let cardYOffset: CGFloat = 6
+    static let imageCardOpacity = cardOpacity
+    static let controlOpacity = 0.045
+    static let controlRadius: CGFloat = 14
+    static let controlYOffset: CGFloat = 6
+    static let controlStrokeOpacity = 0.72
+    static let controlDividerOpacity = 0.08
+    static let sheetOpacity = 0.06
+    static let sheetRadius: CGFloat = 36
+    static let sheetYOffset: CGFloat = -14
+}
+
+extension View {
+    func softAmbientCardShadow(
+        opacity: Double = AppSurfaceDepth.cardOpacity,
+        radius: CGFloat = AppSurfaceDepth.cardRadius,
+        y: CGFloat = AppSurfaceDepth.cardYOffset
+    ) -> some View {
+        shadow(color: .black.opacity(opacity), radius: radius, x: 0, y: y)
+    }
+
+    func softLiftedSheetShadow() -> some View {
+        shadow(
+            color: .black.opacity(AppSurfaceDepth.sheetOpacity),
+            radius: AppSurfaceDepth.sheetRadius,
+            x: 0,
+            y: AppSurfaceDepth.sheetYOffset
+        )
+    }
+
+    func softInteractiveControlShadow() -> some View {
+        shadow(
+            color: .black.opacity(AppSurfaceDepth.controlOpacity),
+            radius: AppSurfaceDepth.controlRadius,
+            x: 0,
+            y: AppSurfaceDepth.controlYOffset
+        )
+    }
 }
 
 enum AppChromeLayout {
-    static let bottomOuterHorizontalPadding: CGFloat = 12
-    static let bottomSpacing: CGFloat = 10
-    static let bottomPadding: CGFloat = -2
-    static let bottomOffset: CGFloat = 0
-    static let bottomSeparationHeight: CGFloat = 0
     static let topSeparationHeight: CGFloat = 112
-    static let bottomVisibleHitSlop: CGFloat = 14
-    static let bottomHitTestEnvelopeHeight: CGFloat = searchIslandSize + bottomVisibleHitSlop * 2
     static let chromeSeparationAllowsHitTesting = false
-    static let dockItemSpacing: CGFloat = 8
-    static let dockItemWidth: CGFloat = 58
-    static let dockItemHeight: CGFloat = 56
-    static let dockBackdropFillOpacity: Double = 0.24
-    static let chromeControlBackdropFillOpacity: Double = 0.28
-    static let dockMaximumContentWidth: CGFloat = 292
-    static let dockSelectionWidth: CGFloat = 76
-    static let dockSelectionPressedWidth: CGFloat = 104
-    static let dockSelectionHeight: CGFloat = 58
-    static let dockSelectionPressedHeight: CGFloat = 74
-    static let dockSelectionMorphDuration = 0.34
-    static let dockSelectionDragCommitDistance: CGFloat = 4
-    static let dockSelectionStretchFactor: CGFloat = 0.30
-    static let dockSelectionMaximumStretch: CGFloat = 54
-    static let dockSelectionLagFactor: CGFloat = 0.16
-    static let dockSelectionMaximumLag: CGFloat = 14
-    static let dockSelectionTapActivationDelay: UInt64 = 0
-    static let dockSelectionTapTravelDelay: UInt64 = 150_000_000
-    static let dockSelectionTapDeactivateDelay: UInt64 = 80_000_000
-    static let dockHorizontalPadding: CGFloat = 10
-    static let dockVerticalPadding: CGFloat = 4
-    static let dockCornerRadius: CGFloat = 34
-    static let searchIslandSize: CGFloat = 64
-    static let searchIslandCornerRadius: CGFloat = 32
-    static let searchFieldHeight: CGFloat = 64
-    static let searchFieldHorizontalPadding: CGFloat = 16
     static let searchMorphDuration = 0.39
-    static let dockMorphZIndex: Double = 2
-    static let searchMorphZIndex: Double = 3
-    static let searchOriginMorphZIndex: Double = 4
-    static let keyboardDismissMorphZIndex: Double = 5
     static let searchForegroundMorphZIndex: Double = 6
-    static let dockSelectionLensZIndex: Double = 1
-    static let dockItemForegroundZIndex: Double = 2
     static let contentPageLayerZIndex: Double = 0
     static let searchPageLayerZIndex: Double = 200
     static let chromeSeparationLayerZIndex: Double = 360
-    static let bottomChromeLayerZIndex: Double = 380
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
-    static let searchFieldIconSlotWidth: CGFloat = 28
+    static let bottomAdminHitTestLayerZIndex: Double = 430
     static let topAdminHorizontalPadding: CGFloat = 24
     static let topAdminTopPadding: CGFloat = 10
     static let topAdminControlSize: CGFloat = 47
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
+    static let menuSectionChromeHeight: CGFloat = 38
+    static let menuSectionChromeRowSpacing: CGFloat = 8
+    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing
+    static let menuSectionBackdropHeight: CGFloat = 92
+    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
+    static let menuSectionJumpViewportAnchorY: CGFloat = 0.19
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
-}
+    static let bottomAdminHitTestEnvelopeHeight: CGFloat = PhrasePageStyle.bottomChromeContentClearance
 
-struct AppDockSelectionLensMetrics: Equatable {
-    let xOffset: CGFloat
-    let width: CGFloat
-    let height: CGFloat
-}
-
-enum AppDockSelectionLayout {
-    static func contentWidth(itemCount: Int) -> CGFloat {
-        guard itemCount > 0 else {
-            return 0
+    static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
+        if showsMenuSectionChrome {
+            return max(topSeparationHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
         }
 
-        return CGFloat(itemCount) * AppChromeLayout.dockItemWidth
-            + CGFloat(itemCount - 1) * AppChromeLayout.dockItemSpacing
-    }
-
-    static func itemIndex(for locationX: CGFloat, itemCount: Int) -> Int? {
-        itemIndex(for: locationX, itemCount: itemCount, contentWidth: contentWidth(itemCount: itemCount))
-    }
-
-    static func itemIndex(for locationX: CGFloat, itemCount: Int, contentWidth: CGFloat) -> Int? {
-        guard itemCount > 0 else {
-            return nil
-        }
-
-        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
-        guard itemCount > 1 else {
-            return 0
-        }
-
-        let leadingCenter = AppChromeLayout.dockItemWidth / 2
-        let trailingCenter = trackWidth - AppChromeLayout.dockItemWidth / 2
-        let pitch = (trailingCenter - leadingCenter) / CGFloat(itemCount - 1)
-        let clampedX = min(max(locationX, 0), trackWidth)
-        let rawIndex = ((clampedX - leadingCenter) / pitch).rounded()
-        return min(max(Int(rawIndex), 0), itemCount - 1)
-    }
-
-    static func clampedDragX(_ locationX: CGFloat, itemCount: Int) -> CGFloat {
-        clampedDragX(locationX, itemCount: itemCount, contentWidth: contentWidth(itemCount: itemCount))
-    }
-
-    static func clampedDragX(_ locationX: CGFloat, itemCount: Int, contentWidth: CGFloat) -> CGFloat {
-        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
-        return min(max(locationX, AppChromeLayout.dockItemWidth / 2), trackWidth - AppChromeLayout.dockItemWidth / 2)
-    }
-
-    static func itemCenterX(index: Int) -> CGFloat {
-        CGFloat(index) * (AppChromeLayout.dockItemWidth + AppChromeLayout.dockItemSpacing)
-            + AppChromeLayout.dockItemWidth / 2
-    }
-
-    static func itemCenterX(index: Int, itemCount: Int, contentWidth: CGFloat) -> CGFloat {
-        guard itemCount > 0 else {
-            return 0
-        }
-
-        guard itemCount > 1 else {
-            return max(contentWidth, AppChromeLayout.dockItemWidth) / 2
-        }
-
-        let trackWidth = max(contentWidth, self.contentWidth(itemCount: itemCount))
-        let leadingCenter = AppChromeLayout.dockItemWidth / 2
-        let trailingCenter = trackWidth - AppChromeLayout.dockItemWidth / 2
-        let pitch = (trailingCenter - leadingCenter) / CGFloat(itemCount - 1)
-        return leadingCenter + CGFloat(min(max(index, 0), itemCount - 1)) * pitch
-    }
-
-    static func lensMetrics(
-        selectedIndex: Int,
-        activeIndex: Int?,
-        dragX: CGFloat?,
-        itemCount: Int,
-        reduceMotion: Bool,
-        contentWidth: CGFloat? = nil,
-        predictedDragX: CGFloat? = nil
-    ) -> AppDockSelectionLensMetrics {
-        guard itemCount > 0 else {
-            return AppDockSelectionLensMetrics(xOffset: 0, width: 0, height: 0)
-        }
-
-        let trackWidth = contentWidth ?? self.contentWidth(itemCount: itemCount)
-        let selectedCenter = itemCenterX(index: selectedIndex, itemCount: itemCount, contentWidth: trackWidth)
-        let fallbackCenter = activeIndex.map {
-            itemCenterX(index: $0, itemCount: itemCount, contentWidth: trackWidth)
-        } ?? selectedCenter
-        let targetCenter = dragX.map { clampedDragX($0, itemCount: itemCount, contentWidth: trackWidth) } ?? fallbackCenter
-
-        guard dragX != nil else {
-            return AppDockSelectionLensMetrics(
-                xOffset: fallbackCenter - AppChromeLayout.dockSelectionWidth / 2,
-                width: AppChromeLayout.dockSelectionWidth,
-                height: AppChromeLayout.dockSelectionHeight
-            )
-        }
-
-        guard !reduceMotion else {
-            return AppDockSelectionLensMetrics(
-                xOffset: fallbackCenter - AppChromeLayout.dockSelectionPressedWidth / 2,
-                width: AppChromeLayout.dockSelectionPressedWidth,
-                height: AppChromeLayout.dockSelectionPressedHeight
-            )
-        }
-
-        let distance = abs(targetCenter - selectedCenter)
-        let predictedCenter = predictedDragX.map {
-            clampedDragX($0, itemCount: itemCount, contentWidth: trackWidth)
-        } ?? targetCenter
-        let predictedTravel = abs(predictedCenter - targetCenter)
-        let stretch = min(
-            distance * AppChromeLayout.dockSelectionStretchFactor + predictedTravel * 0.16,
-            AppChromeLayout.dockSelectionMaximumStretch
-        )
-        let lag = min(
-            (distance + predictedTravel * 0.24) * AppChromeLayout.dockSelectionLagFactor,
-            AppChromeLayout.dockSelectionMaximumLag
-        )
-        let direction: CGFloat = targetCenter >= selectedCenter ? 1 : -1
-        let liquidCenter = targetCenter - direction * lag
-        let width = AppChromeLayout.dockSelectionPressedWidth + stretch
-        let height = min(
-            AppChromeLayout.dockSelectionPressedHeight + stretch * 0.08,
-            AppChromeLayout.dockSelectionPressedHeight + 6
-        )
-
-        return AppDockSelectionLensMetrics(
-            xOffset: liquidCenter - width / 2,
-            width: width,
-            height: height
-        )
+        return topSeparationHeight
     }
 }
 
 enum ChromeSeparationEdge {
     case top
-    case bottom
+}
+
+enum ChromeSeparationGradientStyle: Equatable {
+    case light
+    case darkPhoto
 }
 
 struct ChromeSeparationGradient: View {
     let edge: ChromeSeparationEdge
+    var extendsBehindMenuSectionChrome = false
+    var style: ChromeSeparationGradientStyle = .light
 
     var body: some View {
         LinearGradient(
@@ -463,22 +321,22 @@ struct ChromeSeparationGradient: View {
             startPoint: .top,
             endPoint: .bottom
         )
-        .frame(height: edge == .bottom ? AppChromeLayout.bottomSeparationHeight : AppChromeLayout.topSeparationHeight)
-        .ignoresSafeArea(edges: edge == .bottom ? .bottom : .top)
+        .frame(height: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: extendsBehindMenuSectionChrome))
+        .ignoresSafeArea(edges: .top)
         .allowsHitTesting(AppChromeLayout.chromeSeparationAllowsHitTesting)
     }
 
     private var gradientStops: [Gradient.Stop] {
-        switch edge {
-        case .bottom:
+        if style == .darkPhoto {
             return [
-                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 0.34),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.14), location: 0.60),
-                .init(color: Color(.systemBackground).opacity(0.38), location: 0.82),
-                .init(color: Color(.systemBackground).opacity(0.66), location: 1),
+                .init(color: Color.black.opacity(0.68), location: 0),
+                .init(color: Color.black.opacity(0.48), location: 0.34),
+                .init(color: Color.black.opacity(0.18), location: 0.72),
+                .init(color: Color.black.opacity(0), location: 1),
             ]
-        case .top:
+        }
+
+        guard extendsBehindMenuSectionChrome else {
             return [
                 .init(color: Color(.systemBackground).opacity(0.96), location: 0),
                 .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
@@ -486,17 +344,24 @@ struct ChromeSeparationGradient: View {
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
             ]
         }
+
+        return [
+            .init(color: Color(.systemBackground).opacity(0.97), location: 0),
+            .init(color: Color(.systemBackground).opacity(0.95), location: 0.24),
+            .init(color: Color(.systemBackground).opacity(0.84), location: 0.52),
+            .init(color: PhrasePageStyle.pageBackground.opacity(0.30), location: 0.78),
+            .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
+        ]
     }
 }
 
 struct TopAdminHitTestEnvelope: View {
     var body: some View {
         Rectangle()
-            .fill(Color(.systemBackground).opacity(0.001))
+            .fill(Color.clear)
             .frame(maxWidth: .infinity)
             .frame(height: AppChromeLayout.topAdminHitTestEnvelopeHeight)
-            .contentShape(Rectangle())
-            .onTapGesture {}
+            .allowsHitTesting(false)
             .accessibilityHidden(true)
     }
 }
@@ -504,13 +369,12 @@ struct TopAdminHitTestEnvelope: View {
 enum SearchPageLayout {
     static let horizontalPadding: CGFloat = 24
     static let titleTopPadding: CGFloat = 74
-    static let focusedResultsTopPadding: CGFloat = 64
+    static let focusedResultsTopPadding: CGFloat = 116
     static let contentSpacing: CGFloat = 20
     static let resultGroupSpacing: CGFloat = 12
     static let resultGroupTopPadding: CGFloat = 10
-    static let resultsBottomClearance: CGFloat = 148
+    static let resultsBottomClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let resultsZIndex: Double = 0
-    static let pinnedChromeZIndex: Double = 2
 
     static func headerMode(query: String, isFieldFocused _: Bool) -> SearchPageHeaderMode {
         query.isEmpty ? .full : .compactResults
@@ -568,38 +432,40 @@ enum SearchPageHeaderMode: Equatable {
 
 private struct PhraseListCard: ViewModifier {
     let cornerRadius: CGFloat
-    let strokeOpacity: Double
+    let edgeStrokeOpacity: Double
 
     func body(content: Content) -> some View {
         content
-            .background(.white.opacity(PhrasePageStyle.cardFillOpacity), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.black.opacity(strokeOpacity), lineWidth: 1)
+                    .stroke(.white.opacity(edgeStrokeOpacity), lineWidth: 1)
                     .allowsHitTesting(false)
             }
+            .softAmbientCardShadow()
     }
 }
 
 extension View {
     func phraseListCard(
         cornerRadius: CGFloat = PhrasePageStyle.listCardCornerRadius,
-        strokeOpacity: Double = PhrasePageStyle.cardStrokeOpacity
+        edgeStrokeOpacity: Double = PhrasePageStyle.cardEdgeStrokeOpacity
     ) -> some View {
-        modifier(PhraseListCard(cornerRadius: cornerRadius, strokeOpacity: strokeOpacity))
+        modifier(PhraseListCard(cornerRadius: cornerRadius, edgeStrokeOpacity: edgeStrokeOpacity))
     }
 }
 
 struct HeroMastheadImage: View {
     var imageName: String = PhrasePageStyle.heroImageName
     var verticalOffset: CGFloat? = nil
+    var height: CGFloat = PhrasePageStyle.heroImageHeight
 
     private var resolvedVerticalOffset: CGFloat {
         verticalOffset ?? Self.defaultVerticalOffset(for: imageName)
     }
 
     private var imageRenderHeight: CGFloat {
-        PhrasePageStyle.heroImageHeight + abs(resolvedVerticalOffset) + 72
+        height + abs(resolvedVerticalOffset) + 72
     }
 
     var body: some View {
@@ -618,7 +484,7 @@ struct HeroMastheadImage: View {
                             .offset(y: resolvedVerticalOffset)
                     }
                 }
-                .frame(width: proxy.size.width, height: PhrasePageStyle.heroImageHeight, alignment: .top)
+                .frame(width: proxy.size.width, height: height, alignment: .top)
                 .clipped()
                 .mask {
                     LinearGradient(
@@ -645,7 +511,7 @@ struct HeroMastheadImage: View {
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                .frame(height: PhrasePageStyle.heroImageHeight)
+                .frame(height: height)
             }
             .overlay(alignment: .bottom) {
                 LinearGradient(
@@ -659,7 +525,7 @@ struct HeroMastheadImage: View {
                 .frame(height: 28)
             }
         }
-        .frame(height: PhrasePageStyle.heroImageHeight)
+        .frame(height: height)
         .clipped()
     }
 
@@ -711,6 +577,10 @@ struct HeroMastheadImage: View {
         case "HeroCategoryEmergency", "HeroCategoryEssentials":
             return -78
         default:
+            if imageName.hasPrefix("HeroCity") && imageName.contains("Place") {
+                return -220
+            }
+
             if imageName.hasPrefix("HeroCity")
                 || imageName.hasPrefix("HeroCategory")
                 || imageName.hasPrefix("HeroCountry")

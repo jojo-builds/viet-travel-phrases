@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-hoian-reservation-morning-glory",
+  "phraseText": "Tôi có đặt bàn ở Morning Glory Hội An",
+  "englishTitle": "I have a reservation at Morning Glory Hoi An",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.381Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-reservation-morning-glory",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt bàn",
+      "english": "reserve a table",
+      "keepTogetherReason": "compound restaurant phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "Morning Glory Hội An",
+      "english": "Morning Glory Hoi An",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có đặt bàn ở Morning Glory Hội An",
+      "english": "I have a reservation at Morning Glory Hoi An",
+      "audioKey": "audio-authored-toi-co-dat-ban-o-morning-glory-hoi-an-a2be3e72df"
+    }
+  ]
+}

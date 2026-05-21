@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hue-near-bao-vinh-ancient-town",
+  "phraseText": "Phố cổ Bao Vinh gần đây không?",
+  "englishTitle": "Is Bao Vinh Ancient Town near here?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.386Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-near-bao-vinh-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố cổ Bao Vinh",
+      "english": "Bao Vinh Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần đây",
+      "english": "near here",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố cổ Bao Vinh gần đây không?",
+      "english": "Is Bao Vinh Ancient Town near here?",
+      "audioKey": "audio-authored-pho-co-bao-vinh-gan-day-khong-069438b784"
+    }
+  ]
+}

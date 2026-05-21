@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-kho-gung",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà kho gừng",
+  "englishTranslation": "Chicken braised with ginger",
+  "romanizedNoTones": "Ga kho gung",
+  "soundOut": "gah kaw goong",
+  "notes": "",
+  "atAGlance": "Gà kho gừng is chicken braised with ginger, usually with fish sauce, caramel color, pepper, and rice.",
+  "whatItIs": "Gà kho gừng is chicken braised with ginger, pepper, fish sauce, and caramel until the meat turns warming and savory. It is made for spooning over rice.",
+  "usuallyIncludes": [
+    "chicken",
+    "ginger",
+    "fish-sauce caramel",
+    "black pepper",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice so the ginger-pepper braising juices have somewhere to go. Add pickles or greens if they are served to cut the salt and sweetness.",
+  "howLocalsOrder": "Order gà kho gừng as a rice-table dish. Ask for extra ginger if you like heat from ginger, or extra rice if the braise is strong.",
+  "worthKnowing": "Gà kho gừng belongs to Vietnamese rice-table cooking, where ginger, pepper, and fish-sauce caramel turn simple chicken into something warming and savory.",
+  "goodToKnow": "The heat comes from ginger and pepper as much as chili, so it can feel warming even when it is not fiery.",
+  "commonOptions": [
+    "with rice",
+    "extra ginger",
+    "less pepper",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà kho gừng.",
+    "english": "I’d like one order of chicken braised with ginger.",
+    "pronunciation": "chaw toy moht fuhn gah kaw goong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Gà kho gừng was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

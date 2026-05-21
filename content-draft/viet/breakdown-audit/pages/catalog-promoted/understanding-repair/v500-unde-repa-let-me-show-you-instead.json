@@ -1,0 +1,73 @@
+{
+  "pageID": "viet-phrase-v500-unde-repa-let-me-show-you-instead",
+  "phraseText": "Thay vào đó hãy để tôi chỉ cho bạn",
+  "englishTitle": "Let me show you instead",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.356Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-unde-repa-let-me-show-you-instead",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thay",
+      "english": "replace / change"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "vào",
+      "english": "into / enter"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đó",
+      "english": "that"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "chỉ",
+      "english": "show / point"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "bạn",
+      "english": "you"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thay vào đó hãy để tôi chỉ cho bạn",
+      "english": "Let me show you instead",
+      "audioKey": "v500-unde-repa-let-me-show-you-instead"
+    }
+  ]
+}

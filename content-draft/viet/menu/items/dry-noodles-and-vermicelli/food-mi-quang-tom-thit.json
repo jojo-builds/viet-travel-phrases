@@ -1,0 +1,64 @@
+{
+  "itemID": "food-mi-quang-tom-thit",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì Quảng tôm thịt",
+  "englishTranslation": "Quảng-style turmeric noodles with shrimp and pork",
+  "romanizedNoTones": "Mi Quang tom thit",
+  "soundOut": "mee kwahng tom tit",
+  "notes": "",
+  "atAGlance": "Mì Quảng tôm thịt is the shrimp-and-pork version of Quảng-style turmeric noodles, with herbs, peanuts, rice cracker, and just enough broth to stain the noodles golden.",
+  "whatItIs": "Mì Quảng tôm thịt is a central Vietnamese turmeric-noodle bowl with shrimp, pork, herbs, peanuts, rice crackers, and a shallow yellow broth. The broth seasons the noodles instead of filling the bowl.",
+  "usuallyIncludes": [
+    "wide turmeric rice noodles",
+    "shrimp and pork",
+    "turmeric broth",
+    "peanuts",
+    "rice cracker"
+  ],
+  "howToEnjoy": "Crack the rice cracker into the bowl, mix the herbs and peanuts through, and let the shallow turmeric broth coat the noodles. Add lime or chili after tasting the broth.",
+  "howLocalsOrder": "Order mì Quảng tôm thịt when you want the classic shrimp-and-pork version. Ask for less chili or no peanuts before mixing, but expect only a small amount of broth.",
+  "worthKnowing": "Mì Quảng is a signature of Quảng Nam and Đà Nẵng food culture; the “almost dry” broth level is intentional.",
+  "goodToKnow": "This commonly includes both shellfish and pork. Ask before ordering if either one matters.",
+  "commonOptions": [
+    "less spicy",
+    "no peanuts",
+    "extra rice cracker",
+    "extra herbs"
+  ],
+  "regionalAssociation": "Quảng Nam and central Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains shrimp, pork, and often peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì Quảng tôm thịt.",
+    "english": "I’d like one bowl of quảng-style turmeric noodles with shrimp and pork.",
+    "pronunciation": "chaw toy moht toh mee kwahng tom tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-peanuts",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mì Quảng tôm thịt was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

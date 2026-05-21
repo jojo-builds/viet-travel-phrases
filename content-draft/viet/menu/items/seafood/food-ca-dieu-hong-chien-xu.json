@@ -1,0 +1,67 @@
+{
+  "itemID": "food-ca-dieu-hong-chien-xu",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá diêu hồng chiên xù",
+  "englishTranslation": "Crispy fried red tilapia",
+  "romanizedNoTones": "Ca dieu hong chien xu",
+  "soundOut": "kah yee-ew hawng chee-en soo",
+  "notes": "",
+  "atAGlance": "Cá diêu hồng chiên xù is crispy fried red tilapia, usually with whole fish, golden skin, herbs, rice paper or rice, and lime-pepper salt dip or ginger fish sauce.",
+  "whatItIs": "Cá diêu hồng chiên xù is crispy fried red tilapia, often served whole with golden skin, herbs, rice paper or rice, and lime-pepper salt or ginger fish sauce.",
+  "usuallyIncludes": [
+    "whole red tilapia",
+    "crispy fried skin",
+    "fresh herbs",
+    "rice paper or rice",
+    "lime-pepper salt or ginger fish sauce"
+  ],
+  "howToEnjoy": "Flake the crisp fish from the bones, then eat with rice or wrap small pieces with herbs and rice paper if served. Dip lightly so the crust stays crisp.",
+  "howLocalsOrder": "Order cá diêu hồng chiên xù as a shared whole-fish plate. Ask whether bones remain, and ask for extra herbs or rice paper if you want the wrap-and-dip setup.",
+  "worthKnowing": "At Vietnamese seafood tables, crispy whole fish is often shared slowly: flake meat from the bones, keep the skin crisp, and use herbs or rice paper if served.",
+  "goodToKnow": "Ask for no chili if you want Cá diêu hồng chiên xù mild.",
+  "commonOptions": [
+    "ask about bones",
+    "extra rice paper",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá diêu hồng chiên xù.",
+    "english": "I’d like one order of crispy fried red tilapia.",
+    "pronunciation": "chaw toy moht fuhn kah yee-ew hawng chee-en soo",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cá diêu hồng chiên xù was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

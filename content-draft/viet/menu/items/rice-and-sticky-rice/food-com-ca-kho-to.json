@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-ca-kho-to",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm cá kho tộ",
+  "englishTranslation": "Rice with caramelized fish in clay pot",
+  "romanizedNoTones": "Com ca kho to",
+  "soundOut": "kum kah kaw toh",
+  "notes": "",
+  "atAGlance": "Cơm cá kho tộ is rice with clay-pot caramelized fish. The dark fish-sauce caramel is meant to season the rice.",
+  "whatItIs": "Cơm cá kho tộ is the rice-plate version of cá kho tộ, fish braised in fish sauce, caramelized sugar, and pepper.",
+  "usuallyIncludes": [
+    "rice",
+    "caramelized fish",
+    "fish-sauce caramel",
+    "black pepper",
+    "pickles or greens"
+  ],
+  "howToEnjoy": "Use plain rice to soften the salty-sweet sauce. Add pickles or greens for contrast.",
+  "howLocalsOrder": "Order cơm cá kho tộ when you want clay-pot caramel fish with rice. Ask about bones before the plate lands, and ask for extra rice if you like soaking up the fish-sauce caramel juices.",
+  "worthKnowing": "This is a comfort-food order, especially in southern-style meals where braised fish and rice belong together. In Vietnam, rice plates are everyday meals shaped by broken rice, scallion oil, pickles, fish-sauce caramel, and quick street-service habits.",
+  "goodToKnow": "Ask about bones if you prefer easier fish pieces. The fish-sauce caramel braise should be intense, not mild.",
+  "commonOptions": [
+    "fried egg",
+    "extra rice",
+    "less fish-sauce caramel braise",
+    "extra pickles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain fish bones and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm cá kho tộ.",
+    "english": "I’d like one order of rice with caramelized fish in clay pot.",
+    "pronunciation": "chaw toy moht fuhn kum kah kaw toh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix"
+    ],
+    "reviewNote": "Cơm cá kho tộ was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

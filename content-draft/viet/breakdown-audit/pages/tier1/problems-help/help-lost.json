@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-help-lost",
+  "phraseText": "Tôi bị lạc đường",
+  "englishTitle": "I’m lost",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.282Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-help-lost",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lạc đường",
+      "english": "lost",
+      "keepTogetherReason": "fixed lost-on-route phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi bị lạc đường",
+      "english": "I’m lost",
+      "audioKey": "problems-1"
+    }
+  ]
+}

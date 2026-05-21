@@ -1,0 +1,64 @@
+{
+  "itemID": "food-muc-nuong-sa-te",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mực nướng sa tế",
+  "englishTranslation": "Grilled squid with satay chili sauce",
+  "romanizedNoTones": "Muc nuong sa te",
+  "soundOut": "mook noong sah tay",
+  "notes": "",
+  "atAGlance": "Mực nướng sa tế is squid grilled with satay, usually with smoke, chili oil, lemongrass, and chewy edges.",
+  "whatItIs": "Mực nướng sa tế is squid grilled with satay-style chili oil, lemongrass, garlic, and smoke. The squid should be tender, not rubbery.",
+  "usuallyIncludes": [
+    "squid",
+    "sa tế chili oil",
+    "lemongrass aroma",
+    "grilled char",
+    "lime or dipping salt"
+  ],
+  "howToEnjoy": "Eat while hot, dipping lightly in lime-pepper salt if served. Ask for less satay if you want grilled squid sweetness before chili heat.",
+  "howLocalsOrder": "Order mực nướng sa tế as a shared grilled squid plate. Ask for less spice before grilling if you want less chili oil.",
+  "worthKnowing": "Sa tế in Vietnam often means a fragrant chili oil with lemongrass and aromatics, not just raw heat.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "lime-pepper salt",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần mực nướng sa tế.",
+    "english": "I’d like one order of grilled squid with satay chili sauce.",
+    "pronunciation": "chaw toy moht fuhn mook noong sah tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Mực nướng sa tế was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

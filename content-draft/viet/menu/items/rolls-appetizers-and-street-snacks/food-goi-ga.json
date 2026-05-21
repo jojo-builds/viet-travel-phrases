@@ -1,0 +1,64 @@
+{
+  "itemID": "food-goi-ga",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi gà",
+  "englishTranslation": "Vietnamese chicken salad",
+  "romanizedNoTones": "Goi ga",
+  "soundOut": "goy gah",
+  "notes": "",
+  "atAGlance": "Gỏi gà is chicken salad, usually with cabbage, rau răm, onion, peanuts, and lime-fish sauce dressing.",
+  "whatItIs": "Gỏi gà is shredded chicken salad with cabbage or banana blossom, rau răm, onion, peanuts, fried shallots, and fish-sauce-lime dressing.",
+  "usuallyIncludes": [
+    "shredded chicken",
+    "cabbage or herbs",
+    "onion",
+    "peanuts",
+    "fish-sauce lime dressing"
+  ],
+  "howToEnjoy": "Toss lightly so the shredded chicken picks up herbs and dressing without turning soggy. Peanuts and fried shallots should add crunch at the end.",
+  "howLocalsOrder": "Order gỏi gà as a shared salad or light meal. Ask for no peanuts, less onion, or less chili before it is tossed.",
+  "worthKnowing": "Rau răm gives many Vietnamese chicken salads their peppery, herbal lift; it is part of the identity, not a garnish.",
+  "goodToKnow": "Chicken salad often uses fish sauce, rau răm, onion, and peanuts; the herb bite is part of the dish.",
+  "commonOptions": [
+    "no peanuts",
+    "less onion",
+    "less spicy",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi gà.",
+    "english": "I’d like one order of Vietnamese chicken salad.",
+    "pronunciation": "chaw toy moht fuhn goy gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gỏi gà was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

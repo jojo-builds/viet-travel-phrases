@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bun-nem-nuong",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bún nem nướng",
+  "englishTranslation": "Grilled pork sausage vermicelli bowl",
+  "romanizedNoTones": "Bun nem nuong",
+  "soundOut": "boon nem noong",
+  "notes": "",
+  "atAGlance": "Bún nem nướng is rice vermicelli with grilled pork sausage, usually with herbs, peanuts, pickles, and a thick Nha Trang-style peanut-garlic dip.",
+  "whatItIs": "Bún nem nướng is the Vietnamese name to look for when you want rice vermicelli with grilled pork sausage. The supporting pieces, often herbs, peanuts, pickles, and a thick Nha Trang-style peanut-garlic dip, are not extras; they complete the bite.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "grilled pork sausage",
+    "fresh herbs",
+    "thick Nha Trang-style peanut-garlic dip",
+    "crispy crunch"
+  ],
+  "howToEnjoy": "Toss the grilled pork sausage, herbs, pickles, peanuts, and vermicelli with the thick peanut-garlic dip a little at a time. The dip is rich, so pacing it keeps the bowl bright.",
+  "howLocalsOrder": "Order bún nem nướng for the bouncy grilled pork sausage and thick Nha Trang-style dip. Ask for no peanuts or no chili before mixing if either matters.",
+  "worthKnowing": "Nem nướng is especially tied to south-central food culture; in a bún bowl it turns into a cool, crunchy, smoky meal rather than a soup.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "sauce on the side",
+    "more herbs",
+    "no chili",
+    "no peanuts"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún nem nướng.",
+    "english": "I’d like one order of grilled pork sausage vermicelli bowl.",
+    "pronunciation": "chaw toy moht fuhn boon nem noong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún nem nướng was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

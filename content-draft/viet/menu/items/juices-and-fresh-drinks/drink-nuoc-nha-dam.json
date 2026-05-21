@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-nha-dam",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước nha đam",
+  "englishTranslation": "Aloe vera drink",
+  "romanizedNoTones": "Nuoc nha dam",
+  "soundOut": "nook nyah dahm",
+  "notes": "",
+  "atAGlance": "Nước nha đam is aloe vera drink, lightly sweet with slippery aloe cubes that make texture part of the refreshment.",
+  "whatItIs": "Nước nha đam is sweet aloe drink served cold. Expect aloe vera drink with sweet liquid and slippery, cooling aloe cubes.",
+  "usuallyIncludes": [
+    "aloe vera",
+    "sugar syrup",
+    "water",
+    "ice"
+  ],
+  "howToEnjoy": "Sip slowly so you get the chewy aloe pieces, not just the sweet drink.",
+  "howLocalsOrder": "Nước nha đam is ordered for the slippery aloe pieces as much as the sweet drink. Ask for less sugar and no ice if you want the aloe texture to stay noticeable.",
+  "worthKnowing": "In Vietnam, Nước nha đam shows Vietnam’s love of drinks with texture, where the chew can be as important as the flavor.",
+  "goodToKnow": "The aloe texture is slippery and soft.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước nha đam.",
+    "english": "I’d like one glass of aloe vera drink.",
+    "pronunciation": "chaw toy moht lee nook nyah dahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước nha đam was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-chanh-day",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép chanh dây",
+  "englishTranslation": "Passion fruit juice",
+  "romanizedNoTones": "Nuoc ep chanh day",
+  "soundOut": "nook ep chan zay",
+  "notes": "",
+  "atAGlance": "Nước ép chanh dây turns passion fruit into a bright Vietnamese café drink, tangy, floral, aromatic, and vivid over ice.",
+  "whatItIs": "Nước ép chanh dây is passion fruit mixed with water, sugar, and ice. Expect passion fruit juice that is tangy, floral, aromatic, and bright yellow-orange.",
+  "usuallyIncludes": [
+    "passion fruit",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar only if you enjoy strong tartness.",
+  "howLocalsOrder": "Nước ép chanh dây is usually made or poured cold, so ask for no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép chanh dây is a vivid tropical drink that shows Vietnam’s love of sweet-sour refreshment.",
+  "goodToKnow": "Seeds or pulp may be included.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép chanh dây.",
+    "english": "I’d like one glass of passion fruit juice.",
+    "pronunciation": "chaw toy moht lee nook ep chan zay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép chanh dây was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

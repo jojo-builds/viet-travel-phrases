@@ -28,7 +28,8 @@ Open the repo root instead for:
 - authored content under `content-draft/`
 - native resource generation scripts
 - durable docs and migration/source-of-truth updates
-- shared Expo/reference app work under `app/`
+
+Do not open or edit a React Native/Expo app for product work. `native-ios/` is the only active app product surface.
 
 Read these before meaningful changes:
 
@@ -84,7 +85,7 @@ Design rules Jojo has locked in:
 - Homepage phrase shelves should be friendly labels over existing Browse routes, not duplicate category IDs:
   - `Use now` -> `.category("essentials")`
   - `First hour in Vietnam` -> `.category("first-day")`
-  - `Food & coffee` -> `.category("food")`
+  - `Eating Out` -> `.category("food")`
   - `When you don't understand` -> `.category("polite-repair")`
   - `Taxi & getting around` -> `.category("getting-around")`
   - `Hotel basics` -> `.category("hotel")`
@@ -98,5 +99,5 @@ Verification expectations:
 - After visible UI changes, build and launch the simulator so Jojo can test it.
 - For code changes, run the relevant Xcode build/test command when practical:
   - `xcodegen generate`
-  - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build`
+  - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build`
 - For content/resource changes, regenerate the relevant resource and inspect the diff before committing.

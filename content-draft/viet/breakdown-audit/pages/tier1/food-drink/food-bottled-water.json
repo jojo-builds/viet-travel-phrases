@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-food-bottled-water",
+  "phraseText": "Có nước suối không?",
+  "englishTitle": "Do you have bottled water?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.279Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-food-bottled-water",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nước suối",
+      "english": "bottled water",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có nước suối không?",
+      "english": "Do you have bottled water?",
+      "audioKey": "food-5"
+    }
+  ]
+}

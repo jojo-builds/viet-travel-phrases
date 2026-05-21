@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-sam",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước sâm",
+  "englishTranslation": "Herbal drink",
+  "romanizedNoTones": "Nuoc sam",
+  "soundOut": "nook sum",
+  "notes": "",
+  "atAGlance": "Nước sâm is a cooling herbal drink, dark and gently sweet, built from roots, leaves, and Vietnam’s practical hot-weather drinking habits.",
+  "whatItIs": "Nước sâm is a sweet herbal drink made from roots, leaves, and sugar. Expect herbal tea that is dark, sweet, cooling, and rooty with a medicinal edge.",
+  "usuallyIncludes": [
+    "herbal infusion",
+    "sugar",
+    "ice",
+    "dried roots or leaves"
+  ],
+  "howToEnjoy": "Drink it cold when you want something cooling but not fruity.",
+  "howLocalsOrder": "Nước sâm is an herbal sweet drink, so ask for less sugar if you want the roots, longan, monk fruit, or cooling herbs to come through. Less ice keeps the flavor from turning watery.",
+  "worthKnowing": "In Vietnam, Nước sâm belongs to Vietnam’s herbal street-drink culture, where refreshment and folk comfort overlap.",
+  "goodToKnow": "Usually sweet.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước sâm.",
+    "english": "I’d like one glass of herbal drink.",
+    "pronunciation": "chaw toy moht lee nook sum",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước sâm was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

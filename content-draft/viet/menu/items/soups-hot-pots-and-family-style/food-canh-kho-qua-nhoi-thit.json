@@ -1,0 +1,63 @@
+{
+  "itemID": "food-canh-kho-qua-nhoi-thit",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Canh khổ qua nhồi thịt",
+  "englishTranslation": "Bitter melon soup with stuffed pork",
+  "romanizedNoTones": "Canh kho qua nhoi thit",
+  "soundOut": "kan kaw kwah nyoy tit",
+  "notes": "",
+  "atAGlance": "Canh khổ qua nhồi thịt is bitter melon stuffed with pork, usually with clear broth, herbs, and tender filling.",
+  "whatItIs": "Canh khổ qua nhồi thịt is bitter melon stuffed with minced pork in a clear broth. It is gently bitter, savory, and often eaten with rice.",
+  "usuallyIncludes": [
+    "bitter melon",
+    "minced pork filling",
+    "clear broth",
+    "scallions",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice and take small bites if bitter melon is new to you. The broth should be clear and calming, not spicy.",
+  "howLocalsOrder": "Order canh khổ qua nhồi thịt as a soup for the table. Ask if it contains pork or request extra rice if the bitterness is strong for you.",
+  "worthKnowing": "Khổ qua is associated with “bitterness passing” in Vietnamese wordplay, so the soup carries cultural meaning beyond flavor.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "with rice",
+    "ask about pork",
+    "share size",
+    "less pepper"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh khổ qua nhồi thịt.",
+    "english": "I’d like one bowl of bitter melon soup with stuffed pork.",
+    "pronunciation": "chaw toy moht toh kan kaw kwah nyoy tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Canh khổ qua nhồi thịt was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-tran-is-this-seat-available",
+  "phraseText": "Chỗ ngồi này có sẵn không?",
+  "englishTitle": "Is this seat available?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-is-this-seat-available",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chỗ ngồi",
+      "english": "seat",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sẵn",
+      "english": "ready / available"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chỗ ngồi này có sẵn không?",
+      "english": "Is this seat available?",
+      "audioKey": "v900-tran-is-this-seat-available"
+    }
+  ]
+}

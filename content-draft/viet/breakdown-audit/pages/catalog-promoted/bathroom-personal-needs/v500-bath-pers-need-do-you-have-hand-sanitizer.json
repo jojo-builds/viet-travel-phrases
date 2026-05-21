@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v500-bath-pers-need-do-you-have-hand-sanitizer",
+  "phraseText": "Bạn có nước rửa tay khô không?",
+  "englishTitle": "Do you have hand sanitizer?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.294Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-bath-pers-need-do-you-have-hand-sanitizer",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nước rửa tay",
+      "english": "hand sanitizer",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "khô",
+      "english": "dry"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có nước rửa tay khô không?",
+      "english": "Do you have hand sanitizer?",
+      "audioKey": "v500-bath-pers-need-do-you-have-hand-sanitizer"
+    }
+  ]
+}

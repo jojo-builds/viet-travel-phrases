@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-xao-sa-ot",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà xào sả ớt",
+  "englishTranslation": "Chicken stir-fried with lemongrass and chili",
+  "romanizedNoTones": "Ga xao sa ot",
+  "soundOut": "gah sow sah uht",
+  "notes": "",
+  "atAGlance": "Gà xào sả ớt is chicken stir-fried with lemongrass and chili, usually with sả, onion, rice, and a fish-sauce-and-garlic glaze.",
+  "whatItIs": "Gà xào sả ớt is chicken stir-fried with lemongrass, chili, garlic, onion, and fish-sauce seasoning. It is fragrant, spicy, and best with rice.",
+  "usuallyIncludes": [
+    "chicken",
+    "lemongrass",
+    "chili",
+    "garlic",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice so the lemongrass-chili seasoning has balance. Ask for less chili if you want the citrusy sả aroma to lead.",
+  "howLocalsOrder": "Order gà xào sả ớt when you want a lemongrass-chili wok dish, not fried chicken. Ask for less spice before cooking if you need less heat.",
+  "worthKnowing": "Sả ớt is one of Vietnam’s great flavor combinations: lemongrass fragrance first, chili heat second.",
+  "goodToKnow": "Ask for less spicy if heat is a concern.",
+  "commonOptions": [
+    "less spicy",
+    "with rice",
+    "extra lemongrass",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask for less spicy if heat is a concern.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà xào sả ớt.",
+    "english": "I’d like one order of chicken stir-fried with lemongrass and chili.",
+    "pronunciation": "chaw toy moht fuhn gah sow sah uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà xào sả ớt was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

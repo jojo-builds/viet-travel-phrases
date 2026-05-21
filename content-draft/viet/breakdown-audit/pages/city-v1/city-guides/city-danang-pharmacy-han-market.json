@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-danang-pharmacy-han-market",
+  "phraseText": "Có nhà thuốc gần chợ Hàn không?",
+  "englishTitle": "Is there a pharmacy near Han Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.360Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-pharmacy-han-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nhà thuốc",
+      "english": "pharmacy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "chợ Hàn",
+      "english": "Han Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có nhà thuốc gần chợ Hàn không?",
+      "english": "Is there a pharmacy near Han Market?",
+      "audioKey": "audio-authored-co-nha-thuoc-gan-cho-han-khong-ff450fcc4c"
+    }
+  ]
+}

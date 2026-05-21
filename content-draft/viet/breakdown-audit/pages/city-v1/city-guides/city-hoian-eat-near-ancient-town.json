@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hoian-eat-near-ancient-town",
+  "phraseText": "Ăn gần Phố cổ Hội An",
+  "englishTitle": "Eat near Hoi An Ancient Town",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.378Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-eat-near-ancient-town",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Phố cổ Hội An",
+      "english": "Hoi An Ancient Town",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Phố cổ Hội An",
+      "english": "Eat near Hoi An Ancient Town",
+      "audioKey": "audio-authored-an-gan-pho-co-hoi-an-f957116c2e"
+    }
+  ]
+}

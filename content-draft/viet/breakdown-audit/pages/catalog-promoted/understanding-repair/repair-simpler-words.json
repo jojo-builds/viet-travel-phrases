@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-repair-premium-simpler-words",
+  "phraseText": "Bạn có thể sử dụng những từ đơn giản hơn?",
+  "englishTitle": "Can you use simpler words?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-premium-simpler-words",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sử dụng",
+      "english": "use",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "những",
+      "english": "those / plural marker"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "từ",
+      "english": "from"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đơn",
+      "english": "form / order"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "giản",
+      "english": "simple"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "hơn?",
+      "english": "more"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể sử dụng những từ đơn giản hơn?",
+      "english": "Can you use simpler words?",
+      "audioKey": "repair-premium-simpler-words"
+    }
+  ]
+}

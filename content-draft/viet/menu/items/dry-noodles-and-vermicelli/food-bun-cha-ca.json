@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bun-cha-ca",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún chả cá",
+  "englishTranslation": "Vermicelli noodles with fish cakes",
+  "romanizedNoTones": "Bun cha ca",
+  "soundOut": "boon chah kah",
+  "notes": "",
+  "atAGlance": "Bún chả cá is rice vermicelli with springy fish cakes, herbs, fried shallots, and a light sauce or broth depending on the shop. It should taste seafood-savory, fresh, and gentle.",
+  "whatItIs": "Bún chả cá is rice vermicelli with springy fish cakes, herbs, fried shallots, and a light sauce or broth depending on the shop. The flavor is seafood-savory and gentler than pork-heavy vermicelli bowls.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "fish cakes",
+    "fresh herbs",
+    "fish-sauce dip or light broth",
+    "fried shallots"
+  ],
+  "howToEnjoy": "Taste the fish cakes first, then add herbs, chili, or lime-pepper salt dip or ginger fish sauce gradually. If it comes with broth, sip before adding lime or chili.",
+  "howLocalsOrder": "Bún chả cá is about fish cakes, not pork. Ask whether the shop serves it as a broth bowl or a drier noodle plate, then add herbs, lime, and chili after tasting the fish broth or fish-cake seasoning.",
+  "worthKnowing": "Chả cá means fish cake here, a springy seafood topping common in central coastal noodle shops.",
+  "goodToKnow": "Contains fish; ask about bones if the shop also adds fish pieces.",
+  "commonOptions": [
+    "extra fish cakes",
+    "more herbs",
+    "less chili",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "name-and-menu-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún chả cá.",
+    "english": "I’d like one order of vermicelli noodles with fish cakes.",
+    "pronunciation": "chaw toy moht fuhn boon chah kah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún chả cá was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

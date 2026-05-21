@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 enum PhraseArticleInitialScrollTarget: String {
     case firstBreakdown = "first-breakdown"
@@ -13,11 +14,13 @@ struct PhraseListingView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -31,11 +34,13 @@ struct PhraseListingView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -48,11 +53,13 @@ struct PhraseListingView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -68,11 +75,13 @@ struct PhraseListingView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: isSearchActive,
+            isActive: isActive,
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
+            heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
@@ -89,16 +98,22 @@ struct PhraseArticleTemplateView: View {
     let scrollToTopRoute: AppRoute?
     let chromeNamespace: Namespace.ID?
     let isSearchActive: Bool
+    let isActive: Bool
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
+    let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var presentedHeroImage: PhraseHeroImagePresentation?
 
     init(
         page: PhraseArticlePage,
@@ -108,11 +123,13 @@ struct PhraseArticleTemplateView: View {
         scrollToTopRoute: AppRoute? = nil,
         chromeNamespace: Namespace.ID? = nil,
         isSearchActive: Bool = false,
+        isActive: Bool = true,
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
+        heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
@@ -125,18 +142,29 @@ struct PhraseArticleTemplateView: View {
         self.scrollToTopRoute = scrollToTopRoute
         self.chromeNamespace = chromeNamespace
         self.isSearchActive = isSearchActive
+        self.isActive = isActive
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
+        self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
         self.onDetailTapped = onDetailTapped
     }
 
+    @ViewBuilder
     var body: some View {
+        if usesPhotoBackdropLayout {
+            photoBackdropBody
+        } else {
+            standardBody
+        }
+    }
+
+    private var standardBody: some View {
         ZStack(alignment: .bottom) {
             PhrasePageStyle.pageBackground
                 .ignoresSafeArea()
@@ -166,8 +194,8 @@ struct PhraseArticleTemplateView: View {
                             }
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
-                        .padding(.top, 72 + topChromeContentClearance)
-                        .padding(.bottom, PhrasePageStyle.bottomChromeContentClearance)
+                        .padding(.top, articleSectionsTopPadding + topChromeContentClearance)
+                        .padding(.bottom, articleBottomChromeContentClearance)
                         .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
                         .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
                         .allowsHitTesting(!holdsArticleContentForHomeMorph)
@@ -194,14 +222,276 @@ struct PhraseArticleTemplateView: View {
                         .offset(y: -24)
                 }
             }
-
-            if showsChrome {
-                bottomChrome
-                    .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
-                    .padding(.bottom, AppChromeLayout.bottomPadding)
-                    .offset(y: AppChromeLayout.bottomOffset)
-            }
         }
+        .fullScreenCover(item: $presentedHeroImage) { presentation in
+            PhraseHeroImageLightbox(presentation: presentation)
+        }
+        .accessibilityIdentifier("PhraseArticle.\(page.id)")
+    }
+
+    private var photoBackdropBody: some View {
+        GeometryReader { geometry in
+            let imageName = heroImageName
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+
+            ZStack(alignment: .top) {
+                photoBackdropImage(imageName: imageName, geometry: geometry)
+
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(Self.photoBackdropInitialID)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
+
+                            photoBackdropContentSheet
+                                .id(Self.photoBackdropContentID)
+                        }
+                    }
+                    .onScrollGeometryChange(for: PhrasePhotoBackdropLayout.ScrollState.self, of: { scrollGeometry in
+                        PhrasePhotoBackdropLayout.scrollState(
+                            for: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
+                        }
+
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
+                        }
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        guard scrollToTopRoute == nil || scrollToTopRoute == chromeRoute else {
+                            return
+                        }
+
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+                    }
+                    .task(id: isActive) {
+                        guard isActive else {
+                            return
+                        }
+
+                        if initialScrollTarget == nil {
+                            await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                        } else {
+                            await applyInitialScrollTargetIfNeeded(scrollProxy)
+                        }
+                    }
+                }
+                .ignoresSafeArea(edges: .top)
+            }
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
+            .overlay(alignment: .topLeading) {
+                if showsChrome && !isPhotoBackdropImmersive {
+                    fixedBackButton
+                        .padding(.leading, 24)
+                        .padding(.top, 6)
+                        .offset(y: -24)
+                        .transition(.opacity)
+                }
+            }
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: page.id,
+                        imageName: imageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: page.id,
+                            heroImageName: imageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: page.id,
+                            heroImageName: imageName
+                        )
+                    )
+                    : nil
+            )
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && !isPhotoBackdropImmersive
+        )
+        .accessibilityIdentifier("PhraseArticle.\(page.id)")
+    }
+
+    private func photoBackdropImage(imageName: String, geometry: GeometryProxy) -> some View {
+        let frameHeight = PhrasePhotoBackdropLayout.backdropFrameHeight(
+            for: geometry.size,
+            safeAreaInsets: geometry.safeAreaInsets,
+            pageID: page.id,
+            heroImageName: imageName
+        )
+        let verticalFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: geometry.size,
+            pageID: page.id,
+            heroImageName: imageName
+        )
+
+        return Image(imageName)
+            .resizable()
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: frameHeight,
+                alignment: .top
+            )
+            .clipped()
+            .offset(y: -verticalFocusOffset)
+            .ignoresSafeArea()
+            .accessibilityHidden(true)
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+
+        return VStack(spacing: 0) {
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
+
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
+        }
+        .frame(
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    private var photoBackdropContentSheet: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 8) {
+                    heroBadge
+
+                    Text(page.destination.uppercased())
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                PhraseHeroCopyStack(
+                    title: page.title,
+                    englishTitle: page.englishTitle,
+                    pronunciation: page.pronunciation,
+                    titleSize: heroTitleSize,
+                    titleLineLimit: 2,
+                    pronunciationLineLimit: 2,
+                    morphPageID: morphPageID,
+                    morphNamespace: chromeNamespace,
+                    isMorphActive: false,
+                    isMorphSource: false
+                )
+
+                if shouldShowHeroPlaybackDock {
+                    PlaybackDockView(
+                        audioKey: page.playbackAudioKey,
+                        isSaved: isSaved,
+                        onToggleSaved: onToggleSaved,
+                        visibilityRoute: chromeRoute
+                    )
+                    .padding(.top, heroPlayerTopSpacing)
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, PhrasePageStyle.heroTextBottomPadding + 6)
+
+            LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
+                ForEach(visibleSections) { section in
+                    ArticleSectionView(
+                        section: section,
+                        currentPageID: page.id,
+                        onOpenDetail: onDetailTapped
+                    )
+                    .id(section.id)
+                }
+
+                if shouldRenderCatalogExplore {
+                    ExploreCatalogSection(
+                        currentPageID: page.id,
+                        onOpenDetail: onDetailTapped
+                    )
+                    .id(Self.catalogExploreID)
+                }
+            }
+            .padding(.horizontal, PhrasePageStyle.horizontalPadding)
+            .padding(.top, articleSectionsTopPadding)
+            .padding(.bottom, articleBottomChromeContentClearance)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .softLiftedSheetShadow()
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .accessibilityIdentifier("PhraseArticle.PhotoBackdrop.Content.\(page.id)")
     }
 
     private var hero: some View {
@@ -210,7 +500,7 @@ struct PhraseArticleTemplateView: View {
                 CompactPhraseMastheadBackground()
                     .frame(height: 112)
             } else {
-                HeroMastheadImage(imageName: page.heroImageName ?? PhrasePageStyle.heroImageName)
+                heroImage
             }
 
             VStack(alignment: .leading, spacing: 12) {
@@ -226,7 +516,7 @@ struct PhraseArticleTemplateView: View {
                     title: page.title,
                     englishTitle: page.englishTitle,
                     pronunciation: page.pronunciation,
-                    titleSize: usesCompactPhraseHero ? 38 : 54,
+                    titleSize: heroTitleSize,
                     titleLineLimit: usesCompactPhraseHero ? 3 : 2,
                     pronunciationLineLimit: 2,
                     morphPageID: morphPageID,
@@ -236,27 +526,67 @@ struct PhraseArticleTemplateView: View {
                 )
                 .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
-                PlaybackDockView(
-                    audioKey: page.playbackAudioKey,
-                    isSaved: isSaved,
-                    onToggleSaved: onToggleSaved,
-                    visibilityRoute: chromeRoute
-                )
-                    .homePhraseHeroMorph(
-                        HomePhraseHeroMorphID.player(morphPageID),
-                        namespace: chromeNamespace,
-                        isActive: usesHomePhraseHeroMorph,
-                        isSource: false,
-                        anchor: .topLeading
+                if shouldShowHeroPlaybackDock {
+                    PlaybackDockView(
+                        audioKey: page.playbackAudioKey,
+                        isSaved: isSaved,
+                        onToggleSaved: onToggleSaved,
+                        visibilityRoute: chromeRoute
                     )
-                    .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
-                    .padding(.top, PhrasePageStyle.heroPlayerTopSpacing)
+                        .homePhraseHeroMorph(
+                            HomePhraseHeroMorphID.player(morphPageID),
+                            namespace: chromeNamespace,
+                            isActive: usesHomePhraseHeroMorph,
+                            isSource: false,
+                            anchor: .topLeading
+                        )
+                        .zIndex(usesHomePhraseHeroMorph ? 3 : 0)
+                        .padding(.top, heroPlayerTopSpacing)
+                }
             }
             .padding(.horizontal, 24)
-            .padding(.top, usesCompactPhraseHero ? 20 : PhrasePageStyle.heroTextTopPadding)
+            .padding(.top, heroTextTopPadding)
             .padding(.bottom, PhrasePageStyle.heroTextBottomPadding)
         }
         .background(PhrasePageStyle.pageBackground)
+    }
+
+    @ViewBuilder
+    private var heroImage: some View {
+        let imageName = heroImageName
+        let masthead = HeroMastheadImage(
+            imageName: imageName,
+            height: heroImageHeight
+        )
+
+        if supportsHeroImageLightbox {
+            Button {
+                presentedHeroImage = PhraseHeroImagePresentation(
+                    pageID: page.id,
+                    imageName: imageName,
+                    title: page.title,
+                    subtitle: page.englishTitle
+                )
+            } label: {
+                masthead
+                    .overlay(alignment: .bottomTrailing) {
+                        Image(systemName: "arrow.up.left.and.arrow.down.right")
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(.primary)
+                            .frame(width: 36, height: 36)
+                            .nativeGlass(cornerRadius: 18, tint: .white.opacity(0.22), interactive: true)
+                            .padding(.trailing, 24)
+                            .padding(.bottom, 28)
+                            .accessibilityHidden(true)
+                    }
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Open \(page.title) photo")
+            .accessibilityIdentifier("PhraseArticle.HeroImageButton.\(page.id)")
+        } else {
+            masthead
+        }
     }
 
     private var shouldRenderCatalogExplore: Bool {
@@ -264,7 +594,80 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var usesCompactPhraseHero: Bool {
-        page.heroImageName == "HeroCompactPhraseMasthead"
+        effectiveHeroImageName == "HeroCompactPhraseMasthead"
+    }
+
+    private var usesVietnameseMenuDetailFit: Bool {
+        page.id.hasPrefix("viet-menu-")
+    }
+
+    private var usesCityNounDetailFit: Bool {
+        (page.id.hasPrefix("viet-family-city-") || page.id.hasPrefix("viet-phrase-city-"))
+            && effectiveHeroImageName != nil
+            && !usesCompactPhraseHero
+    }
+
+    private var usesImageDetailFit: Bool {
+        usesVietnameseMenuDetailFit || usesCityNounDetailFit
+    }
+
+    private var usesPhotoBackdropLayout: Bool {
+        PhrasePhotoBackdropLayout.supportsListingPage(
+            pageID: page.id,
+            heroImageName: effectiveHeroImageName
+        )
+    }
+
+    private var supportsHeroImageLightbox: Bool {
+        usesImageDetailFit && effectiveHeroImageName != nil && !usesPhotoBackdropLayout
+    }
+
+    private var effectiveHeroImageName: String? {
+        heroImageNameOverride ?? page.heroImageName
+    }
+
+    private var heroImageName: String {
+        effectiveHeroImageName ?? PhrasePageStyle.heroImageName
+    }
+
+    private var shouldShowHeroPlaybackDock: Bool {
+        !usesImageDetailFit || page.playbackAudioKey != nil
+    }
+
+    private var heroImageHeight: CGFloat {
+        usesImageDetailFit ? 238 : PhrasePageStyle.heroImageHeight
+    }
+
+    private var heroTitleSize: CGFloat {
+        if usesCompactPhraseHero {
+            return 38
+        }
+
+        return usesImageDetailFit ? 46 : 54
+    }
+
+    private var heroTextTopPadding: CGFloat {
+        if usesCompactPhraseHero {
+            return 20
+        }
+
+        return usesImageDetailFit ? 20 : PhrasePageStyle.heroTextTopPadding
+    }
+
+    private var heroPlayerTopSpacing: CGFloat {
+        usesImageDetailFit ? 12 : PhrasePageStyle.heroPlayerTopSpacing
+    }
+
+    private var articleSectionsTopPadding: CGFloat {
+        usesImageDetailFit ? 22 : PhrasePageStyle.articleSectionsTopPadding
+    }
+
+    private var articleBottomChromeContentClearance: CGFloat {
+        if usesPhotoBackdropLayout {
+            return PhrasePhotoBackdropLayout.bottomReadingClearance
+        }
+
+        return usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
     }
 
     private var usesHomePhraseHeroMorph: Bool {
@@ -281,6 +684,8 @@ struct PhraseArticleTemplateView: View {
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
     private static let catalogExploreID = "PhraseArticleTemplateViewCatalogExplore"
+    private static let photoBackdropInitialID = "PhraseArticleTemplateViewPhotoBackdropInitial"
+    private static let photoBackdropContentID = "PhraseArticleTemplateViewPhotoBackdropContent"
 
     private var visibleSections: [PhraseArticleSection] {
         Self.visibleSections(for: page)
@@ -289,7 +694,7 @@ struct PhraseArticleTemplateView: View {
     static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
         page.sections.filter { section in
             guard !isHeroRepeatSection(section, page: page) else { return false }
-            return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty
+            return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
         }
     }
 
@@ -312,7 +717,8 @@ struct PhraseArticleTemplateView: View {
         let duplicateSectionTitles: Set<String> = ["Meaning", "At a glance"]
         guard duplicateSectionTitles.contains(section.title),
               section.phrases.isEmpty,
-              section.breakdown.isEmpty
+              section.breakdown.isEmpty,
+              section.chips.isEmpty
         else {
             return false
         }
@@ -404,6 +810,42 @@ struct PhraseArticleTemplateView: View {
         didApplyInitialScrollTarget = true
     }
 
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+        isPhotoBackdropImmersive = false
+        scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersive(at location: CGPoint, metrics: PhrasePhotoBackdropLayout.Metrics) {
+        if isPhotoBackdropImmersive {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
+            }
+            return
+        }
+
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
+            return
+        }
+
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
+        }
+    }
+
     @ViewBuilder
     private var heroBadge: some View {
         if page.id == PhrasePage.xinChao.id {
@@ -437,45 +879,415 @@ struct PhraseArticleTemplateView: View {
         .nativeGlass(cornerRadius: 26, interactive: true)
     }
 
-    @ViewBuilder
-    private var bottomChrome: some View {
-        if #available(iOS 26.0, *) {
-            GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                bottomChromeContent
-            }
-        } else {
-            bottomChromeContent
+}
+
+struct PhrasePhotoBackdropImmersiveChromePreferenceKey: PreferenceKey {
+    static var defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+struct PhrasePhotoBackdropTabBarBackgroundPreferenceKey: PreferenceKey {
+    static var defaultValue = false
+
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+struct PhrasePhotoBackdropTopChromeStylePreferenceKey: PreferenceKey {
+    static var defaultValue: ChromeSeparationGradientStyle = .light
+
+    static func reduce(
+        value: inout ChromeSeparationGradientStyle,
+        nextValue: () -> ChromeSeparationGradientStyle
+    ) {
+        if nextValue() == .darkPhoto {
+            value = .darkPhoto
         }
     }
+}
 
-    private var bottomChromeContent: some View {
-        let selectedDockItem = AppChrome(route: chromeRoute).selectedDockItem
+struct PhrasePhotoBackdropImmersiveImageContext: Equatable {
+    let pageID: String
+    let imageName: String
+    let viewportSize: CGSize
+    let safeAreaTop: CGFloat
+    let safeAreaBottom: CGFloat
+    let imageFrameHeight: CGFloat
+    let verticalFocusOffset: CGFloat
+}
 
-        return HStack(spacing: AppChromeLayout.bottomSpacing) {
-            HStack(spacing: AppChromeLayout.dockItemSpacing) {
-                ForEach(AppChrome(route: chromeRoute).primaryDockItems, id: \.self) { item in
-                    DockItem(kind: item, selected: item == selectedDockItem)
+struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
+    static var defaultValue: PhrasePhotoBackdropImmersiveImageContext?
+
+    static func reduce(
+        value: inout PhrasePhotoBackdropImmersiveImageContext?,
+        nextValue: () -> PhrasePhotoBackdropImmersiveImageContext?
+    ) {
+        value = nextValue() ?? value
+    }
+}
+
+enum PhrasePhotoBackdropLayout {
+    static let bottomReadingClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance + BrowseCollectionLayout.bottomChromeContentClearance
+    static let immersiveDissolveDuration = 0.18
+    static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
+    static let topChromeContentThresholdPadding: CGFloat = 12
+    static let scrollGeometryUpdateStride: CGFloat = 16
+    private static let standardBackdropVerticalOverscan: CGFloat = 160
+
+    static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        let isCityPage = pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+        return isCityPage && heroImageName.hasPrefix("HeroCity")
+    }
+
+    static func supportsMenuListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        let isMenuPage = pageID.hasPrefix("viet-menu-")
+        return isMenuPage && heroImageName.hasPrefix("BackdropMenu")
+    }
+
+    static func supportsCategoryListingPage(pageID: String, heroImageName: String?) -> Bool {
+        guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
+            return false
+        }
+
+        return !pageID.hasPrefix("viet-menu-") && heroImageName.hasPrefix("HeroCategory")
+    }
+
+    static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
+        supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
+            || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
+            || supportsCategoryListingPage(pageID: pageID, heroImageName: heroImageName)
+    }
+
+    static func backdropFrameHeight(
+        for size: CGSize,
+        safeAreaInsets: EdgeInsets,
+        pageID: String,
+        heroImageName: String?
+    ) -> CGFloat {
+        let height = max(size.height, 1)
+
+        if supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return height + safeAreaInsets.bottom
+        }
+
+        return height + safeAreaInsets.top + safeAreaInsets.bottom + standardBackdropVerticalOverscan
+    }
+
+    static func backdropVerticalFocusOffset(
+        for size: CGSize,
+        pageID: String,
+        heroImageName: String?
+    ) -> CGFloat {
+        0
+    }
+
+    struct Metrics {
+        let initialAnchorOffset: CGFloat
+        let initialContentTop: CGFloat
+        let collapsedContentTop: CGFloat
+        let revealImmersiveOffset: CGFloat
+    }
+
+    static func metrics(for size: CGSize) -> Metrics {
+        let height = max(size.height, 1)
+        let collapsedPeek = min(max(height * 0.11, 78), 104)
+        let collapsedContentTop = max(height - collapsedPeek, 0)
+        let preferredInitialTop = max(height * 0.25, 210)
+        let initialContentTop = min(preferredInitialTop, max(collapsedContentTop - 72, 0))
+
+        return Metrics(
+            initialAnchorOffset: max(collapsedContentTop - initialContentTop, 0),
+            initialContentTop: initialContentTop,
+            collapsedContentTop: collapsedContentTop,
+            revealImmersiveOffset: 24
+        )
+    }
+
+    struct ScrollState: Equatable {
+        let displayOffset: CGFloat
+        let hasPassedRevealThreshold: Bool
+    }
+
+    static func scrollState(for rawOffset: CGFloat, metrics: Metrics) -> ScrollState {
+        let offset = max(rawOffset, 0)
+        return ScrollState(
+            displayOffset: quantizedScrollOffset(offset),
+            hasPassedRevealThreshold: offset > metrics.revealImmersiveOffset
+        )
+    }
+
+    static func quantizedScrollOffset(
+        _ rawOffset: CGFloat,
+        stride: CGFloat = scrollGeometryUpdateStride
+    ) -> CGFloat {
+        let offset = max(rawOffset, 0)
+        guard stride > 0 else {
+            return offset
+        }
+
+        return floor(offset / stride) * stride
+    }
+
+    static func isImageTap(
+        _ location: CGPoint,
+        scrollOffset: CGFloat,
+        metrics: Metrics
+    ) -> Bool {
+        let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+        return location.y >= 0 && location.y <= sheetTop
+    }
+
+    static func topChromeStyle(
+        sheetTop: CGFloat,
+        safeAreaTop: CGFloat,
+        topChromeBackdropHeight: CGFloat
+    ) -> ChromeSeparationGradientStyle {
+        let contentReachesTopChrome = sheetTop <= max(
+            safeAreaTop,
+            topChromeBackdropHeight + topChromeContentThresholdPadding
+        )
+
+        return contentReachesTopChrome ? .light : .darkPhoto
+    }
+}
+
+struct PhotoBackdropBottomChromeBacking: View {
+    let height: CGFloat
+    let topCornerRadius: CGFloat
+
+    var body: some View {
+        UnevenRoundedRectangle(
+            cornerRadii: RectangleCornerRadii(
+                topLeading: topCornerRadius,
+                bottomLeading: 0,
+                bottomTrailing: 0,
+                topTrailing: topCornerRadius
+            ),
+            style: .continuous
+        )
+        .fill(PhrasePageStyle.pageBackground)
+            .frame(height: height)
+    }
+}
+
+private struct PhraseHeroImagePresentation: Identifiable, Equatable {
+    let pageID: String
+    let imageName: String
+    let title: String
+    let subtitle: String
+
+    var id: String { pageID }
+}
+
+private struct PhraseHeroImageLightbox: View {
+    let presentation: PhraseHeroImagePresentation
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            Color.black
+                .ignoresSafeArea()
+
+            ZoomableAssetImageView(
+                imageName: presentation.imageName,
+                accessibilityIdentifier: "PhraseArticle.HeroImageLightbox.Image.\(presentation.pageID)",
+                accessibilityLabel: "\(presentation.title) photo",
+                onVerticalSwipe: {
+                    dismiss()
                 }
-            }
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
+            )
+                .ignoresSafeArea()
 
-            Button {
-                onSearchTapped()
-            } label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.title2.weight(.medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(presentation.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+
+                    Text(presentation.subtitle)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.white.opacity(0.72))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.78)
+                }
+                .layoutPriority(1)
+
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.white)
+                        .frame(width: 46, height: 46)
+                        .background(.ultraThinMaterial, in: Circle())
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close image")
+                .accessibilityIdentifier("PhraseArticle.HeroImageLightbox.Close")
             }
-            .buttonStyle(.plain)
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchActive)
+            .padding(.horizontal, 20)
+            .padding(.top, 18)
+        }
+        .statusBarHidden()
+    }
+}
+
+private struct ZoomableAssetImageView: UIViewRepresentable {
+    let imageName: String
+    let accessibilityIdentifier: String
+    let accessibilityLabel: String
+    let onVerticalSwipe: () -> Void
+
+    func makeUIView(context: Context) -> AssetImageZoomScrollView {
+        let scrollView = AssetImageZoomScrollView()
+        scrollView.onVerticalSwipe = onVerticalSwipe
+        scrollView.configure(
+            imageName: imageName,
+            accessibilityIdentifier: accessibilityIdentifier,
+            accessibilityLabel: accessibilityLabel
+        )
+        return scrollView
+    }
+
+    func updateUIView(_ scrollView: AssetImageZoomScrollView, context: Context) {
+        scrollView.onVerticalSwipe = onVerticalSwipe
+        scrollView.configure(
+            imageName: imageName,
+            accessibilityIdentifier: accessibilityIdentifier,
+            accessibilityLabel: accessibilityLabel
+        )
+    }
+}
+
+private final class AssetImageZoomScrollView: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+    var onVerticalSwipe: (() -> Void)?
+
+    private let imageView = UIImageView()
+    private var loadedImageName: String?
+    private lazy var verticalDismissPanRecognizer: UIPanGestureRecognizer = {
+        let recognizer = UIPanGestureRecognizer(target: self, action: #selector(handleVerticalDismissPan(_:)))
+        recognizer.cancelsTouchesInView = false
+        recognizer.maximumNumberOfTouches = 1
+        recognizer.delegate = self
+        return recognizer
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .black
+        delegate = self
+        minimumZoomScale = 1
+        maximumZoomScale = 4
+        bouncesZoom = true
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        contentInsetAdjustmentBehavior = .never
+
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        addSubview(imageView)
+
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        imageView.addGestureRecognizer(doubleTap)
+        addGestureRecognizer(verticalDismissPanRecognizer)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(imageName: String, accessibilityIdentifier: String, accessibilityLabel: String) {
+        isAccessibilityElement = true
+        self.accessibilityIdentifier = accessibilityIdentifier
+        self.accessibilityLabel = accessibilityLabel
+        accessibilityTraits = [.image, .allowsDirectInteraction]
+
+        guard loadedImageName != imageName else {
+            return
+        }
+
+        loadedImageName = imageName
+        imageView.image = UIImage(named: imageName)
+        zoomScale = minimumZoomScale
+        setNeedsLayout()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if zoomScale == minimumZoomScale {
+            imageView.frame = bounds
+        }
+
+        centerImageIfNeeded()
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        imageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        centerImageIfNeeded()
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        gestureRecognizer === verticalDismissPanRecognizer || otherGestureRecognizer === verticalDismissPanRecognizer
+    }
+
+    @objc private func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
+        if zoomScale > minimumZoomScale {
+            setZoomScale(minimumZoomScale, animated: true)
+        } else {
+            let point = gesture.location(in: imageView)
+            let targetScale = min(maximumZoomScale, 2.6)
+            let size = CGSize(width: bounds.width / targetScale, height: bounds.height / targetScale)
+            let origin = CGPoint(x: point.x - size.width / 2, y: point.y - size.height / 2)
+            zoom(to: CGRect(origin: origin, size: size), animated: true)
         }
     }
 
+    @objc private func handleVerticalDismissPan(_ gesture: UIPanGestureRecognizer) {
+        guard gesture.state == .ended, zoomScale <= minimumZoomScale + 0.01 else {
+            return
+        }
+
+        let translation = gesture.translation(in: self)
+        let velocity = gesture.velocity(in: self)
+        let isMostlyVertical = abs(translation.y) > abs(translation.x) * 1.25
+        let movedEnough = abs(translation.y) > 96
+        let flungEnough = abs(velocity.y) > 900 && abs(translation.y) > 32
+
+        if isMostlyVertical && (movedEnough || flungEnough) {
+            onVerticalSwipe?()
+        }
+    }
+
+    private func centerImageIfNeeded() {
+        let boundsSize = bounds.size
+        var frame = imageView.frame
+
+        frame.origin.x = frame.size.width < boundsSize.width ? (boundsSize.width - frame.size.width) / 2 : 0
+        frame.origin.y = frame.size.height < boundsSize.height ? (boundsSize.height - frame.size.height) / 2 : 0
+        imageView.frame = frame
+    }
 }
 
 private struct ArticleSectionView: View {
@@ -487,6 +1299,8 @@ private struct ArticleSectionView: View {
         switch section.presentation {
         case .breakdownStrip:
             breakdownSection
+        case .menuChips:
+            menuChipsSection
         case .relationshipShelf:
             relationshipShelfSection
         case .horizontalPhraseCards:
@@ -522,7 +1336,7 @@ private struct ArticleSectionView: View {
 
     private var plainTextSection: some View {
         SectionBlock(title: section.title) {
-            Text(section.body)
+            DefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .lineSpacing(3)
@@ -631,6 +1445,113 @@ private struct ArticleSectionView: View {
             }
         }
     }
+
+    private var menuChipsSection: some View {
+        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+            if section.chips.isEmpty {
+                Text(section.body)
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                MenuChipFlow(chips: section.chips, sectionID: section.id)
+            }
+        }
+    }
+}
+
+private struct MenuChipFlow: View {
+    let chips: [String]
+    let sectionID: String
+
+    var body: some View {
+        MenuChipFlowLayout(horizontalSpacing: 8, verticalSpacing: 8) {
+            ForEach(chips, id: \.self) { chip in
+                Text(chip)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .accessibilityIdentifier("MenuDetail.Chip.\(sectionID).\(chip.normalizedMenuChipIdentifier)")
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private struct MenuChipFlowLayout: Layout {
+    let horizontalSpacing: CGFloat
+    let verticalSpacing: CGFloat
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        guard !sizes.isEmpty else {
+            return .zero
+        }
+
+        let maxWidth = max(1, proposal.width ?? sizes.reduce(0) { $0 + $1.width + horizontalSpacing })
+        let rows = arrangedRows(for: sizes, maxWidth: maxWidth)
+        let height = rows.reduce(CGFloat.zero) { partial, row in
+            partial + row.height
+        } + CGFloat(max(0, rows.count - 1)) * verticalSpacing
+
+        return CGSize(width: maxWidth, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        let rows = arrangedRows(for: sizes, maxWidth: bounds.width)
+        var y = bounds.minY
+
+        for row in rows {
+            var x = bounds.minX
+            for index in row.indices {
+                subviews[index].place(
+                    at: CGPoint(x: x, y: y + (row.height - sizes[index].height) / 2),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(sizes[index])
+                )
+                x += sizes[index].width + horizontalSpacing
+            }
+            y += row.height + verticalSpacing
+        }
+    }
+
+    private func arrangedRows(for sizes: [CGSize], maxWidth: CGFloat) -> [MenuChipFlowRow] {
+        var rows: [MenuChipFlowRow] = []
+        var current = MenuChipFlowRow(indices: [], width: 0, height: 0)
+
+        for (index, size) in sizes.enumerated() {
+            let proposedWidth = current.indices.isEmpty ? size.width : current.width + horizontalSpacing + size.width
+            if !current.indices.isEmpty, proposedWidth > maxWidth {
+                rows.append(current)
+                current = MenuChipFlowRow(indices: [index], width: size.width, height: size.height)
+            } else {
+                current.indices.append(index)
+                current.width = proposedWidth
+                current.height = max(current.height, size.height)
+            }
+        }
+
+        if !current.indices.isEmpty {
+            rows.append(current)
+        }
+
+        return rows
+    }
+}
+
+private struct MenuChipFlowRow {
+    var indices: [Int]
+    var width: CGFloat
+    var height: CGFloat
 }
 
 private struct ArticleCallout: View {
@@ -665,6 +1586,73 @@ private struct ArticleCallout: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(tint.color.opacity(0.22), lineWidth: 1)
         }
+    }
+}
+
+private struct DefinedBodyText: View {
+    let text: String
+    let definitions: [PhraseInlineDefinition]
+    @State private var selectedDefinition: PhraseInlineDefinition?
+
+    var body: some View {
+        Text(attributedText)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                if definitions.count == 1 {
+                    selectedDefinition = definitions[0]
+                }
+            }
+            .environment(\.openURL, OpenURLAction { url in
+                guard url.scheme == "speaklocal-definition",
+                      let id = url.host(),
+                      let definition = definitions.first(where: { $0.id == id })
+                else {
+                    return .systemAction
+                }
+
+                selectedDefinition = definition
+                return .handled
+            })
+            .popover(item: $selectedDefinition) { definition in
+                DefinitionPopover(definition: definition)
+                    .presentationCompactAdaptation(.popover)
+            }
+    }
+
+    private var attributedText: AttributedString {
+        var attributed = AttributedString(text)
+        for definition in definitions {
+            var searchStart = attributed.startIndex
+            while let range = attributed[searchStart...].range(
+                of: definition.vietnamese,
+                options: [.caseInsensitive, .diacriticInsensitive]
+            ) {
+                attributed[range].foregroundColor = .red
+                attributed[range].font = .body.weight(.semibold)
+                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
+                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
+                searchStart = range.upperBound
+            }
+        }
+        return attributed
+    }
+}
+
+private struct DefinitionPopover: View {
+    let definition: PhraseInlineDefinition
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(definition.vietnamese)
+                .font(.headline.weight(.black))
+                .foregroundStyle(.red)
+
+            Text(definition.english)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .padding(14)
+        .presentationCompactAdaptation(.popover)
     }
 }
 
@@ -722,6 +1710,14 @@ private extension String {
     var nilIfEmpty: String? {
         isEmpty ? nil : self
     }
+
+    var normalizedMenuChipIdentifier: String {
+        lowercased()
+            .replacingOccurrences(of: "&", with: "and")
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .filter { !$0.isEmpty }
+            .joined(separator: "-")
+    }
 }
 
 private struct SectionLeadIn: View {
@@ -769,19 +1765,19 @@ private struct PhraseRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 9)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -795,12 +1791,6 @@ private struct PhraseRow: View {
             }
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
@@ -830,26 +1820,12 @@ private struct SituationCard: View {
 
             HStack(spacing: 10) {
                 AudioSpeakerButton(tint: phrase.tintName, size: 42, audioKey: phrase.playbackAudioKey)
-
-                if let destinationPageID {
-                    Button {
-                        onOpenDetail(destinationPageID)
-                    } label: {
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.tertiary)
-                            .frame(width: 24, height: 42)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                }
             }
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 16)
         .frame(width: 112, height: 174)
-        .phraseListCard(strokeOpacity: 0.05)
-        .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
+        .phraseListCard()
     }
 
     private var cardSummary: some View {
@@ -897,19 +1873,19 @@ private struct LocalGreetingRow: View {
                 Button {
                     onOpenDetail(destinationPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 9)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(phrase.vietnamese)
@@ -926,12 +1902,6 @@ private struct LocalGreetingRow: View {
             }
 
             Spacer()
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }
@@ -1067,7 +2037,7 @@ private struct BreakdownTokenCard: View {
         .padding(.vertical, 12)
         .frame(width: width)
         .frame(minHeight: 112)
-        .phraseListCard(cornerRadius: 16, strokeOpacity: 0.05)
+        .phraseListCard(cornerRadius: 16)
     }
 }
 
@@ -1253,7 +2223,7 @@ struct ExploreCatalogSection: View {
         "arrivals-routes": PhraseCategory(id: "arrivals-routes", title: "Arrivals and routes", symbolName: "car.fill", tintName: .blue),
         "landmarks-attractions": PhraseCategory(id: "landmarks-attractions", title: "Landmarks and attractions", symbolName: "signpost.right.fill", tintName: .teal),
         "neighborhoods-streets": PhraseCategory(id: "neighborhoods-streets", title: "Neighborhoods and streets", symbolName: "map.fill", tintName: .teal),
-        "food-coffee": PhraseCategory(id: "food-coffee", title: "Food and coffee", symbolName: "fork.knife", tintName: .green),
+        "food-coffee": PhraseCategory(id: "food-coffee", title: "Food and cafes", symbolName: "fork.knife", tintName: .green),
         "shopping-markets": PhraseCategory(id: "shopping-markets", title: "Shopping and markets", symbolName: "bag.fill", tintName: .orange),
         "practical-help-near-places": PhraseCategory(id: "practical-help-near-places", title: "Nearby help", symbolName: "cross.case.fill", tintName: .blue),
     ]
@@ -1443,7 +2413,7 @@ private struct ExploreCatalogCategoryShelf: View {
         case "goodbyes":
             return "Leave conversations cleanly"
         default:
-            return "Useful phrase pages for this travel moment"
+            return "Useful phrases for this travel moment"
         }
     }
 }
@@ -1564,10 +2534,6 @@ private struct ExploreCatalogRow: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -1602,22 +2568,6 @@ private struct CircleIcon: View {
             .foregroundStyle(tint.color)
             .frame(width: 48, height: 48)
             .nativeGlass(cornerRadius: 24)
-    }
-}
-
-private struct DockItem: View {
-    let kind: DockItemKind
-    let selected: Bool
-
-    var body: some View {
-        VStack(spacing: 3) {
-            Image(systemName: kind.symbolName)
-                .font(.system(size: 18, weight: .semibold))
-            Text(kind.title)
-                .font(.caption2.weight(.semibold))
-        }
-        .foregroundStyle(selected ? .red : .secondary)
-        .frame(width: 52, height: 50)
     }
 }
 

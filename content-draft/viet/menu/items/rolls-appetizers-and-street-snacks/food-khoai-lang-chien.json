@@ -1,0 +1,63 @@
+{
+  "itemID": "food-khoai-lang-chien",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Khoai lang chiên",
+  "englishTranslation": "Fried sweet potato",
+  "romanizedNoTones": "Khoai lang chien",
+  "soundOut": "kwai lahng chee-en",
+  "notes": "",
+  "atAGlance": "Khoai lang chiên is fried sweet potato with a crisp outside and soft orange or yellow center, often eaten as a simple street snack.",
+  "whatItIs": "Khoai lang chiên is fried sweet potato, usually crisp outside and soft-sweet inside, sometimes with salt, sesame, or a light batter depending on the stall.",
+  "usuallyIncludes": [
+    "sweet potato",
+    "light batter or crisp edges",
+    "salt or sugar",
+    "hot oil frying"
+  ],
+  "howToEnjoy": "Eat it hot while the outside is crisp and the center is sweet. Ask for no chili powder if you want a simple sweet-salty snack.",
+  "howLocalsOrder": "Order khoai lang chiên as a street snack or side. Ask for no chili, less salt, or pack to go before the batch is bagged.",
+  "worthKnowing": "Vietnamese fried sweet potato can be a roadside snack rather than dessert; the pleasure is the hot contrast of crisp edge and soft center.",
+  "goodToKnow": "This is snack food, not a saucy dish. Eat it hot when the outside is crisp and the sweet potato center is still soft.",
+  "commonOptions": [
+    "no chili",
+    "less salt",
+    "pack to go",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần khoai lang chiên.",
+    "english": "I’d like one order of fried sweet potato.",
+    "pronunciation": "chaw toy moht fuhn kwai lahng chee-en",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Khoai lang chiên was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

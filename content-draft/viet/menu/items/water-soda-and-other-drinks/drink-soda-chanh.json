@@ -1,0 +1,64 @@
+{
+  "itemID": "drink-soda-chanh",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Soda chanh",
+  "englishTranslation": "Lime soda",
+  "romanizedNoTones": "Soda chanh",
+  "soundOut": "soh-dah chan",
+  "notes": "",
+  "atAGlance": "Soda chanh is lime soda, fizzy, sharp, sweet, and a classic Vietnamese café answer to hot weather.",
+  "whatItIs": "Soda chanh is soda water mixed with lime and sugar. Expect lime soda that is fizzy, sharp, sweet, and refreshing.",
+  "usuallyIncludes": [
+    "soda water",
+    "lime",
+    "sugar syrup",
+    "ice"
+  ],
+  "howToEnjoy": "Stir well so the sugar dissolves before you judge the sweetness.",
+  "howLocalsOrder": "Order soda chanh when you want fizzy lime. Ask for less sugar, less ice, or stir it well if you want less syrup, less ice, or a better mixed glass.",
+  "worthKnowing": "At Vietnamese cafés, soda chanh is a classic because lime, fizz, sugar, and ice make a bright hot-weather drink without feeling heavy.",
+  "goodToKnow": "Usually sweet and fizzy.",
+  "commonOptions": [
+    "less sugar",
+    "less ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly soda chanh.",
+    "english": "I’d like one glass of lime soda.",
+    "pronunciation": "chaw toy moht lee soh-dah chan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Soda chanh was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

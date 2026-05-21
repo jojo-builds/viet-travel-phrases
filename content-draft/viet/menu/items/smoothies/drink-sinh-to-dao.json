@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-dao",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố đào",
+  "englishTranslation": "Peach smoothie",
+  "romanizedNoTones": "Sinh to dao",
+  "soundOut": "sing toh dow",
+  "notes": "",
+  "atAGlance": "Sinh tố đào is peach smoothie, soft, fragrant, and often more café-style than traditional street juice.",
+  "whatItIs": "Sinh tố đào is peach blended with ice, milk, or yogurt. Expect peach smoothie that is fragrant, soft, sweet, and café-style.",
+  "usuallyIncludes": [
+    "peach",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it less sweet if you want fruit instead of syrup.",
+  "howLocalsOrder": "Sinh tố đào is blended to order, so ask for less sugar, less condensed milk, or less ice before the fruit hits the blender. The best version should taste like peach, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố đào sits with modern Vietnamese café fruit drinks, where peach is often served cold, sweet, and perfumed.",
+  "goodToKnow": "May taste more like peach syrup than fresh fruit depending on the café.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố đào.",
+    "english": "I’d like one glass of peach smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh dow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố đào was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

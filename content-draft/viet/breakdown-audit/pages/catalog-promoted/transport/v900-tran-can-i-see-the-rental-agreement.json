@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-tran-can-i-see-the-rental-agreement",
+  "phraseText": "Tôi có thể xem hợp đồng thuê được không?",
+  "englishTitle": "Can I see the rental agreement?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.350Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-can-i-see-the-rental-agreement",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xem",
+      "english": "look / see"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hợp",
+      "english": "suitable / combine"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "đồng",
+      "english": "dong / currency"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "thuê",
+      "english": "rent"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể xem hợp đồng thuê được không?",
+      "english": "Can I see the rental agreement?",
+      "audioKey": "v900-tran-can-i-see-the-rental-agreement"
+    }
+  ]
+}

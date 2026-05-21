@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-polite-its-okay",
+  "phraseText": "Không sao đâu",
+  "englishTitle": "It’s okay",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.275Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-polite-its-okay",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Không sao",
+      "english": "no problem / it is okay",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đâu",
+      "english": "where"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Không sao đâu",
+      "english": "It’s okay",
+      "audioKey": "polite-6"
+    }
+  ]
+}

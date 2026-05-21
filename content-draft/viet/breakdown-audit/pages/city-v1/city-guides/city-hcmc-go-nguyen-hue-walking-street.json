@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hcmc-go-nguyen-hue-walking-street",
+  "phraseText": "Đi Phố đi bộ Nguyễn Huệ",
+  "englishTitle": "Go to Nguyen Hue Walking Street",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-nguyen-hue-walking-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Phố đi bộ Nguyễn Huệ",
+      "english": "Nguyen Hue Walking Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Phố đi bộ Nguyễn Huệ",
+      "english": "Go to Nguyen Hue Walking Street",
+      "audioKey": "audio-authored-di-pho-di-bo-nguyen-hue-388af5bd52"
+    }
+  ]
+}

@@ -4,59 +4,66 @@ struct BrowsePageView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
+    var usesPhotoBackdrop = false
     var onOpenDetail: (String) -> Void
     var onOpenCollection: (BrowseCollectionRoute) -> Void
     var onSearchTapped: () -> Void
     var onSearchQuery: (String) -> Void
-    var onSavedTapped: () -> Void
-    var onPracticeTapped: () -> Void
 
+    @ViewBuilder
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+        if usesPhotoBackdrop {
+            contentStack
+                .accessibilityIdentifier("BrowsePageView")
+        } else {
+            ZStack(alignment: .bottom) {
+                PhrasePageStyle.pageBackground
+                    .ignoresSafeArea()
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
-                        header
-                            .id(Self.scrollTopID)
-
-                        situationGrid
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        cityShortcuts
-
-                        startHereShelf
-
-                        compactBrowseHeader
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        situationChips
-
-                        phraseFamilies
-                            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-
-                        byCityShelf
-
-                        returningUserShelves
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        contentStack
                     }
-                    .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    }
                 }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
-                }
+                .ignoresSafeArea(edges: .top)
             }
-            .ignoresSafeArea(edges: .top)
+            .accessibilityIdentifier("BrowsePageView")
         }
-        .accessibilityIdentifier("BrowsePageView")
     }
 
     private static let scrollTopID = "BrowsePageTop"
 
+    private var contentStack: some View {
+        VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
+            header
+                .id(Self.scrollTopID)
+
+            situationGrid
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+            menuGuideShelf
+
+            cityShortcuts
+
+            startHereShelf
+
+            phraseFamilies
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+            compactSearchHeader
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+        }
+        .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
+    }
+
     private var header: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
+            if !usesPhotoBackdrop {
+                HeroMastheadImage()
+            }
 
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 8) {
@@ -108,18 +115,23 @@ struct BrowsePageView: View {
 
     private var cityShortcuts: some View {
         BrowseShelf(title: "Cities") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(BrowseSearchDestinations.cityShortcuts) { city in
-                        BrowseCityChip(city: city) {
-                            onOpenCollection(city.collectionRoute)
-                        }
+            BrowseCityHeroRail(
+                cities: cityHeroShortcuts,
+                onOpenCollection: onOpenCollection
+            )
+        }
+    }
+
+    private var menuGuideShelf: some View {
+        BrowseShelf(title: "Menu guides") {
+            VStack(spacing: BrowsePageLayout.menuGuideCardSpacing) {
+                ForEach(BrowseSearchDestinations.menuGuides) { destination in
+                    BrowseMenuGuideCard(destination: destination) {
+                        open(destination: destination)
                     }
                 }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-                .padding(.bottom, 2)
             }
-            .scrollClipDisabled()
+            .padding(.horizontal, BrowsePageLayout.horizontalPadding)
         }
     }
 
@@ -129,18 +141,20 @@ struct BrowsePageView: View {
                 items: BrowseSearchDestinations.startHere,
                 spacing: 12
             ) { destination in
-                BrowseStartHereCard(destination: destination) { open(destination: destination) }
+                BrowseStartHereCard(destination: destination) {
+                    open(destination: destination)
+                }
             }
             .padding(.horizontal, BrowsePageLayout.horizontalPadding)
         }
     }
 
-    private var compactBrowseHeader: some View {
+    private var compactSearchHeader: some View {
         Button {
             onSearchTapped()
         } label: {
             HStack(spacing: 14) {
-                Text("Browse")
+                Text("Search")
                     .font(.system(size: 28, weight: .black, design: .serif))
                     .foregroundStyle(.primary)
 
@@ -161,26 +175,6 @@ struct BrowsePageView: View {
         .accessibilityIdentifier("Browse.CompactSearch")
     }
 
-    private var situationChips: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
-                Text("Situations")
-                    .font(.headline.weight(.bold))
-                    .padding(.leading, BrowsePageLayout.horizontalPadding)
-                    .padding(.trailing, 4)
-
-                ForEach(BrowseSearchDestinations.situations.prefix(5)) { situation in
-                    BrowseSituationChip(destination: situation) {
-                        open(destination: situation)
-                    }
-                }
-            }
-            .padding(.trailing, BrowsePageLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .scrollClipDisabled()
-    }
-
     private var phraseFamilies: some View {
         BrowseShelf(title: "Phrase families") {
             BrowseTwoColumnGrid(
@@ -192,99 +186,8 @@ struct BrowsePageView: View {
         }
     }
 
-    private var byCityShelf: some View {
-        BrowseShelf(title: "By city") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(BrowseSearchDestinations.cityShortcuts.filter { $0.id != "all-vietnam" }) { city in
-                        BrowseCityCard(city: city) {
-                            onOpenCollection(city.collectionRoute)
-                        }
-                    }
-                }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-                .padding(.bottom, 2)
-            }
-            .scrollClipDisabled()
-        }
-    }
-
-    @ViewBuilder
-    private var returningUserShelves: some View {
-        let shelves = returningUserRows
-
-        if !shelves.isEmpty {
-            BrowseShelf(title: "Your next shelves") {
-                VStack(spacing: 10) {
-                    ForEach(shelves) { row in
-                        BrowseNextShelfRow(row: row)
-                    }
-                }
-                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
-            }
-        }
-    }
-
-    private var returningUserRows: [BrowseNextShelfRowModel] {
-        var rows: [BrowseNextShelfRowModel] = []
-
-        if !intentStore.savedPageIDs.isEmpty {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "saved",
-                    title: "Saved phrases",
-                    subtitle: "\(intentStore.savedPageIDs.count) saved phrase pages",
-                    symbolName: "bookmark.fill",
-                    tintName: .red,
-                    action: onSavedTapped
-                )
-            )
-        }
-
-        if !intentStore.practicePageIDs.isEmpty {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "practice",
-                    title: "Ready to practice",
-                    subtitle: "Continue with \(intentStore.practicePageIDs.count) chosen pages",
-                    symbolName: "waveform",
-                    tintName: .green,
-                    action: onPracticeTapped
-                )
-            )
-        }
-
-        if let recentTitle = recentSummary {
-            rows.append(
-                BrowseNextShelfRowModel(
-                    id: "recent",
-                    title: "Recently viewed",
-                    subtitle: recentTitle,
-                    symbolName: "clock.fill",
-                    tintName: .orange,
-                    action: {
-                        if let pageID = intentStore.recentPageIDs.first {
-                            onOpenDetail(pageID)
-                        }
-                    }
-                )
-            )
-        }
-
-        return rows
-    }
-
-    private var recentSummary: String? {
-        let titles = intentStore.recentPageIDs
-            .compactMap(BrowseSearchPhraseItem.resolve(pageID:))
-            .prefix(3)
-            .map(\.title)
-
-        guard !titles.isEmpty else {
-            return nil
-        }
-
-        return titles.joined(separator: ", ")
+    private var cityHeroShortcuts: [BrowseCityShortcut] {
+        BrowseSearchDestinations.homepageCityShortcuts
     }
 
     private func open(destination: BrowseDestination) {
@@ -296,13 +199,19 @@ enum BrowsePageLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 26
     static let cardCornerRadius: CGFloat = 22
-    static let bottomChromeContentClearance: CGFloat = 224
-    static let situationIconSize: CGFloat = 48
-    static let situationCardMinHeight: CGFloat = 136
-    static let nextShelfRowHeight: CGFloat = 108
-    static let nextShelfIconSize: CGFloat = 48
-    static let nextShelfRowPadding: CGFloat = 14
-    static let nextShelfRowSpacing: CGFloat = 14
+    static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let situationCardMinHeight: CGFloat = 158
+    static let menuGuideCardHeight: CGFloat = 260
+    static let menuGuideCopyHeight: CGFloat = 98
+    static let menuGuideCardSpacing: CGFloat = 14
+    static let cityHeroCardHeight: CGFloat = 368
+    static let cityHeroImageHeight: CGFloat = 216
+    static let cityHeroImageAlignment: Alignment = .center
+    static let cityHeroCopyAreaHeight: CGFloat = cityHeroCardHeight - cityHeroImageHeight
+    static let cityHeroImageCopySeparatorHeight: CGFloat = 1
+    static let cityHeroImageCopySeparatorOpacity: Double = 0.06
+    static let cityHeroCardSpacing: CGFloat = 14
+    static let phraseFamilyCardHeight: CGFloat = 166
     static let situationColumns = [
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12),
@@ -318,6 +227,10 @@ enum BrowsePageLayout {
 
     static func situationCardTitleContentWidth(cardWidth: CGFloat) -> CGFloat {
         max(0, cardWidth - (14 * 2))
+    }
+
+    static func cityHeroCardWidth(containerWidth: CGFloat) -> CGFloat {
+        min(292, max(264, containerWidth * 0.78))
     }
 }
 
@@ -377,80 +290,284 @@ private struct BrowseSituationCard: View {
     let destination: BrowseDestination
     let action: () -> Void
 
+    private var heroImageName: String {
+        BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
     var body: some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Image(systemName: destination.symbolName)
-                        .font(.title2.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .frame(width: BrowsePageLayout.situationIconSize, height: BrowsePageLayout.situationIconSize)
-                        .nativeGlass(
-                            cornerRadius: BrowsePageLayout.situationIconSize / 2,
-                            tint: destination.tintName.color.opacity(0.18),
-                            interactive: true
-                        )
+            ZStack(alignment: .bottomLeading) {
+                Image(heroImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: BrowsePageLayout.situationCardMinHeight,
+                        maxHeight: BrowsePageLayout.situationCardMinHeight,
+                        alignment: .top
+                    )
+                    .clipped()
+                    .accessibilityHidden(true)
 
-                    Spacer(minLength: 8)
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.18),
+                        .init(color: Color.black.opacity(0.18), location: 0.52),
+                        .init(color: Color.black.opacity(0.66), location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
 
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(destination.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.8)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                    Text(destination.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.84)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .layoutPriority(1)
+                Text(destination.title)
+                    .font(.system(size: 24, weight: .black))
+                    .foregroundStyle(.white)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.72)
+                    .shadow(color: .black.opacity(0.32), radius: 8, x: 0, y: 2)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, alignment: .topLeading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.situationCardMinHeight, maxHeight: BrowsePageLayout.situationCardMinHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+            }
+            .softAmbientCardShadow()
+            .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(destination.title). \(destination.subtitle)")
         .accessibilityIdentifier("Browse.Situation.\(destination.id)")
     }
 }
 
-private struct BrowseCityChip: View {
-    let city: BrowseCityShortcut
-    let action: () -> Void
+private struct BrowseCityHeroRail: View {
+    let cities: [BrowseCityShortcut]
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
 
     var body: some View {
-        Button(action: action) {
-            HStack(spacing: 8) {
-                Image(systemName: city.symbolName)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(city.tintName.color)
+        GeometryReader { proxy in
+            let cardWidth = BrowsePageLayout.cityHeroCardWidth(containerWidth: proxy.size.width)
 
-                Text(city.title)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: BrowsePageLayout.cityHeroCardSpacing) {
+                    ForEach(cities) { city in
+                        BrowseCityHeroCard(
+                            city: city,
+                            width: cardWidth,
+                            onOpenCollection: onOpenCollection
+                        )
+                    }
+                }
+                .scrollTargetLayout()
+                .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
             }
-            .padding(.horizontal, 14)
-            .frame(height: 46)
-            .nativeGlass(cornerRadius: 23, interactive: true)
+            .scrollTargetBehavior(.viewAligned)
+            .scrollClipDisabled()
+        }
+        .frame(height: BrowsePageLayout.cityHeroCardHeight + PhrasePageStyle.cardShadowBleedPadding)
+        .accessibilityIdentifier("Browse.CityHeroRail")
+    }
+}
+
+private struct BrowseCityHeroCard: View {
+    let city: BrowseCityShortcut
+    let width: CGFloat
+    let onOpenCollection: (BrowseCollectionRoute) -> Void
+
+    private var descriptor: BrowseCollectionDescriptor? {
+        BrowseSearchDestinations.collectionDescriptor(for: city.collectionRoute)
+    }
+
+    private var title: String {
+        descriptor?.title ?? city.title
+    }
+
+    private var subtitle: String {
+        descriptor?.subtitle ?? "Names, places, and practical phrases."
+    }
+
+    private var imageName: String {
+        descriptor?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
+    var body: some View {
+        Button {
+            onOpenCollection(city.collectionRoute)
+        } label: {
+            ZStack(alignment: .bottomLeading) {
+                VStack(spacing: 0) {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: width, height: BrowsePageLayout.cityHeroImageHeight, alignment: BrowsePageLayout.cityHeroImageAlignment)
+                        .clipped()
+
+                    Color.white.opacity(0.98)
+                        .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight)
+                }
+
+                Rectangle()
+                    .fill(Color.black.opacity(BrowsePageLayout.cityHeroImageCopySeparatorOpacity))
+                    .frame(width: width, height: BrowsePageLayout.cityHeroImageCopySeparatorHeight)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .offset(y: BrowsePageLayout.cityHeroImageHeight)
+                    .allowsHitTesting(false)
+
+                VStack(alignment: .leading, spacing: 9) {
+                    HStack(alignment: .firstTextBaseline, spacing: 10) {
+                        Text(title)
+                            .font(.system(size: 31, weight: .black, design: .serif))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.72)
+
+                        Spacer(minLength: 8)
+                    }
+
+                    Text(subtitle)
+                        .font(.callout.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineSpacing(2)
+                        .lineLimit(3)
+                        .minimumScaleFactor(0.82)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 24)
+                .padding(.top, 18)
+                .frame(width: width, height: BrowsePageLayout.cityHeroCopyAreaHeight, alignment: .topLeading)
+            }
+            .frame(width: width, height: BrowsePageLayout.cityHeroCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+            }
+            .softAmbientCardShadow()
+            .nativeGlass(cornerRadius: 30, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.City.\(city.id)")
     }
 }
 
+private struct BrowseMenuGuideCard: View {
+    let destination: BrowseDestination
+    let action: () -> Void
+
+    private var menuKind: VietnameseMenuKind? {
+        VietnameseMenuKind.kind(forRouteID: destination.id)
+    }
+
+    private var imageName: String {
+        menuKind?.heroImageName
+            ?? BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName
+            ?? "HeroVietnamMasthead"
+    }
+
+    private var imageAlignment: Alignment {
+        switch menuKind {
+        case .food, .drink:
+            return .top
+        case nil:
+            return .center
+        }
+    }
+
+    private var imageVerticalOffset: CGFloat {
+        switch menuKind {
+        case .drink:
+            return -112
+        case .food, nil:
+            return 0
+        }
+    }
+
+    var body: some View {
+        Button(action: action) {
+            ZStack(alignment: .bottomLeading) {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        maxWidth: .infinity,
+                        minHeight: BrowsePageLayout.menuGuideCardHeight,
+                        maxHeight: BrowsePageLayout.menuGuideCardHeight,
+                        alignment: imageAlignment
+                    )
+                    .offset(y: imageVerticalOffset)
+                    .clipped()
+                    .accessibilityHidden(true)
+
+                menuCopyPanel
+            }
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.menuGuideCardHeight, maxHeight: BrowsePageLayout.menuGuideCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                    .allowsHitTesting(false)
+            }
+            .softAmbientCardShadow()
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(destination.title). \(destination.subtitle)")
+        .accessibilityIdentifier("Browse.MenuGuideCard.\(destination.id)")
+    }
+
+    private var menuCopyPanel: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(destination.title)
+                .font(.title3.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+
+            Text(destination.subtitle)
+                .font(.callout)
+                .foregroundStyle(.primary.opacity(0.82))
+                .lineSpacing(1.5)
+                .lineLimit(2)
+                .minimumScaleFactor(0.82)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 12)
+        .padding(.bottom, 14)
+        .frame(
+            maxWidth: .infinity,
+            minHeight: BrowsePageLayout.menuGuideCopyHeight,
+            maxHeight: BrowsePageLayout.menuGuideCopyHeight,
+            alignment: .topLeading
+        )
+        .background {
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+
+                Rectangle()
+                    .fill(Color(.systemBackground).opacity(0.56))
+            }
+            .allowsHitTesting(false)
+        }
+    }
+}
+
 private struct BrowseStartHereCard: View {
     let destination: BrowseDestination
+    var actionLabel = "Start"
     let action: () -> Void
 
     var body: some View {
@@ -474,13 +591,9 @@ private struct BrowseStartHereCard: View {
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    HStack(spacing: 5) {
-                        Text("Start")
-                            .font(.subheadline.weight(.bold))
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                    }
-                    .foregroundStyle(.red)
+                    Text(actionLabel)
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.red)
                 }
                 .layoutPriority(1)
             }
@@ -493,165 +606,58 @@ private struct BrowseStartHereCard: View {
     }
 }
 
-private struct BrowseSituationChip: View {
-    let destination: BrowseDestination
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 5) {
-                Image(systemName: destination.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(destination.tintName.color)
-                    .frame(width: 42, height: 42)
-                    .nativeGlass(cornerRadius: 21, tint: destination.tintName.color.opacity(0.18), interactive: true)
-
-                Text(destination.title == "Getting Around" ? "Transport" : destination.title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-            }
-            .frame(width: 74, height: 86)
-        }
-        .buttonStyle(.plain)
-    }
-}
-
 private struct BrowsePhraseFamilyCard: View {
     let destination: BrowseDestination
     let action: () -> Void
 
+    private var heroImageName: String {
+        BrowseSearchDestinations.collectionDescriptor(for: destination.collectionRoute)?.mastheadImageName ?? "HeroVietnamMasthead"
+    }
+
     var body: some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top) {
-                    Image(systemName: destination.symbolName)
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .frame(width: 48, height: 48)
-                        .nativeGlass(cornerRadius: 24, tint: destination.tintName.color.opacity(0.16), interactive: true)
+            ZStack(alignment: .bottomLeading) {
+                Image(heroImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.phraseFamilyCardHeight)
+                    .clipped()
+                    .accessibilityHidden(true)
 
-                    Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                        .padding(.top, 18)
-                }
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.08),
+                        .init(color: Color.white.opacity(0.18), location: 0.46),
+                        .init(color: Color.white.opacity(0.88), location: 0.78),
+                        .init(color: Color.white.opacity(0.97), location: 1),
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
 
                 Text(destination.title)
-                    .font(.headline.weight(.bold))
+                    .font(.system(size: 21, weight: .black))
                     .foregroundStyle(.primary)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.8)
-
-                Text(destination.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(3)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                if let sample = destination.items.first {
-                    Text(sample.title)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(destination.tintName.color)
-                        .lineLimit(1)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(destination.tintName.color.opacity(0.09), in: Capsule())
-                }
+                    .minimumScaleFactor(0.74)
+                    .padding(.horizontal, 14)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 206, alignment: .topLeading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
+            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.phraseFamilyCardHeight, maxHeight: BrowsePageLayout.phraseFamilyCardHeight)
+            .clipShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+            }
+            .softAmbientCardShadow()
+            .nativeGlass(cornerRadius: BrowsePageLayout.cardCornerRadius, interactive: true)
+            .contentShape(RoundedRectangle(cornerRadius: BrowsePageLayout.cardCornerRadius, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Browse.PhraseFamily.\(destination.id)")
-    }
-}
-
-private struct BrowseCityCard: View {
-    let city: BrowseCityShortcut
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 10) {
-                Image(systemName: city.symbolName)
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(city.tintName.color)
-                    .frame(width: 56, height: 56)
-                    .nativeGlass(cornerRadius: 20, tint: city.tintName.color.opacity(0.14), interactive: true)
-
-                Text(city.title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.75)
-            }
-            .padding(12)
-            .frame(width: 116, height: 128)
-            .phraseListCard(cornerRadius: 18)
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-private struct BrowseNextShelfRowModel: Identifiable {
-    let id: String
-    let title: String
-    let subtitle: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-}
-
-private struct BrowseNextShelfRow: View {
-    let row: BrowseNextShelfRowModel
-
-    var body: some View {
-        Button(action: row.action) {
-            HStack(spacing: BrowsePageLayout.nextShelfRowSpacing) {
-                Image(systemName: row.symbolName)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(row.tintName.color)
-                    .frame(width: BrowsePageLayout.nextShelfIconSize, height: BrowsePageLayout.nextShelfIconSize)
-                    .nativeGlass(
-                        cornerRadius: BrowsePageLayout.nextShelfIconSize / 2,
-                        tint: row.tintName.color.opacity(0.16),
-                        interactive: true
-                    )
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(row.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.82)
-
-                    Text(row.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.86)
-                }
-                .layoutPriority(1)
-
-                Spacer(minLength: 8)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
-            .padding(BrowsePageLayout.nextShelfRowPadding)
-            .frame(maxWidth: .infinity, minHeight: BrowsePageLayout.nextShelfRowHeight, maxHeight: BrowsePageLayout.nextShelfRowHeight, alignment: .leading)
-            .phraseListCard(cornerRadius: BrowsePageLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .frame(maxWidth: .infinity)
-        .accessibilityIdentifier("Browse.NextShelf.\(row.id)")
     }
 }
 
@@ -662,8 +668,6 @@ private struct BrowseNextShelfRow: View {
         onOpenDetail: { _ in },
         onOpenCollection: { _ in },
         onSearchTapped: {},
-        onSearchQuery: { _ in },
-        onSavedTapped: {},
-        onPracticeTapped: {}
+        onSearchQuery: { _ in }
     )
 }

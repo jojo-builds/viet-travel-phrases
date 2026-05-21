@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-danang-eat-near-con-market",
+  "phraseText": "Ăn gần Chợ Cồn",
+  "englishTitle": "Eat near Con Market",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.359Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-danang-eat-near-con-market",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "Chợ Cồn",
+      "english": "Con Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn gần Chợ Cồn",
+      "english": "Eat near Con Market",
+      "audioKey": "audio-authored-an-gan-cho-con-f1db95e14e"
+    }
+  ]
+}

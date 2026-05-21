@@ -1,0 +1,62 @@
+{
+  "itemID": "food-banh-canh-cua",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh canh cua",
+  "englishTranslation": "Thick tapioca noodle soup with crab",
+  "romanizedNoTones": "Banh canh cua",
+  "soundOut": "bahn kan koo-ah",
+  "notes": "",
+  "atAGlance": "Bánh canh cua is thick tapioca-style noodle soup with crab, a glossy savory broth, herbs, and pepper. The noodles are chewy and spoonable, closer to udon texture than phở.",
+  "whatItIs": "Bánh canh cua is crab soup with thick chewy noodles, glossy savory broth, scallions, pepper, and crab sweetness. The noodles are part of the comfort.",
+  "usuallyIncludes": [
+    "thick tapioca noodles",
+    "crab",
+    "savory broth",
+    "scallions",
+    "pepper"
+  ],
+  "howToEnjoy": "Use a spoon and chopsticks together. Add pepper or chili after tasting because the crab broth can be delicate.",
+  "howLocalsOrder": "Bánh canh cua comes with thick, chewy noodles and crab, so ask about shells before ordering. Extra crab or less pepper are useful tweaks, and the broth should feel savory rather than delicate.",
+  "worthKnowing": "Bánh canh cua is loved in Vietnamese noodle shops for contrast: thick chewy noodles, crab sweetness, and a broth that can feel almost stew-like compared with clearer soups.",
+  "goodToKnow": "The broth can be slightly thick from the noodles. Ask about crab shell pieces if you want the easiest version to eat.",
+  "commonOptions": [
+    "extra crab",
+    "quail egg",
+    "less pepper",
+    "ask about shells"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains crab.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bánh canh cua.",
+    "english": "I’d like one bowl of thick tapioca noodle soup with crab.",
+    "pronunciation": "chaw toy moht toh bahn kan koo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-see-menu",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh canh cua was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

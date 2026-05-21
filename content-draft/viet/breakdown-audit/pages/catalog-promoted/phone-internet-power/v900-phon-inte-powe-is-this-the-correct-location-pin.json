@@ -1,0 +1,74 @@
+{
+  "pageID": "viet-phrase-v900-phon-inte-powe-is-this-the-correct-location-pin",
+  "phraseText": "Đây có phải là pin vị trí chính xác không?",
+  "englishTitle": "Is this the correct location pin?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.332Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-phon-inte-powe-is-this-the-correct-location-pin",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đây",
+      "english": "here / this"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "phải",
+      "english": "must / right"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "pin",
+      "english": "battery"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "vị",
+      "english": "taste / position"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "trí",
+      "english": "location / mind"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "chính xác",
+      "english": "correct / exact",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đây có phải là pin vị trí chính xác không?",
+      "english": "Is this the correct location pin?",
+      "audioKey": "v900-phon-inte-powe-is-this-the-correct-location-pin"
+    }
+  ]
+}

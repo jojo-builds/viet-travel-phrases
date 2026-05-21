@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-shop-where-is-the-fitting-room",
+  "phraseText": "Phòng thử đồ ở đâu?",
+  "englishTitle": "Where is the fitting room?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.340Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-where-is-the-fitting-room",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng",
+      "english": "room"
+    },
+    {
+      "vietnamese": "thử đồ",
+      "english": "try on clothes",
+      "keepTogetherReason": "compound fitting action"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng thử đồ ở đâu?",
+      "english": "Where is the fitting room?",
+      "audioKey": "v900-shop-where-is-the-fitting-room"
+    }
+  ]
+}

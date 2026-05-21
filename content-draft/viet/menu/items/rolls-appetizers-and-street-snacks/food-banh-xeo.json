@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-xeo",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh xèo",
+  "englishTranslation": "Crispy Vietnamese pancake",
+  "romanizedNoTones": "Banh xeo",
+  "soundOut": "bahn say-oh",
+  "notes": "",
+  "atAGlance": "Bánh xèo is a crisp turmeric-rice pancake eaten by tearing pieces into rice paper or lettuce with herbs, then dipping in the fish-sauce dip.",
+  "whatItIs": "Bánh xèo is a sizzling turmeric-rice pancake folded around pork, shrimp, bean sprouts, and herbs. The local fun is not fork-and-knife pancake eating: you tear it, wrap it with rice paper or lettuce and herbs, then dip in the fish-sauce dip.",
+  "usuallyIncludes": [
+    "rice flour batter",
+    "pork and shrimp",
+    "bean sprouts",
+    "rice paper or lettuce",
+    "fresh herbs and fish-sauce dip"
+  ],
+  "howToEnjoy": "Tear off a crisp piece, tuck it into rice paper or lettuce with herbs, roll or fold it, then dip lightly in the fish-sauce dip. The herbs and wrapper are part of the dish, not decoration.",
+  "howLocalsOrder": "Order bánh xèo expecting a hands-on wrap-and-dip plate. Ask for extra rice paper or herbs if the table is sharing, and say no chili in the fish-sauce dip before dipping starts.",
+  "worthKnowing": "Bánh xèo changes by region, but the eating ritual is the traveler key: crisp pancake, fresh herbs, rice paper or lettuce, and bright fish-sauce dip in one bite.",
+  "goodToKnow": "Fresh herbs are part of the flavor, not a garnish. Skip chili if you want the fish-sauce dip milder.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "Vietnam",
+  "originPosture": "regional-variation",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh xèo.",
+    "english": "I’d like one order of crispy Vietnamese pancake.",
+    "pronunciation": "chaw toy moht fuhn bahn say-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh xèo was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

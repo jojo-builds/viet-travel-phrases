@@ -125,7 +125,7 @@ function normalizeCitySearchAliases({ city, place, page }) {
 }
 
 const restaurantPlaceKinds = new Set(["restaurant", "cafe"]);
-const dishPlaceKinds = new Set(["local dish", "food spot", "dish"]);
+const dishPlaceKinds = new Set(["local dish", "food spot", "dish", "drink", "dessert"]);
 
 function normalizeCityKind(value) {
   return String(value ?? "").trim().toLowerCase();
@@ -144,6 +144,7 @@ function pageKindFor(page, place) {
   if (page.kind !== "place") return page.kind;
   const placeKind = normalizeCityKind(place.kind);
   if (restaurantPlaceKinds.has(placeKind)) return "restaurant";
+  if (placeKind === "drink" || placeKind === "dessert") return placeKind;
   if (dishPlaceKinds.has(placeKind)) return "dish";
   return "place";
 }
@@ -152,7 +153,9 @@ function contentRoleFor(page, place) {
   if (page.contentRole) return page.contentRole;
   if (place.contentRole) return place.contentRole;
   const placeKind = placeKindFor(place);
-  if (placeKind === "dish") return "dish-anchor";
+  if (placeKind === "drink") return "drink";
+  if (placeKind === "dessert") return "dessert";
+  if (placeKind === "dish") return "dish";
   if (placeKind === "cafe") return "cafe";
   if (placeKind === "restaurant") {
     const sourceIDs = new Set([...(place.sourceIDs ?? []), ...(page.sourceIDs ?? [])]);
@@ -308,7 +311,10 @@ function main() {
     .filter((row) => row.status === "approved");
   const cityRecords = loadCityLibraryRecords();
   const editorialSupportRecords = loadEditorialSupportRecords();
-  const approvedRecords = [...records, ...cityRecords, ...editorialSupportRecords];
+  const cityRecordIDs = new Set(cityRecords.map((record) => record.phrase_id));
+  const cityFamilyIDs = new Set(cityRecords.map((record) => record.family_id));
+  const baseRecords = records.filter((record) => !cityRecordIDs.has(record.phrase_id) && !cityFamilyIDs.has(record.family_id));
+  const approvedRecords = [...baseRecords, ...cityRecords, ...editorialSupportRecords];
 
   const scenariosByID = new Map();
   const familiesByID = new Map();

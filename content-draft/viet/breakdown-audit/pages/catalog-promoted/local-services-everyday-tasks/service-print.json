@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-service-8",
+  "phraseText": "In cái này được không?",
+  "englishTitle": "Can I print this?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.321Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-service-8",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "In",
+      "english": "print"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cái",
+      "english": "item / classifier"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "này",
+      "english": "this"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "In cái này được không?",
+      "english": "Can I print this?",
+      "audioKey": "service-8"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-tra-hoa-cuc",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà hoa cúc",
+  "englishTranslation": "Chrysanthemum tea",
+  "romanizedNoTones": "Tra hoa cuc",
+  "soundOut": "chah hwah kook",
+  "notes": "",
+  "atAGlance": "Trà hoa cúc is chrysanthemum tea, floral and gentle, often chosen when you want a calming herbal cup instead of caffeine punch.",
+  "whatItIs": "Trà hoa cúc is herbal tea made with chrysanthemum flowers. Expect chrysanthemum tea with a honeyed floral aroma, soft herbal body, and gentle sweetness.",
+  "usuallyIncludes": [
+    "chrysanthemum tea",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it hot for fragrance or iced for a cooling herbal cup.",
+  "howLocalsOrder": "Order trà hoa cúc when you want a floral chrysanthemum tea, hot or iced. Ask for less sugar if you want the light honeyed-herbal flavor to stay clean.",
+  "worthKnowing": "In Vietnamese tea shops and cafes, chrysanthemum tea is gentle, floral, and cooling; it is often chosen when coffee feels too heavy.",
+  "goodToKnow": "Often lightly sweetened.",
+  "commonOptions": [
+    "hot",
+    "iced",
+    "less sugar",
+    "no ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà hoa cúc.",
+    "english": "I’d like one glass of chrysanthemum tea.",
+    "pronunciation": "chaw toy moht lee chah hwah kook",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Trà hoa cúc was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

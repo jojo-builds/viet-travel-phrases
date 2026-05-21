@@ -1,0 +1,64 @@
+{
+  "itemID": "food-chao-tom",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chạo tôm",
+  "englishTranslation": "Sugarcane shrimp",
+  "romanizedNoTones": "Chao tom",
+  "soundOut": "chow tom",
+  "notes": "",
+  "atAGlance": "Chạo tôm is grilled shrimp paste on sugarcane, usually served with herbs, rice paper, noodles, and fish-sauce dip.",
+  "whatItIs": "Chạo tôm is springy shrimp paste wrapped around sugarcane and grilled. You pull off the shrimp, wrap it with herbs and rice paper if served, then dip for a sweet, smoky, seafood-rich bite.",
+  "usuallyIncludes": [
+    "shrimp paste",
+    "sugarcane",
+    "rice paper",
+    "fresh herbs",
+    "fish-sauce dip"
+  ],
+  "howToEnjoy": "Slide the shrimp paste from the sugarcane, build a bite with herbs, noodles, and rice paper if provided, then dip lightly. The sugarcane gives aroma more than something to chew through.",
+  "howLocalsOrder": "Order chạo tôm as a shared starter or roll-your-own plate. Ask for extra rice paper, extra herbs, or no chili in the fish-sauce dip before the plate arrives.",
+  "worthKnowing": "Chạo tôm is associated with central Vietnamese celebration food, especially Huế-style spreads where grilled, wrapped, and dipped bites matter.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chạo tôm.",
+    "english": "I’d like one order of sugarcane shrimp.",
+    "pronunciation": "chaw toy moht fuhn chow tom",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chạo tôm was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

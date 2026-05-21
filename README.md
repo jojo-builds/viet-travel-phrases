@@ -8,12 +8,12 @@ Canonical session roots:
 - Full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
 - Reusable Codex skill work: `/Users/jojolim/Developer/labs/skill-labs`
 
-Legacy Windows roots retained for archive/migration lookup only:
+Historical pre-Mac roots may appear in old logs or archived docs only. Do not use them for development:
 
 - `E:\AI\SpeakLocal-App-Family`
 - `E:\AI\Viet-Travel-Phrases`
 
-Older Windows desktop-agent workspace paths may still appear in archived logs, but they are not active Codex startup roots on this Mac.
+Older desktop-agent workspace paths may still appear in archived logs, but they are not active Codex startup roots.
 
 Do not open `/Users/jojolim/Documents/New project` for app work; it is not this repo.
 
@@ -33,14 +33,14 @@ Use this repo for:
 
 - shared app-family implementation
 - Viet and Tagalog dual-variant testing
-- authored content packs and website-preview exports
+- authored content packs and native resource generation
 - language-pack onboarding
-- app definition, premium wiring, and release truth
+- native app definition, premium wiring, and release truth
 
 Current reality summary:
 
-- The Mac is now the primary day-to-day native iOS development machine.
-- `native-ios/` is the active shared SwiftUI/Xcode app shell. SpeakLocal Vietnam is the current live native proof app.
+- Jojo's MacBook is the only current development machine for the app.
+- `native-ios/` is the only active app product surface. SpeakLocal Vietnam is the current live native proof app.
 - The native app is generated from `native-ios/project.yml` and runs as `SpeakLocalNative`.
 - Native app-variant planning config now lives in `native-ios/Config/apps/*.json`.
 - The long-term native resource target is `native-ios/Resources/LanguagePacks/<language>/`, but current live Viet resources still remain at `native-ios/Resources/*.json` and `native-ios/Resources/Audio/` until a coordinated loader/generator migration.
@@ -49,8 +49,8 @@ Current reality summary:
 - Phrase pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" answer pages, not generic generated filler. Lane names such as `tier-one` and `catalog-promoted` describe source origin only; all visible phrase pages should be full-depth canonical pages.
 - Viet remains the only live App Store app today.
 - Tagalog remains a locally validated second-app candidate, not a released app.
-- The existing Expo app under `app/` remains a bridge/reference lane and still contains useful live-app/premium/content work, but it is not the final native UX target.
-- The shared v2 family UI and premium seam include a real iOS one-time purchase / restore path under `app/`.
+- The legacy Expo/React Native shell has been removed from active repo truth. Historical docs may mention it as archive context only.
+- New app UI, Liquid Glass chrome, playback, search, Messages, paywall, and listing work must happen in SwiftUI under `native-ios/`.
 - Viet now has a live 900-family v2 content-pack milestone:
   - 18 live travel categories
   - 900 authored intent families / visible entries
@@ -59,19 +59,19 @@ Current reality summary:
   - 919 approved phrase rows
   - 919 approved rows currently marked `audioStatus=ready`
   - 0 approved rows currently marked `audioStatus=planned`
-  - website-preview exports generated from approved starter/default-first slices
-  - the latest installable preview build predates this `2026-04-16` pack, so a fresh native preview build is still required before device proof
+  - native resource exports generated from authored content
+  - fresh native device proof should come from the current `native-ios/` build
 - Repo build naming now resolves to:
   - `SpeakLocal Vietnam`
   - `SpeakLocal Philippines`
 - Repo premium pricing now resolves to:
-  - `$4.99` one-time unlock
+  - `7-day free trial, then $4.99/month`
 - Current website direction is now:
   - phone-forward, app-aligned, and responsive on desktop
   - a gateway into the app rather than a separate product
   - per-destination starter/free phrase coverage that should mirror the app's starter layer for that destination
   - destination articles that reinforce and route back into those same starter phrases
-- Premium remains app-first for now. Do not treat website premium, shared entitlements, login/account architecture, or code redemption as current product truth.
+- Premium remains native-app-first for now. Do not treat website premium, shared entitlements, login/account architecture, or code redemption as current product truth.
 - Tagalog shares the same draft-to-generated-pack builder path and now also inherits the family StoreKit plumbing, but still only carries the earlier 10-scenario / 70-phrase surface, has not been device-proven, and now has a stronger prep surface for the next v2 pass (`content-draft/tagalog/first-wave-priority.csv` plus `risk-review.md`).
 - Future prep lanes are now in two states rather than one:
   - `thai` has durable research plus an initial scaffold

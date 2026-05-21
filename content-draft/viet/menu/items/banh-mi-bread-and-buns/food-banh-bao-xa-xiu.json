@@ -1,0 +1,63 @@
+{
+  "itemID": "food-banh-bao-xa-xiu",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bao xá xíu",
+  "englishTranslation": "BBQ pork steamed bun",
+  "romanizedNoTones": "Banh bao xa xiu",
+  "soundOut": "bahn bow sah see-ew",
+  "notes": "",
+  "atAGlance": "Bánh bao xá xíu is a steamed bun filled with sweet-savory barbecue pork. The soft dough and saucy pork are the appeal.",
+  "whatItIs": "Bánh bao xá xíu is a soft steamed bun filled with sweet-salty barbecue pork.",
+  "usuallyIncludes": [
+    "steamed bun",
+    "xá xíu pork",
+    "sweet-salty glaze",
+    "soft dough"
+  ],
+  "howToEnjoy": "Eat warm while the dough is soft. If pork is a no, choose bánh bao chay instead.",
+  "howLocalsOrder": "Order bánh bao xá xíu when you want the barbecue pork steamed-bun version. Ask whether it has egg inside if you care about the filling.",
+  "worthKnowing": "Xá xíu reflects Chinese-Vietnamese roast-pork flavor inside a Vietnamese snack-counter bun.",
+  "goodToKnow": "Xá xíu means char siu-style pork. This is a pork bun, not a crisp baguette sandwich.",
+  "commonOptions": [
+    "warm",
+    "takeaway",
+    "extra filling",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một cái bánh bao xá xíu.",
+    "english": "I’d like one char siu steamed bun.",
+    "pronunciation": "chaw toy moht kai bahn bow sah see-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh bao xá xíu was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-money-final-price",
+  "phraseText": "Giá cuối bao nhiêu?",
+  "englishTitle": "What’s your final price?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-money-final-price",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cuối",
+      "english": "last / final"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giá cuối bao nhiêu?",
+      "english": "What’s your final price?",
+      "audioKey": "price-5"
+    }
+  ]
+}

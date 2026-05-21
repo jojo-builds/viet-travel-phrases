@@ -1,0 +1,63 @@
+{
+  "itemID": "food-cha-que",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chả quế",
+  "englishTranslation": "Cinnamon pork sausage",
+  "romanizedNoTones": "Cha que",
+  "soundOut": "chah kway",
+  "notes": "",
+  "atAGlance": "Chả quế is cinnamon pork sausage, usually with warm spice, smooth pork paste, and a lightly browned outside.",
+  "whatItIs": "Chả quế is cinnamon-scented Vietnamese pork sausage, firmer and more aromatic than plain chả lụa. It is often sliced with bánh cuốn, xôi, or mixed plates.",
+  "usuallyIncludes": [
+    "pork sausage",
+    "cinnamon aroma",
+    "fried or browned outside",
+    "pepper",
+    "slices for rice or bánh mì"
+  ],
+  "howToEnjoy": "Eat it in thin slices so the cinnamon aroma does not overwhelm the plate. It pairs well with rice rolls, sticky rice, and herbs.",
+  "howLocalsOrder": "Order chả quế when you want the warmer, cinnamon-fragrant chả. Ask for it sliced or added to bánh cuốn if the shop offers sides.",
+  "worthKnowing": "Quế means cinnamon, a helpful clue that this chả is aromatic rather than plain.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "sliced",
+    "with bánh cuốn",
+    "with xôi",
+    "add to mixed plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần chả quế.",
+    "english": "I’d like one order of cinnamon pork sausage.",
+    "pronunciation": "chaw toy moht fuhn chah kway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Chả quế was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

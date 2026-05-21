@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v900-emer-safe-i-am-safe-now",
+  "phraseText": "Bây giờ tôi đã an toàn",
+  "englishTitle": "I am safe now",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-emer-safe-i-am-safe-now",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bây giờ",
+      "english": "now",
+      "keepTogetherReason": "fixed time phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "an toàn",
+      "english": "safe",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bây giờ tôi đã an toàn",
+      "english": "I am safe now",
+      "audioKey": "v900-emer-safe-i-am-safe-now"
+    }
+  ]
+}

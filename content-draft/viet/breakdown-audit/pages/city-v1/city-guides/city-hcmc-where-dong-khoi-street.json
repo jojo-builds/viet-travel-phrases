@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hcmc-where-dong-khoi-street",
+  "phraseText": "Đường Đồng Khởi ở đâu?",
+  "englishTitle": "Where is Dong Khoi Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.377Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-where-dong-khoi-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đường Đồng Khởi",
+      "english": "Dong Khoi Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đường Đồng Khởi ở đâu?",
+      "english": "Where is Dong Khoi Street?",
+      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280"
+    }
+  ]
+}

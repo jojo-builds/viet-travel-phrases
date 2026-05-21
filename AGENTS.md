@@ -62,26 +62,29 @@ Rules:
 - Treat generated resources as integration hotspots. If a feature changes source data plus generated JSON/assets, regenerate from the latest merged sources after syncing with `main`; do not keep an older generated file just because it came from the branch.
 - Stop and ask only for real blockers: conflicts involving unrelated user changes or unclear ownership, destructive cleanup, signing/provisioning secrets, paid services, language/legal/product decisions, unavailable physical device, or a repeated validation failure after a concrete fix attempt.
 - For parallel feature worktrees, use a branch-specific Simulator instance for native UI/manual QA so sessions do not overwrite each other's installed app, screenshots, logs, or simulator state. Prefer a clear simulator name such as `SpeakLocal Messages`, `SpeakLocal Homepage`, or `SpeakLocal Browse`; create one with `xcrun simctl create "SpeakLocal <Feature>" "iPhone 17 Pro"` if needed. Compiling can share destinations, but launching, tapping, screenshots, and UI tests should target that feature's own Simulator. Physical iPhone installs replace the same bundle ID, so Jojo's phone is `main` by default. Do not build a feature branch to the physical phone unless Jojo explicitly asks for that branch before merge.
-- Current Mac session roots:
+- Current MacBook-only session roots:
   - native iOS app work: `/Users/jojolim/Developer/products/speaklocal/app-family/native-ios`
   - full repo, content, docs, generators, and migration work: `/Users/jojolim/Developer/products/speaklocal/app-family`
+  - marketing, App Store, screenshot/video, campaign, and launch work: `/Users/jojolim/Developer/products/speaklocal/app-family/marketing`
   - reusable Codex skill work: `/Users/jojolim/Developer/labs/skill-labs`
 - Do not start app work from `/Users/jojolim/Documents/New project`; that folder is not this repo.
-- Legacy Windows roots are preserved only as migration/archive references:
+- Historical pre-Mac roots may appear in old logs or archived docs only. Never use them for development:
   - `E:\AI\SpeakLocal-App-Family`
 - Treat these as compatibility aliases only, not preferred roots:
   - `/Users/jojolim/Documents/Projects/speaklocal-app-family`
   - `E:\AI\Viet-Travel-Phrases`
-- Older Windows desktop-agent workspace paths may appear in historical logs or archived task files only. Do not use them as active startup paths.
+- Older desktop-agent workspace paths may appear in historical logs or archived task files only. Do not use them as active startup paths.
 - Stay scoped to shared app-family implementation, current Viet/Tagalog dual-variant work, and future reusable feature rollout.
 - `native-ios/` is the active ship-facing SwiftUI app lane on the Mac.
+- `marketing/` is the active marketing-agency lane for positioning, App Store copy, ASO, screenshot/video planning, campaign briefs, creative direction, launch plans, and measurement. Marketing agents must read `marketing/AGENTS.md` and use the current native iOS app as product truth.
 - `native-ios/` should be treated as one shared native shell with app/language variants supplied by config and language packs.
 - `docs/APP_FAMILY_STRUCTURE.md` is the durable source for the monorepo/native-language-pack structure.
 - `native-ios/Config/apps/*.json` is the native app-variant planning/config surface.
 - `native-ios/Resources/LanguagePacks/<language>/` is the reserved target for per-language generated bundles, but current live Viet native resources still remain at `native-ios/Resources/*.json` plus `native-ios/Resources/Audio/`.
-- Keep the existing Expo app shell under `app/` intact unless there is a concrete blocker; treat it as legacy/reference/bridge during the native transition, not the final premium UX target.
-- `app/family/appRegistry.js` owns runtime/build app identity truth.
-- `app/family/*` owns shared runtime truth.
+- `native-ios/` is the only active app product surface. Do not create, edit, revive, or route product work through Expo, React Native, Metro, or `app/`.
+- Historical Expo/React references may exist in archived docs, but they are not implementation authority. If a task asks for the iPhone app, use SwiftUI under `native-ios/`.
+- Native app identity and variant planning live in `native-ios/Config/apps/*.json`; native bundled content/audio truth lives in `native-ios/Resources/` and authored source under `content-draft/`.
+- Run `node scripts/guard-native-only.js` when changing repo structure or project workflow files; it should pass unless Jojo explicitly chooses to reintroduce a non-native app surface.
 - `native-ios/project.yml` is the reproducible XcodeGen source for the native project.
 - Do not commit personal Apple signing settings. `native-ios/project.yml` and `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` must not contain Jojo's personal `DEVELOPMENT_TEAM`, provisioning profile IDs, certificate fingerprints, or phone-specific signing details. For local physical-device testing, pass signing values as command-line `xcodebuild` overrides or use local Xcode user state only.
 - Physical iPhone testing may be wired or wireless after the iPhone is paired with Xcode and available on the local network. Follow `docs/operations/IOS_DEVICE_BUILDING.md`; do not paste raw device IDs, phone names, Team IDs, provisioning IDs, or certificate details into docs, task results, or committed files.
@@ -92,9 +95,9 @@ Rules:
 - Entity/place pages should not inflate the app by surfacing every generated `action + place` row as catalog inventory. Follow `docs/content/ENTITY_TEMPLATE_PHRASE_POLICY.md`: Browse/Home/city/category surfaces are entity-first, `derived-place-phrases` stay hidden from top-level shelves, and those helper rows surface only for explicit action search, intentional template UI, or Messages/Story flows.
 - Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility, not generic generated filler.
 - Homepage phrase shelves should reuse existing Browse routes when they are genuinely close instead of creating duplicate category IDs. Current homepage shelf routing contract:
-  - `Use now` -> `.category("essentials")`
-  - `First hour in Vietnam` -> `.category("first-day")`
-  - `Food & coffee` -> `.category("food")`
+  - `Essentials` -> `.category("essentials")`
+  - `First Day in Vietnam` -> `.category("first-day")`
+  - `Eating Out` -> `.category("food")`
   - `When you don't understand` -> `.category("polite-repair")`
   - `Taxi & getting around` -> `.category("getting-around")`
   - `Hotel basics` -> `.category("hotel")`
@@ -114,7 +117,7 @@ Rules:
   - Swipe back and swipe forward should feel browser-like; forward history resets when a new route is opened.
   - Search should feel like the bottom search island morphing into the search field, not a hard page swap.
   - Long phrase rows need readable subtitles; wrap or route to canonical pages instead of clipping important meaning.
-- `docs\operations\*` owns live operational truth for build, validation, release, and blocker questions.
+- `docs\operations\*` owns live operational truth for build, validation, release, and blocker questions. Current operational commands are native iOS commands unless a document explicitly says it is historical/archive context.
 - `ops\apps\*.json` owns operator-facing app readiness truth for dashboard and onboarding visibility.
 - `docs\*` owns durable explanation only when it remains a real source of truth. Do not keep duplicate startup or next-step docs alive once they stop being maintained.
 - Before answering current operational questions, prefer:

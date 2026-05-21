@@ -1,0 +1,65 @@
+{
+  "itemID": "food-vit-quay",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Vịt quay",
+  "englishTranslation": "Roasted duck",
+  "romanizedNoTones": "Vit quay",
+  "soundOut": "veet kway",
+  "notes": "",
+  "atAGlance": "Vịt quay is roast duck with lacquered skin, rich meat, five-spice aroma, and pickles or a dark savory dip depending on the shop.",
+  "whatItIs": "Vịt quay is roast duck with glossy skin, rich meat, and often pickles, herbs, rice, noodles, or a dark savory dip depending on the shop.",
+  "usuallyIncludes": [
+    "roast duck",
+    "lacquered skin",
+    "five-spice aroma",
+    "pickles",
+    "rice or noodles"
+  ],
+  "howToEnjoy": "Eat the skin while it is still glossy and the meat is warm. Use pickles, herbs, rice, or noodles to balance the richness.",
+  "howLocalsOrder": "Order vịt quay by portion size: rice plate, noodle bowl, or shared duck plate. Ask for extra pickles or rice before the duck is chopped.",
+  "worthKnowing": "Roast duck in Vietnam often sits at the Chinese-Vietnamese edge of the menu, with crisp skin and aromatic seasoning.",
+  "goodToKnow": "Use pickles, herbs, rice, noodles, or a dark savory dip to cut the duck richness. Ask for extra pickles before the duck is chopped.",
+  "commonOptions": [
+    "extra pickles",
+    "with rice",
+    "with noodles",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần vịt quay.",
+    "english": "I’d like one order of roasted duck.",
+    "pronunciation": "chaw toy moht fuhn veet kway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Vịt quay was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

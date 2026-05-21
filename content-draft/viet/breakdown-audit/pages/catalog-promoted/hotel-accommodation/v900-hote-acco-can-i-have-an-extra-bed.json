@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-can-i-have-an-extra-bed",
+  "phraseText": "Tôi có thể có một giường phụ không?",
+  "englishTitle": "Can I have an extra bed?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.318Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-can-i-have-an-extra-bed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "vietnamese": "giường phụ",
+      "english": "extra bed",
+      "keepTogetherReason": "compound lodging item"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể có một giường phụ không?",
+      "english": "Can I have an extra bed?",
+      "audioKey": "v900-hote-acco-can-i-have-an-extra-bed"
+    }
+  ]
+}

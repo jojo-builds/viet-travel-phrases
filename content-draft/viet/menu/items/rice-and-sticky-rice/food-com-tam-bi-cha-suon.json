@@ -1,0 +1,64 @@
+{
+  "itemID": "food-com-tam-bi-cha-suon",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cơm tấm bì chả sườn",
+  "englishTranslation": "Broken rice with pork chop, shredded pork, and egg meatloaf",
+  "romanizedNoTones": "Com tam bi cha suon",
+  "soundOut": "kum tahm bee chah swoon",
+  "notes": "",
+  "atAGlance": "Cơm tấm bì chả sườn is a loaded broken-rice plate: grilled pork chop, shredded pork skin, steamed egg meatloaf, pickles, scallion oil, and fish-sauce dressing.",
+  "whatItIs": "Cơm tấm bì chả sườn is a southern broken-rice plate with grilled pork chop, shredded pork skin, egg meatloaf, pickles, scallion oil, and fish-sauce dressing.",
+  "usuallyIncludes": [
+    "broken rice",
+    "grilled pork chop",
+    "shredded pork skin",
+    "egg meatloaf",
+    "fish-sauce dressing"
+  ],
+  "howToEnjoy": "Use the nước mắm to season the broken rice, then rotate bites of grilled pork chop, shredded pork skin, steamed egg loaf, pickles, and scallion oil.",
+  "howLocalsOrder": "Order cơm tấm bì chả sườn when you want the full texture set without the fried-egg add-on. Ask for fish-sauce dressing on the side or extra pickles before the plate is dressed.",
+  "worthKnowing": "Cơm tấm began with broken rice grains from milling, associated with southern Vietnam and Saigon working-day eating. Bì, chả, and sườn show how a humble rice base became a beloved loaded plate.",
+  "goodToKnow": "Bì is shredded pork skin with toasted rice powder; chả is the steamed egg-and-pork loaf.",
+  "commonOptions": [
+    "nước mắm on the side",
+    "extra pickles",
+    "add fried egg",
+    "less spicy"
+  ],
+  "regionalAssociation": "southern Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains pork, egg, and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm tấm bì chả sườn.",
+    "english": "I’d like one order of broken rice with pork chop, shredded pork, and egg meatloaf.",
+    "pronunciation": "chaw toy moht fuhn kum tahm bee chah swoon",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cơm tấm bì chả sườn was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-bo-la-lot",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bò lá lốt",
+  "englishTranslation": "Beef wrapped in betel leaves",
+  "romanizedNoTones": "Bo la lot",
+  "soundOut": "baw lah loht",
+  "notes": "",
+  "atAGlance": "Bò lá lốt is beef wrapped in betel leaves, usually with grilled aroma, herbs, rice paper, and sweet-sour fish-sauce dip.",
+  "whatItIs": "Bò lá lốt is seasoned beef wrapped in aromatic lá lốt leaves and grilled. It is often eaten with herbs, rice paper, noodles, and fish-sauce dip so the smoky leaf perfumes the whole bite.",
+  "usuallyIncludes": [
+    "beef in betel leaves",
+    "herbs",
+    "rice paper optional",
+    "sweet-sour fish-sauce dip"
+  ],
+  "howToEnjoy": "Wrap a beef roll with herbs, noodles, and rice paper if served, then dip lightly in the fish-sauce dip. The lá lốt aroma should stay noticeable.",
+  "howLocalsOrder": "Order bò lá lốt as a shared grilled snack. Ask for extra rice paper or herbs if you want to eat it the local wrap-and-dip way.",
+  "worthKnowing": "In Vietnam, lá lốt is piper lolot, often called wild betel leaf; it gives the beef a peppery herbal smell travelers remember.",
+  "goodToKnow": "Rice paper may be served depending on the shop; if you want to wrap, ask for rice paper.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "no chili",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bò lá lốt.",
+    "english": "I’d like one order of beef wrapped in betel leaves.",
+    "pronunciation": "chaw toy moht fuhn baw lah loht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Bò lá lốt was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

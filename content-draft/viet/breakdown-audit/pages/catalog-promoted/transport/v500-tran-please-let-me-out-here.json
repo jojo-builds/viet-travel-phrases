@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-tran-please-let-me-out-here",
+  "phraseText": "Xin vui lòng cho tôi ra khỏi đây",
+  "englishTitle": "Please let me out here",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.349Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-tran-please-let-me-out-here",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ra",
+      "english": "out"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khỏi",
+      "english": "out of / from"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "đây",
+      "english": "here / this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin vui lòng cho tôi ra khỏi đây",
+      "english": "Please let me out here",
+      "audioKey": "v500-tran-please-let-me-out-here"
+    }
+  ]
+}

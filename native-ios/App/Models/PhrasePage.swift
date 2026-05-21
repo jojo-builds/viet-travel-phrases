@@ -137,7 +137,21 @@ struct PhraseArticleSection: Identifiable, Equatable {
     let body: String
     let phrases: [PhraseOption]
     let breakdown: [BreakdownToken]
+    var inlineDefinitions: [PhraseInlineDefinition] = []
+    var chips: [String] = []
     let presentation: SectionPresentation
+}
+
+struct PhraseInlineDefinition: Identifiable, Equatable {
+    let id: String
+    let vietnamese: String
+    let english: String
+
+    init(id: String? = nil, vietnamese: String, english: String) {
+        self.id = id ?? vietnamese.lowercased()
+        self.vietnamese = vietnamese
+        self.english = english
+    }
 }
 
 enum SectionPresentation: String, Decodable, Equatable {
@@ -147,6 +161,7 @@ enum SectionPresentation: String, Decodable, Equatable {
     case horizontalPhraseCards = "horizontal-phrase-cards"
     case relationshipShelf = "relationship-shelf"
     case breakdownStrip = "breakdown-strip"
+    case menuChips = "menu-chips"
     case tipCallout = "tip-callout"
     case warningCallout = "warning-callout"
 
@@ -194,6 +209,8 @@ struct PhraseDetailSection: Identifiable, Equatable {
     let body: String
     var phrases: [PhraseOption] = []
     var breakdown: [BreakdownToken] = []
+    var inlineDefinitions: [PhraseInlineDefinition] = []
+    var chips: [String] = []
     var presentation: SectionPresentation = .automatic
 
     var articleSection: PhraseArticleSection {
@@ -209,6 +226,8 @@ struct PhraseDetailSection: Identifiable, Equatable {
             body: body,
             phrases: phrases,
             breakdown: breakdown,
+            inlineDefinitions: inlineDefinitions,
+            chips: chips,
             presentation: resolvedPresentation
         )
     }
@@ -396,6 +415,7 @@ enum PhraseCatalog {
         }
 
         return pageID == PhrasePage.xinChao.id
+            || VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
     }
 
@@ -900,67 +920,6 @@ enum PhraseSearchIndex {
             }
         }
 
-        if candidateResults.isEmpty {
-            let fallbackQueries = SearchQueryExpander.defaultFallbackQueries
-                .map(normalize)
-                .filter { !$0.isEmpty }
-            let fallbackTokens = uniqueTokens(for: fallbackQueries)
-
-            let fallbackRootResults = rootPages
-                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
-                    let haystack = normalize(searchText(for: page))
-                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
-                        return nil
-                    }
-
-                    let identityHaystack = normalize(searchIdentityText(for: page))
-                    return (
-                        PhraseSearchResult(
-                            pageID: page.id,
-                            title: page.title,
-                            subtitle: page.intentSummary
-                        ),
-                        bestScore(
-                            title: page.title,
-                            englishTitle: page.englishTitle,
-                            pronunciation: page.pronunciation,
-                            haystack: haystack,
-                            identityHaystack: identityHaystack,
-                            normalizedQueries: fallbackQueries,
-                            priority: .anchor
-                        )
-                    )
-                }
-
-            let fallbackDesignedResults = PhraseDetailPage.all
-                .compactMap { page -> (result: PhraseSearchResult, score: Int)? in
-                    let haystack = normalize(searchText(for: page))
-                    guard SearchTextMatcher.matchesAnyToken(fallbackTokens, in: haystack) else {
-                        return nil
-                    }
-
-                    let identityHaystack = normalize(searchIdentityText(for: page))
-                    return (
-                        PhraseSearchResult(
-                            pageID: page.id,
-                            title: page.title,
-                            subtitle: page.englishTitle
-                        ),
-                        bestScore(
-                            title: page.title,
-                            englishTitle: page.englishTitle,
-                            pronunciation: page.pronunciation,
-                            haystack: haystack,
-                            identityHaystack: identityHaystack,
-                            normalizedQueries: fallbackQueries,
-                            priority: searchPriority(for: page)
-                        )
-                    )
-                }
-
-            candidateResults = fallbackRootResults + fallbackDesignedResults
-        }
-
         var bestByPageID: [String: (result: PhraseSearchResult, score: Int)] = [:]
 
         for scoredResult in candidateResults {
@@ -1162,6 +1121,10 @@ extension PhraseDetailPage {
     static func page(withID id: String) -> PhraseDetailPage? {
         if let sqlitePage = VietSQLitePhraseGraphRuntime.detailPage(withID: id) {
             return sqlitePage
+        }
+
+        if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
+            return menuPage
         }
 
         return pagesByID[id]

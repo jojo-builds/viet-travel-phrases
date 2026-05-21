@@ -1,0 +1,66 @@
+{
+  "itemID": "food-goi-bo-bop-thau",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi bò bóp thấu",
+  "englishTranslation": "Beef salad with herbs and vinegar",
+  "romanizedNoTones": "Goi bo bop thau",
+  "soundOut": "goy baw bawp tow",
+  "notes": "",
+  "atAGlance": "Gỏi bò bóp thấu is beef salad tossed with herbs and tart dressing, usually with green banana, star fruit, onion, peanuts, and fish sauce.",
+  "whatItIs": "Gỏi bò bóp thấu is beef salad with herbs, star fruit or green banana, onion, peanuts, and fish-sauce-lime dressing. It is tart, herbal, chewy, and crunchy.",
+  "usuallyIncludes": [
+    "beef",
+    "star fruit or green banana",
+    "onion",
+    "peanuts",
+    "fish-sauce lime dressing"
+  ],
+  "howToEnjoy": "Toss gently so the beef, herbs, peanuts, and sour fruit or banana stay distinct. Ask for no peanuts or less chili before the salad is mixed.",
+  "howLocalsOrder": "Order gỏi bò bóp thấu as a shared salad or drinking-food plate. Ask for less spice or no peanuts before it is dressed.",
+  "worthKnowing": "In Vietnamese salad language, bóp thấu suggests the salad is squeezed or worked together so beef and aromatics absorb the dressing.",
+  "goodToKnow": "This salad may include peanuts, fish sauce, herbs, and rare or lightly cooked beef, so ask before ordering if any of those matter.",
+  "commonOptions": [
+    "less spicy",
+    "no peanuts",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi bò bóp thấu.",
+    "english": "I’d like one order of beef salad with herbs and vinegar.",
+    "pronunciation": "chaw toy moht fuhn goy baw bawp tow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Gỏi bò bóp thấu was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

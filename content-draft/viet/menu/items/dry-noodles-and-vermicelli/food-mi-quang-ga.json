@@ -1,0 +1,63 @@
+{
+  "itemID": "food-mi-quang-ga",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Mì Quảng gà",
+  "englishTranslation": "Quảng-style turmeric noodles with chicken",
+  "romanizedNoTones": "Mi Quang ga",
+  "soundOut": "mee kwahng gah",
+  "notes": "",
+  "atAGlance": "Mì Quảng gà is a Quảng Nam-style chicken noodle bowl with wide turmeric rice noodles, shallow chicken broth, herbs, peanuts, and a crisp rice cracker. It is a central-Vietnam dish, not a soup.",
+  "whatItIs": "Mì Quảng gà is a central-Vietnam noodle bowl with wide turmeric rice noodles, chicken, herbs, peanuts, rice cracker, and shallow broth. It should look half-dry compared with soup.",
+  "usuallyIncludes": [
+    "wide turmeric rice noodles",
+    "chicken",
+    "turmeric broth",
+    "peanuts",
+    "rice cracker"
+  ],
+  "howToEnjoy": "Break some rice cracker into the bowl, mix the shallow broth through the noodles, then add lime or chili. Do not expect the broth to cover everything.",
+  "howLocalsOrder": "Mì Quảng gà should arrive with turmeric rice noodles, peanuts, herbs, and only a shallow amount of broth. Ask for extra broth if you prefer it wetter, and ask for no peanuts before the bowl is built.",
+  "worthKnowing": "Mì Quảng is associated with Quảng Nam and central Vietnam. Its shallow broth, turmeric noodles, herbs, peanuts, and rice cracker are the signature.",
+  "goodToKnow": "The broth is intentionally shallow and concentrated. Mix before adding lime or chili so the turmeric broth coats the noodles.",
+  "commonOptions": [
+    "extra herbs",
+    "less chili",
+    "extra broth",
+    "no peanuts"
+  ],
+  "regionalAssociation": "Quảng Nam and central Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Often contains peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì Quảng gà.",
+    "english": "I’d like one bowl of quảng-style turmeric noodles with chicken.",
+    "pronunciation": "chaw toy moht toh mee kwahng gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-peanuts",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Mì Quảng gà was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

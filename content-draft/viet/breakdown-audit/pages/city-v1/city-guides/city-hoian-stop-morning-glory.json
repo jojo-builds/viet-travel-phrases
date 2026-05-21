@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-family-city-hoian-stop-morning-glory",
+  "phraseText": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
+  "englishTitle": "Let me off near Morning Glory Hội An restaurant.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.382Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-stop-morning-glory",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xuống",
+      "english": "down / get off"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "Morning Glory Hội An.",
+      "english": "Morning Glory Hoi An",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
+      "english": "Let me off near Morning Glory Hội An restaurant.",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f"
+    }
+  ]
+}

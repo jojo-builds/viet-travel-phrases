@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-phrase-repair-premium-time-exact",
+  "phraseText": "Chính xác là mấy giờ?",
+  "englishTitle": "What time exactly?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.354Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-repair-premium-time-exact",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chính xác",
+      "english": "correct / exact",
+      "keepTogetherReason": "compound adjective"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "mấy giờ?",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chính xác là mấy giờ?",
+      "english": "What time exactly?",
+      "audioKey": "repair-premium-time-exact"
+    }
+  ]
+}

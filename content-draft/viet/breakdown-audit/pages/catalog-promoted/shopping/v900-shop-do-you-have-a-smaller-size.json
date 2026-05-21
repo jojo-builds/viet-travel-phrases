@@ -1,0 +1,63 @@
+{
+  "pageID": "viet-phrase-v900-shop-do-you-have-a-smaller-size",
+  "phraseText": "Bạn có kích thước nhỏ hơn không?",
+  "englishTitle": "Do you have a smaller size?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.339Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-do-you-have-a-smaller-size",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "kích",
+      "english": "size / activate"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "thước",
+      "english": "measure / ruler"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nhỏ",
+      "english": "small"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hơn",
+      "english": "more"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có kích thước nhỏ hơn không?",
+      "english": "Do you have a smaller size?",
+      "audioKey": "v900-shop-do-you-have-a-smaller-size"
+    }
+  ]
+}

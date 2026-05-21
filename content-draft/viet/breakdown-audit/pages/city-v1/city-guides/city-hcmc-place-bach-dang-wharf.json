@@ -1,0 +1,28 @@
+{
+  "pageID": "viet-family-city-hcmc-place-bach-dang-wharf",
+  "phraseText": "Bến Bạch Đằng",
+  "englishTitle": "Bach Dang Wharf",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.373Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-place-bach-dang-wharf",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bến Bạch Đằng",
+      "english": "Bach Dang Wharf",
+      "keepTogetherReason": "proper place name"
+    }
+  ]
+}

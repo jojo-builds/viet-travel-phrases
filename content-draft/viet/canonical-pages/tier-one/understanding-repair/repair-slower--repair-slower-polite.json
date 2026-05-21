@@ -29,14 +29,14 @@
         {
           "id": "repair-slower-polite-piece-1",
           "vietnamese": "Nói",
-          "english": "say / speak",
+          "english": "speak / say",
           "audioKey": "breakdown-problems-3-first"
         },
         {
           "id": "repair-slower-polite-piece-2",
           "vietnamese": "chậm",
           "english": "slow",
-          "audioKey": "breakdown-v900-unde-repa-could-you-speak-a-little-slower-please-piece-5"
+          "audioKey": "breakdown-repair-slower-polite-piece-5"
         },
         {
           "id": "repair-slower-polite-piece-3",
@@ -53,7 +53,7 @@
         {
           "id": "repair-slower-polite-full",
           "vietnamese": "Nói chậm giúp tôi được không?",
-          "english": "Could you speak a little slower, please",
+          "english": "Could you speak a little slower, please?",
           "audioKey": "repair-slower-polite"
         }
       ],

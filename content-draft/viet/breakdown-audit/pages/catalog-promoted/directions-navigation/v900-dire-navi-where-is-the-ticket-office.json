@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-dire-navi-where-is-the-ticket-office",
+  "phraseText": "Phòng bán vé ở đâu?",
+  "englishTitle": "Where is the ticket office?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.299Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-dire-navi-where-is-the-ticket-office",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phòng",
+      "english": "room"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bán",
+      "english": "sell"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phòng bán vé ở đâu?",
+      "english": "Where is the ticket office?",
+      "audioKey": "v900-dire-navi-where-is-the-ticket-office"
+    }
+  ]
+}

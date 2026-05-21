@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-family-hotel-more-supplies",
+  "phraseText": "Cho tôi thêm khăn",
+  "englishTitle": "More towels please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.278Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-hotel-more-supplies",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "khăn",
+      "english": "towel / cloth"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi thêm khăn",
+      "english": "More towels please",
+      "audioKey": "hotel-6"
+    }
+  ]
+}

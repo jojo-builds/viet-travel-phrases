@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-v500-shop-can-you-lower-the-price",
+  "phraseText": "Giảm giá chút được không?",
+  "englishTitle": "Can you lower the price?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.287Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-shop-can-you-lower-the-price",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Giảm giá",
+      "english": "discount / lower price",
+      "keepTogetherReason": "compound price phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chút",
+      "english": "a little"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Giảm giá chút được không?",
+      "english": "Can you lower the price?",
+      "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
+    }
+  ]
+}

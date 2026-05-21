@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v900-unde-repa-is-there-someone-who-speaks-english",
+  "phraseText": "Có ai nói được tiếng Anh không?",
+  "englishTitle": "Is there someone who speaks English?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.358Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-unde-repa-is-there-someone-who-speaks-english",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ai",
+      "english": "who / someone"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nói",
+      "english": "say / speak"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tiếng Anh",
+      "english": "English language",
+      "keepTogetherReason": "compound language name"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ai nói được tiếng Anh không?",
+      "english": "Is there someone who speaks English?",
+      "audioKey": "v900-unde-repa-is-there-someone-who-speaks-english"
+    }
+  ]
+}

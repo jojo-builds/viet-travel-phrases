@@ -21,39 +21,40 @@ The homepage should feel like a mixed discovery feed, closer to a streaming app 
 Use the existing card families deliberately:
 
 - large player cards at the top for instant beginner phrases
-- spotlight phrase cards plus compact rows for first-hour and hotel basics
+- curated short phrase cards for first-day and hotel basics
 - realistic image cards for city discovery
 - medium two-column audio grids for food, coffee, money, and shopping
 - circular message contacts for guided conversations
 - wide phrase rows for transport and help
 - image-backed situation rows for Browse entry points
-- large player cards lower on the page again for slower phrase practice
+- large player cards lower on the page again for recently viewed phrase pages when local history exists
 
-Personal shelves are state-gated. `Keep going`, `Saved for later`, and `Message list` must not appear on a fresh first launch; they should show only after local recent/saved/practice state exists.
+Personal shelves are state-gated. `Recently viewed` must not appear on a fresh first launch; it should show only after local recent-page state exists.
 
 ## First-Launch Shelf Order
 
-1. `Use now`
+1. `Essentials`
    - Source: `HomeUseNowCatalog.featureCardIDs`
    - Layout: large player-card carousel.
    - Purpose: fastest beginner phrases to play immediately.
 
-2. `First hour in Vietnam`
+2. `First Day in Vietnam`
    - Route: `.category("first-day")`
-   - Source categories: `airport-border-arrival`, `hotel-accommodation`, `transport`, `directions-navigation`
-   - Layout: spotlight phrase card plus compact phrase rows.
-   - Purpose: airport, pickup, SIM, ATM, hotel arrival.
+   - Source: `HomeFirstDayShelfContent.pageIDs`
+   - Fallback: disabled; this shelf should not auto-fill from broad categories.
+   - Layout: short beginner phrase cards.
+   - Purpose: very small airport, ride, and check-in phrases for a first day in Vietnam.
 
 3. `Explore by city`
    - Source: `BrowseSearchDestinations.homepageCityShortcuts`
    - Layout: realistic image city cards.
    - Purpose: city guides and location-led discovery.
 
-4. `Food & coffee`
+4. `Eating Out`
    - Route: `.category("food")`
    - Source categories: `food-drink`, `money-numbers-prices`
    - Layout: medium two-column audio grid plus a wide `More` row.
-   - Purpose: menu, water, coffee, spice/allergy, paying.
+   - Purpose: tables, ordering, allergies, and paying.
 
 5. `Messages`
    - Source: `HomeContent.practiceScenarios`
@@ -100,18 +101,14 @@ Personal shelves are state-gated. `Keep going`, `Saved for later`, and `Message 
    - Layout: wide phrase rows plus a wide `More` row.
    - Purpose: help, pharmacy, doctor, passport, police/hospital basics.
 
-13. `Listen closer`
-    - Source: `HomeContent.featuredIDs`
-    - Layout: large player cards.
-    - Purpose: slower, richer phrase practice after the quick entry shelves.
-
 ## Returning-User Inserts
 
-When local user state exists, insert personal shelves directly after the hero/header and before `Use now`:
+When local user state exists, personal shelves may appear without fake placeholders:
 
-1. `Keep going`
-2. `Saved for later`
-3. `Message list`
+1. `Recently viewed`
+   - Source: `LocalUserIntentStore.recentPageIDs` through `HomeRecentlyViewedContent`.
+   - Layout: large player-card carousel.
+   - Purpose: let the user reopen the last few phrase/listing pages with the same Home-to-detail transition.
 
 These shelves are intentionally omitted on a clean first launch so new users do not see fake history or empty state furniture.
 

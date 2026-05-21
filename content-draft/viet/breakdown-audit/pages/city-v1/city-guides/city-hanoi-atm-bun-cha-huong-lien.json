@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-family-city-hanoi-atm-bun-cha-huong-lien",
+  "phraseText": "Có ATM gần Bún chả Hương Liên không?",
+  "englishTitle": "Is there an ATM near Bun Cha Huong Lien?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.363Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-atm-bun-cha-huong-lien",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gần",
+      "english": "near"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Bún chả Hương Liên",
+      "english": "Bun Cha Huong Lien",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có ATM gần Bún chả Hương Liên không?",
+      "english": "Is there an ATM near Bun Cha Huong Lien?",
+      "audioKey": "audio-authored-co-atm-gan-bun-cha-huong-lien-khong-c66ead5b07"
+    }
+  ]
+}

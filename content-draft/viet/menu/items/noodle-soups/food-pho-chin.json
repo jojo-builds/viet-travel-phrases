@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-chin",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở chín",
+  "englishTranslation": "Pho with well-done beef",
+  "romanizedNoTones": "Pho chin",
+  "soundOut": "fuh chin",
+  "notes": "",
+  "atAGlance": "Phở chín is beef phở with cooked beef slices, rice noodles, herbs, and clear fragrant broth. It is the safer choice if you want phở without rare meat.",
+  "whatItIs": "Phở chín is beef phở with cooked beef slices, clear broth, rice noodles, onion, herbs, and lime. It keeps the classic phở flavor while avoiding rare meat.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "well-done beef",
+    "onion",
+    "herbs and lime"
+  ],
+  "howToEnjoy": "Taste the broth first, then add herbs, lime, bean sprouts, or chili little by little. The cooked beef is already ready to eat.",
+  "howLocalsOrder": "Phở chín is the safer phở order when you want well-done beef from the start. Taste the broth first, then add herbs or lime; ask for no chili before chili oil or sliced chilies go in.",
+  "worthKnowing": "Chín means cooked or well-done. Learning chín helps you order phở in Vietnam without accidentally getting rare beef.",
+  "goodToKnow": "Chín means cooked or well-done here. You still season the bowl at the table with herbs, lime, bean sprouts, or chili.",
+  "commonOptions": [
+    "rare beef",
+    "extra herbs",
+    "bean sprouts",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở chín.",
+    "english": "I’d like one bowl of pho with well-done beef.",
+    "pronunciation": "chaw toy moht toh fuh chin",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở chín was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

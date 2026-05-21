@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-repair-slower",
+  "phraseText": "Nói chậm chút được không?",
+  "englishTitle": "Can you speak a little slower?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.276Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-repair-slower",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Nói chậm",
+      "english": "speak slowly",
+      "keepTogetherReason": "compound speech-speed phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chút",
+      "english": "a little"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nói chậm chút được không?",
+      "english": "Can you speak a little slower?",
+      "audioKey": "problems-3"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-tra-dao",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Trà đào",
+  "englishTranslation": "Peach tea",
+  "romanizedNoTones": "Tra dao",
+  "soundOut": "chah dow",
+  "notes": "",
+  "atAGlance": "Trà đào is peach tea, fragrant and sweet over ice, a modern café favorite rather than an old ritual tea.",
+  "whatItIs": "Trà đào is iced tea flavored with peach syrup or fruit. Expect peach tea that is fruity, fragrant, sweet, and often served with peach slices over ice.",
+  "usuallyIncludes": [
+    "tea",
+    "peach",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask for less sugar if you want tea flavor instead of candy-like peach.",
+  "howLocalsOrder": "Order trà đào when you want peach tea with ice, syrupy peach aroma, and often peach slices. Ask for less sugar or less ice if you want it less sweet or less icy.",
+  "worthKnowing": "Vietnamese peach tea is usually bright, cold, and fragrant rather than subtle; the peach slices make it feel more like a cafe treat than plain tea.",
+  "goodToKnow": "Usually sweet and not the same as plain tea.",
+  "commonOptions": [
+    "less sugar",
+    "less ice",
+    "no ice",
+    "extra peach"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà đào.",
+    "english": "I’d like one glass of peach tea.",
+    "pronunciation": "chaw toy moht lee chah dow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Trà đào was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

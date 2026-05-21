@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-ep-coc",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép cóc",
+  "englishTranslation": "Ambarella juice",
+  "romanizedNoTones": "Nuoc ep coc",
+  "soundOut": "nook ep kawk",
+  "notes": "",
+  "atAGlance": "Nước ép cóc introduces ambarella, a tart green Vietnamese snack fruit that becomes fragrant, punchy juice over ice.",
+  "whatItIs": "Nước ép cóc is cóc fruit juiced or blended with sugar and ice. Expect ambarella juice that is tart, green, fragrant, and punchy.",
+  "usuallyIncludes": [
+    "ambarella",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Keep a little sugar unless you like very sour fruit drinks.",
+  "howLocalsOrder": "Nước ép cóc is usually made or poured cold, so ask for no sugar, less sugar, or no ice before the glass is finished. Fresh fruit versions taste best when the flavor stays tart, pulpy, or fragrant.",
+  "worthKnowing": "In Vietnam, Nước ép cóc introduces a Vietnamese snack fruit often eaten with chili salt and turned into bright juice.",
+  "goodToKnow": "Tart and unfamiliar for many visitors.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép cóc.",
+    "english": "I’d like one glass of ambarella juice.",
+    "pronunciation": "chaw toy moht lee nook ep kawk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước ép cóc was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

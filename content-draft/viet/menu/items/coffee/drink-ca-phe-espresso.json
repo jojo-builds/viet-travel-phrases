@@ -1,0 +1,57 @@
+{
+  "itemID": "drink-ca-phe-espresso",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê espresso",
+  "englishTranslation": "Espresso",
+  "romanizedNoTones": "Ca phe espresso",
+  "soundOut": "kah fay ess-press-oh",
+  "notes": "",
+  "atAGlance": "Cà phê espresso is the modern café shortcut for a sharp coffee hit, often still carrying Vietnam’s firm robusta bitterness.",
+  "whatItIs": "Cà phê espresso is a small espresso shot or espresso-based café order. Expect a short, sharp espresso-style coffee with concentrated roast and very little sweetness unless added.",
+  "usuallyIncludes": [
+    "espresso coffee",
+    "small cup"
+  ],
+  "howToEnjoy": "Order it when you want a quick coffee hit rather than a sweet phin drink.",
+  "howLocalsOrder": "Cà phê espresso is a more international café order, but sweetness can still be higher than expected. Ask hot or iced, then say less sweet if chocolate, milk, or syrup is involved.",
+  "worthKnowing": "In Vietnam, Cà phê espresso is more common in modern cafés than street stalls, but it helps travelers decode urban coffee menus.",
+  "goodToKnow": "It may still use Vietnamese robusta, so expect a firm bitter edge.",
+  "commonOptions": [
+    "single",
+    "double",
+    "hot",
+    "takeaway"
+  ],
+  "regionalAssociation": "modern Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê espresso.",
+    "english": "I’d like one glass of espresso.",
+    "pronunciation": "chaw toy moht lee kah fay ess-press-oh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê espresso was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

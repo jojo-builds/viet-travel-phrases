@@ -1,0 +1,64 @@
+{
+  "itemID": "food-nem-ran",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nem rán",
+  "englishTranslation": "Northern fried spring rolls",
+  "romanizedNoTones": "Nem ran",
+  "soundOut": "nem rahn",
+  "notes": "",
+  "atAGlance": "Nem rán is northern fried spring rolls, usually with pork, glass noodles, wood ear, crisp wrapper, lettuce, and sweet-sour fish-sauce dip.",
+  "whatItIs": "Nem rán are northern fried spring rolls, often filled with pork, glass noodles, wood ear mushroom, and vegetables, then served with herbs and fish-sauce dip.",
+  "usuallyIncludes": [
+    "fried wrapper",
+    "northern fried spring rolls",
+    "vegetables",
+    "herbs",
+    "fish-sauce dip"
+  ],
+  "howToEnjoy": "Wrap a piece in herbs or lettuce if served, then dip in the fish-sauce dip. Eat while crisp, before the fried wrapper softens.",
+  "howLocalsOrder": "Order nem rán as the northern fried-roll name. Ask for no chili in the fish-sauce dip and use the herbs to balance the fried shell.",
+  "worthKnowing": "Nem rán and chả giò can refer to similar fried-roll territory, but the regional wording helps you read menus from north to south.",
+  "goodToKnow": "Northern-style fried rolls often include pork, mushroom, and glass noodles; dip lightly so the crisp wrapper stays crisp.",
+  "commonOptions": [
+    "extra herbs",
+    "extra lettuce",
+    "no chili",
+    "extra fish-sauce dip"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nem rán.",
+    "english": "I’d like one order of northern fried spring rolls.",
+    "pronunciation": "chaw toy moht fuhn nem rahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Nem rán was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

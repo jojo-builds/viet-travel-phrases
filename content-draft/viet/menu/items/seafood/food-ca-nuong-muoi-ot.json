@@ -1,0 +1,67 @@
+{
+  "itemID": "food-ca-nuong-muoi-ot",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá nướng muối ớt",
+  "englishTranslation": "Grilled fish with chili salt",
+  "romanizedNoTones": "Ca nuong muoi ot",
+  "soundOut": "kah noong moo-ee uht",
+  "notes": "",
+  "atAGlance": "Cá nướng muối ớt is salt-chili grilled fish, usually with charred skin, chili-salt rub, herbs, lime, and a dipping salt or fish-sauce dip.",
+  "whatItIs": "Cá nướng muối ớt is fish grilled with a chili-salt crust, usually served whole or in large pieces with herbs, lime, and a dipping salt or fish-sauce dip.",
+  "usuallyIncludes": [
+    "whole or cut fish",
+    "chili-salt rub",
+    "fresh herbs",
+    "lime",
+    "dipping salt or fish-sauce dip"
+  ],
+  "howToEnjoy": "Share the fish, flake meat carefully from the bones, and use herbs, lime, and dipping salt lightly so the smoke and chili-salt crust stay clear. If rice paper is served, wrap small fish pieces with herbs.",
+  "howLocalsOrder": "Order cá nướng muối ớt as a shared grilled fish. Ask whether it comes whole, whether bones remain, and for less chili before the salt-chili rub goes on.",
+  "worthKnowing": "At Vietnamese seafood shops, this order is about smoke and chili-salt crust; rice paper and herbs may turn it into a wrap-and-share meal if they come with the fish.",
+  "goodToKnow": "Ask for less spicy if heat is a concern.",
+  "commonOptions": [
+    "ask about bones",
+    "less spicy",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask for less spicy if heat is a concern.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá nướng muối ớt.",
+    "english": "I’d like one order of grilled fish with chili salt.",
+    "pronunciation": "chaw toy moht fuhn kah noong moo-ee uht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "rice paper and wrapper specificity audit",
+      "review-gate fix",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cá nướng muối ớt was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

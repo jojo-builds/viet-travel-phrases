@@ -23,9 +23,7 @@ blockers:
   - 'device-proof'
   - 'audio-continuity'
   - 'tagalog-v2-pack'
-legacy_roots:
-  - 'E:\AI\SpeakLocal-App-Family'
-  - 'E:\AI\Viet-Travel-Phrases'
+legacy_roots: []
 external_trackers:
   feature_intake_doc: 'https://docs.google.com/document/d/11XpOXF-l_wW_leO7ua3h7Ju0wHONZx3U2OcOak_6vWw/edit'
   feature_tracker_sheet: 'https://docs.google.com/spreadsheets/d/1eoJ_0XwCDRbhLn59Q0oeu8NFGan_5GrGLI5ZgdaCX7Y/edit'

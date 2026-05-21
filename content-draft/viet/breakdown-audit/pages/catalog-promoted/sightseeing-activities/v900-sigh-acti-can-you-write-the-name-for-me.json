@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-can-you-write-the-name-for-me",
+  "phraseText": "Bạn có thể viết tên cho tôi được không?",
+  "englishTitle": "Can you write the name for me?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-can-you-write-the-name-for-me",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "viết",
+      "english": "write"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tên",
+      "english": "name"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể viết tên cho tôi được không?",
+      "english": "Can you write the name for me?",
+      "audioKey": "v900-sigh-acti-can-you-write-the-name-for-me"
+    }
+  ]
+}

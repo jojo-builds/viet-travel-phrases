@@ -1,0 +1,62 @@
+{
+  "itemID": "food-chao-long",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cháo lòng",
+  "englishTranslation": "Pork offal rice porridge",
+  "romanizedNoTones": "Chao long",
+  "soundOut": "chow lawng",
+  "notes": "",
+  "atAGlance": "Cháo lòng is pork offal rice porridge with ginger, herbs, pepper, and soft rice. It is warming and traditional, but more adventurous than chicken porridge.",
+  "whatItIs": "Cháo lòng is rice porridge with pork offal, ginger, scallions, herbs, and pepper. It is soft and warming, but the toppings are more adventurous than chicken porridge.",
+  "usuallyIncludes": [
+    "rice porridge",
+    "pork offal",
+    "ginger",
+    "scallions",
+    "pepper"
+  ],
+  "howToEnjoy": "Add pepper, herbs, and ginger to brighten the bowl. Choose cháo gà if you want gentle porridge without offal.",
+  "howLocalsOrder": "Cháo lòng is a comfort-bowl order, especially good when you want something soft. Ask for extra ginger or less pepper before mixing, and order fried dough on the side if the shop has it.",
+  "worthKnowing": "Lòng means offal. This is a useful word to recognize if organ meats are a yes or no for you. In Vietnam, cháo is a rice-porridge comfort-food lane. The topping tells you whether the bowl stays gentle or turns more adventurous.",
+  "goodToKnow": "Lòng means offal or organs. If you want the gentle porridge experience without organs, choose cháo gà.",
+  "commonOptions": [
+    "no offal",
+    "extra ginger",
+    "less pepper",
+    "with fried dough"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork offal.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô cháo lòng.",
+    "english": "I’d like one bowl of pork offal rice porridge.",
+    "pronunciation": "chaw toy moht toh chow lawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cháo lòng was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

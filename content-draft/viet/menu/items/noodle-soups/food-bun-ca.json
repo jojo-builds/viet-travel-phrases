@@ -1,0 +1,63 @@
+{
+  "itemID": "food-bun-ca",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún cá",
+  "englishTranslation": "Fish noodle soup",
+  "romanizedNoTones": "Bun ca",
+  "soundOut": "boon kah",
+  "notes": "",
+  "atAGlance": "Bún cá is fish noodle soup, usually with fried or fresh fish, dill or tomato, herbs, and rice vermicelli.",
+  "whatItIs": "Bún cá is fish noodle soup, often with fried fish pieces or fresh fish in a bright broth with tomato, dill, herbs, and rice vermicelli. It feels lighter than beef noodle soups but still deeply savory.",
+  "usuallyIncludes": [
+    "fish broth",
+    "rice vermicelli",
+    "fried or fresh fish",
+    "tomato or dill",
+    "fresh herbs"
+  ],
+  "howToEnjoy": "Check for bones before your first big bite, then season with lime and chili slowly. Herbs brighten the fish broth, while too much chili can cover the seafood sweetness.",
+  "howLocalsOrder": "Order bún cá by the full name and ask whether bones remain if you are worried about bones. Start with the broth plain, then add herbs, lime, and chili after you understand the shop style.",
+  "worthKnowing": "Bún cá often feels coastal or northern on a menu, and each city handles the fish differently: crisp fried pieces, softer fillets, tomato brightness, or dill fragrance.",
+  "goodToKnow": "Fish bones can appear, especially in more traditional bowls.",
+  "commonOptions": [
+    "less spicy",
+    "no chili",
+    "extra herbs",
+    "ask about bones"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún cá.",
+    "english": "I’d like one bowl of fish noodle soup.",
+    "pronunciation": "chaw toy moht toh boon kah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún cá was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

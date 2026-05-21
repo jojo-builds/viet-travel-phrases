@@ -1,0 +1,65 @@
+{
+  "itemID": "food-xoi-ga",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Xôi gà",
+  "englishTranslation": "Sticky rice with chicken",
+  "romanizedNoTones": "Xoi ga",
+  "soundOut": "soy gah",
+  "notes": "",
+  "atAGlance": "Xôi gà is sticky rice with chicken, usually with shredded chicken, fried shallots, herbs, and sometimes chicken sauce.",
+  "whatItIs": "Xôi gà is sticky rice topped with chicken, often shredded or chopped, with fried shallots, scallion oil, herbs, and sometimes chicken gravy or soy-chili seasoning.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "chicken",
+    "fried shallots",
+    "savory topping"
+  ],
+  "howToEnjoy": "Eat it warm so the sticky rice stays soft and the fried shallots stay fragrant. Mix chicken through the rice gradually rather than treating it like a separate side.",
+  "howLocalsOrder": "Order xôi gà for a filling breakfast or snack. Ask for extra fried shallots, less chili, or more chicken before the vendor closes the packet.",
+  "worthKnowing": "Xôi stalls are a major morning rhythm in Vietnam; the rice is dense, portable, and often wrapped for takeaway.",
+  "goodToKnow": "This is often a morning or takeaway packet. Fried shallots, chicken shreds, and warm sticky rice matter more than a separate dip.",
+  "commonOptions": [
+    "extra chicken",
+    "extra fried shallots",
+    "less spicy",
+    "pack to go"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi gà.",
+    "english": "I’d like one order of sticky rice with chicken.",
+    "pronunciation": "chaw toy moht fuhn soy gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Xôi gà was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

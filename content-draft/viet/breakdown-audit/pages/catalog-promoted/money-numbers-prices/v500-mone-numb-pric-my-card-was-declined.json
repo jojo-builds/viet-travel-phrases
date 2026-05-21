@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-my-card-was-declined",
+  "phraseText": "Thẻ của tôi đã bị từ chối",
+  "englishTitle": "My card was declined",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.327Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-my-card-was-declined",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thẻ",
+      "english": "card"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đã",
+      "english": "already / did"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "bị",
+      "english": "got / passive marker"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "từ chối",
+      "english": "decline / reject",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thẻ của tôi đã bị từ chối",
+      "english": "My card was declined",
+      "audioKey": "v500-mone-numb-pric-my-card-was-declined"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-lau-cua-dong",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu cua đồng",
+  "englishTranslation": "Field crab hot pot",
+  "romanizedNoTones": "Lau cua dong",
+  "soundOut": "low koo-ah dawng",
+  "notes": "",
+  "atAGlance": "Lẩu cua đồng is field crab hot pot, usually with crab roe broth, greens, tofu, noodles, and tomatoes.",
+  "whatItIs": "Lẩu cua đồng is field-crab hot pot with crab roe broth, tomatoes, tofu, greens, herbs, and noodles. It is earthy, sweet, and deeply northern-feeling.",
+  "usuallyIncludes": [
+    "field-crab roe broth",
+    "tofu",
+    "tomatoes",
+    "greens",
+    "noodles"
+  ],
+  "howToEnjoy": "Let the crab broth simmer, then add tofu, greens, and noodles in stages. Ask about shellfish if allergies matter.",
+  "howLocalsOrder": "Order lẩu cua đồng for a shared crab hot pot. Ask for extra greens, extra noodles, or less spicy broth before the table starts cooking.",
+  "worthKnowing": "Cua đồng means field crab; the flavor is sweeter and earthier than big sea crab.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "ask about crab",
+    "extra greens",
+    "extra noodles",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu cua đồng.",
+    "english": "I’d like one order of field crab hot pot.",
+    "pronunciation": "chaw toy moht noy low koo-ah dawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu cua đồng was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

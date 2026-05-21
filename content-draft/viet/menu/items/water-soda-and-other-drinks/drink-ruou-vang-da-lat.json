@@ -1,0 +1,59 @@
+{
+  "itemID": "drink-ruou-vang-da-lat",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Rượu vang Đà Lạt",
+  "englishTranslation": "Dalat wine",
+  "romanizedNoTones": "Ruou vang Da Lat",
+  "soundOut": "roo-uh vahng dah laht",
+  "notes": "",
+  "atAGlance": "Rượu vang Đà Lạt is wine from Vietnam’s cool highlands, light, fruity, and tied to Đà Lạt’s unusual climate.",
+  "whatItIs": "Rượu vang Đà Lạt is wine associated with Đà Lạt, Vietnam’s cool mountain city. Expect Đà Lạt wine with gentle fruit, light body, and a highland novelty feel.",
+  "usuallyIncludes": [
+    "alcohol",
+    "glass or bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Order it for curiosity with a meal, not expecting a heavy European red.",
+  "howLocalsOrder": "Rượu vang Đà Lạt is a small-glass or shared-bottle order, not a casual soft drink. Ask about strength and order with food; say no alcohol clearly if you are avoiding it.",
+  "worthKnowing": "In Vietnam, Rượu vang Đà Lạt shows the highland side of Vietnamese drink culture, where Đà Lạt’s cooler climate shaped local wine production.",
+  "goodToKnow": "Alcoholic; style and sweetness vary by bottle.",
+  "commonOptions": [
+    "small glass",
+    "bottle",
+    "share size",
+    "with ice"
+  ],
+  "regionalAssociation": "Đà Lạt",
+  "originPosture": "regional-association",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly rượu vang Đà Lạt.",
+    "english": "I’d like one glass of dalat wine.",
+    "pronunciation": "chaw toy moht lee roo-uh vahng dah laht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Rượu vang Đà Lạt was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

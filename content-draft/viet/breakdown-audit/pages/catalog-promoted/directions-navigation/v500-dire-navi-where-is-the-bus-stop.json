@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-where-is-the-bus-stop",
+  "phraseText": "Trạm xe buýt ở đâu?",
+  "englishTitle": "Where is the bus stop?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-where-is-the-bus-stop",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Trạm xe buýt",
+      "english": "bus stop",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Trạm xe buýt ở đâu?",
+      "english": "Where is the bus stop?",
+      "audioKey": "v500-dire-navi-where-is-the-bus-stop"
+    }
+  ]
+}

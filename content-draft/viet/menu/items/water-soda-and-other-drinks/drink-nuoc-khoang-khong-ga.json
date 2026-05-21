@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-nuoc-khoang-khong-ga",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước khoáng không ga",
+  "englishTranslation": "Still mineral water",
+  "romanizedNoTones": "Nuoc khoang khong ga",
+  "soundOut": "nook kwahng kohng gah",
+  "notes": "",
+  "atAGlance": "Nước khoáng không ga is still mineral water, clean and bubble-free, with không ga telling you there is no fizz.",
+  "whatItIs": "Nước khoáng không ga is non-carbonated mineral water. Expect still mineral water with no bubbles and a clean finish.",
+  "usuallyIncludes": [
+    "still mineral water",
+    "bottle",
+    "ice optional"
+  ],
+  "howToEnjoy": "Use không ga when you want mineral water without fizz.",
+  "howLocalsOrder": "Order nước khoáng không ga when you want still mineral water. Ask for a cold sealed bottle and no ice if you prefer it plain.",
+  "worthKnowing": "On Vietnamese drink menus, không ga is the still-water cue, useful when a place has both sparkling and non-sparkling mineral water.",
+  "goodToKnow": "Không ga means not carbonated.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một chai nước khoáng không ga.",
+    "english": "I’d like one bottle of still mineral water.",
+    "pronunciation": "chaw toy moht chai nook kwahng kohng gah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-final-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording",
+      "native context audit fix"
+    ],
+    "reviewNote": "Nước khoáng không ga was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

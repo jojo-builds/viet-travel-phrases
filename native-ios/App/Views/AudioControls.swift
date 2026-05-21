@@ -97,12 +97,11 @@ struct PlaybackDockView: View {
             .background {
                 Capsule(style: .continuous)
                     .fill(.white.opacity(0.34))
-                    .shadow(color: .black.opacity(0.10), radius: 24, x: 0, y: 14)
-                    .shadow(color: .white.opacity(0.92), radius: 10, x: 0, y: -6)
-            }
-            .overlay {
-                Capsule(style: .continuous)
-                    .stroke(.white.opacity(0.58), lineWidth: 1)
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                    }
+                    .softInteractiveControlShadow()
             }
             .nativeGlass(cornerRadius: 39)
 
@@ -123,7 +122,11 @@ struct PlaybackDockView: View {
             ZStack {
                 Circle()
                     .fill(.white.opacity(0.48))
-                    .shadow(color: .black.opacity(0.09), radius: 12, x: 0, y: 8)
+                    .overlay {
+                        Circle()
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                    }
+                    .softInteractiveControlShadow()
 
                 Image(systemName: isSaved ? "heart.fill" : "heart")
                     .font(.system(size: 22, weight: .semibold))
@@ -152,19 +155,17 @@ struct PlaybackDockView: View {
                     .fill(.white.opacity(0.46))
                     .overlay {
                         Circle()
-                            .stroke(.white.opacity(0.76), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.11), radius: 22, x: 0, y: 13)
-                    .shadow(color: .white.opacity(0.90), radius: 10, x: 0, y: -7)
+                    .softInteractiveControlShadow()
 
                 Circle()
                     .fill(.white.opacity(0.82))
                     .frame(width: 70, height: 70)
                     .overlay {
                         Circle()
-                            .stroke(.white.opacity(0.74), lineWidth: 1)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
                     }
-                    .shadow(color: .black.opacity(0.08), radius: 15, x: 0, y: 10)
 
                 Image(systemName: "play.fill")
                     .font(.system(size: 29, weight: .bold))
@@ -278,7 +279,7 @@ struct AudioSpeedSegmentedControl: View {
 
                 if index < speeds.count - 1 {
                     Rectangle()
-                        .fill(Color.black.opacity(0.08))
+                        .fill(Color.black.opacity(AppSurfaceDepth.controlDividerOpacity))
                         .frame(width: 1, height: metrics.dividerHeight)
                 }
             }
@@ -288,12 +289,12 @@ struct AudioSpeedSegmentedControl: View {
         .frame(height: metrics.controlHeight)
         .background {
             Capsule(style: .continuous)
-                .fill(.white.opacity(0.42))
-                .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 8)
-        }
-        .overlay {
-            Capsule(style: .continuous)
-                .stroke(.white.opacity(0.66), lineWidth: 1)
+                .fill(.ultraThinMaterial)
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                }
+                .softInteractiveControlShadow()
         }
         .nativeGlass(cornerRadius: metrics.cornerRadius, interactive: true)
         .accessibilityElement(children: .contain)
@@ -330,6 +331,18 @@ struct PinnedAudioSpeedChromeState: Equatable {
 }
 
 enum PinnedAudioSpeedChromePolicy {
+    static func canShowPinnedControl(
+        on route: AppRoute,
+        hasStaticBackButton: Bool,
+        isSearchPresented: Bool
+    ) -> Bool {
+        guard !isSearchPresented else {
+            return false
+        }
+
+        return route == .home || hasStaticBackButton
+    }
+
     static func state(
         for anchors: [PhraseAudioPlayerAnchor],
         currentRoute: AppRoute
@@ -341,6 +354,25 @@ enum PinnedAudioSpeedChromePolicy {
             route: isVisible ? currentRoute : nil,
             isVisible: isVisible
         )
+    }
+
+    static func shouldShowPinnedControl(
+        chromeState: PinnedAudioSpeedChromeState,
+        currentRoute: AppRoute,
+        hasStaticBackButton: Bool,
+        isSearchPresented: Bool,
+        isMenuSectionChromeVisible: Bool = false
+    ) -> Bool {
+        guard canShowPinnedControl(
+            on: currentRoute,
+            hasStaticBackButton: hasStaticBackButton,
+            isSearchPresented: isSearchPresented
+        ) else {
+            return false
+        }
+
+        return (chromeState.route == currentRoute && chromeState.isVisible)
+            || isMenuSectionChromeVisible
     }
 
     static func shouldShowPinnedControl(

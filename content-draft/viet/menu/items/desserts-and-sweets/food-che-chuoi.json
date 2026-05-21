@@ -1,0 +1,63 @@
+{
+  "itemID": "food-che-chuoi",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Chè chuối",
+  "englishTranslation": "Banana coconut pudding",
+  "romanizedNoTones": "Che chuoi",
+  "soundOut": "cheh choo-ee",
+  "notes": "",
+  "atAGlance": "Chè chuối is banana coconut pudding with soft banana, coconut milk, tapioca pearls, and often peanuts or sesame on top.",
+  "whatItIs": "Chè chuối is a banana-and-coconut chè, creamy and spoonable rather than icy.",
+  "usuallyIncludes": [
+    "banana",
+    "coconut milk",
+    "tapioca pearls",
+    "peanuts optional",
+    "sesame"
+  ],
+  "howToEnjoy": "Eat it warm or chilled and get banana, coconut, and tapioca in the same spoonful.",
+  "howLocalsOrder": "Order chè chuối when you want banana and coconut comfort. Ask no peanuts if needed, and choose warm if you want the banana aroma strongest.",
+  "worthKnowing": "This is a friendly first chè for travelers because banana and coconut feel familiar while the texture is Vietnamese.",
+  "goodToKnow": "The banana is usually cooked until soft and fragrant. Ask no peanuts if needed.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Often contains peanuts.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly chè chuối.",
+    "english": "I’d like one glass of banana coconut pudding.",
+    "pronunciation": "chaw toy moht lee cheh choo-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè chuối was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

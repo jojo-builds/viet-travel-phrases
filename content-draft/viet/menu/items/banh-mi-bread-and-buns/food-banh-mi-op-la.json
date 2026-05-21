@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-mi-op-la",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh mì ốp la",
+  "englishTranslation": "Fried egg sandwich",
+  "romanizedNoTones": "Banh mi op la",
+  "soundOut": "bahn mee awp lah",
+  "notes": "",
+  "atAGlance": "Bánh mì ốp la is a breakfast bánh mì with sunny eggs, herbs, cucumber, pickles, chili, and Maggi-style soy seasoning, often cooked on a small street griddle.",
+  "whatItIs": "Bánh mì ốp la is a fried-egg bánh mì, often served with runny eggs, pâté or soy seasoning, cucumber, pickles, cilantro, and chili. It is a beloved breakfast order.",
+  "usuallyIncludes": [
+    "baguette",
+    "egg",
+    "pickled vegetables",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "Eat it early in the day when the eggs are hot and the bread is just warmed. If you like runny yolk, stay close to the stall and eat before it soaks too far into the loaf.",
+  "howLocalsOrder": "Order bánh mì ốp la for breakfast-style comfort. Ask for no chili or egg well-done before the egg and bread are finished.",
+  "worthKnowing": "Ốp la shows how Vietnamese breakfast can be quick but still vivid: French-influenced bread, local herbs, pickles, seasoning, and a hot egg all in one hand-held meal for people heading to school or work.",
+  "goodToKnow": "Ask for no chili if you want the egg sandwich without chili.",
+  "commonOptions": [
+    "no chili",
+    "egg well-done",
+    "extra egg",
+    "extra pickles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì ốp la.",
+    "english": "I’d like one fried egg bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee awp lah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Bánh mì ốp la was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

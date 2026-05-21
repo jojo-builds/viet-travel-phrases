@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-tra-sen",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà sen",
+  "englishTranslation": "Lotus tea",
+  "romanizedNoTones": "Tra sen",
+  "soundOut": "chah sen",
+  "notes": "",
+  "atAGlance": "Trà sen is lotus tea, softly floral and especially tied to northern refinement rather than loud fruit sweetness.",
+  "whatItIs": "Trà sen is tea scented with lotus, usually served hot or lightly iced. Expect lotus tea with a soft floral aroma, gentle bitterness, and a calm finish.",
+  "usuallyIncludes": [
+    "tea",
+    "lotus scent",
+    "hot water or ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it slowly; the appeal is fragrance rather than sugar.",
+  "howLocalsOrder": "Trà sen is ordered by temperature and sweetness. Ask for less sugar or less ice before the glass is made, because Vietnamese tea drinks can arrive sweeter and icier than expected.",
+  "worthKnowing": "In Vietnam, Trà sen is associated with northern tea traditions and the refined scent of lotus rather than a loud fruit flavor.",
+  "goodToKnow": "Usually best plain or lightly sweetened.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà sen.",
+    "english": "I’d like one glass of lotus tea.",
+    "pronunciation": "chaw toy moht lee chah sen",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà sen was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-lau-ca-loc",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Lẩu cá lóc",
+  "englishTranslation": "Snakehead fish hot pot",
+  "romanizedNoTones": "Lau ca loc",
+  "soundOut": "low kah lawk",
+  "notes": "",
+  "atAGlance": "Lẩu cá lóc is snakehead fish hot pot, usually with sour broth, elephant ear stem or herbs, noodles, and fish.",
+  "whatItIs": "Lẩu cá lóc is snakehead fish hot pot with sour broth, herbs, greens, tomatoes, pineapple or tamarind, and noodles. It is a shared fish-table meal.",
+  "usuallyIncludes": [
+    "snakehead fish",
+    "sour broth",
+    "greens",
+    "noodles",
+    "fish bones possible"
+  ],
+  "howToEnjoy": "Cook fish pieces carefully, watch for bones, then add greens and noodles in stages. Taste the sour broth before adding chili.",
+  "howLocalsOrder": "Order lẩu cá lóc by table size. Ask about bones, less spicy broth, or extra herbs before the pot starts bubbling.",
+  "worthKnowing": "Cá lóc is snakehead fish, common in southern cooking and often paired with sour broths and fresh herbs.",
+  "goodToKnow": "Ask about bones before ordering if you prefer easy fish pieces. Add greens and noodles after the fish flavors the sour broth.",
+  "commonOptions": [
+    "ask about bones",
+    "less spicy",
+    "extra herbs",
+    "extra noodles"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một nồi lẩu cá lóc.",
+    "english": "I’d like one order of snakehead fish hot pot.",
+    "pronunciation": "chaw toy moht noy low kah lawk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Lẩu cá lóc was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

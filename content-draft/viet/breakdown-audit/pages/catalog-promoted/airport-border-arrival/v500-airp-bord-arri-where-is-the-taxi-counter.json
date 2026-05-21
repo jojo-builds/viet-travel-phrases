@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+  "phraseText": "Quầy taxi ở đâu?",
+  "englishTitle": "Where is the taxi counter?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.291Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Quầy taxi",
+      "english": "taxi counter",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Quầy taxi ở đâu?",
+      "english": "Where is the taxi counter?",
+      "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
+    }
+  ]
+}

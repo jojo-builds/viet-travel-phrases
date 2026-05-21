@@ -1,0 +1,62 @@
+{
+  "itemID": "food-bun-rieu-cua",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bún riêu cua",
+  "englishTranslation": "Crab and tomato noodle soup",
+  "romanizedNoTones": "Bun rieu cua",
+  "soundOut": "boon ree-ew koo-ah",
+  "notes": "",
+  "atAGlance": "Bún riêu cua is crab-and-tomato vermicelli soup with a tangy red broth, soft crab mixture, tofu, herbs, and sometimes snails or pork blood cubes. It is bright, savory, and a little rustic.",
+  "whatItIs": "Bún riêu cua is a crab-and-tomato vermicelli soup with tangy broth, tofu, herbs, and often shrimp paste or extra pork-side toppings. It tastes brighter and more rustic than phở.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "crab-tomato broth",
+    "tofu",
+    "herbs",
+    "shrimp paste optional"
+  ],
+  "howToEnjoy": "Add herbs first, then chili or shrimp paste carefully. The broth already has sour tomato lift, so do not drown it before tasting.",
+  "howLocalsOrder": "Order Bún riêu cua for the crab-tomato broth, then decide whether you want the shrimp-paste funk. If mắm tôm worries you, ask for the shrimp paste on the side, or skip it.",
+  "worthKnowing": "Bún riêu cua is a northern-rooted tomato and crab noodle soup that many shops personalize with tofu, pork, herbs, and shrimp paste.",
+  "goodToKnow": "The sourness usually comes from tomato and tamarind or vinegar-like seasoning, not cream. Ask what toppings are included if you avoid shellfish or pork.",
+  "commonOptions": [
+    "extra herbs",
+    "no shrimp paste",
+    "less chili",
+    "no pork blood"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May include shellfish, shrimp paste, pork, snails, or pork blood depending on the shop.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún riêu cua.",
+    "english": "I’d like one bowl of crab and tomato noodle soup.",
+    "pronunciation": "chaw toy moht toh boon ree-ew koo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún riêu cua was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

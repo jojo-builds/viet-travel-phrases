@@ -1,0 +1,64 @@
+{
+  "itemID": "food-mien-xao-cua",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Miến xào cua",
+  "englishTranslation": "Stir-fried glass noodles with crab",
+  "romanizedNoTones": "Mien xao cua",
+  "soundOut": "mee-en sow koo-ah",
+  "notes": "",
+  "atAGlance": "Miến xào cua is glass noodles stir-fried with crab, usually with sweet crab meat, egg, onion, herbs, and pepper.",
+  "whatItIs": "Miến xào cua is glass noodles wok-tossed with crab, garlic, scallions, and the sweet juices from the crab. The noodles turn glossy as they soak up the seafood flavor.",
+  "usuallyIncludes": [
+    "glass noodles",
+    "crab",
+    "garlic",
+    "garlic-fish-sauce stir-fry glaze",
+    "herbs"
+  ],
+  "howToEnjoy": "Share it while hot, lifting the glass noodles gently so the crab stays distributed. Ask before ordering if you want to avoid shell pieces.",
+  "howLocalsOrder": "Order miến xào cua as a shared crab noodle plate. Ask for less oil or less chili before the wok fires, and check whether the crab comes in shell.",
+  "worthKnowing": "This is a celebratory seafood-noodle order in many Vietnamese restaurants because crab perfumes the whole plate.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "less oil",
+    "share size",
+    "ask about shell"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô miến xào cua.",
+    "english": "I’d like one bowl of stir-fried glass noodles with crab.",
+    "pronunciation": "chaw toy moht toh mee-en sow koo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Miến xào cua was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

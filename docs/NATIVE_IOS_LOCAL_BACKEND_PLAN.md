@@ -30,12 +30,13 @@ Authoring truth should stay as versioned repo files, not as a hand-edited runtim
 Current source lanes:
 
 - `content-draft/` for authored phrase rows, answer-page samples, relation samples, and language prep
-- `app/family/` for existing runtime pack and presentation contracts
-- `app/assets/audio/manifest.json` and `app/assets/audio/registry.ts` for audio registry truth
+- `native-ios/Resources/LanguagePacks/` for bundled generated language data
+- `native-ios/Resources/Audio/` and `native-ios/Resources/viet-audio-manifest.json` for bundled audio truth
+- `native-ios/Resources/*.json` for native article/listing/support resources that still exist outside SQLite
 - `docs/DECISIONS.md`, `docs/V2_CONTENT_MODEL.md`, and `docs/PHRASE_RELATIONSHIP_MODEL.md` for durable content/model decisions
 - `docs/operations/NATIVE_MAC_CUTOVER.md` for native transition state
 
-Recovered Windows worktree lanes now available on the Mac:
+Recovered pre-Mac lanes, if needed, are archive/reference inputs only:
 
 - `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees/liquid-glass-native`
 - `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees/viet-1000-row-expansion`
@@ -44,6 +45,8 @@ Recovered Windows worktree lanes now available on the Mac:
 - `/Users/jojolim/Developer/products/speaklocal/recovered-worktrees/indonesian-expansion-pack`
 
 The recovered worktrees are reference/recovery inputs until their useful changes are intentionally merged into the canonical repo.
+
+Do not use Windows paths or the removed Expo/React Native `app/` tree for current backend, runtime, audio, or presentation work.
 
 ## Runtime storage recommendation
 

@@ -1,0 +1,62 @@
+{
+  "itemID": "food-suong-sao",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sương sáo",
+  "englishTranslation": "Grass jelly",
+  "romanizedNoTones": "Suong sao",
+  "soundOut": "soong sow",
+  "notes": "",
+  "atAGlance": "Sương sáo is grass jelly, a dark herbal jelly served with syrup, ice, or milk. It is cooling, lightly bitter, and very soft.",
+  "whatItIs": "Sương sáo is grass jelly, usually cut into cubes or strips and served as a light dessert or drink topping.",
+  "usuallyIncludes": [
+    "grass jelly",
+    "syrup",
+    "ice",
+    "milk optional"
+  ],
+  "howToEnjoy": "Eat it cold with syrup or milk. The soft jelly texture is the main event.",
+  "howLocalsOrder": "Order sương sáo cold with less syrup if you want its herbal grass-jelly bitterness to stay refreshing rather than hidden by sugar.",
+  "worthKnowing": "Grass jelly sits between drink and dessert in Vietnam, especially on hot days.",
+  "goodToKnow": "The flavor is herbal rather than fruity. Choose it when you want something cooling and not too rich.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần sương sáo.",
+    "english": "I’d like one order of grass jelly.",
+    "pronunciation": "chaw toy moht fuhn soong sow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sương sáo was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

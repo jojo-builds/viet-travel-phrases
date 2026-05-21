@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hue-go-bun-bo-city",
+  "phraseText": "Tìm bún bò Huế ở đâu?",
+  "englishTitle": "Where can I find bun bo Hue?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.385Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-go-bun-bo-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tìm",
+      "english": "find"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bún bò Huế",
+      "english": "Bun bo Hue",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tìm bún bò Huế ở đâu?",
+      "english": "Where can I find bun bo Hue?",
+      "audioKey": "audio-authored-tim-bun-bo-hue-o-dau-2de4ea1518"
+    }
+  ]
+}

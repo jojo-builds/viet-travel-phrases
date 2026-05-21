@@ -24,43 +24,41 @@ const expectedSectionOrder = [
   "at-glance",
   "quick-say",
   "journey-flow",
-  "key-phrases",
-  "breakdown",
+  "getting-there",
+  "tickets",
+  "cable-car",
+  "photos",
+  "getting-back",
   "good-to-know",
-  "explore-next",
+  "food-cash",
+  "breakdown",
 ];
 const expectedBodies = new Map([
   [
-    "at-glance",
-    "Treat Bà Nà Hills as a day-trip flow, not just a place name. The useful moments are pickup, tickets, cable car, photos, food or drinks, and the return ride.",
-  ],
-  ["quick-say", "Use this at the ticket counter or when asking staff for help."],
-  [
     "good-to-know",
-    "Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm where your return ride will meet you.",
-  ],
-  [
-    "explore-next",
-    "Practice the next phrases for getting there, finding the cable car, asking for photos, buying food or drinks, and getting back.",
+    "Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm the return pickup point.",
   ],
 ]);
-const expectedJourneyPhraseIDs = [
+const expectedRows = new Map([
+  ["quick-say", ["city-danang-place-ba-na-hills"]],
+  ["getting-there", ["taxi-1", "repair-5", "transport-stop-here-clearer", "ves-is-this-address-correct"]],
+  ["tickets", ["v500-time-date-book-two-tickets-please", "v500-time-date-book-one-ticket-please", "v500-sigh-acti-where-can-i-buy-tickets"]],
+  ["cable-car", ["ves-where-cable-car"]],
+  ["photos", ["ves-take-photo-for-me"]],
+  ["getting-back", ["directions-8", "v900-dire-navi-is-this-the-correct-pickup-point", "ves-call-taxi-for-me"]],
+  ["food-cash", ["store-1", "airport-4"]],
+]);
+const retiredAttractionPhraseIDs = [
   "city-danang-go-ba-na-hills",
+  "city-danang-where-ba-na-hills",
+  "city-danang-stop-ba-na-hills",
+  "city-danang-eat-near-ba-na-hills",
+  "city-danang-atm-ba-na-hills",
+  "ves-take-me-to-ba-na-hills",
   "ves-two-tickets-ba-na-hills",
-  "ves-where-cable-car",
-  "ves-take-photo-for-me",
-  "store-1",
-  "ves-call-taxi-for-me",
-];
-const expectedKeyPhraseIDs = [
-  "city-danang-go-ba-na-hills",
-  "ves-two-tickets-ba-na-hills",
-  "ves-where-cable-car",
-  "ves-take-photo-for-me",
-  "ves-call-taxi-for-me",
 ];
 const expectedBreakdownTokens = [
-  ["Bà Nà", "name recognition"],
+  ["Bà Nà", "local name"],
   ["Hills", "English word in the attraction name"],
   ["Bà Nà Hills", "Ba Na Hills"],
 ];
@@ -151,8 +149,9 @@ function main() {
   for (const [sectionID, expectedBody] of expectedBodies) {
     assert(authoredPage.sections.find((section) => section.id === sectionID)?.body === expectedBody, `${sectionID} copy changed`);
   }
-  assertArrayEqual(phraseIDs(authoredPage.sections.find((section) => section.id === "journey-flow")), expectedJourneyPhraseIDs, "journey flow phrase IDs");
-  assertArrayEqual(phraseIDs(authoredPage.sections.find((section) => section.id === "key-phrases")), expectedKeyPhraseIDs, "key phrase IDs");
+  for (const [sectionID, expectedPhraseIDs] of expectedRows) {
+    assertArrayEqual(phraseIDs(authoredPage.sections.find((section) => section.id === sectionID)), expectedPhraseIDs, `${sectionID} phrase IDs`);
+  }
   const breakdown = authoredPage.sections.find((section) => section.id === "breakdown");
   assert(breakdown?.title === "Name guide", "breakdown title must be Name guide");
   assertArrayEqual(
@@ -167,6 +166,16 @@ function main() {
   const pageText = JSON.stringify(authoredPage);
   for (const pattern of bannedPatterns) {
     assert(!pattern.test(pageText), `Bà Nà page contains banned/meta wording: ${pattern}`);
+  }
+  for (const phraseID of retiredAttractionPhraseIDs) {
+    assert(!pageText.includes(phraseID), `Bà Nà page still links retired attraction phrase ${phraseID}`);
+  }
+  for (const section of authoredPage.sections ?? []) {
+    for (const phrase of section.phrases ?? []) {
+      if (phrase.id === phraseID) continue;
+      assert(!String(phrase.english ?? "").includes("Ba Na Hills"), `Reusable row ${phrase.id} should not say Ba Na Hills`);
+      assert(!String(phrase.vietnamese ?? "").includes("Bà Nà Hills"), `Reusable row ${phrase.id} should not say Bà Nà Hills`);
+    }
   }
 
   const storePhrase = catalog.phrases.find((phrase) => phrase.id === "store-1");
@@ -201,26 +210,18 @@ function main() {
     ORDER BY sort_order;
   `);
   assertArrayEqual(ids(sqliteSections), expectedSectionOrder, "SQLite section order");
-  const sqliteJourneyRows = sqliteJSON(`
-    SELECT psi.target_id AS id
-    FROM page_section ps
-    JOIN page_section_item psi ON psi.section_id = ps.id
-    WHERE ps.page_id = '${pageID}'
-      AND ps.section_key = 'journey-flow'
-      AND psi.item_kind = 'phrase'
-    ORDER BY psi.sort_order;
-  `);
-  assertArrayEqual(ids(sqliteJourneyRows), expectedJourneyPhraseIDs, "SQLite journey flow phrase IDs");
-  const sqliteKeyRows = sqliteJSON(`
-    SELECT psi.target_id AS id
-    FROM page_section ps
-    JOIN page_section_item psi ON psi.section_id = ps.id
-    WHERE ps.page_id = '${pageID}'
-      AND ps.section_key = 'key-phrases'
-      AND psi.item_kind = 'phrase'
-    ORDER BY psi.sort_order;
-  `);
-  assertArrayEqual(ids(sqliteKeyRows), expectedKeyPhraseIDs, "SQLite key phrase IDs");
+  for (const [sectionID, expectedPhraseIDs] of expectedRows) {
+    const sqliteRows = sqliteJSON(`
+      SELECT psi.target_id AS id
+      FROM page_section ps
+      JOIN page_section_item psi ON psi.section_id = ps.id
+      WHERE ps.page_id = '${pageID}'
+        AND ps.section_key = '${sectionID}'
+        AND psi.item_kind = 'phrase'
+      ORDER BY psi.sort_order;
+    `);
+    assertArrayEqual(ids(sqliteRows), expectedPhraseIDs, `SQLite ${sectionID} phrase IDs`);
+  }
 
   assert(fs.existsSync(path.join(assetDir, "Contents.json")), "HeroBaNaHills Contents.json missing");
   assert(fs.existsSync(path.join(assetDir, "hero-ba-na-hills.png")), "HeroBaNaHills PNG missing");

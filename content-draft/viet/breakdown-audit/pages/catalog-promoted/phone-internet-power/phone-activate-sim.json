@@ -1,0 +1,70 @@
+{
+  "pageID": "viet-phrase-phone-premium-activate-sim",
+  "phraseText": "Bạn có thể giúp tôi kích hoạt SIM được không?",
+  "englishTitle": "Can you help me activate the SIM?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.329Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-phone-premium-activate-sim",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "kích",
+      "english": "size / activate"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hoạt",
+      "english": "operate"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "SIM",
+      "english": "SIM card"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể giúp tôi kích hoạt SIM được không?",
+      "english": "Can you help me activate the SIM?",
+      "audioKey": "phone-premium-activate-sim"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "pageID": "viet-phrase-v900-tran-please-use-the-price-in-the-grab-app",
+  "phraseText": "Vui lòng sử dụng giá trên ứng dụng Grab.",
+  "englishTitle": "Please use the price in the Grab app.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.353Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-please-use-the-price-in-the-grab-app",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "sử dụng",
+      "english": "use",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trên",
+      "english": "on / above"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ứng dụng",
+      "english": "app",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "Grab.",
+      "english": "Grab"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng sử dụng giá trên ứng dụng Grab.",
+      "english": "Please use the price in the Grab app.",
+      "audioKey": "v900-tran-please-use-the-price-in-the-grab-app"
+    }
+  ]
+}

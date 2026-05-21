@@ -1,0 +1,63 @@
+{
+  "itemID": "food-banh-mi-cha-lua",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì chả lụa",
+  "englishTranslation": "Pork sausage sandwich",
+  "romanizedNoTones": "Banh mi cha lua",
+  "soundOut": "bahn mee chah loo-uh",
+  "notes": "",
+  "atAGlance": "A cool, savory bánh mì that puts Vietnam’s smooth chả lụa pork sausage into a French-influenced loaf with herbs and pickles.",
+  "whatItIs": "Bánh mì chả lụa is the deli-counter side of the Vietnamese sandwich: pale slices of steamed pork sausage, pâté or butter, cucumber, cilantro, chili, and đồ chua in a loaf that should shatter lightly when you bite it.",
+  "usuallyIncludes": [
+    "baguette",
+    "pork",
+    "pickled vegetables",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "It is best as a quick breakfast or train-station snack. Ask for chili only if you want heat, then eat it while the bread is still warm and the sausage is cool and springy.",
+  "howLocalsOrder": "Order bánh mì chả lụa when you want smooth Vietnamese pork sausage instead of grilled meat. Ask for no chili, extra pickles, or extra pâté before the bread is closed.",
+  "worthKnowing": "Chả lụa appears at family meals, holiday platters, and lunch counters, so this sandwich brings a familiar Vietnamese sausage into the bánh mì story instead of only copying a French deli sandwich.",
+  "goodToKnow": "Useful phrase: ask for no chili if you are heat-sensitive.",
+  "commonOptions": [
+    "no chili",
+    "extra pâté",
+    "extra pickles",
+    "toasted bread"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì chả lụa.",
+    "english": "I’d like one chả lụa bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee chah loo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "non-generic culinary detail",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì chả lụa was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

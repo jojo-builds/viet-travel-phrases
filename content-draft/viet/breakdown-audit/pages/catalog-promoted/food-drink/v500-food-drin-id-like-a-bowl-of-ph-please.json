@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-phrase-v500-food-drin-id-like-a-bowl-of-ph-please",
+  "phraseText": "Làm ơn cho tôi một tô phở",
+  "englishTitle": "I’d like a bowl of phở, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.303Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-food-drin-id-like-a-bowl-of-ph-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Làm ơn",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một tô",
+      "english": "one bowl",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "phở",
+      "english": "pho"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Làm ơn cho tôi một tô phở",
+      "english": "I’d like a bowl of phở, please",
+      "audioKey": "v500-food-drin-id-like-a-bowl-of-ph-please"
+    }
+  ]
+}

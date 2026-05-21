@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-ca-phe-latte",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê latte",
+  "englishTranslation": "Latte",
+  "romanizedNoTones": "Ca phe latte",
+  "soundOut": "kah fay lah-tay",
+  "notes": "",
+  "atAGlance": "Cà phê latte sits in Vietnam’s contemporary café lane, softer and milkier than phin coffee but often built on the same local coffee culture.",
+  "whatItIs": "Cà phê latte is espresso or strong coffee with milk, served hot or iced at modern cafés. It is more international than phin coffee, but sweetness and coffee strength can still vary by shop.",
+  "usuallyIncludes": [
+    "espresso-style coffee",
+    "steamed or fresh milk"
+  ],
+  "howToEnjoy": "Choose hot or iced first, then sweetness if the café uses syrup or sweetened milk. Expect a softer drink than cà phê sữa đá.",
+  "howLocalsOrder": "Order cà phê latte at urban cafés when you want milk-forward coffee beside the phin classics. Choose hot or iced, then ask for less sweetness before paying if the café uses syrup.",
+  "worthKnowing": "In Vietnamese cities, latte menus sit beside phin coffee, egg coffee, coconut coffee, and salt coffee rather than replacing them.",
+  "goodToKnow": "Ask whether it is hot or iced; menus can vary.",
+  "commonOptions": [
+    "hot",
+    "iced",
+    "less sweet",
+    "takeaway"
+  ],
+  "regionalAssociation": "modern Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê latte.",
+    "english": "I’d like one glass of latte.",
+    "pronunciation": "chaw toy moht lee kah fay lah-tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cà phê latte was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

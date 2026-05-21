@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-loca-serv-ever-task-when-will-it-be-ready",
+  "phraseText": "Khi nào nó sẽ sẵn sàng?",
+  "englishTitle": "When will it be ready?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.324Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-loca-serv-ever-task-when-will-it-be-ready",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Khi nào",
+      "english": "when",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "sẽ",
+      "english": "will"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "sẵn",
+      "english": "ready / available"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sàng?",
+      "english": "morning"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Khi nào nó sẽ sẵn sàng?",
+      "english": "When will it be ready?",
+      "audioKey": "v900-loca-serv-ever-task-when-will-it-be-ready"
+    }
+  ]
+}

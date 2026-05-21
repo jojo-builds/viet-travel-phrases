@@ -1,0 +1,62 @@
+{
+  "itemID": "food-che-dau-den",
+  "menuType": "Food",
+  "category": "Desserts & sweets",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Chè đậu đen",
+  "englishTranslation": "Black bean sweet soup",
+  "romanizedNoTones": "Che dau den",
+  "soundOut": "cheh dow den",
+  "notes": "",
+  "atAGlance": "Chè đậu đen is black bean sweet soup, often served with syrup, coconut milk, and ice. It tastes deeper and earthier than red bean chè.",
+  "whatItIs": "Chè đậu đen is black bean chè, a sweet bean dessert that is usually spooned cold or over ice.",
+  "usuallyIncludes": [
+    "black beans",
+    "sugar syrup",
+    "coconut milk optional",
+    "ice"
+  ],
+  "howToEnjoy": "Stir in coconut milk if served, then spoon beans and syrup together.",
+  "howLocalsOrder": "Order chè đậu đen with ice for the classic cooling version. Ask for less sugar if you want the black-bean flavor and chew to come through.",
+  "worthKnowing": "Black bean chè is a classic example of Vietnamese sweets caring about texture and refreshment as much as sugar.",
+  "goodToKnow": "It is a cooling dessert on hot days. The beans give it more chew and body than a simple pudding.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no coconut",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô chè đậu đen.",
+    "english": "I’d like one bowl of black bean sweet soup.",
+    "pronunciation": "chaw toy moht toh cheh dow den",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-no-ice",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Chè đậu đen was reviewed as a desserts & sweets item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

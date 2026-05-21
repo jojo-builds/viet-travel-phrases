@@ -46,39 +46,33 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể hiển thị",
+          "english": "can I show",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể hiển thị",
-          "english": "show it on my phone",
-          "audioKey": null
+          "vietnamese": "nó",
+          "english": "it",
+          "audioKey": "breakdown-v500-dire-navi-how-far-is-it-first"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nó trên điện",
-          "english": "go / move",
+          "vietnamese": "trên điện thoại của tôi",
+          "english": "on my phone",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "thoại của tôi",
-          "english": "my / mine",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "question marker",
+          "audioKey": "breakdown-bath-6-piece-6"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
           "vietnamese": "Tôi có thể hiển thị nó trên điện thoại của tôi không?",
           "english": "Can I show it on my phone",
-          "audioKey": null
+          "audioKey": "v500-airp-bord-arri-can-i-show-it-on-my-phone"
         }
       ]
     },

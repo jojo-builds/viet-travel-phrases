@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-one-child-ticket-please",
+  "phraseText": "Cho xin một vé trẻ em",
+  "englishTitle": "One child ticket, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-one-child-ticket-please",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vé trẻ em",
+      "english": "child ticket",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho xin một vé trẻ em",
+      "english": "One child ticket, please",
+      "audioKey": "v900-time-date-book-one-child-ticket-please"
+    }
+  ]
+}

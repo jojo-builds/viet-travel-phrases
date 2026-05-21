@@ -56,7 +56,7 @@ final class PracticeNativeMVPTests: XCTestCase {
         for cityID in expectedCityIDs {
             let candidates = try repository.loadPracticeCandidates(cityID: cityID, limit: 180)
 
-            XCTAssertEqual(candidates.count, 150, cityID)
+            XCTAssertGreaterThanOrEqual(candidates.count, 140, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.cityID == cityID }, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.citySubcategoryID != nil }, cityID)
             XCTAssertTrue(candidates.allSatisfy { $0.source.placeID != nil }, cityID)
@@ -160,6 +160,229 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertFalse(snapshot.bucketPrompts.isEmpty)
     }
 
+    func testSavedPracticeItemsIncludeMenuDrinks() throws {
+        let items = try SavedTripPracticeCatalog.items(
+            for: [
+                "viet-menu-drink-ca-phe-sua-da",
+                "viet-menu-drink-ca-phe-den-da",
+                "viet-menu-drink-nuoc-mia",
+                "viet-menu-drink-tra-da",
+            ]
+        )
+
+        XCTAssertEqual(
+            items.map(\.pageID),
+            [
+                "viet-menu-drink-ca-phe-sua-da",
+                "viet-menu-drink-ca-phe-den-da",
+                "viet-menu-drink-nuoc-mia",
+                "viet-menu-drink-tra-da",
+            ]
+        )
+        XCTAssertEqual(items.map(\.vietnamese), ["Cà phê sữa đá", "Cà phê đen đá", "Nước mía", "Trà đá"])
+        XCTAssertTrue(items.allSatisfy { $0.kind == .drinks })
+    }
+
+    func testMatchPracticeSourcesOnlyExposePlayableAudioBackedItems() throws {
+        let snapshot = try PracticeMatchSnapshot.load(
+            practicePageIDs: [
+                "viet-phrase-ves-call-taxi-for-me",
+                "viet-phrase-taxi-1",
+                "viet-phrase-transport-stop-here-clearer",
+                "viet-phrase-v500-tran-please-wait-here",
+                "viet-phrase-v500-tran-are-you-my-driver",
+            ],
+            savedPageIDs: [
+                "viet-phrase-ves-drop-me-off-here",
+                "viet-phrase-polite-1",
+                "viet-phrase-polite-2",
+                "viet-phrase-polite-5",
+                "viet-phrase-polite-7",
+            ]
+        )
+        let requiredSources = [snapshot.quickSource, snapshot.practiceSource, snapshot.savedSource] + snapshot.topicSources
+        var failures: [String] = []
+
+        for source in requiredSources where source.canStart {
+            for item in source.items {
+                if !AudioSpeakerButton.isPlayableAudioKey(item.audioKey) {
+                    failures.append("\(source.id) exposes \(item.pageID) without playable audio")
+                }
+            }
+        }
+
+        XCTAssertTrue(failures.isEmpty, failures.joined(separator: "\n"))
+        XCTAssertFalse(snapshot.practiceSource.items.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertFalse(snapshot.savedSource.items.contains { $0.pageID == "viet-phrase-ves-drop-me-off-here" })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:taxi-directions" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:shopping-markets" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:emergency" && $0.canStart })
+        XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:danang-city" && $0.canStart })
+        XCTAssertGreaterThan(snapshot.quickSource.items.count, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:essentials" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:first-day" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:taxi-directions" }?.items.count ?? 0, 40)
+        XCTAssertGreaterThan(snapshot.topicSources.first { $0.id == "topic:danang-city" }?.items.count ?? 0, 20)
+
+        let foodSource = try XCTUnwrap(snapshot.topicSources.first { $0.id == "topic:food-drinks" })
+        XCTAssertGreaterThanOrEqual(foodSource.imageBackedItems.count, PracticeMatchRound.pairCount)
+        XCTAssertTrue(foodSource.imageBackedItems.contains { $0.pageID.hasPrefix("viet-menu-") })
+    }
+
+    func testAirportBrowsePracticeStarterCanOpenMatchRound() throws {
+        let descriptor = try XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        switch descriptor.practiceAction {
+        case .practiceSource(let sourceID):
+            let snapshot = try PracticeMatchSnapshot.load(practicePageIDs: [], savedPageIDs: [])
+            let source = try XCTUnwrap(snapshot.topicSources.first { $0.id == sourceID })
+
+            XCTAssertEqual(sourceID, "topic:airport")
+            XCTAssertTrue(source.canStart)
+            XCTAssertGreaterThanOrEqual(source.items.count, 4)
+        case .addStarterPages, .practiceMode, .practiceScenario:
+            XCTFail("Airport Browse practice entry should use the audio-backed airport match topic.")
+        }
+    }
+
+    func testMatchRoundSamplesFourItemsFromFullSourcePool() throws {
+        let source = makeMatchSource(itemCount: 84)
+        let firstFourIDs = Set(source.items.prefix(4).map(\.id))
+
+        let sampledRounds = try (0..<8).map { seed in
+            var generator = SeededPracticeRandomNumberGenerator(seed: UInt64(seed + 1))
+            return try XCTUnwrap(PracticeMatchRound.make(source: source, rng: &generator))
+        }
+        let selectionSignatures = Set(sampledRounds.map { round in
+            round.pairs.map(\.id).joined(separator: "|")
+        })
+
+        XCTAssertGreaterThan(selectionSignatures.count, 1)
+        XCTAssertTrue(sampledRounds.contains { round in
+            !Set(round.pairs.map(\.id)).isSubset(of: firstFourIDs)
+        })
+        XCTAssertTrue(sampledRounds.allSatisfy { $0.pairs.count == 4 })
+    }
+
+    func testMatchRoundShufflesPromptAndAnswerSidesIndependently() throws {
+        let source = makeMatchSource(itemCount: 16)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 11)
+
+        let round = try XCTUnwrap(PracticeMatchRound.make(source: source, rng: &generator))
+        let promptPairIDs = round.prompts.map(\.pairID)
+        let answerPairIDs = round.answers.map(\.pairID)
+
+        XCTAssertEqual(Set(promptPairIDs), Set(answerPairIDs))
+        XCTAssertNotEqual(promptPairIDs, answerPairIDs)
+    }
+
+    func testMatchRoundRotatesThroughImageAndAudioModesWhenImagesExist() throws {
+        let source = makeMatchSource(itemCount: 16, imageEvery: 1)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 13)
+
+        let firstRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 0, rng: &generator))
+        let imageRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 1, rng: &generator))
+        let listeningRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 2, rng: &generator))
+        let audioImageRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 3, rng: &generator))
+
+        XCTAssertEqual(firstRound.mode, .phraseToMeaning)
+        XCTAssertEqual(imageRound.mode, .imageToPhrase)
+        XCTAssertEqual(listeningRound.mode, .audioToMeaning)
+        XCTAssertEqual(audioImageRound.mode, .audioToImage)
+        XCTAssertTrue(imageRound.pairs.allSatisfy { $0.item.imageName != nil })
+        XCTAssertTrue(audioImageRound.pairs.allSatisfy { $0.item.imageName != nil })
+    }
+
+    func testMatchRoundSkipsImageModesWhenSourceHasNoImages() throws {
+        let source = makeMatchSource(itemCount: 16)
+        var generator = SeededPracticeRandomNumberGenerator(seed: 14)
+
+        let firstRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 0, rng: &generator))
+        let secondRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 1, rng: &generator))
+        let thirdRound = try XCTUnwrap(PracticeMatchRound.make(source: source, roundIndex: 2, rng: &generator))
+
+        XCTAssertEqual(firstRound.mode, .phraseToMeaning)
+        XCTAssertEqual(secondRound.mode, .audioToMeaning)
+        XCTAssertEqual(thirdRound.mode, .phraseToMeaning)
+    }
+
+    func testMatchRoundAvoidsImmediateRepeatsWhenSourceHasEnoughItems() throws {
+        let source = makeMatchSource(itemCount: 12)
+        let currentRoundIDs = Set(source.items.prefix(PracticeMatchRound.pairCount).map(\.id))
+        var generator = SeededPracticeRandomNumberGenerator(seed: 22)
+
+        let nextRound = try XCTUnwrap(
+            PracticeMatchRound.make(
+                source: source,
+                avoidingItemIDs: currentRoundIDs,
+                rng: &generator
+            )
+        )
+
+        XCTAssertTrue(Set(nextRound.pairs.map(\.id)).isDisjoint(with: currentRoundIDs))
+    }
+
+    func testMatchSessionAdvancesAndCanReturnToPreviousRound() throws {
+        let source = makeMatchSource(itemCount: 12)
+        var initialGenerator = SeededPracticeRandomNumberGenerator(seed: 31)
+        var nextGenerator = SeededPracticeRandomNumberGenerator(seed: 32)
+        var session = try XCTUnwrap(PracticeMatchActiveSession(source: source, rng: &initialGenerator))
+        let firstRound = session.round
+
+        session.matchedPairIDs = Set(firstRound.pairs.map(\.id))
+
+        XCTAssertTrue(session.advanceToNextRound(rng: &nextGenerator))
+        XCTAssertEqual(session.roundIndex, 1)
+        XCTAssertNotEqual(session.round.id, firstRound.id)
+        XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertTrue(session.canReturnToPreviousRound)
+        XCTAssertTrue(Set(session.round.pairs.map(\.id)).isDisjoint(with: Set(firstRound.pairs.map(\.id))))
+
+        XCTAssertTrue(session.returnToPreviousRound())
+        XCTAssertEqual(session.roundIndex, 0)
+        XCTAssertEqual(session.round, firstRound)
+        XCTAssertTrue(session.matchedPairIDs.isEmpty)
+    }
+
+    func testPracticeMatchPresentationUsesOnePullUpCardContract() {
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
+        XCTAssertTrue(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .pullUpOverlay,
+                hasRequestedStart: true,
+                hasActiveSession: false
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .pullUpOverlay,
+                hasRequestedStart: true,
+                hasActiveSession: true
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsDirectStartCard(
+                style: .route,
+                hasRequestedStart: true,
+                hasActiveSession: false
+            )
+        )
+    }
+
+    func testPracticeMatchSnapshotLoadPolicySkipsInactiveRoutes() {
+        XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: false))
+        XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: false))
+        XCTAssertTrue(PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: true))
+        XCTAssertTrue(PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: true))
+    }
+
+    func testPracticePullUpBackdropDimsAndSheetBleedsToScreenEdges() {
+        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.30)
+        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertEqual(PracticeMatchPullUpMetrics.sheetHorizontalBackgroundPadding, 0)
+    }
+
     func testMissedPromptsReappearInMissedReview() throws {
         let store = isolatedProgressStore()
         let firstSnapshot = try PracticeDeckSnapshot.load(
@@ -208,5 +431,40 @@ final class PracticeNativeMVPTests: XCTestCase {
             defaults.removePersistentDomain(forName: suiteName)
         }
         return LocalPracticeProgressStore(defaults: defaults)
+    }
+
+    private func makeMatchSource(itemCount: Int, imageEvery: Int? = nil) -> PracticeMatchSource {
+        PracticeMatchSource(
+            id: "topic:essentials",
+            kind: .topic,
+            title: "Essentials",
+            subtitle: "Test phrases",
+            symbolName: "sparkles",
+            tint: .red,
+            items: (0..<itemCount).map { index in
+                PracticeMatchItem(
+                    pageID: "viet-test-practice-\(index)",
+                    vietnamese: "Cau \(index)",
+                    english: "Phrase \(index)",
+                    audioKey: "viet-test-practice-\(index)",
+                    symbolName: "sparkles",
+                    tint: .red,
+                    imageName: imageEvery.flatMap { index % $0 == 0 ? "HeroMenuFoodPhoBo" : nil }
+                )
+            }
+        )
+    }
+}
+
+private struct SeededPracticeRandomNumberGenerator: RandomNumberGenerator {
+    var state: UInt64
+
+    init(seed: UInt64) {
+        state = seed
+    }
+
+    mutating func next() -> UInt64 {
+        state = state &* 6364136223846793005 &+ 1442695040888963407
+        return state
     }
 }

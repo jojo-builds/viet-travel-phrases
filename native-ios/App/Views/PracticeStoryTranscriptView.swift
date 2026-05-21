@@ -1,13 +1,16 @@
 import SwiftUI
 
+typealias PracticeStoryOpenPhrasePageAction = (_ pageID: String, _ returnTurnID: String?) -> Void
+
 struct PracticeStoryTranscriptView: View {
     let turns: [PracticeStoryTurn]
     let tint: AccentTint
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
+    @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -20,12 +23,14 @@ struct PracticeStoryTranscriptView: View {
                     PracticeStoryBubble(
                         turn: turn,
                         tint: tint,
+                        selectedDefinitionToken: $selectedDefinitionToken,
                         isInPracticePool: isInPracticePool,
                         isSavedPhrasePage: isSavedPhrasePage,
                         onOpenPhrasePage: onOpenPhrasePage,
                         onTogglePracticePage: onTogglePracticePage,
                         onToggleSavedPhrasePage: onToggleSavedPhrasePage
                     )
+                    .id(turn.id)
                     .transition(rowTransition(for: turn))
                 case .localTyping:
                     PracticeStoryTypingBubble(turn: turn)
@@ -39,6 +44,7 @@ struct PracticeStoryTranscriptView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
         .animation(.easeOut(duration: 0.24), value: turns.map(\.id))
         .accessibilityIdentifier("Practice.Story.Transcript")
     }
@@ -104,7 +110,7 @@ private struct PracticeStoryRecoveryLine: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.white.opacity(0.46), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityIdentifier("Practice.Story.Recovery.\(turn.stepID)")
         }
     }
@@ -113,9 +119,10 @@ private struct PracticeStoryRecoveryLine: View {
 private struct PracticeStoryBubble: View {
     let turn: PracticeStoryTurn
     let tint: AccentTint
+    @Binding var selectedDefinitionToken: PracticeStoryDefinitionToken?
     let isInPracticePool: (String) -> Bool
     let isSavedPhrasePage: (String) -> Bool
-    let onOpenPhrasePage: (String) -> Void
+    let onOpenPhrasePage: PracticeStoryOpenPhrasePageAction
     let onTogglePracticePage: (String) -> Void
     let onToggleSavedPhrasePage: (String) -> Void
 
@@ -136,6 +143,8 @@ private struct PracticeStoryBubble: View {
     }
 
     var body: some View {
+        let bubbleShape = RoundedRectangle(cornerRadius: 22, style: .continuous)
+
         HStack(alignment: .bottom, spacing: 8) {
             if isTraveler {
                 Spacer(minLength: 52)
@@ -154,11 +163,12 @@ private struct PracticeStoryBubble: View {
 
                     VStack(alignment: isTraveler ? .trailing : .leading, spacing: 4) {
                         if let vietnamese = turn.vietnamese, !vietnamese.isEmpty {
-                            Text(vietnamese)
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(isTraveler ? .white : .primary)
-                                .multilineTextAlignment(isTraveler ? .trailing : .leading)
-                                .fixedSize(horizontal: false, vertical: true)
+                            PracticeStoryVietnameseLine(
+                                turn: turn,
+                                vietnamese: vietnamese,
+                                isTraveler: isTraveler,
+                                selectedToken: $selectedDefinitionToken
+                            )
                                 .accessibilityIdentifier("Practice.Story.Text.\(isTraveler ? "traveler" : "local").\(turn.id).vietnamese")
                         }
 
@@ -185,16 +195,21 @@ private struct PracticeStoryBubble: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .frame(maxWidth: 302, alignment: isTraveler ? .trailing : .leading)
-            .background(bubbleFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(bubbleFill, in: bubbleShape)
             .overlay {
                 if !isTraveler {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    bubbleShape
                         .stroke(.white.opacity(0.72), lineWidth: 1)
                 }
             }
             .compositingGroup()
-            .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .contentShape(bubbleShape)
+            .simultaneousGesture(
+                TapGesture().onEnded {
+                    selectedDefinitionToken = nil
+                }
+            )
+            .contentShape(.contextMenuPreview, bubbleShape)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Bubble.\(isTraveler ? "traveler" : "local").\(turn.stepID)")
             .contextMenu {
@@ -209,9 +224,9 @@ private struct PracticeStoryBubble: View {
                     }
 
                     Button {
-                        onOpenPhrasePage(pageID)
+                        onOpenPhrasePage(pageID, turn.id)
                     } label: {
-                        Label("Open Phrase Page", systemImage: "doc.text.magnifyingglass")
+                        Label("Open Details", systemImage: "doc.text.magnifyingglass")
                     }
                 }
             }
@@ -237,6 +252,276 @@ private struct PracticeStoryBubble: View {
             .accessibilityHidden(true)
     }
 
+}
+
+private struct PracticeStoryVietnameseLine: View {
+    let turn: PracticeStoryTurn
+    let vietnamese: String
+    let isTraveler: Bool
+    @Binding var selectedToken: PracticeStoryDefinitionToken?
+
+    private var definitionTokens: [PracticeStoryDefinitionToken] {
+        PracticeStoryBreakdownDefinitions.tokens(for: turn)
+    }
+
+    var body: some View {
+        if definitionTokens.isEmpty {
+            Text(vietnamese)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(isTraveler ? .white : .primary)
+                .multilineTextAlignment(isTraveler ? .trailing : .leading)
+                .fixedSize(horizontal: false, vertical: true)
+        } else {
+            ZStack(alignment: isTraveler ? .topTrailing : .topLeading) {
+                PracticeStoryDefinitionFlowLayout(
+                    horizontalSpacing: 5,
+                    verticalSpacing: 4,
+                    alignment: isTraveler ? .trailing : .leading
+                ) {
+                    ForEach(definitionTokens) { token in
+                        PracticeStoryDefinitionTokenButton(
+                            token: token,
+                            isTraveler: isTraveler,
+                            selectedToken: $selectedToken
+                        )
+                    }
+                }
+                .zIndex(1)
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .contain)
+        }
+    }
+}
+
+private struct PracticeStoryDefinitionTokenButton: View {
+    let token: PracticeStoryDefinitionToken
+    let isTraveler: Bool
+    @Binding var selectedToken: PracticeStoryDefinitionToken?
+
+    var body: some View {
+        Button {
+            let nextSelection = selectedToken?.id == token.id ? nil : token
+            DispatchQueue.main.async {
+                selectedToken = nextSelection
+            }
+        } label: {
+            Text(token.vietnamese)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(isTraveler ? .white : .primary)
+                .lineLimit(1)
+                .fixedSize()
+                .padding(.bottom, 4)
+                .overlay(alignment: .bottom) {
+                    PracticeStoryDottedUnderline(color: underlineColor)
+                        .offset(y: 1)
+                }
+                .overlay(alignment: .top) {
+                    if selectedToken?.id == token.id {
+                        PracticeStoryDefinitionCallout(token: token)
+                            .offset(y: -94)
+                            .transition(.opacity.combined(with: .scale(scale: 0.98, anchor: .bottom)))
+                            .allowsHitTesting(false)
+                            .zIndex(2)
+                    }
+                }
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(token.vietnamese), \(token.english)")
+        .accessibilityHint("Shows meaning")
+        .accessibilityIdentifier("Practice.Story.DefinitionToken.\(token.id)")
+        .zIndex(selectedToken?.id == token.id ? 2 : 1)
+    }
+
+    private var underlineColor: Color {
+        isTraveler
+            ? .white.opacity(0.76)
+            : Color(red: 0.07, green: 0.50, blue: 1.0).opacity(0.72)
+    }
+}
+
+private struct PracticeStoryDefinitionCallout: View {
+    let token: PracticeStoryDefinitionToken
+
+    var body: some View {
+        VStack(spacing: 0) {
+            PracticeStoryDefinitionPopover(token: token)
+
+            PracticeStoryDefinitionCalloutTail()
+                .fill(PhrasePageStyle.cardFill)
+                .frame(width: 28, height: 16)
+                .overlay {
+                    PracticeStoryDefinitionCalloutTail()
+                        .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                }
+                .offset(y: -1)
+        }
+        .softAmbientCardShadow()
+        .accessibilityElement(children: .contain)
+    }
+}
+
+private struct PracticeStoryDefinitionPopover: View {
+    let token: PracticeStoryDefinitionToken
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(token.vietnamese)
+                .font(.headline.weight(.bold))
+                .foregroundStyle(.primary)
+                .accessibilityIdentifier("Practice.Story.DefinitionCallout.Vietnamese")
+
+            Text(token.english)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("Practice.Story.DefinitionCallout.English")
+        }
+        .padding(16)
+        .frame(minWidth: 172, maxWidth: 260, alignment: .leading)
+        .background(PhrasePageStyle.cardFill, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("Practice.Story.DefinitionPopover.\(token.id)")
+    }
+}
+
+private struct PracticeStoryDefinitionCalloutTail: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.closeSubpath()
+        return path
+    }
+}
+
+private struct PracticeStoryDottedUnderline: View {
+    let color: Color
+
+    var body: some View {
+        Canvas { context, size in
+            var path = Path()
+            path.move(to: CGPoint(x: 0, y: size.height / 2))
+            path.addLine(to: CGPoint(x: size.width, y: size.height / 2))
+            context.stroke(
+                path,
+                with: .color(color),
+                style: StrokeStyle(lineWidth: 1.35, lineCap: .round, dash: [1, 3])
+            )
+        }
+        .frame(height: 2)
+    }
+}
+
+private struct PracticeStoryDefinitionFlowLayout: Layout {
+    enum Alignment {
+        case leading
+        case trailing
+    }
+
+    var horizontalSpacing: CGFloat
+    var verticalSpacing: CGFloat
+    var alignment: Alignment
+
+    func sizeThatFits(
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Void
+    ) -> CGSize {
+        let maxWidth = proposal.width ?? CGFloat.greatestFiniteMagnitude
+        let rows = rows(for: subviews, maxWidth: maxWidth)
+        let width = proposal.width.map { min($0, rows.map(\.width).max() ?? 0) } ?? (rows.map(\.width).max() ?? 0)
+        let height = rows.reduce(CGFloat(0)) { result, row in
+            result + row.height
+        } + CGFloat(max(0, rows.count - 1)) * verticalSpacing
+
+        return CGSize(width: width, height: height)
+    }
+
+    func placeSubviews(
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Void
+    ) {
+        let rows = rows(for: subviews, maxWidth: bounds.width)
+        var y = bounds.minY
+
+        for row in rows {
+            var x = bounds.minX
+            if alignment == .trailing {
+                x += max(0, bounds.width - row.width)
+            }
+
+            for item in row.items {
+                subviews[item.index].place(
+                    at: CGPoint(x: x, y: y),
+                    anchor: .topLeading,
+                    proposal: ProposedViewSize(item.size)
+                )
+                x += item.size.width + horizontalSpacing
+            }
+
+            y += row.height + verticalSpacing
+        }
+    }
+
+    private func rows(for subviews: Subviews, maxWidth: CGFloat) -> [Row] {
+        guard !subviews.isEmpty else {
+            return []
+        }
+
+        let resolvedMaxWidth = maxWidth.isFinite && maxWidth > 0 ? maxWidth : CGFloat.greatestFiniteMagnitude
+        var rows: [Row] = []
+        var current = Row()
+
+        for index in subviews.indices {
+            let size = subviews[index].sizeThatFits(.unspecified)
+            let nextWidth = current.items.isEmpty
+                ? size.width
+                : current.width + horizontalSpacing + size.width
+
+            if !current.items.isEmpty, nextWidth > resolvedMaxWidth {
+                rows.append(current)
+                current = Row()
+            }
+
+            current.append(Item(index: index, size: size), spacing: horizontalSpacing)
+        }
+
+        if !current.items.isEmpty {
+            rows.append(current)
+        }
+
+        return rows
+    }
+
+    private struct Item {
+        let index: Int
+        let size: CGSize
+    }
+
+    private struct Row {
+        var items: [Item] = []
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+
+        mutating func append(_ item: Item, spacing: CGFloat) {
+            if !items.isEmpty {
+                width += spacing
+            }
+
+            items.append(item)
+            width += item.size.width
+            height = max(height, item.size.height)
+        }
+    }
 }
 
 private struct PracticeStoryTypingBubble: View {
@@ -267,10 +552,10 @@ private struct PracticeStoryTypingBubble: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 13)
-            .background(Color.white.opacity(0.78), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .stroke(.white.opacity(0.68), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Waiting for reply")
@@ -287,12 +572,23 @@ private struct PracticeStoryTypingBubble: View {
 
 struct PracticeStoryComposer: View {
     let step: PracticeScenarioStep
+    let responseOptions: [PracticeScenarioResponseOption]
     let onSend: (PracticeScenarioResponseOption) -> Void
 
     @State private var pendingOptionID: String?
 
+    init(
+        step: PracticeScenarioStep,
+        responseOptions: [PracticeScenarioResponseOption]? = nil,
+        onSend: @escaping (PracticeScenarioResponseOption) -> Void
+    ) {
+        self.step = step
+        self.responseOptions = responseOptions ?? Array(step.responseOptions.prefix(4))
+        self.onSend = onSend
+    }
+
     private var options: [PracticeScenarioResponseOption] {
-        Array(step.responseOptions.prefix(3))
+        Array(responseOptions.prefix(4))
     }
 
     private var pendingOption: PracticeScenarioResponseOption? {
@@ -321,6 +617,7 @@ struct PracticeStoryComposer: View {
             .padding(.top, 8)
             .padding(.bottom, 8)
             .frame(maxWidth: .infinity)
+            .fixedSize(horizontal: false, vertical: true)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("Practice.Story.Composer")
     }
@@ -360,6 +657,7 @@ struct PracticeStoryComposer: View {
                     .padding(.bottom, 2)
                 }
                 .scrollClipDisabled()
+                .frame(height: PracticeStoryChoiceStripLayout.height)
                 .onAppear {
                     focusSelectedChoice(with: scrollProxy, animated: false)
                 }
@@ -376,7 +674,7 @@ struct PracticeStoryComposer: View {
 
         HStack(alignment: .center, spacing: 12) {
             Text(pendingOption?.scenarioVietnamese ?? "")
-                .font(.system(size: 23, weight: .regular))
+                .font(.system(size: 22, weight: .regular))
                 .foregroundStyle(.primary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.82)
@@ -406,10 +704,10 @@ struct PracticeStoryComposer: View {
         }
         .padding(.leading, 18)
         .padding(.trailing, 10)
-        .padding(.vertical, 10)
-        .frame(minHeight: 60)
+        .padding(.vertical, 9)
+        .frame(minHeight: 56)
         .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.38), in: shape)
+        .background(Color(.systemBackground).opacity(0.42), in: shape)
         .nativeGlass(cornerRadius: 24, tint: .white, interactive: true)
         .overlay {
             shape
@@ -419,7 +717,7 @@ struct PracticeStoryComposer: View {
             shape
                 .stroke(Color(.separator).opacity(0.18), lineWidth: 0.7)
         }
-        .shadow(color: .black.opacity(0.07), radius: 18, x: 0, y: 10)
+        .softAmbientCardShadow()
     }
 
     private func focusSelectedChoice(with scrollProxy: ScrollViewProxy, animated: Bool) {
@@ -444,6 +742,7 @@ struct PracticeStoryComposer: View {
 private enum PracticeStoryChoiceStripLayout {
     static let horizontalPadding: CGFloat = 14
     static let trailingFocusSpace: CGFloat = 260
+    static let height: CGFloat = 70
 }
 
 private struct PracticeStoryChoiceChip: View {
@@ -452,11 +751,11 @@ private struct PracticeStoryChoiceChip: View {
     let onSelect: () -> Void
 
     private var minWidth: CGFloat {
-        isSelected ? 236 : 132
+        isSelected ? 224 : 126
     }
 
     private var maxWidth: CGFloat {
-        isSelected ? 312 : 176
+        isSelected ? 300 : 172
     }
 
     var body: some View {
@@ -471,9 +770,9 @@ private struct PracticeStoryChoiceChip: View {
                 .minimumScaleFactor(0.82)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 14)
-                .padding(.vertical, 10)
+                .padding(.vertical, 8)
                 .frame(minWidth: minWidth, maxWidth: maxWidth)
-                .frame(minHeight: 58)
+                .frame(minHeight: 52)
                 .background(chipBackground, in: shape)
                 .nativeGlass(cornerRadius: 20, tint: chipGlassTint, interactive: true)
                 .overlay {
@@ -483,7 +782,7 @@ private struct PracticeStoryChoiceChip: View {
                             lineWidth: isSelected ? 2 : 1
                         )
                 }
-                .shadow(color: .black.opacity(isSelected ? 0.08 : 0.045), radius: isSelected ? 16 : 11, x: 0, y: isSelected ? 8 : 5)
+                .softAmbientCardShadow()
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("Practice.Story.Choice.\(option.id)")

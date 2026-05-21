@@ -1,0 +1,60 @@
+{
+  "itemID": "drink-ca-phe-mocha",
+  "menuType": "Drink",
+  "category": "Coffee",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà phê mocha",
+  "englishTranslation": "Mocha coffee",
+  "romanizedNoTones": "Ca phe mocha",
+  "soundOut": "kah fay moh-kah",
+  "notes": "",
+  "atAGlance": "Cà phê mocha is a dessert-leaning café drink where chocolate and milk soften Vietnamese coffee’s roasted bite.",
+  "whatItIs": "Cà phê mocha is a mocha-style café drink with coffee, milk, and chocolate. Expect coffee with chocolate sweetness, creamy milk, and a softer roast than black phin coffee.",
+  "usuallyIncludes": [
+    "coffee",
+    "milk",
+    "chocolate"
+  ],
+  "howToEnjoy": "Ask for less sugar if you want chocolate flavor without a syrupy finish.",
+  "howLocalsOrder": "Cà phê mocha is a more international café order, but sweetness can still be higher than expected. Ask hot or iced, then say less sweet if chocolate, milk, or syrup is involved.",
+  "worthKnowing": "In Vietnam, Cà phê mocha belongs to Vietnam’s modern café lane, where dessert drinks sit right beside traditional phin coffee.",
+  "goodToKnow": "Usually sweet and milky.",
+  "commonOptions": [
+    "hot",
+    "iced",
+    "less sweet",
+    "takeaway"
+  ],
+  "regionalAssociation": "modern Vietnamese cafés",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly cà phê mocha.",
+    "english": "I’d like one glass of mocha coffee.",
+    "pronunciation": "chaw toy moht lee kah fay moh-kah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Cà phê mocha was reviewed as a coffee item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

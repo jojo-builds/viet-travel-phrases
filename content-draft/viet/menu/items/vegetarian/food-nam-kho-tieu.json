@@ -1,0 +1,62 @@
+{
+  "itemID": "food-nam-kho-tieu",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nấm kho tiêu",
+  "englishTranslation": "Mushrooms braised with pepper",
+  "romanizedNoTones": "Nam kho tieu",
+  "soundOut": "nahm kaw tee-ew",
+  "notes": "",
+  "atAGlance": "Nấm kho tiêu is mushrooms braised with black pepper and soy-caramel depth, a compact vegetarian dish made for rice.",
+  "whatItIs": "Nấm kho tiêu is a chay kho dish where mushrooms replace meat as the savory center. Pepper, soy, and caramelized aromatics make the mushrooms taste deep and glossy.",
+  "usuallyIncludes": [
+    "mushrooms",
+    "black pepper",
+    "soy-caramel glaze",
+    "herbs",
+    "rice"
+  ],
+  "howToEnjoy": "Spoon the mushrooms and glaze over rice, then add herbs or greens for freshness. Ask about fish sauce if you need strict vegetarian cooking.",
+  "howLocalsOrder": "Nấm kho tiêu is a mushroom-and-pepper braise for rice, so ask for less pepper if you want the mushroom sweetness to show. Confirm chay seasoning if the restaurant also cooks meat dishes.",
+  "worthKnowing": "In Vietnam, Nấm kho tiêu shows how vegetarian kitchens use mushrooms for depth instead of mock meat. It is small, peppery, and stronger than it looks.",
+  "goodToKnow": "Ask whether the braise is fully vegetarian if needed.",
+  "commonOptions": [
+    "no fish sauce",
+    "extra tofu",
+    "with rice",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask whether the braise is fully vegetarian if needed.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần nấm kho tiêu.",
+    "english": "I’d like one order of mushrooms braised with pepper.",
+    "pronunciation": "chaw toy moht fuhn nahm kaw tee-ew",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "strict sauce wording",
+      "vegetarian chip guardrail",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nấm kho tiêu was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

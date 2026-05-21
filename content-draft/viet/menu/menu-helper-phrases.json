@@ -1,0 +1,204 @@
+{
+  "helperPhrases": [
+    {
+      "id": "menu-not-spicy",
+      "vietnamese": "Không cay nhé",
+      "english": "Not spicy, please.",
+      "pronunciation": "khong kai nhe",
+      "audioKey": "food-3",
+      "detailPageID": "viet-family-food-not-spicy",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food:savory"
+      ]
+    },
+    {
+      "id": "menu-less-spicy",
+      "vietnamese": "Ít cay thôi",
+      "english": "Less spicy, please.",
+      "pronunciation": "eet kai thoy",
+      "audioKey": "audio-authored-it-cay-thoi-05b8e258a2",
+      "detailPageID": "viet-family-food-not-spicy",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food:savory"
+      ]
+    },
+    {
+      "id": "menu-see-menu",
+      "vietnamese": "Cho tôi xem thực đơn được không?",
+      "english": "Can I see the menu?",
+      "pronunciation": "cho toy sem thook dun duoc khong",
+      "audioKey": "food-menu",
+      "detailPageID": "viet-family-food-menu",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food",
+        "drink"
+      ]
+    },
+    {
+      "id": "menu-pay-now",
+      "vietnamese": "Tính tiền giúp tôi",
+      "english": "Please let me pay.",
+      "pronunciation": "ting tyen zoop toy",
+      "audioKey": "coffee-7",
+      "detailPageID": "viet-family-food-pay-now",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food",
+        "drink"
+      ]
+    },
+    {
+      "id": "menu-less-ice",
+      "vietnamese": "Ít đá thôi",
+      "english": "Just a little ice.",
+      "pronunciation": "eet dah thoy",
+      "audioKey": "coffee-4",
+      "detailPageID": "viet-family-food-less-ice",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "drink"
+      ]
+    },
+    {
+      "id": "menu-no-ice",
+      "vietnamese": "Làm ơn đừng có đá",
+      "english": "No ice, please.",
+      "pronunciation": "lam un dung koh dah",
+      "audioKey": "v500-food-drin-no-ice-please",
+      "detailPageID": "viet-family-v500-food-drin-no-ice-please",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "drink",
+        "dessert"
+      ]
+    },
+    {
+      "id": "menu-no-sugar",
+      "vietnamese": "Không đường nhé",
+      "english": "No sugar, please.",
+      "pronunciation": "khong duong nhe",
+      "audioKey": "coffee-5",
+      "detailPageID": "viet-family-food-no-sugar",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "drink",
+        "dessert"
+      ]
+    },
+    {
+      "id": "menu-less-sugar",
+      "vietnamese": "Làm ơn bớt đường đi",
+      "english": "Less sugar, please.",
+      "pronunciation": "lam un buht duong dee",
+      "audioKey": "v900-food-drin-less-sugar-please",
+      "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "drink",
+        "dessert"
+      ]
+    },
+    {
+      "id": "menu-to-go",
+      "vietnamese": "Mang đi",
+      "english": "To go.",
+      "pronunciation": "mang dee",
+      "audioKey": "coffee-6",
+      "detailPageID": null,
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food",
+        "drink"
+      ]
+    },
+    {
+      "id": "menu-pack-to-go",
+      "vietnamese": "Gói mang về",
+      "english": "Pack it to go.",
+      "pronunciation": "goy mang veh",
+      "audioKey": "food-7",
+      "detailPageID": null,
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food"
+      ]
+    },
+    {
+      "id": "menu-vegetarian",
+      "vietnamese": "Tôi ăn chay",
+      "english": "I am vegetarian.",
+      "pronunciation": "toy an chai",
+      "audioKey": "food-vegetarian",
+      "detailPageID": "viet-family-food-vegetarian",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food"
+      ]
+    },
+    {
+      "id": "menu-peanut-allergy",
+      "vietnamese": "Tôi bị dị ứng đậu phộng",
+      "english": "I am allergic to peanuts.",
+      "pronunciation": "toy bee zee oong dow phong",
+      "audioKey": "food-peanut-allergy",
+      "detailPageID": "viet-family-food-peanut-allergy",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food"
+      ]
+    },
+    {
+      "id": "menu-ask-peanuts",
+      "vietnamese": "Cái này có đậu phộng không?",
+      "english": "Does this have peanuts?",
+      "pronunciation": "kai nay koh dow phong khong",
+      "audioKey": "food-premium-has-peanuts",
+      "detailPageID": "viet-family-food-has-peanuts",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food"
+      ]
+    },
+    {
+      "id": "menu-ask-fish-sauce",
+      "vietnamese": "Cái này có nước mắm không?",
+      "english": "Does this contain fish sauce?",
+      "pronunciation": "kai nay koh nook mam khong",
+      "audioKey": "v900-food-drin-does-this-contain-fish-sauce",
+      "detailPageID": "viet-family-v900-food-drin-does-this-contain-fish-sauce",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food",
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "menu-sauce-on-side",
+      "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
+      "english": "Sauce on the side, please.",
+      "pronunciation": "sin vui lawng cho nook sot vow ben kanh",
+      "audioKey": "v900-food-drin-sauce-on-the-side-please",
+      "detailPageID": "viet-family-v900-food-drin-sauce-on-the-side-please",
+      "audioStatus": "ready",
+      "appliesTo": [
+        "food"
+      ]
+    },
+    {
+      "id": "menu-with-chicken",
+      "vietnamese": "Thêm gà được không?",
+      "english": "Can I add chicken?",
+      "pronunciation": "tem gah duoc khong",
+      "audioKey": null,
+      "detailPageID": null,
+      "audioStatus": "planned",
+      "appliesTo": [
+        "food:customization"
+      ],
+      "missingAudioReason": "Reusable customization phrase requested by product direction; do not render until exact audio exists."
+    }
+  ]
+}

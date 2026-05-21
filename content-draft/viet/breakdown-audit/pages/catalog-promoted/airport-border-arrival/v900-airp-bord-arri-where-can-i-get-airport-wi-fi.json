@@ -1,0 +1,62 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
+  "phraseText": "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
+  "englishTitle": "Where can I get airport Wi-Fi?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.294Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lấy",
+      "english": "take / claim"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Wi-Fi",
+      "english": "Wi-Fi",
+      "keepTogetherReason": "loanword"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sân bay",
+      "english": "airport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể lấy Wi-Fi sân bay ở đâu?",
+      "english": "Where can I get airport Wi-Fi?",
+      "audioKey": "v900-airp-bord-arri-where-can-i-get-airport-wi-fi"
+    }
+  ]
+}

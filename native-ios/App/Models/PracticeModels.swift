@@ -108,12 +108,22 @@ enum PracticeScenarioThreadDismissal: Equatable {
 
 struct PracticeStartRequest: Equatable {
     let id: Int
+    let sourceID: String?
     let mode: PracticeMode?
     let scenarioID: PracticeScenarioID?
     let scenarioThreadDismissal: PracticeScenarioThreadDismissal
 
+    init(id: Int, sourceID: String) {
+        self.id = id
+        self.sourceID = sourceID
+        self.mode = nil
+        self.scenarioID = nil
+        self.scenarioThreadDismissal = .messagesHub
+    }
+
     init(id: Int, mode: PracticeMode) {
         self.id = id
+        self.sourceID = nil
         self.mode = mode
         self.scenarioID = nil
         self.scenarioThreadDismissal = .messagesHub
@@ -125,6 +135,7 @@ struct PracticeStartRequest: Equatable {
         scenarioThreadDismissal: PracticeScenarioThreadDismissal = .messagesHub
     ) {
         self.id = id
+        self.sourceID = nil
         self.mode = nil
         self.scenarioID = scenarioID
         self.scenarioThreadDismissal = scenarioThreadDismissal

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-mi-pate",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì pate",
+  "englishTranslation": "Pâté sandwich",
+  "romanizedNoTones": "Banh mi pate",
+  "soundOut": "bahn mee pah-tay",
+  "notes": "",
+  "atAGlance": "Bánh mì pate carries the bánh mì story in one loaf: French-style pâté and bread reshaped by Vietnam’s herbs, pickles, chili, and street-food pace.",
+  "whatItIs": "Bánh mì pate is a Vietnamese baguette sandwich where liver pâté gives the rich, silky base. The Vietnamese part is just as important: sharp đồ chua pickles, cilantro, cucumber, chili, and a light crackly loaf keep the pâté from feeling heavy.",
+  "usuallyIncludes": [
+    "baguette",
+    "pâté",
+    "pickles",
+    "cilantro",
+    "chili optional"
+  ],
+  "howToEnjoy": "Eat it while the bread is warm so the pâté softens into the crumb. Extra pickles are not decoration; their sour crunch is what makes the rich French-influenced spread feel Vietnamese.",
+  "howLocalsOrder": "Order bánh mì pate when you want pâté to lead, then ask for extra pickles or no chili before the vendor closes the bread. Locals still eat it because it is fast, cheap, portable, and satisfying for breakfast or a street snack.",
+  "worthKnowing": "Bánh mì grew from French colonial bread and pâté, then Vietnam made it its own by using lighter baguettes, herbs, đồ chua, chili, and made-to-order street carts. The pâté version keeps that history visible.",
+  "goodToKnow": "Pâté is usually liver-based. If that flavor is not for you, choose grilled pork, chicken, or egg, but try to notice how the pickles and herbs are designed to balance the richness.",
+  "commonOptions": [
+    "no chili",
+    "extra pickles",
+    "less pâté",
+    "toasted bread"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "Contains liver pâté.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì pate.",
+    "english": "I’d like one pâté bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee pah-tay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bánh mì pate was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "itemID": "food-cao-lau",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Cao lầu",
+  "englishTranslation": "Hội An pork noodle dish",
+  "romanizedNoTones": "Cao lau",
+  "soundOut": "cow low",
+  "notes": "",
+  "atAGlance": "Cao lầu is a Hội An noodle bowl with chewy noodles, pork, herbs, crisp bits, and a small amount of seasoned pork sauce. It is more concentrated and local-specialty than soup-like.",
+  "whatItIs": "Cao lầu is Hội An’s famous dry noodle bowl: chewy noodles, slices of pork, herbs, crisp rice crackers, and a shallow savory pork sauce that coats rather than floods the bowl.",
+  "usuallyIncludes": [
+    "chewy rice noodles",
+    "pork",
+    "fresh herbs",
+    "savory pork sauce",
+    "crispy rice crackers"
+  ],
+  "howToEnjoy": "Break the rice crackers over the noodles, then toss everything so the pork sauce clings to the cao lầu noodles. It should eat like a sauced noodle bowl, not soup.",
+  "howLocalsOrder": "Order cao lầu in Hội An when you want the local noodle texture. Ask for extra herbs or no chili, but keep the shallow pork sauce; it is part of what makes the dish cao lầu.",
+  "worthKnowing": "Cao lầu is strongly associated with Hội An, and travelers often remember it for the chewy noodles and herb pile as much as the pork.",
+  "goodToKnow": "Cao lầu is not a soup bowl and not a dip bowl. The shallow pork coating should cling to the thick Hội An noodles while herbs, bean sprouts, and cracklings keep each bite lively.",
+  "commonOptions": [
+    "extra herbs",
+    "no chili",
+    "extra rice crackers",
+    "less pork sauce"
+  ],
+  "regionalAssociation": "Hội An",
+  "originPosture": "regional-association",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cao lầu.",
+    "english": "I’d like one order of Hội An pork noodle dish.",
+    "pronunciation": "chaw toy moht fuhn cow low",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cao lầu was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

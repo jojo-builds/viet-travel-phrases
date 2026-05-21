@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-tra-vai",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà vải",
+  "englishTranslation": "Lychee tea",
+  "romanizedNoTones": "Tra vai",
+  "soundOut": "chah vai",
+  "notes": "",
+  "atAGlance": "Trà vải is lychee tea, floral, sweet, and cooling, a modern café drink where fruit perfume matters as much as tea.",
+  "whatItIs": "Trà vải is iced tea with lychee flavor or fruit. Expect lychee tea with a floral fruit perfume, sweet syrupy body, and a cooling iced finish.",
+  "usuallyIncludes": [
+    "tea",
+    "lychee",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it cold and ask for less sugar if the lychee syrup tastes too heavy.",
+  "howLocalsOrder": "Trà vải is ordered for fruit aroma as much as tea. Ask for less sugar and extra fruit only if you want the drink sweeter, softer, and more dessert-like.",
+  "worthKnowing": "In Vietnam, Trà vải is a modern café favorite because lychee’s floral sweetness works well with black or green tea.",
+  "goodToKnow": "May include canned lychee, syrup, or jelly depending on the café.",
+  "commonOptions": [
+    "less sweet",
+    "no ice",
+    "extra lychee",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà vải.",
+    "english": "I’d like one glass of lychee tea.",
+    "pronunciation": "chaw toy moht lee chah vai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà vải was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

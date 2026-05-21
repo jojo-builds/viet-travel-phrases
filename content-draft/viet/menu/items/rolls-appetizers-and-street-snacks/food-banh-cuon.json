@@ -1,0 +1,67 @@
+{
+  "itemID": "food-banh-cuon",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Bánh cuốn",
+  "englishTranslation": "Steamed rice rolls",
+  "romanizedNoTones": "Banh cuon",
+  "soundOut": "bahn kwun",
+  "notes": "",
+  "atAGlance": "Bánh cuốn is steamed rice rolls, usually with minced pork, wood ear mushroom, fried shallot, herbs, and fish-sauce dip.",
+  "whatItIs": "Bánh cuốn are delicate steamed rice sheets rolled around minced pork and wood ear mushroom, topped with fried shallots and eaten with herbs, chả, and fish-sauce dip.",
+  "usuallyIncludes": [
+    "steamed rice rolls",
+    "pork and mushroom filling",
+    "fried shallots",
+    "herbs",
+    "fish-sauce dip"
+  ],
+  "howToEnjoy": "Spoon the fish-sauce dip over the rice rolls gradually, then add herbs and fried shallots to each bite. The sheets are soft, so a light hand keeps them silky.",
+  "howLocalsOrder": "Order bánh cuốn as a breakfast or snack plate, often with chả lụa on the side. Ask for no pork, or ask for the fish-sauce dip on the side before the plate is finished.",
+  "worthKnowing": "A good bánh cuốn shop often steams the rice sheets fresh, which is why the rolls feel soft and almost translucent.",
+  "goodToKnow": "Bánh cuốn is often a breakfast or snack plate with chả lụa on the side. Spoon the fish-sauce dip gradually so the rice sheets stay silky.",
+  "commonOptions": [
+    "fish-sauce dip on the side",
+    "extra fried shallots",
+    "extra herbs",
+    "no pork"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bánh cuốn.",
+    "english": "I’d like one order of steamed rice rolls.",
+    "pronunciation": "chaw toy moht fuhn bahn kwun",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Bánh cuốn was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

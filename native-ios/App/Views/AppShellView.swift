@@ -3,28 +3,128 @@ import SwiftUI
 import UIKit
 #endif
 
+private struct PracticeThreadForwardRestore: Equatable {
+    let scenarioID: PracticeScenarioID
+    let focusRequest: BrowseCollectionFocusRequest?
+}
+
+enum HomeScrollTarget: Hashable, Sendable {
+    case top
+    case essentials
+    case firstDay
+    case city
+    case foodCoffee
+    case practice
+    case gettingAround
+    case situations
+    case whenStuck
+    case hotelBasics
+    case relationships
+    case moneyShopping
+    case helpEmergency
+    case recentlyViewed
+}
+
+struct HomeScrollRestorationTarget: Equatable {
+    let target: HomeScrollTarget
+    let offsetY: CGFloat
+}
+
+private struct HomePhotoBackdropScrollState: Equatable {
+    let displayOffset: CGFloat
+    let restorationOffset: CGFloat
+    let hasPassedRevealThreshold: Bool
+
+    init(rawOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) {
+        let offset = max(rawOffset, 0)
+        displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(offset)
+        restorationOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(
+            offset,
+            stride: HomeLayout.shellScrollOffsetPublishStride
+        )
+        hasPassedRevealThreshold = offset > metrics.revealImmersiveOffset
+    }
+}
+
+enum HomeBackdropActivationPolicy {
+    static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
+        AdminRootPhotoBackdropActivationPolicy.targetSurface(
+            previousRoute: previousRoute,
+            currentRoute: currentRoute
+        ) == .home
+    }
+}
+
+enum AppShellTabBarVisibilityPolicy {
+    static func hidesNativeToolbarTabBar(
+        isPracticeOverlayPresented: Bool,
+        isPracticeMatchPresented: Bool,
+        isPracticeThreadPresented: Bool
+    ) -> Bool {
+        (isPracticeMatchPresented && !isPracticeOverlayPresented) || isPracticeThreadPresented
+    }
+
+    static func hidesRenderedSystemTabBar(
+        isPracticeOverlayPresented: Bool,
+        isPracticeMatchPresented: Bool,
+        isPracticeThreadPresented: Bool,
+        hidesPhotoBackdropChrome: Bool
+    ) -> Bool {
+        hidesPhotoBackdropChrome
+            || isPracticeOverlayPresented
+            || hidesNativeToolbarTabBar(
+                isPracticeOverlayPresented: isPracticeOverlayPresented,
+                isPracticeMatchPresented: isPracticeMatchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented
+            )
+    }
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
-    @State private var dockDrag = AppDockInteractionState.inactive
     @State private var interactiveDragResolutionID = 0
-    @State private var dockSelectionTapRequestID = 0
     @State private var searchQuery: String
+    @State private var isSearchPresentationActive = false
     @State private var searchFocusRequestID = 0
+    @State private var searchReturnFocusRequestID = 0
+    @State private var searchReturnFocusRequest: SearchReturnFocusRequest?
     @State private var didApplyLaunchSearchFocus = false
+    @State private var hidesPhotoBackdropChrome = false
+    @State private var showsPhotoBackdropTabBarBackground = false
+    @State private var photoBackdropTopChromeStyle = ChromeSeparationGradientStyle.light
+    @State private var photoBackdropImmersiveImageContext: PhrasePhotoBackdropImmersiveImageContext?
     @State private var practiceStartRequestID = 0
+    @State private var requestedPracticeSourceID: String?
     @State private var requestedPracticeMode: PracticeMode?
     @State private var requestedPracticeScenarioID: PracticeScenarioID?
     @State private var requestedPracticeScenarioThreadDismissal = PracticeScenarioThreadDismissal.messagesHub
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
+    @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
+    @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
+    @State private var isPracticeOverlayPresented = false
+    @State private var practiceOverlayResetTrigger = 0
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
     @State private var isPracticeThreadPresented = false
-    @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
+    @State private var isPracticeMatchPresented = false
+    @State private var tabBarVisibilityRefreshID = 0
     @State private var homePhraseHeroRoutePageID: String?
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
+    @State private var browseDetailHeroImageOverrides: [String: String] = [:]
+    @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
+    @State private var homeCurrentScrollOffsetY: CGFloat = 0
+    @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
+    @State private var adminBackdropStates: [AdminRootPhotoBackdropSurface: AdminRootPhotoBackdropState]
+    @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
+    @State private var menuSectionJumpRequestID = 0
+    @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
+    @State private var savedTripSectionChromeStates: [SavedTripSectionChromeState] = []
+    @State private var savedTripSectionJumpRequestID = 0
+    @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
+    @State private var didApplyInitialAdminBackdropActivation = false
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @FocusState private var isSearchFieldFocused: Bool
@@ -46,31 +146,184 @@ struct AppShellView: View {
         _navigation = State(initialValue: AppShellNavigationState(initialRoute: initialRoute))
         _searchQuery = State(initialValue: initialSearchQuery)
         _requestedPracticeScenarioID = State(initialValue: initialPracticeScenarioID)
+        _adminBackdropStates = State(initialValue: AppShellView.initialAdminBackdropStates())
         self.launchPracticeMode = initialPracticeMode
         self.launchPracticeEntryContext = initialPracticeEntryContext
         self.launchDetailScrollTarget = initialDetailScrollTarget
         self.launchSearchShouldFocus = initialSearchShouldFocus
     }
 
+    private static func initialAdminBackdropStates() -> [AdminRootPhotoBackdropSurface: AdminRootPhotoBackdropState] {
+        return AdminRootPhotoBackdropSurface.allCases.reduce(into: [:]) { result, surface in
+            result[surface] = .fallback
+        }
+    }
+
     var body: some View {
+        TabView(selection: systemTabSelection) {
+            Tab("Home", systemImage: DockItemKind.home.symbolName, value: AppSystemTab.home) {
+                tabShellContent(for: .home)
+            }
+
+            Tab("Browse", systemImage: DockItemKind.browse.symbolName, value: AppSystemTab.browse) {
+                tabShellContent(for: .browse)
+            }
+
+            Tab("Saved", systemImage: DockItemKind.saved.symbolName, value: AppSystemTab.saved) {
+                tabShellContent(for: .saved)
+            }
+
+            Tab("Practice", systemImage: DockItemKind.practice.symbolName, value: AppSystemTab.practice) {
+                tabShellContent(for: .practice)
+            }
+
+            Tab("Search", systemImage: "magnifyingglass", value: AppSystemTab.search, role: .search) {
+                NavigationStack {
+                    tabShellContent(for: .search)
+                }
+                .navigationTitle("Search")
+            }
+        }
+        .toolbar(hidesNativeToolbarTabBar ? .hidden : .visible, for: .tabBar)
+        .toolbarBackground(Color.clear, for: .tabBar)
+        .toolbarBackground(tabBarBackgroundVisibility, for: .tabBar)
+        .toolbarColorScheme(.light, for: .tabBar)
+        .statusBarHidden(hidesPhotoBackdropChrome)
+        .persistentSystemOverlays(hidesPhotoBackdropChrome ? .hidden : .automatic)
+        .searchable(
+            text: $searchQuery,
+            isPresented: $isSearchPresentationActive,
+            placement: .automatic,
+            prompt: "Search Vietnamese phrases"
+        )
+        .searchFocused($isSearchFieldFocused)
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled()
+        .tabViewSearchActivation(.automatic)
+        .background {
+            #if canImport(UIKit)
+            AppShellTabBarAppearanceBridge(
+                usesContentBackground: showsPhotoBackdropTabBarBackground && !hidesPhotoBackdropChrome,
+                isHidden: hidesSystemTabBar
+            )
+            .id(tabBarVisibilityRefreshID)
+            .frame(width: 0, height: 0)
+            #endif
+        }
+        .overlay {
+            if hidesPhotoBackdropChrome, let photoBackdropImmersiveImageContext {
+                PhotoBackdropImmersiveImageCover(context: photoBackdropImmersiveImageContext)
+            }
+        }
+        .overlay(alignment: .bottom) {
+            if showsBottomAdminHitTestOverlay {
+                BottomAdminHitTestOverlay(
+                    selectedTab: selectedSystemTab,
+                    onSelect: handleBottomAdminTabTap
+                )
+                .zIndex(AppChromeLayout.bottomAdminHitTestLayerZIndex)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func tabShellContent(for tab: AppSystemTab) -> some View {
+        if selectedSystemTab == tab {
+            shellContent
+        } else {
+            Color.clear
+                .accessibilityHidden(true)
+        }
+    }
+
+    private var shellContent: some View {
+        shellContentBody
+            .environment(\.colorScheme, .light)
+    }
+
+    private var effectivePhotoBackdropTopChromeStyle: ChromeSeparationGradientStyle {
+        hidesPhotoBackdropChrome ? .light : photoBackdropTopChromeStyle
+    }
+
+    private var tabBarBackgroundVisibility: Visibility {
+        if hidesNativeToolbarTabBar || hidesPhotoBackdropChrome {
+            return .hidden
+        }
+
+        return .automatic
+    }
+
+    private var hidesSystemTabBar: Bool {
+        AppShellTabBarVisibilityPolicy.hidesRenderedSystemTabBar(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            isPracticeMatchPresented: isPracticeMatchPresented,
+            isPracticeThreadPresented: isPracticeThreadPresented,
+            hidesPhotoBackdropChrome: hidesPhotoBackdropChrome
+        )
+    }
+
+    private var showsBottomAdminHitTestOverlay: Bool {
+        !hidesSystemTabBar && !navigation.isSearchPresented
+    }
+
+    private var hidesNativeToolbarTabBar: Bool {
+        AppShellTabBarVisibilityPolicy.hidesNativeToolbarTabBar(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            isPracticeMatchPresented: isPracticeMatchPresented,
+            isPracticeThreadPresented: isPracticeThreadPresented
+        )
+    }
+
+    private func adminBackdropState(
+        for surface: AdminRootPhotoBackdropSurface
+    ) -> AdminRootPhotoBackdropState {
+        adminBackdropStates[surface] ?? .fallback
+    }
+
+    private func isAdminBackdropSurfaceVisible(
+        _ surface: AdminRootPhotoBackdropSurface
+    ) -> Bool {
+        [navigation.currentRoute, navigation.backPreviewRoute, navigation.forwardPreviewRoute]
+            .compactMap { $0 }
+            .contains { AdminRootPhotoBackdropSurface.surface(for: $0) == surface }
+    }
+
+    private var shellContentBody: some View {
         GeometryReader { proxy in
             let pageWidth = max(proxy.size.width, 1)
 
             ZStack {
+                let homeBackdropState = adminBackdropState(for: .home)
                 HomeView(
                     intentStore: intentStore,
+                    backdropImageName: homeBackdropState.imageName,
+                    backdropActivationToken: homeBackdropState.activationToken,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
-                    chromeNamespace: chromeNamespace,
+                    isActive: navigation.currentRoute == .home,
                     isSearchActive: navigation.isSearchPresented,
-                    heroMorphPageID: homePhraseHeroMorphPageID,
+                    currentScrollTarget: $homeCurrentScrollTarget,
+                    currentScrollOffsetY: $homeCurrentScrollOffsetY,
+                    scrollRestorationTarget: $homeScrollRestorationTarget,
                     onSearchTapped: openSearch,
-                    onOpenDetail: openDetailFromHome,
-                    onOpenFeaturedDetail: openFeaturedDetailFromHome,
-                    onOpenCollection: openBrowseCollectionFromHome,
-                    onStartPractice: openPractice,
+                    onOpenDetail: { id, target in
+                        prepareHomeScrollRestoration(target)
+                        openDetailFromHome(id)
+                    },
+                    onOpenFeaturedDetail: { id, target in
+                        prepareHomeScrollRestoration(target)
+                        openFeaturedDetailFromHome(id)
+                    },
+                    onOpenCollection: { route, target in
+                        prepareHomeScrollRestoration(target)
+                        openBrowseCollectionFromHome(route)
+                    },
+                    onStartPractice: { action, target in
+                        prepareHomeScrollRestoration(target)
+                        openPractice(action)
+                    },
                     onBrowseAllTapped: openBrowseAll
                 )
-                .allowsHitTesting(navigation.currentRoute == .home && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .home && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .home)
                 .navigationPageMotion(
                     route: .home,
@@ -81,17 +334,26 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
-                BrowsePageView(
-                    intentStore: intentStore,
-                    scrollToTopTrigger: navigation.browseScrollToTopTrigger,
-                    onOpenDetail: openDetailFromBrowse,
-                    onOpenCollection: openBrowseCollection,
-                    onSearchTapped: openSearch,
-                    onSearchQuery: openSearchQuery,
-                    onSavedTapped: openSaved,
-                    onPracticeTapped: openPractice
-                )
-                .allowsHitTesting(navigation.currentRoute == .browse && !isPreviewingForwardPage)
+                let browseBackdropState = adminBackdropState(for: .browse)
+                AdminPhotoBackdropSurfaceView(
+                    surface: .browse,
+                    backdropImageName: browseBackdropState.imageName,
+                    activationToken: browseBackdropState.activationToken,
+                    isActive: navigation.currentRoute == .browse,
+                    isVisible: isAdminBackdropSurfaceVisible(.browse),
+                    scrollToTopTrigger: navigation.browseScrollToTopTrigger
+                ) { _ in
+                    BrowsePageView(
+                        intentStore: intentStore,
+                        scrollToTopTrigger: navigation.browseScrollToTopTrigger,
+                        usesPhotoBackdrop: true,
+                        onOpenDetail: { openDetailFromBrowse($0) },
+                        onOpenCollection: openBrowseCollection,
+                        onSearchTapped: openSearch,
+                        onSearchQuery: openSearchQuery
+                    )
+                }
+                .allowsHitTesting(navigation.currentRoute == .browse && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .browse)
                 .navigationPageMotion(
                     route: .browse,
@@ -102,13 +364,27 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
-                SavedPagesView(
-                    intentStore: intentStore,
-                    scrollToTopTrigger: navigation.savedScrollToTopTrigger,
-                    onOpenDetail: openDetailFromSaved,
-                    onBrowseTapped: openBrowseAll
-                )
-                .allowsHitTesting(navigation.currentRoute == .saved && !isPreviewingForwardPage)
+                let savedBackdropState = adminBackdropState(for: .saved)
+                AdminPhotoBackdropSurfaceView(
+                    surface: .saved,
+                    backdropImageName: savedBackdropState.imageName,
+                    activationToken: savedBackdropState.activationToken,
+                    isActive: navigation.currentRoute == .saved,
+                    isVisible: isAdminBackdropSurfaceVisible(.saved),
+                    scrollToTopTrigger: navigation.savedScrollToTopTrigger
+                ) { scrollProxy in
+                    SavedPagesView(
+                        intentStore: intentStore,
+                        scrollToTopTrigger: navigation.savedScrollToTopTrigger,
+                        sectionJumpRequest: savedTripSectionJumpRequest,
+                        usesPhotoBackdrop: true,
+                        backdropScrollProxy: scrollProxy,
+                        onOpenDetail: openDetailFromSaved,
+                        onBrowseTapped: openBrowseAll,
+                        onStartSavedPractice: { openPractice(.practiceSource("saved")) }
+                    )
+                }
+                .allowsHitTesting(navigation.currentRoute == .saved && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .saved)
                 .navigationPageMotion(
                     route: .saved,
@@ -119,6 +395,7 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
+                let practiceBackdropState = adminBackdropState(for: .practice)
                 PracticeView(
                     intentStore: intentStore,
                     initialMode: launchPracticeMode,
@@ -126,12 +403,17 @@ struct AppShellView: View {
                     startRequest: practiceStartRequest,
                     isActive: navigation.currentRoute == .practice,
                     scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
+                    topContentClearance: showsStaticBackButton && !isPracticeMatchPresented ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
+                    photoBackdropState: practiceBackdropState,
+                    isPhotoBackdropVisible: isAdminBackdropSurfaceVisible(.practice),
                     onOpenDetail: openDetailFromPractice,
                     onBrowseTapped: openBrowseAll,
+                    onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                    onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
                     onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
                     onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
                 )
-                .allowsHitTesting(navigation.currentRoute == .practice && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .practice && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .practice)
                 .navigationPageMotion(
                     route: .practice,
@@ -147,6 +429,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.rootScrollToTopTrigger,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: navigation.currentRoute == .phrasePage,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
@@ -157,7 +440,7 @@ struct AppShellView: View {
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
                     onDetailTapped: openDetail
                 )
-                .allowsHitTesting(navigation.currentRoute == .phrasePage && !isPreviewingForwardPage)
+                .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .phrasePage)
                 .navigationPageMotion(
                     route: .phrasePage,
@@ -173,12 +456,17 @@ struct AppShellView: View {
                 detailPageStack(width: pageWidth)
 
                 if navigation.isSearchPresented {
+                    let searchBackdropState = adminBackdropState(for: .search)
                     SearchPageView(
                         query: $searchQuery,
                         isFieldFocused: isSearchFieldFocused,
-                        chromeNamespace: chromeNamespace,
-                        showsChrome: false,
+                        returnFocusRequest: searchReturnFocusRequest,
+                        photoBackdropState: searchBackdropState,
+                        isPhotoBackdropActive: navigation.currentRoute == .search,
+                        isPhotoBackdropVisible: isAdminBackdropSurfaceVisible(.search),
                         onClose: closeSearch,
+                        onDismissSearchFocus: dismissSearchFieldFocus,
+                        onPrepareReturnFocus: prepareSearchReturnFocus,
                         onOpenDetail: openDetailFromSearch,
                         onOpenCollection: openBrowseCollectionFromSearch,
                         onSearchQuery: openSearchQuery,
@@ -197,63 +485,94 @@ struct AppShellView: View {
                 }
 
                 forwardPreviewPage(width: pageWidth)
-            }
-            .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
-                let nextState = PinnedAudioSpeedChromePolicy.state(
-                    for: anchors,
-                    currentRoute: navigation.currentRoute
-                )
 
-                if nextState != pinnedAudioSpeedChromeState {
-                    pinnedAudioSpeedChromeState = nextState
+                if isPracticeOverlayPresented {
+                    PracticeView(
+                        intentStore: intentStore,
+                        startRequest: practiceStartRequest,
+                        isActive: true,
+                        scrollToTopTrigger: practiceOverlayResetTrigger,
+                        topContentClearance: 0,
+                        presentationStyle: .pullUpOverlay,
+                        onOpenDetail: openDetailFromPractice,
+                        onBrowseTapped: openBrowseAll,
+                        onDismiss: dismissPracticeOverlay,
+                        onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                        onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
+                        onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
+                        onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
+                    )
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .zIndex(AppChromeLayout.searchPageLayerZIndex + 2)
                 }
             }
-            .overlay(alignment: .leading) {
-                if !isPracticeThreadPresented {
-                    backSwipeCaptureEdge(width: pageWidth)
+            .appShellChromeOverlays(
+                currentRoute: navigation.currentRoute,
+                isSearchPresented: navigation.isSearchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented,
+                hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
+                topChromeStyle: effectivePhotoBackdropTopChromeStyle,
+                isPracticeMatchPresented: isPracticeMatchPresented || isPracticeOverlayPresented,
+                showsStaticBackButton: showsStaticBackButton,
+                showsMenuSectionChrome: showsMenuSectionChrome,
+                canGoForward: navigation.canGoForward,
+                backSwipeCaptureEdge: { backSwipeCaptureEdge(width: pageWidth) },
+                forwardSwipeCaptureEdge: { forwardSwipeCaptureEdge(width: pageWidth) },
+                topAdminRow: { showsPinnedAudioSpeedControl in
+                    topAdminRow(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
+                },
+                menuSectionRail: {
+                    if let currentMenuSectionChromeState {
+                        VietnameseMenuTopSectionRail(
+                            state: currentMenuSectionChromeState,
+                            onSelect: jumpToMenuSection
+                        )
+                    } else if let currentSavedTripSectionChromeState {
+                        SavedTripTopSectionRail(
+                            state: currentSavedTripSectionChromeState,
+                            onSelect: jumpToSavedTripSection
+                        )
+                    }
+                }
+            )
+            .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
+                if menuSectionChromeStates != states {
+                    menuSectionChromeStates = states
                 }
             }
-            .overlay(alignment: .trailing) {
-                if !isPracticeThreadPresented {
-                    forwardSwipeCaptureEdge(width: pageWidth)
+            .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
+                if hidesPhotoBackdropChrome != isHidden {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        hidesPhotoBackdropChrome = isHidden
+                    }
                 }
             }
-            .overlay(alignment: .bottom) {
-                if !isPracticeThreadPresented {
-                    ChromeSeparationGradient(edge: .bottom)
-                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
+            .onPreferenceChange(PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self) { isVisible in
+                if showsPhotoBackdropTabBarBackground != isVisible {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        showsPhotoBackdropTabBarBackground = isVisible
+                    }
                 }
             }
-            .overlay(alignment: .bottom) {
-                if !isPracticeThreadPresented {
-                    bottomChromeHitTestEnvelope
-                        .padding(.bottom, bottomChromePadding)
-                        .offset(y: bottomChromeOffset)
-                        .zIndex(AppChromeLayout.bottomChromeLayerZIndex)
+            .onPreferenceChange(PhrasePhotoBackdropTopChromeStylePreferenceKey.self) { style in
+                if photoBackdropTopChromeStyle != style {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        photoBackdropTopChromeStyle = style
+                    }
                 }
             }
-            .overlay(alignment: .top) {
-                if !isPracticeThreadPresented {
-                    ChromeSeparationGradient(edge: .top)
-                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
+            .onPreferenceChange(PhrasePhotoBackdropImmersiveImagePreferenceKey.self) { context in
+                if photoBackdropImmersiveImageContext != context {
+                    photoBackdropImmersiveImageContext = context
                 }
             }
-            .overlay(alignment: .top) {
-                if showsTopAdminRow {
-                    TopAdminHitTestEnvelope()
-                        .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
-                }
-            }
-            .overlay(alignment: .top) {
-                if showsTopAdminRow {
-                    topAdminRow
-                        .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
-                        .padding(.top, AppChromeLayout.topAdminTopPadding)
-                        .transition(.opacity)
-                        .zIndex(AppChromeLayout.topAdminControlLayerZIndex)
+            .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
+                if savedTripSectionChromeStates != states {
+                    savedTripSectionChromeStates = states
                 }
             }
             .onAppear {
+                applyInitialAdminBackdropActivationIfNeeded()
                 applyLaunchSearchFocusIfNeeded()
             }
             .onChange(of: navigation.isSearchPresented) { _, isPresented in
@@ -261,18 +580,19 @@ struct AppShellView: View {
                     cancelSearchFocus()
                 }
             }
-            .animation(.snappy(duration: 0.24), value: showsPinnedAudioSpeedControl)
         }
-        .preferredColorScheme(.light)
     }
 
     private var practiceStartRequest: PracticeStartRequest? {
-        if let requestedPracticeScenarioID {
+        if requestedPracticeScenarioID != nil {
             return PracticeStartRequest(
                 id: practiceStartRequestID,
-                scenarioID: requestedPracticeScenarioID,
-                scenarioThreadDismissal: requestedPracticeScenarioThreadDismissal
+                sourceID: "quick"
             )
+        }
+
+        if let requestedPracticeSourceID {
+            return PracticeStartRequest(id: practiceStartRequestID, sourceID: requestedPracticeSourceID)
         }
 
         if let requestedPracticeMode {
@@ -288,17 +608,45 @@ struct AppShellView: View {
             let route = AppRoute.browseCollection(renderedCollection.route)
             let isActive = route == navigation.currentRoute
 
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: renderedCollection.route) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
+                    scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
+                    sectionJumpRequest: menuSectionJumpRequest,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
+                    onOpenDetail: { openDetailFromBrowse($0) },
+                    isActive: isActive
+                )
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
+                .accessibilityHidden(!isActive || navigation.isSearchPresented)
+                .transition(AppPageTransition.slideFromTrailing)
+                .zIndex(Double(index + 6))
+                .navigationPageMotion(
+                    route: route,
+                    currentRoute: navigation.currentRoute,
+                    backPreviewRoute: navigation.backPreviewRoute,
+                    forwardPreviewRoute: navigation.forwardPreviewRoute,
+                    drag: interactiveDrag,
+                    width: width
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: renderedCollection.route) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
-                    onOpenDetail: openDetailFromBrowse,
+                    isActive: isActive,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
+                    onOpenDetail: { pageID in
+                        openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
+                    },
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(AppPageTransition.slideFromTrailing)
                 .zIndex(Double(index + 6))
@@ -314,6 +662,101 @@ struct AppShellView: View {
         }
     }
 
+    private var systemTabSelection: Binding<AppSystemTab> {
+        Binding(
+            get: {
+                selectedSystemTab
+            },
+            set: { tab in
+                selectSystemTab(tab)
+            }
+        )
+    }
+
+    private var selectedSystemTab: AppSystemTab {
+        navigation.isSearchPresented
+            ? .search
+            : AppSystemTab(route: navigation.rootRoute)
+    }
+
+    private func selectSystemTab(_ tab: AppSystemTab) {
+        switch tab {
+        case .home, .browse, .saved, .practice:
+            openPrimarySystemTab(tab)
+        case .search:
+            openSearch(prefilledQuery: nil, focusField: false)
+        }
+    }
+
+    private func handleBottomAdminTabTap(_ tab: AppSystemTab) {
+        switch tab {
+        case .home, .browse, .saved, .practice:
+            openPrimarySystemTab(tab)
+        case .search:
+            if navigation.isSearchPresented {
+                focusSearchField()
+            } else {
+                openSearch(prefilledQuery: nil, focusField: false)
+            }
+        }
+    }
+
+    private func jumpToMenuSection(_ sectionID: String) {
+        guard let currentMenuSectionChromeState else {
+            return
+        }
+
+        menuSectionJumpRequestID += 1
+        menuSectionJumpRequest = VietnameseMenuSectionJumpRequest(
+            requestID: menuSectionJumpRequestID,
+            route: currentMenuSectionChromeState.route,
+            sectionID: sectionID
+        )
+    }
+
+    private func jumpToSavedTripSection(_ sectionID: String) {
+        guard currentSavedTripSectionChromeState != nil else {
+            return
+        }
+
+        savedTripSectionJumpRequestID += 1
+        savedTripSectionJumpRequest = SavedTripSectionJumpRequest(
+            requestID: savedTripSectionJumpRequestID,
+            sectionID: sectionID
+        )
+    }
+
+    private func openPrimarySystemTab(_ tab: AppSystemTab) {
+        let previousRoute = navigation.currentRoute
+        withoutRouteAnimation {
+            cancelInteractiveChromeState()
+            cancelSearchFocus()
+
+            switch tab {
+            case .home:
+                clearPracticeThreadForwardRestore()
+                navigation.openHome()
+                searchQuery = ""
+            case .browse:
+                prepareHomeScrollRestoration()
+                clearPracticeThreadForwardRestore()
+                navigation.openBrowse()
+            case .saved:
+                prepareHomeScrollRestoration()
+                clearPracticeThreadForwardRestore()
+                navigation.openSaved()
+            case .practice:
+                prepareHomeScrollRestoration()
+                clearPracticeThreadForwardRestore()
+                clearPracticeStartRequest()
+                navigation.openPractice()
+            case .search:
+                break
+            }
+        }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
+    }
+
     @ViewBuilder
     private func detailPageStack(width: CGFloat) -> some View {
         ForEach(Array(navigation.renderedDetailPages.enumerated()), id: \.element.id) { index, renderedPage in
@@ -326,9 +769,10 @@ struct AppShellView: View {
                     initialScrollTarget: launchDetailScrollTarget,
                     scrollToTopTrigger: navigation.detailScrollToTopTrigger,
                     scrollToTopRoute: navigation.detailScrollToTopRoute,
+                    isActive: isActive,
                     onBackTapped: goBack
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
@@ -348,17 +792,19 @@ struct AppShellView: View {
                     scrollToTopRoute: navigation.detailScrollToTopRoute,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: isActive,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
+                    heroImageNameOverride: browseDetailHeroImageOverrides[renderedPage.pageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
                     onDetailTapped: openDetail
                 )
-                .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
+                .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
                 .transition(detailTransition(for: renderedPage.pageID))
                 .zIndex(Double(index + 10))
@@ -377,6 +823,12 @@ struct AppShellView: View {
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
+            : AppPageTransition.slideFromTrailing
+    }
+
+    private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
+        BrowseCollectionNativeTransition.usesCityDissolve(for: route)
+            ? AppPageTransition.browseCityDissolve
             : AppPageTransition.slideFromTrailing
     }
 
@@ -411,56 +863,105 @@ struct AppShellView: View {
     private func previewPage(for route: AppRoute) -> some View {
         switch route {
         case .home:
+            let homeBackdropState = adminBackdropState(for: .home)
             HomeView(
                 intentStore: intentStore,
+                backdropImageName: homeBackdropState.imageName,
+                backdropActivationToken: homeBackdropState.activationToken,
                 scrollToTopTrigger: 0,
-                chromeNamespace: chromeNamespace,
+                isActive: false,
                 isSearchActive: navigation.isSearchPresented,
+                currentScrollTarget: .constant(nil),
+                currentScrollOffsetY: .constant(0),
+                scrollRestorationTarget: .constant(nil),
                 onSearchTapped: openSearch,
-                onOpenDetail: openDetailFromHome,
-                onOpenFeaturedDetail: openFeaturedDetailFromHome,
-                onOpenCollection: openBrowseCollectionFromHome,
-                onStartPractice: openPractice,
+                onOpenDetail: { id, _ in openDetailFromHome(id) },
+                onOpenFeaturedDetail: { id, _ in openFeaturedDetailFromHome(id) },
+                onOpenCollection: { route, _ in openBrowseCollectionFromHome(route) },
+                onStartPractice: { action, _ in openPractice(action) },
                 onBrowseAllTapped: openBrowseAll
             )
         case .browse:
-            BrowsePageView(
-                intentStore: intentStore,
-                scrollToTopTrigger: 0,
-                onOpenDetail: openDetailFromBrowse,
-                onOpenCollection: openBrowseCollection,
-                onSearchTapped: openSearch,
-                onSearchQuery: openSearchQuery,
-                onSavedTapped: openSaved,
-                onPracticeTapped: openPractice
-            )
+            let browseBackdropState = adminBackdropState(for: .browse)
+            AdminPhotoBackdropSurfaceView(
+                surface: .browse,
+                backdropImageName: browseBackdropState.imageName,
+                activationToken: browseBackdropState.activationToken,
+                isActive: false,
+                isVisible: true
+            ) { _ in
+                BrowsePageView(
+                    intentStore: intentStore,
+                    scrollToTopTrigger: 0,
+                    usesPhotoBackdrop: true,
+                    onOpenDetail: { openDetailFromBrowse($0) },
+                    onOpenCollection: openBrowseCollection,
+                    onSearchTapped: openSearch,
+                    onSearchQuery: openSearchQuery
+                )
+            }
         case .browseCollection(let collectionRoute):
-            if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
+            if let menuKind = VietnameseMenuCatalog.kind(for: collectionRoute) {
+                VietnameseMenuPageView(
+                    kind: menuKind,
+                    scrollToTopTrigger: 0,
+                    scrollToTopRoute: nil,
+                    sectionJumpRequest: nil,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
+                    onOpenDetail: { openDetailFromBrowse($0) },
+                    isActive: false
+                )
+            } else if let descriptor = BrowseSearchDestinations.collectionDescriptor(for: collectionRoute) {
                 BrowseCollectionPageView(
                     descriptor: descriptor,
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
                     focusRequest: nil,
-                    onOpenDetail: openDetailFromBrowse,
+                    isActive: false,
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) },
+                    onOpenDetail: { pageID in
+                        openDetailFromBrowse(pageID, heroImageName: descriptor.mastheadImageName)
+                    },
                     onOpenCollection: openBrowseCollection,
                     onPractice: openPractice
                 )
             }
         case .saved:
-            SavedPagesView(
-                intentStore: intentStore,
-                scrollToTopTrigger: 0,
-                onOpenDetail: openDetailFromSaved,
-                onBrowseTapped: openBrowseAll
-            )
+            let savedBackdropState = adminBackdropState(for: .saved)
+            AdminPhotoBackdropSurfaceView(
+                surface: .saved,
+                backdropImageName: savedBackdropState.imageName,
+                activationToken: savedBackdropState.activationToken,
+                isActive: false,
+                isVisible: true
+            ) { scrollProxy in
+                SavedPagesView(
+                    intentStore: intentStore,
+                    scrollToTopTrigger: 0,
+                    sectionJumpRequest: nil,
+                    usesPhotoBackdrop: true,
+                    backdropScrollProxy: scrollProxy,
+                    onOpenDetail: openDetailFromSaved,
+                    onBrowseTapped: openBrowseAll,
+                    onStartSavedPractice: { openPractice(.practiceSource("saved")) }
+                )
+            }
         case .practice:
+            let practiceBackdropState = adminBackdropState(for: .practice)
             PracticeView(
                 intentStore: intentStore,
                 startRequest: practiceStartRequest,
                 isActive: false,
                 scrollToTopTrigger: 0,
+                topContentClearance: 0,
+                photoBackdropState: practiceBackdropState,
+                isPhotoBackdropVisible: true,
                 onOpenDetail: openDetailFromPractice,
-                onBrowseTapped: openBrowseAll
+                onBrowseTapped: openBrowseAll,
+                onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                onMatchPresentationChanged: { isPracticeMatchPresented = $0 }
             )
         case .phrasePage:
             PhraseListingView(
@@ -468,6 +969,7 @@ struct AppShellView: View {
                 scrollToTopTrigger: navigation.rootScrollToTopTrigger,
                 chromeNamespace: chromeNamespace,
                 isSearchActive: navigation.isSearchPresented,
+                isActive: false,
                 showsChrome: false,
                 topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
@@ -481,6 +983,7 @@ struct AppShellView: View {
                 xinChaoListingView(
                     routePageID: detailPageID,
                     scrollToTopTrigger: 0,
+                    isActive: false,
                     onBackTapped: goBack
                 )
             } else if let detailPage = PhraseDetailPage.page(withID: detailPageID) {
@@ -489,9 +992,11 @@ struct AppShellView: View {
                     scrollToTopTrigger: 0,
                     chromeNamespace: chromeNamespace,
                     isSearchActive: navigation.isSearchPresented,
+                    isActive: false,
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
+                    heroImageNameOverride: browseDetailHeroImageOverrides[detailPageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(detailPageID) },
@@ -499,12 +1004,17 @@ struct AppShellView: View {
                 )
             }
         case .search:
+            let searchBackdropState = adminBackdropState(for: .search)
             SearchPageView(
                 query: $searchQuery,
                 isFieldFocused: isSearchFieldFocused,
-                chromeNamespace: chromeNamespace,
-                showsChrome: false,
+                returnFocusRequest: searchReturnFocusRequest,
+                photoBackdropState: searchBackdropState,
+                isPhotoBackdropActive: false,
+                isPhotoBackdropVisible: true,
                 onClose: closeSearch,
+                onDismissSearchFocus: dismissSearchFieldFocus,
+                onPrepareReturnFocus: prepareSearchReturnFocus,
                 onOpenDetail: openDetailFromSearch,
                 onOpenCollection: openBrowseCollectionFromSearch,
                 onSearchQuery: openSearchQuery,
@@ -519,6 +1029,7 @@ struct AppShellView: View {
         initialScrollTarget: PhraseArticleInitialScrollTarget? = nil,
         scrollToTopTrigger: Int,
         scrollToTopRoute: AppRoute? = nil,
+        isActive: Bool = true,
         onBackTapped: @escaping () -> Void
     ) -> some View {
         PhraseListingView(
@@ -529,6 +1040,7 @@ struct AppShellView: View {
             scrollToTopRoute: scrollToTopRoute,
             chromeNamespace: chromeNamespace,
             isSearchActive: navigation.isSearchPresented,
+            isActive: isActive,
             showsChrome: false,
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
@@ -552,76 +1064,58 @@ struct AppShellView: View {
         interactiveDrag?.direction == .forward && navigation.forwardPreviewRoute != nil
     }
 
-    private var showsStaticBackButton: Bool {
-        switch navigation.currentRoute {
-        case .home, .browse, .search:
-            return false
-        case .practice:
-            return navigation.hasExplicitBackHistory
-        case .browseCollection, .phrasePage, .saved, .detailPage:
-            return true
-        }
+    private var allowsBasePageHitTesting: Bool {
+        !isPracticeOverlayPresented && !isPreviewingForwardPage
     }
 
-    private var showsPinnedAudioSpeedControl: Bool {
-        guard showsStaticBackButton, !navigation.isSearchPresented else {
-            return false
-        }
-
-        return pinnedAudioSpeedChromeState.route == navigation.currentRoute
-            && pinnedAudioSpeedChromeState.isVisible
+    private var showsStaticBackButton: Bool {
+        navigation.showsStaticBackButton
     }
 
     private var pinnedAudioSpeedScrollClearance: CGFloat {
         AppChromeLayout.pinnedAudioSpeedScrollClearance
     }
 
-    private var showsTopAdminRow: Bool {
-        !isPracticeThreadPresented
-            && (showsStaticBackButton || showsPinnedAudioSpeedControl || navigation.canGoForward)
-    }
-
-    private var bottomChromePadding: CGFloat {
-        isSearchFieldFocused ? 12 : AppChromeLayout.bottomPadding
-    }
-
-    private var bottomChromeOffset: CGFloat {
-        isSearchFieldFocused ? 0 : AppChromeLayout.bottomOffset
-    }
-
-    private var bottomChromeHitTestEnvelope: some View {
-        ZStack(alignment: .bottom) {
-            Rectangle()
-                .fill(Color(.systemBackground).opacity(0.001))
-                .frame(maxWidth: .infinity)
-                .frame(height: AppChromeLayout.bottomHitTestEnvelopeHeight)
-                .contentShape(Rectangle())
-                .onTapGesture {}
-                .accessibilityHidden(true)
-
-            staticBottomChrome
-                .padding(.horizontal, AppChromeLayout.bottomOuterHorizontalPadding)
+    private var currentMenuSectionChromeState: VietnameseMenuSectionChromeState? {
+        guard case .browseCollection(let route) = navigation.currentRoute else {
+            return nil
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: AppChromeLayout.bottomHitTestEnvelopeHeight, alignment: .bottom)
-        .contentShape(Rectangle())
+
+        return menuSectionChromeStates.last { $0.route == route }
     }
 
-    private var topAdminRow: some View {
+    private var currentSavedTripSectionChromeState: SavedTripSectionChromeState? {
+        guard navigation.currentRoute == .saved else {
+            return nil
+        }
+
+        return savedTripSectionChromeStates.last
+    }
+
+    private var showsMenuSectionChrome: Bool {
+        guard !isPracticeThreadPresented, !navigation.isSearchPresented else {
+            return false
+        }
+
+        return currentMenuSectionChromeState?.isPinned == true
+            || currentSavedTripSectionChromeState?.isPinned == true
+    }
+
+    private func topAdminRow(showsPinnedAudioSpeedControl: Bool) -> some View {
         Group {
             if #available(iOS 26.0, *) {
                 GlassEffectContainer(spacing: 14) {
-                    topAdminRowContent
+                    topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
                 }
             } else {
-                topAdminRowContent
+                topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
             }
         }
         .frame(maxWidth: .infinity)
         .frame(height: AppChromeLayout.topAdminControlSize)
     }
 
-    private var topAdminRowContent: some View {
+    private func topAdminRowContent(showsPinnedAudioSpeedControl: Bool) -> some View {
         ZStack {
             HStack {
                 if showsStaticBackButton {
@@ -641,7 +1135,6 @@ struct AppShellView: View {
 
             if showsPinnedAudioSpeedControl {
                 PinnedAudioSpeedControl()
-                    .transition(.scale(scale: 0.94).combined(with: .opacity))
             }
         }
     }
@@ -660,631 +1153,6 @@ struct AppShellView: View {
         .nativeGlass(in: Circle(), interactive: true)
         .accessibilityLabel("Go back")
         .accessibilityIdentifier("TopAdmin.BackButton")
-    }
-
-    @ViewBuilder
-    private var staticBottomChrome: some View {
-        AppShellBottomChrome(
-            route: navigation.currentRoute,
-            searchOriginDockItem: navigation.searchOriginDockItem,
-            isSearchFieldFocused: isSearchFieldFocused,
-            searchQuery: $searchQuery,
-            searchFieldFocus: $isSearchFieldFocused,
-            chromeNamespace: chromeNamespace,
-            onOpenSearch: openSearch,
-            onCloseSearch: closeSearch,
-            onFocusSearchField: focusSearchField,
-            onClearFocusedSearch: clearFocusedSearch,
-            onCancelSearchFocus: cancelSearchFocus,
-            onSelectDockItem: performDockAction
-        )
-    }
-
-    @ViewBuilder
-    private var staticBottomChromeGlassContent: some View {
-        let isSearchRoute = navigation.currentRoute == .search
-        let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
-        let chrome = AppChrome(route: navigation.currentRoute)
-
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if isSearchRoute {
-                if !isKeyboardSearch {
-                    searchOriginGlassShell(kind: navigation.searchOriginDockItem)
-                }
-            } else {
-                dockCluster(chrome: chrome)
-            }
-
-            if isSearchRoute {
-                searchFieldGlassShell
-            } else {
-                collapsedSearchButton
-            }
-
-            if isKeyboardSearch {
-                searchDismissKeyboardGlassShell
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
-        .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
-    }
-
-    @ViewBuilder
-    private var searchRouteForegroundControls: some View {
-        if navigation.currentRoute == .search {
-            searchForegroundControls(
-                isKeyboardSearch: isSearchFieldFocused,
-                origin: navigation.searchOriginDockItem
-            )
-        }
-    }
-
-    @ViewBuilder
-    private var staticBottomChromeContent: some View {
-        let isSearchRoute = navigation.currentRoute == .search
-        let isKeyboardSearch = isSearchRoute && isSearchFieldFocused
-        let chrome = AppChrome(route: navigation.currentRoute)
-
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if isSearchRoute {
-                if !isKeyboardSearch {
-                    searchOriginFallbackButton(kind: navigation.searchOriginDockItem)
-                }
-            } else {
-                dockCluster(chrome: chrome)
-            }
-
-            if isSearchRoute {
-                searchFieldFallbackCluster
-            } else {
-                collapsedSearchButton
-            }
-
-            if isKeyboardSearch {
-                searchDismissKeyboardFallbackButton
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
-        .animation(.snappy(duration: 0.34), value: isSearchFieldFocused)
-    }
-
-    private func dockCluster(chrome: AppChrome) -> some View {
-        GeometryReader { proxy in
-            let itemCount = chrome.primaryDockItems.count
-            let contentWidth = max(
-                AppDockSelectionLayout.contentWidth(itemCount: itemCount),
-                proxy.size.width - AppChromeLayout.dockHorizontalPadding * 2
-            )
-            let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
-            let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
-            let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
-            let isPressingDockSelection = dockDrag.dragX != nil
-            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
-            let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
-            let lensMetrics = AppDockSelectionLayout.lensMetrics(
-                selectedIndex: selectedIndex,
-                activeIndex: activeIndex,
-                dragX: dockDrag.dragX,
-                itemCount: itemCount,
-                reduceMotion: reduceMotion,
-                contentWidth: contentWidth,
-                predictedDragX: dockDrag.predictedDragX
-            )
-
-            ZStack(alignment: .leading) {
-                AppShellDockSelectionLens(
-                    width: lensMetrics.width,
-                    height: lensMetrics.height,
-                    isPressed: isPressingDockSelection,
-                    isDragging: isDraggingDockSelection,
-                    chromeNamespace: chromeNamespace
-                )
-                    .offset(x: lensMetrics.xOffset)
-                    .animation(
-                        lensAnimation,
-                        value: lensMetrics
-                    )
-                    .zIndex(AppChromeLayout.dockSelectionLensZIndex)
-
-                HStack(spacing: 0) {
-                    ForEach(Array(chrome.primaryDockItems.enumerated()), id: \.element) { index, item in
-                        Button {
-                            performDockTapAction(item, chrome: chrome, contentWidth: contentWidth)
-                        } label: {
-                            AppShellDockItem(
-                                kind: item,
-                                selected: item == activeItem,
-                                chromeNamespace: chromeNamespace,
-                                isMorphSource: item == chrome.selectedDockItem
-                            )
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel(item.title)
-                        .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
-                        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
-                        .contentShape(Rectangle())
-
-                        if index < chrome.primaryDockItems.count - 1 {
-                            Spacer(minLength: AppChromeLayout.dockItemSpacing)
-                        }
-                    }
-                }
-                .frame(width: contentWidth)
-                .zIndex(AppChromeLayout.dockItemForegroundZIndex)
-            }
-            .frame(width: contentWidth, height: AppChromeLayout.dockItemHeight)
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                dockSelectionGesture(chrome: chrome, contentWidth: contentWidth),
-                including: .all
-            )
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .background(
-                Color.white.opacity(AppChromeLayout.dockBackdropFillOpacity),
-                in: RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
-            )
-            .nativeGlass(cornerRadius: AppChromeLayout.dockCornerRadius)
-            .appChromeGlassOutline(
-                in: RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous),
-                prominence: 0.52
-            )
-            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
-            .zIndex(AppChromeLayout.dockMorphZIndex)
-        }
-        .frame(height: AppChromeLayout.searchIslandSize)
-        .layoutPriority(1)
-    }
-
-    private func dockSelectionGesture(chrome: AppChrome, contentWidth: CGFloat) -> some Gesture {
-        DragGesture(minimumDistance: 0, coordinateSpace: .local)
-            .onChanged { value in
-                updateDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
-            }
-            .onEnded { value in
-                finishDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
-            }
-    }
-
-    private func dockSelectionLensAnimation(isFingerTracking: Bool) -> Animation? {
-        if isFingerTracking {
-            return nil
-        }
-
-        return reduceMotion
-            ? .easeOut(duration: 0.14)
-            : .interactiveSpring(response: 0.24, dampingFraction: 0.78, blendDuration: 0.06)
-    }
-
-    private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        guard let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth) else {
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-
-        let previousItem = dockDrag.activeItem
-        let startItem = dockDrag.startItem ?? chrome.selectedDockItem
-        let didMoveBeyondTap = dockDrag.didMoveBeyondTap
-            || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
-        let activeItem = item
-        let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
-            ?? chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem)
-            ?? 0
-        let activeCenterX = AppDockSelectionLayout.itemCenterX(
-            index: activeIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-        let dragX = didMoveBeyondTap ? value.location.x : activeCenterX
-        let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
-
-        dockDrag = AppDockInteractionState(
-            startItem: startItem,
-            activeItem: activeItem,
-            dragX: dragX,
-            predictedDragX: predictedDragX,
-            isFingerTracking: didMoveBeyondTap,
-            didMoveBeyondTap: didMoveBeyondTap
-        )
-
-        if didMoveBeyondTap, previousItem != nil, previousItem != item {
-            playDockCrossingHaptic()
-        }
-    }
-
-    private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        let wasDraggingSelection = dockDrag.didMoveBeyondTap
-        let shouldCommitSelection = wasDraggingSelection
-            || (dockDrag.activeItem != nil && dockDrag.activeItem != chrome.selectedDockItem)
-        let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
-
-        guard shouldCommitSelection, let item else {
-            withAnimation(
-                reduceMotion
-                ? .easeOut(duration: 0.14)
-                : .interactiveSpring(response: 0.24, dampingFraction: 0.84, blendDuration: 0.06)
-            ) {
-                dockDrag = .inactive
-            }
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-        let requestID = dockSelectionTapRequestID
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
-        let destinationX = AppDockSelectionLayout.itemCenterX(
-            index: destinationIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-
-        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.80, blendDuration: 0.05)) {
-            dockDrag = AppDockInteractionState(
-                startItem: dockDrag.startItem ?? chrome.selectedDockItem,
-                activeItem: item,
-                dragX: destinationX,
-                predictedDragX: destinationX,
-                isFingerTracking: false,
-                didMoveBeyondTap: true
-            )
-        }
-
-        if !wasDraggingSelection, item != chrome.selectedDockItem {
-            playDockCrossingHaptic()
-        }
-        commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
-    }
-
-    private func deactivateDockSelection(requestID: Int, delay: UInt64) {
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: delay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
-                dockDrag = .inactive
-            }
-        }
-    }
-
-    private func commitDockSelectionAction(_ item: DockItemKind, requestID: Int, deactivateDelay: UInt64) {
-        interactiveDragResolutionID += 1
-        homePhraseHeroMorphResetID += 1
-        homePhraseHeroRoutePageID = nil
-        homePhraseHeroMorphPageID = nil
-        homePhraseHeroContentHoldPageID = nil
-        interactiveDrag = nil
-        cancelSearchFocus()
-
-        withAnimation(.snappy(duration: 0.30)) {
-            switch item {
-            case .home:
-                navigation.openHome()
-            case .browse:
-                navigation.openBrowse()
-            case .saved:
-                navigation.openSaved()
-            case .practice:
-                navigation.openPractice()
-            }
-        }
-
-        if item == .home {
-            searchQuery = ""
-        }
-
-        deactivateDockSelection(requestID: requestID, delay: deactivateDelay)
-    }
-
-    private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
-        guard item != chrome.selectedDockItem, !reduceMotion else {
-            performDockAction(item)
-            return
-        }
-        guard dockDrag.activeItem != item else {
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-        let requestID = dockSelectionTapRequestID
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
-        let destinationX = AppDockSelectionLayout.itemCenterX(
-            index: destinationIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-
-        cancelSearchFocus()
-
-        playDockCrossingHaptic()
-        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.78, blendDuration: 0.04)) {
-            dockDrag = AppDockInteractionState(
-                startItem: chrome.selectedDockItem,
-                activeItem: item,
-                dragX: destinationX,
-                predictedDragX: destinationX,
-                isFingerTracking: false,
-                didMoveBeyondTap: true
-            )
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapActivationDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
-        }
-    }
-
-    private func dockItem(for locationX: CGFloat, chrome: AppChrome, contentWidth: CGFloat) -> DockItemKind? {
-        guard let index = AppDockSelectionLayout.itemIndex(
-            for: locationX,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        ) else {
-            return nil
-        }
-
-        return chrome.primaryDockItems[index]
-    }
-
-    private func playDockCrossingHaptic() {
-        #if canImport(UIKit)
-        guard !reduceMotion else {
-            return
-        }
-
-        UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.55)
-        #endif
-    }
-
-    private var collapsedSearchButton: some View {
-        Button {
-            openSearch()
-        } label: {
-            Image(systemName: "magnifyingglass")
-                .font(.title2.weight(.medium))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: Circle()
-        )
-        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .appChromeGlassOutline(in: Circle(), prominence: 0.78)
-        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !navigation.isSearchPresented)
-        .accessibilityLabel("Search")
-        .accessibilityIdentifier("AppChrome.SearchButton")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(Circle())
-        .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private func searchOriginGlassShell(kind _: DockItemKind) -> some View {
-        Color.clear
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(Circle())
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: Circle()
-            )
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .appChromeGlassOutline(in: Circle(), prominence: 0.74)
-            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(Circle())
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.searchOriginMorphZIndex)
-    }
-
-    private var searchFieldGlassShell: some View {
-        Color.clear
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity)
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
-            )
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .appChromeGlassOutline(
-                in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous),
-                prominence: 0.70
-            )
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private func searchForegroundControls(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if !isKeyboardSearch {
-                searchOriginForegroundButton(kind: origin)
-            }
-
-            searchFieldForegroundCluster
-
-            if isKeyboardSearch {
-                searchDismissKeyboardForegroundButton
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .compositingGroup()
-        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
-    }
-
-    private func searchOriginForegroundButton(kind: DockItemKind) -> some View {
-        Button {
-            closeSearch()
-        } label: {
-            Image(systemName: kind.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
-                .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(kind.title)")
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(kind.title)
-        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(Circle())
-    }
-
-    private var searchFieldForegroundCluster: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
-                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: navigation.isSearchPresented)
-                .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
-
-            TextField("Search Vietnamese phrases", text: $searchQuery)
-                .font(.body.weight(.semibold))
-                .foregroundStyle(.primary)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .focused($isSearchFieldFocused)
-                .accessibilityIdentifier("AppChrome.SearchField")
-                .layoutPriority(1)
-        }
-        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-        .frame(height: AppChromeLayout.searchFieldHeight)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous))
-        .onTapGesture {
-            focusSearchField()
-        }
-    }
-
-    private var searchDismissKeyboardGlassShell: some View {
-        Color.clear
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(Circle())
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: Circle()
-            )
-            .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-            .appChromeGlassOutline(in: Circle(), prominence: 0.74)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    private var searchDismissKeyboardForegroundButton: some View {
-        Button {
-            clearFocusedSearch()
-        } label: {
-            Image(systemName: "xmark")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
-        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    private func searchOriginFallbackButton(kind: DockItemKind) -> some View {
-        Button {
-            closeSearch()
-        } label: {
-            Image(systemName: kind.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: Circle()
-        )
-        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .appChromeGlassOutline(in: Circle(), prominence: 0.74)
-        .accessibilityLabel(kind.title)
-        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(Circle())
-        .zIndex(AppChromeLayout.searchOriginMorphZIndex)
-    }
-
-    private var searchFieldFallbackCluster: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
-
-            TextField("Search Vietnamese phrases", text: $searchQuery)
-                .font(.body.weight(.semibold))
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .focused($isSearchFieldFocused)
-                .accessibilityIdentifier("AppChrome.SearchField")
-        }
-        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-        .frame(height: AppChromeLayout.searchFieldHeight)
-        .frame(maxWidth: .infinity)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
-        )
-        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .appChromeGlassOutline(
-            in: RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous),
-            prominence: 0.70
-        )
-        .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private var searchDismissKeyboardFallbackButton: some View {
-        Button {
-            clearFocusedSearch()
-        } label: {
-            Image(systemName: "xmark")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: Circle()
-        )
-        .nativeGlass(cornerRadius: AppChromeLayout.searchIslandCornerRadius, interactive: true)
-        .appChromeGlassOutline(in: Circle(), prominence: 0.74)
-        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
-        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
-        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
     }
 
     private var forwardButton: some View {
@@ -1308,6 +1176,128 @@ struct AppShellView: View {
             .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
+    }
+
+    private struct VietnameseMenuTopSectionRail: View {
+        let state: VietnameseMenuSectionChromeState
+        let onSelect: (String) -> Void
+
+        private var currentSection: VietnameseMenuSectionChromeItem? {
+            state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
+        }
+
+        var body: some View {
+            HStack {
+                Spacer(minLength: 0)
+
+                Menu {
+                    ForEach(state.sections) { section in
+                        Button {
+                            onSelect(section.id)
+                        } label: {
+                            Label(section.title, systemImage: section.symbolName)
+                        }
+                        .accessibilityIdentifier("VietnameseMenu.TopSectionMenu.\(section.id)")
+                    }
+                } label: {
+                    HStack(spacing: 7) {
+                        if let currentSection {
+                            Image(systemName: currentSection.symbolName)
+                                .font(.caption.weight(.black))
+                                .foregroundStyle(currentSection.tintName.color)
+
+                            Text(currentSection.title)
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.78)
+                        }
+
+                        Image(systemName: "chevron.down")
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .contentShape(Capsule(style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+                .accessibilityLabel("Menu section")
+                .accessibilityValue(currentSection?.title ?? "")
+                .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
+
+                Spacer(minLength: 0)
+            }
+            .frame(height: AppChromeLayout.menuSectionChromeHeight)
+        }
+    }
+
+    private struct SavedTripTopSectionRail: View {
+        let state: SavedTripSectionChromeState
+        let onSelect: (String) -> Void
+
+        private var currentSection: SavedTripSectionChromeItem? {
+            state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
+        }
+
+        var body: some View {
+            HStack {
+                Spacer(minLength: 0)
+
+                Menu {
+                    ForEach(state.sections) { section in
+                        Button {
+                            onSelect(section.id)
+                        } label: {
+                            Label(section.title, systemImage: section.symbolName)
+                        }
+                        .accessibilityIdentifier("SavedTrip.TopSectionMenu.\(section.id)")
+                    }
+                } label: {
+                    HStack(spacing: 7) {
+                        if let currentSection {
+                            Image(systemName: currentSection.symbolName)
+                                .font(.caption.weight(.black))
+                                .foregroundStyle(currentSection.tintName.color)
+
+                            Text(currentSection.title)
+                                .font(.subheadline.weight(.black))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.78)
+                        }
+
+                        Image(systemName: "chevron.down")
+                            .font(.caption2.weight(.black))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.horizontal, 14)
+                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                    .overlay {
+                        Capsule(style: .continuous)
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                            .allowsHitTesting(false)
+                    }
+                    .contentShape(Capsule(style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+                .accessibilityLabel("Saved section")
+                .accessibilityValue(currentSection?.title ?? "")
+                .accessibilityIdentifier("SavedTrip.TopSectionPill")
+
+                Spacer(minLength: 0)
+            }
+            .frame(height: AppChromeLayout.menuSectionChromeHeight)
+        }
     }
 
     @ViewBuilder
@@ -1422,6 +1412,53 @@ struct AppShellView: View {
         openDetail(id, source: .article)
     }
 
+    private func prepareHomeScrollRestoration(_ target: HomeScrollTarget? = nil) {
+        guard navigation.currentRoute == .home else {
+            return
+        }
+
+        let resolvedTarget = target
+            ?? homeScrollRestorationTarget?.target
+            ?? homeCurrentScrollTarget
+            ?? .top
+
+        homeScrollRestorationTarget = HomeScrollRestorationTarget(
+            target: resolvedTarget,
+            offsetY: max(homeCurrentScrollOffsetY, 0)
+        )
+    }
+
+    private func activateAdminBackdropIfNeeded(from previousRoute: AppRoute, to currentRoute: AppRoute) {
+        guard let surface = AdminRootPhotoBackdropActivationPolicy.targetSurface(
+            previousRoute: previousRoute,
+            currentRoute: currentRoute
+        ) else {
+            return
+        }
+
+        var state = adminBackdropStates[surface] ?? .fallback
+        state.imageName = SharedBackdropImagePool.nextImageName(for: surface.poolSurface)
+        state.activationToken += 1
+        adminBackdropStates[surface] = state
+    }
+
+    private func applyInitialAdminBackdropActivationIfNeeded() {
+        guard !didApplyInitialAdminBackdropActivation else {
+            return
+        }
+
+        didApplyInitialAdminBackdropActivation = true
+
+        guard let surface = AdminRootPhotoBackdropSurface.surface(for: navigation.currentRoute) else {
+            return
+        }
+
+        var state = adminBackdropStates[surface] ?? .fallback
+        state.imageName = SharedBackdropImagePool.nextImageName(for: surface.poolSurface)
+        state.activationToken += 1
+        adminBackdropStates[surface] = state
+    }
+
     private func openDetailFromHome(_ id: String) {
         openDetail(id, source: .home)
     }
@@ -1476,7 +1513,13 @@ struct AppShellView: View {
         }
     }
 
-    private func openDetailFromBrowse(_ id: String) {
+    private func openDetailFromBrowse(_ id: String, heroImageName: String? = nil) {
+        if let heroImageName, heroImageName.hasPrefix("HeroCategory") {
+            browseDetailHeroImageOverrides[id] = heroImageName
+        } else {
+            browseDetailHeroImageOverrides[id] = nil
+        }
+
         openDetail(id, source: .browse)
     }
 
@@ -1489,7 +1532,12 @@ struct AppShellView: View {
     }
 
     private func openDetail(_ id: String, source: UserIntentSource) {
+        if source != .browse {
+            browseDetailHeroImageOverrides[id] = nil
+        }
+
         cancelInteractiveChromeState()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
@@ -1503,7 +1551,8 @@ struct AppShellView: View {
     private func openBrowseCollection(_ route: BrowseCollectionRoute) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
-        withAnimation(.snappy(duration: 0.34)) {
+        clearPracticeThreadForwardRestore()
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollection(route)
         }
     }
@@ -1511,146 +1560,261 @@ struct AppShellView: View {
     private func openBrowseCollectionFromHome(_ route: BrowseCollectionRoute) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
-        withAnimation(.snappy(duration: 0.34)) {
+        clearPracticeThreadForwardRestore()
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openHomeBrowseCollection(route)
         }
     }
 
     private func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
-        if navigation.searchOriginDockItem == .home {
-            openBrowseCollectionFromHome(route)
-        } else {
-            openBrowseCollection(route)
+        cancelInteractiveChromeState()
+        cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
+        withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
+            navigation.openBrowseCollectionFromSearch(route)
         }
     }
 
     private func openBrowseAll() {
+        if isPracticeOverlayPresented {
+            dismissPracticeOverlay(resetStartRequest: true)
+        }
         openBrowse()
     }
 
-    private func performDockAction(_ item: DockItemKind) {
-        switch item {
-        case .home:
-            openHome()
-        case .browse:
-            openBrowse()
-        case .saved:
-            openSaved()
-        case .practice:
-            openPractice()
-        }
-    }
-
     private func openHome() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openHome()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         searchQuery = ""
     }
 
     private func openBrowse() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        prepareHomeScrollRestoration()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openBrowse()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
     private func openSaved() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         cancelSearchFocus()
+        prepareHomeScrollRestoration()
+        clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openSaved()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
-    private func openPractice() {
+    private func openPractice(preservingStartRequest: Bool = false) {
         cancelInteractiveChromeState()
         cancelSearchFocus()
-        withAnimation(.snappy(duration: 0.34)) {
-            navigation.openPractice()
+        prepareHomeScrollRestoration()
+        clearPracticeThreadForwardRestore()
+        if !preservingStartRequest {
+            clearPracticeStartRequest()
+        }
+
+        practiceOverlayResetTrigger += 1
+        withAnimation(.spring(response: 0.34, dampingFraction: 0.88)) {
+            isPracticeOverlayPresented = true
         }
     }
 
     private func openPractice(_ action: BrowseCollectionPracticeAction) {
+        let matchReturnFocus = currentBrowseCollectionPracticeFocusRequest()
+
         switch action {
         case .addStarterPages(let pageIDs):
             intentStore.addPracticePages(pageIDs)
+            practiceStartRequestID += 1
+            requestedPracticeSourceID = pageIDs.isEmpty ? "quick" : "practice"
             requestedPracticeMode = nil
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
+        case .practiceSource(let sourceID):
+            practiceStartRequestID += 1
+            requestedPracticeSourceID = sourceID
+            requestedPracticeMode = nil
+            requestedPracticeScenarioID = nil
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = matchReturnFocus
         case .practiceMode(let mode):
             practiceStartRequestID += 1
+            requestedPracticeSourceID = nil
             requestedPracticeMode = mode
             requestedPracticeScenarioID = nil
             requestedPracticeScenarioThreadDismissal = .messagesHub
             pendingPracticeThreadReturnFocus = nil
-        case .practiceScenario(let scenarioID):
+            pendingPracticeMatchReturnFocus = matchReturnFocus
+        case .practiceScenario:
             practiceStartRequestID += 1
+            requestedPracticeSourceID = "quick"
             requestedPracticeMode = nil
-            requestedPracticeScenarioID = scenarioID
-            if case .browseCollection(let route) = navigation.currentRoute {
-                requestedPracticeScenarioThreadDismissal = .originRoute
-                pendingPracticeThreadReturnFocus = BrowseCollectionFocusRequest(
-                    id: 0,
-                    route: route,
-                    target: .messageScenario(scenarioID)
-                )
-            } else {
-                requestedPracticeScenarioThreadDismissal = .messagesHub
-                pendingPracticeThreadReturnFocus = nil
-            }
+            requestedPracticeScenarioID = nil
+            clearPracticeThreadForwardRestore()
+            requestedPracticeScenarioThreadDismissal = .messagesHub
+            pendingPracticeThreadReturnFocus = nil
+            pendingPracticeMatchReturnFocus = nil
         }
 
-        openPractice()
+        openPractice(preservingStartRequest: true)
     }
 
-    private func returnFromPracticeThreadToOrigin() {
+    private func currentBrowseCollectionPracticeFocusRequest() -> BrowseCollectionFocusRequest? {
+        guard case let .browseCollection(route) = navigation.currentRoute else {
+            return nil
+        }
+
+        return BrowseCollectionFocusRequest(
+            id: 0,
+            route: route,
+            target: .practiceEntry
+        )
+    }
+
+    private func returnFromPracticeThreadToOrigin(_ scenarioID: PracticeScenarioID?) {
+        let previousRoute = navigation.currentRoute
         let focusRequest = pendingPracticeThreadReturnFocus
         pendingPracticeThreadReturnFocus = nil
+        if let scenarioID {
+            pendingPracticeThreadForwardRestore = PracticeThreadForwardRestore(
+                scenarioID: scenarioID,
+                focusRequest: focusRequest
+            )
+        }
         cancelInteractiveChromeState()
+        prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
-        restoreBrowseCollectionFocusIfNeeded(focusRequest)
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
-    private func restoreBrowseCollectionFocusIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
+    private func returnFromPracticeMatchToOrigin() {
+        let previousRoute = navigation.currentRoute
+        let focusRequest = pendingPracticeMatchReturnFocus
+        cancelInteractiveChromeState()
+        clearPracticeStartRequest()
+        prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
+        pendingPracticeMatchReturnFocus = nil
+
+        if isPracticeOverlayPresented {
+            dismissPracticeOverlay(resetStartRequest: false)
+            return
+        }
+
+        withAnimation(.snappy(duration: 0.34)) {
+            navigation.goBack()
+        }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
+    }
+
+    private func dismissPracticeOverlay() {
+        dismissPracticeOverlay(resetStartRequest: true)
+    }
+
+    private func dismissPracticeOverlay(resetStartRequest: Bool) {
+        if resetStartRequest {
+            clearPracticeStartRequest()
+        }
+
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.92)) {
+            isPracticeMatchPresented = false
+            isPracticeThreadPresented = false
+            isPracticeOverlayPresented = false
+        }
+        refreshTabBarVisibilitySoon()
+    }
+
+    private func refreshTabBarVisibilitySoon() {
+        restoreSystemTabBarVisibility()
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 220_000_000)
+            tabBarVisibilityRefreshID += 1
+            restoreSystemTabBarVisibility()
+        }
+    }
+
+    private func restoreSystemTabBarVisibility() {
+        #if canImport(UIKit)
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        for window in scenes.flatMap(\.windows) {
+            guard let tabBar = window.rootViewController?.findDescendantTabBar() else {
+                continue
+            }
+
+            tabBar.isHidden = false
+            tabBar.alpha = 1
+            tabBar.isUserInteractionEnabled = true
+        }
+        #endif
+    }
+
+    private func prepareBrowseCollectionFocusRestoreIfNeeded(_ focusRequest: BrowseCollectionFocusRequest?) {
         guard let focusRequest else {
             return
         }
 
-        DispatchQueue.main.async {
-            browseCollectionFocusRequestID += 1
-            let request = BrowseCollectionFocusRequest(
-                id: browseCollectionFocusRequestID,
-                route: focusRequest.route,
-                target: focusRequest.target
-            )
-            browseCollectionFocusRequest = request
+        browseCollectionFocusRequestID += 1
+        let request = BrowseCollectionFocusRequest(
+            id: browseCollectionFocusRequestID,
+            route: focusRequest.route,
+            target: focusRequest.target
+        )
+        browseCollectionFocusRequest = request
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                if browseCollectionFocusRequest == request {
-                    browseCollectionFocusRequest = nil
-                }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if browseCollectionFocusRequest == request {
+                browseCollectionFocusRequest = nil
             }
         }
     }
 
     private func goBack() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
+        preparePracticeMatchFocusRestoreIfNeeded()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
+    }
+
+    private func preparePracticeMatchFocusRestoreIfNeeded() {
+        guard navigation.currentRoute == .practice else {
+            return
+        }
+
+        prepareBrowseCollectionFocusRestoreIfNeeded(pendingPracticeMatchReturnFocus)
     }
 
     private func goForward() {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
+        let shouldFocusSearch = navigation.forwardPreviewRoute == .search
         withAnimation(.snappy(duration: 0.34)) {
-            navigation.goForward()
+            navigateForwardInState()
+        }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
+        if shouldFocusSearch {
+            focusSearchField()
         }
     }
 
@@ -1659,39 +1823,68 @@ struct AppShellView: View {
     }
 
     private func openSearchQuery(_ query: String) {
-        openSearch(prefilledQuery: query, focusField: false)
+        openSearch(prefilledQuery: query, focusField: isSearchFieldFocused)
     }
 
     private func openSearch(prefilledQuery: String?, focusField: Bool) {
+        let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
+        clearPracticeThreadForwardRestore()
+        prepareHomeScrollRestoration()
+        if !navigation.isSearchPresented {
+            searchReturnFocusRequest = nil
+        }
         if let prefilledQuery {
             searchQuery = prefilledQuery
         }
 
         if !focusField {
-            cancelSearchFocus()
+            isSearchPresentationActive = false
+            isSearchFieldFocused = false
         }
 
-        withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
+        withoutRouteAnimation {
             navigation.openSearch()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
 
         if focusField {
             focusSearchField()
         }
     }
 
+    private func prepareSearchReturnFocus(_ scrollID: String) {
+        searchReturnFocusRequestID += 1
+        searchReturnFocusRequest = SearchReturnFocusRequest(
+            id: searchReturnFocusRequestID,
+            scrollID: scrollID
+        )
+    }
+
     private func closeSearch() {
+        let previousRoute = navigation.currentRoute
         cancelSearchFocus()
         cancelInteractiveChromeState()
         withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
             navigation.goBack()
         }
+        activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
+    }
+
+    private func dismissSearchFieldFocus() {
+        searchFocusRequestID += 1
+        isSearchPresentationActive = false
+        isSearchFieldFocused = false
+        #if canImport(UIKit)
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        #endif
     }
 
     private func focusSearchField() {
         searchFocusRequestID += 1
         let requestID = searchFocusRequestID
+        isSearchPresentationActive = true
+        isSearchFieldFocused = true
 
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: 220_000_000)
@@ -1710,32 +1903,43 @@ struct AppShellView: View {
         }
         didApplyLaunchSearchFocus = true
 
-        guard launchSearchShouldFocus, navigation.isSearchPresented else {
+        guard navigation.isSearchPresented else {
             return
         }
 
-        focusSearchField()
+        if launchSearchShouldFocus {
+            focusSearchField()
+        } else {
+            dismissSearchFieldFocus()
+        }
     }
 
     private func cancelSearchFocus() {
         searchFocusRequestID += 1
+        isSearchPresentationActive = false
         isSearchFieldFocused = false
-    }
-
-    private func clearFocusedSearch() {
-        searchQuery = ""
-        cancelSearchFocus()
     }
 
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
-        dockSelectionTapRequestID += 1
         homePhraseHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         interactiveDrag = nil
-        dockDrag = .inactive
+    }
+
+    private func clearPracticeStartRequest() {
+        requestedPracticeSourceID = nil
+        requestedPracticeMode = nil
+        requestedPracticeScenarioID = nil
+        requestedPracticeScenarioThreadDismissal = .messagesHub
+        pendingPracticeThreadReturnFocus = nil
+        pendingPracticeMatchReturnFocus = nil
+    }
+
+    private func clearPracticeThreadForwardRestore() {
+        pendingPracticeThreadForwardRestore = nil
     }
 
     private func cancelInteractiveDrag() {
@@ -1792,15 +1996,44 @@ struct AppShellView: View {
             }
 
             withoutRouteAnimation {
+                let previousRoute = navigation.currentRoute
                 switch direction {
                 case .back:
+                    preparePracticeMatchFocusRestoreIfNeeded()
                     navigation.goBack()
                 case .forward:
-                    navigation.goForward()
+                    navigateForwardInState()
                 }
+                activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
                 interactiveDrag = nil
             }
         }
+    }
+
+    private func navigateForwardInState() {
+        preparePracticeThreadForwardRestoreIfNeeded(for: navigation.forwardPreviewRoute)
+        navigation.goForward()
+    }
+
+    private func preparePracticeThreadForwardRestoreIfNeeded(for route: AppRoute?) {
+        guard route == .practice else {
+            return
+        }
+
+        guard let restore = pendingPracticeThreadForwardRestore else {
+            if requestedPracticeSourceID == nil, requestedPracticeMode == nil, requestedPracticeScenarioID == nil {
+                clearPracticeStartRequest()
+            }
+            return
+        }
+
+        practiceStartRequestID += 1
+        requestedPracticeSourceID = nil
+        requestedPracticeMode = nil
+        requestedPracticeScenarioID = restore.scenarioID
+        requestedPracticeScenarioThreadDismissal = .originRoute
+        pendingPracticeThreadReturnFocus = restore.focusRequest
+        pendingPracticeThreadForwardRestore = nil
     }
 
     private func withoutRouteAnimation(_ updates: () -> Void) {
@@ -1818,11 +2051,15 @@ struct AppShellView: View {
         }
 
         let pageID = arguments[arguments.index(after: flagIndex)]
-        guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
-            return shortcutRoute(for: arguments)
+        if let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) {
+            return .detailPage(canonicalPageID)
         }
 
-        return .detailPage(canonicalPageID)
+        if VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil {
+            return .detailPage(pageID)
+        }
+
+        return shortcutRoute(for: arguments)
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {
@@ -1832,6 +2069,10 @@ struct AppShellView: View {
 
         if arguments.contains("--browse") {
             return .browse
+        }
+
+        if arguments.contains("--saved") {
+            return .saved
         }
 
         if arguments.contains("--practice")
@@ -2044,6 +2285,10 @@ struct AppShellNavigationState: Equatable {
             return routeBelowSearch
         }
 
+        if let searchResultBackPreviewRoute {
+            return searchResultBackPreviewRoute
+        }
+
         if !detailPath.isEmpty {
             guard detailPath.count > 1 else {
                 if let collectionRoute = browseCollectionPath.last {
@@ -2075,8 +2320,44 @@ struct AppShellNavigationState: Equatable {
         return nil
     }
 
-    var searchOriginDockItem: DockItemKind {
-        AppChrome(route: routeBelowSearch).selectedDockItem
+    private var searchResultBackPreviewRoute: AppRoute? {
+        guard let snapshot = backStack.last, snapshot.isSearchPresented else {
+            return nil
+        }
+
+        if !detailPath.isEmpty {
+            guard
+                rootRoute == snapshot.rootRoute,
+                browseCollectionPath == snapshot.browseCollectionPath,
+                Array(detailPath.dropLast()) == snapshot.detailPath
+            else {
+                return nil
+            }
+
+            return .search
+        }
+
+        guard !browseCollectionPath.isEmpty else {
+            return nil
+        }
+
+        if rootRoute == snapshot.rootRoute,
+           Array(browseCollectionPath.dropLast()) == snapshot.browseCollectionPath,
+           snapshot.detailPath.isEmpty {
+            return .search
+        }
+
+        if browseCollectionPath.count == snapshot.browseCollectionPath.count + 1,
+           Array(browseCollectionPath.dropLast()) == snapshot.browseCollectionPath,
+           !snapshot.detailPath.isEmpty {
+            return .search
+        }
+
+        return nil
+    }
+
+    var searchOriginSystemTab: AppSystemTab {
+        AppSystemTab(route: routeBelowSearch)
     }
 
     var canGoForward: Bool {
@@ -2085,6 +2366,17 @@ struct AppShellNavigationState: Equatable {
 
     var hasExplicitBackHistory: Bool {
         !backStack.isEmpty
+    }
+
+    var showsStaticBackButton: Bool {
+        switch currentRoute {
+        case .home:
+            return false
+        case .practice:
+            return hasExplicitBackHistory
+        default:
+            return backPreviewRoute != nil
+        }
     }
 
     private var routeBelowSearch: AppRoute {
@@ -2164,6 +2456,19 @@ struct AppShellNavigationState: Equatable {
         backStack.append(snapshot)
     }
 
+    private mutating func recordSearchRouteForBackHistoryIfNeeded() {
+        guard isSearchPresented else {
+            return
+        }
+
+        let snapshot = currentSnapshot
+        guard backStack.last != snapshot else {
+            return
+        }
+
+        backStack.append(snapshot)
+    }
+
     private mutating func restore(_ snapshot: AppShellNavigationSnapshot) {
         rootRoute = snapshot.rootRoute
         browseCollectionPath = snapshot.browseCollectionPath
@@ -2173,6 +2478,7 @@ struct AppShellNavigationState: Equatable {
 
     mutating func openDetail(_ id: String) {
         let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+            ?? (VietnameseMenuCatalog.detailItem(withPageID: id) == nil ? nil : id)
 
         if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
@@ -2180,6 +2486,7 @@ struct AppShellNavigationState: Equatable {
                 return
             }
 
+            recordSearchRouteForBackHistoryIfNeeded()
             detailPath.removeAll()
             browseCollectionPath.removeAll()
             isSearchPresented = false
@@ -2194,9 +2501,16 @@ struct AppShellNavigationState: Equatable {
         }
 
         guard detailPath.last != canonicalPageID else {
+            if isSearchPresented {
+                isSearchPresented = false
+                forwardStack.removeAll()
+                detailScrollToTopRoute = .detailPage(canonicalPageID)
+                detailScrollToTopTrigger += 1
+            }
             return
         }
 
+        recordSearchRouteForBackHistoryIfNeeded()
         isSearchPresented = false
         forwardStack.removeAll()
         detailPath.append(canonicalPageID)
@@ -2313,6 +2627,41 @@ struct AppShellNavigationState: Equatable {
         browseCollectionScrollToTopTrigger += 1
     }
 
+    mutating func openBrowseCollectionFromSearch(_ route: BrowseCollectionRoute) {
+        let originRoute = routeBelowSearch
+        let originSnapshot = AppShellNavigationSnapshot(
+            rootRoute: rootRoute,
+            browseCollectionPath: browseCollectionPath,
+            detailPath: detailPath,
+            isSearchPresented: false
+        )
+
+        if originRoute == .browseCollection(route) {
+            isSearchPresented = false
+            forwardStack.removeAll()
+            browseCollectionScrollToTopRoute = route
+            browseCollectionScrollToTopTrigger += 1
+            return
+        }
+
+        if isSearchPresented {
+            recordSearchRouteForBackHistoryIfNeeded()
+        } else if case .detailPage = originRoute, backStack.last != originSnapshot {
+            backStack.append(originSnapshot)
+        }
+
+        rootRoute = rootRoute == .home ? .home : .browse
+        detailPath.removeAll()
+        isSearchPresented = false
+        forwardStack.removeAll()
+
+        if browseCollectionPath.last != route {
+            browseCollectionPath.append(route)
+        }
+        browseCollectionScrollToTopRoute = route
+        browseCollectionScrollToTopTrigger += 1
+    }
+
     mutating func goBack() {
         if isSearchPresented {
             isSearchPresented = false
@@ -2323,6 +2672,8 @@ struct AppShellNavigationState: Equatable {
         guard !detailPath.isEmpty else {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
+                restoreSearchBackStackAfterPoppingCollectionIfNeeded()
+                restoreExplicitBackStackAfterPoppingCollectionIfNeeded()
                 return
             }
 
@@ -2357,6 +2708,56 @@ struct AppShellNavigationState: Equatable {
 
         let currentDetailID = detailPath.removeLast()
         forwardStack.append(.detailPage(currentDetailID))
+        restoreSearchBackStackAfterPoppingDetailIfNeeded()
+    }
+
+    private mutating func restoreSearchBackStackAfterPoppingDetailIfNeeded() {
+        guard let previousSnapshot = backStack.last, previousSnapshot.isSearchPresented else {
+            return
+        }
+
+        guard
+            rootRoute == previousSnapshot.rootRoute,
+            browseCollectionPath == previousSnapshot.browseCollectionPath,
+            detailPath == previousSnapshot.detailPath
+        else {
+            return
+        }
+
+        restore(backStack.removeLast())
+    }
+
+    private mutating func restoreSearchBackStackAfterPoppingCollectionIfNeeded() {
+        guard let previousSnapshot = backStack.last, previousSnapshot.isSearchPresented else {
+            return
+        }
+
+        if rootRoute == previousSnapshot.rootRoute,
+           browseCollectionPath == previousSnapshot.browseCollectionPath,
+           detailPath == previousSnapshot.detailPath {
+            restore(backStack.removeLast())
+            return
+        }
+
+        if rootRoute == previousSnapshot.rootRoute,
+           browseCollectionPath == previousSnapshot.browseCollectionPath,
+           detailPath.isEmpty,
+           !previousSnapshot.detailPath.isEmpty {
+            restore(backStack.removeLast())
+        }
+    }
+
+    private mutating func restoreExplicitBackStackAfterPoppingCollectionIfNeeded() {
+        guard browseCollectionPath.isEmpty, let previousSnapshot = backStack.last else {
+            return
+        }
+
+        switch previousSnapshot.currentRoute {
+        case .detailPage, .phrasePage, .saved, .practice:
+            restore(backStack.removeLast())
+        case .home, .browse, .browseCollection, .search:
+            return
+        }
     }
 
     mutating func goForward() {
@@ -2408,7 +2809,6 @@ struct AppShellNavigationState: Equatable {
             browseCollectionPath.removeAll()
             detailPath.removeAll()
             rootRoute = .practice
-            practiceScrollToTopTrigger += 1
         case .detailPage(let detailPageID):
             guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) else {
                 return
@@ -2748,6 +3148,30 @@ enum AppPageTransition {
         insertion: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation),
         removal: .opacity.animation(HomePhraseHeroMorphTiming.pageFadeAnimation)
     )
+
+    static let browseCityDissolve = AnyTransition.asymmetric(
+        insertion: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation),
+        removal: .opacity.animation(BrowseCollectionNativeTransition.cityDissolveAnimation)
+    )
+}
+
+enum BrowseCollectionNativeTransition {
+    static let cityDissolveDuration: TimeInterval = 0.22
+    static let cityDissolveAnimation: Animation = .easeInOut(duration: cityDissolveDuration)
+
+    static func usesCityDissolve(for route: BrowseCollectionRoute) -> Bool {
+        guard case .city = route else {
+            return false
+        }
+
+        return true
+    }
+
+    static func animation(for route: BrowseCollectionRoute) -> Animation {
+        usesCityDissolve(for: route)
+            ? cityDissolveAnimation
+            : .snappy(duration: 0.34)
+    }
 }
 
 enum HomePhraseHeroMorphTiming {
@@ -2756,844 +3180,6 @@ enum HomePhraseHeroMorphTiming {
     static let articleRevealDelayNanoseconds: UInt64 = 320_000_000
     static let articleRevealAnimation: Animation = .easeOut(duration: 0.18)
     static let cleanupDelayNanoseconds: UInt64 = 1_120_000_000
-}
-
-private struct AppDockInteractionState: Equatable {
-    var startItem: DockItemKind?
-    var activeItem: DockItemKind?
-    var dragX: CGFloat?
-    var predictedDragX: CGFloat?
-    var isFingerTracking: Bool
-    var didMoveBeyondTap: Bool
-
-    static let inactive = AppDockInteractionState(
-        startItem: nil,
-        activeItem: nil,
-        dragX: nil,
-        predictedDragX: nil,
-        isFingerTracking: false,
-        didMoveBeyondTap: false
-    )
-}
-
-private struct AppShellBottomChrome: View {
-    let route: AppRoute
-    let searchOriginDockItem: DockItemKind
-    let isSearchFieldFocused: Bool
-    @Binding var searchQuery: String
-    let searchFieldFocus: FocusState<Bool>.Binding
-    let chromeNamespace: Namespace.ID
-    let onOpenSearch: () -> Void
-    let onCloseSearch: () -> Void
-    let onFocusSearchField: () -> Void
-    let onClearFocusedSearch: () -> Void
-    let onCancelSearchFocus: () -> Void
-    let onSelectDockItem: (DockItemKind) -> Void
-
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var dockDrag = AppDockInteractionState.inactive
-    @State private var dockSelectionTapRequestID = 0
-
-    var body: some View {
-        chromeBody
-            .onChange(of: route) { _, _ in
-                resetDockInteraction()
-            }
-    }
-
-    @ViewBuilder
-    private var chromeBody: some View {
-        if #available(iOS 26.0, *) {
-            ZStack {
-                GlassEffectContainer(spacing: AppChromeLayout.bottomSpacing) {
-                    staticBottomChromeGlassContent
-                }
-                .frame(maxWidth: .infinity)
-
-                searchRouteForegroundControls
-            }
-            .frame(maxWidth: .infinity)
-        } else {
-            staticBottomChromeContent
-        }
-    }
-
-    @ViewBuilder
-    private var staticBottomChromeGlassContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if isSearchRoute {
-                if !isKeyboardSearch {
-                    searchOriginGlassShell(kind: searchOriginDockItem)
-                }
-            } else {
-                dockCluster(chrome: chrome)
-            }
-
-            if isSearchRoute {
-                searchFieldGlassShell
-            } else {
-                collapsedSearchButton
-            }
-
-            if isKeyboardSearch {
-                searchDismissKeyboardGlassShell
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
-        .animation(.snappy(duration: 0.30), value: isSearchFieldFocused)
-    }
-
-    @ViewBuilder
-    private var searchRouteForegroundControls: some View {
-        if isSearchRoute {
-            searchForegroundControls(
-                isKeyboardSearch: isKeyboardSearch,
-                origin: searchOriginDockItem
-            )
-        }
-    }
-
-    @ViewBuilder
-    private var staticBottomChromeContent: some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if isSearchRoute {
-                if !isKeyboardSearch {
-                    searchOriginFallbackButton(kind: searchOriginDockItem)
-                }
-            } else {
-                dockCluster(chrome: chrome)
-            }
-
-            if isSearchRoute {
-                searchFieldFallbackCluster
-            } else {
-                collapsedSearchButton
-            }
-
-            if isKeyboardSearch {
-                searchDismissKeyboardFallbackButton
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .animation(.snappy(duration: AppChromeLayout.searchMorphDuration), value: isSearchRoute)
-        .animation(.snappy(duration: 0.30), value: isSearchFieldFocused)
-    }
-
-    private var isSearchRoute: Bool {
-        route == .search
-    }
-
-    private var isKeyboardSearch: Bool {
-        isSearchRoute && isSearchFieldFocused
-    }
-
-    private var chrome: AppChrome {
-        AppChrome(route: route)
-    }
-
-    private func dockCluster(chrome: AppChrome) -> some View {
-        GeometryReader { proxy in
-            let itemCount = chrome.primaryDockItems.count
-            let baseContentWidth = AppDockSelectionLayout.contentWidth(itemCount: itemCount)
-            let minimumSurfaceWidth = baseContentWidth + AppChromeLayout.dockHorizontalPadding * 2
-            let maximumSurfaceWidth = AppChromeLayout.dockMaximumContentWidth + AppChromeLayout.dockHorizontalPadding * 2
-            let surfaceWidth = min(max(minimumSurfaceWidth, proxy.size.width), maximumSurfaceWidth)
-            let contentWidth = max(baseContentWidth, surfaceWidth - AppChromeLayout.dockHorizontalPadding * 2)
-            let selectedIndex = chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem) ?? 0
-            let activeItem = dockDrag.activeItem ?? chrome.selectedDockItem
-            let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
-            let isPressingDockSelection = dockDrag.dragX != nil
-            let isDraggingDockSelection = dockDrag.didMoveBeyondTap
-            let lensAnimation = dockSelectionLensAnimation(isFingerTracking: dockDrag.isFingerTracking)
-            let lensMetrics = AppDockSelectionLayout.lensMetrics(
-                selectedIndex: selectedIndex,
-                activeIndex: activeIndex,
-                dragX: dockDrag.dragX,
-                itemCount: itemCount,
-                reduceMotion: reduceMotion,
-                contentWidth: contentWidth,
-                predictedDragX: dockDrag.predictedDragX
-            )
-            let dockShape = RoundedRectangle(cornerRadius: AppChromeLayout.dockCornerRadius, style: .continuous)
-
-            ZStack(alignment: .leading) {
-                AppShellDockSelectionLens(
-                    width: lensMetrics.width,
-                    height: lensMetrics.height,
-                    isPressed: isPressingDockSelection,
-                    isDragging: isDraggingDockSelection,
-                    chromeNamespace: chromeNamespace
-                )
-                .offset(x: lensMetrics.xOffset)
-                .animation(lensAnimation, value: lensMetrics)
-                .zIndex(AppChromeLayout.dockSelectionLensZIndex)
-
-                HStack(spacing: 0) {
-                    ForEach(Array(chrome.primaryDockItems.enumerated()), id: \.element) { index, item in
-                        Button {
-                            performDockTapAction(item, chrome: chrome, contentWidth: contentWidth)
-                        } label: {
-                            AppShellDockItem(
-                                kind: item,
-                                selected: item == activeItem,
-                                chromeNamespace: chromeNamespace,
-                                isMorphSource: item == chrome.selectedDockItem
-                            )
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel(item.title)
-                        .accessibilityIdentifier("AppChrome.Dock.\(item.title)")
-                        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
-                        .contentShape(Rectangle())
-
-                        if index < chrome.primaryDockItems.count - 1 {
-                            Spacer(minLength: AppChromeLayout.dockItemSpacing)
-                        }
-                    }
-                }
-                .frame(width: contentWidth)
-                .zIndex(AppChromeLayout.dockItemForegroundZIndex)
-            }
-            .frame(width: contentWidth, height: AppChromeLayout.dockItemHeight)
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                dockSelectionGesture(chrome: chrome, contentWidth: contentWidth),
-                including: .all
-            )
-            .padding(.horizontal, AppChromeLayout.dockHorizontalPadding)
-            .padding(.vertical, AppChromeLayout.dockVerticalPadding)
-            .frame(width: surfaceWidth, height: AppChromeLayout.searchIslandSize)
-            .background(
-                Color.white.opacity(AppChromeLayout.dockBackdropFillOpacity),
-                in: dockShape
-            )
-            .nativeGlass(in: dockShape)
-            .appChromeGlassOutline(in: dockShape, prominence: 0.28)
-            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: !isSearchRoute)
-            .contentShape(dockShape)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .zIndex(AppChromeLayout.dockMorphZIndex)
-        }
-        .frame(height: AppChromeLayout.searchIslandSize)
-        .layoutPriority(1)
-    }
-
-    private func dockSelectionGesture(chrome: AppChrome, contentWidth: CGFloat) -> some Gesture {
-        DragGesture(minimumDistance: 0, coordinateSpace: .local)
-            .onChanged { value in
-                updateDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
-            }
-            .onEnded { value in
-                finishDockSelectionDrag(value, chrome: chrome, contentWidth: contentWidth)
-            }
-    }
-
-    private func dockSelectionLensAnimation(isFingerTracking: Bool) -> Animation? {
-        if isFingerTracking {
-            return nil
-        }
-
-        return reduceMotion
-            ? .easeOut(duration: 0.14)
-            : .interactiveSpring(response: 0.24, dampingFraction: 0.78, blendDuration: 0.06)
-    }
-
-    private func updateDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        guard let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth) else {
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-
-        let previousItem = dockDrag.activeItem
-        let startItem = dockDrag.startItem ?? chrome.selectedDockItem
-        let didMoveBeyondTap = dockDrag.didMoveBeyondTap
-            || abs(value.translation.width) >= AppChromeLayout.dockSelectionDragCommitDistance
-        let activeItem = item
-        let activeIndex = chrome.primaryDockItems.firstIndex(of: activeItem)
-            ?? chrome.primaryDockItems.firstIndex(of: chrome.selectedDockItem)
-            ?? 0
-        let activeCenterX = AppDockSelectionLayout.itemCenterX(
-            index: activeIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-        let dragX = didMoveBeyondTap ? value.location.x : activeCenterX
-        let predictedDragX = didMoveBeyondTap ? value.predictedEndLocation.x : dragX
-
-        dockDrag = AppDockInteractionState(
-            startItem: startItem,
-            activeItem: activeItem,
-            dragX: dragX,
-            predictedDragX: predictedDragX,
-            isFingerTracking: didMoveBeyondTap,
-            didMoveBeyondTap: didMoveBeyondTap
-        )
-
-        if didMoveBeyondTap, previousItem != nil, previousItem != item {
-            playDockCrossingHaptic()
-        }
-    }
-
-    private func finishDockSelectionDrag(_ value: DragGesture.Value, chrome: AppChrome, contentWidth: CGFloat) {
-        let wasDraggingSelection = dockDrag.didMoveBeyondTap
-        let shouldCommitSelection = wasDraggingSelection
-            || (dockDrag.activeItem != nil && dockDrag.activeItem != chrome.selectedDockItem)
-        let item = dockItem(for: value.location.x, chrome: chrome, contentWidth: contentWidth)
-
-        guard shouldCommitSelection, let item else {
-            withAnimation(
-                reduceMotion
-                ? .easeOut(duration: 0.14)
-                : .interactiveSpring(response: 0.24, dampingFraction: 0.84, blendDuration: 0.06)
-            ) {
-                dockDrag = .inactive
-            }
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-        let requestID = dockSelectionTapRequestID
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
-        let destinationX = AppDockSelectionLayout.itemCenterX(
-            index: destinationIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-
-        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.80, blendDuration: 0.05)) {
-            dockDrag = AppDockInteractionState(
-                startItem: dockDrag.startItem ?? chrome.selectedDockItem,
-                activeItem: item,
-                dragX: destinationX,
-                predictedDragX: destinationX,
-                isFingerTracking: false,
-                didMoveBeyondTap: true
-            )
-        }
-
-        if !wasDraggingSelection, item != chrome.selectedDockItem {
-            playDockCrossingHaptic()
-        }
-        commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
-    }
-
-    private func deactivateDockSelection(requestID: Int, delay: UInt64) {
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: delay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            withAnimation(.interactiveSpring(response: 0.22, dampingFraction: 0.86, blendDuration: 0.04)) {
-                dockDrag = .inactive
-            }
-        }
-    }
-
-    private func commitDockSelectionAction(_ item: DockItemKind, requestID: Int, deactivateDelay: UInt64) {
-        onSelectDockItem(item)
-        deactivateDockSelection(requestID: requestID, delay: deactivateDelay)
-    }
-
-    private func performDockTapAction(_ item: DockItemKind, chrome: AppChrome, contentWidth: CGFloat) {
-        guard item != chrome.selectedDockItem, !reduceMotion else {
-            onSelectDockItem(item)
-            return
-        }
-        guard dockDrag.activeItem != item else {
-            return
-        }
-
-        dockSelectionTapRequestID += 1
-        let requestID = dockSelectionTapRequestID
-        let destinationIndex = chrome.primaryDockItems.firstIndex(of: item) ?? 0
-        let destinationX = AppDockSelectionLayout.itemCenterX(
-            index: destinationIndex,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        )
-
-        onCancelSearchFocus()
-
-        playDockCrossingHaptic()
-        withAnimation(.interactiveSpring(response: 0.20, dampingFraction: 0.78, blendDuration: 0.04)) {
-            dockDrag = AppDockInteractionState(
-                startItem: chrome.selectedDockItem,
-                activeItem: item,
-                dragX: destinationX,
-                predictedDragX: destinationX,
-                isFingerTracking: false,
-                didMoveBeyondTap: true
-            )
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapActivationDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            try? await Task.sleep(nanoseconds: AppChromeLayout.dockSelectionTapTravelDelay)
-            guard requestID == dockSelectionTapRequestID else {
-                return
-            }
-
-            commitDockSelectionAction(item, requestID: requestID, deactivateDelay: AppChromeLayout.dockSelectionTapDeactivateDelay)
-        }
-    }
-
-    private func dockItem(for locationX: CGFloat, chrome: AppChrome, contentWidth: CGFloat) -> DockItemKind? {
-        guard let index = AppDockSelectionLayout.itemIndex(
-            for: locationX,
-            itemCount: chrome.primaryDockItems.count,
-            contentWidth: contentWidth
-        ) else {
-            return nil
-        }
-
-        return chrome.primaryDockItems[index]
-    }
-
-    private func playDockCrossingHaptic() {
-        #if canImport(UIKit)
-        guard !reduceMotion else {
-            return
-        }
-
-        UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.55)
-        #endif
-    }
-
-    private var collapsedSearchButton: some View {
-        let shape = Circle()
-
-        return Button {
-            onOpenSearch()
-        } label: {
-            Image(systemName: "magnifyingglass")
-                .font(.title2.weight(.medium))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(shape)
-                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: !isSearchRoute)
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: shape
-        )
-        .nativeGlass(in: shape, interactive: true)
-        .appChromeGlassOutline(in: shape, prominence: 0.42)
-        .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-        .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: !isSearchRoute)
-        .accessibilityLabel("Search")
-        .accessibilityIdentifier("AppChrome.SearchButton")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(shape)
-        .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private func searchOriginGlassShell(kind _: DockItemKind) -> some View {
-        let shape = Circle()
-
-        return Color.clear
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(shape)
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: shape
-            )
-            .nativeGlass(in: shape, interactive: true)
-            .appChromeGlassOutline(in: shape, prominence: 0.34)
-            .nativeGlassMorphID(AppChromeMorphID.dock, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.dock, namespace: chromeNamespace, isSource: isSearchRoute)
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(shape)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.searchOriginMorphZIndex)
-    }
-
-    private var searchFieldGlassShell: some View {
-        let shape = RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
-
-        return Color.clear
-            .frame(height: AppChromeLayout.searchFieldHeight)
-            .frame(maxWidth: .infinity)
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: shape
-            )
-            .nativeGlass(in: shape, interactive: true)
-            .appChromeGlassOutline(in: shape, prominence: 0.36)
-            .nativeGlassMorphID(AppChromeMorphID.search, namespace: chromeNamespace)
-            .chromeMorph(AppChromeMorphID.search, namespace: chromeNamespace, isSource: true)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private func searchForegroundControls(isKeyboardSearch: Bool, origin: DockItemKind) -> some View {
-        HStack(spacing: AppChromeLayout.bottomSpacing) {
-            if !isKeyboardSearch {
-                searchOriginForegroundButton(kind: origin)
-            }
-
-            searchFieldForegroundCluster
-
-            if isKeyboardSearch {
-                searchDismissKeyboardForegroundButton
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .compositingGroup()
-        .zIndex(AppChromeLayout.searchForegroundMorphZIndex)
-    }
-
-    private func searchOriginForegroundButton(kind: DockItemKind) -> some View {
-        Button {
-            onCloseSearch()
-        } label: {
-            Image(systemName: kind.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-                .chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: false)
-                .accessibilityIdentifier("AppChrome.SearchForegroundOriginIcon.\(kind.title)")
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(kind.title)
-        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(Circle())
-    }
-
-    private var searchFieldForegroundCluster: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
-                .chromeIconMorph(AppChromeMorphID.searchIcon, namespace: chromeNamespace, isSource: isSearchRoute)
-                .accessibilityIdentifier("AppChrome.SearchForegroundSearchIcon")
-
-            TextField("Search Vietnamese phrases", text: $searchQuery)
-                .font(.body.weight(.semibold))
-                .foregroundStyle(.primary)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .focused(searchFieldFocus)
-                .accessibilityIdentifier("AppChrome.SearchField")
-                .layoutPriority(1)
-        }
-        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-        .frame(height: AppChromeLayout.searchFieldHeight)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous))
-        .onTapGesture {
-            onFocusSearchField()
-        }
-    }
-
-    private var searchDismissKeyboardGlassShell: some View {
-        let shape = Circle()
-
-        return Color.clear
-            .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-            .contentShape(shape)
-            .background(
-                Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-                in: shape
-            )
-            .nativeGlass(in: shape, interactive: true)
-            .appChromeGlassOutline(in: shape, prominence: 0.34)
-            .nativeGlassMorphID(AppChromeMorphID.searchDismissKeyboard, namespace: chromeNamespace)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-            .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    private var searchDismissKeyboardForegroundButton: some View {
-        Button {
-            onClearFocusedSearch()
-        } label: {
-            Image(systemName: "xmark")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(Circle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
-        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    private func searchOriginFallbackButton(kind: DockItemKind) -> some View {
-        let shape = Circle()
-
-        return Button {
-            onCloseSearch()
-        } label: {
-            Image(systemName: kind.symbolName)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(shape)
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: shape
-        )
-        .nativeGlass(in: shape, interactive: true)
-        .appChromeGlassOutline(in: shape, prominence: 0.34)
-        .accessibilityLabel(kind.title)
-        .accessibilityIdentifier("AppChrome.SearchOriginButton.\(kind.title)")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(shape)
-        .zIndex(AppChromeLayout.searchOriginMorphZIndex)
-    }
-
-    private var searchFieldFallbackCluster: some View {
-        let shape = RoundedRectangle(cornerRadius: AppChromeLayout.searchIslandCornerRadius, style: .continuous)
-
-        return HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: AppChromeLayout.searchFieldIconSlotWidth)
-
-            TextField("Search Vietnamese phrases", text: $searchQuery)
-                .font(.body.weight(.semibold))
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .focused(searchFieldFocus)
-                .accessibilityIdentifier("AppChrome.SearchField")
-        }
-        .padding(.horizontal, AppChromeLayout.searchFieldHorizontalPadding)
-        .frame(height: AppChromeLayout.searchFieldHeight)
-        .frame(maxWidth: .infinity)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: shape
-        )
-        .nativeGlass(in: shape, interactive: true)
-        .appChromeGlassOutline(in: shape, prominence: 0.36)
-        .zIndex(AppChromeLayout.searchMorphZIndex)
-    }
-
-    private var searchDismissKeyboardFallbackButton: some View {
-        let shape = Circle()
-
-        return Button {
-            onClearFocusedSearch()
-        } label: {
-            Image(systemName: "xmark")
-                .font(.title2.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-                .contentShape(shape)
-        }
-        .buttonStyle(.plain)
-        .background(
-            Color.white.opacity(AppChromeLayout.chromeControlBackdropFillOpacity),
-            in: shape
-        )
-        .nativeGlass(in: shape, interactive: true)
-        .appChromeGlassOutline(in: shape, prominence: 0.34)
-        .accessibilityLabel(searchQuery.isEmpty ? "Dismiss keyboard" : "Clear search")
-        .accessibilityIdentifier("AppChrome.SearchDismissKeyboardButton")
-        .frame(width: AppChromeLayout.searchIslandSize, height: AppChromeLayout.searchIslandSize)
-        .contentShape(shape)
-        .zIndex(AppChromeLayout.keyboardDismissMorphZIndex)
-    }
-
-    private func resetDockInteraction() {
-        dockSelectionTapRequestID += 1
-        dockDrag = .inactive
-    }
-}
-
-private struct AppChromeGlassOutline<S: InsettableShape>: ViewModifier {
-    let shape: S
-    var prominence: Double
-
-    func body(content: Content) -> some View {
-        let clampedProminence = min(max(prominence, 0), 1)
-
-        content
-            .overlay {
-                shape
-                    .strokeBorder(.white.opacity(0.22 + 0.30 * clampedProminence), lineWidth: 0.45 + 0.35 * clampedProminence)
-                    .blendMode(.screen)
-
-                shape
-                    .strokeBorder(
-                        AngularGradient(
-                            colors: [
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
-                                Color(red: 0.95, green: 0.42, blue: 1.0).opacity(0.14 * clampedProminence),
-                                .white.opacity(0.0),
-                                Color(red: 1.0, green: 0.87, blue: 0.36).opacity(0.12 * clampedProminence),
-                                Color(red: 0.35, green: 0.88, blue: 1.0).opacity(0.18 * clampedProminence),
-                            ],
-                            center: .center
-                        ),
-                        lineWidth: 0.8 + 0.4 * clampedProminence
-                    )
-                    .blendMode(.screen)
-
-                shape
-                    .strokeBorder(Color.black.opacity(0.015 + 0.02 * clampedProminence), lineWidth: 0.5)
-                    .blendMode(.multiply)
-            }
-            .shadow(color: .white.opacity(0.10 + 0.16 * clampedProminence), radius: 10 + 6 * clampedProminence, x: 0, y: 0)
-            .shadow(color: .black.opacity(0.035 + 0.04 * clampedProminence), radius: 10 + 8 * clampedProminence, x: 0, y: 4 + 4 * clampedProminence)
-    }
-}
-
-private extension View {
-    func appChromeGlassOutline<S: InsettableShape>(in shape: S, prominence: Double = 1.0) -> some View {
-        modifier(AppChromeGlassOutline(shape: shape, prominence: prominence))
-    }
-}
-
-private struct AppShellDockItem: View {
-    let kind: DockItemKind
-    let selected: Bool
-    var chromeNamespace: Namespace.ID?
-    var isMorphSource = false
-
-    var body: some View {
-        VStack(spacing: 4) {
-            icon
-
-            Text(kind.title)
-                .font(.system(size: 13, weight: .semibold))
-                .lineLimit(1)
-                .minimumScaleFactor(0.68)
-                .frame(maxWidth: AppChromeLayout.dockItemWidth - 4)
-        }
-        .foregroundStyle(selected ? Color(red: 0.98, green: 0.18, blue: 0.22) : Color.primary.opacity(0.68))
-        .frame(width: AppChromeLayout.dockItemWidth, height: AppChromeLayout.dockItemHeight)
-        .contentShape(Rectangle())
-    }
-
-    @ViewBuilder
-    private var icon: some View {
-        let image = Image(systemName: kind.symbolName)
-            .font(.system(size: 22, weight: .semibold))
-
-        if isMorphSource {
-            image.chromeIconMorph(AppChromeMorphID.dockItem(kind), namespace: chromeNamespace, isSource: true)
-        } else {
-            image
-        }
-    }
-}
-
-private struct AppShellDockSelectionLens: View {
-    var width = AppChromeLayout.dockSelectionWidth
-    var height = AppChromeLayout.dockSelectionHeight
-    var isPressed = false
-    var isDragging = false
-    var chromeNamespace: Namespace.ID?
-
-    var body: some View {
-        let cornerRadius = height / 2
-        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        let surfaceOpacity = isDragging ? 0.50 : (isPressed ? 0.42 : 0.18)
-        let highlightOpacity = isDragging ? 0.34 : (isPressed ? 0.24 : 0.08)
-        let edgeProminence = isDragging ? 0.38 : (isPressed ? 0.24 : 0.06)
-
-        ZStack {
-            shape
-                .fill(Color.white.opacity(surfaceOpacity))
-
-            shape
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            .white.opacity(0.54 + highlightOpacity),
-                            Color(red: 0.78, green: 0.94, blue: 1.0).opacity(0.16 + highlightOpacity * 0.44),
-                            Color(red: 1.0, green: 0.84, blue: 0.98).opacity(0.10 + highlightOpacity * 0.34),
-                            .white.opacity(0.24 + highlightOpacity * 0.5),
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .blendMode(.plusLighter)
-
-            if isPressed {
-                shape
-                    .fill(
-                        RadialGradient(
-                            colors: [
-                                Color(red: 0.72, green: 0.94, blue: 1.0).opacity(isDragging ? 0.34 : 0.22),
-                                .white.opacity(0.0),
-                            ],
-                            center: .topLeading,
-                            startRadius: 0,
-                            endRadius: isDragging ? 86 : 64
-                        )
-                    )
-                    .blendMode(.screen)
-
-                LinearGradient(
-                    colors: [
-                        .white.opacity(0.0),
-                        .white.opacity(isDragging ? 0.66 : 0.46),
-                        .white.opacity(0.0),
-                    ],
-                    startPoint: .leading,
-                    endPoint: .trailing
-                )
-                .offset(x: isDragging ? -10 : -6)
-                .blendMode(.screen)
-
-                shape
-                    .strokeBorder(
-                        AngularGradient(
-                            colors: [
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
-                                Color(red: 0.88, green: 0.18, blue: 1.0).opacity(isDragging ? 0.34 : 0.20),
-                                .white.opacity(isDragging ? 0.48 : 0.34),
-                                Color(red: 1.0, green: 0.80, blue: 0.10).opacity(isDragging ? 0.30 : 0.18),
-                                Color(red: 0.02, green: 0.62, blue: 1.0).opacity(isDragging ? 0.42 : 0.26),
-                            ],
-                            center: .center
-                        ),
-                        lineWidth: isDragging ? 2.4 : 1.5
-                    )
-                    .blendMode(.screen)
-            }
-
-            shape
-                .stroke(.white.opacity(isPressed ? 0.88 : 0.64), lineWidth: isPressed ? 1.0 : 0.7)
-                .blendMode(.screen)
-
-            shape
-                .stroke(Color.black.opacity(isPressed ? 0.06 : 0.03), lineWidth: 0.6)
-                .blendMode(.multiply)
-        }
-        .frame(width: width, height: height)
-        .clipShape(shape)
-        .nativeGlass(cornerRadius: cornerRadius, tint: isPressed ? Color(red: 0.84, green: 0.95, blue: 1.0) : .white, interactive: isPressed)
-        .appChromeGlassOutline(in: shape, prominence: edgeProminence)
-        .nativeGlassMorphID(AppChromeMorphID.dockSelection, namespace: chromeNamespace)
-        .scaleEffect(isDragging ? 1.02 : (isPressed ? 1.01 : 1.0))
-        .shadow(color: .white.opacity(isPressed ? 0.54 : 0.22), radius: isPressed ? 24 : 14, x: 0, y: 0)
-        .shadow(color: .black.opacity(isPressed ? 0.13 : 0.07), radius: isPressed ? 20 : 12, x: 0, y: isPressed ? 8 : 5)
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
-    }
 }
 
 private struct NavigationPageMotion: ViewModifier {
@@ -3611,7 +3197,7 @@ private struct NavigationPageMotion: ViewModifier {
             .scaleEffect(presentation.scale)
             .brightness(presentation.brightness)
             .shadow(
-                color: .black.opacity(presentation.shadowOpacity),
+                color: .black.opacity(presentation.shadowOpacity * 0.55),
                 radius: 22 * progress,
                 x: presentation.shadowXOffset,
                 y: 0
@@ -3635,6 +3221,40 @@ private struct NavigationPageMotion: ViewModifier {
 }
 
 private extension View {
+    func appShellChromeOverlays<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>(
+        currentRoute: AppRoute,
+        isSearchPresented: Bool,
+        isPracticeThreadPresented: Bool,
+        hidesPhotoBackdropChrome: Bool,
+        topChromeStyle: ChromeSeparationGradientStyle,
+        isPracticeMatchPresented: Bool,
+        showsStaticBackButton: Bool,
+        showsMenuSectionChrome: Bool,
+        canGoForward: Bool,
+        @ViewBuilder backSwipeCaptureEdge: @escaping () -> BackSwipeCaptureEdge,
+        @ViewBuilder forwardSwipeCaptureEdge: @escaping () -> ForwardSwipeCaptureEdge,
+        @ViewBuilder topAdminRow: @escaping (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow,
+        @ViewBuilder menuSectionRail: @escaping () -> MenuSectionRail
+    ) -> some View {
+        modifier(
+            AppShellChromeOverlayModifier(
+                currentRoute: currentRoute,
+                isSearchPresented: isSearchPresented,
+                isPracticeThreadPresented: isPracticeThreadPresented,
+                hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
+                topChromeStyle: topChromeStyle,
+                isPracticeMatchPresented: isPracticeMatchPresented,
+                showsStaticBackButton: showsStaticBackButton,
+                showsMenuSectionChrome: showsMenuSectionChrome,
+                canGoForward: canGoForward,
+                backSwipeCaptureEdge: backSwipeCaptureEdge,
+                forwardSwipeCaptureEdge: forwardSwipeCaptureEdge,
+                topAdminRow: topAdminRow,
+                menuSectionRail: menuSectionRail
+            )
+        )
+    }
+
     func navigationPageMotion(
         route: AppRoute,
         currentRoute: AppRoute,
@@ -3656,40 +3276,364 @@ private extension View {
     }
 }
 
+private struct PhotoBackdropImmersiveImageCover: View {
+    let context: PhrasePhotoBackdropImmersiveImageContext
+
+    var body: some View {
+        GeometryReader { geometry in
+            let viewportSize = context.viewportSize
+            let frameHeight = max(context.imageFrameHeight, geometry.size.height)
+
+            Image(context.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    width: viewportSize.width,
+                    height: frameHeight,
+                    alignment: .top
+                )
+                .offset(y: -context.verticalFocusOffset)
+                .frame(
+                    width: geometry.size.width,
+                    height: geometry.size.height,
+                    alignment: .top
+                )
+                .clipped()
+                .ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct BottomAdminHitTestOverlay: View {
+    let selectedTab: AppSystemTab
+    let onSelect: (AppSystemTab) -> Void
+
+    private let tabs: [AppSystemTab] = [
+        .home,
+        .browse,
+        .saved,
+        .practice,
+        .search,
+    ]
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(tabs, id: \.self) { tab in
+                Button {
+                    onSelect(tab)
+                } label: {
+                    Color.clear
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())
+                .accessibilityHidden(true)
+            }
+        }
+        .id(selectedTab)
+        .frame(maxWidth: .infinity)
+        .frame(height: AppChromeLayout.bottomAdminHitTestEnvelopeHeight)
+        .ignoresSafeArea(edges: .bottom)
+        .allowsHitTesting(true)
+        .accessibilityHidden(true)
+    }
+}
+
+#if canImport(UIKit)
+enum AppShellTabBarVisibilityTransition {
+    static let duration = PhrasePhotoBackdropLayout.immersiveDissolveDuration
+}
+
+private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
+    let usesContentBackground: Bool
+    let isHidden: Bool
+
+    func makeUIViewController(context: Context) -> Controller {
+        Controller()
+    }
+
+    func updateUIViewController(_ controller: Controller, context: Context) {
+        controller.usesContentBackground = usesContentBackground
+        controller.isHidden = isHidden
+    }
+
+    final class Controller: UIViewController {
+        private var lastAppliedIsHidden: Bool?
+
+        var usesContentBackground = false {
+            didSet {
+                guard oldValue != usesContentBackground else {
+                    return
+                }
+                applyAppearance()
+            }
+        }
+        var isHidden = false {
+            didSet {
+                guard oldValue != isHidden else {
+                    return
+                }
+                applyAppearance()
+            }
+        }
+
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            applyAppearance()
+        }
+
+        override func didMove(toParent parent: UIViewController?) {
+            super.didMove(toParent: parent)
+            applyAppearance()
+        }
+
+        private func applyAppearance(retryCount: Int = 3) {
+            let usesContentBackground = usesContentBackground
+            let isHidden = isHidden
+
+            DispatchQueue.main.async { [weak self] in
+                guard let self, let tabBar = self.findTabBar() else {
+                    if retryCount > 0 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+                            self?.applyAppearance(retryCount: retryCount - 1)
+                        }
+                    }
+                    return
+                }
+                let targetAlpha: CGFloat = isHidden ? 0 : 1
+                let shouldAnimateVisibility = self.lastAppliedIsHidden.map { $0 != isHidden } ?? false
+                self.lastAppliedIsHidden = isHidden
+
+                let appearance = UITabBarAppearance()
+                if isHidden {
+                    appearance.configureWithTransparentBackground()
+                    appearance.backgroundColor = .clear
+                    appearance.shadowColor = .clear
+                    tabBar.backgroundColor = .clear
+                    tabBar.isTranslucent = true
+                    tabBar.layer.shadowOpacity = 0
+                } else if usesContentBackground {
+                    appearance.configureWithTransparentBackground()
+                    appearance.backgroundColor = .clear
+                    appearance.shadowColor = .clear
+                    tabBar.backgroundColor = .clear
+                    tabBar.isTranslucent = true
+                    tabBar.layer.shadowOpacity = 0
+                } else {
+                    appearance.configureWithDefaultBackground()
+                    appearance.shadowColor = nil
+                    tabBar.layer.shadowOpacity = 0
+                }
+
+                tabBar.standardAppearance = appearance
+                tabBar.scrollEdgeAppearance = appearance
+                tabBar.isHidden = false
+                tabBar.isUserInteractionEnabled = !isHidden
+
+                guard shouldAnimateVisibility else {
+                    tabBar.alpha = targetAlpha
+                    return
+                }
+
+                UIView.animate(
+                    withDuration: AppShellTabBarVisibilityTransition.duration,
+                    delay: 0,
+                    options: [.beginFromCurrentState, .allowUserInteraction, .curveEaseInOut]
+                ) {
+                    tabBar.alpha = targetAlpha
+                }
+            }
+        }
+
+        private func findTabBar() -> UITabBar? {
+            if let tabBar = tabBarController?.tabBar {
+                return tabBar
+            }
+
+            var ancestor = parent
+            while let controller = ancestor {
+                if let tabController = controller as? UITabBarController {
+                    return tabController.tabBar
+                }
+
+                if let tabBar = controller.tabBarController?.tabBar {
+                    return tabBar
+                }
+
+                ancestor = controller.parent
+            }
+
+            return view.window?.rootViewController?.findDescendantTabBar()
+        }
+    }
+}
+
+private extension UIViewController {
+    func findDescendantTabBar() -> UITabBar? {
+        if let tabController = self as? UITabBarController {
+            return tabController.tabBar
+        }
+
+        for child in children {
+            if let tabBar = child.findDescendantTabBar() {
+                return tabBar
+            }
+        }
+
+        if let presentedViewController,
+           let tabBar = presentedViewController.findDescendantTabBar()
+        {
+            return tabBar
+        }
+
+        return nil
+    }
+}
+#endif
+
+private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>: ViewModifier {
+    @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
+
+    let currentRoute: AppRoute
+    let isSearchPresented: Bool
+    let isPracticeThreadPresented: Bool
+    let hidesPhotoBackdropChrome: Bool
+    let topChromeStyle: ChromeSeparationGradientStyle
+    let isPracticeMatchPresented: Bool
+    let showsStaticBackButton: Bool
+    let showsMenuSectionChrome: Bool
+    let canGoForward: Bool
+    let backSwipeCaptureEdge: () -> BackSwipeCaptureEdge
+    let forwardSwipeCaptureEdge: () -> ForwardSwipeCaptureEdge
+    let topAdminRow: (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow
+    let menuSectionRail: () -> MenuSectionRail
+
+    func body(content: Content) -> some View {
+        let showsPinnedAudioSpeedControl = PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
+            chromeState: pinnedAudioSpeedChromeState,
+            currentRoute: currentRoute,
+            hasStaticBackButton: showsStaticBackButton,
+            isSearchPresented: isSearchPresented,
+            isMenuSectionChromeVisible: showsMenuSectionChrome
+        )
+        let showsTopAdminRow = !hidesPhotoBackdropChrome
+            && !isPracticeThreadPresented
+            && !isPracticeMatchPresented
+            && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
+        let showsTopGlassChrome = !hidesPhotoBackdropChrome
+            && (showsTopAdminRow || showsMenuSectionChrome)
+
+        content
+            .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
+                let nextState = PinnedAudioSpeedChromePolicy.state(
+                    for: anchors,
+                    currentRoute: currentRoute
+                )
+
+                if nextState != pinnedAudioSpeedChromeState {
+                    pinnedAudioSpeedChromeState = nextState
+                }
+            }
+            .overlay(alignment: .leading) {
+                if !isPracticeThreadPresented {
+                    backSwipeCaptureEdge()
+                }
+            }
+            .overlay(alignment: .trailing) {
+                if !isPracticeThreadPresented {
+                    forwardSwipeCaptureEdge()
+                }
+            }
+            .overlay(alignment: .top) {
+                if !isPracticeThreadPresented && !hidesPhotoBackdropChrome {
+                    ChromeSeparationGradient(
+                        edge: .top,
+                        extendsBehindMenuSectionChrome: showsMenuSectionChrome,
+                        style: topChromeStyle
+                    )
+                        .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
+                }
+            }
+            .overlay(alignment: .top) {
+                if showsTopGlassChrome {
+                    TopAdminHitTestEnvelope()
+                        .zIndex(AppChromeLayout.topAdminHitTestLayerZIndex)
+                }
+            }
+            .overlay(alignment: .top) {
+                if !isPracticeThreadPresented, showsTopGlassChrome {
+                    VStack(spacing: AppChromeLayout.menuSectionChromeRowSpacing) {
+                        if showsTopAdminRow {
+                            topAdminRow(showsPinnedAudioSpeedControl)
+                        }
+
+                        if showsMenuSectionChrome {
+                            menuSectionRail()
+                                .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+                        }
+                    }
+                        .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
+                        .padding(.top, AppChromeLayout.topAdminTopPadding)
+                        .zIndex(AppChromeLayout.topAdminControlLayerZIndex)
+                }
+            }
+    }
+}
+
 // MARK: - Home Surfaces
 
 struct HomeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
+    @Binding var currentScrollTarget: HomeScrollTarget?
+    @Binding var currentScrollOffsetY: CGFloat
+    @Binding var scrollRestorationTarget: HomeScrollRestorationTarget?
+    @State private var scrollPosition = ScrollPosition(idType: HomeScrollTarget.self, edge: .top)
+    @State private var didApplyPhotoBackdropInitialPosition = false
+    @State private var isPhotoBackdropImmersive = false
+    @State private var photoBackdropScrollOffset: CGFloat = 0
 
+    let backdropImageName: String
+    let backdropActivationToken: Int
     let scrollToTopTrigger: Int
-    let chromeNamespace: Namespace.ID?
+    let isActive: Bool
     let isSearchActive: Bool
-    let heroMorphPageID: String?
     var onSearchTapped: () -> Void
-    var onOpenDetail: (String) -> Void
-    var onOpenFeaturedDetail: (String) -> Void
-    var onOpenCollection: (BrowseCollectionRoute) -> Void
-    var onStartPractice: (BrowseCollectionPracticeAction) -> Void
+    var onOpenDetail: (String, HomeScrollTarget) -> Void
+    var onOpenFeaturedDetail: (String, HomeScrollTarget) -> Void
+    var onOpenCollection: (BrowseCollectionRoute, HomeScrollTarget) -> Void
+    var onStartPractice: (BrowseCollectionPracticeAction, HomeScrollTarget) -> Void
     var onBrowseAllTapped: () -> Void
 
     init(
         intentStore: LocalUserIntentStore,
+        backdropImageName: String = SharedBackdropImagePool.fallbackImageName,
+        backdropActivationToken: Int = 0,
         scrollToTopTrigger: Int = 0,
-        chromeNamespace: Namespace.ID? = nil,
+        isActive: Bool = true,
         isSearchActive: Bool = false,
-        heroMorphPageID: String? = nil,
+        currentScrollTarget: Binding<HomeScrollTarget?>,
+        currentScrollOffsetY: Binding<CGFloat>,
+        scrollRestorationTarget: Binding<HomeScrollRestorationTarget?>,
         onSearchTapped: @escaping () -> Void,
-        onOpenDetail: @escaping (String) -> Void,
-        onOpenFeaturedDetail: @escaping (String) -> Void,
-        onOpenCollection: @escaping (BrowseCollectionRoute) -> Void,
-        onStartPractice: @escaping (BrowseCollectionPracticeAction) -> Void,
+        onOpenDetail: @escaping (String, HomeScrollTarget) -> Void,
+        onOpenFeaturedDetail: @escaping (String, HomeScrollTarget) -> Void,
+        onOpenCollection: @escaping (BrowseCollectionRoute, HomeScrollTarget) -> Void,
+        onStartPractice: @escaping (BrowseCollectionPracticeAction, HomeScrollTarget) -> Void,
         onBrowseAllTapped: @escaping () -> Void
     ) {
         self.intentStore = intentStore
+        self.backdropImageName = backdropImageName
+        self.backdropActivationToken = backdropActivationToken
+        self._currentScrollTarget = currentScrollTarget
+        self._currentScrollOffsetY = currentScrollOffsetY
+        self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
-        self.chromeNamespace = chromeNamespace
+        self.isActive = isActive
         self.isSearchActive = isSearchActive
-        self.heroMorphPageID = heroMorphPageID
         self.onSearchTapped = onSearchTapped
         self.onOpenDetail = onOpenDetail
         self.onOpenFeaturedDetail = onOpenFeaturedDetail
@@ -3699,138 +3643,301 @@ struct HomeView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+        GeometryReader { geometry in
+            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+            let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+            let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
+                sheetTop: sheetTop,
+                safeAreaTop: geometry.safeAreaInsets.top,
+                topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+            )
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-                        header
-                            .id(Self.scrollTopID)
+            ZStack(alignment: .top) {
+                photoBackdropImage(geometry: geometry)
 
-                        if hasPersonalProgress {
-                            personalProgressShelves
+                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            Color.clear
+                                .frame(height: metrics.initialAnchorOffset)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: 1)
+                                .id(HomeScrollTarget.top)
+                                .accessibilityHidden(true)
+
+                            Color.clear
+                                .frame(height: max(metrics.initialContentTop - 1, 0))
+                                .accessibilityHidden(true)
+
+                            homeContentSheet
+                        }
+                    }
+                    .scrollPosition($scrollPosition)
+                    .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
+                        HomePhotoBackdropScrollState(
+                            rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                            metrics: metrics
+                        )
+                    }) { _, scrollState in
+                        if currentScrollOffsetY != scrollState.restorationOffset {
+                            currentScrollOffsetY = scrollState.restorationOffset
                         }
 
-                        useNowShelf
+                        if photoBackdropScrollOffset != scrollState.displayOffset {
+                            photoBackdropScrollOffset = scrollState.displayOffset
+                        }
 
-                        homepagePhraseShelf("first-hour")
-
-                        cityShelf
-
-                        homepagePhraseShelf("food-coffee")
-
-                        practiceScenariosShelf
-
-                        homepagePhraseShelf("taxi-getting-around")
-
-                        situationShelves
-
-                        homepagePhraseShelf("when-stuck")
-
-                        homepagePhraseShelf("hotel-basics")
-
-                        relationshipShelf
-
-                        homepagePhraseShelf("money-shopping")
-
-                        homepagePhraseShelf("help-emergency")
-
-                        featuredPhrasesShelf
+                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                isPhotoBackdropImmersive = false
+                            }
+                        }
                     }
-                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+                    .onAppear {
+                        guard isActive else { return }
+                        restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                    }
+                    .onChange(of: isActive) { _, isActive in
+                        if isActive {
+                            restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                        } else if isPhotoBackdropImmersive {
+                            isPhotoBackdropImmersive = false
+                        }
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        scrollRestorationTarget = nil
+                        currentScrollTarget = .top
+                        isPhotoBackdropImmersive = false
+                        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+                    }
+                    .task(id: isActive) {
+                        guard isActive, scrollRestorationTarget == nil else {
+                            return
+                        }
+
+                        await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                    }
                 }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
-                }
+                .ignoresSafeArea(edges: .top)
             }
-            .ignoresSafeArea(edges: .top)
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                SpatialTapGesture().onEnded { value in
+                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
+                }
+            )
+            .preference(
+                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                value: isActive && isPhotoBackdropImmersive
+                    ? PhrasePhotoBackdropImmersiveImageContext(
+                        pageID: "home",
+                        imageName: backdropImageName,
+                        viewportSize: geometry.size,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                            for: geometry.size,
+                            safeAreaInsets: geometry.safeAreaInsets,
+                            pageID: "home",
+                            heroImageName: backdropImageName
+                        ),
+                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                            for: geometry.size,
+                            pageID: "home",
+                            heroImageName: backdropImageName
+                        )
+                    )
+                    : nil
+            )
+            .preference(
+                key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+                value: isActive && !isPhotoBackdropImmersive ? topChromeStyle : .light
+            )
         }
+        .ignoresSafeArea(edges: .bottom)
+        .statusBarHidden(isActive && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && isPhotoBackdropImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && !isPhotoBackdropImmersive
+        )
         .accessibilityIdentifier("HomeView")
-    }
-
-    private static let scrollTopID = "HomeViewTop"
-
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HeroMastheadImage()
-
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 8) {
-                    ZStack {
-                        Circle().fill(Color.red)
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(.yellow)
-                    }
-                    .frame(width: 22, height: 22)
-
-                    Text("SPEAKLOCAL VIETNAM")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-
-                Text("Start speaking now")
-                    .font(.system(size: 36, weight: .black, design: .serif))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.68)
-
-                Text("Offline phrases, audio, and local ways to say it.")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.78)
-            }
-            .padding(.horizontal, HomeLayout.horizontalPadding)
-            .padding(.top, 10)
-            .padding(.bottom, 2)
-        }
-    }
-
-    private var personalProgressShelves: some View {
-        VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
-            continueShelf
-
-            if !savedItems.isEmpty {
-                savedForLaterShelf
+        .task(id: backdropActivationToken) {
+            guard isActive else {
+                return
             }
 
-            if !savedItems.isEmpty || !practiceItems.isEmpty {
-                practiceListShelf
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private var continueShelf: some View {
-        HomeShelf(title: "Keep going", subtitle: "Recent pages and saved phrases") {
-            HomeContinuePanel(
-                item: continueItem,
-                savedCount: savedItems.count,
-                practiceCount: practiceItems.count,
-                onOpenDetail: onOpenDetail,
-                onOpenSavedFallback: {
-                    if let pageID = savedItems.first?.pageID {
-                        onOpenDetail(pageID)
-                    } else {
-                        onBrowseAllTapped()
-                    }
-                },
-                onStartPractice: { onStartPractice(.practiceMode(.savedReview)) },
-                onBrowseAllTapped: onBrowseAllTapped
+            AdminBackdropImagePreheater.preheat(
+                AdminBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
             )
         }
     }
 
+    private var homeContentSheet: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                header
+
+                useNowShelf
+                    .id(HomeScrollTarget.essentials)
+
+                homepagePhraseShelf("first-day", scrollTarget: .firstDay)
+                    .id(HomeScrollTarget.firstDay)
+
+                cityShelf
+                    .id(HomeScrollTarget.city)
+
+                LazyVStack(alignment: .leading, spacing: HomeLayout.sectionSpacing) {
+                    homepagePhraseShelf("food-coffee", scrollTarget: .foodCoffee)
+                        .id(HomeScrollTarget.foodCoffee)
+
+                    practiceScenariosShelf
+                        .id(HomeScrollTarget.practice)
+
+                    homepagePhraseShelf("taxi-getting-around", scrollTarget: .gettingAround)
+                        .id(HomeScrollTarget.gettingAround)
+
+                    situationShelves
+                        .id(HomeScrollTarget.situations)
+
+                    homepagePhraseShelf("when-stuck", scrollTarget: .whenStuck)
+                        .id(HomeScrollTarget.whenStuck)
+
+                    homepagePhraseShelf("hotel-basics", scrollTarget: .hotelBasics)
+                        .id(HomeScrollTarget.hotelBasics)
+
+                    relationshipShelf
+                        .id(HomeScrollTarget.relationships)
+
+                    homepagePhraseShelf("money-shopping", scrollTarget: .moneyShopping)
+                        .id(HomeScrollTarget.moneyShopping)
+
+                    homepagePhraseShelf("help-emergency", scrollTarget: .helpEmergency)
+                        .id(HomeScrollTarget.helpEmergency)
+
+                    recentlyViewedShelf
+                        .id(HomeScrollTarget.recentlyViewed)
+                }
+            }
+            .padding(.bottom, HomeLayout.photoBackdropBottomReadingClearance)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .softLiftedSheetShadow()
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .allowsHitTesting(!isPhotoBackdropImmersive)
+        .accessibilityHidden(isPhotoBackdropImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .accessibilityIdentifier("Home.PhotoBackdrop.Content")
+    }
+
+    private func photoBackdropImage(geometry: GeometryProxy) -> some View {
+        HomePreparedImage(name: backdropImageName)
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                    for: geometry.size,
+                    safeAreaInsets: geometry.safeAreaInsets,
+                    pageID: "home",
+                    heroImageName: backdropImageName
+                ),
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .accessibilityLabel("Home backdrop")
+            .accessibilityHidden(true)
+            .accessibilityIdentifier("Home.PhotoBackdrop.Image")
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+
+        return VStack(spacing: 0) {
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
+
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
+        }
+        .frame(
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text("SPEAKLOCAL VIETNAM")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.horizontal, HomeLayout.horizontalPadding)
+        .padding(.bottom, -12)
+    }
+
     private var useNowShelf: some View {
-        HomeShelf(title: "Use now", subtitle: "") {
+        HomeShelf(
+            title: "Essentials",
+            subtitle: "Core phrases for any trip",
+            route: .category("essentials"),
+            onOpenCollection: { onOpenCollection($0, .essentials) }
+        ) {
             HomeFeaturedPhraseCarousel(
                 items: HomeContent.useNowFeaturePhraseCardItems,
-                heroMorphPageID: heroMorphPageID,
-                chromeNamespace: chromeNamespace,
-                onOpenDetail: onOpenFeaturedDetail,
+                visibilityRoute: .home,
+                onOpenDetail: { onOpenFeaturedDetail($0, .essentials) },
                 isSaved: { intentStore.isPageSaved($0) },
                 onToggleSaved: { intentStore.toggleSavedPage($0) }
             )
@@ -3839,154 +3946,161 @@ struct HomeView: View {
     }
 
     @ViewBuilder
-    private func homepagePhraseShelf(_ id: String) -> some View {
+    private func homepagePhraseShelf(_ id: String, scrollTarget: HomeScrollTarget) -> some View {
         if let shelf = HomeContent.homepagePhraseShelf(id) {
             HomeRoutePhraseShelf(
                 shelf: shelf,
-                onOpenDetail: onOpenDetail,
-                onOpenCollection: onOpenCollection
+                onOpenDetail: { onOpenDetail($0, scrollTarget) },
+                onOpenCollection: { onOpenCollection($0, scrollTarget) }
             )
         }
     }
 
-    private var featuredPhrasesShelf: some View {
-        HomeShelf(title: "Listen closer", subtitle: "") {
-            HomeFeaturedPhraseCarousel(
-                items: HomeContent.featuredPhraseCardItems,
-                heroMorphPageID: heroMorphPageID,
-                chromeNamespace: chromeNamespace,
-                onOpenDetail: onOpenFeaturedDetail,
-                isSaved: { intentStore.isPageSaved($0) },
-                onToggleSaved: { intentStore.toggleSavedPage($0) }
-            )
+    @ViewBuilder
+    private var recentlyViewedShelf: some View {
+        let items = recentlyViewedFeatureItems
+
+        if !items.isEmpty {
+            HomeShelf(title: "Recently viewed", subtitle: "Pick up where you left off") {
+                HomeFeaturedPhraseCarousel(
+                    items: items,
+                    onOpenDetail: { onOpenFeaturedDetail($0, .recentlyViewed) },
+                    isSaved: { intentStore.isPageSaved($0) },
+                    onToggleSaved: { intentStore.toggleSavedPage($0) }
+                )
+            }
+            .padding(.leading, HomeLayout.horizontalPadding)
         }
-        .padding(.leading, HomeLayout.horizontalPadding)
+    }
+
+    private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
+        HomeRecentlyViewedContent
+            .cardPageIDs(from: intentStore.recentPageIDs)
+            .compactMap(HomeFeaturePhraseItem.resolve(pageID:))
     }
 
     private var practiceScenariosShelf: some View {
-        HomeShelf(title: "Messages", subtitle: "Practice short trip conversations") {
-            HomeScenarioRail(
-                scenarios: HomeContent.practiceScenarios,
-                onStartPractice: onStartPractice
+        HomeShelf(title: "Practice", subtitle: "Quick matching rounds") {
+            HomePracticeStarterRail(
+                onStartPractice: { onStartPractice($0, .practice) }
             )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private var savedForLaterShelf: some View {
-        HomeShelf(title: "Saved for later", subtitle: "Pages you marked to come back to") {
-            HomeSavedPhraseGrid(items: savedForLaterDisplayItems, onOpenDetail: onOpenDetail)
-        }
     }
 
     private var situationShelves: some View {
         HomeShelf(title: "Start with a situation", subtitle: "Go straight to what is happening around you") {
             LazyVStack(spacing: 12) {
                 ForEach(HomeContent.situationCards) { card in
-                    HomeSituationActionRow(card: card, onOpenCollection: onOpenCollection)
+                    HomeSituationActionRow(
+                        card: card,
+                        onOpenCollection: { onOpenCollection($0, .situations) }
+                    )
                 }
             }
         }
         .padding(.horizontal, HomeLayout.horizontalPadding)
     }
 
-    private var relationshipPhraseGroups: [[PhraseOption]] {
-        PhrasePage.xinChao.localGreetings.chunked(into: HomeLayout.relationshipRowsPerGroup)
-    }
-
     private var relationshipShelf: some View {
-        HomeShelf(title: "Who are you speaking to?", subtitle: "Pick a warmer hello by age or relationship") {
+        HomeShelf(
+            title: "Who are you speaking to?",
+            subtitle: "Pick a warmer hello by age or relationship",
+            route: .category("local-greetings"),
+            onOpenCollection: { onOpenCollection($0, .relationships) }
+        ) {
             HomeRelationshipListCard(
                 phrases: Array(PhrasePage.xinChao.localGreetings.prefix(3)),
-                onOpenDetail: onOpenDetail
+                onOpenDetail: { onOpenDetail($0, .relationships) }
             )
         }
         .padding(.horizontal, HomeLayout.horizontalPadding)
     }
 
     private var cityShelf: some View {
-        HomeShelf(title: "Explore by city", subtitle: "Popular city guides for your trip") {
-            HomeCityRail(cities: HomeContent.cityCards, onOpenCollection: onOpenCollection)
+        HomeShelf(
+            title: "Explore by city",
+            subtitle: "Popular city guides for your trip",
+            route: .category("city-guides"),
+            onOpenCollection: { onOpenCollection($0, .city) }
+        ) {
+            HomeCityRail(
+                cities: HomeContent.cityCards,
+                onOpenCollection: { onOpenCollection($0, .city) }
+            )
         }
         .padding(.leading, HomeLayout.horizontalPadding)
     }
 
-    private var practiceListShelf: some View {
-        HomeShelf(title: "Message list", subtitle: "Save pages now and rehearse them later") {
-            LazyVStack(spacing: 12) {
-                HomePracticeListRow(
-                    title: "Ready for Messages",
-                    subtitle: practiceReadySubtitle,
-                    symbolName: "bookmark.fill",
-                    tintName: .green,
-                    action: { onStartPractice(.practiceMode(.savedReview)) }
-                )
+    private func restoreScrollTargetIfNeeded(
+        scrollProxy: ScrollViewProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        guard let target = scrollRestorationTarget else {
+            return
+        }
 
-                HomePracticeListRow(
-                    title: "Recently viewed",
-                    subtitle: recentlyViewedSubtitle,
-                    symbolName: "clock.fill",
-                    tintName: .blue,
-                    action: {
-                        if let pageID = continueItem?.pageID {
-                            onOpenDetail(pageID)
-                        } else {
-                            onBrowseAllTapped()
-                        }
-                    }
-                )
+        currentScrollTarget = target.target
+        restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
+        Task { @MainActor in
+            await Task.yield()
+            restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
+            scrollRestorationTarget = nil
+        }
+    }
 
-                HomeTipCard()
+    private func restoreScrollPosition(
+        _ target: HomeScrollRestorationTarget,
+        scrollProxy: ScrollViewProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        if target.offsetY <= 1 {
+            scrollProxy.scrollTo(target.target, anchor: .top)
+            currentScrollOffsetY = target.target == .top ? metrics.initialAnchorOffset : 0
+        } else {
+            scrollPosition.scrollTo(y: target.offsetY)
+        }
+    }
+
+    @MainActor
+    private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
+        guard !didApplyPhotoBackdropInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled, isActive, scrollRestorationTarget == nil else {
+            return
+        }
+
+        isPhotoBackdropImmersive = false
+        currentScrollTarget = .top
+        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+        didApplyPhotoBackdropInitialPosition = true
+    }
+
+    private func togglePhotoBackdropImmersive(
+        at location: CGPoint,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        if isPhotoBackdropImmersive {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isPhotoBackdropImmersive = false
             }
-        }
-    }
-
-    private var continueItem: HomePhraseItem? {
-        intentStore.recentPageIDs.compactMap(HomePhraseItem.resolve(pageID:)).first
-    }
-
-    private var savedItems: [HomePhraseItem] {
-        intentStore.savedPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    private var savedForLaterDisplayItems: [HomePhraseItem] {
-        Array(savedItems.prefix(4))
-    }
-
-    private var hasPersonalProgress: Bool {
-        !intentStore.recentPageIDs.isEmpty
-            || !intentStore.savedPageIDs.isEmpty
-            || !intentStore.practicePageIDs.isEmpty
-    }
-
-    private var practiceItems: [HomePhraseItem] {
-        intentStore.practicePageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    private var practiceReadySubtitle: String {
-        let count = practiceItems.isEmpty ? savedItems.count : practiceItems.count
-        if count == 0 {
-            return "Save a few phrases to start a message"
+            return
         }
 
-        if practiceItems.isEmpty {
-            return "Build a short message from \(count) saved \(count == 1 ? "page" : "pages")"
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: photoBackdropScrollOffset,
+            metrics: metrics
+        ) else {
+            return
         }
 
-        return "Continue with \(count) message-ready \(count == 1 ? "page" : "pages")"
-    }
-
-    private var recentlyViewedSubtitle: String {
-        let recentTitles = intentStore.recentPageIDs
-            .compactMap(HomePhraseItem.resolve(pageID:))
-            .prefix(3)
-            .map(\.title)
-
-        guard !recentTitles.isEmpty else {
-            return "Browse a few pages, then return here"
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isPhotoBackdropImmersive = true
         }
-
-        return recentTitles.joined(separator: ", ")
     }
 }
 
@@ -3994,58 +4108,261 @@ struct SavedPagesView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
 
     let scrollToTopTrigger: Int
+    let sectionJumpRequest: SavedTripSectionJumpRequest?
+    var usesPhotoBackdrop = false
+    var backdropScrollProxy: ScrollViewProxy?
     var onOpenDetail: (String) -> Void
     var onBrowseTapped: () -> Void
+    var onStartSavedPractice: () -> Void
 
+    @State private var currentSectionID: String? = "all"
+    @State private var isSectionRailPinned = false
+    @State private var pendingSectionJumpID = 0
+    @State private var pendingSectionJumpSectionID: String?
+    @State private var practiceReadyCount = 0
+
+    @ViewBuilder
     var body: some View {
-        ZStack(alignment: .bottom) {
-            PhrasePageStyle.pageBackground
-                .ignoresSafeArea()
+        if usesPhotoBackdrop, let backdropScrollProxy {
+            savedContent(scrollProxy: backdropScrollProxy)
+                .savedPagesChromePreferences(
+                    sectionChromeState: sectionChromeState,
+                    onSectionFramesChanged: updateCurrentSection(from:),
+                    onRailFrameChanged: updateRailFrame(_:)
+                )
+                .onChange(of: scrollToTopTrigger) { _, _ in
+                    currentSectionID = "all"
+                }
+                .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                    guard let sectionJumpRequest else {
+                        return
+                    }
 
-            ScrollViewReader { scrollProxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: 18) {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Saved")
-                                .font(.system(size: 42, weight: .black, design: .serif))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.78)
+                    jumpToSection(sectionJumpRequest.sectionID)
+                }
+                .onChange(of: intentStore.savedPageIDs) { _, _ in
+                    if !snapshot.railItems.contains(where: { $0.id == currentSectionID }) {
+                        currentSectionID = "all"
+                    }
+                }
+                .task(id: pendingSectionJumpID) {
+                    await performPendingSectionJump(backdropScrollProxy)
+                }
+                .task(id: intentStore.savedPageIDs) {
+                    await refreshPracticeReadyCount(for: intentStore.savedPageIDs)
+                }
+                .accessibilityIdentifier("SavedPagesView")
+        } else {
+            ZStack(alignment: .bottom) {
+                PhrasePageStyle.pageBackground
+                    .ignoresSafeArea()
 
-                            Text("Phrase pages you marked stay private on this device.")
-                                .font(.title3.weight(.semibold))
-                                .foregroundStyle(.secondary)
-                                .lineLimit(2)
-                                .fixedSize(horizontal: false, vertical: true)
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        savedContent(scrollProxy: scrollProxy)
+                    }
+                    .onChange(of: scrollToTopTrigger) { _, _ in
+                        currentSectionID = "all"
+                        scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    }
+                    .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                        guard let sectionJumpRequest else {
+                            return
                         }
-                        .padding(.top, 76)
-                        .id(Self.scrollTopID)
 
-                        if savedItems.isEmpty {
-                            savedEmptyState
-                        } else {
-                            LazyVStack(spacing: 12) {
-                                ForEach(savedItems) { item in
-                                    HomeWidePhraseButton(item: item, onOpenDetail: onOpenDetail)
-                                }
-                            }
+                        jumpToSection(sectionJumpRequest.sectionID)
+                    }
+                    .onChange(of: intentStore.savedPageIDs) { _, _ in
+                        if !snapshot.railItems.contains(where: { $0.id == currentSectionID }) {
+                            currentSectionID = "all"
                         }
                     }
-                    .padding(.horizontal, HomeLayout.horizontalPadding)
-                    .padding(.bottom, HomeLayout.bottomChromeContentClearance)
-                }
-                .onChange(of: scrollToTopTrigger) { _, _ in
-                    scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                    .task(id: pendingSectionJumpID) {
+                        await performPendingSectionJump(scrollProxy)
+                    }
+                    .task(id: intentStore.savedPageIDs) {
+                        await refreshPracticeReadyCount(for: intentStore.savedPageIDs)
+                    }
                 }
             }
+            .savedPagesChromePreferences(
+                sectionChromeState: sectionChromeState,
+                onSectionFramesChanged: updateCurrentSection(from:),
+                onRailFrameChanged: updateRailFrame(_:)
+            )
+            .accessibilityIdentifier("SavedPagesView")
         }
-        .accessibilityIdentifier("SavedPagesView")
     }
 
     private static let scrollTopID = "SavedPagesViewTop"
+    private static let savedContentTopID = "SavedPagesViewContentTop"
 
-    private var savedItems: [HomePhraseItem] {
-        intentStore.savedPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
+    private func savedContent(scrollProxy: ScrollViewProxy) -> some View {
+        VStack(alignment: .leading, spacing: SavedTripLayout.sectionSpacing) {
+            header
+                .id(Self.scrollTopID)
+                .padding(.horizontal, SavedTripLayout.horizontalPadding)
+
+            SavedTripPracticeCard(
+                practiceReadyCount: snapshot.practiceReadyCount,
+                totalSavedCount: snapshot.totalItemCount,
+                onStart: onStartSavedPractice,
+                onBrowse: onBrowseTapped
+            )
+            .padding(.horizontal, SavedTripLayout.horizontalPadding)
+
+            if snapshot.totalItemCount == 0 {
+                savedEmptyState
+                    .padding(.horizontal, SavedTripLayout.horizontalPadding)
+            } else {
+                sectionRail(scrollProxy: scrollProxy)
+
+                Color.clear
+                    .frame(width: 1, height: 1)
+                    .id(Self.savedContentTopID)
+                    .accessibilityHidden(true)
+
+                sectionedSavedItems
+                    .padding(.horizontal, SavedTripLayout.horizontalPadding)
+            }
+        }
+        .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+    }
+
+    private var snapshot: SavedTripSnapshot {
+        SavedTripSnapshot.make(
+            savedPageIDs: intentStore.savedPageIDs,
+            practiceReadyCount: practiceReadyCount
+        )
+    }
+
+    private var resolvedCurrentSectionID: String {
+        currentSectionID ?? "all"
+    }
+
+    private var sectionChromeState: SavedTripSectionChromeState? {
+        let railItems = snapshot.railItems
+        guard !railItems.isEmpty else {
+            return nil
+        }
+
+        return SavedTripSectionChromeState(
+            currentSectionID: resolvedCurrentSectionID,
+            isPinned: isSectionRailPinned,
+            sections: railItems.map { item in
+                SavedTripSectionChromeItem(
+                    id: item.id,
+                    title: item.title,
+                    symbolName: item.symbolName,
+                    tintName: item.tintName
+                )
+            }
+        )
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ZStack {
+                    Circle().fill(Color.red)
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 8, weight: .bold))
+                        .foregroundStyle(.yellow)
+                }
+                .frame(width: 22, height: 22)
+
+                Text("SPEAKLOCAL VIETNAM")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            Text("Saved")
+                .font(.system(size: 42, weight: .black, design: .serif))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.78)
+
+            Text("Your saved phrases, foods, drinks, and places for your trip.")
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineSpacing(2)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.top, usesPhotoBackdrop ? 18 : 76)
+    }
+
+    private func sectionRail(scrollProxy: ScrollViewProxy) -> some View {
+        GeometryReader { proxy in
+            let cardWidth = SavedTripLayout.sectionCardWidth(containerWidth: proxy.size.width)
+
+            ScrollViewReader { railProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: SavedTripLayout.sectionCardSpacing) {
+                        ForEach(snapshot.railItems) { item in
+                            SavedTripSectionImageCard(
+                                item: item,
+                                isSelected: resolvedCurrentSectionID == item.id,
+                                action: { jumpToSection(item.id) }
+                            )
+                            .frame(width: cardWidth)
+                            .id(Self.railScrollID(for: item.id))
+                        }
+                    }
+                    .padding(.leading, SavedTripLayout.horizontalPadding)
+                    .padding(.trailing, SavedTripLayout.horizontalPadding)
+                    .padding(.bottom, 2)
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+                .onChange(of: resolvedCurrentSectionID) { _, sectionID in
+                    withAnimation(.snappy(duration: 0.24)) {
+                        railProxy.scrollTo(Self.railScrollID(for: sectionID), anchor: .leading)
+                    }
+                }
+            }
+        }
+        .frame(height: SavedTripLayout.sectionCardHeight)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: SavedTripRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
+    }
+
+    private var sectionedSavedItems: some View {
+        LazyVStack(alignment: .leading, spacing: 0) {
+            ForEach(Array(snapshot.sections.enumerated()), id: \.element.id) { index, section in
+                Color.clear
+                    .frame(width: 1, height: 1)
+                    .id(Self.sectionAnchorID(for: section.id))
+                    .accessibilityHidden(true)
+
+                SavedTripSectionBlock(
+                    section: section,
+                    onOpenDetail: onOpenDetail,
+                    onToggleSaved: { item in intentStore.toggleSavedPage(item.pageID) }
+                )
+                .padding(.top, index == 0 ? 0 : SavedTripLayout.sectionSpacing)
+                .background {
+                    GeometryReader { proxy in
+                        Color.clear.preference(
+                            key: SavedTripSectionFramePreferenceKey.self,
+                            value: [
+                                SavedTripSectionFrame(
+                                    id: section.id,
+                                    order: index,
+                                    minY: proxy.frame(in: .global).minY
+                                ),
+                            ]
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private var savedEmptyState: some View {
@@ -4060,35 +4377,458 @@ struct SavedPagesView: View {
                     .nativeGlass(cornerRadius: 23, interactive: true)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Save useful phrases as you explore")
+                    Text("Save what matters for your trip")
                         .font(.headline.weight(.bold))
                         .foregroundStyle(.primary)
 
-                    Text("Browse the catalog, then tap the heart on a phrase page to keep it here.")
+                    Text("Browse Vietnam, then tap the heart on phrases, foods, and drinks to keep them here.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                 }
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
     }
+
+    private func jumpToSection(_ sectionID: String) {
+        let validIDs = Set(snapshot.railItems.map(\.id))
+        guard validIDs.contains(sectionID) else {
+            return
+        }
+
+        currentSectionID = sectionID
+        pendingSectionJumpSectionID = sectionID
+        pendingSectionJumpID += 1
+    }
+
+    @MainActor
+    private func performPendingSectionJump(_ scrollProxy: ScrollViewProxy) async {
+        guard pendingSectionJumpID > 0, let pendingSectionJumpSectionID else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: SavedTripLayout.sectionJumpDelayNanoseconds)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        let target = pendingSectionJumpSectionID == "all"
+            ? Self.savedContentTopID
+            : Self.sectionAnchorID(for: pendingSectionJumpSectionID)
+
+        withAnimation(.snappy(duration: 0.32)) {
+            scrollProxy.scrollTo(
+                target,
+                anchor: UnitPoint(x: 0.5, y: SavedTripLayout.sectionJumpViewportAnchorY)
+            )
+        }
+    }
+
+    private func updateCurrentSection(from frames: [SavedTripSectionFrame]) {
+        guard !frames.isEmpty else {
+            return
+        }
+
+        let sortedFrames = frames.sorted { lhs, rhs in
+            if lhs.order == rhs.order {
+                return lhs.minY < rhs.minY
+            }
+
+            return lhs.order < rhs.order
+        }
+        let activeFrames = sortedFrames.filter { $0.minY <= SavedTripLayout.sectionActivationY }
+        let selectedID = activeFrames.max { $0.minY < $1.minY }?.id ?? "all"
+
+        if currentSectionID != selectedID {
+            currentSectionID = selectedID
+        }
+    }
+
+    private func updateRailFrame(_ frame: CGRect?) {
+        isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= SavedTripLayout.glassRailRevealY
+    }
+
+    private func refreshPracticeReadyCount(for pageIDs: [String]) async {
+        let count = await Task.detached(priority: .userInitiated) {
+            (try? SavedTripPracticeCatalog.items(for: pageIDs).count) ?? 0
+        }.value
+
+        await MainActor.run {
+            guard pageIDs == intentStore.savedPageIDs else {
+                return
+            }
+
+            practiceReadyCount = count
+        }
+    }
+
+    private static func railScrollID(for sectionID: String) -> String {
+        "saved-rail-\(sectionID)"
+    }
+
+    private static func sectionAnchorID(for sectionID: String) -> String {
+        "saved-section-anchor-\(sectionID)"
+    }
+}
+
+private extension View {
+    func savedPagesChromePreferences(
+        sectionChromeState: SavedTripSectionChromeState?,
+        onSectionFramesChanged: @escaping ([SavedTripSectionFrame]) -> Void,
+        onRailFrameChanged: @escaping (CGRect?) -> Void
+    ) -> some View {
+        self
+            .onPreferenceChange(SavedTripSectionFramePreferenceKey.self, perform: onSectionFramesChanged)
+            .onPreferenceChange(SavedTripRailFramePreferenceKey.self, perform: onRailFrameChanged)
+            .preference(
+                key: SavedTripSectionChromePreferenceKey.self,
+                value: sectionChromeState.map { [$0] } ?? []
+            )
+    }
+}
+
+private enum SavedTripLayout {
+    static let horizontalPadding: CGFloat = 20
+    static let sectionSpacing: CGFloat = 22
+    static let sectionTitleToRowsSpacing: CGFloat = 20
+    static let sectionCardSpacing: CGFloat = 12
+    static let sectionCardHeight: CGFloat = 154
+    static let sectionImageHeight: CGFloat = 96
+    static let practiceUnlockCount = 4
+    static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 280
+    static let sectionJumpViewportAnchorY: CGFloat = 0.19
+    static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
+    static let glassRailRevealY: CGFloat = 72
+
+    static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
+        max(132, min(164, (containerWidth - horizontalPadding * 2 - sectionCardSpacing * 1.5) / 2.35))
+    }
+}
+
+private struct SavedTripPracticeCard: View {
+    let practiceReadyCount: Int
+    let totalSavedCount: Int
+    let onStart: () -> Void
+    let onBrowse: () -> Void
+
+    private var canStart: Bool {
+        practiceReadyCount >= SavedTripLayout.practiceUnlockCount
+    }
+
+    private var remainingCount: Int {
+        max(0, SavedTripLayout.practiceUnlockCount - practiceReadyCount)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 14) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(
+                            LinearGradient(
+                                colors: [Color.red.opacity(0.16), Color.red.opacity(0.04)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 72, height: 72)
+                        .rotationEffect(.degrees(-4))
+
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(.white.opacity(0.82))
+                        .frame(width: 54, height: 54)
+                        .softAmbientCardShadow()
+
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 24, weight: .black))
+                        .foregroundStyle(.red)
+                }
+                .frame(width: 84, height: 78)
+                .accessibilityHidden(true)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(canStart ? "Practice your saved items" : "Save 4 items to unlock practice")
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Text(canStart ? "Review the things you saved." : "Saved phrases, foods, and drinks become match rounds.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .layoutPriority(1)
+            }
+
+            Button(action: canStart ? onStart : onBrowse) {
+                HStack {
+                    Text(canStart ? "Start Practicing" : (totalSavedCount == 0 ? "Browse Vietnam" : "Save \(remainingCount) more"))
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+
+                    Spacer(minLength: 8)
+
+                    Image(systemName: "chevron.right")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(.white)
+                }
+                .padding(.horizontal, 18)
+                .frame(maxWidth: .infinity)
+                .frame(height: 48)
+                .background(Color.red, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier(canStart ? "SavedTrip.Practice.Start" : "SavedTrip.Practice.Browse")
+        }
+        .padding(16)
+        .background(
+            LinearGradient(
+                colors: [Color.red.opacity(0.11), Color.white.opacity(0.78)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ),
+            in: RoundedRectangle(cornerRadius: 22, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                .allowsHitTesting(false)
+        }
+        .softAmbientCardShadow()
+    }
+}
+
+private struct SavedTripSectionImageCard: View {
+    let item: SavedTripRailItem
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 0) {
+                if let imageName = item.imageName {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: SavedTripLayout.sectionImageHeight)
+                        .frame(maxWidth: .infinity)
+                        .clipped()
+                } else {
+                    ZStack {
+                        item.tintName.color.opacity(0.10)
+
+                        Image(systemName: item.symbolName)
+                            .font(.system(size: 30, weight: .black))
+                            .foregroundStyle(item.tintName.color)
+                    }
+                    .frame(height: SavedTripLayout.sectionImageHeight)
+                    .frame(maxWidth: .infinity)
+                }
+
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(item.title)
+                        .font(.headline.weight(.black))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.72)
+                }
+                .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity, minHeight: 58, alignment: .leading)
+                .background(PhrasePageStyle.imageCaptionFill)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(isSelected ? item.tintName.color.opacity(0.58) : .white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: isSelected ? 1.5 : 1)
+                    .allowsHitTesting(false)
+            }
+            .softAmbientCardShadow()
+            .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier("SavedTrip.SectionRail.\(item.id)")
+    }
+}
+
+private struct SavedTripSectionBlock: View {
+    let section: SavedTripSection
+    let onOpenDetail: (String) -> Void
+    let onToggleSaved: (SavedTripItem) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: SavedTripLayout.sectionTitleToRowsSpacing) {
+            Text(section.title)
+                .font(.title2.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("SavedTrip.SectionTitle.\(section.id)")
+
+            VStack(spacing: 0) {
+                ForEach(section.items) { item in
+                    SavedTripItemRow(
+                        item: item,
+                        onOpenDetail: { onOpenDetail(item.pageID) },
+                        onToggleSaved: { onToggleSaved(item) }
+                    )
+
+                    if item.id != section.items.last?.id {
+                        Divider().padding(.leading, 86)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
+        }
+    }
+}
+
+private struct SavedTripItemRow: View {
+    let item: SavedTripItem
+    let onOpenDetail: () -> Void
+    let onToggleSaved: () -> Void
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Button(action: onOpenDetail) {
+                HStack(spacing: 14) {
+                    thumbnail
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.title)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.74)
+
+                        Text(item.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("SavedTrip.Row.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "SavedTrip.Audio.\(item.pageID)"
+            )
+
+            Button(action: onToggleSaved) {
+                Image(systemName: "heart.fill")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.red)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Remove from Saved")
+            .accessibilityIdentifier("SavedTrip.Unsave.\(item.pageID)")
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+    }
+
+    @ViewBuilder
+    private var thumbnail: some View {
+        if let imageName = item.imageName {
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 62, height: 62)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                }
+                .accessibilityHidden(true)
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(item.tintName.color.opacity(0.10))
+
+                Image(systemName: item.symbolName)
+                    .font(.system(size: 22, weight: .black))
+                    .foregroundStyle(item.tintName.color)
+            }
+            .frame(width: 62, height: 62)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+struct SavedTripSectionJumpRequest: Equatable {
+    let requestID: Int
+    let sectionID: String
+}
+
+struct SavedTripSectionChromeItem: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let symbolName: String
+    let tintName: AccentTint
+}
+
+struct SavedTripSectionChromeState: Equatable {
+    let currentSectionID: String
+    let isPinned: Bool
+    let sections: [SavedTripSectionChromeItem]
+}
+
+struct SavedTripSectionChromePreferenceKey: PreferenceKey {
+    static var defaultValue: [SavedTripSectionChromeState] = []
+
+    static func reduce(value: inout [SavedTripSectionChromeState], nextValue: () -> [SavedTripSectionChromeState]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct SavedTripSectionFrame: Equatable {
+    let id: String
+    let order: Int
+    let minY: CGFloat
+}
+
+private struct SavedTripSectionFramePreferenceKey: PreferenceKey {
+    static var defaultValue: [SavedTripSectionFrame] = []
+
+    static func reduce(value: inout [SavedTripSectionFrame], nextValue: () -> [SavedTripSectionFrame]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct SavedTripRailFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect?
+
+    static func reduce(value: inout CGRect?, nextValue: () -> CGRect?) {
+        value = nextValue() ?? value
+    }
 }
 
 enum HomeLayout {
     static let horizontalPadding: CGFloat = 24
-    static let sectionSpacing: CGFloat = 28
+    static let sectionSpacing: CGFloat = 42
     static let cardCornerRadius: CGFloat = 22
     static let largeCardCornerRadius: CGFloat = 28
-    static let quickPhraseCardHeight: CGFloat = 122
-    static let quickPhraseCardWidth: CGFloat = 146
+    static let quickPhraseCardHeight: CGFloat = 142
+    static let quickPhraseCardWidth: CGFloat = 160
     static let quickPhraseGridRowSpacing: CGFloat = 12
     static let featurePhraseCardWidth: CGFloat = 344
     static let featurePhraseCardHeight: CGFloat = 326
@@ -4108,11 +4848,14 @@ enum HomeLayout {
     static let situationImageHeight: CGFloat = 68
     static let cityCardWidth: CGFloat = 118
     static let cityCardHeight: CGFloat = 178
+    static let cityImageHeight: CGFloat = 122
     static let relationshipRowsPerGroup = 3
     static let relationshipGroupSpacing: CGFloat = 12
     static let relationshipRowHeight: CGFloat = 102
     static let relationshipGroupVerticalPadding: CGFloat = 10
-    static let bottomChromeContentClearance: CGFloat = 224
+    static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
+    static let shellScrollOffsetPublishStride: CGFloat = 4
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
         let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))
@@ -4243,13 +4986,6 @@ private struct HomeFeaturePhraseItem: Identifiable, Equatable {
     }
 }
 
-private struct HomeScenario: Identifiable {
-    let scenarioID: PracticeScenarioID
-
-    var id: String { scenarioID.rawValue }
-    var practiceAction: BrowseCollectionPracticeAction { .practiceScenario(scenarioID) }
-}
-
 private enum HomePhraseShelfLayout {
     case quickTiles
     case spotlightRows
@@ -4267,6 +5003,8 @@ private struct HomeSituationCard: Identifiable {
 }
 
 private struct HomePhraseShelfDefinition: Identifiable {
+    private static let defaultMaximumShelfItems = 12
+
     let id: String
     let title: String
     let subtitle: String
@@ -4274,6 +5012,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
     let sourceCategoryIDs: [String]
     let pageIDs: [String]
     let layout: HomePhraseShelfLayout
+    let maximumItemCount: Int
+    let fillsFromSourceCategories: Bool
+    let items: [HomePhraseItem]
 
     init(
         id: String,
@@ -4282,7 +5023,9 @@ private struct HomePhraseShelfDefinition: Identifiable {
         route: BrowseCollectionRoute,
         sourceCategoryIDs: [String],
         pageIDs: [String],
-        layout: HomePhraseShelfLayout = .quickTiles
+        layout: HomePhraseShelfLayout = .quickTiles,
+        maximumItemCount: Int = Self.defaultMaximumShelfItems,
+        fillsFromSourceCategories: Bool = true
     ) {
         self.id = id
         self.title = title
@@ -4291,17 +5034,50 @@ private struct HomePhraseShelfDefinition: Identifiable {
         self.sourceCategoryIDs = sourceCategoryIDs
         self.pageIDs = pageIDs
         self.layout = layout
+        self.maximumItemCount = maximumItemCount
+        self.fillsFromSourceCategories = fillsFromSourceCategories
+        self.items = Self.resolveItems(
+            pageIDs: pageIDs,
+            sourceCategoryIDs: sourceCategoryIDs,
+            maximumItemCount: maximumItemCount,
+            fillsFromSourceCategories: fillsFromSourceCategories
+        )
     }
 
-    var items: [HomePhraseItem] {
+    private static func resolveItems(
+        pageIDs: [String],
+        sourceCategoryIDs: [String],
+        maximumItemCount: Int,
+        fillsFromSourceCategories: Bool
+    ) -> [HomePhraseItem] {
         var seen = Set<String>()
         var rows: [HomePhraseItem] = []
 
-        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+        func append(_ item: HomePhraseItem) {
+            guard rows.count < maximumItemCount else {
+                return
+            }
             guard seen.insert(item.pageID).inserted else {
-                continue
+                return
             }
             rows.append(item)
+        }
+
+        for item in pageIDs.compactMap(HomePhraseItem.resolve(pageID:)) {
+            append(item)
+        }
+
+        guard fillsFromSourceCategories else {
+            return rows
+        }
+
+        for categoryID in sourceCategoryIDs where rows.count < maximumItemCount {
+            let categoryItems = PhraseCatalog.items(selectedCategoryID: categoryID)
+            for catalogItem in categoryItems where rows.count < maximumItemCount {
+                if let item = HomePhraseItem.resolve(pageID: catalogItem.pageID) {
+                    append(item)
+                }
+            }
         }
 
         return rows
@@ -4358,32 +5134,65 @@ enum HomeUseNowCatalog {
     static let featureCardIDs = Array(starterIDs.prefix(6))
 }
 
+enum HomeRecentlyViewedContent {
+    static let maximumFeatureCards = 6
+
+    static func cardPageIDs(from recentPageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var cardPageIDs: [String] = []
+
+        for pageID in recentPageIDs {
+            guard let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) else {
+                continue
+            }
+            guard seen.insert(canonicalPageID).inserted else {
+                continue
+            }
+
+            cardPageIDs.append(canonicalPageID)
+            if cardPageIDs.count == maximumFeatureCards {
+                break
+            }
+        }
+
+        return cardPageIDs
+    }
+}
+
+enum HomeFirstDayShelfContent {
+    static let title = "First Day in Vietnam"
+    static let maximumCards = 8
+    static let pageIDs = [
+        "viet-phrase-airport-1",
+        "viet-phrase-airport-3",
+        "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
+        "viet-phrase-airport-5",
+        "viet-phrase-taxi-1",
+        "viet-phrase-hotel-1",
+        "viet-phrase-hotel-2",
+        "viet-phrase-directions-9",
+    ]
+}
+
 private enum HomeContent {
     static let useNowIDs = HomeUseNowCatalog.starterIDs
 
     static let homepagePhraseShelves: [HomePhraseShelfDefinition] = [
         HomePhraseShelfDefinition(
-            id: "first-hour",
-            title: "First hour in Vietnam",
-            subtitle: "Airport, pickup, SIM, ATM, and check-in.",
+            id: "first-day",
+            title: HomeFirstDayShelfContent.title,
+            subtitle: "Short airport, ride, and check-in phrases.",
             route: .category("first-day"),
             sourceCategoryIDs: ["airport-border-arrival", "hotel-accommodation", "transport", "directions-navigation"],
-            pageIDs: [
-                "viet-phrase-airport-2",
-                "viet-phrase-airport-5",
-                "viet-phrase-airport-3",
-                "viet-phrase-v500-airp-bord-arri-where-is-the-atm",
-                "viet-phrase-v500-tran-please-take-me-to-this-hotel",
-                "viet-phrase-hotel-1",
-                "viet-phrase-v500-airp-bord-arri-here-is-my-passport",
-                "viet-phrase-phone-1",
-            ],
-            layout: .spotlightRows
+            pageIDs: HomeFirstDayShelfContent.pageIDs,
+            layout: .spotlightRows,
+            maximumItemCount: HomeFirstDayShelfContent.maximumCards,
+            fillsFromSourceCategories: false
         ),
         HomePhraseShelfDefinition(
             id: "food-coffee",
-            title: "Food & coffee",
-            subtitle: "Menu, water, coffee, spice, allergies, and paying.",
+            title: "Eating Out",
+            subtitle: "Tables, ordering, allergies, and paying.",
             route: .category("food"),
             sourceCategoryIDs: ["food-drink", "money-numbers-prices"],
             pageIDs: [
@@ -4451,14 +5260,16 @@ private enum HomeContent {
             route: .category("shopping"),
             sourceCategoryIDs: ["shopping", "money-numbers-prices", "local-services-everyday-tasks"],
             pageIDs: [
-                "viet-phrase-money-how-much-common",
                 "viet-phrase-price-1",
+                "viet-phrase-v500-shop-can-you-lower-the-price",
                 "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
                 "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
                 "viet-phrase-price-9",
                 "viet-phrase-shop-1",
             ],
-            layout: .mediumGrid
+            layout: .mediumGrid,
+            maximumItemCount: 6,
+            fillsFromSourceCategories: false
         ),
         HomePhraseShelfDefinition(
             id: "help-emergency",
@@ -4483,49 +5294,22 @@ private enum HomeContent {
         homepagePhraseShelves.first { $0.id == id }
     }
 
-    static let featuredIDs = [
-        "viet-thank-you",
-        PhrasePage.xinChao.id,
-        "viet-excuse-sorry",
-        "viet-family-repair-meaning",
-        "viet-family-hotel-checkout-time",
-    ]
-
-    static var useNowItems: [HomePhraseItem] {
+    static let useNowItems: [HomePhraseItem] = {
         useNowIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] {
+    static let useNowFeaturePhraseCardItems: [HomeFeaturePhraseItem] = {
         HomeUseNowCatalog.featureCardIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
+    }()
 
-    static var savedFallbackItems: [HomePhraseItem] {
+    static let savedFallbackItems: [HomePhraseItem] = {
         savedFallbackPageIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
+    }()
 
     static let savedFallbackPageIDs = [
         "viet-phrase-v500-unde-repa-can-you-show-me-a-picture",
         "viet-phrase-hotel-3",
     ]
-
-    static var featuredItems: [HomePhraseItem] {
-        featuredIDs.compactMap(HomePhraseItem.resolve(pageID:))
-    }
-
-    static var featuredPhraseCardItems: [HomeFeaturePhraseItem] {
-        featuredIDs.compactMap(HomeFeaturePhraseItem.resolve(pageID:))
-    }
-
-    static var practiceScenarios: [HomeScenario] {
-        [
-            .danangFirstDay,
-            .hotelCheckInHelp,
-            .taxiGrabPickup,
-            .pharmacyHelp,
-            .danangDay,
-            .restaurantOrderingPayment,
-        ].map { HomeScenario(scenarioID: $0) }
-    }
 
     static let situationCards = [
         HomeSituationCard(
@@ -4537,7 +5321,7 @@ private enum HomeContent {
         ),
         HomeSituationCard(
             id: "food-shopping",
-            title: "Food and shopping",
+            title: "Eating out and shopping",
             subtitle: "Restaurants, markets, items, prices",
             imageName: "HomeSituationFoodShopping",
             route: .category("food")
@@ -4551,7 +5335,7 @@ private enum HomeContent {
         ),
     ]
 
-    static var cityCards: [HomeCityCard] {
+    static let cityCards: [HomeCityCard] = {
         BrowseSearchDestinations.homepageCityShortcuts.map { city in
             HomeCityCard(
                 id: city.id,
@@ -4560,7 +5344,7 @@ private enum HomeContent {
                 route: city.collectionRoute
             )
         }
-    }
+    }()
 
     private static func homeCityTitle(for cityID: String, fallback: String) -> String {
         switch cityID {
@@ -4629,16 +5413,54 @@ private enum HomeContent {
     ]
 }
 
+private struct HomePreparedImage: View {
+    let name: String
+
+    var body: some View {
+        AdminBackdropPreparedImage(name: name)
+    }
+}
+
 #if DEBUG
 enum HomePageLinkRegistry {
     static var homepageListingPageIDs: [String] {
         uniquePageIDs(
             HomeUseNowCatalog.featureCardIDs
             + HomeContent.homepagePhraseShelves.flatMap(\.pageIDs)
-            + HomeContent.featuredIDs
             + HomeContent.savedFallbackPageIDs
             + PhrasePage.xinChao.localGreetings.prefix(3).compactMap(\.detailPageID)
         )
+    }
+
+    static var firstDayHomepagePageIDs: [String] {
+        HomeContent.homepagePhraseShelf("first-day")?.items.map(\.pageID) ?? []
+    }
+
+    static var homepagePhraseShelfSnapshots: [HomePagePhraseShelfSnapshot] {
+        HomeContent.homepagePhraseShelves.map { shelf in
+            HomePagePhraseShelfSnapshot(
+                id: shelf.id,
+                title: shelf.title,
+                items: shelf.items.map { item in
+                    HomePagePhraseShelfSnapshot.Item(
+                        pageID: item.pageID,
+                        title: item.title,
+                        subtitle: item.subtitle
+                    )
+                }
+            )
+        }
+    }
+
+    static var homepageCollectionRoutes: [BrowseCollectionRoute] {
+        [
+            .category("essentials"),
+            .category("local-greetings"),
+            .category("city-guides"),
+        ]
+        + HomeContent.homepagePhraseShelves.map(\.route)
+        + HomeContent.situationCards.map(\.route)
+        + HomeContent.cityCards.map(\.route)
     }
 
     private static func uniquePageIDs(_ pageIDs: [String]) -> [String] {
@@ -4646,234 +5468,132 @@ enum HomePageLinkRegistry {
         return pageIDs.filter { seen.insert($0).inserted }
     }
 }
+
+struct HomePagePhraseShelfSnapshot: Equatable {
+    struct Item: Equatable {
+        let pageID: String
+        let title: String
+        let subtitle: String
+    }
+
+    let id: String
+    let title: String
+    let items: [Item]
+}
 #endif
 
 private struct HomeShelf<Content: View>: View {
     let title: String
     let subtitle: String
+    let route: BrowseCollectionRoute?
+    let onOpenCollection: ((BrowseCollectionRoute) -> Void)?
     let content: Content
 
-    init(title: String, subtitle: String, @ViewBuilder content: () -> Content) {
+    init(
+        title: String,
+        subtitle: String,
+        route: BrowseCollectionRoute? = nil,
+        onOpenCollection: ((BrowseCollectionRoute) -> Void)? = nil,
+        @ViewBuilder content: () -> Content
+    ) {
         self.title = title
         self.subtitle = subtitle
+        self.route = route
+        self.onOpenCollection = onOpenCollection
         self.content = content()
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            header
+
+            content
+        }
+    }
+
+    @ViewBuilder
+    private var header: some View {
+        if let route, let onOpenCollection {
+            headerContent(showsChevron: true)
+                .onTapGesture {
+                    onOpenCollection(route)
+                }
+        } else {
+            headerContent(showsChevron: false)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(title)
+                .accessibilityHint(subtitle)
+        }
+    }
+
+    private func headerContent(showsChevron: Bool) -> some View {
+        HStack(spacing: 7) {
             Text(title)
                 .font(.title2.weight(.bold))
                 .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.82)
-                .accessibilityHint(subtitle)
 
-            content
-        }
-    }
-}
-
-private struct HomeContinuePanel: View {
-    let item: HomePhraseItem?
-    let savedCount: Int
-    let practiceCount: Int
-    let onOpenDetail: (String) -> Void
-    let onOpenSavedFallback: () -> Void
-    let onStartPractice: () -> Void
-    let onBrowseAllTapped: () -> Void
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Button(action: primaryAction) {
-                HStack(spacing: 14) {
-                    ZStack {
-                        Circle()
-                            .fill(primaryTint.color.opacity(0.14))
-                            .overlay {
-                                Circle().stroke(.white.opacity(0.76), lineWidth: 1)
-                            }
-
-                        Image(systemName: primarySymbolName)
-                            .font(.system(size: 25, weight: .semibold))
-                            .foregroundStyle(primaryTint.color)
-                    }
-                    .frame(width: HomeLayout.continuePrimaryIconSize, height: HomeLayout.continuePrimaryIconSize)
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item == nil ? "Start here" : "Last viewed")
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(primaryTint.color)
-                            .textCase(.uppercase)
-
-                        Text(primaryTitle)
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.78)
-
-                        Text(primarySubtitle)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .layoutPriority(1)
-
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("Home.ContinuePrimary")
-
-            HStack(spacing: 10) {
-                HomeContinueActionPill(
-                    title: savedActionTitle,
-                    symbolName: "heart.fill",
-                    tintName: .red,
-                    action: onOpenSavedFallback
-                )
-
-                HomeContinueActionPill(
-                    title: practiceActionTitle,
-                    symbolName: "play.fill",
-                    tintName: .green,
-                    action: onStartPractice
-                )
+            if showsChevron {
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.tertiary)
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        .accessibilityIdentifier("Home.ContinuePanel")
-    }
-
-    private var primaryTitle: String {
-        item?.title ?? "Browse phrases"
-    }
-
-    private var primarySubtitle: String {
-        item?.subtitle ?? "Pick a useful page to save or practice."
-    }
-
-    private var primarySymbolName: String {
-        item?.symbolName ?? "square.grid.2x2.fill"
-    }
-
-    private var primaryTint: AccentTint {
-        item?.tintName ?? .blue
-    }
-
-    private var savedActionTitle: String {
-        savedCount == 0 ? "Saved phrases" : "\(savedCount) saved"
-    }
-
-    private var practiceActionTitle: String {
-        practiceCount == 0 ? "Practice list" : "\(practiceCount) practice"
-    }
-
-    private func primaryAction() {
-        if let item {
-            onOpenDetail(item.pageID)
-        } else {
-            onBrowseAllTapped()
-        }
-    }
-}
-
-private struct HomeContinueActionPill: View {
-    let title: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 7) {
-                Image(systemName: symbolName)
-                    .font(.caption.weight(.bold))
-
-                Text(title)
-                    .font(.subheadline.weight(.bold))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.76)
-            }
-            .foregroundStyle(tintName.color)
-            .frame(maxWidth: .infinity)
-            .frame(height: HomeLayout.continueActionHeight)
-            .background(tintName.color.opacity(0.10), in: Capsule(style: .continuous))
-            .overlay {
-                Capsule(style: .continuous)
-                    .stroke(tintName.color.opacity(0.18), lineWidth: 1)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-private struct HomeQuickPhraseGrid: View {
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    private let rows = [
-        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: HomeLayout.quickPhraseGridRowSpacing),
-        GridItem(.fixed(HomeLayout.quickPhraseCardHeight), spacing: 0),
-    ]
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: rows, alignment: .top, spacing: 12) {
-                ForEach(items) { item in
-                    HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
-                }
-            }
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
-        }
-        .frame(height: HomeLayout.quickPhraseCardHeight * 2 + HomeLayout.quickPhraseGridRowSpacing)
-        .scrollClipDisabled()
+        .contentShape(Rectangle())
     }
 }
 
 private struct HomeFeaturedPhraseCarousel: View {
     let items: [HomeFeaturePhraseItem]
-    let heroMorphPageID: String?
-    let chromeNamespace: Namespace.ID?
+    let visibilityRoute: AppRoute?
     let onOpenDetail: (String) -> Void
     let isSaved: (String) -> Bool
     let onToggleSaved: (String) -> Void
 
+    init(
+        items: [HomeFeaturePhraseItem],
+        visibilityRoute: AppRoute? = nil,
+        onOpenDetail: @escaping (String) -> Void,
+        isSaved: @escaping (String) -> Bool,
+        onToggleSaved: @escaping (String) -> Void
+    ) {
+        self.items = items
+        self.visibilityRoute = visibilityRoute
+        self.onOpenDetail = onOpenDetail
+        self.isSaved = isSaved
+        self.onToggleSaved = onToggleSaved
+    }
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
-                ForEach(items) { item in
-                    HomeFeaturedPhraseCard(
-                        item: item,
-                        isSaved: isSaved(item.pageID),
-                        isHeroMorphSource: heroMorphPageID == item.morphPageID,
-                        chromeNamespace: chromeNamespace,
-                        onOpenDetail: onOpenDetail,
-                        onToggleSaved: { onToggleSaved(item.pageID) }
-                    )
-                }
-            }
-            .scrollTargetLayout()
-            .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 3)
+            carouselItems
+                .padding(.trailing, HomeLayout.horizontalPadding)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.featurePhraseCardHeight)
-        .scrollTargetBehavior(.viewAligned)
+        .frame(height: HomeLayout.featurePhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .scrollClipDisabled()
+    }
+
+    private var carouselItems: some View {
+        LazyHStack(spacing: 14) {
+            ForEach(items) { item in
+                HomeFeaturedPhraseCard(
+                    item: item,
+                    isSaved: isSaved(item.pageID),
+                    visibilityRoute: item.id == items.first?.id ? visibilityRoute : nil,
+                    onOpenDetail: onOpenDetail,
+                    onToggleSaved: { onToggleSaved(item.pageID) }
+                )
+            }
+        }
     }
 }
 
 private struct HomeFeaturedPhraseCard: View {
     let item: HomeFeaturePhraseItem
     let isSaved: Bool
-    let isHeroMorphSource: Bool
-    let chromeNamespace: Namespace.ID?
+    let visibilityRoute: AppRoute?
     let onOpenDetail: (String) -> Void
     let onToggleSaved: () -> Void
 
@@ -4888,45 +5608,33 @@ private struct HomeFeaturedPhraseCard: View {
                         englishTitle: item.englishTitle,
                         pronunciation: item.pronunciation,
                         titleSize: 42,
-                        pronunciationLineLimit: 1,
-                        morphPageID: item.morphPageID,
-                        morphNamespace: chromeNamespace,
-                        isMorphActive: isHeroMorphSource,
-                        isMorphSource: true
+                        pronunciationLineLimit: 1
                     )
                     .padding(.trailing, 48)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityIdentifier("HomeFeaturedPhrase.Open.\(item.pageID)")
-                .zIndex(isHeroMorphSource ? 4 : 0)
 
                 Spacer(minLength: 0)
 
                 PlaybackDockView(
                     audioKey: item.audioKey,
                     isSaved: isSaved,
-                    onToggleSaved: onToggleSaved
+                    onToggleSaved: onToggleSaved,
+                    visibilityRoute: visibilityRoute
                 )
-                .homePhraseHeroMorph(
-                    HomePhraseHeroMorphID.player(item.morphPageID),
-                    namespace: chromeNamespace,
-                    isActive: isHeroMorphSource,
-                    isSource: true,
-                    anchor: .topLeading
-                )
-                .zIndex(isHeroMorphSource ? 3 : 0)
             }
             .padding(.horizontal, 18)
             .padding(.top, 22)
             .padding(.bottom, 14)
             .frame(width: HomeLayout.featurePhraseCardWidth, height: HomeLayout.featurePhraseCardHeight, alignment: .topLeading)
-            .background(.white.opacity(0.64), in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 32, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.07), radius: 22, x: 0, y: 14)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: 32)
         }
         .accessibilityIdentifier("HomeFeaturedPhrase.\(item.pageID)")
@@ -4938,158 +5646,157 @@ private struct HomeQuickPhraseCard: View {
     let onOpenDetail: (String) -> Void
 
     var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            VStack(spacing: 8) {
-                AudioSpeakerButton(
-                    tint: item.tintName,
-                    size: 52,
-                    audioKey: item.audioKey,
-                    accessibilityIdentifier: "HomeQuick.Audio.\(item.pageID)"
-                )
-                .frame(height: 56)
+        ZStack(alignment: .top) {
+            Button {
+                onOpenDetail(item.pageID)
+            } label: {
+                VStack(spacing: 8) {
+                    Color.clear
+                        .frame(height: 56)
+                        .accessibilityHidden(true)
 
-                VStack(spacing: 3) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.72)
+                    VStack(spacing: 3) {
+                        Text(item.title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.66)
+                            .frame(height: 44, alignment: .bottom)
 
-                    Text(item.subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.78)
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.78)
+                            .frame(height: 18, alignment: .top)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 12)
+                .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
+                .contentShape(Rectangle())
+                .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 12)
-            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .buttonStyle(.plain)
+            .accessibilityLabel("\(item.title), \(item.subtitle)")
+            .accessibilityIdentifier("HomeQuick.\(item.pageID)")
+
+            AudioSpeakerButton(
+                tint: item.tintName,
+                size: 52,
+                audioKey: item.audioKey,
+                accessibilityIdentifier: "HomeQuick.Audio.\(item.pageID)"
+            )
+            .frame(height: 56)
+            .padding(.top, 12)
         }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeQuick.\(item.pageID)")
+        .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
     }
 }
 
-private struct HomeScenarioRail: View {
-    let scenarios: [HomeScenario]
+private struct HomePracticeStarter: Identifiable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let symbolName: String
+    let tint: AccentTint
+    let action: BrowseCollectionPracticeAction
+
+    static let defaults: [HomePracticeStarter] = [
+        HomePracticeStarter(
+            id: "quick",
+            title: "Quick match",
+            subtitle: "Four useful pairs",
+            symbolName: "bolt.fill",
+            tint: .red,
+            action: .practiceSource("quick")
+        ),
+        HomePracticeStarter(
+            id: "practice",
+            title: "Practice pool",
+            subtitle: "Your added phrases",
+            symbolName: "bookmark.fill",
+            tint: .red,
+            action: .practiceSource("practice")
+        ),
+        HomePracticeStarter(
+            id: "food-drinks",
+            title: "Eating Out",
+            subtitle: "Order, ask, pay",
+            symbolName: "takeoutbag.and.cup.and.straw.fill",
+            tint: .orange,
+            action: .practiceSource("topic:food-drinks")
+        ),
+        HomePracticeStarter(
+            id: "airport",
+            title: "Airport",
+            subtitle: "Arrival and baggage",
+            symbolName: "airplane.arrival",
+            tint: .red,
+            action: .practiceSource("topic:airport")
+        ),
+    ]
+}
+
+private struct HomePracticeStarterRail: View {
     let onStartPractice: (BrowseCollectionPracticeAction) -> Void
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(alignment: .top, spacing: 8) {
-                ForEach(scenarios) { scenario in
-                    HomeScenarioContactButton(
-                        scenario: scenario,
-                        onStartPractice: onStartPractice
-                    )
+            LazyHStack(alignment: .top, spacing: 10) {
+                ForEach(HomePracticeStarter.defaults) { starter in
+                    Button {
+                        onStartPractice(starter.action)
+                    } label: {
+                        VStack(alignment: .leading, spacing: 12) {
+                            HomePracticeStarterIcon(symbolName: starter.symbolName, tint: starter.tint)
+
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(starter.title)
+                                    .font(.headline.weight(.black))
+                                    .foregroundStyle(.primary)
+                                    .lineLimit(2)
+                                    .minimumScaleFactor(0.78)
+
+                                Text(starter.subtitle)
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(2)
+                            }
+
+                            Spacer(minLength: 0)
+                        }
+                        .padding(14)
+                        .frame(width: 152, height: 138, alignment: .leading)
+                        .phraseListCard(cornerRadius: 22)
+                        .contentShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("Home.PracticeStarter.\(starter.id)")
                 }
             }
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 2)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.messageRailHeight)
+        .frame(height: 138 + PhrasePageStyle.cardShadowBleedPadding)
         .scrollClipDisabled()
-        .accessibilityIdentifier("HomeScenarioRail")
+        .accessibilityIdentifier("HomePracticeStarterRail")
     }
 }
 
-private struct HomeScenarioContactButton: View {
-    let scenario: HomeScenario
-    let onStartPractice: (BrowseCollectionPracticeAction) -> Void
+private struct HomePracticeStarterIcon: View {
+    let symbolName: String
+    let tint: AccentTint
 
     var body: some View {
-        Button {
-            onStartPractice(scenario.practiceAction)
-        } label: {
-            VStack(spacing: 9) {
-                PracticeMessageAvatar(
-                    scenarioID: scenario.scenarioID,
-                    size: HomeLayout.messageAvatarSize,
-                    showsSymbol: true
-                )
-
-                Text(scenario.scenarioID.messageContactName)
-                    .font(.callout.weight(.medium))
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.78)
-                    .frame(height: 38, alignment: .top)
-            }
-            .frame(width: HomeLayout.messageContactWidth, alignment: .top)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(scenario.scenarioID.messageContactName)
-        .accessibilityIdentifier("HomeScenario.\(scenario.id)")
-    }
-}
-
-private struct HomeSavedPhraseGrid: View {
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    private let columns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12),
-    ]
-
-    var body: some View {
-        LazyVGrid(columns: columns, spacing: 12) {
-            ForEach(items) { item in
-                HomeSavedPhraseCard(item: item, onOpenDetail: onOpenDetail)
-            }
-        }
-    }
-}
-
-private struct HomeSavedPhraseCard: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        Button {
-            onOpenDetail(item.pageID)
-        } label: {
-            VStack(spacing: 14) {
-                AudioSpeakerButton(
-                    tint: item.tintName,
-                    size: 52,
-                    audioKey: item.audioKey,
-                    accessibilityIdentifier: "HomeSaved.Audio.\(item.pageID)"
-                )
-                .frame(height: 56)
-
-                VStack(spacing: 5) {
-                    Text(item.title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(3)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.68)
-
-                    Text(item.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(3)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.76)
-                }
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity)
-            .frame(height: HomeLayout.savedCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeSaved.\(item.pageID)")
+        Image(systemName: symbolName)
+            .font(.headline.weight(.bold))
+            .foregroundStyle(tint.color)
+            .frame(width: 48, height: 48)
+            .nativeGlass(cornerRadius: 24, tint: tint.color, interactive: true)
     }
 }
 
@@ -5197,8 +5904,7 @@ private struct HomeSituationActionRow: View {
             onOpenCollection(card.route)
         } label: {
             HStack(spacing: 18) {
-                Image(card.imageName)
-                    .resizable()
+                HomePreparedImage(name: card.imageName)
                     .scaledToFill()
                     .frame(width: HomeLayout.situationImageWidth, height: HomeLayout.situationImageHeight)
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -5217,10 +5923,6 @@ private struct HomeSituationActionRow: View {
                         .minimumScaleFactor(0.76)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(10)
             .frame(maxWidth: .infinity)
@@ -5238,18 +5940,15 @@ private struct HomeCityRail: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
+            LazyHStack(spacing: 14) {
                 ForEach(cities) { city in
                     HomeCityCardView(city: city, onOpenCollection: onOpenCollection)
                 }
             }
-            .scrollTargetLayout()
             .padding(.trailing, HomeLayout.horizontalPadding)
-            .padding(.bottom, 4)
+            .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
         }
-        .frame(height: HomeLayout.cityCardHeight + 4)
-        .scrollTargetBehavior(.viewAligned)
-        .scrollClipDisabled()
+        .frame(height: HomeLayout.cityCardHeight + PhrasePageStyle.cardShadowBleedPadding)
         .accessibilityIdentifier("HomeCityRail")
     }
 }
@@ -5263,10 +5962,9 @@ private struct HomeCityCardView: View {
             onOpenCollection(city.route)
         } label: {
             VStack(alignment: .leading, spacing: 0) {
-                Image(city.imageName)
-                    .resizable()
+                HomePreparedImage(name: city.imageName)
                     .scaledToFill()
-                    .frame(width: HomeLayout.cityCardWidth, height: 122)
+                    .frame(width: HomeLayout.cityCardWidth, height: HomeLayout.cityImageHeight)
                     .clipped()
 
                 HStack(spacing: 6) {
@@ -5278,105 +5976,40 @@ private struct HomeCityCardView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     Spacer(minLength: 2)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .padding(.horizontal, 12)
                 .frame(height: 56)
             }
             .frame(width: HomeLayout.cityCardWidth, height: HomeLayout.cityCardHeight)
             .clipShape(RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous))
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
+            .homeStaticImageCard(cornerRadius: HomeLayout.cardCornerRadius)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("HomeCity.\(city.id)")
     }
 }
 
-private struct HomePracticeListRow: View {
-    let title: String
-    let subtitle: String
-    let symbolName: String
-    let tintName: AccentTint
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 18) {
-                Image(systemName: symbolName)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(tintName.color)
-                    .frame(width: 62, height: 62)
-                    .nativeGlass(cornerRadius: 31, tint: tintName.color.opacity(0.32), interactive: true)
-
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(title)
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-
-                    Text(subtitle)
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.76)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-                Image(systemName: "chevron.right")
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
-            .padding(16)
-            .frame(maxWidth: .infinity)
-            .homeGlassCard(cornerRadius: HomeLayout.largeCardCornerRadius)
-        }
-        .buttonStyle(.plain)
-    }
-}
-
-private struct HomeTipCard: View {
-    var body: some View {
-        HStack(spacing: 16) {
-            Image(systemName: "lightbulb.fill")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(Color(red: 0.82, green: 0.53, blue: 0.08))
-                .frame(width: 62, height: 62)
-                .nativeGlass(cornerRadius: 31, tint: Color(red: 0.82, green: 0.53, blue: 0.08).opacity(0.24))
-
-            VStack(alignment: .leading, spacing: 5) {
-                Text("Tip")
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(.primary)
-
-                Text("Save phrases as you browse so Practice is ready when you need it.")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(3)
-            }
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 1.0, green: 0.94, blue: 0.78).opacity(0.18), in: RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: HomeLayout.cardCornerRadius, style: .continuous)
-                .stroke(Color(red: 0.82, green: 0.53, blue: 0.08).opacity(0.28), lineWidth: 1)
-        }
-    }
-}
-
 private extension View {
     func homeGlassCard(cornerRadius: CGFloat) -> some View {
         self
-            .background(.white.opacity(0.58), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .background(PhrasePageStyle.glassCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(.white.opacity(0.72), lineWidth: 1)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.055), radius: 18, x: 0, y: 10)
+            .softAmbientCardShadow()
             .nativeGlass(cornerRadius: cornerRadius)
+    }
+
+    func homeStaticImageCard(cornerRadius: CGFloat) -> some View {
+        self
+            .background(PhrasePageStyle.elevatedCardFill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(.white.opacity(PhrasePageStyle.cardEdgeStrokeOpacity), lineWidth: 1)
+                    .allowsHitTesting(false)
+            }
+            .softAmbientCardShadow()
     }
 }
 
@@ -5389,275 +6022,30 @@ private struct HomeRoutePhraseShelf: View {
         let items = shelf.items
 
         if !items.isEmpty {
-            switch shelf.layout {
-            case .quickTiles:
-                quickTileShelf(items: items)
-            case .spotlightRows:
-                spotlightRowsShelf(items: items)
-            case .mediumGrid:
-                mediumGridShelf(items: items)
-            case .wideRows:
-                wideRowsShelf(items: items)
-            case .tallCards:
-                tallCardsShelf(items: items)
-            }
+            phraseRail(items: items)
         }
     }
 
-    private func quickTileShelf(items: [HomePhraseItem]) -> some View {
-        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
+    private func phraseRail(items: [HomePhraseItem]) -> some View {
+        HomeShelf(
+            title: shelf.title,
+            subtitle: shelf.subtitle,
+            route: shelf.route,
+            onOpenCollection: onOpenCollection
+        ) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 12) {
                     ForEach(items) { item in
                         HomeQuickPhraseCard(item: item, onOpenDetail: onOpenDetail)
                     }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
                 }
                 .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 2)
+                .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
             }
-            .frame(height: HomeLayout.quickPhraseCardHeight)
+            .frame(height: HomeLayout.quickPhraseCardHeight + PhrasePageStyle.cardShadowBleedPadding)
             .scrollClipDisabled()
         }
         .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private func spotlightRowsShelf(items: [HomePhraseItem]) -> some View {
-        let leadingItem = items.first
-        let sideItems = Array(items.dropFirst().prefix(2))
-        let trailingItems = Array(items.dropFirst(3).prefix(2))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top, spacing: 12) {
-                    if let leadingItem {
-                        HomePhraseCard(item: leadingItem, onOpenDetail: onOpenDetail)
-                    }
-
-                    if !sideItems.isEmpty {
-                        VStack(spacing: 12) {
-                            ForEach(sideItems) { item in
-                                HomeCompactPhraseRow(item: item, onOpenDetail: onOpenDetail)
-                            }
-                        }
-                    }
-
-                    ForEach(trailingItems) { item in
-                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
-                    .frame(height: HomeLayout.tallPhraseCardHeight)
-                }
-                .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 3)
-            }
-            .frame(height: HomeLayout.tallPhraseCardHeight)
-            .scrollClipDisabled()
-        }
-        .padding(.leading, HomeLayout.horizontalPadding)
-    }
-
-    private func mediumGridShelf(items: [HomePhraseItem]) -> some View {
-        let gridItems = Array(items.prefix(4))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            VStack(spacing: 12) {
-                LazyVGrid(
-                    columns: [
-                        GridItem(.flexible(), spacing: 12),
-                        GridItem(.flexible(), spacing: 12),
-                    ],
-                    spacing: 12
-                ) {
-                    ForEach(gridItems) { item in
-                        HomeSavedPhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-                }
-
-                HomeBrowseRouteWideCard(
-                    identifier: shelf.id,
-                    title: "More \(shelf.browseTitle)",
-                    subtitle: shelf.subtitle,
-                    route: shelf.route,
-                    onOpenCollection: onOpenCollection
-                )
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private func wideRowsShelf(items: [HomePhraseItem]) -> some View {
-        let rowItems = Array(items.prefix(4))
-
-        return HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            LazyVStack(spacing: 12) {
-                ForEach(rowItems) { item in
-                    HomeWidePhraseButton(item: item, onOpenDetail: onOpenDetail)
-                }
-
-                HomeBrowseRouteWideCard(
-                    identifier: shelf.id,
-                    title: "More \(shelf.browseTitle)",
-                    subtitle: shelf.subtitle,
-                    route: shelf.route,
-                    onOpenCollection: onOpenCollection
-                )
-            }
-        }
-        .padding(.horizontal, HomeLayout.horizontalPadding)
-    }
-
-    private func tallCardsShelf(items: [HomePhraseItem]) -> some View {
-        HomeShelf(title: shelf.title, subtitle: shelf.subtitle) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top, spacing: 12) {
-                    ForEach(items) { item in
-                        HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                    }
-
-                    HomeBrowseRouteCard(
-                        identifier: shelf.id,
-                        title: "More",
-                        subtitle: shelf.browseTitle,
-                        route: shelf.route,
-                        onOpenCollection: onOpenCollection
-                    )
-                }
-                .padding(.trailing, HomeLayout.horizontalPadding)
-                .padding(.bottom, 2)
-            }
-            .frame(height: HomeLayout.tallPhraseCardHeight)
-            .scrollClipDisabled()
-        }
-        .padding(.leading, HomeLayout.horizontalPadding)
-    }
-}
-
-private struct HomeBrowseRouteCard: View {
-    let identifier: String
-    let title: String
-    let subtitle: String
-    let route: BrowseCollectionRoute
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
-
-    var body: some View {
-        Button {
-            onOpenCollection(route)
-        } label: {
-            VStack(spacing: 10) {
-                ZStack {
-                    Circle()
-                        .fill(AccentTint.red.color.opacity(0.12))
-
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 23, weight: .black))
-                        .foregroundStyle(AccentTint.red.color)
-                }
-                .frame(width: 52, height: 52)
-
-                VStack(spacing: 3) {
-                    Text(title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-
-                    Text(subtitle)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.78)
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 12)
-            .frame(width: HomeLayout.quickPhraseCardWidth, height: HomeLayout.quickPhraseCardHeight)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
-    }
-}
-
-private struct HomeBrowseRouteWideCard: View {
-    let identifier: String
-    let title: String
-    let subtitle: String
-    let route: BrowseCollectionRoute
-    let onOpenCollection: (BrowseCollectionRoute) -> Void
-
-    var body: some View {
-        Button {
-            onOpenCollection(route)
-        } label: {
-            HStack(spacing: 14) {
-                ZStack {
-                    Circle()
-                        .fill(AccentTint.red.color.opacity(0.12))
-
-                    Image(systemName: "chevron.right")
-                        .font(.headline.weight(.black))
-                        .foregroundStyle(AccentTint.red.color)
-                }
-                .frame(width: 48, height: 48)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title)
-                        .font(.headline.weight(.bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.78)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .layoutPriority(1)
-            }
-            .padding(14)
-            .frame(maxWidth: .infinity, minHeight: 76)
-            .homeGlassCard(cornerRadius: HomeLayout.cardCornerRadius)
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("HomeShelf.More.\(identifier)")
-        .accessibilityHint(subtitle)
-    }
-}
-
-private struct HomeHorizontalPhraseShelf: View {
-    let title: String
-    let subtitle: String
-    let items: [HomePhraseItem]
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        if !items.isEmpty {
-            HomeShelf(title: title, subtitle: subtitle) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        ForEach(items) { item in
-                            HomePhraseCard(item: item, onOpenDetail: onOpenDetail)
-                        }
-                    }
-                    .padding(.trailing, HomeLayout.horizontalPadding)
-                    .padding(.bottom, 2)
-                }
-                .scrollClipDisabled()
-            }
-            .padding(.leading, HomeLayout.horizontalPadding)
-        }
     }
 }
 
@@ -5693,10 +6081,6 @@ private struct HomeWidePhraseButton: View {
                     .layoutPriority(1)
 
                     Spacer()
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
                 }
                 .contentShape(Rectangle())
             }
@@ -5706,109 +6090,6 @@ private struct HomeWidePhraseButton: View {
         }
         .padding(14)
         .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-    }
-}
-
-private struct HomeCompactPhraseRow: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        HStack(spacing: 10) {
-            AudioSpeakerButton(
-                tint: item.tintName,
-                size: 42,
-                audioKey: item.audioKey,
-                accessibilityIdentifier: "HomeCompact.Audio.\(item.pageID)"
-            )
-
-            Button {
-                onOpenDetail(item.pageID)
-            } label: {
-                HStack(spacing: 8) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(item.title)
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.74)
-
-                        Text(item.subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.76)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .layoutPriority(1)
-
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(12)
-        .frame(width: HomeLayout.compactPhraseRowWidth, height: HomeLayout.compactPhraseRowHeight)
-        .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-        .accessibilityIdentifier("HomeCompact.\(item.pageID)")
-    }
-}
-
-private struct HomePhraseCard: View {
-    let item: HomePhraseItem
-    let onOpenDetail: (String) -> Void
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Button {
-                onOpenDetail(item.pageID)
-            } label: {
-                VStack(alignment: .leading, spacing: 10) {
-                    Color.clear
-                    .frame(height: 52)
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.78)
-                            .fixedSize(horizontal: false, vertical: true)
-
-                        Text(item.subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .layoutPriority(1)
-
-                    HStack {
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(.tertiary)
-                    }
-                }
-                .padding(14)
-                .frame(width: HomeLayout.tallPhraseCardWidth, height: HomeLayout.tallPhraseCardHeight, alignment: .topLeading)
-                .phraseListCard(cornerRadius: HomeLayout.cardCornerRadius)
-                .shadow(color: .black.opacity(0.06), radius: 16, x: 0, y: 10)
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("HomePhrase.\(item.pageID)")
-
-            AudioSpeakerButton(
-                tint: item.tintName,
-                size: 50,
-                audioKey: item.audioKey,
-                accessibilityIdentifier: "HomePhrase.Audio.\(item.pageID)"
-            )
-            .padding(14)
-        }
     }
 }
 
@@ -5843,10 +6124,6 @@ private struct HomeSituationGroupRow: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
-
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
             }
             .padding(14)
             .frame(
@@ -5906,13 +6183,13 @@ private struct HomeRelationshipRow: View {
                 Button {
                     onOpenDetail(detailPageID)
                 } label: {
-                    rowContent(showsChevron: true)
+                    rowContent
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .frame(maxWidth: .infinity)
             } else {
-                rowContent(showsChevron: false)
+                rowContent
             }
 
             AudioSpeakerButton(
@@ -5925,7 +6202,7 @@ private struct HomeRelationshipRow: View {
         .padding(.horizontal, 14)
     }
 
-    private func rowContent(showsChevron: Bool) -> some View {
+    private var rowContent: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(phrase.vietnamese)
@@ -5942,12 +6219,6 @@ private struct HomeRelationshipRow: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-
-            if showsChevron {
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.tertiary)
-            }
         }
     }
 }

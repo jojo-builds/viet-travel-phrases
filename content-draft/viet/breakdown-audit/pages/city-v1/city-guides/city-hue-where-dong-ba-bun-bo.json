@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-city-hue-where-dong-ba-bun-bo",
+  "phraseText": "Bún bò ở chợ Đông Ba ở chỗ nào?",
+  "englishTitle": "Where is bun bo at Dong Ba Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-where-dong-ba-bun-bo",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bún bò ở chợ Đông Ba",
+      "english": "Bun bo at Dong Ba Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "chỗ",
+      "english": "place / spot"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nào?",
+      "english": "which / any"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bún bò ở chợ Đông Ba ở chỗ nào?",
+      "english": "Where is bun bo at Dong Ba Market?",
+      "audioKey": "audio-authored-bun-bo-o-cho-dong-ba-o-cho-nao-28554209a3"
+    }
+  ]
+}

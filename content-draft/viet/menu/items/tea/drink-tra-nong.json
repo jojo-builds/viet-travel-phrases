@@ -1,0 +1,58 @@
+{
+  "itemID": "drink-tra-nong",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Trà nóng",
+  "englishTranslation": "Hot tea",
+  "romanizedNoTones": "Tra nong",
+  "soundOut": "chah nawng",
+  "notes": "",
+  "atAGlance": "Trà nóng is hot tea, simple and hospitable, the kind of small cup that anchors meals, homes, and shop counters across Vietnam.",
+  "whatItIs": "Trà nóng is plain hot tea served in a small cup or pot. Expect hot tea with a gentle tannic edge, clean aroma, and little or no sweetness.",
+  "usuallyIncludes": [
+    "tea"
+  ],
+  "howToEnjoy": "Drink it slowly with food or after coffee if you want something cleansing.",
+  "howLocalsOrder": "Trà nóng is ordered when you want a warm, plain cup rather than a sweet iced drink. Ask for honey or sugar separately if you want to keep the tea clean.",
+  "worthKnowing": "In Vietnam, trà nóng is a quiet part of Vietnamese hospitality, especially in homes, restaurants, and older-style shops.",
+  "goodToKnow": "Ask before adding sugar; plain hot tea is often served without it.",
+  "commonOptions": [
+    "less sweet",
+    "honey",
+    "hot",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà nóng.",
+    "english": "I’d like one glass of hot tea.",
+    "pronunciation": "chaw toy moht lee chah nawng",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà nóng was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

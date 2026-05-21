@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+  "phraseText": "Tôi không có hộ chiếu",
+  "englishTitle": "I do not have my passport",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.300Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không có hộ chiếu",
+      "english": "I do not have my passport",
+      "audioKey": "v500-emer-safe-i-do-not-have-my-passport"
+    }
+  ]
+}

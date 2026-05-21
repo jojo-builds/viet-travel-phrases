@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-where-is-the-elevator",
+  "phraseText": "Thang máy ở đâu?",
+  "englishTitle": "Where is the elevator?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-where-is-the-elevator",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thang máy",
+      "english": "elevator",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thang máy ở đâu?",
+      "english": "Where is the elevator?",
+      "audioKey": "v500-dire-navi-where-is-the-elevator"
+    }
+  ]
+}

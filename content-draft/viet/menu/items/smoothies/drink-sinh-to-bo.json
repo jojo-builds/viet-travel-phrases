@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-bo",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Sinh tố bơ",
+  "englishTranslation": "Avocado smoothie",
+  "romanizedNoTones": "Sinh to bo",
+  "soundOut": "sing toh buh",
+  "notes": "",
+  "atAGlance": "Sinh tố bơ is Vietnam’s famous avocado smoothie, thick and creamy with condensed milk turning a savory fruit into dessert.",
+  "whatItIs": "Sinh tố bơ is ripe avocado blended with ice, milk, or condensed milk. Expect avocado smoothie that is thick, buttery, creamy, and often sweetened with condensed milk.",
+  "usuallyIncludes": [
+    "avocado",
+    "condensed milk",
+    "ice",
+    "milk optional"
+  ],
+  "howToEnjoy": "Drink it with a straw or spoon; ask for less sugar if you want the avocado flavor more savory and mellow.",
+  "howLocalsOrder": "Sinh tố bơ is meant to be thick and buttery, not a thin health shake. Ask less condensed milk or less sugar before blending if you want the avocado flavor more mellow.",
+  "worthKnowing": "In Vietnam, Sinh tố bơ is one of the most distinctive Vietnamese smoothie experiences for visitors who expect avocado to be salty.",
+  "goodToKnow": "Rich and filling enough to count as a snack.",
+  "commonOptions": [
+    "less sweet",
+    "less condensed milk",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Usually contains dairy or condensed milk.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố bơ.",
+    "english": "I’d like one glass of avocado smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh buh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố bơ was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

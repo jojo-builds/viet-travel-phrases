@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-v900-tran-i-think-the-fare-is-wrong",
+  "phraseText": "Tôi nghĩ giá vé sai",
+  "englishTitle": "I think the fare is wrong",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.351Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-tran-i-think-the-fare-is-wrong",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "nghĩ",
+      "english": "think"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giá",
+      "english": "price"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "vé",
+      "english": "ticket"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sai",
+      "english": "wrong"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi nghĩ giá vé sai",
+      "english": "I think the fare is wrong",
+      "audioKey": "v900-tran-i-think-the-fare-is-wrong"
+    }
+  ]
+}

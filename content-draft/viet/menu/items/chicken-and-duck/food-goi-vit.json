@@ -1,0 +1,65 @@
+{
+  "itemID": "food-goi-vit",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi vịt",
+  "englishTranslation": "Duck salad",
+  "romanizedNoTones": "Goi vit",
+  "soundOut": "goy veet",
+  "notes": "",
+  "atAGlance": "Gỏi vịt is duck salad, usually with cabbage, herbs, ginger fish sauce, peanuts, and sliced duck.",
+  "whatItIs": "Gỏi vịt is duck salad with shredded or sliced duck, cabbage or banana blossom, rau răm, onion, peanuts, and ginger fish-sauce dressing.",
+  "usuallyIncludes": [
+    "duck",
+    "cabbage or banana blossom",
+    "rau răm",
+    "ginger fish-sauce dressing",
+    "peanuts optional"
+  ],
+  "howToEnjoy": "Toss lightly so the duck catches the ginger dressing without losing the crunch of the greens. Ask for peanuts out before the salad is mixed if needed.",
+  "howLocalsOrder": "Order gỏi vịt as a shared salad, often alongside cháo vịt. Ask for less spice, no peanuts, or extra ginger fish sauce before it is tossed.",
+  "worthKnowing": "In Vietnam, duck salad often travels with duck porridge: rich meat, crunchy greens, rau răm, and ginger dip balancing one another.",
+  "goodToKnow": "Rau răm gives the salad its peppery herbal lift; it is part of the duck flavor, not decoration.",
+  "commonOptions": [
+    "less spicy",
+    "no peanuts",
+    "extra herbs",
+    "share size"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi vịt.",
+    "english": "I’d like one order of duck salad.",
+    "pronunciation": "chaw toy moht fuhn goy veet",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Gỏi vịt was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

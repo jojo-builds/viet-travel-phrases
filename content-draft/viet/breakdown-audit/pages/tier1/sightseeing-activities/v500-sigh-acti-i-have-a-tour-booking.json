@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+  "phraseText": "Tôi có đặt tour",
+  "englishTitle": "I have a tour booking",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.288Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-v500-sigh-acti-i-have-a-tour-booking",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt tour",
+      "english": "book a tour",
+      "keepTogetherReason": "compound booking action"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có đặt tour",
+      "english": "I have a tour booking",
+      "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
+    }
+  ]
+}

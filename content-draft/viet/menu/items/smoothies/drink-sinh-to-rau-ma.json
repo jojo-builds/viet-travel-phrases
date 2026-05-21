@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-rau-ma",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố rau má",
+  "englishTranslation": "Pennywort smoothie",
+  "romanizedNoTones": "Sinh to rau ma",
+  "soundOut": "sing toh row mah",
+  "notes": "",
+  "atAGlance": "Sinh tố rau má blends pennywort into a thicker green drink, cooling and grassy but softer than straight rau má juice.",
+  "whatItIs": "Sinh tố rau má is rau má blended into a cold drink, sometimes creamy. Expect pennywort smoothie that is green, herbal, grassy, and often softened with milk or mung bean.",
+  "usuallyIncludes": [
+    "pennywort",
+    "water or ice",
+    "sugar optional",
+    "mung bean optional"
+  ],
+  "howToEnjoy": "Order it when you want something earthy and cooling instead of fruity.",
+  "howLocalsOrder": "Sinh tố rau má is earthy and green, especially if mung bean is added. Ask less sweet and no milk if you want the pennywort flavor clean instead of dessert-like.",
+  "worthKnowing": "In Vietnam, Sinh tố rau má shows Vietnam’s herbal refreshment lane, where leafy drinks can be as common as fruit drinks.",
+  "goodToKnow": "The grassy flavor can surprise first-timers.",
+  "commonOptions": [
+    "less sweet",
+    "no milk",
+    "with mung bean",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố rau má.",
+    "english": "I’d like one glass of pennywort smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh row mah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố rau má was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

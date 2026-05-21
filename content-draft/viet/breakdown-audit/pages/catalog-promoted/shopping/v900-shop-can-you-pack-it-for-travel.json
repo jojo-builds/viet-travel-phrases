@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-shop-can-you-pack-it-for-travel",
+  "phraseText": "Bạn có thể đóng gói nó để đi du lịch?",
+  "englishTitle": "Can you pack it for travel?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.339Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-shop-can-you-pack-it-for-travel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "vietnamese": "đóng gói",
+      "english": "pack / package",
+      "keepTogetherReason": "compound packing verb"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "để",
+      "english": "to / in order to"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "du lịch?",
+      "english": "tourism / travel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể đóng gói nó để đi du lịch?",
+      "english": "Can you pack it for travel?",
+      "audioKey": "v900-shop-can-you-pack-it-for-travel"
+    }
+  ]
+}

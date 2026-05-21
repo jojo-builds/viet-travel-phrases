@@ -1,0 +1,60 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-can-i-book-online",
+  "phraseText": "Tôi có thể đặt chỗ trực tuyến không?",
+  "englishTitle": "Can I book online?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.344Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-can-i-book-online",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đặt chỗ",
+      "english": "make a reservation",
+      "keepTogetherReason": "compound booking action"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trực",
+      "english": "online / direct"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "tuyến",
+      "english": "line / route"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi có thể đặt chỗ trực tuyến không?",
+      "english": "Can I book online?",
+      "audioKey": "v500-time-date-book-can-i-book-online"
+    }
+  ]
+}

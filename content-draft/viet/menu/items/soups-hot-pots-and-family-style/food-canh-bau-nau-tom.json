@@ -1,0 +1,64 @@
+{
+  "itemID": "food-canh-bau-nau-tom",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Canh bầu nấu tôm",
+  "englishTranslation": "Gourd soup with shrimp",
+  "romanizedNoTones": "Canh bau nau tom",
+  "soundOut": "kan bow now tom",
+  "notes": "",
+  "atAGlance": "Canh bầu nấu tôm is gourd soup with shrimp, usually with clear broth, soft bầu, shrimp sweetness, and scallion.",
+  "whatItIs": "Canh bầu nấu tôm is bottle-gourd soup with shrimp, a clear broth, scallions, and gentle sweetness from the soft bầu.",
+  "usuallyIncludes": [
+    "bottle gourd",
+    "shrimp",
+    "clear broth",
+    "scallions",
+    "rice on the side"
+  ],
+  "howToEnjoy": "Eat with rice when you want something light and cooling. The shrimp adds sweetness, while the bầu stays soft and mild.",
+  "howLocalsOrder": "Order canh bầu nấu tôm as a shared soup. Ask about shrimp if allergies matter or request it with rice for a gentle meal.",
+  "worthKnowing": "Bầu is bottle gourd, a cooling vegetable that shows up often in Vietnamese home cooking.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "with rice",
+    "ask about shrimp",
+    "share size",
+    "extra vegetables"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô canh bầu nấu tôm.",
+    "english": "I’d like one bowl of gourd soup with shrimp.",
+    "pronunciation": "chaw toy moht toh kan bow now tom",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Canh bầu nấu tôm was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

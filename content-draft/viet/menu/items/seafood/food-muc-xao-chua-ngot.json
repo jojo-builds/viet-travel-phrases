@@ -1,0 +1,63 @@
+{
+  "itemID": "food-muc-xao-chua-ngot",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mực xào chua ngọt",
+  "englishTranslation": "Squid stir-fried with sweet-and-sour sauce",
+  "romanizedNoTones": "Muc xao chua ngot",
+  "soundOut": "mook sow choo-ah ngawt",
+  "notes": "",
+  "atAGlance": "Mực xào chua ngọt is sweet-and-sour squid, usually with pineapple or tomato, onion, cucumber, and rice.",
+  "whatItIs": "Mực xào chua ngọt is squid stir-fried in a sweet-sour fish-sauce glaze with pineapple or tomato, onion, and cucumber. At seafood shops, this is the bright wok option: tender squid, quick heat, and tangy fruit acidity rather than a heavy gravy.",
+  "usuallyIncludes": [
+    "squid",
+    "sweet-sour glaze",
+    "pineapple or tomato",
+    "onion and bell pepper",
+    "plain rice"
+  ],
+  "howToEnjoy": "Share Mực xào chua ngọt if you can, and use lime, salt, chili, ginger, or herbs lightly so the seafood still tastes fresh.",
+  "howLocalsOrder": "Mực xào chua ngọt is squid stir-fried sweet-sour, usually with vegetables. Ask for less chili before the wok starts, and eat quickly so the squid stays tender.",
+  "worthKnowing": "Mực xào chua ngọt fits Vietnam's coastal and ốc-shop dining culture, where seafood is ordered by cooking style and shared slowly with lime, salt, chili, or herbs.",
+  "goodToKnow": "Chua ngọt means sour-sweet. The squid should stay springy while pineapple, tomato, or vinegar brightness keeps the glaze from tasting heavy.",
+  "commonOptions": [
+    "less sweet",
+    "less spicy",
+    "extra vegetables",
+    "rice on the side"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần mực xào chua ngọt.",
+    "english": "I’d like one order of squid stir-fried with sweet-and-sour sauce.",
+    "pronunciation": "chaw toy moht fuhn mook sow choo-ah ngawt",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-specificity-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed"
+    ],
+    "reviewNote": "Mực xào chua ngọt was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Line-edited malformed or vague sauce wording before final review gate."
+  }
+}

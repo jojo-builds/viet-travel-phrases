@@ -1,0 +1,64 @@
+{
+  "itemID": "food-be-thui",
+  "menuType": "Food",
+  "category": "Beef & goat",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bê thui",
+  "englishTranslation": "Roasted young veal",
+  "romanizedNoTones": "Be thui",
+  "soundOut": "bay too-ee",
+  "notes": "",
+  "atAGlance": "Bê thui is tender young veal, often linked with Quảng Nam/Cầu Mống style, served with herbs, rice paper, and pungent mắm nêm fermented anchovy dip.",
+  "whatItIs": "Bê thui is lightly roasted young veal served for wrapping with rice paper, herbs, green banana, star fruit, and mắm nêm. The fermented anchovy dip is strong, salty, and central.",
+  "usuallyIncludes": [
+    "veal",
+    "rice paper",
+    "fresh herbs",
+    "green banana or star fruit",
+    "mắm nêm"
+  ],
+  "howToEnjoy": "Wrap veal with herbs and rice paper, then dip lightly in mắm nêm. Start carefully; fermented anchovy dip is powerful and salty.",
+  "howLocalsOrder": "Order bê thui as a shared wrap-and-dip plate. Ask for extra rice paper, extra herbs, or fish-sauce dip if mắm nêm feels too strong.",
+  "worthKnowing": "Bê thui is strongly associated with Quảng Nam and Cầu Mống-style veal, a central Vietnamese specialty travelers may see near Đà Nẵng and Hội An.",
+  "goodToKnow": "Mắm nêm is fermented anchovy dip, not tamarind. It can be funky, salty, and intense.",
+  "commonOptions": [
+    "extra rice paper",
+    "extra herbs",
+    "fish-sauce dip instead of mắm nêm",
+    "share plate"
+  ],
+  "regionalAssociation": "Quảng Nam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains veal and often fermented anchovy sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bê thui.",
+    "english": "I’d like one order of roasted young veal.",
+    "pronunciation": "chaw toy moht fuhn bay too-ee",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce and dip terms are named or explained",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bê thui was reviewed as a beef & goat item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

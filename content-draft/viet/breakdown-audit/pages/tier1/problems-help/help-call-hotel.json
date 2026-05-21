@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-family-help-call-hotel",
+  "phraseText": "Gọi khách sạn giúp tôi",
+  "englishTitle": "Please call the hotel for me",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.283Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-help-call-hotel",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Gọi",
+      "english": "call"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Gọi khách sạn giúp tôi",
+      "english": "Please call the hotel for me",
+      "audioKey": "help-2"
+    }
+  ]
+}

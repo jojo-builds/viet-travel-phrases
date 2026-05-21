@@ -1,0 +1,71 @@
+{
+  "pageID": "viet-phrase-v500-prob-help-please-help-me-contact-my-embassy",
+  "phraseText": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi",
+  "englishTitle": "Please help me contact my embassy",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-prob-help-please-help-me-contact-my-embassy",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin",
+      "english": "please / request"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "hãy",
+      "english": "please do"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "giúp",
+      "english": "help"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "liên hệ",
+      "english": "contact",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "với",
+      "english": "with / to"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "đại sứ quán",
+      "english": "embassy",
+      "keepTogetherReason": "compound place term"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "của tôi",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi",
+      "english": "Please help me contact my embassy",
+      "audioKey": "v500-prob-help-please-help-me-contact-my-embassy"
+    }
+  ]
+}

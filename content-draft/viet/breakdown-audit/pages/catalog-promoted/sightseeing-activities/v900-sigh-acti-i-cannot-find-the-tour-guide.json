@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-i-cannot-find-the-tour-guide",
+  "phraseText": "Tôi không thể tìm thấy hướng dẫn viên du lịch",
+  "englishTitle": "I cannot find the tour guide",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.341Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-i-cannot-find-the-tour-guide",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "thể",
+      "english": "can / able to"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tìm thấy",
+      "english": "find",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "vietnamese": "hướng dẫn",
+      "english": "instructions / guide",
+      "keepTogetherReason": "compound instruction term"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "viên",
+      "english": "staff / viên"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "du lịch",
+      "english": "tourism / travel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi không thể tìm thấy hướng dẫn viên du lịch",
+      "english": "I cannot find the tour guide",
+      "audioKey": "v900-sigh-acti-i-cannot-find-the-tour-guide"
+    }
+  ]
+}

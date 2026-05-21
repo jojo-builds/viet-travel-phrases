@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-money-find-atm",
+  "phraseText": "ATM gần nhất ở đâu?",
+  "englishTitle": "Where is the nearest ATM?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.280Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-money-find-atm",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "ATM",
+      "english": "an ATM"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "gần nhất",
+      "english": "nearest",
+      "keepTogetherReason": "fixed place phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "ATM gần nhất ở đâu?",
+      "english": "Where is the nearest ATM?",
+      "audioKey": "airport-4"
+    }
+  ]
+}

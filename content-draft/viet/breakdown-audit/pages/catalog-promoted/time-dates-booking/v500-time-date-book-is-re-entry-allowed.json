@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-phrase-v500-time-date-book-is-re-entry-allowed",
+  "phraseText": "Có được phép nhập cảnh lại không?",
+  "englishTitle": "Is re-entry allowed?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.345Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-time-date-book-is-re-entry-allowed",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "được phép",
+      "english": "allowed / permitted",
+      "keepTogetherReason": "fixed permission phrase"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhập cảnh lại",
+      "english": "re-enter the country",
+      "keepTogetherReason": "fixed immigration phrase"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có được phép nhập cảnh lại không?",
+      "english": "Is re-entry allowed?",
+      "audioKey": "v500-time-date-book-is-re-entry-allowed"
+    }
+  ]
+}

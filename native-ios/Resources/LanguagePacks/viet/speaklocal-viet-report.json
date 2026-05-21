@@ -4,21 +4,21 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:0f63207a3675e0d6",
-    "generatedAt": "source-hash:0f63207a3675e0d6"
+    "contentVersion": "viet-sqlite-fixture:19b2c7ab86a321f7",
+    "generatedAt": "source-hash:19b2c7ab86a321f7"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "9ac05dacb9679fc9130afff32cc1af553dfedea17e2ce5126a777c2f64919d41"
+      "sha256": "be6f5b5fe29117f87a154c46d9ebf79bc80c50b4dda3ab244da8b1115c4c2678"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "206931c3340a1fb1ebc5572d5d30b8f9c2badba93b166c4bf4f58d4de8e3db13"
+      "sha256": "9482efb0d4ffb24462c73bde55261a5c46ea5bca98005dbd9c1b6b52c7d5572a"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
-      "sha256": "688345116ade2b39783c0e230b7e6aeb98663d36cb0120a101ee290c1a97dede"
+      "sha256": "6c46541e61b45c84d6a813b950d2547a34c0fa9ea41cecb3d6d47135051edc71"
     },
     "xcodeProject": {
       "path": "native-ios/project.yml",
@@ -30,14 +30,14 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "a51563a60be749a2b72172dc98522d40ff5af389426b03ba509da55ea68a2077"
+      "sha256": "7f6d78dd21789499f9396f92745c8b55b8c2db3724d4c345c8becc26496b3c59"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "44dd0af32af1d2b4b1bcce56fd6ebd3324c8a655dad37c84be76b7ddefdd703a",
+    "databaseSha256": "6be6dad23171684df227731f9b974a14579b6365b56797d9c4bd225934eaf1db",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -54,51 +54,51 @@
       "ok": true
     },
     "clusters": {
-      "expected": 3059,
-      "actual": 3059,
+      "expected": 1747,
+      "actual": 1747,
       "ok": true
     },
     "phrases": {
-      "expected": 3078,
-      "actual": 3078,
+      "expected": 1765,
+      "actual": 1765,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 3070,
-      "actual": 3070,
+      "expected": 1758,
+      "actual": 1758,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 3070,
-      "actual": 3070,
+      "expected": 1758,
+      "actual": 1758,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 19,
-    "clusters": 3059,
-    "clusterMembers": 3078,
-    "phrases": 3078,
-    "pages": 3070,
-    "aliases": 3962,
-    "pageCategories": 19015,
-    "pagePracticeSeeds": 3070,
-    "pagePracticeSteps": 4899,
-    "sections": 11333,
-    "sectionItems": 32067,
-    "breakdownTokens": 11414,
-    "relations": 20413,
-    "searchDocuments": 3078,
-    "audioAssets": 3910,
-    "audioUsages": 12484,
-    "audioTextDedupeRows": 2496,
-    "missingAudioAuditRows": 1978
+    "clusters": 1747,
+    "clusterMembers": 1765,
+    "phrases": 1765,
+    "pages": 1758,
+    "aliases": 2638,
+    "pageCategories": 8791,
+    "pagePracticeSeeds": 1758,
+    "pagePracticeSteps": 2608,
+    "sections": 7040,
+    "sectionItems": 15810,
+    "breakdownTokens": 6900,
+    "relations": 8317,
+    "searchDocuments": 1765,
+    "audioAssets": 4318,
+    "audioUsages": 13756,
+    "audioTextDedupeRows": 2919,
+    "missingAudioAuditRows": 680
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 3078,
+    "ftsRowCount": 1765,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
     "relationshipWordsEligiblePageCount": 20,
@@ -157,10 +157,10 @@
     "duplicateBreakdownGlossSample": [],
     "bannedUserFacingMatchCount": 0,
     "bannedUserFacingMatches": [],
-    "cityLibraryPageCount": 750,
+    "cityLibraryPageCount": 806,
     "cityCount": 5,
-    "cityPlaceCount": 150,
-    "cityTagCount": 750
+    "cityPlaceCount": 500,
+    "cityTagCount": 806
   },
   "unresolvedReferences": {
     "detailPageIDCount": 0,
@@ -171,10 +171,10 @@
     "authoredPhraseItemsNotInCatalog": []
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 3070,
-    "sourcePhraseRowCount": 3078,
-    "phrasesResolvedToCanonicalPages": 3078,
-    "duplicateNormalizedTargetTextGroupCount": 6,
+    "canonicalPageCount": 1758,
+    "sourcePhraseRowCount": 1765,
+    "phrasesResolvedToCanonicalPages": 1765,
+    "duplicateNormalizedTargetTextGroupCount": 5,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
         "normalizedTargetText": "đặt chỗ dưới tên này",
@@ -229,18 +229,6 @@
         ]
       },
       {
-        "normalizedTargetText": "tôi gặp tài xế ở đâu?",
-        "canonicalPhraseID": "airport-pickup-clearer",
-        "canonicalPageID": "viet-phrase-airport-pickup-clearer",
-        "phraseIDs": [
-          "airport-pickup-clearer",
-          "v500-airp-bord-arri-where-do-i-meet-the-driver"
-        ],
-        "aliasedPhraseIDs": [
-          "v500-airp-bord-arri-where-do-i-meet-the-driver"
-        ]
-      },
-      {
         "normalizedTargetText": "xin lỗi",
         "canonicalPhraseID": "polite-5",
         "canonicalPageID": "viet-phrase-polite-5",
@@ -254,28 +242,2698 @@
       }
     ],
     "unresolvedDuplicateNormalizedTargetTextGroups": [],
-    "aliasConflictCount": 2,
+    "aliasConflictCount": 447,
     "aliasConflicts": [
       {
-        "aliasID": "viet-family-airport-pickup",
-        "firstCanonicalPageID": "viet-phrase-airport-5",
-        "nextCanonicalPageID": "viet-phrase-airport-pickup-clearer",
+        "aliasID": "viet-family-food-peanut-allergy",
+        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
+        "nextCanonicalPageID": "viet-phrase-food-15",
         "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
       },
       {
-        "aliasID": "viet-family-airport-pickup",
-        "firstCanonicalPageID": "viet-phrase-airport-5",
-        "nextCanonicalPageID": "viet-phrase-airport-pickup-clearer",
+        "aliasID": "viet-family-food-peanut-allergy",
+        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
+        "nextCanonicalPageID": "viet-phrase-food-15",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-food-peanut-allergy",
+        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
+        "nextCanonicalPageID": "viet-phrase-food-15",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-food-peanut-allergy",
+        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
+        "nextCanonicalPageID": "viet-phrase-food-15",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-phrase-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-repair-show-me",
+        "firstCanonicalPageID": "viet-phrase-repair-show-me",
+        "nextCanonicalPageID": "viet-phrase-repair-5",
+        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
+      },
+      {
+        "aliasID": "viet-family-transport-stop-here",
+        "firstCanonicalPageID": "viet-phrase-taxi-3",
+        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
         "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
       }
     ]
   },
   "graph": {
-    "relationCount": 20413,
+    "relationCount": 8317,
     "relationTypes": [
       {
         "relationType": "also_common_with",
-        "count": 11
+        "count": 10
       },
       {
         "relationType": "clearer_than",
@@ -287,313 +2945,313 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 12438
+        "count": 4397
       },
       {
         "relationType": "same_need_alt_context",
-        "count": 19
+        "count": 18
       },
       {
         "relationType": "see_also",
-        "count": 7937
+        "count": 3884
       }
     ]
   },
   "audio": {
-    "manifestEntries": 3910,
-    "uniqueNormalizedSpokenTextCount": 2496,
-    "assets": 3910,
-    "usages": 12484,
-    "missingAudioAuditRows": 1978,
-    "plannedMissingAudioAuditRows": 1978,
+    "manifestEntries": 4318,
+    "uniqueNormalizedSpokenTextCount": 2919,
+    "assets": 4318,
+    "usages": 13756,
+    "missingAudioAuditRows": 680,
+    "plannedMissingAudioAuditRows": 680,
     "releaseBlockingMissingAudioAuditRows": 0,
     "plannedMissingAudioQueue": "docs/audio-queues/viet-planned-missing-audio.csv",
-    "plannedMissingAudioQueueRows": 1978,
+    "plannedMissingAudioQueueRows": 680,
     "missingAudioAuditSample": [
       {
-        "id": "missing-audio:planned:79b1ad1e1fb5094a",
+        "id": "missing-audio:planned:a80b9b12c97ab056",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-nha-ve-sinh-gan-day-khong",
-        "expected_text": "nhà vệ sinh gần đây không?",
-        "normalized_expected_text": "nhà vệ sinh gần đây không?",
+        "target_id": "city-danang-atm-airport",
+        "expected_text": "Có ATM gần Sân bay Đà Nẵng không?",
+        "normalized_expected_text": "có atm gần sân bay đà nẵng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:3aae99ae735fb4e2",
+        "id": "missing-audio:planned:e99af4e6ed3415e9",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-nha-ve-sinh",
-        "expected_text": "Cho tôi đến nhà vệ sinh",
-        "normalized_expected_text": "cho tôi đến nhà vệ sinh",
+        "target_id": "city-danang-atm-bach-dang-street",
+        "expected_text": "Có ATM gần Đường Bạch Đằng không?",
+        "normalized_expected_text": "có atm gần đường bạch đằng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:c2a64011dfc1a6f1",
+        "id": "missing-audio:planned:764b6155e5c22492",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-stop-at-place-dung-o-nha-ve-sinh",
-        "expected_text": "Dừng ở nhà vệ sinh",
-        "normalized_expected_text": "dừng ở nhà vệ sinh",
+        "target_id": "city-danang-atm-con-market",
+        "expected_text": "Có ATM gần Chợ Cồn không?",
+        "normalized_expected_text": "có atm gần chợ cồn không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:d8f114f7f2804631",
+        "id": "missing-audio:planned:6d67f52835b5221a",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-where-place-quay-le-tan-o-dau",
-        "expected_text": "quầy lễ tân ở đâu?",
-        "normalized_expected_text": "quầy lễ tân ở đâu?",
+        "target_id": "city-danang-atm-han-market",
+        "expected_text": "Có ATM gần Chợ Hàn không?",
+        "normalized_expected_text": "có atm gần chợ hàn không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:30f0e3a44af6071e",
+        "id": "missing-audio:planned:f8876c196e5ef6ba",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-quay-le-tan-gan-day-khong",
-        "expected_text": "quầy lễ tân gần đây không?",
-        "normalized_expected_text": "quầy lễ tân gần đây không?",
+        "target_id": "city-danang-atm-helio-night-market",
+        "expected_text": "Có ATM gần Chợ đêm Helio không?",
+        "normalized_expected_text": "có atm gần chợ đêm helio không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:f111a1344c310939",
+        "id": "missing-audio:planned:a1feb27d5406fe82",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-quay-le-tan",
-        "expected_text": "Cho tôi đến quầy lễ tân",
-        "normalized_expected_text": "cho tôi đến quầy lễ tân",
+        "target_id": "city-danang-bach-dang-route",
+        "expected_text": "Đi đường Bạch Đằng",
+        "normalized_expected_text": "đi đường bạch đằng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:3df301c73e6ecb77",
+        "id": "missing-audio:planned:403773227918538e",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-stop-at-place-dung-o-quay-le-tan",
-        "expected_text": "Dừng ở quầy lễ tân",
-        "normalized_expected_text": "dừng ở quầy lễ tân",
+        "target_id": "city-danang-eat-near-bach-dang-street",
+        "expected_text": "Ăn gần Đường Bạch Đằng",
+        "normalized_expected_text": "ăn gần đường bạch đằng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:ab104cb99fc5d5df",
+        "id": "missing-audio:planned:c53f053b84a3f347",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-nha-thuoc-gan-day-khong",
-        "expected_text": "nhà thuốc gần đây không?",
-        "normalized_expected_text": "nhà thuốc gần đây không?",
+        "target_id": "city-danang-eat-near-con-market",
+        "expected_text": "Ăn gần Chợ Cồn",
+        "normalized_expected_text": "ăn gần chợ cồn",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:3f21af927bd52cd2",
+        "id": "missing-audio:planned:818232de24b38677",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-nha-thuoc",
-        "expected_text": "Cho tôi đến nhà thuốc",
-        "normalized_expected_text": "cho tôi đến nhà thuốc",
+        "target_id": "city-danang-eat-near-han-market",
+        "expected_text": "Ăn gần Chợ Hàn",
+        "normalized_expected_text": "ăn gần chợ hàn",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:5ee6f060b8ea3e87",
+        "id": "missing-audio:planned:cbdd59522fc81b64",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-stop-at-place-dung-o-nha-thuoc",
-        "expected_text": "Dừng ở nhà thuốc",
-        "normalized_expected_text": "dừng ở nhà thuốc",
+        "target_id": "city-danang-go-airport",
+        "expected_text": "Đi Sân bay Đà Nẵng",
+        "normalized_expected_text": "đi sân bay đà nẵng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:a6f49540395b2c42",
+        "id": "missing-audio:planned:e6570e4fdfc03b4c",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-atm-gan-day-khong",
-        "expected_text": "ATM gần đây không?",
-        "normalized_expected_text": "atm gần đây không?",
+        "target_id": "city-danang-go-con-market",
+        "expected_text": "Đi Chợ Cồn",
+        "normalized_expected_text": "đi chợ cồn",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:6e4db03538cf1a6d",
+        "id": "missing-audio:planned:9092d3a9a7f5ef69",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-atm",
-        "expected_text": "Cho tôi đến ATM",
-        "normalized_expected_text": "cho tôi đến atm",
+        "target_id": "city-danang-go-han-market",
+        "expected_text": "Đi Chợ Hàn",
+        "normalized_expected_text": "đi chợ hàn",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:10a753b68bd5ed32",
+        "id": "missing-audio:planned:5c43895521dadcd2",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-stop-at-place-dung-o-atm",
-        "expected_text": "Dừng ở ATM",
-        "normalized_expected_text": "dừng ở atm",
+        "target_id": "city-danang-go-helio-night-market",
+        "expected_text": "Đi Chợ đêm Helio",
+        "normalized_expected_text": "đi chợ đêm helio",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:c02fff9952bc471e",
+        "id": "missing-audio:planned:4a0e5d7c25084e30",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-where-place-ben-xe-o-dau",
-        "expected_text": "bến xe ở đâu?",
-        "normalized_expected_text": "bến xe ở đâu?",
+        "target_id": "city-danang-go-nen",
+        "expected_text": "Cho tôi đến nhà hàng Nén Đà Nẵng.",
+        "normalized_expected_text": "cho tôi đến nhà hàng nén đà nẵng.",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:69eb335f4c1ce8c8",
+        "id": "missing-audio:planned:3ace51e6cb6ffe22",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-ben-xe-gan-day-khong",
-        "expected_text": "bến xe gần đây không?",
-        "normalized_expected_text": "bến xe gần đây không?",
+        "target_id": "city-danang-go-nguyen-van-linh-street",
+        "expected_text": "Đi Đường Nguyễn Văn Linh",
+        "normalized_expected_text": "đi đường nguyễn văn linh",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:e5eff84d214c67c0",
+        "id": "missing-audio:planned:227ff23e02e88d38",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-ben-xe",
-        "expected_text": "Cho tôi đến bến xe",
-        "normalized_expected_text": "cho tôi đến bến xe",
+        "target_id": "city-danang-go-railway-station",
+        "expected_text": "Đi Ga Đà Nẵng",
+        "normalized_expected_text": "đi ga đà nẵng",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:ef1683f0b60ba20b",
+        "id": "missing-audio:planned:9b68d931ca7603da",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-stop-at-place-dung-o-ben-xe",
-        "expected_text": "Dừng ở bến xe",
-        "normalized_expected_text": "dừng ở bến xe",
+        "target_id": "city-danang-go-son-tra-night-market",
+        "expected_text": "Đi Chợ đêm Sơn Trà",
+        "normalized_expected_text": "đi chợ đêm sơn trà",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:6e919fd4a0a341ae",
+        "id": "missing-audio:planned:32704d7e2d6643fc",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-where-place-ben-tau-o-dau",
-        "expected_text": "bến tàu ở đâu?",
-        "normalized_expected_text": "bến tàu ở đâu?",
+        "target_id": "city-danang-go-tien-sa-port",
+        "expected_text": "Đi Cảng Tiên Sa",
+        "normalized_expected_text": "đi cảng tiên sa",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:bfe63f9acde82b1a",
+        "id": "missing-audio:planned:6c6278be26fbcec4",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-near-place-ben-tau-gan-day-khong",
-        "expected_text": "bến tàu gần đây không?",
-        "normalized_expected_text": "bến tàu gần đây không?",
+        "target_id": "city-danang-go-vo-nguyen-giap-street",
+        "expected_text": "Đi Đường Võ Nguyên Giáp",
+        "normalized_expected_text": "đi đường võ nguyên giáp",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       },
       {
-        "id": "missing-audio:planned:bae6f0b121d619ac",
+        "id": "missing-audio:planned:73af4abe3b4d4425",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "vpe-take-me-place-cho-toi-den-ben-tau",
-        "expected_text": "Cho tôi đến bến tàu",
-        "normalized_expected_text": "cho tôi đến bến tàu",
+        "target_id": "city-danang-near-bach-dang-street",
+        "expected_text": "Đường Bạch Đằng gần đây không?",
+        "normalized_expected_text": "đường bạch đằng gần đây không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:0f63207a3675e0d6"
+        "created_at": "source-hash:19b2c7ab86a321f7"
       }
     ]
   },
   "categoryData": {
-    "authoredCategoryCount": 901,
+    "authoredCategoryCount": 862,
     "authoredCategoryIDs": [
       "actual-landmarks",
       "address-confirm",
@@ -607,26 +3265,28 @@
       "bathroom-shower",
       "beginner",
       "city-guides",
+      "city-page-kind-dessert",
       "city-page-kind-dish",
+      "city-page-kind-drink",
       "city-page-kind-phrase",
       "city-page-kind-place",
       "city-page-kind-restaurant",
       "city-phrases",
       "confirm-location",
       "content-role-cafe",
-      "content-role-dish-anchor",
+      "content-role-dessert",
+      "content-role-dish",
+      "content-role-drink",
       "content-role-everyday",
       "content-role-fine-dining",
       "content-role-iconic",
       "danang",
       "derived-place-phrases",
       "difficulty-beginner",
-      "difficulty-intermediate",
       "directions-navigation",
       "directions-pickup-point",
       "directions-which-exit",
       "dish-order-diet",
-      "dragon-bridge",
       "driver-ready",
       "driver-ready-phrase",
       "driver-wait",
@@ -683,11 +3343,11 @@
       "ingredients",
       "intermediate",
       "journey-page",
-      "journey-page-child",
       "landmarks-attractions",
+      "local-desserts",
       "local-dishes",
+      "local-drinks",
       "local-services-everyday-tasks",
-      "marble-mountains",
       "menu-help",
       "money-numbers-prices",
       "money-price-changed",
@@ -715,7 +3375,10 @@
       "place-kind-attraction",
       "place-kind-beach",
       "place-kind-cafe",
+      "place-kind-dessert",
       "place-kind-dish",
+      "place-kind-drink",
+      "place-kind-experience",
       "place-kind-landmark",
       "place-kind-market",
       "place-kind-museum",
@@ -730,36 +3393,9 @@
       "place-kind-village",
       "place-navigation",
       "polite-basics",
-      "politeness-tone-cleanup",
       "practical-help-near-places",
-      "practice-buy-item",
-      "practice-city-destination",
-      "practice-distractor",
-      "practice-english-to-vietnamese",
-      "practice-food-has",
-      "practice-food-less",
-      "practice-food-without",
-      "practice-have-item",
-      "practice-health-symptom",
-      "practice-help-action",
-      "practice-likely-replies",
-      "practice-likely-reply",
-      "practice-missing-token",
-      "practice-near-place",
-      "practice-need-item",
-      "practice-one-item-please",
-      "practice-polite-register",
-      "practice-polite-request",
-      "practice-price-item",
-      "practice-pronoun-help",
-      "practice-pronoun-social",
-      "practice-stop-at-place",
-      "practice-take-me-place",
-      "practice-vietnamese-to-english",
-      "practice-where-place",
       "premium",
       "problems-help",
-      "relationship-follow-up",
       "repair",
       "repair-show-me",
       "repair-simpler-words",
@@ -779,7 +3415,6 @@
       "shopping",
       "shopping-exchange",
       "shopping-markets",
-      "show-me",
       "sight-book-in-advance",
       "sightseeing",
       "sightseeing-activities",
@@ -799,26 +3434,19 @@
       "support-family-menu-recommendation",
       "support-family-photo-help",
       "support-family-pickup-location",
-      "support-family-relationship-follow-up",
       "support-family-restaurant-ordering",
       "support-family-return-time",
       "support-family-ride-back",
-      "support-family-route-full-sentence",
-      "support-family-show-me",
       "support-family-spice-check",
       "support-family-street-confirm",
       "support-family-street-driver",
-      "support-family-ticket-counter",
       "support-family-wrong-place",
       "support-model-dish-order-diet",
       "support-model-driver-ready-phrase",
       "support-model-place-journey-navigation",
       "support-model-place-navigation-photo",
-      "support-model-politeness-tone-cleanup",
       "support-model-restaurant-live-interaction",
       "support-model-street-pronouncer",
-      "support-model-ticket-counter",
-      "ticket-counter",
       "time-boarding",
       "time-dates-booking",
       "time-move-later",
@@ -887,7 +3515,6 @@
       "v500-emer-safe-there-is-a-fire",
       "v500-food-drin-does-this-contain-peanuts",
       "v500-food-drin-does-this-contain-shrimp",
-      "v500-food-drin-does-this-have-egg-or-peanuts",
       "v500-food-drin-i-am-allergic-to-fish-sauce",
       "v500-food-drin-i-am-allergic-to-shellfish",
       "v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
@@ -913,7 +3540,6 @@
       "v500-heal-phar-i-need-a-clinic",
       "v500-heal-phar-i-need-a-dentist",
       "v500-heal-phar-i-need-a-hospital",
-      "v500-heal-phar-where-is-the-pharmacy",
       "v500-hote-acco-can-i-change-rooms",
       "v500-hote-acco-can-i-check-in-early",
       "v500-hote-acco-can-i-check-out-late",
@@ -984,7 +3610,6 @@
       "v500-prob-help-can-you-call-security",
       "v500-prob-help-can-you-check-the-security-camera",
       "v500-prob-help-can-you-contact-the-driver",
-      "v500-prob-help-can-you-help-me",
       "v500-prob-help-can-you-help-me-contact-my-hotel",
       "v500-prob-help-can-you-help-me-look-for-it",
       "v500-prob-help-i-have-contacted-my-embassy",
@@ -1062,7 +3687,6 @@
       "v500-tran-please-let-me-out-here",
       "v500-tran-please-lower-the-music",
       "v500-tran-please-open-the-trunk",
-      "v500-tran-please-stop-right-here",
       "v500-tran-please-take-me-to-this-hotel",
       "v500-tran-please-wait-here",
       "v500-tran-when-is-the-next-bus",
@@ -1070,13 +3694,11 @@
       "v500-unde-repa-can-i-use-a-translation-app",
       "v500-unde-repa-can-you-repeat-the-last-part",
       "v500-unde-repa-can-you-show-me-a-picture",
-      "v500-unde-repa-can-you-show-me-on-the-map",
       "v500-unde-repa-can-you-spell-the-name",
       "v500-unde-repa-can-you-write-the-address",
       "v500-unde-repa-can-you-write-the-price",
       "v500-unde-repa-can-you-write-the-time",
       "v500-unde-repa-do-you-mean-this-one",
-      "v500-unde-repa-how-much-did-you-say",
       "v500-unde-repa-i-dont-understand-this-word",
       "v500-unde-repa-i-missed-what-you-said",
       "v500-unde-repa-i-understand-a-little",
@@ -1094,7 +3716,6 @@
       "v500-unde-repa-please-show-me-where-to-tap",
       "v500-unde-repa-please-speak-into-my-phone",
       "v500-unde-repa-please-type-it-into-my-phone",
-      "v500-unde-repa-sorry-i-dont-speak-vietnamese",
       "v500-unde-repa-that-is-not-what-i-meant",
       "v900-airp-bord-arri-can-i-pay-the-driver-by-card",
       "v900-airp-bord-arri-can-you-help-me-book-a-taxi",
@@ -1283,7 +3904,6 @@
       "v900-hote-acco-how-much-is-one-extra-night",
       "v900-hote-acco-i-want-to-cancel-my-stay",
       "v900-hote-acco-i-was-charged-for-something-i-did-not-use",
-      "v900-hote-acco-id-like-to-check-in-please",
       "v900-hote-acco-is-this-room-available-tonight",
       "v900-hote-acco-is-this-the-total-amount",
       "v900-hote-acco-please-change-the-sheets",
@@ -1490,7 +4110,6 @@
       "v900-unde-repa-can-you-explain-it-in-english",
       "v900-unde-repa-can-you-read-this-translation",
       "v900-unde-repa-can-you-say-it-in-a-simpler-way",
-      "v900-unde-repa-could-you-speak-a-little-slower-please",
       "v900-unde-repa-do-you-mean-today-or-tomorrow",
       "v900-unde-repa-i-think-there-is-a-misunderstanding",
       "v900-unde-repa-im-trying-but-i-dont-know-the-right-words",

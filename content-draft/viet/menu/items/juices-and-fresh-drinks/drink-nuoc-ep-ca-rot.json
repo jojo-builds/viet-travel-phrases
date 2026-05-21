@@ -1,0 +1,63 @@
+{
+  "itemID": "drink-nuoc-ep-ca-rot",
+  "menuType": "Drink",
+  "category": "Juices & fresh drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Nước ép cà rốt",
+  "englishTranslation": "Carrot juice",
+  "romanizedNoTones": "Nuoc ep ca rot",
+  "soundOut": "nook ep kah roht",
+  "notes": "",
+  "atAGlance": "Nước ép cà rốt is carrot juice from the fresh-juice stall world, earthy, orange, softly sweet, and often mellowed with sugar or milk.",
+  "whatItIs": "Nước ép cà rốt is fresh carrot juice served cold. Expect carrot juice that is earthy, sweet, bright orange, and often mellowed with sugar or milk.",
+  "usuallyIncludes": [
+    "carrot",
+    "water",
+    "ice",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Ask if it is mixed with milk or sugar if you want a cleaner vegetable flavor.",
+  "howLocalsOrder": "Order nước ép cà rốt when you want a vegetable juice that still feels sweet. Ask for less sugar, no milk, or no ice before blending or pouring.",
+  "worthKnowing": "Carrot juice sits beside tropical fruit at fresh-juice stalls, and it can taste earthy, sweet, and mellow, especially if sugar or milk is added.",
+  "goodToKnow": "Earthier than fruit juice.",
+  "commonOptions": [
+    "less sugar",
+    "no ice",
+    "more ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước ép cà rốt.",
+    "english": "I’d like one glass of carrot juice.",
+    "pronunciation": "chaw toy moht lee nook ep kah roht",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Nước ép cà rốt was reviewed as a juices & fresh drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

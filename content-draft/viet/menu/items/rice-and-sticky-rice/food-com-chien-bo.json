@@ -1,0 +1,68 @@
+{
+  "itemID": "food-com-chien-bo",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cơm chiên bò",
+  "englishTranslation": "Beef fried rice",
+  "romanizedNoTones": "Com chien bo",
+  "soundOut": "kum chee-en baw",
+  "notes": "",
+  "atAGlance": "Cơm chiên bò is beef fried rice, usually with wok-tossed rice, egg, beef, scallion, and vegetables.",
+  "whatItIs": "Cơm chiên bò is beef fried rice with egg, scallions, garlic, and wok-seared beef pieces. The best versions are dry enough that the grains stay distinct.",
+  "usuallyIncludes": [
+    "fried rice",
+    "beef",
+    "egg",
+    "scallions",
+    "garlic or onion"
+  ],
+  "howToEnjoy": "Eat it hot from the wok and use chili lightly. The beef, egg, and garlic should season the rice so each grain tastes savory on its own.",
+  "howLocalsOrder": "Order cơm chiên bò when you want fried rice with beef rather than a sauced beef plate. Ask for less oil, no onion, or extra egg before cooking.",
+  "worthKnowing": "This is a practical Vietnamese rice-shop order: quick, filling, and easy to adjust for oil, chili, onion, or egg.",
+  "goodToKnow": "The beef and egg should season the rice as it fries. Add chili or soy only if you want extra punch after tasting the first few bites.",
+  "commonOptions": [
+    "less oil",
+    "no onion",
+    "extra egg",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cơm chiên bò.",
+    "english": "I’d like one order of beef fried rice.",
+    "pronunciation": "chaw toy moht fuhn kum chee-en baw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "native copy audit fix",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cơm chiên bò was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

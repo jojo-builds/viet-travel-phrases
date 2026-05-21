@@ -1,13 +1,13 @@
 # SpeakLocal Vietnam Premium Expansion Plan
 
-Status: live allocation and future-only planning authority after the 900-family completion  
-Last updated: 2026-04-16  
+Status: live allocation, subscription framing, and future-only planning authority after the 900-family completion
+Last updated: 2026-05-18
 Scope: Viet content allocation, premium philosophy, and future-only expansion guardrails
 
 ## Why this doc exists
 
 - lock the current live Viet content truth at the completed `150 / 750 / 900` boundary
-- preserve the active unlock price at `$4.99` one-time
+- preserve the active subscription target: `7-day free trial, then $4.99/month`
 - show how the live 900-family pack is distributed across the 18 traveler scenarios
 - protect future planning from drifting back into the now-completed live target
 
@@ -20,8 +20,9 @@ Scope: Viet content allocation, premium philosophy, and future-only expansion gu
   - `919` approved phrase rows
   - `919` approved rows currently marked `audioStatus=ready`
   - `0` approved rows currently marked `audioStatus=planned`
-- Current live unlock target:
-  - `$4.99` one-time
+- Current live subscription target:
+  - `7-day free trial, then $4.99/month`
+  - product ID: `app.speaklocal.vietnam.subscription.monthly`
 - Explicit future option only:
   - `200` starter visible intent families
   - `800` premium visible intent families
@@ -32,26 +33,27 @@ Scope: Viet content allocation, premium philosophy, and future-only expansion gu
 - Planning unit = intent-family primary, not raw phrase rows.
 - One family = one travel situation, one best phrase to say first, plus only a few nearby variants when they materially help.
 - Starter vs premium boundary lives on the family primary.
-- Use `content-draft/viet/phrase-source.csv`, `app/family/packs/viet.generated.ts`, `app/scripts/validate-premium-boundary.ts`, and `app/family/presentation/vietPremium.ts` for current live-build truth.
+- Use `content-draft/viet/phrase-source.csv`, `native-ios/Resources/LanguagePacks/`, `native-ios/Resources/viet-authored-listing-pages.json`, `native-ios/Resources/viet-audio-manifest.json`, and native validators under `native-ios/scripts/` for current live-build truth.
 - Use this doc for live scenario allocation and any future-only thinking beyond the current live 900-family pack.
 - Do not treat `200 / 1000` as current live truth.
+- Do not use the removed Expo/React Native `app/` tree as product, pack, presentation, or premium truth.
 
 ## Premium philosophy
 
-- SpeakLocal Vietnam is a destination-first travel phrasebook, not an academic language-learning app.
-- Free = get by.
-- Premium = do not get stuck.
-- Premium must earn belief through recovery, clarification, confidence, cost-control, and help under stress.
-- The app should behave like a traveler decision engine, not a random phrase warehouse.
-- Premium should deepen the same categories travelers already open in free instead of hiding whole categories behind the paywall.
-- Emergency, pharmacy, and understanding/repair basics stay in starter access.
+- SpeakLocal Vietnam is a destination-first travel companion, not an academic language-learning app, a generic phrase warehouse, or an arbitrary AI translation box.
+- The emotional center is positive discovery: food, coffee, menus, cities, places, things to do, culture, sound, and confidence before the trip.
+- The trial should let the traveler experience concrete curated value before paying.
+- The paid subscription must earn belief through the full curated Vietnam library: food/menu depth, places and culture, playable audio, search/browse discovery, saved/practice loops, and practical support for real trip moments.
+- The app should behave like a prepared traveler companion, not a random phrase list.
+- Content depth should stay integrated inside the same categories travelers naturally open instead of feeling like disconnected paid inventory.
+- Emergency, pharmacy, understanding/repair, and other serious support surfaces stay calm, useful, and easy to find without becoming the product's fear-led emotional center.
 
 ## Website and monetization guardrails
 
-- The website may use the live `150 / 750 / 900` boundary to explain starter scope and why premium exists.
-- For Vietnam, the website should expose only the starter/free layer that matches the app's starter surface and route deeper value into the app.
+- The website may use the live `150 / 750 / 900` boundary to explain content depth and why the subscription exists.
+- For Vietnam, the website can expose a starter preview layer that matches approved app content and route deeper value into the app.
 - Destination articles should reinforce those same starter phrases instead of becoming a separate web-only product layer.
-- Premium remains app-first in current truth. Do not add website premium, cross-platform entitlement sync, login/account architecture, or code-redemption flow in this plan.
+- Subscription remains app-first in current truth. Do not add website premium, cross-platform entitlement sync, login/account architecture, or code-redemption flow in this plan.
 - Any future website monetization idea stays deferred until app sales proof justifies revisiting it.
 
 ## Live 900-family allocation snapshot
@@ -109,5 +111,5 @@ Scope: Viet content allocation, premium philosophy, and future-only expansion gu
   - family count requested
   - whether the lane is a live maintenance pass or a future-only `200 / 1000` exploration
 - Audio batching should follow traveler value and proof needs, not simple file-order generation.
-- Website, App Store, and paywall copy may now use the live `150 / 750 / 900` boundary.
+- Website, App Store, and paywall copy may now use the live `150 / 750 / 900` boundary plus the `7-day free trial, then $4.99/month` subscription truth.
 - Do not claim `200 / 1000` in customer-facing copy until the live build actually reaches those numbers.

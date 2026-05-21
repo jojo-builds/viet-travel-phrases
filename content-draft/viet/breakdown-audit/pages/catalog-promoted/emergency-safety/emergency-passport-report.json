@@ -1,0 +1,72 @@
+{
+  "pageID": "viet-phrase-emergency-premium-passport-report",
+  "phraseText": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi.",
+  "englishTitle": "I need a report for my lost passport.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.299Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-emergency-premium-passport-report",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "về",
+      "english": "back / about"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "bị mất",
+      "english": "is missing / lost",
+      "keepTogetherReason": "fixed problem phrase"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "của tôi.",
+      "english": "my / mine",
+      "keepTogetherReason": "possessive phrase"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi.",
+      "english": "I need a report for my lost passport.",
+      "audioKey": "emergency-premium-passport-report"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-phrase-v900-time-date-book-what-time-does-it-finish",
+  "phraseText": "Mấy giờ thì xong?",
+  "englishTitle": "What time does it finish?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.347Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-time-date-book-what-time-does-it-finish",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Mấy giờ",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "thì",
+      "english": "then / topic marker"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xong?",
+      "english": "done"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Mấy giờ thì xong?",
+      "english": "What time does it finish?",
+      "audioKey": "v900-time-date-book-what-time-does-it-finish"
+    }
+  ]
+}

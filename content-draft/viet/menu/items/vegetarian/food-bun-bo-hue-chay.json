@@ -1,0 +1,64 @@
+{
+  "itemID": "food-bun-bo-hue-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún bò Huế chay",
+  "englishTranslation": "Vegetarian Hue-style noodle soup",
+  "romanizedNoTones": "Bun bo Hue chay",
+  "soundOut": "boon baw hway chai",
+  "notes": "",
+  "atAGlance": "Bún bò Huế chay is vegetarian Huế-style spicy noodle soup, usually with lemongrass broth, thick noodles, tofu, mushrooms, and herbs.",
+  "whatItIs": "Bún bò Huế chay is a vegetarian take on Huế-style lemongrass noodle soup, usually with tofu, mushrooms, vegetables, herbs, and a spicy red broth without beef.",
+  "usuallyIncludes": [
+    "thick rice vermicelli",
+    "lemongrass vegetarian broth",
+    "tofu or mushrooms",
+    "chili oil",
+    "herbs"
+  ],
+  "howToEnjoy": "Taste the lemongrass broth before adding chili oil, then add herbs and lime slowly. Ask about fish sauce if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order bún bò Huế chay and make the word chay clear. Ask for no fish sauce if you need the broth and seasoning fully vegetarian.",
+  "worthKnowing": "Chay versions often recreate the aroma and noodle style of the original while replacing meat with tofu, mushrooms, and vegetable broth.",
+  "goodToKnow": "Ask whether the broth is fully vegetarian and whether chili oil or seasoning is made separately from the meat version.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "less spicy",
+    "extra tofu"
+  ],
+  "regionalAssociation": "Huế and central Vietnam",
+  "originPosture": "regional-association",
+  "travelerCaution": "Confirm the broth is vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún bò Huế chay.",
+    "english": "I’d like one bowl of vegetarian Hue-style noodle soup.",
+    "pronunciation": "chaw toy moht toh boon baw hway chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Bún bò Huế chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-phrase-help-5",
+  "phraseText": "Tôi cần làm biên bản",
+  "englishTitle": "I need to file a report",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.335Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-help-5",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cần",
+      "english": "need"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "làm",
+      "english": "do / make"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "biên",
+      "english": "receipt / border"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bản",
+      "english": "document / version"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi cần làm biên bản",
+      "english": "I need to file a report",
+      "audioKey": "help-5"
+    }
+  ]
+}

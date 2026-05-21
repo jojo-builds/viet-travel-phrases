@@ -1,0 +1,63 @@
+{
+  "itemID": "food-xoi-man",
+  "menuType": "Food",
+  "category": "Rice & sticky rice",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Xôi mặn",
+  "englishTranslation": "Savory sticky rice",
+  "romanizedNoTones": "Xoi man",
+  "soundOut": "soy mahn",
+  "notes": "",
+  "atAGlance": "Xôi mặn is savory sticky rice with assorted toppings such as Chinese sausage, shredded pork, egg, fried shallots, and pâté-like spreads depending on the vendor.",
+  "whatItIs": "Xôi mặn is savory sticky rice loaded with toppings such as Chinese sausage, shredded pork, egg, pâté, pork floss, scallion oil, and fried shallots.",
+  "usuallyIncludes": [
+    "sticky rice",
+    "Chinese sausage",
+    "egg or pâté",
+    "pork floss",
+    "fried shallots"
+  ],
+  "howToEnjoy": "Mix the rich toppings through the sticky rice while it is warm. A small amount of chili or soy seasoning is enough because the toppings are already salty and savory.",
+  "howLocalsOrder": "Order xôi mặn when you want a loaded savory sticky-rice packet. Ask what toppings are included, then request no pâté, no pork, or extra egg before wrapping.",
+  "worthKnowing": "Mặn means savory or salty, which separates this from sweet xôi orders on breakfast menus.",
+  "goodToKnow": "It is dense for its size. Treat it as a portable breakfast or snack that eats more like a small meal.",
+  "commonOptions": [
+    "extra egg",
+    "no pâté",
+    "no pork",
+    "pack to go"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May include pork sausage, pâté, or egg depending on the vendor.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần xôi mặn.",
+    "english": "I’d like one order of savory sticky rice.",
+    "pronunciation": "chaw toy moht fuhn soy mahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sauce descriptions are grammatical",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Xôi mặn was reviewed as a rice & sticky rice item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

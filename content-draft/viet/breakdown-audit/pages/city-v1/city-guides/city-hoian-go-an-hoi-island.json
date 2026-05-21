@@ -1,0 +1,39 @@
+{
+  "pageID": "viet-family-city-hoian-go-an-hoi-island",
+  "phraseText": "Đi Đảo An Hội",
+  "englishTitle": "Go to An Hoi Island",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.378Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hoian-go-an-hoi-island",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Đảo An Hội",
+      "english": "An Hoi Island",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Đi Đảo An Hội",
+      "english": "Go to An Hoi Island",
+      "audioKey": "audio-authored-di-dao-an-hoi-d45ff0c575"
+    }
+  ]
+}

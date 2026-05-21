@@ -1,0 +1,65 @@
+{
+  "pageID": "viet-phrase-v900-mone-numb-pric-can-you-refund-the-difference",
+  "phraseText": "Bạn có thể hoàn lại tiền chênh lệch không?",
+  "englishTitle": "Can you refund the difference?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.328Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-mone-numb-pric-can-you-refund-the-difference",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bạn",
+      "english": "you"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có thể",
+      "english": "can / able to",
+      "keepTogetherReason": "fixed modal phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "hoàn",
+      "english": "refund / return"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lại",
+      "english": "again / back"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "tiền",
+      "english": "money"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "chênh lệch",
+      "english": "difference",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bạn có thể hoàn lại tiền chênh lệch không?",
+      "english": "Can you refund the difference?",
+      "audioKey": "v900-mone-numb-pric-can-you-refund-the-difference"
+    }
+  ]
+}

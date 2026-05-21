@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-hote-acco-how-much-is-one-extra-night",
+  "phraseText": "Thêm một đêm là bao nhiêu?",
+  "englishTitle": "How much is one extra night?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.320Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-hote-acco-how-much-is-one-extra-night",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Thêm",
+      "english": "more / add"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đêm",
+      "english": "night"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "là",
+      "english": "is / means"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bao nhiêu?",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Thêm một đêm là bao nhiêu?",
+      "english": "How much is one extra night?",
+      "audioKey": "v900-hote-acco-how-much-is-one-extra-night"
+    }
+  ]
+}

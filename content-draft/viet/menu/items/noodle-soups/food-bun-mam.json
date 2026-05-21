@@ -1,0 +1,63 @@
+{
+  "itemID": "food-bun-mam",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún mắm",
+  "englishTranslation": "Fermented fish noodle soup",
+  "romanizedNoTones": "Bun mam",
+  "soundOut": "boon mahm",
+  "notes": "",
+  "atAGlance": "Bún mắm is a Mekong-style noodle soup with fermented fish broth, rice vermicelli, seafood, pork, eggplant, herbs, and a deep salty aroma. It is bold on purpose.",
+  "whatItIs": "Bún mắm is rice vermicelli in fermented fish broth with seafood, pork, eggplant, herbs, and a powerful savory aroma. It is one of the boldest soups in the menu set.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "fermented fish broth",
+    "seafood",
+    "pork",
+    "eggplant and herbs"
+  ],
+  "howToEnjoy": "Smell and sip before adding chili. Herbs and vegetables are not decoration; they freshen the fermented fish broth.",
+  "howLocalsOrder": "Bún mắm is for people who want the fermented fish broth, so ask what seafood is in today's pot before committing. Less chili and no pork are worth saying early because toppings are added fast.",
+  "worthKnowing": "Bún mắm is strongly associated with southern and Mekong Delta cooking. The fermented fish base is the identity, not a flaw.",
+  "goodToKnow": "This is one of the strongest-flavored soups on a Vietnamese menu. If fermented fish sounds like too much, choose bún riêu or phở first.",
+  "commonOptions": [
+    "extra herbs",
+    "less chili",
+    "no pork",
+    "ask what seafood"
+  ],
+  "regionalAssociation": "southern Vietnam and the Mekong Delta",
+  "originPosture": "regional-association",
+  "travelerCaution": "Contains fermented fish broth and often seafood or pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún mắm.",
+    "english": "I’d like one bowl of fermented fish noodle soup.",
+    "pronunciation": "chaw toy moht toh boon mahm",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún mắm was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

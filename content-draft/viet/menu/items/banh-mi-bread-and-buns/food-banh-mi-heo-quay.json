@@ -1,0 +1,64 @@
+{
+  "itemID": "food-banh-mi-heo-quay",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh mì heo quay",
+  "englishTranslation": "Roasted pork sandwich",
+  "romanizedNoTones": "Banh mi heo quay",
+  "soundOut": "bahn mee heh-oh kway",
+  "notes": "",
+  "atAGlance": "Bánh mì heo quay is roast-pork bánh mì, bringing crackling pork into Vietnam’s French-influenced street sandwich with pickles, cucumber, cilantro, and chili.",
+  "whatItIs": "Bánh mì heo quay makes roast pork with crisp skin the star. The best bite has crackling, rich pork, sharp pickles, cucumber, cilantro, and a little chili if you want heat.",
+  "usuallyIncludes": [
+    "baguette",
+    "roast pork with crackling",
+    "pickles",
+    "cucumber",
+    "cilantro"
+  ],
+  "howToEnjoy": "Eat it soon so the crackling stays crisp against the bread. Ask for no chili before the vendor adds chili or spicy seasoning.",
+  "howLocalsOrder": "Order bánh mì heo quay when you want crunch from roast pork skin. Ask for extra pickles or no chili early, because bánh mì stalls move quickly and the sandwich is assembled in seconds.",
+  "worthKnowing": "Heo quay means roast pork; inside bánh mì, it shows Vietnam’s habit of adapting the loaf to local appetites. Crackling, herbs, and đồ chua make it feel more Vietnamese than a simple roast-pork sandwich.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "no chili",
+    "extra pickles",
+    "extra roast pork",
+    "less sauce"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "origin-story",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ổ bánh mì heo quay.",
+    "english": "I’d like one roast pork bánh mì.",
+    "pronunciation": "chaw toy moht oh bahn mee heh-oh kway",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-rice-paper-audit-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit"
+    ],
+    "reviewNote": "Bánh mì heo quay was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

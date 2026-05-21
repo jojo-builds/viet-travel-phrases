@@ -1,0 +1,54 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-where-does-the-tour-meet",
+  "phraseText": "Chuyến đi gặp nhau ở đâu?",
+  "englishTitle": "Where does the tour meet?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-where-does-the-tour-meet",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chuyến",
+      "english": "trip"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đi",
+      "english": "go"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "gặp",
+      "english": "meet"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhau",
+      "english": "each other"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chuyến đi gặp nhau ở đâu?",
+      "english": "Where does the tour meet?",
+      "audioKey": "v900-sigh-acti-where-does-the-tour-meet"
+    }
+  ]
+}

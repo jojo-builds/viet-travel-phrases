@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-tra-chanh",
+  "menuType": "Drink",
+  "category": "Tea",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Trà chanh",
+  "englishTranslation": "Lemon tea",
+  "romanizedNoTones": "Tra chanh",
+  "soundOut": "chah chan",
+  "notes": "",
+  "atAGlance": "Trà chanh is lemon tea with a Hanoi street-hangout feeling, tart, sweet, icy, and made for low stools and long chats.",
+  "whatItIs": "Trà chanh is iced tea with lemon or lime and sugar. Expect lemon tea that is brisk, sweet-tart, and easy to drink over ice.",
+  "usuallyIncludes": [
+    "tea",
+    "lemon or lime",
+    "ice",
+    "sugar"
+  ],
+  "howToEnjoy": "Order it less sweet if you want the tea and citrus to stay crisp.",
+  "howLocalsOrder": "Trà chanh is a bright street-café tea, so ask for less sugar if you want the citrus to taste sharp instead of syrupy. Less ice keeps it stronger for a longer walk.",
+  "worthKnowing": "In Vietnam, Trà chanh is tied to sidewalk café culture, especially casual evening hangs where the drink is more social than fancy.",
+  "goodToKnow": "Sweetness can be high by default.",
+  "commonOptions": [
+    "less sweet",
+    "more ice",
+    "no ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly trà chanh.",
+    "english": "I’d like one glass of lemon tea.",
+    "pronunciation": "chaw toy moht lee chah chan",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Trà chanh was reviewed as a tea item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

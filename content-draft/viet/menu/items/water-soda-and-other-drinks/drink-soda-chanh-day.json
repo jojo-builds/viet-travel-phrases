@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-soda-chanh-day",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Soda chanh dây",
+  "englishTranslation": "Passion fruit soda",
+  "romanizedNoTones": "Soda chanh day",
+  "soundOut": "soh-dah chan zay",
+  "notes": "",
+  "atAGlance": "Soda chanh dây is passion-fruit soda, bubbly, tart, floral, and built for a cold café glass.",
+  "whatItIs": "Soda chanh dây is soda water mixed with passion fruit and sugar. Expect passion fruit soda that is fizzy, tart, floral, and sweet.",
+  "usuallyIncludes": [
+    "soda water",
+    "passion fruit",
+    "sugar syrup",
+    "ice"
+  ],
+  "howToEnjoy": "Ask for less sugar if you want the passion fruit bite to stay sharp.",
+  "howLocalsOrder": "Soda chanh dây is built cold, fizzy, and sweet, so ask for less sugar syrup or no ice before stirring. Lime, passion fruit, or mint should stay bright through the bubbles.",
+  "worthKnowing": "In Vietnam, Soda chanh dây belongs to Vietnam’s modern café soda lane, where tropical fruit and bubbles make a hot-day drink.",
+  "goodToKnow": "Seeds or pulp may appear.",
+  "commonOptions": [
+    "cold",
+    "with ice",
+    "no ice",
+    "can or bottle"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly soda chanh dây.",
+    "english": "I’d like one glass of passion fruit soda.",
+    "pronunciation": "chaw toy moht lee soh-dah chan zay",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Soda chanh dây was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

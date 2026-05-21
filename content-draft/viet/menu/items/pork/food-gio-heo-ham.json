@@ -1,0 +1,66 @@
+{
+  "itemID": "food-gio-heo-ham",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Giò heo hầm",
+  "englishTranslation": "Braised pork knuckle",
+  "romanizedNoTones": "Gio heo ham",
+  "soundOut": "yaw heh-oh hum",
+  "notes": "",
+  "atAGlance": "Giò heo hầm is braised or simmered pork leg, usually with gelatinous skin, tender meat, broth, and vegetables.",
+  "whatItIs": "Giò heo hầm is simmered pork knuckle, usually cooked until the skin and tendon turn soft in broth with vegetables, herbs, or medicinal aromatics depending on the shop.",
+  "usuallyIncludes": [
+    "pork knuckle",
+    "clear broth",
+    "root vegetables or greens",
+    "scallions",
+    "black pepper"
+  ],
+  "howToEnjoy": "Eat slowly and expect gelatinous skin, tender meat, and broth rather than a dry pork plate. Rice or noodles can make it a full meal.",
+  "howLocalsOrder": "Order giò heo hầm when you want soft pork knuckle and broth. Ask if it comes with noodles, rice, or vegetables before choosing sides.",
+  "worthKnowing": "In Vietnamese soups and stews, the prized texture is collagen-rich and tender; travelers who prefer lean meat may want another pork order.",
+  "goodToKnow": "Hầm means simmered. Expect gelatin-rich pork knuckle in broth, so the pleasure is tender skin, soft meat, and a warming bowl rather than a caramelized kho plate.",
+  "commonOptions": [
+    "with rice",
+    "with noodles",
+    "extra vegetables",
+    "leaner piece"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần giò heo hầm.",
+    "english": "I’d like one order of braised pork knuckle.",
+    "pronunciation": "chaw toy moht fuhn yaw heh-oh hum",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Giò heo hầm was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

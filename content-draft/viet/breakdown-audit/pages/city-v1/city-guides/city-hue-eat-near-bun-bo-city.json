@@ -1,0 +1,45 @@
+{
+  "pageID": "viet-family-city-hue-eat-near-bun-bo-city",
+  "phraseText": "Ăn bún bò Huế ở đâu?",
+  "englishTitle": "Where can I eat bun bo Hue?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.384Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-eat-near-bun-bo-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Ăn",
+      "english": "eat"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bún bò Huế",
+      "english": "Bun bo Hue",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Ăn bún bò Huế ở đâu?",
+      "english": "Where can I eat bun bo Hue?",
+      "audioKey": "audio-authored-an-bun-bo-hue-o-dau-e9709dc7ad"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ga-hap-hanh",
+  "menuType": "Food",
+  "category": "Chicken & duck",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gà hấp hành",
+  "englishTranslation": "Steamed chicken with scallions",
+  "romanizedNoTones": "Ga hap hanh",
+  "soundOut": "gah hup hanh",
+  "notes": "",
+  "atAGlance": "Gà hấp hành is steamed chicken with scallion, usually with ginger, salt, chicken juices, and herbs.",
+  "whatItIs": "Gà hấp hành is steamed chicken with scallions, often served with ginger, rau răm, and a salt-lime-pepper or ginger fish-sauce dip.",
+  "usuallyIncludes": [
+    "chicken",
+    "scallions",
+    "ginger",
+    "rau răm or herbs",
+    "salt-lime dip"
+  ],
+  "howToEnjoy": "Eat the chicken warm with scallions and a small dip of ginger or lime-pepper salt. The meat should taste clean, not heavily sauced.",
+  "howLocalsOrder": "Order gà hấp hành when you want gentle steamed chicken. Ask for the dip on the side or less pepper if you want it mild.",
+  "worthKnowing": "Hấp means steamed; on chicken, it usually signals a cleaner, herbier plate than fried or grilled versions.",
+  "goodToKnow": "Hấp hành means steamed with scallions. The flavor should be gentle and chicken-forward, with ginger, scallion, or a light salt-lime note if served.",
+  "commonOptions": [
+    "dip on the side",
+    "less pepper",
+    "extra herbs",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gà hấp hành.",
+    "english": "I’d like one order of steamed chicken with scallions.",
+    "pronunciation": "chaw toy moht fuhn gah hup hanh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gà hấp hành was reviewed as a chicken & duck item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ca-tim-nuong-mo-hanh-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cà tím nướng mỡ hành chay",
+  "englishTranslation": "Grilled eggplant with scallion oil",
+  "romanizedNoTones": "Ca tim nuong mo hanh chay",
+  "soundOut": "kah teem noong muh hanh chai",
+  "notes": "",
+  "atAGlance": "Cà tím nướng mỡ hành chay is grilled eggplant with scallion oil, usually with smoky eggplant, peanuts, soy-lime dip, and herbs.",
+  "whatItIs": "Cà tím nướng mỡ hành chay is grilled eggplant with scallion oil, peanuts, herbs, and vegetarian seasoning. The eggplant should taste smoky and silky.",
+  "usuallyIncludes": [
+    "grilled eggplant",
+    "scallion oil",
+    "peanuts",
+    "soy-lime vegetarian dip",
+    "herbs"
+  ],
+  "howToEnjoy": "Spoon the smoky eggplant over rice, getting scallion oil and peanuts in each bite. Ask for no peanuts or no fish sauce if needed.",
+  "howLocalsOrder": "Order cà tím nướng mỡ hành chay as a vegetarian shared plate. Ask for no fish sauce, no peanuts, or extra rice before serving.",
+  "worthKnowing": "Mỡ hành means scallion oil; in chay cooking it still gives richness without meat.",
+  "goodToKnow": "Mỡ hành should be scallion oil; confirm no pork fat or fish sauce if the stall is not fully vegetarian.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "no peanuts",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Confirm the scallion oil and seasoning are vegetarian if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cà tím nướng mỡ hành chay.",
+    "english": "I’d like one order of grilled eggplant with scallion oil.",
+    "pronunciation": "chaw toy moht fuhn kah teem noong muh hanh chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-ask-fish-sauce",
+    "menu-ask-peanuts",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Cà tím nướng mỡ hành chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

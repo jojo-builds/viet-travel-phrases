@@ -1,0 +1,66 @@
+{
+  "itemID": "food-bun-moc",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún mọc",
+  "englishTranslation": "Pork meatball noodle soup",
+  "romanizedNoTones": "Bun moc",
+  "soundOut": "boon mawk",
+  "notes": "",
+  "atAGlance": "Bún mọc is pork-and-mushroom ball noodle soup, usually with rice vermicelli, mọc, pork slices, herbs, and clear broth.",
+  "whatItIs": "Bún mọc is a clear pork-broth noodle soup featuring mọc: springy pork-and-wood-ear mushroom balls. Rice vermicelli, herbs, lime, and chili let the light broth stay fragrant instead of heavy.",
+  "usuallyIncludes": [
+    "clear pork broth",
+    "rice vermicelli",
+    "mọc pork-mushroom balls",
+    "pork slices",
+    "fresh herbs"
+  ],
+  "howToEnjoy": "Taste the clear broth first, then add herbs, lime, or chili in small steps. The pleasure is the gentle pork broth against the bouncy mọc balls.",
+  "howLocalsOrder": "Order bún mọc when you want a lighter noodle soup rather than a fiery bowl. Ask for extra herbs or no chili before seasoning; many shops expect you to finish the balance at the table.",
+  "worthKnowing": "Mọc refers to the pork-and-mushroom balls, so this is a useful menu word once you start reading Vietnamese noodle-shop signs.",
+  "goodToKnow": "May contain pork.",
+  "commonOptions": [
+    "extra herbs",
+    "extra mọc",
+    "no chili",
+    "no MSG"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "May contain pork.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô bún mọc.",
+    "english": "I’d like one bowl of pork meatball noodle soup.",
+    "pronunciation": "chaw toy moht toh boon mawk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "rice paper and wrapper specificity audit",
+      "copy hygiene fix"
+    ],
+    "reviewNote": "Bún mọc was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after rice-paper/local eating ritual audit; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

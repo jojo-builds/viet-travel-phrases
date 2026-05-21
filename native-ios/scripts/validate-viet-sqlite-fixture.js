@@ -15,9 +15,6 @@ const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues",
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
 const relationSamplePath = path.join(repoRoot, "content-draft", "viet", "relation-sample-v1.json");
 const websitePreviewPath = path.join(repoRoot, "content-draft", "viet", "website-preview.json");
-const expoVietPackPath = path.join(repoRoot, "app", "family", "packs", "viet.generated.ts");
-const expoVietPresentationPath = path.join(repoRoot, "app", "family", "presentation", "viet.ts");
-const expoVietPremiumPath = path.join(repoRoot, "app", "family", "presentation", "vietPremium.ts");
 const tierOnePagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "tier-one");
 const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "canonical-pages", "catalog-promoted");
 const sitePreviewDataRoot = path.join(repoRoot, "site", "data", "phrase-previews");
@@ -130,22 +127,32 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-hello-chao",
   "viet-phrase-hello-chao-ban",
   "viet-phrase-hello-da-chao-anh-chi",
-  "viet-phrase-help-1",
+  "viet-family-food-to-go",
+  "viet-phrase-coffee-6",
+  "viet-family-help-need-help",
+  "viet-phrase-polite-2",
   "viet-phrase-polite-3",
   "viet-phrase-polite-5",
+  "viet-phrase-v500-poli-basi-okay",
+  "viet-phrase-polite-thank-you-polite",
   "viet-phrase-repair-4",
   "viet-phrase-repair-english-help",
   "viet-phrase-repair-number-amount",
-  "viet-phrase-ves-can-you-show-me-politeness",
+  "viet-phrase-time-1",
+  "viet-phrase-time-2",
+  "viet-phrase-v500-food-drin-no-ice-please",
+  "viet-phrase-coffee-5",
+  "viet-phrase-v500-tran-please-go-straight",
+  "viet-phrase-v900-tran-please-turn-right-here",
+  "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
+  "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
+  "viet-phrase-repair-show-me",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
 ];
 
 const approvedQuickSayShortcutPairs = [
-  ["viet-phrase-city-danang-place-ba-na-hills", "viet-phrase-ves-two-tickets-ba-na-hills"],
-  ["viet-phrase-city-danang-place-marble-mountains", "viet-phrase-city-danang-ticket-marble-mountains"],
-  ["viet-phrase-city-danang-place-son-tra", "viet-phrase-city-danang-go-son-tra"],
   ["viet-phrase-city-hanoi-place-bun-cha-huong-lien", "viet-phrase-ves-order-bun-cha-portion"],
   ["viet-phrase-city-hanoi-place-pho-bat-dan", "viet-phrase-ves-order-pho-bowl"],
   ["viet-phrase-city-hue-place-bun-bo-city", "viet-phrase-ves-order-bun-bo-hue-bowl"],
@@ -258,6 +265,18 @@ function main() {
   }
 
   const report = readJSON(reportPath);
+  const authoredPages = fs.existsSync(authoredPagesPath) ? readJSON(authoredPagesPath) : { pages: [] };
+  const handwrittenCityArticlePageIDs = (authoredPages.pages ?? [])
+    .filter((page) => page.tierRole === "city-v1")
+    .filter((page) => page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed")
+    .flatMap((page) => [
+      page.id,
+      String(page.id ?? "").replace(/^viet-family-/, "viet-phrase-"),
+    ])
+    .filter(Boolean);
+  const handwrittenCityArticlePageIDSQL = handwrittenCityArticlePageIDs.length
+    ? handwrittenCityArticlePageIDs.map(sqlQuote).join(",")
+    : "''";
   const counts = JSON.parse(sqliteValue(`SELECT json_object(
     'scenarios', (SELECT count(*) FROM scenario),
     'clusters', (SELECT count(*) FROM phrase_cluster),
@@ -275,9 +294,34 @@ function main() {
     'missingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit),
     'releaseBlockingMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE release_blocking = 1),
     'plannedMissingAudioAuditRows', (SELECT count(*) FROM missing_audio_audit WHERE severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioPhraseRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'phrase' AND severity = 'planned' AND release_blocking = 0),
+    'plannedMissingAudioBreakdownRows', (SELECT count(*) FROM missing_audio_audit WHERE target_kind = 'breakdown_token' AND severity = 'planned' AND release_blocking = 0),
+    'duplicatedPlannedMissingAudioTexts', (
+      SELECT count(*)
+      FROM (
+        SELECT normalized_expected_text
+        FROM missing_audio_audit
+        WHERE severity = 'planned'
+          AND release_blocking = 0
+        GROUP BY normalized_expected_text
+        HAVING count(*) > 1
+      )
+    ),
     'cities', (SELECT count(*) FROM city),
     'cityPlaces', (SELECT count(*) FROM city_place),
-    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
+    'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag),
+    'cityReadyAudioPhraseRows', (
+      SELECT count(*)
+      FROM phrase p
+      JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+      WHERE p.audio_status = 'ready'
+    ),
+    'cityPlannedAudioPhraseRows', (
+      SELECT count(*)
+      FROM phrase p
+      JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+      WHERE p.audio_status = 'planned'
+    )
   );`));
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : { cities: [], places: [], pages: [] };
   const cityLibraryPages = (cityLibrary.pages ?? []).filter((page) => page.status === "approved");
@@ -345,8 +389,13 @@ function main() {
   assertEqual(counts.plannedMissingAudioAuditRows, counts.missingAudioAuditRows, "missing audio audit rows should all be planned");
   assertEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "release-blocking missing audio audit rows");
   assertEqual(counts.plannedMissingAudioAuditRows, plannedAudioQueueRows, "planned missing audio queue rows");
-  assertTrue(counts.plannedMissingAudioAuditRows <= plannedAudioSourcePhraseCount, "planned missing audio rows must be deduped by normalized expected text");
-  assertTrue(plannedAudioSourcePhraseCount >= cityLibraryPages.length, "planned source phrases should include at least the city-library pages");
+  assertTrue(counts.plannedMissingAudioPhraseRows <= plannedAudioSourcePhraseCount, "planned phrase missing audio rows must be deduped by normalized expected text");
+  assertZero(counts.duplicatedPlannedMissingAudioTexts, "duplicated planned missing audio normalized text rows");
+  assertEqual(
+    counts.cityReadyAudioPhraseRows + counts.cityPlannedAudioPhraseRows,
+    cityLibraryPages.length,
+    "city-library pages should have ready or planned audio"
+  );
   assertEqual(counts.cities, (cityLibrary.cities ?? []).length, "city table count");
   assertEqual(counts.cityPlaces, (cityLibrary.places ?? []).length, "city place table count");
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");
@@ -419,23 +468,13 @@ function main() {
     !relationshipWordsEligiblePageIDs.includes("viet-family-city-danang-place-ba-na-hills"),
     "relationship-word eligibility should not include Bà Nà Hills place page"
   );
-  [
-    "viet-family-city-danang-where-ba-na-hills",
-    "viet-phrase-city-danang-where-ba-na-hills",
-    "viet-family-city-danang-go-ba-na-hills",
-    "viet-phrase-city-danang-go-ba-na-hills",
-    "viet-family-city-danang-eat-near-ba-na-hills",
-    "viet-phrase-city-danang-eat-near-ba-na-hills",
-    "viet-family-city-danang-atm-ba-na-hills",
-    "viet-phrase-city-danang-atm-ba-na-hills",
-    "viet-family-city-danang-stop-ba-na-hills",
-    "viet-phrase-city-danang-stop-ba-na-hills",
-  ].forEach((pageID) => {
-    assertTrue(
-      !relationshipWordsEligiblePageIDs.includes(pageID),
-      `relationship-word eligibility should not include Bà Nà Hills child page ${pageID}`
-    );
-  });
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM phrase p
+    JOIN phrase_city_tag pct ON pct.phrase_id = p.id
+    WHERE pct.page_kind = 'phrase'
+      AND pct.place_kind IN ('attraction', 'beach', 'landmark', 'museum', 'nature', 'park', 'river', 'village');
+  `), "attraction action child pages should be retired, not relationship-word eligible");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -567,6 +606,7 @@ function main() {
         ) THEN 0 ELSE 1 END AS text_only
       FROM phrase_page pp
       JOIN page_section ps ON ps.page_id = pp.id
+      WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
     ),
     runs AS (
       SELECT
@@ -603,6 +643,7 @@ function main() {
           ) THEN 0 ELSE 1 END AS text_only
         FROM phrase_page pp
         JOIN page_section ps ON ps.page_id = pp.id
+        WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
       ),
       runs AS (
         SELECT
@@ -665,6 +706,7 @@ function main() {
     LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
     LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
     WHERE pc.page_id != 'viet-phrase-polite-1'
+      AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND (
         has_breakdown = 0
         OR has_context_copy = 0
@@ -713,6 +755,7 @@ function main() {
       LEFT JOIN derived_pages dp ON dp.page_id = pc.page_id
       LEFT JOIN likely_reply_pages lr ON lr.page_id = pc.page_id
       WHERE pc.page_id != 'viet-phrase-polite-1'
+        AND pc.page_id NOT IN (${handwrittenCityArticlePageIDSQL})
         AND (
           has_breakdown = 0
           OR has_context_copy = 0
@@ -816,7 +859,9 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM phrase_page pp
-    WHERE NOT EXISTS (
+    WHERE pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
+      AND
+      NOT EXISTS (
       SELECT 1
       FROM page_section ps
       WHERE ps.page_id = pp.id
@@ -827,7 +872,9 @@ function main() {
   assertZero(sqliteValue(`
     SELECT count(*)
     FROM page_section ps
+    JOIN phrase_page pp ON pp.id = ps.page_id
     WHERE ps.section_key = 'breakdown'
+      AND pp.id NOT IN (${handwrittenCityArticlePageIDSQL})
       AND NOT EXISTS (
         SELECT 1
         FROM page_section_item psi
@@ -848,8 +895,18 @@ function main() {
       GROUP BY pp.id, pp.title
       HAVING pp.title LIKE '% %'
          AND token_count = 1
+         AND pp.id NOT IN (${reviewedCompoundPhrasePageIDSQL})
+         AND NOT EXISTS (
+           SELECT 1
+           FROM phrase_city_tag pct
+           WHERE pct.phrase_id = pp.phrase_id
+             AND (
+               pct.page_kind IN ('place', 'restaurant', 'dish', 'street')
+               OR pct.place_kind IN ('place', 'restaurant', 'dish', 'street')
+             )
+         )
     );
-  `), "multiword pages with only one breakdown token");
+  `), "non-entity multiword pages with only one breakdown token");
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -1045,9 +1102,6 @@ function main() {
     phraseSourcePath,
     relationSamplePath,
     websitePreviewPath,
-    expoVietPackPath,
-    expoVietPresentationPath,
-    expoVietPremiumPath,
     ...walkJSONFiles(tierOnePagesRoot),
     ...walkJSONFiles(catalogPromotedPagesRoot),
     ...walkJSONFiles(sitePreviewDataRoot),

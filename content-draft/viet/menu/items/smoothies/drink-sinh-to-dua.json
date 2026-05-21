@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-dua",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố dừa",
+  "englishTranslation": "Coconut smoothie",
+  "romanizedNoTones": "Sinh to dua",
+  "soundOut": "sing toh yoo-uh",
+  "notes": "",
+  "atAGlance": "Sinh tố dừa is coconut smoothie, rich and icy with a creamy tropical body that feels made for Vietnamese heat.",
+  "whatItIs": "Sinh tố dừa is young coconut or coconut cream blended with ice and milk. Expect coconut smoothie that is creamy, icy, lightly nutty, and dessert-like.",
+  "usuallyIncludes": [
+    "coconut",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Drink it slowly; coconut richness can make it feel heavier than juice.",
+  "howLocalsOrder": "Sinh tố dừa is blended to order, so ask for less sugar, less condensed milk, or less ice before the fruit hits the blender. The best version should taste like coconut, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố dừa shows how Vietnamese smoothie stalls turn coconut from a water drink into a creamy dessert cup.",
+  "goodToKnow": "Ask about dairy if you avoid milk or condensed milk.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố dừa.",
+    "english": "I’d like one glass of coconut smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh yoo-uh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố dừa was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

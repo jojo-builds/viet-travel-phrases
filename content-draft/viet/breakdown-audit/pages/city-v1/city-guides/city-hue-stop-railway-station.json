@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hue-stop-railway-station",
+  "phraseText": "Dừng ở Ga Huế",
+  "englishTitle": "Stop at Hue Railway Station",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.389Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-stop-railway-station",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Dừng ở",
+      "english": "stop at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "Ga Huế",
+      "english": "Hue Railway Station",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Dừng ở Ga Huế",
+      "english": "Stop at Hue Railway Station",
+      "audioKey": "audio-authored-dung-o-ga-hue-7f2f73305a"
+    }
+  ]
+}

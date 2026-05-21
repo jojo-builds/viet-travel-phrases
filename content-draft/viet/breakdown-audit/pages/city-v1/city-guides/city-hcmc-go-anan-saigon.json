@@ -1,0 +1,55 @@
+{
+  "pageID": "viet-family-city-hcmc-go-anan-saigon",
+  "phraseText": "Cho tôi đến nhà hàng Anăn Sài Gòn.",
+  "englishTitle": "Please take me to Anăn Sài Gòn restaurant.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-go-anan-saigon",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "nhà hàng",
+      "english": "restaurant",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "Anăn Sài Gòn.",
+      "english": "Anan Saigon",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi đến nhà hàng Anăn Sài Gòn.",
+      "english": "Please take me to Anăn Sài Gòn restaurant.",
+      "audioKey": "audio-authored-cho-toi-den-nha-hang-anan-sai-gon-303d2fea5c"
+    }
+  ]
+}

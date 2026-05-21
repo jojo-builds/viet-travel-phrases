@@ -1,0 +1,61 @@
+{
+  "itemID": "food-banh-bao-chay",
+  "menuType": "Food",
+  "category": "Bánh mì, bread & buns",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bánh bao chay",
+  "englishTranslation": "Vegetarian steamed bun",
+  "romanizedNoTones": "Banh bao chay",
+  "soundOut": "bahn bow chai",
+  "notes": "",
+  "atAGlance": "Bánh bao chay is a vegetarian steamed bun, usually filled with mushrooms, vegetables, tofu, or mock meat depending on the shop.",
+  "whatItIs": "Bánh bao chay is the vegetarian version of a steamed bun: soft dough around a savory plant-based filling.",
+  "usuallyIncludes": [
+    "steamed bun",
+    "vegetarian filling",
+    "mushrooms or vegetables",
+    "soft dough"
+  ],
+  "howToEnjoy": "Eat it warm and check the filling if strict vegetarian details matter.",
+  "howLocalsOrder": "Bánh bao chay is a warm takeaway bun order; ask what filling is inside if the tray is mixed. Locals buy it for a quick breakfast or snack, so ask for it warmed before leaving.",
+  "worthKnowing": "Chay is the useful menu word here. It tells you this is not the pork-and-egg steamed bun lane. In Vietnam, bánh bao belongs to the snack-counter world: soft steamed dough, hidden filling, and quick takeaway warmth rather than crisp baguette texture.",
+  "goodToKnow": "Chay signals vegetarian, but ask about egg or dairy if strict. The bun should be steamed, soft, and warm.",
+  "commonOptions": [
+    "warm",
+    "takeaway",
+    "ask about egg",
+    "extra filling"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about egg or dairy if strict vegetarian.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một cái bánh bao chay.",
+    "english": "I’d like one order of vegetarian steamed bun.",
+    "pronunciation": "chaw toy moht kai bahn bow chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bánh bao chay was reviewed as a bánh mì, bread & buns item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

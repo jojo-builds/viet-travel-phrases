@@ -1,0 +1,56 @@
+{
+  "pageID": "viet-phrase-v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+  "phraseText": "Tôi đã đặt dịch vụ đón tại sân bay",
+  "englishTitle": "I have an airport pickup booked",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.292Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-airp-bord-arri-i-have-an-airport-pickup-booked",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đã đặt",
+      "english": "booked / reserved",
+      "keepTogetherReason": "compound verb phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "dịch vụ đón",
+      "english": "pickup service",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "tại",
+      "english": "at / because"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "sân bay",
+      "english": "airport",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Tôi đã đặt dịch vụ đón tại sân bay",
+      "english": "I have an airport pickup booked",
+      "audioKey": "v900-airp-bord-arri-i-have-an-airport-pickup-booked"
+    }
+  ]
+}

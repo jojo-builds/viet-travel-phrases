@@ -1,0 +1,65 @@
+{
+  "itemID": "food-muc-hap-gung",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mực hấp gừng",
+  "englishTranslation": "Steamed squid with ginger",
+  "romanizedNoTones": "Muc hap gung",
+  "soundOut": "mook hup goong",
+  "notes": "",
+  "atAGlance": "Mực hấp gừng is squid steamed with ginger, usually with scallion, herbs, and ginger fish sauce.",
+  "whatItIs": "Mực hấp gừng is squid steamed with ginger, scallions, and light aromatics. It should smell fresh and stay tender rather than rubbery.",
+  "usuallyIncludes": [
+    "squid",
+    "ginger",
+    "scallions",
+    "light dip",
+    "herbs optional"
+  ],
+  "howToEnjoy": "Eat soon after steaming, dipping lightly in ginger fish sauce or lime-pepper salt if served. Overcooked squid gets tough, so timing matters.",
+  "howLocalsOrder": "Order mực hấp gừng when you want a lighter squid dish. Ask for less chili and check freshness by the ginger-steam aroma when it arrives.",
+  "worthKnowing": "At Vietnamese seafood shops, steamed squid is chosen for freshness: ginger lifts the aroma without hiding the seafood.",
+  "goodToKnow": "Fresh squid should smell clean and gingery, not fishy.",
+  "commonOptions": [
+    "less spicy",
+    "ginger dip",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần mực hấp gừng.",
+    "english": "I’d like one order of steamed squid with ginger.",
+    "pronunciation": "chaw toy moht fuhn mook hup goong",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Mực hấp gừng was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

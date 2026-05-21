@@ -1,0 +1,63 @@
+{
+  "itemID": "food-bun-bo-xao",
+  "menuType": "Food",
+  "category": "Dry noodles & vermicelli",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bún bò xào",
+  "englishTranslation": "Stir-fried beef over vermicelli",
+  "romanizedNoTones": "Bun bo xao",
+  "soundOut": "boon baw sow",
+  "notes": "",
+  "atAGlance": "Bún bò xào is stir-fried beef over cool rice vermicelli with herbs, pickles, peanuts or fried shallots, and fish-sauce dip. It is savory, bright, and built for mixing.",
+  "whatItIs": "Bún bò xào is stir-fried beef over cool rice vermicelli with herbs, pickles, peanuts or fried shallots, and fish-sauce dip. It is savory, bright, crunchy, and built for mixing.",
+  "usuallyIncludes": [
+    "rice vermicelli",
+    "stir-fried beef",
+    "fresh herbs",
+    "fish-sauce dip",
+    "peanuts or fried shallots"
+  ],
+  "howToEnjoy": "Pour the fish-sauce dip gradually, then mix so the beef juices, herbs, noodles, and crunch share the flavor. Ask for no chili or no peanuts before it is assembled.",
+  "howLocalsOrder": "Bún bò xào eats more like a beef noodle salad than a soup. Ask for no peanuts or extra herbs before mixing, then add fish-sauce dip in small pours so the beef stays bright.",
+  "worthKnowing": "The usual dressing is fish sauce balanced with lime, sugar, garlic, and chili. It is light and pourable, not a thick gravy. In Vietnamese dry noodle and vermicelli bowls, cool herbs, warm toppings, sauce, crunch, and soft noodles all matter.",
+  "goodToKnow": "Start with half the fish-sauce dressing, mix, then add more if the noodles need it.",
+  "commonOptions": [
+    "extra fish-sauce dip",
+    "more herbs",
+    "no chili",
+    "no peanuts"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần bún bò xào.",
+    "english": "I’d like one order of stir-fried beef over vermicelli.",
+    "pronunciation": "chaw toy moht fuhn boon baw sow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bún bò xào was reviewed as a dry noodles & vermicelli item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

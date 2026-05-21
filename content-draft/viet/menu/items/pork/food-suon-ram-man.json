@@ -1,0 +1,62 @@
+{
+  "itemID": "food-suon-ram-man",
+  "menuType": "Food",
+  "category": "Pork",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sườn ram mặn",
+  "englishTranslation": "Savory caramelized pork ribs",
+  "romanizedNoTones": "Suon ram man",
+  "soundOut": "swoon ram mahn",
+  "notes": "",
+  "atAGlance": "Sườn ram mặn is pork ribs simmered or tossed in a salty fish-sauce caramel until the edges turn sticky. It is made for rice.",
+  "whatItIs": "Sườn ram mặn is pork ribs cooked in a salty fish-sauce caramel until sticky and glossy. It is more about deep seasoning than barbecue smoke.",
+  "usuallyIncludes": [
+    "pork ribs",
+    "fish sauce caramel",
+    "garlic",
+    "black pepper",
+    "scallions"
+  ],
+  "howToEnjoy": "Eat with rice and pickles or greens. The fish-sauce caramel braise is meant to season rice, not sit unused on the plate.",
+  "howLocalsOrder": "Sườn ram mặn is caramelized pork ribs for rice, so ask for extra rice before the salty-sweet glaze takes over the plate. If you dislike black pepper, ask for less pepper.",
+  "worthKnowing": "Ram and kho-style dishes show how Vietnamese home cooking turns fish sauce, sugar, garlic, and pepper into a glossy braise.",
+  "goodToKnow": "Mặn means salty or savory here. The fish-sauce caramel braise should cling to the ribs, not behave like a loose gravy.",
+  "commonOptions": [
+    "extra rice",
+    "less pepper",
+    "pickled greens",
+    "share plate"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains pork ribs and fish sauce.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần sườn ram mặn.",
+    "english": "I’d like one order of savory caramelized pork ribs.",
+    "pronunciation": "chaw toy moht fuhn swoon ram mahn",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-line-edit",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sườn ram mặn was reviewed as a pork item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order line-edited for item-specific ordering behavior and text-only audio policy."
+  }
+}

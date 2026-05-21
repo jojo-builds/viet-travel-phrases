@@ -4,7 +4,9 @@ Alignment note: `docs/OFFLINE_SQLITE_PHRASE_GRAPH_PLAN.md` now owns the proposed
 
 ## Goal
 
-Keep the current app shell shippable while moving the content system away from a phrase warehouse and toward a traveler decision engine.
+Keep the current app shell shippable while moving the content system away from a phrase warehouse and toward curated trip fluency for an excited pre-trip traveler.
+
+The content system should help travelers explore a destination before arrival through food, cities, menus, culture, pronunciation, and useful everyday phrases, then keep those phrases usable in-country. It should not optimize primarily for arbitrary live translation.
 
 ## Runtime shape
 
@@ -197,14 +199,15 @@ Viet:
 - `content-draft/viet/relation-authoring-notes.md`
 - `content-draft/viet/canonical-pages/tier-one/_tier-one-index.json` for the current computed Tier 1 source-origin inventory
 - `content-draft/viet/canonical-pages/<lane>/<scenario>/<page-id>.json` for authored offline canonical phrase-page articles
-- `content-draft/viet/practice-expansion/TASK-VIET-CONTENT-PRACTICE-EXPANSION-001/` for the approved practice-first live expansion lane and its page records/rationale
+- `content-draft/viet/menu/_menu-index.json`, `content-draft/viet/menu/items/**`, and `content-draft/viet/menu/menu-helper-phrases.json` for the handwritten Food Menu and Drink Menu detail-page source
+  - each menu item carries text-only `howLocalsOrder` guidance so the page teaches the local ordering move, customization choice, sauce/dip/broth behavior, or drink flavor/ice/sweetness decision without creating one-off audio requirements
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only
 
 Viet Tier 1 listing-page quality standard:
 
 - Use the installed `speaklocal-listing-pages` skill for authoring and review.
-- Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, and practice-expansion pages all compile into one full-depth canonical phrase graph.
+- Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, editorial-support, and menu-owned pages compile into one full-depth canonical phrase graph.
 - Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
 - Each page should carry phrase-specific explanation, useful variants, tone/register guidance, positively framed local/cultural/travel notes, canonical links, and audio-backed rows.
 - Avoid visible internal terms such as `repair` when they are not traveler-friendly; for example, use "When You Don't Understand" in UI copy instead of "Understanding Repair."
@@ -219,9 +222,8 @@ Tagalog prep sample:
 - `content-draft/tagalog/relation-sample-v1.json`
 - `content-draft/tagalog/relation-authoring-notes.md`
 
-Generated runtime output:
+Generated native runtime output:
 
-- `app/family/packs/viet.generated.ts`
 - `native-ios/Resources/viet-phrase-catalog.json`
 - `native-ios/Resources/viet-authored-listing-pages.json`
 - `native-ios/Resources/viet-audio-manifest.json`
@@ -232,8 +234,11 @@ Native generation scripts:
 
 - `native-ios/scripts/generate-viet-catalog.js`
 - `native-ios/scripts/generate-authored-tier-one-pages.js`
-- `native-ios/scripts/sync-viet-audio.js`
+- `native-ios/scripts/generate-vietnamese-menu-copy.js` compiles the handwritten per-item menu source into the bundled runtime JSON and CSV export
+- `native-ios/scripts/validate-vietnamese-menu-copy.js` validates menu source/runtime parity, one-by-one review status, text-only order lines, text-only `How locals order` sections, sauce/drink specificity, and audio-ready reusable helper phrases
+- `native-ios/scripts/sync-viet-audio.js` validates and normalizes native audio manifest coverage
 - `native-ios/scripts/generate-breakdown-audio-elevenlabs.js`
+- `native-ios/scripts/generate-vietnamese-menu-audio-elevenlabs.js`
 
 Website export output:
 
@@ -246,7 +251,7 @@ Website export output:
 
 - the website consumes the exported JSON manifest and module payloads, not app runtime internals directly
 - `content-draft/*/website-preview.json` remains the article-module selection layer
-- `npm run export:website-previews` projects starter/default-first phrase/audio modules from the generated app-family pack into site-owned data paths
+- website preview exports should be regenerated from native/content source paths, not from a React Native app pack
 - each exported module now carries website-safe module metadata plus phrase-level fields needed for reuse:
   - destination, language, languageCode, country, variant
   - scenarioId / scenarioName

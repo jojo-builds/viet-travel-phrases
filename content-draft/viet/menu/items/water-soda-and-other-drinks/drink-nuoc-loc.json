@@ -1,0 +1,58 @@
+{
+  "itemID": "drink-nuoc-loc",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Nước lọc",
+  "englishTranslation": "Drinking water",
+  "romanizedNoTones": "Nuoc loc",
+  "soundOut": "nook lawk",
+  "notes": "",
+  "atAGlance": "Nước lọc is plain drinking water, often filtered by the glass, so sealed-bottle travelers may want nước suối instead.",
+  "whatItIs": "Nước lọc is filtered drinking water. Expect filtered water, plain and neutral, sometimes served by the glass rather than in a sealed bottle.",
+  "usuallyIncludes": [
+    "drinking water",
+    "glass or pitcher",
+    "ice optional"
+  ],
+  "howToEnjoy": "Use this term when asking for plain water, but bottled water is clearer if you need sealed water.",
+  "howLocalsOrder": "Nước lọc is a simple water order, but ask for a sealed cold bottle if that matters. Ask for no ice if you do not want ice added to the glass.",
+  "worthKnowing": "In Vietnam, Nước lọc is the everyday Vietnamese phrase for plain drinking water.",
+  "goodToKnow": "For sealed bottled water, nước suối may be clearer.",
+  "commonOptions": [
+    "cold",
+    "large bottle",
+    "no ice",
+    "with ice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly nước lọc.",
+    "english": "I’d like one glass of drinking water.",
+    "pronunciation": "chaw toy moht lee nook lawk",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Nước lọc was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

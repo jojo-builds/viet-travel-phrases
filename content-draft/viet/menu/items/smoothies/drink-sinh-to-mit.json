@@ -1,0 +1,61 @@
+{
+  "itemID": "drink-sinh-to-mit",
+  "menuType": "Drink",
+  "category": "Smoothies",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Sinh tố mít",
+  "englishTranslation": "Jackfruit smoothie",
+  "romanizedNoTones": "Sinh to mit",
+  "soundOut": "sing toh meet",
+  "notes": "",
+  "atAGlance": "Sinh tố mít is jackfruit smoothie, bold, honeyed, tropical, and aromatic enough that you smell the fruit before you sip.",
+  "whatItIs": "Sinh tố mít is ripe jackfruit blended with ice and milk. Expect jackfruit smoothie with a strong tropical perfume, honeyed sweetness, and creamy body.",
+  "usuallyIncludes": [
+    "jackfruit",
+    "ice",
+    "milk or condensed milk",
+    "sugar optional"
+  ],
+  "howToEnjoy": "Order it if you want a bold fruit aroma; jackfruit is not shy.",
+  "howLocalsOrder": "Sinh tố mít is blended to order, so ask for less sugar, less condensed milk, or less ice before the fruit hits the blender. The best version should taste like jackfruit, not just cold condensed milk.",
+  "worthKnowing": "In Vietnam, Sinh tố mít introduces mít, a fruit Vietnamese markets love and visitors often remember by scent first.",
+  "goodToKnow": "The flavor is strong and sweet.",
+  "commonOptions": [
+    "less sugar",
+    "no condensed milk",
+    "less ice",
+    "takeaway"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly sinh tố mít.",
+    "english": "I’d like one glass of jackfruit smoothie.",
+    "pronunciation": "chaw toy moht lee sing toh meet",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-sugar",
+    "menu-no-sugar",
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Sinh tố mít was reviewed as a smoothies item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

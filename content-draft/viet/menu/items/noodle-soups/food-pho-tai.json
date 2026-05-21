@@ -1,0 +1,62 @@
+{
+  "itemID": "food-pho-tai",
+  "menuType": "Food",
+  "category": "Noodle soups",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Phở tái",
+  "englishTranslation": "Pho with rare beef",
+  "romanizedNoTones": "Pho tai",
+  "soundOut": "fuh tie",
+  "notes": "",
+  "atAGlance": "Phở tái is beef phở with very thin rare beef slices that finish cooking in the hot broth. It is clean, aromatic, and more tender than the well-done beef version.",
+  "whatItIs": "Phở tái is beef phở with thin rare beef slices added just before serving, so the hot broth finishes them in the bowl. It gives you tender beef without making the soup heavy.",
+  "usuallyIncludes": [
+    "beef broth",
+    "rice noodles",
+    "rare beef",
+    "onion",
+    "herbs and lime"
+  ],
+  "howToEnjoy": "Let the beef sit in the broth for a moment, then taste before adding chili or lime. Choose phở chín if you want fully cooked beef from the start.",
+  "howLocalsOrder": "Phở tái is the order when you want rare beef, so say the full name instead of just phở. Add lime, herbs, and chili after tasting the beef broth; ask for cooked beef instead if rare beef is not for you.",
+  "worthKnowing": "Tái means rare or lightly cooked. In a hot bowl of phở, the beef finishes cooking at the table, which is why locals order it confidently.",
+  "goodToKnow": "If rare beef makes you nervous, order phở chín instead. The broth should still be hot enough to soften the beef at the table.",
+  "commonOptions": [
+    "well-done beef",
+    "extra herbs",
+    "bean sprouts",
+    "no chili"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "cultural-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô phở tái.",
+    "english": "I’d like one bowl of pho with rare beef.",
+    "pronunciation": "chaw toy moht toh fuh tie",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "specific-to-dish-or-drink",
+      "vietnam-culinary-context",
+      "traveler-excitement-and-utility",
+      "non-generic-visible-copy",
+      "helper-phrases-audio-ready",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Phở tái was reviewed as a noodle soups item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

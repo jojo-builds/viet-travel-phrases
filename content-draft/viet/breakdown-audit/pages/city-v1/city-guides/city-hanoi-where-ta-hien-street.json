@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-ta-hien-street",
+  "phraseText": "Phố Tạ Hiện ở đâu?",
+  "englishTitle": "Where is Ta Hien Street?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.370Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-ta-hien-street",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Phố Tạ Hiện",
+      "english": "Ta Hien Street",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Phố Tạ Hiện ở đâu?",
+      "english": "Where is Ta Hien Street?",
+      "audioKey": "audio-authored-pho-ta-hien-o-dau-ba823123b6"
+    }
+  ]
+}

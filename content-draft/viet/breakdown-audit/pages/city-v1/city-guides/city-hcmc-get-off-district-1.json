@@ -1,0 +1,50 @@
+{
+  "pageID": "viet-family-city-hcmc-get-off-district-1",
+  "phraseText": "Cho tôi xuống ở Quận 1",
+  "englishTitle": "Let me get off in District 1",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.372Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hcmc-get-off-district-1",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "xuống ở",
+      "english": "get off at",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "Quận 1",
+      "english": "District 1",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi xuống ở Quận 1",
+      "english": "Let me get off in District 1",
+      "audioKey": "audio-authored-cho-toi-xuong-o-quan-1-2bf9b4bc65"
+    }
+  ]
+}

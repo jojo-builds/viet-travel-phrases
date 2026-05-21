@@ -10,14 +10,6 @@ const catalogPromotedPagesRoot = path.join(repoRoot, "content-draft", "viet", "c
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredResourcePath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
-const practiceExpansionRoot = path.join(
-  repoRoot,
-  "content-draft",
-  "viet",
-  "practice-expansion",
-  "TASK-VIET-CONTENT-PRACTICE-EXPANSION-001"
-);
-const practiceManifestPath = path.join(practiceExpansionRoot, "manifest.json");
 
 const exactGlosses = new Map(Object.entries({
   "a": "polite yes / opener",
@@ -41,12 +33,14 @@ const exactGlosses = new Map(Object.entries({
   "bao ve": "security",
   "bac xiu": "sweet milk coffee",
   "bat dau": "begin / start",
+  "dau len may": "start boarding",
   "bay gio": "now",
   "bay gio no": "it now",
   "bep": "kitchen",
   "bien nhan bao": "receipt for insurance",
   "bien nhan bao hiem": "receipt for insurance",
   "bi mat": "lost",
+  "bi lay mat": "was taken / stolen",
   "bot": "reduce / lower",
   "buc anh": "picture",
   "bua sang": "breakfast",
@@ -69,6 +63,7 @@ const exactGlosses = new Map(Object.entries({
   "cho biet": "tell / let know",
   "cho hoi": "excuse me / may I ask",
   "cho khach san": "for the hotel",
+  "cho mot qua": "give me one",
   "cho nguoi quan ly": "for the manager",
   "cho toi": "for me / please",
   "cho toi biet": "please tell me",
@@ -89,8 +84,11 @@ const exactGlosses = new Map(Object.entries({
   "co chua": "does it contain?",
   "co duoc": "can it be?",
   "co hoat dong": "does it work?",
+  "co may atm": "is there an ATM",
   "co mo": "is it open?",
+  "co nuoc mam": "has fish sauce",
   "co san": "available",
+  "co thang may": "has an elevator",
   "co the": "can",
   "co the don": "can clean",
   "co the tra lai": "can return",
@@ -99,6 +97,7 @@ const exactGlosses = new Map(Object.entries({
   "co o day": "is here",
   "con": "still / also",
   "cong an": "police",
+  "cua ban la": "your ... is",
   "cua toi": "my / mine",
   "cung voi thuc an": "with food",
   "da": "respectful opener",
@@ -118,6 +117,7 @@ const exactGlosses = new Map(Object.entries({
   "di dau": "where are you going",
   "di ngu": "go to sleep",
   "di thang": "go straight",
+  "do mat me": "somewhere cool",
   "diem gap": "meeting point",
   "dia chi": "address",
   "dien thoai": "phone",
@@ -153,13 +153,14 @@ const exactGlosses = new Map(Object.entries({
   "gui tin nhan": "send a message",
   "hai": "two",
   "hanh ly": "baggage",
-  "hay": "please do",
+  "hay": "or",
   "hoa don": "bill / receipt",
   "ho chieu": "passport",
   "ho chieu cua toi": "my passport",
   "hoat dong": "working",
   "hom nay": "today",
   "hom nay co mo cua": "open today",
+  "huong": "direction",
   "it cay": "less spicy",
   "khach san": "hotel",
   "khan giay": "tissues",
@@ -171,16 +172,28 @@ const exactGlosses = new Map(Object.entries({
   "khoang": "about",
   "khoang muoi": "about ten",
   "khu don": "pickup area",
+  "lam no ma": "make it without",
+  "la sai": "is wrong",
+  "la xe": "is the car",
+  "la xe cua": "is my car",
   "lam on": "please",
+  "lau": "long / how long",
   "lien he": "contact",
   "lien he voi": "contact",
   "luc": "at the time",
+  "man hinh cua": "screen of",
+  "ma xac minh": "verification code",
   "may lanh": "air conditioning",
   "may lanh co": "the air conditioner",
   "mat": "lost",
+  "mat bao lau": "takes how long",
+  "mat chia khoa": "lost key",
   "mat hang": "item",
   "mat khau": "password",
+  "mat the tin": "lost credit card",
+  "mang thai": "pregnant",
   "mi": "noodles",
+  "moi ngay": "per day",
   "mot": "one / a",
   "mot buc anh": "a picture",
   "mot cai khac": "another one",
@@ -189,6 +202,12 @@ const exactGlosses = new Map(Object.entries({
   "mot mat hang": "one item",
   "mot ngay": "one day",
   "nam phut": "five minutes",
+  "nao mat hon": "somewhere cooler",
+  "nay mau den": "this one in black",
+  "ngay mai": "tomorrow",
+  "ngay mai co": "tomorrow has / is there",
+  "mon nay ma": "this dish without",
+  "mon gi": "which dish",
   "mot phong": "one room",
   "mua": "buy",
   "mua sim": "buy a SIM",
@@ -200,9 +219,12 @@ const exactGlosses = new Map(Object.entries({
   "nhan phong": "check in",
   "nhan duoc": "receive",
   "nhan tin": "text message",
+  "nen tim kiem su giup do": "should seek help",
   "nhap canh": "immigration",
   "nhieu": "much / many",
   "no": "it",
+  "no bang mau": "it in color",
+  "no qua email": "it by email",
   "noi": "say / speak",
   "noi chuyen": "speak / talk",
   "noi chuyen voi": "speak with",
@@ -218,6 +240,9 @@ const exactGlosses = new Map(Object.entries({
   "ben phai": "right side",
   "phai": "right / correct",
   "phai khong": "is that right?",
+  "phai mat": "takes",
+  "phai mat bao": "takes how much",
+  "phai mat bao lau": "takes how long",
   "trai": "left",
   "phi": "fee",
   "phong": "room",
@@ -225,6 +250,7 @@ const exactGlosses = new Map(Object.entries({
   "phong tam": "bathroom",
   "phong yen tinh": "quiet room",
   "qua": "too / very",
+  "qua cay": "too spicy",
   "re phai": "turn right",
   "re trai": "turn left",
   "roi": "already / enough",
@@ -232,6 +258,10 @@ const exactGlosses = new Map(Object.entries({
   "sai": "wrong",
   "sao": "why / how",
   "sao bay gio": "why now",
+  "sang ngay mai": "to tomorrow",
+  "se mat": "will take",
+  "se mat bao": "will take how much",
+  "se mat bao lau": "will take how long",
   "sim": "SIM card",
   "tam": "for now",
   "tai xe": "driver",
@@ -241,14 +271,18 @@ const exactGlosses = new Map(Object.entries({
   "the": "can / able to",
   "the hanh ly": "baggage tag",
   "the nhan duoc": "can receive",
+  "the co may": "can have the device",
   "the su dung": "can use",
   "the tin dung": "credit card",
   "the tim thay": "can find",
+  "thang may": "elevator",
   "thi thuc": "visa",
   "thit": "meat",
+  "thu ma toi": "the item I",
   "them mot dem": "one more night",
   "thoi gian": "time",
   "thuoc": "medicine",
+  "thue": "tax",
   "tien": "money",
   "tien mat": "cash",
   "tieng anh": "English",
@@ -256,15 +290,20 @@ const exactGlosses = new Map(Object.entries({
   "tim thay": "find",
   "toi": "I / me",
   "toi da": "I already / I did",
+  "toi da mac": "I made",
   "toi den day": "I am here",
   "toi dang": "I am",
+  "toi dang mang": "I am carrying",
+  "de toi thuc": "for me to do",
   "toi bi": "I have / got",
+  "toi bi mat": "I lost / is missing",
   "toi can": "I need",
   "toi co": "I have",
   "toi co the": "can I",
   "toi khong": "I do not",
   "toi muon": "I want",
   "toi nghi": "I think",
+  "toi nen mang": "I should bring",
   "toi se": "I will",
   "toi tra": "I pay",
   "tra lai": "return / give back",
@@ -287,6 +326,8 @@ const exactGlosses = new Map(Object.entries({
   "xe": "vehicle",
   "xe buyt": "bus",
   "xe cuu thuong": "ambulance",
+  "xe may": "motorbike",
+  "xe may co": "motorbike has",
   "xin": "please / ask",
   "xin chao": "hello",
   "xin loi": "excuse me / sorry",
@@ -324,7 +365,8 @@ const exactGlosses = new Map(Object.entries({
   "on roi cam on ban": "okay now, thank you",
   "ngot lam on": "MSG, please",
   "dung co rom": "no straw",
-  "cho mot qua dua tuoi": "fresh coconut",
+  "cho mot qua dua tuoi": "give me one fresh coconut",
+  "dua tuoi": "fresh coconut",
   "cho mot ly ca phe nong": "hot coffee",
   "cho mot ly": "one cup",
   "cai nua": "one more",
@@ -485,6 +527,76 @@ const exactGlosses = new Map(Object.entries({
   "xe nay co": "does this vehicle",
   "y anh/chi la": "which one do you mean",
   "y ban la": "do you mean",
+  "ban co bia": "do you have beer",
+  "bat dau luc": "starts at",
+  "bao xa": "how far",
+  "ben ngoai thanh pho": "outside the city",
+  "ca cam on": "all, thank you",
+  "cau duong": "tolls",
+  "cho nguoi bi": "for someone with",
+  "chinh xac": "correct",
+  "chup anh": "photography",
+  "cua duong pho": "of the street",
+  "cua vao thu": "closed on weekday",
+  "cua luc": "closes at",
+  "da bi danh": "was stolen",
+  "da duoc nau chin chua": "cooked yet",
+  "doi la bao lau": "how long the wait is",
+  "doi dien quan": "across from the cafe",
+  "doai la gi": "exchange rate",
+  "dong viet nam": "Vietnamese dong",
+  "du chua": "enough yet",
+  "duoc bao gom": "included",
+  "duoi": "downstairs",
+  "dung de lam": "used for",
+  "dung loi vao": "use the entrance",
+  "ga": "chicken",
+  "gi o day": "what here",
+  "gigabyte duoc bao gom": "gigabytes included",
+  "goc": "corner",
+  "hang o day": "order here",
+  "hieu o day": "signal here",
+  "hom nay hay": "today or",
+  "hon": "more",
+  "la con so": "is the number",
+  "la duong nhap cu chinh xac": "is the correct immigration line",
+  "la duong pho chinh xac": "is the correct street",
+  "la loi vao ben phai": "is the right entrance",
+  "la moi nguoi": "per person",
+  "la pin vi tri chinh xac": "is the correct location pin",
+  "la tong so": "is the total",
+  "la tong so cuoi cung": "is the final total",
+  "la tuyen taxi chinh thuc": "is the official taxi line",
+  "lam toi buon ngu": "make me sleepy",
+  "len lau": "upstairs",
+  "mot phong khac": "a different room",
+  "nao yen tinh hon": "somewhere quieter",
+  "nen bang qua": "should cross",
+  "nen dung": "should stop",
+  "nen dung no cung voi thuc": "take it with food",
+  "ngay nhap canh lai": "re-entry",
+  "ngoai": "outside",
+  "nguoi dang o": "people ahead",
+  "nhap canh lai": "re-entry",
+  "nhau": "meet each other",
+  "nhan do la": "accept dollars",
+  "nhieu vien": "how many pills",
+  "nhung gi": "what things",
+  "no trong bao nhieu ngay": "it for how many days",
+  "phu hop": "right / suitable",
+  "qua cay doi voi toi": "too spicy for me",
+  "quat": "fan",
+  "ra nao": "which exit",
+  "se san sang": "will be ready",
+  "theo nhung gi": "bring what",
+  "tiep theo": "next",
+  "toi o trong cop xe": "in the trunk",
+  "trong toi nay": "available tonight",
+  "trong trung tam": "inside the mall",
+  "tuong tu cho tre em": "same for children",
+  "vao ban dem": "at night",
+  "xa qua": "too far",
+  "xong": "done",
 }));
 
 const weakGlossPatterns = [
@@ -513,6 +625,7 @@ const weakGlossPatterns = [
   /^extra detail$/i,
   /^specific detail$/i,
   /^name or place detail$/i,
+  /^code$/i,
   /^(first|second|middle|final) name part$/i,
   /^soft reassurance$/i,
 ];
@@ -527,6 +640,26 @@ function normalize(value) {
     .replace(/[^a-z0-9/]+/g, " ")
     .trim()
     .replace(/\s+/g, " ");
+}
+
+function isVietnameseCodeToken(vietnamese) {
+  const rawWords = String(vietnamese ?? "")
+    .normalize("NFC")
+    .toLowerCase()
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean);
+  const key = normalize(vietnamese);
+  return rawWords.includes("mã")
+    || (
+      rawWords.includes("ma")
+      && (
+        key.includes("ma qr")
+        || key.includes("ma xac minh")
+        || key.includes("ma dat")
+        || key.includes("ma pin")
+        || key.includes("ma otp")
+      )
+    );
 }
 
 function audioTextKey(value) {
@@ -609,6 +742,11 @@ function fallbackFromVietnamese(vietnamese) {
   if (raw === "dạ") return "respectful opener";
   if (raw === "quầy") return "counter";
   if (raw === "quay") return "come back";
+  if (raw === "thẻ") return "card";
+  if (raw === "phộng") return "peanut";
+  if (raw === "đậu phộng") return "peanuts";
+  if (raw === "hãy") return "please do";
+  if (raw === "không?") return "question marker";
   if (raw === "lắm") return "very";
   if (raw === "làm") return "do / make";
   if (raw === "tới") return "arrive / reach";
@@ -796,7 +934,7 @@ function inferFromEnglishAndToken(vietnamese, oldGloss, pageEnglish) {
   if (key.includes("thuoc")) return "medicine";
   if (key.includes("sim")) return "SIM card";
   if (key.includes("wifi") || key.includes("wi fi")) return "Wi-Fi";
-  if (key.includes("ma")) return "code";
+  if (isVietnameseCodeToken(vietnamese)) return "code";
   if (key.includes("phi")) return "fee";
   if (key.includes("gia")) return "price";
   if (key.includes("ve")) return "ticket";
@@ -909,18 +1047,11 @@ function collectJSONFiles(dir) {
   return files;
 }
 
-function practiceSourceFiles() {
-  if (!fs.existsSync(practiceManifestPath)) return [];
-  const manifest = JSON.parse(fs.readFileSync(practiceManifestPath, "utf8"));
-  return (manifest.sourceShards ?? []).map((item) => path.join(practiceExpansionRoot, item));
-}
-
 function allSourceFiles() {
   return [
     ...collectJSONFiles(tierOnePagesRoot),
     ...collectJSONFiles(catalogPromotedPagesRoot),
     cityLibraryPath,
-    ...practiceSourceFiles(),
     authoredResourcePath,
   ].filter((filePath) => fs.existsSync(filePath));
 }
@@ -1000,7 +1131,8 @@ function inferGloss(token, page, glossary) {
   const rawFallback = fallbackFromVietnamese(vietnamese);
   if (rawFallback) return rawFallback;
   if (exactGlosses.has(key)) return exactGlosses.get(key);
-  if (glossary.has(key)) return glossary.get(key);
+  const glossaryGloss = glossary.get(key);
+  if (glossaryGloss && normalize(glossaryGloss) !== normalize(pageEnglish)) return glossaryGloss;
   return inferFromEnglishAndToken(vietnamese, oldGloss, pageEnglish);
 }
 
@@ -1034,18 +1166,319 @@ function hasWeakNonFinalGloss(tokens) {
     .some((token) => weakGloss(tokenEnglish(token)));
 }
 
+function fullBreakdownToken(page, tokens, title, id) {
+  const key = normalize(title);
+  const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
+    ?? exactAudioKeyForText(title);
+  const full = { id, vietnamese: title, english: fullPhraseGloss(page) };
+  if (fullAudioKey) full.audioKey = fullAudioKey;
+  return full;
+}
+
+function semanticReplacementWithFull(page, tokens, pieces) {
+  const title = String(page.title ?? page.targetText ?? "").trim();
+  return [
+    ...pieces.map((piece, index) => ({
+      id: `chunk-${index + 1}`,
+      vietnamese: piece.vietnamese,
+      english: piece.english,
+      audioKey: piece.audioKey ?? exactAudioKeyForText(piece.vietnamese) ?? null,
+    })),
+    fullBreakdownToken(page, tokens, title, `chunk-${pieces.length + 1}`),
+  ];
+}
+
+function subjectFromEnglish(page) {
+  const english = cleanEnglish(englishTitleForPage(page));
+  const lower = english.toLowerCase();
+  if (lower.includes("get downtown")) return "go downtown";
+  const toMatch = lower.match(/^how long (?:does it take|will it take) to (.+)$/i);
+  if (toMatch?.[1]) return toMatch[1];
+  return "the action";
+}
+
 function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   const title = String(page.title ?? page.targetText ?? "").trim();
   const key = normalize(title);
+  if (key === "tui cua toi bi lay mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Túi của tôi", english: "my bag" },
+      { vietnamese: "bị lấy mất", english: "was taken / stolen" },
+    ]);
+  }
+  if (key === "tui cua toi bi hong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Túi của tôi", english: "my bag" },
+      { vietnamese: "bị hỏng", english: "is damaged" },
+    ]);
+  }
+  if (key === "vali cua toi bi mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vali của tôi", english: "my suitcase" },
+      { vietnamese: "bị mất", english: "is missing" },
+    ]);
+  }
+  if (key === "vi cua toi bi mat") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ví của tôi", english: "my wallet" },
+      { vietnamese: "bị mất", english: "is missing" },
+    ]);
+  }
+  if (key === "vi cua toi da bi danh cap") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ví của tôi", english: "my wallet" },
+      { vietnamese: "đã bị đánh cắp", english: "was stolen" },
+    ]);
+  }
+  if (key === "the cua toi da bi tu choi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ của tôi", english: "my card" },
+      { vietnamese: "đã bị từ chối", english: "was declined" },
+    ]);
+  }
+  if (key === "esim cua toi khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "eSIM của tôi", english: "my eSIM" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "the sim khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ SIM", english: "SIM card" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "toi co the hien thi no tren dien thoai cua toi khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể hiển thị", english: "can I show" },
+      { vietnamese: "nó", english: "it" },
+      { vietnamese: "trên điện thoại của tôi", english: "on my phone" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ung dung ban do cua toi khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng bản đồ của tôi", english: "my map app" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "the phong khong mo duoc") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Thẻ phòng", english: "key card" },
+      { vietnamese: "không mở được", english: "does not open" },
+    ]);
+  }
+  if (key === "atm khong dua tien mat cho toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "ATM", english: "ATM" },
+      { vietnamese: "không đưa", english: "did not give" },
+      { vietnamese: "tiền mặt", english: "cash" },
+      { vietnamese: "cho tôi", english: "for me / please" },
+    ]);
+  }
+  if (key === "atm da giu the cua toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "ATM", english: "ATM" },
+      { vietnamese: "đã giữ", english: "kept" },
+      { vietnamese: "thẻ của tôi", english: "my card" },
+    ]);
+  }
+  if (key === "ban co the gui hanh ly cua toi sau khi tra phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể", english: "can you" },
+      { vietnamese: "gửi hành lý của tôi", english: "store my luggage" },
+      { vietnamese: "sau khi trả phòng", english: "after check-out" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "cai nay co dau phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Cái này", english: "this one" },
+      { vietnamese: "có", english: "have / yes" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "cai nay co trung hay dau phong khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Cái này", english: "this one" },
+      { vietnamese: "có", english: "have / yes" },
+      { vietnamese: "trứng", english: "egg" },
+      { vietnamese: "hay", english: "or" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "toi bi di ung dau phong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi bị dị ứng", english: "I am allergic" },
+      { vietnamese: "đậu phộng", english: "peanuts" },
+    ]);
+  }
+  if (key === "hay lam mon nay ma khong can dau phong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Hãy làm món này", english: "please make this dish" },
+      { vietnamese: "mà không cần đậu phộng", english: "without peanuts" },
+    ]);
+  }
+  if (key === "toi quet the duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi quẹt", english: "I tap / swipe" },
+      { vietnamese: "thẻ", english: "card" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "toi co the thanh toan hoa don bang the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
+      { vietnamese: "hóa đơn", english: "bill / receipt" },
+      { vietnamese: "bằng thẻ", english: "by card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "toi co the thanh toan tien ve bang the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
+      { vietnamese: "tiền vé", english: "the fare" },
+      { vietnamese: "bằng thẻ", english: "by card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "co tinh phi the khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Có tính phí", english: "is there a fee" },
+      { vietnamese: "thẻ", english: "card" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ung dung se khong chap nhan the cua toi") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng", english: "the app" },
+      { vietnamese: "sẽ không chấp nhận", english: "will not accept" },
+      { vietnamese: "thẻ của tôi", english: "my card" },
+    ]);
+  }
+  if (key === "dieu nay co an toan voi thuoc cua toi khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Điều này có an toàn", english: "is this safe" },
+      { vietnamese: "với thuốc của tôi", english: "with my medicine" },
+      { vietnamese: "không?", english: "question marker" },
+    ]);
+  }
+  if (key === "ban co the giup toi goi bao hiem du lich cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể giúp tôi gọi", english: "can you help me call" },
+      { vietnamese: "bảo hiểm du lịch của tôi", english: "my travel insurance" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "may the khong hoat dong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Máy thẻ", english: "card machine" },
+      { vietnamese: "không hoạt động", english: "is not working" },
+    ]);
+  }
+  if (key === "ung dung cho biet trinh dieu khien cua toi co o day nhung toi khong the tim thay chung") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Ứng dụng cho biết", english: "the app says" },
+      { vietnamese: "trình điều khiển của tôi", english: "my driver" },
+      { vietnamese: "có ở đây", english: "is here" },
+      { vietnamese: "nhưng tôi không thể tìm thấy", english: "but I cannot find" },
+      { vietnamese: "chúng", english: "them" },
+    ]);
+  }
+  if (key === "ban co the goi cho nguoi lien lac khan cap cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể gọi", english: "can you call" },
+      { vietnamese: "người liên lạc khẩn cấp của tôi", english: "my emergency contact" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "ban co the giup toi lien he voi khach san cua toi duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn có thể giúp tôi liên hệ", english: "can you help me contact" },
+      { vietnamese: "khách sạn của tôi", english: "my hotel" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "vui long gui tien hoan lai vao the nay") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vui lòng gửi", english: "please send" },
+      { vietnamese: "tiền hoàn lại", english: "the refund" },
+      { vietnamese: "vào thẻ này", english: "to this card" },
+    ]);
+  }
+  if (key === "toi co the dat tui cua toi o day duoc khong") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Tôi có thể đặt", english: "can I put" },
+      { vietnamese: "túi của tôi", english: "my bag" },
+      { vietnamese: "ở đây", english: "here" },
+      { vietnamese: "được không?", english: "is it possible?" },
+    ]);
+  }
+  if (key === "vui long huy thanh toan the do") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Vui lòng", english: "please" },
+      { vietnamese: "hủy", english: "cancel" },
+      { vietnamese: "thanh toán thẻ", english: "card payment" },
+      { vietnamese: "đó", english: "that" },
+    ]);
+  }
+  if (key === "ban la tai xe cua toi a") {
+    return semanticReplacementWithFull(page, tokens, [
+      { vietnamese: "Bạn là", english: "are you" },
+      { vietnamese: "tài xế của tôi", english: "my driver" },
+      { vietnamese: "à?", english: "polite yes / opener" },
+    ]);
+  }
+  if (key === "se mat bao lau") {
+    return [
+      { id: "chunk-1", vietnamese: "Sẽ mất", english: "will take" },
+      { id: "chunk-2", vietnamese: "bao lâu", english: "how long" },
+      fullBreakdownToken(page, tokens, title, "chunk-3"),
+    ];
+  }
+  if (key === "phai mat bao lau") {
+    return [
+      { id: "chunk-1", vietnamese: "Phải mất", english: "takes" },
+      { id: "chunk-2", vietnamese: "bao lâu", english: "how long" },
+      fullBreakdownToken(page, tokens, title, "chunk-3"),
+    ];
+  }
+  if (key === "viec sua chua se mat bao lau") {
+    return [
+      { id: "chunk-1", vietnamese: "Việc sửa chữa", english: "the repair" },
+      { id: "chunk-2", vietnamese: "sẽ mất", english: "will take" },
+      { id: "chunk-3", vietnamese: "bao lâu", english: "how long" },
+      fullBreakdownToken(page, tokens, title, "chunk-4"),
+    ];
+  }
+  const subjectBeforeDuration = title.replace(/\s+mất bao lâu\??$/iu, "").trim();
+  if (
+    key.endsWith(" mat bao lau")
+    && subjectBeforeDuration
+    && normalize(subjectBeforeDuration) !== key
+    && !key.endsWith(" se mat bao lau")
+    && !key.endsWith(" phai mat bao lau")
+  ) {
+    return [
+      { id: "chunk-1", vietnamese: subjectBeforeDuration, english: subjectFromEnglish(page) },
+      { id: "chunk-2", vietnamese: "mất bao lâu", english: "takes how long" },
+      fullBreakdownToken(page, tokens, title, "chunk-3"),
+    ];
+  }
   if (key === "toi hieu mot chut") {
-    const fullAudioKey = tokens.find((token) => normalize(tokenVietnamese(token)) === key && token.audioKey)?.audioKey
-      ?? exactAudioKeyForText(title);
-    const full = { id: "chunk-3", vietnamese: title, english: fullPhraseGloss(page) };
-    if (fullAudioKey) full.audioKey = fullAudioKey;
     return [
       { id: "chunk-1", vietnamese: "Tôi hiểu", english: "I understand" },
       { id: "chunk-2", vietnamese: "một chút", english: "a little" },
-      full,
+      fullBreakdownToken(page, tokens, title, "chunk-3"),
+    ];
+  }
+  if (key === "toi dang mang thai") {
+    return [
+      { id: "chunk-1", vietnamese: "tôi đang", english: "I am" },
+      { id: "chunk-2", vietnamese: "mang thai", english: "pregnant" },
+      fullBreakdownToken(page, tokens, title, "chunk-3"),
     ];
   }
   if (key === "dua ho chieu ra") {
@@ -1130,6 +1563,53 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
   ];
 }
 
+const forcedSemanticBreakdownKeys = new Set([
+  "atm da giu the cua toi",
+  "atm khong dua tien mat cho toi",
+  "ban co the giup toi goi bao hiem du lich cua toi duoc khong",
+  "ban co the goi cho nguoi lien lac khan cap cua toi duoc khong",
+  "ban co the gui hanh ly cua toi sau khi tra phong khong",
+  "ban co the giup toi lien he voi khach san cua toi duoc khong",
+  "ban la tai xe cua toi a",
+  "cai nay co dau phong khong",
+  "cai nay co trung hay dau phong khong",
+  "co tinh phi the khong",
+  "dieu nay co an toan voi thuoc cua toi khong",
+  "esim cua toi khong hoat dong",
+  "hay lam mon nay ma khong can dau phong",
+  "may the khong hoat dong",
+  "the cua toi da bi tu choi",
+  "the phong khong mo duoc",
+  "the sim khong hoat dong",
+  "toi bi di ung dau phong",
+  "toi co the dat tui cua toi o day duoc khong",
+  "toi co the hien thi no tren dien thoai cua toi khong",
+  "toi co the thanh toan hoa don bang the khong",
+  "toi co the thanh toan tien ve bang the khong",
+  "toi quet the duoc khong",
+  "tui cua toi bi hong",
+  "tui cua toi bi lay mat",
+  "ung dung ban do cua toi khong hoat dong",
+  "ung dung cho biet trinh dieu khien cua toi co o day nhung toi khong the tim thay chung",
+  "ung dung se khong chap nhan the cua toi",
+  "vali cua toi bi mat",
+  "vi cua toi bi mat",
+  "vi cua toi da bi danh cap",
+  "vui long gui tien hoan lai vao the nay",
+  "vui long huy thanh toan the do",
+]);
+
+function shouldForceSemanticBreakdown(page) {
+  const title = String(page.title ?? page.targetText ?? "").trim();
+  const key = normalize(title);
+  return forcedSemanticBreakdownKeys.has(key)
+    || key === "se mat bao lau"
+    || key === "phai mat bao lau"
+    || key === "viec sua chua se mat bao lau"
+    || key === "toi dang mang thai"
+    || key.endsWith(" mat bao lau");
+}
+
 function repairBreakdown(page, section, glossary, stats) {
   let tokens = section.breakdown ?? [];
   if (!Array.isArray(tokens) || tokens.length === 0) return false;
@@ -1145,7 +1625,8 @@ function repairBreakdown(page, section, glossary, stats) {
   const duplicateFullPhraseReplacement = replacementForDuplicateFullPhraseBreakdown(page, tokens);
   if (
     duplicateFullPhraseReplacement
-    && (tokens.filter((token) => isFullPhraseToken(page, token)).length > 1
+    && (shouldForceSemanticBreakdown(page)
+      || tokens.filter((token) => isFullPhraseToken(page, token)).length > 1
       || hasNonFinalFullPhraseToken(page, tokens)
       || hasNonFinalWholeEnglishGloss(page, tokens)
       || hasWeakNonFinalGloss(tokens))

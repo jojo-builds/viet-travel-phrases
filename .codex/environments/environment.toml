@@ -6,16 +6,16 @@ name = "SpeakLocal App Family"
 script = ""
 
 [[actions]]
-name = "Run"
+name = "Native Build"
 icon = "run"
-command = "node script/build_and_run.js run"
+command = "node script/build_and_run.js build"
 
 [[actions]]
-name = "Run Web"
+name = "Native Test"
 icon = "run"
-command = "node script/build_and_run.js web"
+command = "node script/build_and_run.js test"
 
 [[actions]]
-name = "Expo Doctor"
+name = "Native Doctor"
 icon = "tool"
 command = "node script/build_and_run.js doctor"

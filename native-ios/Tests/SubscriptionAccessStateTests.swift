@@ -92,4 +92,22 @@ final class SubscriptionAccessStateTests: XCTestCase {
         XCTAssertEqual(decoded.productID, "app.speaklocal.vietnam.subscription.monthly")
         XCTAssertEqual(decoded.unlockedAt, unlockedAt)
     }
+
+    func testHostedUnitTestEnvironmentDoesNotEnableDebugBypass() {
+        let environment = [
+            "XCTestConfigurationFilePath": "/tmp/SpeakLocalNativeTests.xctestconfiguration",
+            "XCInjectBundleInto": "/tmp/SpeakLocalNative.app/SpeakLocalNative",
+        ]
+
+        XCTAssertFalse(SubscriptionTestEnvironment.isRunningUITests(environment))
+    }
+
+    func testUITestEnvironmentEnablesDebugBypass() {
+        let environment = [
+            "XCTestConfigurationFilePath": "/tmp/SpeakLocalNativeUITests.xctestconfiguration",
+            "XCInjectBundleInto": "/tmp/SpeakLocalNativeUITests-Runner.app/SpeakLocalNativeUITests-Runner",
+        ]
+
+        XCTAssertTrue(SubscriptionTestEnvironment.isRunningUITests(environment))
+    }
 }

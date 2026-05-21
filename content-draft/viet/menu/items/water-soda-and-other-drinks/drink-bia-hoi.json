@@ -1,0 +1,59 @@
+{
+  "itemID": "drink-bia-hoi",
+  "menuType": "Drink",
+  "category": "Water, soda & other drinks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Bia hơi",
+  "englishTranslation": "Fresh draft beer",
+  "romanizedNoTones": "Bia hoi",
+  "soundOut": "bee-ah hoy",
+  "notes": "",
+  "atAGlance": "Bia hơi is fresh draft beer for sidewalk social drinking, light, low-cost, and meant to be poured and finished quickly.",
+  "whatItIs": "Bia hơi is fresh local draft beer served from kegs, often at casual beer halls. Expect fresh draft beer that is very light, low-cost, gently malty, and meant to be drunk cold and quickly.",
+  "usuallyIncludes": [
+    "fresh draft beer",
+    "chilled glass",
+    "ice optional"
+  ],
+  "howToEnjoy": "Drink it at the table with snacks; it is about freshness and atmosphere more than complexity.",
+  "howLocalsOrder": "Bia hơi is ordered by the glass at casual beer spots, often with snacks. Ask for a cold glass and drink it fresh; this style is light, social, and not meant to sit around.",
+  "worthKnowing": "In Vietnam, Bia hơi is a Hanoi and northern Vietnam institution, famous for low prices and lively sidewalk beer culture.",
+  "goodToKnow": "Alcoholic and usually light-bodied.",
+  "commonOptions": [
+    "by the glass",
+    "cold",
+    "with snacks",
+    "share pitcher"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một ly bia hơi.",
+    "english": "I’d like one glass of fresh draft beer.",
+    "pronunciation": "chaw toy moht chai bee-ah hoy",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-less-ice",
+    "menu-no-ice",
+    "menu-pay-now",
+    "menu-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-how-locals-order-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "drink flavor and experience are described",
+      "customization guidance is practical",
+      "Vietnam drink culture context",
+      "reusable helper phrases only for audio",
+      "how locals order text-only section",
+      "no one-off local-ordering audio"
+    ],
+    "reviewNote": "Bia hơi was reviewed as a water, soda & other drinks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "How Locals Order section added as text-only traveler guidance; reusable helper phrases remain the only customization audio."
+  }
+}

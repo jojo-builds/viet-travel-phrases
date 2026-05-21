@@ -1,0 +1,66 @@
+{
+  "itemID": "food-mi-xao-chay",
+  "menuType": "Food",
+  "category": "Vegetarian",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Mì xào chay",
+  "englishTranslation": "Vegetarian stir-fried noodles",
+  "romanizedNoTones": "Mi xao chay",
+  "soundOut": "mee sow chai",
+  "notes": "",
+  "atAGlance": "Mì xào chay is vegetarian stir-fried noodles, usually with egg noodles or wheat noodles, vegetables, tofu, garlic, and soy-lime vegetarian dip.",
+  "whatItIs": "Mì xào chay is vegetarian stir-fried noodles with vegetables, tofu or mushrooms, garlic, scallions, and savory seasoning; some shops use egg noodles.",
+  "usuallyIncludes": [
+    "noodles",
+    "vegetables",
+    "tofu or mushrooms",
+    "garlic",
+    "egg noodles optional"
+  ],
+  "howToEnjoy": "Eat hot while the noodles still have chew and the vegetables stay bright. Ask about egg noodles or fish sauce if strict vegetarian eating matters.",
+  "howLocalsOrder": "Order mì xào chay and ask for no fish sauce or no egg noodles before the wok starts if needed. Ask for extra vegetables instead of extra seasoning.",
+  "worthKnowing": "Xào means stir-fried, so this chay order is about wok heat, vegetables, and noodle texture rather than soup.",
+  "goodToKnow": "Some vegetarian noodle orders still use egg noodles or egg; ask if you need it vegan.",
+  "commonOptions": [
+    "vegetarian",
+    "no fish sauce",
+    "extra vegetables",
+    "less oil"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Ask about egg noodles, egg, and fish sauce if strict.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô mì xào chay.",
+    "english": "I’d like one bowl of vegetarian stir-fried noodles.",
+    "pronunciation": "chaw toy moht toh mee sow chai",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-fish-sauce",
+    "menu-vegetarian"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-validator-cleanup-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording",
+      "validator cleanup"
+    ],
+    "reviewNote": "Mì xào chay was reviewed as a vegetarian item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

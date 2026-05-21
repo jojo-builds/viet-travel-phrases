@@ -1,0 +1,48 @@
+{
+  "pageID": "viet-phrase-v500-emer-safe-there-is-a-fire",
+  "phraseText": "Có một ngọn lửa",
+  "englishTitle": "There is a fire",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.301Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-emer-safe-there-is-a-fire",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ngọn",
+      "english": "flame / classifier"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "lửa",
+      "english": "fire"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Có một ngọn lửa",
+      "english": "There is a fire",
+      "audioKey": "v500-emer-safe-there-is-a-fire"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-sup-bi-do",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Súp bí đỏ",
+  "englishTranslation": "Pumpkin soup",
+  "romanizedNoTones": "Sup bi do",
+  "soundOut": "soop bee daw",
+  "notes": "",
+  "atAGlance": "Súp bí đỏ is pumpkin soup, usually with smooth pumpkin, cream or broth, and gentle sweetness.",
+  "whatItIs": "Súp bí đỏ is pumpkin soup, usually smooth, lightly sweet, and creamy or velvety depending on the shop. It can be a cafe, banquet, or family-style starter.",
+  "usuallyIncludes": [
+    "pumpkin",
+    "cream or light broth",
+    "pepper",
+    "herbs",
+    "small bowl"
+  ],
+  "howToEnjoy": "Sip it warm and taste for sweetness before adding pepper. Bread or rice may come on the side depending on the setting.",
+  "howLocalsOrder": "Order súp bí đỏ when you want a gentle pumpkin soup. Ask whether it contains cream, chicken stock, or meat if dietary needs matter.",
+  "worthKnowing": "Bí đỏ means pumpkin, and the soup can range from western-influenced creamy to lighter Vietnamese-style versions.",
+  "goodToKnow": "Pumpkin soup may be a modern café or family-style soup; ask if it contains cream, chicken stock, or seafood stock if needed.",
+  "commonOptions": [
+    "ask about cream",
+    "ask about meat stock",
+    "no pepper",
+    "small bowl"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô súp bí đỏ.",
+    "english": "I’d like one bowl of pumpkin soup.",
+    "pronunciation": "chaw toy moht toh soop bee daw",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Súp bí đỏ was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

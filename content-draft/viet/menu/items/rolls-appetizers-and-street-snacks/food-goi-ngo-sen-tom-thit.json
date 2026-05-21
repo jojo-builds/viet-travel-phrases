@@ -1,0 +1,65 @@
+{
+  "itemID": "food-goi-ngo-sen-tom-thit",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Gỏi ngó sen tôm thịt",
+  "englishTranslation": "Lotus stem salad with shrimp and pork",
+  "romanizedNoTones": "Goi ngo sen tom thit",
+  "soundOut": "goy ngoh sen tom tit",
+  "notes": "",
+  "atAGlance": "Gỏi ngó sen tôm thịt is lotus-stem salad with shrimp and pork, usually with crisp lotus stems, herbs, peanuts, and sweet-tart dressing.",
+  "whatItIs": "Gỏi ngó sen tôm thịt is lotus-stem salad with shrimp, pork, herbs, peanuts, and a bright fish-sauce-lime dressing. The lotus stems give it a juicy crunch.",
+  "usuallyIncludes": [
+    "lotus stem",
+    "shrimp and pork",
+    "fresh herbs",
+    "peanuts",
+    "fish-sauce lime dressing"
+  ],
+  "howToEnjoy": "Toss lightly so the lotus stems stay crisp, then eat with shrimp, pork, herbs, and peanuts in each bite. Add chili only if you want heat over the clean crunch.",
+  "howLocalsOrder": "Order gỏi ngó sen tôm thịt as a shared salad. Ask for no peanuts, no pork, or less chili before it is dressed.",
+  "worthKnowing": "In Vietnamese salads, lotus stem is the signature texture here; it is refreshing, crisp, and very different from leafy salad.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "no peanuts",
+    "no pork",
+    "less spicy",
+    "extra herbs"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi ngó sen tôm thịt.",
+    "english": "I’d like one order of lotus stem salad with shrimp and pork.",
+    "pronunciation": "chaw toy moht fuhn goy ngoh sen tom tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-native-context-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit",
+      "Vietnam context audit"
+    ],
+    "reviewNote": "Gỏi ngó sen tôm thịt was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

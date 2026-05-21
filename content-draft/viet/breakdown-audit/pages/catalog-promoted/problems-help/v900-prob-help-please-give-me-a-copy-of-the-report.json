@@ -1,0 +1,66 @@
+{
+  "pageID": "viet-phrase-v900-prob-help-please-give-me-a-copy-of-the-report",
+  "phraseText": "Xin vui lòng cho tôi một bản sao của báo cáo",
+  "englishTitle": "Please give me a copy of the report",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.337Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-prob-help-please-give-me-a-copy-of-the-report",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Xin vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "một",
+      "english": "one / a"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "bản sao",
+      "english": "copy",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "của",
+      "english": "of"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Xin vui lòng cho tôi một bản sao của báo cáo",
+      "english": "Please give me a copy of the report",
+      "audioKey": "v900-prob-help-please-give-me-a-copy-of-the-report"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "pageID": "viet-family-ves-not-right-place",
+  "phraseText": "Hình như không đúng chỗ.",
+  "englishTitle": "I think this is not the right place.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.391Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-ves-not-right-place",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Hình",
+      "english": "photo"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "như",
+      "english": "seems / like"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "không",
+      "english": "no / not"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đúng",
+      "english": "correct / right"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "chỗ.",
+      "english": "place / spot"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Hình như không đúng chỗ.",
+      "english": "I think this is not the right place.",
+      "audioKey": "audio-authored-hinh-nhu-khong-dung-cho-b63d5ef9e3"
+    }
+  ]
+}

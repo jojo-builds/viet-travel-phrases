@@ -1,0 +1,49 @@
+{
+  "pageID": "viet-phrase-v900-sigh-acti-what-time-does-the-tour-start",
+  "phraseText": "Chuyến tham quan bắt đầu lúc mấy giờ?",
+  "englishTitle": "What time does the tour start?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.342Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v900-sigh-acti-what-time-does-the-tour-start",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "vietnamese": "Chuyến tham quan",
+      "english": "tour",
+      "keepTogetherReason": "compound tour noun"
+    },
+    {
+      "vietnamese": "bắt đầu",
+      "english": "start / begin",
+      "keepTogetherReason": "compound start verb"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "lúc",
+      "english": "at the time"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "mấy giờ?",
+      "english": "what time",
+      "keepTogetherReason": "fixed time question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chuyến tham quan bắt đầu lúc mấy giờ?",
+      "english": "What time does the tour start?",
+      "audioKey": "v900-sigh-acti-what-time-does-the-tour-start"
+    }
+  ]
+}

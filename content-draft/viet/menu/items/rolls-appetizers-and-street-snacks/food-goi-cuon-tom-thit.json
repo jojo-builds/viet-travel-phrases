@@ -1,0 +1,64 @@
+{
+  "itemID": "food-goi-cuon-tom-thit",
+  "menuType": "Food",
+  "category": "Rolls, appetizers & street snacks",
+  "subcategory": "",
+  "popular": true,
+  "vietnameseItem": "Gỏi cuốn tôm thịt",
+  "englishTranslation": "Fresh spring rolls with shrimp and pork",
+  "romanizedNoTones": "Goi cuon tom thit",
+  "soundOut": "goy kwun tom tit",
+  "notes": "",
+  "atAGlance": "Gỏi cuốn tôm thịt is fresh rolls with shrimp and pork, usually with rice paper, herbs, noodles, lettuce, and peanut or fish sauce.",
+  "whatItIs": "Gỏi cuốn tôm thịt is a fresh rice-paper roll with shrimp, pork, herbs, lettuce, and noodles. Peanut-hoisin dip makes it nutty and rich, while fish-sauce dip keeps it lighter.",
+  "usuallyIncludes": [
+    "rice paper",
+    "shrimp and pork",
+    "rice vermicelli",
+    "herbs",
+    "peanut sauce or fish-sauce dip"
+  ],
+  "howToEnjoy": "Eat the rolls cool, dipping each bite in peanut-hoisin or fish-sauce dip depending on the shop. The rice paper should stay soft and the herbs should taste fresh.",
+  "howLocalsOrder": "Order gỏi cuốn tôm thịt by the plate or by the roll, then choose the dip. Ask about peanuts before choosing peanut-hoisin if allergies matter.",
+  "worthKnowing": "This is the classic fresh roll: shrimp, pork, herbs, noodles, and rice paper, a lighter counterpoint to fried spring rolls.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "peanut-free",
+    "extra herbs",
+    "fish-sauce dip",
+    "no pork"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần gỏi cuốn tôm thịt.",
+    "english": "I’d like one order of fresh spring rolls with shrimp and pork.",
+    "pronunciation": "chaw toy moht fuhn goy kwun tom tit",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-ask-peanuts",
+    "menu-pack-to-go"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "sentence grammar line edit",
+      "specific sauce and drink flavor copy",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Gỏi cuốn tôm thịt was reviewed as a rolls, appetizers & street snacks item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "itemID": "food-sup-mang-cua",
+  "menuType": "Food",
+  "category": "Soups, hot pots & family-style",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Súp măng cua",
+  "englishTranslation": "Crab and asparagus soup",
+  "romanizedNoTones": "Sup mang cua",
+  "soundOut": "soop mahng koo-ah",
+  "notes": "",
+  "atAGlance": "Súp măng cua is asparagus crab soup, usually with crab, egg ribbons, asparagus, and pepper.",
+  "whatItIs": "Súp măng cua is thick crab-and-asparagus soup with egg ribbons, mushrooms, crab meat, and pepper. It is silky, savory, and spoonable.",
+  "usuallyIncludes": [
+    "crab",
+    "asparagus",
+    "egg ribbons",
+    "thickened broth",
+    "pepper"
+  ],
+  "howToEnjoy": "Stir gently and taste before adding pepper or chili oil. The crab sweetness and asparagus should stay delicate.",
+  "howLocalsOrder": "Order súp măng cua by bowl size, and ask about crab or egg if allergies matter. Request no pepper if you want it mild.",
+  "worthKnowing": "Súp on Vietnamese menus often points to a thicker banquet or snack soup rather than canh, the everyday rice-table soup.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "no pepper",
+    "ask about crab",
+    "small bowl",
+    "extra egg"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một tô súp măng cua.",
+    "english": "I’d like one bowl of crab and asparagus soup.",
+    "pronunciation": "chaw toy moht toh soop mahng koo-ah",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "review-gate fix",
+      "rice paper and local eating ritual audit"
+    ],
+    "reviewNote": "Súp măng cua was reviewed as a soups, hot pots & family-style item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Rechecked after full editorial gate; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

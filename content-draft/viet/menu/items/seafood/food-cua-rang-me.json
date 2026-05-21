@@ -1,0 +1,65 @@
+{
+  "itemID": "food-cua-rang-me",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cua rang me",
+  "englishTranslation": "Crab with tamarind sauce",
+  "romanizedNoTones": "Cua rang me",
+  "soundOut": "koo-ah rang meh",
+  "notes": "",
+  "atAGlance": "Cua rang me is crab stir-fried with tamarind, usually with sweet crab, sticky sour sauce, herbs, and bread or rice.",
+  "whatItIs": "Cua rang me is crab tossed in sticky tamarind glaze: sweet, sour, garlicky, and messy in the best way. The shell carries much of the flavor.",
+  "usuallyIncludes": [
+    "crab",
+    "tamarind glaze",
+    "garlic",
+    "chili optional",
+    "herbs optional"
+  ],
+  "howToEnjoy": "Crack the shell, pull the meat through the tamarind glaze, and keep napkins close. Rice or bread can help catch the sweet-sour juices.",
+  "howLocalsOrder": "Order cua rang me as a shared seafood plate. Ask for less chili or extra bread before the crab arrives if you want to catch the tamarind glaze.",
+  "worthKnowing": "At Vietnamese crab shops, rang me is the sticky sweet-sour tamarind style people choose when they want a messy, hands-on plate.",
+  "goodToKnow": "Contains or may contain seafood or shellfish.",
+  "commonOptions": [
+    "less spicy",
+    "extra bread",
+    "share size",
+    "with rice"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "Contains or may contain seafood or shellfish.",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cua rang me.",
+    "english": "I’d like one order of crab with tamarind sauce.",
+    "pronunciation": "chaw toy moht fuhn koo-ah rang meh",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cua rang me was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

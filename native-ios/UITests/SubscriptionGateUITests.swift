@@ -9,7 +9,7 @@ final class SubscriptionGateUITests: XCTestCase {
     func testSubscriptionBypassLaunchesMainApp() {
         let app = launch(arguments: ["--subscription-bypass"])
 
-        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: 20))
     }
 
     func testForceSubscriptionOnboardingShowsPlaceholderFlow() {

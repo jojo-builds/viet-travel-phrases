@@ -1,0 +1,44 @@
+{
+  "pageID": "viet-family-city-hue-stop-bun-bo-city",
+  "phraseText": "Cho tôi bún bò Huế",
+  "englishTitle": "Bun bo Hue, please",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.388Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hue-stop-bun-bo-city",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "cho",
+      "english": "to / for"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "bún bò Huế",
+      "english": "Bun bo Hue",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Cho tôi bún bò Huế",
+      "english": "Bun bo Hue, please",
+      "audioKey": "audio-authored-cho-toi-bun-bo-hue-f9baf6ac96"
+    }
+  ]
+}

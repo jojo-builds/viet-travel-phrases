@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-family-city-hanoi-where-dong-xuan",
+  "phraseText": "Chợ Đồng Xuân ở đâu?",
+  "englishTitle": "Where is Dong Xuan Market?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.369Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-family-city-hanoi-where-dong-xuan",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Chợ Đồng Xuân",
+      "english": "Dong Xuan Market",
+      "keepTogetherReason": "proper place name"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "ở đâu?",
+      "english": "where",
+      "keepTogetherReason": "fixed place question"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Chợ Đồng Xuân ở đâu?",
+      "english": "Where is Dong Xuan Market?",
+      "audioKey": "audio-authored-cho-dong-xuan-o-dau-1a0ba2fd0c"
+    }
+  ]
+}

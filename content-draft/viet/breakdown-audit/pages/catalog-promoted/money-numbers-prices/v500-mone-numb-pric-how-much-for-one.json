@@ -1,0 +1,40 @@
+{
+  "pageID": "viet-phrase-v500-mone-numb-pric-how-much-for-one",
+  "phraseText": "Bao nhiêu một cái?",
+  "englishTitle": "How much for one?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.326Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-mone-numb-pric-how-much-for-one",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Bao nhiêu",
+      "english": "how much / how many",
+      "keepTogetherReason": "fixed amount question"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "một cái?",
+      "english": "one item",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Bao nhiêu một cái?",
+      "english": "How much for one?",
+      "audioKey": "v500-mone-numb-pric-how-much-for-one"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "pageID": "viet-phrase-v500-dire-navi-is-it-inside-the-mall",
+  "phraseText": "Nó có ở trong trung tâm mua sắm không?",
+  "englishTitle": "Is it inside the mall?",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.296Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-dire-navi-is-it-inside-the-mall",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Nó",
+      "english": "it"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có",
+      "english": "have / there is"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "ở",
+      "english": "at / in / stay"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "trung tâm mua sắm",
+      "english": "mall / shopping center",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "không?",
+      "english": "yes/no?"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Nó có ở trong trung tâm mua sắm không?",
+      "english": "Is it inside the mall?",
+      "audioKey": "v500-dire-navi-is-it-inside-the-mall"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "itemID": "food-ca-hap-xi-dau",
+  "menuType": "Food",
+  "category": "Seafood",
+  "subcategory": "",
+  "popular": false,
+  "vietnameseItem": "Cá hấp xì dầu",
+  "englishTranslation": "Steamed fish with soy sauce",
+  "romanizedNoTones": "Ca hap xi dau",
+  "soundOut": "kah hup see dow",
+  "notes": "",
+  "atAGlance": "Cá hấp xì dầu is fish steamed with soy sauce, usually with ginger, scallion, onion, and savory juices.",
+  "whatItIs": "Cá hấp xì dầu is fish steamed with soy sauce, ginger, scallions, and light aromatics. It is clean, savory, and usually ordered to share.",
+  "usuallyIncludes": [
+    "fish",
+    "soy sauce",
+    "ginger",
+    "scallions",
+    "herbs"
+  ],
+  "howToEnjoy": "Lift the fish gently, watch for bones, and spoon the soy-ginger juices over rice if served. The fish should smell fresh and delicate.",
+  "howLocalsOrder": "Order cá hấp xì dầu when you want steamed fish rather than fried fish. Ask whether it comes whole, whether bones remain, and for rice if you want to catch the soy-ginger juices.",
+  "worthKnowing": "This Vietnamese-Chinese seafood style is popular for shared meals because soy, ginger, and scallion flatter fresh fish without burying it.",
+  "goodToKnow": "Whole fish can have bones; ask whether bones remain if that worries you.",
+  "commonOptions": [
+    "ask about bones",
+    "with rice",
+    "share size",
+    "less spicy"
+  ],
+  "regionalAssociation": "",
+  "originPosture": "category-context",
+  "travelerCaution": "",
+  "orderLine": {
+    "vietnamese": "Cho tôi một phần cá hấp xì dầu.",
+    "english": "I’d like one order of steamed fish with soy sauce.",
+    "pronunciation": "chaw toy moht fuhn kah hup see dow",
+    "audioPolicy": "text-only"
+  },
+  "helperPhraseIDs": [
+    "menu-not-spicy",
+    "menu-less-spicy",
+    "menu-sauce-on-side",
+    "menu-pack-to-go",
+    "menu-pay-now"
+  ],
+  "editorialReview": {
+    "status": "handwritten-reviewed",
+    "reviewedBy": "codex-menu-final-review-fix-pass",
+    "reviewedAt": "2026-05-15",
+    "checks": [
+      "varied worth-knowing voice",
+      "sauce and drink specificity",
+      "dish-specific Vietnam context",
+      "traveler ordering utility",
+      "how locals order text-only section",
+      "no one-off local-ordering audio",
+      "template-like wording removed",
+      "final review gate fix",
+      "no generic fallback wording"
+    ],
+    "reviewNote": "Cá hấp xì dầu was reviewed as a seafood item with the item name as the audio anchor and reusable helpers for ordering.",
+    "notes": "Resolved final editorial gate FIX_NOW copy; How Locals Order remains text-only and reusable helper phrases remain the only customization audio."
+  }
+}

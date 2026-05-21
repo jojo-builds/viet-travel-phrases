@@ -1,0 +1,82 @@
+{
+  "pageID": "viet-phrase-v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki",
+  "phraseText": "Vui lòng đưa tôi đến khách sạn được liệt kê trong đặt phòng này.",
+  "englishTitle": "Please take me to the hotel listed on this booking.",
+  "reviewStatus": "reviewed",
+  "visualReview": {
+    "status": "reviewed",
+    "method": "codex native detail-page breakdown audit pass",
+    "reviewedAt": "2026-05-15T09:54:45.290Z",
+    "launchArguments": [
+      "--detail-page",
+      "viet-phrase-v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki",
+      "--detail-scroll",
+      "first-breakdown"
+    ]
+  },
+  "notes": [
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+  ],
+  "tokens": [
+    {
+      "id": "chunk-1",
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "fixed polite phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đưa",
+      "english": "give / take"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "tôi",
+      "english": "I / me"
+    },
+    {
+      "id": "chunk-4",
+      "vietnamese": "đến",
+      "english": "to / arrive at"
+    },
+    {
+      "id": "chunk-5",
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "compound noun"
+    },
+    {
+      "id": "chunk-6",
+      "vietnamese": "được",
+      "english": "possible / okay"
+    },
+    {
+      "id": "chunk-7",
+      "vietnamese": "liệt kê",
+      "english": "listed",
+      "keepTogetherReason": "compound verb"
+    },
+    {
+      "id": "chunk-8",
+      "vietnamese": "trong",
+      "english": "inside / in"
+    },
+    {
+      "id": "chunk-9",
+      "vietnamese": "đặt phòng",
+      "english": "book a room",
+      "keepTogetherReason": "compound hotel phrase"
+    },
+    {
+      "id": "chunk-10",
+      "vietnamese": "này.",
+      "english": "this"
+    },
+    {
+      "id": "full",
+      "vietnamese": "Vui lòng đưa tôi đến khách sạn được liệt kê trong đặt phòng này.",
+      "english": "Please take me to the hotel listed on this booking.",
+      "audioKey": "v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki"
+    }
+  ]
+}
