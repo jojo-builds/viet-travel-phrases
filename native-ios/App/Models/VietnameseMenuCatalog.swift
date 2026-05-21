@@ -1412,6 +1412,7 @@ struct LocationMenuPick: Identifiable, Equatable {
     let imageName: String
     let detailPageID: String
     let linkedMenuItemID: String?
+    let afterSectionID: String?
 
     var linkedMenuItem: VietnameseMenuItem? {
         guard let linkedMenuItemID else {
@@ -1432,13 +1433,52 @@ struct LocationMenuPick: Identifiable, Equatable {
 
 enum LocationMenuPicksCatalog {
     static func picks(forPageID pageID: String) -> [LocationMenuPick] {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+            return picks(forPageID: familyPageID)
+        }
+
         switch pageID {
+        case "viet-family-city-danang-place-bac-my-an-market":
+            return menuItemPicks(["food-kem-bo"], after: "at-glance")
+        case "viet-family-city-danang-place-con-market":
+            return menuItemPicks(["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"], after: "place-brief")
+        case "viet-family-city-danang-place-han-market":
+            return menuItemPicks(["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"], after: "place-brief")
+        case "viet-family-city-danang-place-helio-night-market":
+            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"], after: "use-it-with")
+        case "viet-family-city-danang-place-son-tra-night-market":
+            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"], after: "place-brief")
+        case "viet-family-city-hanoi-place-dinh-cafe":
+            return menuItemPicks(["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "place-brief")
+        case "viet-family-city-hanoi-place-giang-cafe":
+            return menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "at-glance")
+        case "viet-family-city-hanoi-place-the-note-coffee":
+            return menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "at-glance")
+        case "viet-family-city-hoian-place-bale-well":
+            return menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "at-glance")
+        case "viet-family-city-hoian-place-banh-mi-phuong":
+            return menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "at-glance")
+        case "viet-family-city-hoian-place-madam-khanh":
+            return menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "at-glance")
+        case "viet-family-city-hoian-place-morning-glory":
+            return menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "at-glance")
+        case "viet-family-city-hue-place-tam-giang-lagoon":
+            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"], after: "place-brief")
         case "viet-family-city-hcmc-place-lusine-thao-dien",
              "viet-phrase-city-hcmc-place-lusine-thao-dien":
             return lusineThaoDienPicks
         default:
             return []
         }
+    }
+
+    static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
+        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+    }
+
+    static func trailingPicks(forPageID pageID: String) -> [LocationMenuPick] {
+        picks(forPageID: pageID).filter { $0.afterSectionID == nil }
     }
 
     static func pick(withDetailPageID pageID: String) -> LocationMenuPick? {
@@ -1471,6 +1511,27 @@ enum LocationMenuPicksCatalog {
         lusineThaoDienPicks
     }
 
+    private static func menuItemPicks(_ itemIDs: [String], after sectionID: String) -> [LocationMenuPick] {
+        Array(itemIDs.prefix(4)).compactMap { menuItemPick(itemID: $0, after: sectionID) }
+    }
+
+    private static func menuItemPick(itemID: String, after sectionID: String) -> LocationMenuPick? {
+        guard let item = VietnameseMenuCatalog.allItems.first(where: { $0.itemID == itemID }) else {
+            return nil
+        }
+
+        return LocationMenuPick(
+            id: "\(sectionID)-\(item.itemID)",
+            title: item.vietnameseItem,
+            subtitle: item.englishTranslation,
+            proof: "",
+            imageName: item.menuImageName,
+            detailPageID: item.detailPageID,
+            linkedMenuItemID: item.itemID,
+            afterSectionID: sectionID
+        )
+    }
+
     private static let lusineThaoDienPicks: [LocationMenuPick] = [
         LocationMenuPick(
             id: "lusine-eggs-benedict",
@@ -1479,7 +1540,8 @@ enum LocationMenuPicksCatalog {
             proof: "The familiar brunch default.",
             imageName: "HeroMenuFoodBanhMiOpLa",
             detailPageID: "viet-menu-lusine-thao-dien-eggs-benedict",
-            linkedMenuItemID: nil
+            linkedMenuItemID: nil,
+            afterSectionID: nil
         ),
         LocationMenuPick(
             id: "lusine-premium-pho",
@@ -1488,7 +1550,8 @@ enum LocationMenuPicksCatalog {
             proof: "The comfort bowl beside coffee.",
             imageName: VietnameseMenuImages.assetName(forItemID: "food-pho-dac-biet"),
             detailPageID: "viet-menu-food-pho-dac-biet",
-            linkedMenuItemID: "food-pho-dac-biet"
+            linkedMenuItemID: "food-pho-dac-biet",
+            afterSectionID: nil
         ),
         LocationMenuPick(
             id: "lusine-squid-ink-crab-pasta",
@@ -1497,7 +1560,8 @@ enum LocationMenuPicksCatalog {
             proof: "The plate that turns coffee into lunch.",
             imageName: "HeroMenuFoodMiXaoHaiSan",
             detailPageID: "viet-menu-lusine-thao-dien-squid-ink-crab-pasta",
-            linkedMenuItemID: nil
+            linkedMenuItemID: nil,
+            afterSectionID: nil
         ),
         LocationMenuPick(
             id: "lusine-crispy-chicken-salad",
@@ -1506,7 +1570,8 @@ enum LocationMenuPicksCatalog {
             proof: "The lighter plate with crunch.",
             imageName: "HeroMenuFoodGoiGa",
             detailPageID: "viet-menu-lusine-thao-dien-crispy-chicken-salad",
-            linkedMenuItemID: nil
+            linkedMenuItemID: nil,
+            afterSectionID: nil
         ),
         LocationMenuPick(
             id: "lusine-salt-caramel-coffee",
@@ -1515,7 +1580,8 @@ enum LocationMenuPicksCatalog {
             proof: "The one people stay longer for.",
             imageName: "HeroMenuDrinkCaPheMuoi",
             detailPageID: "viet-menu-lusine-thao-dien-salt-caramel-coffee",
-            linkedMenuItemID: nil
+            linkedMenuItemID: nil,
+            afterSectionID: nil
         ),
         LocationMenuPick(
             id: "lusine-avocado-toast",
@@ -1524,7 +1590,8 @@ enum LocationMenuPicksCatalog {
             proof: "The simple breakfast beside coffee.",
             imageName: "HeroMenuFoodBanhMiOpLa",
             detailPageID: "viet-menu-lusine-thao-dien-avocado-toast",
-            linkedMenuItemID: nil
+            linkedMenuItemID: nil,
+            afterSectionID: nil
         ),
     ]
 

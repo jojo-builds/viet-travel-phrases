@@ -197,11 +197,24 @@ struct PhraseArticleTemplateView: View {
                                     onOpenDetail: onDetailTapped
                                 )
                                 .id(section.id)
+
+                                if !locationMenuPicks(after: section.id).isEmpty {
+                                    LocationMenuPicksSection(
+                                        title: "Mentioned Here",
+                                        leadIn: nil,
+                                        picks: locationMenuPicks(after: section.id),
+                                        isPageSaved: isPageSaved,
+                                        onToggleSavedPage: onToggleSavedPage,
+                                        onOpenDetail: onDetailTapped
+                                    )
+                                }
                             }
 
-                            if shouldRenderLocationMenuPicks {
+                            if shouldRenderTrailingLocationMenuPicks {
                                 LocationMenuPicksSection(
-                                    picks: locationMenuPicks,
+                                    title: "Popular Here",
+                                    leadIn: "The orders that keep showing up.",
+                                    picks: trailingLocationMenuPicks,
                                     isPageSaved: isPageSaved,
                                     onToggleSavedPage: onToggleSavedPage,
                                     onOpenDetail: onDetailTapped
@@ -483,11 +496,24 @@ struct PhraseArticleTemplateView: View {
                         onOpenDetail: onDetailTapped
                     )
                     .id(section.id)
+
+                    if !locationMenuPicks(after: section.id).isEmpty {
+                        LocationMenuPicksSection(
+                            title: "Mentioned Here",
+                            leadIn: nil,
+                            picks: locationMenuPicks(after: section.id),
+                            isPageSaved: isPageSaved,
+                            onToggleSavedPage: onToggleSavedPage,
+                            onOpenDetail: onDetailTapped
+                        )
+                    }
                 }
 
-                if shouldRenderLocationMenuPicks {
+                if shouldRenderTrailingLocationMenuPicks {
                     LocationMenuPicksSection(
-                        picks: locationMenuPicks,
+                        title: "Popular Here",
+                        leadIn: "The orders that keep showing up.",
+                        picks: trailingLocationMenuPicks,
                         isPageSaved: isPageSaved,
                         onToggleSavedPage: onToggleSavedPage,
                         onOpenDetail: onDetailTapped
@@ -625,12 +651,16 @@ struct PhraseArticleTemplateView: View {
         page.showsCatalogExplore && page.id == PhrasePage.xinChao.id
     }
 
-    private var shouldRenderLocationMenuPicks: Bool {
-        !locationMenuPicks.isEmpty
+    private var shouldRenderTrailingLocationMenuPicks: Bool {
+        !trailingLocationMenuPicks.isEmpty
     }
 
-    private var locationMenuPicks: [LocationMenuPick] {
-        LocationMenuPicksCatalog.picks(forPageID: page.id)
+    private var trailingLocationMenuPicks: [LocationMenuPick] {
+        LocationMenuPicksCatalog.trailingPicks(forPageID: page.id)
+    }
+
+    private func locationMenuPicks(after sectionID: String) -> [LocationMenuPick] {
+        LocationMenuPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
     }
 
     private var usesCompactPhraseHero: Bool {
@@ -1518,6 +1548,8 @@ private struct ArticleSectionView: View {
 }
 
 private struct LocationMenuPicksSection: View {
+    var title = "Popular Here"
+    var leadIn: String? = "The orders that keep showing up."
     let picks: [LocationMenuPick]
     let isPageSaved: (String) -> Bool
     let onToggleSavedPage: (String) -> Void
@@ -1525,8 +1557,8 @@ private struct LocationMenuPicksSection: View {
 
     var body: some View {
         SectionBlock(
-            title: "Popular Here",
-            leadIn: "The orders that keep showing up."
+            title: title,
+            leadIn: leadIn
         ) {
             VStack(spacing: 0) {
                 ForEach(picks) { pick in
@@ -1584,11 +1616,13 @@ private struct LocationMenuPickRow: View {
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        Text(pick.proof)
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary.opacity(0.92))
-                            .lineLimit(2)
-                            .fixedSize(horizontal: false, vertical: true)
+                        if !pick.proof.isEmpty {
+                            Text(pick.proof)
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.secondary.opacity(0.92))
+                                .lineLimit(2)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
                     }
                     .layoutPriority(1)
                 }
