@@ -29,6 +29,25 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
 
+    func testEssentialsTopicOpensMatchRoundSheet() {
+        let app = launchPracticeApp()
+
+        scrollUntilStaticTextExists("Practice by topic", in: app)
+        tapStaticText("Essentials", in: app)
+
+        let sheet = app.otherElements["Practice.Match.Round"].firstMatch
+        XCTAssertTrue(sheet.waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
+
+        sheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.22))
+            .press(
+                forDuration: 0.1,
+                thenDragTo: sheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.38))
+            )
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 1))
+    }
+
     func testPracticeSavedSourceStartsFromSavedTripItems() {
         let app = launchPracticeApp(extraArguments: ["--seed-returning-user-shelves"])
 

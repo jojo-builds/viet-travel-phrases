@@ -345,7 +345,9 @@ final class PracticeNativeMVPTests: XCTestCase {
     }
 
     func testPracticeMatchPresentationUsesOnePullUpCardContract() {
-        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .route))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .pullUpOverlay))
         XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
         XCTAssertTrue(
             PracticeMatchPresentationPolicy.showsDirectStartCard(
@@ -384,6 +386,30 @@ final class PracticeNativeMVPTests: XCTestCase {
             PracticeMatchPresentationPolicy.showsHubLayer(
                 style: .route,
                 hasActiveSession: true
+            )
+        )
+    }
+
+    func testPracticeMatchPullUpDismissalRequiresACommittedDrag() {
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 121,
+                predictedTranslation: 130,
+                cardHeight: 620
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 44,
+                predictedTranslation: 71,
+                cardHeight: 620
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 230,
+                predictedTranslation: 280,
+                cardHeight: 620
             )
         )
     }
