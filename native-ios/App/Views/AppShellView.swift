@@ -324,11 +324,13 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
+                    isPageSaved: { intentStore.isPageSaved($0) },
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     onBackTapped: {},
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
+                    onToggleSavedPage: { intentStore.toggleSavedPage($0) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(navigation.currentRoute == .phrasePage && !isPreviewingForwardPage)
@@ -651,12 +653,14 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(renderedPage.pageID),
+                    isPageSaved: { intentStore.isPageSaved($0) },
                     heroMorphPageID: homePhraseHeroMorphPageID,
                     heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
                     heroImageNameOverride: browseDetailHeroImageOverrides[renderedPage.pageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(renderedPage.pageID) },
+                    onToggleSavedPage: { intentStore.toggleSavedPage($0) },
                     onDetailTapped: openDetail
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && !isPreviewingForwardPage)
@@ -803,9 +807,11 @@ struct AppShellView: View {
                 showsChrome: false,
                 topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                 isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
+                isPageSaved: { intentStore.isPageSaved($0) },
                 onBackTapped: {},
                 onSearchTapped: openSearch,
                 onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
+                onToggleSavedPage: { intentStore.toggleSavedPage($0) },
                 onDetailTapped: openDetail
             )
         case .detailPage(let detailPageID):
@@ -826,10 +832,12 @@ struct AppShellView: View {
                     showsChrome: false,
                     topChromeContentClearance: pinnedAudioSpeedScrollClearance,
                     isSaved: intentStore.isPageSaved(detailPageID),
+                    isPageSaved: { intentStore.isPageSaved($0) },
                     heroImageNameOverride: browseDetailHeroImageOverrides[detailPageID],
                     onBackTapped: goBack,
                     onSearchTapped: openSearch,
                     onToggleSaved: { intentStore.toggleSavedPage(detailPageID) },
+                    onToggleSavedPage: { intentStore.toggleSavedPage($0) },
                     onDetailTapped: openDetail
                 )
             }
@@ -870,11 +878,13 @@ struct AppShellView: View {
             showsChrome: false,
             topChromeContentClearance: pinnedAudioSpeedScrollClearance,
             isSaved: intentStore.isPageSaved(routePageID),
+            isPageSaved: { intentStore.isPageSaved($0) },
             heroMorphPageID: homePhraseHeroMorphPageID,
             heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
             onBackTapped: onBackTapped,
             onSearchTapped: openSearch,
             onToggleSaved: { intentStore.toggleSavedPage(routePageID) },
+            onToggleSavedPage: { intentStore.toggleSavedPage($0) },
             onDetailTapped: openDetail
         )
     }

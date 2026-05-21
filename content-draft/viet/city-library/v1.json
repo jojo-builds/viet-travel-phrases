@@ -41021,9 +41021,9 @@
       "targetText": "L'Usine Thảo Điền",
       "englishText": "L'Usine Thao Dien",
       "pronunciation": "lusine thao dien",
-      "context": "For L'Usine Thao Dien, Saigon's cafe story comes through design details, soft pauses, cafe views, and coffee counters, alongside Saigon street energy.",
-      "tip": "L'Usine Thao Dien stays rooted in Saigon through iced glasses, street stools, design details, and soft pauses, alongside Saigon street energy.",
-      "rationale": "L'Usine Thao Dien brings Saigon into focus through design details, soft pauses, cafe views, and coffee counters, alongside Saigon street energy.",
+      "context": "L'Usine has several Saigon locations. This is the calmer Thao Dien one, with villas, side streets, design shops, and longer coffees.",
+      "tip": "Early is the better version, before traffic builds, brunch fills in, and the sidewalks heat up.",
+      "rationale": "High ceilings, warm wood, soft light, quiet tables, and enough polish to feel easy without feeling formal.",
       "chunks": [
         [
           "L'Usine",
@@ -41052,39 +41052,46 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "L'Usine Thao Dien is worth saving for Saigon's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect leafy Thao Dien cafe terrace with iced coffee and villa setting.",
+        "summary": "L'Usine Thao Dien is the softer branch for a morning that can drift from iced coffee into brunch. High ceilings, warm wood, quiet tables, and shop shelves make it feel easy to stay.",
         "sourceNotes": "L'Usine Thao Dien named-place source",
         "imagePromptNote": "Leafy Thao Dien cafe terrace with iced coffee and villa setting, realistic photo, no logo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "L'Usine Thao Dien is worth saving when you want Saigon's cafe culture, not just caffeine: iced glasses, street stools, design details, and soft pauses, alongside Saigon street energy."
+            "title": "A Slower Thao Dien Morning",
+            "body": "Coffee can be the whole plan here. The room just makes it easier to stay longer."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At L'Usine Thao Dien, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: leafy Thao Dien cafe terrace with iced coffee and villa setting, with cafe views, coffee counters, iced glasses, and street stools, alongside Saigon street energy."
-          },
-          {
-            "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say L'Usine Thảo Điền for L'Usine Thao Dien. The local name is easier to remember once it sits beside coffee counters, iced glasses, street stools, and design details, alongside Saigon street energy."
+            "title": "Why This Branch Works",
+            "body": "High ceilings, warm wood, soft light, quiet tables, and enough polish to feel easy without feeling formal."
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon street energy."
+            "title": "Popular Here",
+            "body": "Vietnamese milk coffee, salt caramel coffee, Eggs Benedict, Premium Pho, crispy chicken salad, and squid ink crab pasta with crab."
           },
           {
             "id": "when-to-use",
-            "title": "Before you go",
-            "body": "L'Usine Thao Dien works best when the name is tied to the reason for going, not memorized as an abstract label. Picture leafy Thao Dien cafe terrace with iced coffee and villa setting with coffee counters, iced glasses, street stools, and design details, alongside Saigon street energy."
+            "title": "Come Before It Gets Loud",
+            "body": "Early is the better version. Before traffic builds, brunch fills in, and the sidewalks heat up."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "L'Usine Thảo Điền carries L'Usine Thao Dien's surrounding details: design details, soft pauses, cafe views, and coffee counters, alongside Saigon street energy, with Leafy Thao Dien cafe terrace with iced coffee and villa setting behind it."
+            "title": "The Thao Dien One",
+            "body": "L'Usine has several Saigon locations. This is the calmer one, with villas, side streets, design shops, and longer coffees."
+          },
+          {
+            "id": "quick-say",
+            "title": "Useful Here",
+            "body": "Ask for a table, get the menu, order Vietnamese iced milk coffee, ask what they recommend, and check whether you can pay by card.",
+            "phraseIDs": [
+              "food-need-table",
+              "food-menu",
+              "coffee-1",
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
+            ]
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceLusineThaoDien",
