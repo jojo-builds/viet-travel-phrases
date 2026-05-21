@@ -506,8 +506,11 @@ struct SavedTripPracticeItem: Identifiable, Equatable {
 }
 
 enum SavedTripPracticeCatalog {
-    static func items(for savedPageIDs: [String]) throws -> [SavedTripPracticeItem] {
-        var repository: VietSQLiteLanguagePackRepository?
+    static func items(
+        for savedPageIDs: [String],
+        repository existingRepository: VietSQLiteLanguagePackRepository? = nil
+    ) throws -> [SavedTripPracticeItem] {
+        var repository = existingRepository
         var seenPageIDs = Set<String>()
         var seenVietnamese = Set<String>()
         var seenEnglish = Set<String>()

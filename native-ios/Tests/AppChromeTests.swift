@@ -486,6 +486,38 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
+    func testSQLiteRuntimeCachesStayBoundedDuringSearchAndDetailBrowsing() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        _ = VietSQLitePhraseGraphRuntime.search("coffee", limit: 4)
+        _ = VietSQLitePhraseGraphRuntime.search(" coffee ", limit: 4)
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedSearchResultCountForTesting, 1)
+
+        for index in 0..<(VietSQLitePhraseGraphRuntime.searchResultCacheLimitForTesting + 8) {
+            _ = VietSQLitePhraseGraphRuntime.search("cache-test-query-\(index)", limit: 3)
+        }
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.cachedSearchResultCountForTesting,
+            VietSQLitePhraseGraphRuntime.searchResultCacheLimitForTesting
+        )
+
+        let pageIDs = Array(
+            PhraseCatalog.items(selectedCategoryID: PhraseCatalog.allCategoryID)
+                .map(\.pageID)
+                .prefix(VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting + 12)
+        )
+        XCTAssertGreaterThan(pageIDs.count, VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting)
+
+        for pageID in pageIDs {
+            _ = VietSQLitePhraseGraphRuntime.detailPage(withID: pageID)
+        }
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting,
+            VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting
+        )
+    }
+
     func testAdminRootBackdropSurfacesMapToSharedPoolCursor() {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)

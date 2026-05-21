@@ -534,17 +534,16 @@ enum AdminBackdropImagePreheater {
                 }
 
                 autoreleasepool {
-                    if let preparedImage = UIImage(named: imageName)?.preparingForDisplay() {
-                        lock.lock()
-                        if generation == preheatGeneration {
-                            preheatedImages[imageName] = preparedImage
-                            preheatedImageOrder.append(imageName)
-                            trimPreheatedImagesIfNeeded()
-                        } else {
-                            releasePendingReservation(imageName)
-                        }
-                        lock.unlock()
+                    let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
+                    lock.lock()
+                    if generation == preheatGeneration, let preparedImage {
+                        preheatedImages[imageName] = preparedImage
+                        preheatedImageOrder.append(imageName)
+                        trimPreheatedImagesIfNeeded()
+                    } else {
+                        releasePendingReservation(imageName)
                     }
+                    lock.unlock()
                 }
             }
         }
