@@ -309,6 +309,22 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
     }
 
+    func testPhotoBackdropBottomBackingKeepsRoundedSheetEdge() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let restingSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: restingSheetTop),
+            PhrasePhotoBackdropLayout.sheetTopCornerRadius,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: 0),
+            0,
+            accuracy: 0.001
+        )
+    }
+
     func testAdminPhotoBackdropRestingSheetUsesRealInitialScrollOffset() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let naturalState = AdminPhotoBackdropScrollState(rawOffset: 0, metrics: metrics)
@@ -340,8 +356,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThan(pulledDownSheetTop, restingSheetTop)
         XCTAssertLessThanOrEqual(pulledDownSheetTop, metrics.collapsedContentTop)
         XCTAssertEqual(
-            AdminPhotoBackdropSurfaceLayout.bottomChromeOcclusionHeight(safeAreaBottom: 34),
-            PhrasePageStyle.bottomChromeContentClearance + 34,
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: restingSheetTop),
+            PhrasePhotoBackdropLayout.sheetTopCornerRadius,
             accuracy: 0.001
         )
     }
