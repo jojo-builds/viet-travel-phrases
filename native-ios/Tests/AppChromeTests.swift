@@ -196,6 +196,11 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBottomAdminHitTestEnvelopeDoesNotCoverPulledPhotoSheet() {
+        XCTAssertLessThan(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, 88)
+    }
+
     func testTopAdminControlsUseCompactAlignedMetrics() {
         XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
         XCTAssertLessThanOrEqual(AppChromeLayout.topAdminControlSize, 48)

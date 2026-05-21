@@ -419,7 +419,6 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             metrics: metrics
         )
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
             Color.clear
@@ -428,7 +427,7 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
 
             PhotoBackdropBottomChromeBacking(
                 height: backdropHeight,
-                topCornerRadius: topCornerRadius
+                topCornerRadius: 0
             )
         }
         .frame(
