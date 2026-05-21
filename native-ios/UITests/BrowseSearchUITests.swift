@@ -557,6 +557,31 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
     }
 
+    func testEssentialsSubcategoryJumpClearsTopAdminChrome() {
+        let app = launchApp(arguments: ["--browse-category", "essentials"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.essentials"].waitForExistence(timeout: 4))
+        let firstFilter = app.buttons["BrowseCollection.Subcategory.essentials.polite-basics"]
+        XCTAssertTrue(firstFilter.waitForExistence(timeout: 2))
+
+        tapHorizontalCard(
+            app.buttons["BrowseCollection.Subcategory.essentials.gratitude"],
+            app: app,
+            scrollAnchor: firstFilter
+        )
+
+        let sectionTitle = app.staticTexts["Gratitude phrases"]
+        XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
+
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        XCTAssertTrue(backButton.waitForExistence(timeout: 2))
+        XCTAssertGreaterThan(
+            sectionTitle.frame.minY,
+            backButton.frame.maxY + 16,
+            "Subcategory jumps should leave the section label below the top admin chrome."
+        )
+    }
+
     func testAirportCollectionKeepsFirstSectionCloseToSubcategoryRail() {
         let app = launchApp(arguments: ["--browse-category", "airport"])
 

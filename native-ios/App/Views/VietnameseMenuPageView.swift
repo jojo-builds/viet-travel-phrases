@@ -573,7 +573,7 @@ private enum VietnameseMenuLayout {
     static let sectionCardHeight: CGFloat = 166
     static let sectionImageHeight: CGFloat = 108
     static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
-    static let sectionJumpViewportAnchorY: CGFloat = 0.19
+    static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
     static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
     static let glassRailRevealY: CGFloat = 72
 

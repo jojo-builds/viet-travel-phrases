@@ -148,6 +148,12 @@ final class AppChromeTests: XCTestCase {
             AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
         )
         XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+        XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
+        XCTAssertEqual(
+            BrowseCollectionLayout.subcategoryJumpViewportAnchorY,
+            AppChromeLayout.menuSectionJumpViewportAnchorY,
+            accuracy: 0.001
+        )
     }
 
     func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
