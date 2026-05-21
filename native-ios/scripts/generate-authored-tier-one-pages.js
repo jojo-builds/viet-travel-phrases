@@ -2563,28 +2563,39 @@ function applyCityEditorialImport(sections, pageRecord) {
     return sections;
   }
 
+  const usesSourceMode = ["expanded-detail", "mobile-first"].includes(editorialImport.sourceMode);
   const nextSections = editorialImport.replaceGeneratedSections === true
     ? []
     : sections.map((section) => ({ ...section }));
   const generatedSectionByID = new Map(sections.map((section) => [section.id, section]));
   const shouldReplaceGeneratedSections = editorialImport.replaceGeneratedSections === true;
+  const shouldUseEditorialOnlySections = shouldReplaceGeneratedSections && usesSourceMode;
   const insertBeforeIndex = () => {
     const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
     return goodToKnowIndex === -1 ? nextSections.length : goodToKnowIndex;
   };
 
   for (const editorialSection of editorialImport.sections) {
-    const generatedSection = shouldReplaceGeneratedSections
-      ? generatedSectionByID.get(editorialSection.id)
-      : null;
-    const next = {
-      ...(generatedSection ? { ...generatedSection } : {}),
-      id: editorialSection.id,
-      title: editorialSection.title,
-      body: editorialSection.body,
-    };
+    const generatedSection = generatedSectionByID.get(editorialSection.id);
+    const hasPhraseIDs = Array.isArray(editorialSection.phraseIDs);
+    const next = shouldUseEditorialOnlySections
+      ? {
+        id: editorialSection.id,
+        title: editorialSection.title,
+        body: editorialSection.body,
+        phrases: [],
+        breakdown: [],
+        presentation: editorialSection.presentation ?? (hasPhraseIDs ? "phrase-list" : "plain-text"),
+      }
+      : {
+        ...(generatedSection ? { ...generatedSection } : {}),
+        id: editorialSection.id,
+        title: editorialSection.title,
+        body: editorialSection.body,
+      };
     if (Array.isArray(editorialSection.phraseIDs)) {
       next.phrases = editorialSection.phraseIDs.map((phraseID) => editorialCityPhraseOption(phraseID, pageRecord.id));
+      next.presentation = editorialSection.presentation ?? "phrase-list";
     }
     if (editorialSection.id === "breakdown") {
       next.breakdown = editorialCityBreakdownTokens(editorialSection.breakdownTokens);
@@ -3124,6 +3135,8 @@ function cityPageForRecord(pageRecord, context) {
       rationale: cleanTravelerBody(pageRecord.rationale),
       editorialImportPatchID: pageRecord.editorialImport?.patchID ?? null,
       editorialReviewStatus: pageRecord.editorialImport?.reviewStatus ?? null,
+      editorialSourceMode: pageRecord.editorialImport?.sourceMode ?? null,
+      editorialRuntimeOverrideKind: pageRecord.editorialImport?.runtimeOverride?.kind ?? null,
       targetHeroImageName: pageRecord.editorialImport?.targetHeroImageName ?? pageRecord.productionIntake?.targetHeroImageName ?? null,
     },
     sections: withSectionPresentations(authoredSections),
@@ -3784,6 +3797,9 @@ function withoutGenericNearbyOptions(options) {
 function curatedNameSectionPhrases(page, section, profile) {
   const existing = section.phrases || [];
   if (section.id === "quick-say") {
+    if (normalizeAudioText(section.title || "") === "useful phrases" && existing.length > 0) {
+      return compactPhraseOptions(existing, 6);
+    }
     const self = selfPhraseOptionForPage(page);
     return self ? [self] : existing.slice(0, 1);
   }
@@ -4366,6 +4382,7 @@ function baNaJourneySection(existingByID, id, title, phraseIDs, tintName = "teal
 
 function rewriteBaNaHillsJourneySections(page, sections) {
   if (!isBaNaHillsPage(page)) return sections;
+  if (page.cityMetadata?.editorialRuntimeOverrideKind !== "ba-na-hills-journey") return sections;
 
   const existingByID = new Map(sections.map((section) => [section.id, section]));
   const about = existingByID.get("at-glance");

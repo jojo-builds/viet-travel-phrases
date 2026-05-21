@@ -345,7 +345,9 @@ final class PracticeNativeMVPTests: XCTestCase {
     }
 
     func testPracticeMatchPresentationUsesOnePullUpCardContract() {
-        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .route))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .pullUpOverlay))
         XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
         XCTAssertTrue(
             PracticeMatchPresentationPolicy.showsDirectStartCard(
@@ -388,6 +390,37 @@ final class PracticeNativeMVPTests: XCTestCase {
         )
     }
 
+    func testPracticeMatchPullUpDismissalRequiresACommittedDrag() {
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 230,
+                predictedTranslation: 280,
+                cardHeight: 620
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 44,
+                predictedTranslation: 71,
+                cardHeight: 620
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 448,
+                predictedTranslation: 470,
+                cardHeight: 620
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 140,
+                predictedTranslation: 490,
+                cardHeight: 620
+            )
+        )
+    }
+
     func testPracticeMatchSnapshotLoadPolicySkipsInactiveRoutes() {
         XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldLoadSnapshot(isActive: false))
         XCTAssertFalse(PracticeMatchSnapshotLoadPolicy.shouldHandleStartRequest(isActive: false))
@@ -396,9 +429,51 @@ final class PracticeNativeMVPTests: XCTestCase {
     }
 
     func testPracticePullUpBackdropDimsAndSheetBleedsToScreenEdges() {
-        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.30)
-        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.52)
         XCTAssertEqual(PracticeMatchPullUpMetrics.sheetHorizontalBackgroundPadding, 0)
+        XCTAssertEqual(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 0,
+                cardHeight: 620
+            ),
+            PracticeMatchPullUpMetrics.backdropOpacity,
+            accuracy: 0.001
+        )
+        XCTAssertLessThan(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 240,
+                cardHeight: 620
+            ),
+            PracticeMatchPullUpMetrics.backdropOpacity
+        )
+        XCTAssertEqual(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 620,
+                cardHeight: 620
+            ),
+            0,
+            accuracy: 0.001
+        )
+    }
+
+    func testPracticePhotoBackdropHubIgnoresTopChromeClearanceInsideSheet() {
+        XCTAssertEqual(
+            PracticeMatchHubLayout.topPadding(
+                usesPhotoBackdrop: true,
+                topContentClearance: 132
+            ),
+            18,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.topPadding(
+                usesPhotoBackdrop: false,
+                topContentClearance: 132
+            ),
+            154,
+            accuracy: 0.001
+        )
     }
 
     func testMissedPromptsReappearInMissedReview() throws {

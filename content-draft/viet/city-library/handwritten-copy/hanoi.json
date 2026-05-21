@@ -686,9 +686,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cho tôi một cà phê trứng nóng for hot egg coffee, Lối lên quán ở đâu? for the stairs, and Ít ngọt thôi for less sweet.",
+          "body": "",
           "phraseIDs": [
-            "city-hanoi-place-dinh-cafe"
+            "coffee-1",
+            "v900-food-drin-one-hot-coffee-please",
+            "v900-food-drin-less-sugar-please",
+            "coffee-7"
           ]
         },
         {
@@ -701,7 +704,8 @@
           "title": "Keep It Short Near Hoàn Kiếm",
           "body": "The café works as a short pause before or after a lake walk. If the room is full, nearby coffee stops can keep the day moving."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hanoi-place-dong-da",
@@ -1035,11 +1039,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask for cà phê trứng nóng for hot egg coffee, ca cao trứng for egg cocoa, and ít ngọt được không? if you want less sweetness.",
+          "body": "",
           "phraseIDs": [
-            "city-hanoi-place-giang-cafe",
-            "city-hanoi-where-giang-cafe",
-            "city-hanoi-go-giang-cafe"
+            "coffee-1",
+            "v900-food-drin-one-hot-coffee-please",
+            "v900-food-drin-less-sugar-please",
+            "coffee-7"
           ]
         },
         {
@@ -1052,7 +1057,8 @@
           "title": "Old Quarter Coffee Starting Point",
           "body": "Nguyễn Hữu Huân has become one of Hanoi’s coffee streets. Giảng is the history-heavy starting point before comparing other egg-coffee shops."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hanoi-place-giap-bat-bus-station",
@@ -3063,9 +3069,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask for cà phê trứng if egg coffee is the point, giấy ghi chú if you need note paper, and tầng trên if you want an upstairs seat.",
+          "body": "",
           "phraseIDs": [
-            "city-hanoi-place-the-note-coffee"
+            "coffee-1",
+            "coffee-4",
+            "coffee-6",
+            "coffee-7"
           ]
         },
         {
@@ -3078,7 +3087,8 @@
           "title": "Go For The Memory",
           "body": "Crowds and narrow stairs are part of the tradeoff. The stop is still worth it when you want a small, readable Hanoi coffee memory rather than a serious café session."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hanoi-place-thong-nhat-park",

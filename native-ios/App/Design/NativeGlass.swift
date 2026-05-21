@@ -290,7 +290,7 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
-    static let bottomAdminHitTestEnvelopeHeight: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
     static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
         if showsMenuSectionChrome {
@@ -314,6 +314,7 @@ struct ChromeSeparationGradient: View {
     let edge: ChromeSeparationEdge
     var extendsBehindMenuSectionChrome = false
     var style: ChromeSeparationGradientStyle = .light
+    var opacityScale: Double = 1
 
     var body: some View {
         LinearGradient(
@@ -329,9 +330,9 @@ struct ChromeSeparationGradient: View {
     private var gradientStops: [Gradient.Stop] {
         if style == .darkPhoto {
             return [
-                .init(color: Color.black.opacity(0.68), location: 0),
-                .init(color: Color.black.opacity(0.48), location: 0.34),
-                .init(color: Color.black.opacity(0.18), location: 0.72),
+                .init(color: Color.black.opacity(scaledOpacity(0.72)), location: 0),
+                .init(color: Color.black.opacity(scaledOpacity(0.54)), location: 0.34),
+                .init(color: Color.black.opacity(scaledOpacity(0.24)), location: 0.72),
                 .init(color: Color.black.opacity(0), location: 1),
             ]
         }
@@ -352,6 +353,10 @@ struct ChromeSeparationGradient: View {
             .init(color: PhrasePageStyle.pageBackground.opacity(0.30), location: 0.78),
             .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
         ]
+    }
+
+    private func scaledOpacity(_ opacity: Double) -> Double {
+        opacity * min(max(opacityScale, 0), 1)
     }
 }
 

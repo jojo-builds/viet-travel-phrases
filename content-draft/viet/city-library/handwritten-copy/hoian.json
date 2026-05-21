@@ -296,9 +296,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Một suất ăn bao nhiêu tiền? before starting, Chỉ cho tôi cách cuốn được không? for the first roll, and Tính tiền giúp tôi when ready to leave.",
+          "body": "",
           "phraseIDs": [
-            "city-hoian-place-bale-well"
+            "food-menu",
+            "food-1",
+            "food-3",
+            "coffee-7"
           ]
         },
         {
@@ -311,7 +314,8 @@
           "title": "Close To The Old Core",
           "body": "The restaurant is close enough to pair with an Ancient Town walk. It works better as a food detour than as a slow tasting menu."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-banh-dap-hen-xao",
@@ -411,11 +415,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Một bánh mì thịt, ít ớt for pork with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+          "body": "",
           "phraseIDs": [
-            "city-hoian-place-banh-mi-phuong",
-            "city-hoian-where-banh-mi-phuong",
-            "city-hoian-go-banh-mi-phuong"
+            "v500-food-drin-id-like-a-b-nh-m-please",
+            "food-3",
+            "food-7",
+            "price-1"
           ]
         },
         {
@@ -428,7 +433,8 @@
           "title": "A Quick Old Town Detour",
           "body": "Phan Châu Trinh is close enough to fold into an Ancient Town walk. Order, eat nearby, and move on rather than making the fame story the whole plan."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-banh-xeo",
@@ -2049,9 +2055,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Một bánh mì thập cẩm, ít ớt for mixed bánh mì with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+          "body": "",
           "phraseIDs": [
-            "city-hoian-place-madam-khanh"
+            "v500-food-drin-id-like-a-b-nh-m-please",
+            "food-3",
+            "food-7",
+            "price-1"
           ]
         },
         {
@@ -2064,7 +2073,8 @@
           "title": "Different Job Than Phượng",
           "body": "Madam Khanh should feel like a heat-and-filling decision, while Bánh Mì Phượng is more about moving through a faster glass-case counter."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-mai-fish",
@@ -2359,11 +2369,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Món nào là món đặc trưng của Hội An? for a specialty, Món này có tôm hoặc thịt heo không? for ingredients, and Món này có cay không? for heat.",
+          "body": "",
           "phraseIDs": [
-            "city-hoian-place-morning-glory",
-            "city-hoian-where-morning-glory",
-            "city-hoian-reservation-morning-glory"
+            "food-menu",
+            "food-1",
+            "v500-food-drin-does-this-contain-shrimp",
+            "food-7"
           ]
         },
         {
@@ -2376,7 +2387,8 @@
           "title": "A Launchpad, Not The Whole Story",
           "body": "After one controlled meal, smaller counters and specialty stops become easier to understand. Morning Glory should not carry every Hội An food expectation."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-mot-herbal-drink",
@@ -3802,9 +3814,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask for một đĩa bánh bao bánh vạc when ordering, then Bánh này có tôm không? if shellfish matters. More dipping sauce is thêm nước chấm.",
+          "body": "",
           "phraseIDs": [
-            "city-hoian-place-white-rose-restaurant"
+            "food-menu",
+            "food-1",
+            "v500-food-drin-does-this-contain-shrimp",
+            "food-7"
           ]
         },
         {
@@ -3817,7 +3832,8 @@
           "title": "A Short Food Detour",
           "body": "The restaurant sits outside the densest lantern-street loop. The value is a purposeful dish stop, not a full evening plan."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-wonton",

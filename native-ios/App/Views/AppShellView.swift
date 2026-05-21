@@ -96,6 +96,21 @@ enum AppShellPracticeOverlayChromePolicy {
     static func preferredSystemColorScheme(isPracticeOverlayPresented: Bool) -> ColorScheme? {
         isPracticeOverlayPresented ? .dark : nil
     }
+
+    static func topChromeOpacityScale(
+        isPracticeOverlayPresented: Bool,
+        backdropOpacity: Double
+    ) -> Double {
+        guard isPracticeOverlayPresented else {
+            return 1
+        }
+
+        guard PracticeMatchPullUpMetrics.backdropOpacity > 0 else {
+            return 1
+        }
+
+        return min(max(backdropOpacity / PracticeMatchPullUpMetrics.backdropOpacity, 0), 1)
+    }
 }
 
 struct AppShellView: View {
@@ -121,6 +136,7 @@ struct AppShellView: View {
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
     @State private var isPracticeOverlayPresented = false
+    @State private var practiceOverlayBackdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity
     @State private var practiceOverlayResetTrigger = 0
     @State private var browseCollectionFocusRequestID = 0
     @State private var browseCollectionFocusRequest: BrowseCollectionFocusRequest?
@@ -270,6 +286,9 @@ struct AppShellView: View {
     private var shellContent: some View {
         shellContentBody
             .environment(\.colorScheme, .light)
+            .onPreferenceChange(PracticeOverlayBackdropOpacityPreferenceKey.self) { opacity in
+                practiceOverlayBackdropOpacity = opacity
+            }
     }
 
     private var effectiveTopChromeStyle: ChromeSeparationGradientStyle {
@@ -283,6 +302,13 @@ struct AppShellView: View {
     private var preferredSystemColorScheme: ColorScheme? {
         AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
             isPracticeOverlayPresented: isPracticeOverlayPresented
+        )
+    }
+
+    private var topChromeOpacityScale: Double {
+        AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+            isPracticeOverlayPresented: isPracticeOverlayPresented,
+            backdropOpacity: practiceOverlayBackdropOpacity
         )
     }
 
@@ -555,6 +581,7 @@ struct AppShellView: View {
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
                 topChromeStyle: effectiveTopChromeStyle,
+                topChromeOpacityScale: topChromeOpacityScale,
                 isPracticeMatchPresented: isPracticeMatchPresented || isPracticeOverlayPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -1669,6 +1696,7 @@ struct AppShellView: View {
         }
 
         practiceOverlayResetTrigger += 1
+        practiceOverlayBackdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity
         withAnimation(.spring(response: 0.34, dampingFraction: 0.88)) {
             isPracticeOverlayPresented = true
         }
@@ -3268,6 +3296,7 @@ private extension View {
         isPracticeThreadPresented: Bool,
         hidesPhotoBackdropChrome: Bool,
         topChromeStyle: ChromeSeparationGradientStyle,
+        topChromeOpacityScale: Double,
         isPracticeMatchPresented: Bool,
         showsStaticBackButton: Bool,
         showsMenuSectionChrome: Bool,
@@ -3284,6 +3313,7 @@ private extension View {
                 isPracticeThreadPresented: isPracticeThreadPresented,
                 hidesPhotoBackdropChrome: hidesPhotoBackdropChrome,
                 topChromeStyle: topChromeStyle,
+                topChromeOpacityScale: topChromeOpacityScale,
                 isPracticeMatchPresented: isPracticeMatchPresented,
                 showsStaticBackButton: showsStaticBackButton,
                 showsMenuSectionChrome: showsMenuSectionChrome,
@@ -3458,11 +3488,11 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
                     tabBar.isTranslucent = true
                     tabBar.layer.shadowOpacity = 0
                 } else if usesContentBackground {
-                    appearance.configureWithTransparentBackground()
-                    appearance.backgroundColor = .clear
+                    appearance.configureWithOpaqueBackground()
+                    appearance.backgroundColor = .systemBackground
                     appearance.shadowColor = .clear
-                    tabBar.backgroundColor = .clear
-                    tabBar.isTranslucent = true
+                    tabBar.backgroundColor = .systemBackground
+                    tabBar.isTranslucent = false
                     tabBar.layer.shadowOpacity = 0
                 } else {
                     appearance.configureWithDefaultBackground()
@@ -3544,6 +3574,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
     let isPracticeThreadPresented: Bool
     let hidesPhotoBackdropChrome: Bool
     let topChromeStyle: ChromeSeparationGradientStyle
+    let topChromeOpacityScale: Double
     let isPracticeMatchPresented: Bool
     let showsStaticBackButton: Bool
     let showsMenuSectionChrome: Bool
@@ -3594,7 +3625,8 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
                     ChromeSeparationGradient(
                         edge: .top,
                         extendsBehindMenuSectionChrome: showsMenuSectionChrome,
-                        style: topChromeStyle
+                        style: topChromeStyle,
+                        opacityScale: topChromeOpacityScale
                     )
                         .zIndex(AppChromeLayout.chromeSeparationLayerZIndex)
                 }
@@ -3925,7 +3957,6 @@ struct HomeView: View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
             Color.clear
@@ -3934,7 +3965,7 @@ struct HomeView: View {
 
             PhotoBackdropBottomChromeBacking(
                 height: backdropHeight,
-                topCornerRadius: topCornerRadius
+                topCornerRadius: 0
             )
         }
         .frame(

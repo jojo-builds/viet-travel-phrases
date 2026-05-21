@@ -19,9 +19,15 @@ enum PracticeMatchSnapshotLoadPolicy {
 enum PracticeMatchPresentationPolicy {
     static func usesPullUpRoundCard(for style: PracticePresentationStyle) -> Bool {
         switch style {
-        case .route, .pullUpOverlay:
+        case .route:
+            return false
+        case .pullUpOverlay:
             return true
         }
+    }
+
+    static func usesNativeSystemSheet(for style: PracticePresentationStyle) -> Bool {
+        style == .route
     }
 
     static func showsDirectStartCard(
@@ -46,8 +52,50 @@ enum PracticeMatchPresentationPolicy {
 }
 
 enum PracticeMatchPullUpMetrics {
-    static let backdropOpacity: Double = 0.34
+    static let backdropOpacity: Double = 0.46
     static let sheetHorizontalBackgroundPadding: CGFloat = 0
+
+    static func backdropOpacity(
+        dragTranslation: CGFloat,
+        cardHeight: CGFloat
+    ) -> Double {
+        let fadeDistance = max(420, cardHeight * 0.72)
+        let progress = min(max(dragTranslation / fadeDistance, 0), 1)
+
+        return backdropOpacity * Double(1 - progress)
+    }
+}
+
+struct PracticeOverlayBackdropOpacityPreferenceKey: PreferenceKey {
+    static var defaultValue: Double = 0
+
+    static func reduce(value: inout Double, nextValue: () -> Double) {
+        value = max(value, nextValue())
+    }
+}
+
+enum PracticeMatchHubLayout {
+    static func topPadding(usesPhotoBackdrop: Bool, topContentClearance: CGFloat) -> CGFloat {
+        let basePadding: CGFloat = usesPhotoBackdrop ? 18 : 22
+        let contentClearance = usesPhotoBackdrop ? 0 : topContentClearance
+
+        return basePadding + contentClearance
+    }
+}
+
+enum PracticeMatchPullUpDismissalPolicy {
+    static func shouldDismiss(
+        translation: CGFloat,
+        predictedTranslation: CGFloat,
+        cardHeight: CGFloat
+    ) -> Bool {
+        let committedDistance = max(420, cardHeight * 0.68)
+        let fastSwipeDistance = max(130, cardHeight * 0.20)
+        let predictedDistance = max(460, cardHeight * 0.78)
+
+        return translation >= committedDistance
+            || (translation >= fastSwipeDistance && predictedTranslation >= predictedDistance)
+    }
 }
 
 struct PracticeView: View {
@@ -4556,6 +4604,9 @@ private struct PracticeMatchRootView: View {
     @State private var activeSession: PracticeMatchActiveSession?
     @State private var activeSessionDismissalTarget = PracticeMatchDismissalTarget.hub
     @State private var handledRequestedKey: String?
+    @State private var nativeRoundSheetDetent = PresentationDetent.medium
+
+    private static let nativeRoundSheetDismissalDetent = PresentationDetent.height(96)
 
     var body: some View {
         ZStack {
@@ -4576,24 +4627,40 @@ private struct PracticeMatchRootView: View {
                     .accessibilityHidden(activeSession != nil)
             }
 
+            if let activeSession, !presentsActiveSessionInNativeSheet {
+                roundView(for: activeSession, topContentClearance: topContentClearance)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .zIndex(1)
+            }
+        }
+        .sheet(isPresented: nativeRoundSheetBinding) {
             if let activeSession {
-                PracticeMatchRoundView(
-                    session: activeSession,
-                    intentStore: intentStore,
-                    sourceOptions: sourceOptions,
-                    topContentClearance: topContentClearance,
-                    presentationStyle: presentationStyle,
-                    onClose: closeActiveSession,
-                    onDismiss: dismissActiveSession,
-                    onPreviousRound: returnToPreviousRound,
-                    onSelectSource: selectSource,
-                    onSelectPrompt: selectPrompt,
-                    onSelectAnswer: selectAnswer,
-                    onHint: revealHint,
-                    onContinue: continuePractice
-                )
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-                .zIndex(1)
+                roundView(for: activeSession, topContentClearance: 0)
+                    .presentationDetents(
+                        [Self.nativeRoundSheetDismissalDetent, .medium, .large],
+                        selection: $nativeRoundSheetDetent
+                    )
+                    .presentationDragIndicator(.visible)
+                    .presentationContentInteraction(.resizes)
+                    .interactiveDismissDisabled(true)
+                    .onAppear {
+                        nativeRoundSheetDetent = .medium
+                    }
+                    .onChange(of: nativeRoundSheetDetent) { _, detent in
+                        guard detent == Self.nativeRoundSheetDismissalDetent else {
+                            return
+                        }
+
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
+                            guard nativeRoundSheetDetent == Self.nativeRoundSheetDismissalDetent else {
+                                return
+                            }
+
+                            closeActiveSession()
+                        }
+                    }
+            } else {
+                Color.clear
             }
         }
         .task {
@@ -4633,6 +4700,47 @@ private struct PracticeMatchRootView: View {
         }
         .accessibilityHidden(!isActive)
         .accessibilityIdentifier("Practice.Match.Root")
+    }
+
+    @ViewBuilder
+    private func roundView(
+        for session: PracticeMatchActiveSession,
+        topContentClearance: CGFloat
+    ) -> some View {
+        PracticeMatchRoundView(
+            session: session,
+            intentStore: intentStore,
+            sourceOptions: sourceOptions,
+            topContentClearance: topContentClearance,
+            presentationStyle: presentationStyle,
+            onClose: closeActiveSession,
+            onDismiss: dismissActiveSession,
+            onPreviousRound: returnToPreviousRound,
+            onSelectSource: selectSource,
+            onSelectPrompt: selectPrompt,
+            onSelectAnswer: selectAnswer,
+            onHint: revealHint,
+            onContinue: continuePractice
+        )
+    }
+
+    private var presentsActiveSessionInNativeSheet: Bool {
+        PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle)
+    }
+
+    private var nativeRoundSheetBinding: Binding<Bool> {
+        Binding(
+            get: {
+                presentsActiveSessionInNativeSheet && activeSession != nil
+            },
+            set: { isPresented in
+                guard !isPresented, presentsActiveSessionInNativeSheet, activeSession != nil else {
+                    return
+                }
+
+                closeActiveSession()
+            }
+        )
     }
 
     @ViewBuilder
@@ -4801,6 +4909,7 @@ private struct PracticeMatchRootView: View {
         }
 
         withAnimation(.easeInOut(duration: 0.22)) {
+            nativeRoundSheetDetent = .medium
             activeSessionDismissalTarget = dismissalTarget
             activeSession = session
         }
@@ -4847,6 +4956,7 @@ private struct PracticeMatchRootView: View {
         }
 
         withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+            nativeRoundSheetDetent = .medium
             activeSession = session
         }
     }
@@ -5088,8 +5198,6 @@ private struct PracticeMatchHubView: View {
                 PracticeErrorCard(message: message, onRetry: onRetry)
             case .loaded(let snapshot):
                 PracticeMatchQuickSection(
-                    quickSource: snapshot.quickSource,
-                    practiceSource: snapshot.practiceSource,
                     savedSource: snapshot.savedSource,
                     onStartSource: onStartSource,
                     onBrowseTapped: onBrowseTapped
@@ -5102,7 +5210,10 @@ private struct PracticeMatchHubView: View {
             }
         }
         .padding(.horizontal, PracticeLayout.horizontalPadding)
-        .padding(.top, (usesPhotoBackdrop ? 18 : 22) + topContentClearance)
+        .padding(.top, PracticeMatchHubLayout.topPadding(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            topContentClearance: topContentClearance
+        ))
         .padding(.bottom, HomeLayout.bottomChromeContentClearance)
     }
 }
@@ -5124,37 +5235,12 @@ private struct PracticeMatchHero: View {
 }
 
 private struct PracticeMatchQuickSection: View {
-    let quickSource: PracticeMatchSource
-    let practiceSource: PracticeMatchSource
     let savedSource: PracticeMatchSource
     let onStartSource: (PracticeMatchSource) -> Void
     let onBrowseTapped: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            PracticeMatchSourceCard(
-                source: quickSource,
-                title: "Quick practice",
-                subtitle: "Start with common Vietnam phrases.",
-                actionTitle: "Start",
-                onTap: { onStartSource(quickSource) }
-            )
-
-            if practiceSource.canStart {
-                PracticeMatchSourceCard(
-                    source: practiceSource,
-                    title: practiceSource.title,
-                    subtitle: practiceSource.subtitle,
-                    actionTitle: "Start",
-                    onTap: { onStartSource(practiceSource) }
-                )
-            } else {
-                PracticeMatchPracticeEmptyCard(
-                    practiceCount: practiceSource.items.count,
-                    onBrowseTapped: onBrowseTapped
-                )
-            }
-
             if savedSource.canStart {
                 PracticeMatchSourceCard(
                     source: savedSource,
@@ -5520,6 +5606,7 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
 
     @State private var detent: PracticeMatchPullUpDetent
     @State private var dragTranslation: CGFloat = 0
+    @State private var isCompletingDragDismissal = false
 
     init(
         initialDetent: PracticeMatchPullUpDetent,
@@ -5536,9 +5623,13 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
         GeometryReader { proxy in
             let height = detent.height(for: proxy.size, safeAreaInsets: proxy.safeAreaInsets)
             let downwardDrag = max(0, dragTranslation)
+            let backdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: downwardDrag,
+                cardHeight: height
+            )
 
             ZStack(alignment: .bottom) {
-                Color.black.opacity(PracticeMatchPullUpMetrics.backdropOpacity)
+                Color.black.opacity(backdropOpacity)
                     .ignoresSafeArea()
                     .contentShape(Rectangle())
                     .onTapGesture(perform: onDismiss)
@@ -5551,32 +5642,14 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
                     .contentShape(cardShape)
                     .offset(y: downwardDrag)
                     .animation(.spring(response: 0.32, dampingFraction: 0.88), value: detent)
-                    .highPriorityGesture(cardDragGesture())
-                    .overlay(alignment: .top) {
-                        ZStack {
-                            Color.black.opacity(0.001)
-
-                            PracticeMatchPanGestureSurface(
-                                onChanged: { translation in
-                                    updateDragTranslation(translation)
-                                },
-                                onEnded: { translation, predictedTranslation in
-                                    settleDrag(
-                                        translation: translation,
-                                        predictedTranslation: predictedTranslation
-                                    )
-                                    dragTranslation = 0
-                                }
-                            )
-                        }
-                        .frame(height: 28)
-                        .contentShape(Rectangle())
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityIdentifier("Practice.Match.PullHandle")
-                    }
+                    .simultaneousGesture(cardDragGesture(cardHeight: height))
             }
             .frame(width: proxy.size.width, height: proxy.size.height, alignment: .bottom)
             .contentShape(Rectangle())
+            .preference(
+                key: PracticeOverlayBackdropOpacityPreferenceKey.self,
+                value: backdropOpacity
+            )
         }
         .ignoresSafeArea(edges: [.horizontal, .bottom])
     }
@@ -5593,7 +5666,7 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
         )
     }
 
-    private func cardDragGesture() -> some Gesture {
+    private func cardDragGesture(cardHeight: CGFloat) -> some Gesture {
         DragGesture(minimumDistance: 8, coordinateSpace: .local)
             .onChanged { value in
                 updateDragTranslation(value.translation.height)
@@ -5601,116 +5674,59 @@ private struct PracticeMatchPullUpCard<Content: View>: View {
             .onEnded { value in
                 settleDrag(
                     translation: value.translation.height,
-                    predictedTranslation: value.predictedEndTranslation.height
+                    predictedTranslation: value.predictedEndTranslation.height,
+                    cardHeight: cardHeight
                 )
-                dragTranslation = 0
             }
     }
 
     private func updateDragTranslation(_ translation: CGFloat) {
+        guard !isCompletingDragDismissal else {
+            return
+        }
+
         let downwardTranslation = max(0, translation)
         dragTranslation = downwardTranslation
-
-        if detent == .medium, downwardTranslation > 120 {
-            dragTranslation = 0
-            onDismiss()
-        }
     }
 
-    private func settleDrag(translation: CGFloat, predictedTranslation: CGFloat) {
-        let isDownwardDismissal = translation > 44 || predictedTranslation > 70
+    private func settleDrag(
+        translation: CGFloat,
+        predictedTranslation: CGFloat,
+        cardHeight: CGFloat
+    ) {
+        guard !isCompletingDragDismissal else {
+            return
+        }
+
+        let isDownwardDismissal = PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+            translation: translation,
+            predictedTranslation: predictedTranslation,
+            cardHeight: cardHeight
+        )
         let shouldDismiss = detent == .medium && isDownwardDismissal
+        let shouldCollapseToMedium = translation > max(70, cardHeight * 0.12)
+            || predictedTranslation > max(100, cardHeight * 0.18)
 
         if shouldDismiss {
-            onDismiss()
+            isCompletingDragDismissal = true
+            withAnimation(.easeInOut(duration: 0.2)) {
+                dragTranslation = cardHeight + 80
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
+                onDismiss()
+            }
             return
         }
 
         withAnimation(.spring(response: 0.32, dampingFraction: 0.88)) {
             if translation < -70 {
                 detent = .expanded
-            } else if isDownwardDismissal {
+            } else if shouldCollapseToMedium {
                 detent = .medium
             } else {
                 detent = initialDetent
             }
-        }
-    }
-}
-
-private struct PracticeMatchPanGestureSurface: UIViewRepresentable {
-    let onChanged: (CGFloat) -> Void
-    let onEnded: (CGFloat, CGFloat) -> Void
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(onChanged: onChanged, onEnded: onEnded)
-    }
-
-    func makeUIView(context: Context) -> UIView {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .clear
-        view.isUserInteractionEnabled = true
-
-        let recognizer = UIPanGestureRecognizer(
-            target: context.coordinator,
-            action: #selector(Coordinator.handlePan(_:))
-        )
-        recognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(recognizer)
-
-        let swipeRecognizer = UISwipeGestureRecognizer(
-            target: context.coordinator,
-            action: #selector(Coordinator.handleSwipeDown(_:))
-        )
-        swipeRecognizer.direction = .down
-        swipeRecognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(swipeRecognizer)
-
-        context.coordinator.view = view
-        return view
-    }
-
-    func updateUIView(_ uiView: UIView, context: Context) {
-        context.coordinator.onChanged = onChanged
-        context.coordinator.onEnded = onEnded
-        context.coordinator.view = uiView
-    }
-
-    final class Coordinator: NSObject {
-        var onChanged: (CGFloat) -> Void
-        var onEnded: (CGFloat, CGFloat) -> Void
-        weak var view: UIView?
-
-        init(onChanged: @escaping (CGFloat) -> Void, onEnded: @escaping (CGFloat, CGFloat) -> Void) {
-            self.onChanged = onChanged
-            self.onEnded = onEnded
-        }
-
-        @objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
-            guard let view else {
-                return
-            }
-
-            let translation = recognizer.translation(in: view).y
-            let velocity = recognizer.velocity(in: view).y
-            let predictedTranslation = translation + velocity * 0.12
-
-            switch recognizer.state {
-            case .began, .changed:
-                onChanged(translation)
-            case .ended, .cancelled, .failed:
-                onEnded(translation, predictedTranslation)
-            default:
-                break
-            }
-        }
-
-        @objc func handleSwipeDown(_ recognizer: UISwipeGestureRecognizer) {
-            guard recognizer.state == .ended else {
-                return
-            }
-
-            onEnded(160, 220)
+            dragTranslation = 0
         }
     }
 }
