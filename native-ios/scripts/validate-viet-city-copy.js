@@ -13,6 +13,29 @@ const expectedPagesPerCity = 100;
 const expectedNounPageCount = expectedCityIDs.length * expectedPagesPerCity;
 const reviewStatus = "handwritten-reviewed";
 const reviewID = "viet-city-copy-production-2026-05-17";
+const legacyTemplateSectionTitles = new Set([
+  "Why go",
+  "What you'll get",
+  "Say it locally",
+  "Worth it if",
+  "Good to know",
+]);
+const reviewLedVenueResearch = new Map([
+  [
+    "city-hcmc-place-lusine-thao-dien",
+    {
+      path: path.join(repoRoot, "content-draft", "viet", "city-library", "research", "location-reviews", "hcmc", "lusine-thao-dien.review-research.json"),
+      requiredSignals: [
+        /eggs benedict/i,
+        /squid ink crab pasta/i,
+        /premium pho/i,
+        /salt caramel coffee/i,
+        /high ceilings?/i,
+        /thao dien/i,
+      ],
+    },
+  ],
+]);
 const bannedVisibleFragments = [
   "noun",
   "anchor",
@@ -259,20 +282,11 @@ function validateProfileUtility(page) {
 function validateReasonToGoStructure(page) {
   const sections = page.editorialImport?.sections ?? [];
   const byID = new Map(sections.map((section) => [section.id, section]));
-  const expectedTitles = {
-    "at-glance": "Why go",
-    "place-brief": "What you'll get",
-    "quick-say": "Say it locally",
-    "use-it-with": "Worth it if",
-  };
-  for (const [sectionID, expectedTitle] of Object.entries(expectedTitles)) {
+  const requiredSectionIDs = ["at-glance", "place-brief", "use-it-with"];
+  for (const sectionID of requiredSectionIDs) {
     const section = byID.get(sectionID);
     if (!section) {
       fail(`${page.id} missing reason-to-go section ${sectionID}`);
-      continue;
-    }
-    if (section.title !== expectedTitle) {
-      fail(`${page.id} section ${sectionID} should be titled "${expectedTitle}", found "${section.title}"`);
     }
   }
   const text = normalizedLower(visibleEditorialText(page));
@@ -297,6 +311,54 @@ function validateReasonToGoStructure(page) {
   ];
   if (!reasonWords.some((word) => text.includes(word))) {
     fail(`${page.id} missing a reason-to-go or factual hook cue`);
+  }
+  validateReviewLedVenueStructure(page);
+}
+
+function validateReviewLedVenueStructure(page) {
+  const expectation = reviewLedVenueResearch.get(page.id);
+  if (!expectation) return;
+
+  const researchPath = expectation.path;
+  if (!fs.existsSync(researchPath)) {
+    fail(`${page.id} missing local review research file ${path.relative(repoRoot, researchPath)}`);
+    return;
+  }
+
+  const research = readJSON(researchPath);
+  const standards = research.googleReviewHarvest ?? {};
+  if ((standards.targetReviewCount ?? 0) < 25) {
+    fail(`${page.id} review research should target at least 25 reviews`);
+  }
+  if ((standards.minimumReviewCountForScale ?? 0) < 20) {
+    fail(`${page.id} review research should keep 20 reviews as the minimum before scaling`);
+  }
+  const reviewSignals = Array.isArray(research.targetedReviewSignals) ? research.targetedReviewSignals : research.reviewSignals;
+  if ((standards.publiclySurfacedReviewCount ?? 0) < 1 || !Array.isArray(reviewSignals) || reviewSignals.length < 1) {
+    fail(`${page.id} review research must record at least one public review signal`);
+  }
+
+  const editorial = page.editorialImport ?? {};
+  const visibleText = [
+    editorial.summary,
+    ...(editorial.sections ?? []).flatMap((section) => [section.title, section.body]),
+  ].filter(Boolean).join("\n");
+
+  for (const section of editorial.sections ?? []) {
+    if (legacyTemplateSectionTitles.has(normalize(section.title))) {
+      fail(`${page.id} review-led venue copy drifted back to legacy section title "${section.title}"`);
+    }
+  }
+  for (const pattern of expectation.requiredSignals ?? []) {
+    if (!pattern.test(visibleText)) {
+      fail(`${page.id} review-led venue copy missing researched signal ${pattern}`);
+    }
+  }
+  if (/\b(reviews? point(?:s|ed)? to|recent reviews?|source signals?|review-backed|publicly surfaced)\b/i.test(visibleText)) {
+    fail(`${page.id} exposes research scaffolding in visible venue copy`);
+  }
+  if (/(^|\n)\s*[A-Z][A-Za-z'’ ]{1,24}:\s/.test(visibleText)) {
+    fail(`${page.id} uses field-label copy with a colon in visible venue prose`);
   }
 }
 

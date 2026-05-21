@@ -9,6 +9,16 @@ const swiftPath = path.join(repoRoot, "native-ios", "App", "Models", "BrowseSear
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
 const expectedPagesPerCity = 100;
+const reviewLedVenuePageIDs = new Set([
+  "city-hcmc-place-lusine-thao-dien",
+]);
+const legacyTemplateSectionTitles = new Set([
+  "Why go",
+  "What you'll get",
+  "Say it locally",
+  "Worth it if",
+  "Good to know",
+]);
 const audienceRewriteReviewIDs = new Set([
   "viet-city-audience-rewrite-2026-05-18",
   "viet-city-handwritten-copy-2026-05-18",
@@ -120,15 +130,22 @@ function auditPage(page) {
     fail(failures, "missing expected editorial sections");
   }
   const titlesByID = new Map(sections.map((section) => [section.id, normalize(section.title)]));
-  const expectedTitles = {
-    "at-glance": "Why go",
-    "place-brief": "What you'll get",
-    "quick-say": "Say it locally",
-    "use-it-with": "Worth it if",
-  };
-  for (const [sectionID, expectedTitle] of Object.entries(expectedTitles)) {
-    if (titlesByID.get(sectionID) !== expectedTitle) {
-      fail(failures, `section ${sectionID} should be "${expectedTitle}"`);
+  for (const sectionID of ["at-glance", "place-brief", "use-it-with"]) {
+    if (!titlesByID.has(sectionID)) {
+      fail(failures, `missing flexible article section ${sectionID}`);
+    }
+  }
+  if (reviewLedVenuePageIDs.has(page.id)) {
+    for (const section of sections) {
+      if (legacyTemplateSectionTitles.has(normalize(section.title))) {
+        fail(failures, `review-led venue kept legacy section title: ${section.title}`);
+      }
+    }
+    if (/\b(reviews? point(?:s|ed)? to|recent reviews?|source signals?|review-backed|publicly surfaced)\b/i.test(text)) {
+      fail(failures, "visible copy exposes research scaffolding");
+    }
+    if (/(^|\n)\s*[A-Z][A-Za-z'’ ]{1,24}:\s/.test(text)) {
+      fail(failures, "visible copy uses field-label colon prose");
     }
   }
   if (startsWithTemplateOpening(page.context)) {
