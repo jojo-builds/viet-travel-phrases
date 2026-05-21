@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-20
+Last updated: 2026-05-21
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -10,7 +10,31 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
-## Current City Copy Lane Evidence
+## Current Main Admin Backdrop And Performance Evidence
+
+Current `main` evidence from the 2026-05-21 admin photo backdrop merge plus native performance bug hunt:
+
+- validated app-code commit installed on Jojo's iPhone: `c9e2cb25` (`Merge performance-freeze-audit`)
+- merged lanes: `feature/admin-photo-backdrop-polish`, `feature/performance-freeze-audit`
+- explicitly skipped lanes: `feature/paywall`, `feature/messages-section`
+- performance fixes landed for bounded SQLite runtime caches, Browse image lookup caching, cached bundled mascot images, Practice Match SQLite connection reuse, and failed backdrop-preheat reservation cleanup
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/AppChromeTests` plus `SpeakLocalNativeTests/PracticeNativeMVPTests`
+  - passed: `181` tests, `0` failures
+  - note: the MCP call timed out during the cold isolated-DerivedData run, but the underlying `xcodebuild` completed and the log ended with `TEST EXECUTE SUCCEEDED`
+- Physical iPhone Debug build/install from `main`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
+## Previous City Copy Lane Evidence
 
 Fresh evidence from the 2026-05-18 city-place reason-to-go copy pass on `feature/city-pages`:
 
@@ -33,7 +57,7 @@ Fresh evidence from the 2026-05-18 city-place reason-to-go copy pass on `feature
 
 Scope note: this was a copy/content/resource pass. No simulator or physical iPhone build was run because no Swift app behavior changed.
 
-## Current Main Merge Sweep Evidence
+## Previous Main Merge Sweep Evidence
 
 Current `main` evidence from the 2026-05-20 homepage follow-up merge sweep:
 
