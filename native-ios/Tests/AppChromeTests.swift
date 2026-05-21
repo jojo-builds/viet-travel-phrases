@@ -2146,16 +2146,16 @@ final class AppChromeTests: XCTestCase {
         let boKhoBanhMi = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-bo-kho-banh-mi"))
         let caRiDe = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-ca-ri-de"))
 
-        XCTAssertTrue(bunBoXao.sections.first?.body.contains("nước chấm") == true)
+        XCTAssertTrue(bunBoXao.sections.first?.body.contains("fish-sauce dip") == true)
         XCTAssertTrue(bunBoXao.sections.first { $0.id == "worth-knowing" }?.body.contains("fish sauce balanced with lime") == true)
-        XCTAssertEqual(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "stir-fried beef", "fresh herbs", "nước chấm", "peanuts or fried shallots"])
+        XCTAssertEqual(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "stir-fried beef", "fresh herbs", "fish-sauce dip", "peanuts or fried shallots"])
         XCTAssertFalse(bunBoXao.sections.first { $0.id == "usually-includes" }?.chips.contains("egg noodles") == true)
 
         XCTAssertTrue(bunDau.sections.first?.body.contains("shrimp-paste sauce") == true)
         XCTAssertEqual(bunDau.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fried tofu", "fresh herbs", "mắm tôm", "pork optional"])
 
         XCTAssertTrue(bunChaCa.sections.first?.body.contains("fish cakes") == true)
-        XCTAssertEqual(bunChaCa.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fish cakes", "fresh herbs", "nước chấm or light broth", "fried shallots"])
+        XCTAssertEqual(bunChaCa.sections.first { $0.id == "usually-includes" }?.chips, ["rice vermicelli", "fish cakes", "fresh herbs", "fish-sauce dip or light broth", "fried shallots"])
         XCTAssertFalse(bunChaCa.sections.first?.body.localizedCaseInsensitiveContains("grilled pork") == true)
         XCTAssertFalse(bunChaCa.sections.first { $0.id == "worth-knowing" }?.body.localizedCaseInsensitiveContains("Hanoi") == true)
 

@@ -14,8 +14,52 @@ final class AdminChromeUITests: XCTestCase {
 
         for iteration in 1...8 {
             openSearch(in: app, iteration: iteration)
-            openDock("Home", in: app)
+            tapSystemTabCoordinate("Home", in: app)
             assertHomeVisible(in: app)
+        }
+    }
+
+    func testBugHuntBottomAdminNavigationStressSoak() throws {
+        let sentinelPath = "/tmp/speaklocal-bughunt-stress-enabled"
+        guard FileManager.default.fileExists(atPath: sentinelPath) else {
+            throw XCTSkip("Create \(sentinelPath) to run the long bug-hunt soak.")
+        }
+
+        let secondsPath = "/tmp/speaklocal-bughunt-stress-seconds"
+        let configuredSeconds = (try? String(contentsOfFile: secondsPath, encoding: .utf8))
+            .flatMap { TimeInterval($0.trimmingCharacters(in: .whitespacesAndNewlines)) }
+        let requestedSeconds = configuredSeconds ?? (4 * 60 * 60)
+        let deadline = Date().addingTimeInterval(max(30, requestedSeconds))
+        let app = launchApp(arguments: ["--reset-demo-state"])
+        assertHomeVisible(in: app)
+
+        var iteration = 0
+        while Date() < deadline {
+            iteration += 1
+
+            openSearch(in: app, iteration: iteration)
+            tapSystemTabCoordinate("Home", in: app)
+            assertHomeVisible(in: app)
+
+            if iteration.isMultiple(of: 3) {
+                app.swipeUp()
+                app.swipeDown()
+                assertHomeVisible(in: app)
+            }
+
+            tapSystemTabCoordinate("Browse", in: app)
+            XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
+
+            tapSystemTabCoordinate("Saved", in: app)
+            XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+            tapSystemTabCoordinate("Practice", in: app)
+            XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
+
+            if iteration.isMultiple(of: 5) {
+                tapSystemTabCoordinate("Home", in: app)
+                assertHomeVisible(in: app)
+            }
         }
     }
 
@@ -270,7 +314,6 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Start speaking now"].exists)
         XCTAssertFalse(app.staticTexts["Offline phrases, audio, and local ways to say it."].exists)
         XCTAssertTrue(app.staticTexts["Essentials"].exists)
-        XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertFalse(app.staticTexts["Test phrase cards"].exists)
         XCTAssertFalse(app.staticTexts["Larger listen cards for common moments"].exists)
         XCTAssertFalse(app.descendants(matching: .any)["Home.SearchEntry"].exists)
@@ -280,7 +323,6 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["First Day in Vietnam"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["HomeShelf.Header.category.first-day"].exists)
         XCTAssertFalse(app.buttons["HomeShelf.More.first-day"].exists)
         XCTAssertFalse(app.staticTexts["Recently viewed"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-mid.png")
@@ -289,13 +331,11 @@ final class AdminChromeUITests: XCTestCase {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Explore by city"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["HomeShelf.Header.category.city-guides"].exists)
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-liquid-city.png")
 
         for _ in 0..<3 where !app.staticTexts["Eating Out"].exists {
             app.swipeUp()
         }
-        XCTAssertTrue(app.buttons["HomeShelf.Header.category.food"].waitForExistence(timeout: 3))
         XCTAssertFalse(app.buttons["HomeShelf.More.food-coffee"].exists)
 
         let practiceRail = app.descendants(matching: .any)["HomePracticeStarterRail"]
@@ -325,7 +365,6 @@ final class AdminChromeUITests: XCTestCase {
         }
 
         XCTAssertTrue(app.staticTexts["Essentials"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["HomeShelf.Header.category.essentials"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
         captureHomeLiquidGlassProofIfRequested(app: app, name: "home-use-now-large-card-start.png")
     }
@@ -458,8 +497,12 @@ final class AdminChromeUITests: XCTestCase {
         if dockButton.waitForExistence(timeout: 2), dockButton.isHittable {
             dockButton.tap()
         } else {
-            systemTabCoordinate(title, in: app).tap()
+            tapSystemTabCoordinate(title, in: app)
         }
+    }
+
+    private func tapSystemTabCoordinate(_ title: String, in app: XCUIApplication) {
+        systemTabCoordinate(title, in: app).tap()
     }
 
     private func assertHomeVisible(in app: XCUIApplication) {
@@ -489,7 +532,7 @@ final class AdminChromeUITests: XCTestCase {
             normalizedX = 0.31
         case "Saved":
             normalizedX = 0.49
-        case "Messages":
+        case "Messages", "Practice":
             normalizedX = 0.66
         case "Search":
             normalizedX = 0.82

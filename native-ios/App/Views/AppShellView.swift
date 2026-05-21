@@ -483,28 +483,40 @@ struct AppShellView: View {
                 }
             )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
-                menuSectionChromeStates = states
+                if menuSectionChromeStates != states {
+                    menuSectionChromeStates = states
+                }
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
-                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
-                    hidesPhotoBackdropChrome = isHidden
+                if hidesPhotoBackdropChrome != isHidden {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        hidesPhotoBackdropChrome = isHidden
+                    }
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self) { isVisible in
-                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
-                    showsPhotoBackdropTabBarBackground = isVisible
+                if showsPhotoBackdropTabBarBackground != isVisible {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        showsPhotoBackdropTabBarBackground = isVisible
+                    }
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropTopChromeStylePreferenceKey.self) { style in
-                withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
-                    photoBackdropTopChromeStyle = style
+                if photoBackdropTopChromeStyle != style {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        photoBackdropTopChromeStyle = style
+                    }
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveImagePreferenceKey.self) { context in
-                photoBackdropImmersiveImageContext = context
+                if photoBackdropImmersiveImageContext != context {
+                    photoBackdropImmersiveImageContext = context
+                }
             }
             .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
-                savedTripSectionChromeStates = states
+                if savedTripSectionChromeStates != states {
+                    savedTripSectionChromeStates = states
+                }
             }
             .onAppear {
                 applyLaunchSearchFocusIfNeeded()
@@ -5389,16 +5401,14 @@ private struct HomeShelf<Content: View>: View {
     @ViewBuilder
     private var header: some View {
         if let route, let onOpenCollection {
-            Button {
-                onOpenCollection(route)
-            } label: {
-                headerContent(showsChevron: true)
-            }
-            .buttonStyle(.plain)
-            .accessibilityHint(subtitle)
-            .accessibilityIdentifier("HomeShelf.Header.\(route.id)")
+            headerContent(showsChevron: true)
+                .onTapGesture {
+                    onOpenCollection(route)
+                }
         } else {
             headerContent(showsChevron: false)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(title)
                 .accessibilityHint(subtitle)
         }
     }

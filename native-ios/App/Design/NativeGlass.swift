@@ -36,14 +36,9 @@ struct NativeGlass<S: Shape>: ViewModifier {
     var interactive = false
 
     func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            if interactive {
-                content
-                    .glassEffect(.regular.tint(tint.opacity(0.44)).interactive(), in: shape)
-            } else {
-                content
-                    .glassEffect(.regular.tint(tint.opacity(0.36)), in: shape)
-            }
+        if #available(iOS 26.0, *), interactive {
+            content
+                .glassEffect(.regular.tint(tint.opacity(0.44)).interactive(), in: shape)
         } else {
             content
                 .background(.ultraThinMaterial, in: shape)
