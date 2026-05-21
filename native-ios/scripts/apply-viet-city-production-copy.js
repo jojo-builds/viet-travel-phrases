@@ -1,7 +1,29 @@
 #!/usr/bin/env node
 
+// Legacy recovery script.
+//
+// Do not use this script as the source of final city-page prose. Its section
+// builders are useful for structural recovery and broad validation, but they
+// can produce template-shaped copy that reads like an app following rules.
+// Final city/place pages should be researched and authored in
+// content-draft/viet/city-library/handwritten-copy/*.json using the outcome
+// standard in docs/content/CITY_PAGE_COPY_AUTHORING.md.
+
 const fs = require("fs");
 const path = require("path");
+
+const LEGACY_ALLOW_FLAG = "--allow-legacy-template-recovery";
+
+if (!process.argv.includes(LEGACY_ALLOW_FLAG)) {
+  console.error([
+    "apply-viet-city-production-copy.js is a legacy template recovery script.",
+    "It must not be used for final review-led city/place prose.",
+    "Author specific researched copy in content-draft/viet/city-library/handwritten-copy/*.json instead.",
+    "Use docs/content/CITY_PAGE_COPY_AUTHORING.md for the review-led, no-default-template standard.",
+    `If you are intentionally recovering old structural output, rerun with ${LEGACY_ALLOW_FLAG}.`,
+  ].join("\n"));
+  process.exit(1);
+}
 
 const repoRoot = path.resolve(__dirname, "..", "..");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");

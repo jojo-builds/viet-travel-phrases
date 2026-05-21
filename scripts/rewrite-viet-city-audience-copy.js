@@ -8,6 +8,19 @@ const sourcePath = path.join(repoRoot, "content-draft", "viet", "city-library", 
 const handwrittenCopyDir = path.join(repoRoot, "content-draft", "viet", "city-library", "handwritten-copy");
 
 const REVIEW_ID = "viet-city-reason-to-go-copy-2026-05-18";
+const LEGACY_ALLOW_FLAG = "--allow-legacy-template-rewrite";
+
+if (!process.argv.includes(LEGACY_ALLOW_FLAG)) {
+  console.error([
+    "rewrite-viet-city-audience-copy.js is a legacy template rewrite script.",
+    "It should not be used for final city/place page prose.",
+    "Research the specific place and author final copy in content-draft/viet/city-library/handwritten-copy/*.json.",
+    "Use docs/content/CITY_PAGE_COPY_AUTHORING.md for the outcome-based standard.",
+    `If you are intentionally recovering the legacy broad pass, rerun with ${LEGACY_ALLOW_FLAG}.`,
+  ].join("\n"));
+  process.exit(1);
+}
+
 let placeByID = new Map();
 
 const cityProfiles = {

@@ -1,0 +1,336 @@
+{
+  "pageID": "city-hcmc-place-lusine-thao-dien",
+  "placeName": "L'Usine Thao Dien",
+  "localName": "L'Usine Thảo Điền",
+  "address": "24 Thảo Điền, An Khánh, Hồ Chí Minh 700000, Vietnam",
+  "googlePlaceID": "ChIJ2yP0SOgndTERQp2K8gNw42o",
+  "retrievedAt": "2026-05-20",
+  "storagePolicy": "off-app research source; do not bundle raw review text or display review dumps in the app",
+  "googleReviewHarvest": {
+    "targetReviewCount": 25,
+    "minimumReviewCountForScale": 20,
+    "directGoogleReviewCount": 0,
+    "googleMirroredReviewCount": 8,
+    "publiclySurfacedReviewCount": 25,
+    "usableTargetedReviewSignalCount": 25,
+    "googleRatingAtRetrieval": 4.7,
+    "googleReviewCountAtRetrieval": 1496,
+    "status": "direct_google_review_list_unavailable_target_met_with_google_mirror_plus_tripadvisor",
+    "limitation": "The live Google Maps place URL opened as a limited listing and did not expose a review list in the public path available to this session. The Google review RPC attempts returned a null payload. Thaodien and Wanderlog exposed a small mirrored Google review set, so the 25-signal research base combines those Google-mirrored reviews with Tripadvisor reviews instead of inventing missing Google reviews.",
+    "nextStepForPureGoogle25": "Use an approved Google Business/Profile export, Places review API access where available, or a signed browser/session-based review export before scaling a pure 25-Google-review requirement."
+  },
+  "sources": [
+    {
+      "label": "Thaodien venue page",
+      "url": "https://thaodien.app/vi/venue/l-usine-thao-dien",
+      "use": "Google rating count, venue positioning, photo/menu signals, and mirrored Google review snippets"
+    },
+    {
+      "label": "Wanderlog venue page",
+      "url": "https://wanderlog.com/tr/place/details/3253278/lusine-thao-dien",
+      "use": "mirrored Google review snippets and review aggregate"
+    },
+    {
+      "label": "Tripadvisor page 1",
+      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g293925-d17288252-Reviews-L_Usine_Thao_Dien-Ho_Chi_Minh_City.html",
+      "use": "recent and positive Tripadvisor review signals"
+    },
+    {
+      "label": "Tripadvisor page 2",
+      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g293925-d17288252-Reviews-or15-L_Usine_Thao_Dien-Ho_Chi_Minh_City.html",
+      "use": "older but useful positive branch, atmosphere, menu, and service signals"
+    },
+    {
+      "label": "L'Usine official Thao Dien brunch journal",
+      "url": "https://lusinespace.com/breakfast-brunch-in-thao-dien-coffee-comfort-food-good-vibes/",
+      "use": "official positioning for Thao Dien, high ceilings, open layout, warm wood, concept store, breakfast, brunch, coffee"
+    },
+    {
+      "label": "L'Usine brand location overview",
+      "url": "https://lusinespace.com/lusine-more-than-a-cafe-a-saigon-experience/",
+      "use": "branch distinction: Thao Dien as relaxed garden-feel neighborhood favorite"
+    },
+    {
+      "label": "Thaodien brunch guide",
+      "url": "https://thaodien.app/guide/brunch-guide-saturday-mornings-thao-dien",
+      "use": "local brunch-scene comparison and polished gallery-meets-cafe framing"
+    },
+    {
+      "label": "Corner place page",
+      "url": "https://www.corner.inc/place/1150453",
+      "use": "third-party place voice: proper sit-down brunch, Eggs Benedict, squid ink crab pasta, lingering space"
+    }
+  ],
+  "targetedReviewSignals": [
+    {
+      "n": 1,
+      "source": "google_mirror_wanderlog",
+      "author": "Kazu-kun",
+      "rating": 5,
+      "date": "2025-11-30",
+      "evidence": "Eggs Benedict, squid ink crab pasta, Americano, grape-hibiscus tea, atmosphere, service, hospitality, and return intent.",
+      "copyUse": ["Eggs Benedict", "squid ink crab pasta", "coffee and tea", "staff/service"]
+    },
+    {
+      "n": 2,
+      "source": "google_mirror_wanderlog",
+      "author": "Shawn R",
+      "rating": 5,
+      "date": "2025-11-15",
+      "evidence": "Quiet charming cafe, nice decor, lighter warm pho, good coffee, calm atmosphere.",
+      "copyUse": ["quiet room", "Premium Pho", "good coffee", "calm atmosphere"]
+    },
+    {
+      "n": 3,
+      "source": "google_mirror_wanderlog",
+      "author": "M F",
+      "rating": 5,
+      "date": "2025-10-10",
+      "evidence": "Weekday lunch, spacious open room, kind staff, salmon penne, carbonara, cheesecake, carrot cake.",
+      "copyUse": ["spacious open room", "kind staff", "cake/lunch range"]
+    },
+    {
+      "n": 4,
+      "source": "google_mirror_wanderlog",
+      "author": "Emma",
+      "rating": 5,
+      "date": "2025-09-11",
+      "evidence": "Beautiful Thao Dien cafe, charming design and atmosphere, relaxing place, tasty food, good portions, friendly staff.",
+      "copyUse": ["beautiful branch", "charming design", "good portions", "friendly staff"]
+    },
+    {
+      "n": 5,
+      "source": "google_mirror_thaodien",
+      "author": "Emily Rider",
+      "rating": 5,
+      "date": "2025-10-16",
+      "evidence": "Great brunch cafe, very good coffee, crispy chicken salad, high-quality options, kind server.",
+      "copyUse": ["brunch cafe", "coffee", "crispy chicken salad", "service"]
+    },
+    {
+      "n": 6,
+      "source": "google_mirror_thaodien",
+      "author": "Just Wendy",
+      "rating": 5,
+      "date": "2025-10-19",
+      "evidence": "Food and drinks both praised, detail-oriented, lovely atmosphere, welcoming staff, Premium Pho, salt caramel coffee, Sunday morning.",
+      "copyUse": ["Premium Pho", "salt caramel coffee", "Sunday morning", "welcoming staff"]
+    },
+    {
+      "n": 7,
+      "source": "google_mirror_public_payload",
+      "author": "z y",
+      "rating": 5,
+      "date": "2026-01-07",
+      "evidence": "Eggs Benedict and French toast called amazing, comfortable atmosphere, proper brunch, quality worth the price.",
+      "copyUse": ["Eggs Benedict", "French toast", "proper brunch", "comfortable atmosphere"]
+    },
+    {
+      "n": 8,
+      "source": "google_mirror_public_payload",
+      "author": "T.A",
+      "rating": 5,
+      "date": "2026-02-20",
+      "evidence": "Stumbled across brunch place, beautiful garden, tasty food, com tam, very nice staff, return intent during trip.",
+      "copyUse": ["beautiful garden", "brunch place", "Vietnamese comfort order", "staff warmth"]
+    },
+    {
+      "n": 9,
+      "source": "google_mirror_public_payload",
+      "author": "Georton Soares",
+      "rating": 4,
+      "date": "2025-02-20",
+      "evidence": "Amazing brunch, stylish inviting atmosphere, Eggs Benedict with pulled pork, duck salad, smoothie, presentation and service.",
+      "copyUse": ["brunch", "stylish atmosphere", "Eggs Benedict", "salads and smoothies"]
+    },
+    {
+      "n": 10,
+      "source": "tripadvisor",
+      "author": "Curiosity37249818993",
+      "rating": 5,
+      "date": "2026-01-21",
+      "evidence": "Daily breakfast for two weeks, food, service, smiles, kindness, caring staff, favorite breakfast.",
+      "copyUse": ["breakfast as repeat habit", "staff warmth", "morning anchor"]
+    },
+    {
+      "n": 11,
+      "source": "tripadvisor",
+      "author": "Dhineshsdhinu",
+      "rating": 5,
+      "date": "2025-10-11",
+      "evidence": "Perfect place to start the day, light and hearty breakfast options, kid-friendly, warm staff, cozy atmosphere.",
+      "copyUse": ["start the day", "breakfast range", "family-friendly", "cozy room"]
+    },
+    {
+      "n": 12,
+      "source": "tripadvisor",
+      "author": "Bethcads",
+      "rating": 5,
+      "date": "2019-09-01",
+      "evidence": "Free-flow brunch, amazing staff, good vibe, good time.",
+      "copyUse": ["brunch occasion", "staff", "good-time energy"]
+    },
+    {
+      "n": 13,
+      "source": "tripadvisor",
+      "author": "kenziebaca",
+      "rating": 5,
+      "date": "2019-08-27",
+      "evidence": "Weekly visits, exceptional food and drinks, comfortable atmosphere, kind attentive service.",
+      "copyUse": ["regulars return", "food and drinks", "comfortable atmosphere", "attentive service"]
+    },
+    {
+      "n": 14,
+      "source": "tripadvisor",
+      "author": "Joshua K",
+      "rating": 5,
+      "date": "2019-08-23",
+      "evidence": "First visit, amazing food, nice ambience to chill and relax.",
+      "copyUse": ["first-visit appeal", "food", "relaxed ambience"]
+    },
+    {
+      "n": 15,
+      "source": "tripadvisor",
+      "author": "Sally A",
+      "rating": 5,
+      "date": "2019-08-02",
+      "evidence": "Lunch, pretty balcony, superb service, European staples and Asian dishes, all choices delicious.",
+      "copyUse": ["lunch range", "balcony/setting", "European plus Asian menu", "service"]
+    },
+    {
+      "n": 16,
+      "source": "tripadvisor",
+      "author": "Raulyn Rediang",
+      "rating": 5,
+      "date": "2023-12-10",
+      "evidence": "Good food, best coffee, avocado toast, vanilla coffee, strong recommendation.",
+      "copyUse": ["avocado toast", "coffee", "simple brunch order"]
+    },
+    {
+      "n": 17,
+      "source": "tripadvisor",
+      "author": "R. K. V.",
+      "rating": 5,
+      "date": "2022-06-01",
+      "evidence": "Salads called excellent, fresh, good mixtures, reasonable value.",
+      "copyUse": ["salads", "fresh lighter option"]
+    },
+    {
+      "n": 18,
+      "source": "tripadvisor",
+      "author": "Brian L",
+      "rating": 5,
+      "date": "2021-02-17",
+      "evidence": "Meeting and dinner, good food, fish and chips, pleasant service, drinks.",
+      "copyUse": ["meeting-friendly", "full meal", "pleasant service"]
+    },
+    {
+      "n": 19,
+      "source": "tripadvisor",
+      "author": "Hall T",
+      "rating": 5,
+      "date": "2019-09-03",
+      "evidence": "Fresh vibrant atmosphere, extremely friendly staff, wide menu, very good food, wine list, all-day usefulness.",
+      "copyUse": ["fresh atmosphere", "friendly staff", "wide menu", "all-day flexibility"]
+    },
+    {
+      "n": 20,
+      "source": "tripadvisor",
+      "author": "Leigh M",
+      "rating": 5,
+      "date": "2019-08-31",
+      "evidence": "Brunch board, free-flow drinks, perfect service, repeat visits.",
+      "copyUse": ["brunch board", "repeat visits", "service"]
+    },
+    {
+      "n": 21,
+      "source": "tripadvisor",
+      "author": "Justine O",
+      "rating": 5,
+      "date": "2019-08-23",
+      "evidence": "Coffee, weekend all-day breakfast, kind professional staff, clear modern space.",
+      "copyUse": ["coffee", "all-day breakfast", "clear modern space", "staff"]
+    },
+    {
+      "n": 22,
+      "source": "tripadvisor",
+      "author": "Tien K",
+      "rating": 5,
+      "date": "2019-08-23",
+      "evidence": "Ham and gruyere, lychee tea, great atmosphere, warm service.",
+      "copyUse": ["sandwich/tea range", "atmosphere", "warm service"]
+    },
+    {
+      "n": 23,
+      "source": "tripadvisor",
+      "author": "AyamiMrkm",
+      "rating": 5,
+      "date": "2019-08-22",
+      "evidence": "Relaxed, well-looked-after environment, people, atmosphere, music, food, drinks, branch loyalty.",
+      "copyUse": ["relaxed environment", "branch loyalty", "food and drinks", "staff"]
+    },
+    {
+      "n": 24,
+      "source": "tripadvisor",
+      "author": "Martin M",
+      "rating": 5,
+      "date": "2019-09-18",
+      "evidence": "Regular visit pattern, food, service, environment, never too busy to enjoy a good meal.",
+      "copyUse": ["regulars", "not too rushed", "good meal"]
+    },
+    {
+      "n": 25,
+      "source": "tripadvisor",
+      "author": "David D",
+      "rating": 5,
+      "date": "2019-08-25",
+      "evidence": "Family brunch deal, lots of food, nice ambience, relaxing place, helpful service, return intent.",
+      "copyUse": ["family brunch", "lots of food", "relaxing ambience", "helpful service"]
+    }
+  ],
+  "copyEvidenceMap": [
+    {
+      "copyDetail": "coffee becomes brunch or lunch",
+      "evidenceNumbers": [1, 5, 6, 10, 11, 13, 16, 21],
+      "reasoning": "Multiple reviews start with coffee or breakfast and expand into full plates, all-day breakfast, or repeat visits."
+    },
+    {
+      "copyDetail": "this is a proper sit-down brunch branch, not a quick espresso counter",
+      "evidenceNumbers": [1, 7, 9, 11, 12, 20, 21, 25],
+      "reasoning": "Eggs Benedict, brunch boards, all-day breakfast, family brunch, and proper breakfast language recur across sources."
+    },
+    {
+      "copyDetail": "room feels calm, bright, designed, and easy to stay in",
+      "evidenceNumbers": [2, 3, 4, 6, 9, 11, 13, 14, 19, 21, 23, 24],
+      "reasoning": "Reviews repeatedly mention quiet/calm, charming design, spacious open rooms, modern space, comfortable atmosphere, and a relaxed environment."
+    },
+    {
+      "copyDetail": "staff warmth is part of why people remember the branch",
+      "evidenceNumbers": [1, 3, 4, 5, 6, 8, 10, 11, 12, 13, 15, 19, 21, 22, 23, 25],
+      "reasoning": "Friendly, warm, welcoming, kind, professional, attentive, and helpful service appears across Google-mirrored and Tripadvisor reviews."
+    },
+    {
+      "copyDetail": "specific popular orders",
+      "evidenceNumbers": [1, 2, 5, 6, 7, 9, 16, 17],
+      "reasoning": "Eggs Benedict, squid ink crab pasta, Premium Pho, crispy chicken salad, salt caramel coffee, avocado toast, salads, coffee, and tea are backed by repeated or named review signals."
+    },
+    {
+      "copyDetail": "this Thao Dien branch is calmer and more neighborhood-shaped than a central stop",
+      "evidenceNumbers": [2, 4, 8, 11, 13, 14, 23, 24],
+      "reasoning": "The review language leans calm, relaxed, charming, comfortable, garden/leafy, and easy to spend time in, which supports the branch-specific positioning alongside official/location sources."
+    }
+  ],
+  "sourceSignals": [
+    "Official L'Usine materials position Thao Dien around breakfast, brunch, coffee, high ceilings, open layout, warm wood, concept-store browsing, and the neighborhood's relaxed rhythm.",
+    "Thaodien's brunch guide places L'Usine among polished Thao Dien brunch options, distinct from quick bakery or coffee-only stops.",
+    "Corner independently frames the branch as a French-style brunch cafe for proper sit-down meals, especially Eggs Benedict and squid ink crab pasta.",
+    "Review evidence repeatedly supports a human hook: someone enters for coffee or breakfast and finds enough room, food, staff warmth, and neighborhood ease to stay longer."
+  ],
+  "copyImplications": [
+    "Lead with the human action, not a poetic abstraction: a quick coffee becomes brunch or lunch because the room and menu make it easy.",
+    "Do not reuse old section scaffolding or colon-led field copy.",
+    "Keep the Thao Dien branch distinction visible because L'Usine has other Saigon locations.",
+    "Make menu picks visible as popular at this exact branch and tie each item to review/menu evidence.",
+    "Avoid raw review quotes in runtime copy unless attribution and source terms are resolved."
+  ]
+}

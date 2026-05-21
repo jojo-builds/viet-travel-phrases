@@ -1404,6 +1404,184 @@ enum VietnameseMenuCatalog {
     }
 }
 
+struct LocationMenuPick: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let proof: String
+    let imageName: String
+    let detailPageID: String
+    let linkedMenuItemID: String?
+
+    var linkedMenuItem: VietnameseMenuItem? {
+        guard let linkedMenuItemID else {
+            return nil
+        }
+
+        return VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID }
+    }
+
+    var audioKey: String? {
+        guard let linkedMenuItem else {
+            return nil
+        }
+
+        return AudioAssetManifest.main?.audioKey(forExactText: linkedMenuItem.vietnameseItem)
+    }
+}
+
+enum LocationMenuPicksCatalog {
+    static func picks(forPageID pageID: String) -> [LocationMenuPick] {
+        switch pageID {
+        case "viet-family-city-hcmc-place-lusine-thao-dien",
+             "viet-phrase-city-hcmc-place-lusine-thao-dien":
+            return lusineThaoDienPicks
+        default:
+            return []
+        }
+    }
+
+    static func pick(withDetailPageID pageID: String) -> LocationMenuPick? {
+        allPicks.first { $0.detailPageID == pageID }
+    }
+
+    static func detailPage(withID pageID: String) -> PhraseDetailPage? {
+        guard let pick = pick(withDetailPageID: pageID), pick.linkedMenuItemID == nil else {
+            return nil
+        }
+
+        return PhraseDetailPage(
+            id: pick.detailPageID,
+            title: pick.title,
+            englishTitle: pick.subtitle,
+            pronunciation: pick.title,
+            summary: pick.proof,
+            iconName: "fork.knife",
+            tintName: .orange,
+            heroImageName: detailHeroImageName(for: pick),
+            sections: detailSections(for: pick),
+            examples: [],
+            audioKey: nil,
+            practiceCTALabel: "Practice ordering here",
+            showsCatalogExplore: false
+        )
+    }
+
+    private static var allPicks: [LocationMenuPick] {
+        lusineThaoDienPicks
+    }
+
+    private static let lusineThaoDienPicks: [LocationMenuPick] = [
+        LocationMenuPick(
+            id: "lusine-eggs-benedict",
+            title: "Eggs Benedict",
+            subtitle: "Brunch eggs with hollandaise",
+            proof: "The familiar brunch default.",
+            imageName: "HeroMenuFoodBanhMiOpLa",
+            detailPageID: "viet-menu-lusine-thao-dien-eggs-benedict",
+            linkedMenuItemID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-premium-pho",
+            title: "Premium Pho",
+            subtitle: "Related phrase: Phở đặc biệt",
+            proof: "The comfort bowl beside coffee.",
+            imageName: VietnameseMenuImages.assetName(forItemID: "food-pho-dac-biet"),
+            detailPageID: "viet-menu-food-pho-dac-biet",
+            linkedMenuItemID: "food-pho-dac-biet"
+        ),
+        LocationMenuPick(
+            id: "lusine-squid-ink-crab-pasta",
+            title: "Squid ink crab pasta",
+            subtitle: "Seafood pasta",
+            proof: "The plate that turns coffee into lunch.",
+            imageName: "HeroMenuFoodMiXaoHaiSan",
+            detailPageID: "viet-menu-lusine-thao-dien-squid-ink-crab-pasta",
+            linkedMenuItemID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-crispy-chicken-salad",
+            title: "Crispy chicken salad",
+            subtitle: "Fresh salad with crunch",
+            proof: "The lighter plate with crunch.",
+            imageName: "HeroMenuFoodGoiGa",
+            detailPageID: "viet-menu-lusine-thao-dien-crispy-chicken-salad",
+            linkedMenuItemID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-salt-caramel-coffee",
+            title: "Salt caramel coffee",
+            subtitle: "Sweet coffee drink",
+            proof: "The one people stay longer for.",
+            imageName: "HeroMenuDrinkCaPheMuoi",
+            detailPageID: "viet-menu-lusine-thao-dien-salt-caramel-coffee",
+            linkedMenuItemID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-avocado-toast",
+            title: "Avocado toast",
+            subtitle: "Breakfast toast",
+            proof: "The simple breakfast beside coffee.",
+            imageName: "HeroMenuFoodBanhMiOpLa",
+            detailPageID: "viet-menu-lusine-thao-dien-avocado-toast",
+            linkedMenuItemID: nil
+        ),
+    ]
+
+    private static func detailHeroImageName(for pick: LocationMenuPick) -> String {
+        switch pick.id {
+        case "lusine-eggs-benedict", "lusine-avocado-toast":
+            return "BackdropMenuFoodBanhMiOpLa"
+        case "lusine-squid-ink-crab-pasta":
+            return "BackdropMenuFoodMiXaoHaiSan"
+        case "lusine-crispy-chicken-salad":
+            return "BackdropMenuFoodGoiGa"
+        case "lusine-salt-caramel-coffee":
+            return "BackdropMenuDrinkCaPheMuoi"
+        default:
+            return "HeroCityHcmcPlaceLusineThaoDien"
+        }
+    }
+
+    private static func detailSections(for pick: LocationMenuPick) -> [PhraseDetailSection] {
+        [
+            PhraseDetailSection(
+                id: "why-it-shows-up",
+                title: "Why it shows up",
+                body: pick.proof,
+                presentation: .tipCallout
+            ),
+            PhraseDetailSection(
+                id: "what-it-is",
+                title: "What it is",
+                body: detailBody(for: pick)
+            ),
+            PhraseDetailSection(
+                id: "at-lusine",
+                title: "At L'Usine Thảo Điền",
+                body: "It fits this branch because L'Usine Thảo Điền is remembered as a sit-down brunch cafe, not just a coffee counter: real plates, good coffee, a calmer room, and service people mention afterward."
+            ),
+        ]
+    }
+
+    private static func detailBody(for pick: LocationMenuPick) -> String {
+        switch pick.id {
+        case "lusine-eggs-benedict":
+            return "A classic brunch plate with poached eggs and hollandaise. This is the easy first order when the visit is meant to be breakfast, not only coffee."
+        case "lusine-squid-ink-crab-pasta":
+            return "A richer seafood pasta order that makes the table feel more like lunch. It is one of the dishes guests name when the cafe turns into a full meal."
+        case "lusine-crispy-chicken-salad":
+            return "A lighter plate with crunch for the table that wants brunch without everyone choosing eggs, noodles, or a heavier main."
+        case "lusine-salt-caramel-coffee":
+            return "A sweeter coffee drink for the second-cup part of the visit. It fits the Sunday-morning side of this branch."
+        case "lusine-avocado-toast":
+            return "A familiar breakfast order that makes the branch feel easy for a first Thao Dien morning, especially beside coffee."
+        default:
+            return pick.subtitle
+        }
+    }
+}
+
 private extension Optional where Wrapped == String {
     var nonEmptyValue: String? {
         guard let value = self?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {

@@ -575,6 +575,21 @@ private enum SavedTripResolver {
             )
         }
 
+        if let pick = LocationMenuPicksCatalog.pick(withDetailPageID: pageID) {
+            let kind: SavedTripSectionKind = pick.id.contains("coffee") ? .drinks : .food
+
+            return SavedTripItem(
+                pageID: pick.detailPageID,
+                title: pick.title,
+                subtitle: pick.subtitle,
+                symbolName: kind.symbolName,
+                tintName: kind.tintName,
+                audioKey: pick.audioKey,
+                imageName: pick.imageName,
+                kind: kind
+            )
+        }
+
         guard let item = BrowseSearchPhraseItem.resolve(pageID: pageID) else {
             return nil
         }

@@ -11,12 +11,14 @@ struct PhraseDetailView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
+    let isPageSaved: (String) -> Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onToggleSaved: (() -> Void)?
+    var onToggleSavedPage: (String) -> Void
     var onDetailTapped: (String) -> Void
 
     init(
@@ -30,12 +32,14 @@ struct PhraseDetailView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
+        isPageSaved: @escaping (String) -> Bool = { _ in false },
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
         onToggleSaved: (() -> Void)? = nil,
+        onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
@@ -48,12 +52,14 @@ struct PhraseDetailView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
+        self.isPageSaved = isPageSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
+        self.onToggleSavedPage = onToggleSavedPage
         self.onDetailTapped = onDetailTapped
     }
 
@@ -71,12 +77,14 @@ struct PhraseDetailView: View {
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
+            isPageSaved: isPageSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
+            onToggleSavedPage: onToggleSavedPage,
             onDetailTapped: onDetailTapped
         )
     }
