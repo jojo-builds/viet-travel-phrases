@@ -278,6 +278,7 @@ function main() {
       const imagePromptNote = page.editorialImport?.imagePromptNote ?? page.productionIntake?.imagePromptNote ?? "";
       const targetHeroImageName = page.editorialImport?.targetHeroImageName ?? page.productionIntake?.targetHeroImageName ?? page.heroImageName;
       const sourceMode = normalize(entry.sourceMode ?? "");
+      const runtimeOverride = entry.runtimeOverride ?? page.editorialImport?.runtimeOverride;
       if (!targetHeroImageName) fail(`${entry.pageID} is missing target hero image name`);
 
       page.context = normalize(entry.context ?? summary);
@@ -314,7 +315,9 @@ function main() {
       } else {
         delete page.editorialImport.sourceMode;
       }
-      if (!entry.runtimeOverride) {
+      if (runtimeOverride) {
+        page.editorialImport.runtimeOverride = runtimeOverride;
+      } else {
         delete page.editorialImport.runtimeOverride;
       }
       importedEntries.push({ ...entry, sections });

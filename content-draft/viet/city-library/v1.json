@@ -11893,6 +11893,40 @@
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
         },
+        "runtimeOverride": {
+          "kind": "ba-na-hills-journey",
+          "reason": "Ba Na Hills is a full journey page in the native runtime; utility phrase sections extend the reviewed place-body sections after Why go, Say it locally, What you'll get, Day-trip landmark, Full-day timing, and Good to know.",
+          "expectedSectionIDs": [
+            "at-glance",
+            "quick-say",
+            "place-brief",
+            "use-it-with",
+            "when-to-use",
+            "getting-there",
+            "tickets",
+            "cable-car",
+            "photos",
+            "getting-back",
+            "good-to-know",
+            "food-cash"
+          ],
+          "sourceSectionIDsPreserved": [
+            "at-glance",
+            "quick-say",
+            "place-brief",
+            "use-it-with",
+            "when-to-use",
+            "good-to-know"
+          ],
+          "generatedSectionIDs": [
+            "getting-there",
+            "tickets",
+            "cable-car",
+            "photos",
+            "getting-back",
+            "food-cash"
+          ]
+        },
         "sourceMode": "expanded-detail"
       },
       "heroImageName": "HeroCityDanangPlaceBaNaHills",
@@ -14045,7 +14079,11 @@
           {
             "id": "use-it-with",
             "title": "Arrive Before The Show",
-            "body": "On show nights, choose your side before phones fill the rail. The close view is more physical; the promenade view is easier to photograph."
+            "body": "On show nights, choose your side before phones fill the rail. The close view is more physical; the promenade view is easier to photograph.",
+            "phraseIDs": [
+              "repair-5",
+              "transport-stop-here-clearer"
+            ]
           },
           {
             "id": "good-to-know",

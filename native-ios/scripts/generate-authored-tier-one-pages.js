@@ -4396,7 +4396,12 @@ function rewriteBaNaHillsJourneySections(page, sections) {
 
   return [
     about ? { ...about, id: "at-glance", title: "About" } : null,
-    hearName ? { ...hearName, id: "quick-say", title: "Say it locally" } : null,
+    hearName ? baNaJourneySection(existingByID, "quick-say", "Useful Phrases", [
+      "sight-1",
+      "sight-3",
+      "sight-4",
+      "sight-5",
+    ], "teal") : null,
     placeBrief ?? null,
     useItWith ?? null,
     whenToUse ?? null,

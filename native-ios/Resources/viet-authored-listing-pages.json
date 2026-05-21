@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 806,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-21T10:20:44.500Z"
+    "generatedAt": "2026-05-21T12:29:24.500Z"
   },
   "pages": [
     {
@@ -181642,13 +181642,13 @@
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
-        "editorialRuntimeOverrideKind": null,
+        "editorialRuntimeOverrideKind": "ba-na-hills-journey",
         "targetHeroImageName": "HeroCityDanangPlaceBaNaHills"
       },
       "sections": [
         {
           "id": "at-glance",
-          "title": "Know You Are Choosing A Theme Park",
+          "title": "About",
           "body": "Ba Na Hills is a mountain theme park, not just a quiet Golden Bridge viewpoint. Expect cable cars, replica French streets, gardens, rides, crowds, and weather risk.",
           "phrases": [],
           "breakdown": [],
@@ -181728,12 +181728,186 @@
           "presentation": "plain-text"
         },
         {
+          "id": "getting-there",
+          "title": "Getting there",
+          "body": "",
+          "phrases": [
+            {
+              "id": "taxi-1",
+              "vietnamese": "Cho tôi tới đây",
+              "english": "Take me here",
+              "pronunciation": "cho toy toy day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-transport-destination",
+              "audioKey": "taxi-1"
+            },
+            {
+              "id": "repair-5",
+              "vietnamese": "Chỉ trên bản đồ giúp tôi được không?",
+              "english": "Can you show me on the map?",
+              "pronunciation": "chee tren ban doh zoop toy dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-phrase-repair-show-me",
+              "audioKey": "repair-5"
+            },
+            {
+              "id": "transport-stop-here-clearer",
+              "vietnamese": "Cho tôi xuống ngay đây",
+              "english": "Please stop right here",
+              "pronunciation": "cho toy zoong ngay day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-transport-stop-here",
+              "audioKey": "transport-stop-here-clearer"
+            },
+            {
+              "id": "ves-is-this-address-correct",
+              "vietnamese": "Địa chỉ này đúng không?",
+              "english": "Is this address correct?",
+              "pronunciation": "dia chee nay dung khong",
+              "symbolName": "text.bubble.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-ves-is-this-address-correct",
+              "audioKey": "audio-authored-dia-chi-nay-dung-khong-620d046937"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "tickets",
+          "title": "Tickets",
+          "body": "",
+          "phrases": [
+            {
+              "id": "v500-time-date-book-two-tickets-please",
+              "vietnamese": "Xin cho hai vé",
+              "english": "Two tickets, please",
+              "pronunciation": "Xin cho hai ve",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-phrase-v500-time-date-book-two-tickets-please",
+              "audioKey": "v500-time-date-book-two-tickets-please"
+            },
+            {
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
+            },
+            {
+              "id": "v500-sigh-acti-where-can-i-buy-tickets",
+              "vietnamese": "Tôi có thể mua vé ở đâu?",
+              "english": "Where can I buy tickets?",
+              "pronunciation": "Toi co the mua ve o dau",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
+              "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "cable-car",
+          "title": "Cable car",
+          "body": "",
+          "phrases": [
+            {
+              "id": "ves-where-cable-car",
+              "vietnamese": "Cáp treo ở đâu?",
+              "english": "Where is the cable car?",
+              "pronunciation": "cap treo uh dow",
+              "symbolName": "text.bubble.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-ves-where-cable-car",
+              "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "photos",
+          "title": "Photos",
+          "body": "",
+          "phrases": [
+            {
+              "id": "ves-take-photo-for-me",
+              "vietnamese": "Bạn chụp giúp tôi được không?",
+              "english": "Can you take a photo for me?",
+              "pronunciation": "ban choop zoop toy duoc khong",
+              "symbolName": "text.bubble.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-family-ves-take-photo-for-me",
+              "audioKey": "audio-authored-ban-chup-giup-toi-duoc-khong-4068eb6127"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "getting-back",
+          "title": "Getting back",
+          "body": "",
+          "phrases": [
+            {
+              "id": "ves-call-taxi-for-me",
+              "vietnamese": "Gọi giúp tôi taxi được không?",
+              "english": "Can you call me a taxi?",
+              "pronunciation": "goy zoop toy tak see duoc khong",
+              "symbolName": "text.bubble.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-ves-call-taxi-for-me",
+              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
           "id": "good-to-know",
-          "title": "A Half-Day Minimum",
+          "title": "Good to know",
           "body": "Ba Na Hills sits far enough from central Đà Nẵng to need a real outing. Pairing it with too many city stops makes the day feel mechanical.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
+        },
+        {
+          "id": "food-cash",
+          "title": "Food & cash",
+          "body": "",
+          "phrases": [
+            {
+              "id": "store-1",
+              "vietnamese": "Cho tôi chai nước",
+              "english": "A bottle of water please",
+              "pronunciation": "cho toy chai nook",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-water",
+              "audioKey": "store-1"
+            },
+            {
+              "id": "airport-4",
+              "vietnamese": "ATM gần nhất ở đâu?",
+              "english": "Where is the nearest ATM?",
+              "pronunciation": "ay-tee-em gun nyut uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-money-find-atm",
+              "audioKey": "airport-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
         }
       ],
       "examples": [
@@ -181768,16 +181942,78 @@
               "sight-4",
               "sight-5"
             ]
+          },
+          {
+            "stepID": "getting-there",
+            "title": "Getting there",
+            "sourceSectionID": "getting-there",
+            "primaryPhraseIDs": [
+              "taxi-1"
+            ],
+            "supportPhraseIDs": [
+              "repair-5",
+              "transport-stop-here-clearer",
+              "ves-is-this-address-correct"
+            ]
+          },
+          {
+            "stepID": "tickets",
+            "title": "Tickets",
+            "sourceSectionID": "tickets",
+            "primaryPhraseIDs": [
+              "v500-time-date-book-two-tickets-please"
+            ],
+            "supportPhraseIDs": [
+              "v500-time-date-book-one-ticket-please",
+              "v500-sigh-acti-where-can-i-buy-tickets"
+            ]
+          },
+          {
+            "stepID": "cable-car",
+            "title": "Cable car",
+            "sourceSectionID": "cable-car",
+            "primaryPhraseIDs": [
+              "ves-where-cable-car"
+            ],
+            "supportPhraseIDs": []
+          },
+          {
+            "stepID": "photos",
+            "title": "Photos",
+            "sourceSectionID": "photos",
+            "primaryPhraseIDs": [
+              "ves-take-photo-for-me"
+            ],
+            "supportPhraseIDs": []
+          },
+          {
+            "stepID": "getting-back",
+            "title": "Getting back",
+            "sourceSectionID": "getting-back",
+            "primaryPhraseIDs": [
+              "ves-call-taxi-for-me"
+            ],
+            "supportPhraseIDs": []
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-ba-na-hills",
-          "sight-1"
+          "sight-1",
+          "taxi-1",
+          "v500-time-date-book-two-tickets-please",
+          "ves-where-cable-car",
+          "ves-take-photo-for-me",
+          "ves-call-taxi-for-me"
         ],
         "secondaryPracticePhraseIDs": [
           "sight-3",
           "sight-4",
-          "sight-5"
+          "sight-5",
+          "repair-5",
+          "transport-stop-here-clearer",
+          "ves-is-this-address-correct",
+          "v500-time-date-book-one-ticket-please",
+          "v500-sigh-acti-where-can-i-buy-tickets"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-ba-na-hills"
       }
@@ -185847,9 +186083,30 @@
           "id": "use-it-with",
           "title": "Arrive Before The Show",
           "body": "On show nights, choose your side before phones fill the rail. The close view is more physical; the promenade view is easier to photograph.",
-          "phrases": [],
+          "phrases": [
+            {
+              "id": "repair-5",
+              "vietnamese": "Chỉ trên bản đồ giúp tôi được không?",
+              "english": "Can you show me on the map?",
+              "pronunciation": "chee tren ban doh zoop toy dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-repair-show-me",
+              "audioKey": "repair-5"
+            },
+            {
+              "id": "transport-stop-here-clearer",
+              "vietnamese": "Cho tôi xuống ngay đây",
+              "english": "Please stop right here",
+              "pronunciation": "cho toy zoong ngay day",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-transport-stop-here",
+              "audioKey": "transport-stop-here-clearer"
+            }
+          ],
           "breakdown": [],
-          "presentation": "plain-text"
+          "presentation": "phrase-list"
         },
         {
           "id": "good-to-know",
@@ -185892,16 +186149,29 @@
               "sight-4",
               "taxi-3"
             ]
+          },
+          {
+            "stepID": "use-it-with",
+            "title": "Arrive Before The Show",
+            "sourceSectionID": "use-it-with",
+            "primaryPhraseIDs": [
+              "repair-5"
+            ],
+            "supportPhraseIDs": [
+              "transport-stop-here-clearer"
+            ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-dragon-bridge",
-          "directions-1"
+          "directions-1",
+          "repair-5"
         ],
         "secondaryPracticePhraseIDs": [
           "sight-3",
           "sight-4",
-          "taxi-3"
+          "taxi-3",
+          "transport-stop-here-clearer"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-dragon-bridge"
       }
