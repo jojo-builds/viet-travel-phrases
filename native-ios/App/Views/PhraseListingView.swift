@@ -1386,6 +1386,10 @@ private struct ArticleSectionView: View {
         ExploreCatalogLayout.groupHeight(for: Swift.min(section.phrases.count, ExploreCatalogLayout.itemsPerGroup))
     }
 
+    private func sectionLeadIn(when hasStructuredContent: Bool) -> String? {
+        hasStructuredContent ? section.body.nilIfEmpty : nil
+    }
+
     private var plainTextSection: some View {
         SectionBlock(title: section.title) {
             DefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
@@ -1397,7 +1401,7 @@ private struct ArticleSectionView: View {
     }
 
     private var relationshipShelfSection: some View {
-        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+        SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
                 Text(section.body)
                     .font(.body)
@@ -1430,7 +1434,7 @@ private struct ArticleSectionView: View {
     }
 
     private var phraseListSection: some View {
-        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+        SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
                 Text(section.body)
                     .font(.body)
@@ -1458,7 +1462,7 @@ private struct ArticleSectionView: View {
     }
 
     private var horizontalCardsSection: some View {
-        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+        SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
                 Text(section.body)
                     .font(.body)
@@ -1485,7 +1489,7 @@ private struct ArticleSectionView: View {
     }
 
     private var breakdownSection: some View {
-        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+        SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.breakdown.isEmpty)) {
             if section.breakdown.isEmpty {
                 Text(section.body)
                     .font(.body)
@@ -1499,7 +1503,7 @@ private struct ArticleSectionView: View {
     }
 
     private var menuChipsSection: some View {
-        SectionBlock(title: section.title, leadIn: section.body.nilIfEmpty) {
+        SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.chips.isEmpty)) {
             if section.chips.isEmpty {
                 Text(section.body)
                     .font(.body)

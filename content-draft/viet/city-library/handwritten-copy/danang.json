@@ -291,9 +291,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cầu Vàng đi hướng nào? for the Golden Bridge, Cáp treo cuối mấy giờ? for the last cable car, and Hôm nay trên núi có sương mù không? before committing.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-ba-na-hills"
+            "sight-1",
+            "sight-3",
+            "sight-4",
+            "sight-5"
           ]
         },
         {
@@ -316,7 +319,8 @@
           "title": "A Half-Day Minimum",
           "body": "Ba Na Hills sits far enough from central Đà Nẵng to need a real outing. Pairing it with too many city stops makes the day feel mechanical."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-bac-my-an-market",
@@ -338,9 +342,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cho tôi một ly kem bơ for avocado ice cream, Món này là gì? before pointing, and Cho tôi một phần nhỏ when you want a small portion.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-bac-my-an-market"
+            "price-1",
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -353,7 +360,8 @@
           "title": "Not Hàn Or Cồn",
           "body": "Hàn is better for central bearings and gifts; Cồn is stronger for a food crawl. Bắc Mỹ An is narrower, and that is the point."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-bach-dang-street",
@@ -882,9 +890,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Phòng Mỹ Sơn ở đâu? for the Mỹ Sơn gallery, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-cham-museum"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3",
+            "sight-4"
           ]
         },
         {
@@ -897,7 +908,8 @@
           "title": "A Culture Stop Downtown",
           "body": "The museum sits close to the Hàn River and Dragon Bridge. It works as the slower counterweight to Đà Nẵng’s waterfront speed."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-che-xoa-xoa-hat-luu",
@@ -997,11 +1009,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Món này là gì? before pointing, Cho tôi một phần nhỏ for a small portion, and Có cay không? before committing to chili.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-con-market",
-            "city-danang-where-con-market",
-            "city-danang-eat-near-con-market"
+            "price-1",
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -1014,7 +1027,8 @@
           "title": "Different Job Than Hàn",
           "body": "Hàn is easier for central bearings and gifts. Cồn is better when you want small dishes, cash, stool seating, and a less polished food crawl."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-cong-caphe-bach-dang",
@@ -1153,9 +1167,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cầu Rồng ở đâu? for directions, Mấy giờ phun lửa? for show time, and Chỗ này có bị ướt không? before standing close.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-dragon-bridge"
+            "directions-1",
+            "sight-3",
+            "sight-4",
+            "taxi-3"
           ]
         },
         {
@@ -1168,7 +1185,8 @@
           "title": "A Riverfront Connector",
           "body": "Dragon Bridge pairs naturally with the Hàn River walk, Love Bridge, or Sơn Trà Night Market. It is a short civic ritual, not a whole evening by itself."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-dragon-bridge-fire-show",
@@ -1307,9 +1325,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Tầng mỹ thuật hiện đại ở đâu? for the modern art floor, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-fine-arts-museum"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3",
+            "sight-4"
           ]
         },
         {
@@ -1322,7 +1343,8 @@
           "title": "Pair It Centrally",
           "body": "The museum works before Hàn Market, the riverfront, or a nearby coffee stop. Plan for a compact visit unless regional art is already the main interest."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-golden-bridge",
@@ -1539,11 +1561,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Start with Chợ Hàn ở đâu? for directions, then ask Món này là gì? or Bớt chút được không? when you are standing at a stall.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-han-market",
-            "city-danang-where-han-market",
-            "city-danang-go-han-market"
+            "price-1",
+            "price-4",
+            "food-1",
+            "shop-5"
           ]
         },
         {
@@ -1556,7 +1579,8 @@
           "title": "Different Job Than Cồn",
           "body": "Hàn is the easier central market for bearings and gifts. Cồn is the stronger food-first choice when snacks matter more than location or polished browsing."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-han-river",
@@ -1656,11 +1680,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Chợ đêm Helio ở đâu? for directions, Món này bao nhiêu tiền? for prices, Cho tôi một phần nhỏ for a small portion, and Có chỗ ngồi không? for seating.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-helio-night-market",
-            "city-danang-where-helio-night-market",
-            "city-danang-go-helio-night-market"
+            "price-1",
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -1673,7 +1698,8 @@
           "title": "Different Job Than Sơn Trà",
           "body": "Sơn Trà is the Dragon Bridge add-on. Helio is the more controlled food-and-seating night when options and music matter."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-hoa-phu-thanh",
@@ -2085,9 +2111,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cầu Tình Yêu ở đâu? for directions, Tôi có thể mua ổ khóa ở đâu? for a lock, and Mấy giờ đèn bật? for lighting.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-love-bridge"
+            "directions-1",
+            "sight-3",
+            "sight-4",
+            "taxi-3"
           ]
         },
         {
@@ -2100,7 +2129,8 @@
           "title": "Pair It, Do Not Center It",
           "body": "Pair Love Bridge with Dragon Bridge, Sơn Trà Night Market, APEC Park, or a Hàn River walk. It works best as a small evening link."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-madame-lan",
@@ -2356,9 +2386,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Lối vào ở số 31 Trần Phú phải không? if checking the entrance, Khu lịch sử Đà Nẵng ở tầng nào? for the history section, and Hôm nay có phim 3D không? if films are listed.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-museum"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3",
+            "sight-4"
           ]
         },
         {
@@ -2371,7 +2404,8 @@
           "title": "New Enough To Verify",
           "body": "Confirm entrance, hours, ticket price, and special exhibits before going. The riverfront location makes a Hàn River walk easy afterward."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-museum-branch-2",
@@ -3407,11 +3441,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Chợ đêm Sơn Trà ở đâu? for directions, Món này bao nhiêu tiền? for price, and Tính theo ký hay theo phần? before seafood.",
+          "body": "",
           "phraseIDs": [
-            "city-danang-place-son-tra-night-market",
-            "city-danang-where-son-tra-night-market",
-            "city-danang-go-son-tra-night-market"
+            "price-1",
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -3424,7 +3459,8 @@
           "title": "Different Job Than Cồn",
           "body": "Cồn is the stronger food-first daytime market. Sơn Trà is the convenient night-market add-on near riverfront lights."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-danang-place-son-tra-wildlife-drive",

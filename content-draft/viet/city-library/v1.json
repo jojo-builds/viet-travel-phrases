@@ -11845,9 +11845,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cầu Vàng đi hướng nào? for the Golden Bridge, Cáp treo cuối mấy giờ? for the last cable car, and Hôm nay trên núi có sương mù không? before committing.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-ba-na-hills"
+              "sight-1",
+              "sight-3",
+              "sight-4",
+              "sight-5"
             ]
           },
           {
@@ -11885,37 +11888,12 @@
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
-        "runtimeOverride": {
-          "kind": "ba-na-hills-journey",
-          "reason": "Ba Na Hills is a full journey page in the native runtime; utility phrase sections extend the reviewed place-body sections after Why go, Say it locally, What you'll get, Day-trip landmark, Full-day timing, and Good to know.",
-          "expectedSectionIDs": [
-            "at-glance",
-            "quick-say",
-            "place-brief",
-            "use-it-with",
-            "when-to-use",
-            "getting-there",
-            "tickets",
-            "cable-car",
-            "photos",
-            "getting-back",
-            "good-to-know",
-            "food-cash"
-          ],
-          "sourceSectionIDsPreserved": [
-            "at-glance",
-            "quick-say",
-            "place-brief",
-            "use-it-with",
-            "when-to-use",
-            "good-to-know"
-          ]
-        },
         "audienceRewrite": {
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       },
       "heroImageName": "HeroCityDanangPlaceBaNaHills",
       "audioKey": "audio-authored-ba-na-hills-c5674a9b64",
@@ -11986,9 +11964,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cho tôi một ly kem bơ for avocado ice cream, Món này là gì? before pointing, and Cho tôi một phần nhỏ when you want a small portion.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-bac-my-an-market"
+              "price-1",
+              "food-1",
+              "food-3",
+              "food-7"
             ]
           },
           {
@@ -12019,7 +12000,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -13366,9 +13348,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Phòng Mỹ Sơn ở đâu? for the Mỹ Sơn gallery, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-cham-museum"
+              "v500-sigh-acti-where-is-the-entrance",
+              "v500-sigh-acti-where-can-i-buy-tickets",
+              "sight-3",
+              "sight-4"
             ]
           },
           {
@@ -13399,7 +13384,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -13661,11 +13647,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Món này là gì? before pointing, Cho tôi một phần nhỏ for a small portion, and Có cay không? before committing to chili.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-con-market",
-              "city-danang-where-con-market",
-              "city-danang-eat-near-con-market"
+              "price-1",
+              "food-1",
+              "food-3",
+              "food-7"
             ]
           },
           {
@@ -13696,7 +13683,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -14046,9 +14034,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cầu Rồng ở đâu? for directions, Mấy giờ phun lửa? for show time, and Chỗ này có bị ướt không? before standing close.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-dragon-bridge"
+              "directions-1",
+              "sight-3",
+              "sight-4",
+              "taxi-3"
             ]
           },
           {
@@ -14090,7 +14081,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       },
       "heroImageName": "HeroCityDanangPlaceDragonBridge",
       "audioKey": "audio-authored-cau-rong-90dc128d4b",
@@ -14446,9 +14438,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Tầng mỹ thuật hiện đại ở đâu? for the modern art floor, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-fine-arts-museum"
+              "v500-sigh-acti-where-is-the-entrance",
+              "v500-sigh-acti-where-can-i-buy-tickets",
+              "sight-3",
+              "sight-4"
             ]
           },
           {
@@ -14479,7 +14474,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -15029,11 +15025,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Start with Chợ Hàn ở đâu? for directions, then ask Món này là gì? or Bớt chút được không? when you are standing at a stall.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-han-market",
-              "city-danang-where-han-market",
-              "city-danang-go-han-market"
+              "price-1",
+              "price-4",
+              "food-1",
+              "shop-5"
             ]
           },
           {
@@ -15064,7 +15061,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -15321,11 +15319,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Chợ đêm Helio ở đâu? for directions, Món này bao nhiêu tiền? for prices, Cho tôi một phần nhỏ for a small portion, and Có chỗ ngồi không? for seating.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-helio-night-market",
-              "city-danang-where-helio-night-market",
-              "city-danang-go-helio-night-market"
+              "price-1",
+              "food-1",
+              "food-3",
+              "food-7"
             ]
           },
           {
@@ -15356,7 +15355,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -16389,9 +16389,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cầu Tình Yêu ở đâu? for directions, Tôi có thể mua ổ khóa ở đâu? for a lock, and Mấy giờ đèn bật? for lighting.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-love-bridge"
+              "directions-1",
+              "sight-3",
+              "sight-4",
+              "taxi-3"
             ]
           },
           {
@@ -16422,7 +16425,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -17115,9 +17119,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Lối vào ở số 31 Trần Phú phải không? if checking the entrance, Khu lịch sử Đà Nẵng ở tầng nào? for the history section, and Hôm nay có phim 3D không? if films are listed.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-museum"
+              "v500-sigh-acti-where-is-the-entrance",
+              "v500-sigh-acti-where-can-i-buy-tickets",
+              "sight-3",
+              "sight-4"
             ]
           },
           {
@@ -17148,7 +17155,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -19784,11 +19792,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Chợ đêm Sơn Trà ở đâu? for directions, Món này bao nhiêu tiền? for price, and Tính theo ký hay theo phần? before seafood.",
+            "body": "",
             "phraseIDs": [
-              "city-danang-place-son-tra-night-market",
-              "city-danang-where-son-tra-night-market",
-              "city-danang-go-son-tra-night-market"
+              "price-1",
+              "food-1",
+              "food-3",
+              "food-7"
             ]
           },
           {
@@ -19819,7 +19828,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -24651,9 +24661,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cho tôi một cà phê trứng nóng for hot egg coffee, Lối lên quán ở đâu? for the stairs, and Ít ngọt thôi for less sweet.",
+            "body": "",
             "phraseIDs": [
-              "city-hanoi-place-dinh-cafe"
+              "coffee-1",
+              "v900-food-drin-one-hot-coffee-please",
+              "v900-food-drin-less-sugar-please",
+              "coffee-7"
             ]
           },
           {
@@ -24684,7 +24697,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hanoi.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -25524,11 +25538,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask for cà phê trứng nóng for hot egg coffee, ca cao trứng for egg cocoa, and ít ngọt được không? if you want less sweetness.",
+            "body": "",
             "phraseIDs": [
-              "city-hanoi-place-giang-cafe",
-              "city-hanoi-where-giang-cafe",
-              "city-hanoi-go-giang-cafe"
+              "coffee-1",
+              "v900-food-drin-one-hot-coffee-please",
+              "v900-food-drin-less-sugar-please",
+              "coffee-7"
             ]
           },
           {
@@ -25559,7 +25574,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hanoi.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -30631,9 +30647,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask for cà phê trứng if egg coffee is the point, giấy ghi chú if you need note paper, and tầng trên if you want an upstairs seat.",
+            "body": "",
             "phraseIDs": [
-              "city-hanoi-place-the-note-coffee"
+              "coffee-1",
+              "coffee-4",
+              "coffee-6",
+              "coffee-7"
             ]
           },
           {
@@ -30664,7 +30683,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hanoi.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -37158,11 +37178,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Cho tôi xem menu before ordering, Giá này cho một chai hay một xô? when drink pricing is unclear, and Không, cảm ơn when declining a pitch.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-bui-vien-street",
-              "city-hcmc-where-bui-vien-street",
-              "city-hcmc-go-bui-vien"
+              "food-menu",
+              "price-8",
+              "polite-4",
+              "taxi-3"
             ]
           },
           {
@@ -37193,7 +37214,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -37946,11 +37968,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Chợ Bình Tây ở đâu? or Chùa Bà Thiên Hậu đi hướng nào? when you are close, then Tôi chỉ xem thôi if browsing stalls.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-cho-lon",
-              "city-hcmc-where-cho-lon",
-              "city-hcmc-go-cho-lon"
+              "price-1",
+              "price-4",
+              "food-1",
+              "shop-5"
             ]
           },
           {
@@ -37981,7 +38004,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -39108,9 +39132,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Hồ Con Rùa ở đâu? for Turtle Lake, Chợ Bàn Cờ đi hướng nào? for the market, and Gọi xe về Quận 1 giúp tôi được không? for the return.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-district-3"
+              "directions-1",
+              "directions-3",
+              "shop-4",
+              "taxi-3"
             ]
           },
           {
@@ -39141,7 +39168,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -39300,11 +39328,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đường Đồng Khởi ở đâu? when close by, or Đi bộ đến Nhà hát Thành phố được không? when you want to confirm the Opera House is walkable.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-dong-khoi-street",
-              "city-hcmc-where-dong-khoi-street",
-              "city-hcmc-dong-khoi-route"
+              "directions-1",
+              "directions-3",
+              "v500-dire-navi-can-i-walk-there",
+              "taxi-3"
             ]
           },
           {
@@ -39335,7 +39364,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -40470,9 +40500,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đường Thái Văn Lung ở đâu? for the area, Cho tôi xem menu trước before entering, and Tôi chỉ đi dạo thôi if you are only looking.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-japan-town"
+              "directions-1",
+              "directions-3",
+              "shop-4",
+              "taxi-3"
             ]
           },
           {
@@ -40503,7 +40536,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -44169,10 +44203,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đường Xuân Thủy ở đâu? for the first street, Cho tôi xem menu trước before choosing a café or restaurant, and Gọi xe về Quận 1 giúp tôi được không? for the ride back.",
+            "body": "",
             "phraseIDs": [
-              "city-hcmc-place-thao-dien",
-              "city-hcmc-go-thao-dien"
+              "directions-1",
+              "directions-3",
+              "shop-4",
+              "taxi-3"
             ]
           },
           {
@@ -44203,7 +44239,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hcmc.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -47796,9 +47833,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Một suất ăn bao nhiêu tiền? before starting, Chỉ cho tôi cách cuốn được không? for the first roll, and Tính tiền giúp tôi when ready to leave.",
+            "body": "",
             "phraseIDs": [
-              "city-hoian-place-bale-well"
+              "food-menu",
+              "food-1",
+              "food-3",
+              "coffee-7"
             ]
           },
           {
@@ -47829,7 +47869,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hoian.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -48091,11 +48132,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Một bánh mì thịt, ít ớt for pork with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+            "body": "",
             "phraseIDs": [
-              "city-hoian-place-banh-mi-phuong",
-              "city-hoian-where-banh-mi-phuong",
-              "city-hoian-go-banh-mi-phuong"
+              "v500-food-drin-id-like-a-b-nh-m-please",
+              "food-3",
+              "food-7",
+              "price-1"
             ]
           },
           {
@@ -48126,7 +48168,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hoian.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -52158,9 +52201,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Một bánh mì thập cẩm, ít ớt for mixed bánh mì with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+            "body": "",
             "phraseIDs": [
-              "city-hoian-place-madam-khanh"
+              "v500-food-drin-id-like-a-b-nh-m-please",
+              "food-3",
+              "food-7",
+              "price-1"
             ]
           },
           {
@@ -52191,7 +52237,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hoian.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -52931,11 +52978,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Món nào là món đặc trưng của Hội An? for a specialty, Món này có tôm hoặc thịt heo không? for ingredients, and Món này có cay không? for heat.",
+            "body": "",
             "phraseIDs": [
-              "city-hoian-place-morning-glory",
-              "city-hoian-where-morning-glory",
-              "city-hoian-reservation-morning-glory"
+              "food-menu",
+              "food-1",
+              "v500-food-drin-does-this-contain-shrimp",
+              "food-7"
             ]
           },
           {
@@ -52966,7 +53014,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hoian.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -56525,9 +56574,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask for một đĩa bánh bao bánh vạc when ordering, then Bánh này có tôm không? if shellfish matters. More dipping sauce is thêm nước chấm.",
+            "body": "",
             "phraseIDs": [
-              "city-hoian-place-white-rose-restaurant"
+              "food-menu",
+              "food-1",
+              "v500-food-drin-does-this-contain-shrimp",
+              "food-7"
             ]
           },
           {
@@ -56558,7 +56610,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hoian.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -59659,9 +59712,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Hôm nay trên núi có mưa không? before going, Đường lên Hải Vọng Đài ở đâu? for the viewpoint, and Đường đi Ngũ Hồ có trơn không? if heading to Five Lakes.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-bach-ma-national-park"
+              "v500-dire-navi-how-far-is-it",
+              "v500-dire-navi-can-i-walk-there",
+              "sight-3",
+              "sight-5"
             ]
           },
           {
@@ -59692,7 +59748,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -63703,9 +63760,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Khi nào thủy triều xuống? for low tide, Hàu hôm nay có tươi không? before oysters, and Chỗ nào chụp ảnh an toàn? near the water.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-lap-an-lagoon"
+              "transport-fare",
+              "v900-tran-where-is-the-boat-pier",
+              "sight-3",
+              "sight-5"
             ]
           },
           {
@@ -63736,7 +63796,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -65546,9 +65607,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đi thuyền đến chùa Thiên Mụ bao nhiêu tiền? for price, Đi một chiều hay khứ hồi? for return, and Có áo phao không? for life jackets.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-perfume-river"
+              "transport-fare",
+              "v900-tran-where-is-the-boat-pier",
+              "sight-3",
+              "sight-5"
             ]
           },
           {
@@ -65579,7 +65643,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -66801,9 +66866,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đi thuyền lúc hoàng hôn bao nhiêu tiền? for a sunset boat, Đi khứ hồi không? for round trip, and Có áo phao không? for life jackets.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-tam-giang-lagoon"
+              "transport-fare",
+              "v900-tran-where-is-the-boat-pier",
+              "sight-3",
+              "sight-5"
             ]
           },
           {
@@ -66834,7 +66902,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -67670,9 +67739,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Say Làng hương Thủy Xuân for the place, then ask Tôi có thể chụp ảnh không? before close photos or Cái này bao nhiêu tiền? before buying.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-thuy-xuan-incense-village"
+              "sight-3",
+              "price-1",
+              "price-7",
+              "shop-4"
             ]
           },
           {
@@ -67703,7 +67775,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {
@@ -68349,9 +68422,12 @@
           {
             "id": "quick-say",
             "title": "Useful Phrases",
-            "body": "Ask Đồi Vọng Cảnh ở đâu? for directions, Đi lên đồi có khó không? for the walk, and Chỗ nào ngắm hoàng hôn đẹp? for sunset.",
+            "body": "",
             "phraseIDs": [
-              "city-hue-place-vong-canh-hill"
+              "v500-dire-navi-how-far-is-it",
+              "v500-dire-navi-can-i-walk-there",
+              "sight-3",
+              "sight-5"
             ]
           },
           {
@@ -68382,7 +68458,8 @@
           "reviewID": "viet-city-handwritten-copy-2026-05-18",
           "standard": "handwritten-per-listing-traveler-excitement",
           "source": "content-draft/viet/city-library/handwritten-copy/hue.json"
-        }
+        },
+        "sourceMode": "expanded-detail"
       }
     },
     {

@@ -725,11 +725,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Cho tôi xem menu before ordering, Giá này cho một chai hay một xô? when drink pricing is unclear, and Không, cảm ơn when declining a pitch.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-bui-vien-street",
-            "city-hcmc-where-bui-vien-street",
-            "city-hcmc-go-bui-vien"
+            "food-menu",
+            "price-8",
+            "polite-4",
+            "taxi-3"
           ]
         },
         {
@@ -742,7 +743,8 @@
           "title": "Backpacker District, Not All Saigon",
           "body": "Bùi Viện sits in the Phạm Ngũ Lão backpacker area near central District 1. See it if curious, then balance it with Nguyễn Huệ, Chợ Lớn, or a quieter dinner."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-bun-thit-nuong",
@@ -1037,11 +1039,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Chợ Bình Tây ở đâu? or Chùa Bà Thiên Hậu đi hướng nào? when you are close, then Tôi chỉ xem thôi if browsing stalls.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-cho-lon",
-            "city-hcmc-where-cho-lon",
-            "city-hcmc-go-cho-lon"
+            "price-1",
+            "price-4",
+            "food-1",
+            "shop-5"
           ]
         },
         {
@@ -1054,7 +1057,8 @@
           "title": "Beyond District 1",
           "body": "Chợ Lớn is best with half a day and patience for short rides. It is not the open boulevard version of central Saigon."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-cho-lon-walking-route",
@@ -1505,9 +1509,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Hồ Con Rùa ở đâu? for Turtle Lake, Chợ Bàn Cờ đi hướng nào? for the market, and Gọi xe về Quận 1 giúp tôi được không? for the return.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-district-3"
+            "directions-1",
+            "directions-3",
+            "shop-4",
+            "taxi-3"
           ]
         },
         {
@@ -1520,7 +1527,8 @@
           "title": "Plan The Return",
           "body": "District 3 does not hand over one headline moment. It is still worth it when District 1 feels compressed and a small central walking section sounds better."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
@@ -1581,11 +1589,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đường Đồng Khởi ở đâu? when close by, or Đi bộ đến Nhà hát Thành phố được không? when you want to confirm the Opera House is walkable.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-dong-khoi-street",
-            "city-hcmc-where-dong-khoi-street",
-            "city-hcmc-dong-khoi-route"
+            "directions-1",
+            "directions-3",
+            "v500-dire-navi-can-i-walk-there",
+            "taxi-3"
           ]
         },
         {
@@ -1598,7 +1607,8 @@
           "title": "Early Before It Thickens",
           "body": "Morning is better if buildings matter more than shopping. Later in the day, heat and traffic can make the street feel like another central corridor."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-fine-arts-museum",
@@ -2049,9 +2059,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đường Thái Văn Lung ở đâu? for the area, Cho tôi xem menu trước before entering, and Tôi chỉ đi dạo thôi if you are only looking.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-japan-town"
+            "directions-1",
+            "directions-3",
+            "shop-4",
+            "taxi-3"
           ]
         },
         {
@@ -2064,7 +2077,8 @@
           "title": "Early Dinner Is Easier",
           "body": "Early dinner is better for a first visit. Later at night the area can get louder and less useful for someone trying to orient calmly."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-landmark-81",
@@ -3536,10 +3550,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đường Xuân Thủy ở đâu? for the first street, Cho tôi xem menu trước before choosing a café or restaurant, and Gọi xe về Quận 1 giúp tôi được không? for the ride back.",
+          "body": "",
           "phraseIDs": [
-            "city-hcmc-place-thao-dien",
-            "city-hcmc-go-thao-dien"
+            "directions-1",
+            "directions-3",
+            "shop-4",
+            "taxi-3"
           ]
         },
         {
@@ -3552,7 +3568,8 @@
           "title": "Cross The River On Purpose",
           "body": "The ride from the central core is part of the decision. The neighborhood is still worth it when the slower pocket is the reason for going."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hcmc-place-thien-hau-pagoda",
