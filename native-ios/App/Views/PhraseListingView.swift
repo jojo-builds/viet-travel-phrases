@@ -18,12 +18,14 @@ struct PhraseListingView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
+    let isPageSaved: (String) -> Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
+    var onToggleSavedPage: (String) -> Void = { _ in }
     var onDetailTapped: (String) -> Void = { _ in }
 
     init(
@@ -38,12 +40,14 @@ struct PhraseListingView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
+        isPageSaved: @escaping (String) -> Bool = { _ in false },
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
+        onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
@@ -57,12 +61,14 @@ struct PhraseListingView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
+        self.isPageSaved = isPageSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
+        self.onToggleSavedPage = onToggleSavedPage
         self.onDetailTapped = onDetailTapped
     }
 
@@ -79,12 +85,14 @@ struct PhraseListingView: View {
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
+            isPageSaved: isPageSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
+            onToggleSavedPage: onToggleSavedPage,
             onDetailTapped: onDetailTapped
         )
     }
@@ -102,12 +110,14 @@ struct PhraseArticleTemplateView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
+    let isPageSaved: (String) -> Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
+    var onToggleSavedPage: (String) -> Void = { _ in }
     var onDetailTapped: (String) -> Void = { _ in }
     @State private var didApplyInitialScrollTarget = false
     @State private var didApplyPhotoBackdropInitialPosition = false
@@ -127,12 +137,14 @@ struct PhraseArticleTemplateView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
+        isPageSaved: @escaping (String) -> Bool = { _ in false },
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void = {},
         onSearchTapped: @escaping () -> Void = {},
         onToggleSaved: (() -> Void)? = nil,
+        onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
         self.page = page
@@ -146,12 +158,14 @@ struct PhraseArticleTemplateView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
+        self.isPageSaved = isPageSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
+        self.onToggleSavedPage = onToggleSavedPage
         self.onDetailTapped = onDetailTapped
     }
 
@@ -183,6 +197,15 @@ struct PhraseArticleTemplateView: View {
                                     onOpenDetail: onDetailTapped
                                 )
                                 .id(section.id)
+                            }
+
+                            if shouldRenderLocationMenuPicks {
+                                LocationMenuPicksSection(
+                                    picks: locationMenuPicks,
+                                    isPageSaved: isPageSaved,
+                                    onToggleSavedPage: onToggleSavedPage,
+                                    onOpenDetail: onDetailTapped
+                                )
                             }
 
                             if shouldRenderCatalogExplore {
@@ -462,6 +485,15 @@ struct PhraseArticleTemplateView: View {
                     .id(section.id)
                 }
 
+                if shouldRenderLocationMenuPicks {
+                    LocationMenuPicksSection(
+                        picks: locationMenuPicks,
+                        isPageSaved: isPageSaved,
+                        onToggleSavedPage: onToggleSavedPage,
+                        onOpenDetail: onDetailTapped
+                    )
+                }
+
                 if shouldRenderCatalogExplore {
                     ExploreCatalogSection(
                         currentPageID: page.id,
@@ -593,6 +625,14 @@ struct PhraseArticleTemplateView: View {
         page.showsCatalogExplore && page.id == PhrasePage.xinChao.id
     }
 
+    private var shouldRenderLocationMenuPicks: Bool {
+        !locationMenuPicks.isEmpty
+    }
+
+    private var locationMenuPicks: [LocationMenuPick] {
+        LocationMenuPicksCatalog.picks(forPageID: page.id)
+    }
+
     private var usesCompactPhraseHero: Bool {
         effectiveHeroImageName == "HeroCompactPhraseMasthead"
     }
@@ -664,7 +704,10 @@ struct PhraseArticleTemplateView: View {
 
     private var articleBottomChromeContentClearance: CGFloat {
         if usesPhotoBackdropLayout {
-            return PhrasePhotoBackdropLayout.bottomReadingClearance
+            return PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: page.id,
+                heroImageName: effectiveHeroImageName
+            )
         }
 
         return usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
@@ -933,11 +976,20 @@ struct PhrasePhotoBackdropImmersiveImagePreferenceKey: PreferenceKey {
 
 enum PhrasePhotoBackdropLayout {
     static let bottomReadingClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance + BrowseCollectionLayout.bottomChromeContentClearance
+    static let cityDetailBottomScrollLift: CGFloat = 128
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
     static let topChromeContentThresholdPadding: CGFloat = 12
     static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
+
+    static func bottomReadingClearance(pageID: String, heroImageName: String?) -> CGFloat {
+        if supportsCityListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return bottomReadingClearance + cityDetailBottomScrollLift
+        }
+
+        return bottomReadingClearance
+    }
 
     static func supportsCityListingPage(pageID: String, heroImageName: String?) -> Bool {
         guard let heroImageName, heroImageName != "HeroCompactPhraseMasthead" else {
@@ -1458,6 +1510,125 @@ private struct ArticleSectionView: View {
                 MenuChipFlow(chips: section.chips, sectionID: section.id)
             }
         }
+    }
+}
+
+private struct LocationMenuPicksSection: View {
+    let picks: [LocationMenuPick]
+    let isPageSaved: (String) -> Bool
+    let onToggleSavedPage: (String) -> Void
+    let onOpenDetail: (String) -> Void
+
+    var body: some View {
+        SectionBlock(
+            title: "Popular Here",
+            leadIn: "The orders that keep showing up."
+        ) {
+            VStack(spacing: 0) {
+                ForEach(picks) { pick in
+                    LocationMenuPickRow(
+                        pick: pick,
+                        isSaved: isPageSaved(pick.detailPageID),
+                        onOpenDetail: { onOpenDetail(pick.detailPageID) },
+                        onToggleSaved: { onToggleSavedPage(pick.detailPageID) }
+                    )
+
+                    if pick.id != picks.last?.id {
+                        Divider().padding(.leading, 86)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 8)
+            .phraseListCard(cornerRadius: 24)
+        }
+        .accessibilityIdentifier("LocationMenuPicks.Section")
+    }
+}
+
+private struct LocationMenuPickRow: View {
+    let pick: LocationMenuPick
+    let isSaved: Bool
+    let onOpenDetail: () -> Void
+    let onToggleSaved: () -> Void
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Button(action: onOpenDetail) {
+                HStack(spacing: 14) {
+                    Image(pick.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 62, height: 62)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                        }
+                        .accessibilityHidden(true)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(pick.title)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.78)
+
+                        Text(pick.subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text(pick.proof)
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary.opacity(0.92))
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .layoutPriority(1)
+                }
+            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+            .accessibilityIdentifier("LocationMenuPick.Row.\(pick.id)")
+
+            if let audioKey = pick.audioKey {
+                AudioSpeakerButton(
+                    tint: pick.linkedMenuItem?.kind?.tintName ?? .orange,
+                    size: 44,
+                    audioKey: audioKey,
+                    accessibilityIdentifier: "LocationMenuPick.Audio.\(pick.id)"
+                )
+                .zIndex(1)
+            } else {
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.secondary.opacity(0.8))
+                    .frame(width: 36, height: 36)
+                    .nativeGlass(cornerRadius: 18, interactive: false)
+                    .zIndex(1)
+            }
+
+            Button(action: onToggleSaved) {
+                Image(systemName: isSaved ? "heart.fill" : "heart")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(.red)
+                    .frame(width: 44, height: 44)
+                    .background(Color.white.opacity(0.001), in: Circle())
+                    .contentShape(Circle())
+            }
+            .buttonStyle(.plain)
+            .frame(width: 44, height: 44)
+            .contentShape(Circle())
+            .accessibilityLabel(isSaved ? "Remove from Saved" : "Save to My Trip")
+            .accessibilityIdentifier("LocationMenuPick.Save.\(pick.id)")
+            .zIndex(2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
     }
 }
 

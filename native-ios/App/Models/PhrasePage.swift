@@ -416,6 +416,7 @@ enum PhraseCatalog {
 
         return pageID == PhrasePage.xinChao.id
             || VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil
+            || LocationMenuPicksCatalog.detailPage(withID: pageID) != nil
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
     }
 
@@ -1125,6 +1126,10 @@ extension PhraseDetailPage {
 
         if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
             return menuPage
+        }
+
+        if let locationMenuPage = LocationMenuPicksCatalog.detailPage(withID: id) {
+            return locationMenuPage
         }
 
         return pagesByID[id]

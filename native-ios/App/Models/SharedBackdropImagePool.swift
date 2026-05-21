@@ -8,10 +8,21 @@ enum SharedBackdropImagePool {
         case practice
         case search
         case sharedPage
+
+        var usesAdminRootCursor: Bool {
+            switch self {
+            case .home, .browse, .saved, .practice, .search:
+                return true
+            case .sharedPage:
+                return false
+            }
+        }
     }
 
     static let fallbackImageName = "HomeVietnamMapBackdrop"
     static let preheatLookaheadCount = 1
+    private static let storageKeyPrefix = "SpeakLocal.SharedBackdropImagePool.nextIndex"
+    private static let adminRootStorageKey = "\(storageKeyPrefix).adminRoot"
 
     static let vietnamForwardAssetNames = [
         "HomeVietnamMapBackdrop",
@@ -68,7 +79,9 @@ enum SharedBackdropImagePool {
     }
 
     static func storageKey(for surface: Surface) -> String {
-        "SpeakLocal.SharedBackdropImagePool.nextIndex.\(surface.rawValue)"
+        surface.usesAdminRootCursor
+            ? adminRootStorageKey
+            : "\(storageKeyPrefix).\(surface.rawValue)"
     }
 
     private static func normalizedIndex(_ index: Int) -> Int {

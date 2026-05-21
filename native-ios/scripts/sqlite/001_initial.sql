@@ -258,6 +258,59 @@ CREATE TABLE missing_audio_audit (
   created_at TEXT NOT NULL
 );
 
+CREATE TABLE vietnamese_menu_helper_phrase (
+  id TEXT PRIMARY KEY,
+  language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
+  vietnamese TEXT NOT NULL,
+  english TEXT NOT NULL,
+  pronunciation TEXT NOT NULL,
+  audio_key TEXT,
+  detail_page_id TEXT,
+  audio_status TEXT NOT NULL,
+  applies_to_json TEXT NOT NULL,
+  sort_order INTEGER NOT NULL
+);
+
+CREATE TABLE vietnamese_menu_item (
+  item_id TEXT PRIMARY KEY,
+  language_pack_id TEXT NOT NULL REFERENCES language_pack(id),
+  menu_type TEXT NOT NULL,
+  category TEXT NOT NULL,
+  subcategory TEXT NOT NULL,
+  popular INTEGER NOT NULL,
+  vietnamese_item TEXT NOT NULL,
+  english_translation TEXT NOT NULL,
+  romanized_no_tones TEXT NOT NULL,
+  sound_out TEXT NOT NULL,
+  notes TEXT NOT NULL,
+  at_a_glance TEXT NOT NULL,
+  what_it_is TEXT,
+  usually_includes_json TEXT NOT NULL,
+  how_to_enjoy TEXT,
+  how_locals_order TEXT,
+  worth_knowing TEXT,
+  regional_association TEXT,
+  origin_posture TEXT,
+  traveler_caution TEXT,
+  good_to_know TEXT NOT NULL,
+  common_options_json TEXT NOT NULL,
+  quick_say_vietnamese TEXT NOT NULL,
+  quick_say_english TEXT NOT NULL,
+  quick_say_sound_out TEXT NOT NULL,
+  order_line_vietnamese TEXT,
+  order_line_english TEXT,
+  order_line_pronunciation TEXT,
+  order_line_audio_policy TEXT,
+  helper_phrase_ids_json TEXT NOT NULL,
+  editorial_review_status TEXT,
+  editorial_review_reviewed_by TEXT,
+  editorial_review_reviewed_at TEXT,
+  editorial_review_checks_json TEXT NOT NULL,
+  editorial_review_review_note TEXT,
+  source_path TEXT NOT NULL,
+  sort_order INTEGER NOT NULL
+);
+
 CREATE TABLE search_document (
   rowid INTEGER PRIMARY KEY,
   id TEXT NOT NULL UNIQUE,
@@ -325,4 +378,6 @@ CREATE INDEX idx_page_section_item_section ON page_section_item(section_id, sort
 CREATE INDEX idx_phrase_relation_source ON phrase_relation(source_kind, source_id, sort_order);
 CREATE INDEX idx_phrase_relation_target ON phrase_relation(target_kind, target_id);
 CREATE INDEX idx_audio_usage_target ON audio_usage(target_kind, target_id);
+CREATE INDEX idx_vietnamese_menu_item_kind_category ON vietnamese_menu_item(menu_type, category, subcategory, popular, sort_order);
+CREATE INDEX idx_vietnamese_menu_helper_audio_status ON vietnamese_menu_helper_phrase(audio_status);
 CREATE INDEX idx_search_document_target ON search_document(target_kind, target_id);

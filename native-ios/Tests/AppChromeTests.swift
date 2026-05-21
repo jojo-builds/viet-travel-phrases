@@ -236,6 +236,35 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
     }
 
+    func testCityPlacePhotoBackdropDetailPagesHaveExtraBottomScrollClearance() {
+        let cityPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-city-hcmc-place-lusine-thao-dien"))
+        let menuPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.supportsCityListingPage(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            )
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance + PhrasePhotoBackdropLayout.cityDetailBottomScrollLift,
+            accuracy: 0.001
+        )
+        XCTAssertGreaterThanOrEqual(PhrasePhotoBackdropLayout.cityDetailBottomScrollLift, 128)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: menuPage.id,
+                heroImageName: menuPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance,
+            accuracy: 0.001
+        )
+    }
+
     func testPhotoBackdropTopChromeTurnsDarkOnlyWhileImageIsUnderStatusArea() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
@@ -343,39 +372,43 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testSharedBackdropPoolKeepsSurfaceSequencesIsolated() {
+    func testSharedBackdropPoolUsesOneCursorAcrossAdminRootSurfaces() {
         let isolatedDefaults = isolatedBackdropDefaults(named: #function)
         let defaults = isolatedDefaults.defaults
         defer { defaults.removePersistentDomain(forName: isolatedDefaults.suiteName) }
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
+        let imageNames = SharedBackdropImagePool.vietnamForwardAssetNames
+        let adminRootSurfaces: [SharedBackdropImagePool.Surface] = [
+            .home,
+            .browse,
+            .saved,
+            .practice,
+            .search,
+        ]
 
-        for surface in [SharedBackdropImagePool.Surface.browse, .saved, .practice, .search, .sharedPage] {
+        for (offset, surface) in adminRootSurfaces.enumerated() {
             XCTAssertEqual(
                 SharedBackdropImagePool.nextImageName(for: surface, defaults: defaults),
-                SharedBackdropImagePool.vietnamForwardAssetNames[0],
-                "\(surface.rawValue) should have an independent backdrop cursor"
+                imageNames[offset],
+                "\(surface.rawValue) should advance the shared admin-root cursor"
             )
         }
+
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
-            2
+            adminRootSurfaces.count
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .browse)),
+            Set(adminRootSurfaces.map { SharedBackdropImagePool.storageKey(for: $0) }).count,
             1
         )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .saved)),
-            1
+
+        XCTAssertNotEqual(
+            SharedBackdropImagePool.storageKey(for: .sharedPage),
+            SharedBackdropImagePool.storageKey(for: .home)
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .practice)),
-            1
-        )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .search)),
-            1
+            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
+            imageNames[0]
         )
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
@@ -407,7 +440,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
-    func testAdminRootBackdropSurfacesMapToIndependentPoolSurfaces() {
+    func testAdminRootBackdropSurfacesMapToSharedPoolCursor() {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .saved), .saved)
@@ -421,6 +454,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.saved.poolSurface, .saved)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.practice.poolSurface, .practice)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.search.poolSurface, .search)
+
+        let adminRootPoolKeys = Set(AdminRootPhotoBackdropSurface.allCases.map {
+            SharedBackdropImagePool.storageKey(for: $0.poolSurface)
+        })
+        XCTAssertEqual(adminRootPoolKeys.count, 1)
     }
 
     func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
@@ -2144,6 +2182,70 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(drinks.starterItems.first?.title, "Cà phê sữa đá")
         XCTAssertEqual(drinks.subcategories.first?.title, "Coffee")
         XCTAssertEqual(drinks.subcategories.first?.phraseCount, 14)
+    }
+
+    func testLusineReviewBackedMenuPicksResolveAndLink() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        XCTAssertEqual(
+            picks.map(\.title),
+            [
+                "Eggs Benedict",
+                "Premium Pho",
+                "Squid ink crab pasta",
+                "Crispy chicken salad",
+                "Salt caramel coffee",
+                "Avocado toast",
+            ]
+        )
+        XCTAssertEqual(
+            LocationMenuPicksCatalog.picks(forPageID: "viet-phrase-city-hcmc-place-lusine-thao-dien").map(\.id),
+            picks.map(\.id)
+        )
+        XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: "viet-menu-food-pho-bo").isEmpty)
+        XCTAssertTrue(picks.allSatisfy { !$0.proof.localizedCaseInsensitiveContains("guest signal") })
+
+        let premiumPho = try XCTUnwrap(picks.first { $0.id == "lusine-premium-pho" })
+        XCTAssertEqual(premiumPho.detailPageID, "viet-menu-food-pho-dac-biet")
+        XCTAssertNotNil(VietnameseMenuCatalog.detailItem(withPageID: premiumPho.detailPageID))
+        XCTAssertNil(LocationMenuPicksCatalog.detailPage(withID: premiumPho.detailPageID))
+
+        let eggs = try XCTUnwrap(picks.first { $0.id == "lusine-eggs-benedict" })
+        let eggsDetail = try XCTUnwrap(LocationMenuPicksCatalog.detailPage(withID: eggs.detailPageID))
+        XCTAssertEqual(eggsDetail.title, "Eggs Benedict")
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(eggs.detailPageID))
+        XCTAssertNotNil(PhraseDetailPage.page(withID: eggs.detailPageID))
+    }
+
+    func testLusineLocationMenuPicksUseExistingAssetsAndSavedTripRows() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        for pick in picks {
+            XCTAssertNotNil(UIImage(named: pick.imageName), "Missing location menu pick image: \(pick.imageName)")
+
+            guard pick.linkedMenuItemID == nil else {
+                continue
+            }
+
+            let detail = try XCTUnwrap(PhraseDetailPage.page(withID: pick.detailPageID))
+            let heroImageName = try XCTUnwrap(detail.heroImageName)
+            XCTAssertNotNil(UIImage(named: heroImageName), "Missing location menu detail image: \(heroImageName)")
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: detail.id, heroImageName: heroImageName),
+                "\(pick.id) should open with the same photo-backdrop feel as menu item pages"
+            )
+        }
+
+        let snapshot = SavedTripSnapshot.make(
+            savedPageIDs: [
+                "viet-menu-lusine-thao-dien-eggs-benedict",
+                "viet-menu-lusine-thao-dien-salt-caramel-coffee",
+            ]
+        )
+
+        XCTAssertEqual(snapshot.sections.map(\.kind), [.food, .drinks])
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .food })?.items.first?.title, "Eggs Benedict")
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .drinks })?.items.first?.title, "Salt caramel coffee")
     }
 
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
