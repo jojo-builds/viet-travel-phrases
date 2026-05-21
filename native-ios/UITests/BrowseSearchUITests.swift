@@ -204,11 +204,13 @@ final class BrowseSearchUITests: XCTestCase {
     func testSavedPracticeOpensAsPullUpCardOverSavedTrip() {
         let app = launchApp(arguments: ["--saved", "--reset-demo-state", "--seed-returning-user-shelves"])
 
-        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 8))
-        tapWhenVisible(app.buttons["SavedTrip.Practice.Start"], app: app)
+        XCTAssertTrue(waitForSavedRoot(in: app, timeout: 8))
+        let startPracticeText = app.staticTexts["Start Practicing"]
+        XCTAssertTrue(startPracticeText.waitForExistence(timeout: 8))
+        startPracticeText.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].exists)
+        XCTAssertTrue(savedRootExists(in: app))
         XCTAssertFalse(
             app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
             "Saved-launched practice should hide the bottom tab bar while the pull-up card is open."
@@ -220,7 +222,7 @@ final class BrowseSearchUITests: XCTestCase {
 
         closePractice(app)
         XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
-        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 4))
+        XCTAssertTrue(waitForSavedRoot(in: app, timeout: 4))
     }
 
     func testFoodCollectionUsesMessageSectionAfterNounRows() {
@@ -897,6 +899,20 @@ final class BrowseSearchUITests: XCTestCase {
         app.launchArguments = arguments
         app.launch()
         return app
+    }
+
+    private func waitForSavedRoot(in app: XCUIApplication, timeout: TimeInterval) -> Bool {
+        let photoBackdropContent = app.descendants(matching: .any)["Saved.PhotoBackdrop.Content"]
+        if photoBackdropContent.waitForExistence(timeout: timeout) {
+            return true
+        }
+
+        return app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 1)
+    }
+
+    private func savedRootExists(in app: XCUIApplication) -> Bool {
+        app.descendants(matching: .any)["Saved.PhotoBackdrop.Content"].exists
+            || app.descendants(matching: .any)["SavedPagesView"].exists
     }
 
     private func closePractice(_ app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
