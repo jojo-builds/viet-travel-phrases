@@ -153,7 +153,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.descendants(matching: .any)["Practice.Match.Root"].exists)
     }
 
-    func testBrowsePracticeOpensAsPullUpCardOverCurrentCollection() {
+    func testBrowsePracticeOpensAsSheetOverCurrentCollection() {
         let app = launchApp(arguments: ["--browse-category", "first-day"])
         let practiceEntryID = "BrowseCollection.PracticeEntry.category.first-day"
 
@@ -168,7 +168,7 @@ final class BrowseSearchUITests: XCTestCase {
         )
         XCTAssertFalse(
             app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
-            "Browse-launched practice should hide the bottom tab bar while the pull-up card is open."
+            "Browse-launched practice should hide the bottom tab bar while the practice sheet is open."
         )
         XCTAssertFalse(
             app.descendants(matching: .any)["Practice.Match.Hub"].exists,
@@ -201,7 +201,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.first-day"].exists)
     }
 
-    func testSavedPracticeOpensAsPullUpCardOverSavedTrip() {
+    func testSavedPracticeOpensAsSheetOverSavedTrip() {
         let app = launchApp(arguments: ["--saved", "--reset-demo-state", "--seed-returning-user-shelves"])
 
         XCTAssertTrue(waitForSavedRoot(in: app, timeout: 8))
@@ -213,7 +213,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(savedRootExists(in: app))
         XCTAssertFalse(
             app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
-            "Saved-launched practice should hide the bottom tab bar while the pull-up card is open."
+            "Saved-launched practice should hide the bottom tab bar while the practice sheet is open."
         )
         XCTAssertFalse(
             app.descendants(matching: .any)["Practice.Match.Hub"].exists,
