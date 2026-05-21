@@ -405,7 +405,10 @@ struct BrowseCollectionPageView: View {
 
         selectedCityCardID = filter.id
         withAnimation(.snappy(duration: 0.28)) {
-            scrollProxy.scrollTo(BrowseCityBrowseScrollID.group(filter.id), anchor: .top)
+            scrollProxy.scrollTo(
+                BrowseCityBrowseScrollID.group(filter.id),
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
+            )
         }
     }
 
@@ -418,7 +421,7 @@ struct BrowseCollectionPageView: View {
         withAnimation(.snappy(duration: 0.28)) {
             scrollProxy.scrollTo(
                 BrowseCategorySubcategoryScrollID.group(subcategory.id),
-                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.subcategoryJumpViewportAnchorY)
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
             )
         }
     }
@@ -469,7 +472,7 @@ enum BrowseCollectionLayout {
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
-    static let subcategoryJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
+    static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
 
     static func cityFilterCardWidth(availableWidth: CGFloat) -> CGFloat {
         let visiblePeekWidth = min(cityFilterCardPeekWidth, max(28, availableWidth * 0.11))
@@ -860,13 +863,19 @@ private struct BrowseCityFilterSection: View {
 
                 LazyVStack(alignment: .leading, spacing: 18) {
                     ForEach(visibleFilters) { filter in
-                        BrowseCityNounGroupSection(
-                            filter: filter,
-                            onOpenDetail: onOpenDetail,
-                            isSaved: isSaved,
-                            onToggleSaved: onToggleSaved
-                        )
-                        .id(BrowseCityBrowseScrollID.group(filter.id))
+                        VStack(alignment: .leading, spacing: 0) {
+                            Color.clear
+                                .frame(width: 1, height: 1)
+                                .id(BrowseCityBrowseScrollID.group(filter.id))
+                                .accessibilityHidden(true)
+
+                            BrowseCityNounGroupSection(
+                                filter: filter,
+                                onOpenDetail: onOpenDetail,
+                                isSaved: isSaved,
+                                onToggleSaved: onToggleSaved
+                            )
+                        }
                     }
                 }
             }

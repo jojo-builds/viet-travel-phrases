@@ -264,10 +264,16 @@ final class BrowseSearchUITests: XCTestCase {
             XCTAssertTrue(scrollAnchor.waitForExistence(timeout: 2))
         }
 
-        tapHorizontalCard(app.buttons["VietnameseMenu.SectionRail.seafood"], app: app, scrollAnchor: scrollAnchor)
+        tapHorizontalCard(app.buttons["VietnameseMenu.SectionRail.noodle-soups"], app: app, scrollAnchor: scrollAnchor)
 
-        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-ca-kho-to"].waitForExistence(timeout: 3))
+        let sectionTitle = app.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"]
+        XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
+        assertElementClearsTopAdminChrome(
+            sectionTitle,
+            app: app,
+            message: "Food Menu section jumps should leave the section title below the top admin chrome."
+        )
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-pho-bo"].waitForExistence(timeout: 3))
     }
 
     func testVietnameseMenuSectionHeadersHideCountsAndHelperSubtitles() {
@@ -543,6 +549,22 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testCityBrowseCardJumpClearsTopAdminChrome() {
+        let app = launchApp(arguments: ["--browse-city", "danang"])
+        let targetFilterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
+        let targetGroup = app.descendants(matching: .any)["BrowseCollection.CityGroup.danang.browse.landmarks"]
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: targetFilterID, app: app)
+
+        XCTAssertTrue(targetGroup.waitForExistence(timeout: 3))
+        assertElementClearsTopAdminChrome(
+            targetGroup,
+            app: app,
+            message: "City Browse by jumps should leave the noun-group label below the top admin chrome."
+        )
+    }
+
     func testCaptureBrowseCityHeroFadeProofForAllCityCards() {
         let app = launchApp(arguments: ["--browse"])
 
@@ -581,29 +603,45 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
     }
 
-    func testEssentialsSubcategoryJumpClearsTopAdminChrome() {
-        let app = launchApp(arguments: ["--browse-category", "essentials"])
+    func testRepresentativeCategorySubcategoryJumpsClearTopAdminChrome() {
+        let cases = [
+            (
+                routeID: "essentials",
+                firstFilterID: "BrowseCollection.Subcategory.essentials.polite-basics",
+                targetFilterID: "BrowseCollection.Subcategory.essentials.gratitude",
+                sectionTitle: "Gratitude phrases"
+            ),
+            (
+                routeID: "questions",
+                firstFilterID: "BrowseCollection.Subcategory.questions.directions",
+                targetFilterID: "BrowseCollection.Subcategory.questions.clarify",
+                sectionTitle: "Clarify phrases"
+            ),
+        ]
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.essentials"].waitForExistence(timeout: 4))
-        let firstFilter = app.buttons["BrowseCollection.Subcategory.essentials.polite-basics"]
-        XCTAssertTrue(firstFilter.waitForExistence(timeout: 2))
+        for testCase in cases {
+            let app = launchApp(arguments: ["--browse-category", testCase.routeID])
 
-        tapHorizontalCard(
-            app.buttons["BrowseCollection.Subcategory.essentials.gratitude"],
-            app: app,
-            scrollAnchor: firstFilter
-        )
+            XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.\(testCase.routeID)"].waitForExistence(timeout: 4))
+            let firstFilter = app.buttons[testCase.firstFilterID]
+            XCTAssertTrue(firstFilter.waitForExistence(timeout: 2))
 
-        let sectionTitle = app.staticTexts["Gratitude phrases"]
-        XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
+            tapHorizontalCard(
+                app.buttons[testCase.targetFilterID],
+                app: app,
+                scrollAnchor: firstFilter
+            )
 
-        let backButton = app.buttons["TopAdmin.BackButton"]
-        XCTAssertTrue(backButton.waitForExistence(timeout: 2))
-        XCTAssertGreaterThan(
-            sectionTitle.frame.minY,
-            backButton.frame.maxY + 16,
-            "Subcategory jumps should leave the section label below the top admin chrome."
-        )
+            let sectionTitle = app.staticTexts[testCase.sectionTitle]
+            XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
+            assertElementClearsTopAdminChrome(
+                sectionTitle,
+                app: app,
+                message: "\(testCase.routeID) subcategory jumps should leave the section label below the top admin chrome."
+            )
+
+            app.terminate()
+        }
     }
 
     func testAirportCollectionKeepsFirstSectionCloseToSubcategoryRail() {
@@ -1312,6 +1350,24 @@ final class BrowseSearchUITests: XCTestCase {
         return frame.minX >= appFrame.minX + 8
             && frame.maxX <= appFrame.maxX - 8
             && frame.intersects(appFrame)
+    }
+
+    private func assertElementClearsTopAdminChrome(
+        _ element: XCUIElement,
+        app: XCUIApplication,
+        message: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        XCTAssertTrue(backButton.waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertGreaterThan(
+            element.frame.minY,
+            backButton.frame.maxY + 16,
+            message,
+            file: file,
+            line: line
+        )
     }
 
     private func captureBrowseCityHeroFadeProofIfRequested(app: XCUIApplication, name: String) {
