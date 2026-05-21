@@ -66,6 +66,44 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPracticeOverlayUsesDarkTopAndStatusChrome() {
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: true,
+                hidesPhotoBackdropChrome: false,
+                photoBackdropTopChromeStyle: .light
+            ),
+            .darkPhoto
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: false,
+                hidesPhotoBackdropChrome: false,
+                photoBackdropTopChromeStyle: .darkPhoto
+            ),
+            .darkPhoto
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: false,
+                hidesPhotoBackdropChrome: true,
+                photoBackdropTopChromeStyle: .darkPhoto
+            ),
+            .light
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
+                isPracticeOverlayPresented: true
+            ),
+            .dark
+        )
+        XCTAssertNil(
+            AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
+                isPracticeOverlayPresented: false
+            )
+        )
+    }
+
     func testPlayableAudioTintsUseOneConsistentActionColor() {
         let expected = rgbaComponents(for: AccentTint.red.audioColor)
 

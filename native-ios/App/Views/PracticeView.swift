@@ -31,6 +31,18 @@ enum PracticeMatchPresentationPolicy {
     ) -> Bool {
         style == .pullUpOverlay && hasRequestedStart && !hasActiveSession
     }
+
+    static func showsHubLayer(
+        style: PracticePresentationStyle,
+        hasActiveSession: Bool
+    ) -> Bool {
+        switch style {
+        case .route:
+            return true
+        case .pullUpOverlay:
+            return !hasActiveSession
+        }
+    }
 }
 
 enum PracticeMatchPullUpMetrics {
@@ -4461,9 +4473,14 @@ private struct PracticeMatchRootView: View {
                     .ignoresSafeArea()
             }
 
-            practiceHub
-                .allowsHitTesting(activeSession == nil)
-                .accessibilityHidden(activeSession != nil)
+            if PracticeMatchPresentationPolicy.showsHubLayer(
+                style: presentationStyle,
+                hasActiveSession: activeSession != nil
+            ) {
+                practiceHub
+                    .allowsHitTesting(activeSession == nil)
+                    .accessibilityHidden(activeSession != nil)
+            }
 
             if let activeSession {
                 PracticeMatchRoundView(
@@ -4680,6 +4697,11 @@ private struct PracticeMatchRootView: View {
 
     private func closeActiveSession() {
         let dismissalTarget = activeSessionDismissalTarget
+        if presentationStyle == .pullUpOverlay, dismissalTarget == .originRoute {
+            onCloseToOrigin()
+            return
+        }
+
         withAnimation(.easeInOut(duration: 0.2)) {
             activeSession = nil
             activeSessionDismissalTarget = .hub

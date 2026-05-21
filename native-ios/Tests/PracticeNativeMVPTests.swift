@@ -368,6 +368,24 @@ final class PracticeNativeMVPTests: XCTestCase {
                 hasActiveSession: false
             )
         )
+        XCTAssertTrue(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: false
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: true
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .route,
+                hasActiveSession: true
+            )
+        )
     }
 
     func testPracticeMatchSnapshotLoadPolicySkipsInactiveRoutes() {
