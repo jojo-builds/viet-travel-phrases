@@ -10,14 +10,14 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
-## Current Main Admin Backdrop And Performance Evidence
+## Current Main Thermal Bug Hunt Evidence
 
-Current `main` evidence from the 2026-05-21 admin photo backdrop merge plus native performance bug hunt:
+Current `main` evidence from the 2026-05-21 native thermal bug hunt:
 
-- validated app-code commit installed on Jojo's iPhone: `c9e2cb25` (`Merge performance-freeze-audit`)
-- merged lanes: `feature/admin-photo-backdrop-polish`, `feature/performance-freeze-audit`
+- validated app-code commit installed on Jojo's iPhone: `e8293cd92` (`Merge thermal bug hunt fixes`)
+- merged lane: `feature/thermal-bug-hunt-20260521`
 - explicitly skipped lanes: `feature/paywall`, `feature/messages-section`
-- performance fixes landed for bounded SQLite runtime caches, Browse image lookup caching, cached bundled mascot images, Practice Match SQLite connection reuse, and failed backdrop-preheat reservation cleanup
+- thermal-risk fixes landed for cached SQLite canonical page lookups, direct local-state canonical membership checks, non-canceling backdrop image preheat reservation, one-shot Search return-focus restore tasks, and coalesced Practice Match snapshot loads
 
 Fresh command evidence from this pass:
 
@@ -25,13 +25,13 @@ Fresh command evidence from this pass:
   - passed
 - `node scripts/guard-native-only.js`
   - passed: no active Expo/React Native app surface found
-- XcodeBuildMCP simulator tests, `SpeakLocalNativeTests/AppChromeTests` plus `SpeakLocalNativeTests/PracticeNativeMVPTests`
-  - passed: `181` tests, `0` failures
-  - note: the MCP call timed out during the cold isolated-DerivedData run, but the underlying `xcodebuild` completed and the log ended with `TEST EXECUTE SUCCEEDED`
+- XcodeBuildMCP simulator focused and regression tests
+  - passed: `14` tests, `0` failures
+  - covered new thermal-regression tests plus `LocalUserIntentStoreTests` and SQLite canonical lookup regressions
 - Physical iPhone Debug build/install/launch from `main`
   - build passed
   - install passed
-  - launch passed after the phone was unlocked
+  - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
 
 ## Previous City Copy Lane Evidence
