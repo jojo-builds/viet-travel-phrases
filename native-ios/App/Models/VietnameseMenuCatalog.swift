@@ -232,7 +232,7 @@ enum VietnameseMenuImages {
     }
 }
 
-private struct VietnameseMenuPayload: Decodable {
+struct VietnameseMenuPayload: Decodable, Equatable {
     let helperPhrases: [VietnameseMenuHelperPhraseDefinition]?
     let items: [VietnameseMenuItem]
 }
@@ -1377,15 +1377,30 @@ enum VietnameseMenuCatalog {
     }
 
     private static func loadPayload() -> VietnameseMenuPayload {
-        guard
-            let url = Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let payload = try? JSONDecoder().decode(VietnameseMenuPayload.self, from: data)
-        else {
+        if let payload = VietSQLitePhraseGraphRuntime.vietnameseMenuPayload() {
+            return payload
+        }
+
+        guard let url = Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json") else {
+            VietSQLiteRuntimeDiagnostics.reportFallback(
+                surface: "VietnameseMenuCatalog",
+                reason: "Missing bundled vietnamese-menu-copy.json fallback."
+            )
             return VietnameseMenuPayload(helperPhrases: [], items: [])
         }
 
-        return payload
+        do {
+            let data = try Data(contentsOf: url)
+            let payload = try JSONDecoder().decode(VietnameseMenuPayload.self, from: data)
+            VietSQLiteRuntimeDiagnostics.reportFallback(
+                surface: "VietnameseMenuCatalog",
+                reason: "Loaded bundled JSON fallback."
+            )
+            return payload
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "VietnameseMenuCatalog", error: error)
+            return VietnameseMenuPayload(helperPhrases: [], items: [])
+        }
     }
 }
 
