@@ -11760,9 +11760,9 @@
       "targetText": "Bà Nà Hills",
       "englishText": "Ba Na Hills",
       "pronunciation": "bah na hills",
-      "context": "Ba Na Hills changes the Da Nang day from beach heat to a cooler mountain-resort outing, with cable cars, forested ridges, fantasy-style streets, and the Golden Bridge.",
-      "tip": "Bà Nà Hills is the name to recognize when the plan involves the cable car, the Golden Bridge, or a full-day mountain park outside central Da Nang.",
-      "rationale": "Ba Na Hills matters because it is less a quick landmark and more a whole excursion: transport, tickets, weather, viewpoints, and a very different pace from the city.",
+      "context": "Ba Na Hills works when the day is planned as a full mountain outing, with weather, tickets, cable-car timing, and crowd expectations handled before leaving the city.",
+      "tip": "Go early, check mountain weather, and do the Golden Bridge first if that photo matters. Fog can make the view atmospheric or hide it completely.",
+      "rationale": "The complex is still worth it when the sky opens because the cable-car climb from Đà Nẵng heat into cooler mountain air can feel genuinely cinematic.",
       "chunks": [
         [
           "Bà",
@@ -11785,7 +11785,7 @@
         "patchID": "viet-city-handwritten-copy-2026-05-18",
         "approvedAt": "2026-05-18T00:00:00+07:00",
         "sourcePatch": "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json",
-        "summary": "Ba Na Hills is the mountain day trip many people picture from Da Nang: a long cable-car climb, cool air, resort streets, and the Golden Bridge held up by giant stone hands.",
+        "summary": "Ba Na Hills is a mountain theme park, not just the Golden Bridge: cable cars, cooler air, replica French streets, gardens, indoor rides, crowds, and weather risk above Đà Nẵng.",
         "categoryIDs": [
           "city-guides",
           "danang",
@@ -11839,33 +11839,36 @@
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Ba Na Hills is worth saving when the trip needs a full mountain day rather than another beach or bridge stop. The appeal is the ascent, the cooler air, and the surreal Golden Bridge scene above Da Nang."
-          },
-          {
-            "id": "place-brief",
-            "title": "What you'll get",
-            "body": "Expect a cable-car ride over forested slopes, sudden mist, European-style resort streets, gardens, crowds, and photo stops. It feels packaged and theatrical, but the scale makes it memorable."
+            "title": "Know You Are Choosing A Theme Park",
+            "body": "Ba Na Hills is a mountain theme park, not just a quiet Golden Bridge viewpoint. Expect cable cars, replica French streets, gardens, rides, crowds, and weather risk."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Bà Nà Hills for Ba Na Hills. Keep the name together when asking about tickets, drivers, or the cable car, because it usually means the whole mountain complex."
+            "title": "Useful Phrases",
+            "body": "Ask Cầu Vàng đi hướng nào? for the Golden Bridge, Cáp treo cuối mấy giờ? for the last cable car, and Hôm nay trên núi có sương mù không? before committing.",
+            "phraseIDs": [
+              "city-danang-place-ba-na-hills"
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "Cooler Air, Bigger Production",
+            "body": "The cable car gives the real arrival: forest below, cooler air above, and a full resort complex instead of a quiet lookout. Clear weather can make the scale feel cinematic."
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want a big, easy-to-plan outing with views, a famous photo stop, and cooler mountain weather. Skip it if you only want quiet local texture."
+            "title": "Bridge Before The Crowd",
+            "body": "If the Golden Bridge matters, go early and do it before the rest of the park. After that, decide how much French Village, gardens, rides, or food you actually want."
           },
           {
             "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Before you go, check the weather and treat it as a day trip. Fog can make the bridge atmospheric or hide the view completely, and the ride from Da Nang takes planning."
+            "title": "Early, With Weather Checked",
+            "body": "Morning is the least painful crowd strategy. Fog or rain can turn the famous view into an expensive cloud walk, so the forecast matters before the ride west."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Good to know: the Golden Bridge is inside the Ba Na Hills complex, not in central Da Nang. The cable car is part of the visit, not just transportation."
+            "title": "A Half-Day Minimum",
+            "body": "Ba Na Hills sits far enough from central Đà Nẵng to need a real outing. Pairing it with too many city stops makes the day feel mechanical."
           }
         ],
         "replaceGeneratedSections": true,
@@ -11936,9 +11939,9 @@
       "targetText": "Chợ Bắc Mỹ An",
       "englishText": "Bac My An Market",
       "pronunciation": "cho bac my an",
-      "context": "For Bac My An Market, Da Nang's market story comes through bargaining rhythm, bags, local shopping movement, and market aisles, alongside coastal Da Nang.",
-      "tip": "Bac My An Market carries bargaining rhythm, bags, local shopping movement, and market aisles, alongside coastal Da Nang into the travel plan.",
-      "rationale": "Bac My An Market brings Da Nang into focus through bargaining rhythm, bags, local shopping movement, and market aisles, alongside coastal Da Nang.",
+      "context": "Bắc Mỹ An makes sense near Mỹ An or Mỹ Khê, when a lower-pressure bite makes more sense than a full cross-city market mission.",
+      "tip": "Start with kem bơ, then add one hot snack only if still hungry. Keep claims narrow because stall hours and menus change.",
+      "rationale": "The market is still worth it because it gives the beach side of Đà Nẵng a simple food pause without the scale or pressure of Hàn or Cồn.",
       "chunks": [
         [
           "Chợ",
@@ -11966,39 +11969,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Bac My An Market is worth browsing because it shows Da Nang through stalls, snacks, goods, color, and everyday buying rhythm. Expect neighborhood wet market with produce baskets and breakfast stalls, early morning.",
+        "summary": "Bắc Mỹ An Market is a smaller beach-side Đà Nẵng snack stop where kem bơ, small portions, cash, pointing, and spice questions matter more than souvenir browsing.",
         "sourceNotes": "Local map.",
         "imagePromptNote": "Photorealistic owned asset: neighborhood wet market with produce baskets and breakfast stalls, early morning, no close-up faces.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Bac My An Market is worth browsing because it shows everyday Da Nang: bargaining rhythm, bags, local shopping movement, and market aisles, alongside coastal Da Nang."
+            "title": "Start With Kem Bơ, Then Decide",
+            "body": "Bắc Mỹ An Market is a small snack stop near the Mỹ An side of Đà Nẵng. Start with kem bơ, then decide whether one hot snack is enough."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Bac My An Market, you get everyday shopping, snacks, gifts, bargaining, and local rhythm: neighborhood wet market with produce baskets and breakfast stalls, early morning, with produce colors, snack counters, bargaining rhythm, and bags, alongside coastal Da Nang."
+            "title": "Small Market, Small Orders",
+            "body": "This is not the place to decode every stall. Point politely, ask what something is, check spice, and keep the first order small."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ Bắc Mỹ An for Bac My An Market. The local name is easier to remember once it sits beside bags, local shopping movement, market aisles, and produce colors, alongside coastal Da Nang."
+            "title": "Useful Phrases",
+            "body": "Ask Cho tôi một ly kem bơ for avocado ice cream, Món này là gì? before pointing, and Cho tôi một phần nhỏ when you want a small portion.",
+            "phraseIDs": [
+              "city-danang-place-bac-my-an-market"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: snack counters, bargaining rhythm, bags, and local shopping movement, alongside coastal Da Nang."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Bac My An Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture neighborhood wet market with produce baskets and breakfast stalls, early morning with market aisles, produce colors, snack counters, and bargaining rhythm, alongside coastal Da Nang."
+            "title": "Beach-Side Snack Stop",
+            "body": "The market is still worth it when you are already near Mỹ An, Mỹ Khê, or the beach side of the city. It does not need to become a cross-city mission."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The Vietnamese name for Bac My An Market and the scene reinforce each other through produce colors, snack counters, bargaining rhythm, and bags, alongside coastal Da Nang."
+            "title": "Not Hàn Or Cồn",
+            "body": "Hàn is better for central bearings and gifts; Cồn is stronger for a food crawl. Bắc Mỹ An is narrower, and that is the point."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceBacMyAnMarket",
@@ -13316,9 +13317,9 @@
       "targetText": "Bảo tàng Điêu khắc Chăm",
       "englishText": "Museum of Cham Sculpture",
       "pronunciation": "bow tahng dieu khac cham",
-      "context": "For Museum of Cham Sculpture, Da Nang's cultural stop story comes through artifacts, quiet light, memory, and local history, alongside Han River light.",
-      "tip": "Bảo tàng Điêu khắc Chăm feels tied to Museum of Cham Sculpture through memory, local history, display cases, and gallery rooms, alongside Han River light.",
-      "rationale": "Museum of Cham Sculpture brings Da Nang into focus through artifacts, quiet light, memory, and local history, alongside Han River light.",
+      "context": "The museum works when the visit has a small looking plan: three galleries first, repeated forms next, and labels after the eye has adjusted.",
+      "tip": "Go near opening, pick three room anchors, and look for dancers, deities, animals, altars, and carved movement rather than reading every label.",
+      "rationale": "The museum is still worth it because the old galleries and sandstone figures give central Vietnam a human historical texture before the faster waterfront image returns.",
       "chunks": [
         [
           "Bảo tàng",
@@ -13348,39 +13349,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Museum of Cham Sculpture is worth a stop if you want Da Nang to feel more layered than the streets outside. Expect sandstone Cham sculpture gallery with quiet gallery light.",
+        "summary": "The Museum of Cham Sculpture is the calm downtown Đà Nẵng culture stop where Mỹ Sơn, Trà Kiệu, and Đồng Dương galleries help the city feel older than bridges and beaches.",
         "sourceNotes": "City library; Da Nang Fantasticity; museum source.",
         "imagePromptNote": "Photorealistic owned asset: sandstone Cham sculpture gallery with soft museum lighting, no exact artifact reproduction.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Museum of Cham Sculpture is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with memory, local history, display cases, and gallery rooms, alongside Han River light."
+            "title": "Pick Three First Rooms",
+            "body": "Start with the Mỹ Sơn, Trà Kiệu, and Đồng Dương galleries instead of trying to read every label. The museum gives Đà Nẵng historical depth fast."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Museum of Cham Sculpture, you get rooms, objects, art, and memory inside the city's story: sandstone Cham sculpture gallery with quiet gallery light, with artifacts, quiet light, memory, and local history, alongside Han River light."
+            "title": "Quiet Stone, Warm Light",
+            "body": "The rooms hold sandstone gods, dancers, altars, and temple fragments from Champa sites across central Vietnam. Daylight makes the sculpture feel calmer than an artifact list."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Bảo tàng Điêu khắc Chăm for Museum of Cham Sculpture. The local name is easier to remember once it sits beside gallery rooms, artifacts, quiet light, and memory, alongside Han River light."
+            "title": "Useful Phrases",
+            "body": "Ask Phòng Mỹ Sơn ở đâu? for the Mỹ Sơn gallery, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+            "phraseIDs": [
+              "city-danang-place-cham-museum"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: local history, display cases, gallery rooms, and artifacts, alongside Han River light."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Museum of Cham Sculpture works best when the name is tied to the reason for going, not memorized as an abstract label. Picture sandstone Cham sculpture gallery with quiet gallery light with gallery rooms, artifacts, quiet light, and memory, alongside Han River light."
+            "title": "Look For Repeated Forms",
+            "body": "Find national treasures if they are marked, then notice what repeats: dancers, deities, animals, altars, and carved movement. Pattern teaches faster than label-reading."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Bảo tàng Điêu khắc Chăm feels less abstract when it sits beside display cases, gallery rooms, artifacts, and quiet light, alongside Han River light and the scene of Museum of Cham Sculpture."
+            "title": "A Culture Stop Downtown",
+            "body": "The museum sits close to the Hàn River and Dragon Bridge. It works as the slower counterweight to Đà Nẵng’s waterfront speed."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceChamMuseum",
@@ -13613,9 +13612,9 @@
       "targetText": "Chợ Cồn",
       "englishText": "Con Market",
       "pronunciation": "chuh con",
-      "context": "Con Market gives Da Nang a practical food-market scene: cooked-food counters, produce aisles, small goods, tight walkways, and the feeling of locals shopping around you.",
-      "tip": "Chợ Cồn is the short local name. It is helpful to recognize because signs, taxi drivers, and food recommendations may use the Vietnamese name instead of Con Market.",
-      "rationale": "Con Market matters because it turns Da Nang from beaches and bridges into everyday appetite: snacks, ingredients, small purchases, and crowded market rhythm.",
+      "context": "Cồn Market should be treated as a snack market before a souvenir stop, especially when the goal is Đà Nẵng food rhythm rather than easy central orientation.",
+      "tip": "Do one slow lap, start with a small portion, and follow busy counters rather than the loudest call.",
+      "rationale": "The market is still worth it because it gives Đà Nẵng a louder everyday food texture: sweet stalls, hot-food counters, outside carts, and quick snack decisions.",
       "chunks": [
         [
           "Chợ",
@@ -13645,39 +13644,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Con Market is Da Nang's busy food-and-shopping market, better for local snacks and everyday bustle than polished sightseeing. Expect covered aisles, fruit, steam, sweets, and lunch crowds.",
+        "summary": "Cồn Market is the food-first Đà Nẵng market: rougher than Hàn, stronger for local snacks, and better when you want stools, steam, small portions, and cash-ready browsing.",
         "sourceNotes": "City library; Da Nang Fantasticity.",
         "imagePromptNote": "Photorealistic owned asset: busy covered market aisle with fruit and snack stalls, no visible faces, natural light.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Con Market is worth browsing when you want Da Nang to feel lived-in and edible, not just scenic. It is a covered market for snacks, produce, small goods, and quick local meals."
+            "title": "The Food-First Market",
+            "body": "Cồn Market is the better choice when eating matters more than souvenir shopping. Compared with Hàn, it feels rougher around the edges and more snack-focused."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "Expect narrow aisles, fruit stalls, cooked-food counters, sweets, plastic stools, and a lot of movement. The best part is the food energy, especially if you like grazing."
+            "title": "Aisles, Stools, Steam",
+            "body": "Inside, sweet stalls and hot-food counters sit close together. Outside, carts and plastic stools make the market quicker, louder, and more local-feeling."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ Cồn for Con Market. Chợ means market, so this name is also a small clue for recognizing market names elsewhere in Vietnam."
+            "title": "Useful Phrases",
+            "body": "Ask Món này là gì? before pointing, Cho tôi một phần nhỏ for a small portion, and Có cay không? before committing to chili.",
+            "phraseIDs": [
+              "city-danang-place-con-market",
+              "city-danang-where-con-market",
+              "city-danang-eat-near-con-market"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you like food stalls, quick snacks, and local shopping texture. It is less ideal if you want wide aisles, quiet browsing, or a polished souvenir stop."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Before you go, arrive hungry and keep expectations simple. This is a market to wander, point, taste, and notice, not a place that needs a formal plan."
+            "title": "Afternoon For Snacks",
+            "body": "Morning gives fresh-market texture, but afternoon is a strong snack window. The stop is still worth it when you want Đà Nẵng food rhythm in a working market."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Good to know: Con Market is one of the densest places to see central Vietnamese snacks in Da Nang, even if you only stop for a short look."
+            "title": "Different Job Than Hàn",
+            "body": "Hàn is easier for central bearings and gifts. Cồn is better when you want small dishes, cash, stool seating, and a less polished food crawl."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceConMarket",
@@ -14000,9 +13999,9 @@
       "targetText": "Cầu Rồng",
       "englishText": "Dragon Bridge",
       "pronunciation": "cow zong",
-      "context": "Dragon Bridge is memorable because the bridge itself is shaped like a dragon crossing the Han River, not because it is just another scenic bridge.",
-      "tip": "The hook is simple and visual: Cầu Rồng means Dragon Bridge, and the dragon form makes the name easy to connect to the riverfront before you arrive.",
-      "rationale": "Dragon Bridge belongs in Da Nang because it is both a practical crossing and one of the city's strongest visual landmarks on the Han River.",
+      "context": "Dragon Bridge makes sense as a riverfront decision, especially on show nights when timing, side choice, and crowd position matter more than the bridge facts.",
+      "tip": "Arrive before the show crowd thickens, choose close or dry early, and recheck the schedule the same week if the fire-and-water show matters.",
+      "rationale": "The bridge is still worth it because it makes Đà Nẵng’s city-center-to-beach layout visible in one bright riverfront scene.",
       "chunks": [
         [
           "Cầu",
@@ -14031,38 +14030,36 @@
           "agent-approved-import/traveler-editorial-review.md",
           "agent-approved-import/canonical-import-safety-review.md"
         ],
-        "summary": "Dragon Bridge is Da Nang's dragon-shaped bridge across the Han River, a modern city symbol that links the airport side, the riverfront, and the beach road. Save it for the shape, the river lights, and the easy central orientation.",
+        "summary": "Dragon Bridge is the Đà Nẵng landmark with one useful choice: stand close for spray and crowd energy, or stay on the riverbank for the cleaner view of the dragon and skyline.",
         "categoryIDs": [],
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Dragon Bridge is worth knowing because it gives Da Nang one of its clearest visual signatures: a dragon-shaped bridge stretching across the Han River between the city center and the beach side."
+            "title": "Choose Dry Or Close",
+            "body": "Dragon Bridge is easy to overcomplicate. Stand near the bridge if spray is part of the fun; stay on the riverbank for the cleaner dragon-head view."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Dragon Bridge, expect river light, traffic moving through the dragon body, skyline views, and a place that makes Da Nang feel like a city built around bridges rather than only beaches."
+            "title": "Better From The Riverbank",
+            "body": "The bridge itself is traffic and crowds. The riverbank gives you the skyline, reflections, and enough distance to understand the dragon shape."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Cầu Rồng for Dragon Bridge. Cầu means bridge, and Rồng means dragon, so the local name matches exactly what you are looking at."
+            "title": "Useful Phrases",
+            "body": "Ask Cầu Rồng ở đâu? for directions, Mấy giờ phun lửa? for show time, and Chỗ này có bị ướt không? before standing close.",
+            "phraseIDs": [
+              "city-danang-place-dragon-bridge"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want a central evening walk, a riverfront meeting point, or a simple landmark that helps the city layout make sense."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Before you go, connect Dragon Bridge with the Han River and the beach road. It is a useful name for walking plans, ride routes, and recognizing the center of Da Nang."
+            "title": "Arrive Before The Show",
+            "body": "On show nights, choose your side before phones fill the rail. The close view is more physical; the promenade view is easier to photograph."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Good to know: Cầu Rồng is literal and visual. If the dragon shape is the reason for the stop, the Vietnamese name reinforces it instead of feeling like a label to memorize."
+            "title": "A Riverfront Connector",
+            "body": "Dragon Bridge pairs naturally with the Hàn River walk, Love Bridge, or Sơn Trà Night Market. It is a short civic ritual, not a whole evening by itself."
           }
         ],
         "replaceGeneratedSections": true,
@@ -14402,9 +14399,9 @@
       "targetText": "Bảo tàng Mỹ thuật Đà Nẵng",
       "englishText": "Da Nang Fine Arts Museum",
       "pronunciation": "bao tang my thuat da nang",
-      "context": "For Da Nang Fine Arts Museum, Da Nang's cultural stop story comes through artifacts, quiet light, memory, and local history, alongside coastal Da Nang.",
-      "tip": "Display cases, gallery rooms, artifacts, and quiet light, alongside coastal Da Nang give Da Nang Fine Arts Museum a setting before the trip begins.",
-      "rationale": "Da Nang Fine Arts Museum brings Da Nang into focus through memory, local history, display cases, and gallery rooms, alongside coastal Da Nang.",
+      "context": "The museum is easier when the visit starts with modern art or folk craft rather than every label in every room.",
+      "tip": "Choose the second floor for modern works or the third floor for folk craft and regional objects, then pick three pieces to actually notice.",
+      "rationale": "The museum is still worth it because it gives Đà Nẵng a quieter art-and-craft layer away from beach, bridge, and river-show imagery.",
       "chunks": [
         [
           "Bảo tàng",
@@ -14432,39 +14429,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Da Nang Fine Arts Museum is worth a stop if you want Da Nang to feel more layered than the streets outside. Expect bright museum entry area and framed paintings.",
+        "summary": "Da Nang Fine Arts Museum is a compact downtown culture stop on Lê Duẩn where modern Vietnamese art, folk craft, masks, textiles, wood, ceramics, and regional objects need one floor choice first.",
         "sourceNotes": "Da Nang Fantasticity.",
         "imagePromptNote": "Photorealistic owned asset: bright museum entrance and framed paintings, no copied artworks, clean daylight.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Da Nang Fine Arts Museum is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with memory, local history, display cases, and gallery rooms, alongside coastal Da Nang."
+            "title": "Pick Modern Or Folk First",
+            "body": "Da Nang Fine Arts Museum is easier if you choose one lens before walking in: modern Vietnamese art or folk craft and regional objects."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Da Nang Fine Arts Museum, you get rooms, objects, art, and memory inside the city's story: bright museum entry area and framed paintings, with memory, local history, display cases, and gallery rooms, alongside coastal Da Nang."
+            "title": "A Smaller Art Stop Downtown",
+            "body": "The museum sits on Lê Duẩn, away from the river-show version of Đà Nẵng. Expect lacquer, oil, silk, sculpture, masks, textiles, wood, ceramics, and craft traditions."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Bảo tàng Mỹ thuật Đà Nẵng for Da Nang Fine Arts Museum. The local name is easier to remember once it sits beside quiet light, memory, local history, and display cases, alongside coastal Da Nang."
+            "title": "Useful Phrases",
+            "body": "Ask Tầng mỹ thuật hiện đại ở đâu? for the modern art floor, Có thuyết minh tiếng Anh không? for English interpretation, and Tôi có thể chụp ảnh không? before photos.",
+            "phraseIDs": [
+              "city-danang-place-fine-arts-museum"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: gallery rooms, artifacts, quiet light, and memory, alongside coastal Da Nang."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Da Nang Fine Arts Museum works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bright museum entry area and framed paintings with local history, display cases, gallery rooms, and artifacts, alongside coastal Da Nang."
+            "title": "Good Before Heat Or Rain",
+            "body": "Morning keeps the visit from feeling like emergency air-conditioning. Rain can also make it a useful indoor counterweight to beach plans."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Bảo tàng Mỹ thuật Đà Nẵng carries Bright museum entry area and framed paintings forward when the visitor sees or hears the place later."
+            "title": "Pair It Centrally",
+            "body": "The museum works before Hàn Market, the riverfront, or a nearby coffee stop. Plan for a compact visit unless regional art is already the main interest."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceFineArtsMuseum",
@@ -14985,9 +14980,9 @@
       "targetText": "Chợ Hàn",
       "englishText": "Han Market",
       "pronunciation": "chuh han",
-      "context": "Han Market sits in the city center, so it works as an easy market stop between river walks, hotels, cafes, and other Da Nang errands.",
-      "tip": "Chợ Hàn is the local name for Han Market. Chợ means market, and Hàn points to the Han River and central Da Nang.",
-      "rationale": "Han Market matters because it is a convenient, visible market stop rather than a hidden local detour: good for orientation, browsing, and quick gifts.",
+      "context": "Hàn Market sits in central Đà Nẵng as an easy first-bearings market: useful for a food lap, a gift errand, or a quick city-center orientation stop.",
+      "tip": "Morning is better for food energy and fresh-market movement. Later is calmer for fabric, dried goods, rattan bags, and souvenir browsing.",
+      "rationale": "The market matters because it makes central Đà Nẵng feel concrete fast: food smells, fabric stalls, dried seafood, bargaining, and river-side errands in one short stop.",
       "chunks": [
         [
           "Chợ",
@@ -15017,39 +15012,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Han Market is the central Da Nang market many visitors recognize first: close to the Han River, easy to reach, and full of textiles, dried goods, snacks, and souvenir browsing.",
+        "summary": "Hàn Market gives a quick first read on central Đà Nẵng: mắm, dried seafood, fabric, rattan bags, and breakfast bowls under one roof, close enough to pair with the river or Dragon Bridge.",
         "sourceNotes": "City library; Vietnam Tourism/Da Nang sources.",
         "imagePromptNote": "Photorealistic owned asset: market exterior and textile stalls, bright daytime, no readable vendor names.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Han Market is worth browsing if you want an easy central market stop near the river. It is more convenient than adventurous: textiles, snacks, dried goods, souvenirs, and quick errands."
+            "title": "A Market For First Bearings",
+            "body": "Hàn Market gives you a practical first read on central Đà Nẵng. Jars of mắm, dried squid, fabric stalls, rattan bags, and breakfast bowls make the city feel specific even if you buy nothing."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "Expect bright aisles, fabric and clothing stalls, dried seafood, packaged snacks, fruit, and vendors used to visitors. It gives Da Nang a practical shopping layer."
+            "title": "Walk Once Before Choosing",
+            "body": "The food area is easier after one slow lap. Notice where people are eating, then choose mì Quảng, bánh bèo, nem lụi, or a small bánh xèo instead of ordering from the first call."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ Hàn for Han Market. The word Chợ tells you it is a market, while Hàn ties the name to the Han River area."
+            "title": "Useful Phrases",
+            "body": "Start with Chợ Hàn ở đâu? for directions, then ask Món này là gì? or Bớt chút được không? when you are standing at a stall.",
+            "phraseIDs": [
+              "city-danang-place-han-market",
+              "city-danang-where-han-market",
+              "city-danang-go-han-market"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want a central, low-effort market browse for gifts, snacks, or fabric. For a rougher food-market feel, Con Market has more local bustle."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Before you go, think of it as a convenient city-center market rather than a quiet cultural site. A short visit can be enough."
+            "title": "Morning Food, Later Gifts",
+            "body": "Food rhythm is strongest early, while fabric, dried food, and souvenir browsing can feel easier after the first rush. The stop is still worth it because it gives central Đà Nẵng a working-market texture."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Good to know: Han Market and Con Market are different stops. Han Market is easier for central browsing; Con Market leans more food-heavy and local."
+            "title": "Different Job Than Cồn",
+            "body": "Hàn is the easier central market for bearings and gifts. Cồn is the stronger food-first choice when snacks matter more than location or polished browsing."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceHanMarket",
@@ -15277,9 +15272,9 @@
       "targetText": "Chợ đêm Helio",
       "englishText": "Helio Night Market",
       "pronunciation": "chuh dem helio",
-      "context": "For Helio Night Market, Da Nang's night market story comes through small gifts, warm lights, river edges, and evening crowds, alongside Han River light.",
-      "tip": "Chợ đêm Helio points back to Helio Night Market through lanterns, food smoke, small gifts, and warm lights, alongside Han River light.",
-      "rationale": "Helio Night Market brings Da Nang into focus through small gifts, warm lights, river edges, and evening crowds, alongside Han River light.",
+      "context": "Helio works when the night needs food, music, and seating more than a traditional market or riverfront landmark add-on.",
+      "tip": "Pick one local snack first, find a seat, then add a skewer, drink, or dessert if still hungry. Check event programming close to the date.",
+      "rationale": "The market is still worth it because its curated layout can be a relief when a tired visitor wants options without turning dinner into negotiation.",
       "chunks": [
         [
           "Chợ đêm",
@@ -15309,39 +15304,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Helio Night Market is worth knowing in Da Nang because it brings the city shifting from daytime movement into food, lights, and browsing into the trip. Expect outdoor night market food stalls with warm lights, warm.",
+        "summary": "Helio Night Market is the organized outdoor food-court night in Đà Nẵng: food stalls, seating, music, lights, and less vendor pressure than tighter working markets.",
         "sourceNotes": "City library; Da Nang Fantasticity.",
         "imagePromptNote": "Photorealistic owned asset: outdoor night market food stalls with warm lights, appetizing but no brand signs.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Helio Night Market is worth knowing because it gives Da Nang a specific night market scene: lanterns, food smoke, small gifts, and warm lights, alongside Han River light."
+            "title": "Treat It Like A Food Court Night",
+            "body": "Helio is easier if you stop expecting a working market. Treat it as an organized outdoor food court with stalls, seating, and music."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Helio Night Market, you get the city shifting from daytime movement into food, lights, and browsing: outdoor night market food stalls with warm lights, warm, with lanterns, food smoke, small gifts, and warm lights, alongside Han River light."
+            "title": "Clean, Curated, Less Chaotic",
+            "body": "Compared with tighter markets, Helio gives more space, clearer zones, and less pressure from vendors. It may feel less local, but lower friction can help."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ đêm Helio for Helio Night Market. The local name is easier to remember once it sits beside evening crowds, lanterns, food smoke, and small gifts, alongside Han River light."
+            "title": "Useful Phrases",
+            "body": "Ask Chợ đêm Helio ở đâu? for directions, Món này bao nhiêu tiền? for prices, Cho tôi một phần nhỏ for a small portion, and Có chỗ ngồi không? for seating.",
+            "phraseIDs": [
+              "city-danang-place-helio-night-market",
+              "city-danang-where-helio-night-market",
+              "city-danang-go-helio-night-market"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Helio Night Market gives your itinerary a clearer image: warm lights, river edges, evening crowds, and lanterns, alongside Han River light."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Helio Night Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture outdoor night market food stalls with warm lights, warm with food smoke, small gifts, warm lights, and river edges, alongside Han River light."
+            "title": "Order In Rounds",
+            "body": "Start with one local dish or snack, then add a skewer, drink, or dessert after seeing portion size. Seafood pricing should be checked before agreeing."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Chợ đêm Helio points back to Outdoor night market food stalls with warm lights, warm, where Helio Night Market feels specific rather than abstract."
+            "title": "Different Job Than Sơn Trà",
+            "body": "Sơn Trà is the Dragon Bridge add-on. Helio is the more controlled food-and-seating night when options and music matter."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceHelioNightMarket",
@@ -16345,9 +16340,9 @@
       "targetText": "Cầu Tình Yêu",
       "englishText": "Love Bridge",
       "pronunciation": "cow tinh yeu",
-      "context": "For Love Bridge, Da Nang's landmark story comes through history, city light, landmark memory, and architecture, alongside coastal Da Nang.",
-      "tip": "Love Bridge feels clearer with views, local pride, history, and city light, alongside coastal Da Nang around it.",
-      "rationale": "Love Bridge brings Da Nang into focus through landmark memory, architecture, views, and local pride, alongside coastal Da Nang.",
+      "context": "Love Bridge fits as one small link in a Hàn River evening route, not as a main Đà Nẵng attraction.",
+      "tip": "Walk the railing, take the Dragon Bridge angle, and ask about lock rules only if attaching a lock actually matters.",
+      "rationale": "The stop is still worth it when the heart lanterns are lit and the riverfront evening already has you nearby.",
       "chunks": [
         [
           "Cầu",
@@ -16377,39 +16372,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Love Bridge is worth knowing in Da Nang because it brings architecture, views, local pride, and history in visual form into the trip. Expect pedestrian bridge railings with heart-shaped lamps near the river, evening, love locks and river light.",
+        "summary": "Cầu Tình Yêu is a short Hàn River pause near Dragon Bridge, with heart lanterns, love locks, the Carp-Dragon statue nearby, and an easy evening photo frame.",
         "sourceNotes": "City library; Da Nang Fantasticity.",
         "imagePromptNote": "Photorealistic owned asset: pedestrian bridge railings with heart-shaped lamps near the river, evening, no branded locks close-up.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Love Bridge is worth knowing because it gives Da Nang a specific landmark scene: views, local pride, history, and city light, alongside coastal Da Nang."
+            "title": "Make It A Short River Pause",
+            "body": "Cầu Tình Yêu is not a major stop by itself. It works as a short Hàn River pause with heart lanterns, lock-covered railings, and Dragon Bridge nearby."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Love Bridge, you get architecture, views, local pride, and history in visual form: pedestrian bridge railings with heart-shaped lamps near the river, evening, love locks and river light, with landmark memory, architecture, views, and local pride, alongside coastal Da Nang."
+            "title": "Sentimental, But Simple",
+            "body": "The bridge is openly romantic and photo-oriented. That can feel staged, but the lights and riverfront setting make it easy to enjoy briefly."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Cầu Tình Yêu for Love Bridge. The local name is easier to remember once it sits beside local pride, history, city light, and landmark memory, alongside coastal Da Nang."
+            "title": "Useful Phrases",
+            "body": "Ask Cầu Tình Yêu ở đâu? for directions, Tôi có thể mua ổ khóa ở đâu? for a lock, and Mấy giờ đèn bật? for lighting.",
+            "phraseIDs": [
+              "city-danang-place-love-bridge"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Love Bridge gives your itinerary a clearer image: local pride, history, city light, and landmark memory, alongside coastal Da Nang."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Love Bridge works best when the name is tied to the reason for going, not memorized as an abstract label. Picture pedestrian bridge railings with heart-shaped lamps near the river, evening, love locks and river light with city light, landmark memory, architecture, and views, alongside coastal Da Nang."
+            "title": "Lock Or Just Look",
+            "body": "If you want a lock, check where to buy one and whether current rules allow it. Otherwise, walk the railing, take the angle, and keep moving."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Cầu Tình Yêu belongs in the same image as views, local pride, history, and city light, alongside coastal Da Nang, with Love Bridge rooted in Da Nang."
+            "title": "Pair It, Do Not Center It",
+            "body": "Pair Love Bridge with Dragon Bridge, Sơn Trà Night Market, APEC Park, or a Hàn River walk. It works best as a small evening link."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceLoveBridge",
@@ -17075,9 +17068,9 @@
       "targetText": "Bảo tàng Đà Nẵng",
       "englishText": "Da Nang Museum",
       "pronunciation": "bao tang da nang",
-      "context": "Da Nang Museum brings the city's civic history into focus through a former Governor's Palace and City Hall building, historical galleries, wartime memory, and Han River setting.",
-      "tip": "Bảo tàng Đà Nẵng names the main city-history museum, not the Cham Sculpture Museum or Da Nang Fine Arts Museum.",
-      "rationale": "Da Nang Museum makes the city feel more layered by connecting modern beach-and-bridge Da Nang to civic history, wartime memory, and a riverside heritage building.",
+      "context": "The museum works as a current-venue stop with entrance, hours, ticket price, and special exhibits checked before sending anyone there.",
+      "tip": "Choose one floor theme first: city history, wartime context, or regional culture. Then pair the visit with a Hàn River walk.",
+      "rationale": "The museum is still worth it because it makes the city itself the subject: local history, wartime memory, ethnic communities, craft life, and the river side of Đà Nẵng.",
       "chunks": [
         [
           "Bảo tàng",
@@ -17105,39 +17098,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Da Nang Museum is worth a stop if you want the city to feel less like only beaches and bridges. Its riverside building began as the French-era Governor's Palace, later served as Da Nang City Hall, and now holds the city's historical collection.",
+        "summary": "Da Nang Museum is the new city-first culture stop on Bạch Đằng, useful when Đà Nẵng has only meant beaches, bridges, seafood, and river lights so far.",
         "sourceNotes": "Da Nang Fantasticity; local map.",
         "imagePromptNote": "Photorealistic owned asset: civic museum exterior on a leafy city street, documentary style, no readable signage.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "This is Da Nang's city-history stop: a former French-era Governor's Palace and City Hall turned museum, facing the Han River and giving the modern coastal city an older civic story."
+            "title": "Start With The City, Not The Beach",
+            "body": "Da Nang Museum is the right culture stop if the city has only been beaches, bridges, and seafood in your head. The building makes Đà Nẵng itself the subject."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "The reason to go is context: the museum helps explain how Da Nang grew from an older port and civic center into the beach-and-bridge city many visitors see first."
+            "title": "Old City Hall, New Displays",
+            "body": "The renovated Bạch Đằng setting matters. Expect modern exhibit rooms rather than a dusty municipal collection, with city history and regional culture in the foreground."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Bảo tàng Đà Nẵng for Da Nang Museum. Bảo tàng means museum, and the full name matters because Da Nang has several museum stops."
+            "title": "Useful Phrases",
+            "body": "Ask Lối vào ở số 31 Trần Phú phải không? if checking the entrance, Khu lịch sử Đà Nẵng ở tầng nào? for the history section, and Hôm nay có phim 3D không? if films are listed.",
+            "phraseIDs": [
+              "city-danang-place-museum"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want a slower cultural stop near the river, a rainy-afternoon plan, or before visiting Cham sites, old streets, and central Da Nang."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Bảo tàng Đà Nẵng names the main city-history museum, not the Cham Sculpture Museum or Da Nang Fine Arts Museum. Picture civic museum exterior on a leafy city street."
+            "title": "Pick One Floor Theme First",
+            "body": "Choose city history, wartime context, or regional culture before reading every display. A focused route keeps the museum from becoming an indoor checklist."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Choose this name for the main city-history museum. If you mean Cham sculpture or fine art, choose those more specific museum names instead."
+            "title": "New Enough To Verify",
+            "body": "Confirm entrance, hours, ticket price, and special exhibits before going. The riverfront location makes a Hàn River walk easy afterward."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceMuseum",
@@ -19744,9 +19735,9 @@
       "targetText": "Chợ đêm Sơn Trà",
       "englishText": "Son Tra Night Market",
       "pronunciation": "chuh dem son chah",
-      "context": "For Son Tra Night Market, Da Nang's night market story comes through warm lights, river edges, evening crowds, and lanterns, alongside coastal Da Nang.",
-      "tip": "Son Tra Night Market stays rooted in Da Nang through food smoke, small gifts, warm lights, and river edges, alongside coastal Da Nang.",
-      "rationale": "Son Tra Night Market brings Da Nang into focus through food smoke, small gifts, warm lights, and river edges, alongside coastal Da Nang.",
+      "context": "Sơn Trà works when paired with the Hàn River, Dragon Bridge show, Love Bridge, or nearby evening lights.",
+      "tip": "Do one lap before buying, check seafood prices before agreeing, and start smaller if the grills feel like too much.",
+      "rationale": "The market is still worth it because it makes a riverfront night simple: lights, smoke, snacks, souvenirs, bridge photos, and a short walk between stops.",
       "chunks": [
         [
           "Chợ đêm",
@@ -19776,39 +19767,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Son Tra Night Market is worth knowing in Da Nang because it brings the city shifting from daytime movement into food, lights, and browsing into the trip. Expect Night market near a bridge glow, food smoke and lantern light.",
+        "summary": "Sơn Trà Night Market is an easy snack-and-walk near Dragon Bridge and Love Bridge, better as a riverfront evening add-on than a serious food-market mission.",
         "sourceNotes": "City library; Vietnam Tourism Da Nang; Da Nang Fantasticity.",
         "imagePromptNote": "Photorealistic owned asset: night market near a bridge glow, food smoke and lantern light, no readable logos.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Son Tra Night Market is worth knowing because it gives Da Nang a specific night market scene: warm lights, river edges, evening crowds, and lanterns, alongside coastal Da Nang."
+            "title": "Snack Before The Bridge Show",
+            "body": "Sơn Trà Night Market is useful because it sits near the Dragon Bridge side of the river. Treat it as an easy snack-and-walk, not a serious shopping mission."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Son Tra Night Market, you get the city shifting from daytime movement into food, lights, and browsing: Night market near a bridge glow, food smoke and lantern light, with food smoke, small gifts, warm lights, and river edges, alongside coastal Da Nang."
+            "title": "Lights, Smoke, Small Decisions",
+            "body": "Expect seafood grills, snacks, drinks, souvenirs, clothes, and visitors moving between stalls. The first lap is for reading prices and smoke."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ đêm Sơn Trà for Son Tra Night Market. The local name is easier to remember once it sits beside lanterns, food smoke, small gifts, and warm lights, alongside coastal Da Nang."
+            "title": "Useful Phrases",
+            "body": "Ask Chợ đêm Sơn Trà ở đâu? for directions, Món này bao nhiêu tiền? for price, and Tính theo ký hay theo phần? before seafood.",
+            "phraseIDs": [
+              "city-danang-place-son-tra-night-market",
+              "city-danang-where-son-tra-night-market",
+              "city-danang-go-son-tra-night-market"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Son Tra Night Market gives your itinerary a clearer image: river edges, evening crowds, lanterns, and food smoke, alongside coastal Da Nang."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Son Tra Night Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Night market near a bridge glow, food smoke and lantern light with lanterns, food smoke, small gifts, and warm lights, alongside coastal Da Nang."
+            "title": "Best When It Connects A Night",
+            "body": "The market works around the lively middle of the evening, especially when Dragon Bridge, Love Bridge, or the river walk is already part of the plan."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The image of Son Tra Night Market feels more present when Chợ đêm Sơn Trà has evening crowds, lanterns, food smoke, and small gifts, alongside coastal Da Nang around it."
+            "title": "Different Job Than Cồn",
+            "body": "Cồn is the stronger food-first daytime market. Sơn Trà is the convenient night-market add-on near riverfront lights."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceSonTraNightMarket",
@@ -24612,9 +24603,9 @@
       "targetText": "Cà phê Đinh",
       "englishText": "Dinh Cafe",
       "pronunciation": "ca phe dinh",
-      "context": "For Dinh Cafe, Hanoi's cafe story comes through soft pauses, cafe views, coffee counters, and iced glasses, alongside old-quarter cafe rhythm.",
-      "tip": "Hanoi's cafe scene comes through street stools, design details, soft pauses, and cafe views, alongside old-quarter cafe rhythm.",
-      "rationale": "Dinh Cafe brings Hanoi into focus through coffee counters, iced glasses, street stools, and design details, alongside old-quarter cafe rhythm.",
+      "context": "Đinh Café works when the visit is a compact Hanoi coffee pause with a physical arrival sequence, not just another egg-coffee checklist.",
+      "tip": "Find the 13 Đinh Tiên Hoàng entrance, climb up, order hot egg coffee, and do not force a long wait if the room is full.",
+      "rationale": "The café is still worth it because the second-floor room and lake-edge pause can make the cup feel like old Hanoi, even now that visitors know it.",
       "chunks": [
         [
           "Cà",
@@ -24643,39 +24634,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Dinh Cafe is worth saving for Hanoi's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect upstairs Hanoi cafe balcony with small coffee cups and lake glimpse.",
+        "summary": "Cà phê Đinh is the small upstairs egg-coffee stop near Hoàn Kiếm Lake where the entrance, climb, second-floor room, and hot cà phê trứng are part of the ritual.",
         "sourceNotes": "Hanoi tourism portal",
         "imagePromptNote": "Upstairs Hanoi cafe balcony with small coffee cups and lake glimpse, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Dinh Cafe is worth saving when you want Hanoi's cafe culture, not just caffeine: soft pauses, cafe views, coffee counters, and iced glasses, alongside old-quarter cafe rhythm."
+            "title": "Find The Upstairs Room First",
+            "body": "Cà phê Đinh is about the approach as much as the drink. Find the Đinh Tiên Hoàng entrance, go upstairs, then order."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Dinh Cafe, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: upstairs Hanoi cafe balcony with small coffee cups and lake glimpse, with coffee counters, iced glasses, street stools, and design details, alongside old-quarter cafe rhythm."
+            "title": "Old Quarter, Lake Edge",
+            "body": "The room is tight, older, and close to Hoàn Kiếm Lake, with a small coffee counter and little cups. It is not polished, and that is part of the point."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Cà phê Đinh for Dinh Cafe. The local name is easier to remember once it sits beside design details, soft pauses, cafe views, and coffee counters, alongside old-quarter cafe rhythm."
+            "title": "Useful Phrases",
+            "body": "Ask Cho tôi một cà phê trứng nóng for hot egg coffee, Lối lên quán ở đâu? for the stairs, and Ít ngọt thôi for less sweet.",
+            "phraseIDs": [
+              "city-hanoi-place-dinh-cafe"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: iced glasses, street stools, design details, and soft pauses, alongside old-quarter cafe rhythm."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Dinh Cafe works best when the name is tied to the reason for going, not memorized as an abstract label. Picture upstairs Hanoi cafe balcony with small coffee cups and lake glimpse with cafe views, coffee counters, iced glasses, and street stools, alongside old-quarter cafe rhythm."
+            "title": "Still Worth The Climb",
+            "body": "The climb into a small second-floor room over Đinh Tiên Hoàng can make the cup feel connected to old Hanoi rather than just another coffee stop."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Cà phê Đinh feels like something heard in Hanoi, with Upstairs Hanoi cafe balcony with small coffee cups and lake glimpse around it."
+            "title": "Keep It Short Near Hoàn Kiếm",
+            "body": "The café works as a short pause before or after a lake walk. If the room is full, nearby coffee stops can keep the day moving."
           }
         ],
         "targetHeroImageName": "HeroCityHanoiPlaceDinhCafe",
@@ -25484,9 +25473,9 @@
       "targetText": "Cà phê Giảng",
       "englishText": "Cafe Giang",
       "pronunciation": "kah feh giang",
-      "context": "For Cafe Giang, Hanoi's cafe story comes through cafe views, coffee counters, iced glasses, and street stools, alongside Hanoi coffeehouse culture.",
-      "tip": "Cafe Giang feels clearer with iced glasses, street stools, design details, and soft pauses, alongside Hanoi coffeehouse culture around it.",
-      "rationale": "Cafe Giang brings Hanoi into focus through design details, soft pauses, cafe views, and coffee counters, alongside Hanoi coffeehouse culture.",
+      "context": "Giảng works when the visit is one clear coffee ritual, not a long café session or a broad Hanoi food history lesson.",
+      "tip": "Order hot egg coffee first if this is your first stop. Egg cocoa is the softer alternative when coffee feels too bitter.",
+      "rationale": "The café is still worth it because the small cup, old entrance, and custard-like foam make Hanoi coffee feel specific fast.",
       "chunks": [
         [
           "Cà",
@@ -25518,39 +25507,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Giang Cafe is Hanoi's egg-coffee landmark: thick whipped yolk cream, small cups, tucked-away tables, and a cafe ritual visitors remember long after the cup is gone.",
+        "summary": "Cà phê Giảng is the original-feeling Hanoi egg coffee stop: a narrow Old Quarter entrance, small tables, hot cà phê trứng, and a cup that drinks closer to dessert.",
         "sourceNotes": "Cafe Giang official site",
         "imagePromptNote": "Egg coffee cup in a compact Hanoi cafe, warm yellow light, realistic no-logo photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "This is one of Hanoi's most specific cafe images: a narrow entry area, close tables, sweet foam, coffee bitterness, and the feeling of finding something local and iconic."
+            "title": "Start Hot And Classic At The Source",
+            "body": "Cà phê Giảng is where egg coffee becomes more than a novelty. Find the Old Quarter entrance and order hot cà phê trứng first."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "Giang matters because egg coffee is not just a drink here, it is a Hanoi story of wartime substitution, sweetness, invention, and cafe culture."
+            "title": "Small Cups, Close Tables",
+            "body": "Expect a busy, old-school room rather than a polished lounge. The point is the little cup: dark coffee under thick egg cream."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Hear Cà phê Giảng while picturing the egg-coffee cup itself: glossy foam, coffee bitterness, close tables, and old-quarter street sound."
+            "title": "Useful Phrases",
+            "body": "Ask for cà phê trứng nóng for hot egg coffee, ca cao trứng for egg cocoa, and ít ngọt được không? if you want less sweetness.",
+            "phraseIDs": [
+              "city-hanoi-place-giang-cafe",
+              "city-hanoi-where-giang-cafe",
+              "city-hanoi-go-giang-cafe"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: street stools, design details, soft pauses, and cafe views, alongside Hanoi coffeehouse culture."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Cafe Giang works best when the name is tied to the reason for going, not memorized as an abstract label. Picture egg coffee cup in a compact Hanoi cafe, warm yellow light with coffee counters, iced glasses, street stools, and design details, alongside Hanoi coffeehouse culture."
+            "title": "After The Lake Walk",
+            "body": "Mid-morning or late afternoon keeps the stop small and warm. The cup is still worth it when treated like dessert rather than a normal caffeine errand."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The name stays tied to iced glasses, street stools, design details, and soft pauses, alongside Hanoi coffeehouse culture, giving Cafe Giang a concrete setting in Hanoi."
+            "title": "Old Quarter Coffee Starting Point",
+            "body": "Nguyễn Hữu Huân has become one of Hanoi’s coffee streets. Giảng is the history-heavy starting point before comparing other egg-coffee shops."
           }
         ],
         "targetHeroImageName": "HeroCityHanoiPlaceGiangCafe",
@@ -30594,9 +30583,9 @@
       "targetText": "The Note Coffee",
       "englishText": "The Note Coffee",
       "pronunciation": "the note coffee",
-      "context": "The Note Coffee turns a coffee break near Hoan Kiem into a message-covered room: colorful notes, small tables, lake-area bustle, and a very easy photo memory.",
-      "tip": "The Note Coffee usually stays in English, but the place makes sense once you picture the notes first and the drink second.",
-      "rationale": "The Note Coffee belongs in Hanoi because it gives the city's cafe culture a playful, personal ritual: write a note, stick it up, and sit inside the accumulated messages.",
+      "context": "The café works when the visit is framed as a memory stop, not a quiet coffee session or undiscovered local room.",
+      "tip": "Climb higher if a seat is open, write the note before the drink disappears into photos, and leave once the ritual has done its job.",
+      "rationale": "The place is still worth it because the sequence is clear and harmlessly fun: drink, stairs, notes in many languages, one message of your own, then back to the lake.",
       "chunks": [
         [
           "The",
@@ -30625,39 +30614,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "The Note Coffee is a small Hanoi cafe where handwritten sticky notes cover walls, tables, stairs, and ceilings. The hook is not just coffee; it is reading messages from other visitors and leaving one of your own.",
+        "summary": "The Note Coffee is best as a short Hanoi ritual near Hoàn Kiếm: order egg coffee or coconut latte, climb to a seat, read a few handwritten notes, and leave one.",
         "sourceNotes": "place-name only",
         "imagePromptNote": "Colorful sticky-note cafe interior with coffee cups, realistic travel photo, no readable private notes.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "The Note Coffee is worth saving because the room itself is the experience: sticky notes from past visitors cover the walls, tables, stairs, and ceilings around a small Hanoi cafe."
+            "title": "Order, Climb, Leave A Note",
+            "body": "The Note Coffee is touristy, but the ritual is simple enough to enjoy. Order a drink, climb to a seat, read a few messages, then leave one of your own."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At The Note Coffee, expect coffee, color, crowded messages, and a pause near Hoan Kiem where you can read other people's notes and add your own before heading back into the Old Quarter."
+            "title": "Four Floors Of Handwriting",
+            "body": "Walls, tables, stairs, and ceilings are layered with notes in different languages. It can feel crowded and overstimulating, so the memory matters more than a silent coffee session."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "The Note Coffee usually stays as the venue name. If you need to explain it, connect the English name to the sticky notes: quán cà phê có giấy ghi chú, a cafe with little notes."
+            "title": "Useful Phrases",
+            "body": "Ask for cà phê trứng if egg coffee is the point, giấy ghi chú if you need note paper, and tầng trên if you want an upstairs seat.",
+            "phraseIDs": [
+              "city-hanoi-place-the-note-coffee"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want a coffee stop that feels personal and playful rather than only scenic: a drink, a message, a photo, and a small memory near the lake."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Before you go, do not expect a quiet specialty-coffee temple. Picture a compact, message-covered cafe where the charm is the wall of notes as much as the cup."
+            "title": "A Hoàn Kiếm Pause",
+            "body": "The café works as a short stop before or after walking around Hoàn Kiếm Lake. One drink and one note are enough before the Old Quarter pulls you back outside."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Good to know: if the group only wants calm seating, this may feel busy. It works best as a short, memorable stop during a Hoan Kiem or Old Quarter walk."
+            "title": "Go For The Memory",
+            "body": "Crowds and narrow stairs are part of the tradeoff. The stop is still worth it when you want a small, readable Hanoi coffee memory rather than a serious café session."
           }
         ],
         "targetHeroImageName": "HeroCityHanoiPlaceTheNoteCoffee",
@@ -37122,9 +37109,9 @@
       "targetText": "Phố Bùi Viện",
       "englishText": "Bui Vien Street",
       "pronunciation": "foh bui vien",
-      "context": "For Bui Vien Street, Saigon's street story comes through cafe edges, neighborhood movement, street signs, and shopfronts, alongside Saigon river lights.",
-      "tip": "Phố Bùi Viện points back to Bui Vien Street through street signs, shopfronts, scooters, and crossings, alongside Saigon river lights.",
-      "rationale": "Bui Vien Street brings Saigon into focus through street signs, shopfronts, scooters, and crossings, alongside Saigon river lights.",
+      "context": "Bùi Viện works when the first visit is observational before committed: walk once, read the noise, then decide whether a bar, food stall, or exit is right.",
+      "tip": "Early evening is kinder for a first look. Later gets louder, more alcohol-driven, and more chaotic around pitches and prices.",
+      "rationale": "The street is still worth seeing because it shows one concentrated version of Saigon nightlife, as long as it is balanced with calmer parts of the city.",
       "chunks": [
         [
           "Phố",
@@ -37154,39 +37141,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Bui Vien Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect Bui Vien evening street with signs and small tables.",
+        "summary": "Bùi Viện is Saigon’s concentrated backpacker-nightlife strip, best handled with one look-first pass, close phone and bag habits, and price checks before sitting down.",
         "sourceNotes": "existing-city-library; Vietnam Travel HCMC",
         "imagePromptNote": "Bui Vien evening street with signs and small tables, realistic no-logo photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Bui Vien Street is worth recognizing because streets shape how Saigon feels on the ground: street signs, shopfronts, scooters, and crossings, alongside Saigon river lights."
+            "title": "Walk Once Before Sitting",
+            "body": "Bùi Viện is useful when you want to see the backpacker-nightlife version of Ho Chi Minh City in one concentrated walk. Do one pass before choosing anything."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Bui Vien Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: Bui Vien evening street with signs and small tables, with scooters, crossings, cafe edges, and neighborhood movement, alongside Saigon river lights."
+            "title": "Music From Every Door",
+            "body": "Bars push sound into the street, stools fill the pavement, and people move in slow clusters. It can be fun briefly and exhausting if you expected a relaxed night market."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Phố Bùi Viện for Bui Vien Street. The local name is easier to remember once it sits beside crossings, cafe edges, neighborhood movement, and street signs, alongside Saigon river lights."
+            "title": "Useful Phrases",
+            "body": "Ask Cho tôi xem menu before ordering, Giá này cho một chai hay một xô? when drink pricing is unclear, and Không, cảm ơn when declining a pitch.",
+            "phraseIDs": [
+              "city-hcmc-place-bui-vien-street",
+              "city-hcmc-where-bui-vien-street",
+              "city-hcmc-go-bui-vien"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the street helps you understand the neighborhood before you are there: shopfronts, scooters, crossings, and cafe edges, alongside Saigon river lights."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Bui Vien Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Bui Vien evening street with signs and small tables with neighborhood movement, street signs, shopfronts, and scooters, alongside Saigon river lights."
+            "title": "Check Prices Before Ordering",
+            "body": "Keep your phone and bag close, check prices before ordering, and ignore quick pitches that pressure a decision. Looking first keeps the visit lighter."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Phố Bùi Viện lands better when the visitor already imagines street signs, shopfronts, scooters, and crossings, alongside Saigon river lights around Bui Vien Street."
+            "title": "Backpacker District, Not All Saigon",
+            "body": "Bùi Viện sits in the Phạm Ngũ Lão backpacker area near central District 1. See it if curious, then balance it with Nguyễn Huệ, Chợ Lớn, or a quieter dinner."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceBuiVienStreet",
@@ -37910,9 +37897,9 @@
       "targetText": "Chợ Lớn",
       "englishText": "Cho Lon",
       "pronunciation": "chuh lon",
-      "context": "For Cho Lon, Saigon's neighborhood story comes through hotel edges, evening walks, neighborhood identity, and cafes, alongside Ben Thanh market energy.",
-      "tip": "Neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy give Cho Lon a setting before the trip begins.",
-      "rationale": "Cho Lon brings Saigon into focus through lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy.",
+      "context": "Chợ Lớn gives Saigon a trade-first Chinatown layer, with temples, market streets, delivery carts, herbs, dried goods, and short rides between stops.",
+      "tip": "Go in the morning for market movement and cooler sidewalks, then use short rides instead of forcing one perfect walking loop.",
+      "rationale": "The district is still worth it because it shows a different Saigon from the District 1 hotel core: trade, temples, incense, wholesale goods, and working streets.",
       "chunks": [
         [
           "Chợ",
@@ -37942,39 +37929,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Cho Lon is worth recognizing because neighborhoods turn Saigon from landmarks into lived-in areas. Expect Cho Lon street scene with Chinese-Vietnamese shopfronts and lanterns.",
+        "summary": "Chợ Lớn is too large for one casual wander, so a first visit works better with Binh Tay Market, Thiên Hậu Temple, and one nearby medicine, lantern, or fabric street.",
         "sourceNotes": "existing-city-library; Vietnam Travel HCMC",
         "imagePromptNote": "Cho Lon street scene with Chinese-Vietnamese shopfronts and lanterns, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Cho Lon is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy."
+            "title": "Start With The District First",
+            "body": "Chợ Lớn is not one tidy street. Start with Binh Tay Market, Thiên Hậu Temple, and one nearby medicine, lantern, or fabric street."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Cho Lon, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: Cho Lon street scene with Chinese-Vietnamese shopfronts and lanterns, with lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy."
+            "title": "Trade First, Tourism Second",
+            "body": "Shutters, wholesale goods, incense coils, temple courtyards, sacks of dried ingredients, and delivery carts do more of the talking than souvenir displays."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Chợ Lớn for Cho Lon. The local name is easier to remember once it sits beside cafes, lanes, small shops, and hotel edges, alongside Ben Thanh market energy."
+            "title": "Useful Phrases",
+            "body": "Ask Chợ Bình Tây ở đâu? or Chùa Bà Thiên Hậu đi hướng nào? when you are close, then Tôi chỉ xem thôi if browsing stalls.",
+            "phraseIDs": [
+              "city-hcmc-place-cho-lon",
+              "city-hcmc-where-cho-lon",
+              "city-hcmc-go-cho-lon"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: evening walks, neighborhood identity, cafes, and lanes, alongside Ben Thanh market energy."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Cho Lon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Cho Lon street scene with Chinese-Vietnamese shopfronts and lanterns with cafes, lanes, small shops, and hotel edges, alongside Ben Thanh market energy."
+            "title": "Morning Makes Sense",
+            "body": "Earlier hours bring more active trade and cooler sidewalks. Late afternoon traffic can make the return to District 1 feel longer than the map suggests."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The name stays tied to neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy, giving Cho Lon a concrete setting in Saigon."
+            "title": "Beyond District 1",
+            "body": "Chợ Lớn is best with half a day and patience for short rides. It is not the open boulevard version of central Saigon."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceChoLon",
@@ -39074,9 +39061,9 @@
       "targetText": "Quận 3",
       "englishText": "District 3",
       "pronunciation": "quan 3",
-      "context": "For District 3, Saigon's neighborhood story comes through hotel edges, evening walks, neighborhood identity, and cafes, alongside Ben Thanh market energy.",
-      "tip": "District 3 feels clearer with lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy around it.",
-      "rationale": "District 3 brings Saigon into focus through neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy.",
+      "context": "District 3 works when the first move is one chosen stop and nearby walking, not a vague plan to cover the whole district.",
+      "tip": "Choose War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market first, then walk nearby and call a car when done.",
+      "rationale": "The district is still worth it because it shows central Saigon between headline landmarks: greener streets, everyday cafés, apartment blocks, markets, and traffic that feels lived-in.",
       "chunks": [
         [
           "Quận",
@@ -39104,39 +39091,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "District 3 is worth recognizing because neighborhoods turn Saigon from landmarks into lived-in areas. Expect District 3 tree-lined street with old villas and cafes.",
+        "summary": "Quận 3 is the central Saigon breathing route beside District 1: War Remnants Museum, Turtle Lake, Tân Định Church, Bàn Cờ Market, cafés, older buildings, and tree-lined streets.",
         "sourceNotes": "Visit HCMC portal",
         "imagePromptNote": "District 3 tree-lined street with old villas and cafes, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "District 3 is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: hotel edges, evening walks, neighborhood identity, and cafes, alongside Ben Thanh market energy."
+            "title": "Choose One Stop, Then Walk Nearby",
+            "body": "Quận 3 is useful when you start with one stop: War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market. Nearby streets do the rest."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At District 3, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: District 3 tree-lined street with old villas and cafes, with lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy."
+            "title": "Saigon With A Lower Volume",
+            "body": "The district sits close to District 1 but often feels greener and more lived-in: tree-lined streets, cafés, older buildings, schools, markets, temples, and apartment blocks."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Quận 3 for District 3. The local name is easier to remember once it sits beside cafes, lanes, small shops, and hotel edges, alongside Ben Thanh market energy."
+            "title": "Useful Phrases",
+            "body": "Ask Hồ Con Rùa ở đâu? for Turtle Lake, Chợ Bàn Cờ đi hướng nào? for the market, and Gọi xe về Quận 1 giúp tôi được không? for the return.",
+            "phraseIDs": [
+              "city-hcmc-place-district-3"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: evening walks, neighborhood identity, cafes, and lanes, alongside Ben Thanh market energy."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "District 3 works best when the name is tied to the reason for going, not memorized as an abstract label. Picture District 3 tree-lined street with old villas and cafes with small shops, hotel edges, evening walks, and neighborhood identity, alongside Ben Thanh market energy."
+            "title": "Match The Stop To Your Mood",
+            "body": "War Remnants Museum is serious and emotional. Turtle Lake is lighter. Bàn Cờ Market is a local food-and-market look. Tân Định Church is a quick visual stop if open."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Quận 3 points to District 3's scene through neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy."
+            "title": "Plan The Return",
+            "body": "District 3 does not hand over one headline moment. It is still worth it when District 1 feels compressed and a small central walking section sounds better."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceDistrict3",
@@ -39266,9 +39251,9 @@
       "targetText": "Đường Đồng Khởi",
       "englishText": "Dong Khoi Street",
       "pronunciation": "duong dong khoi",
-      "context": "For Dong Khoi Street, Saigon's street story comes through crossings, cafe edges, neighborhood movement, and street signs, alongside Ben Thanh market energy.",
-      "tip": "Neighborhood movement, street signs, shopfronts, and scooters, alongside Ben Thanh market energy give Dong Khoi Street a setting before the trip begins.",
-      "rationale": "Dong Khoi Street brings Saigon into focus through neighborhood movement, street signs, shopfronts, and scooters, alongside Ben Thanh market energy.",
+      "context": "Đồng Khởi helps District 1 make sense when you walk it as a short landmark spine rather than a quiet heritage lane.",
+      "tip": "Start near the Central Post Office and move toward the river. Morning makes the facades, hotel doors, and street shape easier to read before heat and traffic thicken.",
+      "rationale": "The street matters because it connects several first Saigon landmarks in one mental map: post office, cathedral area, Opera House, hotel facades, shops, and river edge.",
       "chunks": [
         [
           "Đường",
@@ -39298,39 +39283,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Dong Khoi Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect Dong Khoi Street with boutiques, trees, and scooters.",
+        "summary": "Đồng Khởi is the compact District 1 spine from the cathedral and post office area toward the Opera House, old hotel facades, café windows, shops, traffic, and the Saigon River.",
         "sourceNotes": "existing-city-library; Vietnam Travel HCMC",
         "imagePromptNote": "Dong Khoi Street with boutiques, trees, and scooters, photorealistic.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Dong Khoi Street is worth recognizing because streets shape how Saigon feels on the ground: neighborhood movement, street signs, shopfronts, and scooters, alongside Ben Thanh market energy."
+            "title": "Walk The Spine Toward The River",
+            "body": "Đồng Khởi is short, but it carries a lot. Start near the Central Post Office, pass the Opera House, and keep moving toward the Saigon River."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Dong Khoi Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: Dong Khoi Street with boutiques, trees, and scooters, with shopfronts, scooters, crossings, and cafe edges, alongside Ben Thanh market energy."
+            "title": "History With Traffic Passing",
+            "body": "This is not a quiet heritage lane. Motorbikes slide past hotel doors, sunlight hits glass storefronts, and colonial-era facades sit beside coffee chains and tour groups."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Đường Đồng Khởi for Dong Khoi Street. The local name is easier to remember once it sits beside street signs, shopfronts, scooters, and crossings, alongside Ben Thanh market energy."
+            "title": "Useful Phrases",
+            "body": "Ask Đường Đồng Khởi ở đâu? when close by, or Đi bộ đến Nhà hát Thành phố được không? when you want to confirm the Opera House is walkable.",
+            "phraseIDs": [
+              "city-hcmc-place-dong-khoi-street",
+              "city-hcmc-where-dong-khoi-street",
+              "city-hcmc-dong-khoi-route"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the street helps you understand the neighborhood before you are there: cafe edges, neighborhood movement, street signs, and shopfronts, alongside Ben Thanh market energy."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Dong Khoi Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Dong Khoi Street with boutiques, trees, and scooters with street signs, shopfronts, scooters, and crossings, alongside Ben Thanh market energy."
+            "title": "Use Landmarks As Steps",
+            "body": "Move from the post office and cathedral area to the Opera House, then toward the river. The street is still worth it because it gives District 1 a simple walking sequence."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Đường Đồng Khởi belongs to the scene, with shopfronts, scooters, crossings, and cafe edges, alongside Ben Thanh market energy around it and Saigon in view."
+            "title": "Early Before It Thickens",
+            "body": "Morning is better if buildings matter more than shopping. Later in the day, heat and traffic can make the street feel like another central corridor."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceDongKhoiStreet",
@@ -40438,9 +40423,9 @@
       "targetText": "Khu phố Nhật Lê Thánh Tôn",
       "englishText": "Japan Town Saigon",
       "pronunciation": "khu pho nhat le thanh ton",
-      "context": "For Japan Town Saigon, Saigon's neighborhood story comes through evening walks, neighborhood identity, cafes, and lanes, alongside Saigon river lights.",
-      "tip": "Khu phố Nhật Lê Thánh Tôn sits inside the scene around Japan Town Saigon: evening walks, neighborhood identity, cafes, and lanes, alongside Saigon river lights.",
-      "rationale": "Japan Town Saigon brings Saigon into focus through small shops, hotel edges, evening walks, and neighborhood identity, alongside Saigon river lights.",
+      "context": "Japan Town works when the first move is one alley and one dinner or drink decision, not an attempt to decode every business in the cluster.",
+      "tip": "Go early if food is the main goal. Later, the area becomes more bar-driven and less useful for calm orientation.",
+      "rationale": "The neighborhood is still worth it because it gives District 1 a narrower, layered texture: Japanese signs, small stairways, curtains, lanterns, restaurants, and discreet nightlife.",
       "chunks": [
         [
           "Khu phố",
@@ -40468,39 +40453,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Japan Town Saigon is worth recognizing because neighborhoods turn Saigon from landmarks into lived-in areas. Expect narrow Saigon alley with Japanese restaurant signs and lanterns.",
+        "summary": "Japan Town Saigon is the compact District 1 dining-and-alley cluster around Lê Thánh Tôn and Thái Văn Lung, where reading the door matters before entering.",
         "sourceNotes": "local named-area source",
         "imagePromptNote": "Narrow Saigon alley with Japanese restaurant signs and lanterns, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Japan Town Saigon is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: cafes, lanes, small shops, and hotel edges, alongside Saigon river lights."
+            "title": "Choose An Alley Before Dinner",
+            "body": "Start around Lê Thánh Tôn and Thái Văn Lung, choose one alley, then decide whether the night is ramen, izakaya food, a quiet drink, or just a look."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Japan Town Saigon, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: narrow Saigon alley with Japanese restaurant signs and lanterns, with evening walks, neighborhood identity, cafes, and lanes, alongside Saigon river lights."
+            "title": "District 1, Different Texture",
+            "body": "The streets are narrower and more layered than nearby hotel avenues. Japanese signs, small stairways, restaurant curtains, lanterns, and upper-floor businesses sit close together."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Khu phố Nhật Lê Thánh Tôn for Japan Town Saigon. The local name is easier to remember once it sits beside hotel edges, evening walks, neighborhood identity, and cafes, alongside Saigon river lights."
+            "title": "Useful Phrases",
+            "body": "Ask Đường Thái Văn Lung ở đâu? for the area, Cho tôi xem menu trước before entering, and Tôi chỉ đi dạo thôi if you are only looking.",
+            "phraseIDs": [
+              "city-hcmc-place-japan-town"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: lanes, small shops, hotel edges, and evening walks, alongside Saigon river lights."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Japan Town Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture narrow Saigon alley with Japanese restaurant signs and lanterns with neighborhood identity, cafes, lanes, and small shops, alongside Saigon river lights."
+            "title": "Read The Door Before Entering",
+            "body": "Some doors are straightforward restaurants; others are bars, clubs, or adult-oriented businesses. Menu, entrance, and crowd tell you more than the alley alone."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Khu phố Nhật Lê Thánh Tôn feels less abstract when it sits beside small shops, hotel edges, evening walks, and neighborhood identity, alongside Saigon river lights and the scene of Japan Town Saigon."
+            "title": "Early Dinner Is Easier",
+            "body": "Early dinner is better for a first visit. Later at night the area can get louder and less useful for someone trying to orient calmly."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceJapanTown",
@@ -44137,9 +44120,9 @@
       "targetText": "Thảo Điền",
       "englishText": "Thao Dien",
       "pronunciation": "thao dien",
-      "context": "For Thao Dien, Saigon's neighborhood story comes through small shops, hotel edges, evening walks, and neighborhood identity, alongside Nguyen Hue city light.",
-      "tip": "Saigon's neighborhood scene comes through small shops, hotel edges, evening walks, and neighborhood identity, alongside Nguyen Hue city light.",
-      "rationale": "Thao Dien brings Saigon into focus through small shops, hotel edges, evening walks, and neighborhood identity, alongside Nguyen Hue city light.",
+      "context": "Thảo Điền works as a decompression neighborhood, not a full-city substitute for District 1, Chợ Lớn, markets, or old landmarks.",
+      "tip": "Start on Xuân Thủy, choose one stop before wandering, and plan the ride back instead of treating the area like a walking loop home.",
+      "rationale": "The neighborhood is still worth it when District 1 feels too dense because it gives more space for coffee, browsing, dinner, and a slower east-side reset.",
       "chunks": [
         [
           "Thảo",
@@ -44169,39 +44152,38 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Thao Dien is worth recognizing because neighborhoods turn Saigon from landmarks into lived-in areas. Expect leafy Thao Dien cafe street with villas and scooters.",
+        "summary": "Thảo Điền is the slower east-side Saigon pocket best handled through one first street, usually Xuân Thủy, then one café, boutique, bakery, gallery, dinner, or return-car plan.",
         "sourceNotes": "existing-city-library; Visit HCMC portal",
         "imagePromptNote": "Leafy Thao Dien cafe street with villas and scooters, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Thao Dien is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: evening walks, neighborhood identity, cafes, and lanes, alongside Nguyen Hue city light."
+            "title": "Start On Xuân Thủy",
+            "body": "Thảo Điền is easier if you choose one first street. Start on Xuân Thủy for cafés, boutiques, bakeries, restaurants, and a slower walk."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Thao Dien, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: leafy Thao Dien cafe street with villas and scooters, with evening walks, neighborhood identity, cafes, and lanes, alongside Nguyen Hue city light."
+            "title": "A Softer East-Side Pocket",
+            "body": "The area feels greener, lower, and more international than the District 1 hotel core. That is the use and the limit: decompression, not the whole city."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Thảo Điền for Thao Dien. The local name is easier to remember once it sits beside lanes, small shops, hotel edges, and evening walks, alongside Nguyen Hue city light."
+            "title": "Useful Phrases",
+            "body": "Ask Đường Xuân Thủy ở đâu? for the first street, Cho tôi xem menu trước before choosing a café or restaurant, and Gọi xe về Quận 1 giúp tôi được không? for the ride back.",
+            "phraseIDs": [
+              "city-hcmc-place-thao-dien",
+              "city-hcmc-go-thao-dien"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: neighborhood identity, cafes, lanes, and small shops, alongside Nguyen Hue city light."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Thao Dien works best when the name is tied to the reason for going, not memorized as an abstract label. Picture leafy Thao Dien cafe street with villas and scooters with hotel edges, evening walks, neighborhood identity, and cafes, alongside Nguyen Hue city light."
+            "title": "Pick One Stop Before Wandering",
+            "body": "Coffee, a bakery, a booked meal, or a gallery gives the area shape. Without one, it can feel like scattered villas and side streets."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The scene around Thao Dien stays vivid when Thảo Điền sits beside evening walks, neighborhood identity, cafes, and lanes, alongside Nguyen Hue city light."
+            "title": "Cross The River On Purpose",
+            "body": "The ride from the central core is part of the decision. The neighborhood is still worth it when the slower pocket is the reason for going."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceThaoDien",
@@ -47766,9 +47748,9 @@
       "targetText": "Giếng Bà Lễ",
       "englishText": "Bale Well",
       "pronunciation": "ba le well bale well",
-      "context": "For Bale Well, Hoi An's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside Cam Thanh coconut-waterway life.",
-      "tip": "Hoi An's restaurant scene comes through menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life.",
-      "rationale": "Bale Well brings Hoi An into focus through menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life.",
+      "context": "Bale Well works when the meal is lively, messy, and social, with staff often showing the first roll rather than leaving the table to decode everything alone.",
+      "tip": "Ask the set price before the food starts landing, and check whether a smaller portion is possible if you are solo or not very hungry.",
+      "rationale": "The stop is still worth it because the friction becomes part of the fun once the set, price, and first roll are clear.",
       "chunks": [
         [
           "Giếng",
@@ -47797,39 +47779,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Bale Well is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect casual Hoi An table with grilled skewers, herbs, and rice paper.",
+        "summary": "Bale Well is the hands-on Hội An meal where pork skewers, bánh xèo, spring rolls, herbs, rice paper, and sauce arrive as a shared set, so price and portion questions matter first.",
         "sourceNotes": "Local food and venue references; local-name spelling kept conservative.",
         "imagePromptNote": "Photorealistic owned asset: casual Hoi An table with grilled skewers, herbs, and rice paper, no signage.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Bale Well is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life."
+            "title": "Confirm The Set First",
+            "body": "Bale Well is built around a roll-it-yourself spread: pork skewers, bánh xèo, spring rolls, herbs, rice paper, and sauce. Ask the set price before the table fills."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Bale Well, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: casual Hoi An table with grilled skewers, herbs, and rice paper, with menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life."
+            "title": "Fast, Messy, Social",
+            "body": "Food can arrive quickly, which is both charm and caution. Let the staff show the first roll, then expect herbs, sauce, and pork juices on your fingers."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Giếng Bà Lễ for Bale Well. The local name is easier to remember once it sits beside evening meal energy, tables, house dishes, and menu details, alongside Cam Thanh coconut-waterway life."
+            "title": "Useful Phrases",
+            "body": "Ask Một suất ăn bao nhiêu tiền? before starting, Chỉ cho tôi cách cuốn được không? for the first roll, and Tính tiền giúp tôi when ready to leave.",
+            "phraseIDs": [
+              "city-hoian-place-bale-well"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the meal itself should be one of the day's memories: staff rhythm, drinks, evening meal energy, and tables, alongside Cam Thanh coconut-waterway life."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Bale Well works best when the name is tied to the reason for going, not memorized as an abstract label. Picture casual Hoi An table with grilled skewers, herbs, and rice paper with staff rhythm, drinks, evening meal energy, and tables, alongside Cam Thanh coconut-waterway life."
+            "title": "Check Portion Size",
+            "body": "The usual spread is better for sharing than nibbling. The stop is still worth it when you want a lively, filling meal and a little instruction."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Giếng Bà Lễ points back to Casual Hoi An table with grilled skewers, herbs, and rice paper, where Bale Well feels specific rather than abstract."
+            "title": "Close To The Old Core",
+            "body": "The restaurant is close enough to pair with an Ancient Town walk. It works better as a food detour than as a slow tasting menu."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceBaleWell",
@@ -48061,9 +48041,9 @@
       "targetText": "Bánh mì Phượng",
       "englishText": "Banh Mi Phuong",
       "pronunciation": "bahn mee fuong",
-      "context": "For Banh Mi Phuong, Hoi An's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside lantern-street Hoi An.",
-      "tip": "Banh Mi Phuong stays rooted in Hoi An through house dishes, menu details, staff rhythm, and drinks, alongside lantern-street Hoi An.",
-      "rationale": "Banh Mi Phuong brings Hoi An into focus through staff rhythm, drinks, evening meal energy, and tables, alongside lantern-street Hoi An.",
+      "context": "Bánh Mì Phượng makes sense as a short counter-meal stop, with the fame kept smaller than the actual ordering task.",
+      "tip": "Choose pork and pâté for the classic move, ask for little or no chili before the sandwich is built, and go before peak queue pressure.",
+      "rationale": "The stop is still worth it because a crisp, well-built bánh mì can deliver herbs, pickles, pâté, sauce, and heat in one quick Hội An meal.",
       "chunks": [
         [
           "Bánh",
@@ -48094,39 +48074,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Banh Mi Phuong is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Banh mi counter with baguettes and herbs.",
+        "summary": "Bánh Mì Phượng is a fast Hội An sandwich-counter meal where the useful move is deciding filling, chili, sauce, and takeaway before the line reaches the glass case.",
         "sourceNotes": "Existing city-library; Vietnam Tourism and local food references.",
         "imagePromptNote": "Photorealistic owned asset: banh mi counter with baguettes and herbs, no logo, documentary street-food light.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Banh Mi Phuong is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside lantern-street Hoi An."
+            "title": "Choose Before The Counter Moves",
+            "body": "Bánh Mì Phượng moves fast, so decide the meal details: filling, chili, sauce, and takeaway before the line reaches the glass case."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Banh Mi Phuong, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Banh mi counter with baguettes and herbs, with house dishes, menu details, staff rhythm, and drinks, alongside lantern-street Hoi An."
+            "title": "Fast Bread, Many Hands",
+            "body": "Expect crisp rolls, pâté, herbs, pickles, meat or chicken, sauce, and heat built in layers. The counter-meal rhythm rewards a clear order before the menu moment passes."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Bánh mì Phượng for Banh Mi Phuong. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside lantern-street Hoi An."
+            "title": "Useful Phrases",
+            "body": "Ask Một bánh mì thịt, ít ớt for pork with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+            "phraseIDs": [
+              "city-hoian-place-banh-mi-phuong",
+              "city-hoian-where-banh-mi-phuong",
+              "city-hoian-go-banh-mi-phuong"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the meal itself should be one of the day's memories: tables, house dishes, menu details, and staff rhythm, alongside lantern-street Hoi An."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Banh Mi Phuong works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Banh mi counter with baguettes and herbs with menu details, staff rhythm, drinks, and evening meal energy, alongside lantern-street Hoi An."
+            "title": "Earlier Keeps It Human",
+            "body": "Before peak queue time, the sandwich matters more than the crowd. The fame can feel large, but the best version is still a quick, confident food stop."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Bánh mì Phượng carries Banh Mi Phuong's surrounding details: house dishes, menu details, staff rhythm, and drinks, alongside lantern-street Hoi An, with Banh mi counter with baguettes and herbs behind it."
+            "title": "A Quick Old Town Detour",
+            "body": "Phan Châu Trinh is close enough to fold into an Ancient Town walk. Order, eat nearby, and move on rather than making the fame story the whole plan."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceBanhMiPhuong",
@@ -52130,9 +52110,9 @@
       "targetText": "Madam Khánh",
       "englishText": "Madam Khanh",
       "pronunciation": "madam khanh",
-      "context": "For Madam Khanh, Hoi An's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside lantern-street Hoi An.",
-      "tip": "Madam Khanh becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside lantern-street Hoi An.",
-      "rationale": "Madam Khanh brings Hoi An into focus through drinks, evening meal energy, tables, and house dishes, alongside lantern-street Hoi An.",
+      "context": "Madam Khanh works as a small counter meal before returning to Ancient Town, a tailor appointment, lantern streets, or coffee.",
+      "tip": "Ask for mixed bánh mì if you want the fuller house-style order, and say little or no chili before the roll is built.",
+      "rationale": "The stop is still worth it because the order is quick, the flavor is clear, and a confident counter sentence keeps the famous line from feeling stressful.",
       "chunks": [
         [
           "Madam",
@@ -52161,39 +52141,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Madam Khanh is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect sandwich shop counter with baguettes and fresh herbs, street-side details.",
+        "summary": "Madam Khanh is a fast Hội An bánh mì stop where the useful task is naming the filling and chili level before the roll is built, not proving the sandwich is famous.",
         "sourceNotes": "Local food and venue references; no ranking claims.",
         "imagePromptNote": "Photorealistic owned asset: sandwich shop counter with baguettes and fresh herbs, neutral signage, daylight.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Madam Khanh is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with menu details, staff rhythm, drinks, and evening meal energy, alongside lantern-street Hoi An."
+            "title": "Name The Filling And Heat",
+            "body": "Madam Khanh is easiest when you order like you already know the move: filling first, chili level second. Fame matters less than a clear counter sentence."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Madam Khanh, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: sandwich shop counter with baguettes and fresh herbs, street-side details, with drinks, evening meal energy, tables, and house dishes, alongside lantern-street Hoi An."
+            "title": "A Famous Stop That Can Stay Small",
+            "body": "The sandwich has the familiar Hội An shape: crisp roll, warm filling, herbs, pickles, sauce, and heat. It does not need to become the whole meal plan."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Madam Khánh for Madam Khanh. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside lantern-street Hoi An."
+            "title": "Useful Phrases",
+            "body": "Ask Một bánh mì thập cẩm, ít ớt for mixed bánh mì with little chili, Không ớt được không? for no chili, and Mang đi for takeaway.",
+            "phraseIDs": [
+              "city-hoian-place-madam-khanh"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside lantern-street Hoi An."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Madam Khanh works best when the name is tied to the reason for going, not memorized as an abstract label. Picture sandwich shop counter with baguettes and fresh herbs, street-side details with evening meal energy, tables, house dishes, and menu details, alongside lantern-street Hoi An."
+            "title": "Earlier Than Peak Hunger",
+            "body": "Before the line tightens, the counter feels easier and the sandwich stays the point. The stop is still worth it as a quick Ancient Town food pause."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Madam Khánh feels less abstract when it sits beside tables, house dishes, menu details, and staff rhythm, alongside lantern-street Hoi An and the scene of Madam Khanh."
+            "title": "Different Job Than Phượng",
+            "body": "Madam Khanh should feel like a heat-and-filling decision, while Bánh Mì Phượng is more about moving through a faster glass-case counter."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceMadamKhanh",
@@ -52902,9 +52880,9 @@
       "targetText": "Morning Glory Hội An",
       "englishText": "Morning Glory Hoi An",
       "pronunciation": "morning glory hoy an",
-      "context": "For Morning Glory Hoi An, Hoi An's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside Cam Thanh coconut-waterway life.",
-      "tip": "Morning Glory Hoi An stays rooted in Hoi An through house dishes, menu details, staff rhythm, and drinks, alongside Cam Thanh coconut-waterway life.",
-      "rationale": "Morning Glory Hoi An brings Hoi An into focus through evening meal energy, tables, house dishes, and menu details, alongside Cam Thanh coconut-waterway life.",
+      "context": "Morning Glory works when the room organizes street-food and home-food ideas into a calmer restaurant frame without pretending to be the whole Hội An food story.",
+      "tip": "Pick one Hội An or central-coast dish first, then ask about pork, shellfish, and chili before adding shared plates.",
+      "rationale": "The restaurant is still worth it when Ancient Town feels busy and a first dinner needs to be easier to read than a food crawl.",
       "chunks": [
         [
           "Morning",
@@ -52936,39 +52914,39 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Morning Glory Hoi An is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Vietnamese restaurant table with shared dishes and lantern-lit yellow walls.",
+        "summary": "Morning Glory Original is a controlled first Hội An meal near the old streets, useful when the menu feels wide and one local dish, one shared plate, and ingredient questions keep dinner readable.",
         "sourceNotes": "Existing city-library; Quang Nam Tourism Morning Glory reference.",
         "imagePromptNote": "Photorealistic owned asset: Vietnamese restaurant table with shared dishes and lantern-lit yellow walls, no branding.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Morning Glory Hoi An is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with house dishes, menu details, staff rhythm, and drinks, alongside Cam Thanh coconut-waterway life."
+            "title": "Pick One Hội An Dish First",
+            "body": "Morning Glory is useful when you want a controlled first meal near the old streets. Choose one Hội An or central-coast dish before the menu gets wide."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Morning Glory Hoi An, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Vietnamese restaurant table with shared dishes and lantern-lit yellow walls, with evening meal energy, tables, house dishes, and menu details, alongside Cam Thanh coconut-waterway life."
+            "title": "Street Food In A Restaurant Frame",
+            "body": "The room is organized, but the idea is still daily Vietnamese food: market snacks, home dishes, street-food logic, and family recipes in one place."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Morning Glory Hội An for Morning Glory Hoi An. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life."
+            "title": "Useful Phrases",
+            "body": "Ask Món nào là món đặc trưng của Hội An? for a specialty, Món này có tôm hoặc thịt heo không? for ingredients, and Món này có cay không? for heat.",
+            "phraseIDs": [
+              "city-hoian-place-morning-glory",
+              "city-hoian-where-morning-glory",
+              "city-hoian-reservation-morning-glory"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Cam Thanh coconut-waterway life."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Morning Glory Hoi An works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Vietnamese restaurant table with shared dishes and lantern-lit yellow walls with drinks, evening meal energy, tables, and house dishes, alongside Cam Thanh coconut-waterway life."
+            "title": "Good When You Need Calm",
+            "body": "The restaurant is still worth it when Ancient Town feels busy and the first dinner should be readable. Go before peak dinner pressure if calm matters."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Morning Glory Hội An belongs in the same image as staff rhythm, drinks, evening meal energy, and tables, alongside Cam Thanh coconut-waterway life, with Morning Glory Hoi An rooted in Hoi An."
+            "title": "A Launchpad, Not The Whole Story",
+            "body": "After one controlled meal, smaller counters and specialty stops become easier to understand. Morning Glory should not carry every Hội An food expectation."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceMorningGlory",
@@ -56499,9 +56477,9 @@
       "targetText": "Nhà hàng White Rose",
       "englishText": "White Rose Restaurant",
       "pronunciation": "nha hang white rose",
-      "context": "For White Rose Restaurant, Hoi An's restaurant story comes through tables, house dishes, menu details, and staff rhythm, alongside Hoi An old-town texture.",
-      "tip": "Nhà hàng White Rose sits inside the scene around White Rose Restaurant: drinks, evening meal energy, tables, and house dishes, alongside Hoi An old-town texture.",
-      "rationale": "White Rose Restaurant brings Hoi An into focus through drinks, evening meal energy, tables, and house dishes, alongside Hoi An old-town texture.",
+      "context": "White Rose makes the most sense when the meal has one purpose: taste the dish at the source instead of chasing every Hội An specialty at once.",
+      "tip": "Order the dumplings first, add fried wonton only if you want crunch, and ask about shrimp if shellfish matters.",
+      "rationale": "The restaurant is still worth it because the dish feels tied to one place: pale wrappers, shaped dumplings, sauce, and a family-kitchen reputation around Hội An.",
       "chunks": [
         [
           "Nhà",
@@ -56530,39 +56508,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "White Rose Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect plate of white rose dumplings on ceramic table, soft window light.",
+        "summary": "White Rose Restaurant is the focused Hội An stop for bánh bao bánh vạc: thin dumplings, shrimp or pork filling, crisp topping, dipping sauce, and a short detour from Ancient Town.",
         "sourceNotes": "Local food and venue references; no exclusivity claims.",
         "imagePromptNote": "Photorealistic owned asset: plate of white rose dumplings on ceramic table, soft window light, no logo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "White Rose Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Hoi An old-town texture."
+            "title": "Start With The Dumpling Source",
+            "body": "White Rose Restaurant is for bánh bao bánh vạc, not a long menu. The focused order helps the meal stay small, specific, and easy to understand."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At White Rose Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: plate of white rose dumplings on ceramic table, soft window light, with drinks, evening meal energy, tables, and house dishes, alongside Hoi An old-town texture."
+            "title": "A Focused Little Meal",
+            "body": "The plate arrives pale and delicate: thin rice wrappers, shrimp or pork filling, crisp fried topping, and dipping sauce doing most of the lift."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Nhà hàng White Rose for White Rose Restaurant. The local name is easier to remember once it sits beside staff rhythm, drinks, evening meal energy, and tables, alongside Hoi An old-town texture."
+            "title": "Useful Phrases",
+            "body": "Ask for một đĩa bánh bao bánh vạc when ordering, then Bánh này có tôm không? if shellfish matters. More dipping sauce is thêm nước chấm.",
+            "phraseIDs": [
+              "city-hoian-place-white-rose-restaurant"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if the meal itself should be one of the day's memories: house dishes, menu details, staff rhythm, and drinks, alongside Hoi An old-town texture."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "White Rose Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture plate of white rose dumplings on ceramic table, soft window light with staff rhythm, drinks, evening meal energy, and tables, alongside Hoi An old-town texture."
+            "title": "Earlier If Making Matters",
+            "body": "Earlier in the day gives a better chance of seeing dumplings shaped or steamed. Otherwise, keep the stop short and let Ancient Town carry the rest of the walk."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Nhà hàng White Rose carries the surrounding image back to Plate of white rose dumplings on ceramic table, soft window light and the place around it."
+            "title": "A Short Food Detour",
+            "body": "The restaurant sits outside the densest lantern-street loop. The value is a purposeful dish stop, not a full evening plan."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceWhiteRoseRestaurant",
@@ -59636,9 +59612,9 @@
       "targetText": "Vườn quốc gia Bạch Mã",
       "englishText": "Bach Ma National Park",
       "pronunciation": "vuon quoc gia bach ma",
-      "context": "For Bach Ma National Park, Hue's nature day trip story comes through cooler air, misty forest, waterfalls, and mountain roads, alongside citadel-side Hue.",
-      "tip": "Cooler air, misty forest, waterfalls, and mountain roads, alongside citadel-side Hue give Bach Ma National Park a setting before the trip begins.",
-      "rationale": "Bach Ma National Park brings Hue into focus through cooler air, misty forest, waterfalls, and mountain roads, alongside citadel-side Hue.",
+      "context": "Bạch Mã works when one main route is chosen before departure, and transport, weather, trail condition, and return timing are clear.",
+      "tip": "Choose Hải Vọng Đài, Five Lakes, or Đỗ Quyên Waterfall first. Wear shoes with grip and expect fog or wet stairs if the mountain turns.",
+      "rationale": "The park is still worth it when forest and walking are the goal, because the mountain air and water routes feel very different from city museums or roadside viewpoints.",
       "chunks": [
         [
           "Vườn",
@@ -59666,39 +59642,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Bach Ma National Park is worth knowing in Hue because it brings the region opening into forest, water, weather, and mountain quiet into the trip. Expect misty mountain forest trail with waterfall spray and lush central Vietnam greenery.",
+        "summary": "Bạch Mã National Park is a real nature day between Huế and Đà Nẵng, with cooler mountain air, forest, viewpoints, lakes, waterfalls, wet steps, and weather risk.",
         "sourceNotes": "References: Hue tourism portal natural-scenery materials; park listings.",
         "imagePromptNote": "Photorealistic misty mountain forest trail with waterfall spray and lush central Vietnam greenery.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Bach Ma National Park is worth knowing because it gives Hue a specific nature day trip scene: waterfalls, mountain roads, trails, and shade, alongside citadel-side Hue."
+            "title": "Check Weather Before Committing",
+            "body": "Bạch Mã is a real nature day, not a quick viewpoint. Weather can decide whether the forest feels clear and alive or slippery and fogged-in."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Bach Ma National Park, you get the region opening into forest, water, weather, and mountain quiet: misty mountain forest trail with waterfall spray and lush central Vietnam greenery, with cooler air, misty forest, waterfalls, and mountain roads, alongside citadel-side Hue."
+            "title": "Pick One Main Route",
+            "body": "Choose between Hải Vọng Đài for the viewpoint, Five Lakes for water and walking, or Đỗ Quyên Waterfall for a bigger nature payoff."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Vườn quốc gia Bạch Mã for Bach Ma National Park. The local name is easier to remember once it sits beside misty forest, waterfalls, mountain roads, and trails, alongside citadel-side Hue."
+            "title": "Useful Phrases",
+            "body": "Ask Hôm nay trên núi có mưa không? before going, Đường lên Hải Vọng Đài ở đâu? for the viewpoint, and Đường đi Ngũ Hồ có trơn không? if heading to Five Lakes.",
+            "phraseIDs": [
+              "city-hue-place-bach-ma-national-park"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Bach Ma National Park gives your itinerary a clearer image: shade, cooler air, misty forest, and waterfalls, alongside citadel-side Hue."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Bach Ma National Park works best when the name is tied to the reason for going, not memorized as an abstract label. Picture misty mountain forest trail with waterfall spray and lush central Vietnam greenery with misty forest, waterfalls, mountain roads, and trails, alongside citadel-side Hue."
+            "title": "Bring Grip, Water, And Patience",
+            "body": "Trails can be wet, steps can be steep, and travel time from Huế or Đà Nẵng is part of the day. City sandals are the wrong bet."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Vườn quốc gia Bạch Mã points back to Misty mountain forest trail with waterfall spray and lush central Vietnam greenery, where Bach Ma National Park feels specific rather than abstract."
+            "title": "A Deliberate Day Trip",
+            "body": "The park is best when forest and walking are the point. For an easier view, Lập An Lagoon, Hải Vân Pass, or a city museum may use less energy."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceBachMaNationalPark",
@@ -63682,9 +63656,9 @@
       "targetText": "Đầm Lập An",
       "englishText": "Lap An Lagoon",
       "pronunciation": "dam lap an",
-      "context": "For Lap An Lagoon, Hue's nature stop story comes through shade, water, weather, and quieter space beyond traffic, alongside royal-city memory.",
-      "tip": "Đầm Lập An points back to Lap An Lagoon through green edges, paths, shade, and water, alongside royal-city memory.",
-      "rationale": "Lap An Lagoon brings Hue into focus through green edges, paths, shade, and water, alongside royal-city memory.",
+      "context": "Lập An should be treated as a road-trip seafood and tide stop, not a dense attraction with a long activity list.",
+      "tip": "Check tide first and light second. If stopping to eat, ask about oysters or fresh seafood rather than treating the lagoon as only a photo place.",
+      "rationale": "The lagoon is still worth it when the timing helps: quiet water, Bạch Mã mountains, oyster farms, baskets, boats, and a slow road-trip pause.",
       "chunks": [
         [
           "Đầm",
@@ -63712,39 +63686,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Lap An Lagoon is worth knowing in Hue because it brings the city opening beyond buildings and traffic into the trip. Expect shallow lagoon with mountains and oyster stakes, bright central Vietnam haze.",
+        "summary": "Lập An Lagoon is a Huế-Lăng Cô-Hải Vân pause that works best when low tide reveals sandbars, oyster beds, boats, and people working close to the water.",
         "sourceNotes": "References: Hue tourism portal famous places.",
         "imagePromptNote": "Photorealistic shallow lagoon with mountains and oyster stakes, bright central Vietnam haze.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Lap An Lagoon is worth knowing because it gives Hue a specific nature stop scene: shade, water, weather, and quieter space beyond traffic, alongside royal-city memory."
+            "title": "Go When The Tide Helps",
+            "body": "Lập An Lagoon is worth planning around low water. Sandbars, oyster beds, and people working near the shore give the place its shape."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Lap An Lagoon, you get the city opening beyond buildings and traffic: shallow lagoon with mountains and oyster stakes, bright central Vietnam haze, with shade, water, weather, and quieter space beyond traffic, alongside royal-city memory."
+            "title": "Quiet Water, Working Farms",
+            "body": "The view alone is not the full point. Still water, Bạch Mã mountains, baskets, boats, and oyster farms make the lagoon feel worked rather than staged."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Đầm Lập An for Lap An Lagoon. The local name is easier to remember once it sits beside water, weather, quieter space beyond traffic, and green edges, alongside royal-city memory."
+            "title": "Useful Phrases",
+            "body": "Ask Khi nào thủy triều xuống? for low tide, Hàu hôm nay có tươi không? before oysters, and Chỗ nào chụp ảnh an toàn? near the water.",
+            "phraseIDs": [
+              "city-hue-place-lap-an-lagoon"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: paths, shade, water, and weather, alongside royal-city memory."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Lap An Lagoon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture shallow lagoon with mountains and oyster stakes, bright central Vietnam haze with quieter space beyond traffic, green edges, paths, and shade, alongside royal-city memory."
+            "title": "A Road-Trip Pause",
+            "body": "The lagoon fits naturally with Lăng Cô Beach, Hải Vân Pass, or the Huế-to-Đà Nẵng transfer. It rarely needs to become a full standalone day."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Đầm Lập An belongs with Shallow lagoon with mountains and oyster stakes, bright central Vietnam haze, giving Lap An Lagoon a specific travel scene before the trip begins."
+            "title": "Tide First, Light Second",
+            "body": "Sunrise and late afternoon help, but low tide carries the real decision. Without it, the stop can become a pretty roadside pause."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceLapAnLagoon",
@@ -65525,9 +65497,9 @@
       "targetText": "Sông Hương",
       "englishText": "Perfume River",
       "pronunciation": "song huong",
-      "context": "For Perfume River, Hue's river story comes through evening light, boats, bridges, and reflections, alongside Hue river-city memory.",
-      "tip": "Sông Hương feels tied to Perfume River through river walks, waterline views, evening light, and boats, alongside Hue river-city memory.",
-      "rationale": "Perfume River brings Hue into focus through evening light, boats, bridges, and reflections, alongside Hue river-city memory.",
+      "context": "Sông Hương should be framed as the city’s middle line between the citadel, bridges, pagodas, tomb routes, hotels, and riverbank cafés.",
+      "tip": "Ask for Thiên Mụ Pagoda rather than a vague cruise, and confirm price, one-way or round trip, time, and life jackets before boarding.",
+      "rationale": "The river is still worth it because it turns Huế from scattered monuments into a city arranged around water, bridges, pagodas, and tomb roads.",
       "chunks": [
         [
           "Sông",
@@ -65557,39 +65529,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Perfume River is worth knowing because water helps organize Hue: bridges, reflections, banks, boats, and evening light. Expect calm Perfume River with dragon boat, low mountains, and Hue skyline at sunset.",
+        "summary": "The Perfume River helps Huế make sense when a boat ride has a destination: Thiên Mụ Pagoda, a confirmed price, a clear duration, and a return plan.",
         "sourceNotes": "References: existing city library; Vietnam Tourism Hue; UNESCO Complex of Hue Monuments.",
         "imagePromptNote": "Photorealistic calm Perfume River with dragon boat, low mountains, and Hue skyline at sunset.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Perfume River is worth knowing because the water helps organize the city: evening light, boats, bridges, and reflections, alongside Hue river-city memory."
+            "title": "Choose A Destination, Not A Cruise",
+            "body": "For a first Perfume River ride, ask for Thiên Mụ Pagoda instead of a vague cruise. A destination gives the boat trip a point."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Perfume River, you get geography, history, and everyday movement meeting: calm Perfume River with dragon boat, low mountains, and Hue skyline at sunset, with river walks, waterline views, evening light, and boats, alongside Hue river-city memory."
+            "title": "Slow Boats, Real Distances",
+            "body": "A dragon boat sounds ceremonial, but the experience is simple: low seats, open water, city edges, and time passing slowly. The route matters before boarding."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Sông Hương for Perfume River. The local name is easier to remember once it sits beside waterline views, evening light, boats, and bridges, alongside Hue river-city memory."
+            "title": "Useful Phrases",
+            "body": "Ask Đi thuyền đến chùa Thiên Mụ bao nhiêu tiền? for price, Đi một chiều hay khứ hồi? for return, and Có áo phao không? for life jackets.",
+            "phraseIDs": [
+              "city-hue-place-perfume-river"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Perfume River gives your itinerary a clearer image: reflections, river walks, waterline views, and evening light, alongside Hue river-city memory."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Perfume River works best when the name is tied to the reason for going, not memorized as an abstract label. Picture calm Perfume River with dragon boat, low mountains, and Hue skyline at sunset with waterline views, evening light, boats, and bridges, alongside Hue river-city memory."
+            "title": "Late Afternoon, Not Too Late",
+            "body": "Late afternoon gives softer light and less heat without making the return feel uncertain. Evening folk music is a performance choice, not just transport."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The image of Perfume River feels more present when Sông Hương has evening light, boats, bridges, and reflections, alongside Hue river-city memory around it."
+            "title": "The City’s Middle Line",
+            "body": "The river connects the Imperial City, Trường Tiền Bridge, Thiên Mụ Pagoda, and tomb routes. It helps plan Huế in sections rather than random taxi hops."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlacePerfumeRiver",
@@ -66784,9 +66754,9 @@
       "targetText": "Phá Tam Giang",
       "englishText": "Tam Giang Lagoon",
       "pronunciation": "pha tam giang",
-      "context": "For Tam Giang Lagoon, Hue's nature stop story comes through weather, quieter space beyond traffic, green edges, and paths, alongside imperial Hue.",
-      "tip": "Tam Giang Lagoon becomes more specific beside weather, quieter space beyond traffic, green edges, and paths, alongside imperial Hue.",
-      "rationale": "Tam Giang Lagoon brings Hue into focus through weather, quieter space beyond traffic, green edges, and paths, alongside imperial Hue.",
+      "context": "Tam Giang works when the water is treated as a working lagoon, not a vague scenery stop: boats, traps, shrimp, oysters, clams, and villages around shallow water.",
+      "tip": "Confirm dock, ride length, return, and life jackets before boarding. If seafood is part of the plan, ask what is fresh that day.",
+      "rationale": "The lagoon is still worth it when weather and timing help because fish traps, low boats, sunset water, and village work feel different from central Huế river photos.",
       "chunks": [
         [
           "Phá",
@@ -66814,39 +66784,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Tam Giang Lagoon is worth knowing in Hue because it brings the city opening beyond buildings and traffic into the trip. Expect Lagoon sunrise with fish traps, small boat silhouettes, and pastel Hue sky.",
+        "summary": "Tam Giang Lagoon is a Huế countryside half-day that needs sunrise or sunset timing, a dock, a boat length, a round-trip plan, life-jacket questions, and same-day weather.",
         "sourceNotes": "References: Hue tourism portal Ru Cha and Tam Giang materials.",
         "imagePromptNote": "Photorealistic lagoon sunrise with fish traps, small boat silhouettes, and pastel Hue sky.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Tam Giang Lagoon is worth knowing because it gives Hue a specific nature stop scene: weather, quieter space beyond traffic, green edges, and paths, alongside imperial Hue."
+            "title": "Go For Sunset With A Boat Plan",
+            "body": "Tam Giang Lagoon needs timing and a simple plan. Sunrise or sunset can work, but only after the dock, boat, and return are clear."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Tam Giang Lagoon, you get the city opening beyond buildings and traffic: Lagoon sunrise with fish traps, small boat silhouettes, and pastel Hue sky, with weather, quieter space beyond traffic, green edges, and paths, alongside imperial Hue."
+            "title": "Working Water, Not Just A View",
+            "body": "The best detail is the lagoon as work: fish traps, shrimp, oysters, clams, low boats, and villages living around shallow water."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Phá Tam Giang for Tam Giang Lagoon. The local name is easier to remember once it sits beside quieter space beyond traffic, green edges, paths, and shade, alongside imperial Hue."
+            "title": "Useful Phrases",
+            "body": "Ask Đi thuyền lúc hoàng hôn bao nhiêu tiền? for a sunset boat, Đi khứ hồi không? for round trip, and Có áo phao không? for life jackets.",
+            "phraseIDs": [
+              "city-hue-place-tam-giang-lagoon"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: water, weather, quieter space beyond traffic, and green edges, alongside imperial Hue."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Tam Giang Lagoon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Lagoon sunrise with fish traps, small boat silhouettes, and pastel Hue sky with paths, shade, water, and weather, alongside imperial Hue."
+            "title": "Light First, Weather Always",
+            "body": "Sunset can make the water and nets memorable, but rain, wind, or poor visibility can flatten the ride. Check weather the same day."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Phá Tam Giang belongs to the scene, with shade, water, weather, and quieter space beyond traffic, alongside imperial Hue around it and Hue in view."
+            "title": "A Countryside Half-Day",
+            "body": "Tam Giang works best outside the city with transport arranged. It is not a spare-hour detour between tombs unless the route is already set."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceTamGiangLagoon",
@@ -67653,9 +67621,9 @@
       "targetText": "Làng hương Thủy Xuân",
       "englishText": "Thuy Xuan Incense Village",
       "pronunciation": "lang huong thuy swan",
-      "context": "For Thuy Xuan Incense Village, Hue's village story comes through pagodas, garden houses, markets, and incense.",
-      "tip": "Làng hương Thủy Xuân points back to Thuy Xuan Incense Village through the Perfume River, central dishes, imperial gates, and royal tombs.",
-      "rationale": "Thuy Xuan Incense Village brings Hue into focus through pagodas, garden houses, markets, and incense.",
+      "context": "Thủy Xuân fits naturally on a west-Huế outing with Vọng Cảnh Hill or the royal tombs, especially when you want a craft stop between larger imperial sites.",
+      "tip": "Ask before close photos and watch one stick being made before shopping. Morning gives softer light, more active making, and less heat.",
+      "rationale": "The village is memorable because the color has a real process behind it: scent, bamboo, paste, dyed sticks, drying racks, and family craft along the road.",
       "chunks": [
         [
           "Làng",
@@ -67685,39 +67653,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Thuy Xuan is Hue in scent and color: incense bundles opened like flowers, sandalwood in the air, and small workshops along the route to royal tombs.",
+        "summary": "Thủy Xuân Incense Village is the Huế craft stop where bright incense fans become more than a photo: bamboo sticks, scented paste, color, and handwork line the tomb-and-hill route.",
         "sourceNotes": "References: existing city library; Hue tourism portal.",
         "imagePromptNote": "Photorealistic bundles of colorful incense sticks fanning out along a Hue village street.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "This is Hue's ritual craft made visible: bright incense fans, handmade sticks, temple scents, and workshops sitting close to the roads that lead toward tombs and hills."
+            "title": "Go For The Craft, Not Just The Color",
+            "body": "The incense fans are the easy photo, but the better reason to stop is the handwork. Thủy Xuân lets you watch scent, bamboo, paste, and dyed sticks become one object."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "Thuy Xuan matters because Hue's beauty is also worship, memory, family altars, temple scent, and everyday craft, not only imperial monuments."
+            "title": "Watch One Stick Made",
+            "body": "Ask someone to show the rolling before you start taking close photos. If they invite you to try, the stop becomes a small craft lesson rather than a backdrop."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Làng hương Thủy Xuân for Thuy Xuan Incense Village. The local name is easier to remember once it sits beside royal tombs, pagodas, garden houses, and markets."
+            "title": "Useful Phrases",
+            "body": "Say Làng hương Thủy Xuân for the place, then ask Tôi có thể chụp ảnh không? before close photos or Cái này bao nhiêu tiền? before buying.",
+            "phraseIDs": [
+              "city-hue-place-thuy-xuan-incense-village"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if Thuy Xuan Incense Village gives your itinerary a clearer image: garden houses, markets, incense, and the Perfume River."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Thuy Xuan Incense Village works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bundles of colorful incense sticks fanning out along a Hue village street with central dishes, imperial gates, royal tombs, and pagodas."
+            "title": "Morning Before The Tomb Route Gets Hot",
+            "body": "Morning brings softer light on the incense fans and a better chance of active making. The stop is still worth it when it breaks up tomb visits with color, scent, and hands at work."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "Làng hương Thủy Xuân carries the visual details around it: pagodas, garden houses, markets, and incense, plus the local setting of Bundles of colorful incense sticks fanning out along a Hue village street."
+            "title": "Part Of West Huế",
+            "body": "Pair the village with Vọng Cảnh Hill, Tự Đức Tomb, Đồng Khánh Tomb, or another west-side stop. It works better as texture between larger sites than as a full standalone mission."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceThuyXuanIncenseVillage",
@@ -68334,9 +68300,9 @@
       "targetText": "Đồi Vọng Cảnh",
       "englishText": "Vong Canh Hill",
       "pronunciation": "doi vong canh",
-      "context": "For Vong Canh Hill, Hue's nature stop story comes through paths, shade, water, and weather, alongside citadel-side Hue.",
-      "tip": "Vong Canh Hill feels clearer with paths, shade, water, and weather, alongside citadel-side Hue around it.",
-      "rationale": "Vong Canh Hill brings Hue into focus through paths, shade, water, and weather, alongside citadel-side Hue.",
+      "context": "Vọng Cảnh works as a brief pause after Tự Đức, Đồng Khánh, or another southwest Huế stop, not as a dramatic standalone hill mission.",
+      "tip": "Go before sunset, check weather, and plan transport back before dark. Flat rain can turn the view into a simple breather.",
+      "rationale": "The hill is still worth it when light helps because the small scale gives Huế a quiet river-and-tomb landscape pause between structured monuments.",
       "chunks": [
         [
           "Đồi",
@@ -68366,39 +68332,37 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Vong Canh Hill is worth knowing in Hue because it brings the city opening beyond buildings and traffic into the trip. Expect pine-covered hill viewpoint over Perfume River bends and distant mountains.",
+        "summary": "Vọng Cảnh Hill is a short southwest Huế viewpoint best used after a tomb stop, with pine shade, Perfume River bends, countryside, soft light, and a planned ride back.",
         "sourceNotes": "References: existing city library; Hue tourism portal famous places.",
         "imagePromptNote": "Photorealistic pine-covered hill viewpoint over Perfume River bends and distant mountains.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Why go",
-            "body": "Vong Canh Hill is worth knowing because it gives Hue a specific nature stop scene: paths, shade, water, and weather, alongside citadel-side Hue."
+            "title": "Go After A Tomb Stop",
+            "body": "Vọng Cảnh Hill works best as a short viewpoint after Tự Đức, Đồng Khánh, or another southwest Huế stop. Sunset can be the reason to linger."
           },
           {
             "id": "place-brief",
-            "title": "What you'll get",
-            "body": "At Vong Canh Hill, you get the city opening beyond buildings and traffic: pine-covered hill viewpoint over Perfume River bends and distant mountains, with water, weather, quieter space beyond traffic, and green edges, alongside citadel-side Hue."
+            "title": "Pines, River, Low Effort",
+            "body": "The hill is not high or dramatic. The reward is pine shade, Perfume River bends, countryside, and the tomb landscape nearby."
           },
           {
             "id": "quick-say",
-            "title": "Say it locally",
-            "body": "Say Đồi Vọng Cảnh for Vong Canh Hill. The local name is easier to remember once it sits beside weather, quieter space beyond traffic, green edges, and paths, alongside citadel-side Hue."
+            "title": "Useful Phrases",
+            "body": "Ask Đồi Vọng Cảnh ở đâu? for directions, Đi lên đồi có khó không? for the walk, and Chỗ nào ngắm hoàng hôn đẹp? for sunset.",
+            "phraseIDs": [
+              "city-hue-place-vong-canh-hill"
+            ]
           },
           {
             "id": "use-it-with",
-            "title": "Worth it if",
-            "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: weather, quieter space beyond traffic, green edges, and paths, alongside citadel-side Hue."
-          },
-          {
-            "id": "when-to-use",
-            "title": "Before you go",
-            "body": "Vong Canh Hill works best when the name is tied to the reason for going, not memorized as an abstract label. Picture pine-covered hill viewpoint over Perfume River bends and distant mountains with green edges, paths, shade, and water, alongside citadel-side Hue."
+            "title": "Arrive Before Sunset",
+            "body": "Give yourself enough light to walk up, find the view, and leave without rushing. Soft light makes the small scale feel like a feature."
           },
           {
             "id": "good-to-know",
-            "title": "Good to know",
-            "body": "The image of Vong Canh Hill feels more present when Đồi Vọng Cảnh has paths, shade, water, and weather, alongside citadel-side Hue around it."
+            "title": "Plan The Ride Back",
+            "body": "Have a car, scooter, or ride-hailing plan. The hill is easygoing, but transport after dark should not be improvised."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceVongCanhHill",
