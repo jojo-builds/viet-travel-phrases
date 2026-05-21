@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D4F5414BADC0FFEE000001 /* AdminPhotoBackdropSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4F5414BADC0FFEE000002 /* AdminPhotoBackdropSurfaceView.swift */; };
 		034037B7D97D6400BEC8F0E8 /* AppChromeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094EBCA2A1C2908334452B3A /* AppChromeTests.swift */; };
 		05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */; };
 		0705C583B1734184937E5F87 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92E39F9AC9626410FF3CDC /* AppChrome.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		094EBCA2A1C2908334452B3A /* AppChromeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChromeTests.swift; sourceTree = "<group>"; };
+		0D4F5414BADC0FFEE000002 /* AdminPhotoBackdropSurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPhotoBackdropSurfaceView.swift; sourceTree = "<group>"; };
 		0AC47CCF8D5CFE31AAAD4BD7 /* PracticeStorySessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStorySessionView.swift; sourceTree = "<group>"; };
 		0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthoredVietListingPages.swift; sourceTree = "<group>"; };
 		152EC4AC0563F01164AC24D5 /* SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		3E745989854A54FDA88A0313 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D4F5414BADC0FFEE000002 /* AdminPhotoBackdropSurfaceView.swift */,
 				65875EEA097A552AA1510358 /* AppShellView.swift */,
 				B16251C7B60B5DAA58A148B9 /* AudioControls.swift */,
 				89A4A25A462F949B68607A96 /* BrowseCollectionPageView.swift */,
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0705C583B1734184937E5F87 /* AppChrome.swift in Sources */,
+				0D4F5414BADC0FFEE000001 /* AdminPhotoBackdropSurfaceView.swift in Sources */,
 				3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */,
 				532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */,
 				AE8BE3879C05C9EC7BA1F804 /* AudioControls.swift in Sources */,

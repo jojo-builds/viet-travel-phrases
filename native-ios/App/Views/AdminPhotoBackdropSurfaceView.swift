@@ -1,0 +1,555 @@
+import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
+
+enum AdminRootPhotoBackdropSurface: String, CaseIterable, Hashable {
+    case home
+    case browse
+    case saved
+    case practice
+    case search
+
+    var poolSurface: SharedBackdropImagePool.Surface {
+        switch self {
+        case .home:
+            return .home
+        case .browse:
+            return .browse
+        case .saved:
+            return .saved
+        case .practice:
+            return .practice
+        case .search:
+            return .search
+        }
+    }
+
+    var pageID: String {
+        "admin-\(rawValue)"
+    }
+
+    var accessibilityPrefix: String {
+        switch self {
+        case .home:
+            return "Home"
+        case .browse:
+            return "Browse"
+        case .saved:
+            return "Saved"
+        case .practice:
+            return "Practice"
+        case .search:
+            return "Search"
+        }
+    }
+
+    static func surface(for route: AppRoute) -> AdminRootPhotoBackdropSurface? {
+        switch route {
+        case .home:
+            return .home
+        case .browse:
+            return .browse
+        case .saved:
+            return .saved
+        case .practice:
+            return .practice
+        case .search:
+            return .search
+        case .browseCollection, .phrasePage, .detailPage:
+            return nil
+        }
+    }
+}
+
+struct AdminRootPhotoBackdropState: Equatable {
+    var imageName: String
+    var activationToken: Int
+
+    static let fallback = AdminRootPhotoBackdropState(
+        imageName: SharedBackdropImagePool.fallbackImageName,
+        activationToken: 0
+    )
+}
+
+enum AdminRootPhotoBackdropActivationPolicy {
+    static func targetSurface(
+        previousRoute: AppRoute,
+        currentRoute: AppRoute
+    ) -> AdminRootPhotoBackdropSurface? {
+        guard let currentSurface = AdminRootPhotoBackdropSurface.surface(for: currentRoute) else {
+            return nil
+        }
+
+        return AdminRootPhotoBackdropSurface.surface(for: previousRoute) == currentSurface
+            ? nil
+            : currentSurface
+    }
+
+    static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
+        targetSurface(previousRoute: previousRoute, currentRoute: currentRoute) != nil
+    }
+}
+
+enum AdminBackdropPreheatPolicy {
+    static let maxRetainedPreparedImages = 4
+
+    static func imageNames(backdropImageName: String) -> [String] {
+        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
+    }
+}
+
+enum HomeBackdropPreheatPolicy {
+    static let maxRetainedPreparedImages = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
+
+    static func imageNames(backdropImageName: String) -> [String] {
+        AdminBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
+    }
+}
+
+private struct AdminPhotoBackdropScrollState: Equatable {
+    let displayOffset: CGFloat
+    let hasPassedRevealThreshold: Bool
+
+    init(rawOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) {
+        let offset = max(rawOffset, 0) + metrics.initialAnchorOffset
+        displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(offset)
+        hasPassedRevealThreshold = offset > metrics.revealImmersiveOffset
+    }
+}
+
+struct AdminPhotoBackdropSurfaceView<Content: View>: View {
+    let surface: AdminRootPhotoBackdropSurface
+    let backdropImageName: String
+    let activationToken: Int
+    let isActive: Bool
+    let isVisible: Bool
+    let allowsImmersiveToggle: Bool
+    let scrollToTopTrigger: Int
+    let onScrollToTop: () -> Void
+    let proxyRefreshID: Int
+    let onScrollProxyReady: (ScrollViewProxy) -> Void
+    let content: (ScrollViewProxy) -> Content
+
+    @State private var didApplyInitialPosition = false
+    @State private var isImmersive = false
+    @State private var scrollOffset: CGFloat = 0
+    @State private var scrollPosition = ScrollPosition(idType: String.self, edge: .top)
+
+    init(
+        surface: AdminRootPhotoBackdropSurface,
+        backdropImageName: String,
+        activationToken: Int,
+        isActive: Bool,
+        isVisible: Bool,
+        allowsImmersiveToggle: Bool = true,
+        scrollToTopTrigger: Int = 0,
+        onScrollToTop: @escaping () -> Void = {},
+        proxyRefreshID: Int = 0,
+        onScrollProxyReady: @escaping (ScrollViewProxy) -> Void = { _ in },
+        @ViewBuilder content: @escaping (ScrollViewProxy) -> Content
+    ) {
+        self.surface = surface
+        self.backdropImageName = backdropImageName
+        self.activationToken = activationToken
+        self.isActive = isActive
+        self.isVisible = isVisible
+        self.allowsImmersiveToggle = allowsImmersiveToggle
+        self.scrollToTopTrigger = scrollToTopTrigger
+        self.onScrollToTop = onScrollToTop
+        self.proxyRefreshID = proxyRefreshID
+        self.onScrollProxyReady = onScrollProxyReady
+        self.content = content
+    }
+
+    var body: some View {
+        Group {
+            if isVisible {
+                GeometryReader { geometry in
+                    let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+                    let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+                    let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
+                        sheetTop: sheetTop,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+                    )
+
+                    ZStack(alignment: .top) {
+                        photoBackdropImage(geometry: geometry)
+                        photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+
+                        ScrollViewReader { scrollProxy in
+                            ScrollView(.vertical, showsIndicators: false) {
+                                VStack(spacing: 0) {
+                                    Color.clear
+                                        .frame(height: 1)
+                                        .id(topAnchorID)
+                                        .accessibilityHidden(true)
+
+                                    Color.clear
+                                        .frame(height: max(metrics.initialContentTop - 1, 0))
+                                        .accessibilityHidden(true)
+
+                                    contentSheet(scrollProxy: scrollProxy)
+                                }
+                            }
+                            .scrollPosition($scrollPosition)
+                            .scrollDismissesKeyboard(.interactively)
+                            .onScrollGeometryChange(for: AdminPhotoBackdropScrollState.self, of: { scrollGeometry in
+                                AdminPhotoBackdropScrollState(
+                                    rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                                    metrics: metrics
+                                )
+                            }) { _, scrollState in
+                                if scrollOffset != scrollState.displayOffset {
+                                    scrollOffset = scrollState.displayOffset
+                                }
+
+                                if isImmersive, scrollState.hasPassedRevealThreshold {
+                                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                        isImmersive = false
+                                    }
+                                }
+                            }
+                            .onAppear {
+                                if isActive, !didApplyInitialPosition {
+                                    scrollPosition.scrollTo(y: 0)
+                                    scrollProxy.scrollTo(topAnchorID, anchor: .top)
+                                }
+                                onScrollProxyReady(scrollProxy)
+                            }
+                            .onChange(of: proxyRefreshID) { _, _ in
+                                onScrollProxyReady(scrollProxy)
+                            }
+                            .onChange(of: scrollToTopTrigger) { _, _ in
+                                onScrollToTop()
+                                isImmersive = false
+                                scrollPosition.scrollTo(y: 0)
+                                scrollProxy.scrollTo(topAnchorID, anchor: .top)
+                            }
+                            .task(id: isActive) {
+                                guard isActive else {
+                                    return
+                                }
+
+                                await applyInitialPositionIfNeeded(scrollProxy, metrics: metrics)
+                            }
+                        }
+                    }
+                    .ignoresSafeArea(edges: .top)
+                    .contentShape(Rectangle())
+                    .simultaneousGesture(
+                        SpatialTapGesture().onEnded { value in
+                            toggleImmersive(at: value.location, metrics: metrics)
+                        }
+                    )
+                    .preference(
+                        key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                        value: isActive && isImmersive
+                            ? PhrasePhotoBackdropImmersiveImageContext(
+                                pageID: surface.pageID,
+                                imageName: backdropImageName,
+                                viewportSize: geometry.size,
+                                safeAreaTop: geometry.safeAreaInsets.top,
+                                safeAreaBottom: geometry.safeAreaInsets.bottom,
+                                imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                                    for: geometry.size,
+                                    safeAreaInsets: geometry.safeAreaInsets,
+                                    pageID: surface.pageID,
+                                    heroImageName: backdropImageName
+                                ),
+                                verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                                    for: geometry.size,
+                                    pageID: surface.pageID,
+                                    heroImageName: backdropImageName
+                                )
+                            )
+                            : nil
+                    )
+                    .preference(
+                        key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+                        value: isActive && !isImmersive ? topChromeStyle : .light
+                    )
+                }
+            } else {
+                Color.clear
+            }
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .statusBarHidden(isActive && isImmersive)
+        .persistentSystemOverlays(isActive && isImmersive ? .hidden : .automatic)
+        .preference(
+            key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
+            value: isActive && isVisible && isImmersive
+        )
+        .preference(
+            key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
+            value: isActive && isVisible && !isImmersive
+        )
+        .accessibilityIdentifier("\(surface.accessibilityPrefix).PhotoBackdrop.Surface")
+        .task(id: activationToken) {
+            guard isActive, isVisible else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheat(
+                AdminBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
+            )
+        }
+        .onChange(of: isActive) { _, active in
+            if !active {
+                isImmersive = false
+            }
+        }
+        .onChange(of: allowsImmersiveToggle) { _, allowsImmersiveToggle in
+            if !allowsImmersiveToggle {
+                isImmersive = false
+            }
+        }
+    }
+
+    private var topAnchorID: String {
+        "\(surface.rawValue)-photo-backdrop-top"
+    }
+
+    private func contentSheet(scrollProxy: ScrollViewProxy) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Capsule()
+                .fill(.secondary.opacity(0.22))
+                .frame(width: 42, height: 5)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 12)
+                .padding(.bottom, 10)
+                .accessibilityHidden(true)
+
+            content(scrollProxy)
+        }
+        .background {
+            UnevenRoundedRectangle(
+                cornerRadii: RectangleCornerRadii(
+                    topLeading: 34,
+                    bottomLeading: 0,
+                    bottomTrailing: 0,
+                    topTrailing: 34
+                ),
+                style: .continuous
+            )
+            .fill(PhrasePageStyle.pageBackground)
+        }
+        .softLiftedSheetShadow()
+        .opacity(isImmersive ? 0 : 1)
+        .allowsHitTesting(!isImmersive)
+        .accessibilityHidden(isImmersive)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
+        .accessibilityIdentifier("\(surface.accessibilityPrefix).PhotoBackdrop.Content")
+    }
+
+    private func photoBackdropImage(geometry: GeometryProxy) -> some View {
+        AdminBackdropPreparedImage(name: backdropImageName)
+            .scaledToFill()
+            .frame(
+                width: geometry.size.width,
+                height: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                    for: geometry.size,
+                    safeAreaInsets: geometry.safeAreaInsets,
+                    pageID: surface.pageID,
+                    heroImageName: backdropImageName
+                ),
+                alignment: .top
+            )
+            .clipped()
+            .ignoresSafeArea()
+            .accessibilityLabel("\(surface.accessibilityPrefix) backdrop")
+            .accessibilityHidden(true)
+            .accessibilityIdentifier("\(surface.accessibilityPrefix).PhotoBackdrop.Image")
+    }
+
+    private func photoBackdropBottomChromeBackdrop(
+        geometry: GeometryProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) -> some View {
+        let safeAreaBottom = geometry.safeAreaInsets.bottom
+        let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+
+        return VStack(spacing: 0) {
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
+
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
+        }
+        .frame(
+            height: geometry.size.height + safeAreaBottom,
+            alignment: .top
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    @MainActor
+    private func applyInitialPositionIfNeeded(
+        _ scrollProxy: ScrollViewProxy,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) async {
+        guard !didApplyInitialPosition else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 80_000_000)
+        guard !Task.isCancelled, isActive else {
+            return
+        }
+
+        isImmersive = false
+        scrollPosition.scrollTo(y: 0)
+        scrollProxy.scrollTo(topAnchorID, anchor: .top)
+        didApplyInitialPosition = true
+    }
+
+    private func toggleImmersive(
+        at location: CGPoint,
+        metrics: PhrasePhotoBackdropLayout.Metrics
+    ) {
+        guard isActive, isVisible, allowsImmersiveToggle else {
+            return
+        }
+
+        if isImmersive {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                isImmersive = false
+            }
+            return
+        }
+
+        guard PhrasePhotoBackdropLayout.isImageTap(
+            location,
+            scrollOffset: scrollOffset,
+            metrics: metrics
+        ) else {
+            return
+        }
+
+        withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+            isImmersive = true
+        }
+    }
+}
+
+enum AdminBackdropImagePreheater {
+    #if canImport(UIKit)
+    private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
+    private static let lock = NSLock()
+    private static var preheatedImageNames = Set<String>()
+    private static var preheatedImages = [String: UIImage]()
+    private static var preheatedImageOrder = [String]()
+    private static var preheatGeneration = 0
+
+    static func preheat(_ imageNames: [String]) {
+        let uniqueImageNames = imageNames.reduce(into: [String]()) { result, imageName in
+            guard !result.contains(imageName) else {
+                return
+            }
+
+            result.append(imageName)
+        }
+        lock.lock()
+        let pendingImageNames = uniqueImageNames.filter { !preheatedImageNames.contains($0) }
+        guard !pendingImageNames.isEmpty else {
+            lock.unlock()
+            return
+        }
+
+        preheatGeneration += 1
+        let generation = preheatGeneration
+        pendingImageNames.forEach { preheatedImageNames.insert($0) }
+        lock.unlock()
+
+        Task.detached(priority: .utility) {
+            for imageName in pendingImageNames {
+                guard isCurrentPreheatGeneration(generation) else {
+                    releasePendingReservations(pendingImageNames)
+                    return
+                }
+
+                autoreleasepool {
+                    if let preparedImage = UIImage(named: imageName)?.preparingForDisplay() {
+                        lock.lock()
+                        if generation == preheatGeneration {
+                            preheatedImages[imageName] = preparedImage
+                            preheatedImageOrder.append(imageName)
+                            trimPreheatedImagesIfNeeded()
+                        } else {
+                            releasePendingReservation(imageName)
+                        }
+                        lock.unlock()
+                    }
+                }
+            }
+        }
+    }
+
+    static func preparedImage(named imageName: String) -> UIImage? {
+        lock.lock()
+        defer { lock.unlock() }
+        return preheatedImages[imageName]
+    }
+
+    private static func isCurrentPreheatGeneration(_ generation: Int) -> Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        return generation == preheatGeneration
+    }
+
+    private static func releasePendingReservations(_ imageNames: [String]) {
+        lock.lock()
+        defer { lock.unlock() }
+        imageNames.forEach(releasePendingReservation)
+    }
+
+    private static func releasePendingReservation(_ imageName: String) {
+        if preheatedImages[imageName] == nil {
+            preheatedImageNames.remove(imageName)
+        }
+    }
+
+    private static func trimPreheatedImagesIfNeeded() {
+        while preheatedImageOrder.count > maxPreheatedImageCount {
+            let evictedImageName = preheatedImageOrder.removeFirst()
+            preheatedImages[evictedImageName] = nil
+            preheatedImageNames.remove(evictedImageName)
+        }
+    }
+    #else
+    static func preheat(_ imageNames: [String]) {}
+    #endif
+}
+
+struct AdminBackdropPreparedImage: View {
+    let name: String
+
+    var body: some View {
+        #if canImport(UIKit)
+        if let preparedImage = AdminBackdropImagePreheater.preparedImage(named: name) {
+            Image(uiImage: preparedImage)
+                .resizable()
+                .interpolation(.medium)
+        } else {
+            Image(name)
+                .resizable()
+                .interpolation(.medium)
+        }
+        #else
+        Image(name)
+            .resizable()
+            .interpolation(.medium)
+        #endif
+    }
+}

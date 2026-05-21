@@ -804,7 +804,7 @@ private struct BrowseCityFilterSection: View {
             VStack(alignment: .leading, spacing: 18) {
                 imageFilterRail
 
-                VStack(alignment: .leading, spacing: 18) {
+                LazyVStack(alignment: .leading, spacing: 18) {
                     ForEach(visibleFilters) { filter in
                         BrowseCityNounGroupSection(
                             filter: filter,
@@ -960,7 +960,7 @@ private struct BrowseCityNounGroupSection: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.82)
 
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(filter.items) { item in
                     BrowseCityNounRow(
                         item: item,
