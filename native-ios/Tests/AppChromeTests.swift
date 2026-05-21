@@ -136,6 +136,30 @@ final class AppChromeTests: XCTestCase {
                 isPracticeOverlayPresented: false
             )
         )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: false,
+                backdropOpacity: 0
+            ),
+            1,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: true,
+                backdropOpacity: PracticeMatchPullUpMetrics.backdropOpacity
+            ),
+            1,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: true,
+                backdropOpacity: PracticeMatchPullUpMetrics.backdropOpacity * 0.25
+            ),
+            0.25,
+            accuracy: 0.001
+        )
     }
 
     func testPlayableAudioTintsUseOneConsistentActionColor() {
