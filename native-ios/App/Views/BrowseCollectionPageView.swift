@@ -332,7 +332,7 @@ struct BrowseCollectionPageView: View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
             Color.clear

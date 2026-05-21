@@ -420,7 +420,7 @@ struct PhraseArticleTemplateView: View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
             Color.clear
@@ -1009,6 +1009,7 @@ enum PhrasePhotoBackdropLayout {
     static let cityDetailBottomScrollLift: CGFloat = 128
     static let immersiveDissolveDuration = 0.18
     static let immersiveDissolveAnimation: Animation = .easeInOut(duration: immersiveDissolveDuration)
+    static let sheetTopCornerRadius: CGFloat = 34
     static let topChromeContentThresholdPadding: CGFloat = 12
     static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
@@ -1143,6 +1144,10 @@ enum PhrasePhotoBackdropLayout {
         )
 
         return contentReachesTopChrome ? .light : .darkPhoto
+    }
+
+    static func bottomChromeBackingTopCornerRadius(sheetTop: CGFloat) -> CGFloat {
+        sheetTop > 1 ? sheetTopCornerRadius : 0
     }
 }
 
