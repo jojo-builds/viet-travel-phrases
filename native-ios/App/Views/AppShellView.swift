@@ -3488,11 +3488,11 @@ private struct AppShellTabBarAppearanceBridge: UIViewControllerRepresentable {
                     tabBar.isTranslucent = true
                     tabBar.layer.shadowOpacity = 0
                 } else if usesContentBackground {
-                    appearance.configureWithTransparentBackground()
-                    appearance.backgroundColor = .clear
+                    appearance.configureWithOpaqueBackground()
+                    appearance.backgroundColor = .systemBackground
                     appearance.shadowColor = .clear
-                    tabBar.backgroundColor = .clear
-                    tabBar.isTranslucent = true
+                    tabBar.backgroundColor = .systemBackground
+                    tabBar.isTranslucent = false
                     tabBar.layer.shadowOpacity = 0
                 } else {
                     appearance.configureWithDefaultBackground()
@@ -3957,7 +3957,6 @@ struct HomeView: View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
         return VStack(spacing: 0) {
             Color.clear
@@ -3966,7 +3965,7 @@ struct HomeView: View {
 
             PhotoBackdropBottomChromeBacking(
                 height: backdropHeight,
-                topCornerRadius: topCornerRadius
+                topCornerRadius: 0
             )
         }
         .frame(

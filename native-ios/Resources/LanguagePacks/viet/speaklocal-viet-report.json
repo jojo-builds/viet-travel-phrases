@@ -4,8 +4,8 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:80625b41f0f1d787",
-    "generatedAt": "source-hash:80625b41f0f1d787"
+    "contentVersion": "viet-sqlite-fixture:3148aa58f50a5818",
+    "generatedAt": "source-hash:3148aa58f50a5818"
   },
   "sourceInputs": {
     "catalog": {
@@ -14,7 +14,7 @@
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "214cb2ccd939b6fddf8cbdfa8a480d23a78161bea77e3444a29af6a28470be23"
+      "sha256": "1cfa8233b0fe632638d0ec587df949e1b4a43336fc8aac23c71c4238f0353e14"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -34,14 +34,14 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "a46041e91c03f1769d58f16ca2a2802b8e570f2eaeb1005b27779a63451ab9b3"
+      "sha256": "1e7be260722deadad57970ad72ac85b698f804a2b7c033793e1fb52f753ded2e"
     }
   },
   "outputs": {
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "2888b5d53674cb67d9612a80b7e3b57ec81387011d6fc7f870fdb8274540f167",
+    "databaseSha256": "2888af52507115307a08517ab92697d200860a6f9f90e9e96fe4536493f3f460",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -88,14 +88,14 @@
     "aliases": 2638,
     "pageCategories": 8791,
     "pagePracticeSeeds": 1758,
-    "pagePracticeSteps": 2589,
-    "sections": 7010,
-    "sectionItems": 15767,
+    "pagePracticeSteps": 2562,
+    "sections": 7006,
+    "sectionItems": 15773,
     "breakdownTokens": 6900,
-    "relations": 8274,
+    "relations": 8311,
     "searchDocuments": 1765,
     "audioAssets": 4318,
-    "audioUsages": 13724,
+    "audioUsages": 13799,
     "audioTextDedupeRows": 2919,
     "missingAudioAuditRows": 680,
     "vietnameseMenuHelperPhrases": 16,
@@ -250,7 +250,7 @@
       }
     ],
     "unresolvedDuplicateNormalizedTargetTextGroups": [],
-    "aliasConflictCount": 447,
+    "aliasConflictCount": 422,
     "aliasConflicts": [
       {
         "aliasID": "viet-family-food-peanut-allergy",
@@ -274,156 +274,6 @@
         "aliasID": "viet-family-food-peanut-allergy",
         "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
         "nextCanonicalPageID": "viet-phrase-food-15",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-phrase-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-repair-show-me",
-        "firstCanonicalPageID": "viet-phrase-repair-show-me",
-        "nextCanonicalPageID": "viet-phrase-repair-5",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-transport-stop-here",
-        "firstCanonicalPageID": "viet-phrase-taxi-3",
-        "nextCanonicalPageID": "viet-phrase-transport-stop-here-clearer",
         "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
       },
       {
@@ -2937,7 +2787,7 @@
     ]
   },
   "graph": {
-    "relationCount": 8274,
+    "relationCount": 8311,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -2961,7 +2811,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 3841
+        "count": 3878
       }
     ]
   },
@@ -2969,7 +2819,7 @@
     "manifestEntries": 4318,
     "uniqueNormalizedSpokenTextCount": 2919,
     "assets": 4318,
-    "usages": 13724,
+    "usages": 13799,
     "missingAudioAuditRows": 680,
     "plannedMissingAudioAuditRows": 680,
     "releaseBlockingMissingAudioAuditRows": 0,
@@ -2988,7 +2838,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:e99af4e6ed3415e9",
@@ -3002,7 +2852,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:764b6155e5c22492",
@@ -3016,7 +2866,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:6d67f52835b5221a",
@@ -3030,7 +2880,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:f8876c196e5ef6ba",
@@ -3044,7 +2894,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:a1feb27d5406fe82",
@@ -3058,7 +2908,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:403773227918538e",
@@ -3072,7 +2922,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:c53f053b84a3f347",
@@ -3086,7 +2936,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:818232de24b38677",
@@ -3100,7 +2950,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:cbdd59522fc81b64",
@@ -3114,7 +2964,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:e6570e4fdfc03b4c",
@@ -3128,7 +2978,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:9092d3a9a7f5ef69",
@@ -3142,7 +2992,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:5c43895521dadcd2",
@@ -3156,7 +3006,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:4a0e5d7c25084e30",
@@ -3170,7 +3020,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:3ace51e6cb6ffe22",
@@ -3184,7 +3034,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:227ff23e02e88d38",
@@ -3198,7 +3048,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:9b68d931ca7603da",
@@ -3212,7 +3062,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:32704d7e2d6643fc",
@@ -3226,7 +3076,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:6c6278be26fbcec4",
@@ -3240,7 +3090,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       },
       {
         "id": "missing-audio:planned:73af4abe3b4d4425",
@@ -3254,7 +3104,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:80625b41f0f1d787"
+        "created_at": "source-hash:3148aa58f50a5818"
       }
     ]
   },

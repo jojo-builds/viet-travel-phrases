@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-21T07:30:19.086Z",
+    "generatedAt": "2026-05-21T10:20:44.500Z",
     "tierOneFamilyCount": 150,
     "cityLibraryPageCount": 806,
     "editorialSupportPageCount": 24,
@@ -11689,14 +11689,6 @@
       "resolved": true
     },
     {
-      "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "cable-car",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
-      "text": "Cáp treo ở đâu?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-danang-place-bac-my-an-market",
       "sectionID": "hero",
       "kind": "hero",
@@ -13217,14 +13209,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hanoi-place-giang-cafe",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
-      "text": "Dừng ở Cà phê Giảng",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hanoi-place-giap-bat-bus-station",
       "sectionID": "hero",
       "kind": "hero",
@@ -13750,6 +13734,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cong-vien-yen-so-db67277cbf",
       "text": "Công viên Yên Sở",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-giang-cafe",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
+      "text": "Dừng ở Cà phê Giảng",
       "resolved": false
     },
     {
@@ -14753,14 +14745,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
-      "text": "Đường Đồng Khởi ở đâu?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hcmc-place-fine-arts-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -15166,6 +15150,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-toi-muon-mua-sim-gan-cho-ben-thanh-ddfae9b82c",
       "text": "Tôi muốn mua SIM gần chợ Bến Thành",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-where-dong-khoi-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
+      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -15817,14 +15809,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
-      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hoian-place-banh-xeo",
       "sectionID": "hero",
       "kind": "hero",
@@ -16193,14 +16177,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hoian-place-morning-glory",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
-      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hoian-place-mot-herbal-drink",
       "sectionID": "hero",
       "kind": "hero",
@@ -16486,6 +16462,22 @@
       "kind": "hero",
       "audioKey": "audio-authored-yaly-couture-c6e18fb83d",
       "text": "Yaly Couture",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-banh-mi-phuong",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
+      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-morning-glory",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
+      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
       "resolved": false
     },
     {
@@ -17977,6 +17969,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-ves-where-cable-car",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
+      "text": "Cáp treo ở đâu?",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-ves-where-driver-waits",
       "sectionID": "hero",
       "kind": "hero",
@@ -18416,14 +18416,6 @@
       "kind": "hero",
       "audioKey": "audio-authored-cap-treo-ba-na-d3523e4c50",
       "text": "Cáp treo Bà Nà",
-      "resolved": false
-    },
-    {
-      "pageID": "viet-family-city-danang-place-ba-na-hills",
-      "sectionID": "cable-car",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
-      "text": "Cáp treo ở đâu?",
       "resolved": false
     },
     {
@@ -19643,14 +19635,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hanoi-place-giang-cafe",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
-      "text": "Dừng ở Cà phê Giảng",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hanoi-place-giap-bat-bus-station",
       "sectionID": "hero",
       "kind": "hero",
@@ -20072,6 +20056,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cong-vien-yen-so-db67277cbf",
       "text": "Công viên Yên Sở",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-giang-cafe",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-dung-o-ca-phe-giang-9ed36d9bae",
+      "text": "Dừng ở Cà phê Giảng",
       "resolved": false
     },
     {
@@ -20891,14 +20883,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hcmc-place-dong-khoi-street",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
-      "text": "Đường Đồng Khởi ở đâu?",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hcmc-place-fito-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -21208,6 +21192,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-toi-muon-mua-sim-gan-cho-ben-thanh-ddfae9b82c",
       "text": "Tôi muốn mua SIM gần chợ Bến Thành",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-where-dong-khoi-street",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-duong-dong-khoi-o-dau-85f0b0c280",
+      "text": "Đường Đồng Khởi ở đâu?",
       "resolved": false
     },
     {
@@ -21707,14 +21699,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
-      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hoian-place-banh-xeo",
       "sectionID": "hero",
       "kind": "hero",
@@ -22003,14 +21987,6 @@
       "resolved": false
     },
     {
-      "pageID": "viet-family-city-hoian-place-morning-glory",
-      "sectionID": "place-brief",
-      "kind": "phrase",
-      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
-      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
-      "resolved": false
-    },
-    {
       "pageID": "viet-family-city-hoian-place-mot-herbal-drink",
       "sectionID": "hero",
       "kind": "hero",
@@ -22240,6 +22216,22 @@
       "kind": "hero",
       "audioKey": "audio-authored-yaly-couture-c6e18fb83d",
       "text": "Yaly Couture",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-banh-mi-phuong",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-banh-mi-phuong-6bc7140f67",
+      "text": "Cho tôi xuống gần nhà hàng Bánh mì Phượng.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-morning-glory",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cho-toi-xuong-gan-nha-hang-morning-glory-hoi-an-1f23001d6f",
+      "text": "Cho tôi xuống gần nhà hàng Morning Glory Hội An.",
       "resolved": false
     },
     {
@@ -23424,6 +23416,14 @@
       "kind": "phrase",
       "audioKey": "audio-authored-co-mon-nao-noi-tieng-khong-ec75eed66f",
       "text": "Có món nào nổi tiếng không?",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-ves-where-cable-car",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cap-treo-o-dau-8548abeeca",
+      "text": "Cáp treo ở đâu?",
       "resolved": false
     },
     {

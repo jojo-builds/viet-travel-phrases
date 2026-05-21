@@ -2162,6 +2162,7 @@ function main() {
     JOIN page_section ps ON ps.page_id = pp.id
     JOIN page_section_item psi ON psi.section_id = ps.id
     WHERE ps.section_key IN ('quick-say', 'standard-way')
+      AND ps.title != 'Useful Phrases'
       AND psi.item_kind = 'phrase'
       AND NOT (
         (psi.note = pp.id AND psi.title_override = pp.title)

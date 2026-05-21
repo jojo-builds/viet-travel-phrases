@@ -296,9 +296,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Hôm nay trên núi có mưa không? before going, Đường lên Hải Vọng Đài ở đâu? for the viewpoint, and Đường đi Ngũ Hồ có trơn không? if heading to Five Lakes.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-bach-ma-national-park"
+            "v500-dire-navi-how-far-is-it",
+            "v500-dire-navi-can-i-walk-there",
+            "sight-3",
+            "sight-5"
           ]
         },
         {
@@ -311,7 +314,8 @@
           "title": "A Deliberate Day Trip",
           "body": "The park is best when forest and walking are the point. For an easier view, Lập An Lagoon, Hải Vân Pass, or a city museum may use less energy."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-banh-beo",
@@ -1893,9 +1897,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Khi nào thủy triều xuống? for low tide, Hàu hôm nay có tươi không? before oysters, and Chỗ nào chụp ảnh an toàn? near the water.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-lap-an-lagoon"
+            "transport-fare",
+            "v900-tran-where-is-the-boat-pier",
+            "sight-3",
+            "sight-5"
           ]
         },
         {
@@ -1908,7 +1915,8 @@
           "title": "Tide First, Light Second",
           "body": "Sunrise and late afternoon help, but low tide carries the real decision. Without it, the stop can become a pretty roadside pause."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-le-ba-dang-art-center",
@@ -2632,9 +2640,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đi thuyền đến chùa Thiên Mụ bao nhiêu tiền? for price, Đi một chiều hay khứ hồi? for return, and Có áo phao không? for life jackets.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-perfume-river"
+            "transport-fare",
+            "v900-tran-where-is-the-boat-pier",
+            "sight-3",
+            "sight-5"
           ]
         },
         {
@@ -2647,7 +2658,8 @@
           "title": "The City’s Middle Line",
           "body": "The river connects the Imperial City, Trường Tiền Bridge, Thiên Mụ Pagoda, and tomb routes. It helps plan Huế in sections rather than random taxi hops."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-perfume-river-dragon-boat",
@@ -3137,9 +3149,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đi thuyền lúc hoàng hôn bao nhiêu tiền? for a sunset boat, Đi khứ hồi không? for round trip, and Có áo phao không? for life jackets.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-tam-giang-lagoon"
+            "transport-fare",
+            "v900-tran-where-is-the-boat-pier",
+            "sight-3",
+            "sight-5"
           ]
         },
         {
@@ -3152,7 +3167,8 @@
           "title": "A Countryside Half-Day",
           "body": "Tam Giang works best outside the city with transport arranged. It is not a spare-hour detour between tombs unless the route is already set."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-tay-loc-market",
@@ -3486,9 +3502,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Say Làng hương Thủy Xuân for the place, then ask Tôi có thể chụp ảnh không? before close photos or Cái này bao nhiêu tiền? before buying.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-thuy-xuan-incense-village"
+            "sight-3",
+            "price-1",
+            "price-7",
+            "shop-4"
           ]
         },
         {
@@ -3501,7 +3520,8 @@
           "title": "Part Of West Huế",
           "body": "Pair the village with Vọng Cảnh Hill, Tự Đức Tomb, Đồng Khánh Tomb, or another west-side stop. It works better as texture between larger sites than as a full standalone mission."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-tinh-gia-vien",
@@ -3757,9 +3777,12 @@
         {
           "id": "quick-say",
           "title": "Useful Phrases",
-          "body": "Ask Đồi Vọng Cảnh ở đâu? for directions, Đi lên đồi có khó không? for the walk, and Chỗ nào ngắm hoàng hôn đẹp? for sunset.",
+          "body": "",
           "phraseIDs": [
-            "city-hue-place-vong-canh-hill"
+            "v500-dire-navi-how-far-is-it",
+            "v500-dire-navi-can-i-walk-there",
+            "sight-3",
+            "sight-5"
           ]
         },
         {
@@ -3772,7 +3795,8 @@
           "title": "Plan The Ride Back",
           "body": "Have a car, scooter, or ride-hailing plan. The hill is easygoing, but transport after dark should not be improvised."
         }
-      ]
+      ],
+      "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hue-place-vy-da",
