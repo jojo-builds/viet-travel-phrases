@@ -89,13 +89,25 @@ enum AdminRootPhotoBackdropActivationPolicy {
     static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
         targetSurface(previousRoute: previousRoute, currentRoute: currentRoute) != nil
     }
+
+    static func shouldRefreshImage(
+        surface: AdminRootPhotoBackdropSurface,
+        currentState: AdminRootPhotoBackdropState
+    ) -> Bool {
+        switch surface {
+        case .home:
+            return true
+        case .browse, .saved, .practice, .search:
+            return currentState.activationToken == 0
+        }
+    }
 }
 
 enum AdminBackdropPreheatPolicy {
     static let maxRetainedPreparedImages = 4
 
     static func imageNames(backdropImageName: String) -> [String] {
-        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
+        [backdropImageName]
     }
 }
 
@@ -103,16 +115,26 @@ enum HomeBackdropPreheatPolicy {
     static let maxRetainedPreparedImages = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
 
     static func imageNames(backdropImageName: String) -> [String] {
-        AdminBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
+        SharedBackdropImagePool.preheatCandidateImageNames(selectedImageName: backdropImageName)
     }
 }
 
-private struct AdminPhotoBackdropScrollState: Equatable {
+enum AdminPhotoBackdropSurfaceLayout {
+    static func sheetTop(scrollOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) -> CGFloat {
+        max(metrics.collapsedContentTop - scrollOffset, 0)
+    }
+
+    static func bottomChromeOcclusionHeight(safeAreaBottom: CGFloat) -> CGFloat {
+        PhrasePageStyle.bottomChromeContentClearance + safeAreaBottom
+    }
+}
+
+struct AdminPhotoBackdropScrollState: Equatable {
     let displayOffset: CGFloat
     let hasPassedRevealThreshold: Bool
 
     init(rawOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) {
-        let offset = max(rawOffset, 0) + metrics.initialAnchorOffset
+        let offset = max(rawOffset, 0)
         displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(offset)
         hasPassedRevealThreshold = offset > metrics.revealImmersiveOffset
     }
@@ -134,7 +156,6 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
     @State private var didApplyInitialPosition = false
     @State private var isImmersive = false
     @State private var scrollOffset: CGFloat = 0
-    @State private var scrollPosition = ScrollPosition(idType: String.self, edge: .top)
 
     init(
         surface: AdminRootPhotoBackdropSurface,
@@ -167,7 +188,10 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             if isVisible {
                 GeometryReader { geometry in
                     let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
-                    let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+                    let sheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+                        scrollOffset: scrollOffset,
+                        metrics: metrics
+                    )
                     let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
                         sheetTop: sheetTop,
                         safeAreaTop: geometry.safeAreaInsets.top,
@@ -182,6 +206,10 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                             ScrollView(.vertical, showsIndicators: false) {
                                 VStack(spacing: 0) {
                                     Color.clear
+                                        .frame(height: metrics.initialAnchorOffset)
+                                        .accessibilityHidden(true)
+
+                                    Color.clear
                                         .frame(height: 1)
                                         .id(topAnchorID)
                                         .accessibilityHidden(true)
@@ -193,7 +221,6 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                     contentSheet(scrollProxy: scrollProxy)
                                 }
                             }
-                            .scrollPosition($scrollPosition)
                             .scrollDismissesKeyboard(.interactively)
                             .onScrollGeometryChange(for: AdminPhotoBackdropScrollState.self, of: { scrollGeometry in
                                 AdminPhotoBackdropScrollState(
@@ -212,11 +239,15 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                 }
                             }
                             .onAppear {
-                                if isActive, !didApplyInitialPosition {
-                                    scrollPosition.scrollTo(y: 0)
+                                if isVisible, !didApplyInitialPosition {
                                     scrollProxy.scrollTo(topAnchorID, anchor: .top)
                                 }
                                 onScrollProxyReady(scrollProxy)
+                            }
+                            .onChange(of: isVisible) { _, visible in
+                                if visible, !didApplyInitialPosition {
+                                    scrollProxy.scrollTo(topAnchorID, anchor: .top)
+                                }
                             }
                             .onChange(of: proxyRefreshID) { _, _ in
                                 onScrollProxyReady(scrollProxy)
@@ -224,17 +255,18 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                             .onChange(of: scrollToTopTrigger) { _, _ in
                                 onScrollToTop()
                                 isImmersive = false
-                                scrollPosition.scrollTo(y: 0)
                                 scrollProxy.scrollTo(topAnchorID, anchor: .top)
                             }
-                            .task(id: isActive) {
-                                guard isActive else {
+                            .task(id: isVisible) {
+                                guard isVisible else {
                                     return
                                 }
 
                                 await applyInitialPositionIfNeeded(scrollProxy, metrics: metrics)
                             }
                         }
+
+                        photoBackdropBottomChromeOcclusion(geometry: geometry)
                     }
                     .ignoresSafeArea(edges: .top)
                     .contentShape(Rectangle())
@@ -369,7 +401,10 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let sheetTop = max(metrics.collapsedContentTop - scrollOffset, 0)
+        let sheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+            scrollOffset: scrollOffset,
+            metrics: metrics
+        )
         let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
         let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
 
@@ -394,6 +429,26 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         .accessibilityHidden(true)
     }
 
+    private func photoBackdropBottomChromeOcclusion(geometry: GeometryProxy) -> some View {
+        VStack {
+            Spacer(minLength: 0)
+
+            Rectangle()
+                .fill(PhrasePageStyle.pageBackground)
+                .frame(
+                    height: AdminPhotoBackdropSurfaceLayout.bottomChromeOcclusionHeight(
+                        safeAreaBottom: geometry.safeAreaInsets.bottom
+                    )
+                )
+                .accessibilityHidden(true)
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
     @MainActor
     private func applyInitialPositionIfNeeded(
         _ scrollProxy: ScrollViewProxy,
@@ -404,12 +459,11 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         }
 
         try? await Task.sleep(nanoseconds: 80_000_000)
-        guard !Task.isCancelled, isActive else {
+        guard !Task.isCancelled, isVisible else {
             return
         }
 
         isImmersive = false
-        scrollPosition.scrollTo(y: 0)
         scrollProxy.scrollTo(topAnchorID, anchor: .top)
         didApplyInitialPosition = true
     }

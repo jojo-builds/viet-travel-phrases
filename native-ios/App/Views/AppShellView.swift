@@ -1486,10 +1486,18 @@ struct AppShellView: View {
             return
         }
 
-        var state = adminBackdropStates[surface] ?? .fallback
-        state.imageName = SharedBackdropImagePool.nextImageName(for: surface.poolSurface)
-        state.activationToken += 1
-        adminBackdropStates[surface] = state
+        let currentState = adminBackdropStates[surface] ?? .fallback
+        guard AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+            surface: surface,
+            currentState: currentState
+        ) else {
+            return
+        }
+
+        adminBackdropStates[surface] = AdminRootPhotoBackdropState(
+            imageName: SharedBackdropImagePool.nextImageName(for: surface.poolSurface),
+            activationToken: currentState.activationToken + 1
+        )
     }
 
     private func openDetailFromHome(_ id: String) {
@@ -3809,7 +3817,7 @@ struct HomeView: View {
             }
 
             AdminBackdropImagePreheater.preheat(
-                AdminBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
+                HomeBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
             )
         }
     }
