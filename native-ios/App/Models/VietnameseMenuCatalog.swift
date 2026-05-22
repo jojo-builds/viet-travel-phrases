@@ -1411,8 +1411,31 @@ struct LocationMenuPick: Identifiable, Equatable {
     let proof: String
     let imageName: String
     let detailPageID: String
+    let audioText: String?
     let linkedMenuItemID: String?
     let afterSectionID: String?
+
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil,
+        linkedMenuItemID: String?,
+        afterSectionID: String?
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.proof = proof
+        self.imageName = imageName
+        self.detailPageID = detailPageID
+        self.audioText = audioText
+        self.linkedMenuItemID = linkedMenuItemID
+        self.afterSectionID = afterSectionID
+    }
 
     var linkedMenuItem: VietnameseMenuItem? {
         guard let linkedMenuItemID else {
@@ -1423,6 +1446,10 @@ struct LocationMenuPick: Identifiable, Equatable {
     }
 
     var audioKey: String? {
+        if let audioText {
+            return AudioAssetManifest.main?.audioKey(forExactText: audioText)
+        }
+
         guard let linkedMenuItem else {
             return nil
         }
@@ -1646,6 +1673,38 @@ enum LocationMenuPicksCatalog {
         default:
             return pick.subtitle
         }
+    }
+}
+
+enum LocationRelatedPicksCatalog {
+    static func picks(forPageID pageID: String) -> [LocationMenuPick] {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+            return picks(forPageID: familyPageID)
+        }
+
+        switch pageID {
+        case "viet-family-city-danang-place-han-market":
+            return [
+                LocationMenuPick(
+                    id: "han-market-related-con-market",
+                    title: "Chợ Cồn",
+                    subtitle: "Con Market",
+                    proof: "The stronger food-first market nearby.",
+                    imageName: "HeroCityDanangPlaceConMarket",
+                    detailPageID: "viet-family-city-danang-place-con-market",
+                    audioText: "Chợ Cồn",
+                    linkedMenuItemID: nil,
+                    afterSectionID: "good-to-know"
+                ),
+            ]
+        default:
+            return []
+        }
+    }
+
+    static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
+        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
     }
 }
 
