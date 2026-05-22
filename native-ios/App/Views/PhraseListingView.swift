@@ -208,6 +208,17 @@ struct PhraseArticleTemplateView: View {
                                         onOpenDetail: onDetailTapped
                                     )
                                 }
+
+                                if !locationRelatedPicks(after: section.id).isEmpty {
+                                    LocationMenuPicksSection(
+                                        title: "Compare Nearby",
+                                        leadIn: nil,
+                                        picks: locationRelatedPicks(after: section.id),
+                                        isPageSaved: isPageSaved,
+                                        onToggleSavedPage: onToggleSavedPage,
+                                        onOpenDetail: onDetailTapped
+                                    )
+                                }
                             }
 
                             if shouldRenderTrailingLocationMenuPicks {
@@ -507,6 +518,17 @@ struct PhraseArticleTemplateView: View {
                             onOpenDetail: onDetailTapped
                         )
                     }
+
+                    if !locationRelatedPicks(after: section.id).isEmpty {
+                        LocationMenuPicksSection(
+                            title: "Compare Nearby",
+                            leadIn: nil,
+                            picks: locationRelatedPicks(after: section.id),
+                            isPageSaved: isPageSaved,
+                            onToggleSavedPage: onToggleSavedPage,
+                            onOpenDetail: onDetailTapped
+                        )
+                    }
                 }
 
                 if shouldRenderTrailingLocationMenuPicks {
@@ -661,6 +683,10 @@ struct PhraseArticleTemplateView: View {
 
     private func locationMenuPicks(after sectionID: String) -> [LocationMenuPick] {
         LocationMenuPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
+    }
+
+    private func locationRelatedPicks(after sectionID: String) -> [LocationMenuPick] {
+        LocationRelatedPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
     }
 
     private var usesCompactPhraseHero: Bool {

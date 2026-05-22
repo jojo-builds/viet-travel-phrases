@@ -2484,6 +2484,44 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testHanMarketRelatedPlacePickLinksToConMarket() throws {
+        let pageID = "viet-family-city-danang-place-han-market"
+        let aliasPageID = "viet-phrase-city-danang-place-han-market"
+        let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
+
+        XCTAssertEqual(picks.count, 1)
+        XCTAssertEqual(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id))
+
+        let conMarket = try XCTUnwrap(picks.first)
+        XCTAssertEqual(conMarket.id, "han-market-related-con-market")
+        XCTAssertEqual(conMarket.title, "Chợ Cồn")
+        XCTAssertEqual(conMarket.subtitle, "Con Market")
+        XCTAssertEqual(conMarket.proof, "The stronger food-first market nearby.")
+        XCTAssertEqual(conMarket.detailPageID, "viet-family-city-danang-place-con-market")
+        XCTAssertEqual(conMarket.afterSectionID, "good-to-know")
+        XCTAssertNil(conMarket.linkedMenuItemID)
+        XCTAssertNotNil(conMarket.audioKey)
+        XCTAssertNotNil(UIImage(named: conMarket.imageName))
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(conMarket.detailPageID))
+
+        XCTAssertEqual(
+            LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: "good-to-know").map(\.id),
+            [conMarket.id]
+        )
+        XCTAssertTrue(LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: "place-brief").isEmpty)
+
+        let detail = try XCTUnwrap(PhraseDetailPage.page(withID: conMarket.detailPageID))
+        XCTAssertEqual(detail.title, "Chợ Cồn")
+        XCTAssertEqual(detail.englishTitle, "Con Market")
+
+        let savedTrip = SavedTripSnapshot.make(savedPageIDs: [conMarket.detailPageID])
+        let savedItem = try XCTUnwrap(savedTrip.sections.flatMap(\.items).first)
+        XCTAssertEqual(savedItem.title, "Chợ Cồn")
+        XCTAssertEqual(savedItem.subtitle, "Con Market")
+        XCTAssertNotNil(savedItem.audioKey)
+        XCTAssertEqual(savedItem.imageName, "HeroCityDanangPlaceConMarket")
+    }
+
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
         let foodSections = VietnameseMenuCatalog.sections(for: .food)
         let drinkSections = VietnameseMenuCatalog.sections(for: .drink)
