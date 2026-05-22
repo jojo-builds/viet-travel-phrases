@@ -80,8 +80,11 @@ Follow `playbooks/merge-sweep.md`.
 
 Non-negotiables:
 
+- Merging is not review. Treat pre-merge review, merge, and post-merge validation as three separate gates.
 - Do not merge paywall unless explicitly requested.
 - Do not merge dirty lanes unless Jojo says the threads are done and it is safe to checkpoint them.
+- Before merging any non-trivial `ahead-ready` or `dirty-done` lane, produce a pre-merge review against current `main`: what changed, user-facing behavior changes, possible regressions, risky files or logic, missing tests, manual QA checklist, and recommendation: `merge`, `fix first`, or `needs human decision`.
+- If the pre-merge recommendation is `fix first` or `needs human decision`, do not call the merge helper until the blocker is fixed or Jojo decides.
 - Before merging a lane into `main`, sync current `main` into that lane and validate there.
 - Resolve conflicts by preserving both feature intents.
 - Never resolve by taking an entire file from one side unless Jojo explicitly asks.
@@ -118,7 +121,13 @@ If the helper refuses because `main` has unrelated untracked files, inspect firs
 
 ## Review Gate
 
-For important merges or high-risk UI changes, run a review gate:
+For every non-trivial lane with commits or checkpointed dirty work, run a pre-merge review before merging:
+
+- Compare the source lane against current `main`.
+- Report what changed, user-facing behavior changes, possible regressions, risky files or logic, missing tests, a manual QA checklist, and a recommendation: `merge`, `fix first`, or `needs human decision`.
+- Treat a lane as trivial only when it is already `same-as-main`, a clean sync-only lane, or docs/metadata-only with no runtime, operational, or product behavior effect. If skipping the formal report, say why.
+
+For important merges or high-risk UI changes, strengthen that review gate:
 
 - Ask one read-only subagent to inspect requirements vs implementation.
 - Ask another if there is meaningful independent surface area, such as performance or copy.

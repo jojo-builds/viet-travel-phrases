@@ -136,10 +136,6 @@ enum AdminPhotoBackdropSurfaceLayout {
     static func sheetTop(scrollOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) -> CGFloat {
         max(metrics.collapsedContentTop - scrollOffset, 0)
     }
-
-    static func bottomChromeOcclusionHeight(safeAreaBottom: CGFloat) -> CGFloat {
-        PhrasePageStyle.bottomChromeContentClearance + safeAreaBottom
-    }
 }
 
 struct AdminPhotoBackdropScrollState: Equatable {
@@ -279,7 +275,6 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                             }
                         }
 
-                        photoBackdropBottomChromeOcclusion(geometry: geometry)
                     }
                     .ignoresSafeArea(edges: .top)
                     .contentShape(Rectangle())
@@ -418,7 +413,16 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             scrollOffset: scrollOffset,
             metrics: metrics
         )
-        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
             Color.clear
@@ -427,33 +431,13 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
 
             PhotoBackdropBottomChromeBacking(
                 height: backdropHeight,
-                topCornerRadius: 0
+                topCornerRadius: topCornerRadius
             )
         }
         .frame(
-            height: geometry.size.height + safeAreaBottom,
+            height: backingFrameHeight,
             alignment: .top
         )
-        .ignoresSafeArea(edges: .bottom)
-        .opacity(isImmersive ? 0 : 1)
-        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
-    }
-
-    private func photoBackdropBottomChromeOcclusion(geometry: GeometryProxy) -> some View {
-        VStack {
-            Spacer(minLength: 0)
-
-            Rectangle()
-                .fill(PhrasePageStyle.pageBackground)
-                .frame(
-                    height: AdminPhotoBackdropSurfaceLayout.bottomChromeOcclusionHeight(
-                        safeAreaBottom: geometry.safeAreaInsets.bottom
-                    )
-                )
-                .accessibilityHidden(true)
-        }
         .ignoresSafeArea(edges: .bottom)
         .opacity(isImmersive ? 0 : 1)
         .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
