@@ -462,24 +462,7 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
-                let practiceBackdropState = adminBackdropState(for: .practice)
-                PracticeView(
-                    intentStore: intentStore,
-                    initialMode: launchPracticeMode,
-                    entryContext: launchPracticeEntryContext,
-                    startRequest: practiceStartRequest,
-                    isActive: navigation.currentRoute == .practice,
-                    scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
-                    topContentClearance: showsStaticBackButton && !isPracticeMatchPresented ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
-                    photoBackdropState: practiceBackdropState,
-                    isPhotoBackdropVisible: isAdminBackdropSurfaceVisible(.practice),
-                    onOpenDetail: openDetailFromPractice,
-                    onBrowseTapped: openBrowseAll,
-                    onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
-                    onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
-                    onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
-                    onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
-                )
+                practiceRouteSurface
                 .allowsHitTesting(navigation.currentRoute == .practice && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .practice)
                 .navigationPageMotion(
@@ -650,6 +633,39 @@ struct AppShellView: View {
                 }
             }
         }
+    }
+
+    @ViewBuilder
+    private var practiceRouteSurface: some View {
+        if shouldRenderPracticeRouteSurface {
+            let practiceBackdropState = adminBackdropState(for: .practice)
+            PracticeView(
+                intentStore: intentStore,
+                initialMode: launchPracticeMode,
+                entryContext: launchPracticeEntryContext,
+                startRequest: practiceStartRequest,
+                isActive: navigation.currentRoute == .practice,
+                scrollToTopTrigger: navigation.practiceScrollToTopTrigger,
+                topContentClearance: showsStaticBackButton && !isPracticeMatchPresented ? AppChromeLayout.topAdminHitTestEnvelopeHeight : 0,
+                photoBackdropState: practiceBackdropState,
+                isPhotoBackdropVisible: isAdminBackdropSurfaceVisible(.practice),
+                onOpenDetail: openDetailFromPractice,
+                onBrowseTapped: openBrowseAll,
+                onCloseMatchToOrigin: returnFromPracticeMatchToOrigin,
+                onMatchPresentationChanged: { isPracticeMatchPresented = $0 },
+                onThreadBackToOrigin: returnFromPracticeThreadToOrigin,
+                onThreadPresentationChanged: { isPracticeThreadPresented = $0 }
+            )
+        } else {
+            Color.clear
+                .accessibilityHidden(true)
+        }
+    }
+
+    private var shouldRenderPracticeRouteSurface: Bool {
+        [navigation.currentRoute, navigation.backPreviewRoute, navigation.forwardPreviewRoute]
+            .compactMap { $0 }
+            .contains(.practice)
     }
 
     private var practiceStartRequest: PracticeStartRequest? {

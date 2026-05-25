@@ -18,16 +18,15 @@ enum PracticeMatchSnapshotLoadPolicy {
 
 enum PracticeMatchPresentationPolicy {
     static func usesPullUpRoundCard(for style: PracticePresentationStyle) -> Bool {
-        switch style {
-        case .route:
-            return false
-        case .pullUpOverlay:
-            return true
-        }
+        false
     }
 
     static func usesNativeSystemSheet(for style: PracticePresentationStyle) -> Bool {
-        style == .route
+        true
+    }
+
+    static func presentsRequestedStartInNativeSheet(for style: PracticePresentationStyle) -> Bool {
+        usesNativeSystemSheet(for: style) && style == .pullUpOverlay
     }
 
     static func showsDirectStartCard(
@@ -35,7 +34,10 @@ enum PracticeMatchPresentationPolicy {
         hasRequestedStart: Bool,
         hasActiveSession: Bool
     ) -> Bool {
-        style == .pullUpOverlay && hasRequestedStart && !hasActiveSession
+        style == .pullUpOverlay
+            && hasRequestedStart
+            && !hasActiveSession
+            && !presentsRequestedStartInNativeSheet(for: style)
     }
 
     static func showsHubLayer(
@@ -47,7 +49,9 @@ enum PracticeMatchPresentationPolicy {
         case .route:
             return true
         case .pullUpOverlay:
-            return !hasActiveSession && hasRequestedStart
+            return !hasActiveSession
+                && hasRequestedStart
+                && !presentsRequestedStartInNativeSheet(for: style)
         }
     }
 }
@@ -4607,7 +4611,7 @@ private struct PracticeMatchRootView: View {
     @State private var handledRequestedKey: String?
     @State private var nativeRoundSheetDetent = PresentationDetent.medium
 
-    private static let nativeRoundSheetDismissalDetent = PresentationDetent.height(96)
+    private static let nativeRoundSheetDetents: Set<PresentationDetent> = [.medium, .large]
 
     var body: some View {
         ZStack {
@@ -4636,34 +4640,19 @@ private struct PracticeMatchRootView: View {
             }
         }
         .sheet(isPresented: nativeRoundSheetBinding) {
-            if let activeSession {
-                roundView(for: activeSession, topContentClearance: 0)
-                    .presentationDetents(
-                        [Self.nativeRoundSheetDismissalDetent, .medium, .large],
-                        selection: $nativeRoundSheetDetent
-                    )
-                    .presentationDragIndicator(.visible)
-                    .presentationContentInteraction(.resizes)
-                    .interactiveDismissDisabled(true)
-                    .onAppear {
-                        nativeRoundSheetDetent = .medium
-                    }
-                    .onChange(of: nativeRoundSheetDetent) { _, detent in
-                        guard detent == Self.nativeRoundSheetDismissalDetent else {
-                            return
-                        }
-
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
-                            guard nativeRoundSheetDetent == Self.nativeRoundSheetDismissalDetent else {
-                                return
-                            }
-
-                            closeActiveSession()
-                        }
-                    }
-            } else {
-                Color.clear
-            }
+            nativeRoundSheetContent
+                .presentationDetents(
+                    Self.nativeRoundSheetDetents,
+                    selection: $nativeRoundSheetDetent
+                )
+                .presentationDragIndicator(.visible)
+                .presentationBackground(.regularMaterial)
+                .presentationCornerRadius(32)
+                .presentationBackgroundInteraction(.disabled)
+                .presentationContentInteraction(.resizes)
+                .onAppear {
+                    nativeRoundSheetDetent = .medium
+                }
         }
         .task {
             reloadSnapshotIfNeeded()
@@ -4715,6 +4704,7 @@ private struct PracticeMatchRootView: View {
             sourceOptions: sourceOptions,
             topContentClearance: topContentClearance,
             presentationStyle: presentationStyle,
+            showsSheetHandle: !presentsActiveSessionInNativeSheet,
             onClose: closeActiveSession,
             onDismiss: dismissActiveSession,
             onPreviousRound: returnToPreviousRound,
@@ -4733,16 +4723,48 @@ private struct PracticeMatchRootView: View {
     private var nativeRoundSheetBinding: Binding<Bool> {
         Binding(
             get: {
-                presentsActiveSessionInNativeSheet && activeSession != nil
+                shouldPresentNativeSheet
             },
             set: { isPresented in
-                guard !isPresented, presentsActiveSessionInNativeSheet, activeSession != nil else {
+                guard !isPresented, shouldPresentNativeSheet else {
                     return
                 }
 
-                closeActiveSession()
+                if activeSession != nil {
+                    closeActiveSession()
+                } else {
+                    onDismiss()
+                }
             }
         )
+    }
+
+    private var shouldPresentNativeSheet: Bool {
+        (presentsActiveSessionInNativeSheet && activeSession != nil)
+            || presentsRequestedStartInNativeSheet
+    }
+
+    private var presentsRequestedStartInNativeSheet: Bool {
+        PracticeMatchPresentationPolicy.presentsRequestedStartInNativeSheet(for: presentationStyle)
+            && requestedKey != nil
+            && activeSession == nil
+    }
+
+    @ViewBuilder
+    private var nativeRoundSheetContent: some View {
+        if let activeSession {
+            roundView(for: activeSession, topContentClearance: 0)
+        } else if presentsRequestedStartInNativeSheet {
+            PracticeMatchDirectStartCard(
+                state: loadState,
+                requestedSourceTitle: requestedSourceTitle,
+                showsSheetHandle: false,
+                onRetry: reloadSnapshotIfNeeded,
+                onDismiss: onDismiss
+            )
+        } else {
+            Color.clear
+        }
     }
 
     @ViewBuilder
@@ -4910,7 +4932,7 @@ private struct PracticeMatchRootView: View {
             return
         }
 
-        if presentationStyle == .pullUpOverlay, dismissalTarget == .originRoute {
+        if PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle) {
             nativeRoundSheetDetent = .medium
             activeSessionDismissalTarget = dismissalTarget
             activeSession = session
@@ -4931,9 +4953,15 @@ private struct PracticeMatchRootView: View {
             return
         }
 
-        withAnimation(.easeInOut(duration: 0.2)) {
+        if PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle) {
+            nativeRoundSheetDetent = .medium
             activeSession = nil
             activeSessionDismissalTarget = .hub
+        } else {
+            withAnimation(.easeInOut(duration: 0.2)) {
+                activeSession = nil
+                activeSessionDismissalTarget = .hub
+            }
         }
 
         if dismissalTarget == .originRoute {
@@ -5075,13 +5103,16 @@ private struct PracticeMatchRootView: View {
 private struct PracticeMatchDirectStartCard: View {
     let state: PracticeMatchDataState
     let requestedSourceTitle: String?
+    var showsSheetHandle = true
     let onRetry: () -> Void
     let onDismiss: () -> Void
 
     var body: some View {
         VStack(spacing: 0) {
-            PracticeMatchSheetHandle()
-                .padding(.top, 12)
+            if showsSheetHandle {
+                PracticeMatchSheetHandle()
+                    .padding(.top, 12)
+            }
 
             HStack {
                 Spacer(minLength: 0)
@@ -5453,6 +5484,7 @@ private struct PracticeMatchRoundView: View {
     let sourceOptions: [PracticeMatchSource]
     let topContentClearance: CGFloat
     let presentationStyle: PracticePresentationStyle
+    let showsSheetHandle: Bool
     let onClose: () -> Void
     let onDismiss: () -> Void
     let onPreviousRound: () -> Void
@@ -5509,8 +5541,13 @@ private struct PracticeMatchRoundView: View {
             } else {
                 ZStack(alignment: .top) {
                     VStack(spacing: 12) {
-                        PracticeMatchSheetHandle()
-                            .padding(.top, topHandlePadding)
+                        if showsSheetHandle {
+                            PracticeMatchSheetHandle()
+                                .padding(.top, topHandlePadding)
+                        } else {
+                            Color.clear
+                                .frame(height: topHandlePadding)
+                        }
 
                         PracticeMatchRoundHeader(
                             session: session,

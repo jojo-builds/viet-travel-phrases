@@ -31,24 +31,20 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
     }
 
-    func testEssentialsTopicOpensMatchRoundSheet() {
+    func testEssentialsTopicMatchRoundSheetDismissesWithSwipeDown() {
         let app = launchPracticeApp()
 
         scrollUntilStaticTextExists("Practice by topic", in: app)
         scrollUntilStaticTextIsHittable("Essentials", in: app)
         tapStaticText("Essentials", in: app)
 
-        let sheet = app.otherElements["Practice.Match.Round"].firstMatch
-        XCTAssertTrue(sheet.waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
 
-        sheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.22))
-            .press(
-                forDuration: 0.1,
-                thenDragTo: sheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.38))
-            )
-        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 1))
+        dragVertically(in: app, from: 0.58, to: 0.94)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Practice by topic"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Essentials"].exists)
     }
 
     func testPracticeSavedSourceStartsFromSavedTripItems() {
@@ -110,5 +106,13 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(text.waitForExistence(timeout: 1), file: file, line: line)
         XCTAssertTrue(text.isHittable, file: file, line: line)
+    }
+
+    private func dragVertically(in app: XCUIApplication, from startY: CGFloat, to endY: CGFloat) {
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: startY))
+            .press(
+                forDuration: 0.1,
+                thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: endY))
+            )
     }
 }

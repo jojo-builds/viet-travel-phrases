@@ -344,12 +344,14 @@ final class PracticeNativeMVPTests: XCTestCase {
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
     }
 
-    func testPracticeMatchPresentationUsesOnePullUpCardContract() {
+    func testPracticeMatchPresentationUsesNativeSheetContract() {
         XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
         XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .route))
-        XCTAssertFalse(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .pullUpOverlay))
-        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
-        XCTAssertTrue(
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .pullUpOverlay))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.presentsRequestedStartInNativeSheet(for: .pullUpOverlay))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.presentsRequestedStartInNativeSheet(for: .route))
+        XCTAssertFalse(
             PracticeMatchPresentationPolicy.showsDirectStartCard(
                 style: .pullUpOverlay,
                 hasRequestedStart: true,
@@ -370,7 +372,7 @@ final class PracticeNativeMVPTests: XCTestCase {
                 hasActiveSession: false
             )
         )
-        XCTAssertTrue(
+        XCTAssertFalse(
             PracticeMatchPresentationPolicy.showsHubLayer(
                 style: .pullUpOverlay,
                 hasActiveSession: false,
