@@ -1,0 +1,158 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 2
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_03",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 2,
+    "returnedReplacementCount": 2,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_03",
+  "chunks": [
+    {
+      "chunkFile": "danang_001_025_humanized.json",
+      "cityID": "danang",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-danang-place-central-bus-station",
+          "message": "heading is command-like: Check The Bay Twice"
+        },
+        {
+          "id": "city-danang-place-che-xoa-xoa-hat-luu",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-central-bus-station",
+          "summary": "A practical Da Nang transport handoff where bags, bays, route signs, fare questions, and the next road matter more than scenery on the day.",
+          "context": "For travel days when the visitor needs to match the vehicle, route, bay, and exit plan without burning patience.",
+          "tip": "Save the station name, next stop, and hotel address in Vietnamese. Showing the screen can be cleaner than repeating tones near engines.",
+          "rationale": "The bus station gives travel days a clearer script: confirm the bay, board the right vehicle, and plan the exit before arrival.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Next Leg Before The Curb",
+              "body": "Da Nang Central Bus Station matters on practical days: bags at your feet, signs overhead, route details on your phone, and one more road ahead."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Travel-Day Clarity",
+              "body": "This stop is about luggage, route signs, vehicle bays, and the next road. Confirm the practical pieces while patience and phone battery still exist."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bus Station Words",
+              "body": "Ask for the bay, route, ticket, next stop, luggage spot, and exit plan before boarding."
+            },
+            {
+              "id": "place-brief",
+              "title": "Check The Bay Twice",
+              "body": "A city name on a sign is not enough. Bay, company, and direction all deserve a second look before boarding."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Names On Screen",
+              "body": "Have the station name, next stop, and hotel address ready to show. A clear screen can beat uncertain pronunciation beside luggage carts."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Exit Plan Early",
+              "body": "Decide how you will leave before the bus pulls in. Pickup point, taxi queue, or ride pin is easier with battery and patience intact."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-che-xoa-xoa-hat-luu",
+          "summary": "A cold Da Nang dessert cup of jelly, coconut milk, shaved ice, chewy red cubes, and texture more than simple sweetness after heat.",
+          "context": "Good as a small cool-down after market snacks, a river walk, or a meal that needs a sweet finish.",
+          "tip": "Stir once before judging it. Coconut, ice, jelly, and syrup shift as the cup settles.",
+          "rationale": "Che xoa xoa hat luu gives Da Nang a quick sweet memory built around cold texture, not a heavy dessert stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Texture Before Sweetness",
+              "body": "Che xoa xoa hat luu is a cold Da Nang dessert cup: jelly, coconut milk, shaved ice, syrup, and chewy red cubes."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Cold Texture Stop",
+              "body": "This dessert makes sense as a small cool-down. Jelly, coconut, shaved ice, syrup, and chewy red pieces matter more than simple sweetness."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dessert Cup Words",
+              "body": "Ask for one dessert cup, less ice, less sugar, coconut, and the price before judging the texture."
+            },
+            {
+              "id": "place-brief",
+              "title": "Stir, Then Taste",
+              "body": "The cup changes as coconut, ice, jelly, and syrup mix. The pleasure is soft, cold, slippery, and chewy at once."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Red Cubes Are The Cue",
+              "body": "Hat luu means pomegranate seeds, but in this dessert the red pieces are usually chewy starch or jelly. Expect texture, not fruit."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Small Cool-Down",
+              "body": "Do not turn it into a search for one ideal cup. The pleasure is quick, cold, local-feeling, and easy to fold into the evening."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

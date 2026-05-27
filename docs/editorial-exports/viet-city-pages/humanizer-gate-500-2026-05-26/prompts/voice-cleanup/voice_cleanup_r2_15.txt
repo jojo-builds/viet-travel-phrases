@@ -1,0 +1,302 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_15",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_15",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hanoi-place-banh-cuon",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-bay-mau-lake",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hanoi-place-bay-mau-lake",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha-huong-lien",
+          "message": "heading is command-like: Check Add-Ons First"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha-huong-lien",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-ba-dinh-square",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha-huong-lien",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-ba-dinh-square",
+          "summary": "Ba Dinh Square is Hanoi in a formal public mood: open pavement, red flags, official facades, and a quieter sense of national memory.",
+          "context": "The square is strongest as a slow civic stop, not a browse. Give it space, read it from distance, and pair nearby landmarks carefully.",
+          "tip": "The visit stays strongest when it stays simple: slow arrival, permitted photo moments, and no fixed schedule assumptions until current access is checked.",
+          "rationale": "Ba Dinh Square gives the capital a clear ceremonial center without needing heavy explanation or tourist drama.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Open Space Changes The Pace",
+              "body": "There is less to browse here and more to read from distance: flags, geometry, official buildings, and the way people move through the square."
+            },
+            {
+              "id": "quick-say",
+              "title": "Hear The Formal Name",
+              "body": "Quảng trường Ba Đình is the local name. It belongs with a slower voice, broad pavement, and a visit that does not need to be rushed."
+            },
+            {
+              "id": "place-brief",
+              "title": "Scale Is The Point",
+              "body": "The square can make Hanoi feel like a capital, not only a set of old streets and coffee rooms. Its restraint is the point."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pair Nearby Stops Carefully",
+              "body": "The Mausoleum area and One Pillar Pagoda sit close in memory, but each has its own rules and timing. The square itself stays cleaner as a simple civic pause."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Slow Civic Pause",
+              "body": "The square fits a morning or afternoon when the plan needs open space, flags, and national memory more than another dense street. Pair it with nearby stops only if the timing feels calm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Simple Memory",
+              "body": "Access, ceremonies, photo rules, and nearby opening times can change. The civic scale, flags, and formal Ba Dinh setting carry the stop."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-banh-cuon",
+          "summary": "Banh cuon is a gentle Hanoi morning plate: thin steamed rice sheets, savory filling, herbs, fried shallot, and dipping sauce while the shop is still moving.",
+          "context": "This dish works as a quick breakfast or light meal before coffee, a market walk, or an Old Quarter errand.",
+          "tip": "Eat while the rolls are still warm and soft. Add sauce slowly, then adjust chili only after the first bite.",
+          "rationale": "Banh cuon gives Hanoi a quieter food memory: steam, texture, herbs, and a small-table breakfast rhythm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Steam Sets The Clock",
+              "body": "Bánh cuốn is best soon after the plate lands. The rice sheets are delicate, and the texture matters as much as the filling."
+            },
+            {
+              "id": "quick-say",
+              "title": "Order One Plate",
+              "body": "Bánh cuốn is the name to recognize. If you are unsure how much to order, start with one portion and let the table stay simple."
+            },
+            {
+              "id": "place-brief",
+              "title": "Sauce In Small Spoonfuls",
+              "body": "The dipping sauce brings the plate together, but it can take over quickly. Spoon a little over the rolls, taste, then add more."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Keeps It Light",
+              "body": "This is not a long brunch mood. A plate of soft rolls can give the morning shape before coffee, errands, or a denser food stop later."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Gentle Morning Meal",
+              "body": "Banh cuon belongs early in the day, before a heavier lunch or long market stretch. The plate is most useful when you want steam, texture, and a clean first bite."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Texture Is The Memory",
+              "body": "Look for soft sheets, herbs, fried shallot, and the contrast between warm rice and bright sauce. That is the Hanoi detail to keep."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-bay-mau-lake",
+          "summary": "Bay Mau Lake gives Hanoi a softer middle: water, trees, walking edges, and the ordinary park rhythm around Thong Nhat Park's south side.",
+          "context": "The lake is a reset, not a grand sight. It works when a day needs shade, water, and a short walk away from traffic.",
+          "tip": "Pedal boats, facilities, and rules belong in the plan only after a current check. The safer draw is shade, water, and a slow park edge.",
+          "rationale": "Bay Mau Lake gives Hanoi a walkable water edge beyond streets, scooters, and dense food stops.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Water Inside The Park",
+              "body": "Hồ Bảy Mẫu is best kept modest: a lake, paths, trees, and people using the park around it. The pause between streets is the point."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Lake Name Matters",
+              "body": "Hồ Bảy Mẫu is the local name. It is useful when asking about the lake inside the park or pointing to the water on a map."
+            },
+            {
+              "id": "place-brief",
+              "title": "Walk The Edge First",
+              "body": "Give the lake one slow edge before deciding whether to sit, keep walking, or leave. The first stretch tells you where the shade and calm are."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pair It With Thong Nhat Park",
+              "body": "The lake makes most sense when the park is already part of the plan. Come for a short reset before returning to denser streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Reset",
+              "body": "Bay Mau Lake makes sense when heat, traffic, or museum time has made the day feel tight. Give it one shaded loop or bench pause, then move on."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Do Not Inflate It",
+              "body": "This is more about air and trees than a dramatic photo. A shaded bench near water may be enough."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-bun-cha",
+          "summary": "Bun cha is a Hanoi table rhythm: charcoal pork, warm dipping broth, rice noodles, herbs, garlic, chili, and small bites built one at a time.",
+          "context": "This dish works for a smoky, casual Hanoi meal: charcoal pork, warm broth, cool noodles, and herbs handled one bite at a time.",
+          "tip": "The broth stays close, chili comes after tasting, and the meal makes more sense in small bites than as one large bowl.",
+          "rationale": "Bun cha gives Hanoi a smoky food memory that starts before the first bite and stays practical at the table.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Smoke First, Then The Table",
+              "body": "Bún chả reaches you before the bowl does: pork over charcoal, warm broth, noodles, herbs, garlic, and chili waiting nearby."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "food-menu",
+                "food-3",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "place-brief",
+              "title": "Broth Stays At The Center",
+              "body": "The pork sits in the dipping broth while noodles and herbs stay separate. Add small amounts as you eat."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Taste Before Chili",
+              "body": "Garlic, chili, and herbs change the meal quickly. Taste the broth first so the smoky pork and sweet-sour balance stay clear."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Fast Can Still Feel Calm",
+              "body": "Turnover is part of the rhythm. Order, settle in, then let the table teach the meal: dip, herbs, noodles, broth, repeat."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-bun-cha-huong-lien",
+          "summary": "Bun Cha Huong Lien is for letting bun cha become a real Hanoi meal: grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly.",
+          "context": "The name may carry attention, but lunch is still the point: order clearly, build the bite slowly, and let the bowl stay central.",
+          "tip": "Menu, add-ons, hours, and closure details can change. Keep the stop grounded in grilled pork, broth, herbs, and a quick table rhythm.",
+          "rationale": "Huong Lien is strongest when fame stays smaller than the food and the table rhythm is clear before sitting down.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Bowl Sets The Pace",
+              "body": "Hương Liên is strongest when you sit down for one thing. Grilled pork, broth, noodles, herbs, and small add-ons should not become a complicated project."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Order Stays Clear",
+              "body": "Bún chả Hương Liên is the name to recognize. The main dish comes first, with menu and payment phrases nearby if the table moves quickly."
+            },
+            {
+              "id": "place-brief",
+              "title": "Build The Bite Slowly",
+              "body": "Do not dump everything together at once. Dip noodles, add herbs, take pork, and learn the balance before changing the bowl."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Check Add-Ons First",
+              "body": "If extras are offered, slow down long enough to understand what is coming. The main move is still bun cha first."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Lunch With One Job",
+              "body": "Huong Lien fits when the plan wants a clear bun cha meal, not a broad menu search. Let the bowl, herbs, and broth carry the stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Fame Should Stay Smaller Than Lunch",
+              "body": "The restaurant name may bring noise, but the meal does not need to. Sit, eat while the pork and broth are warm, then move back into the city."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

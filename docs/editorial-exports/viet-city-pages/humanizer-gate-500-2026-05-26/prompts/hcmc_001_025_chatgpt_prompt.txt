@@ -1,0 +1,1120 @@
+Batch ID: hcmc_001_025_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+HCMC-specific repair brief: remove old formula copy such as "works best when the name is tied to the reason for going," "not memorized as an abstract label," "alongside Saigon street energy/light/movement," "At X, you get...," "carries the visual details," and generic Worth it if scaffolding. Write from HCMC place evidence: arrival, ordering, crossing, waiting, cooling off indoors, choosing a street, finding the right entrance, or deciding whether a detour is worth it.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hcmc",
+  "range": "001-025",
+  "entries": [
+    {
+      "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
+      "summary": "42 Nguyen Hue apartment building is the old apartment block behind the famous cafe-apartment facade on Nguyen Hue Walking Street. Save it for balconies, narrow stairs, floor-by-floor cafe hunting, coffee tables, and a central Saigon view.",
+      "context": "42 Nguyen Hue is the address people connect with the cafe apartment building: an old block now used for cafes, boutiques, and balcony stops above Nguyen Hue Walking Street.",
+      "tip": "The hook is the building itself: stacked balconies, small rooms turned into cafes, and the feeling of choosing a floor instead of choosing one normal storefront.",
+      "rationale": "42 Nguyen Hue belongs in Saigon because it turns an ordinary apartment facade into a visible coffee-and-shopping landmark right on the walking street.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "42 Nguyen Hue apartment building is worth saving because it explains the cafe-apartment idea at a glance: an old apartment block on Nguyen Hue Walking Street where balconies and small upstairs rooms now hold cafes and shops."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At 42 Nguyen Hue, the visit starts from the facade. Look up from the walking street, choose a floor, then head through stairs or elevators toward small cafe rooms, coffee tables, balcony seats, warm lights, and a view over central Saigon."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chung cư 42 Nguyễn Huệ for the building itself. Chung cư means apartment building, and 42 Nguyễn Huệ keeps the address clear when the plan is the cafe-filled block rather than one specific cafe."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Nguyen Hue is already on the day plan and you want one stop that feels visual, central, and easy to explore without committing to a long detour."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Before you go, think of 42 Nguyen Hue as the physical address and facade. The cafes can change, but the old apartment block, balconies, and walking-street location are the stable thing to recognize."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Good to know: the building and the Cafe Apartment are essentially the same central stop. Use 42 Nguyễn Huệ for the address, and Cafe Apartment when picturing the floor-by-floor cafe crawl."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-akuna",
+      "summary": "Akuna is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect fine-dining counter with Vietnamese ingredients, polished Saigon interior.",
+      "context": "For Akuna, Saigon's restaurant story comes through evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy.",
+      "tip": "Saigon feels more specific when Akuna is tied to evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy.",
+      "rationale": "Akuna brings Saigon into focus through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Akuna is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with house dishes, menu details, staff rhythm, and drinks, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Akuna, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: fine-dining counter with Vietnamese ingredients, polished Saigon interior, with staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Akuna usually stays as the venue name. Say it slowly and connect it to the scene around it: menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Akuna works best when the name is tied to the reason for going, not memorized as an abstract label. Picture fine-dining counter with Vietnamese ingredients, polished Saigon interior with tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Akuna carries the visual details around it: staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy, plus the local setting of Fine-dining counter with Vietnamese ingredients, polished Saigon interior."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-an-dong-market",
+      "summary": "An Dong Market is worth knowing in Saigon because it brings shopping culture built around clothes, fabric, gifts, small counters, and browsing into the trip. Expect multi-level local market with fabric and clothing stalls, Saigon.",
+      "context": "For An Dong Market, Saigon's shopping market story comes through small counters, bags, gifts, and browsing lanes, alongside Saigon street energy.",
+      "tip": "Chợ An Đông sits inside the scene around An Dong Market: gifts, browsing lanes, clothing racks, and fabric stacks, alongside Saigon street energy.",
+      "rationale": "An Dong Market brings Saigon into focus through gifts, browsing lanes, clothing racks, and fabric stacks, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "An Dong Market is worth knowing because it gives Saigon a specific shopping market scene: gifts, browsing lanes, clothing racks, and fabric stacks, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At An Dong Market, you get shopping culture built around clothes, fabric, gifts, small counters, and browsing: multi-level local market with fabric and clothing stalls, Saigon, with gifts, browsing lanes, clothing racks, and fabric stacks, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ An Đông for An Dong Market. The local name is easier to remember once it sits beside browsing lanes, clothing racks, fabric stacks, and small counters, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if An Dong Market gives your itinerary a clearer image: bags, gifts, browsing lanes, and clothing racks, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "An Dong Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture multi-level local market with fabric and clothing stalls, Saigon with browsing lanes, clothing racks, fabric stacks, and small counters, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chợ An Đông belongs in the same image as clothing racks, fabric stacks, small counters, and bags, alongside Saigon street energy, with An Dong Market rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-anan-saigon",
+      "summary": "Anan Saigon is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect contemporary Vietnamese restaurant table with herbs and small plates.",
+      "context": "For Anan Saigon, Saigon's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy.",
+      "tip": "Anan Saigon stays rooted in Saigon through house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy.",
+      "rationale": "Anan Saigon brings Saigon into focus through evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Anan Saigon is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Anan Saigon, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: contemporary Vietnamese restaurant table with herbs and small plates, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Anăn Sài Gòn for Anan Saigon. The local name is easier to remember once it sits beside tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Anan Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture contemporary Vietnamese restaurant table with herbs and small plates with tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Anăn Sài Gòn feels less abstract when it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy and the scene of Anan Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ao-dai-museum",
+      "summary": "Ao Dai Museum is worth a stop if you want Saigon to feel more layered than the streets outside. Expect Ao dai display in garden-like museum space, colorful silk.",
+      "context": "For Ao Dai Museum, Saigon's cultural stop story comes through display cases, gallery rooms, artifacts, and quiet light, alongside Ben Thanh market energy.",
+      "tip": "Bảo tàng Áo Dài feels tied to Ao Dai Museum through memory, local history, display cases, and gallery rooms, alongside Ben Thanh market energy.",
+      "rationale": "Ao Dai Museum brings Saigon into focus through artifacts, quiet light, memory, and local history, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ao Dai Museum is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with display cases, gallery rooms, artifacts, and quiet light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ao Dai Museum, you get rooms, objects, art, and memory inside the city's story: Ao dai display in garden-like museum space, colorful silk, with display cases, gallery rooms, artifacts, and quiet light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Áo Dài for Ao Dai Museum. The local name is easier to remember once it sits beside quiet light, memory, local history, and display cases, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: gallery rooms, artifacts, quiet light, and memory, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ao Dai Museum works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Ao dai display in garden-like museum space, colorful silk with local history, display cases, gallery rooms, and artifacts, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bảo tàng Áo Dài belongs to Ao dai display in garden-like museum space, colorful silk, especially the surrounding artifacts, quiet light, memory, and local history, alongside Ben Thanh market energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bach-dang-waterbus-station",
+      "summary": "Bach Dang Waterbus Station is worth knowing in Saigon because it brings the city opening onto a river route rather than a road route into the trip. Expect river steps, boat noses, skyline edges, and the change from street movement to water movement.",
+      "context": "For Bach Dang Waterbus Station, Saigon's river landing story comes through bridges, skyline views, waterfront movement, and river steps, alongside Saigon river lights.",
+      "tip": "Bến tàu thủy Bạch Đằng feels tied to Bach Dang Waterbus Station through bridges, skyline views, waterfront movement, and river steps, alongside Saigon river lights.",
+      "rationale": "Bach Dang Waterbus Station brings Saigon into focus through boarding points, boats, bridges, and skyline views, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bach Dang Waterbus Station is worth knowing because it gives Saigon a specific river landing scene: bridges, skyline views, waterfront movement, and river steps, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bach Dang Waterbus Station, you get the city opening onto a river route rather than a road route: river steps, boat noses, skyline edges, and the change from street movement to water movement, with boarding points, boats, bridges, and skyline views, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến tàu thủy Bạch Đằng for Bach Dang Waterbus Station. The local name is easier to remember once it sits beside river steps, boarding points, boats, and bridges, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Bach Dang Waterbus Station gives your itinerary a clearer image: river steps, boarding points, boats, and bridges, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bach Dang Waterbus Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture river steps, boat noses, skyline edges, and the change from street movement to water movement with river steps, boarding points, boats, and bridges, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến tàu thủy Bạch Đằng carries River steps, boat noses, skyline edges, and the change from street movement to water movement forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bach-dang-wharf",
+      "summary": "Bach Dang Wharf is worth knowing in Saigon because it brings architecture, views, local pride, and history in visual form into the trip. Expect Saigon River waterfront at Bach Dang Wharf with skyline and boats.",
+      "context": "For Bach Dang Wharf, Saigon's landmark story comes through views, local pride, history, and city light, alongside Saigon street energy.",
+      "tip": "Bến Bạch Đằng feels tied to Bach Dang Wharf through history, city light, landmark memory, and architecture, alongside Saigon street energy.",
+      "rationale": "Bach Dang Wharf brings Saigon into focus through views, local pride, history, and city light, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bach Dang Wharf is worth knowing because it gives Saigon a specific landmark scene: history, city light, landmark memory, and architecture, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bach Dang Wharf, you get architecture, views, local pride, and history in visual form: Saigon River waterfront at Bach Dang Wharf with skyline and boats, with views, local pride, history, and city light, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến Bạch Đằng for Bach Dang Wharf. The local name is easier to remember once it sits beside city light, landmark memory, architecture, and views, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Bach Dang Wharf gives your itinerary a clearer image: local pride, history, city light, and landmark memory, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bach Dang Wharf works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Saigon River waterfront at Bach Dang Wharf with skyline and boats with city light, landmark memory, architecture, and views, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến Bạch Đằng belongs to the real scene around Bach Dang Wharf: landmark memory, architecture, views, and local pride, alongside Saigon street energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-banh-mi",
+      "summary": "Banh mi in Saigon is fast, layered, and built for the street: crisp bread, pate, herbs, pickles, chili, and a vendor rhythm that feels instantly local.",
+      "context": "Banh mi matters in Saigon because it is both everyday food and a first taste of the city: portable, cheap, fragrant, and easy to find.",
+      "tip": "Bánh mì is the dish name to recognize. The Saigon part comes from the style, the cart, and the fillings more than a longer phrase.",
+      "rationale": "Banh mi gives Saigon a food memory that is simple to order and vivid before arrival: crunch, herbs, pate, pickles, and street-side speed.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh mi is worth trying because it shows Saigon at street speed: a crisp baguette, pate, herbs, pickled vegetables, chili, and a vendor who can build lunch in minutes."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "Expect crunch first, then richness from pate or meat, freshness from herbs and pickles, and heat if chili goes in. It is small enough for a snack and satisfying enough for a meal."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh mì for banh mi. The name is already the menu word, so keep it short unless you are naming a specific shop."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a low-effort first bite of Saigon: quick, filling, inexpensive, and easy to compare from one shop to another."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Before you go, decide whether chili is welcome. Many of the best sandwiches move fast, so it helps to know the basic word before you reach the counter."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Good to know: bánh mì can mean bread generally, but on food pages and street signs it usually points to the filled sandwich."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+      "summary": "Banh Mi Huynh Hoa is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Banh mi counter with crusty baguettes and fillings, Saigon street shop.",
+      "context": "For Banh Mi Huynh Hoa, Saigon's restaurant story comes through evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.",
+      "tip": "Banh Mi Huynh Hoa stays rooted in Saigon through house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy.",
+      "rationale": "Banh Mi Huynh Hoa brings Saigon into focus through evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh Mi Huynh Hoa is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh Mi Huynh Hoa, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Banh mi counter with crusty baguettes and fillings, Saigon street shop, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh mì Huỳnh Hoa for Banh Mi Huynh Hoa. The local name is easier to remember once it sits beside drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh Mi Huynh Hoa works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Banh mi counter with crusty baguettes and fillings, Saigon street shop with drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Banh Mi Huynh Hoa feels more present when Bánh mì Huỳnh Hoa has staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-banh-xeo",
+      "summary": "Southern sizzling pancake is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect crispy bánh xèo with shrimp, pork, herbs, dipping sauce.",
+      "context": "For Southern sizzling pancake, Saigon's food story comes through steam, texture, small meal rituals, and flavor, alongside Saigon river lights.",
+      "tip": "Bánh xèo ở Thành phố Hồ Chí Minh feels tied to Southern sizzling pancake through steam, texture, small meal rituals, and flavor, alongside Saigon river lights.",
+      "rationale": "Southern sizzling pancake brings Saigon into focus through small meal rituals, flavor, herbs, and sauce, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Southern sizzling pancake is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Southern sizzling pancake, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: crispy bánh xèo with shrimp, pork, herbs, dipping sauce, with herbs, sauce, steam, and texture, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh xèo ở Thành phố Hồ Chí Minh for Southern sizzling pancake. The local name is easier to remember once it sits beside flavor, herbs, sauce, and steam, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: texture, small meal rituals, flavor, and herbs, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Southern sizzling pancake works best when the name is tied to the reason for going, not memorized as an abstract label. Picture crispy bánh xèo with shrimp, pork, herbs, dipping sauce with texture, small meal rituals, flavor, and herbs, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The scene around Southern sizzling pancake stays vivid when Bánh xèo ở Thành phố Hồ Chí Minh sits beside small meal rituals, flavor, herbs, and sauce, alongside Saigon river lights."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-banh-xeo-46a",
+      "summary": "Banh Xeo 46A is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect large crispy bánh xèo on metal tray with herbs, Saigon restaurant table.",
+      "context": "For Banh Xeo 46A, Saigon's restaurant story comes through staff rhythm, drinks, evening meal energy, and tables, alongside Nguyen Hue city light.",
+      "tip": "Banh Xeo 46A feels clearer with house dishes, menu details, staff rhythm, and drinks, alongside Nguyen Hue city light around it.",
+      "rationale": "Banh Xeo 46A brings Saigon into focus through evening meal energy, tables, house dishes, and menu details, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh Xeo 46A is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh Xeo 46A, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: large crispy bánh xèo on metal tray with herbs, Saigon restaurant table, with staff rhythm, drinks, evening meal energy, and tables, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh xèo 46A for Banh Xeo 46A. The local name is easier to remember once it sits beside drinks, evening meal energy, tables, and house dishes, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh Xeo 46A works best when the name is tied to the reason for going, not memorized as an abstract label. Picture large crispy bánh xèo on metal tray with herbs, Saigon restaurant table with menu details, staff rhythm, drinks, and evening meal energy, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh xèo 46A points to Banh Xeo 46A's scene through evening meal energy, tables, house dishes, and menu details, alongside Nguyen Hue city light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "summary": "A famous Saigon clock-tower market for quick orientation, snack stalls, souvenir aisles, bargaining practice, and an outside meeting point before the crowd takes over.",
+      "context": "A central Saigon market stop shaped by the clock tower, snack stalls, souvenir aisles, bargaining practice, and an easy outside meeting point.",
+      "tip": "Walk once before buying; the first lap gives you prices, tone, exits, and a better place to meet if the group splits up.",
+      "rationale": "Ben Thanh gives Saigon a first market scene that is famous, busy, visitor-facing, and still useful for orientation, snacks, and gifts.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Start With The Clock Tower",
+          "body": "Ben Thanh is both a landmark and a working market scene: the clock-tower entrance, souvenir aisles, snack stalls, and practiced sales rhythm all packed into one central Saigon stop. Walk once before buying. The first lap is part of the visit."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "price-1",
+            "price-8",
+            "coffee-7"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Let The First Lap Slow You Down",
+          "body": "The same kind of bag, shirt, coffee pack, or snack may appear more than once. A lap gives you prices, tone, and exits before you commit."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Snack Small, Browse Light",
+          "body": "A drink, a bowl, or one grilled item is enough to make the market feel real without turning it into a full meal. Save energy for the next street."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Meet Outside, Not Deep Inside",
+          "body": "The clock tower is easier than a stall number. If people split up, choose an outside meeting point before the aisles pull everyone in different directions."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "summary": "Ben Thanh Metro Station is worth recognizing because travel days still carry the mood of Saigon. Expect station facade, route boards, waiting benches, and local streets just outside.",
+      "context": "For Ben Thanh Metro Station, Saigon's station story comes through onward roads, station doors, route boards, and waiting benches, alongside Nguyen Hue city light.",
+      "tip": "Ben Thanh Metro Station carries city light, local signs, onward roads, and station doors, alongside Nguyen Hue city light into the travel plan.",
+      "rationale": "Ben Thanh Metro Station brings Saigon into focus through onward roads, station doors, route boards, and waiting benches, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ben Thanh Metro Station is worth recognizing because travel days still carry the city's mood: route boards, waiting benches, city light, and local signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ben Thanh Metro Station, you get the handoff between travel days, city days, trains, buses, rides, and local names: station facade, route boards, waiting benches, and local streets just outside, with route boards, waiting benches, city light, and local signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Ga Bến Thành for Ben Thanh Metro Station. The local name is easier to remember once it sits beside waiting benches, city light, local signs, and onward roads, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Ben Thanh Metro Station gives your itinerary a clearer image: waiting benches, city light, local signs, and onward roads, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ben Thanh Metro Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture station facade, route boards, waiting benches, and local streets just outside with waiting benches, city light, local signs, and onward roads, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ga Bến Thành carries the surrounding image back to Station facade, route boards, waiting benches, and local streets just outside and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bep-me-in",
+      "summary": "Bep Me In is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect cozy Saigon restaurant table with clay pots and herbs.",
+      "context": "For Bep Me In, Saigon's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy.",
+      "tip": "Bếp Mẹ Ỉn feels tied to Bep Me In through staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy.",
+      "rationale": "Bep Me In brings Saigon into focus through staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bep Me In is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bep Me In, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: cozy Saigon restaurant table with clay pots and herbs, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bếp Mẹ Ỉn for Bep Me In. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bep Me In works best when the name is tied to the reason for going, not memorized as an abstract label. Picture cozy Saigon restaurant table with clay pots and herbs with tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bếp Mẹ Ỉn belongs to Cozy Saigon restaurant table with clay pots and herbs, especially the surrounding staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-binh-tay-market",
+      "summary": "Binh Tay Market is worth browsing because it shows Saigon through stalls, snacks, goods, color, and everyday buying rhythm. Expect Binh Tay Market courtyard with yellow facade and stalls.",
+      "context": "For Binh Tay Market, Saigon's market story comes through bags, local shopping movement, market aisles, and produce colors, alongside Saigon street energy.",
+      "tip": "Chợ Bình Tây sits inside the scene around Binh Tay Market: bags, local shopping movement, market aisles, and produce colors, alongside Saigon street energy.",
+      "rationale": "Binh Tay Market brings Saigon into focus through market aisles, produce colors, snack counters, and bargaining rhythm, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Binh Tay Market is worth browsing because it shows everyday Saigon: bags, local shopping movement, market aisles, and produce colors, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Binh Tay Market, you get everyday shopping, snacks, gifts, bargaining, and local rhythm: Binh Tay Market courtyard with yellow facade and stalls, with snack counters, bargaining rhythm, bags, and local shopping movement, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ Bình Tây for Binh Tay Market. The local name is easier to remember once it sits beside local shopping movement, market aisles, produce colors, and snack counters, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: bargaining rhythm, bags, local shopping movement, and market aisles, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Binh Tay Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Binh Tay Market courtyard with yellow facade and stalls with bargaining rhythm, bags, local shopping movement, and market aisles, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chợ Bình Tây points to Binh Tay Market's scene through market aisles, produce colors, snack counters, and bargaining rhythm, alongside Saigon street energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bitexco-tower",
+      "summary": "Bitexco Financial Tower is worth knowing in Saigon because it brings architecture, views, local pride, and history in visual form into the trip. Expect Bitexco tower rising over District 1 streets, scooters below.",
+      "context": "For Bitexco Financial Tower, Saigon's landmark story comes through landmark memory, architecture, views, and local pride, alongside Ben Thanh market energy.",
+      "tip": "Bitexco Financial Tower feels clearer with views, local pride, history, and city light, alongside Ben Thanh market energy around it.",
+      "rationale": "Bitexco Financial Tower brings Saigon into focus through landmark memory, architecture, views, and local pride, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bitexco Financial Tower is worth knowing because it gives Saigon a specific landmark scene: views, local pride, history, and city light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bitexco Financial Tower, you get architecture, views, local pride, and history in visual form: Bitexco tower rising over District 1 streets, scooters below, with history, city light, landmark memory, and architecture, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Tòa nhà Bitexco for Bitexco Financial Tower. The local name is easier to remember once it sits beside city light, landmark memory, architecture, and views, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Bitexco Financial Tower gives your itinerary a clearer image: local pride, history, city light, and landmark memory, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bitexco Financial Tower works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Bitexco tower rising over District 1 streets, scooters below with local pride, history, city light, and landmark memory, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Tòa nhà Bitexco carries Bitexco Financial Tower's surrounding details: landmark memory, architecture, views, and local pride, alongside Ben Thanh market energy, with Bitexco tower rising over District 1 streets, scooters below behind it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bo-la-lot",
+      "summary": "Beef in betel leaves is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect grilled bò lá lốt rolls with herbs and rice paper.",
+      "context": "For Beef in betel leaves, Saigon's food story comes through texture, small meal rituals, flavor, and herbs, alongside Saigon street energy.",
+      "tip": "Saigon's food scene comes through sauce, steam, texture, and small meal rituals, alongside Saigon street energy.",
+      "rationale": "Beef in betel leaves brings Saigon into focus through sauce, steam, texture, and small meal rituals, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Beef in betel leaves is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with sauce, steam, texture, and small meal rituals, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Beef in betel leaves, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: grilled bò lá lốt rolls with herbs and rice paper, with sauce, steam, texture, and small meal rituals, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bò lá lốt ở Thành phố Hồ Chí Minh for Beef in betel leaves. The local name is easier to remember once it sits beside herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Beef in betel leaves works best when the name is tied to the reason for going, not memorized as an abstract label. Picture grilled bò lá lốt rolls with herbs and rice paper with small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bò lá lốt ở Thành phố Hồ Chí Minh carries Beef in betel leaves's surrounding details: texture, small meal rituals, flavor, and herbs, alongside Saigon street energy, with Grilled bò lá lốt rolls with herbs and rice paper behind it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bot-chien",
+      "summary": "Fried rice-flour cakes is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect bột chiên sizzling on flat griddle with egg and green onions.",
+      "context": "For Fried rice-flour cakes, Saigon's food story comes through flavor, herbs, sauce, and steam, alongside Ben Thanh market energy.",
+      "tip": "Bột chiên ở Thành phố Hồ Chí Minh belongs beside flavor, herbs, sauce, and steam, alongside Ben Thanh market energy around Fried rice-flour cakes.",
+      "rationale": "Fried rice-flour cakes brings Saigon into focus through sauce, steam, texture, and small meal rituals, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Fried rice-flour cakes is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with sauce, steam, texture, and small meal rituals, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Fried rice-flour cakes, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bột chiên sizzling on flat griddle with egg and green onions, with texture, small meal rituals, flavor, and herbs, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bột chiên ở Thành phố Hồ Chí Minh for Fried rice-flour cakes. The local name is easier to remember once it sits beside steam, texture, small meal rituals, and flavor, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: herbs, sauce, steam, and texture, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Fried rice-flour cakes works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bột chiên sizzling on flat griddle with egg and green onions with herbs, sauce, steam, and texture, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bột chiên ở Thành phố Hồ Chí Minh keeps its setting close: Bột chiên sizzling on flat griddle with egg and green onions, surrounded by sauce, steam, texture, and small meal rituals, alongside Ben Thanh market energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-bui-vien-street",
+      "summary": "Bùi Viện is Saigon’s concentrated backpacker-nightlife strip, best handled with one look-first pass, close phone and bag habits, and price checks before sitting down.",
+      "context": "Bùi Viện works when the first visit is observational before committed: walk once, read the noise, then decide whether a bar, food stall, or exit is right.",
+      "tip": "Early evening is kinder for a first look. Later gets louder, more alcohol-driven, and more chaotic around pitches and prices.",
+      "rationale": "The street is still worth seeing because it shows one concentrated version of Saigon nightlife, as long as it is balanced with calmer parts of the city.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Walk Once Before Sitting",
+          "body": "Bùi Viện is useful when you want to see the backpacker-nightlife version of Ho Chi Minh City in one concentrated walk. Do one pass before choosing anything."
+        },
+        {
+          "id": "place-brief",
+          "title": "Music From Every Door",
+          "body": "Bars push sound into the street, stools fill the pavement, and people move in slow clusters. It can be fun briefly and exhausting if you expected a relaxed night market."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "food-menu",
+            "price-8",
+            "polite-4",
+            "taxi-3"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Check Prices Before Ordering",
+          "body": "Keep your phone and bag close, check prices before ordering, and ignore quick pitches that pressure a decision. Looking first keeps the visit lighter."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Backpacker District, Not All Saigon",
+          "body": "Bùi Viện sits in the Phạm Ngũ Lão backpacker area near central District 1. See it if curious, then balance it with Nguyễn Huệ, Chợ Lớn, or a quieter dinner."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-bun-thit-nuong",
+      "summary": "Grilled pork vermicelli is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect bowl of bún thịt nướng with herbs, peanuts, grilled pork.",
+      "context": "For Grilled pork vermicelli, Saigon's food story comes through texture, small meal rituals, flavor, and herbs, alongside District 1 movement.",
+      "tip": "Bún thịt nướng ở Thành phố Hồ Chí Minh sits inside the scene around Grilled pork vermicelli: texture, small meal rituals, flavor, and herbs, alongside District 1 movement.",
+      "rationale": "Grilled pork vermicelli brings Saigon into focus through sauce, steam, texture, and small meal rituals, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Grilled pork vermicelli is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with sauce, steam, texture, and small meal rituals, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Grilled pork vermicelli, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of bún thịt nướng with herbs, peanuts, grilled pork, with texture, small meal rituals, flavor, and herbs, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bún thịt nướng ở Thành phố Hồ Chí Minh for Grilled pork vermicelli. The local name is easier to remember once it sits beside small meal rituals, flavor, herbs, and sauce, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Grilled pork vermicelli works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of bún thịt nướng with herbs, peanuts, grilled pork with herbs, sauce, steam, and texture, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bún thịt nướng ở Thành phố Hồ Chí Minh carries the surrounding image back to Bowl of bún thịt nướng with herbs, peanuts, grilled pork and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ca-phe-sua-da",
+      "summary": "Saigon iced milk coffee is worth knowing in Saigon because drink culture is part pause, part local rhythm. Expect iced Vietnamese milk coffee on Saigon sidewalk table, scooters softly behind.",
+      "context": "For Saigon iced milk coffee, Saigon's drink story comes through cafe counters, street stools, local refreshment, and sweetness, alongside Nguyen Hue city light.",
+      "tip": "Saigon iced milk coffee stays rooted in Saigon through cafe counters, street stools, local refreshment, and sweetness, alongside Nguyen Hue city light.",
+      "rationale": "Saigon iced milk coffee brings Saigon into focus through local refreshment, sweetness, city pauses, and iced glasses, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Saigon iced milk coffee is worth knowing because Vietnam's drink culture often carries the pause between bigger plans: local refreshment, sweetness, city pauses, and iced glasses, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Saigon iced milk coffee, you get drink culture, street stools, cold glasses, local refreshment, and sidewalk pauses: iced Vietnamese milk coffee on Saigon sidewalk table, scooters softly behind, with local refreshment, sweetness, city pauses, and iced glasses, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cà phê sữa đá Sài Gòn ở Thành phố Hồ Chí Minh for Saigon iced milk coffee. The local name is easier to remember once it sits beside iced glasses, cafe counters, street stools, and local refreshment, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if a cold glass, coffee pause, or sidewalk drink would make the day feel more local: sweetness, city pauses, iced glasses, and cafe counters, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Saigon iced milk coffee works best when the name is tied to the reason for going, not memorized as an abstract label. Picture iced Vietnamese milk coffee on Saigon sidewalk table, scooters softly behind with iced glasses, cafe counters, street stools, and local refreshment, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cà phê sữa đá Sài Gòn ở Thành phố Hồ Chí Minh fits naturally with cafe counters, street stools, local refreshment, and sweetness, alongside Nguyen Hue city light around Saigon iced milk coffee."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cafe-apartment-nguyen-hue",
+      "summary": "Cafe Apartment on Nguyen Hue is not one cafe; it is an old apartment building turned into a vertical stack of cafes, boutiques, balconies, and tiny upstairs rooms above the walking street.",
+      "context": "Cafe Apartment on Nguyen Hue is Saigon cafe culture in building form: look up at the stacked facade, pick a floor, then settle into a small cafe room above Nguyen Hue Walking Street.",
+      "tip": "The useful hook is vertical cafe hopping, not just coffee: balconies, stairwells, signs, small shops, and the question of which floor to try first.",
+      "rationale": "Cafe Apartment on Nguyen Hue belongs in the city pages because it is a visual Saigon landmark and a practical District 1 pause, not just another cafe counter.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cafe Apartment on Nguyen Hue is worth saving because it is not one famous cafe. It is an old apartment building turned into a vertical cafe stop, with balconies, signs, small shops, and upstairs rooms facing the walking street."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cafe Apartment on Nguyen Hue, expect a small adventure before the coffee: looking up at the facade, finding the entrance, choosing a floor, and landing in a cafe with a balcony view over central Saigon."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chung cư cà phê Nguyễn Huệ. Chung cư means apartment building, cà phê means coffee or cafe, and Nguyễn Huệ is the walking street, so the phrase tells locals you mean the cafe-filled building."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a central Saigon stop that feels visual and easy to explore: coffee, balcony views, small boutiques, and a break from the heat without leaving District 1."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Before you go, do not picture a single counter. Picture a stacked apartment facade where each floor can hold a different cafe, and where the fun is partly deciding which little room to try."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Good to know: some people describe it by the address, 42 Nguyễn Huệ. If a cafe name changes, the building name still keeps the place recognizable."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cafe-hop-nguyen-hue",
+      "summary": "Nguyen Hue cafe hop is worth knowing in Saigon because it brings movement across the city as part of the discovery into the trip. Expect cafe-hopping scene inside Nguyen Hue apartment building, balcony city view.",
+      "context": "For Nguyen Hue cafe hop, Saigon's route story comes through food stops, cafe pauses, local movement, and the route between named places, alongside Ben Thanh market energy.",
+      "tip": "Saigon's route scene comes through cafe pauses, local movement, the route between named places, and street corners, alongside Ben Thanh market energy.",
+      "rationale": "Nguyen Hue cafe hop brings Saigon into focus through street corners, food stops, cafe pauses, and local movement, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Nguyen Hue cafe hop is worth knowing because it gives Saigon a specific route scene: food stops, cafe pauses, local movement, and the route between named places, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Nguyen Hue cafe hop, you get movement across the city as part of the discovery: cafe-hopping scene inside Nguyen Hue apartment building, balcony city view, with street corners, food stops, cafe pauses, and local movement, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đi cà phê Nguyễn Huệ for Nguyen Hue cafe hop. The local name is easier to remember once it sits beside street corners, food stops, cafe pauses, and local movement, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Nguyen Hue cafe hop gives your itinerary a clearer image: cafe pauses, local movement, the route between named places, and street corners, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Nguyen Hue cafe hop works best when the name is tied to the reason for going, not memorized as an abstract label. Picture cafe-hopping scene inside Nguyen Hue apartment building, balcony city view with street corners, food stops, cafe pauses, and local movement, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name stays tied to cafe pauses, local movement, the route between named places, and street corners, alongside Ben Thanh market energy, giving Nguyen Hue cafe hop a concrete setting in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+      "summary": "Pham Ngoc Thach cloth-filter coffee is worth saving for Saigon's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect cloth-filter coffee being poured in old Saigon cafe.",
+      "context": "For Pham Ngoc Thach cloth-filter coffee, Saigon's cafe story comes through coffee counters, iced glasses, street stools, and design details, alongside Ben Thanh market energy.",
+      "tip": "Cà phê vợt Phạm Ngọc Thạch points back to Pham Ngoc Thach cloth-filter coffee through coffee counters, iced glasses, street stools, and design details, alongside Ben Thanh market energy.",
+      "rationale": "Pham Ngoc Thach cloth-filter coffee brings Saigon into focus through coffee counters, iced glasses, street stools, and design details, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Pham Ngoc Thach cloth-filter coffee is worth saving when you want Saigon's cafe culture, not just caffeine: soft pauses, cafe views, coffee counters, and iced glasses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Pham Ngoc Thach cloth-filter coffee, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: cloth-filter coffee being poured in old Saigon cafe, with street stools, design details, soft pauses, and cafe views, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cà phê vợt Phạm Ngọc Thạch for Pham Ngoc Thach cloth-filter coffee. The local name is easier to remember once it sits beside design details, soft pauses, cafe views, and coffee counters, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: iced glasses, street stools, design details, and soft pauses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Pham Ngoc Thach cloth-filter coffee works best when the name is tied to the reason for going, not memorized as an abstract label. Picture cloth-filter coffee being poured in old Saigon cafe with cafe views, coffee counters, iced glasses, and street stools, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cà phê vợt Phạm Ngọc Thạch sits beside street stools, design details, soft pauses, and cafe views, alongside Ben Thanh market energy, so Pham Ngoc Thach cloth-filter coffee feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-che",
+      "summary": "Sweet soup dessert is worth trying in Saigon for sweetness, texture, color, and a small break between bigger plans. Expect colorful Vietnamese chè cups with coconut milk and jelly, Saigon dessert stall.",
+      "context": "For Sweet soup dessert, Saigon's sweet story comes through color, evening snack counters, dessert cups, and coconut milk, alongside Nguyen Hue city light.",
+      "tip": "Coconut milk, jelly, shaved ice, and fruit, alongside Nguyen Hue city light give Sweet soup dessert a setting before the trip begins.",
+      "rationale": "Sweet soup dessert brings Saigon into focus through coconut milk, jelly, shaved ice, and fruit, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Sweet soup dessert is worth trying for the sweet side of Saigon: the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters, with fruit, color, evening snack counters, and dessert cups, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Sweet soup dessert, you get the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters: colorful Vietnamese chè cups with coconut milk and jelly, Saigon dessert stall, with color, evening snack counters, dessert cups, and coconut milk, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chè Sài Gòn ở Thành phố Hồ Chí Minh for Sweet soup dessert. The local name is easier to remember once it sits beside fruit, color, evening snack counters, and dessert cups, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the sweet, textural side of the city: fruit, color, evening snack counters, and dessert cups, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Sweet soup dessert works best when the name is tied to the reason for going, not memorized as an abstract label. Picture colorful Vietnamese chè cups with coconut milk and jelly, Saigon dessert stall with shaved ice, fruit, color, and evening snack counters, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chè Sài Gòn ở Thành phố Hồ Chí Minh fits naturally with dessert cups, coconut milk, jelly, and shaved ice, alongside Nguyen Hue city light around Sweet soup dessert."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

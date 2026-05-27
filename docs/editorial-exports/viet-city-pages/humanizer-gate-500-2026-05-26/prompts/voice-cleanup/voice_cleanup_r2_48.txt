@@ -1,0 +1,284 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_48",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_48",
+  "chunks": [
+    {
+      "chunkFile": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hoian-place-cham-islands",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-cham-islands-snorkel-boat",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hoian-place-che-bap-cam-nam",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-chuc-thanh-pagoda",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-chuc-thanh-pagoda",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cocobox",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-cham-islands",
+          "summary": "Cham Islands moves Hoi An out from old streets toward open water, green hills, fishing boats, and a different pace. It belongs in the plan when the day needs air, weather, and a real break from lanes.",
+          "context": "The island name belongs to the water side of Hoi An: boat planning, weather, green edges, and time away from dense streets.",
+          "tip": "Cù Lao Chàm is easier to remember as a water day, not a quick old-town add-on.",
+          "rationale": "Cham Islands gives the city a wider frame: sea, hills, boats, and the pause that comes after too many close streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Open Water After Old Streets",
+              "body": "Cham Islands is the Hoi An phrase that points beyond the old-town lanes. It gives the trip sea air, green hills, fishing boats, and a slower day shaped by weather."
+            },
+            {
+              "id": "place-brief",
+              "title": "Island Bay, Working Boats",
+              "body": "The scene is a turquoise island bay, working boats, and green slopes in clear daylight. The feeling is less about one landmark and more about the city loosening toward the sea."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cù Lao Chàm On The Water",
+              "body": "You may hear Cù Lao Chàm. Hold the full sound with the island picture: boat ride, sea air, green hills, and time away from the old-town lanes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Island Day Pairing",
+              "body": "It fits when the Hoi An plan needs one bigger nature break after markets, houses, cafes, or tailor stops. The commitment is water-based, so weather should lead the decision."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Open-Water Memory",
+              "body": "The phrase is easiest to remember when tied to the reason: open water, island hills, and a day outside the old-town rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Bigger Day Than A View",
+              "body": "This is not just another view inside Hoi An. It changes the pace of the day, so leave space around it instead of squeezing it between small stops."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+          "summary": "Cham Islands snorkel boat turns the island idea into a boarding moment: clear water ahead, green islands in view, and the day shaped by a boat plan rather than old-town walking.",
+          "context": "This belongs to Hoi An's water-travel side: boarding points, boat time, sea light, and the move from shore to island.",
+          "tip": "Tàu đi Cù Lao Chàm belongs to the crossing itself: the dock, the boat, the water, and the return plan.",
+          "rationale": "The boat gives Cham Islands a physical sequence: boarding, crossing, snorkeling, and returning, not just a dot offshore.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Crossing, Not Just Transport",
+              "body": "This stop is about the boat becoming part of the day. The clear image is boarding near shore, heading toward green islands, and letting water set the pace."
+            },
+            {
+              "id": "place-brief",
+              "title": "Clear Water Before Arrival",
+              "body": "The scene is a small tour boat moving over clear water toward Cham Islands. The island visit starts before arrival, with sea light, motion, and the simple focus of getting out there."
+            },
+            {
+              "id": "quick-say",
+              "title": "Tàu Đi Means The Boat",
+              "body": "Tàu đi Cù Lao Chàm means a boat going to Cham Islands. The phrase helps when the plan is about the crossing, not only the island."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Longer Water Rhythm",
+              "body": "It fits a day that can handle a longer water rhythm. A lighter old-town plan makes the return feel less like an afterthought."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Boarding To Return",
+              "body": "The snorkel boat phrase works when it carries the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hoi An."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather Matters",
+              "body": "Water clarity, comfort, and timing depend on weather. A flexible plan is safer than treating the boat as a fixed old-town errand."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-che-bap-cam-nam",
+          "summary": "Cam Nam corn sweet soup gives Hoi An a small, soft food pause: corn, coconut milk, sweetness, and riverside daylight between bigger meals and walks.",
+          "context": "This is the dessert side of Hoi An: simple bowls, coconut milk, corn texture, and a snack break rather than a full meal.",
+          "tip": "Chè bắp Cẩm Nam is easier to remember as a bowl, not a dessert category: sweet corn, coconut milk, and a quick reset.",
+          "rationale": "The dish makes Cam Nam feel close to Hoi An's food rhythm without pretending it is a major restaurant stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Sweet Pause",
+              "body": "Cam Nam corn sweet soup is a quick bowl, not a big food mission. It gives sweetness and texture between walks, especially when lunch or dinner still sits ahead."
+            },
+            {
+              "id": "place-brief",
+              "title": "Corn, Coconut, Daylight",
+              "body": "The bowl is corn sweet soup with coconut milk on a simple table in riverside daylight. The detail to remember is soft corn, light sweetness, and a pause that stays small."
+            },
+            {
+              "id": "quick-say",
+              "title": "Corn Sweet Soup In Cam Nam",
+              "body": "Chè bắp Cẩm Nam names the Cam Nam version of corn sweet soup. The words help you recognize the dish when dessert stalls or menus are close."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snack Rhythm",
+              "body": "It fits after a walk across Cam Nam or before returning to heavier food. The bowl is a gentle pause, not a whole food plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Bowl, Simple Move",
+              "body": "The moment is simple: point to the bowl, recognize the phrase, and enjoy something sweet without turning the stop into a full meal."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Texture First",
+              "body": "This is about corn, coconut milk, and soft texture more than dramatic flavor. That smaller expectation makes the stop easier to enjoy."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-chuc-thanh-pagoda",
+          "summary": "Chuc Thanh Pagoda gives Hoi An a quieter sacred stop: old roofs, incense, shaded courtyard space, and a pace that asks for slower steps.",
+          "context": "The pagoda belongs to Hoi An's spiritual layer: gates, tiled roofs, incense, local memory, and respectful pauses away from shopping streets.",
+          "tip": "Chùa Chúc Thánh is a phrase to hold quietly. Match it with covered courtyards, shade, and the slower behavior of a worship space.",
+          "rationale": "The place adds depth to Hoi An by turning architecture and worship into a calm stop rather than another exterior photo.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Sacred Stop",
+              "body": "Chuc Thanh Pagoda asks for a slower pace than old-town browsing. The visit is about worship, old rooflines, incense, and the quiet held inside a courtyard."
+            },
+            {
+              "id": "place-brief",
+              "title": "Roof Tiles And Shade",
+              "body": "The courtyard image is mossy roof tiles, frangipani trees, and age in the surfaces. The interest is in stillness as much as architecture."
+            },
+            {
+              "id": "quick-say",
+              "title": "Chùa Marks The Pagoda",
+              "body": "Chùa Chúc Thánh is the Vietnamese phrase. A local may recognize that more quickly than the English-style pagoda wording."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-Town Contrast",
+              "body": "It fits when the day has had enough shops, cafes, and bright streets. The stop gives Hoi An a more devotional rhythm without needing a long visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respectful Pace",
+              "body": "The first move is not the camera. The courtyard, incense, and worship setting tell you how quiet to be."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sacred, Not Scenic Only",
+              "body": "The tiled roofs and trees matter, but this is still a pagoda. Dress and behavior should follow the setting rather than the photo."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cocobox",
+          "summary": "Cocobox gives Hoi An a short cafe reset: fruit, juice, coffee, design cues, and a little shade when the walking loop starts to blur.",
+          "context": "This is Hoi An's cafe rhythm in a compact form: a counter, cold drinks, coffee, fruit, and a pause between old-town moves.",
+          "tip": "Cocobox is easiest to treat as a drink stop with fruit and coffee, not a meal plan.",
+          "rationale": "Cocobox helps the day slow down without leaving the old-town flow.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cool Drink Pause",
+              "body": "Cocobox fits the part of the day when heat and walking have made everything feel too close. Coffee, juice, and fruit give the old-town loop a reset."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fruit, Coffee, Counter",
+              "body": "The counter is tropical juice, coffee, fruit, and a yellow-wall Hoi An feel. The stop is small, visual, and drink-led."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cocobox At The Counter",
+              "body": "Cocobox usually stays as Cocobox. A slow pronunciation plus a point to coffee, juice, or the counter menu is enough."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Walks",
+              "body": "It belongs between shops, old houses, river time, or a lunch plan. The point is a clean pause rather than a long cafe session."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Heat Reset",
+              "body": "The strongest moment is practical: one cold drink, a short seat, and enough time for the next old-town stretch to feel clear again."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cafe, Not Landmark",
+              "body": "The phrase helps mark a pause in the day. It does not need to carry the whole Hoi An cafe story."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

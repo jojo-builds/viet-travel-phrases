@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW CITY/PLACE COPY.** Current standard: `speaklocal.place.app-detail.v2.2`. Start with `CURRENT_CITY_PAGE_STANDARD.md`. This file is retained only as historical reference.
+
 # SpeakLocal Calibrated 31 Example Set - Vietnam Cities V2.1
 
 This file curates the supplied 26-entry set into primary anchors, secondary examples, revised weaker examples, and five new backlog entries.

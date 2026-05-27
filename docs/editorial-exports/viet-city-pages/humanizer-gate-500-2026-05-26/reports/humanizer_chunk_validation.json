@@ -1,0 +1,2325 @@
+{
+  "gate": "humanizer-gate-500-2026-05-26",
+  "generatedAt": "2026-05-27T08:28:59.212Z",
+  "entries": 500,
+  "errorCount": 534,
+  "warningCount": 0,
+  "chunks": [
+    {
+      "file": "danang_001_025_humanized.json",
+      "cityID": "danang",
+      "range": "001-025",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-danang-place-3d-art-in-paradise",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-43-factory",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-airport",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to []"
+        },
+        {
+          "id": "city-danang-place-an-thuong-street-area",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-apec-park",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-asia-park",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-ba-na-cable-car",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-ba-na-hills",
+          "message": "quick-say phraseIDs changed from [sight-1|sight-3|sight-4] to [sight-1|sight-3|sight-4|sight-5]"
+        },
+        {
+          "id": "city-danang-place-bac-my-an-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-bac-my-an-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|food-3] to [price-1|food-1|food-3|food-7]"
+        },
+        {
+          "id": "city-danang-place-bach-dang-street",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-ban-co-peak",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-banh-mi",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-banh-trang-cuon-thit-heo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-banh-xeo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-banh-xeo-ba-duong",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-be-man",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-bep-cuon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-boulevard-gelato-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-bun-cha-ca",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-bun-cha-ca-hon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-cathedral",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-central-bus-station",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-5|taxi-3] to []"
+        },
+        {
+          "id": "city-danang-place-cham-museum",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-cham-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3|sight-4]"
+        },
+        {
+          "id": "city-danang-place-che-xoa-xoa-hat-luu",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-co-chu-nho",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "danang_026_050_humanized.json",
+      "cityID": "danang",
+      "range": "026-050",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-danang-place-con-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-con-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|food-3] to [price-1|food-1|food-3|food-7]"
+        },
+        {
+          "id": "city-danang-place-cong-caphe-bach-dang",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-domestic-terminal",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to []"
+        },
+        {
+          "id": "city-danang-place-dong-dinh-museum",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-dong-dinh-museum",
+          "message": "quick-say phraseIDs changed from [sight-1|sight-3|sight-4] to [sight-1|sight-3|sight-4|hotel-9]"
+        },
+        {
+          "id": "city-danang-place-dragon-bridge",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-dragon-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|sight-4] to [directions-1|sight-3|sight-4|taxi-3]"
+        },
+        {
+          "id": "city-danang-place-dragon-bridge-fire-show",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-dragon-carp-statue",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-fatfish",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-fine-arts-museum",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-fine-arts-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3|sight-4]"
+        },
+        {
+          "id": "city-danang-place-golden-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-hai-chau-district",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-hai-san",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-hai-van-pass",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-hai-van-pass-ride",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-han-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-han-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to [price-1|price-4|food-1|shop-5]"
+        },
+        {
+          "id": "city-danang-place-han-river",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-han-river-cruise",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-helio-night-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-helio-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|food-3] to [price-1|food-1|food-3|food-7]"
+        },
+        {
+          "id": "city-danang-place-hoa-phu-thanh",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-hoa-trung-lake",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-international-terminal",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-international-terminal",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to [airport-1|airport-2|airport-3|airport-5]"
+        },
+        {
+          "id": "city-danang-place-kem-bo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-la-maison-1888",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-lady-buddha",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-le-duan-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-danang-place-linh-ung-pagoda",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-long-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-lotte-mart",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-lotte-mart",
+          "message": "quick-say phraseIDs changed from [price-1|shop-5|store-2] to [price-1|shop-5|store-2|store-7]"
+        },
+        {
+          "id": "city-danang-place-love-bridge",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-love-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|sight-4] to [directions-1|sight-3|sight-4|taxi-3]"
+        },
+        {
+          "id": "city-danang-place-madame-lan",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-man-thai-beach",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-marble-mountain-cave-walk",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-marble-mountains",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-mi-quang",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-mi-quang-1a",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-museum",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3|sight-4]"
+        },
+        {
+          "id": "city-danang-place-museum-branch-2",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-danang-place-my-an",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-my-an-beach",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-my-khe",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-my-quang-ba-mua",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-my-quang-dung",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-nam-danh-seafood",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-nam-house",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-nam-o-fish-sauce-village",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-nam-o-reef",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-nem-lui",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-nen",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-ngu-hanh-son-district",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "danang_076_100_humanized.json",
+      "cityID": "danang",
+      "range": "076-100",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-danang-place-nguyen-van-linh-street",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-non-nuoc-beach",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-non-nuoc-stone-village",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-oc-hut",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-pham-van-dong-beach",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-phap-lam-pagoda",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-phuoc-my",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-railway-station",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-5|taxi-3] to []"
+        },
+        {
+          "id": "city-danang-place-reply-1988",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-six-on-six",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-son-tra",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-son-tra-district",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-son-tra-night-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-danang-place-son-tra-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|food-3] to [price-1|food-1|food-3|food-7]"
+        },
+        {
+          "id": "city-danang-place-son-tra-wildlife-drive",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-thanh-binh-beach",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-danang-place-the-temptation",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-danang-place-thuan-phuoc-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-tien-sa-port",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-5|taxi-3] to []"
+        },
+        {
+          "id": "city-danang-place-tran-hung-dao-street",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-tran-thi-ly-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-trung-vuong-theatre",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-vincom-plaza",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-danang-place-vo-nguyen-giap-street",
+          "message": "quick-say phraseIDs changed from [directions-1|sight-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-danang-place-wonderlust",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-danang-place-yen-retreat",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hanoi-place-ba-dinh-district",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-ba-dinh-square",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-banh-cuon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-bay-mau-lake",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-bia-hoi",
+          "message": "quick-say phraseIDs changed from [v900-food-drin-do-you-have-beer|food-need-table|food-1] to []"
+        },
+        {
+          "id": "city-hanoi-place-botanical-garden",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|store-1] to []"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to [food-menu|food-3|coffee-7]"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha-huong-lien",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-bun-cha-ta",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-bun-thang",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-ca-phe-sua-da",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca-thang-long",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-cho-buoi-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-coffee-hop",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hanoi-place-cyclo-old-quarter",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-dinh-cafe",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hanoi-place-dinh-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please|coffee-7]"
+        },
+        {
+          "id": "city-hanoi-place-dong-da",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-dong-xuan",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-egg-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hanoi-place-ethnology-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter-walk",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-gia",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hanoi_026_050_humanized.json",
+      "cityID": "hanoi",
+      "range": "026-050",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hanoi-place-gia-lam-station",
+          "message": "quick-say phraseIDs changed from [directions-1|v900-dire-navi-where-is-the-train-station|v500-tran-is-this-train-delayed] to []"
+        },
+        {
+          "id": "city-hanoi-place-giang-cafe",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hanoi-place-giang-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please|coffee-7]"
+        },
+        {
+          "id": "city-hanoi-place-giap-bat-bus-station",
+          "message": "quick-say phraseIDs changed from [v500-tran-does-this-bus-go-there|v500-tran-when-is-the-next-bus|transport-fare] to []"
+        },
+        {
+          "id": "city-hanoi-place-hang-bac-street",
+          "message": "quick-say phraseIDs changed from [directions-1|price-1|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-hang-da-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-hang-gai-street",
+          "message": "quick-say phraseIDs changed from [directions-1|price-1|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-hanoi-flag-tower",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-hanoi-railway-station",
+          "message": "quick-say phraseIDs changed from [directions-1|v900-dire-navi-where-is-the-train-station|v500-tran-is-this-train-delayed] to []"
+        },
+        {
+          "id": "city-hanoi-place-hibana-by-koki",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-ho-chi-minh-mausoleum",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-ho-chi-minh-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-hoa-lo-prison",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-hoan-kiem",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-hom-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-imperial-citadel",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-lam-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hanoi-place-lamai-garden",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-lenin-park",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|store-1] to []"
+        },
+        {
+          "id": "city-hanoi-place-literature-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-loading-t-cafe",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hanoi-place-loading-t-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to [coffee-1|v500-dire-navi-do-i-go-upstairs|coffee-4|coffee-7]"
+        },
+        {
+          "id": "city-hanoi-place-long-bien-bridge",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-long-bien-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-manzi-art-space",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-mien-luon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-mien-luon-chan-cam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hanoi-place-my-dinh-bus-station",
+          "message": "quick-say phraseIDs changed from [v500-tran-does-this-bus-go-there|v500-tran-when-is-the-next-bus|transport-fare] to []"
+        },
+        {
+          "id": "city-hanoi-place-nang-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hanoi-place-national-museum-history",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-nem-cua-be",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-ngoc-son-temple",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-nguyen-huu-huan-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-night-market-walk",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-noi-bai-airport",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-nuoc-ngam-bus-station",
+          "message": "quick-say phraseIDs changed from [v500-tran-does-this-bus-go-there|v500-tran-when-is-the-next-bus|transport-fare] to []"
+        },
+        {
+          "id": "city-hanoi-place-old-quarter",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-old-quarter-walking-tour",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-one-pillar-pagoda",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-opera-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-can-i-buy-tickets|sight-4|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-phan-dinh-phung-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-pho-bat-dan",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-pho-bo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-pho-bo-lam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-pho-ga",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-pho-gia-truyen",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-quan-thanh-temple",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-quang-ba-flower-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-red-river",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-st-joseph-cathedral",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-street-food-walk",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-ta-hien",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hanoi_076_100_humanized.json",
+      "cityID": "hanoi",
+      "range": "076-100",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hanoi-place-tam-vi",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-tay-ho",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-temple-literature",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-the-note-coffee",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hanoi-place-the-note-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to [coffee-1|coffee-4|coffee-6|coffee-7]"
+        },
+        {
+          "id": "city-hanoi-place-thong-nhat-park",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|store-1] to []"
+        },
+        {
+          "id": "city-hanoi-place-train-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-tran-quoc-pagoda",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-trang-tien-plaza",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-trang-tien-street",
+          "message": "quick-say phraseIDs changed from [directions-1|price-1|shop-4] to []"
+        },
+        {
+          "id": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hanoi-place-truc-bach-lake",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-turtle-tower",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-udam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-need-table|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-art-gallery",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-circus",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-can-i-buy-tickets|sight-4|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-fine-arts-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-military-history-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-national-tuong-theatre",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-can-i-buy-tickets|sight-4|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-water-puppet-theatre",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-can-i-buy-tickets|sight-4|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-weekend-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|food-1|price-8] to []"
+        },
+        {
+          "id": "city-hanoi-place-west-lake",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-west-lake-loop",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|sight-5] to []"
+        },
+        {
+          "id": "city-hanoi-place-womens-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hanoi-place-xoi-xeo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v900-food-drin-what-do-you-recommend] to []"
+        },
+        {
+          "id": "city-hanoi-place-yen-so-park",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-dire-navi-can-i-walk-there|store-1] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hcmc_001_025_humanized.json",
+      "cityID": "hcmc",
+      "range": "001-025",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hcmc-place-42-nguyen-hue-apartment",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-akuna",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-an-dong-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-anan-saigon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-ao-dai-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-bach-dang-waterbus-station",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-8|v900-tran-where-can-i-buy-a-ticket] to []"
+        },
+        {
+          "id": "city-hcmc-place-bach-dang-wharf",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi-huynh-hoa",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-market",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to [price-1|price-8|coffee-7]"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|transport-2] to []"
+        },
+        {
+          "id": "city-hcmc-place-bep-me-in",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-binh-tay-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-bitexco-tower",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-bo-la-lot",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-bot-chien",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-bui-vien-street",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-bui-vien-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [food-menu|price-8|polite-4|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-bun-thit-nuong",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-ca-phe-sua-da",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-cafe-apartment-nguyen-hue",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-cafe-hop-nguyen-hue",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-che",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hcmc-place-cheo-leo-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-cho-lon",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-cho-lon",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [price-1|price-4|food-1|shop-5]"
+        },
+        {
+          "id": "city-hcmc-place-cho-lon-walking-route",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-city-hall",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-coco-dining",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-com-tam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-com-tam-ba-ghien",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-cong-ca-phe-dong-khoi",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-cu-chi-day-trip",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-cu-chi-tunnels",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-district-1",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-district-3",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-district-3",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [directions-1|directions-3|shop-4|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-dong-khoi-landmark-walk",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-dong-khoi-street",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-dong-khoi-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [directions-1|directions-3|v500-dire-navi-can-i-walk-there|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-gia-dinh-park",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hcmc-place-goi-cuon",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-golden-dragon-water-puppet",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-ho-thi-ky-flower-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-hu-tieu",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hcmc-place-independence-palace",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-jade-emperor-pagoda",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-japan-town",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-japan-town",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [directions-1|directions-3|shop-4|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-landmark-81",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-le-thanh-ton-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-le-van-tam-park",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hcmc-place-little-hanoi-egg-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-long-trieu",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-lusine-thao-dien",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to [food-need-table|food-menu|coffee-1|v900-food-drin-what-do-you-recommend|v900-food-drin-can-i-pay-the-bill-by-card]"
+        },
+        {
+          "id": "city-hcmc-place-mariamman-temple",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-mien-dong-bus-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|transport-2] to []"
+        },
+        {
+          "id": "city-hcmc-place-mien-tay-bus-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|transport-2] to []"
+        },
+        {
+          "id": "city-hcmc-place-motorbike-food-tour",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-municipal-theatre-square",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-nephele",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-nguyen-hue",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-nguyen-trai-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-nhieu-loc-canal",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hcmc-place-notre-dame",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-oc",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-opera-a-o-show",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-opera-house",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-pasteur-street",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-pasteur-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [directions-2|directions-3|repair-show-me|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-pha-lau",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-pham-ngu-lao-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hcmc_076_100_humanized.json",
+      "cityID": "hcmc",
+      "range": "076-100",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hcmc-place-pho-hoa-pasteur",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-pho-nam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-post-office",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-rex-hotel-rooftop",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-russian-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-saigon-railway-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|transport-2] to []"
+        },
+        {
+          "id": "city-hcmc-place-saigon-river",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-saigon-river-boat",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-saigon-skydeck",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-saigon-square",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-southern-women-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-street-food-evening",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-takashimaya-saigon-centre",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-tan-son-nhat-airport",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-tao-dan-park",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hcmc-place-thao-dien",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hcmc-place-thao-dien",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to [directions-1|directions-3|shop-4|taxi-3]"
+        },
+        {
+          "id": "city-hcmc-place-thien-hau-pagoda",
+          "message": "quick-say phraseIDs changed from [directions-1|v500-sigh-acti-where-is-the-entrance|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-thu-thiem-riverfront",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-ton-duc-thang-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-turtle-lake",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hcmc-place-vincom-dong-khoi",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-4] to []"
+        },
+        {
+          "id": "city-hcmc-place-vinhomes-central-park",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hcmc-place-war-remnants-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hcmc-place-workshop-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|v900-food-drin-one-hot-coffee-please|v900-food-drin-less-sugar-please] to []"
+        },
+        {
+          "id": "city-hcmc-place-zoo-botanical-gardens",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hoian_001_025_humanized.json",
+      "cityID": "hoian",
+      "range": "001-025",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hoian-place-an-bang",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-an-hoi-bridge",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-an-hoi-island",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-ancient-town",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-boat-pier",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-bale-well",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hoian-place-bale-well",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to [food-menu|food-1|food-3|coffee-7]"
+        },
+        {
+          "id": "city-hoian-place-banh-dap-hen-xao",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-banh-mi",
+          "message": "quick-say phraseIDs changed from [v500-food-drin-id-like-a-b-nh-m-please|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-banh-mi-phuong",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hoian-place-banh-mi-phuong",
+          "message": "quick-say phraseIDs changed from [v500-food-drin-id-like-a-b-nh-m-please|food-3|food-7] to [v500-food-drin-id-like-a-b-nh-m-please|food-3|food-7|price-1]"
+        },
+        {
+          "id": "city-hoian-place-banh-xeo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-bay-mau-coconut-forest",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-bebe-tailor",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-bus-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|taxi-3] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-chau",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-kim-island",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-nam",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-pho",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh-basket-boat",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh-coconut-village",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cantonese-assembly-hall",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-cao-lau-city",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-cargo-club",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hoian-place-cham-islands",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-cham-islands-snorkel-boat",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-che-bap-cam-nam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-chuc-thanh-pagoda",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-cocobox",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-com-ga",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-cooking-class",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-countryside-bicycle-loop",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-beach",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-estuary",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-pier",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        },
+        {
+          "id": "city-hoian-place-duc-an-old-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-espresso-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|taxi-3] to []"
+        },
+        {
+          "id": "city-hoian-place-faifo-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-folk-culture-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-from-danang-airport",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|taxi-3] to []"
+        },
+        {
+          "id": "city-hoian-place-from-danang-railway-station",
+          "message": "quick-say phraseIDs changed from [directions-8|v900-tran-where-can-i-buy-a-ticket|taxi-3] to []"
+        },
+        {
+          "id": "city-hoian-place-fujian-assembly-hall",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-hainan-assembly-hall",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-handicraft-workshop",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-history-culture-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-hoai-river",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-japanese-bridge",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-kim-bong-carpentry-village",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-lantern-boat",
+          "message": "quick-say phraseIDs changed from [v900-tran-where-is-the-boat-pier|v900-tran-where-can-i-buy-a-ticket|directions-8] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hoian-place-lantern-making-class",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-lune-center",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-madam-khanh",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hoian-place-madam-khanh",
+          "message": "quick-say phraseIDs changed from [v500-food-drin-id-like-a-b-nh-m-please|food-3|food-7] to [v500-food-drin-id-like-a-b-nh-m-please|food-3|food-7|price-1]"
+        },
+        {
+          "id": "city-hoian-place-mai-fish",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-mango-mango",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-memories-land",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-metiseko",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-mi-quang",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-minh-an-ward",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-morning-glory",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hoian-place-morning-glory",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v500-food-drin-does-this-contain-shrimp] to [food-menu|food-1|v500-food-drin-does-this-contain-shrimp|food-7]"
+        },
+        {
+          "id": "city-hoian-place-mot-herbal-drink",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-my-son-sanctuary",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-nguyen-hoang-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-nguyen-phuc-chu-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-nguyen-thai-hoc-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-nu-eatery",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-phin-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-phung-hung-old-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-pottery-workshop",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-precious-heritage-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-quan-cong-temple",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-quan-thang-old-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hoian_076_100_humanized.json",
+      "cityID": "hoian",
+      "range": "076-100",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hoian-place-reach-out-tea-house",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-reaching-out-arts-crafts",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-rice-fields",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-roastery",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-rosies-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-sa-huynh-culture-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-silk-village",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-streets-restaurant-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-tailor-fitting",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-tan-ky-old-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-thanh-ha",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-the-field",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-thu-bon-river",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-tra-nhieu-village",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-tra-que",
+          "message": "quick-say phraseIDs changed from [sight-2|sight-5|store-1] to []"
+        },
+        {
+          "id": "city-hoian-place-trade-ceramics-museum",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-traditional-art-performance-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-tran-phu-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hoian-place-trieu-chau-assembly-hall",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hoian-place-u-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hoian-place-vys-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        },
+        {
+          "id": "city-hoian-place-white-rose-dumplings",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-white-rose-restaurant",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hoian-place-white-rose-restaurant",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|v500-food-drin-does-this-contain-shrimp] to [food-menu|food-1|v500-food-drin-does-this-contain-shrimp|food-7]"
+        },
+        {
+          "id": "city-hoian-place-wonton",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hoian-place-yaly-couture",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|shop-5] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hue-place-an-cuu-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-an-dinh-palace",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-an-hien-garden-house",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-ancient-hue-gallery-cuisine",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-ancient-hue-restaurant",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-ancient-space-restaurant",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-ba-van-banh-loc",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-banh-beo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-banh-bot-loc",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-banh-khoai",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-banh-nam",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-bao-quoc-pagoda",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-bao-vinh-ancient-town",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-ben-ngu-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-ben-trang-cafe-bistro",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-bun-bo-city",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-bun-hen",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-bun-thit-nuong",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-che-hue",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-chu-van-an-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-com-am-phu",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-com-hen",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-cyclo-citadel-loop",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-dai-nam-restaurant",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hue_026_050_humanized.json",
+      "cityID": "hue",
+      "range": "026-050",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hue-place-de-po-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-diem-phung-thi-art-center",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-dien-tho-palace",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-dong-ba",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-dong-ba-bun-bo",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-dong-khanh-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-duc-duc-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-duyet-thi-duong-theater",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-flag-tower",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-forbidden-purple-city",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-gia-hoi",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-gia-long-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-hen-island",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-hon-chen-temple",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-huyen-tran-temple",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-imperial-city",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-incense-village-workshop",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-khai-dinh-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-khong-gian-hoai-co-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-kim-long",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-kodo-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-lagoon-seafood-boat",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-lang-thang-coffee",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-lap-an-lagoon",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hue-place-lap-an-lagoon",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to [transport-fare|v900-tran-where-is-the-boat-pier|sight-3|sight-5]"
+        },
+        {
+          "id": "city-hue-place-le-ba-dang-art-center",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hue_051_075_humanized.json",
+      "cityID": "hue",
+      "range": "051-075",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hue-place-le-ba-dang-memory-space",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-le-loi-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-les-jardins",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-lien-hoa-vegetarian",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-long-an-palace",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-mandarin-coffee-restaurant",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-me-xung",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-minh-mang-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-museum-commissioned-porcelains",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-nam-giao-esplanade",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-ngo-mon-gate",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-ngu-binh-mountain",
+          "message": "quick-say phraseIDs changed from [v500-dire-navi-how-far-is-it|v500-dire-navi-can-i-walk-there|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-nguyen-dinh-chieu-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-nha-nhac-royal-court-music",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-night-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-nine-dynastic-urns",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-northern-bus-station",
+          "message": "quick-say phraseIDs changed from [transport-fare|directions-1|airport-5] to []"
+        },
+        {
+          "id": "city-hue-place-perfume-river",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hue-place-perfume-river",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to [transport-fare|v900-tran-where-is-the-boat-pier|sight-3|sight-5]"
+        },
+        {
+          "id": "city-hue-place-perfume-river-dragon-boat",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-pham-ngu-lao-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-phu-bai-airport",
+          "message": "quick-say phraseIDs changed from [airport-1|airport-2|airport-3] to []"
+        },
+        {
+          "id": "city-hue-place-phu-cam-church",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-phu-hau-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-railway-station",
+          "message": "quick-say phraseIDs changed from [transport-fare|directions-1|airport-5] to []"
+        },
+        {
+          "id": "city-hue-place-royal-antiquities-museum",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "file": "hue_076_100_humanized.json",
+      "cityID": "hue",
+      "range": "076-100",
+      "status": "fail",
+      "errors": [
+        {
+          "id": "city-hue-place-royal-court-music-show",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-ru-cha-mangrove",
+          "message": "quick-say phraseIDs changed from [v500-dire-navi-how-far-is-it|v500-dire-navi-can-i-walk-there|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-song-huong-floating-restaurant",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-songlab",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-southern-bus-station",
+          "message": "quick-say phraseIDs changed from [transport-fare|directions-1|airport-5] to []"
+        },
+        {
+          "id": "city-hue-place-tam-giang-lagoon",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hue-place-tam-giang-lagoon",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to [transport-fare|v900-tran-where-is-the-boat-pier|sight-3|sight-5]"
+        },
+        {
+          "id": "city-hue-place-tay-loc-market",
+          "message": "quick-say phraseIDs changed from [price-1|price-4|food-1] to []"
+        },
+        {
+          "id": "city-hue-place-thai-hoa-palace",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-thanh-cafe",
+          "message": "quick-say phraseIDs changed from [coffee-1|coffee-4|coffee-6] to []"
+        },
+        {
+          "id": "city-hue-place-thanh-toan-bridge",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-the-mieu-temple",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-thien-mu",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-thieu-tri-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-thuy-bieu-village",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-thuy-xuan-incense-village",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hue-place-thuy-xuan-incense-village",
+          "message": "quick-say phraseIDs changed from [sight-3|price-1|price-7] to [sight-3|price-1|price-7|shop-4]"
+        },
+        {
+          "id": "city-hue-place-tinh-gia-vien",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        },
+        {
+          "id": "city-hue-place-toa-kham-boat-station",
+          "message": "quick-say phraseIDs changed from [transport-fare|v900-tran-where-is-the-boat-pier|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-truong-tien",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-truong-tien-plaza",
+          "message": "quick-say phraseIDs changed from [price-1|price-7|shop-4] to []"
+        },
+        {
+          "id": "city-hue-place-tu-duc-tomb",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|v500-sigh-acti-where-can-i-buy-tickets|sight-3] to []"
+        },
+        {
+          "id": "city-hue-place-tu-hieu-pagoda",
+          "message": "quick-say phraseIDs changed from [v500-sigh-acti-where-is-the-entrance|sight-3|sight-5] to []"
+        },
+        {
+          "id": "city-hue-place-vong-canh-hill",
+          "message": "dropped source section when-to-use"
+        },
+        {
+          "id": "city-hue-place-vong-canh-hill",
+          "message": "quick-say phraseIDs changed from [v500-dire-navi-how-far-is-it|v500-dire-navi-can-i-walk-there|sight-3] to [v500-dire-navi-how-far-is-it|v500-dire-navi-can-i-walk-there|sight-3|sight-5]"
+        },
+        {
+          "id": "city-hue-place-vy-da",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-walking-street",
+          "message": "quick-say phraseIDs changed from [directions-1|directions-3|v500-dire-navi-can-i-walk-there] to []"
+        },
+        {
+          "id": "city-hue-place-y-thao-garden",
+          "message": "quick-say phraseIDs changed from [food-menu|food-1|food-3] to []"
+        }
+      ],
+      "warnings": []
+    }
+  ]
+}

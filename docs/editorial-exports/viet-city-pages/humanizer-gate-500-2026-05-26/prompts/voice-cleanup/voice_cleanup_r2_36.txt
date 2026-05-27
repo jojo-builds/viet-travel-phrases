@@ -1,0 +1,333 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_36",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_36",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "heading is command-like: Check Practical Details Late"
+        },
+        {
+          "id": "city-hcmc-place-goi-cuon",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-golden-dragon-water-puppet",
+          "message": "heading is command-like: Check The Show Time"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "freshness/process-like heading: Current Exhibits Can Change"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-gia-dinh-park",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-golden-dragon-water-puppet",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 12x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: dish name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 21x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 6x: freshness/checking heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 13x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 6x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-fine-arts-museum",
+          "summary": "Ho Chi Minh City Museum of Fine Arts is a quiet indoor reset with yellow courtyards, tiled floors, gallery rooms, and a slower layer of Saigon history.",
+          "context": "The museum gives central Saigon a cultural pause: art, rooms, display cases, local memory, quiet light, and an old building around it.",
+          "tip": "Pick a few rooms rather than trying to absorb everything. The building, courtyard, and tiled floors are part of the visit.",
+          "rationale": "The museum works because it changes the city’s pace: street noise outside, yellow walls and gallery rooms inside.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Indoor Layer",
+              "body": "The Fine Arts Museum gives Saigon a slower indoor pause: yellow courtyards, tiled floors, gallery rooms, and art away from street noise."
+            },
+            {
+              "id": "place-brief",
+              "title": "Building And Rooms Together",
+              "body": "The old building is part of the memory. Let the courtyard, stairs, tiles, and galleries share attention instead of rushing every display."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Mỹ thuật is the useful local name. It helps with drivers, maps, and recognizing the museum entrance."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heat Reset",
+              "body": "The museum fits when outdoor stops start feeling harsh. It gives the day shade, quiet rooms, and a different pace."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Rooms Are Enough",
+              "body": "Do not pressure the visit into a full art survey. A courtyard pause and a few rooms can still make the stop worthwhile."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Exhibits Can Change",
+              "body": "Hold exhibit expectations lightly. The durable draw is the museum building, gallery rhythm, and quieter cultural layer inside central Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-fito-museum",
+          "summary": "FITO Museum is a focused indoor stop for traditional Vietnamese medicine, wooden cabinets, herbs, display rooms, and a quieter cultural layer away from central noise.",
+          "context": "The museum’s story sits in objects and rooms: medicine history, cabinets, herbs, display cases, artifacts, and quiet light.",
+          "tip": "Go when the subject interests you. The stop is strongest as a focused medicine-history visit, not a general museum placeholder.",
+          "rationale": "FITO feels specific because the cabinets, herbs, and traditional medicine context give the rooms a clear topic.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Medicine-History Detour",
+              "body": "FITO Museum is a focused stop: traditional Vietnamese medicine, wooden cabinets, herbs, artifacts, and rooms built around one subject."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cabinets, Herbs, Objects",
+              "body": "The details matter more than speed. Look at the tools, drawers, labels, and herb displays as parts of one medical-history story."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Y học Cổ truyền Việt Nam is the full local name. Showing it on a map may be easier than saying it from memory."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Focused Indoor Reset",
+              "body": "The museum fits a day that needs shade and a quieter stop, especially if medicine, herbs, or small museums interest you."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Narrow Subject, Better Visit",
+              "body": "The stop is stronger when you accept its focus. It is not a broad Saigon overview; it is a traditional medicine museum."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check Practical Details Late",
+              "body": "Hours, ticket details, and interpretation can change. The stable reason to go is the medicine-history collection and wooden interior."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-gia-dinh-park",
+          "summary": "Gia Dinh Park is an everyday open-air reset near the airport, with trees, walking paths, family time, shade, and a park rhythm outside the sightseeing core.",
+          "context": "The park shows Saigon without a formal attraction: walking paths, open lawns, evening light, families, shade, and airport-side movement.",
+          "tip": "Treat it as a nearby breather, especially around airport timing or a local stay. It is not a cross-city must-plan attraction.",
+          "rationale": "The park’s value is ordinary city life: trees, shade, walkers, families, open lawns, and space away from central sightseeing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Everyday Air Near The Airport",
+              "body": "Gia Dinh Park is an open-air reset: trees, walking paths, shade, lawns, and family time near the airport side of Saigon."
+            },
+            {
+              "id": "place-brief",
+              "title": "Park Rhythm, Not Attraction Mode",
+              "body": "The scene is everyday rather than formal: walking, sitting, family time, and evening light under trees."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Công viên Gia Định is the local name. It helps with maps or drivers, especially when airport-area timing matters."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Airport-Side Breather",
+              "body": "The park makes most sense if you are nearby, between plans, or need fresh air before or after airport movement."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Nearby Beats Cross-City",
+              "body": "Do not force it from across town. Gia Dinh Park is strongest as a local reset when the route already puts you close."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Ordinary Is The Point",
+              "body": "Công viên Gia Định is memorable because it is not trying to be a landmark: shade, walkers, families, and open space."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-goi-cuon",
+          "summary": "Fresh spring rolls are a light Saigon food memory: rice paper, herbs, shrimp or pork, cool texture, and peanut or fish sauce at the table.",
+          "context": "Gỏi cuốn gives the city a cooler food rhythm through herbs, rice paper, sauce, texture, and a small meal that does not feel heavy.",
+          "tip": "Order them when you want something lighter than soup or rice. Dip gently first so the sauce does not take over the herbs.",
+          "rationale": "The dish becomes specific through texture: soft rice paper, fresh herbs, cool filling, and sauce on the side.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cooler Food Break",
+              "body": "Gỏi cuốn gives Saigon a lighter bite: rice paper, herbs, cool filling, and sauce instead of a hot bowl or heavy plate."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs, Rice Paper, Sauce",
+              "body": "Fresh spring rolls are about texture. The filling stays clean, the herbs do the lifting, and the sauce adds the final pull."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name",
+              "body": "Gỏi cuốn is the useful name. Pointing also helps because fillings and sauces can vary by shop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Light Meal Or Shared Plate",
+              "body": "They work as a small lunch, a shared starter, or a break from richer meals. The portion is usually easy to read."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce First, Then More",
+              "body": "Dip lightly before committing. Peanut sauce or fish sauce can change the balance fast, especially if the herbs are fresh and sharp."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cool Does Not Mean Plain",
+              "body": "The memory is in the contrast: soft wrapper, crisp herbs, cool filling, and sauce that makes the roll feel complete."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+          "summary": "Golden Dragon Water Puppet Theater is an evening performance stop where music, puppets, stage light, and a traditional show give Saigon a cultural indoor option.",
+          "context": "The theater brings performance culture into the trip: music, masks, water-puppet staging, theater doors, and evening streets around District 1.",
+          "tip": "Treat it as a timed show, not a drop-in landmark. Check the schedule and ticket situation before building the evening around it.",
+          "rationale": "The stop matters because it adds living performance to the city mix, with musicians, puppets, stage light, and a short evening structure.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Evening Show Stop",
+              "body": "Golden Dragon Water Puppet Theater gives the night a timed cultural stop: music, puppets, stage light, and a performance indoors."
+            },
+            {
+              "id": "place-brief",
+              "title": "Music And Water Stage",
+              "body": "The draw is the live staging: musicians, puppets, warm lights, water movement, and a show rhythm different from museums or monuments."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Nhà hát Múa rối nước Rồng Vàng is the local name. Showing it on a map may be easier than saying the full phrase."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Timed Evening Plan",
+              "body": "The theater fits before or after a simple dinner. Build the evening around the showtime only after checking the current schedule."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Performance, Not Landmark",
+              "body": "Think of it as a show you attend, not a building you glance at. Tickets and timing matter more than the facade."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check The Show Time",
+              "body": "Do not rely on old show times. The stable reason to go is the water-puppet performance; the practical details should be current."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

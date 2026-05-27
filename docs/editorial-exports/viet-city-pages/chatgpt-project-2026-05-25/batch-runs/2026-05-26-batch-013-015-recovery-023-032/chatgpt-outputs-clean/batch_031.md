@@ -1,0 +1,210 @@
+SpeakLocal v2.2 BATCH_031 - Hanoi - 2026-05-26
+Bánh cuốn ở Hà Nội / Steamed rice rolls — Hanoi — dish
+Reader View
+Breakfast Before The City Speeds Up
+Bánh cuốn is one of Hanoi’s gentler morning plates: thin steamed rice sheets, pork-and-mushroom filling, fried shallot, herbs, and fish-sauce dip. It is best while the rolls are still soft and the shop is moving quickly.
+
+Useful phrase cards
+
+Cho tôi một phần — One portion, please.
+Không cay nhé — Not spicy, please.
+Tính tiền giúp tôi — Please let me pay.
+Steam Sets The Clock
+Eat soon after the plate lands. The rice sheets are delicate, and the texture is the point: soft, warm, a little slippery, with crunch from fried shallot and herbs on the side.
+
+Sauce In Small Spoonfuls
+
+The dip brings the plate together, but do not flood it at once. Spoon a little over the rolls, taste, then add more. If chili is on the table, add it slowly.
+
+A Quick Table, Then Back Out
+
+This is a small-meal rhythm, not a long brunch. A plate of bánh cuốn can give the morning a real Hanoi shape before coffee, a market walk, or the next Old Quarter errand.
+
+Implementation notes
+page_id: city-hanoi-place-banh-cuon
+target_hero_image: HeroCityHanoiPlaceBanhCuon
+Anchor: Cà phê Giảng / White Rose behavior — one focused order, small ritual, no broad food essay.
+Phrase/audio:
+food-1 / food-1 — mapped ready audio.
+food-3 / food-3 — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-banh-cuon planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Bánh cuốn — food-banh-cuon — render.
+Chả lụa — food-cha-lua — render if the card system supports side-item mentions from this copy/source context.
+Related place candidates: none.
+Freshness notes: no current shop, hour, price, or queue claim in visible copy.
+Source notes: MICHELIN Hanoi guide row; Menu Catalog row for bánh cuốn.
+Score: 28/30 — strong focused dish draft; capped for no rendered screenshot proof and pre-import source freshness check.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Hồ Bảy Mẫu / Bay Mau Lake — Hanoi — nature
+Reader View
+Water Inside The Park
+Hồ Bảy Mẫu gives Hanoi a softer middle: water, trees, walking edges, and the everyday park rhythm around Công viên Thống Nhất. Do not make it grand. Let it be a pause between streets.
+
+Useful phrase cards
+
+Lối vào ở đâu? — Where is the entrance?
+Nhà vệ sinh ở đâu? — Where is the bathroom?
+Đi bộ mất bao lâu? — How long does it take on foot?
+Walk The Edge First
+Give the lake one slow edge before deciding whether to sit, keep walking, or leave. The first lap tells you where the shade is, where people are lingering, and whether the park has the calm you wanted.
+
+Shade Is The Better View
+
+This is more about air and trees than a dramatic photo. In Hanoi heat or traffic noise, a shaded bench near water can do more for the day than another crowded stop.
+
+Pair It With Thống Nhất Park
+
+The lake makes the most sense when the park is already part of the plan. Come for a reset, a short walk, or a quieter hour before returning to denser streets.
+
+Implementation notes
+page_id: city-hanoi-place-bay-mau-lake
+target_hero_image: HeroCityHanoiPlaceBayMauLake
+Anchor: Lập An Lagoon / Vọng Cảnh Hill behavior — restrained nature copy, condition-aware, short-stop framing.
+Phrase/audio:
+v500-sigh-acti-where-is-the-entrance / v500-sigh-acti-where-is-the-entrance — mapped ready audio.
+bath-1 / bath-1 — mapped ready audio.
+directions-3 / directions-3 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bay-mau-lake planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Công viên Thống Nhất / Thong Nhat Park — hanoi-thong-nhat-park — render.
+Related place candidates:
+Hanoi Botanical Garden — hanoi-botanical-garden — render/check after same-batch target is approved.
+Freshness notes: source evidence is thin; keep pedal boats, current facilities, rules, and hours out of visible copy until checked.
+Source notes: place-name only row plus catalog neighbor Thong Nhat Park.
+Score: 27/30 — useful and restrained; capped for sparse source evidence and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bia hơi Hà Nội / Fresh beer — Hanoi — drink
+Reader View
+Sit Low, Keep It Light
+Bia hơi is Hanoi at stool height: small tables, quick pours, shared snacks, and a cold glass between one walk and the next. The drink is simple; the sidewalk pause is the memory.
+
+Useful phrase cards
+
+Bạn có bia không? — Do you have beer?
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Tính tiền giúp tôi — Please let me pay.
+Read The Corner Before Sitting
+Walk past once before choosing a table. Look for a corner that feels active but not frantic, with people actually drinking and eating rather than only calling from the curb.
+
+Snacks Carry The Pause
+
+The beer makes more sense with something small on the table. Keep the order simple, share what arrives, and let the glass be part of the street rhythm rather than the whole evening.
+
+One Glass Can Be Enough
+
+Bia hơi is light, but it is still alcohol. A single cold glass can give you the scene without dragging the day sideways.
+
+Implementation notes
+page_id: city-hanoi-place-bia-hoi
+target_hero_image: HeroCityHanoiPlaceBiaHoi
+Anchor: Bùi Viện / Hàn Market behavior — look first, sit later; social street energy without hype.
+Phrase/audio:
+v900-food-drin-do-you-have-beer / v900-food-drin-do-you-have-beer — mapped ready audio.
+food-menu / food-menu — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bia-hoi planned audio; name/pronunciation support only, hide until audio.
+Menu/catalog item:
+Bia hơi — drink-bia-hoi — render.
+Mentioned Here candidates:
+Bia hơi — drink-bia-hoi — render.
+Related place candidates: none.
+Freshness notes: no price, exact street, operating hour, or venue claim in visible copy.
+Source notes: Vietnam Travel Hanoi row; Menu Catalog row for bia hơi.
+Score: 28/30 — clear traveler behavior and tone; capped for source freshness and no screenshot proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Vườn Bách Thảo Hà Nội / Hanoi Botanical Garden — Hanoi — park
+Reader View
+Green Space Beside The Formal City
+Vườn Bách Thảo sits on Hanoi’s Ba Đình side, where broad streets and monument stops can make the city feel formal. The garden gives the day a quieter counterweight: trees, paths, benches, and local families taking the air.
+
+Useful phrase cards
+
+Lối vào ở đâu? — Where is the entrance?
+Nhà vệ sinh ở đâu? — Where is the bathroom?
+Tôi có thể đi bộ tới đó được không? — Can I walk there?
+Choose Shade Over Checklist
+There is no need to turn the garden into a task. Find shade, slow down, and let the paths do the work after heavier sightseeing.
+
+A Pause Between Bigger Stops
+
+The garden fits best between Ba Đình-area stops, when the day needs open air but not another formal visit. It can be a short walk, a bench break, or a reset before the next ride.
+
+Late Afternoon Softens It
+
+The garden’s best mood is ordinary: children moving through the paths, people sitting under trees, light dropping through leaves. Go for that, not for a headline moment.
+
+Implementation notes
+page_id: city-hanoi-place-botanical-garden
+target_hero_image: HeroCityHanoiPlaceBotanicalGarden
+Anchor: Vọng Cảnh Hill / Da Nang Fine Arts Museum behavior — calm stop with a clear route role, not inflated.
+Phrase/audio:
+v500-sigh-acti-where-is-the-entrance / v500-sigh-acti-where-is-the-entrance — mapped ready audio.
+bath-1 / bath-1 — mapped ready audio.
+v500-dire-navi-can-i-walk-there / v500-dire-navi-can-i-walk-there — mapped ready audio.
+Place-name phrase: city-hanoi-place-botanical-garden planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Ba Dinh District / Quận Ba Đình — hanoi-ba-dinh-district — render.
+Related place candidates:
+Bay Mau Lake — hanoi-bay-mau-lake — render/check after same-batch target is approved.
+Ba Dinh Square — hanoi-ba-dinh-square — check_catalog if “Ba Đình-area stops” should surface as a card.
+Freshness notes: current entrance, hours, ticketing, facilities, and garden rules need check before import.
+Source notes: Hanoi tourism portal row; City Places Catalog neighbor rows.
+Score: 28/30 — calm, place-specific, low-risk visible copy; capped for freshness and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bún chả Hương Liên / Bun Cha Huong Lien — Hanoi — restaurant
+Reader View
+The Bowl Sets The Pace
+Hương Liên is a good place to let bún chả become a real Hanoi meal, not just a name on a list. The table is direct: grilled pork in warm dipping broth, vermicelli, herbs, and a few small choices about chili, portions, and add-ons.
+
+Useful phrase cards
+
+Cho tôi một phần — One portion, please.
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Tính tiền giúp tôi — Please let me pay.
+Build The Bite Slowly
+Do not dump everything together at once. Dip some noodles, add herbs, take a piece of pork, and learn the balance before changing the bowl.
+
+Check Add-Ons Before The Table Fills
+
+If extras are offered, slow the order down long enough to understand what is coming. The main move is still bún chả first; add more only if the table and appetite make sense.
+
+Fame Should Stay Smaller Than Lunch
+
+The name may carry noise, but the meal does not need to. Sit, order clearly, eat while the pork and broth are warm, then move back into the city.
+
+Implementation notes
+page_id: city-hanoi-place-bun-cha-huong-lien
+target_hero_image: HeroCityHanoiPlaceBunChaHuongLien
+Anchor: Bale Well / White Rose behavior — ordering confidence around one known dish and a specific table rhythm.
+Phrase/audio:
+food-1 / food-1 — mapped ready audio.
+food-menu / food-menu — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bun-cha-huong-lien / audio-authored-bun-cha-huong-lien-7123b3d369 ready; pronunciation/name support by default, not visible phrase card.
+Hidden/planned action phrases:
+ves-order-bun-cha-portion planned audio; do not render until ready.
+city-hanoi-go-bun-cha-huong-lien, city-hanoi-where-bun-cha-huong-lien, and related taxi/location phrases planned; hide until audio.
+Menu/catalog item:
+Bún chả — food-bun-cha — render.
+Mentioned Here candidates:
+Bún chả — food-bun-cha — render.
+Related place candidates:
+Bún chả ở Hà Nội — hanoi-bun-cha — render/check as related dish page if the app supports dish-to-restaurant pairing.
+Freshness notes: current menu, add-ons, hours, closure/holiday status, and MICHELIN listing freshness need check before import.
+Source notes: MICHELIN Hanoi guide row; Menu Catalog row for bún chả.
+Score: 28/30 — specific meal behavior with ready reusable phrases; capped for current venue facts and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_031`
+- `page_ids: city-hanoi-place-banh-cuon, city-hanoi-place-bay-mau-lake, city-hanoi-place-bia-hoi, city-hanoi-place-botanical-garden, city-hanoi-place-bun-cha-huong-lien`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none for visible ready-audio cards; hidden/planned phrases include city-hanoi-place-banh-cuon, city-hanoi-place-bay-mau-lake, city-hanoi-place-bia-hoi, city-hanoi-place-botanical-garden, ves-order-bun-cha-portion, city-hanoi-go-bun-cha-huong-lien, city-hanoi-where-bun-cha-huong-lien`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Bay Mau Lake source evidence is sparse; bia hoi and Bun Cha Huong Lien should avoid price/hour/current-service claims; Botanical Garden entrance/facility claims kept out of visible copy`
+- `source_freshness_risks: MICHELIN Hanoi guide, Vietnam Travel Hanoi, Hanoi tourism portal, restaurant menu/status, park entrance/facilities, and lake/park activity details need pre-import freshness checks`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+

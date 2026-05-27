@@ -1,0 +1,288 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_50",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_50",
+  "chunks": [
+    {
+      "chunkFile": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hoian-place-espresso-station",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-espresso-station",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-folk-culture-museum",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-folk-culture-museum",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-from-danang-railway-station",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-fujian-assembly-hall",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-hainan-assembly-hall",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-espresso-station",
+          "summary": "The Espresso Station gives Hoi An a narrow-lane coffee pause: espresso, a small counter, shade, and a reset that feels more drink-led than sightseeing-led.",
+          "context": "This is a cafe stop in the old-town rhythm: a small bar, coffee machine, lane setting, and a shorter pause between walks.",
+          "tip": "The venue phrase usually stays in English. The mental picture is a small espresso bar first, then a decision about a longer cafe.",
+          "rationale": "The Espresso Station keeps the cafe moment compact, which helps it feel different from rooftop or view-first coffee stops.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee In A Narrow Lane",
+              "body": "The Espresso Station is for the moment when the old-town walk needs a cleaner coffee pause. The image is espresso, a small counter, and a lane setting rather than a long meal."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Bar, Strong Cue",
+              "body": "The bar is small and set in a narrow Hoi An lane, with the coffee machine doing most of the explaining. The appeal is compact and drink-led."
+            },
+            {
+              "id": "quick-say",
+              "title": "English Phrase, Coffee Context",
+              "body": "The Espresso Station usually stays as the venue phrase. Saying it slowly and pointing to coffee keeps the exchange simple."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafe Contrast",
+              "body": "It fits when Faifo feels too view-focused or a full cafe sit feels too long. This is the tighter coffee stop in the old-town flow."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Pause Mindset",
+              "body": "The right rhythm is one drink, a moment out of the lane traffic, then back into the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A View Stop",
+              "body": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar feeling and the lane around it."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-folk-culture-museum",
+          "summary": "Museum of Folk Culture gives Hoi An an indoor cultural pause: lanterns, textiles, wooden beams, and enough context to make the street scenery feel less standalone.",
+          "context": "This is a museum stop for folk life, memory, display rooms, textiles, lanterns, and a quieter break from outdoor walking.",
+          "tip": "Bảo tàng Văn hóa Dân gian is the local phrase. Attach it to folk culture displays rather than general history.",
+          "rationale": "The museum helps Hoi An's craft and daily-life memory sit behind the streets without asking for a long visit.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Indoor Layer Behind The Streets",
+              "body": "Museum of Folk Culture gives the old town an inside layer. Lanterns, textiles, wooden beams, and displays help the street scenery feel less like pure backdrop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lanterns, Textiles, Beams",
+              "body": "The rooms hold folk-culture exhibits with lanterns, textiles, and wood beams. The visit is quieter than the lanes outside and better in a short, attentive loop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bảo Tàng Dân Gian",
+              "body": "Bảo tàng Văn hóa Dân gian means Museum of Folk Culture. The phrase separates this stop from the broader history museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heat Pause",
+              "body": "It fits when outdoor walking starts to flatten the day. A museum pause can reset attention before more old-town wandering."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small-Museum Mindset",
+              "body": "A few objects, one room at a time, is enough. The point is context, not reading every label."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Labels Are Only Part Of It",
+              "body": "Some rooms may explain more than others. A short visit is fine if the displays stop adding to the walk outside."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-from-danang-railway-station",
+          "summary": "Da Nang Railway Station for Hoi An is the train-arrival handoff: platform, bags, station doors, road light, and the transfer that makes Hoi An feel close.",
+          "context": "This is a transfer route from rail to road: station doors, luggage, coastal roads, river bridges, and the first approach to Hoi An.",
+          "tip": "Ga Đà Nẵng đi Hội An is a route phrase. It belongs to leaving the station and finding the transfer.",
+          "rationale": "The station route makes arrival feel organized before the old town appears.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "From Platform To Road",
+              "body": "Da Nang Railway Station for Hoi An is the point where a train trip becomes a road transfer. The important scene is luggage, station doors, and the move toward town."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Transfer To Picture",
+              "body": "The transfer image is station doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An. The place matters because it starts the transfer."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Phrase",
+              "body": "Ga Đà Nẵng đi Hội An means Da Nang Station to Hoi An. It is the phrase for the route after the train, not the station alone."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Arrival Planning",
+              "body": "It fits when comparing train arrival with airport arrival. Pickup point, fare, timing, and road conditions need current confirmation."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Station Handoff",
+              "body": "The phrase belongs when the platform part is over and the next task is finding the right car, driver, or onward plan."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From The Airport Route",
+              "body": "The railway station and airport both feed Hoi An, but pickup points and timing differ. The route label needs to stay specific."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-fujian-assembly-hall",
+          "summary": "Fujian Assembly Hall gives Hoi An a vivid courtyard stop: red and gold detail, incense, gates, tiled roofs, and a ceremonial pause inside the old town.",
+          "context": "This is a heritage and worship stop: assembly hall architecture, incense, gates, courtyards, old walls, and ceremonial space.",
+          "tip": "Hội quán Phúc Kiến is the local phrase. Attach it to the red-and-gold courtyard and incense, not a generic old house.",
+          "rationale": "The hall makes Hoi An's Chinese-assembly heritage concrete through color, incense, and courtyard sequence.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Ceremony In Red And Gold",
+              "body": "Fujian Assembly Hall is one of the old-town stops where the architecture does real work. Gates, courtyards, incense, and red-and-gold detail turn heritage into a physical sequence."
+            },
+            {
+              "id": "place-brief",
+              "title": "Red, Gold, Incense",
+              "body": "The courtyard is ornate, with incense smoke, tiled roofs, and strong red-and-gold surfaces. The place feels ceremonial before it feels quiet."
+            },
+            {
+              "id": "quick-say",
+              "title": "Hội Quán Marks The Hall",
+              "body": "Hội quán Phúc Kiến is the Vietnamese phrase for Fujian Assembly Hall. Hội quán signals an assembly hall, not a family house."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Built-Heritage Pairing",
+              "body": "It fits with Japanese Covered Bridge, old houses, or another assembly hall when the day is about Hoi An's built history."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Courtyard Mindset",
+              "body": "The strongest sequence is gate, courtyard, incense, then detail. A slower pace lets the layers separate instead of treating the hall as one photo."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sacred Context",
+              "body": "The color and ornament matter, but the space also carries worship and community memory. Behavior should match that."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-hainan-assembly-hall",
+          "summary": "Hainan Assembly Hall is a quieter assembly-hall stop in Hoi An, with incense coils, yellow-red surfaces, courtyard space, and a slower heritage rhythm than the louder landmarks.",
+          "context": "This is a heritage and worship stop: assembly-hall courtyard, incense, gates, old walls, and ceremonial memory inside the old town.",
+          "tip": "Hội quán Hải Nam is the phrase to recognize. It helps separate this hall from Fujian Assembly Hall and other old-town stops.",
+          "rationale": "The hall adds a calmer assembly-hall layer, giving Hoi An heritage more than one color and pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Assembly-Hall Pause",
+              "body": "Hainan Assembly Hall gives the old-town heritage loop a quieter register. The interest is incense, courtyard space, old walls, and a yellow-red facade without rushing the visit."
+            },
+            {
+              "id": "place-brief",
+              "title": "Yellow-Red, Less Loud",
+              "body": "The courtyard is calmer, with incense coils and yellow-red surfaces. The detail is ceremonial, but the mood is less loud than the busiest old-town stops."
+            },
+            {
+              "id": "quick-say",
+              "title": "Hải Nam Marks This Hall",
+              "body": "Hội quán Hải Nam is the Vietnamese phrase. Hội quán marks it as an assembly hall; Hải Nam points to Hainan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Assembly-Hall Contrast",
+              "body": "It fits when the plan compares old-town halls without making each one feel the same. A light pairing with Fujian Assembly Hall is enough."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Quiet Detail Mindset",
+              "body": "This stop rewards a slower look at incense coils, facade color, and courtyard proportions rather than a quick glance."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Respect The Room",
+              "body": "The building can look like a heritage sight first, but it still carries worship and community memory. Quiet behavior matters."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

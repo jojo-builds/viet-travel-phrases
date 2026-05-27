@@ -1,0 +1,153 @@
+SpeakLocal v2.2 BATCH_026 - Da Nang - 2026-05-26
+Làng đá Non Nước / Non Nuoc Stone Carving Village — Da Nang — Village
+Reader View
+Watch The Dust Before You Shop
+Non Nuoc sits at the foot of the Marble Mountains, where stone carving feels less like a souvenir stop and more like a working lane. Look for the half-finished pieces, tool marks, and stone dust before you think about what could fit in a suitcase.
+Useful phrase cards
+
+“Tôi chỉ xem thôi.” — I’m just looking.
+“Cái này bao nhiêu?” — How much is this?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+The Village Is The Process
+Buddhas, lions, garden pieces, and polished stone are the obvious shapes. The better detail is the making: rough blocks, hands at the tools, and finished pieces waiting beside the road.
+Look First, Then Ask
+Take one slow pass before stepping into a shop. If someone is carving, ask before taking close photos, and keep the first question simple: price, material, or whether a piece can be packed safely.
+
+Best Beside The Mountains
+The stop makes most sense before or after Marble Mountains, when the stone in the cliffs and the stone in the workshops can sit together in your head. It is a short craft pause, not an all-day plan.
+
+Implementation notes
+page_id: city-danang-place-non-nuoc-stone-village
+target_hero_image: HeroCityDanangPlaceNonNuocStoneVillage
+Phrase/audio mapping: shop-4 / shop-4; price-1 / price-1; sight-3 / sight-3; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-non-nuoc-stone-village / audio-authored-lang-da-non-nuoc-8642dec883; ready; render as pronunciation/name support, not as a visible phrase card.
+Mentioned Here candidates: Marble Mountains / Ngũ Hành Sơn — landmark; catalogId: danang-marble-mountains; status: render; displaySubtitle: “Mountain-and-cave area beside the carving village.”
+Related place candidates: Non Nuoc Beach / Biển Non Nước — relationship: nearby_beach_pairing; catalogId: danang-non-nuoc-beach; status: render; displaySubtitle: “A nearby beach pause after the craft lanes.”
+Freshness notes: Workshop access, retail mix, photo expectations, and packing/shipping details need a light pre-import check.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — strong craft moment and compact first screen; capped for current workshop/photo/retail checks and final catalog/audio QA.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Ốc hút ở Đà Nẵng / Stirred snails — Da Nang — Dish
+Reader View
+Small Shells, Slow First Order
+Ốc hút is a snack built for fingers, shells, lemongrass, chili, and time. Order small first, watch how people loosen the meat, and let the table stay a little messy.
+Useful phrase cards
+
+“Cho tôi một phần.” — One portion, please.
+“Ít cay thôi.” — Less spicy, please.
+“Tính tiền giúp tôi.” — The bill, please.
+The Name Matches The Motion
+Hút means drawing out, which tells you how the dish is eaten. The snails are about texture, sauce, and heat more than a tidy fork-and-knife meal.
+Keep Heat Negotiable
+Chili can move fast here. Start with one portion, taste the sauce, and ask for less heat before adding more food to the table.
+
+A Snack With Its Own Rhythm
+Treat it as a Da Nang street-food pause: a bowl, a drink, a few napkins, and a little patience with the shells. The memory is the rhythm as much as the flavor.
+
+Implementation notes
+page_id: city-danang-place-oc-hut
+target_hero_image: HeroCityDanangPlaceOcHut
+Phrase/audio mapping: food-1 / food-1; food-not-spicy-clearer / audio-authored-it-cay-thoi-05b8e258a2; coffee-7 / coffee-7; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-oc-hut; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: none for render; copy names no catalog food item beyond the page itself.
+Related place candidates: none; avoid forcing a general seafood card without a clear catalog target.
+Freshness notes: Stall availability, current serving style, price, spice level, and exact local spelling/use need light review; menu catalog has related snail items but no exact ốc hút item selected here.
+Source notes: Da Nang local food sources; spelling/use source; legacy city-v1 row; Phrase Picker and Menu Catalog checked.
+Score: 27/30 — focused ordering moment and ready phrase cards; capped for thin dish evidence and current stall/menu variability.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Biển Phạm Văn Đồng / Pham Van Dong Beach — Da Nang — Beach
+Reader View
+Beach Air Before The Day Gets Full
+Pham Van Dong Beach gives central Da Nang an easy coastal reset: palms, sand, morning light, and the city still close behind you. The easiest read is a quick beach walk before breakfast, seafood, or another errand pulls you inland.
+Useful phrase cards
+
+“Nhà vệ sinh ở đâu?” — Where is the bathroom?
+“Điểm đón ở đâu?” — Where is the pickup point?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Morning Keeps It Simple
+Early light is kinder on the sand, and the beach feels easier before the day heats up. Walk first, then decide whether you want a longer sit.
+Shade Is Part Of The Plan
+The open beach can feel exposed. Bring water, keep an eye on your bag, and do not build the whole day around one patch of sand if the sun is sharp.
+
+Close To The City Rhythm
+Pham Van Dong makes sense when you want beach air without leaving the hotel-and-cafe side of Da Nang for long. Pair it with My Khe, a seafood stop, or the Han River later in the day.
+
+Implementation notes
+page_id: city-danang-place-pham-van-dong-beach
+target_hero_image: HeroCityDanangPlacePhamVanDongBeach
+Phrase/audio mapping: bath-1 / bath-1; directions-8 / directions-8; hotel-9 / hotel-9; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-pham-van-dong-beach; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: My Khe Beach / Biển Mỹ Khê — beach; catalogId: danang-my-khe-beach; status: render; displaySubtitle: “The better-known beach stretch nearby.” Han River / Sông Hàn — river; catalogId: danang-han-river; status: render; displaySubtitle: “A later city-waterfront walk after beach time.”
+Related place candidates: Son Tra Night Market / Chợ đêm Sơn Trà — relationship: evening_pairing; catalogId: danang-son-tra-night-market; status: check_catalog; displaySubtitle: “A night-market add-on if the evening route moves toward Dragon Bridge.”
+Freshness notes: Beach facilities, swimming conditions, lifeguard presence, access, and pickup points need current review; visible copy avoids fixed hours or safety claims.
+Source notes: Vietnam Tourism Da Nang; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — clean beach-side traveler move; capped for beach-condition and facilities freshness.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Chùa Pháp Lâm / Phap Lam Pagoda — Da Nang — Landmark
+Reader View
+A Quiet Hour Behind The Traffic
+Phap Lam Pagoda gives central Da Nang a slower register: yellow walls, courtyard shade, incense, and Buddhist imagery a short step from ordinary city noise. Keep the visit simple and respectful.
+Useful phrase cards
+
+“Tôi có thể vào được không?” — Can I come in?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+“Xin lỗi.” — Excuse me / sorry.
+Enter Softly
+Covered shoulders are the safer move, voices stay low, and worshippers should not become the subject of your photos. The place asks for a slower pace than the streets outside.
+Notice The Courtyard, Not Just The Gate
+The details are modest: temple roofs, incense smoke, shaded corners, and figures that reward a few quiet minutes. Do not rush it like a checkpoint.
+
+A Small Cultural Counterpoint
+Come between beach, bridge, market, or museum time when you want Da Nang to feel less like only waterfront. The stop is compact, so it fits better as a pause than as the center of the day.
+
+Implementation notes
+page_id: city-danang-place-phap-lam-pagoda
+target_hero_image: HeroCityDanangPlacePhapLamPagoda
+Phrase/audio mapping: v900-poli-basi-can-i-come-in / v900-poli-basi-can-i-come-in; sight-3 / sight-3; polite-5 / polite-5; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-phap-lam-pagoda; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: none for render; visible copy names no exact catalog item beyond broad city categories.
+Related place candidates: Da Nang Cathedral / Nhà thờ Con Gà Đà Nẵng — relationship: central_landmark_contrast; catalogId: danang-cathedral; status: render; displaySubtitle: “Another compact central landmark with a different religious register.” Da Nang Museum / Bảo tàng Đà Nẵng — relationship: central_culture_pairing; catalogId: danang-museum; status: check_catalog; displaySubtitle: “A nearby culture stop when the day needs more city context.”
+Freshness notes: Current access, photo expectations, dress norms, and worship activity need light review; visible copy keeps etiquette general.
+Source notes: Da Nang Fantasticity; local map; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — calm first screen and clear etiquette move; capped for access/photo freshness and final native/cultural QA.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Phước Mỹ / Phuoc My — Da Nang — Neighborhood
+Reader View
+Blocks That Make The Beach Side Legible
+Phuoc My is one of the names that turns Da Nang’s beach side from a blur of hotels into a real area. Learn it when you are sorting cafés, side streets, apartment balconies, and the walk back from the sand.
+Useful phrase cards
+
+“Ở gần đây không?” — Is it near here?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Name The Area Before You Navigate
+Drivers, maps, and hotel pages may use ward or neighborhood names before they use the landmark you have in mind. Phuoc My helps you place yourself on the city’s east side, close to the beach but still lived in.
+Cafes, Errands, Evening Walks
+The detail here is ordinary: small shops, balconies, hotel edges, scooter crossings, and cafés that become landmarks because you pass them twice. That is the reason to recognize the name.
+
+Keep The Route Loose
+Choose one nearby café, beach access point, or dinner plan, then let the blocks connect themselves. For a broader night out, An Thuong or the riverfront may be a clearer choice.
+
+Implementation notes
+page_id: city-danang-place-phuoc-my
+target_hero_image: HeroCityDanangPlacePhuocMy
+Phrase/audio mapping: directions-2 / directions-2; directions-3 / directions-3; hotel-9 / hotel-9; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-phuoc-my; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: An Thuong Area / Khu An Thượng — neighborhood; catalogId: danang-an-thuong-street-area; status: render; displaySubtitle: “A nearby beach-side area with a clearer dining-and-wandering frame.”
+Related place candidates: My Khe Beach / Biển Mỹ Khê — relationship: beach_side_orientation; catalogId: danang-my-khe-beach; status: render; displaySubtitle: “The beach landmark many travelers use to orient nearby stays.” My An / Mỹ An — relationship: neighboring_area_contrast; catalogId: danang-my-an; status: render; displaySubtitle: “Another beach-side neighborhood name worth separating from Phuoc My.” Han River / Sông Hàn — relationship: city_orientation_contrast; catalogId: danang-han-river; status: render; displaySubtitle: “The river side of the city, useful as a contrast to beach-side blocks.”
+Freshness notes: Administrative naming, ward boundaries, map labels, and business turnover need light review; visible copy avoids naming specific venues.
+Source notes: Local map; legacy city-v1 row; City Places Catalog checked.
+Score: 27/30 — useful neighborhood orientation; capped for sparse evidence, boundary ambiguity, and current map-label review.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_026`
+- `page_ids: city-danang-place-non-nuoc-stone-village, city-danang-place-oc-hut, city-danang-place-pham-van-dong-beach, city-danang-place-phap-lam-pagoda, city-danang-place-phuoc-my`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready-audio reusable phrases, with native QA still required before import`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Non Nuoc packing/photo language; ốc hút serving-style variability; Pham Van Dong facilities and beach-condition assumptions; Phap Lam access/photo etiquette; Phuoc My map-boundary language`
+- `source_freshness_risks: workshop access, stall/menu availability, beach facilities and safety conditions, pagoda access expectations, neighborhood map/admin naming, related-card catalog IDs`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+

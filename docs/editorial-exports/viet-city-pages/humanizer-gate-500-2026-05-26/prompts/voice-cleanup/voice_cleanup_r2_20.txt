@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_20",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_20",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_026_050_humanized.json",
+      "cityID": "hanoi",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hanoi-place-giang-cafe",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hanoi-place-giap-bat-bus-station",
+          "message": "heading is command-like: Check Live Transport"
+        },
+        {
+          "id": "city-hanoi-place-loading-t-cafe",
+          "message": "heading is command-like: Check The Door"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-gia-lam-station",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-giap-bat-bus-station",
+          "message": "freshness/process-like heading: Bay Check Before The Seat"
+        },
+        {
+          "id": "city-hanoi-place-hom-market",
+          "message": "freshness/process-like heading: Market Details Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-hom-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-gia-lam-station",
+          "summary": "Gia Lam Railway Station is a quieter rail edge of Hanoi: signs, benches, bags, and the pause before the city resumes outside the gate.",
+          "context": "This is a travel-day handoff, not a sightseeing stop. The name matters most when a ticket, pickup, or ride pin points away from the main station.",
+          "tip": "Match Ga Gia Lâm against your ticket and ride pin before relaxing. Hanoi station names can blur when bags are involved.",
+          "rationale": "Gia Lam is strongest as a practical name-recognition stop, with bags, station signs, and onward streets in view.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Rail Edge",
+              "body": "Gia Lam Railway Station feels like a handoff: signs, benches, bags, and the small pause before Hanoi starts moving again."
+            },
+            {
+              "id": "place-brief",
+              "title": "Ticket, Name, Ride Pin",
+              "body": "The useful move is simple. Match the Vietnamese name, your ticket, and the ride-hailing pin before following the busiest flow."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Ga Gia Lâm is the name to listen for. Keep it beside the ticket screen, not only in memory."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Exit Should Stay Plain",
+              "body": "Collect bags, find the correct door, choose a clear ride point, and leave the station area without turning the transfer into a wander."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Save The First Walk",
+              "body": "With luggage, small mistakes get heavier. Save the coffee stop or first Hanoi walk for after bags are dropped."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Transfer Stays Plain",
+              "body": "The station is easiest when the next step is already plain: ticket, pickup, or onward ride."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-giang-cafe",
+          "summary": "Cà phê Giảng is a compact Hanoi egg-coffee ritual: a narrow Old Quarter entrance, close tables, and a small hot cup that drinks like dessert.",
+          "context": "Giảng works when the visit stays focused on the first hot egg coffee, not a long café session or a broad food-history lesson.",
+          "tip": "Order hot cà phê trứng first if this is your first Hanoi egg-coffee stop. Treat the cup like dessert, not a normal caffeine run.",
+          "rationale": "Giảng stands out through a physical ritual: narrow entrance, close tables, hot egg coffee, and a short dessert-like pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Go Hot For The First Cup",
+              "body": "Cà phê Giảng is still good as one clear coffee ritual: find the narrow Nguyễn Hữu Huân entrance, sit close, and order hot cà phê trứng."
+            },
+            {
+              "id": "place-brief",
+              "title": "Narrow Door, Close Tables",
+              "body": "Expect an old-school room more than a lounge. Tight seating and quick turnover are part of the visit, so keep the order simple."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "coffee-1",
+                "v900-food-drin-one-hot-coffee-please",
+                "v900-food-drin-less-sugar-please",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Texture Is The Point",
+              "body": "Hot egg coffee gives the thick cream its best chance: warm, sweet, foamy, and balanced against dark coffee underneath."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Compare Later",
+              "body": "Nguyễn Hữu Huân is a natural coffee street. Giảng is the origin-heavy stop; Đinh or The Note can wait for another lake-side moment."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-giap-bat-bus-station",
+          "summary": "Giap Bat Bus Station is a practical Hanoi edge: awnings, signs, luggage, waiting benches, and the first move into the next ride toward the south.",
+          "context": "This is a transfer stop for bags, route boards, and pickup decisions. It stays practical because the station is about the next move.",
+          "tip": "Confirm Bến xe Giáp Bát before sitting down. Keep the route board and your bag in view until the next move is clear.",
+          "rationale": "Giap Bat is strongest as a clear transfer scene: confirm, wait visibly, and leave cleanly.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Bags First, City Second",
+              "body": "Giap Bat Bus Station is a practical Hanoi edge: awnings, signs, luggage, waiting benches, and the first view back into the city."
+            },
+            {
+              "id": "place-brief",
+              "title": "Bay Check Before The Seat",
+              "body": "Bus stations look obvious until a bay changes or a sign is easy to miss. Ask once, then wait where the route is visible."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Show",
+              "body": "Bến xe Giáp Bát is the local name. Keep it on your phone for drivers, staff, or anyone pointing you toward the right side."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Visible Curb Beats A Vague Pickup",
+              "body": "For a taxi or ride-hailing pickup, choose a clear door or visible curb instead of drifting through traffic with luggage."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Hanoi Returns Outside The Gate",
+              "body": "The station gives a real slice of travel-day Hanoi, but it does not need extra drama. Confirm, exit, and let the city return outside."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check Live Transport",
+              "body": "A calm station stop comes from doing less: confirm the bay, keep bags close, and pick a clear exit."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-hom-market",
+          "summary": "Chợ Hôm feels practical before scenic: bolts of cloth, fluorescent light, bags moving through tight aisles, and shoppers who know what they came for.",
+          "context": "Chợ Hôm centers fabric-market behavior and small buying interactions, with ordinary market movement around it.",
+          "tip": "Do one slow pass before pointing at anything. The fabric area is easier once you see where people browse, cut, carry, and pay.",
+          "rationale": "Hom Market is more specific when fabric, fluorescent light, tight aisles, and practical buying rhythm lead.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fabric First, Then Aisles",
+              "body": "Chợ Hôm feels practical before scenic: bolts of cloth, fluorescent light, bags in tight aisles, and shoppers who already know the task."
+            },
+            {
+              "id": "place-brief",
+              "title": "Walk Before Pointing",
+              "body": "Do one slow pass before asking prices. The fabric area is easier once you see where people browse, cut, carry, and pay."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name",
+              "body": "Chợ Hôm is the local name to show for signs, drivers, and quick market questions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Purchases Fit The Market",
+              "body": "This is a good place for small practical buys or fabric curiosity, not a pressure test."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Texture, Not Checklist",
+              "body": "The best read is the rhythm: cloth, counters, fluorescent light, movement, and ordinary shopping."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Market Details Can Shift",
+              "body": "A small, practical browse fits the room better than a big shopping mission."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-loading-t-cafe",
+          "summary": "Loading T is an Old Quarter coffee pause with a Chân Cầm address, stairs to a second-floor room, patterned tiles, vintage corners, and cinnamon-leaning egg coffee.",
+          "context": "Loading T works through its upstairs arrival and small-room pause: stairs, tile, vintage corners, and coffee first.",
+          "tip": "Choose the drink first, especially if egg coffee or a cinnamon note is the reason you came. The small room feels better once the order is settled.",
+          "rationale": "Loading T is strongest when the arrival, room, and drink order feel like one compact Old Quarter pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Find The Upstairs Pause",
+              "body": "Loading T is an Old Quarter coffee pause with a real arrival moment: Chân Cầm address, stairs, patterned tiles, vintage corners, and cinnamon-leaning egg coffee."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "coffee-1",
+                "v500-dire-navi-do-i-go-upstairs",
+                "coffee-4",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "place-brief",
+              "title": "Drink Before Room",
+              "body": "Choose the drink first. The room is small, and the visit feels better once the order is out of the way."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Room Is The Pause",
+              "body": "The appeal is not a long work session. It is old building details, tile, collected objects, and a window back into Old Quarter movement."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check The Door",
+              "body": "Cafe hours and address signals can drift across guide sites. If this is the stop you care about, check it before crossing town."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

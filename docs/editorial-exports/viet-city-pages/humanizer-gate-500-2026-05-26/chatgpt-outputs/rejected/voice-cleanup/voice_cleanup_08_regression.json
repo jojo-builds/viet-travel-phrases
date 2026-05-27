@@ -1,0 +1,1536 @@
+{
+  "sessionID": "voice_cleanup_08",
+  "chunkReplacements": [
+    {
+      "chunkFile": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "replacements": [
+        {
+          "pageID": "city-hoian-place-lantern-making-class",
+          "entry": {
+            "pageID": "city-hoian-place-lantern-making-class",
+            "summary": "Lantern-making class turns Hoi An’s lantern streets into a hands-on workshop pause: colored frames, patient instruction, and a finished piece you can remember later.",
+            "context": "For Lantern-making class, the useful scene is the table: bamboo frames, fabric or paper, tools, and someone showing the next small step.",
+            "tip": "Arrive ready to make one object slowly. The point is not a show; it is the moment your hands understand the lantern shape.",
+            "rationale": "Lantern-making class gives craft a simple role in the day: a seated break from looking, with a souvenir that comes from doing.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Hands First, Lantern Later",
+                "body": "Lantern-making class works as a quiet break from sightseeing. Sit at the workshop table, follow the frame, and let the finished lantern carry the memory."
+              },
+              {
+                "id": "place-brief",
+                "title": "A Workshop Break From Looking",
+                "body": "Expect colored lantern frames, tools, instruction, and a room that feels more hands-on than staged. It suits visitors who want one craft moment, not another photo stop."
+              },
+              {
+                "id": "quick-say",
+                "title": "Lantern Class In Vietnamese",
+                "body": "Lớp làm lồng đèn Hội An means a Hoi An lantern-making class. It helps when asking a driver, hotel desk, or workshop host to confirm the right activity."
+              },
+              {
+                "id": "use-it-with",
+                "title": "After Old Streets Or Rain",
+                "body": "The class fits after a lantern-street walk or during a wet afternoon. It slows the day without sending you far from the old-town rhythm."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Small Making Moment",
+                "body": "Think of this as one patient hour with frames, hands, and a finished object. Avoid loading it with every craft expectation in Hoi An."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Finished Piece Matters",
+                "body": "The useful memory is the lantern you handled, not the room itself. That keeps the activity grounded even if the setup feels visitor-friendly."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-lune-center",
+          "entry": {
+            "pageID": "city-hoian-place-lune-center",
+            "summary": "Hoi An Lune Center gives the evening a performance shape: a bamboo, full-moon-like theater by the Hoai River, stage light, music, and old-town roofs nearby.",
+            "context": "For Hoi An Lune Center, the place reads as an evening venue first: river approach, theater doors, stage lighting, and a clear pause from street wandering.",
+            "tip": "Treat it as a planned night stop. The dome and river setting do most of the orientation before the performance begins.",
+            "rationale": "Hoi An Lune Center adds living performance to the old-town day, without asking the visitor to treat the venue like another monument.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Evening Belongs To The Dome",
+                "body": "Hoi An Lune Center is for the moment the walking day becomes a seated evening. The bamboo dome, river edge, and stage light give it a different pace."
+              },
+              {
+                "id": "place-brief",
+                "title": "Performance, Not A Monument",
+                "body": "Expect a performance venue rather than a museum stop: doors, seating, music, masks or movement, and the feeling of entering a show from the riverside."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Bamboo-Dome Name",
+                "body": "Hoi An Lune Center usually stays in English. The name is easiest to place when tied to the bamboo dome by the Hoai River."
+              },
+              {
+                "id": "use-it-with",
+                "title": "River Walk Before Or After",
+                "body": "The venue pairs naturally with an evening river walk. A little space around it keeps the show from feeling squeezed between market browsing and dinner."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Planned Night Stop",
+                "body": "This is a named evening plan, not a casual pass-by. Set the timing before you go, then let the river approach set the mood."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Bamboo Shape, River Edge",
+                "body": "The round bamboo theater is the durable image. Remember that first, and the venue becomes easier to place among Hoi An’s old roofs and lantern light."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-mai-fish",
+          "entry": {
+            "pageID": "city-hoian-place-mai-fish",
+            "summary": "Mai Fish suits the night when dinner feels settled, not improvised: a Vietnamese dining room, fish and herbs on the table, warm light, and staff rhythm.",
+            "context": "For Mai Fish, the useful scene is a seated meal with menu questions, drinks, shared dishes, and enough room for dinner to be part of the evening.",
+            "tip": "The table can start with one clear house-style dish or fish order, then add only what the group can actually finish.",
+            "rationale": "Mai Fish gives Hoi An a calmer restaurant moment after walking, when a meal needs more shape than another snack stop.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Dinner With A Real Pause",
+                "body": "Mai Fish belongs to the evening when you want to sit down and let dinner hold the itinerary for a while, not just fill the gap between sights."
+              },
+              {
+                "id": "place-brief",
+                "title": "Fish, Herbs, Warm Light",
+                "body": "Expect a Vietnamese restaurant frame rather than a market bite: tables, drinks, fish or house dishes, herbs, menu questions, and a slower room rhythm."
+              },
+              {
+                "id": "quick-say",
+                "title": "Mai Fish At Dinner",
+                "body": "Mai Fish usually stays as the venue name. It is easiest to confirm when tied to dinner, fish dishes, and a settled table."
+              },
+              {
+                "id": "use-it-with",
+                "title": "After A Long Walking Day",
+                "body": "It pairs well after old-town walking, a tailor errand, or river time. The meal gives the day a seated finish without becoming formal."
+              },
+              {
+                "id": "when-to-use",
+                "title": "One Clear Order First",
+                "body": "Begin with one dish the table can agree on, then add from there. That keeps the meal readable if the menu feels wider than expected."
+              },
+              {
+                "id": "good-to-know",
+                "title": "No Need To Chase A Signature",
+                "body": "The menu may not hold the same dish every night. Staff guidance can shape the meal better than chasing one supposed signature."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-mango-mango",
+          "entry": {
+            "pageID": "city-hoian-place-mango-mango",
+            "summary": "Mango Mango is a riverside dinner choice for the night when color, plates, drinks, and lantern glow should be part of the meal rather than background.",
+            "context": "For Mango Mango, the place reads through its river setting, colorful room, table rhythm, drinks, and the feeling of dinner near the evening walk.",
+            "tip": "Arrive with the river in the plan, not just the menu. The setting is part of why the meal makes sense.",
+            "rationale": "Mango Mango brings restaurant choice and riverside evening together, so dinner can sit between old-town walking and the night market edge.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Riverside Dinner With Color",
+                "body": "Mango Mango makes most sense when the river is already part of the evening. The room, plates, drinks, and lantern glow carry as much weight as the order."
+              },
+              {
+                "id": "place-brief",
+                "title": "A Meal Near The Walk",
+                "body": "Expect a colorful restaurant setting, tables arranged for a proper meal, and a river-adjacent feel that keeps dinner connected to Hoi An’s evening movement."
+              },
+              {
+                "id": "quick-say",
+                "title": "Mango Mango By The River",
+                "body": "Mango Mango usually stays in English. The name should be tied to the riverside restaurant, not to the fruit, when confirming directions."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Before Market Browsing",
+                "body": "The restaurant can sit before a night-market walk or after a river stroll. Enough time keeps dinner from feeling like a hurried stop."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Setting Counts Here",
+                "body": "This is not just a plate choice. The useful part is a dinner that keeps you near the water, lights, and evening foot traffic."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Setting Holds Better",
+                "body": "Avoid building the night around one exact dish. The steadier reason to go is the riverside meal frame: drinks, plates, color, and night air."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-market",
+          "entry": {
+            "pageID": "city-hoian-place-market",
+            "summary": "Hoi An Market gives the old town its working edge: produce colors, food counters, small goods, bargaining rhythm, and morning buying under yellow awnings.",
+            "context": "For Hoi An Market, the first slow lap through aisles matters before choosing snacks, gifts, or a small purchase.",
+            "tip": "Bring small bills and curiosity. One lap before buying makes the market feel less like pressure and more like a working place.",
+            "rationale": "Hoi An Market keeps daily buying close to the tourist streets, giving visitors a practical read on food, goods, and local rhythm.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A First Lap Market",
+                "body": "Hoi An Market is easiest after one slow loop. Notice produce, food counters, and small goods before deciding whether to snack, browse, or bargain."
+              },
+              {
+                "id": "place-brief",
+                "title": "Morning Color, Real Buying",
+                "body": "Expect produce, food stalls, yellow awnings, bags, and quick exchanges. It is a working market, not just a backdrop for old-town color."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chợ Hội An On The Route",
+                "body": "Chợ Hội An is the name to listen for. It helps when asking about the market, a nearby stall, or the way back to the old streets."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Snacks Before Souvenirs",
+                "body": "Food and produce give the market its rhythm early. Gift browsing can come after you understand the aisles and the pace of buying."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Purchases Feel Easier",
+                "body": "The market suits a light browse, a snack, or one practical purchase. It gets harder when treated like a full shopping mission."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Bargaining Stays Gentle",
+                "body": "Read prices calmly and keep the exchange small. A polite question does more here than trying to win every dong."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-memories-land",
+          "entry": {
+            "pageID": "city-hoian-place-memories-land",
+            "summary": "Hoi An Memories Land is an evening performance-island stop, useful when the day needs a clearer show plan beyond lantern streets and river wandering.",
+            "context": "For Hoi An Memories Land, the useful scene is arrival at dusk: riverside stop, show posters, lantern glow, and the sense of a planned evening.",
+            "tip": "Give it room in the night. The stop works poorly as an afterthought because the approach, stop, and performance frame need time.",
+            "rationale": "Hoi An Memories Land gives the river side of town a staged evening role, distinct from casual old-town wandering.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Show Night, Not A Stroll",
+                "body": "Hoi An Memories Land belongs to a planned evening. Think riverside stop, performance posters, lantern glow, and the shift from wandering to show time."
+              },
+              {
+                "id": "place-brief",
+                "title": "Performance Island Energy",
+                "body": "Expect a large, staged attraction frame rather than a small heritage stop. The useful image is arrival at dusk, before the performance pulls attention inward."
+              },
+              {
+                "id": "quick-say",
+                "title": "Đảo Ký ức Hội An",
+                "body": "Đảo Ký ức Hội An means Hoi An Memories Island. It helps when confirming the right attraction with a driver or hotel desk."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Dinner Timing Matters",
+                "body": "Put dinner before or after with care. A show-focused evening needs cleaner timing than a casual market browse."
+              },
+              {
+                "id": "when-to-use",
+                "title": "One Evening Anchor",
+                "body": "This stop can anchor the night when you want structure after daytime wandering. It should not be squeezed into a loose lantern walk."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Timing Belongs Outside The Mood",
+                "body": "Treat schedules, access, and tickets as planning work. The durable idea is simpler: riverside arrival and a staged Hoi An show."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-metiseko",
+          "entry": {
+            "pageID": "city-hoian-place-metiseko",
+            "summary": "Metiseko is a textile boutique pause in Hoi An: folded prints, a polished old-town room, yellow walls, and a slower look at fabric as keepsake.",
+            "context": "For Metiseko, the useful scene is browsing fabric and finished pieces, not negotiating a quick tailor job from scratch.",
+            "tip": "Treat it as a design-and-textile stop. Look first, then decide whether anything fits your luggage, budget, and trip memory.",
+            "rationale": "Metiseko gives Hoi An’s fabric culture a quieter shop frame, with prints and finished goods instead of a rushed fitting-room errand.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Textiles Before Tailor Talk",
+                "body": "Metiseko makes more sense as a fabric-and-design browse than a rushed tailoring errand. The prints and finished pieces set the pace."
+              },
+              {
+                "id": "place-brief",
+                "title": "Folded Prints, Polished Room",
+                "body": "Expect an elegant textile boutique: folded patterns, old-town walls, careful display, and a calmer shopping rhythm than the busier tailor circuit."
+              },
+              {
+                "id": "quick-say",
+                "title": "Metiseko For Textiles",
+                "body": "Metiseko usually stays as the shop name. It is easiest to place when tied to textiles, prints, and the storefront."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Cooler Shopping Pause",
+                "body": "It can break up old-town walking, especially when the day needs an indoor pause. The stop is small enough to stay focused."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Keepsake With Taste",
+                "body": "This is a better fit for a considered fabric keepsake than for fast bargain hunting. Look slowly before asking questions."
+              },
+              {
+                "id": "good-to-know",
+                "title": "No Need To Force A Purchase",
+                "body": "Browsing still teaches the place. If nothing fits, the folded patterns and room give a clearer memory than another generic souvenir search."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-mi-quang",
+          "entry": {
+            "pageID": "city-hoian-place-mi-quang",
+            "summary": "Mi Quang in Hoi An is a bowl to understand before you order: turmeric-toned noodles, herbs, peanuts, rice cracker, a little sauce, and central-coast texture.",
+            "context": "For Mi Quang in Hoi An, the bowl reads through noodles, herbs, crunch, sauce, and heat before anything gets mixed.",
+            "tip": "Notice the rice cracker and herbs before stirring. The bowl makes more sense when texture stays part of the first few bites.",
+            "rationale": "Mi Quang gives Hoi An a central-coast food reference point, distinct from bánh mì counters and white rose dumplings.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Bowl Has Its Own Logic",
+                "body": "Mì Quảng is not a soup bowl in the usual sense. Noodles, herbs, peanuts, rice cracker, and a small amount of sauce all matter."
+              },
+              {
+                "id": "place-brief",
+                "title": "Texture Before Volume",
+                "body": "Expect a bowl built around contrast: soft noodles, fresh herbs, crunchy cracker, peanuts, and savory sauce. The first bites should not be rushed."
+              },
+              {
+                "id": "quick-say",
+                "title": "Mì Quảng On Menus",
+                "body": "Mì Quảng ở Hội An means mì Quảng in Hoi An. It helps when scanning menus or asking for the dish near the old town."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Central-Coast Food Anchor",
+                "body": "The dish gives the food day a different shape from bánh mì, dumplings, or cao lầu. It is a good small-meal anchor."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Heat And Herbs First",
+                "body": "Notice heat and herbs before mixing everything. The bowl is easier to enjoy when you understand what each part is doing."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Regional, Not Random",
+                "body": "Mì Quảng belongs to central Vietnam’s food map. In Hoi An, it helps connect the meal to the wider coast rather than one restaurant name."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-minh-an-ward",
+          "entry": {
+            "pageID": "city-hoian-place-minh-an-ward",
+            "summary": "Minh An Ward gives old-town wandering an addressable shape: lanes, cafes, small shops, hotel edges, evening walks, and the Thu Bon River close by.",
+            "context": "For Minh An Ward, the area matters because it helps you recognize where you are staying or walking, not chase a single landmark.",
+            "tip": "The ward name helps place hotels, cafes, and old-town walks. It keeps the area from feeling like more than one interchangeable lantern street.",
+            "rationale": "Minh An Ward turns Hoi An from loose scenery into a lived-in area with lanes, shops, stays, and river-adjacent movement.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Name For The Old-Town Core",
+                "body": "Minh An Ward helps old-town Hoi An feel less shapeless. It gives lanes, cafes, small shops, and hotel edges a real area name."
+              },
+              {
+                "id": "place-brief",
+                "title": "Lanes, Shops, River Edges",
+                "body": "Expect yellow-wall lanes, bicycles, paper lanterns, small storefronts, cafes, and the Thu Bon River close enough to shape evening movement."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phường Minh An On Addresses",
+                "body": "Phường Minh An is the local ward name. It helps when a hotel, cafe, or pickup point gives an address instead of a landmark."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Better Bearings After Arrival",
+                "body": "The name matters most once you are placing your stay, dinner walk, or coffee stop. It turns wandering into a small mental map."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Area, Not Attraction",
+                "body": "Minh An is not a single sight. Treat it as the neighborhood frame around old-town errands, meals, and evening walks."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Nearby Streets Still Matter",
+                "body": "Ward names help, but street names and landmarks will still guide most moves. Both are useful when asking directions."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-mot-herbal-drink",
+          "entry": {
+            "pageID": "city-hoian-place-mot-herbal-drink",
+            "summary": "Mot herbal drink is a cold old-town pause: herbal sweetness, lemongrass, lotus-leaf garnish, iced glass, and a short reset between walks.",
+            "context": "For Mot herbal drink, the useful scene is not a long cafe sit. It is a quick counter drink on an old-town street.",
+            "tip": "Order it when heat or walking has caught up with you. The drink makes sense as a pause, not the day’s main plan.",
+            "rationale": "Mot herbal drink gives Hoi An’s drink culture a small, recognizable moment between larger plans.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Cold Pause Between Walks",
+                "body": "Mot herbal drink fits the moment when old-town walking needs a reset. Think iced glass, herbal sweetness, lemongrass, and a quick return to the street."
+              },
+              {
+                "id": "place-brief",
+                "title": "Herbal, Sweet, Recognizable",
+                "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The point is refreshment and recognition, not a long cafe session."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nước Mót At The Counter",
+                "body": "Nước Mót ở Hội An means Mot herbal drink in Hoi An. It helps when naming the drink rather than just pointing at the cup."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Heat And Dinner",
+                "body": "The drink fits between market browsing, river walking, and dinner. It gives the day a cooler middle without taking much time."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Short Counter Moment",
+                "body": "This is a small pause, not a full stop. Drink it, notice the flavor, and keep the old-town route moving."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Sweetness Can Be The Point",
+                "body": "Do not expect a plain tea. The memory is the herbal sweetness, cold glass, and street-side rhythm around it."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-museum",
+          "entry": {
+            "pageID": "city-hoian-place-museum",
+            "summary": "Hoi An Museum gives the old town a quieter layer: yellow-wall facade, tiled roof, gallery rooms, artifacts, local history, and a break from street scenery.",
+            "context": "For Hoi An Museum, the useful move is choosing a few objects or rooms, not trying to turn a short museum visit into homework.",
+            "tip": "Pick a small focus before entering: trade, local history, or old-town life. That keeps the museum from becoming a blur.",
+            "rationale": "Hoi An Museum adds context to the streets outside, especially when the visitor needs shade, quiet, and a few reference points.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Three Anchors Beat Every Case",
+                "body": "Hoi An Museum is easier with a small focus: trade, local history, or old-town life. A few objects can carry more than every label."
+              },
+              {
+                "id": "place-brief",
+                "title": "Quiet Rooms Behind The Streets",
+                "body": "Expect a yellow-wall museum facade, tiled roof, gallery rooms, artifacts, and cooler light. It is a context stop, not a headline monument."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bảo tàng Hội An",
+                "body": "Bảo tàng Hội An means Hoi An Museum. It helps when asking for directions or spotting the name near the old town."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Shade And Context",
+                "body": "The museum pairs well with a hot afternoon or rain break. It gives the streets outside a little more depth without demanding a long visit."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short Visits Are Fine",
+                "body": "A few displays can be enough. Leaving before museum fatigue sets in keeps the old-town story sharper."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Quiet Layer Is The Point",
+                "body": "Do not chase one object. The steadier reason to go is context, quiet, and a cooler indoor pause."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-my-son-sanctuary",
+          "entry": {
+            "pageID": "city-hoian-place-my-son-sanctuary",
+            "summary": "My Son Sanctuary makes Cham history physical outside Hoi An: brick temple towers, green valley, ceremonial space, old walls, gates, and morning haze.",
+            "context": "For My Son Sanctuary, arrival should leave enough attention for ruins, not squeeze the site into a quick photo detour.",
+            "tip": "Go with the valley and brick towers in mind. The site needs slower looking than a normal old-town stop.",
+            "rationale": "My Son Sanctuary gives the trip a wider historical frame, reaching beyond Hoi An’s streets into Cham architecture and ritual space.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Brick Towers Beyond Town",
+                "body": "My Son Sanctuary is a different kind of Hoi An-area day: Cham brick towers, green valley, old walls, and a setting that asks for slower looking."
+              },
+              {
+                "id": "place-brief",
+                "title": "History Made Physical",
+                "body": "Expect temple remains, gates, courtyards, paths, and weathered brick rather than a polished old-town facade. The place is strongest when read as architecture and ritual space."
+              },
+              {
+                "id": "quick-say",
+                "title": "Thánh địa Mỹ Sơn",
+                "body": "Thánh địa Mỹ Sơn is the Vietnamese name. It helps when confirming a route, pickup, or guide for the sanctuary outside Hoi An."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Wider Heritage Day",
+                "body": "My Son pairs better with a lighter Hoi An day than with too many old-town errands. Give the ruins enough attention to feel separate."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Morning Helps The Site",
+                "body": "Soft morning light and cooler air suit the brick towers and valley. Give the ride and the site enough space in the day."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Not An Old-Town Landmark",
+                "body": "The sanctuary is outside Hoi An’s core. Treat it as a heritage excursion, not a quick yellow-wall stop."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-nguyen-hoang-night-market",
+          "entry": {
+            "pageID": "city-hoian-place-nguyen-hoang-night-market",
+            "summary": "Nguyen Hoang Night Market gives the An Hoi evening a named lane of lantern stalls, small gifts, food smoke, river edges, and warm movement.",
+            "context": "For Nguyen Hoang Night Market, the first lap sets up the choice between food, gifts, photos, or just movement through lantern light.",
+            "tip": "The first lap can absorb the lights and crowd. Small purchases and snacks feel easier after you know the rhythm.",
+            "rationale": "Nguyen Hoang Night Market makes Hoi An’s evening browse more specific by naming the market street rather than the whole night scene.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Named Night-Market Lane",
+                "body": "Nguyen Hoang Night Market gives the evening a clearer address: lantern stalls, small gifts, food smoke, warm lights, and the river nearby."
+              },
+              {
+                "id": "place-brief",
+                "title": "Lights, Gifts, One First Lap",
+                "body": "Expect outdoor stalls and easy browsing rather than deep shopping. Walk once before buying so the crowd and lantern glow do not rush the choice."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chợ đêm Nguyễn Hoàng",
+                "body": "Chợ đêm Nguyễn Hoàng is the local name. It helps when distinguishing this market lane from broader old-town night wandering."
+              },
+              {
+                "id": "use-it-with",
+                "title": "After Dinner Or Before Dessert",
+                "body": "The market works as a compact evening browse after dinner or before a drink. A small goal helps: one snack, one gift, or one walk."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Crowd First, Purchase Second",
+                "body": "The first pass shows where the food, lanterns, and gift stalls cluster. Buying feels calmer after the pattern is visible."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Different From The Whole Night Scene",
+                "body": "The name points to a specific market area, not every lit street in Hoi An. That makes directions and meeting points easier."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+          "entry": {
+            "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+            "summary": "Nguyen Phuc Chu Street gives An Hoi’s night side a walkable spine: lantern-market energy, signs, shopfronts, crossings, and warm light near the river.",
+            "context": "For Nguyen Phuc Chu Street, the named street orients the night-market side of Hoi An.",
+            "tip": "The street name helps with directions and meetups. It turns the lantern-market side from a glow into a route.",
+            "rationale": "Nguyen Phuc Chu Street helps visitors place the An Hoi evening on the map instead of drifting through unnamed lights.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "An Hoi’s Evening Spine",
+                "body": "Nguyen Phuc Chu Street helps the night side of Hoi An make sense. It gives lantern stalls, shopfronts, signs, and crossings a clear line."
+              },
+              {
+                "id": "place-brief",
+                "title": "Street First, Market Around It",
+                "body": "Expect a named street on An Hoi island with warm night light, market energy, signs, and people moving between shops and the river."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phố Nguyễn Phúc Chu",
+                "body": "Phố Nguyễn Phúc Chu is the street name. It helps with directions, meetups, and separating An Hoi from the older streets across the water."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Meeting Point Street",
+                "body": "The name is useful when friends split up, a driver asks where to stop, or the night market starts to feel like one long blur."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Route Rather Than Attraction",
+                "body": "The street is not the whole plan. It is the line that helps you move through stalls, drinks, crossings, and river edges."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Lantern Energy Can Be Repetitive",
+                "body": "A named street keeps the evening grounded when the lights start looking similar. Pair it with a bridge, river edge, or market lap."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+          "entry": {
+            "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+            "summary": "Nguyen Thai Hoc Street is one of the old-town lanes that makes Hoi An walkable: wooden balconies, lantern shade, shopfronts, cafe edges, and late-afternoon light.",
+            "context": "For Nguyen Thai Hoc Street, a real street line helps before drifting through the old town.",
+            "tip": "The name gives bearings between shops, old houses, cafes, and river walks. It keeps the old town from turning into one postcard.",
+            "rationale": "Nguyen Thai Hoc Street gives Hoi An’s pedestrian old town a recognizable route, especially when wooden balconies and lanterns start repeating.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Street Line Through Old Town",
+                "body": "Nguyen Thai Hoc Street gives old-town wandering a spine. Wooden balconies, lantern shade, shopfronts, and cafe edges are easier to place along a named street."
+              },
+              {
+                "id": "place-brief",
+                "title": "Late-Afternoon Walking Shape",
+                "body": "Expect a pedestrian old-town street with balconies, lanterns, signs, and people moving between shops, houses, and cafes. The light matters, but the route matters more."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phố Nguyễn Thái Học",
+                "body": "Phố Nguyễn Thái Học is the street name. It helps when asking for a shop, old house, cafe, or meeting point nearby."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Old Houses And Cafes",
+                "body": "The street can connect heritage stops, browsing, and coffee without turning the walk into an errand list. One clear turn can guide the next move."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Bearing, Not A Photo Label",
+                "body": "Remember the street for orientation first. The lanterns and balconies make better sense when they sit on a route."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Small Detours Are The Point",
+                "body": "Nearby lanes can pull you off the street. That is fine; the name gives you a way back into the old-town grid."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-night-market",
+          "entry": {
+            "pageID": "city-hoian-place-night-market",
+            "summary": "Hoi An Night Market is the broader evening browse: lantern aisles, small gifts, food smoke, river light, and people moving through a warm night crowd.",
+            "context": "For Hoi An Night Market, the visit works better after deciding between a snack walk, a gift browse, or a lantern-lit pass-through.",
+            "tip": "Pick one job for the market before entering. A snack, a small gift, or a slow walk keeps the crowd from taking over.",
+            "rationale": "Hoi An Night Market gives the evening a browse-and-light rhythm, distinct from a seated dinner or a planned performance.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Night Browse With One Job",
+                "body": "Hoi An Night Market is easier when it has one job: snack, small gift, or lantern walk. Without that, the warm crowd can swallow the evening."
+              },
+              {
+                "id": "place-brief",
+                "title": "Lantern Aisles And River Light",
+                "body": "Expect a busy night-market aisle, people moving slowly, lantern glow, small goods, food smoke, and the river close enough to shape the walk."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chợ đêm Hội An",
+                "body": "Chợ đêm Hội An is the broad name for Hoi An Night Market. It helps when the plan is the evening market, not one exact stall."
+              },
+              {
+                "id": "use-it-with",
+                "title": "After A Seated Dinner",
+                "body": "The market works well after dinner when you only need a walk, dessert, or one small purchase. It is harder when everyone is already tired."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Goals Beat Big Browsing",
+                "body": "A single snack or gift keeps the market pleasant. Trying to see every stall makes the lights feel repetitive fast."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Nguyen Hoang Is More Specific",
+                "body": "Some visitors use Nguyen Hoang Night Market for the named market area. Hoi An Night Market is the broader evening shorthand."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-nu-eatery",
+          "entry": {
+            "pageID": "city-hoian-place-nu-eatery",
+            "summary": "Nu Eatery is an intimate courtyard-style meal for the night when small plates, Vietnamese flavors, staff rhythm, and a quieter table matter more than spectacle.",
+            "context": "For Nu Eatery, the useful scene is a compact restaurant table with shared plates and menu questions, not a big old-town dining production.",
+            "tip": "The meal can stay small and deliberate. A few shared plates can carry the evening better than overordering.",
+            "rationale": "Nu Eatery gives Hoi An a quieter restaurant option, with the table and pacing doing more than a large view or famous dish.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Small Plates, Smaller Room",
+                "body": "Nu Eatery suits a meal that stays intimate: a compact table, Vietnamese small plates, menu questions, and enough quiet to notice the food."
+              },
+              {
+                "id": "place-brief",
+                "title": "Courtyard Scale, Shared Plates",
+                "body": "Expect a smaller restaurant frame rather than a riverside production. The useful rhythm is ordering a few plates and letting the table decide the pace."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nu Eatery At The Table",
+                "body": "Nu Eatery usually stays in English. The name is easiest to confirm when tied to a small restaurant meal."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Quieter Dinner Choice",
+                "body": "It fits a night when Ancient Town feels full and dinner should be more measured. The room matters because it keeps the meal close."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Few Plates Are Enough",
+                "body": "The menu may tempt a wider order, but the better move is a small set of dishes the table can actually notice."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Small Table Carries It",
+                "body": "The exact menu and booking rhythm may not be the same every night. The steadier reason to remember it is the intimate table, shared plates, and quieter pace."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-phin-coffee",
+          "entry": {
+            "pageID": "city-hoian-place-phin-coffee",
+            "summary": "Phin Coffee is a Hoi An cafe pause built around the drip: Vietnamese phin over glass, ice or sweetness, leafy table, and a slower break.",
+            "context": "For Phin Coffee, the useful scene is the pause itself: coffee counter, dripping filter, iced glass, and a place to reset between walks.",
+            "tip": "The phin can take its time. The slow drip is part of the cafe rhythm, not a delay to fight.",
+            "rationale": "Phin Coffee gives the day a compact coffee ritual when heat, walking, or shopping needs a calmer middle.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Drip Sets The Pace",
+                "body": "Phin Coffee works when you let the filter slow the day down. The glass, drip, ice, and sweetness are the point of the pause."
+              },
+              {
+                "id": "place-brief",
+                "title": "Cafe Rhythm, Not Just Caffeine",
+                "body": "Expect a Vietnamese phin, coffee counter, iced glasses, leafy table, and a short reset between meals, market browsing, or old-town walking."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phin Coffee And The Filter",
+                "body": "Phin Coffee usually stays in English. The word phin points to the filter, which helps you recognize the coffee ritual."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Heat And Errands",
+                "body": "The cafe fits between tailor visits, market browsing, or a long walk. It gives the day a seated pause without demanding a full meal."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Slow Coffee Is The Point",
+                "body": "Do not rush the drip. If the day is packed, the pause may be exactly why the stop belongs."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Sweetness Changes The Cup",
+                "body": "Vietnamese coffee can lean strong and sweet. A simple less-sweet request helps, then the phin does its work."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-phung-hung-old-house",
+          "entry": {
+            "pageID": "city-hoian-place-phung-hung-old-house",
+            "summary": "Phung Hung Old House gives Hoi An architecture a close look: old wooden balcony, yellow street corner, lanterns, tiled roof, and lived-in history.",
+            "context": "For Phung Hung Old House, one old house deserves a slower look before every heritage facade starts to blur.",
+            "tip": "Look for the wood, balcony, rooms, and street corner. One house can teach more than another fast pass through the old town.",
+            "rationale": "Phung Hung Old House turns Hoi An’s old architecture into a specific stop, not just a repeated yellow-wall backdrop.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "One Old House In Focus",
+                "body": "Phung Hung Old House helps old-town architecture stop blurring. Wood, balcony, rooms, roofline, and street corner give the visit a single focus."
+              },
+              {
+                "id": "place-brief",
+                "title": "Wood Balcony, Yellow Corner",
+                "body": "Expect an old wooden house on a yellow street corner, with lanterns, roofline, and a closer look at Hoi An’s merchant-house texture."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà cổ Phùng Hưng",
+                "body": "Nhà cổ Phùng Hưng is the Vietnamese name. It helps when asking for this specific old house rather than another heritage facade."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Short Heritage Pause",
+                "body": "The house works between street wandering, coffee, or nearby old-town stops. It does not need to become a long museum-style visit."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Woodwork Before Another Facade",
+                "body": "Notice the balcony, wood, roofline, and threshold before moving on. That keeps the stop from feeling like only another yellow wall."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Old-House Fabric Holds",
+                "body": "Room access or photo expectations may differ by day. The durable reason to remember it is the old-house fabric and street-corner setting."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-pottery-workshop",
+          "entry": {
+            "pageID": "city-hoian-place-pottery-workshop",
+            "summary": "Thanh Ha pottery workshop brings Hoi An craft down to clay, wheel, hands, terracotta shelves, and the patient rhythm of making one object.",
+            "context": "For Thanh Ha pottery workshop, wet clay becoming shape is the scene that makes the village workshop setting matter.",
+            "tip": "Watch the hands before trying the wheel. The village craft context matters as much as the finished keepsake.",
+            "rationale": "Thanh Ha pottery workshop gives the craft village route a tactile stop, with clay and process carrying the memory.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Clay Before Souvenir",
+                "body": "Thanh Ha pottery workshop is strongest when the process comes first. Wet clay, wheel, hands, and shelves matter more than rushing to a keepsake."
+              },
+              {
+                "id": "place-brief",
+                "title": "Village Workshop Texture",
+                "body": "Expect a pottery wheel, damp clay, tools, terracotta shelves, and a workshop setting tied to Thanh Ha’s craft village identity."
+              },
+              {
+                "id": "quick-say",
+                "title": "Xưởng gốm Thanh Hà",
+                "body": "Xưởng gốm Thanh Hà means Thanh Ha pottery workshop. It helps when confirming the craft stop or asking where the workshop area is."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Craft Village Route",
+                "body": "The workshop fits naturally with a Thanh Ha village visit. It gives the route a hands-on point instead of only browsing finished pottery."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Hands Make The Memory",
+                "body": "The useful part is watching or trying the making process. A small object matters more when you have seen how the clay moves."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Clay, Wheel, Village",
+                "body": "The workshop may be hands-on or mostly demonstration. Either way, the memory should stay with clay, process, village setting, and craft."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-precious-heritage-museum",
+          "entry": {
+            "pageID": "city-hoian-place-precious-heritage-museum",
+            "summary": "Precious Heritage Museum offers a quieter gallery stop in Hoi An: photography, textiles, warm yellow walls, display rooms, and stories beyond the old streets.",
+            "context": "For Precious Heritage Museum, the useful move is choosing a few portraits, textiles, or rooms, not trying to absorb every detail.",
+            "tip": "The textiles and faces can slow you down. The museum works better with attention than with a forced full-room sweep.",
+            "rationale": "Precious Heritage Museum adds cultural context through photography and dress, giving Hoi An a different indoor layer.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Faces And Textiles Slow The Visit",
+                "body": "Precious Heritage Museum works when you let photography and textiles hold attention. A few portraits can say more than a rushed pass through every room."
+              },
+              {
+                "id": "place-brief",
+                "title": "Gallery Rooms, Warm Walls",
+                "body": "Expect a heritage photography gallery with textiles, display rooms, warm yellow walls, and quieter light than the old streets outside."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bảo tàng Di sản Vô giá",
+                "body": "Bảo tàng Di sản Vô giá means Precious Heritage Museum. It helps when confirming the museum name in Vietnamese."
+              },
+              {
+                "id": "use-it-with",
+                "title": "An Indoor Culture Pause",
+                "body": "The museum pairs well with heat, rain, or a slower afternoon. It gives cultural depth without sending you far from the old-town frame."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Few Rooms Are Enough",
+                "body": "A small focus is enough: portraits, textiles, or regional dress. The visit can stay short and still feel meaningful."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Respect The Room",
+                "body": "Photography displays and cultural dress deserve a slower pace. A quiet visit fits better when the old streets outside feel busy."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-quan-cong-temple",
+          "entry": {
+            "pageID": "city-hoian-place-quan-cong-temple",
+            "summary": "Quan Cong Temple is a sacred old-town stop where red gates, incense, tiled roofs, courtyards, and respectful pauses shape the visit.",
+            "context": "For Quan Cong Temple, slower body language matters more than a normal sightseeing pace.",
+            "tip": "Pause before taking photos or stepping close. The temple asks for attention, not only a quick look at red walls and incense.",
+            "rationale": "Quan Cong Temple gives Hoi An’s old town a worship layer, making the visit feel deeper than shops and lanterns alone.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Temple With A Slower Pace",
+                "body": "Quan Cong Temple asks for a different rhythm from the surrounding streets. Red gates, incense, courtyards, and tiled roofs deserve a quieter approach."
+              },
+              {
+                "id": "place-brief",
+                "title": "Incense, Gates, Courtyard",
+                "body": "Expect a sacred place, not just architecture: incense urn, temple gate, shaded areas, old-town walls, and people moving with more care."
+              },
+              {
+                "id": "quick-say",
+                "title": "Miếu Quan Công",
+                "body": "Miếu Quan Công is the Vietnamese name. It helps when asking for the temple near Hoi An’s old streets."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Quiet Break From Shops",
+                "body": "The temple works as a respectful pause between market, street, or old-house stops. It changes the old-town rhythm without taking you far."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Respect Before Photos",
+                "body": "Pause first, then read the space. If photos are allowed, keep distance and avoid treating worship as decoration."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Sacred Texture Matters",
+                "body": "Incense, shade, gates, and courtyards are not props. The visit feels better when the visitor gives the place a little space."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-quan-thang-old-house",
+          "entry": {
+            "pageID": "city-hoian-place-quan-thang-old-house",
+            "summary": "Quan Thang Old House gives Hoi An’s heritage houses a carved-wood focus: old yellow walls, doorway detail, soft side light, rooms, and street texture.",
+            "context": "For Quan Thang Old House, one doorway and interior deserve attention before the old-town facades start blending together.",
+            "tip": "Notice the carved wood first. The house makes more sense through detail than through a fast tick on an old-town route.",
+            "rationale": "Quan Thang Old House gives Hoi An architecture a specific interior-and-doorway memory, distinct from broader street wandering.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Carved Wood In Focus",
+                "body": "Quan Thang Old House is strongest as a detail stop. The carved doorway, old yellow walls, and soft side light give the house its memory."
+              },
+              {
+                "id": "place-brief",
+                "title": "Old House, Close Range",
+                "body": "Expect an old Hoi An house with woodwork, threshold craft, rooms, and a quieter interior feel than the street outside."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà cổ Quân Thắng",
+                "body": "Nhà cổ Quân Thắng is the Vietnamese name. It helps when asking for this specific old house among several heritage stops."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Streets And Houses",
+                "body": "The house fits a short old-town route with nearby streets, cafes, and other heritage buildings. A slower pace leaves room for one detail."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Doorway Before The Next Stop",
+                "body": "The visit works when the carved wood gets attention before the next stop pulls you away. Woodwork carries the house better than an errand list."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Carved Wood Holds",
+                "body": "Room access, tickets, or photo expectations may differ by day. The stable reason to remember it is the carved wood and old-house setting."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "chunkFile": "hoian_076_100_humanized.json",
+      "cityID": "hoian",
+      "range": "076-100",
+      "replacements": [
+        {
+          "pageID": "city-hoian-place-reaching-out-arts-crafts",
+          "entry": {
+            "pageID": "city-hoian-place-reaching-out-arts-crafts",
+            "summary": "Reaching Out Arts & Crafts gives Hội An a quieter craft stop: handmade ceramics, textiles, workshop tables, and materials you can study without turning the browse into souvenir pressure.",
+            "context": "The draw is the patient craft table, not a big shopping haul. Look for the material, the finish, and the small decisions behind a handmade piece.",
+            "tip": "A slow browse carries more than a rushed shelf-by-shelf pass. One cup, textile, or tool detail can be enough.",
+            "rationale": "It earns a place in Hội An by showing craft through hands and materials inside the old-town rhythm, without needing big specifics about a factory or show.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Craft At Table Speed",
+                "body": "This is a calm craft stop: ceramics, textiles, tools, and finished pieces close enough to notice the work behind them."
+              },
+              {
+                "id": "place-brief",
+                "title": "Materials Do The Talking",
+                "body": "Notice the tactile side: glaze, thread, wood, cloth, and how a handmade object feels different from a mass souvenir."
+              },
+              {
+                "id": "quick-say",
+                "title": "Reaching Out For Craft",
+                "body": "The English name is the practical label. Đồ thủ công means handicrafts, but the shop name will be clearer for directions."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Slow Browse Near Old Houses",
+                "body": "It pairs naturally with an old-town walk when you want one indoor craft stop instead of another cafe or lantern photo."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Keepsake Energy",
+                "body": "The visit makes sense when a gift or object should carry a little memory of Hội An, not just fill luggage space."
+              },
+              {
+                "id": "good-to-know",
+                "title": "No Need To Overbuy",
+                "body": "A careful look is enough. The point is craft awareness first; buying only matters if one piece genuinely holds your attention."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-roastery",
+          "entry": {
+            "pageID": "city-hoian-place-roastery",
+            "summary": "Hoi An Roastery is a compact coffee pause in the old-town loop, where a counter, iced glass, and street-side view can reset the walk without making coffee the main event.",
+            "context": "Think of it as a coffee stop inside the walking rhythm: espresso, Vietnamese coffee, iced glasses, and a place to sit before the next old-town move.",
+            "tip": "The clean move is simple: order, cool down, and leave before the pause turns into a plan. The cafe works as a reset.",
+            "rationale": "Hoi An Roastery belongs because coffee is part of the town’s walking day, especially when heat, crowds, or rain make a short seated break matter.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Coffee Inside The Walking Loop",
+                "body": "The pause is the reason: a counter, cups, iced drinks, and a place to reset without leaving the old-town rhythm."
+              },
+              {
+                "id": "place-brief",
+                "title": "Caffeine, Shade, Then Back Out",
+                "body": "Expect coffee first, atmosphere second. The stop is easy to understand when it stays short and tied to the walk."
+              },
+              {
+                "id": "quick-say",
+                "title": "Hoi An Roastery For Coffee",
+                "body": "Hoi An Roastery usually stays in English. Show the name on a map; no special Vietnamese phrase is needed to make it clear."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Heat And The Next Stop",
+                "body": "It fits between a museum, old house, tailor visit, or river walk when the body needs shade more than another sight."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short Pause Energy",
+                "body": "A short drink makes more sense than settling in for hours. The old town will keep pulling the day forward."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Different Branch, Same Pause",
+                "body": "Do not build the pause around a particular branch feature. The durable reason to remember it is coffee, shade, and a short old-town reset."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-sa-huynh-culture-museum",
+          "entry": {
+            "pageID": "city-hoian-place-sa-huynh-culture-museum",
+            "summary": "Museum of Sa Huynh Culture is a compact way to add older layers to Hội An: pottery, artifacts, and quiet cases that pull the town beyond lanterns and shopfronts.",
+            "context": "The museum is strongest as a short context stop. Let a few objects do the work rather than trying to turn every case into a full history lesson.",
+            "tip": "Give yourself a few reference points: pottery shapes, burial objects, trade hints, and the feeling that Hội An was layered long before the postcard streets.",
+            "rationale": "It belongs because Hội An needs more than exterior charm, and this museum points toward older cultures behind the town’s later trading identity.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Older Than The Street Scene",
+                "body": "The museum gives Hội An a deeper time layer: pottery, artifacts, cases, and a quieter story behind the old-town surface."
+              },
+              {
+                "id": "place-brief",
+                "title": "Objects Before Labels",
+                "body": "A short visit works if you choose a few forms to notice: bowls, jars, silhouettes, and the way objects sit under museum light."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bảo tàng Văn hóa Sa Huỳnh",
+                "body": "Bảo tàng Văn hóa Sa Huỳnh is the Vietnamese name. The first words simply tell someone you mean the museum."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Short Indoor Layer",
+                "body": "It pairs well with an old-house or assembly-hall walk when the day needs context rather than another exterior photo."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Museum Energy",
+                "body": "This is a compact stop. A focused half hour can be better than forcing a long visit from thin labels or tired attention."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Context Layer, Not Homework",
+                "body": "Exhibit interpretation may be uneven. Let the museum add context instead of trying to carry the whole history of Hoi An."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-silk-village",
+          "entry": {
+            "pageID": "city-hoian-place-silk-village",
+            "summary": "Hoi An Silk Village puts tailoring culture back at the fabric stage: looms, thread spools, silk rooms, and a slower look at what sits behind the old-town fitting appointment.",
+            "context": "The stop makes the most sense when you want material context before or after tailoring. It is about silk, weaving, and fabric decisions more than quick shopping.",
+            "tip": "Notice the thread and loom work before thinking about what to buy. The craft side is what separates it from another tailor storefront.",
+            "rationale": "It belongs because Hội An is known for clothing and tailoring, and the village setting lets fabric feel like a process before it becomes a garment.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Before The Fitting Room",
+                "body": "Hoi An Silk Village connects the tailor story to looms, thread, fabric, and the work that happens before measurements begin."
+              },
+              {
+                "id": "place-brief",
+                "title": "Silk As Process",
+                "body": "Look for practical cues: thread spools, weaving rooms, fabric texture, and the difference between looking at cloth and choosing it."
+              },
+              {
+                "id": "quick-say",
+                "title": "Làng lụa Hội An",
+                "body": "Làng lụa Hội An means Hội An Silk Village. It helps for recognition, though the English name is also widely understandable."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Near A Tailor Day",
+                "body": "It makes sense before choosing fabric or after a fitting, when the clothing process is already on your mind."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Craft Context Over Shopping",
+                "body": "The visit is stronger when you care how silk is made. Quick souvenir hunting will miss the reason the place exists."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Fabric Labels Deserve Questions",
+                "body": "Do not rely on broad silk claims without asking staff. Look, feel, and compare before treating any fabric label as final."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-streets-restaurant-cafe",
+          "entry": {
+            "pageID": "city-hoian-place-streets-restaurant-cafe",
+            "summary": "STREETS Restaurant Cafe gives Hội An a meal with a training-restaurant angle: simple tables, a quieter dining room, and a stop that feels more purposeful than a random cafe break.",
+            "context": "The scene is a training-cafe dining room, not a loud coffee counter. Think meal, staff rhythm, and a clear table rather than an all-day cafe hangout.",
+            "tip": "Keep the order simple if the menu feels broad. The point is a readable meal in a room with more purpose than a quick caffeine stop.",
+            "rationale": "It belongs because Hội An has many food choices, and this one gives the restaurant list a social-training story without needing promotional language.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Meal With A Purposeful Room",
+                "body": "STREETS reads more like a training restaurant than a casual cafe stop: simple tables, calm service, and a meal with a clearer role."
+              },
+              {
+                "id": "place-brief",
+                "title": "Readable Dining, Not Cafe Drift",
+                "body": "Expect a dining-room feel. Choose a meal and let the staff rhythm guide the stop."
+              },
+              {
+                "id": "quick-say",
+                "title": "STREETS For A Meal",
+                "body": "STREETS is the name to show or search. For ordering, simple menu and bill phrases matter more than translating the venue."
+              },
+              {
+                "id": "use-it-with",
+                "title": "When Dinner Needs Structure",
+                "body": "It fits a day when scattered snacks are no longer enough and you want a table, a menu, and a calmer room."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Good For A Reset Meal",
+                "body": "The stop makes sense after walking, shopping, or heat, when a seated meal will help the rest of the day feel organized."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Purpose Without A Speech",
+                "body": "The social-training angle is part of the identity, but the visible experience should still be a good, respectful meal."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-thanh-ha",
+          "entry": {
+            "pageID": "city-hoian-place-thanh-ha",
+            "summary": "Thanh Ha Pottery Village gives Hội An a craft-village stop with clay at the center: wheels, terracotta vessels, workshop rhythm, and a slower route beyond Ancient Town.",
+            "context": "The village is strongest when seen through clay and hands, not through a generic village tour. Pottery is the reason the detour exists.",
+            "tip": "Focus on the making before the shopping. A wheel, a drying shelf, or a terracotta shape gives the stop its memory.",
+            "rationale": "Thanh Ha belongs because it connects Hội An’s village life with a specific craft tradition instead of another yellow-wall walk.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Clay Gives The Village Its Shape",
+                "body": "Thanh Ha is easiest to understand through pottery: wheels, terracotta vessels, workshop tables, and the rhythm of making by hand."
+              },
+              {
+                "id": "place-brief",
+                "title": "A Craft Detour Beyond Town",
+                "body": "The stop feels slower than Ancient Town. Clay, water, drying pieces, and repeated forms are the textures to watch."
+              },
+              {
+                "id": "quick-say",
+                "title": "Làng gốm Thanh Hà",
+                "body": "Làng gốm Thanh Hà means Thanh Ha pottery village. It is the phrase to recognize on maps or with a driver."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Countryside Craft Loop",
+                "body": "It pairs well with a route that already leaves the old streets, especially when you want one clear craft focus."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Hands Before Souvenirs",
+                "body": "The strongest memory is watching how the clay is worked. Shopping can come after the craft makes sense."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Pottery First, Guarantees Second",
+                "body": "Workshop activity may be quiet at some hours. The durable draw is the pottery tradition, not a guaranteed demonstration at every moment."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-the-field",
+          "entry": {
+            "pageID": "city-hoian-place-the-field",
+            "summary": "The Field Hoi An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the setting as much as the food.",
+            "context": "The restaurant’s role is the setting: a meal near the fields where space and light matter. Avoid making the whole plan depend on one dish.",
+            "tip": "Let the location lead the decision. The table makes the most sense when you want a meal to slow the day rather than simply end it.",
+            "rationale": "It belongs because Hội An’s food day is not only old-town counters; a rice-field meal gives the itinerary a different pace.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Dinner Beside The Fields",
+                "body": "The Field Hoi An is about where the meal happens: open air, rice-field edges, sunset mood, and a table with room around it."
+              },
+              {
+                "id": "place-brief",
+                "title": "Setting First, Menu Second",
+                "body": "Expect the location to carry much of the memory. The menu may move with the day, but the field-side pause is the reason to go."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Field On The Map",
+                "body": "The Field Hoi An is the practical name. Show it on a map rather than translating the restaurant into Vietnamese."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Slower Evening Meal",
+                "body": "It fits after a countryside ride or a dense old-town day, when dinner feels like part of the route."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Light Changes The Stop",
+                "body": "Late-day light can make the setting feel stronger. Rain or darkness may shift the meal back toward the table itself."
+              },
+              {
+                "id": "good-to-know",
+                "title": "One Dish Is Too Fragile",
+                "body": "Do not anchor the plan to one dish. The durable reason is the field-side setting, with room, light, and a slower table."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-thu-bon-river",
+          "entry": {
+            "pageID": "city-hoian-place-thu-bon-river",
+            "summary": "Thu Bon River is the line that helps Hội An make sense: boats, bridges, reflections, waterline walks, and evening light pulling Ancient Town toward the banks.",
+            "context": "The river is not only scenery. It organizes movement, views, bridges, boat offers, and the way the old town opens toward water.",
+            "tip": "Walk the bank before deciding on any boat. The river often gives enough context from the edge, especially around late afternoon.",
+            "rationale": "Thu Bon River belongs because water is part of Hội An’s identity, shaping routes, trade memory, evening walks, and the town’s sense of arrival.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The City’s Water Spine",
+                "body": "Thu Bon River gives Hội An its edge: boats, reflections, bridges, banks, and the open space that balances the old streets."
+              },
+              {
+                "id": "place-brief",
+                "title": "A View That Becomes A Route",
+                "body": "The river works as orientation. A walk along the water can connect markets, bridges, cafes, and evening light without much planning."
+              },
+              {
+                "id": "quick-say",
+                "title": "Sông Thu Bồn",
+                "body": "Sông Thu Bồn means Thu Bon River. The phrase helps with directions, especially when paired with a bridge or bank."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Old Town And Evening",
+                "body": "It fits naturally at golden hour, after a meal, or between lantern streets and a bridge crossing."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Boat Or Bank First",
+                "body": "A boat is optional. The bank itself can be enough if you want reflections, movement, and a low-commitment pause."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Water Is Working Space",
+                "body": "Boats and river edges are part of daily movement. Leave room for people working, docking, or moving goods."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-trade-ceramics-museum",
+          "entry": {
+            "pageID": "city-hoian-place-trade-ceramics-museum",
+            "summary": "Museum of Trade Ceramics adds a quieter trade-history layer to Hội An: bowls, jars, old wooden rooms, and objects that point back to the town’s port life.",
+            "context": "The museum is strongest when treated as a small object study. Ceramics make trade history easier to picture than another broad heritage paragraph.",
+            "tip": "Pick a few shapes and materials to follow through the rooms. The old wooden-house setting is part of how the objects make sense.",
+            "rationale": "It belongs because Hội An’s trading past needs objects, not only streets; ceramics give that past a visible, human scale.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Trade History In Bowls And Jars",
+                "body": "The museum gives Hội An’s port story a physical form: ceramics, old rooms, cases, and objects that traveled before tourists did."
+              },
+              {
+                "id": "place-brief",
+                "title": "Small Objects, Larger Routes",
+                "body": "A bowl or jar can say more than a long timeline. Notice shapes, glazes, and how the wooden house frames them."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bảo tàng Gốm sứ Mậu dịch",
+                "body": "Bảo tàng Gốm sứ Mậu dịch is the Vietnamese name. The first words signal museum; the rest points to trade ceramics."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Quiet Heritage Layer",
+                "body": "It pairs well with Tan Ky Old House, Tran Phu Street, or an assembly hall when the walk needs more context."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short Attention Works",
+                "body": "This is a good stop for a focused look, especially if heat or rain makes an indoor layer more appealing."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Old-House Frame Matters",
+                "body": "Displays and labels may differ over time. Keep the idea simple: ceramics, trade memory, and an old-house museum setting."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-traditional-art-performance-house",
+          "entry": {
+            "pageID": "city-hoian-place-traditional-art-performance-house",
+            "summary": "Traditional Art Performance House gives Hội An an indoor culture stop built around stage light, music, masks, and a small performance setting rather than another old house.",
+            "context": "The venue matters as living culture, not a static display. Think stage, curtain, instruments, and the short shift from sightseeing into watching.",
+            "tip": "Build the plan around a confirmed show time. Without a performance, the nearby old-town route may matter more than the name.",
+            "rationale": "It belongs because Hội An’s heritage is not only architecture; performance gives the old town a moving, sounded layer.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Stage Inside The Old Town",
+                "body": "Traditional Art Performance House adds a live-culture layer: stage light, music, masks, curtains, and a room meant for watching."
+              },
+              {
+                "id": "place-brief",
+                "title": "Performance, Not Another Facade",
+                "body": "Movement is the difference. A short show turns the day from looking at buildings into hearing and watching tradition."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà biểu diễn nghệ thuật cổ truyền",
+                "body": "Nhà biểu diễn nghệ thuật cổ truyền Hội An means Hội An traditional art performance house. The name is long, so a map helps."
+              },
+              {
+                "id": "use-it-with",
+                "title": "An Indoor Evening Layer",
+                "body": "It fits after dinner or a lantern walk when you want something seated, cultural, and shorter than a full night plan."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Timing Matters Here",
+                "body": "The place is strongest when a performance is actually on, not just when you pass the door."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Short Visit Expectations",
+                "body": "Expect a compact cultural stop, not a grand theater night. That smaller scale is part of its old-town fit."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-tran-phu-street",
+          "entry": {
+            "pageID": "city-hoian-place-tran-phu-street",
+            "summary": "Tran Phu Street is a named spine through Hội An’s old-town walk: yellow walls, shopfronts, lanterns, crossings, and enough landmarks to make the town feel easier to read.",
+            "context": "The street helps turn Ancient Town from a blur into a route. Cafes, old houses, assembly halls, and riverward movement all feel easier with a named spine.",
+            "tip": "Let the street orient you before chasing side lanes. Once Tran Phu makes sense, nearby turns feel less random.",
+            "rationale": "Tran Phu belongs because a named street can make Hội An walkable in the visitor’s head before arrival.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Street Spine With Bearings",
+                "body": "Tran Phu helps the old town feel legible: yellow walls, lanterns, shopfronts, crossings, and enough reference points to hold the walk."
+              },
+              {
+                "id": "place-brief",
+                "title": "Shopfronts, Crossings, Lanterns",
+                "body": "The point is not one sight. The street works as a line of movement between houses, cafes, shops, and riverward turns."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phố Trần Phú",
+                "body": "Phố Trần Phú means Tran Phu Street. It helps with maps and directions when Ancient Town starts to feel like one continuous lane."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Old-Town Stops",
+                "body": "It pairs naturally with Tan Ky Old House, assembly halls, museums, tailors, and coffee stops along the same walking rhythm."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A First Walk Works Here",
+                "body": "Early in the walk, the street can orient you. Later, it becomes a return path toward cafes, houses, halls, or the river."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Traffic Still Exists",
+                "body": "Even in heritage streets, scooters and crossings still shape the walk. Slow down at corners instead of staring only at lanterns."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-vys-market",
+          "entry": {
+            "pageID": "city-hoian-place-vys-market",
+            "summary": "Vy's Market Restaurant turns a Hội An meal into an indoor food-hall style stop: counters, bowls, herbs, and enough variety to browse without chasing every specialty outside.",
+            "context": "The role is controlled variety. It is not a street market, but the counter setup can make local dishes feel easier to compare and order.",
+            "tip": "Walk the counters before committing. A first lap helps you read bowls, herbs, portions, and what actually sounds good.",
+            "rationale": "Vy's Market belongs because it gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Food-Hall Variety Indoors",
+                "body": "Vy's Market Restaurant gives you counters, bowls, herbs, and a more organized way to look at Vietnamese dishes in one place."
+              },
+              {
+                "id": "place-brief",
+                "title": "Browse Before Ordering",
+                "body": "The first move is a slow look at the counters before choosing. Variety is helpful only if it does not become panic."
+              },
+              {
+                "id": "quick-say",
+                "title": "Vy's Market At The Counter",
+                "body": "Vy's Market Restaurant usually stays in English. Show the name on a map; ordering phrases matter more than translating it."
+              },
+              {
+                "id": "use-it-with",
+                "title": "When A Market Feels Like Too Much",
+                "body": "It fits a night when you want local flavors with seating, lighting, and less stall pressure than an outdoor market."
+              },
+              {
+                "id": "when-to-use",
+                "title": "One Round First",
+                "body": "Start with one dish or small order, then add more after you understand portion size and flavor direction."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Variety Moves With The Menu",
+                "body": "Do not plan around one exact counter or dish. The stable draw is organized variety, with seating and less stall pressure."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hoian-place-yaly-couture",
+          "entry": {
+            "pageID": "city-hoian-place-yaly-couture",
+            "summary": "Yaly Couture brings the Hội An tailor stop into a more polished atelier setting: fabric walls, measuring tape, fitting rooms, and decisions that turn a trip into clothing.",
+            "context": "The scene is a tailoring appointment, not casual browsing. Fabric choice, measurements, fit, and pickup timing matter more than the shopfront.",
+            "tip": "Arrive with references, a budget ceiling, and enough time for fittings. The first conversation should make the final garment feel possible, not vague.",
+            "rationale": "Yaly Couture belongs because tailoring is a durable Hội An ritual, and a named atelier helps the visit imagine the process before stepping inside.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Tailor Stop With Polish",
+                "body": "Yaly Couture gives the tailor ritual a more finished frame: fabric walls, measuring tape, fitting rooms, and a stronger appointment feel."
+              },
+              {
+                "id": "place-brief",
+                "title": "Decisions Before The Mirror",
+                "body": "The work begins before the fitting room: fabric, cut, lining, budget, deadline, and how clear your reference is."
+              },
+              {
+                "id": "quick-say",
+                "title": "Yaly Couture At The Fitting",
+                "body": "Yaly Couture usually stays in English. Show the shop name on a map; the tailoring conversation matters more than translating it."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Serious Tailor Plan",
+                "body": "It fits when custom clothing is a real goal, not a casual maybe. Leave time for measurements, fitting, and adjustment."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Reference Photos Help",
+                "body": "A photo or garment example can make the first conversation clearer. Vague ideas often become vague fittings."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Timing Needs Honesty",
+                "body": "Do not promise yourself a perfect piece on a rushed schedule. The better souvenir is clothing that actually fits."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass",
+    "notes": "Targeted quick-say headings and planning-language fixes applied while preserving pageIDs, section IDs, section order, and existing arrays.",
+    "remainingRisks": []
+  }
+}

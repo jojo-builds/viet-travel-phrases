@@ -1,3 +1,5 @@
+> **BACKLOG / STATUS ONLY — NOT A CURRENT STANDARD.** Use `CURRENT_CITY_PAGE_STANDARD.md` for the active `speaklocal.place.app-detail.v2.2` city/place app-detail standard.
+
 # Remaining Places From The Screenshots
 
 This is the working backlog for locations that appeared in the SpeakLocal listing screenshots but do not yet have curated V2 example entries.

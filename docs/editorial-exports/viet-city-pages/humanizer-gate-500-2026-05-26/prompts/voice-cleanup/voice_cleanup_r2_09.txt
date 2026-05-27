@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_09",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_09",
+  "chunks": [
+    {
+      "chunkFile": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-danang-place-museum-branch-2",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-my-an",
+          "message": "banned visible fragment: works when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-marble-mountains",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-mi-quang",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-mi-quang-1a",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-museum-branch-2",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-my-an",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 22x: name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 22x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-marble-mountains",
+          "summary": "Marble Mountains is a compact climb through limestone hills, caves, pagodas, stone steps, viewpoints, and carving streets south of Da Nang.",
+          "context": "The place asks for movement. Arrive ready to climb into the site rather than only photograph the name from below.",
+          "tip": "Ngu Hanh Son refers to the broader mountain cluster, so it can cover caves, pagodas, viewpoints, and the stone shops near the base.",
+          "rationale": "Marble Mountains combines geology, Buddhist spaces, craft streets, and coastal views in one Da Nang stop close to the beach side.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Climb Is The Point",
+              "body": "Marble Mountains is close enough to feel like a city stop, but it asks for stairs, cave air, incense, and pauses at pagoda gates. Come ready to move through it."
+            },
+            {
+              "id": "place-brief",
+              "title": "Stairs Before Viewpoints",
+              "body": "The first stretch tells you what kind of visit this is. Stone steps, shaded rock, and temple corners slow the pace before the higher views back toward Da Nang's beach side."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Ngu Hanh Son is the local name for the five-element mountain cluster. It keeps the stop broader than one cave, one pagoda, or one photo angle."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Caves Change The Mood",
+              "body": "Inside the chambers, the air drops and shrine light does more than any single photo. Move quietly, give people room, and let your eyes adjust before reaching for the camera."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Several Stops In One Climb",
+              "body": "Treat the mountains as a compact climb with choices: caves, pagodas, viewpoints, and stone-carving streets below. Shoes and patience matter more than one photo."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Stone Shops At The Base",
+              "body": "The streets below have stone-carving shops and traffic around the entrance area. Browse only if you have attention left; the climb itself is already enough for one compact stop."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-mi-quang",
+          "summary": "Mi Quang is the Da Nang bowl to recognize by its shallow broth, turmeric noodles, herbs, peanuts, rice cracker, and texture-first rhythm.",
+          "context": "Dish guidance first, venue choice second. Understand the bowl before choosing a shop, protein, or add-on.",
+          "tip": "Pick the protein first, then taste before adding more chili. Break the rice cracker late if you want the crunch to last.",
+          "rationale": "Mi Quang teaches Da Nang through the bowl itself: turmeric noodles, herbs, cracker, broth, and the confidence to order by name.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Look For The Shallow Bowl",
+              "body": "Mi Quang in Da Nang is not a soupy noodle bowl. It usually lands wide and shallow, with turmeric-colored noodles, a little rich broth, herbs, peanuts, and a rice cracker."
+            },
+            {
+              "id": "place-brief",
+              "title": "Protein Before Extras",
+              "body": "Menus often split the bowl by chicken, shrimp-and-pork, or a house mix. Pick that before worrying about extras; the noodles, herbs, peanuts, and cracker are the shape."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Mi Quang is the dish name to listen for in Da Nang. The Quang part points toward central Vietnam, not a generic noodle bowl."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Break The Cracker Late",
+              "body": "The rice cracker is not garnish to ignore. Break it once the bowl is in front of you, then pull herbs through the sauce so the crunch does not disappear too early."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Bowl Before Venue",
+              "body": "Best before picking a restaurant or protein, so the dish itself is clear: turmeric noodles, shallow broth, herbs, peanuts, rice cracker, and sauce."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Local Meal, Light Shape",
+              "body": "A good bowl sits between beach-day ease and central-Vietnam depth: dry enough to stay light, saucy enough to remember. It is a smart first local meal."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-mi-quang-1a",
+          "summary": "Mi Quang 1A is a focused Da Nang noodle stop where the useful move is simple: choose the bowl, fold in herbs, and keep lunch narrow.",
+          "context": "A small noodle-shop stop feels clearest when the meal stays simple. Let the bowl, herbs, cracker, and quick table rhythm carry lunch.",
+          "tip": "Keep the order around mi Quang first. Decide the style the menu is actually serving that day before adding extras.",
+          "rationale": "Mi Quang 1A turns a known dish into a practical restaurant stop through bowl choice, herbs, cracker, and a short lunch rhythm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Fast Table For A Focused Bowl",
+              "body": "Mi Quang 1A keeps the meal narrow: sit down, choose the bowl style, fold in the herbs, and let the day keep moving."
+            },
+            {
+              "id": "place-brief",
+              "title": "Know The Bowl Style",
+              "body": "This is not the moment for a broad Da Nang dinner. Keep the order around mi Quang and decide chicken, shrimp-and-pork, or whatever house version is available."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Mi Quang 1A is easiest to remember as a small noodle-shop table: herbs, cracker, and a focused bowl before the day keeps moving."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Herbs Do Some Work",
+              "body": "The greens, peanuts, sauce, and cracker are part of the balance. Taste once before adding more heat, then fold the herbs through instead of leaving them beside the bowl."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Noodle Stop, Not Big Dinner",
+              "body": "Good when the plan is a focused bowl rather than a broad dinner. Choose the mi Quang first, then add sides only if the table rhythm is clear."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Meal, Clear Memory",
+              "body": "This kind of noodle stop fits a day with river light, beach time, or a museum already on it. It gives local flavor without turning lunch into a long sit."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-museum-branch-2",
+          "summary": "Da Nang Museum Branch 2 is a quieter culture pause, useful for courtyard light, gallery rooms, display cases, and a few objects rather than a full museum mission.",
+          "context": "A smaller culture pause than the main museum. Keep the visit modest: courtyard light, gallery rooms, display cases, and a few objects worth noticing.",
+          "tip": "Let the courtyard slow the visit before the rooms. Pick a few objects or room details instead of forcing a full timeline.",
+          "rationale": "Branch 2 gives Da Nang a smaller indoor culture stop that contrasts with the outdoor beach, bridge, and seafood rhythm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Way Into The City",
+              "body": "Da Nang Museum Branch 2 is better treated as a small culture pause than another box to tick. Courtyard light, gallery rooms, display cases, and a few objects can give the city more depth."
+            },
+            {
+              "id": "place-brief",
+              "title": "Courtyard First, Rooms After",
+              "body": "If the visit begins outside, give that light a minute before the display cases. Smaller museum stops are easier when you slow down before trying to read everything."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Bao tang Da Nang - Co so 2 means Da Nang Museum, Branch 2. The name matters because this is a branch-style stop, not the main museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pick Objects, Not A Timeline",
+              "body": "Choose a few objects, artworks, or room details and follow them. Branch museums can lose shape if you force every label into one story."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Culture Pause",
+              "body": "Good as a quieter indoor culture stop, with courtyard light and a few objects carrying the visit. Let it stay modest beside the main museum."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bridge-And-Beach Da Nang Gets Quieter",
+              "body": "The contrast matters: after traffic, river views, and outdoor plans, quiet rooms let the city gather a little depth. Keep the visit short enough that the objects stay clear."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-my-an",
+          "summary": "My An is the Da Nang beach-side neighborhood where hotels, cafes, small shops, motorbikes, and midday shade turn a stay into real blocks.",
+          "context": "The area is not one big sight. It works when someone learns a few corners, return points, and dinner routes around the beach side.",
+          "tip": "Pick one cafe, hotel, or corner you can find again. My An is easier when a walk has a home base.",
+          "rationale": "My An makes the beach side feel lived-in, with hotel edges, small shops, cafes, and lanes behind the sand.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Read The Beach Side By Blocks",
+              "body": "My An is the part of Da Nang where a beach stay turns into real streets. Low-rise hotels, cafes, small shops, motorbikes, and shade sit close enough to learn one block at a time."
+            },
+            {
+              "id": "place-brief",
+              "title": "Walk Before Choosing Dinner",
+              "body": "The area makes more sense after one unhurried pass. Notice which cafes have people inside, where the hotel edges thin out, and which lanes feel comfortable after dark."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "My An is the neighborhood name to know around this beach side. It turns cafes, hotel edges, and small streets into something clearer than one blur near the sand."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Beach Rhythm, Everyday Streets",
+              "body": "Do not expect one big sight. The appeal is smaller: a coffee before sand, a shop on the way back, a scooter-heavy corner, and a night walk that feels lived in."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Neighborhood Base Check",
+              "body": "Good when the trip needs an area name for cafes, hotel edges, beach access, and small evening walks. The south-beach side feels less vague with this label."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Return Point Matters",
+              "body": "Pick one cafe, hotel, or corner you can find again. My An is easy when your walk has a home base; it gets fuzzier if every lane becomes near the beach."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

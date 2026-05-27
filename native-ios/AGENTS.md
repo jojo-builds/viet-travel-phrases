@@ -52,7 +52,8 @@ Content and listing-page rules:
 
 - `Xin chào` is the flagship visual/content rhythm.
 - Tier 1 pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
-- Use the installed `speaklocal-listing-pages` skill when authoring, reviewing, or refactoring listing/detail pages.
+- Use the installed `speaklocal-listing-pages` skill for canonical phrase listing mechanics, phrase rows, audio links, routing, renderer behavior, and validation.
+- City/place app-detail pages are different from canonical phrase listing pages. For city/place app-detail copy or implementation, start from `../docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`; the current source/render contract is `speaklocal.place.app-detail.v2.2`.
 - Runtime copy remains offline; do not add runtime AI/network dependency for phrase content.
 - One phrase gets one canonical page ID. Search, browse, variants, Explore shelves, and row arrows should all route to that page.
 - Speaker icons imply playable bundled audio or a missing-audio audit item.

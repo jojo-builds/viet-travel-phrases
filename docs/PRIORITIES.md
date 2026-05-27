@@ -11,10 +11,10 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 4. Prioritize the surfaces that express that audience wedge most clearly:
    - Home as a destination/culture/phrase gateway
    - Food Menu and Drink Menu as flagship menu exploration
-   - city pages as place-first trip exploration
+   - city pages as place-first trip exploration using the current `speaklocal.place.app-detail.v2.2` contract
    - noun-first Browse/category rows for food, markets, places, and everyday objects
    - saved/practice loops for building a personal trip phrase set before arrival
-5. Finish and keep improving Viet canonical phrase pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/canonical-pages/**` and the `speaklocal-listing-pages` skill.
+5. Finish and keep improving Viet canonical phrase pages as authored offline "Different ways to say [phrase] in Vietnam" article pages using `content-draft/viet/canonical-pages/**` and the `speaklocal-listing-pages` skill; keep city/place app-detail work routed through `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`.
 6. Treat destination-app completeness as a phrase-graph problem: save the real alternate phrasings, relation branches, likely replies, and adjacent next-step phrases for major traveler intents instead of stopping at one visible phrase per page.
 7. Keep audio attached to that phrase graph. Speaker icons imply bundled audio or an explicit missing-audio audit item; reuse exact normalized audio before generating new ElevenLabs assets.
 8. Add the pre-live Practice/Quiz lane as a native offline rehearsal layer, not a generic game shell. `docs/PRACTICE_QUIZ_PRELIVE_PLAN.md` is the current planning source for the first implementation sequence: offline deck generation, native Practice surfaces, listing-page `Practice this`, local missed review, practice audio audit, simulator/device proof, and follow-up mascot integration.

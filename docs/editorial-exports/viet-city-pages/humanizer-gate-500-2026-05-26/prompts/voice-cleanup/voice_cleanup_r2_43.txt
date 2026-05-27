@@ -1,0 +1,289 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_43",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_43",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_076_100_humanized.json",
+      "cityID": "hcmc",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hcmc-place-thien-hau-pagoda",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-thu-thiem-riverfront",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-thu-thiem-riverfront",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-vinhomes-central-park",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-war-remnants-museum",
+          "message": "banned visible fragment: gives saigon a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-ton-duc-thang-museum",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-thien-hau-pagoda",
+          "summary": "Thien Hau Pagoda is a slow sacred stop where incense, courtyards, tiled roofs, and respectful pauses matter more than speed. The visit deserves a quiet, observant pace.",
+          "context": "The place is shaped by worship and architecture: temple gates, shade, incense coils, courtyards, tiled roofs, and small pauses.",
+          "tip": "A slower pace matters here; prayer paths, low voices, and careful photo timing all help the temple stay itself.",
+          "rationale": "It gives Saigon a sacred layer through a living temple, not just an old building.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Temple That Slows The Pace",
+              "body": "Thien Hau Pagoda asks for a slower visit. Incense, courtyards, tiled roofs, and worship rhythm matter more than a quick photo stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Incense And Courtyards",
+              "body": "Expect temple gates, shade, incense coils, and interior courtyards. The beauty is in the built layers and the way people move through them."
+            },
+            {
+              "id": "quick-say",
+              "title": "Chùa Bà At The Gate",
+              "body": "Chùa Bà Thiên Hậu is the name to recognize. Chùa means pagoda or temple, and Thiên Hậu names the deity honored here."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Respect Over Speed",
+              "body": "The stop fits a Chợ Lớn route when you have enough space to lower your voice, pause, and notice how worship shapes the building."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Chợ Lớn Pairing",
+              "body": "The pagoda makes most sense with other Chợ Lớn streets or markets nearby, not as a rushed jump from central District 1."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Photo And Voice Awareness",
+              "body": "Photos are better handled carefully here. Watch the room first, keep out of prayer paths, and let the temple stay a place of worship."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-thu-thiem-riverfront",
+          "summary": "Thu Thiem riverfront gives Saigon a skyline pause from across the water: District 1 in view, bridges nearby, reflections, open bank, and dusk doing most of the work.",
+          "context": "The riverfront is about distance and orientation: waterline views, evening light, bridges, boats, and the central skyline across the river.",
+          "tip": "Dusk gives the clearest reason to cross: the city lights up across the water while the bank stays open and simple.",
+          "rationale": "It lets the skyline breathe and makes the river feel like a divider, not just a view beside District 1.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Skyline From Across The Water",
+              "body": "Thu Thiem riverfront is about looking back at District 1. The distance makes the skyline, bridges, and river feel clearer than they do from the center."
+            },
+            {
+              "id": "place-brief",
+              "title": "Dusk Does The Work",
+              "body": "Expect an open river edge, waterline views, reflections, and the city across the water. The scene is simple until the light changes."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bờ Sông Phrase",
+              "body": "Bờ sông Thủ Thiêm is the phrase to recognize. Bờ sông means riverbank, and Thủ Thiêm names the east-side area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Crossing Payoff",
+              "body": "It fits when crossing the river has a purpose: skyline, air, evening light, and a different angle on the central city."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather And Light",
+              "body": "The riverfront depends heavily on sky and timing. Flat light can make it quiet; dusk gives it shape."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Simple Riverfront Expectations",
+              "body": "Do not expect a packed attraction. Space, view, and the feeling of Saigon across the water carry the stop."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ton-duc-thang-museum",
+          "summary": "Ton Duc Thang Museum is a quieter museum stop near the waterfront, with local history, rooms, objects, and memory replacing another street-facing landmark.",
+          "context": "The role is compact culture: artifacts, display rooms, quiet light, local history, and a pause near the Saigon waterfront.",
+          "tip": "A focused visit works better than trying to read everything; pick the historical frame, then let the waterfront reset the day after.",
+          "rationale": "It gives central Saigon a local-history layer close to the river, useful when the day needs more than shopping or views.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Museum Near The Water",
+              "body": "Ton Duc Thang Museum gives the waterfront area a quieter historical stop. It is for rooms, objects, and local memory rather than another street view."
+            },
+            {
+              "id": "place-brief",
+              "title": "History In A Smaller Frame",
+              "body": "Expect a modern museum exterior near the Saigon waterfront and interior displays that slow the day down."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bảo tàng Tôn Đức Thắng is the Vietnamese name. Bảo tàng means museum, followed by the historical figure's name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Focused Short Visit",
+              "body": "The museum fits better with one historical focus than a pressure to read every room. Keep the visit compact and attentive."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Waterfront Pairing",
+              "body": "It pairs naturally with a river or central walk when you want a cultural stop near the water without a crowded landmark mood."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Museum Pace",
+              "body": "The stop rewards a slower pace. Give the rooms a little quiet, then let the nearby waterfront bring the day back outside."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-vinhomes-central-park",
+          "summary": "Vinhomes Central Park gives Saigon a riverside green break with lawns, families, walking paths, and Landmark 81 behind it. The scale feels open without leaving the city.",
+          "context": "The park role is open-air reset: riverside paths, lawns, shade, families, evening light, and the Landmark 81 backdrop.",
+          "tip": "The strongest reason is space. It fits days when central sidewalks feel tight and the river side can carry a slower walk.",
+          "rationale": "It gives modern Saigon a park-and-skyline frame, less formal than a landmark and more spacious than a mall.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Riverside Space With A Skyline",
+              "body": "Vinhomes Central Park gives Saigon a wider green frame: lawns, river paths, families, and Landmark 81 rising behind the scene."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lawns, Paths, Families",
+              "body": "Expect a modern riverside park rather than an old-city landmark. Space, walking room, shade, and skyline context carry the stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name On Maps",
+              "body": "Công viên Vinhomes Central Park is the name to recognize. Công viên means park; the rest usually stays as the development name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Modern Saigon Pause",
+              "body": "It fits a day when you want open air and skyline scale without leaving the city or adding another indoor mall."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Evening Walk Logic",
+              "body": "Evening light gives the lawns, families, and tall buildings more atmosphere. The park works well as a slower end to the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not The Old-City Core",
+              "body": "This is modern Saigon, not colonial facades or old markets. That contrast is the reason to include it, not a flaw."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-war-remnants-museum",
+          "summary": "War Remnants Museum is a serious Saigon stop about the Vietnam War, with photographs, documents, military equipment, and exhibits that can be emotionally heavy.",
+          "context": "War Remnants Museum changes the day from restaurants, streets, and skyline into recent history. It is not a casual gallery stop.",
+          "tip": "Bảo tàng Chứng tích Chiến tranh is the name to recognize on signs, tickets, maps, and search results.",
+          "rationale": "The museum gives Saigon a sobering historical layer and deserves copy that prepares people for the weight of the visit.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Serious History Stop",
+              "body": "War Remnants Museum is for a heavier Saigon hour. The exhibits focus on the Vietnam War and its consequences, so the visit deserves time and emotional space."
+            },
+            {
+              "id": "place-brief",
+              "title": "Photographs, Documents, Equipment",
+              "body": "Expect photographs, documents, military equipment, prison-related exhibits, and rooms that can be hard to move through quickly. This is not a light museum skim."
+            },
+            {
+              "id": "quick-say",
+              "title": "Long Name To Recognize",
+              "body": "Bảo tàng Chứng tích Chiến tranh is the Vietnamese name. Bảo tàng means museum; the rest identifies this specific war-history site."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Clearer Day Around It",
+              "body": "The museum fits better with a slower plan than with a crowded checklist. A café, quiet walk, or simple meal afterward can help the day settle."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Emotional Space Around The Visit",
+              "body": "The photo rooms can sit heavily. Stacking the museum beside another intense stop may make the day harder to absorb."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Popularity Does Not Make It Light",
+              "body": "The museum is well known, but familiarity does not soften the subject. Expect a serious historical visit, not a neutral attraction."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

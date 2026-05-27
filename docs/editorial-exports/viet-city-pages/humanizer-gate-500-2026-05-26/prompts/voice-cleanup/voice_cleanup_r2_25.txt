@@ -1,0 +1,321 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_25",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_25",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-pho-bo",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-pho-bo",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-pho-bo-lam",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-pho-bo-lam",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-pho-ga",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-pho-gia-truyen",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-pho-gia-truyen",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-quan-thanh-temple",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-quan-thanh-temple",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 25x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 25x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 25x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-pho-bo",
+          "summary": "Beef pho is the Hanoi bowl many visitors imagine before arrival: clear broth, flat rice noodles, sliced beef, green onion, herbs, and lime nearby.",
+          "context": "Taste the broth first, then adjust the bowl instead of turning the table into a condiment project.",
+          "tip": "If you see tái, expect rarer beef. Chín points toward cooked beef. One clear choice is enough for a first bowl.",
+          "rationale": "Phở bò ở Hà Nội is stable dish guidance, built around menu words, broth restraint, and simple table behavior.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Broth Before Add-Ins",
+              "body": "Beef pho is clear broth, flat noodles, sliced beef, green onion, herbs, and lime waiting near the bowl."
+            },
+            {
+              "id": "place-brief",
+              "title": "Taste First",
+              "body": "Take one spoonful before adding lime, chili, or extra herbs. The bowl changes quickly."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phở bò is the dish name for beef pho. In Hanoi, it is the baseline bowl for reading other noodle soups."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Beef Words",
+              "body": "Tái usually points to rarer beef. Chín points to cooked beef. You do not need every cut on the first order."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Hanoi Baseline",
+              "body": "After one good bowl, other noodle soups become easier to read: broth weight, herbs, texture, and table rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Stable Dish, Shifting Shops",
+              "body": "Dish-level details are stable. Named restaurants can change, so let the room, menu, and crowd confirm the stop."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-pho-bo-lam",
+          "summary": "Pho Bo Lam centers on the bowl: beef broth, rice noodles, herbs, and deeper chew if tendon is the texture you want in a focused Hanoi pho stop.",
+          "context": "Choose texture on purpose. Tendon changes the bowl, so the order is more than a menu test.",
+          "tip": "Start with broth and beef before adding too much lime or chili. The bowl already has enough going on.",
+          "rationale": "Phở Bò Lâm gets its specificity from texture and pace while guide mentions, menu, hours, and closure details stay date-sensitive.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Beef Cuts, Simple Table",
+              "body": "Pho Bo Lam is a plain-table pho stop where broth, noodles, herbs, and beef texture lead the meal."
+            },
+            {
+              "id": "place-brief",
+              "title": "Texture On Purpose",
+              "body": "Tendon is richer and chewier than simple sliced beef. Pick it because you want that texture."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phở Bò Lâm is the name to keep beside beef pho, herbs, and a focused Hanoi meal."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Plain And Memorable",
+              "body": "This stop is strongest when lunch stays simple: eat the bowl, notice the shop rhythm, and move on."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pho Comparison",
+              "body": "If trying more than one pho stop, compare broth, beef texture, herbs, and room pace without turning lunch into homework."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Shop Details Shift",
+              "body": "Guide status, hours, menu, and closure details can change. Read recent signs and the room before making the bowl a fixed plan."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-pho-ga",
+          "summary": "Chicken pho keeps the comfort of Hanoi pho but reads lighter: broth, rice noodles, shredded chicken, herbs, and lime without beef's heavier pull.",
+          "context": "Pick the gentler pho lane after richer meals or when a cleaner bowl sounds better.",
+          "tip": "Add lime slowly. Chicken broth can be delicate, and too much sharpness can flatten the bowl.",
+          "rationale": "Phở gà ở Hà Nội gives stable dish guidance with a clear contrast to beef pho and no need for a named venue.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Lighter Pho Bowl",
+              "body": "Chicken pho is broth, rice noodles, chicken, herbs, and lime with a cleaner feel than the beef version."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gentler Comfort",
+              "body": "The bowl can feel restorative after several rich meals: steam, chicken, noodles, and a broth that stays quieter."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phở gà is the dish name for chicken pho. It is the easier pho lane when beef feels heavy."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lime Slowly",
+              "body": "Taste before adding lime, then herbs, then chili only if you want heat. The broth can change fast."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Bowl, Clear Meal",
+              "body": "A simple bowl is enough. The pleasure is steam, chicken, and a few small adjustments at the table."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Restaurant Examples Shift",
+              "body": "The dish is steady, but restaurant examples can change. Check the room, menu, and crowd before treating any shop as the plan."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-pho-gia-truyen",
+          "summary": "Pho Gia Truyen is better treated as a quick broth-counter meal: steam, sliced beef, herbs, hot broth, and a room moving at meal speed.",
+          "context": "Know the bowl before the rush. The appeal is not decoration; it is the counter pace and the broth.",
+          "tip": "Decide on a straightforward pho order before the room pulls your attention. A clear first minute keeps the meal calm.",
+          "rationale": "Phở Gia Truyền gives a strong counter-meal moment through broth, pace, beef, herbs, and a room moving quickly.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Steam First, Seat Second",
+              "body": "Pho Gia Truyen is steam, sliced beef, herbs, hot broth, and a table that does not need to slow the day down."
+            },
+            {
+              "id": "place-brief",
+              "title": "Bowl Before Rush",
+              "body": "A straightforward pho order keeps the first minute calm when the room, counter, and other diners start moving."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phở Gia Truyền is the name to pair with beef pho, counter rhythm, and Old Quarter meal speed."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Counter Pace",
+              "body": "Do not expect lingering. Watch the rhythm, take the bowl seriously, and let the table stay simple."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pho Comparison",
+              "body": "Compare broth, beef texture, herbs, and room pace if trying several Hanoi pho stops."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Counter Details Shift",
+              "body": "Venue status, menu, hours, and closure details can change. Let the counter rhythm confirm the stop before you commit."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-quan-thanh-temple",
+          "summary": "Quan Thanh Temple shifts quickly from traffic to shade: temple gate, incense, stone, courtyard quiet, and a slower step near West Lake.",
+          "context": "Pause at the gate before treating the temple like another photo stop.",
+          "tip": "Let the courtyard change the sound of the street before reaching for the camera. The quieter pace is part of the visit.",
+          "rationale": "Đền Quán Thánh is sacred and specific, with worship respect, lake pairing, and day-of access details left open.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Traffic Outside, Incense Inside",
+              "body": "Quan Thanh shifts from road noise into shade, incense, stone, temple architecture, and a courtyard that asks for a slower step."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gate Pause",
+              "body": "The entrance is part of the visit. Step in slowly, let your eyes adjust, and notice how the courtyard changes the street."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Đền Quán Thánh is the name to connect with the temple gate, incense, and the West Lake side of Hanoi."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Camera Secondary",
+              "body": "This is an active worship space. Take photos gently, step aside, and put the phone away when the room asks for quiet."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Lake Pairing",
+              "body": "The temple sits well with a West Lake or Trúc Bạch walk, especially when the day needs a quiet pause."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Temple Rules Shift",
+              "body": "Hours, entrance access, worship expectations, and restoration notices can change. Read the gate before stepping into the courtyard."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

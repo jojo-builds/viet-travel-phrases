@@ -1,0 +1,321 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_66",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_66",
+  "chunks": [
+    {
+      "chunkFile": "hue_051_075_humanized.json",
+      "cityID": "hue",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hue-place-nguyen-dinh-chieu-street",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-nha-nhac-royal-court-music",
+          "message": "banned visible fragment: verified"
+        },
+        {
+          "id": "city-hue-place-night-market",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-northern-bus-station",
+          "message": "banned visible fragment: matters when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-nguyen-dinh-chieu-street",
+          "message": "freshness/process-like heading: Stall Mix Can Change"
+        },
+        {
+          "id": "city-hue-place-nguyen-dinh-chieu-street",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-nha-nhac-royal-court-music",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-night-market",
+          "message": "freshness/process-like heading: Current Nights Vary"
+        },
+        {
+          "id": "city-hue-place-night-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-nine-dynastic-urns",
+          "message": "freshness/process-like heading: Restoration Context Can Shift"
+        },
+        {
+          "id": "city-hue-place-nine-dynastic-urns",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-northern-bus-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 13x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 13x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-nguyen-dinh-chieu-street",
+          "summary": "Nguyen Dinh Chieu Walking Street gives Hue an evening river-walk rhythm: bridge lights, lanterns, food stalls, and a named stretch for an easy first wander.",
+          "context": "The street is a river-edge orientation point, where walking, snacks, lights, and nearby bridges make Hue easier after dark.",
+          "tip": "Phố đi bộ Nguyễn Đình Chiểu is the name to recognize. Phố đi bộ means walking street, helpful when checking maps.",
+          "rationale": "A pedestrian stretch gives visitors a lower-pressure evening move than choosing a bar, market, or boat ride too quickly.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Simple River Walk",
+              "body": "This is an easy evening stretch: river edge, lights, food stalls, bridge views, and enough movement to feel social without needing a full night out."
+            },
+            {
+              "id": "place-brief",
+              "title": "Dusk Makes It Clearer",
+              "body": "The street's role is strongest around dusk, when the river, lights, and walking traffic all explain why people gather there."
+            },
+            {
+              "id": "quick-say",
+              "title": "Walking Street Name",
+              "body": "Phố đi bộ Nguyễn Đình Chiểu is the local name. Phố đi bộ means pedestrian or walking street, a useful phrase beyond Hue."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Low-Pressure Evening",
+              "body": "It pairs well with a bridge view, snack stop, or hotel-side walk when you want to be outside without committing to a long night market browse."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crowds Are Part Of It",
+              "body": "Movement, families, stalls, and photo stops are part of the setting. The street is not quiet, but it is easier to read than a scattered nightlife district."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Stall Mix Can Change",
+              "body": "Food stalls, lighting, and crowd levels can vary by night. The stable reason to remember it is the river-walk setting."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-nha-nhac-royal-court-music",
+          "summary": "Hue Royal Court Music turns the old capital into a listening stop: traditional instruments, stage light, costumes, and a performance layer beyond gates and tombs.",
+          "context": "This is performance culture rather than a static landmark, tied to court memory, indoor stages, music, and the evening side of Hue.",
+          "tip": "Nhã nhạc cung đình Huế is the full Vietnamese name. Nhã nhạc points to refined court music, not a general concert.",
+          "rationale": "The stop matters because it shows Hue's royal culture as sound and ceremony, not only architecture and display cases.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Court Culture Heard Live",
+              "body": "Hue Royal Court Music adds sound to the old capital: instruments, stage light, costumes, and a formal mood that architecture alone cannot give."
+            },
+            {
+              "id": "place-brief",
+              "title": "Performance, Not Museum Silence",
+              "body": "This is a staged cultural experience, not a room of objects. The value is hearing court tradition framed for visitors while still tied to Hue's royal memory."
+            },
+            {
+              "id": "quick-say",
+              "title": "Full Local Name",
+              "body": "Nhã nhạc cung đình Huế is the phrase to recognize. It is long, but the middle words connect the performance to royal court culture."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Evening Culture Slot",
+              "body": "It fits after a river walk, dinner, or museum day when sitting down for sound and ceremony feels better than one more outdoor landmark."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Schedules need a close-to-the-day check",
+              "body": "Performance times, venues, and programs can change. The idea is a cultural evening choice, with the current show verified before planning around it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Formality Is The Point",
+              "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, not a lack of energy."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-night-market",
+          "summary": "Hue Night Market is a light evening browse by the river: lantern glow, snack smells, small gifts, and a way to keep moving after the day's monuments.",
+          "context": "The market role is an after-dark add-on, connecting river edges, warm lights, crowds, snacks, and souvenirs without needing a formal plan.",
+          "tip": "Chợ đêm Huế is the useful name. Chợ means market, and đêm signals night, which helps with signs and map searches.",
+          "rationale": "The market gives Hue a simple night scene after royal sites close, with browsing and snacks instead of another ticketed stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Easy Night Browse",
+              "body": "Hue Night Market is a low-commitment evening move: river edge, lantern light, snacks, small gifts, and enough crowd energy to extend the day."
+            },
+            {
+              "id": "place-brief",
+              "title": "Snacks Before Souvenirs",
+              "body": "A slow lap helps separate quick snacks from gift stalls. The market is more enjoyable when dinner, browsing, and photos do not all compete at once."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name",
+              "body": "Chợ đêm Huế means Hue Night Market. The words are straightforward and useful in other cities too: chợ for market, đêm for night."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After The River Walk",
+              "body": "It fits naturally after a bridge view or river stroll. It is an add-on rather than the main reason to cross town."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Current Nights Vary",
+              "body": "Night-market hours, stall mix, and crowd level can shift. Current checks matter if the stop reference points your evening."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Cash Helps",
+              "body": "For snacks and small gifts, small bills can make transactions easier. Prices and payment habits can vary, so avoid assuming every stall handles cards."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-nine-dynastic-urns",
+          "summary": "The Nine Dynastic Urns give Hue's Imperial City a heavy bronze pause: royal symbolism, courtyard order, carved relief detail, and history held in objects you circle slowly.",
+          "context": "This landmark is about bronze, dynasty memory, courtyard placement, and the way royal authority appears through carved surfaces.",
+          "tip": "Cửu Đỉnh is the Vietnamese name. It is short, so it can be easier to recognize than the full English description.",
+          "rationale": "The urns turn imperial history into a physical row of objects, making the courtyard feel more specific than a pass-through space.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Bronze In The Courtyard",
+              "body": "The Nine Dynastic Urns slow the Imperial City down. Bronze forms, carved reliefs, and courtyard order make royal memory feel heavy and close."
+            },
+            {
+              "id": "place-brief",
+              "title": "Objects With Authority",
+              "body": "These are not decorative props. Their scale and placement carry dynasty symbolism, so a slow circle can reveal more than a quick photo line."
+            },
+            {
+              "id": "quick-say",
+              "title": "Short Local Name",
+              "body": "Cửu Đỉnh is the local name. Its compact sound makes it useful when asking about the urns inside the Imperial City."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Pause Inside The Citadel",
+              "body": "The urns fit between bigger palace spaces, giving the walk a focused object stop before the next gate, hall, or courtyard."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Detail Rewards Time",
+              "body": "Reliefs and surface details come after noticing the overall row. The sequence lands better when the eye moves from scale to carving."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Restoration Context Can Shift",
+              "body": "Access lines, nearby restoration, and route flow can change. The durable detail is the bronze row and its role in imperial memory."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-northern-bus-station",
+          "summary": "Hue Northern Bus Station is a practical city-edge marker: route boards, waiting benches, local signs, and the moment highway travel turns back into Hue streets.",
+          "context": "This station belongs to arrival and onward movement, not sightseeing: bus doors, route boards, first streets, and a return toward citadel-side Hue.",
+          "tip": "Bến xe phía Bắc Huế is the name to recognize. Bến xe means bus station, and phía Bắc points to the northern side.",
+          "rationale": "Knowing the station name reduces arrival stress, especially when a bus leg ends before the old capital feels visible.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A City-Edge Arrival Point",
+              "body": "This is a practical threshold: bus doors, route boards, benches, local signs, and the first decision about how to move back into Hue."
+            },
+            {
+              "id": "place-brief",
+              "title": "More Logistics Than Landmark",
+              "body": "The value is clarity, not beauty. Recognizing the station helps with pickups, onward rides, and explaining where a bus has left you."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name",
+              "body": "Bến xe phía Bắc Huế means Hue Northern Bus Station. The words bến xe are useful anywhere in Vietnam when talking about bus stations."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Arrival And Pickup Plans",
+              "body": "It matters when arranging a pickup, calling a car, or checking whether a route ends on the northern side rather than near your hotel."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Details Change Fast",
+              "body": "Routes, bays, ticket counters, and pickup points can change. Current confirmation matters more than memorizing a fixed station layout."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Saved Names Help",
+              "body": "A saved Vietnamese name and hotel address can prevent confusion after a long ride, especially if the station is only a transfer point."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

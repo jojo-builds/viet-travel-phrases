@@ -1,0 +1,297 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_08",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_08",
+  "chunks": [
+    {
+      "chunkFile": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-danang-place-linh-ung-pagoda",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-linh-ung-pagoda",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-long-coffee",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-madame-lan",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-man-thai-beach",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-marble-mountain-cave-walk",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 22x: name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 22x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-linh-ung-pagoda",
+          "summary": "Linh Ung Pagoda is the Son Tra stop where temple courtyards, incense, sea wind, and the white Lady Buddha all sit above Da Nang's coast.",
+          "context": "The visit feels strongest when the view is not the whole point. Move through the grounds like an active religious place, then let the coast open around it.",
+          "tip": "Chua Linh Ung is the pagoda name to recognize. Many visitors say Lady Buddha for the same area, but the pagoda gives the statue its setting.",
+          "rationale": "Linh Ung gives Da Nang a coastal spiritual stop that is neither only a viewpoint nor only a statue photo.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Temple Grounds Before The View",
+              "body": "Linh Ung Pagoda sits high on Son Tra, where courtyards, incense, sea wind, and Lady Buddha come together above Da Nang. The view is part of the visit, but the place still asks for temple manners."
+            },
+            {
+              "id": "place-brief",
+              "title": "Move Like It Is Active",
+              "body": "Dress and walk as if people are there to pray, not only to take photos. Lower voices, give space around incense and altars, and let the courtyard set the pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Say Chua Linh Ung for the pagoda. It often appears beside Lady Buddha and Son Tra, keeping the temple, statue, and peninsula in the same mental picture."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Statue Sets The Scale",
+              "body": "Lady Buddha gives the complex its strongest visual pull. Find the statue, then look back toward the city and coast to understand why this pagoda feels tied to the peninsula."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Temple Manners First",
+              "body": "Arrive ready for a working pagoda, not only a viewpoint. Covered shoulders, quieter voices, and slower movement make the statue and sea view feel connected to the temple grounds."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Son Tra Can Wait",
+              "body": "The pagoda pairs naturally with a Son Tra drive, but it does not need to become a rushed checklist. If weather, road, or group energy feels off, the grounds and view are enough."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-long-coffee",
+          "summary": "Long Coffee is an old-school Da Nang cafe pause: low stools, iced glasses, metal phin coffee, and a short reset between hotter plans.",
+          "context": "This is a coffee stop to sit inside for a little while, not a whole afternoon to perform. The room, ice, and street rhythm do the work.",
+          "tip": "Start with ca phe sua da for sweet and strong, or ca phe den da if you want the coffee darker and less softened.",
+          "rationale": "Long Coffee adds a grounded cafe rhythm to the Da Nang set without pretending every pause needs a major attraction around it.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Sit Low And Let The Coffee Work",
+              "body": "Long Coffee is for the pause: low stools, iced glasses, metal phin coffee, and a room that keeps moving without asking much from you. Come between bigger plans, not as a laptop afternoon."
+            },
+            {
+              "id": "place-brief",
+              "title": "Order Simply",
+              "body": "Choose ca phe sua da if you want the classic sweet, strong version. Choose ca phe den da if you want the coffee darker and less softened."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Ca phe Long is the local name to notice on maps or signs. Keep it tied to the old-school coffee table, not a generic cafe stop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Stay For The Street Rhythm",
+              "body": "The point is the table, the ice, the phin, the small talk, and the way people come and go. It can still be memorable because nothing needs to perform."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Old-School Coffee Pause",
+              "body": "Good for a short, local-feeling coffee stop when the day needs shade and caffeine more than a polished cafe plan. The point is the stool-side rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "One Coffee, Then Back Out",
+              "body": "Keep the stop short enough to stay pleasant. After one coffee and a little shade, move back into the day before heat, traffic, or another plan takes over."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-madame-lan",
+          "summary": "Madame Lan is a polished Da Nang dinner stop for courtyard light, shared plates, a clearer menu, and a meal that can hold its own place in the night.",
+          "context": "A calmer dinner fit than a quick bite between river plans. Keep the order flexible and let the room, table pace, and menu in front of you guide the meal.",
+          "tip": "Read the menu before ordering wide. One main and one shared plate can make the table easier before adding more.",
+          "rationale": "Madame Lan brings restaurant rhythm, room, and Han River evening context into the city set through shared plates and a calmer night pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner With A Room Around It",
+              "body": "Madame Lan is the Da Nang restaurant to choose when dinner becomes part of the night, not just a stop between Han River plans."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read Before Ordering Wide",
+              "body": "The room makes it tempting to order too much. Choose one main, one vegetable or shared plate, then see the table size before adding more."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Madame Lan may be the name you hear first. Keep it tied to courtyard, lantern light, and shared-plate pacing rather than a single promised dish."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Courtyard Time Beats A Rush",
+              "body": "If you land near the lanterned courtyard, give the meal a little time. This is one of the easier places in Da Nang to let dinner feel like a pause."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Dinner With A Little Space",
+              "body": "A good fit when the meal needs to feel calmer than a quick bite between river plans. Keep the order flexible and let the table pace the night."
+            },
+            {
+              "id": "good-to-know",
+              "title": "When The Group Needs Range",
+              "body": "It suits a group with different confidence levels: people who want Vietnamese food, someone who wants a clearer menu, and anyone tired of negotiating every detail."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-man-thai-beach",
+          "summary": "Man Thai Beach is a quieter Da Nang coastal scene, with fishing boats, Son Tra hills, working sand, and a better reason to go early.",
+          "context": "This is not the easiest all-day beach setup. It works as a short walk, photo pause, or seafood-side detour when the coast still feels local.",
+          "tip": "Go light, keep out of working space, and choose a pickup point before wandering away from the main road.",
+          "rationale": "Man Thai Beach adds a working-coast note to Da Nang's beach set: fishing boats, quieter sand, Son Tra edges, and a short coastal pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fishing Boats Before The Beach Day",
+              "body": "Man Thai Beach is the beach scene to picture before Da Nang turns into hotel towers and sunbeds: fishing boats on sand, Son Tra hills behind them, and the morning still quiet."
+            },
+            {
+              "id": "place-brief",
+              "title": "Early Light, Working Sand",
+              "body": "Morning is when the boats and light make the place feel specific. Walk gently, keep out of working space, and treat the beach as more than a backdrop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Bien Man Thai is the beach name to notice. It keeps the stop closer to the fishing edge than to the better-known hotel beach image."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Not The Easiest All-Day Setup",
+              "body": "For loungers, hotel services, and a more familiar swim plan, another beach may be easier. Man Thai is better as a short coastal pause or photo walk."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Fishing Edge Morning",
+              "body": "Good as a quiet coastal look before the beach day gets busy. Come for boats, Son Tra edges, and sea air rather than a full-service swim stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Pickup Pin Before Wandering",
+              "body": "The beach can feel quiet once you step away from the main road. Drop a pin before wandering and choose the pickup point while everyone still has energy."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-marble-mountain-cave-walk",
+          "summary": "The Marble Mountain cave walk is the cave-and-shrine layer of Ngu Hanh Son, with stone steps, dimmer air, incense, and a slower kind of attention.",
+          "context": "This is a physical visit, not a flat photo stop. The useful decision is pace: how much cave, shrine, stair, and quiet the group has energy for.",
+          "tip": "Treat shrine spaces differently from viewpoints. Lower your voice, watch signs, and ask before taking photos when the space feels active.",
+          "rationale": "The cave walk gives Marble Mountains a specific on-foot rhythm, distinct from the broader mountain-cluster stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Stone Steps Before Shrine Light",
+              "body": "The Marble Mountain cave walk is the part of Ngu Hanh Son where the city drops away: stone steps, cave shade, incense, shrine light, and a slower kind of attention than the beach road asks for."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cave Pace Before Photos",
+              "body": "This is not a flat photo stop. Expect steps, uneven stone, dimmer cave spaces, and places where quiet matters more than speed."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Hang dong Ngu Hanh Son points to the cave part of the Marble Mountains visit. It is useful when you need the shrine-and-cave layer, not the whole site."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Respect The Shrine Light",
+              "body": "Some corners feel more like worship spaces than sightseeing stops. Lower your voice, watch signs, and put the camera away when the space calls for it."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Caves Over Checklist",
+              "body": "Good when the cave-and-shrine pace matters more than racing every viewpoint. Stairs, shade, and respectful pauses shape the visit."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Enough Without Every Viewpoint",
+              "body": "A cave walk can be enough if the heat or stairs start to win. Pair it with a cafe break or a ride back toward the beach instead of stacking every viewpoint."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

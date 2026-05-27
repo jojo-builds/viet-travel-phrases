@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_14",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_14",
+  "chunks": [
+    {
+      "chunkFile": "danang_076_100_humanized.json",
+      "cityID": "danang",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-danang-place-tran-thi-ly-bridge",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-trung-vuong-theatre",
+          "message": "heading is command-like: Check The Program, Then Decide"
+        },
+        {
+          "id": "city-danang-place-vo-nguyen-giap-street",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-danang-place-wonderlust",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-yen-retreat",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: street name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: beach name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: cafe name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 13x: good-for/as/when heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-tran-thi-ly-bridge",
+          "summary": "Tran Thi Ly Bridge gives Da Nang a calmer bridge image: cable-stayed lines over the Hàn River, clean skyline, moving traffic, and late light on the water.",
+          "context": "Remember it as a city-shape bridge that folds into a river route, not as an event stop.",
+          "tip": "The angle matters before the crossing: silhouette, traffic movement, or quick river view.",
+          "rationale": "Tran Thi Ly Bridge gives the river a quieter line, especially when cable-stayed shapes and traffic movement matter more than spectacle.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Bridge For The Skyline",
+              "body": "Tran Thi Ly Bridge gives Da Nang a calmer bridge image than the dragon side: cable-stayed lines over the Hàn River, clean skyline, moving traffic, and late light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Angle Before Crossing",
+              "body": "The bridge is strongest from a river angle. Decide whether you want the silhouette, the traffic movement, or a quick crossing, then keep the visit simple."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bridge Name",
+              "body": "Say Cầu Trần Thị Lý. Cầu means bridge, so the first word returns on bridge signs and maps."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Late Light On The Lines",
+              "body": "The cables and skyline read better when glare drops. Pair the view with a short Hàn River walk, dinner nearby, or a slow ride past the bridge."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for Skyline Shape",
+              "body": "Choose this bridge when you want a quieter city silhouette rather than a show. Late light, river angles, and a simple crossing give it enough purpose."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different Energy Than Dragon Bridge",
+              "body": "Dragon Bridge is the event bridge. Tran Thi Ly is the city-shape bridge: quieter, cleaner, and easier to fold into a river route."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-trung-vuong-theatre",
+          "summary": "Trung Vuong Theatre is the Da Nang name to remember when the night wants a stage: soft marquee glow, scooters outside, posters, and people arriving.",
+          "context": "The theatre matters most when there is a specific show or event; without one, keep it as a central cultural marker.",
+          "tip": "Check the program before building a plan around it, then leave room for dinner, coffee, or a river walk nearby.",
+          "rationale": "Trung Vuong Theatre belongs as a central stage marker, with posters, scooters outside, and dinner or coffee close enough afterward.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A City Night That Starts At The Doors",
+              "body": "Trung Vuong Theatre is the Da Nang name to remember when you want a stage, not another bridge. Picture the front doors at dusk, scooters outside, and people arriving."
+            },
+            {
+              "id": "place-brief",
+              "title": "Check The Program, Then Decide",
+              "body": "The theatre matters most when there is a specific performance, concert, or event. Without that, keep it as a central name rather than a place to tour."
+            },
+            {
+              "id": "quick-say",
+              "title": "Theatre Name",
+              "body": "Say Nhà hát Trưng Vương. Nhà hát means theatre, a useful phrase when asking about performances, entrances, or tickets."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Front Carries The Mood",
+              "body": "Even a short look can make the city feel less beach-only. Stage doors, evening traffic, posters, and lobby movement give Da Nang a cultural layer."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Best With A Real Program",
+              "body": "The theatre matters most when a performance is actually part of the night. Check the program before crossing town, then fold dinner or coffee around it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Dinner Nearby Fits The Night",
+              "body": "The cleanest plan is theatre plus a central dinner, coffee, or river walk. Leave room for timing changes around show nights."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-vo-nguyen-giap-street",
+          "summary": "Vo Nguyen Giap Street is the beach road that gives Da Nang shape: hotels, palms, scooters, cafe fronts, long crossings, and My Khe beside the map.",
+          "context": "The first beach-side ride leads straight into a practical question: where the stop and crossing should happen.",
+          "tip": "Treat it like a working coastal road, not a slow promenade; choose crossings deliberately and keep ride pins out of traffic.",
+          "rationale": "Vo Nguyen Giap Street makes beach-side Da Nang easier to read: hotels, palms, scooters, crossings, and My Khe beside the map.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Beach Road That Gives Da Nang Shape",
+              "body": "Vo Nguyen Giap is the street name to recognize before your first beach-side ride. Hotels, palms, scooters, cafe fronts, and long crossings line up beside the coast."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read It From The Beach Side",
+              "body": "Morning makes the street easiest to understand: beach light on one side, hotel doors and cafes on the other, scooters moving before the heat gets heavy."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name",
+              "body": "Say Đường Võ Nguyên Giáp. Đường means street or road, and the full name is clearer for drivers, hotel desks, and map checks."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cross In Deliberate Pieces",
+              "body": "Treat it like a working coastal road, not a promenade. Choose visible crossings, wait for a real gap, and avoid drifting while checking signs."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for Beach-Side Pickups",
+              "body": "The street name matters when hotels, seafood stops, and beach access points sit along the same coast road. Choose the crossing and curb before calling the ride."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Stretches Beat The Boulevard",
+              "body": "The name matters most when linking a beach hotel, cafe, seafood stop, or ride pickup. You do not need the full boulevard for it to become familiar."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-wonderlust",
+          "summary": "Wonderlust is a bright cafe reset: clean counter, iced glass, minimalist table, and a short pause between heat, walking, markets, beach time, or dinner.",
+          "context": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan.",
+          "tip": "Order cold, decide sweetness early, and keep the stop simple if the next plan is already close.",
+          "rationale": "Wonderlust gives the cafe set a bright reset, useful for cooling down between walks, markets, beach time, and dinner.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Bright Pause Between Heat And Dinner",
+              "body": "Wonderlust is a cafe reset: a clean counter, an iced glass, and a table where Da Nang slows down for a minute."
+            },
+            {
+              "id": "place-brief",
+              "title": "Order Cold, Decide Sweetness Early",
+              "body": "Iced coffee gives you the classic sweet pull; black iced coffee keeps the order cleaner. If sugar or ice matters, say it before the drink is made."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cafe Name",
+              "body": "Wonderlust usually stays as the venue name. Say it slowly, show it on the map, and keep the visit simple: drink, sit, pay, move on."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Table Beats A Long Session",
+              "body": "The draw is the pause: bright table, iced coffee, counter, and design detail. Let it reset the day between walks, markets, beach time, or dinner."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for A Clean Reset",
+              "body": "Wonderlust works when the day needs a bright table more than a destination cafe. Order simply, sit long enough to cool down, then move on."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Pause Is The Point",
+              "body": "You do not need to translate the name or build a route around it. The useful part is a clean, cool stop when the day needs one."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-yen-retreat",
+          "summary": "Yen Retreat gives Da Nang a quieter outdoor edge: lawn, river, simple tents, mountains, and a pause beyond the dense beach-and-bridge loop.",
+          "context": "The retreat works as a weather-aware outdoor pause where the ride back matters as much as the quiet once you arrive.",
+          "tip": "The return belongs in the plan before the quiet fully takes over; the softer setting feels easier with transport handled.",
+          "rationale": "The calm nature mood stays clear while avoiding fragile operational details.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Edge Past The Traffic",
+              "body": "Yen Retreat gives Da Nang a softer outdoor scene: lawn, river, simple tents, mountains, and room to hear the day slow down."
+            },
+            {
+              "id": "place-brief",
+              "title": "Rain Changes The Plan",
+              "body": "The same riverside lawn can feel calm in soft weather and messy after heavy rain. Check the sky before committing to an outdoor pause."
+            },
+            {
+              "id": "quick-say",
+              "title": "Retreat Name",
+              "body": "Yên Retreat usually travels good as a map name. Show the Vietnamese spelling when arranging a ride or checking the return."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Uncrowded Pause",
+              "body": "This is stronger as a simple pause than a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before it feels forced."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Best With Weather And Ride Margin",
+              "body": "Yen Retreat makes sense when the sky looks kind and the return is not rushed. A quiet outdoor stop needs margin for rain, distance, and daylight."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Return Plan Before The Quiet",
+              "body": "Once you are away from the dense beach-and-bridge loop, transport matters. Show the place on your phone and keep margin before dark."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

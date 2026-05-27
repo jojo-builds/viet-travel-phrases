@@ -498,7 +498,7 @@ function main() {
     }
 
     if (pageKind === "dish" || pageKind === "drink" || pageKind === "dessert") {
-      const hasFoodIdentity = /\bdish|drink|dessert|coffee|beer|tea|chè|cà phê|bia|món|bowl|plate|glass|cup|menu/i.test(renderedText);
+      const hasFoodIdentity = /\bdish|drink|dessert|coffee|beer|tea|chè|cà phê|bia|món|bowl|plate|glass|cup|menu|meal|bite|bread|sandwich|banh mi|bánh mì/i.test(renderedText);
       const hasFoodTexture = /\btexture|ingredient|sauce|spice|spicy|herb|noodle|broth|sweet|sweetness|ice|topping|coconut|milk|fruit|flavor|steam|crunch|dipping|stool|snack|evening street/i.test(renderedText);
       if (!hasFoodIdentity || !hasFoodTexture) {
         pageKindTemplateErrors.push(`${page.id} dish page needs food/drink identity plus sensory detail`);

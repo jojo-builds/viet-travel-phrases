@@ -1,0 +1,313 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_54",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_54",
+  "chunks": [
+    {
+      "chunkFile": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hoian-place-nu-eatery",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-phin-coffee",
+          "message": "banned visible fragment: works when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hoian-place-nguyen-phuc-chu-street",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-nguyen-thai-hoc-street",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-night-market",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-nu-eatery",
+          "message": "freshness/process-like heading: Details Need Current Checking"
+        },
+        {
+          "id": "city-hoian-place-nu-eatery",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 17x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: venue name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 23x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+          "summary": "Nguyen Phuc Chu Street gives An Hoi’s night side a walkable spine: lantern-market energy, signs, shopfronts, crossings, and warm light near the river.",
+          "context": "For Nguyen Phuc Chu Street, the named street orients the night-market side of Hoi An.",
+          "tip": "The street name helps with directions and meetups. It turns the lantern-market side from a glow into a route.",
+          "rationale": "Nguyen Phuc Chu Street helps visitors place the An Hoi evening on the map instead of drifting through unnamed lights.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Hoi’s Evening Spine",
+              "body": "Nguyen Phuc Chu Street helps the night side of Hoi An make sense. It gives lantern stalls, shopfronts, signs, and crossings a clear line."
+            },
+            {
+              "id": "place-brief",
+              "title": "Street First, Market Around It",
+              "body": "Expect a named street on An Hoi island with warm night light, market energy, signs, and people moving between shops and the river."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố Nguyễn Phúc Chu is the street name. It helps with directions, meetups, and separating An Hoi from the older streets across the water."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Meeting Point Street",
+              "body": "The name is useful when friends split up, a driver asks where to stop, or the night market starts to feel like one long blur."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Route Rather Than Attraction",
+              "body": "The street is not the whole plan. It is the line that helps you move through stalls, drinks, crossings, and river edges."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Lantern Energy Can Be Repetitive",
+              "body": "A named street keeps the evening grounded when the lights start looking similar. Pair it with a bridge, river edge, or market lap."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+          "summary": "Nguyen Thai Hoc Street is one of the old-town lanes that makes Hoi An walkable: wooden balconies, lantern shade, shopfronts, cafe edges, and late-afternoon light.",
+          "context": "For Nguyen Thai Hoc Street, a real street line helps before drifting through the old town.",
+          "tip": "The name gives bearings between shops, old houses, cafes, and river walks. It keeps the old town from turning into one postcard.",
+          "rationale": "Nguyen Thai Hoc Street gives Hoi An’s pedestrian old town a recognizable route, especially when wooden balconies and lanterns start repeating.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Street Line Through Old Town",
+              "body": "Nguyen Thai Hoc Street gives old-town wandering a spine. Wooden balconies, lantern shade, shopfronts, and cafe edges are easier to place along a named street."
+            },
+            {
+              "id": "place-brief",
+              "title": "Late-Afternoon Walking Shape",
+              "body": "Expect a pedestrian old-town street with balconies, lanterns, signs, and people moving between shops, houses, and cafes. The light matters, but the route matters more."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố Nguyễn Thái Học is the street name. It helps when asking for a shop, old house, cafe, or meeting point nearby."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old Houses And Cafes",
+              "body": "The street can connect heritage stops, browsing, and coffee without turning the walk into a checklist. One reference point can guide the next turn."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Bearing, Not A Photo Label",
+              "body": "Remember the street for orientation first. The lanterns and balconies make better sense when they sit on a route."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Detours Are The Point",
+              "body": "Nearby lanes can pull you off the street. That is fine; the name gives you a way back into the old-town grid."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-night-market",
+          "summary": "Hoi An Night Market is the broader evening browse: lantern aisles, small gifts, food smoke, river light, and people moving through a warm night crowd.",
+          "context": "For Hoi An Night Market, the visit works better after deciding between a snack walk, a gift browse, or a lantern-lit pass-through.",
+          "tip": "Pick one job for the market before entering. A snack, a small gift, or a slow walk keeps the crowd from taking over.",
+          "rationale": "Hoi An Night Market gives the evening a browse-and-light rhythm, distinct from a seated dinner or a planned performance.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Night Browse With One Job",
+              "body": "Hoi An Night Market is easier when it has one job: snack, small gift, or lantern walk. Without that, the warm crowd can swallow the evening."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lantern Aisles And River Light",
+              "body": "Expect a busy night-market aisle, people moving slowly, lantern glow, small goods, food smoke, and the river close enough to shape the walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Chợ đêm Hội An is the broad name for Hoi An Night Market. It helps when the plan is the evening market, not one exact stall."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Seated Dinner",
+              "body": "The market works well after dinner when you only need a walk, dessert, or one small purchase. It is harder when everyone is already tired."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Goals Beat Big Browsing",
+              "body": "A single snack or gift keeps the market pleasant. Trying to see every stall makes the lights feel repetitive fast."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Nguyen Hoang Is More Specific",
+              "body": "Some visitors use Nguyen Hoang Night Market for the named market area. Hoi An Night Market is the broader evening shorthand."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-nu-eatery",
+          "summary": "Nu Eatery is an intimate courtyard-style meal for the night when small plates, Vietnamese flavors, staff rhythm, and a quieter table matter more than spectacle.",
+          "context": "For Nu Eatery, the useful scene is a compact restaurant table with shared plates and menu questions, not a big old-town dining production.",
+          "tip": "The meal can stay small and deliberate. A few shared plates can carry the evening better than overordering.",
+          "rationale": "Nu Eatery gives Hoi An a quieter restaurant option, with the table and pacing doing more than a large view or famous dish.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Plates, Smaller Room",
+              "body": "Nu Eatery suits a meal that stays intimate: a compact table, Vietnamese small plates, menu questions, and enough quiet to notice the food."
+            },
+            {
+              "id": "place-brief",
+              "title": "Courtyard Scale, Shared Plates",
+              "body": "Expect a smaller restaurant frame rather than a riverside production. The useful rhythm is ordering a few plates and letting the table decide the pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Recognize",
+              "body": "Nu Eatery usually stays in English. The name is easiest to confirm when tied to a small restaurant meal."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quieter Dinner Choice",
+              "body": "It fits a night when Ancient Town feels full and dinner should be more measured. The room matters because it keeps the meal close."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Plates Are Enough",
+              "body": "The menu may tempt a wider order, but the better move is a small set of dishes the table can actually notice."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Need Current Checking",
+              "body": "menus and booking patterns can change. The steadier reason to remember it is the intimate table, shared plates, and quieter pace."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-phin-coffee",
+          "summary": "Phin Coffee is a Hoi An cafe pause built around the drip: Vietnamese phin over glass, ice or sweetness, leafy table, and a slower break.",
+          "context": "For Phin Coffee, the useful scene is the pause itself: coffee counter, dripping filter, iced glass, and a place to reset between walks.",
+          "tip": "The phin can take its time. The slow drip is part of the cafe rhythm, not a delay to fight.",
+          "rationale": "Phin Coffee gives the day a compact coffee ritual when heat, walking, or shopping needs a calmer middle.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Drip Sets The Pace",
+              "body": "Phin Coffee works when you let the filter slow the day down. The glass, drip, ice, and sweetness are the point of the pause."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cafe Rhythm, Not Just Caffeine",
+              "body": "Expect a Vietnamese phin, coffee counter, iced glasses, leafy table, and a short reset between meals, market browsing, or old-town walking."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Recognize",
+              "body": "Phin Coffee usually stays in English. The word phin points to the filter, which helps you recognize the coffee ritual."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Heat And Errands",
+              "body": "The cafe fits between tailor visits, market browsing, or a long walk. It gives the day a seated pause without demanding a full meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Slow Coffee Is The Point",
+              "body": "Do not rush the drip. If the day is packed, the pause may be exactly why the stop belongs."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sweetness Changes The Cup",
+              "body": "Vietnamese coffee can lean strong and sweet. A simple less-sweet request helps, then the phin does its work."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

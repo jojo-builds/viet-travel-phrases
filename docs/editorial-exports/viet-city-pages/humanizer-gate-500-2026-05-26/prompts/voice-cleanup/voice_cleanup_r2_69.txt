@@ -1,0 +1,305 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_69",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_69",
+  "chunks": [
+    {
+      "chunkFile": "hue_076_100_humanized.json",
+      "cityID": "hue",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hue-place-ru-cha-mangrove",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-song-huong-floating-restaurant",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-songlab",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-songlab",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-royal-court-music-show",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hue-place-song-huong-floating-restaurant",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hue-place-tay-loc-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: the image to hold"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 6x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 16x: map/name utility heading"
+        },
+        {
+          "id": "076-100",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-royal-court-music-show",
+          "summary": "A royal court music show turns a Huế evening toward living sound: musicians, masks, stage light, and court memory instead of another still monument.",
+          "context": "The stop belongs to an evening itinerary, when theatre doors and river-city streets make the performance feel separate from daytime tombs and gates.",
+          "tip": "Look for Biểu diễn nhã nhạc cung đình when a sign or ticket desk uses the Vietnamese name for the royal court music performance.",
+          "rationale": "Music, masks, lacquer stage light, and a seated audience give Hue's royal culture a moving, human scale after the monuments close.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Evening With Court Music",
+              "body": "This is Hue through performance rather than stone: musicians, masks, stage light, and a room that lets royal memory move for an hour."
+            },
+            {
+              "id": "place-brief",
+              "title": "Living Culture After Monuments",
+              "body": "Expect a small royal court music setting, not a museum case. The draw is hearing the rhythm and seeing the stage craft up close."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Biểu diễn nhã nhạc cung đình is the phrase to listen for when staff, tickets, or signs refer to the show."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Calm Night Pairing",
+              "body": "The show fits after a Citadel or river day, when sitting down for sound and stage light feels better than adding another outdoor stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Image To Hold",
+              "body": "Picture musicians on a lacquered stage, masks catching warm light, and a small audience listening rather than moving through another courtyard."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Specific, Not Grand",
+              "body": "The name can sound formal in English. The visit feels clearer when it is treated as one intimate performance scene inside royal-culture Hue."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ru-cha-mangrove",
+          "summary": "Ru Cha Mangrove Forest gives Hue a green edge beyond streets and palaces: water channels, tangled roots, soft shade, and a slower outdoor pause.",
+          "context": "Rú Chá belongs to the nature side of Hue, where paths, water, and mangrove shade replace the city's courtyards and traffic.",
+          "tip": "The local name is short: Rú Chá. It is easier to catch when signs or directions point toward the mangrove forest.",
+          "rationale": "The stop changes the day's texture with roots, water, shade, and weather instead of another royal or riverside landmark.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Green Edges Beyond Hue",
+              "body": "Rú Chá is the reset when the day needs water, roots, and shade instead of another building or street crossing."
+            },
+            {
+              "id": "place-brief",
+              "title": "Water Channels And Roots",
+              "body": "Expect mangrove paths, soft green light, tangled roots, and narrow water channels. The scene is quiet by design."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Catch",
+              "body": "Rú Chá is the Vietnamese name to recognize in directions, captions, or local conversation around the mangrove forest."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Outdoor Detour",
+              "body": "It fits a day that can handle a softer nature stop, especially when heat or city density makes shade and water feel welcome."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather Sets The Mood",
+              "body": "The forest depends on light and weather. Cloud, rain, or harsh sun can change the feeling more than at an indoor stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Scene, Clear Role",
+              "body": "This is not a grand countryside expedition. Its role is a quiet green break on Hue's outer edge."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-song-huong-floating-restaurant",
+          "summary": "Song Huong Floating Restaurant turns dinner into a river moment: tables on the Perfume River, dusk reflections, bridge lights, and a meal that feels placed.",
+          "context": "The restaurant belongs to Hue's evening river rhythm, where food, drinks, staff movement, and water views share the same scene.",
+          "tip": "Nhà hàng nổi Sông Hương is the name to recognize when looking for the floating restaurant on or beside the Perfume River.",
+          "rationale": "The setting matters as much as the menu: dusk water, nearby bridge lights, and table rhythm make the meal part of the route.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner With River Edges",
+              "body": "This is the meal to remember for where it happens: on the Perfume River, with dusk, reflections, and bridge light around the table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Floating, Not Just Riverside",
+              "body": "Expect a floating restaurant scene rather than a normal dining room. The movement of staff, water, and lights shapes the evening."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nhà hàng nổi Sông Hương connects the name to the river, so it can help when checking signs or asking nearby."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Meal That Carries The Day",
+              "body": "It fits when dinner can slow the itinerary down, especially after tombs, markets, or a long walk by the river."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Evening Makes Sense",
+              "body": "The strongest image is dusk: water below, bridge lights in the distance, and the city settling around the river."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Setting First",
+              "body": "The floating setting is the reason to remember it. Exact menu details can stay flexible until the meal."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-songlab",
+          "summary": "Sống Platform - SốngLab gives Hue a contemporary indoor turn: dark rooms, digital light, local motifs, and creative work beside the older imperial story.",
+          "context": "This cultural stop sits away from the usual tomb-and-palace rhythm, with gallery rooms, quiet light, memory, and modern display choices.",
+          "tip": "Sống Platform - SốngLab usually stays as the venue name, so listening for the full name is more useful than translating it.",
+          "rationale": "The stop helps Hue feel current as well as historic, with digital art and local motifs adding a different room to the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Contemporary Room In Hue",
+              "body": "After tombs and gates, this is Hue in a different register: dark gallery space, digital light, and local motifs handled in a modern way."
+            },
+            {
+              "id": "place-brief",
+              "title": "Old Capital, New Tools",
+              "body": "The point is contrast. SốngLab lets contemporary design and media sit beside the city's older imperial memory without pretending to be a monument."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Hear",
+              "body": "Sống Platform - SốngLab is the name to recognize. It may appear untranslated on signs, posts, or directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Indoor Reset Between Heritage Stops",
+              "body": "It fits when the day needs a quieter room, cooler light, and a break from courtyards, traffic, or open-air sightseeing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Culture Pause",
+              "body": "Picture immersive light, local motifs, and a darker room rather than a long museum route. That narrower expectation helps the stop land."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Modern, Still Hue",
+              "body": "The useful contrast is not old versus new. It is how contemporary work keeps Hue from feeling frozen in imperial memory."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-tay-loc-market",
+          "summary": "Tay Loc Market gives Citadel-side Hue an everyday market scene: produce colors, snack counters, butcher tables, bargaining rhythm, and local buying.",
+          "context": "The market belongs to everyday Hue, where aisles, counters, small goods, and shopping movement matter more than a polished visitor route.",
+          "tip": "Chợ Tây Lộc is the name to recognize around Citadel-side market streets, especially when directions point toward a local market stop.",
+          "rationale": "The market turns Hue into daily movement: vegetables, snacks, counters, bargaining, and people buying what the day needs.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Everyday Hue In Aisles",
+              "body": "Tay Loc is for seeing the city's daily buying rhythm: produce, snack counters, butcher tables, small goods, and quick decisions."
+            },
+            {
+              "id": "place-brief",
+              "title": "Market Rhythm Over Souvenir Polish",
+              "body": "Expect a local market atmosphere near the Citadel side, with practical counters and color rather than a staged visitor experience."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name To Recognize",
+              "body": "Chợ Tây Lộc is the Vietnamese name to listen for in directions or when checking whether you are at the right market."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Browse With Snacks",
+              "body": "The stop fits a day with room for browsing, one snack, and a quick look at how local shopping moves."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Scene To Expect",
+              "body": "Picture vegetable aisles, butcher counters, produce color, and a Citadel-side street mood instead of a clean souvenir hall."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small specifics Are Safer",
+              "body": "Treat it as a neighborhood market look. Exact stall mix, snacks, and prices can change by day."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -201,13 +201,14 @@ Viet:
 - `content-draft/viet/canonical-pages/<lane>/<scenario>/<page-id>.json` for authored offline canonical phrase-page articles
 - `content-draft/viet/menu/_menu-index.json`, `content-draft/viet/menu/items/**`, and `content-draft/viet/menu/menu-helper-phrases.json` for the handwritten Food Menu and Drink Menu detail-page source
   - each menu item carries text-only `howLocalsOrder` guidance so the page teaches the local ordering move, customization choice, sauce/dip/broth behavior, or drink flavor/ice/sweetness decision without creating one-off audio requirements
-- `docs/content/CITY_PAGE_COPY_AUTHORING.md` for the city/place page copy standard: research the specific place first, find the hook only that place can own, and avoid template prose that could fit a similar venue
+- `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md` for the current city/place app-detail contract: `speaklocal.place.app-detail.v2.2`
+- `docs/content/CITY_PAGE_COPY_AUTHORING.md` for city/place research and voice guidance that feeds that V2.2 app-detail contract
 - `content-draft/viet/premium-expansion/` for future lane scaffolds and promoted-live historical manifests
 - `content-draft/viet/website-preview.json` for article-module selection and ordering only
 
 Viet Tier 1 listing-page quality standard:
 
-- Use the installed `speaklocal-listing-pages` skill for authoring and review.
+- Use the installed `speaklocal-listing-pages` skill for canonical phrase-page authoring and review. For city/place app-detail pages, use `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`; `speaklocal-listing-pages` is mechanics-only for phrase/audio/routing/rendering.
 - Treat source lanes as provenance only. `tier-one`, `catalog-promoted`, city, editorial-support, and menu-owned pages compile into one full-depth canonical phrase graph.
 - Pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
 - Each page should carry phrase-specific explanation, useful variants, tone/register guidance, positively framed local/cultural/travel notes, canonical links, and audio-backed rows.

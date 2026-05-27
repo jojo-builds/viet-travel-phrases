@@ -1,0 +1,734 @@
+[
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-danang-place-international-terminal",
+    "displayName": "Nhà ga quốc tế Đà Nẵng",
+    "englishName": "Da Nang International Terminal",
+    "city": "Đà Nẵng",
+    "category": "Arrival",
+    "pronunciation": "nya ga kwok tey da nang",
+    "intro": {
+      "heading": "The Arrival Sequence Matters",
+      "body": "Da Nang International Terminal is the first practical hour of central Vietnam: immigration, baggage, SIMs, cash, pickup doors, and the ride into the city. Keep the order simple and do not start solving pickup before you are through the public hall."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Nhập cảnh ở đâu?",
+        "en": "Where is immigration?",
+        "intent": "find_immigration",
+        "phraseId": "airport-1",
+        "audioId": "airport-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Lấy hành lý ở đâu?",
+        "en": "Where is baggage claim?",
+        "intent": "find_baggage",
+        "phraseId": "airport-2",
+        "audioId": "airport-2",
+        "status": "mapped"
+      },
+      {
+        "vi": "Mua SIM ở đâu?",
+        "en": "Where can I buy a SIM card?",
+        "intent": "buy_sim",
+        "phraseId": "airport-3",
+        "audioId": "airport-3",
+        "status": "mapped"
+      },
+      {
+        "vi": "Khu đón ở đâu?",
+        "en": "Where is the pickup area?",
+        "intent": "find_pickup_area",
+        "phraseId": "airport-5",
+        "audioId": "airport-5",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "follow-the-arrival-order",
+        "heading": "Arrival Works In Order",
+        "body": "Move through immigration, baggage, customs, then into the public hall. SIM counters, ATMs, hotel drivers, and ride-app exits make more sense once you are past the doors."
+      },
+      {
+        "id": "keep-pickup-visible",
+        "heading": "Pickup Gets Easier With One Pin",
+        "body": "Before leaving the hall, open the pickup pin and check which door or column the driver means. Da Nang is close, but airport exits can split a group quickly."
+      },
+      {
+        "id": "name-the-hoi-an-transfer",
+        "heading": "Know Which Car Is Yours",
+        "body": "If the next stop is Hội An, confirm the driver name, car plate, and hotel area while you still have light, space, and Wi-Fi. The ride is simple once the car is clearly yours."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "SIM card",
+        "type": "service",
+        "catalogId": "viet-family-airport-sim",
+        "sourceText": "SIMs",
+        "displaySubtitle": "Get connected before leaving the terminal.",
+        "reason": "Named in the arrival sequence and supported by a bundled airport SIM phrase.",
+        "status": "render"
+      },
+      {
+        "label": "ATM",
+        "type": "service",
+        "catalogId": "viet-family-money-find-atm",
+        "sourceText": "cash",
+        "displaySubtitle": "Find cash before the ride into the city.",
+        "reason": "Cash is a natural airport-arrival need and the catalog has an ATM family.",
+        "status": "render"
+      },
+      {
+        "label": "Hội An",
+        "type": "city",
+        "catalogId": null,
+        "sourceText": "Hội An",
+        "displaySubtitle": "Common onward transfer after the airport arrival flow.",
+        "reason": "Common onward destination, but this should render only after catalog QA chooses the correct Hội An city or Ancient Town item.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-danang-place-airport",
+        "label": "Sân bay Đà Nẵng",
+        "relationship": "parent_airport",
+        "displaySubtitle": "Use the broader airport name when terminal details are not needed.",
+        "reason": "Parent airport page for travelers who need the broader airport name.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-danang-place-domestic-terminal",
+        "label": "Nhà ga quốc nội Đà Nẵng",
+        "relationship": "terminal_contrast",
+        "displaySubtitle": "The domestic side matters for pickups, transfers, and check-in.",
+        "reason": "Useful contrast when pickup, transfer, or check-in depends on the domestic side.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "same_week",
+        "reason": "Airport pickup rules, ride-app pickup location, counter locations, and terminal service desks can change.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All four useful phrase cards resolve to ready bundled audio in the local catalog.",
+        "blocking": false
+      },
+      {
+        "type": "catalog_qa",
+        "reason": "Hội An needs a final render target before it becomes a visible Mentioned Here card.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass",
+      "catalogMentionScan": "pass",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Closest anchor: airport and first-arrival behavior, with Ba Na Hills-style expectation setting kept practical rather than scenic.",
+        "2026-05-24 screenshot review gate: revised heading/body language away from command-like contract copy and toward a natural arrival briefing.",
+        "Useful phrases should render immediately after the intro and should not appear as a prose paragraph."
+      ]
+    },
+    "score": {
+      "value": 28,
+      "max": 30,
+      "reason": "Strong arrival job, verified phrase/audio mapping, and valid related terminal cards; capped for same-week airport pickup and service-counter freshness."
+    },
+    "sourceNotes": [
+      "Official Da Nang airport and Terminal 2 arrival references should be rechecked before publication.",
+      "Repo source notes classify this page as airport and transport sourced."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-danang-place-dong-dinh-museum",
+    "displayName": "Bảo tàng Đồng Đình",
+    "englishName": "Dong Dinh Museum",
+    "city": "Đà Nẵng",
+    "category": "Museum",
+    "pronunciation": "bao tang dong dinh",
+    "intro": {
+      "heading": "Quiet Culture On Sơn Trà",
+      "body": "Dong Dinh Museum is a private garden-house stop on the Sơn Trà side of Đà Nẵng. Go for shade, old houses, ceramics, fishing-life objects, and a slower pause before or after Lady Buddha, not a checklist museum hour."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Vé bao nhiêu?",
+        "en": "How much is the ticket?",
+        "intent": "ask_ticket_price",
+        "phraseId": "sight-1",
+        "audioId": "sight-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tôi chụp hình ở đây được không?",
+        "en": "Can I take photos here?",
+        "intent": "ask_photo_permission",
+        "phraseId": "sight-3",
+        "audioId": "sight-3",
+        "status": "mapped"
+      },
+      {
+        "vi": "Mấy giờ đóng cửa?",
+        "en": "What time does it close?",
+        "intent": "ask_closing_time",
+        "phraseId": "sight-4",
+        "audioId": "sight-4",
+        "status": "mapped"
+      },
+      {
+        "vi": "Gọi taxi giúp tôi được không?",
+        "en": "Can you call a taxi for me?",
+        "intent": "ask_call_taxi",
+        "phraseId": "hotel-9",
+        "audioId": "hotel-9",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "expect-garden-before-gallery",
+        "heading": "Garden First, Gallery Second",
+        "body": "The first memory may be trees, stone, water, and shade before any display case. That retreat from beach-and-bridge traffic is part of the visit."
+      },
+      {
+        "id": "pick-two-stories",
+        "heading": "Two Stories Are Enough",
+        "body": "Move slowly enough to notice old house materials, ceramic pieces, fishing-life objects, and ethnography rooms. A short visit works better when you choose two threads instead of trying to read every label."
+      },
+      {
+        "id": "pair-it-with-peninsula",
+        "heading": "Best As A Peninsula Pairing",
+        "body": "It fits best into a Sơn Trà or Lady Buddha route. Crossing town just for one small museum can feel thin unless quiet is the reason you came."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Sơn Trà Peninsula",
+        "type": "place",
+        "catalogId": "viet-family-city-danang-place-son-tra",
+        "sourceText": "Sơn Trà",
+        "displaySubtitle": "Peninsula route with sea views, pagodas, and quieter stops.",
+        "reason": "Named as the route setting and supported by a place catalog item.",
+        "status": "render"
+      },
+      {
+        "label": "Lady Buddha",
+        "type": "landmark",
+        "catalogId": "viet-family-city-danang-place-lady-buddha",
+        "sourceText": "Lady Buddha",
+        "displaySubtitle": "Big peninsula landmark to pair with the museum route.",
+        "reason": "Natural same-route landmark in the practical pairing section.",
+        "status": "render"
+      },
+      {
+        "label": "Museum of Cham Sculpture",
+        "type": "museum",
+        "catalogId": "viet-family-city-danang-place-cham-museum",
+        "sourceText": "museum",
+        "displaySubtitle": "Central museum for Cham sculpture and a stronger downtown culture stop.",
+        "reason": "Useful catalog contrast for central museum behavior, but it is not named in visible copy and should stay related rather than Mentioned Here.",
+        "status": "do_not_render"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-danang-place-linh-ung-pagoda",
+        "label": "Chùa Linh Ứng",
+        "relationship": "same_peninsula_route",
+        "displaySubtitle": "Same-peninsula pagoda stop near Lady Buddha.",
+        "reason": "Useful route pairing for a Sơn Trà / Lady Buddha outing.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-danang-place-cham-museum",
+        "label": "Bảo tàng Điêu khắc Chăm",
+        "relationship": "museum_contrast",
+        "displaySubtitle": "Central museum contrast if you want one stronger culture stop.",
+        "reason": "Stronger central museum contrast for travelers choosing one culture stop.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "same_week",
+        "reason": "Hours, ticket price, photo rules, and current access should be checked before publication.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All four useful phrase cards resolve to ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass",
+      "catalogMentionScan": "pass",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Closest anchor: Da Nang Museum / Cham Museum, but this version keeps the garden-house and Sơn Trà route distinct.",
+        "2026-05-24 screenshot review gate: softened the first heading from a command into a natural role cue.",
+        "Do not promote Kim Bồng or other craft context unless visible copy names it naturally."
+      ]
+    },
+    "score": {
+      "value": 28,
+      "max": 30,
+      "reason": "Specific museum behavior, valid phrase cards, and useful route-related modules; capped for current access, hours, and ticket verification."
+    },
+    "sourceNotes": [
+      "Central Vietnam Guide describes Dong Dinh Museum as a garden museum on Hoàng Sa Street near Lady Buddha, with antiquities, art, fisherman life, and ethnography sections."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hcmc-place-pasteur-street",
+    "displayName": "Đường Pasteur",
+    "englishName": "Pasteur Street",
+    "city": "Saigon",
+    "category": "Street",
+    "pronunciation": "duong pasteur",
+    "intro": {
+      "heading": "Start With One Doorway",
+      "body": "Pasteur Street is easiest when you do not try to make it a destination. Start near one cafe, office, museum edge, or District 1 errand, then use the street name to keep the next few blocks readable."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Ở gần đây không?",
+        "en": "Is it near here?",
+        "intent": "ask_nearby",
+        "phraseId": "directions-2",
+        "audioId": "directions-2",
+        "status": "mapped"
+      },
+      {
+        "vi": "Đi bộ mất bao lâu?",
+        "en": "How long does it take on foot?",
+        "intent": "ask_walking_time",
+        "phraseId": "directions-3",
+        "audioId": "directions-3",
+        "status": "mapped"
+      },
+      {
+        "vi": "Chỉ cho tôi được không?",
+        "en": "Can you show me?",
+        "intent": "show_me",
+        "phraseId": "repair-show-me",
+        "audioId": "repair-show-me",
+        "status": "mapped"
+      },
+      {
+        "vi": "Dừng ở đây được rồi",
+        "en": "You can stop here",
+        "intent": "ride_stop_here",
+        "phraseId": "taxi-3",
+        "audioId": "taxi-3",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "start-near-one-stop",
+        "heading": "Let The Block Orient You",
+        "body": "After the first stop, look for the next real doorway: a cafe sign, an office lobby, a side street, or the entrance your map pin is trying to describe."
+      },
+      {
+        "id": "treat-the-name-as-map-tool",
+        "heading": "The Name Still Carries Weight",
+        "body": "The street name carries colonial-era layers, the Pasteur Institute story, surviving shophouses, and everyday traffic. It also gives drivers and map pins one shared reference."
+      },
+      {
+        "id": "cross-check-continue",
+        "heading": "Pause Before Crossing",
+        "body": "Traffic, tree shade, and parked scooters can hide the obvious entrance. Pause before crossing, check the map, then ask with the phone open if the pin looks close but wrong."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "District 1",
+        "type": "neighborhood",
+        "catalogId": "viet-family-city-hcmc-go-district-1",
+        "sourceText": "District 1",
+        "displaySubtitle": "Central Saigon base for short walks, cafes, museums, and errands.",
+        "reason": "Named as the practical orientation anchor for the street.",
+        "status": "render"
+      },
+      {
+        "label": "Pasteur Institute",
+        "type": "landmark",
+        "catalogId": null,
+        "sourceText": "Pasteur Institute",
+        "displaySubtitle": "Historic name behind the street.",
+        "reason": "Historical source of the street identity, but no local catalog item was found.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hcmc-place-dong-khoi-street",
+        "label": "Đường Đồng Khởi",
+        "relationship": "street_contrast",
+        "displaySubtitle": "More polished District 1 street for heritage facades, shops, and riverward walking.",
+        "reason": "More polished heritage-shopping street contrast for a District 1 walk.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-hcmc-place-district-3",
+        "label": "Quận 3",
+        "relationship": "nearby_continuation",
+        "displaySubtitle": "Nearby central district for a slower route beyond District 1.",
+        "reason": "Useful continuation west of the hotel core when the traveler wants a broader route.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "light",
+        "reason": "Individual cafes, offices, and nearby doors change quickly; the street-name behavior stays stable.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All four useful phrase cards resolve to ready bundled audio and were shortened to reduce phrase-row stress.",
+        "blocking": false
+      },
+      {
+        "type": "catalog_qa",
+        "reason": "Pasteur Institute should not render until a catalog item exists.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass",
+      "catalogMentionScan": "pass",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Closest anchor: Đồng Khởi Street and Japan Town Saigon, with less romance and more map-use behavior.",
+        "2026-05-24 screenshot review gate: revised abstract utility language into a more natural street-walking briefing.",
+        "2026-05-24 second review fix: added doorway, block, traffic, and entrance details so the street page feels less conceptual.",
+        "The map-check row was replaced with the primary-audio repair-show-me phrase so the native SQLite audio gate can pass without changing the street moment."
+      ]
+    },
+    "score": {
+      "value": 28,
+      "max": 30,
+      "reason": "Clear street-use behavior, shorter mapped phrase rows, and valid related cards; capped because individual business context is intentionally not verified here."
+    },
+    "sourceNotes": [
+      "Historic Vietnam traces Pasteur Street's rue Pellerin history, Pasteur Institute connection, shophouses, and present street identity."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hanoi-place-loading-t-cafe",
+    "displayName": "Loading T Cafe",
+    "englishName": "Loading T Cafe",
+    "city": "Hà Nội",
+    "category": "Cafe",
+    "pronunciation": "loading t cafe",
+    "intro": {
+      "heading": "Find The Upstairs Pause",
+      "body": "Loading T is an Old Quarter coffee pause with a real arrival moment: Chân Cầm address, stairs to a second-floor room, patterned tiles, vintage corners, and cinnamon-leaning egg coffee."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Cho tôi một cà phê sữa đá",
+        "en": "One iced milk coffee please",
+        "intent": "order_iced_milk_coffee",
+        "phraseId": "coffee-1",
+        "audioId": "coffee-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tôi có lên lầu không?",
+        "en": "Do I go upstairs?",
+        "intent": "ask_go_upstairs",
+        "phraseId": "v500-dire-navi-do-i-go-upstairs",
+        "audioId": "v500-dire-navi-do-i-go-upstairs",
+        "status": "mapped"
+      },
+      {
+        "vi": "Ít đá thôi",
+        "en": "Just a little ice",
+        "intent": "ask_less_ice",
+        "phraseId": "coffee-4",
+        "audioId": "coffee-4",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tính tiền giúp tôi",
+        "en": "The bill, please",
+        "intent": "pay_now",
+        "phraseId": "coffee-7",
+        "audioId": "coffee-7",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "order-before-settling",
+        "heading": "The Drink Comes First",
+        "body": "Choose the drink first, especially if egg coffee or a cinnamon note is the reason you came. The room is small, and the visit feels better once the order is out of the way."
+      },
+      {
+        "id": "let-the-room-slow-you-down",
+        "heading": "The Room Is The Pause",
+        "body": "The appeal is not a long work session. It is a short reset: old building details, tile, collected objects, and a window back into Old Quarter movement."
+      },
+      {
+        "id": "check-the-door-same-day",
+        "heading": "The Door Is Worth Checking",
+        "body": "Cafe hours and address signals can drift across guide sites. If this is the coffee stop you care about, check it before crossing town."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Egg coffee",
+        "type": "drink",
+        "catalogId": "viet-family-city-hanoi-place-egg-coffee",
+        "sourceText": "egg coffee",
+        "displaySubtitle": "Creamy Hanoi coffee ritual to compare with nearby cafes.",
+        "reason": "Core drink context named in the intro and ordering section.",
+        "status": "render"
+      },
+      {
+        "label": "Iced milk coffee",
+        "type": "drink",
+        "catalogId": "viet-family-city-hanoi-place-ca-phe-sua-da",
+        "sourceText": "cà phê sữa đá",
+        "displaySubtitle": "Cold Vietnamese coffee for a quick, familiar order.",
+        "reason": "Useful phrase card and catalog drink connection.",
+        "status": "render"
+      },
+      {
+        "label": "Old Quarter",
+        "type": "neighborhood",
+        "catalogId": "viet-family-city-hanoi-go-old-quarter",
+        "sourceText": "Old Quarter",
+        "displaySubtitle": "Dense Hanoi walking area around cafes, shops, and lake-side routes.",
+        "reason": "Natural setting and route context for the cafe.",
+        "status": "render"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
+        "label": "Cà phê Đinh",
+        "relationship": "upstairs_egg_coffee_comparison",
+        "displaySubtitle": "Upstairs egg-coffee stop near Hoàn Kiếm Lake.",
+        "reason": "Another upstairs Hanoi egg-coffee stop with a similar physical arrival cue.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-hanoi-place-giang-cafe",
+        "label": "Cà phê Giảng",
+        "relationship": "egg_coffee_origin_comparison",
+        "displaySubtitle": "Classic egg-coffee source for a more origin-story visit.",
+        "reason": "Useful comparison when the traveler is choosing one egg-coffee ritual.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "same_week",
+        "reason": "Hours, entrance path, seating, and payment options should be checked before publication.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All four useful phrase cards resolve to ready bundled audio in the local catalog.",
+        "blocking": false
+      },
+      {
+        "type": "native_speaker_qa",
+        "reason": "Existing audio wins for the upstairs and payment phrases, but their naturalness and English gloss should receive native-speaker review before production.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass",
+      "catalogMentionScan": "pass",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Closest anchor: Cà phê Đinh and The Note Coffee, with the page organized around finding the upstairs pause.",
+        "2026-05-24 screenshot review gate: kept the strong upstairs-pause concept and tightened the visible phrase gloss for the payment card.",
+        "Phrase cards must render immediately after the intro; this was a known failure in the prior pilot."
+      ]
+    },
+    "score": {
+      "value": 28,
+      "max": 30,
+      "reason": "Concrete cafe ritual, valid phrase/audio mapping, and useful drink/neighborhood links; capped for current hours, entrance, and payment verification."
+    },
+    "sourceNotes": [
+      "Loading T official site lists 8 P. Chân Cầm.",
+      "Asian Coffee Map and Made in City notes describe an Old Quarter cafe, second-floor villa room, patterned tiles, and cinnamon egg coffee; recheck current status before publication."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-danang-place-lotte-mart",
+    "displayName": "Lotte Mart Đà Nẵng",
+    "englishName": "Lotte Mart Da Nang",
+    "city": "Đà Nẵng",
+    "category": "Shopping",
+    "pronunciation": "lotte mart da nang",
+    "intro": {
+      "heading": "The Easy Indoor Reset",
+      "body": "When the day is hot, rainy, or low on supplies, Lotte Mart gives you an easy indoor reset. Come here for water, sunscreen, toiletries, snacks, basic groceries, and predictable shelves instead of market bargaining."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Cái này bao nhiêu?",
+        "en": "How much is this?",
+        "intent": "ask_price",
+        "phraseId": "price-1",
+        "audioId": "price-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Trả ở đâu?",
+        "en": "Where do I pay?",
+        "intent": "ask_pay_location",
+        "phraseId": "shop-5",
+        "audioId": "shop-5",
+        "status": "mapped"
+      },
+      {
+        "vi": "Có túi không?",
+        "en": "Do you have a bag?",
+        "intent": "ask_for_bag",
+        "phraseId": "store-2",
+        "audioId": "store-2",
+        "status": "mapped"
+      },
+      {
+        "vi": "Cho tôi hóa đơn",
+        "en": "Please give me the receipt",
+        "intent": "ask_receipt",
+        "phraseId": "store-7",
+        "audioId": "store-7",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "buy-the-heat-and-rain-basics",
+        "heading": "Restock Before You Move On",
+        "body": "Buy the ordinary things that make the next few hours easier: water, sunscreen, tissues, snacks, basic clothes, or small gifts. It is especially useful before the beach, a long ride, or a hotel reset."
+      },
+      {
+        "id": "regroup-before-the-taxi",
+        "heading": "Regroup Before The Taxi",
+        "body": "If everyone is tired, regroup inside before calling the car. It is easier to choose a pickup point once everyone has water, bags, and a plan."
+      },
+      {
+        "id": "different-job-than-han",
+        "heading": "Hàn For Texture, Lotte For Ease",
+        "body": "Go to Hàn Market for bargaining, souvenirs, fabric, food stalls, and local-market texture. Come here for posted prices, cool air, receipts, and lower decision pressure."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Sunscreen",
+        "type": "service_item",
+        "catalogId": "viet-family-service-sunscreen",
+        "sourceText": "sunscreen",
+        "displaySubtitle": "Easy to grab before the beach or another long walk.",
+        "reason": "Named as a practical shopping need and supported by a shopping/service family.",
+        "status": "render"
+      },
+      {
+        "label": "Hàn Market",
+        "type": "market",
+        "catalogId": "viet-family-city-danang-place-han-market",
+        "sourceText": "Hàn Market",
+        "displaySubtitle": "Better for souvenirs, bargaining, fabric, and local market texture.",
+        "reason": "Named as a direct contrast; render it in related places rather than duplicating it here.",
+        "status": "do_not_render"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-danang-place-han-market",
+        "label": "Chợ Hàn",
+        "relationship": "market_contrast",
+        "displaySubtitle": "Better for souvenirs, bargaining, fabric, and local market texture.",
+        "reason": "Local-market contrast for central texture and bargaining.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-danang-place-vincom-plaza",
+        "label": "Vincom Plaza Đà Nẵng",
+        "relationship": "indoor_shopping_alternative",
+        "displaySubtitle": "Another indoor stop when cool air and easy shopping matter.",
+        "reason": "Similar indoor shopping alternative when route planning matters.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "same_week",
+        "reason": "Hours, pickup doors, and store layout should be checked before publication.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All four useful phrase cards resolve to ready bundled audio in the local catalog.",
+        "blocking": false
+      },
+      {
+        "type": "native_speaker_qa",
+        "reason": "Review the compact checkout phrases before production; current rows keep existing audio rather than inventing more natural variants.",
+        "blocking": false
+      },
+      {
+        "type": "catalog_qa",
+        "reason": "Only Sunscreen renders from Mentioned Here; Hàn Market stays in Related Places and no unsupported food-court card renders.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass",
+      "catalogMentionScan": "pass",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Closest anchor: Hàn Market / Cồn Market, inverted into the practical indoor-shopping job.",
+        "2026-05-24 screenshot review gate: contract passed but voice was revised from command-like listing-function copy into a traveler-experience briefing.",
+        "The copy now gives a concrete contrast with Hàn Market and a valid related-place render target.",
+        "2026-05-24 production gate fix: removed visible food-court claims because current official store evidence does not need that unstable detail."
+      ]
+    },
+    "score": {
+      "value": 28,
+      "max": 30,
+      "reason": "Distinct practical-shopping job, revised natural voice, valid phrase/audio mapping, and stronger market contrast; capped for current hours, phrase naturalness, and pickup-door verification."
+    },
+    "sourceNotes": [
+      "Lotte Mart's official Da Nang store page supports the active store identity and address.",
+      "Visible copy intentionally avoids exact hours, pickup doors, payment rules, and food-court status."
+    ]
+  }
+]

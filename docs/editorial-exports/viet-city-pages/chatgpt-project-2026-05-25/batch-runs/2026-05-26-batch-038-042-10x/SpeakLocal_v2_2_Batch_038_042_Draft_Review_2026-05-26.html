@@ -1,0 +1,1496 @@
+<!doctype html><html><head><meta charset="utf-8"><title>SpeakLocal v2.2 Batch 038-042 Draft Review</title>
+<style>body{font-family:Arial,sans-serif;line-height:1.45;max-width:900px;margin:40px auto;padding:0 24px;color:#111}h1{font-size:28px;margin-top:36px;border-bottom:1px solid #ddd;padding-bottom:8px}h2{font-size:22px;margin-top:28px}h3{font-size:18px;margin-top:22px;color:#333}p{margin:8px 0}ul{margin:8px 0 16px 24px}li{margin:4px 0}code{font-family:Menlo,monospace;background:#f5f5f5;padding:1px 3px;border-radius:3px}.sep{height:1px;background:#ddd;margin:28px 0}</style></head><body>
+<h1>SpeakLocal v2.2 Batch 038-042 Draft Review</h1>
+<p>Date: 2026-05-26</p>
+<p>Status: captured draft review. Not production-ready. Batch-level productionizer status: <code>revise_before_review</code> until the full 50-page pass is complete.</p>
+<p>Google/reader note: this document replaces screenshots for copy review; implementation notes remain separate from app-visible copy.</p>
+<h2>Audit Summary</h2>
+<ul>
+<li>The drafts are stronger than early Codex-generated prose, but they are still drafts.</li>
+<li><code>batch_040</code> leaked a visible <code>Sections</code> label into the Reader View shape. This is a hard productionizer fix before Jojo review or import.</li>
+<li>Several batches use bare <code>Phrase cards</code> instead of <code>Useful phrase cards</code>. That is not fatal for review docs, but it is an import risk if a normalizer treats labels as app-visible fields.</li>
+<li>The safer reusable-phrase rule sometimes flattens similar food pages into repeated three-card sets. Repeats need to be justified, varied, or marked for revision.</li>
+<li>Some headings still cluster around command verbs such as <code>Keep</code>, <code>Choose</code>, <code>Read</code>, <code>Ask</code>, <code>Confirm</code>, and <code>Leave</code>. The cadence is better than the rejected pilot voice, but a 10-listing batch makes the scaffold visible.</li>
+<li>Thin-source rows must stay narrow. The productionizer should block or shrink pages that invent generic station, cafe, street, market, or airport props to cover missing evidence.</li>
+</ul>
+<h2>Batch Decision</h2>
+<p>Batch-level decision: <code>revise_before_review</code>.</p>
+<p>Reason: this batch needs a productionizer pass before Jojo voice review. The pass should remove export-label leaks, sweep heading cadence, check phrase-card repetition, and mark any thin-source pages that cannot carry the current copy.</p>
+<h2>Next Action</h2>
+<p>Run the productionizer prompt on representative slices first, then apply it to all captured batches before import work. Do not call these 50 production-ready until Jojo voice approval, phrase/audio/catalog mapping, source import, native regeneration, rendered screenshots, and <code>V2_2_PRODUCTION_REVIEW_GATE.md</code> pass.</p>
+<h2>Captured Drafts</h2>
+<h1>BATCH_038</h1>
+<p>SpeakLocal v2.2 BATCH_038 - Hanoi - 2026-05-26</p>
+<h2>Loading T Cafe / Loading T Cafe — Hanoi — Cafe</h2>
+<h3>Reader View</h3>
+<p><strong>A Short Climb For Cinnamon Coffee</strong></p>
+<p>Loading T feels best as a brief Old Quarter reset: find the Chân Cầm address, climb to the second-floor room, and let the patterned tile and old furniture slow the block down. If egg coffee is why you came, order first; the cinnamon note belongs in the cup, not in a long stay.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Tôi có lên lầu không?</strong> — Do I go upstairs?</li>
+<li><strong>Làm ơn bớt đường đi</strong> — Less sugar, please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Order Before Looking Around</strong></p>
+<p>The room is small enough that the visit feels smoother once the drink is handled. Choose coffee, settle, then notice the tile, corners, and window back toward Old Quarter movement.</p>
+<p><strong>Keep It A Short Pause</strong></p>
+<p>This is not the cafe to turn into a full work session. It is better as a twenty-minute cup between streets, when Hanoi has been loud and you want one upstairs room.</p>
+<p><strong>Confirm The Door Before Crossing Town</strong></p>
+<p>Small cafes can shift hours, entrances, or seating without much warning. If Loading T is the main coffee stop of the day, verify the basics before making a long detour.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-loading-t-cafe</code>; ledger_row <code>146</code>; hero <code>HeroCityHanoiPlaceLoadingTCafe</code>.</li>
+<li>Phrase/audio: <code>v500-dire-navi-do-i-go-upstairs</code> / <code>v500-dire-navi-do-i-go-upstairs</code> mapped; <code>v900-food-drin-less-sugar-please</code> / <code>v900-food-drin-less-sugar-please</code> mapped; <code>coffee-7</code> / <code>coffee-7</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-loading-t-cafe</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>drink-ca-phe-trung</code> Egg coffee render; <code>hanoi-old-quarter</code> Old Quarter render; Chân Cầm street has no confirmed catalog row, do_not_render.</li>
+<li>Related place candidates: <code>hanoi-dinh-cafe</code>, <code>hanoi-giang-cafe</code>, <code>hanoi-the-note-coffee</code> for Hanoi coffee comparison; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row is place-name only plus legacy Chân Cầm/upstairs/cinnamon-leaning egg coffee details; verify current entrance, hours, seating, and menu before import.</li>
+<li>Score: 26/30 — sharper upstairs moment; capped for sparse evidence and planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no duplicate body, no unsupported phrase cards, and no numbered visible heading; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Phở Bát Đàn / Pho Bat Dan — Hanoi — Restaurant</h2>
+<h3>Reader View</h3>
+<p><strong>Steam At A Metal Table</strong></p>
+<p>Phở Bát Đàn is the kind of meal that makes the Old Quarter feel awake: steam over beef broth, herbs waiting at the side, and a simple table that clears quickly once the bowl is done. Come for the bowl, not a long sit.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Làm ơn cho tôi một tô phở</strong> — I’d like a bowl of phở, please.</li>
+<li><strong>Cho thêm rau</strong> — More herbs, please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Choose The Bowl Before The Table</strong></p>
+<p>The visit goes better when you already know the main move: beef pho, herbs, broth, then sit. This is a focused meal, not a menu-reading afternoon.</p>
+<p><strong>Keep The Broth Clear</strong></p>
+<p>Add herbs, lime, or chili slowly. Hanoi pho can be quiet in the bowl before it becomes bright at the edge, and the first spoonful tells you how much it needs.</p>
+<p><strong>Leave While The Bowl Still Leads</strong></p>
+<p>The memory should be steam, broth, and the street outside — not overworking the stop. Eat, pay, and let the rest of the Old Quarter keep moving.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-pho-bat-dan</code>; ledger_row <code>166</code>; hero <code>HeroCityHanoiPlacePhoBatDan</code>.</li>
+<li>Phrase/audio: <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> / <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> mapped; <code>food-4</code> / <code>food-4</code> mapped; <code>coffee-7</code> / <code>coffee-7</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-pho-bat-dan</code> / <code>audio-authored-pho-bat-dan-5484f2c6ca</code> ready; render as pronunciation/name support only.</li>
+<li>Mentioned Here candidates: <code>food-pho-bo</code> Beef pho render; <code>hanoi-old-quarter</code> Old Quarter render.</li>
+<li>Related place candidates: <code>hanoi-pho-gia-truyen</code>, <code>hanoi-pho-bo-lam</code>, <code>hanoi-pho-bo</code> for pho comparison; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row is place-name only plus legacy bowl/table/Old Quarter details; verify current hours, menu flow, line/payment norms, and closure status before import.</li>
+<li>Score: 25/30 — clear meal rhythm; capped for thin venue evidence.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no place-name phrase card, no duplicate body, and no volatile claims about price or queue rules; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Phở bò ở Hà Nội / Beef pho — Hanoi — Dish</h2>
+<h3>Reader View</h3>
+<p><strong>Broth Before Add-Ins</strong></p>
+<p>Beef pho is the Hanoi bowl most travelers imagine before arrival: clear beef broth, flat rice noodles, sliced beef, green onion, herbs, and lime close by. The better first move is restraint — taste the broth before turning the table into a condiment project.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Làm ơn cho tôi một tô phở</strong> — I’d like a bowl of phở, please.</li>
+<li><strong>Cho thêm rau</strong> — More herbs, please.</li>
+<li><strong>Không cay nhé</strong> — Not spicy, please.</li>
+</ul>
+<p><strong>Taste First, Then Adjust</strong></p>
+<p>Take one spoonful before adding lime, chili, or extra herbs. The bowl changes quickly, and a lighter hand keeps the broth from disappearing under everything else.</p>
+<p><strong>Know The Beef Words</strong></p>
+<p>If you see tái, expect rarer beef. Chín points toward cooked beef. You do not need every cut on the first bowl; one clear choice is enough.</p>
+<p><strong>Make It The Hanoi Baseline</strong></p>
+<p>After one good beef pho, other noodle soups become easier to read. You start to notice broth weight, herbs, texture, and how much the city can fit into one bowl.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-pho-bo</code>; ledger_row <code>167</code>; hero <code>HeroCityHanoiPlacePhoBo</code>.</li>
+<li>Phrase/audio: <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> / <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> mapped; <code>food-4</code> / <code>food-4</code> mapped; <code>food-3</code> / <code>food-3</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-pho-bo</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>food-pho-bo</code> Phở bò render; <code>food-pho-tai</code> Phở tái render; <code>food-pho-chin</code> Phở chín render.</li>
+<li>Related place candidates: <code>hanoi-pho-ga</code> for chicken pho contrast; <code>hanoi-pho-bat-dan</code>, <code>hanoi-pho-bo-lam</code>, <code>hanoi-pho-gia-truyen</code> for restaurant choices; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites Vietnam Travel Hanoi and MICHELIN Hanoi guide; Menu Catalog has <code>food-pho-bo</code>, <code>food-pho-tai</code>, and <code>food-pho-chin</code>; dish-level facts are stable, but restaurant examples still need current checks.</li>
+<li>Score: 28/30 — strong dish briefing and menu-catalog fit; capped for planned place-name audio and phrase QA.</li>
+<li>QA notes: Reader View has 3 ready-audio reusable phrase cards, no text-only dish order line rendered, no duplicate body, and catalog mentions evaluated; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Phở Bò Lâm / Pho Bo Lam — Hanoi — Restaurant</h2>
+<h3>Reader View</h3>
+<p><strong>Beef Cuts, Simple Table</strong></p>
+<p>Phở Bò Lâm should stay centered on the bowl: beef broth, rice noodles, herbs, and the deeper chew of tendon if that is the cut you want. The room does not need to perform; the table just needs to hold the steam.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Làm ơn cho tôi một tô phở</strong> — I’d like a bowl of phở, please.</li>
+<li><strong>Cho thêm rau</strong> — More herbs, please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Choose Texture On Purpose</strong></p>
+<p>Tendon changes the bowl. It is richer and chewier than a simple sliced-beef order, so choose it because you want that texture, not because the menu feels like a test.</p>
+<p><strong>Do Not Overbuild The Bowl</strong></p>
+<p>Start with broth and beef before adding too much lime or chili. The bowl has enough going on without turning every spoonful sharp.</p>
+<p><strong>Keep The Meal Plain And Memorable</strong></p>
+<p>This is a good stop when lunch should feel like part of the Hanoi day without becoming a long restaurant plan. Eat the bowl, notice the shop rhythm, and move on.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-pho-bo-lam</code>; ledger_row <code>168</code>; hero <code>HeroCityHanoiPlacePhoBoLam</code>.</li>
+<li>Phrase/audio: <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> / <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> mapped; <code>food-4</code> / <code>food-4</code> mapped; <code>coffee-7</code> / <code>coffee-7</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-pho-bo-lam</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>food-pho-bo</code> Phở bò render; tendon detail has no confirmed menu catalog item, do_not_render.</li>
+<li>Related place candidates: <code>hanoi-pho-bat-dan</code>, <code>hanoi-pho-gia-truyen</code>, <code>hanoi-pho-bo</code> for pho comparison; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites MICHELIN Vietnam 2025 and MICHELIN Hanoi guide, plus legacy tendon/herbs/simple table detail; verify current guide status, hours, menu, and closure status before import.</li>
+<li>Score: 27/30 — clear texture-based ordering cue; capped for current venue checks and planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no unsupported dish-specific phrase card, no duplicate body, and visible claims kept stable; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Phở gà ở Hà Nội / Chicken pho — Hanoi — Dish</h2>
+<h3>Reader View</h3>
+<p><strong>A Lighter Pho Bowl</strong></p>
+<p>Chicken pho keeps the comfort of Hanoi pho — broth, rice noodles, herbs, lime — but the bowl reads cleaner and gentler than beef. It is a good reset when you want steam and noodles without the heavier pull of beef broth.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Làm ơn cho tôi một tô phở</strong> — I’d like a bowl of phở, please.</li>
+<li><strong>Cho thêm rau</strong> — More herbs, please.</li>
+<li><strong>Không cay nhé</strong> — Not spicy, please.</li>
+</ul>
+<p><strong>Taste Before The Lime</strong></p>
+<p>Chicken broth can be delicate. Add lime slowly, then herbs, then chili only if you actually want heat.</p>
+<p><strong>When Beef Feels Too Much</strong></p>
+<p>This is the easier pho lane after several rich meals. Shredded chicken, rice noodles, and a cleaner broth can make the bowl feel restorative without becoming plain.</p>
+<p><strong>Keep The Order Small</strong></p>
+<p>A simple bowl is enough. The pleasure is in the steam, the chicken, and the small adjustments at the table.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-pho-ga</code>; ledger_row <code>169</code>; hero <code>HeroCityHanoiPlacePhoGa</code>.</li>
+<li>Phrase/audio: <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> / <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> mapped; <code>food-4</code> / <code>food-4</code> mapped; <code>food-3</code> / <code>food-3</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-pho-ga</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>food-pho-ga</code> Phở gà render; <code>food-pho-bo</code> Phở bò render only if comparison card is desired.</li>
+<li>Related place candidates: <code>hanoi-pho-bo</code> for beef pho contrast; <code>hanoi-pho-bat-dan</code>, <code>hanoi-pho-bo-lam</code>, <code>hanoi-pho-gia-truyen</code> only if cross-pho browsing is wanted; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row is place-name only; Menu Catalog has <code>food-pho-ga</code>; dish-level claims are stable, but no venue-specific claims should be added without fresh checks.</li>
+<li>Score: 26/30 — useful dish contrast and restrained copy; capped for sparse source notes and planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio reusable phrase cards, no text-only chicken-pho order line rendered, no duplicate body, and no unsupported current venue facts; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Phở Gia Truyền / Pho Gia Truyen — Hanoi — Restaurant</h2>
+<h3>Reader View</h3>
+<p><strong>Steam First, Seat Second</strong></p>
+<p>Phở Gia Truyền is best treated as a quick broth-counter meal: see the steam, know the bowl you want, then let the table stay simple. The appeal is not decoration. It is sliced beef, herbs, hot broth, and a room that moves at meal speed.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Làm ơn cho tôi một tô phở</strong> — I’d like a bowl of phở, please.</li>
+<li><strong>Cho thêm rau</strong> — More herbs, please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Know The Bowl Before The Rush</strong></p>
+<p>Decide on a straightforward pho order before the room pulls your attention. A clear order keeps the first minute calm.</p>
+<p><strong>Counter Pace Is Part Of It</strong></p>
+<p>This kind of pho stop does not need lingering. Watch the rhythm, take the bowl seriously, and do not expect the table to slow the day down for you.</p>
+<p><strong>Compare Without Turning It Into Homework</strong></p>
+<p>If you are trying more than one Hanoi pho shop, compare broth, beef texture, herbs, and how the room moves. One or two bowls teach more than a checklist of names.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-pho-gia-truyen</code>; ledger_row <code>170</code>; hero <code>HeroCityHanoiPlacePhoGiaTruyen</code>.</li>
+<li>Phrase/audio: <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> / <code>v500-food-drin-id-like-a-bowl-of-ph-please</code> mapped; <code>food-4</code> / <code>food-4</code> mapped; <code>coffee-7</code> / <code>coffee-7</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-pho-gia-truyen</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>food-pho-bo</code> Phở bò render; <code>hanoi-old-quarter</code> render only if catalog QA confirms visible neighborhood placement is appropriate.</li>
+<li>Related place candidates: <code>hanoi-pho-bat-dan</code>, <code>hanoi-pho-bo-lam</code>, <code>hanoi-pho-bo</code> for pho comparison; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites MICHELIN Hanoi guide and legacy sliced-beef/herbs/steam detail; verify current guide status, hours, menu, and closure status before import.</li>
+<li>Score: 27/30 — strong counter-meal moment; capped for current venue checks and planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no unsupported place-name phrase card, no duplicate body, and no exaggerated restaurant claims; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Đền Quán Thánh / Quan Thanh Temple — Hanoi — Landmark</h2>
+<h3>Reader View</h3>
+<p><strong>Traffic Outside, Incense Inside</strong></p>
+<p>At Đền Quán Thánh, the shift is immediate: traffic outside, shade and incense inside, stone and temple architecture asking for a slower step. Give yourself a minute at the gate before treating it like another photo stop.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Hôm nay có mở cửa không?</strong> — Is it open today?</li>
+</ul>
+<p><strong>Pause At The Gate</strong></p>
+<p>The entrance is part of the visit. Step in slowly, let your eyes adjust, and notice how the courtyard changes the sound of the street.</p>
+<p><strong>Keep The Camera Secondary</strong></p>
+<p>This is an active worship space, not just old architecture. Ask before taking photos close to altars or people praying, and put the phone away when the room asks for quiet.</p>
+<p><strong>Pair It With The Lake Edge</strong></p>
+<p>Quan Thanh sits well with a West Lake or Trúc Bạch walk. Keep the temple as a quiet pause, then let the water and nearby streets carry the rest of the route.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-quan-thanh-temple</code>; ledger_row <code>171</code>; hero <code>HeroCityHanoiPlaceQuanThanhTemple</code>.</li>
+<li>Phrase/audio: <code>v500-sigh-acti-where-is-the-entrance</code> / <code>v500-sigh-acti-where-is-the-entrance</code> mapped; <code>sight-3</code> / <code>sight-3</code> mapped; <code>v500-time-date-book-is-it-open-today</code> / <code>v500-time-date-book-is-it-open-today</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-quan-thanh-temple</code> / <code>audio-authored-den-quan-thanh-fbed2afa89</code> ready; render as pronunciation/name support only.</li>
+<li>Mentioned Here candidates: <code>hanoi-west-lake</code> West Lake render; <code>hanoi-truc-bach-lake</code> Truc Bach Lake render.</li>
+<li>Related place candidates: <code>hanoi-tran-quoc-pagoda</code>, <code>hanoi-west-lake-loop</code>, <code>hanoi-ba-dinh-district</code> for nearby route planning; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites Hanoi tourism portal; verify current hours, worship/photo expectations, entrance access, and any restoration notices before import.</li>
+<li>Score: 28/30 — calm place-specific visit behavior; capped for current access/photo checks.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no place-name phrase card, no duplicate body, and respectful worship framing; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Chợ hoa Quảng Bá / Quang Ba Flower Market — Hanoi — Market</h2>
+<h3>Reader View</h3>
+<p><strong>Flowers Before Breakfast</strong></p>
+<p>Quảng Bá is a market before it is a photo stop: bundles of roses and chrysanthemums, wet pavement, scooters, and vendors moving fast while much of Hanoi is still quiet. Go with your eyes open and your hands out of the way.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Trả ở đâu?</strong> — Where do I pay?</li>
+<li><strong>Tôi đang tìm một món quà</strong> — I’m looking for a gift.</li>
+</ul>
+<p><strong>Watch The Work Before Buying</strong></p>
+<p>Stand aside for a minute before stepping into a stall lane. The market has its own rhythm, and the flowers are moving for real customers, not only for cameras.</p>
+<p><strong>Buy Small And Carry Smart</strong></p>
+<p>If you buy flowers, think about the rest of your morning. A small bundle is easier than trying to carry a fragile armful through scooters, cafés, and hotel lobbies.</p>
+<p><strong>Fold It Into A Lake Morning</strong></p>
+<p>The market makes the most sense with a West Lake-side morning, coffee after, or a slow ride back into the city. It does not need a full itinerary around it.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-quang-ba-flower-market</code>; ledger_row <code>172</code>; hero <code>HeroCityHanoiPlaceQuangBaFlowerMarket</code>.</li>
+<li>Phrase/audio: <code>price-1</code> / <code>price-1</code> mapped; <code>shop-5</code> / <code>shop-5</code> mapped; <code>v900-shop-im-looking-for-a-gift</code> / <code>v900-shop-im-looking-for-a-gift</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-quang-ba-flower-market</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>hanoi-west-lake</code> West Lake render; roses/chrysanthemums have no confirmed catalog rows, do_not_render.</li>
+<li>Related place candidates: <code>hanoi-long-bien-market</code>, <code>hanoi-west-lake</code>, <code>hanoi-west-lake-loop</code> for early-market or lake pairing; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites Hanoi tourism portal and legacy pre-dawn flower-market scene; verify current operating rhythm, best arrival window, access, and holiday-season crowd changes before import.</li>
+<li>Score: 27/30 — strong market moment and ready phrase fit; capped for time-sensitive market conditions and planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no unsupported flower-specific phrase card, no duplicate body, and no fixed hours or pricing claims; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Sông Hồng / Red River — Hanoi — River</h2>
+<h3>Reader View</h3>
+<p><strong>The City Opens At The Waterline</strong></p>
+<p>The Red River gives Hanoi a wider edge: Long Bien Bridge above, sandy banks below, boats, reflections, and evening light stretching the city out. It is not polished scenery. It is working water, and that is why it holds the view.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Đi bộ có xa quá không?</strong> — Is it too far to walk?</li>
+<li><strong>Tôi có đi qua cầu không?</strong> — Do I go over the bridge?</li>
+<li><strong>Cho tôi tới đây</strong> — Take me here.</li>
+</ul>
+<p><strong>Look From Long Bien First</strong></p>
+<p>Long Bien Bridge gives the river shape. From there, the banks, boats, and distance make more sense than they do from a random road edge.</p>
+<p><strong>Treat The Banks As Working Space</strong></p>
+<p>Do not read every open patch as a promenade. The river edge can be practical, uneven, and local. Stay aware of footing, traffic, and where people are actually moving.</p>
+<p><strong>Go For Light, Not A Long Walk</strong></p>
+<p>Evening light is the reason to linger. Keep the plan simple: one bridge view, one waterline pause, then a clear way back.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-red-river</code>; ledger_row <code>173</code>; hero <code>HeroCityHanoiPlaceRedRiver</code>.</li>
+<li>Phrase/audio: <code>v500-dire-navi-is-it-too-far-to-walk</code> / <code>v500-dire-navi-is-it-too-far-to-walk</code> mapped; <code>v500-dire-navi-do-i-go-over-the-bridge</code> / <code>v500-dire-navi-do-i-go-over-the-bridge</code> mapped; <code>taxi-1</code> / <code>taxi-1</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-red-river</code> planned; hide place-name audio until audio is available.</li>
+<li>Mentioned Here candidates: <code>hanoi-long-bien-bridge</code> Long Bien Bridge render; <code>hanoi-red-river</code> self item do_not_render as a card.</li>
+<li>Related place candidates: <code>hanoi-long-bien-bridge</code>, <code>hanoi-long-bien-market</code>, <code>hanoi-old-quarter</code> for route pairing; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites Hanoi tourism portal and legacy Long Bien/sandy banks/boats scene; verify current public access, bank conditions, safety, and bridge-area routing before import.</li>
+<li>Score: 27/30 — clear waterline behavior and restrained claims; capped for access and condition checks plus planned place-name audio.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no place-name phrase card, no duplicate body, and no fixed route or safety guarantee; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Nhà thờ Lớn Hà Nội / St. Joseph&#x27;s Cathedral — Hanoi — Landmark</h2>
+<h3>Reader View</h3>
+<p><strong>Old Lanes, Big Facade</strong></p>
+<p>St. Joseph&#x27;s Cathedral sits where old lanes, scooters, cafe umbrellas, and a tall facade all press into one square. Look from outside first; the building changes the pace of the block even before you step in.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Hôm nay có mở cửa không?</strong> — Is it open today?</li>
+</ul>
+<p><strong>Read The Square Before Entering</strong></p>
+<p>The outside is part of the stop: stone facade, passing scooters, people waiting, and cafés around the edges. Take that in before treating the cathedral as a quick interior check.</p>
+<p><strong>Keep Worship Clear Of The Camera</strong></p>
+<p>If the doors are open, enter gently. Ask before taking photos, avoid blocking anyone praying, and let the quiet inside stay quiet.</p>
+<p><strong>Coffee Can Wait Ten Minutes</strong></p>
+<p>The surrounding streets make it easy to turn the visit into a cafe plan. Give the cathedral its own short pause first, then walk toward Hoàn Kiếm or the old lanes.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>IDs: page_id <code>city-hanoi-place-st-joseph-cathedral</code>; ledger_row <code>174</code>; hero <code>HeroCityHanoiPlaceStJosephCathedral</code>.</li>
+<li>Phrase/audio: <code>v500-sigh-acti-where-is-the-entrance</code> / <code>v500-sigh-acti-where-is-the-entrance</code> mapped; <code>sight-3</code> / <code>sight-3</code> mapped; <code>v500-time-date-book-is-it-open-today</code> / <code>v500-time-date-book-is-it-open-today</code> mapped.</li>
+<li>Name audio: <code>city-hanoi-place-st-joseph-cathedral</code> / <code>audio-authored-nha-tho-lon-ha-noi-b724787e93</code> ready; render as pronunciation/name support only.</li>
+<li>Mentioned Here candidates: <code>hanoi-hoan-kiem-lake</code> Hoan Kiem Lake render; <code>hanoi-old-quarter</code> Old Quarter render.</li>
+<li>Related place candidates: <code>hanoi-loading-t-cafe</code>, <code>hanoi-dinh-cafe</code>, <code>hanoi-hoan-kiem-lake</code> for nearby route planning; needs catalog QA before rendering.</li>
+<li>Source/freshness notes: supplied row cites Hanoi tourism portal and legacy facade/scooters/cafe-umbrella scene; verify current church access, service-time limits, photo expectations, and any restoration notices before import.</li>
+<li>Score: 28/30 — specific first-screen scene and respectful visit behavior; capped for current access/photo checks.</li>
+<li>QA notes: Reader View has 3 ready-audio phrase cards, no unsupported name phrase card, no duplicate body, and no fixed opening or service-time claim; screenshot and production gates remain pending.</li>
+</ul>
+<h2>Codex handoff block</h2>
+<ul>
+<li><code>batch_id: batch_038</code></li>
+<li><code>page_ids: city-hanoi-place-loading-t-cafe, city-hanoi-place-pho-bat-dan, city-hanoi-place-pho-bo, city-hanoi-place-pho-bo-lam, city-hanoi-place-pho-ga, city-hanoi-place-pho-gia-truyen, city-hanoi-place-quan-thanh-temple, city-hanoi-place-quang-ba-flower-market, city-hanoi-place-red-river, city-hanoi-place-st-joseph-cathedral</code></li>
+<li><code>ready_to_import: no</code></li>
+<li><code>chat_output_is_canonical: yes</code></li>
+<li><code>google_doc_url: optional_or_missing</code></li>
+<li><code>phrase_cards_needing_catalog_check: none for visible cards; all visible cards use ready audio; dish-specific menu quick-say lines remain hidden until audio</code></li>
+<li><code>place_name_phrases: render_only_if_ready_audio_else_hide_until_audio</code></li>
+<li><code>visible_copy_risks: Pho restaurant differentiation is intentionally restrained; Loading T and Pho Bat Dan are thin-source; Quang Ba timing is framed without fixed hours</code></li>
+<li><code>source_freshness_risks: verify current venue hours, entrances, worship/photo access, market operating rhythm, riverbank access, and restaurant menu/payment flow before Jojo voice approval and Codex import</code></li>
+<li><code>next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval</code></li>
+</ul>
+<h1>BATCH_039</h1>
+<p>SpeakLocal v2.2 BATCH_039 - Hanoi - 2026-05-26</p>
+<h2>Đi bộ ăn vặt Hà Nội / Hanoi street-food walk</h2>
+<h3>Reader View</h3>
+<p><strong>A Meal Across Short Stops</strong></p>
+<p>A Hanoi street-food walk is less about chasing a list and more about letting the evening unfold in small plates: steam from a soup pot, herbs on a metal tray, low stools, a grill you smell before you see it. Keep the route loose and order lightly.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Cho tôi một phần</strong> — One portion, please.</li>
+<li><strong>Không cay nhé</strong> — Not spicy, please.</li>
+</ul>
+<p><strong>Small Orders Keep The Night Open</strong></p>
+<p>One dish per stop is the cleanest rhythm. A bowl of phở bò, a plate of bánh cuốn, or a shared bún chả can be enough before the next corner asks for attention.</p>
+<p><strong>Busy Tables Beat Loud Calls</strong></p>
+<p>A row of people finishing bowls says more than a bright sign. Watch for fast turnover, fresh herbs, and cooks who are already in motion.</p>
+<p><strong>Coffee Or Something Sweet Can Close The Loop</strong></p>
+<p>Leave room at the end. Egg coffee, fruit, or a small dessert stop lets the walk slow down instead of ending with one more heavy order.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-street-food-walk</code></li>
+<li>Phrase/audio: <code>price-1</code> / <code>price-1</code> ready; <code>food-1</code> / <code>food-1</code> ready; <code>food-3</code> / <code>food-3</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-street-food-walk</code> planned; hide until audio.</li>
+<li>Mentioned Here candidates: Bún chả <code>hanoi-bun-cha</code> / <code>food-bun-cha</code>; Bánh cuốn <code>hanoi-banh-cuon</code> / <code>food-banh-cuon</code>; Beef pho <code>hanoi-pho-bo</code> / <code>food-pho-bo</code>; Egg coffee <code>hanoi-egg-coffee</code> / <code>drink-ca-phe-trung</code>.</li>
+<li>Related place candidates: Old Quarter <code>hanoi-old-quarter</code>; Dong Xuan Market <code>hanoi-dong-xuan-market</code>; Hanoi Weekend Night Market <code>hanoi-weekend-night-market</code>.</li>
+<li>Source/freshness: Vietnam Travel Hanoi; MICHELIN Hanoi guide. Vendor mix, exact routes, prices, and opening patterns need late checks.</li>
+<li>Score: 27/30. QA: visible copy is specific and non-duplicative; phrase cards are ready-audio reusable; catalog/native and screenshot review still pending.</li>
+</ul>
+<h2>Phố Tạ Hiện / Ta Hien Street</h2>
+<h3>Reader View</h3>
+<p><strong>One Lap Before A Stool</strong></p>
+<p>Tạ Hiện is the Old Quarter at evening volume: low stools, warm signs, food smoke, small glasses of bia hơi, and groups deciding whether the night is one drink or several streets. Walk the block once before choosing a seat.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Không, cảm ơn</strong> — No, thank you.</li>
+</ul>
+<p><strong>Dusk Gives You More Choice</strong></p>
+<p>Earlier evening is easier for a first read. You can see the lane, compare seats, and decide whether you want food, beer, music, or just the scene.</p>
+<p><strong>Prices Before Bottles</strong></p>
+<p>Menus and drink prices are worth checking before you sit. The street gets louder as the night goes on, so handle the simple money question while conversation is still easy.</p>
+<p><strong>Leave Before It Turns Into Work</strong></p>
+<p>The charm is the compression: old lanes, close tables, noise, and food smoke in one short stretch. When it stops feeling fun, step back toward the lake or another Old Quarter lane.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-ta-hien</code></li>
+<li>Phrase/audio: <code>food-menu</code> / <code>food-menu</code> ready; <code>price-1</code> / <code>price-1</code> ready; <code>polite-4</code> / <code>polite-4</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-ta-hien</code> / <code>audio-authored-pho-ta-hien-fb695b0958</code> ready.</li>
+<li>Mentioned Here candidates: Bia hơi <code>hanoi-bia-hoi</code> / <code>drink-bia-hoi</code>; Old Quarter <code>hanoi-old-quarter</code>; Hoan Kiem Lake <code>hanoi-hoan-kiem-lake</code>.</li>
+<li>Related place candidates: Hanoi Weekend Night Market <code>hanoi-weekend-night-market</code>; Old Quarter walking route <code>hanoi-old-quarter-walking-tour</code>.</li>
+<li>Source/freshness: Vietnam Travel Hanoi. Current crowd controls, individual bar status, prices, and street conditions need late checks.</li>
+<li>Score: 27/30. QA: no numbered heading, no quote-wrapped phrase cards, ready audio mapped; nightlife details kept non-specific.</li>
+</ul>
+<h2>Tầm Vị / Tam Vi</h2>
+<h3>Reader View</h3>
+<p><strong>Dinner With A Northern Table Rhythm</strong></p>
+<p>Tầm Vị is the kind of Hanoi meal that asks you to slow down: warm wood, shared dishes, rice on the table, and a room that feels more like dinner than a quick refuel. Go when the meal can carry part of the evening.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi bàn cho hai người nhé</strong> — A table for two, please.</li>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Tôi có đặt chỗ</strong> — I have a booking.</li>
+</ul>
+<p><strong>Share More Than You Solo</strong></p>
+<p>The room makes more sense with a table order than a single-bowl mindset. Choose a few dishes, keep rice in the center, and let the meal move at a quieter pace.</p>
+<p><strong>Ask Early, Then Relax</strong></p>
+<p>Questions about pork, shellfish, spice, or table size are easiest before the first dish arrives. Once the order is settled, the appeal is the slower rhythm.</p>
+<p><strong>One Meal Can Be The Evening</strong></p>
+<p>Do not squeeze it between too many sights. The memory here is not one dramatic plate; it is the room, the table, and the feeling that dinner had enough time.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-tam-vi</code></li>
+<li>Phrase/audio: <code>food-need-table</code> / <code>food-need-table</code> ready; <code>food-menu</code> / <code>food-menu</code> ready; <code>time-4</code> / <code>time-4</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-tam-vi</code> / <code>audio-authored-tam-vi-1336abffcd</code> ready.</li>
+<li>Mentioned Here candidates: none visible; no dish-specific menu claims added.</li>
+<li>Related place candidates: none for this draft; restaurant comparisons can be added after Jojo review if desired.</li>
+<li>Source/freshness: MICHELIN Vietnam 2025. Current guide status, hours, booking pattern, menu, and holiday closures need late checks.</li>
+<li>Score: 26/30. QA: strong restaurant moment, but kept restrained because dish/menu specifics need confirmation; ready-audio phrase cards mapped.</li>
+</ul>
+<h2>Tây Hồ / Tay Ho</h2>
+<h3>Reader View</h3>
+<p><strong>Lake Air After The Old Quarter</strong></p>
+<p>Tây Hồ gives Hanoi a wider frame: lake glimpses, scooters under trees, cafes, small shops, and quieter residential edges. Think of it as one coffee, one short walk, and a clear ride back.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một cà phê sữa đá</strong> — One iced milk coffee, please.</li>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Bạn có thể giúp tôi quay lại khách sạn được không?</strong> — Can you help me get back to my hotel?</li>
+</ul>
+<p><strong>Choose One Edge</strong></p>
+<p>West Lake is too large for vague wandering. Pick a cafe street, a lake-view corner, or a short walk first, then let the rest of the area stay optional.</p>
+<p><strong>Cafes Before A Long Wander</strong></p>
+<p>A seat with a drink can make the neighborhood click faster than trying to cover every lane. After that, shops and side streets feel easier to read.</p>
+<p><strong>The Return Ride Matters</strong></p>
+<p>Tây Hồ can feel close on a map and longer on foot in heat or traffic. Decide your exit before the lake walk turns into a tired loop.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-tay-ho</code></li>
+<li>Phrase/audio: <code>coffee-1</code> / <code>coffee-1</code> ready; <code>directions-3</code> / <code>directions-3</code> ready; <code>v500-dire-navi-can-you-help-me-get-back-to-my-hotel</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-tay-ho</code> / <code>audio-authored-tay-ho-e1feb07783</code> ready.</li>
+<li>Mentioned Here candidates: West Lake <code>hanoi-west-lake</code>; Hoan Kiem Lake <code>hanoi-hoan-kiem-lake</code>; Hanoi coffee hop <code>hanoi-coffee-hop</code>.</li>
+<li>Related place candidates: West Lake loop <code>hanoi-west-lake-loop</code>; Truc Bach Lake <code>hanoi-truc-bach-lake</code>; Trieu Viet Vuong Coffee Street <code>hanoi-trieu-viet-vuong-coffee-street</code>.</li>
+<li>Source/freshness: Hanoi tourism portal. Named cafes, shops, traffic patterns, and neighborhood business turnover need late checks.</li>
+<li>Score: 27/30. QA: clear neighborhood behavior, varied headings, and ready audio; business-specific claims avoided.</li>
+</ul>
+<h2>Văn Miếu / Temple of Literature</h2>
+<h3>Reader View</h3>
+<p><strong>Courtyards Before The Stone Steles</strong></p>
+<p>Văn Miếu rewards a slower pace. Pass through the gates, let the courtyards reset your eyes, then notice the stone steles, red wood, tiled roofs, and shaded pauses instead of treating it like one photo stop.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Nhà vệ sinh ở đâu?</strong> — Where is the bathroom?</li>
+</ul>
+<p><strong>Move Gate By Gate</strong></p>
+<p>The visit has a natural sequence. Each courtyard changes the mood a little, so walking too quickly makes the place feel flatter than it is.</p>
+<p><strong>Read Stone, Then Look Up</strong></p>
+<p>The steles carry the memory, but the roofs, gates, trees, and red-painted wood carry the atmosphere. Give both kinds of detail a moment.</p>
+<p><strong>Quiet Is Part Of The Visit</strong></p>
+<p>Keep voices low, step aside for anyone praying or taking formal photos, and let the shade do some of the work. The place feels better when it is not rushed.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-temple-literature</code></li>
+<li>Phrase/audio: <code>v500-sigh-acti-where-is-the-entrance</code> ready; <code>sight-3</code> / <code>sight-3</code> ready; <code>bath-1</code> / <code>bath-1</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-temple-literature</code> / <code>audio-authored-van-mieu-1cb0b15574</code> ready.</li>
+<li>Mentioned Here candidates: none beyond the page itself.</li>
+<li>Related place candidates: Vietnam Fine Arts Museum <code>hanoi-vietnam-fine-arts-museum</code>; Imperial Citadel of Thang Long <code>hanoi-imperial-citadel</code>; Ho Chi Minh Mausoleum <code>hanoi-ho-chi-minh-mausoleum</code>.</li>
+<li>Source/freshness: Vietnam Travel Hanoi; Hanoi tourism portal. Hours, ticketing, photo expectations, and event closures need late checks.</li>
+<li>Score: 28/30. QA: specific landmark rhythm, ready audio, no volatile claims in Reader View.</li>
+</ul>
+<h2>The Note Coffee / The Note Coffee</h2>
+<h3>Reader View</h3>
+<p><strong>Order, Climb, Leave A Note</strong></p>
+<p>The Note Coffee is touristy, but the ritual is simple enough to enjoy. Order a drink, climb to a seat, read a few handwritten messages, and leave one of your own before the Old Quarter pulls you back outside.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Không đường nhé</strong> — No sugar, please.</li>
+<li><strong>Tôi có lên lầu không?</strong> — Do I go upstairs?</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>The Crowd Is Part Of The Trade</strong></p>
+<p>This is not the quiet Hanoi cafe fantasy. The notes, stairs, small tables, and people moving through the room are part of the memory.</p>
+<p><strong>Read A Few, Not Every Wall</strong></p>
+<p>Walls, ceilings, stairs, and tables can feel overloaded. Pick a few messages, write yours, and let the stop stay small.</p>
+<p><strong>One Drink Near The Lake Is Enough</strong></p>
+<p>Egg coffee or coconut coffee makes sense here, but the bigger point is the pause near Hoàn Kiếm. One drink and one note are plenty.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-the-note-coffee</code></li>
+<li>Phrase/audio: <code>coffee-5</code> / <code>coffee-5</code> ready; <code>v500-dire-navi-do-i-go-upstairs</code> ready; <code>coffee-7</code> / <code>coffee-7</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-the-note-coffee</code> planned; hide until audio.</li>
+<li>Mentioned Here candidates: Egg coffee <code>hanoi-egg-coffee</code> / <code>drink-ca-phe-trung</code>; Coconut coffee <code>drink-ca-phe-cot-dua</code>; Hoan Kiem Lake <code>hanoi-hoan-kiem-lake</code>; Old Quarter <code>hanoi-old-quarter</code>.</li>
+<li>Related place candidates: Cafe Giang <code>hanoi-giang-cafe</code>; Dinh Cafe <code>hanoi-dinh-cafe</code>; Hanoi coffee hop <code>hanoi-coffee-hop</code>.</li>
+<li>Source/freshness: place-name only plus canonical v2.2 shape. Current address, branch status, hours, menu, stairs, and crowd pattern need late checks.</li>
+<li>Score: 27/30. QA: matches tourist-ritual pattern without scolding; egg-coffee order phrase kept out of visible cards until audio is mapped.</li>
+</ul>
+<h2>Công viên Thống Nhất / Thong Nhat Park</h2>
+<h3>Reader View</h3>
+<p><strong>Breathing Room Around The Lake</strong></p>
+<p>Công viên Thống Nhất gives Hanoi a simple open-air pause: paths, trees, lake edges, morning walkers, families, and shade after too many street crossings. It does not need to be grand to be useful.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Nhà vệ sinh ở đâu?</strong> — Where is the bathroom?</li>
+<li><strong>Cho tôi chai nước</strong> — A bottle of water, please.</li>
+</ul>
+<p><strong>Morning Shows The Park</strong></p>
+<p>Earlier hours give the park its clearest rhythm: walkers, exercise groups, quiet benches, and the lake before the day gets heavy.</p>
+<p><strong>A Short Lap Helps</strong></p>
+<p>Choose a path and make one loop or partial loop. The park is better as a reset than as a checklist of features.</p>
+<p><strong>Shade Is The Main Point</strong></p>
+<p>On a hot day, the practical reward is simple: trees, a slower walking pace, and space to stop without buying another drink.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-thong-nhat-park</code></li>
+<li>Phrase/audio: <code>directions-3</code> / <code>directions-3</code> ready; <code>bath-1</code> / <code>bath-1</code> ready; <code>store-1</code> / <code>store-1</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-thong-nhat-park</code> planned; hide until audio.</li>
+<li>Mentioned Here candidates: none visible by name.</li>
+<li>Related place candidates: Bay Mau Lake <code>hanoi-bay-mau-lake</code>; Lenin Park <code>hanoi-lenin-park</code>; Yen So Park <code>hanoi-yen-so-park</code>.</li>
+<li>Source/freshness: Hanoi tourism portal. Access points, facilities, maintenance, events, and park hours need late checks.</li>
+<li>Score: 27/30. QA: restrained park copy with concrete movement; no unsupported facility claims beyond general traveler needs.</li>
+</ul>
+<h2>Phố đường tàu Hà Nội / Hanoi Train Street</h2>
+<h3>Reader View</h3>
+<p><strong>The View Stays On The Edge</strong></p>
+<p>Hanoi Train Street is memorable because the space is so tight: rail line, walls, cafe edges, signs, and people moving carefully around a narrow corridor. The point is not proving how close you can stand to the tracks.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Bây giờ nó có mở không?</strong> — Is it open now?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Tôi nên tránh những gì?</strong> — What should I avoid?</li>
+</ul>
+<p><strong>Access Changes, Safety Does Not</strong></p>
+<p>Rules and entry points can shift. Follow barriers, staff, and local instructions first; if the street is closed, do not turn the visit into an argument.</p>
+<p><strong>Cafes Are The Frame</strong></p>
+<p>When a permitted cafe seat is available, the better move is to stay back, keep bags off the rail area, and let the narrowness tell the story.</p>
+<p><strong>Keep The Photo Brief</strong></p>
+<p>A quick photo from a safe edge is enough. Crowding the track area makes the street worse for residents, cafe staff, and other travelers.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-train-street</code></li>
+<li>Phrase/audio: <code>v500-dire-navi-is-it-open-now</code> ready; <code>sight-3</code> / <code>sight-3</code> ready; <code>v500-sigh-acti-what-should-i-avoid</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-train-street</code> / <code>audio-authored-pho-duong-tau-ha-noi-ee65be1d03</code> ready.</li>
+<li>Mentioned Here candidates: Old Quarter <code>hanoi-old-quarter</code>; Hanoi Railway Station <code>hanoi-hanoi-railway-station</code>.</li>
+<li>Related place candidates: Nguyen Huu Huan Street <code>hanoi-nguyen-huu-huan-street</code>; Old Quarter walking route <code>hanoi-old-quarter-walking-tour</code>.</li>
+<li>Source/freshness: Hanoi tourism portal. Access rules, cafe operations, enforcement, train timing, and safety guidance require same-week checks.</li>
+<li>Score: 26/30. QA: safety-forward without fear language; current access uncertainty keeps score lower.</li>
+</ul>
+<h2>Chùa Trấn Quốc / Tran Quoc Pagoda</h2>
+<h3>Reader View</h3>
+<p><strong>A Lake-Edge Pagoda Pause</strong></p>
+<p>Chùa Trấn Quốc sits where the lake changes the whole visit: red tower, water, trees, temple gates, and a quieter pocket beside the road. Come for a short, respectful pause rather than a long site plan.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Cảm ơn</strong> — Thank you.</li>
+</ul>
+<p><strong>Arrive Softly</strong></p>
+<p>The shift from traffic to temple grounds is part of the experience. Slow down before the gate, then let the lake and courtyard set the pace.</p>
+<p><strong>Photos Need Space</strong></p>
+<p>The tower and water are easy to photograph, but this is also an active sacred place. Step aside, watch for prayer, and avoid making the camera the whole visit.</p>
+<p><strong>Pair It With West Lake</strong></p>
+<p>The pagoda makes the most sense as part of a West Lake or Trúc Bạch outing. Keep it short, then continue the lake edge while the light is still good.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-tran-quoc-pagoda</code></li>
+<li>Phrase/audio: <code>v500-sigh-acti-where-is-the-entrance</code> ready; <code>sight-3</code> / <code>sight-3</code> ready; <code>polite-2</code> / <code>polite-2</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-tran-quoc-pagoda</code> / <code>audio-authored-chua-tran-quoc-cfe2d77d7b</code> ready.</li>
+<li>Mentioned Here candidates: West Lake <code>hanoi-west-lake</code>; Truc Bach Lake <code>hanoi-truc-bach-lake</code>.</li>
+<li>Related place candidates: Quan Thanh Temple <code>hanoi-quan-thanh-temple</code>; West Lake loop <code>hanoi-west-lake-loop</code>; Tay Ho <code>hanoi-tay-ho</code>.</li>
+<li>Source/freshness: Hanoi tourism portal. Hours, access, ceremony activity, photo expectations, and crowd patterns need late checks.</li>
+<li>Score: 28/30. QA: concise sacred-place behavior; no ticket/hour claims; ready phrase audio mapped.</li>
+</ul>
+<h2>Tràng Tiền Plaza / Trang Tien Plaza</h2>
+<h3>Reader View</h3>
+<p><strong>Cool Air Between Street Moves</strong></p>
+<p>Tràng Tiền Plaza is the polished indoor break Hanoi sometimes hands you at exactly the right moment: a known corner near the lake, scooters outside, cool air inside, and storefronts that ask less from you than another crowded sidewalk.</p>
+<p><strong>Phrase cards</strong></p>
+<ul>
+<li><strong>Tôi chỉ xem thôi</strong> — I’m just looking.</li>
+<li><strong>Trả ở đâu?</strong> — Where do I pay?</li>
+<li><strong>Tôi quẹt thẻ được không?</strong> — Can I pay by card?</li>
+</ul>
+<p><strong>A Known Corner Helps</strong></p>
+<p>The facade and central location make it an easy meetup point near Hoàn Kiếm, the French Quarter, and Tràng Tiền Street. That can matter more than buying anything.</p>
+<p><strong>Browse Without Turning It Into A Mall Day</strong></p>
+<p>Step inside, cool down, check a shop or two, and leave before the city-center energy disappears. Hanoi is still waiting outside.</p>
+<p><strong>Heat And Rain Make The Case</strong></p>
+<p>The plaza is most useful when weather or street movement has worn you down. Treat it as a reset before the next walk, meal, or lake stop.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li><code>page_id: city-hanoi-place-trang-tien-plaza</code></li>
+<li>Phrase/audio: <code>shop-4</code> / <code>shop-4</code> ready; <code>shop-5</code> / <code>shop-5</code> ready; <code>store-6</code> / <code>store-6</code> ready.</li>
+<li>Place-name audio: <code>city-hanoi-place-trang-tien-plaza</code> planned; hide until audio.</li>
+<li>Mentioned Here candidates: Hoan Kiem Lake <code>hanoi-hoan-kiem-lake</code>; French Quarter <code>hanoi-french-quarter</code>; Trang Tien Street <code>hanoi-trang-tien-street</code>.</li>
+<li>Related place candidates: Hanoi Opera House <code>hanoi-opera-house</code>; Turtle Tower <code>hanoi-turtle-tower</code>; French Quarter walk <code>hanoi-french-quarter-walk</code>.</li>
+<li>Source/freshness: Hanoi tourism portal. Current tenants, hours, access, food counters, payment norms, and facade/entrance changes need late checks.</li>
+<li>Score: 26/30. QA: clear indoor-break behavior; retail specifics kept out until verified.</li>
+</ul>
+<h2>Codex handoff block</h2>
+<ul>
+<li><code>batch_id: batch_039</code></li>
+<li><code>page_ids: city-hanoi-place-street-food-walk, city-hanoi-place-ta-hien, city-hanoi-place-tam-vi, city-hanoi-place-tay-ho, city-hanoi-place-temple-literature, city-hanoi-place-the-note-coffee, city-hanoi-place-thong-nhat-park, city-hanoi-place-train-street, city-hanoi-place-tran-quoc-pagoda, city-hanoi-place-trang-tien-plaza</code></li>
+<li><code>ready_to_import: no</code></li>
+<li><code>chat_output_is_canonical: yes</code></li>
+<li><code>google_doc_url: optional_or_missing</code></li>
+<li><code>phrase_cards_needing_catalog_check: none_visible; hidden_or_planned_only: egg coffee order for The Note Coffee if Jojo wants a drink-specific card, note-paper request if audio is created later</code></li>
+<li><code>place_name_phrases: render_only_if_ready_audio_else_hide_until_audio</code></li>
+<li><code>visible_copy_risks: Train Street access can change; The Note Coffee details are source-thin; Tam Vi menu and guide status can change; Trang Tien Plaza tenants and food counters can change; Tay Ho business names intentionally omitted</code></li>
+<li><code>source_freshness_risks: same-week checks needed for Train Street access/safety, current restaurant/cafe hours and booking patterns, temple/pagoda access and photo expectations, park facilities/hours, and plaza tenant/payment details</code></li>
+<li><code>next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval</code></li>
+</ul>
+<h1>BATCH_040</h1>
+<p>SpeakLocal v2.2 BATCH_040 - Hanoi - 2026-05-26</p>
+<h2>Phố Tràng Tiền / Trang Tien Street</h2>
+<h3>Reader View</h3>
+<p><strong>One Street For French Quarter Bearings</strong></p>
+<p>Tràng Tiền is the kind of Hanoi street that makes the old center feel walkable: trees, shopfronts, book edges, scooters moving in waves, and crossings that ask for patience. Treat it as a short orientation line, not a shopping mission.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Cho hỏi, đi tới đó thế nào?</strong> — Excuse me, how do I get there?</li>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Tôi chỉ xem thôi</strong> — I’m just looking.</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Read It In One Pass</strong></p>
+<p>The street is better after one slow walk. Notice the shade, the shop signs, the crossings, and where the pavement opens before deciding whether to stop.</p>
+<p><strong>Crossings Set The Pace</strong></p>
+<p>Do not rush the street just because it looks central. Scooters, curb edges, and parked bikes make the walk feel very Hanoi; pause, choose your gap, and keep the move simple.</p>
+<p><strong>Pair It With The Lake Side</strong></p>
+<p>Tràng Tiền makes sense before or after Hoàn Kiếm, the Opera House side, or a short French Quarter walk. It gives the area a spine instead of turning the old center into scattered pins.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-trang-tien-street</code></li>
+<li>Phrase/audio: <code>directions-how-to-get / directions-1</code> ready; <code>directions-how-long / directions-3</code> ready; <code>shopping-just-looking / shop-4</code> ready.</li>
+<li>Place-name audio: <code>Phố Tràng Tiền</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: Hoàn Kiếm Lake <code>hanoi-hoan-kiem-lake</code> render; Hanoi Opera House <code>hanoi-opera-house</code> render; French Quarter walk <code>hanoi-french-quarter-walk</code> render.</li>
+<li>Related place candidates: Trang Tien Plaza <code>hanoi-trang-tien-plaza</code> as nearby street context; French Quarter <code>hanoi-french-quarter</code> as area context.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy city-v1 source. Shopfronts and café edges may change; visible copy avoids exact business claims.</li>
+<li>Score: 26/30 draft. Strong street role and traveler movement; capped for thin evidence and place-name audio not ready.</li>
+<li>QA notes: Reader View avoids process terms; no numbered heading; phrase cards are ready reusable rows; no duplicate bodies; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Phố cà phê Triệu Việt Vương / Trieu Viet Vuong Coffee Street</h2>
+<h3>Reader View</h3>
+<p><strong>Coffee Street Before The Café Choice</strong></p>
+<p>Triệu Việt Vương is easier when the street is the decision, not one must-find café. Walk past the signs, listen for the room you want, then choose a short coffee pause under the trees before the scooters pull your attention back.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Cho tôi một cà phê sữa đá</strong> — One iced milk coffee, please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>One Lap Changes The Order</strong></p>
+<p>A first pass keeps you from sitting at the first open doorway. Look for shade, table height, fan noise, and whether the room feels like a quick cup or a longer pause.</p>
+<p><strong>Small Order, Better Read</strong></p>
+<p>A basic cà phê sữa đá is enough for the first stop. You can always add a second café later; the street is built for comparing moods, not proving loyalty to one address.</p>
+<p><strong>Leave Before It Turns Into A Search</strong></p>
+<p>Coffee streets can make choice feel endless. Pick a table, drink slowly, then move on while the pause still feels like part of the day rather than a research project.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-trieu-viet-vuong-coffee-street</code></li>
+<li>Phrase/audio: <code>food-menu / food-menu</code> ready; <code>food-coffee-milk / coffee-1</code> ready; <code>food-pay-now / coffee-7</code> ready.</li>
+<li>Place-name audio: <code>Phố cà phê Triệu Việt Vương</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: Iced milk coffee <code>hanoi-ca-phe-sua-da</code> render; Hanoi coffee hop <code>hanoi-coffee-hop</code> render.</li>
+<li>Related place candidates: Cộng Cà Phê <code>hanoi-cong-ca-phe-trieu-viet-vuong</code> render only if the app wants a named café card; Hanoi coffee hop <code>hanoi-coffee-hop</code> render.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy street source. Individual cafés and signs can change quickly; visible copy keeps the street behavior durable.</li>
+<li>Score: 27/30 draft. Clear traveler choice and ready phrases; capped for business turnover and place-name audio not ready.</li>
+<li>QA notes: No quote-wrapped phrase cards; no repeated heading scaffold; menu/catalog scan completed for coffee item; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Hồ Trúc Bạch / Truc Bach Lake</h2>
+<h3>Reader View</h3>
+<p><strong>Water First, Café After</strong></p>
+<p>Trúc Bạch gives Hanoi a quieter shape: water close to the curb, lakeside tables, narrow crossings, and neighborhood views that feel slower than the traffic around it. Arrive for the edge first; sit only after you know which side feels calm.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Ở gần đây không?</strong> — Is it near here?</li>
+<li><strong>Chỉ trên bản đồ giúp tôi được không?</strong> — Can you show me on the map?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>The Loop Can Stay Short</strong></p>
+<p>You do not need to circle everything. A short lake-edge walk is enough to understand the mood: water, shade, scooters, small tables, and the city softening around the view.</p>
+<p><strong>Cafés Belong To The Scene</strong></p>
+<p>A lakeside café is not an escape from the place; it is part of how Trúc Bạch works. Choose the table after you see light, noise, and traffic from the edge.</p>
+<p><strong>West Lake Makes The Pairing Bigger</strong></p>
+<p>If the day is already on the north side, Trúc Bạch can sit beside West Lake, Trấn Quốc Pagoda, or a longer water walk. Keep the plan loose enough for weather and crossings.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-truc-bach-lake</code></li>
+<li>Phrase/audio: <code>directions-how-long / directions-3</code> ready; <code>directions-near / directions-2</code> ready; <code>repair-show-me / repair-5</code> ready.</li>
+<li>Place-name audio: <code>Hồ Trúc Bạch</code> ready, <code>audio-authored-ho-truc-bach-2d9fcbf59f</code>.</li>
+<li>Mentioned Here candidates: West Lake <code>hanoi-west-lake</code> render; Trấn Quốc Pagoda <code>hanoi-tran-quoc-pagoda</code> render.</li>
+<li>Related place candidates: West Lake loop <code>hanoi-west-lake-loop</code> render; Quan Thanh Temple <code>hanoi-quan-thanh-temple</code> render if nearby-route cards are wanted.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy lake source. Café names, seating, and exact walking conditions may change; visible copy stays non-volatile.</li>
+<li>Score: 28/30 draft. Strong physical traveler moment and ready place audio; capped for route/freshness checks.</li>
+<li>QA notes: Reader View keeps check/status language out; phrase cards are reusable; no duplicate bodies; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Tháp Rùa / Turtle Tower</h2>
+<h3>Reader View</h3>
+<p><strong>Find The Tower From The Lake Edge</strong></p>
+<p>Turtle Tower is not a stop you enter. It is the small shape that holds Hoàn Kiếm together when the lake, trees, walkers, and old-center traffic are all moving around you. Stand back, let the water do the work, and keep it as an orientation point.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Cho hỏi, đi tới đó thế nào?</strong> — Excuse me, how do I get there?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>The View Is The Visit</strong></p>
+<p>The tower sits apart on the water, so the useful move is choosing your angle. Look from different lake edges instead of treating it like a building with an entrance.</p>
+<p><strong>Legend Without A Lecture</strong></p>
+<p>You do not need the full story before the view works. The tower, the lake name, the reflections, and the old streets nearby already carry enough memory for a first look.</p>
+<p><strong>A Short Loop Is Enough</strong></p>
+<p>Pair the tower with a Hoàn Kiếm walk, Ngọc Sơn Temple, or the Old Quarter edge. It is a small moment, but it gives the center of Hanoi a clear mental picture.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-turtle-tower</code></li>
+<li>Phrase/audio: <code>directions-how-to-get / directions-1</code> ready; <code>sight-photos / sight-3</code> ready; <code>directions-how-long / directions-3</code> ready.</li>
+<li>Place-name audio: <code>Tháp Rùa</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: Hoàn Kiếm Lake <code>hanoi-hoan-kiem-lake</code> render; Ngọc Sơn Temple <code>hanoi-ngoc-son-temple</code> render; Old Quarter <code>hanoi-old-quarter</code> render.</li>
+<li>Related place candidates: Old Quarter walking route <code>hanoi-old-quarter-walking-tour</code> render; Hoàn Kiếm Lake <code>hanoi-hoan-kiem-lake</code> render.</li>
+<li>Freshness/source notes: Vietnam Travel Hanoi and Hanoi tourism portal plus legacy lake/legend source. Visible copy avoids hours, access rules, or event timing.</li>
+<li>Score: 28/30 draft. Clear landmark decision and grounded lake behavior; capped for place-name audio not ready and render review pending.</li>
+<li>QA notes: No banned opener; no unsupported one-off phrase; Mentioned Here scan completed; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Ưu Đàm / Uu Dam</h2>
+<h3>Reader View</h3>
+<p><strong>A Calm Vegetarian Table</strong></p>
+<p>Ưu Đàm should feel like a meal chosen on purpose, not a compromise between sights. Expect a calmer room, herbs, clay bowls, and a slower table rhythm than the steam-and-stool meals outside.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Cho tôi bàn cho hai người nhé</strong> — A table for two, please.</li>
+<li><strong>Tôi ăn chay</strong> — I am vegetarian.</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Choose Fewer Dishes First</strong></p>
+<p>A vegetarian meal can still spread wide. Begin with a few plates, see portion size, then add more only if the table still feels balanced.</p>
+<p><strong>Vegetarian Does Not Mean Light</strong></p>
+<p>Tofu, mushrooms, herbs, sauces, rice, and warm bowls can make the meal feel full without meat. Ask about heat or ingredients before assuming every dish will be gentle.</p>
+<p><strong>Make The Meal The Pause</strong></p>
+<p>This is the kind of restaurant to place after a dense walking day. Let the room slow the evening instead of squeezing it between two bigger plans.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-udam</code></li>
+<li>Phrase/audio: <code>food-menu / food-menu</code> ready; <code>food-need-table / food-need-table</code> ready; <code>food-vegetarian / food-vegetarian</code> ready.</li>
+<li>Place-name audio: <code>Ưu Đàm</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: none for visible copy; menu items are intentionally not named without current menu confirmation.</li>
+<li>Related place candidates: none recommended for first render; optional later comparison with other MICHELIN Hanoi restaurants after catalog review.</li>
+<li>Freshness/source notes: MICHELIN Vietnam 2025 plus legacy restaurant source. Current menu, hours, booking pattern, and holiday closures need a late check.</li>
+<li>Score: 26/30 draft. Good meal rhythm and safe phrase set; capped for current venue facts and menu specificity limits.</li>
+<li>QA notes: Food/menu catalog checked; no unsupported dish claims; phrase cards are ready reusable rows; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Vietnam Art Gallery / Vietnam Art Gallery</h2>
+<h3>Reader View</h3>
+<p><strong>A Gallery Stop Between Street Hours</strong></p>
+<p>Vietnam Art Gallery works as a quiet reset inside a Hanoi day: white walls, framed work, softer light, and enough room to look slowly before going back to traffic and café corners.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+<li><strong>Có hướng dẫn tiếng Anh không?</strong> — Is there an English guide?</li>
+<li><strong>Dịch giúp tôi cái này được không?</strong> — Can you translate this for me?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Choose A Few Works, Not Every Wall</strong></p>
+<p>A small gallery visit is better when you give yourself a limit. Pick a few pieces to really see, then leave before the stop turns into polite label-reading.</p>
+<p><strong>Lacquer And Local Materials Matter</strong></p>
+<p>Look for surfaces, texture, and how the work handles light. The gallery is a useful counterpoint to street Hanoi because the pace changes so quickly once you step inside.</p>
+<p><strong>Keep The Stop Light</strong></p>
+<p>This does not need to become a full museum block. Pair it with a café pause or a nearby walk, then return to the city with your eyes reset.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-vietnam-art-gallery</code></li>
+<li>Phrase/audio: <code>sight-photos / sight-3</code> ready; <code>v900-sigh-acti-is-there-an-english-guide / v900-sigh-acti-is-there-an-english-guide</code> ready; <code>repair-translate-this / repair-translate-this</code> ready.</li>
+<li>Place-name audio: venue name planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: none; visible copy names no catalogable artwork or artist.</li>
+<li>Related place candidates: Vietnam Fine Arts Museum <code>hanoi-vietnam-fine-arts-museum</code> render; Manzi Art Space <code>hanoi-manzi-art-space</code> render if gallery comparison cards are enabled.</li>
+<li>Freshness/source notes: Vietnam Travel Hanoi plus legacy gallery source. Current exhibitions, photo policy, and opening status require a late check.</li>
+<li>Score: 26/30 draft. Calm and specific enough for a thin-evidence gallery; capped for exhibit/photo freshness and place-name audio not ready.</li>
+<li>QA notes: No schema terms in Reader View; no forced Mentioned Here cards; phrase cards ready; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Rạp Xiếc Trung ương / Vietnam Central Circus</h2>
+<h3>Reader View</h3>
+<p><strong>A Live Night, Not Another Building</strong></p>
+<p>Vietnam Central Circus is an evening switch: theatre doors, stage light, families moving through the entrance, and Hanoi street activity outside. Go for the performance energy, not for another exterior to photograph.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Vé bao nhiêu?</strong> — How much is the ticket?</li>
+<li><strong>Mấy giờ?</strong> — What time?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Arrive With A Buffer</strong></p>
+<p>Circus nights are easier when the first move is not rushed. Give yourself time for the entrance, tickets, seats, and the small confusion that comes with any live venue.</p>
+<p><strong>Street Energy At The Door</strong></p>
+<p>The building exterior is part of the memory: lights, traffic, people arriving, and the shift from pavement noise to stage focus. That transition is the reason to make it an evening stop.</p>
+<p><strong>Keep The Night Uncrowded</strong></p>
+<p>Do not stack too many cultural stops around it. Dinner, the show, and a simple ride back will usually feel better than trying to force one more landmark afterward.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-vietnam-circus</code></li>
+<li>Phrase/audio: <code>sight-ticket / sight-1</code> ready; <code>time-what-time / time-1</code> ready; <code>sight-photos / sight-3</code> ready.</li>
+<li>Place-name audio: <code>Rạp Xiếc Trung ương</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: none in visible copy.</li>
+<li>Related place candidates: Vietnam National Tuong Theatre <code>hanoi-vietnam-national-tuong-theatre</code> render; Thang Long Water Puppet Theatre <code>hanoi-water-puppet-theatre</code> render; Hanoi Opera House <code>hanoi-opera-house</code> render.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy performance-venue source. Current show schedule, ticketing, seating, and photo rules need a late check.</li>
+<li>Score: 26/30 draft. Clear live-event traveler moment; capped for schedule freshness and place-name audio not ready.</li>
+<li>QA notes: Phrase cards are reusable and not venue-specific; no repeated station/route scaffold; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Bảo tàng Mỹ thuật Việt Nam / Vietnam Fine Arts Museum</h2>
+<h3>Reader View</h3>
+<p><strong>Three Rooms Beat Every Label</strong></p>
+<p>Vietnam Fine Arts Museum rewards a shorter, more deliberate visit. The yellow building and shaded courtyard give you a pause first; the galleries make more sense when you choose a few rooms instead of trying to absorb every case.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Vé bao nhiêu?</strong> — How much is the ticket?</li>
+<li><strong>Có hướng dẫn tiếng Anh không?</strong> — Is there an English guide?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>The Building Slows The Day</strong></p>
+<p>Arrive with enough time to notice the courtyard, stairs, banners, and quieter light before the galleries. The first shift is from street speed to museum pace.</p>
+<p><strong>Follow Materials Across Rooms</strong></p>
+<p>Rather than reading every label, look for lacquer, silk, sculpture, folk forms, and how Vietnamese art changes across periods. A few repeated materials will teach faster than a full sweep.</p>
+<p><strong>A Real Indoor Break</strong></p>
+<p>This is not just shelter from heat or rain. It gives Hanoi a quieter cultural layer, especially when your day has been mostly lakes, streets, and food.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-vietnam-fine-arts-museum</code></li>
+<li>Phrase/audio: <code>sight-ticket / sight-1</code> ready; <code>v900-sigh-acti-is-there-an-english-guide / v900-sigh-acti-is-there-an-english-guide</code> ready; <code>sight-photos / sight-3</code> ready.</li>
+<li>Place-name audio: <code>Bảo tàng Mỹ thuật Việt Nam</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: none for visible copy; art materials are not mapped as place cards.</li>
+<li>Related place candidates: Vietnam Art Gallery <code>hanoi-vietnam-art-gallery</code> render; Vietnam Museum of Ethnology <code>hanoi-ethnology-museum</code> render if museum comparison cards are enabled.</li>
+<li>Freshness/source notes: Vietnam Travel Hanoi and Hanoi tourism portal plus legacy museum source. Ticketing, hours, temporary exhibitions, and photo policy need a late check.</li>
+<li>Score: 27/30 draft. Strong museum-fatigue prevention and observed details; capped for current-operations checks and place-name audio not ready.</li>
+<li>QA notes: No duplicate bodies; phrase cards sit immediately after intro; Mentioned Here scan completed; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Bảo tàng Lịch sử Quân sự Việt Nam / Vietnam Military History Museum</h2>
+<h3>Reader View</h3>
+<p><strong>Outside First, Gallery After</strong></p>
+<p>Vietnam Military History Museum is easier when you let the outdoor scale settle before the display cases: metal, open space, military objects, and the quieter rooms that carry the harder context. Keep the visit focused; this is not a light filler stop.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Vé bao nhiêu?</strong> — How much is the ticket?</li>
+<li><strong>Có hướng dẫn tiếng Anh không?</strong> — Is there an English guide?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Outdoor Scale Comes First</strong></p>
+<p>Begin with the large objects outside if that route is open. Size, weather, and open air change how the history lands before you move into smaller displays.</p>
+<p><strong>Inside Needs A Slower Pace</strong></p>
+<p>The rooms can carry more weight than the exterior suggests. Choose one period or theme to follow instead of trying to turn the visit into a complete history lesson.</p>
+<p><strong>Leave Space Afterward</strong></p>
+<p>This museum can make the rest of the day feel heavier. Plan something simple next: a walk, a quiet drink, or a ride back without another demanding stop.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-vietnam-military-history-museum</code></li>
+<li>Phrase/audio: <code>sight-ticket / sight-1</code> ready; <code>v900-sigh-acti-is-there-an-english-guide / v900-sigh-acti-is-there-an-english-guide</code> ready; <code>sight-photos / sight-3</code> ready.</li>
+<li>Place-name audio: <code>Bảo tàng Lịch sử Quân sự Việt Nam</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: Hanoi Flag Tower <code>hanoi-hanoi-flag-tower</code> hold for freshness review before render.</li>
+<li>Related place candidates: Hoa Lo Prison Relic <code>hanoi-hoa-lo-prison</code> render; Imperial Citadel of Thang Long <code>hanoi-imperial-citadel</code> render.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy museum source. Strong freshness risk around current site routing, exhibits, and any old Flag Tower framing; visible copy avoids naming the tower.</li>
+<li>Score: 25/30 draft. Safer voice and visit shape, but capped for source freshness risk and place-name audio not ready.</li>
+<li>QA notes: Visible copy avoids stale location-specific claims; phrase cards ready; Mentioned Here held to review; native render pending.</li>
+</ul>
+<div class="sep"></div>
+<h2>Nhà hát Tuồng Việt Nam / Vietnam National Tuong Theatre</h2>
+<h3>Reader View</h3>
+<p><strong>One Traditional Stage For The Night</strong></p>
+<p>Vietnam National Tuong Theatre gives Hanoi a different evening register: masks, red curtain, stage light, and a performance form that may feel unfamiliar before it clicks. Go for the form and the room, not for a museum-style explanation.</p>
+<h3>Useful phrase cards</h3>
+<ul>
+<li><strong>Vé bao nhiêu?</strong> — How much is the ticket?</li>
+<li><strong>Mấy giờ?</strong> — What time?</li>
+<li><strong>Tôi chụp hình ở đây được không?</strong> — Can I take photos here?</li>
+</ul>
+<h3>Sections</h3>
+<p><strong>Stylized Is The Point</strong></p>
+<p>Tuồng can feel formal, loud, and symbolic if you arrive expecting naturalistic theatre. Watch the masks, gestures, music, and movement before worrying about catching every plot detail.</p>
+<p><strong>Arrive Before The First Cue</strong></p>
+<p>A short buffer helps with tickets, seats, and the first look at the room. The evening will feel better if you are not entering halfway through the atmosphere.</p>
+<p><strong>A Quieter Pairing Helps</strong></p>
+<p>Keep the rest of the night simple: an early dinner, the show, then a calm ride back. The performance should have room to stay strange, vivid, and specific.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hanoi-place-vietnam-national-tuong-theatre</code></li>
+<li>Phrase/audio: <code>sight-ticket / sight-1</code> ready; <code>time-what-time / time-1</code> ready; <code>sight-photos / sight-3</code> ready.</li>
+<li>Place-name audio: <code>Nhà hát Tuồng Việt Nam</code> planned; hide until ready audio.</li>
+<li>Mentioned Here candidates: none in visible copy.</li>
+<li>Related place candidates: Vietnam Central Circus <code>hanoi-vietnam-circus</code> render; Thang Long Water Puppet Theatre <code>hanoi-water-puppet-theatre</code> render; Hanoi Opera House <code>hanoi-opera-house</code> render.</li>
+<li>Freshness/source notes: Hanoi tourism portal plus legacy performance-venue source. Current schedule, ticketing, language support, and photo rules need a late check.</li>
+<li>Score: 27/30 draft. Strong expectation-setting for a traditional performance; capped for schedule freshness and place-name audio not ready.</li>
+<li>QA notes: No quote-wrapped phrase cards; no repeated intro scaffolds; performance copy stays practical without flattening the form; native render pending.</li>
+</ul>
+<h2>Codex handoff block</h2>
+<p>```markdown</p>
+<ul>
+<li><code>batch_id: batch_040</code></li>
+<li><code>page_ids: city-hanoi-place-trang-tien-street, city-hanoi-place-trieu-viet-vuong-coffee-street, city-hanoi-place-truc-bach-lake, city-hanoi-place-turtle-tower, city-hanoi-place-udam, city-hanoi-place-vietnam-art-gallery, city-hanoi-place-vietnam-circus, city-hanoi-place-vietnam-fine-arts-museum, city-hanoi-place-vietnam-military-history-museum, city-hanoi-place-vietnam-national-tuong-theatre</code></li>
+<li><code>ready_to_import: no</code></li>
+<li><code>chat_output_is_canonical: yes</code></li>
+<li><code>google_doc_url: optional_or_missing</code></li>
+<li><code>phrase_cards_needing_catalog_check: none; visible phrase cards use ready-audio reusable traveler-action rows from Phrase Picker</code></li>
+<li><code>place_name_phrases: render_only_if_ready_audio_else_hide_until_audio</code></li>
+<li><code>visible_copy_risks: Vietnam Military History Museum intentionally avoids old-site specifics; Uu Dam avoids current menu specifics; gallery and performance pages avoid current exhibitions/schedules</code></li>
+<li><code>source_freshness_risks: current hours, ticketing, photo rules, performance schedules, gallery exhibitions, restaurant menu/booking pattern, and Vietnam Military History Museum site routing need late checks</code></li>
+<li><code>next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval</code></li>
+</ul>
+<p>```</p>
+<h1>BATCH_041</h1>
+<p>SpeakLocal v2.2 BATCH_041 - Hanoi/Saigon - 2026-05-26</p>
+<h2>Nhà hát Múa rối Thăng Long / Thang Long Water Puppet Theatre — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>An Evening Show With Real Hanoi Texture</strong></p>
+<p>Thang Long Water Puppet Theatre turns a Hoàn Kiếm evening into something warmer than another lake loop. The dark water, live music, lacquered puppets, and small-stage timing give Vietnamese performance a shape you can remember after the lights come up.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Vé bao nhiêu?</strong> — How much is the ticket?</li>
+<li><strong>Tôi có thể chọn chỗ ngồi của mình không?</strong> — Can I choose my seat?</li>
+<li><strong>Nó bắt đầu lúc mấy giờ?</strong> — What time does it start?</li>
+</ul>
+<p><strong>Arrive Before The Curtain</strong></p>
+<p>The theatre sits in a busy central pocket, so the first win is simple: arrive with enough time to find the door, settle your seat, and stop treating the show like one more errand between photos.</p>
+<p><strong>Music Does More Than Decorate</strong></p>
+<p>The puppets are the image people remember, but the musicians give the show its pulse. Listen for the drum hits, voices, and water sounds before trying to follow every story beat.</p>
+<p><strong>Check Photos Before You Lift The Phone</strong></p>
+<p>Stage rules can change, and a phone screen is the fastest way to pull yourself out of the room. Ask first, then put the show back in front of you.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>sight-1</code> / <code>sight-1</code> ready; <code>v500-time-date-book-can-i-choose-my-seat</code> / same ready; <code>v900-time-date-book-what-time-does-it-start</code> / same ready.</li>
+<li>Mentioned Here candidates: Hoàn Kiếm Lake — <code>hanoi-hoan-kiem-lake</code>, place, <code>render</code>; Old Quarter — <code>hanoi-old-quarter</code>, neighborhood, <code>check_catalog</code> if copy later names it.</li>
+<li>Related place candidates: Hanoi Opera House — <code>hanoi-opera-house</code>, performance contrast, <code>check_catalog</code>; Hoàn Kiếm Lake — <code>hanoi-hoan-kiem-lake</code>, evening pairing, <code>render</code>.</li>
+<li>Place-name audio: <code>city-hanoi-place-water-puppet-theatre</code> ready, <code>audio-authored-nha-hat-mua-roi-thang-long-bee079cc3d</code>.</li>
+<li>Freshness/source: Vietnam Travel Hanoi source; recheck show times, ticket flow, seat rules, and photo policy before import.</li>
+<li>Score/QA: 28/30. Voice pass; phrase cards ready; catalog candidates evaluated; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Chợ đêm phố cổ Hà Nội / Hanoi Weekend Night Market — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>A Slow Lap Before The Lights Take Over</strong></p>
+<p>Hanoi Weekend Night Market is less about one famous stall than the Old Quarter changing gears after dark. Stalls open into the street, walkers thicken, and the better move is to browse once before committing to food, small gifts, or a photo stop.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Bớt chút được không?</strong> — Can you lower it a little?</li>
+<li><strong>Tôi chỉ xem thôi.</strong> — I’m just looking.</li>
+</ul>
+<p><strong>Browse Once Before Buying</strong></p>
+<p>Give yourself one pass with your hands free. The first stall is rarely the only version, and the walk makes it easier to see which prices, snacks, and souvenirs repeat.</p>
+<p><strong>Keep Orders Small</strong></p>
+<p>Night-market food is better in rounds than in one heavy decision. Try one snack, keep moving, then decide whether the crowd still feels fun.</p>
+<p><strong>Step Out When The Street Narrows</strong></p>
+<p>The best parts can also be the tightest: warm lights, food smoke, bikes at the edges, and people stopping suddenly. Keep your bag close and pause at the side before checking your phone.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>price-1</code> / <code>price-1</code> ready; <code>price-4</code> / <code>price-4</code> ready; <code>shop-4</code> / <code>shop-4</code> ready.</li>
+<li>Mentioned Here candidates: Old Quarter — <code>hanoi-old-quarter</code>, neighborhood, <code>render</code>; Hoàn Kiếm Lake — <code>hanoi-hoan-kiem-lake</code>, nearby place, <code>check_catalog</code> if copy later names it.</li>
+<li>Related place candidates: Old Quarter walking route — <code>hanoi-old-quarter-walking-tour</code>, route pairing, <code>check_catalog</code>; Dong Xuan Market — <code>hanoi-dong-xuan</code>, daytime market contrast, <code>check_catalog</code>.</li>
+<li>Place-name audio: <code>city-hanoi-place-weekend-night-market</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: Vietnam Travel Hanoi source; recheck weekend timing, street coverage, stall mix, and any pedestrian rules.</li>
+<li>Score/QA: 28/30. Market behavior clear; phrase cards ready; no one-off phrases; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Hồ Tây / West Lake — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>A Water Break From The Street Noise</strong></p>
+<p>West Lake gives Hanoi a wider horizon: shore roads, café edges, temple silhouettes, and long views that change with the weather. It is the place for a walk, coffee, or sunset pause when the Old Quarter feels too tight.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Ở gần đây không?</strong> — Is it near here?</li>
+<li><strong>Tôi có thể đi bộ tới đó được không?</strong> — Can I walk there?</li>
+</ul>
+<p><strong>Choose One Shoreline</strong></p>
+<p>The lake is bigger than it looks on a phone. Pick one edge for the day—Tây Hồ café streets, the temple side, or a short sunset stretch—rather than trying to fold the whole lake into a quick gap.</p>
+<p><strong>Cafés Make The Pause Easier</strong></p>
+<p>A drink gives the view a frame. Sit near the water, watch the scooters and walkers pass, then decide whether you want more shoreline or a ride back into the center.</p>
+<p><strong>Temples And Neighborhoods Change The Mood</strong></p>
+<p>Tran Quoc Pagoda, Tây Hồ streets, and smaller lake roads each give a different version of the same water. The lake can hold the pause even when haze softens the view.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>directions-3</code> / <code>directions-3</code> ready; <code>directions-2</code> / <code>directions-2</code> ready; <code>v500-dire-navi-can-i-walk-there</code> / same ready.</li>
+<li>Mentioned Here candidates: Tây Hồ — <code>hanoi-tay-ho</code>, neighborhood, <code>render</code>; Tran Quoc Pagoda — <code>hanoi-tran-quoc-pagoda</code>, landmark, <code>render</code>; Old Quarter — <code>hanoi-old-quarter</code>, neighborhood, <code>check_catalog</code>.</li>
+<li>Related place candidates: West Lake loop — <code>hanoi-west-lake-loop</code>, route pairing, <code>render</code>; Tran Quoc Pagoda — <code>hanoi-tran-quoc-pagoda</code>, nearby landmark, <code>render</code>.</li>
+<li>Place-name audio: <code>city-hanoi-place-west-lake</code> ready, <code>audio-authored-ho-tay-e93d0b9507</code>.</li>
+<li>Freshness/source: Hanoi tourism portal source; recheck access notes only if future copy adds hours, parking, events, or venue claims.</li>
+<li>Score/QA: 29/30. Calm, specific, and low-risk; phrase cards ready; catalog candidates evaluated; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Vòng Hồ Tây / West Lake loop — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>Circle Only As Much As The Day Allows</strong></p>
+<p>The West Lake loop sounds tidy on a map, but in real Hanoi it is a long shoreline with scooters, shade gaps, cafés, and changing sidewalks. Treat it as a flexible ride or walk in sections, not a promise to finish every meter.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Điểm đón ở đâu?</strong> — Where is the pickup point?</li>
+<li><strong>Tôi gặp tài xế ở đâu?</strong> — Where do I meet the driver?</li>
+</ul>
+<p><strong>Pick A Section Before Moving</strong></p>
+<p>A short, good stretch beats a heroic loop done tired. Choose a side near your café, temple stop, or hotel route, then let the lake decide how far you keep going.</p>
+<p><strong>Leave Room For Traffic And Heat</strong></p>
+<p>The road rhythm changes fast: quiet water, then scooter clusters, then a tight corner with no patience for wandering. Keep the plan loose, especially in midday heat.</p>
+<p><strong>End Near Food Or A Ride Point</strong></p>
+<p>The loop is easier when the finish is already imagined. End near a café, a known street, or a pickup point instead of waiting until you are tired to solve the ride back.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>directions-3</code> / <code>directions-3</code> ready; <code>directions-8</code> / <code>directions-8</code> ready; <code>airport-pickup-clearer</code> / <code>airport-pickup-clearer</code> ready.</li>
+<li>Mentioned Here candidates: West Lake — <code>hanoi-west-lake</code>, place, <code>render</code>; Tây Hồ — <code>hanoi-tay-ho</code>, neighborhood, <code>render</code>; Tran Quoc Pagoda — <code>hanoi-tran-quoc-pagoda</code>, landmark, <code>check_catalog</code> if copy later names it.</li>
+<li>Related place candidates: West Lake — <code>hanoi-west-lake</code>, parent place, <code>render</code>; Tây Hồ — <code>hanoi-tay-ho</code>, neighborhood stop, <code>render</code>.</li>
+<li>Place-name audio: <code>city-hanoi-place-west-lake-loop</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: Hanoi tourism portal source; verify route conditions only if future copy adds bike-rental, closure, or traffic-rule claims.</li>
+<li>Score/QA: 28/30. Clear route behavior; phrase cards ready; no unsupported transport claims; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Bảo tàng Phụ nữ Việt Nam / Vietnamese Women&#x27;s Museum — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>Choose A Few Rooms And Slow Down</strong></p>
+<p>The Vietnamese Women’s Museum gives Hanoi a quieter interior story after the street rush: clothing, family life, wartime memory, and everyday labor shown through objects rather than spectacle. A short visit works if you choose a few rooms and let the details do the work.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Xin một vé.</strong> — One ticket, please.</li>
+<li><strong>Có hướng dẫn tiếng Anh không?</strong> — Is there an English guide?</li>
+<li><strong>Có được phép chụp ảnh không?</strong> — Is photography allowed?</li>
+</ul>
+<p><strong>Follow Objects, Not Every Label</strong></p>
+<p>Follow what catches your eye: a garment, a wedding object, a work tool, a wartime photo. The museum lands better when you build meaning from a few objects instead of trying to absorb every panel.</p>
+<p><strong>Ask About English Support</strong></p>
+<p>Interpretation can shape the visit here. If English support is limited, keep the visit visual and slow; the rooms still give enough texture through materials, faces, and arrangement.</p>
+<p><strong>Leave Space After Heavy Rooms</strong></p>
+<p>Some galleries may carry more emotional weight than the calm entrance suggests. Plan a café, a walk, or a quiet reset afterward instead of stacking the day too tightly.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>v500-time-date-book-one-ticket-please</code> / same ready; <code>v900-sigh-acti-is-there-an-english-guide</code> / same ready; <code>v900-sigh-acti-is-photography-allowed</code> / same ready.</li>
+<li>Mentioned Here candidates: none forced; current copy does not name a natural catalog item besides the page itself.</li>
+<li>Related place candidates: Hoa Lo Prison Relic — <code>hanoi-hoa-lo-prison</code>, serious museum pairing, <code>check_catalog</code>; Hanoi Opera House — <code>hanoi-opera-house</code>, nearby culture pairing, <code>check_catalog</code>.</li>
+<li>Place-name audio: <code>city-hanoi-place-womens-museum</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: Hanoi tourism portal source; recheck hours, ticketing, English interpretation, temporary exhibits, and photo policy.</li>
+<li>Score/QA: 28/30. Museum-fatigue prevention clear; phrase cards ready; no duplicate body; catalog scan complete; screenshot and production gates not_run.</li>
+</ul>
+<h2>Xôi xéo ở Hà Nội / Sticky rice with mung bean — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>Breakfast That Fits In One Hand</strong></p>
+<p>Xôi xéo is yellow sticky rice folded into a quick Hanoi meal: mung bean pressed soft, fried shallots on top, and warm grains that travel well in paper or leaf. It is a breakfast move more than a sit-down event.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một phần.</strong> — One portion, please.</li>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Mang đi.</strong> — To go.</li>
+</ul>
+<p><strong>Look For Steam And Turnover</strong></p>
+<p>This dish is best when it feels recently made. Watch for warm rice, steady local buying, and toppings moving quickly rather than a tray that looks forgotten.</p>
+<p><strong>Order Small The First Time</strong></p>
+<p>Sticky rice is heavier than it looks. A small portion gives you the texture—soft mung bean, chewy rice, crisp shallot—without turning breakfast into a weight you carry all morning.</p>
+<p><strong>Toppings Change The Meal</strong></p>
+<p>Plain xôi xéo is simple and fragrant. Extra meat, egg, or sausage can make it closer to a full meal, so point carefully and check the price before the packet is closed.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>food-1</code> / <code>food-1</code> ready; <code>price-1</code> / <code>price-1</code> ready; <code>coffee-6</code> / <code>coffee-6</code> ready.</li>
+<li>Mentioned Here candidates: Xôi xéo — <code>food-xoi-xeo</code>, food, <code>render</code>; xôi mặn — <code>food-xoi-man</code>, food, <code>check_catalog</code> only if future copy names the savory variant.</li>
+<li>Related place candidates: none; dish page can stand without a route card.</li>
+<li>Place-name audio: <code>city-hanoi-place-xoi-xeo</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: place-name source plus Menu Catalog item <code>food-xoi-xeo</code>; do not render exact dish quick-say unless audio is mapped or created.</li>
+<li>Score/QA: 27/30. Concrete food behavior; capped for thin place evidence and planned place-name audio; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Công viên Yên Sở / Yen So Park — Hanoi</h2>
+<h3>Reader View</h3>
+<p><strong>Open Air Without A Sightseeing Script</strong></p>
+<p>Yen So Park is the Hanoi pause where nothing has to be checked off. Lakeside paths, open grass, trees, and family movement make it feel more like a local afternoon than a formal attraction.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Đi bộ mất bao lâu?</strong> — How long does it take on foot?</li>
+<li><strong>Điểm đón ở đâu?</strong> — Where is the pickup point?</li>
+<li><strong>Bây giờ nó có mở không?</strong> — Is it open now?</li>
+</ul>
+<p><strong>Go For Space, Not A Landmark</strong></p>
+<p>The point is the room to breathe: grass, paths, water, and ordinary city life happening around you. Bring the right expectation and the park does not have to perform for you.</p>
+<p><strong>Keep It Weather-Aware</strong></p>
+<p>Open air is the appeal and the catch. Heat, rain, and muddy paths can change the visit quickly, so keep the plan light and leave room to shorten it.</p>
+<p><strong>Know Your Exit Before Dusk</strong></p>
+<p>A big park can feel easy until the return ride becomes vague. Save your pickup point, notice the gate you entered, and leave while the way back still feels clear.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>directions-3</code> / <code>directions-3</code> ready; <code>directions-8</code> / <code>directions-8</code> ready; <code>v500-dire-navi-is-it-open-now</code> / same ready.</li>
+<li>Mentioned Here candidates: none forced; current copy does not name a natural catalog item besides the page itself.</li>
+<li>Related place candidates: none unless future route copy pairs the park with a specific south-Hanoi stop.</li>
+<li>Place-name audio: <code>city-hanoi-place-yen-so-park</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: Hanoi tourism portal source; recheck access, opening pattern, gates, weather-sensitive conditions, and any event closures.</li>
+<li>Score/QA: 27/30. Sparse-evidence copy kept restrained; phrase cards ready; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Ga Bến Thành / Ben Thanh Metro Station — Saigon</h2>
+<h3>Reader View</h3>
+<p><strong>Read The Signs Before You Surface</strong></p>
+<p>Ga Bến Thành is the stop where Saigon shifts from maps to street choices. Give yourself a minute with the route boards, exits, and meeting points before stepping back into the traffic around Ben Thanh.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Đây có đúng bến không?</strong> — Is this the right platform?</li>
+<li><strong>Đó là lối ra nào?</strong> — Which exit is it?</li>
+<li><strong>Điểm đón ở đâu?</strong> — Where is the pickup point?</li>
+</ul>
+<p><strong>Match The Exit To The Next Street</strong></p>
+<p>The wrong exit can turn a simple transfer into a hot, noisy backtrack. Check the street name, market side, or pickup point before following the fastest crowd upstairs.</p>
+<p><strong>Crowds Move Faster Than First-Timers</strong></p>
+<p>Stations reward small pauses. Step aside to read the board, confirm the direction, and let commuters pass before you make the next move.</p>
+<p><strong>Solve The Handoff Outside</strong></p>
+<p>After the train, the next question is usually not the station itself—it is the walk, taxi, market, or hotel route after it. Confirm the meeting point while you still have your bearings.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>transport-1</code> / <code>transport-1</code> ready; <code>repair-premium-which-exit</code> / same ready; <code>directions-8</code> / <code>directions-8</code> ready.</li>
+<li>Mentioned Here candidates: Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, market, <code>render</code>; District 1 — <code>hcmc-district-1</code>, neighborhood, <code>check_catalog</code> if future copy names it.</li>
+<li>Related place candidates: Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, nearby market, <code>render</code>; Nguyen Hue Walking Street — <code>hcmc-nguyen-hue-walking-street</code>, central walk pairing, <code>check_catalog</code>.</li>
+<li>Place-name audio: <code>city-hcmc-place-ben-thanh-metro-station</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: Visit HCMC portal source; recheck station access, ticketing, line status, exits, and wayfinding before import.</li>
+<li>Score/QA: 27/30. Specific station moment; visible copy avoids current-service promises; phrase cards ready; screenshot and production gates not_run.</li>
+</ul>
+<h2>Bếp Mẹ Ỉn / Bep Me In — Saigon</h2>
+<h3>Reader View</h3>
+<p><strong>Make Dinner Part Of The Walk</strong></p>
+<p>Bếp Mẹ Ỉn is the kind of central Saigon meal that can slow the day down without turning dinner into a ceremony. Expect a compact room feel, clay-pot warmth, herbs, shared plates, and a table rhythm that suits travelers who want Vietnamese food without decoding a street stall first.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Ít cay thôi.</strong> — Less spicy, please.</li>
+<li><strong>Tính tiền giúp tôi.</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Read The Menu Before Ordering Wide</strong></p>
+<p>A comfortable restaurant can make it too easy to order the whole idea of Vietnam at once. Choose one main dish, one vegetable or shared plate, then see how the table feels.</p>
+<p><strong>Ask Early About Heat And Ingredients</strong></p>
+<p>If pork, shellfish, spice, or herbs matter to you, ask before the order starts moving. A calm table is the right place to handle that, not after dishes arrive.</p>
+<p><strong>Keep The Meal Close To The Evening</strong></p>
+<p>This is a good central dinner before or after Ben Thanh browsing. Let it be the meal, then move back into the night instead of asking one table to carry the whole evening.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>food-menu</code> / <code>food-menu</code> ready; <code>food-not-spicy-clearer</code> / <code>audio-authored-it-cay-thoi-05b8e258a2</code> ready; <code>coffee-7</code> / <code>coffee-7</code> ready.</li>
+<li>Mentioned Here candidates: Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, market, <code>render</code>; specific menu items — <code>do_not_render</code> until current menu is checked.</li>
+<li>Related place candidates: Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, nearby pre/post-meal pairing, <code>render</code>; District 1 — <code>hcmc-district-1</code>, central-area context, <code>check_catalog</code>.</li>
+<li>Place-name audio: <code>city-hcmc-place-bep-me-in</code> planned; hide place-name audio until ready.</li>
+<li>Freshness/source: local named-restaurant source plus legacy copy; recheck current address, opening status, menu, booking/queue pattern, and holiday closures.</li>
+<li>Score/QA: 27/30. Voice is controlled and menu claims are restrained; phrase cards ready; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Chợ Bình Tây / Binh Tay Market — Saigon</h2>
+<h3>Reader View</h3>
+<p><strong>Watch The Market Work First</strong></p>
+<p>Binh Tay Market is better when you arrive ready to observe before buying. The courtyard, yellow facade, packed aisles, bags, produce colors, and wholesale rhythm show a different Saigon from the hotel core.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Bớt chút được không?</strong> — Can you lower it a little?</li>
+<li><strong>Tôi chỉ xem thôi.</strong> — I’m just looking.</li>
+</ul>
+<p><strong>Make The First Lap Reconnaissance</strong></p>
+<p>Walk once with no pressure to purchase. Notice which aisles feel wholesale, which counters are easier for small buys, and where the crowd naturally slows.</p>
+<p><strong>Buy Lightly, Carry Less</strong></p>
+<p>The market can tempt you into bags before the day is ready for them. Small goods, snacks, or a short browse keep the visit useful without turning the rest of the route into luggage management.</p>
+<p><strong>Pair It With Chợ Lớn Streets</strong></p>
+<p>Binh Tay makes the most sense as part of a Cho Lon morning. Add Thien Hau Pagoda or a nearby street look afterward if you still have attention for one more stop.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Phrases: <code>price-1</code> / <code>price-1</code> ready; <code>price-4</code> / <code>price-4</code> ready; <code>shop-4</code> / <code>shop-4</code> ready.</li>
+<li>Mentioned Here candidates: Cho Lon — <code>hcmc-cho-lon</code>, neighborhood, <code>render</code>; Thien Hau Pagoda — <code>hcmc-thien-hau-pagoda</code>, landmark, <code>render</code>; Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, market contrast, <code>check_catalog</code> if future copy names it.</li>
+<li>Related place candidates: Cho Lon walking route — <code>hcmc-cho-lon-walking-route</code>, area route, <code>check_catalog</code>; Thien Hau Pagoda — <code>hcmc-thien-hau-pagoda</code>, nearby cultural stop, <code>render</code>; Ben Thanh Market — <code>hcmc-ben-thanh-market</code>, central-market contrast, <code>render</code>.</li>
+<li>Place-name audio: <code>city-hcmc-place-binh-tay-market</code> ready, <code>audio-authored-cho-binh-tay-4e1f45d293</code>.</li>
+<li>Freshness/source: existing city library plus Vietnam Travel HCMC source; recheck hours, access, renovation status, stall mix, and visitor-facing buying norms.</li>
+<li>Score/QA: 28/30. Market role is distinct from Ben Thanh; phrase cards ready; catalog candidates evaluated; no duplicate body; screenshot and production gates not_run.</li>
+</ul>
+<h2>Codex handoff block</h2>
+<ul>
+<li><code>batch_id: batch_041</code></li>
+<li><code>page_ids: city-hanoi-place-water-puppet-theatre, city-hanoi-place-weekend-night-market, city-hanoi-place-west-lake, city-hanoi-place-west-lake-loop, city-hanoi-place-womens-museum, city-hanoi-place-xoi-xeo, city-hanoi-place-yen-so-park, city-hcmc-place-ben-thanh-metro-station, city-hcmc-place-bep-me-in, city-hcmc-place-binh-tay-market</code></li>
+<li><code>ready_to_import: no</code></li>
+<li><code>chat_output_is_canonical: yes</code></li>
+<li><code>google_doc_url: optional_or_missing</code></li>
+<li><code>phrase_cards_needing_catalog_check: none visible; all visible phrase cards use ready-audio reusable traveler-action phrases</code></li>
+<li><code>place_name_phrases: render_only_if_ready_audio_else_hide_until_audio; ready for water-puppet-theatre, west-lake, binh-tay-market; planned/hide for weekend-night-market, west-lake-loop, womens-museum, xoi-xeo, yen-so-park, ben-thanh-metro-station, bep-me-in</code></li>
+<li><code>visible_copy_risks: Bep Me In menu specifics intentionally limited; Ben Thanh Metro Station avoids service-frequency or ticket-rule claims; all hours/prices/current rules kept out of visible copy</code></li>
+<li><code>source_freshness_risks: theatre show times and photo rules; weekend night market timing and stall mix; museum hours and English support; xoi vendor variation; Yen So Park access and gates; metro station access/wayfinding; Bep Me In current menu/address/status; Binh Tay Market hours/access/stall mix</code></li>
+<li><code>next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval</code></li>
+</ul>
+<h1>BATCH_042</h1>
+<p>SpeakLocal v2.2 BATCH_042 - Saigon - 2026-05-26</p>
+<h2>Tòa nhà Bitexco / Bitexco Financial Tower</h2>
+<h3>Reader View</h3>
+<p><strong>A High Read On The Center</strong></p>
+<p>Bitexco is the skyline cue you keep catching between District 1 streets: the rounded tower above scooter noise, glass catching weather, the river not far away. Go when you want one high look at Saigon before returning to the street.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Mấy giờ mở cửa?</strong> — What time does it open?</li>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+</ul>
+<p><strong>Street Level First</strong></p>
+<p>Look at the tower from the sidewalk before going up. The contrast is the point: heat, honking, shopfronts, and then that sudden piece of glass above the old city grid.</p>
+<p><strong>Views Need Clear Weather</strong></p>
+<p>A high view is only as good as the day. If the sky is hazy or wet, keep the stop flexible and let the tower work as a landmark you pass rather than a paid-view commitment.</p>
+<p><strong>Pair It With A Short Walk</strong></p>
+<p>Bitexco sits well with a river edge, Nguyễn Huệ, or a District 1 coffee pause. Do the view, then come back down quickly enough that the city still feels close.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-bitexco-tower</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Lối vào ở đâu?</code> — <code>phraseId/audioId: v500-sigh-acti-where-is-the-entrance</code>; ready audio; mapped</p>
+<p>  * <code>Mấy giờ mở cửa?</code> — <code>phraseId/audioId: time-5</code>; ready audio; mapped</p>
+<p>  * <code>Cái này bao nhiêu?</code> — <code>phraseId/audioId: price-1</code>; ready audio; mapped</p>
+<ul>
+<li>Place-name audio: <code>Tòa nhà Bitexco</code> ready as <code>city-hcmc-place-bitexco-tower</code> / <code>audio-authored-toa-nha-bitexco-ce74d5e48b</code></li>
+<li>Mentioned Here candidates: District 1 <code>hcmc-district-1</code>; Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code>; Saigon River <code>hcmc-saigon-river</code></li>
+<li>Related place candidates: Saigon Skydeck <code>hcmc-saigon-skydeck</code>; Ben Thanh Market <code>hcmc-ben-thanh-market</code></li>
+<li>Freshness notes: verify tower access, viewing-deck operations, ticket price, hours, and weather-dependent visibility before import</li>
+<li>Draft score: 27/30 — strong first-screen use and concrete scene; capped for current tower operations and rendered proof still pending</li>
+<li>QA notes: phrase cards are ready-audio reusable; no duplicate body; no volatile hours/prices in Reader View; Jojo voice review still needed</li>
+</ul>
+<h2>Bò lá lốt ở Thành phố Hồ Chí Minh / Beef in betel leaves</h2>
+<h3>Reader View</h3>
+<p><strong>The Roll That Starts At The Grill</strong></p>
+<p>Bò lá lốt is most memorable before it reaches the table: smoke, betel leaves, little beef rolls, herbs piled beside rice paper. Order small, watch how others wrap, then build one bite with the greens instead of treating it like plain grilled meat.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một phần</strong> — One portion please.</li>
+<li><strong>Không cay nhé</strong> — Not spicy please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Herbs Carry The Plate</strong></p>
+<p>The leaves, herbs, and dip are not decoration. Put a little of everything into the bite so the beef, smoke, and sweet-sour sauce land together.</p>
+<p><strong>Rice Paper May Vary</strong></p>
+<p>Some shops serve it as a wrap; others keep the rolls simpler. If rice paper appears, go slowly on the first one and copy the table rhythm.</p>
+<p><strong>Keep Sauce In Control</strong></p>
+<p>The dip can be sweet, salty, sour, and spicy at once. Start with a small dip, then add more once the herbs and rice paper are in the bite.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-bo-la-lot</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một phần</code> — <code>phraseId/audioId: food-1</code>; ready audio; mapped</p>
+<p>  * <code>Không cay nhé</code> — <code>phraseId/audioId: food-3</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: <code>food-bo-la-lot</code> exists; quick-say line is text-only and should not render as a visible phrase card unless Codex maps audio later</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Bò lá lốt <code>food-bo-la-lot</code>; bánh xèo <code>food-banh-xeo</code> only if comparison copy is later added</li>
+<li>Related place candidates: none required for this draft</li>
+<li>Freshness notes: dish availability and exact serving style vary by shop; keep visible copy general</li>
+<li>Draft score: 28/30 — specific food behavior and good catalog fit; capped for dish-name audio and native phrase QA</li>
+<li>QA notes: reusable phrase cards only; no one-off dish order phrase in Reader View; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Bột chiên ở Thành phố Hồ Chí Minh / Fried rice-flour cakes</h2>
+<h3>Reader View</h3>
+<p><strong>A Sizzle Before The First Bite</strong></p>
+<p>Bột chiên is the Saigon snack you understand by hearing it: rice-flour cubes hitting a flat griddle, egg setting around the edges, green onion scattered at the end. It is greasy in the right small-dose way, better as a shared plate than a whole meal plan.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một phần</strong> — One portion please.</li>
+<li><strong>Không cay nhé</strong> — Not spicy please.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Watch The Griddle</strong></p>
+<p>If you can see the pan, pause before ordering. The best cue is a plate coming off hot, with crisp edges and egg still soft enough to pull the pieces together.</p>
+<p><strong>Share The First Plate</strong></p>
+<p>This is a good first-order snack, not a table-filling commitment. Split one plate, then decide whether you want another round or a different stall.</p>
+<p><strong>Sauce Wakes It Up</strong></p>
+<p>The sauce and chili change the whole plate. Add a little first, especially if the griddle already smells rich from oil and egg.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-bot-chien</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một phần</code> — <code>phraseId/audioId: food-1</code>; ready audio; mapped</p>
+<p>  * <code>Không cay nhé</code> — <code>phraseId/audioId: food-3</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: no exact <code>bột chiên</code> item found in Menu Catalog; add or map before rendering a food card</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Bột chiên needs catalog creation or mapping before card render</li>
+<li>Related place candidates: none required for this draft</li>
+<li>Freshness notes: avoid fixed stall claims; exact sauce, egg, and serving style vary</li>
+<li>Draft score: 27/30 — strong observed food moment; capped for missing menu item and dish-name audio</li>
+<li>QA notes: phrase cards are reusable and ready; no one-off dish phrase; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Phố Bùi Viện / Bui Vien Street</h2>
+<h3>Reader View</h3>
+<p><strong>Walk Once Before Sitting</strong></p>
+<p>Bùi Viện is loud before it is fun: bar doors open, music competes, stools press into the street, and offers come quickly. Make one uncommitted pass first. Then choose a seat, a snack, or an exit with your phone and bag close.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Cái này bao nhiêu?</strong> — How much is this?</li>
+<li><strong>Gọi taxi giúp tôi được không?</strong> — Can you call a taxi for me?</li>
+</ul>
+<p><strong>Noise From Every Door</strong></p>
+<p>This is the backpacker-nightlife version of Saigon in one tight strip. It can be funny for a short look and exhausting if you expected a relaxed evening walk.</p>
+<p><strong>Prices Before Drinks</strong></p>
+<p>Check the menu before ordering, especially when a pitch comes quickly. A clear price keeps the night lighter than trying to sort it out after the table fills.</p>
+<p><strong>Leave While You Still Like It</strong></p>
+<p>You do not need to stay late for Bùi Viện to count. Early evening is enough for a first read; later, the street gets louder and less forgiving.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-bui-vien-street</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi xem thực đơn được không?</code> — <code>phraseId/audioId: food-menu</code>; ready audio; mapped</p>
+<p>  * <code>Cái này bao nhiêu?</code> — <code>phraseId/audioId: price-1</code>; ready audio; mapped</p>
+<p>  * <code>Gọi taxi giúp tôi được không?</code> — <code>phraseId/audioId: hotel-9</code>; ready audio; mapped</p>
+<ul>
+<li>Place-name audio: <code>Phố Bùi Viện</code> ready as <code>city-hcmc-place-bui-vien-street</code> / <code>audio-authored-pho-bui-vien-120e855cda</code></li>
+<li>Mentioned Here candidates: Bùi Viện Street <code>hcmc-bui-vien-street</code>; Phạm Ngũ Lão Street <code>hcmc-pham-ngu-lao-street</code>; District 1 <code>hcmc-district-1</code></li>
+<li>Related place candidates: Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code>; Chợ Lớn <code>hcmc-cho-lon</code></li>
+<li>Freshness notes: verify current pedestrian-night pattern, safety advisories, and street access before import</li>
+<li>Draft score: 29/30 — matches the nightlife safety pattern without fear tone; capped for current-street checks and rendered proof</li>
+<li>QA notes: phrase cards are reusable and ready; first-screen copy is concrete; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Bún thịt nướng ở Thành phố Hồ Chí Minh / Grilled pork vermicelli</h2>
+<h3>Reader View</h3>
+<p><strong>Cool Noodles, Hot Pork</strong></p>
+<p>A bowl of bún thịt nướng looks tidy until you start mixing: grilled pork over cool rice vermicelli, herbs, pickles, peanuts, and fish-sauce dressing waiting to be folded through. The first bite should have smoke, crunch, and cold noodles at once.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một phần</strong> — One portion please.</li>
+<li><strong>Cái này có đậu phộng không?</strong> — Does this have peanuts?</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Mix Before Judging</strong></p>
+<p>The pork on top is only the start. Turn the bowl so the herbs, noodles, dressing, and grilled edges all meet.</p>
+<p><strong>Pour The Dressing Gradually</strong></p>
+<p>The fish-sauce dressing is meant to season the bowl, but it can take over if you empty it all at once. Add some, mix, taste, then decide.</p>
+<p><strong>Ask About Peanuts Early</strong></p>
+<p>Peanuts are common here and easy to miss under herbs or fried shallots. Ask before the bowl is finished if allergies or texture matter.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-bun-thit-nuong</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một phần</code> — <code>phraseId/audioId: food-1</code>; ready audio; mapped</p>
+<p>  * <code>Cái này có đậu phộng không?</code> — <code>phraseId/audioId: food-premium-has-peanuts</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: <code>food-bun-thit-nuong</code> exists; quick-say line is text-only and should not render as a visible phrase card unless Codex maps audio later</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Bún thịt nướng <code>food-bun-thit-nuong</code>; peanuts handled through phrase card, not as a food card</li>
+<li>Related place candidates: Bò lá lốt <code>city-hcmc-place-bo-la-lot</code> only if food-item related cards are supported</li>
+<li>Freshness notes: shop ingredients and peanut use can vary; keep allergy phrase visible only with mapped audio</li>
+<li>Draft score: 28/30 — strong bowl behavior and catalog fit; capped for dish-name audio and ingredient variability</li>
+<li>QA notes: reusable phrase cards only; no one-off dish order phrase; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Cà phê sữa đá Sài Gòn ở Thành phố Hồ Chí Minh / Saigon iced milk coffee</h2>
+<h3>Reader View</h3>
+<p><strong>A Cold Glass Between Plans</strong></p>
+<p>Cà phê sữa đá is a Saigon pause you can carry between bigger moves: dark coffee, condensed milk, ice, and the slow clink of a glass on a sidewalk table. It is sweet and strong, so ask early if you want less ice or a cleaner coffee taste.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một cà phê sữa đá</strong> — One iced milk coffee please.</li>
+<li><strong>Ít đá thôi</strong> — Just a little ice.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Sweetness Comes Built In</strong></p>
+<p>Condensed milk is part of the drink, not an add-on. If you want less sweetness, it may be easier to choose cà phê đen đá than to turn milk coffee into something it is not.</p>
+<p><strong>Sidewalk Tables Count</strong></p>
+<p>The setting can be as simple as a plastic stool and a street corner. Let that be enough; this is a short pause, not a laptop session.</p>
+<p><strong>Know The Softer Order</strong></p>
+<p>Bạc xỉu is the milkier, gentler cousin if full-strength robusta feels too sharp. It keeps the coffee mood without the same bitter edge.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-ca-phe-sua-da</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một cà phê sữa đá</code> — <code>phraseId/audioId: coffee-1</code>; ready audio; mapped</p>
+<p>  * <code>Ít đá thôi</code> — <code>phraseId/audioId: coffee-4</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: <code>drink-ca-phe-sua-da</code>, <code>drink-ca-phe-den-da</code>, and <code>drink-bac-xiu</code> exist</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Cà phê sữa đá <code>drink-ca-phe-sua-da</code>; Cà phê đen đá <code>drink-ca-phe-den-da</code>; Bạc xỉu <code>drink-bac-xiu</code></li>
+<li>Related place candidates: Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code>; Cafe Apartment on Nguyen Hue <code>hcmc-cafe-apartment-nguyen-hue</code></li>
+<li>Freshness notes: no venue-specific claims; keep as drink-culture page with menu mapping</li>
+<li>Draft score: 29/30 — tight drink ritual and strong catalog/audio fit; capped for page-name audio and rendered proof</li>
+<li>QA notes: phrase cards are ready and reusable; named drink items have catalog rows; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Chung cư cà phê Nguyễn Huệ / Cafe Apartment on Nguyen Hue</h2>
+<h3>Reader View</h3>
+<p><strong>Look Up Before Choosing A Floor</strong></p>
+<p>The Cafe Apartment is not one cafe hiding behind one sign. From Nguyễn Huệ, the old facade reads like a vertical menu: balcony plants, lit windows, small shop signs, and people leaning over the rail. Pick the building first, then let the floor choose the mood.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Lối vào ở đâu?</strong> — Where is the entrance?</li>
+<li><strong>Tôi có lên lầu không?</strong> — Do I go upstairs?</li>
+<li><strong>Tôi có thể ngồi đây được không?</strong> — Can I sit here?</li>
+</ul>
+<p><strong>The Facade Is The First Step</strong></p>
+<p>Stand across the walking street for a moment before going in. The stacked signs and balconies make more sense from outside than from the stairwell.</p>
+<p><strong>Balcony Seats Change The Stop</strong></p>
+<p>A small drink becomes better when the room opens toward Nguyễn Huệ. If the best seats are full, keep the visit short and choose another floor rather than waiting too long.</p>
+<p><strong>Many Rooms, Many Rhythms</strong></p>
+<p>This is a building full of small rooms, not a single cafe with one service rhythm. The fun is partly choosing, climbing, and finding your own corner above the street.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-cafe-apartment-nguyen-hue</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Lối vào ở đâu?</code> — <code>phraseId/audioId: v500-sigh-acti-where-is-the-entrance</code>; ready audio; mapped</p>
+<p>  * <code>Tôi có lên lầu không?</code> — <code>phraseId/audioId: v500-dire-navi-do-i-go-upstairs</code>; ready audio; mapped</p>
+<p>  * <code>Tôi có thể ngồi đây được không?</code> — <code>phraseId/audioId: v900-poli-basi-can-i-sit-here</code>; ready audio; mapped</p>
+<ul>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Cafe Apartment on Nguyen Hue <code>hcmc-cafe-apartment-nguyen-hue</code>; 42 Nguyen Hue apartment building <code>hcmc-42-nguyen-hue-apartment</code>; Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code></li>
+<li>Related place candidates: Nguyen Hue cafe hop <code>hcmc-cafe-hop-nguyen-hue</code>; Cà phê sữa đá <code>city-hcmc-place-ca-phe-sua-da</code></li>
+<li>Freshness notes: verify tenant mix, entrance, elevator/stair access, any building fee, and current opening patterns before import</li>
+<li>Draft score: 28/30 — strong upstairs-arrival copy; capped for tenant turnover and page-name audio</li>
+<li>QA notes: phrase cards are ready and reusable; no one-off building phrase; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Đi cà phê Nguyễn Huệ / Nguyen Hue cafe hop</h2>
+<h3>Reader View</h3>
+<p><strong>Two Cafes Is Enough</strong></p>
+<p>A Nguyễn Huệ cafe hop is better kept light: one upstairs drink, one street-level reset, then a walk before every stop turns into the same iced glass and balcony photo. The fun is in moving through the building and the walking street, not proving you tried every cafe.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi xem thực đơn được không?</strong> — Can I see the menu?</li>
+<li><strong>Tôi có lên lầu không?</strong> — Do I go upstairs?</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Pick One Upstairs Room</strong></p>
+<p>Start with one room above the street, not a list of cafes. Choose the view, the quietest table, or the easiest order, then let that be the first stop.</p>
+<p><strong>Street Air Between Drinks</strong></p>
+<p>Come back down between stops. Nguyễn Huệ gives the hop its rhythm: open space, families walking, city lights, and enough room to decide whether you actually want another coffee.</p>
+<p><strong>End Before Coffee Becomes Work</strong></p>
+<p>A good cafe hop should leave you more awake, not more tired. If the second drink feels forced, switch to a walk or dessert and keep the evening moving.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-cafe-hop-nguyen-hue</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi xem thực đơn được không?</code> — <code>phraseId/audioId: food-menu</code>; ready audio; mapped</p>
+<p>  * <code>Tôi có lên lầu không?</code> — <code>phraseId/audioId: v500-dire-navi-do-i-go-upstairs</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code>; Cafe Apartment on Nguyen Hue <code>hcmc-cafe-apartment-nguyen-hue</code>; Cà phê sữa đá <code>drink-ca-phe-sua-da</code></li>
+<li>Related place candidates: 42 Nguyen Hue apartment building <code>hcmc-42-nguyen-hue-apartment</code>; Saigon River <code>hcmc-saigon-river</code></li>
+<li>Freshness notes: avoid naming individual cafes until tenant mix and openings are verified</li>
+<li>Draft score: 28/30 — distinct from the building page and keeps the route compact; capped for tenant turnover and page-name audio</li>
+<li>QA notes: phrase cards are ready and reusable; no duplicate body with Cafe Apartment page; Jojo voice review still needed</li>
+</ul>
+<h2>Cà phê vợt Phạm Ngọc Thạch / Pham Ngoc Thach cloth-filter coffee</h2>
+<h3>Reader View</h3>
+<p><strong>Wait For The Pour</strong></p>
+<p>Cloth-filter coffee asks you to slow down before the caffeine arrives. The point is the old rhythm: coffee strained through cloth, ice waiting, condensed milk or sugar if you want it, and a table that gives the day a few quieter minutes.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một cà phê sữa đá</strong> — One iced milk coffee please.</li>
+<li><strong>Ít đá thôi</strong> — Just a little ice.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Old Method, Short Pause</strong></p>
+<p>Cà phê vợt is about the method as much as the cup. Watch the pour if you can, then let the drink sit for a moment before rushing back into traffic.</p>
+<p><strong>Choose Sweet Or Dark</strong></p>
+<p>If you want the classic cold comfort, milk coffee is the easy order. If you want the filter taste sharper, cà phê đen đá keeps the cup cleaner and less creamy.</p>
+<p><strong>Keep The Stop Unhurried</strong></p>
+<p>This is not a cafe to overload with plans. One drink, a few minutes, and a slower look at the street are enough.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-cafe-vot-pham-ngoc-thach</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một cà phê sữa đá</code> — <code>phraseId/audioId: coffee-1</code>; ready audio; mapped</p>
+<p>  * <code>Ít đá thôi</code> — <code>phraseId/audioId: coffee-4</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: <code>drink-ca-phe-sua-da</code> and <code>drink-ca-phe-den-da</code> exist</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Cà phê sữa đá <code>drink-ca-phe-sua-da</code>; Cà phê đen đá <code>drink-ca-phe-den-da</code></li>
+<li>Related place candidates: Saigon iced milk coffee page <code>city-hcmc-place-ca-phe-sua-da</code>; Nguyen Hue cafe hop <code>city-hcmc-place-cafe-hop-nguyen-hue</code></li>
+<li>Freshness notes: verify named cafe status, address, hours, menu options, and current service pattern before import</li>
+<li>Draft score: 27/30 — strong coffee ritual; capped for named-cafe freshness and page-name audio</li>
+<li>QA notes: phrase cards are ready and reusable; no current hours/prices in Reader View; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Chè Sài Gòn ở Thành phố Hồ Chí Minh / Sweet soup dessert</h2>
+<h3>Reader View</h3>
+<p><strong>A Small Dessert Stop After Dark</strong></p>
+<p>Chè is the sweet counter you understand by looking first: cups of beans, jellies, fruit, coconut milk, crushed ice, and syrups stacked in color. Start with one cup and let the textures do the work.</p>
+<p><strong>Useful phrase cards</strong></p>
+<ul>
+<li><strong>Cho tôi một phần</strong> — One portion please.</li>
+<li><strong>Ít đá thôi</strong> — Just a little ice.</li>
+<li><strong>Tính tiền giúp tôi</strong> — Please let me pay.</li>
+</ul>
+<p><strong>Point Before Ordering</strong></p>
+<p>A chè counter can move fast because the choices are visual. Point to the cup or ingredient mix that looks right, then keep the first order simple.</p>
+<p><strong>Coconut Milk Makes It Rich</strong></p>
+<p>Chè ba màu gives you the easy color-and-texture version. Chè Thái leans fruitier and creamier. Chè bắp is softer, warmer in mood, and less showy.</p>
+<p><strong>One Cup Is Plenty</strong></p>
+<p>This is a break between bigger plans, not a dessert challenge. Stop while the ice, coconut milk, and jelly still feel refreshing.</p>
+<h3>Implementation notes</h3>
+<ul>
+<li>Page ID: <code>city-hcmc-place-che</code></li>
+<li>Phrase/audio:</li>
+</ul>
+<p>  * <code>Cho tôi một phần</code> — <code>phraseId/audioId: food-1</code>; ready audio; mapped</p>
+<p>  * <code>Ít đá thôi</code> — <code>phraseId/audioId: coffee-4</code>; ready audio; mapped</p>
+<p>  * <code>Tính tiền giúp tôi</code> — <code>phraseId/audioId: coffee-7</code>; ready audio; mapped</p>
+<ul>
+<li>Menu/catalog: <code>food-che-ba-mau</code>, <code>food-che-thai</code>, and <code>food-che-bap</code> exist; generic Saigon chè page phrase audio is planned</li>
+<li>Place-name audio: page phrase exists but audio is planned; hide until audio</li>
+<li>Mentioned Here candidates: Chè ba màu <code>food-che-ba-mau</code>; Chè Thái <code>food-che-thai</code>; Chè bắp <code>food-che-bap</code></li>
+<li>Related place candidates: Cà phê sữa đá <code>city-hcmc-place-ca-phe-sua-da</code>; Nguyễn Huệ Walking Street <code>hcmc-nguyen-hue-walking-street</code></li>
+<li>Freshness notes: exact chè variants and stall availability vary; keep visible copy variant-based, not venue-specific</li>
+<li>Draft score: 28/30 — strong dessert behavior and catalog mapping; capped for generic page-name audio and variant availability</li>
+<li>QA notes: phrase cards are ready and reusable; catalog mentions are natural; no duplicate body; Jojo voice review still needed</li>
+</ul>
+<h2>Codex handoff block</h2>
+<p>```markdown</p>
+<ul>
+<li><code>batch_id: batch_042</code></li>
+<li><code>page_ids: city-hcmc-place-bitexco-tower, city-hcmc-place-bo-la-lot, city-hcmc-place-bot-chien, city-hcmc-place-bui-vien-street, city-hcmc-place-bun-thit-nuong, city-hcmc-place-ca-phe-sua-da, city-hcmc-place-cafe-apartment-nguyen-hue, city-hcmc-place-cafe-hop-nguyen-hue, city-hcmc-place-cafe-vot-pham-ngoc-thach, city-hcmc-place-che</code></li>
+<li><code>ready_to_import: no</code></li>
+<li><code>chat_output_is_canonical: yes</code></li>
+<li><code>google_doc_url: optional_or_missing</code></li>
+<li><code>phrase_cards_needing_catalog_check: none for visible cards; all visible cards use ready-audio reusable phrases, with Codex to confirm exact mapping before import</code></li>
+<li><code>place_name_phrases: render_only_if_ready_audio_else_hide_until_audio; ready for Tòa nhà Bitexco and Phố Bùi Viện; planned/hide for dish, drink, cafe-apartment, cafe-hop, cloth-filter coffee, and chè page-name phrases</code></li>
+<li><code>visible_copy_risks: Bùi Viện tone should stay safety-aware without fear; Cafe Apartment and Nguyen Hue cafe hop must stay distinct; named-cafe copy for Phạm Ngọc Thạch stays intentionally restrained</code></li>
+<li><code>source_freshness_risks: verify Bitexco operations/tickets, Bùi Viện pedestrian-night pattern and advisories, Cafe Apartment tenant/access details, Phạm Ngọc Thạch cafe status, and dish/stall availability; no volatile hours or prices are in Reader View</code></li>
+<li><code>next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval</code></li>
+</ul>
+<p>```</p>
+</body></html>

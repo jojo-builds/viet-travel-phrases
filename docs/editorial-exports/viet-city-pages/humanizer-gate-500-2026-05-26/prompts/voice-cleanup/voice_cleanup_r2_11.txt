@@ -1,0 +1,292 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_11",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_11",
+  "chunks": [
+    {
+      "chunkFile": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-danang-place-nam-house",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nam-o-fish-sauce-village",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nam-o-reef",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nem-lui",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nen",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 22x: name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 22x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-nam-house",
+          "summary": "Nam House Cafe is a shaded Da Nang coffee pause with plants, patterned tiles, vintage corners, iced drinks, and a room worth noticing.",
+          "context": "A short cafe reset between meals, markets, and beach-side heat, with the room, drink, and seat doing the quiet work.",
+          "tip": "Choose the drink first, then the seat. The room matters, but the pause works better when the order is simple.",
+          "rationale": "Nam House gives the cafe set a room-led pause that differs from old-school stool coffee and beach-side chain stops.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Pause For The Room As Much As The Coffee",
+              "body": "Nam House is strongest when the day needs shade, ice, and a room with its own patience. Plants, patterned tiles, vintage corners, and a slow glass make the pause feel chosen."
+            },
+            {
+              "id": "place-brief",
+              "title": "Drink First, Seat Second",
+              "body": "Order the coffee you actually want first: sweet, black, or milk-forward if available. Then look for the corner that feels easiest."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Nam House usually stays as the venue name. Let the name sit beside plants, patterned tile, old objects, and a slower room."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-House Details Carry The Pause",
+              "body": "The room matters here. Patterned tile, plants, old objects, and warm corners give you something to notice while the ice melts and the street heat drops away."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Room-Led Coffee Break",
+              "body": "Good for a short cafe reset when the room matters as much as the drink. Choose simply, sit where the light feels good, then move on."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Better As A Reset Than A Camp",
+              "body": "This is a good short pause between meals, markets, and beach-side heat. Stay long enough to cool down and look around, then let the cafe remain one quiet piece."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nam-o-fish-sauce-village",
+          "summary": "Nam O fish sauce village turns nuoc mam into a coastal craft: anchovies, salt, barrels, time, salty air, and everyday Vietnamese flavor.",
+          "context": "This is not a generic shopping stop. The point is salty air, barrels, anchovies, and why Nam O is tied to fish sauce.",
+          "tip": "Look for the making before the buying. The smell, barrels, and coastal lanes are part of understanding why Nam O is tied to fish sauce.",
+          "rationale": "Nam O fish sauce village connects Da Nang's coast, local craft, and a flavor that sits behind many Vietnamese meals.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fish Sauce Starts On The Coast",
+              "body": "Nam O turns nuoc mam back into a coastal craft: anchovies, salt, barrels, time, and lanes where the smell tells you what is being made."
+            },
+            {
+              "id": "place-brief",
+              "title": "Barrels First, Products Second",
+              "body": "Look for the making before the shopping. The point is the slow change from fish and salt into sauce, and the village makes that transformation feel physical."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Lang nghe nuoc mam Nam O tells the story in the name: craft village, fish sauce, and the coastal village that gives the stop its reason."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Smell Is Part Of The Visit",
+              "body": "This is not a polished attraction sealed away from its work. The salty, fermented air is part of understanding why Nam O is tied to fish sauce."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Craft Before Shopping",
+              "body": "Good when the point is understanding fish sauce as a coastal craft. Notice barrels, salt, anchovies, and village lanes before thinking about bottles."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pair Flavor With Shoreline",
+              "body": "If the day already points toward Nam O, add the reef only when tide and weather make the coast worth seeing. One stop gives flavor; the other gives shoreline."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nam-o-reef",
+          "summary": "Nam O Reef is a rocky shoreline stop for tide pools, fishing-village edges, low light, and a different side of Da Nang's coast north of town.",
+          "context": "A condition-dependent rocky shoreline, not resort sand. Tide, weather, access, and footing shape whether the stop makes sense.",
+          "tip": "Go only when conditions make the rocks visible and safe enough to read. Watch your footing and keep distance from working coastal space.",
+          "rationale": "Nam O Reef adds a specific northern-coast nature stop that pairs naturally with the Nam O fish-sauce craft area.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Go When The Tide Shows The Rocks",
+              "body": "Nam O Reef is shoreline, not resort sand. The good version is rocks, tidal pools, fishing-village edges, and low light that gives the coast its shape."
+            },
+            {
+              "id": "place-brief",
+              "title": "Tide Is The Difference",
+              "body": "The reef matters most when water level reveals texture: dark rock, shallow pools, and small edges that disappear when conditions are wrong. Check tide and weather first."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Ran Nam O is the local reef name. It keeps the stop about rocky shoreline, not a general beach or seafood area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Walk Like It Is Working Coast",
+              "body": "Treat the shore as a local fishing edge, not a stage set. Watch your footing, keep distance from slick rocks, and give people working near water enough room."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Low Tide, Careful Feet",
+              "body": "Good when tide and weather make the rocks readable. This is a condition-dependent shoreline, better for careful looking than casual resort sand."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Add It Only When The Route Fits",
+              "body": "Pair the reef with Nam O fish sauce village if you are already on this side of Da Nang. It is less convincing when squeezed into a packed beach-and-bridge day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nem-lui",
+          "summary": "Nem lui is a hand-rolled table ritual: grilled pork, rice paper, herbs, sauce, and a first order that teaches the meal slowly by hand.",
+          "context": "A hands-on food stop about wrapping, dipping, heat, and shared table rhythm, with peanut or pork questions handled before the plate gets complicated.",
+          "tip": "Watch one roll before copying. Ask about peanuts before dipping if that matters, and taste the sauce before adding heat.",
+          "rationale": "Nem lui is built around motion, sauce, and table confidence, not just a skewer arriving on a plate.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Roll The Skewer While It Is Hot",
+              "body": "Nem lui is a small table ritual: grilled pork, rice paper, herbs, and sauce moving through your hands before the skewer cools. The flavor is in the roll."
+            },
+            {
+              "id": "place-brief",
+              "title": "Watch One Roll Before Copying",
+              "body": "If staff or another table shows the rhythm, take the hint: pork off the skewer, herbs in, sauce controlled, rice paper wrapped tight enough to hold."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Nem lui is the dish name to remember. In Da Nang, keep it tied to skewers, herbs, rice paper, and sauce rather than plain grilled pork."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Sauce Sets The Bite",
+              "body": "The sauce can make nem lui feel rich, sweet, nutty, or sharper depending on the shop. If peanuts matter, ask before dipping; if heat worries you, taste first."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Wrap Slowly",
+              "body": "Good when the group can slow down and assemble the bite: skewer, herbs, rice paper, sauce, and heat. Ask about peanuts or pork if needed."
+            },
+            {
+              "id": "good-to-know",
+              "title": "One Order Is Enough To Learn",
+              "body": "This is a good first-round dish because it teaches the table without committing the whole meal. Order one portion, understand the roll, then decide what to add."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nen",
+          "summary": "Nen Da Nang is a composed dinner stop where herbs, ceramics, small courses, staff rhythm, and time matter more than a quick plate.",
+          "context": "Nen is a slower dinner plan, not a quick plate between stops. Leave room for the booking, table pace, staff guidance, and any food limits.",
+          "tip": "Leave room around the booking and mention food limits early. A meal like this works better when it is not squeezed between other plans.",
+          "rationale": "Nen adds a higher-commitment dinner stop to Da Nang through pacing, room for conversation, and a composed table rhythm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Dinner That Slows The Night",
+              "body": "Nen is for the Da Nang evening when the meal is meant to hold its own place in the plan. Expect herbs, ceramics, small courses, and staff rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Space Around The Booking",
+              "body": "Leave room around the booking. A tasting-style meal loses its shape if you are squeezing it between a beach shower, bridge photos, and a late ride."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Nen Da Nang is the venue name to recognize. Tie it to a slower, composed dinner rather than a casual stop between beach and bridge."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Food Limits Before Courses",
+              "body": "If shellfish, pork, heat, alcohol, or a dietary restriction matters, say it before the table starts moving. It is easier to adjust early."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Dinner With Intention",
+              "body": "Good when the meal itself is the evening plan. Leave room for a slower table pace, careful dishes, and staff guidance rather than squeezing it between stops."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Dinner Needs Time",
+              "body": "Nen reads clearly when conversation has time to catch up with the plates. Go with someone who wants dinner to be one of the day's memories."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -1,0 +1,319 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_35",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_35",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hcmc-place-cu-chi-tunnels",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hcmc-place-district-3",
+          "message": "banned visible fragment: works when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-com-tam-ba-ghien",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cu-chi-tunnels",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "freshness/process-like heading: Menu Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-district-1",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 12x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: dish name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 21x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 6x: freshness/checking heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 13x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 6x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-com-tam-ba-ghien",
+          "summary": "Com Tam Ba Ghien is a focused broken-rice stop for a big grilled pork chop, egg, pickles, and a meal that works better than a long menu debate.",
+          "context": "The restaurant makes sense around one order: cơm tấm with grilled pork, egg, pickles, fish sauce, and a busy local-meal rhythm.",
+          "tip": "Go for the pork chop plate if that is the reason you came. Decide egg and add-ons early so the order stays easy.",
+          "rationale": "Ba Ghien gives the dish a named stop: a large pork chop, broken rice, sauce, pickles, and the momentum of a focused meal.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Pork Chop Is The Point",
+              "body": "Com Tam Ba Ghien is easiest when you know the move: broken rice with a big grilled pork chop, egg, pickles, and fish sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Focused Meal",
+              "body": "This is not a wandering dinner choice. The stop makes sense when cơm tấm, grilled pork, and a filling plate are the reason."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Cơm tấm Ba Ghiền is the name to show or say. It links the dish and the shop in one easy phrase."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lunch With Momentum",
+              "body": "The meal fits a day when you want a clear local plate before moving on. Order, eat, and let the stop stay focused."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Add-Ons Decided Early",
+              "body": "Pick the pork chop first, then decide egg or extra pieces. A quick decision keeps the order from becoming a counter-side puzzle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce On Your Terms",
+              "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cu-chi-tunnels",
+          "summary": "Cu Chi Tunnels is a historic-site stop where forest paths, tunnel displays, shaded guide pauses, and wartime memory make the visit heavier than a photo stop.",
+          "context": "The tunnels bring Saigon history into a physical setting: earth, preserved spaces, quiet exhibits, guide stops, and trees outside the city core.",
+          "tip": "Go with enough time to listen. The site is strongest when the tunnel display, earth paths, and guide context stay connected.",
+          "rationale": "Cu Chi Tunnels gives the history a place to stand: shaded trees, preserved spaces, exhibits, and the discomfort of close underground design.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History Underfoot",
+              "body": "Cu Chi Tunnels is about more than seeing an entrance. The paths, displays, and guide stops make wartime history physical."
+            },
+            {
+              "id": "place-brief",
+              "title": "Forest Edge And Tunnel Displays",
+              "body": "Expect shaded trees, earth paths, preserved spaces, and quiet exhibits. The site works when you slow down enough for context."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Địa đạo Củ Chi is the local name for Cu Chi Tunnels. It helps with maps, drivers, and recognizing the site."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Guide Context First",
+              "body": "A guide or clear explanation matters here. Without context, the site can flatten into objects, paths, and photos."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Serious Stop",
+              "body": "Treat the visit as a history stop, not a light countryside break. The strongest memory may be the scale and closeness of the tunnels."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Outside The Central Day",
+              "body": "Địa đạo Củ Chi usually belongs to a planned outing from Saigon. The travel time is part of the decision."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cuc-gach-quan",
+          "summary": "Cuc Gach Quan is an old-house restaurant choice for a slower Vietnamese meal, tiled floors, family-style dishes, and a room that feels separate from traffic.",
+          "context": "The restaurant works around house setting and table rhythm: shared dishes, old Saigon interiors, staff pacing, and a dinner that slows down.",
+          "tip": "Let the meal be shared and unhurried. The old-house feel is part of the reason to go, not just decoration around the food.",
+          "rationale": "Tiled floors, family-style dishes, and an old-house interior give Cuc Gach Quan a clearer role than a generic Vietnamese dinner.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old House, Shared Table",
+              "body": "Cuc Gach Quan fits a slower meal in an old Saigon house: tiled floors, family-style dishes, and a room away from traffic."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Room Carries The Meal",
+              "body": "The setting matters here. Shared dishes, house details, and a calmer table make the meal feel different from a quick central restaurant."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Cục Gạch Quán is the name to show or say. Diacritics help, but the address may be easier when ordering a ride."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Dinner Slot",
+              "body": "The restaurant belongs on a night when you want to sit, share dishes, and let dinner be the main plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Family-Style Expectations",
+              "body": "Think shared plates rather than one rushed solo bowl. The meal makes more sense when the table has time to settle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details Can Shift",
+              "body": "Hold exact dish expectations lightly. The durable draw is the old-house setting, family-style rhythm, and quieter dinner mood."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-district-1",
+          "summary": "District 1 is the central Saigon base layer for hotel edges, boulevards, markets, cafés, older facades, high-rises, scooters, and evening landmark walks.",
+          "context": "Quận 1 organizes central Saigon: many first landmarks, hotels, cafés, shops, and walking corridors sit close together here.",
+          "tip": "Think in smaller corridors, not the whole district at once. Ben Thanh, Nguyen Hue, Dong Khoi, and the river each create a different walk.",
+          "rationale": "District 1 turns scattered landmarks into a mental map: market edge, boulevard, hotel core, older facades, traffic, cafés, and river direction.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Central Saigon Base Layer",
+              "body": "District 1 is where many first Saigon references cluster: hotels, cafés, markets, boulevards, old facades, high-rises, and evening walks."
+            },
+            {
+              "id": "place-brief",
+              "title": "Several Corridors, Not One Mood",
+              "body": "Ben Thanh, Dong Khoi, Nguyen Hue, and the river edge feel different. The district makes sense when you read it in smaller pieces."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Quận 1 is the local name. It is useful for taxis, hotel directions, and understanding why many first stops sit nearby."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Hotel Core And First Walks",
+              "body": "The district is a strong base for early orientation. Step out for one corridor, then build confidence before crossing into other neighborhoods."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Routes Beat Big Statements",
+              "body": "Picture one boulevard or market edge at a time. Trying to summarize all of District 1 makes the place less useful."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Busy Does Not Mean Simple",
+              "body": "Quận 1 is central, but not uniform. Traffic, hotel blocks, shopping streets, and civic spaces each ask for a different pace."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-district-3",
+          "summary": "Quận 3 is the central Saigon breathing route beside District 1: War Remnants Museum, Turtle Lake, Tân Định Church, Bàn Cờ Market, cafés, and older streets.",
+          "context": "District 3 works when the first move is one chosen stop and a nearby walk, not a loose plan to cover the whole district.",
+          "tip": "Pick War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market first, then walk nearby and call a car when done.",
+          "rationale": "The district shows central Saigon between headline landmarks: greener streets, everyday cafés, apartment blocks, markets, older buildings, and lived-in traffic.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Stop, Then Nearby Streets",
+              "body": "Quận 3 works with one first stop: War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market. Nearby streets do the rest."
+            },
+            {
+              "id": "place-brief",
+              "title": "Central Saigon, Lower Volume",
+              "body": "The district sits close to District 1 but often feels greener and more lived-in: tree-lined streets, cafés, older buildings, schools, markets, and apartments."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "directions-1",
+                "directions-3",
+                "shop-4",
+                "taxi-3"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "Mood Sets The Stop",
+              "body": "War Remnants Museum is serious. Turtle Lake is lighter. Bàn Cờ Market is food-and-market texture. Tân Định Church is a quick visual stop if open."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Return Plan Matters",
+              "body": "District 3 is not one smooth sightseeing loop. Walk in small sections and call a car when heat, traffic, or distance starts deciding for you."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

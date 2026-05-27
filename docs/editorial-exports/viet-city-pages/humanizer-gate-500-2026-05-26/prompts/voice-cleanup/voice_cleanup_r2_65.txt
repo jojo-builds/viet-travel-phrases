@@ -1,0 +1,313 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_65",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_65",
+  "chunks": [
+    {
+      "chunkFile": "hue_051_075_humanized.json",
+      "cityID": "hue",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hue-place-museum-commissioned-porcelains",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-ngo-mon-gate",
+          "message": "banned visible fragment: stable role"
+        },
+        {
+          "id": "city-hue-place-ngu-binh-mountain",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-minh-mang-tomb",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-museum-commissioned-porcelains",
+          "message": "freshness/process-like heading: Displays Can Shift"
+        },
+        {
+          "id": "city-hue-place-museum-commissioned-porcelains",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-nam-giao-esplanade",
+          "message": "freshness/process-like heading: Access Details Can Vary"
+        },
+        {
+          "id": "city-hue-place-nam-giao-esplanade",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-ngo-mon-gate",
+          "message": "freshness/process-like heading: Ticket Details need a close-to-the-day check"
+        },
+        {
+          "id": "city-hue-place-ngo-mon-gate",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 13x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 13x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-minh-mang-tomb",
+          "summary": "The Tomb of Minh Mang rewards a slower tomb-gate moment: axial paths, lakes, red gates, tiled roofs, and the formal calm of Hue's royal landscape.",
+          "context": "This is one of Hue's ceremonial heritage stops, shaped by alignment, water, gates, courtyards, and the feeling of moving through order.",
+          "tip": "Lăng Minh Mạng is the Vietnamese name to recognize. Lăng tells people you mean a royal tomb, not the Imperial City.",
+          "rationale": "The tomb turns dynasty history into walking distance, with architecture, water, and sequence doing more than any single plaque.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Formal Tomb Sequence",
+              "body": "Minh Mang is about order: gate, path, courtyard, water, and roofline. Slow movement matters more than trying to photograph every structure."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lakes, Gates, Axis",
+              "body": "This is an arranged royal landscape rather than a single building. The route carries you through symmetry, shade, and water reflections before the history fully lands."
+            },
+            {
+              "id": "quick-say",
+              "title": "Royal Tomb Name",
+              "body": "Lăng Minh Mạng is the local name. The word lăng is helpful across Hue because several royal tombs use it on signs, maps, and driver screens."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Tomb Route reference point",
+              "body": "It pairs naturally with another tomb or a Perfume River plan, but the visit needs enough time to walk the grounds without rushing the sequence."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Heat Changes The Visit",
+              "body": "Midday heat can flatten the experience. Shade, water, and slower pacing make the tomb feel more thoughtful than a quick gate photo."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Tickets And Access Change",
+              "body": "Ticket bundles, access details, and restoration areas can shift. A simple plan is safer until current stop details are checked."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-museum-commissioned-porcelains",
+          "summary": "The Museum of Nguyen Dynasty Commissioned Porcelains gives Hue a quieter object-focused stop: blue-and-white bowls, display cases, gallery light, and royal taste at close range.",
+          "context": "This is for a short indoor layer of Hue, where ceramics, commissioned objects, and quiet rooms offer detail after big royal sites.",
+          "tip": "Bảo tàng Đồ sứ ký kiểu thời Nguyễn is long, but it helps to recognize bảo tàng for museum and đồ sứ for porcelain.",
+          "rationale": "The museum makes royal history feel domestic and tactile, shifting attention from gates and tombs to bowls, decoration, and display cases.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Royal History In Porcelain",
+              "body": "This stop narrows Hue from palaces to objects: bowls, blue-and-white detail, glass cases, and the quieter taste of the Nguyen court."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Short Indoor Layer",
+              "body": "The museum is a focused room-by-room pause after larger sites. It is more about close looking than covering a grand route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Long Name, Useful Pieces",
+              "body": "Bảo tàng means museum, and đồ sứ means porcelain. Those parts are easier to recognize than the full official name on a first try."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Palace Architecture",
+              "body": "It makes sense after Long An Palace or the Royal Antiquities Museum, when a smaller object story can balance the scale of timber halls and courtyards."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Close Looking Helps",
+              "body": "Porcelain rewards small attention: painted lines, forms, labels, and case arrangements. A short focused visit may land better than a long museum session."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Displays Can Shift",
+              "body": "Temporary arrangements can change. The stable reason to go is Nguyen-period porcelain and the way Hue's royal world appears through objects."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-nam-giao-esplanade",
+          "summary": "Nam Giao Esplanade is Hue in ritual geometry: open terraces, old brick, trees, and the rare feeling of a royal ceremony site without a crowded room.",
+          "context": "The stop is about space and ceremony more than ornament: an open ritual terrace where royal memory sits in brick, trees, and alignment.",
+          "tip": "Đàn Nam Giao is the Vietnamese name. Đàn here points to a ritual altar or esplanade, not a music stage.",
+          "rationale": "It adds another kind of royal Hue, less about objects and more about ceremony, open air, and how a court arranged sacred space.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Royal Space In The Open",
+              "body": "Nam Giao feels different from palace rooms and tomb gates. The interest is open ritual ground, old brick, trees, and the geometry of ceremony."
+            },
+            {
+              "id": "place-brief",
+              "title": "Quiet Rather Than Ornate",
+              "body": "Heavy decoration is not the point at every step. The site speaks through scale, alignment, and emptiness, which can feel subtle after the Imperial City."
+            },
+            {
+              "id": "quick-say",
+              "title": "Ritual Site Name",
+              "body": "Đàn Nam Giao is the name to recognize. It helps to connect the place with royal rites rather than a general park or courtyard."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Different Royal Mood",
+              "body": "It pairs well with palace or tomb days because it shows another layer of court life: ceremony outdoors, not just buildings and objects."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Subtle Stop, Strong Context",
+              "body": "This is not a spectacle-first visit. It lands better when you already care about how Hue's royal world arranged ritual, hierarchy, and space."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Details Can Vary",
+              "body": "Path condition, gates, and interpretation can change. The durable claim is the site's ceremonial role and open terrace form."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ngo-mon-gate",
+          "summary": "Ngọ Môn is the Imperial City's front threshold: stone, flags, tiled rooflines, and the moment Hue shifts from busy streets into royal courtyards.",
+          "context": "This gate is the first strong visual cue for the Imperial City, where walls, ceremony, courtyards, and crowd movement meet.",
+          "tip": "Ngọ Môn is short and useful to recognize on tickets, signs, and driver screens. It names the gate, not the whole citadel.",
+          "rationale": "The gate gives Hue's royal center a threshold, turning arrival from a map point into a physical crossing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Royal Threshold",
+              "body": "Ngo Mon Gate is the front moment of the Imperial City: stone, flags, roofline, open space, and the feeling that the street has become court ground."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gate First, Then Courtyards",
+              "body": "The gate matters because it frames the next move. A moment from farther back helps you read the roof and walls before the courtyards pull you inward."
+            },
+            {
+              "id": "quick-say",
+              "title": "Short Local Name",
+              "body": "Ngọ Môn is the Vietnamese name. It is compact enough to say or recognize quickly, especially around Imperial City tickets and meeting points."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Natural Meeting Point",
+              "body": "Because the gate is so recognizable, it can reference point photos, group meetups, and the first orientation moment before a larger citadel walk."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crowds Change The Feel",
+              "body": "A crowded entrance can make the gate feel like logistics. Step aside when possible and give the architecture a moment before moving through."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Ticket Details need a close-to-the-day check",
+              "body": "stop rules, ticket bundles, and restoration routing can change. The stable role is the gate as the Imperial City's main ceremonial front."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ngu-binh-mountain",
+          "summary": "Ngu Binh Mountain gives Hue a distant natural reference point: a muted backdrop behind rooftops and river, more about orientation and atmosphere than a major hike.",
+          "context": "This is Hue beyond buildings: mountain shape, river context, weather, green edges, and the way the city opens on the horizon.",
+          "tip": "Núi Ngự Bình is the Vietnamese name. Núi means mountain, which helps when reading signs or asking about the view.",
+          "rationale": "The mountain helps the visit picture Hue as a landscape city, not just a set of royal sites and streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Mountain In The Background",
+              "body": "Ngu Binh is often more useful as an orientation landmark than a planned climb. It gives Hue a horizon behind the river, rooftops, and tomb roads."
+            },
+            {
+              "id": "place-brief",
+              "title": "Weather Matters",
+              "body": "Morning haze, rain, or flat light can change how much the mountain shows. The point is landscape context, not a guaranteed viewpoint moment."
+            },
+            {
+              "id": "quick-say",
+              "title": "Mountain Name",
+              "body": "Núi Ngự Bình is the local name. The word núi is worth noticing because it appears in many Vietnamese mountain and hill names."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good For City Context",
+              "body": "It fits naturally when talking about Hue's river, tomb routes, and garden-house landscape. The mountain helps the city feel placed rather than scattered."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Not A Heavy Outing",
+              "body": "For most visitors, this is a name to recognize and a shape to notice. Bigger energy belongs to tombs, pagodas, or a true nature day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Views Are Conditional",
+              "body": "Weather and viewpoint access can affect the experience. Modest expectations help: the mountain is a backdrop and context marker before it is an attraction."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

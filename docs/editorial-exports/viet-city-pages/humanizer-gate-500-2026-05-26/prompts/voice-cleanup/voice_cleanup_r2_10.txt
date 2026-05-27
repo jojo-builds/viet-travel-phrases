@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_10",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_10",
+  "chunks": [
+    {
+      "chunkFile": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-danang-place-my-an-beach",
+          "message": "heading is command-like: Check The Water First"
+        },
+        {
+          "id": "city-danang-place-my-an-beach",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-my-an-beach",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-my-khe",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-my-quang-ba-mua",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-my-quang-dung",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nam-danh-seafood",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 22x: name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 22x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-my-an-beach",
+          "summary": "My An Beach is a quieter beach-side pause near the My An stay area, with open sand, hotel edges, and a low-friction way onto the coast.",
+          "context": "This beach can become a swim, short sit, or walk, with weather and water deciding how much time belongs here.",
+          "tip": "Check waves, current, weather, and where other people are swimming before settling in. If conditions feel off, keep it to sand, shade, and photos.",
+          "rationale": "My An Beach gives Da Nang a softer beach edge that connects naturally to My An without competing with My Khe's bigger-name role.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Ease Onto The Sand",
+              "body": "My An Beach is the beach-side pause for people staying around My An. The scene is quieter than the headline stretch: umbrellas, low-rise hotel edges, and bright open sand."
+            },
+            {
+              "id": "place-brief",
+              "title": "Arrive Light",
+              "body": "Bring only what you want to carry back through the street. This beach suits a swim, a short sit, or a slow walk before deciding what the rest of the day needs."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Bien My An keeps the beach tied to the neighborhood behind it. The name is useful when choosing between this quieter edge and wider My Khe."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Check The Water First",
+              "body": "Look at waves, current, and where other people are swimming before you settle in. If conditions feel off, keep it to sand, shade, and photos."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Beach Time With Conditions",
+              "body": "Good for a short sit, swim decision, or sand walk near the My An area. Let weather and water shape the stop when conditions feel rough."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sea Air Before Seafood",
+              "body": "The beach can slow the pace before a meal. A short walk back toward My An gives the seafood-and-cafe side of Da Nang a calmer frame."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-my-khe",
+          "summary": "My Khe Beach gives Da Nang its open coastal scale: wide sand, city behind, sea in front, and a morning that can reset the whole day.",
+          "context": "Da Nang's recognizable beach stretch, with weather and water still shaping the visit. Let the day decide between swimming, walking, or simply watching the sea.",
+          "tip": "Choose a clear place to step onto the sand, keep belongings close, and let rough weather turn the stop into a walk-only reset if needed.",
+          "rationale": "My Khe gives Da Nang its beach identity while staying practical about pickup, conditions, and the city's nearness.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Go Early For The Wide Beach",
+              "body": "My Khe Beach gives Da Nang its open coastal scale. At sunrise, the sand feels wider, the water reads calmer, and the city skyline stays far enough back."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Patch Of Sand",
+              "body": "The shoreline can feel long, so do not try to read all of it at once. Pick a clear patch of sand, watch where people are swimming, and keep your things close."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Bien My Khe is the beach name many people know in Da Nang, and it points to the wider, more recognizable coastal stretch."
+            },
+            {
+              "id": "use-it-with",
+              "title": "City Behind, Sea In Front",
+              "body": "My Khe is not remote, and that is part of the ease. You can get sea air without leaving the city, then fold back into cafes, hotels, or a bridge walk."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Morning Coastal Reset",
+              "body": "Good when the day needs open sand and sea air before heat builds. It can be a swim, a walk, or simply a reset with the city behind you."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather Changes The Mood",
+              "body": "Bright mornings make the beach feel generous. Wind, rain, or rough water can turn it into a walk-only stop, which is still a good reset between busier plans."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-my-quang-ba-mua",
+          "summary": "My Quang Ba Mua is a Da Nang mi Quang stop where yellow noodles, shallow broth, herbs, peanuts, and rice cracker carry the meal at the table.",
+          "context": "A named mi Quang stop where the bowl matters more than a long restaurant plan. Arrive ready for noodles, herbs, cracker, and a clear first order.",
+          "tip": "Order one bowl first, taste it, then add chili, lime, sides, or drinks after the table rhythm is clear.",
+          "rationale": "My Quang Ba Mua connects a named restaurant to the broader mi Quang dish through ordering rhythm, texture, and the first bowl.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Order The Bowl Before The Table Fills",
+              "body": "The dish leads at My Quang Ba Mua. Think yellow noodles, shallow broth, herbs, peanuts, rice cracker, and a table that feels better once your order is clear."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read It As Mi Quang",
+              "body": "This is not a soup-first meal. Mix the noodles through the shallow broth, break the rice cracker when you want crunch, and add lime or chili after the first bite."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "My Quang Ba Mua is the restaurant name. Keep it linked to mi Quang first, not to a broad sit-down dinner expectation."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Bowl Before Extras",
+              "body": "Ask for one bowl before adding extra sides or drinks. A simple first order gives you space to notice the turmeric noodles, herbs, and house rhythm."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Bowl First, Extras Later",
+              "body": "Good when the group wants a named mi Quang stop without turning lunch complicated. Start with the bowl, taste, then decide on chili, lime, and sides."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Meal, Not A Gap Filler",
+              "body": "The appeal is not only that food arrives between sights. It is a central-Vietnam bowl with enough texture to make lunch feel like part of the day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-my-quang-dung",
+          "summary": "My Quang Dung is a counter-style mi Quang stop where pointing, choosing the bowl, and adding herbs or chili slowly make the meal easier.",
+          "context": "A counter-oriented mi Quang stop where watching the bowls move makes ordering easier. Point clearly, taste first, and build flavor slowly.",
+          "tip": "Look at the bowls moving before you point. Taste before adding heat, because chili, lime, peanuts, and sauce can build quickly.",
+          "rationale": "My Quang Dung gives the city set a counter-style mi Quang option built around pointing, tasting, and keeping lunch compact.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Counter First, Bowl Next",
+              "body": "The easiest version of My Quang Dung is simple: point, choose the bowl, then leave the flavor to herbs, lime, chili, and the cracker."
+            },
+            {
+              "id": "place-brief",
+              "title": "Look Before You Point",
+              "body": "Take a moment to see what bowls are moving. A quick look at herbs, lime, and chili makes the order feel less like guessing."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "My Quang Dung is easiest to remember as a mi Quang counter scene, with quick bowls, herbs, chili, and no need for a long lunch."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Add Heat Slowly",
+              "body": "Mi Quang can carry spice, peanuts, and sharp lime all at once. Taste first, then add chili; it is easier to build the bowl than undo it."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Counter Rhythm First",
+              "body": "Good when pointing and watching other bowls feels easier than decoding a long menu. Taste before adding chili, lime, peanuts, or extra sauce."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Small Stop Is Enough",
+              "body": "This is a good meal to fit between bigger Da Nang plans. Eat, reset, and leave room for a walk rather than stretching a noodle counter into a long lunch."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nam-danh-seafood",
+          "summary": "Nam Danh Seafood is a neighborhood seafood table where clams, grilled fish, cold drinks, plastic stools, and shared rounds make the meal.",
+          "context": "A seafood-table note built around rounds, shared plates, and practical ordering rather than fixed prices or menu details.",
+          "tip": "Order in rounds. Start small, confirm what matters, then add a second plate once the table understands the rhythm.",
+          "rationale": "Nam Danh Seafood adds a casual seafood-table stop built around shared rounds, pointing clearly, and letting the setting carry the meal.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Order In Rounds, Not All At Once",
+              "body": "Nam Danh is the kind of seafood stop where the table becomes the plan: clams, grilled fish, cold drinks, plastic stools, and a quick round of pointing."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Plates Keep The Night Easy",
+              "body": "Seafood gets easier when the first order is a warm-up. Choose one clam dish, one grilled plate, or one shared thing, then decide what deserves a second round."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Hai san Nam Danh is the seafood name to listen for. Keep it tied to shared plates and neighborhood rhythm, not a formal restaurant script."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Point, Confirm, Then Share",
+              "body": "Do not expect every choice to unfold like a long English menu conversation. Point clearly, confirm price or portion when it matters, and let shared plates do the work."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Rounds At The Table",
+              "body": "Good when seafood can arrive in small rounds. Start with one or two plates, confirm the table rhythm, then add more instead of over-ordering."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Setting Carries The Meal",
+              "body": "The memory is not only the fish. It is the neighborhood seafood rhythm: stools close together, sauce bowls, drinks sweating on the table, and a meal that feels part of the evening."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

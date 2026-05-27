@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-05-22T10:44:56.766Z",
+  "source": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/V2_2_RENDER_PILOT_REDO_APP_DETAILS.json",
+  "previewUrl": "http://127.0.0.1:8765/docs/design/city-pages/render-pilot-redo/",
+  "screenshots": [
+    {
+      "id": "viet-family-city-danang-place-international-terminal",
+      "fullPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/01-danang-international-terminal-full-page.jpg",
+      "bottomPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/01-danang-international-terminal-bottom-check.jpg",
+      "checks": {
+        "phraseCardsAfterIntro": true,
+        "duplicateBodyCount": 0,
+        "phraseProseBlocks": 0,
+        "overflowRows": [],
+        "mentionedCards": 2,
+        "expectedMentioned": 2,
+        "relatedCards": 2,
+        "expectedRelated": 2,
+        "bottomChromeClearance": 138,
+        "bottomChromeOverlapsContent": false,
+        "imageIssues": [],
+        "internalLabelLeaks": [],
+        "reasonTextLeaks": [],
+        "missingDisplaySubtitleText": []
+      }
+    },
+    {
+      "id": "viet-family-city-danang-place-dong-dinh-museum",
+      "fullPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/02-danang-dong-dinh-museum-full-page.jpg",
+      "bottomPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/02-danang-dong-dinh-museum-bottom-check.jpg",
+      "checks": {
+        "phraseCardsAfterIntro": true,
+        "duplicateBodyCount": 0,
+        "phraseProseBlocks": 0,
+        "overflowRows": [],
+        "mentionedCards": 2,
+        "expectedMentioned": 2,
+        "relatedCards": 2,
+        "expectedRelated": 2,
+        "bottomChromeClearance": 138,
+        "bottomChromeOverlapsContent": false,
+        "imageIssues": [],
+        "internalLabelLeaks": [],
+        "reasonTextLeaks": [],
+        "missingDisplaySubtitleText": []
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pasteur-street",
+      "fullPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/03-hcmc-pasteur-street-full-page.jpg",
+      "bottomPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/03-hcmc-pasteur-street-bottom-check.jpg",
+      "checks": {
+        "phraseCardsAfterIntro": true,
+        "duplicateBodyCount": 0,
+        "phraseProseBlocks": 0,
+        "overflowRows": [],
+        "mentionedCards": 1,
+        "expectedMentioned": 1,
+        "relatedCards": 2,
+        "expectedRelated": 2,
+        "bottomChromeClearance": 138,
+        "bottomChromeOverlapsContent": false,
+        "imageIssues": [],
+        "internalLabelLeaks": [],
+        "reasonTextLeaks": [],
+        "missingDisplaySubtitleText": []
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-loading-t-cafe",
+      "fullPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/04-hanoi-loading-t-cafe-full-page.jpg",
+      "bottomPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/04-hanoi-loading-t-cafe-bottom-check.jpg",
+      "checks": {
+        "phraseCardsAfterIntro": true,
+        "duplicateBodyCount": 0,
+        "phraseProseBlocks": 0,
+        "overflowRows": [],
+        "mentionedCards": 3,
+        "expectedMentioned": 3,
+        "relatedCards": 2,
+        "expectedRelated": 2,
+        "bottomChromeClearance": 138,
+        "bottomChromeOverlapsContent": false,
+        "imageIssues": [],
+        "internalLabelLeaks": [],
+        "reasonTextLeaks": [],
+        "missingDisplaySubtitleText": []
+      }
+    },
+    {
+      "id": "viet-family-city-danang-place-lotte-mart",
+      "fullPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/05-danang-lotte-mart-full-page.jpg",
+      "bottomPath": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-redo-2026-05-22/05-danang-lotte-mart-bottom-check.jpg",
+      "checks": {
+        "phraseCardsAfterIntro": true,
+        "duplicateBodyCount": 0,
+        "phraseProseBlocks": 0,
+        "overflowRows": [],
+        "mentionedCards": 1,
+        "expectedMentioned": 1,
+        "relatedCards": 2,
+        "expectedRelated": 2,
+        "bottomChromeClearance": 138,
+        "bottomChromeOverlapsContent": false,
+        "imageIssues": [],
+        "internalLabelLeaks": [],
+        "reasonTextLeaks": [],
+        "missingDisplaySubtitleText": []
+      }
+    }
+  ]
+}

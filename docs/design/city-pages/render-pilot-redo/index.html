@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpeakLocal v2.2 Render Pilot Redo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: #edf0ee;
+      color: #141414;
+      letter-spacing: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #edf0ee;
+    }
+
+    main {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      background: #f8f8f5;
+    }
+
+    .phone {
+      width: 100%;
+      min-height: 100vh;
+      background: #f8f8f5;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 318px;
+      background: #d8ddd7;
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.98) contrast(0.97);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.06) 34%, rgba(248,248,245,0.9) 100%);
+      pointer-events: none;
+    }
+
+    .status-bar {
+      position: relative;
+      z-index: 2;
+      height: 64px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 28px 13px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #101010;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      left: 50%;
+      top: 14px;
+      transform: translateX(-50%);
+      width: 122px;
+      height: 36px;
+      border-radius: 999px;
+      background: #050505;
+      z-index: 3;
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .back-button {
+      position: absolute;
+      z-index: 3;
+      left: 22px;
+      top: 122px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.83);
+      box-shadow: 0 14px 24px rgba(20,20,20,0.12);
+      display: grid;
+      place-items: center;
+      font-size: 31px;
+      line-height: 1;
+    }
+
+    .sheet {
+      position: relative;
+      z-index: 4;
+      margin-top: -42px;
+      min-height: 650px;
+      border-radius: 28px 28px 0 0;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 -24px 38px rgba(31,42,35,0.12);
+      padding: 16px 22px 22px;
+    }
+
+    .grabber {
+      width: 48px;
+      height: 5px;
+      border-radius: 999px;
+      background: #dcdeda;
+      margin: 0 auto 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #7a8279;
+      letter-spacing: 0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .eyebrow .pin {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      color: #d8444f;
+      border: 1px solid #efc4c8;
+      font-size: 11px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 49px;
+      line-height: 0.92;
+      letter-spacing: 0;
+      color: #0f0f0f;
+      max-width: 10ch;
+    }
+
+    .english {
+      margin: 14px 0 10px;
+      font-size: 20px;
+      line-height: 1.28;
+      color: #7d817b;
+      font-weight: 700;
+    }
+
+    .pronunciation {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #858882;
+      font-size: 17px;
+      font-weight: 700;
+      margin: 12px 0 18px;
+    }
+
+    .wave {
+      color: #dd4a57;
+      font-size: 23px;
+      letter-spacing: 0;
+    }
+
+    .audio-panel {
+      display: grid;
+      grid-template-columns: 64px 86px 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.82);
+      box-shadow: 0 20px 34px rgba(22,26,24,0.10);
+      margin: 18px 0 28px;
+      border: 1px solid #eef0ec;
+    }
+
+    .circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15,20,16,0.09);
+      color: #dc4654;
+      font-weight: 900;
+      font-size: 28px;
+    }
+
+    .play {
+      width: 78px;
+      height: 78px;
+      font-size: 34px;
+    }
+
+    .speed {
+      height: 50px;
+      border-radius: 999px;
+      background: #f6f4f0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      color: #454c43;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .speed span {
+      display: grid;
+      place-items: center;
+      border-right: 1px solid #e3e2de;
+    }
+
+    .speed span:last-child {
+      border-right: 0;
+      color: #d3434f;
+      position: relative;
+    }
+
+    .speed span:last-child::after {
+      content: "";
+      position: absolute;
+      left: 22%;
+      right: 22%;
+      bottom: 8px;
+      height: 3px;
+      border-radius: 999px;
+      background: #d3434f;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-title,
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.18;
+      color: #131313;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: #777a73;
+      font-size: 18px;
+      line-height: 1.42;
+      letter-spacing: 0;
+    }
+
+    .phrase-grid {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 24px;
+      background: rgba(248,248,245,0.96);
+      border: 1px solid #eef0ec;
+      box-shadow: 0 18px 30px rgba(30,36,31,0.08);
+    }
+
+    .phrase-card {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 11px;
+      align-items: center;
+      min-height: 58px;
+      padding: 9px 11px 9px 7px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #eceee9;
+    }
+
+    .phrase-play {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fff4f5;
+      color: #d94350;
+      font-size: 18px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .phrase-vi {
+      display: block;
+      color: #1a1a18;
+      font-size: 16px;
+      line-height: 1.22;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+
+    .phrase-en {
+      display: block;
+      margin-top: 3px;
+      color: #8b8e86;
+      font-size: 14px;
+      line-height: 1.22;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+
+    .module {
+      padding: 16px;
+      border-radius: 24px;
+      background: #f5f6f2;
+      border: 1px solid #ebeee8;
+    }
+
+    .card-row {
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-card {
+      min-height: 68px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #e7eae4;
+      padding: 12px 14px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .link-label {
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 900;
+      color: #181817;
+    }
+
+    .link-meta {
+      font-size: 13px;
+      line-height: 1.3;
+      color: #858a81;
+      font-weight: 700;
+    }
+
+    .bottom-spacer {
+      height: 126px;
+    }
+
+    .bottom-chrome {
+      position: sticky;
+      bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr 64px;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0 0;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .tab-pill {
+      height: 66px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 18px 28px rgba(22,26,24,0.11);
+      border: 1px solid #edf0eb;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      padding: 5px 8px;
+    }
+
+    .tab {
+      display: grid;
+      justify-items: center;
+      gap: 3px;
+      color: #111;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .tab-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .tab.active {
+      color: #d84853;
+    }
+
+    .search-button {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #edf0eb;
+      box-shadow: 0 18px 28px rgba(22,26,24,0.11);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <main id="app" aria-live="polite"></main>
+  <script>
+    const heroMap = {
+      "viet-family-city-danang-place-international-terminal": "/native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceInternationalTerminal.imageset/hero-city-danang-place-international-terminal-720q80.jpg",
+      "viet-family-city-danang-place-dong-dinh-museum": "/native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceDongDinhMuseum.imageset/hero-city-danang-place-dong-dinh-museum-720q80.jpg",
+      "viet-family-city-hcmc-place-pasteur-street": "/native-ios/Resources/Assets.xcassets/HeroCityHcmcPlacePasteurStreet.imageset/hero-city-hcmc-place-pasteur-street-720q80.jpg",
+      "viet-family-city-hanoi-place-loading-t-cafe": "/native-ios/Resources/Assets.xcassets/HeroCityHanoiPlaceLoadingTCafe.imageset/hero-city-hanoi-place-loading-tcafe-720q80.jpg",
+      "viet-family-city-danang-place-lotte-mart": "/native-ios/Resources/Assets.xcassets/HeroCityDanangPlaceLotteMart.imageset/hero-city-danang-place-lotte-mart-720q80.jpg"
+    };
+
+    const titleBreaks = {
+      "viet-family-city-danang-place-international-terminal": "Nhà ga<br>quốc tế<br>Đà Nẵng",
+      "viet-family-city-danang-place-dong-dinh-museum": "Bảo tàng<br>Đồng Đình",
+      "viet-family-city-hcmc-place-pasteur-street": "Đường<br>Pasteur",
+      "viet-family-city-hanoi-place-loading-t-cafe": "Loading T<br>Cafe",
+      "viet-family-city-danang-place-lotte-mart": "Lotte Mart<br>Đà Nẵng"
+    };
+
+    function escapeHTML(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function catalogSubtitle(item, catalogByPageID) {
+      const catalogItem = item.catalogId ? catalogByPageID.get(item.catalogId) : null;
+      return item.displaySubtitle || catalogItem?.summary || "";
+    }
+
+    function renderLinkCards(items, relationLabel, catalogByPageID) {
+      const renderable = items.filter((item) => item.status === "render");
+      if (!renderable.length) return "";
+      return `
+        <section class="module" data-module="${escapeHTML(relationLabel)}">
+          <h2>${escapeHTML(relationLabel)}</h2>
+          <div class="card-row">
+            ${renderable.map((item) => {
+              const subtitle = catalogSubtitle(item, catalogByPageID);
+              return `
+              <article class="link-card">
+                <span class="link-label">${escapeHTML(item.label)}</span>
+                ${subtitle ? `<span class="link-meta">${escapeHTML(subtitle)}</span>` : ""}
+              </article>
+            `;
+            }).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPage(page, catalogByPageID) {
+      return `
+        <article class="phone" data-page-id="${escapeHTML(page.id)}">
+          <div class="hero">
+            <img alt="" src="${heroMap[page.id]}">
+            <div class="dynamic-island"></div>
+            <div class="status-bar">
+              <span>3:28</span>
+              <span class="status-icons">Wi-Fi ▰</span>
+            </div>
+            <div class="back-button">‹</div>
+          </div>
+
+          <div class="sheet">
+            <div class="grabber"></div>
+            <p class="eyebrow"><span class="pin">⌖</span> SpeakLocal Vietnam</p>
+            <h1>${titleBreaks[page.id] || escapeHTML(page.displayName)}</h1>
+            <p class="english">${escapeHTML(page.englishName)}</p>
+            <div class="pronunciation"><span class="wave">▥</span><span>${escapeHTML(page.pronunciation)}</span></div>
+            <div class="audio-panel">
+              <div class="circle">♡</div>
+              <div class="circle play">▶</div>
+              <div class="speed"><span>0.5x</span><span>0.75x</span><span>1.0x</span></div>
+            </div>
+
+            <section class="intro" data-section="intro">
+              <h2>${escapeHTML(page.intro.heading)}</h2>
+              <p>${escapeHTML(page.intro.body)}</p>
+            </section>
+
+            <section class="phrases" data-section="useful-phrases">
+              <h2>Useful Phrases</h2>
+              <div class="phrase-grid">
+                ${page.usefulPhraseCards.map((card) => `
+                  <article class="phrase-card" data-phrase-id="${escapeHTML(card.phraseId)}">
+                    <span class="phrase-play">▶</span>
+                    <span>
+                      <span class="phrase-vi">${escapeHTML(card.vi)}</span>
+                      <span class="phrase-en">${escapeHTML(card.en)}</span>
+                    </span>
+                  </article>
+                `).join("")}
+              </div>
+            </section>
+
+            ${page.sections.map((section) => `
+              <section data-section="${escapeHTML(section.id)}">
+                <h2>${escapeHTML(section.heading)}</h2>
+                <p>${escapeHTML(section.body)}</p>
+              </section>
+            `).join("")}
+
+            ${renderLinkCards(page.mentionedHereCandidates, "Mentioned Here", catalogByPageID)}
+            ${renderLinkCards(page.relatedPlaceCandidates, "Related Places", catalogByPageID)}
+
+            <div class="bottom-spacer"></div>
+            <nav class="bottom-chrome" aria-label="App chrome">
+              <div class="tab-pill">
+                <span class="tab active"><span class="tab-icon">⌂</span>Home</span>
+                <span class="tab"><span class="tab-icon">▦</span>Browse</span>
+                <span class="tab"><span class="tab-icon">♥</span>Saved</span>
+                <span class="tab"><span class="tab-icon">▦</span>Practice</span>
+              </div>
+              <span class="search-button">⌕</span>
+            </nav>
+          </div>
+        </article>
+      `;
+    }
+
+    async function boot() {
+      const pages = await fetch("/docs/design/city-pages/V2_2_RENDER_PILOT_REDO_APP_DETAILS.json").then((res) => res.json());
+      const catalog = await fetch("/native-ios/Resources/viet-phrase-catalog.json").then((res) => res.json());
+      const catalogByPageID = new Map((catalog.families || []).map((family) => [family.pageID, family]));
+      const params = new URLSearchParams(location.search);
+      const pageId = params.get("page") || pages[0].id;
+      const page = pages.find((candidate) => candidate.id === pageId) || pages[0];
+      document.getElementById("app").innerHTML = renderPage(page, catalogByPageID);
+    }
+
+    boot();
+  </script>
+</body>
+</html>

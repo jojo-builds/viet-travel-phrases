@@ -1,0 +1,289 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_45",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_45",
+  "chunks": [
+    {
+      "chunkFile": "hoian_001_025_humanized.json",
+      "cityID": "hoian",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hoian-place-bay-mau-coconut-forest",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-chau",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-kim-island",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-nam",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-pho",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 4x: neighborhood name to hear"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 11x: map/name utility heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-bay-mau-coconut-forest",
+          "summary": "Bay Mau Coconut Forest changes Hoi An’s texture with water-coconut palms, narrow channels, basket boats, village water, and green shade.",
+          "context": "Bay Mau matters because Hoi An is not only lantern streets. Cam Thanh’s coconut waterways bring wetland life, palm shade, and boat movement into the trip.",
+          "tip": "Rừng dừa Bảy Mẫu is the name to recognize. Rừng dừa means coconut forest, which points your ear toward palms and waterways.",
+          "rationale": "Bay Mau Coconut Forest gives Hoi An a green water rhythm: channels, basket boats, palm shade, weather, and a softer space beyond traffic.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coconut Waterways Beyond Town",
+              "body": "Bay Mau is Hoi An beyond the old yellow walls: green coconut palms, low boats, river channels, and the village-water rhythm around Cam Thanh."
+            },
+            {
+              "id": "place-brief",
+              "title": "Basket Boats And Palm Shade",
+              "body": "Expect water coconut palms over narrow channels and round basket boats moving through shade. The setting feels wetter, greener, and quieter than the old streets."
+            },
+            {
+              "id": "quick-say",
+              "title": "Forest Name To Hear",
+              "body": "Say Rừng dừa Bảy Mẫu for Bay Mau Coconut Forest. Rừng dừa means coconut forest, which keeps the name tied to palms and water."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Weather Changes The Mood",
+              "body": "This is a water-and-shade stop, so weather matters. Sun, cloud, or rain can change whether the ride feels bright, cool, or flat."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Village Water, Not Theme Only",
+              "body": "The basket boats are the easy image, but the place also points to Cam Thanh’s water-village life. Keep that wider setting in mind."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cam Thanh Context Helps",
+              "body": "Bay Mau sits in the Cam Thanh coconut-waterway world. Knowing that helps separate it from beaches, old-town river walks, and generic boat rides."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-chau",
+          "summary": "Cam Chau is a quieter Hoi An neighborhood name for garden lanes, bicycles, hotels, cafes, and the slower space between old town and beach days.",
+          "context": "Cam Chau matters as a base and walking area, not a landmark. Gardens, bicycles, cafes, and hotel edges make the city feel lived-in.",
+          "tip": "Cẩm Châu is the name to recognize. It helps when a hotel, driver, or map points you toward a neighborhood instead of a landmark.",
+          "rationale": "Cam Chau gives Hoi An a softer daily rhythm: lanes, gardens, bicycles, cafes, hotel edges, and a less crowded read on the city.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Base Between Stops",
+              "body": "Cam Chau helps Hoi An feel lived-in: garden lanes, bicycles, cafes, and hotel edges rather than one landmark pulling all attention."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lanes Before Landmarks",
+              "body": "Expect quieter neighborhood lanes with gardens and bicycles, especially in softer morning light. The area is useful as a base and walking texture."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name To Hear",
+              "body": "Say Cẩm Châu for Cam Chau. The name is useful when addresses, hotels, or drivers describe Hoi An by neighborhood."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Easy For Slow Mornings",
+              "body": "Cam Chau fits the gentler parts of the day: leaving a hotel, finding coffee, or taking a quiet lane before the old core gets busy."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Old Town Stays Nearby",
+              "body": "The area can feel calm without feeling detached from Hoi An. Keep the old core in mind, but do not expect every lane to be a sight."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Place To Sleep Into",
+              "body": "Cam Chau is often more useful as a stay-and-walk area than a planned attraction. The name helps the city feel less centralized."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-kim-island",
+          "summary": "Cam Kim Island slows Hoi An down across the river with quiet island roads, fields, small homes, village routes, and local craft context.",
+          "context": "Cam Kim matters because it changes the day from old-town density to village rhythm. The island road, river, fields, and small homes do the work.",
+          "tip": "Cẩm Kim is the name to recognize. It points toward the island, village routes, river crossings, and a slower Hoi An edge.",
+          "rationale": "Cam Kim Island gives Hoi An a rural counterpoint: quiet roads, fields, river views, small homes, and craft context beyond the old streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Island Pace Across The River",
+              "body": "Cam Kim Island gives Hoi An a slower edge across the water: quiet roads, fields, small homes, and village routes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fields, Roads, Small Homes",
+              "body": "Expect a quiet island road with river, fields, and small homes. The scene is low-key, so the value comes from pace rather than spectacle."
+            },
+            {
+              "id": "quick-say",
+              "title": "Island Name To Hear",
+              "body": "Say Cẩm Kim for Cam Kim Island. The name is useful when maps, drivers, or tours point beyond the old-town side of Hoi An."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Craft Gives The Route Shape",
+              "body": "Local craft context gives Cam Kim more purpose than a vague ride. Keep the route simple and let the village pace carry it."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Detour, Slower Mood",
+              "body": "Cam Kim suits a softer detour when the old town feels full. Do not load it with beach, market, and tailor expectations."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not Another Old Town Street",
+              "body": "The island earns its place through contrast with the yellow-wall core. Think river crossing, village road, and open space."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-nam",
+          "summary": "Cam Nam is the nearby island-neighborhood name for a small bridge, quiet lanes, river glimpses, cafes, and the older core just across the water.",
+          "context": "Cam Nam matters because it shows Hoi An immediately beyond the main old-town flow. The bridge, island lanes, and river glimpses set the scale.",
+          "tip": "Cẩm Nam is the name to recognize. It helps when directions point across the bridge toward the island side of Hoi An.",
+          "rationale": "Cam Nam gives Hoi An a close but different edge: bridge crossing, island lanes, river glimpses, and a quieter neighborhood feel.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Across The Small Bridge",
+              "body": "Cam Nam is close to the old core, but the small bridge changes the feel. Island lanes and river glimpses make the city quieter."
+            },
+            {
+              "id": "place-brief",
+              "title": "Island Lanes Near The Core",
+              "body": "Expect a small bridge, low-key lanes, and river glimpses rather than a landmark cluster. The area is useful for feeling Hoi An’s edges."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name To Hear",
+              "body": "Say Cẩm Nam for Cam Nam. The name helps when addresses, drivers, or maps point across the water from the old town."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Quiet Walk Between Meals",
+              "body": "Cam Nam fits a low-pressure walk, a stay nearby, or a route between meals. It is not a checklist stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "River Glimpses Set The Scale",
+              "body": "The place makes sense through small views rather than headline sights: bridge, lane, water, and the old core within reach."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Nearby, But Different",
+              "body": "Cam Nam is close enough to feel connected to Hoi An’s center, yet separate enough to change the pace of the walk."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-pho",
+          "summary": "Cam Pho is a residential Hoi An neighborhood name tied to tiled roofs, potted plants, small lanes, hotel edges, and the old core nearby.",
+          "context": "Cam Pho matters because it keeps Hoi An from becoming only landmarks. Residential lanes, tiled roofs, and small stays give the old area softer edges.",
+          "tip": "Cẩm Phô is the name to recognize. It helps when an address or hotel places you near the old core but outside the main flow.",
+          "rationale": "Cam Pho gives Hoi An a neighborhood scale: tiled roofs, potted plants, lanes, hotel edges, and a quieter frame near the heritage center.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old Town Edges Turn Residential",
+              "body": "Cam Pho shows the old core easing into neighborhood life: tiled roofs, potted plants, small lanes, and hotel edges."
+            },
+            {
+              "id": "place-brief",
+              "title": "Roofs, Lanes, Potted Plants",
+              "body": "Expect a residential Hoi An lane with tiled roofs and potted plants. The value is the quieter frame around the main heritage area."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name To Hear",
+              "body": "Say Cẩm Phô for Cam Pho. The name helps when addresses, hotels, or local directions place you near the old-town edge."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Bearings Near The Core",
+              "body": "Cam Pho is useful when you need to understand where you are staying or walking, not when you need a single headline sight."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Softer Exit From Crowds",
+              "body": "When the river and main lanes feel full, Cam Pho can make Hoi An feel residential again through small streets and slower corners."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Name Helps With Hotels",
+              "body": "The neighborhood name may matter most in addresses and pickups. It gives local shape to the old-town edge."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_60",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_60",
+  "chunks": [
+    {
+      "chunkFile": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hue-place-bun-hen",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-bun-hen",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-chu-van-an-street",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-com-am-phu",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-com-am-phu",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-com-hen",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-com-hen",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-cyclo-citadel-loop",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-cyclo-citadel-loop",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-bun-hen",
+          "summary": "Bun hen is a Hue clam noodle bowl with small clams, shredded herbs, peanuts, chili oil, and a river-city flavor that feels compact but bright.",
+          "context": "The dish shows Hue through herbs, texture, clam flavor, sauce, and the small-meal rhythm tied to river food rather than heavy broth.",
+          "tip": "Bún hến ở Huế is the phrase to recognize on a menu; the hến points to the tiny clams that carry the bowl.",
+          "rationale": "Bun hen gives Hue a sharper, lighter food memory than beef noodle soup, with herbs and chili doing much of the work.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Clams, Big Lift",
+              "body": "Bun hen is built from small pieces: clams, herbs, peanuts, chili oil, and noodles. The bowl feels light, but the flavor can be sharp."
+            },
+            {
+              "id": "place-brief",
+              "title": "Texture Carries The Bowl",
+              "body": "Expect shredded herbs, crunchy toppings, clam flavor, and chili heat. It is less about broth and more about contrast."
+            },
+            {
+              "id": "quick-say",
+              "title": "Clam Word To Notice",
+              "body": "Say Bún hến ở Huế when looking for the Hue clam noodle bowl. The word hến is the clue."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Lighter Food Stop",
+              "body": "It fits when bun bo feels too heavy but you still want something clearly Hue."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Heat Comes Fast",
+              "body": "Add chili carefully. The bowl can move from bright to hot quickly because the toppings are concentrated."
+            },
+            {
+              "id": "good-to-know",
+              "title": "River Food Context",
+              "body": "Clam dishes belong naturally to Hue's river food memory. That context helps the bowl feel less like a random noodle order."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-chu-van-an-street",
+          "summary": "Chu Van An Street helps central Hue feel walkable, with small restaurants, signboards, parked scooters after rain, and a route you can actually name.",
+          "context": "The street story is about crossings, cafe edges, neighborhood movement, and the practical confidence of recognizing one central road.",
+          "tip": "Đường Chu Văn An is the name to listen for when asking directions; it helps turn a loose hotel-area walk into a named street.",
+          "rationale": "Chu Van An Street gives visitors a simple ground-level reference point for Hue, especially around restaurants, cafes, scooters, and short evening movement.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Named Street Helps",
+              "body": "Chu Van An Street gives the center a handle. Small restaurants, signboards, scooters, and rain-dark pavement make the area easier to picture."
+            },
+            {
+              "id": "place-brief",
+              "title": "Street, Not Attraction",
+              "body": "The value is orientation. Treat it as a named spine for food, cafes, and crossings rather than a sight to complete."
+            },
+            {
+              "id": "quick-say",
+              "title": "Direction Name",
+              "body": "Say Đường Chu Văn An when asking for the street. Đường signals a road, which helps in a direction question."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Walkable Food Edge",
+              "body": "It fits when you need a simple route between a stay, a meal, and a cafe without overplanning."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crossings Set The Pace",
+              "body": "Traffic and rain shape the walk. A short, careful street segment is better than forcing a long loop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Names Beat Guessing",
+              "body": "Learning one street name can make central Hue feel less vague, especially when rides, restaurants, and cafes cluster nearby."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-com-am-phu",
+          "summary": "Com am phu is a Hue rice plate with sliced egg, pork, herbs, vegetables, and sauce arranged like a small puzzle before the first bite.",
+          "context": "The dish shows Hue through rice, herbs, sauce, texture, and the visual order of a plate that gets mixed at the table.",
+          "tip": "Cơm âm phủ ở Huế is the name to recognize; it sounds dramatic, but the plate itself is an arranged rice meal.",
+          "rationale": "Com am phu gives Hue a visually clear food stop, useful when a rice plate sounds steadier than noodles or small snacks.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Rice Plate With Arrangement",
+              "body": "Com am phu arrives as a composed plate: rice, sliced egg, pork, herbs, vegetables, and sauce. The visual order is part of the appeal."
+            },
+            {
+              "id": "place-brief",
+              "title": "Mixing Makes The Meal",
+              "body": "The ingredients may look separated at first. Sauce, herbs, pork, and rice come alive once the plate is mixed bite by bite."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dramatic Name, Simple Meal",
+              "body": "Say Cơm âm phủ ở Huế when asking for the Hue rice plate. The name is memorable, but the order is straightforward."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Steadier Than Snack Plates",
+              "body": "It fits when you want a proper meal but not a soup bowl or long restaurant sitting."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce Before Extra Heat",
+              "body": "Try the sauce before adding chili. The plate depends on balance more than force."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Visual First Impression",
+              "body": "This dish is easier to remember when you picture the arranged egg, pork, herbs, vegetables, and sauce around the rice."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-com-hen",
+          "summary": "Com hen is Hue’s clam rice bowl: baby clams, herbs, crispy toppings, chili paste, and a compact river-food meal with plenty of texture.",
+          "context": "The dish brings Hue into rice, tiny clams, herbs, sauce, crunch, and the small-meal rhythm tied to river ingredients.",
+          "tip": "Cơm hến ở Huế is the phrase to recognize; hến is the small clam that makes the bowl specific to Hue.",
+          "rationale": "Com hen gives Hue a sharper rice-based food memory than a plain lunch plate, with clams and crunchy toppings carrying the identity.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Tiny Clams, Crunchy Bowl",
+              "body": "Com hen is compact but busy: baby clams, herbs, crispy toppings, chili paste, and rice in one textured bowl."
+            },
+            {
+              "id": "place-brief",
+              "title": "River Flavor Over Heaviness",
+              "body": "Expect a lighter bowl than beef noodles, with clam flavor and crunch doing the work instead of a rich broth."
+            },
+            {
+              "id": "quick-say",
+              "title": "Clam Rice Name",
+              "body": "Say Cơm hến ở Huế when asking for clam rice. The word hến is the key to the dish."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Midday Hue Bowl",
+              "body": "It fits when you want something local and filling without turning lunch into a long sit-down meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Chili Paste With Care",
+              "body": "Add chili paste slowly. The bowl is small, so heat can take over quickly."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Texture Is The Memory",
+              "body": "The clams matter, but so do the herbs and crispy toppings. The bowl is more about contrast than size."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-cyclo-citadel-loop",
+          "summary": "Citadel cyclo loop turns Hue movement into the experience: a slow ride by walls, street corners, food stops, cafe pauses, and late-afternoon light.",
+          "context": "The route story is about seeing named places from street level, with Citadel walls, local movement, corners, and pauses between stops.",
+          "tip": "Xích lô quanh Kinh thành is the phrase to recognize if you are asking about a cyclo ride around the Citadel area.",
+          "rationale": "The cyclo loop gives Hue a slower moving frame, useful when walking feels too hot but a car would seal off the city.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Slow Wheels By The Walls",
+              "body": "A Citadel cyclo loop is about pace. The walls, corners, and late light feel different when you are moving slowly at street height."
+            },
+            {
+              "id": "place-brief",
+              "title": "Route More Than Ride",
+              "body": "The useful part is the sequence between named places, food stops, and cafe pauses, not just sitting in a cyclo."
+            },
+            {
+              "id": "quick-say",
+              "title": "Ride Phrase To Recognize",
+              "body": "Say Xích lô quanh Kinh thành when asking about a cyclo around the Citadel. Xích lô is the ride; Kinh thành is the Citadel."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Heat Break With Views",
+              "body": "It fits when the Citadel side feels too hot to walk fully, but you still want street-level movement."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Route Agreed First",
+              "body": "Agree on the rough loop before riding. A clear route keeps the cyclo from becoming a vague spin around town."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Can Be Enough",
+              "body": "A compact loop may land better than a long ride. The value is the slower view, not distance."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

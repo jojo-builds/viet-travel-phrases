@@ -1,0 +1,209 @@
+SpeakLocal v2.2 BATCH_029 - Da Nang - 2026-05-26
+Cảng Tiên Sa / Tien Sa Port — Da Nang — Port
+Reader View
+Where Da Nang Turns To Open Water
+Cảng Tiên Sa is the port name to recognize when a plan points beyond the riverfront: a ship arrival, a coastal transfer, or the Sơn Trà side of the city. Expect working water more than a stroll — gates, sea air, low hills, and the shift from street traffic to harbor rhythm.
+
+Useful phrase cards
+“Cho tôi tới đây” — Take me here
+“Điểm đón ở đâu?” — Where is the pickup point?
+“Dừng ở đây được rồi” — You can stop here
+Sections
+Arrive With The Gate, Not Just The Name
+Ports can waste time when the phone pin, gate, and pickup point do not match. Keep the Vietnamese name, booking contact, and vehicle note visible before leaving central Đà Nẵng.
+
+Working Water, Not A Promenade
+
+This is not the Hàn River walk. The feeling is more practical: harbor edges, vehicles, security points, and sea air under the Sơn Trà hills. That working-water texture is the reason the name stays useful.
+
+Keep The Next Move Close
+
+Cảng Tiên Sa makes sense when it belongs to an arrival, transfer, seafood stop, or Sơn Trà plan. For a simple water view, the Hàn River or beach side gives an easier pause.
+
+Implementation notes
+Page ID: city-danang-place-tien-sa-port
+Hero image: HeroCityDanangPlaceTienSaPort
+Place-name audio: city-danang-place-tien-sa-port · audio-authored-cang-tien-sa-00a20c3b42 · ready · render as name support, not phrase card
+Phrase/audio status:
+taxi-1 · audioId: taxi-1 · mapped
+directions-8 · audioId: directions-8 · mapped
+taxi-3 · audioId: taxi-3 · mapped
+Mentioned Here candidates:
+Sơn Trà Peninsula · catalogId: danang-son-tra · type: nature · status: render · displaySubtitle: Coastal hill-and-road context for the port side of Da Nang.
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Easier central water pause when the port is not part of the plan.
+Related place candidates:
+Hàn River · relationship: easier_water_pause · catalogId: danang-han-river · status: render
+Sơn Trà Peninsula · relationship: route_context · catalogId: danang-son-tra · status: render
+Freshness notes: Verify current port access, passenger pickup rules, gate naming, and any security restrictions before import.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row rewritten for v2.2.
+Score: 27/30 — strong practical role and restrained claims; capped for port-access freshness and sparse public-facing detail.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Đường Trần Hưng Đạo / Tran Hung Dao Street — Da Nang — Street
+Reader View
+Read The Bridges From The East Bank
+Đường Trần Hưng Đạo makes Da Nang’s river scene feel walkable. From this side, the Hàn River, Dragon Bridge, Love Bridge area, scooters, hotel fronts, and evening lights line up without asking you to turn every block into a stop.
+
+Useful phrase cards
+“Cho hỏi, đi tới đó thế nào?” — Excuse me, how do I get there?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Ở gần đây không?” — Is it near here?
+Sections
+Follow The River Line
+Treat the street as a line, not a checklist. Walk a manageable stretch, notice the bridge angles, then decide whether to cross, keep moving, or stop for coffee nearby.
+
+Pick Your Bridge Side
+
+Dragon Bridge looks different from each bank. Trần Hưng Đạo gives one version of the view; Bạch Đằng Street gives another. For any fire-show timing, check the schedule separately before building the evening around it.
+
+Blue Hour Gives It Shape
+
+Late afternoon into evening is when the street feels clearest: river light, scooter flow, shopfronts, and bridge lights arriving one layer at a time. Keep the route short if heat or traffic starts to wear down the walk.
+
+Implementation notes
+Page ID: city-danang-place-tran-hung-dao-street
+Hero image: HeroCityDanangPlaceTranHungDaoStreet
+Place-name audio: city-danang-place-tran-hung-dao-street · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+directions-1 · audioId: directions-1 · mapped
+directions-3 · audioId: directions-3 · mapped
+directions-2 · audioId: directions-2 · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: The waterline that organizes this side of central Da Nang.
+Dragon Bridge · catalogId: danang-dragon-bridge · type: landmark · status: render · displaySubtitle: Main bridge-view reason many travelers notice this street.
+Love Bridge · catalogId: danang-love-bridge · type: landmark · status: render · displaySubtitle: Short riverfront pause along the same east-bank area.
+Bạch Đằng Street · catalogId: danang-bach-dang-street · type: street · status: render · displaySubtitle: Opposite-bank comparison for river views and evening walking.
+Related place candidates:
+Dragon Bridge · relationship: bridge_view_pairing · catalogId: danang-dragon-bridge · status: render
+Bạch Đằng Street · relationship: opposite_bank_contrast · catalogId: danang-bach-dang-street · status: render
+Freshness notes: Verify current sidewalk access, traffic changes, and Dragon Bridge show schedule only if the page later names timing.
+Source notes: Vietnam Tourism Da Nang bridge-viewing side note; local map; legacy city-v1 row rewritten for v2.2.
+Score: 28/30 — clear street-spine behavior and natural related cards; capped for show-schedule and streetscape freshness.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Cầu Trần Thị Lý / Tran Thi Ly Bridge — Da Nang — Landmark
+Reader View
+A Quieter Bridge For The Skyline
+Cầu Trần Thị Lý gives Da Nang a calmer bridge image than the dragon side: a cable-stayed curve over the Hàn River, clean skyline, traffic in motion, and late light on the water. It is best remembered as a shape in the city, not a long stop.
+
+Useful phrase cards
+“Tôi có thể chụp ảnh ở đây được không?” — Can I take a photo here?
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Dừng ở đây được rồi” — You can stop here
+Sections
+Choose The Angle Before The Crossing
+The bridge is strongest from a river angle. Decide whether you want the silhouette, the traffic movement, or a quick crossing, then keep the visit simple.
+
+Late Light Helps The Lines
+
+The cables and skyline read better when glare drops. Pair the view with a short Hàn River walk, dinner nearby, or a slow ride past the bridge rather than stretching it into a separate outing.
+
+Different Energy Than Dragon Bridge
+
+Dragon Bridge is the event bridge. Trần Thị Lý is the city-shape bridge: cleaner, quieter, and easier to fold into a river route when you want Da Nang’s architecture without the crowd focus.
+
+Implementation notes
+Page ID: city-danang-place-tran-thi-ly-bridge
+Hero image: HeroCityDanangPlaceTranThiLyBridge
+Place-name audio: city-danang-place-tran-thi-ly-bridge · audio-authored-cau-tran-thi-ly-c3efadb5bf · ready · render as name support, not phrase card
+Phrase/audio status:
+v900-sigh-acti-can-i-take-a-photo-here · audioId: v900-sigh-acti-can-i-take-a-photo-here · mapped
+repair-5 · audioId: repair-5 · mapped
+taxi-3 · audioId: taxi-3 · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Waterline that gives the bridge its best viewing context.
+Dragon Bridge · catalogId: danang-dragon-bridge · type: landmark · status: render · displaySubtitle: Higher-energy bridge contrast for the same city river scene.
+Related place candidates:
+Hàn River · relationship: river_walk_pairing · catalogId: danang-han-river · status: render
+Dragon Bridge · relationship: bridge_contrast · catalogId: danang-dragon-bridge · status: render
+Freshness notes: Verify current viewing access, traffic or pedestrian constraints, and any nearby construction before import.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row rewritten for v2.2.
+Score: 28/30 — specific visual role and clean comparison; capped for access/viewpoint freshness and native render proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nhà hát Trưng Vương / Trung Vuong Theatre — Da Nang — Experience
+Reader View
+A City Night That Starts At The Doors
+Nhà hát Trưng Vương is the Da Nang name to remember when you want a stage, not another bridge. The useful image is the entry area at dusk: soft marquee glow, scooters outside, people arriving, and the beach-day city turning toward evening.
+
+Useful phrase cards
+“Vé bao nhiêu?” — How much is the ticket?
+“Nó bắt đầu lúc mấy giờ?” — What time does it start?
+“Lối vào ở đâu?” — Where is the entrance?
+Sections
+Check The Program, Then Decide
+The theatre matters most when there is a specific performance, concert, or event on the calendar. Without that, keep it as a name to recognize in the center rather than a place to tour.
+
+The Front Carries The Mood
+
+Even a short look can help the city feel less beach-only. Stage doors, evening traffic, posters, and lobby movement give Da Nang a cultural layer that a bridge photo cannot.
+
+Keep Dinner Nearby
+
+The cleanest plan is theatre plus a central dinner, coffee, or river walk. Leave room for timing changes, because show nights and event access can shift more than a normal café or market stop.
+
+Implementation notes
+Page ID: city-danang-place-trung-vuong-theatre
+Hero image: HeroCityDanangPlaceTrungVuongTheatre
+Place-name audio: city-danang-place-trung-vuong-theatre · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+sight-1 · audioId: sight-1 · mapped
+v900-time-date-book-what-time-does-it-start · audioId: v900-time-date-book-what-time-does-it-start · mapped
+v500-sigh-acti-where-is-the-entrance · audioId: v500-sigh-acti-where-is-the-entrance · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Easy central walk to pair with an evening plan.
+Related place candidates:
+Nguyễn Hiển Dĩnh Tuồng Theatre · relationship: performance_venue_contrast · catalogId: danang-nguyen-hien-dinh-tuong-theatre · status: render
+Hàn River · relationship: central_evening_pairing · catalogId: danang-han-river · status: render
+Freshness notes: Verify current programming, ticketing, entrance flow, and venue access before import.
+Source notes: Da Nang Fantasticity; local map; legacy city-v1 row rewritten for v2.2.
+Score: 27/30 — good evening-use frame; capped for programming volatility and planned place-name audio.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Vincom Plaza Đà Nẵng / Vincom Plaza Da Nang — Da Nang — Market
+Reader View
+An Indoor Reset Near The River
+Vincom Plaza Đà Nẵng is the polished indoor break when heat, rain, or street movement starts to blur the day. Think storefronts, cool air, food counters, restrooms, and an easy meetup point before going back outside.
+
+Useful phrase cards
+“Tôi chỉ xem thôi” — I’m just looking
+“Trả ở đâu?” — Where do I pay?
+“Nó có ở trong trung tâm mua sắm không?” — Is it inside the mall?
+Sections
+Cool Air Changes The Pace
+A mall stop can sound ordinary until the afternoon heat or a sudden rain shower hits. This one gives the trip a controlled pause: indoor walking, simple errands, snacks, and a place to regroup.
+
+Choose A Meeting Point Before Splitting
+
+“The mall” can still be vague once everyone is inside. Pick a storefront, lobby area, or food-counter zone before separating, especially if phones are low or the group is moving at different speeds.
+
+Not A Market Replacement
+
+Vincom is smoother than Hàn or Cồn, but it will not give the same working-market read on Đà Nẵng. Keep it for errands, rain cover, snacks, or a low-friction shopping stop; go to the markets when city texture matters more.
+
+Implementation notes
+Page ID: city-danang-place-vincom-plaza
+Hero image: HeroCityDanangPlaceVincomPlaza
+Place-name audio: city-danang-place-vincom-plaza · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+shop-4 · audioId: shop-4 · mapped
+shop-5 · audioId: shop-5 · mapped
+v500-dire-navi-is-it-inside-the-mall · audioId: v500-dire-navi-is-it-inside-the-mall · mapped
+Mentioned Here candidates:
+Hàn Market · catalogId: danang-han-market · type: market · status: render · displaySubtitle: Central market contrast when working texture matters.
+Cồn Market · catalogId: danang-con-market · type: market · status: render · displaySubtitle: Food-first market contrast for a more local snack route.
+Related place candidates:
+Hàn Market · relationship: market_contrast · catalogId: danang-han-market · status: render
+Cồn Market · relationship: food_market_contrast · catalogId: danang-con-market · status: render
+Freshness notes: Verify tenant mix, food-counter availability, restroom access, current hours, and any mall-renaming details before import.
+Source notes: Local map; legacy city-v1 row rewritten for v2.2. Menu Catalog read; no specific food/item render recommended from this draft.
+Score: 27/30 — clear indoor-restock role and useful market contrast; capped for tenant/hours freshness and planned place-name audio.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+batch_id: batch_029
+page_ids: city-danang-place-tien-sa-port, city-danang-place-tran-hung-dao-street, city-danang-place-tran-thi-ly-bridge, city-danang-place-trung-vuong-theatre, city-danang-place-vincom-plaza
+ready_to_import: no
+chat_output_is_canonical: yes
+google_doc_url: optional_or_missing
+phrase_cards_needing_catalog_check: none for selected visible phrase cards; all selected phrase cards are ready-audio reusable traveler-action phrases from the Native Phrase Catalog
+place_name_phrases: render_only_if_ready_audio_else_hide_until_audio; ready: Cảng Tiên Sa, Cầu Trần Thị Lý; hide_until_audio: Đường Trần Hưng Đạo, Nhà hát Trưng Vương, Vincom Plaza Đà Nẵng
+visible_copy_risks: Cảng Tiên Sa access wording may need tighter port-specific review; Trần Hưng Đạo and Trần Thị Lý depend on current viewing/access conditions; Trưng Vương depends on programming; Vincom depends on tenant and mall-access freshness
+source_freshness_risks: port gate/pickup/security rules; Dragon Bridge schedule if paired later; bridge/street construction or access changes; theatre programming/ticketing/entrance; Vincom hours, tenant mix, food counters, restroom access
+next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval
+

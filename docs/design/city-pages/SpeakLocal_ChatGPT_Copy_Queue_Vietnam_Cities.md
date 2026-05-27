@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW CITY/PLACE COPY.** Current standard: `speaklocal.place.app-detail.v2.2`. Start with `CURRENT_CITY_PAGE_STANDARD.md`. This file is retained only as historical reference.
+
 # SpeakLocal ChatGPT Copy Queue for Vietnam City Listings
 
 Use this file as the append-only working list for places that need more city-listing copy from ChatGPT or another writing pass.
