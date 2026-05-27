@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-27
+Last updated: 2026-05-28
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -55,7 +55,35 @@ Four-gate status from this pass: Authority / Scope `FINAL_PASS`, Editorial Voice
 
 ## Current Main Merge Sweep Evidence
 
-Current `main` evidence from the 2026-05-21 non-paywall/non-messages merge sweep:
+Current `main` evidence from the 2026-05-25 non-City-Pages/non-Paywall/non-Messages merge sweep:
+
+- validated app-code commit installed on Jojo's iPhone: `a3af0ab41` (`Merge practice-area`)
+- merged lanes: `feature/practice-area`
+- synced clean allowed feature lanes to final `main`
+- explicitly skipped lanes: `feature/city-pages`, `codex/viet-city-phrase-library-v1`, `feature/paywall`, `feature/messages-section`, `archive/messages-section-20260516`, and old `integration/*` worktrees
+- City Pages dirty worktree was left untouched by request
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- XcodeBuildMCP simulator focused Practice/Browse/Home sheet tests
+  - passed: `5` tests, `0` failures
+- XcodeBuildMCP simulator `SpeakLocalNativeTests/AppChromeTests`
+  - passed: `168` tests, `0` failures
+- Paywall and Messages exclusion checks
+  - passed: paywall commits are contained only by `feature/paywall`; Messages commit is contained only by Messages branches
+- Physical iPhone Debug build/install from `main`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
+## Previous Main Merge Sweep Evidence
+
+Main evidence from the 2026-05-21 non-paywall/non-messages merge sweep:
 
 - validated app/content commit on `main`: `c6c795b3a` (`Reconcile merged city detail phrase rows`)
 - merged lanes: `feature/admin-photo-backdrop-polish`, `feature/city-pages`, `feature/practice-area`, `feature/homepage-design`
