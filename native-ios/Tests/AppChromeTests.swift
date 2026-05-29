@@ -2165,10 +2165,11 @@ final class AppChromeTests: XCTestCase {
 
     func testClarificationCollectionUsesTravelerFacingFilterLabels() {
         let clarification = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("polite-repair")))
+        let coreSubcategories = coreBrowseSubcategories(in: clarification)
 
         XCTAssertEqual(clarification.title, "When You Don't Understand")
         XCTAssertEqual(
-            clarification.subcategories.map(\.title),
+            coreSubcategories.map(\.title),
             ["Clarify", "Polite basics", "Get help"]
         )
         XCTAssertTrue(clarification.subcategories.allSatisfy { !$0.items.isEmpty })
@@ -2181,25 +2182,67 @@ final class AppChromeTests: XCTestCase {
         let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
         let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
         let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+        let questionCoreSubcategories = coreBrowseSubcategories(in: questions)
+        let numbersMoneyCoreSubcategories = coreBrowseSubcategories(in: numbersMoney)
+        let firstDayCoreSubcategories = coreBrowseSubcategories(in: firstDay)
 
         XCTAssertEqual(
-            questions.subcategories.map(\.title),
+            questionCoreSubcategories.map(\.title),
             ["Directions", "Time", "Clarify"]
         )
         XCTAssertEqual(
-            numbersMoney.subcategories.map(\.title),
+            numbersMoneyCoreSubcategories.map(\.title),
             ["Payment", "Shopping"]
         )
         XCTAssertEqual(
-            firstDay.subcategories.map(\.title),
+            firstDayCoreSubcategories.map(\.title),
             ["Airport", "Hotel", "Transport"]
         )
 
-        let visibleLabels = questions.subcategories.map(\.title)
-            + numbersMoney.subcategories.map(\.title)
-            + firstDay.subcategories.map(\.title)
+        let visibleLabels = questionCoreSubcategories.map(\.title)
+            + numbersMoneyCoreSubcategories.map(\.title)
+            + firstDayCoreSubcategories.map(\.title)
         XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
+    }
+
+    func testSearchOnlyPhraseSurfacingAddsBrowsableSectionsForAll315Rows() {
+        let routeIDs = [
+            "emergency",
+            "everyday-services",
+            "getting-around",
+            "local-greetings",
+            "numbers-money",
+            "polite-repair",
+            "questions",
+            "shopping",
+            "tours-sights",
+        ]
+        let descriptors = routeIDs.map { routeID in
+            try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category(routeID)), routeID)
+        }
+        let surfacedSubcategories = descriptors.flatMap { searchOnlySubcategories(in: $0) }
+        let surfacedPageIDs = surfacedSubcategories.flatMap { subcategory in
+            subcategory.items.map(\.pageID)
+        }
+
+        XCTAssertEqual(BrowseSearchDestinations.situations.first { $0.id == "everyday-services" }?.title, "Everyday Needs")
+        XCTAssertEqual(BrowseSearchDestinations.situations.first { $0.id == "tours-sights" }?.title, "Tours & Sights")
+        XCTAssertEqual(surfacedSubcategories.count, 26)
+        XCTAssertEqual(surfacedPageIDs.count, 315)
+        XCTAssertEqual(Set(surfacedPageIDs).count, 315)
+        XCTAssertTrue(surfacedSubcategories.allSatisfy { !$0.items.isEmpty })
+
+        let everydayServices = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("everyday-services")))
+        let toursSights = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("tours-sights")))
+        let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
+        let emergency = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("emergency")))
+
+        XCTAssertTrue(searchOnlyItemIDs(in: everydayServices).contains("viet-phrase-phone-premium-otp-not-arriving"))
+        XCTAssertTrue(searchOnlyItemIDs(in: everydayServices).contains("viet-phrase-v500-bath-pers-need-is-there-a-public-bathroom-nearby"))
+        XCTAssertTrue(searchOnlyItemIDs(in: toursSights).contains("viet-phrase-v500-sigh-acti-where-is-the-entrance"))
+        XCTAssertTrue(searchOnlyItemIDs(in: numbersMoney).contains("viet-phrase-money-premium-total-wrong"))
+        XCTAssertTrue(searchOnlyItemIDs(in: emergency).contains("viet-phrase-emergency-premium-phone-stolen"))
     }
 
     func testVisibleCategorySubcategorySectionsArePopulated() {
@@ -2216,6 +2259,18 @@ final class AppChromeTests: XCTestCase {
                 )
             }
         }
+    }
+
+    private func coreBrowseSubcategories(in descriptor: BrowseCollectionDescriptor) -> [BrowseCollectionSubcategory] {
+        descriptor.subcategories.filter { !$0.id.contains(".search-only.") }
+    }
+
+    private func searchOnlySubcategories(in descriptor: BrowseCollectionDescriptor) -> [BrowseCollectionSubcategory] {
+        descriptor.subcategories.filter { $0.id.contains(".search-only.") }
+    }
+
+    private func searchOnlyItemIDs(in descriptor: BrowseCollectionDescriptor) -> Set<String> {
+        Set(searchOnlySubcategories(in: descriptor).flatMap { $0.items.map(\.pageID) })
     }
 
     func testCategoryHeroOverridesEnablePhotoBackdropForPhrasePages() {

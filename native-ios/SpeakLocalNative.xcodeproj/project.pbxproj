@@ -19,6 +19,7 @@
 		38B893276AD8652F98766E0F /* LanguagePacks in Resources */ = {isa = PBXBuildFile; fileRef = A83272548030E59BD55C69E3 /* LanguagePacks */; };
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
 		3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */; };
+		4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */; };
 		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
 		56BE39BA0B7382244604A4B0 /* AdminPhotoBackdropSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A680DA00D6F1528D04188 /* AdminPhotoBackdropSurfaceView.swift */; };
 		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
@@ -125,6 +126,7 @@
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
 		EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePageView.swift; sourceTree = "<group>"; };
+		EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSearchOnlyPhraseSurfacing.swift; sourceTree = "<group>"; };
 		ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStoryBreakdownDefinitions.swift; sourceTree = "<group>"; };
 		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
 		F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNativeMVPTests.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */,
 				CFE84225C5DACBD7E06E4ED6 /* SharedBackdropImagePool.swift */,
 				4D3723F574BB0F2BBDADECC7 /* VietnameseMenuCatalog.swift */,
+				EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */,
 				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
 			);
 			path = Models;
@@ -450,6 +453,7 @@
 				B5527E65B3B401A6D99AC0AD /* SharedBackdropImagePool.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
 				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
+				4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */,
 				7A3C2A4210802EBC0319FAA7 /* VietnameseMenuCatalog.swift in Sources */,
 				C99E42DF398D6922C5CC8F7A /* VietnameseMenuPageView.swift in Sources */,
 			);
