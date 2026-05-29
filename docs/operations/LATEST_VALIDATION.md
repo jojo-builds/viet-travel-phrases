@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-28
+Last updated: 2026-05-29
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,44 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current Main City Pages v2.2 Merge Evidence
+
+Current `main` evidence from the 2026-05-29 city-pages merge:
+
+- merged app/content commit: `7ba42f0fc` (`Merge city-pages`)
+- merged lanes: `feature/city-pages`
+- synced clean allowed lanes to final `main`: all clean non-Messages/non-Paywall worktrees were fast-forwarded to `7ba42f0fc`
+- explicitly skipped lanes: `feature/messages-section`, `feature/paywall`, and `archive/messages-section-20260516`
+- exclusion check passed: `main` does not contain the Messages or Paywall branch heads
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`
+  - passed: `500` total, `500` `FINAL_PASS`, `0` revise/fail
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`
+  - passed: `0` failures
+- `node native-ios/scripts/validate-viet-city-copy.js`
+  - passed: `5` hubs, `500` city noun pages, `500` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js`
+  - passed: `806` pages
+- `node native-ios/scripts/validate-viet-hero-image-assets.js`
+  - passed under the current non-unique hero gate
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`
+  - passed: `500` city places, `0` release-blocking missing-audio rows
+- `node scripts/practice/generate-viet-practice-deck.js --check`
+  - passed: `2791` items, `14` scenarios, `7` question types
+- V2.2 Node test chain
+  - passed: validator, projection, and builder tests
+- Physical iPhone Debug build/install/launch from `main`
+  - build passed
+  - install passed
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 
 ## Current City Pages Hard Reset v2.2 Evidence
 
