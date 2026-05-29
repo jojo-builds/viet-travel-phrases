@@ -754,7 +754,7 @@ final class AppChromeTests: XCTestCase {
             )
         )
 
-        XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, PhrasePhotoBackdropLayout.bottomReadingClearance)
+        XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, AppBottomContentClearance.photoBackdropRoot)
     }
 
     func testHomePhotoBackdropImageTapRegionIncludesInitialVisibleImage() {
@@ -1300,6 +1300,58 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(BrowsePageLayout.bottomChromeContentClearance, PhrasePageStyle.bottomChromeContentClearance)
         XCTAssertGreaterThanOrEqual(SearchPageLayout.resultsBottomClearance, 100)
         XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 132)
+    }
+
+    func testRootPhotoBackdropSurfacesReserveFullBottomReadingClearance() {
+        XCTAssertEqual(HomeLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertGreaterThan(
+            AppBottomContentClearance.photoBackdropRoot,
+            PhrasePhotoBackdropLayout.bottomReadingClearance
+        )
+
+        XCTAssertEqual(HomeLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: false), BrowsePageLayout.bottomChromeContentClearance)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: false), SearchPageLayout.resultsBottomClearance)
+        XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+    }
+
+    func testBottomClearancePolicyCoversEveryOpenablePageAndRouteFamily() {
+        let routeSurfaces = AppBottomContentClearance.validationRouteSurfaces()
+        XCTAssertGreaterThanOrEqual(routeSurfaces.count, 10)
+
+        for surface in routeSurfaces {
+            XCTAssertGreaterThanOrEqual(
+                surface.actualClearance,
+                surface.requiredClearance,
+                "\(surface.id) should leave content readable above bottom admin chrome"
+            )
+        }
+
+        let detailSurfaces = PhraseCatalog.allItems.compactMap { item -> AppBottomContentClearance.ValidationSurface? in
+            guard let page = PhraseDetailPage.page(withID: item.pageID) else {
+                return nil
+            }
+
+            return AppBottomContentClearance.detailValidationSurface(
+                pageID: page.id,
+                heroImageName: page.heroImageName
+            )
+        }
+
+        XCTAssertGreaterThanOrEqual(detailSurfaces.count, 1_700)
+
+        for surface in detailSurfaces {
+            XCTAssertGreaterThanOrEqual(
+                surface.actualClearance,
+                surface.requiredClearance,
+                "\(surface.id) should leave content readable above bottom admin chrome"
+            )
+        }
     }
 
     func testSearchPageUsesCompactHeaderForQueryResults() {

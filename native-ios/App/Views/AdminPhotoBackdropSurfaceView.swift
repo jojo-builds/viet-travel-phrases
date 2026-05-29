@@ -272,6 +272,10 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                 }
 
                                 await applyInitialPositionIfNeeded(scrollProxy, metrics: metrics)
+                                await AppBottomInsetValidation.scrollToBottom(
+                                    scrollProxy,
+                                    sentinelID: "\(surface.accessibilityPrefix).BottomSentinel"
+                                )
                             }
                         }
 

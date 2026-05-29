@@ -123,6 +123,10 @@ struct PhraseArticleTemplateView: View {
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
+
+    private var bottomSentinelID: String {
+        "PhraseArticle.BottomSentinel.\(page.id)"
+    }
     @State private var presentedHeroImage: PhraseHeroImagePresentation?
 
     init(
@@ -239,6 +243,8 @@ struct PhraseArticleTemplateView: View {
                                 )
                                 .id(Self.catalogExploreID)
                             }
+
+                            AppBottomSentinel(id: bottomSentinelID)
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
                         .padding(.top, articleSectionsTopPadding + topChromeContentClearance)
@@ -258,6 +264,7 @@ struct PhraseArticleTemplateView: View {
                 }
                 .task {
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
+                    await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                 }
             }
             .ignoresSafeArea(edges: .top)
@@ -340,6 +347,8 @@ struct PhraseArticleTemplateView: View {
                         } else {
                             await applyInitialScrollTargetIfNeeded(scrollProxy)
                         }
+
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -557,6 +566,8 @@ struct PhraseArticleTemplateView: View {
                     )
                     .id(Self.catalogExploreID)
                 }
+
+                AppBottomSentinel(id: bottomSentinelID)
             }
             .padding(.horizontal, PhrasePageStyle.horizontalPadding)
             .padding(.top, articleSectionsTopPadding)
@@ -701,18 +712,11 @@ struct PhraseArticleTemplateView: View {
         effectiveHeroImageName == "HeroCompactPhraseMasthead"
     }
 
-    private var usesVietnameseMenuDetailFit: Bool {
-        page.id.hasPrefix("viet-menu-")
-    }
-
-    private var usesCityNounDetailFit: Bool {
-        (page.id.hasPrefix("viet-family-city-") || page.id.hasPrefix("viet-phrase-city-"))
-            && effectiveHeroImageName != nil
-            && !usesCompactPhraseHero
-    }
-
     private var usesImageDetailFit: Bool {
-        usesVietnameseMenuDetailFit || usesCityNounDetailFit
+        PhraseArticleTemplateLayout.usesImageDetailFit(
+            pageID: page.id,
+            heroImageName: effectiveHeroImageName
+        )
     }
 
     private var usesPhotoBackdropLayout: Bool {
@@ -767,14 +771,10 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var articleBottomChromeContentClearance: CGFloat {
-        if usesPhotoBackdropLayout {
-            return PhrasePhotoBackdropLayout.bottomReadingClearance(
-                pageID: page.id,
-                heroImageName: effectiveHeroImageName
-            )
-        }
-
-        return usesImageDetailFit ? 132 : PhrasePageStyle.bottomChromeContentClearance
+        PhraseArticleTemplateLayout.bottomContentClearance(
+            pageID: page.id,
+            heroImageName: effectiveHeroImageName
+        )
     }
 
     private var usesHomePhraseHeroMorph: Bool {
@@ -1198,6 +1198,36 @@ enum PhrasePhotoBackdropLayout {
         sheetTop: CGFloat
     ) -> CGFloat {
         max(bottomChromeBackingFrameHeight(viewportHeight: viewportHeight, safeAreaBottom: safeAreaBottom) - sheetTop, 0)
+    }
+}
+
+enum PhraseArticleTemplateLayout {
+    static let imageDetailBottomClearance: CGFloat = 132
+
+    static func bottomContentClearance(pageID: String, heroImageName: String?) -> CGFloat {
+        if PhrasePhotoBackdropLayout.supportsListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return AppBottomContentClearance.photoBackdropClearance(
+                PhrasePhotoBackdropLayout.bottomReadingClearance(
+                    pageID: pageID,
+                    heroImageName: heroImageName
+                )
+            )
+        }
+
+        if usesImageDetailFit(pageID: pageID, heroImageName: heroImageName) {
+            return imageDetailBottomClearance
+        }
+
+        return AppBottomContentClearance.standard
+    }
+
+    static func usesImageDetailFit(pageID: String, heroImageName: String?) -> Bool {
+        let usesVietnameseMenuDetailFit = pageID.hasPrefix("viet-menu-")
+        let usesCityNounDetailFit = (pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-"))
+            && heroImageName != nil
+            && heroImageName != "HeroCompactPhraseMasthead"
+
+        return usesVietnameseMenuDetailFit || usesCityNounDetailFit
     }
 }
 

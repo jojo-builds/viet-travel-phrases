@@ -86,6 +86,13 @@ enum PracticeMatchHubLayout {
 
         return basePadding + contentClearance
     }
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: HomeLayout.bottomChromeContentClearance
+        )
+    }
 }
 
 enum PracticeMatchPullUpDismissalPolicy {
@@ -5253,13 +5260,15 @@ private struct PracticeMatchHubView: View {
                     onStartSource: onStartSource
                 )
             }
+
+            AppBottomSentinel(id: "Practice.BottomSentinel")
         }
         .padding(.horizontal, PracticeLayout.horizontalPadding)
         .padding(.top, PracticeMatchHubLayout.topPadding(
             usesPhotoBackdrop: usesPhotoBackdrop,
             topContentClearance: topContentClearance
         ))
-        .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+        .padding(.bottom, PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop))
     }
 }
 
