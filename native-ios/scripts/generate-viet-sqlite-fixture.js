@@ -14,6 +14,7 @@ const menuCopyPath = path.join(nativeRoot, "Resources", "vietnamese-menu-copy.js
 const xcodeProjectPath = path.join(nativeRoot, "project.yml");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
+const searchOnlySurfacingPath = path.join(repoRoot, "content-draft", "viet", "search-only-surfacing-v1.json");
 const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const outputDir = path.join(nativeRoot, "Resources", "LanguagePacks", "viet");
 const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
@@ -70,6 +71,7 @@ const sourcePaths = {
   xcodeProject: xcodeProjectPath,
   schema: schemaPath,
   cityLibrary: cityLibraryPath,
+  searchOnlySurfacing: searchOnlySurfacingPath,
 };
 
 function readJSON(filePath) {
@@ -240,10 +242,11 @@ function main() {
   const audioManifest = readJSON(audioManifestPath);
   const menuPayload = readJSON(menuCopyPath);
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : null;
+  const searchOnlySurfacing = readJSON(searchOnlySurfacingPath);
   const xcodeProject = fs.readFileSync(xcodeProjectPath, "utf8");
   const schema = fs.readFileSync(schemaPath, "utf8");
   const inputHash = sha256(
-    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, ...(cityLibrary ? [cityLibraryPath] : [])]
+    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, searchOnlySurfacingPath, ...(cityLibrary ? [cityLibraryPath] : [])]
       .map((filePath) => `${relative(filePath)}\n${sha256(fs.readFileSync(filePath))}`)
       .join("\n")
   );
@@ -1392,6 +1395,79 @@ function main() {
       source_path: sourcePath,
     });
   }
+
+  function addSearchOnlySurfacingSections() {
+    const surfacingSourcePath = relative(searchOnlySurfacingPath);
+    const pagePhraseIDByPageID = new Map(pageRows.map((row) => [row.id, row.phrase_id]));
+    const groups = new Map();
+
+    for (const placement of searchOnlySurfacing.placements ?? []) {
+      const targetPhrase = phraseByID.get(placement.phraseID);
+      if (!targetPhrase) {
+        throw new Error(`Search-only surfacing target phrase missing: ${placement.phraseID}`);
+      }
+
+      for (const support of placement.supportPlacements ?? []) {
+        const sourcePhraseID = pagePhraseIDByPageID.get(support.sourcePageID);
+        if (!sourcePhraseID) {
+          throw new Error(`Search-only surfacing source page missing: ${support.sourcePageID}`);
+        }
+        const key = `${support.sourcePageID}\u0000${support.sectionID}`;
+        if (!groups.has(key)) {
+          groups.set(key, {
+            sourcePageID: support.sourcePageID,
+            sourcePhraseID,
+            sectionID: support.sectionID,
+            sectionTitle: support.sectionTitle,
+            sectionBody: support.sectionBody,
+            displayLabel: support.displayLabel,
+            rows: [],
+          });
+        }
+        groups.get(key).rows.push({ placement, support, targetPhrase });
+      }
+    }
+
+    Array.from(groups.values())
+      .sort((a, b) => `${a.sourcePageID}:${a.sectionID}`.localeCompare(`${b.sourcePageID}:${b.sectionID}`))
+      .forEach((group, groupIndex) => {
+        const sectionID = addSection({
+          pageID: group.sourcePageID,
+          sectionKey: group.sectionID,
+          title: group.sectionTitle,
+          body: group.sectionBody,
+          presentation: "phrase-list",
+          sortOrder: 20 + groupIndex,
+          sourcePath: surfacingSourcePath,
+        });
+
+        group.rows
+          .sort((a, b) => {
+            if (a.support.sortOrder !== b.support.sortOrder) return a.support.sortOrder - b.support.sortOrder;
+            return String(a.placement.englishTitle).localeCompare(String(b.placement.englishTitle));
+          })
+          .forEach(({ placement, support, targetPhrase }, index) => {
+            const added = addPhraseSectionItem({
+              sectionID,
+              phrase: targetPhrase,
+              sortOrder: index,
+              note: placement.canonicalPageID,
+            });
+            if (!added) return;
+            addPageRelation({
+              sourcePhraseID: group.sourcePhraseID,
+              targetPhraseID: targetPhrase.id,
+              relationType: "useful_next_phrase",
+              reason: `Search-only surfacing places ${placement.englishTitle} near a browsable anchor page.`,
+              displayLabel: support.displayLabel,
+              sortOrder: index,
+              sourcePath: surfacingSourcePath,
+            });
+          });
+      });
+  }
+
+  addSearchOnlySurfacingSections();
 
   for (const page of authoredPages) {
     const canonicalPageID = canonicalPageIDForPhrase(page.phraseID);

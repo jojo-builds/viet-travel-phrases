@@ -289,15 +289,16 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
+    static let topReadableShieldHeight: CGFloat = max(topSeparationHeight, topAdminHitTestEnvelopeHeight)
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
     static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
     static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
         if showsMenuSectionChrome {
-            return max(topSeparationHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
+            return max(topReadableShieldHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
         }
 
-        return topSeparationHeight
+        return topReadableShieldHeight
     }
 }
 

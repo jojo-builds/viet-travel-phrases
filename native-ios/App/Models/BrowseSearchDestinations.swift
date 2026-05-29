@@ -592,6 +592,24 @@ enum BrowseSearchDestinations {
             sampleQuery: "price"
         ),
         BrowseDestination(
+            id: "everyday-services",
+            title: "Everyday Needs",
+            subtitle: "Bathroom, phone, laundry, water, rain",
+            categoryIDs: ["local-services-everyday-tasks", "bathroom-personal-needs", "phone-internet-power"],
+            symbolName: "wrench.and.screwdriver.fill",
+            tintName: .teal,
+            sampleQuery: "where is the bathroom"
+        ),
+        BrowseDestination(
+            id: "tours-sights",
+            title: "Tours & Sights",
+            subtitle: "Tickets, entrances, guides, photos",
+            categoryIDs: ["sightseeing-activities", "time-dates-booking", "directions-navigation"],
+            symbolName: "ticket.fill",
+            tintName: .orange,
+            sampleQuery: "where can I buy tickets"
+        ),
+        BrowseDestination(
             id: "emergency",
             title: "Emergency",
             subtitle: "Help, health, safety, problems",
@@ -1077,7 +1095,9 @@ enum BrowseSearchDestinations {
             limit: 8
         )
         let starterItems = entityContent?.starterItems ?? phraseStarterItems
-        let subcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
+        let baseSubcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
+        let searchOnlySubcategories = VietSearchOnlyPhraseSurfacing.subcategories(for: id, tintName: tint)
+        let subcategories = categoryEntitySubcategories(baseSubcategories, inserting: searchOnlySubcategories, for: id)
         let shelves = categoryExploreShelves(
             collectionID: id,
             categoryIDs: categoryIDs,
@@ -2383,6 +2403,10 @@ enum BrowseSearchDestinations {
             return "Taxis, buses, walking directions, stops, maps, and addresses."
         case "emergency":
             return "Calm help, health, safety, and problem-solving phrases."
+        case "everyday-services":
+            return "The practical trip phrases for bathrooms, water, laundry, phone help, rain, and small service counters."
+        case "tours-sights":
+            return "Tickets, entrances, meeting points, guides, photos, and tour details."
         case "local-greetings":
             return "Relationship-aware hellos and warm local openers."
         case "city-guides":
@@ -2912,6 +2936,8 @@ enum BrowseSearchDestinations {
         "hotel": "HeroCategoryHotel",
         "food": "HeroCategoryFood",
         "shopping": "HeroCategoryNumbersMoney",
+        "everyday-services": "HeroCategoryEssentials",
+        "tours-sights": "HeroCategoryQuestions",
         "getting-around": "HeroCategoryGettingAround",
         "first-day": "HeroCategoryFirstDay",
         "city-guides": "HeroCountryVietnam",
@@ -2989,6 +3015,24 @@ enum BrowseSearchDestinations {
             "pickup point",
             "call taxi",
             "call driver",
+        ],
+        "everyday-services": [
+            "bathroom",
+            "public bathroom",
+            "where can I print",
+            "laundry service",
+            "buy shampoo",
+            "phone charger",
+            "wifi password",
+            "data top up",
+        ],
+        "tours-sights": [
+            "buy tickets",
+            "where is the entrance",
+            "meeting point",
+            "tour guide",
+            "take photos",
+            "book a tour",
         ],
         "emergency": [
             "lost passport",
