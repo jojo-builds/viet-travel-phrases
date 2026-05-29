@@ -10,6 +10,42 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Main Non-Paywall Merge Sweep Evidence
+
+Current `main` evidence from the 2026-05-29 orchestrator merge sweep:
+
+- merged lanes: `feature/admin-photo-backdrop-polish`, `feature/bottom-padding-audit`, and `feature/menu-section`
+- explicitly skipped lanes: `feature/messages-section`, `feature/paywall`, and `archive/messages-section-20260516`
+- preserved boundary: Paywall and Messages branch heads remain unmerged into `main`
+- merge resolution: kept a single `AppChromeLayout.topReadableShieldHeight` declaration using `max(topSeparationHeight, topAdminHitTestEnvelopeHeight)`, while preserving bottom-clearance validation helpers and Menu scroll-coordinator behavior
+- follow-up validation fix: Search standard-scroll validation now scrolls to `Search.BottomSentinel` under the `--validate-bottom-inset-scroll-to-bottom` launch argument, and `BottomInsetUITests` now query sentinel `otherElements` directly instead of broad `.any` snapshots
+
+Fresh command evidence from this pass:
+
+- `git diff --check`
+  - passed before and after the Search validation fix
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- `node native-ios/scripts/validate-viet-search-only-surfacing.js`
+  - passed: `315` keep-search-only rows, `26` browsable subcategories, `315` generated relations, `315` generated section items
+- XcodeBuildMCP simulator `AppChromeTests` focused merge set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered search-only Browse surfacing, bottom-clearance policy, Menu section inventory, Menu large-model `Equatable` guard, pinned section coalescing, immediate jump policy, and top-section chrome coordinator behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/result-bundles/test_sim_2026-05-29T14-53-21-114Z_pid4769_05fb8cb6.xcresult`
+- XcodeBuildMCP simulator Menu UI checks on iPhone 17 Pro
+  - passed: `BrowseSearchUITests/testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive` and `BrowseSearchUITests/testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, `2` tests, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/result-bundles/test_sim_2026-05-29T14-53-54-621Z_pid4769_defac781.xcresult`
+- XcodeBuildMCP simulator bottom-inset UI split reruns on iPhone 17 Pro
+  - passed: `BottomInsetUITests/testPrimaryRootRoutesKeepBottomContentAboveSystemTabBar`, `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/result-bundles/test_sim_2026-05-29T15-00-08-099Z_pid4769_e7a89e4a.xcresult`
+  - passed: `BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar`, `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/result-bundles/test_sim_2026-05-29T15-00-55-255Z_pid4769_9093f927.xcresult`
+- XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
+  - build passed
+  - install passed
+  - launch passed
+  - bundle id: `app.speaklocal.vietnam.native`
+
 ## Current Menu Section Worktree Evidence
 
 Current `feature/menu-section` evidence from the 2026-05-29 Vietnamese menu top-section picker fix:

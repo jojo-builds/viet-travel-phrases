@@ -17,7 +17,7 @@ final class BottomInsetUITests: XCTestCase {
 
         for route in routes {
             let app = launchApp(arguments: route.arguments)
-            XCTAssertTrue(app.descendants(matching: .any)[route.sentinelID].waitForExistence(timeout: 8), route.name)
+            XCTAssertTrue(app.otherElements[route.sentinelID].waitForExistence(timeout: 8), route.name)
             assertBottomSentinelClearsTabBar(route.sentinelID, in: app, routeName: route.name)
             app.terminate()
         }
@@ -54,7 +54,7 @@ final class BottomInsetUITests: XCTestCase {
 
         for route in routes {
             let app = launchApp(arguments: route.arguments)
-            XCTAssertTrue(app.descendants(matching: .any)[route.sentinelID].waitForExistence(timeout: 8), route.name)
+            XCTAssertTrue(app.otherElements[route.sentinelID].waitForExistence(timeout: 8), route.name)
             assertBottomSentinelClearsTabBar(route.sentinelID, in: app, routeName: route.name)
             app.terminate()
         }
@@ -74,7 +74,7 @@ final class BottomInsetUITests: XCTestCase {
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        let sentinel = app.descendants(matching: .any)[sentinelID]
+        let sentinel = app.otherElements[sentinelID]
         let tabBar = app.tabBars.firstMatch
         XCTAssertTrue(tabBar.waitForExistence(timeout: 4), "\(routeName) tab bar missing", file: file, line: line)
 

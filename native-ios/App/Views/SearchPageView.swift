@@ -123,6 +123,12 @@ struct SearchPageView: View {
                             .onChange(of: returnFocusRequest) { _, request in
                                 applyReturnFocusIfNeeded(request, scrollProxy: scrollProxy)
                             }
+                            .task(id: searchResults.query) {
+                                await AppBottomInsetValidation.scrollToBottom(
+                                    scrollProxy,
+                                    sentinelID: "Search.BottomSentinel"
+                                )
+                            }
                         }
                     }
                 }
