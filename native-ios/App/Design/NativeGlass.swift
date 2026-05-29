@@ -267,6 +267,7 @@ extension View {
 
 enum AppChromeLayout {
     static let topSeparationHeight: CGFloat = 112
+    static let topReadableShieldHeight: CGFloat = topAdminHitTestEnvelopeHeight
     static let chromeSeparationAllowsHitTesting = false
     static let searchMorphDuration = 0.39
     static let searchForegroundMorphZIndex: Double = 6
@@ -299,6 +300,184 @@ enum AppChromeLayout {
         }
 
         return topReadableShieldHeight
+    }
+}
+
+enum AppBottomContentClearance {
+    struct ValidationSurface {
+        let id: String
+        let actualClearance: CGFloat
+        let requiredClearance: CGFloat
+    }
+
+    static let standard: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let minimumReadable: CGFloat = AppChromeLayout.bottomAdminHitTestEnvelopeHeight + 24
+    static let photoBackdropOverlayCompensation: CGFloat = AppChromeLayout.bottomAdminHitTestEnvelopeHeight
+    static let photoBackdropRoot: CGFloat = photoBackdropClearance(PhrasePhotoBackdropLayout.bottomReadingClearance)
+
+    static func rootSurface(usesPhotoBackdrop: Bool, standard standardClearance: CGFloat = standard) -> CGFloat {
+        usesPhotoBackdrop ? photoBackdropRoot : standardClearance
+    }
+
+    static func photoBackdropClearance(_ baseClearance: CGFloat) -> CGFloat {
+        baseClearance + photoBackdropOverlayCompensation
+    }
+
+    static func requiredRootSurfaceClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        usesPhotoBackdrop ? photoBackdropRoot : minimumReadable
+    }
+
+    static func detailValidationSurface(pageID: String, heroImageName: String?) -> ValidationSurface {
+        ValidationSurface(
+            id: "detail.\(pageID)",
+            actualClearance: PhraseArticleTemplateLayout.bottomContentClearance(
+                pageID: pageID,
+                heroImageName: heroImageName
+            ),
+            requiredClearance: detailRequiredClearance(pageID: pageID, heroImageName: heroImageName)
+        )
+    }
+
+    static func validationRouteSurfaces() -> [ValidationSurface] {
+        let rootSurfaces = [
+            ValidationSurface(
+                id: "home.photoBackdrop",
+                actualClearance: HomeLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "browse.photoBackdrop",
+                actualClearance: BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "search.photoBackdrop",
+                actualClearance: SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "saved.photoBackdrop",
+                actualClearance: SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "practice.photoBackdrop",
+                actualClearance: PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "home.standard",
+                actualClearance: HomeLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "browse.standard",
+                actualClearance: BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "search.standard",
+                actualClearance: SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "saved.standard",
+                actualClearance: SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "practice.standard",
+                actualClearance: PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+        ]
+
+        let collectionSurfaces = BrowseSearchDestinations.visibleCategoryCollectionRoutes.compactMap { route -> ValidationSurface? in
+            if let kind = VietnameseMenuCatalog.kind(for: route) {
+                let usesPhotoBackdrop = kind.photoBackdropImageName != nil
+                return ValidationSurface(
+                    id: "collection.\(route.id)",
+                    actualClearance: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop),
+                    requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: usesPhotoBackdrop)
+                )
+            }
+
+            guard let descriptor = BrowseSearchDestinations.collectionDescriptor(for: route) else {
+                return nil
+            }
+
+            let usesPhotoBackdrop = descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
+            return ValidationSurface(
+                id: "collection.\(route.id)",
+                actualClearance: BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: usesPhotoBackdrop)
+            )
+        }
+
+        return rootSurfaces + collectionSurfaces
+    }
+
+    private static func detailRequiredClearance(pageID: String, heroImageName: String?) -> CGFloat {
+        if PhrasePhotoBackdropLayout.supportsListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return photoBackdropClearance(
+                PhrasePhotoBackdropLayout.bottomReadingClearance(pageID: pageID, heroImageName: heroImageName)
+            )
+        }
+
+        return minimumReadable
+    }
+}
+
+struct AppBottomSentinel: View {
+    let id: String
+
+    var body: some View {
+        Rectangle()
+            .fill(Color.black.opacity(0.001))
+            .frame(height: 4)
+            .frame(maxWidth: .infinity)
+            .id(id)
+            .accessibilityElement()
+            .accessibilityIdentifier(id)
+            .accessibilityLabel(id)
+    }
+}
+
+enum AppBottomInsetValidation {
+    static let scrollToBottomLaunchArgument = "--validate-bottom-inset-scroll-to-bottom"
+
+    static var shouldScrollToBottom: Bool {
+        ProcessInfo.processInfo.arguments.contains(scrollToBottomLaunchArgument)
+    }
+
+    @MainActor
+    static func scrollToBottom(_ scrollProxy: ScrollViewProxy, sentinelID: String) async {
+        guard shouldScrollToBottom else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 650_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        scrollWithoutAnimation(scrollProxy, sentinelID: sentinelID)
+
+        try? await Task.sleep(nanoseconds: 250_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        scrollWithoutAnimation(scrollProxy, sentinelID: sentinelID)
+    }
+
+    @MainActor
+    private static func scrollWithoutAnimation(_ scrollProxy: ScrollViewProxy, sentinelID: String) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) {
+            scrollProxy.scrollTo(sentinelID, anchor: .bottom)
+        }
     }
 }
 
@@ -381,6 +560,13 @@ enum SearchPageLayout {
     static let resultGroupTopPadding: CGFloat = 10
     static let resultsBottomClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let resultsZIndex: Double = 0
+
+    static func resultsBottomClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: resultsBottomClearance
+        )
+    }
 
     static func headerMode(query: String, isFieldFocused _: Bool) -> SearchPageHeaderMode {
         query.isEmpty ? .full : .compactResults
