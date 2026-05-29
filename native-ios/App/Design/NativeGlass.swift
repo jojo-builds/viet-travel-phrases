@@ -267,7 +267,6 @@ extension View {
 
 enum AppChromeLayout {
     static let topSeparationHeight: CGFloat = 112
-    static let topReadableShieldHeight: CGFloat = topAdminHitTestEnvelopeHeight
     static let chromeSeparationAllowsHitTesting = false
     static let searchMorphDuration = 0.39
     static let searchForegroundMorphZIndex: Double = 6

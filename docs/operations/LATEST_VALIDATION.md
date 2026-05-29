@@ -10,6 +10,67 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Menu Section Worktree Evidence
+
+Current `feature/menu-section` evidence from the 2026-05-29 Vietnamese menu top-section picker fix:
+
+- taxonomy fix: the Food Menu now publishes restaurant-style section headers to the in-page rail, visible section titles, and top glass dropdown from the same `VietnameseMenuCatalog.sections(for:)` source; legacy protein buckets such as `Pork` and `Beef & goat` are folded into `Grilled & braised meats`
+- root-cause fix: pinned top-section `Menu` selections now keep the selected section label stable while the lazy, variable-height section stack converges on the requested anchor
+- smoothness fix: pinned, scroll-derived section-title crossings are coalesced before publishing to the top glass label, while direct dropdown/rail jumps still update immediately
+- direct-jump stability fix: explicit top-picker selections now keep ownership of the pill label through the short lazy-stack settle window so scroll geometry cannot relabel the pill to a neighboring section while the jump lands
+- second-layer smoothness fix: unnecessary deep `Equatable` conformance was removed from large Vietnamese menu payload/section/item structs after a scroll CPU sample showed AttributeGraph comparing whole section/item arrays during section-boundary updates
+- preserved UX: the existing top glass dropdown surface, in-page rail, audio speed chrome, and menu rows remain in place; the food inventory still exposes 269 unique rows
+
+Fresh command evidence from this pass:
+
+- XcodeBuildMCP simulator `AppChromeTests` menu inventory/taxonomy set
+  - passed: `testVietnameseMenuCollectionsUseCsvBackedInventory`, `testVietnameseMenuSectionsExposeFullVerticalInventory`, `testVietnameseMenuSectionTrackingCoordinatorPublishesOnlyMeaningfulChanges`, and `testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges`, `4` tests, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T12-50-59-636Z_pid11523_ca9b3100.xcresult`
+- XcodeBuildMCP simulator top-picker UI taxonomy set
+  - passed: `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, `testVietnameseMenuTopSectionPillJumpsToSeafood`, `testVietnameseFoodMenuSectionRailScrollsToCategory`, and `testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive`, `4` tests, `0` failures
+  - verifies the top picker exposes `Seafood`, `Grilled & braised meats`, and `Soups & hot pots`, while old `pork` and `beef-and-goat` menu entries are absent
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T12-51-21-598Z_pid11523_0fee6598.xcresult`
+- XcodeBuildMCP simulator resumed top-picker proof
+  - initial rerun failed before app launch because the previously configured feature simulator was no longer available
+  - rerun on the available iPhone 17 Pro simulator passed: `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T14-43-37-911Z_pid11523_e9e8457a.xcresult`
+- Physical iPhone install for the taxonomy fix
+  - previous four attempts were blocked before build/install because Xcode reported no connected or available paired iPhone
+  - resumed physical-device attempt passed build, install, and launch for the current `feature/menu-section` app build
+  - post-build signing scan passed; local personal signing remained outside repo-tracked signing files
+- simulator CPU sample while driving the fast Vietnamese Food Menu section-boundary swipe
+  - before the second-layer fix: sampled stacks included `VietnameseMenuSection.__derived_struct_equals` / `VietnameseMenuItem.__derived_struct_equals` under AttributeGraph equality work
+  - after the fix: repeated sample at `native-ios/artifacts/menu-section-cpu-sample-20260529-174504-post-equatable/vietnamese-menu-section-scroll.sample.txt` no longer contained those equality stacks
+- XcodeBuildMCP simulator `BrowseSearchUITests/testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`
+  - failed before the first scroll-stability fix because the top pill did not stay on the chosen `Seafood` section
+  - now passes against the restaurant-style section set instead of the old protein buckets
+- XcodeBuildMCP simulator `AppChromeTests` second-layer performance guard
+  - passed: `testVietnameseMenuLargeModelsAvoidDeepEquatableComparisons`, plus section coalescing and immediate-jump policy tests, `3` tests, `0` failures
+- XcodeBuildMCP simulator current combined menu smoothness set after the second-layer fix
+  - passed: `testVietnameseMenuLargeModelsAvoidDeepEquatableComparisons`, `testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges`, `testVietnameseMenuSectionJumpPolicyUsesImmediateScroll`, `testVietnameseMenuSectionChromeCoordinatorSeparatesPinnedChangesFromLabelChanges`, `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, and `testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive`, `6` tests, `0` failures
+- Physical iPhone focused UI test run after the second-layer fix
+  - passed: `BrowseSearchUITests/testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive` and `BrowseSearchUITests/testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, `2` tests, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-dnxakcrpfonvumejbiymsetlqwjq/Logs/Test/Test-SpeakLocalNative-2026.05.29_17-49-35-+0700.xcresult`
+- XcodeBuildMCP simulator combined direct-jump and boundary-coalescing smoke set
+  - passed: `testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges`, `testVietnameseMenuSectionJumpPolicyUsesImmediateScroll`, `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, and `testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive`, `4` tests, `0` failures
+- XcodeBuildMCP simulator `AppChromeTests` focused menu/chrome set
+  - passed: `8` tests, `0` failures
+- XcodeBuildMCP simulator menu/top-picker focused UI set
+  - passed: `testVietnameseFoodMenuSectionRailScrollsToCategory`, `testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff`, `testVietnameseMenuTopSectionPillJumpsToSeafood`, `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, and `testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive`, `5` tests, `0` failures
+- XcodeBuildMCP simulator visual check
+  - passed: fast scrolls across section-title boundaries remain responsive, and selecting a top dropdown section keeps the top pill on the selected restaurant-style section
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- signing-file cleanliness check
+  - passed: `native-ios/project.yml` and `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` stayed unchanged
+- Physical iPhone Debug build/install from `feature/menu-section` after the second-layer fix
+  - build passed
+  - install passed
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
 ## Current Main City Pages v2.2 Merge Evidence
 
 Current `main` evidence from the 2026-05-29 city-pages merge:

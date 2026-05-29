@@ -1,4 +1,5 @@
 import XCTest
+import Combine
 import CoreGraphics
 import SwiftUI
 import UIKit
@@ -460,6 +461,241 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertFalse(PhrasePhotoBackdropLayout.scrollState(for: 24, metrics: metrics).hasPassedRevealThreshold)
         XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
+    }
+
+    func testVietnameseMenuPhotoBackdropScrollCoordinatorPublishesOnlyDisplayOffsetChanges() {
+        let coordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        XCTAssertFalse(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 0, hasPassedRevealThreshold: false)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 0)
+        XCTAssertEqual(publishCount, 0)
+
+        XCTAssertFalse(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 16, hasPassedRevealThreshold: false)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 16)
+        XCTAssertEqual(publishCount, 1)
+
+        XCTAssertTrue(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 16, hasPassedRevealThreshold: true)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 16)
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.reset()
+        XCTAssertEqual(coordinator.displayOffset, 0)
+        XCTAssertEqual(publishCount, 2)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuSectionTrackingCoordinatorPublishesOnlyMeaningfulChanges() {
+        let coordinator = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "popular")
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: 20),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 180),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "popular")
+        XCTAssertEqual(publishCount, 0)
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: -220),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 64),
+                VietnameseMenuSectionFrame(id: "seafood", order: 2, minY: 220),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: -240),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 40),
+                VietnameseMenuSectionFrame(id: "seafood", order: 2, minY: 200),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: 140, width: 1, height: 80), revealY: 72)
+        XCTAssertFalse(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: -120, width: 1, height: 20), revealY: 72)
+        XCTAssertTrue(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 2)
+
+        coordinator.setCurrentSection("seafood")
+        coordinator.setCurrentSection("seafood")
+        XCTAssertEqual(coordinator.currentSectionID, "seafood")
+        XCTAssertEqual(publishCount, 3)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges() {
+        let coordinator = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "noodles-and-bowls")
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: -120, width: 1, height: 20), revealY: 72)
+        XCTAssertTrue(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 1)
+
+        let seafoodUpdate = coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 0, minY: -320),
+                VietnameseMenuSectionFrame(id: "seafood", order: 1, minY: 80),
+                VietnameseMenuSectionFrame(id: "grilled-and-braised-meats", order: 2, minY: 260),
+            ],
+            activationY: 120,
+            defersPinnedUpdates: true
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+        XCTAssertEqual(seafoodUpdate?.sectionID, "seafood")
+
+        let grilledMeatsUpdate = coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "seafood", order: 1, minY: -280),
+                VietnameseMenuSectionFrame(id: "grilled-and-braised-meats", order: 2, minY: 70),
+                VietnameseMenuSectionFrame(id: "soups-and-hot-pots", order: 3, minY: 240),
+            ],
+            activationY: 120,
+            defersPinnedUpdates: true
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+        XCTAssertEqual(grilledMeatsUpdate?.sectionID, "grilled-and-braised-meats")
+
+        coordinator.commitPendingSectionUpdate(seafoodUpdate!)
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.commitPendingSectionUpdate(grilledMeatsUpdate!)
+        XCTAssertEqual(coordinator.currentSectionID, "grilled-and-braised-meats")
+        XCTAssertEqual(publishCount, 2)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuLargeModelsAvoidDeepEquatableComparisons() {
+        XCTAssertFalse(
+            VietnameseMenuItem.self is any Equatable.Type,
+            "Menu item payloads are large enough that scroll-time AttributeGraph comparisons should not walk every field."
+        )
+        XCTAssertFalse(
+            VietnameseMenuSection.self is any Equatable.Type,
+            "Section views carry item arrays; deep Equatable conformance can show up as scroll-time section-boundary work."
+        )
+        XCTAssertFalse(
+            VietnameseMenuPayload.self is any Equatable.Type,
+            "The decoded menu payload is runtime content, not a value that should participate in SwiftUI equality checks."
+        )
+    }
+
+    func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
+        XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.layoutCorrectionPasses, 3)
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.settleNanoseconds, 900_000_000)
+        XCTAssertEqual(VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds, 120_000_000)
+    }
+
+    func testVietnameseMenuSectionChromeCoordinatorSeparatesPinnedChangesFromLabelChanges() {
+        let coordinator = VietnameseMenuSectionChromeCoordinator()
+        let popular = VietnameseMenuSectionChromeItem(
+            id: "popular",
+            title: "Popular",
+            symbolName: "star.fill",
+            tintName: .red
+        )
+        let seafood = VietnameseMenuSectionChromeItem(
+            id: "seafood",
+            title: "Seafood",
+            symbolName: "fish.fill",
+            tintName: .teal
+        )
+        let route = BrowseCollectionRoute.category("vietnamese-food-menu")
+
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        XCTAssertTrue(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: popular.id,
+                    isPinned: true,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, popular.id)
+        XCTAssertEqual(publishCount, 1)
+
+        XCTAssertFalse(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: true,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, seafood.id)
+        XCTAssertEqual(publishCount, 2)
+
+        XCTAssertTrue(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: false,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, seafood.id)
+        XCTAssertEqual(publishCount, 3)
+
+        XCTAssertFalse(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: false,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(publishCount, 3)
+        _ = cancellable
     }
 
     func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
@@ -2502,8 +2738,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(food.starterTitle, "Popular dishes")
         XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
         XCTAssertEqual(food.starterItems.first?.title, "Phở bò")
-        XCTAssertEqual(food.subcategories.first?.title, "Khai vị & snacks")
-        XCTAssertEqual(food.subcategories.first?.phraseCount, 32)
+        XCTAssertEqual(food.subcategories.first?.title, "Starters & snacks")
+        XCTAssertEqual(food.subcategories.first?.phraseCount, 29)
 
         XCTAssertEqual(drinks.title, "Drink Menu")
         XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
@@ -2896,45 +3132,41 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(foodSections.map(\.id), [
             "popular",
-            "khai-vi-and-snacks",
-            "noodle-soups",
-            "vermicelli-bowls",
-            "rice-and-clay-pot",
+            "starters-and-snacks",
+            "noodles-and-bowls",
+            "rice-plates-and-clay-pots",
             "banh-mi-and-buns",
             "seafood",
-            "pork",
-            "chicken-and-duck",
-            "beef-and-goat",
-            "canh-and-lau",
-            "tofu-and-chay",
-            "desserts",
+            "grilled-and-braised-meats",
+            "soups-and-hot-pots",
+            "vegetarian-and-chay",
+            "sweets",
         ])
+        XCTAssertFalse(foodSections.contains { ["Pork", "Chicken & duck", "Beef & goat"].contains($0.title) })
         XCTAssertEqual(foodSections.first?.items.map(\.itemID), ["food-pho-bo", "food-pho-ga", "food-bun-bo-hue", "food-bun-rieu-cua", "food-hu-tieu-nam-vang"])
         XCTAssertEqual(foodSections.first?.featuredImageName, "HeroMenuFoodPhoBo")
         XCTAssertEqual(foodSections.first { $0.id == "seafood" }?.featuredImageName, "HeroMenuFoodTomRangMuoi")
         XCTAssertEqual(
             Dictionary(uniqueKeysWithValues: foodSections.dropFirst().map { ($0.id, $0.itemCount) }),
             [
-                "khai-vi-and-snacks": 32,
-                "noodle-soups": 33,
-                "vermicelli-bowls": 21,
-                "rice-and-clay-pot": 28,
+                "starters-and-snacks": 29,
+                "noodles-and-bowls": 48,
+                "rice-plates-and-clay-pots": 26,
                 "banh-mi-and-buns": 16,
                 "seafood": 26,
-                "pork": 19,
-                "chicken-and-duck": 19,
-                "beef-and-goat": 18,
-                "canh-and-lau": 24,
-                "tofu-and-chay": 7,
-                "desserts": 26,
+                "grilled-and-braised-meats": 56,
+                "soups-and-hot-pots": 22,
+                "vegetarian-and-chay": 20,
+                "sweets": 26,
             ]
         )
         XCTAssertEqual(foodSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 269)
         XCTAssertEqual(Set(foodSections.dropFirst().flatMap { $0.items }.map(\.itemID)).count, 269)
-        XCTAssertTrue(foodSections.first { $0.id == "khai-vi-and-snacks" }?.items.contains { $0.itemID == "food-banh-xeo-chay" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "noodle-soups" }?.items.contains { $0.itemID == "food-bun-mang-vit" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "canh-and-lau" }?.items.contains { $0.itemID == "food-bo-nhung-dam" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "tofu-and-chay" }?.items.contains { $0.itemID == "food-dau-hu-kho-nam" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "starters-and-snacks" }?.items.contains { $0.itemID == "food-goi-cuon" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "noodles-and-bowls" }?.items.contains { $0.itemID == "food-bun-mang-vit" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "grilled-and-braised-meats" }?.items.contains { $0.itemID == "food-bo-luc-lac" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "soups-and-hot-pots" }?.items.contains { $0.itemID == "food-bo-nhung-dam" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "vegetarian-and-chay" }?.items.contains { $0.itemID == "food-dau-hu-kho-nam" } == true)
 
         XCTAssertEqual(drinkSections.map(\.id), [
             "popular",

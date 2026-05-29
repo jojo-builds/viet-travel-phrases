@@ -260,13 +260,13 @@ final class BrowseSearchUITests: XCTestCase {
         if popularRail.waitForExistence(timeout: 2) {
             scrollAnchor = popularRail
         } else {
-            scrollAnchor = app.buttons["VietnameseMenu.SectionRail.noodle-soups"]
+            scrollAnchor = app.buttons["VietnameseMenu.SectionRail.noodles-and-bowls"]
             XCTAssertTrue(scrollAnchor.waitForExistence(timeout: 2))
         }
 
-        tapHorizontalCard(app.buttons["VietnameseMenu.SectionRail.noodle-soups"], app: app, scrollAnchor: scrollAnchor)
+        tapHorizontalCard(app.buttons["VietnameseMenu.SectionRail.noodles-and-bowls"], app: app, scrollAnchor: scrollAnchor)
 
-        let sectionTitle = app.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"]
+        let sectionTitle = app.staticTexts["VietnameseMenu.SectionTitle.noodles-and-bowls"]
         XCTAssertTrue(sectionTitle.waitForExistence(timeout: 3))
         assertElementClearsTopAdminChrome(
             sectionTitle,
@@ -280,10 +280,10 @@ final class BrowseSearchUITests: XCTestCase {
         let food = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
         XCTAssertTrue(food.staticTexts["Food Menu"].waitForExistence(timeout: 4))
-        tapHorizontalCard(food.buttons["VietnameseMenu.SectionRail.noodle-soups"], app: food, scrollAnchor: food.buttons["VietnameseMenu.SectionRail.popular"])
-        XCTAssertTrue(food.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"].waitForExistence(timeout: 3))
+        tapHorizontalCard(food.buttons["VietnameseMenu.SectionRail.noodles-and-bowls"], app: food, scrollAnchor: food.buttons["VietnameseMenu.SectionRail.popular"])
+        XCTAssertTrue(food.staticTexts["VietnameseMenu.SectionTitle.noodles-and-bowls"].waitForExistence(timeout: 3))
         XCTAssertFalse(food.staticTexts["26"].exists)
-        XCTAssertFalse(food.staticTexts["phở, bún, mì"].exists)
+        XCTAssertFalse(food.staticTexts["48"].exists)
         food.terminate()
 
         let drinks = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu"])
@@ -337,15 +337,109 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["PinnedAudioSpeedControl"].waitForExistence(timeout: 2))
         sectionPill.tap()
 
-        let noodleSoups = app.buttons["VietnameseMenu.TopSectionMenu.noodle-soups"]
-        if noodleSoups.waitForExistence(timeout: 2) {
-            noodleSoups.tap()
+        let noodlesAndBowls = app.buttons["VietnameseMenu.TopSectionMenu.noodles-and-bowls"]
+        if noodlesAndBowls.waitForExistence(timeout: 2) {
+            noodlesAndBowls.tap()
         } else {
-            app.buttons["Noodle soups"].tap()
+            app.buttons["Noodles & bowls"].tap()
         }
 
-        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.noodle-soups"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.noodles-and-bowls"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-pho-bo"].waitForExistence(timeout: 3))
+    }
+
+    func testVietnameseMenuTopSectionPillJumpsToSeafood() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
+
+        for _ in 0..<4 where !app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"].exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+
+        let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        sectionPill.tap()
+
+        let seafood = app.buttons["VietnameseMenu.TopSectionMenu.seafood"]
+        if seafood.waitForExistence(timeout: 2) {
+            seafood.tap()
+        } else {
+            app.buttons["Seafood"].tap()
+        }
+
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-tom-rang-muoi"].waitForExistence(timeout: 3))
+    }
+
+    func testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
+
+        let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
+        for _ in 0..<4 where !sectionPill.exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+
+        sectionPill.tap()
+        XCTAssertTrue(app.buttons["VietnameseMenu.TopSectionMenu.grilled-and-braised-meats"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.buttons["VietnameseMenu.TopSectionMenu.pork"].exists)
+        XCTAssertFalse(app.buttons["VietnameseMenu.TopSectionMenu.beef-and-goat"].exists)
+        app.buttons["VietnameseMenu.TopSectionMenu.noodles-and-bowls"].tap()
+        XCTAssertTrue(waitForTopSectionPill(sectionPill, value: "Noodles & bowls", timeout: 3))
+
+        assertVietnameseMenuTopSectionJump(
+            in: app,
+            sectionPill: sectionPill,
+            sectionID: "seafood",
+            sectionTitle: "Seafood",
+            expectedRowID: "food-tom-rang-muoi"
+        )
+        assertVietnameseMenuTopSectionJump(
+            in: app,
+            sectionPill: sectionPill,
+            sectionID: "grilled-and-braised-meats",
+            sectionTitle: "Grilled & braised meats",
+            expectedRowID: "food-thit-kho-trung"
+        )
+        assertVietnameseMenuTopSectionJump(
+            in: app,
+            sectionPill: sectionPill,
+            sectionID: "soups-and-hot-pots",
+            sectionTitle: "Soups & hot pots",
+            expectedRowID: "food-bo-nhung-dam"
+        )
+    }
+
+    func testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
+
+        let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
+        let startedAt = Date()
+        for _ in 0..<8 where !sectionPill.exists {
+            fastSwipeUp(app)
+            RunLoop.current.run(until: Date().addingTimeInterval(0.08))
+        }
+        XCTAssertLessThan(Date().timeIntervalSince(startedAt), 24)
+
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        sectionPill.tap()
+
+        let seafood = app.buttons["VietnameseMenu.TopSectionMenu.seafood"]
+        if seafood.waitForExistence(timeout: 2) {
+            seafood.tap()
+        } else {
+            app.buttons["Seafood"].tap()
+        }
+
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-tom-rang-muoi"].waitForExistence(timeout: 3))
     }
 
     func testVietnameseMenuDetailPhotoBackdropHidesAndRestoresContent() {
@@ -1277,6 +1371,63 @@ final class BrowseSearchUITests: XCTestCase {
         let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.76))
         let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.58))
         start.press(forDuration: 0.04, thenDragTo: end)
+    }
+
+    private func fastSwipeUp(_ app: XCUIApplication) {
+        let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.74))
+        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.24))
+        start.press(forDuration: 0.03, thenDragTo: end)
+    }
+
+    private func assertVietnameseMenuTopSectionJump(
+        in app: XCUIApplication,
+        sectionPill: XCUIElement,
+        sectionID: String,
+        sectionTitle: String,
+        expectedRowID: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2), file: file, line: line)
+        sectionPill.tap()
+
+        let menuButton = app.buttons["VietnameseMenu.TopSectionMenu.\(sectionID)"]
+        if menuButton.waitForExistence(timeout: 2) {
+            menuButton.tap()
+        } else {
+            app.buttons[sectionTitle].tap()
+        }
+
+        XCTAssertTrue(
+            waitForTopSectionPill(sectionPill, value: sectionTitle, timeout: 3),
+            "Top section pill should match the chosen \(sectionTitle) section.",
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(
+            app.staticTexts["VietnameseMenu.SectionTitle.\(sectionID)"].waitForExistence(timeout: 3),
+            file: file,
+            line: line
+        )
+        XCTAssertTrue(
+            app.buttons["VietnameseMenu.Row.\(expectedRowID)"].waitForExistence(timeout: 3),
+            file: file,
+            line: line
+        )
+    }
+
+    private func waitForTopSectionPill(_ sectionPill: XCUIElement, value: String, timeout: TimeInterval) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+
+        while Date() < deadline {
+            if sectionPill.exists, sectionPill.value as? String == value {
+                return true
+            }
+
+            RunLoop.current.run(until: Date().addingTimeInterval(0.05))
+        }
+
+        return false
     }
 
     private func edgeSwipeBack(_ app: XCUIApplication) {
