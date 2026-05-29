@@ -152,7 +152,8 @@ struct AppShellView: View {
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
     @State private var adminBackdropStates: [AdminRootPhotoBackdropSurface: AdminRootPhotoBackdropState]
-    @State private var menuSectionChromeStates: [VietnameseMenuSectionChromeState] = []
+    @State private var menuSectionChromeCoordinator = VietnameseMenuSectionChromeCoordinator()
+    @State private var isMenuSectionChromePinned = false
     @State private var menuSectionJumpRequestID = 0
     @State private var menuSectionJumpRequest: VietnameseMenuSectionJumpRequest?
     @State private var savedTripSectionChromeStates: [SavedTripSectionChromeState] = []
@@ -575,9 +576,9 @@ struct AppShellView: View {
                     topAdminRow(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
                 },
                 menuSectionRail: {
-                    if let currentMenuSectionChromeState {
+                    if menuSectionChromeCoordinator.currentState != nil {
                         VietnameseMenuTopSectionRail(
-                            state: currentMenuSectionChromeState,
+                            coordinator: menuSectionChromeCoordinator,
                             onSelect: jumpToMenuSection
                         )
                     } else if let currentSavedTripSectionChromeState {
@@ -589,9 +590,8 @@ struct AppShellView: View {
                 }
             )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
-                if menuSectionChromeStates != states {
-                    menuSectionChromeStates = states
-                }
+                _ = menuSectionChromeCoordinator.apply(states)
+                refreshMenuSectionChromePinnedState()
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
                 if hidesPhotoBackdropChrome != isHidden {
@@ -787,7 +787,7 @@ struct AppShellView: View {
     }
 
     private func jumpToMenuSection(_ sectionID: String) {
-        guard let currentMenuSectionChromeState else {
+        guard let currentMenuSectionChromeState = menuSectionChromeCoordinator.currentState else {
             return
         }
 
@@ -809,6 +809,13 @@ struct AppShellView: View {
             requestID: savedTripSectionJumpRequestID,
             sectionID: sectionID
         )
+    }
+
+    private func refreshMenuSectionChromePinnedState() {
+        let isPinned = menuSectionChromeCoordinator.currentState?.isPinned == true
+        if isMenuSectionChromePinned != isPinned {
+            isMenuSectionChromePinned = isPinned
+        }
     }
 
     private func openPrimarySystemTab(_ tab: AppSystemTab) {
@@ -1169,14 +1176,6 @@ struct AppShellView: View {
         AppChromeLayout.pinnedAudioSpeedScrollClearance
     }
 
-    private var currentMenuSectionChromeState: VietnameseMenuSectionChromeState? {
-        guard case .browseCollection(let route) = navigation.currentRoute else {
-            return nil
-        }
-
-        return menuSectionChromeStates.last { $0.route == route }
-    }
-
     private var currentSavedTripSectionChromeState: SavedTripSectionChromeState? {
         guard navigation.currentRoute == .saved else {
             return nil
@@ -1190,7 +1189,7 @@ struct AppShellView: View {
             return false
         }
 
-        return currentMenuSectionChromeState?.isPinned == true
+        return isMenuSectionChromePinned
             || currentSavedTripSectionChromeState?.isPinned == true
     }
 
@@ -1272,11 +1271,19 @@ struct AppShellView: View {
     }
 
     private struct VietnameseMenuTopSectionRail: View {
-        let state: VietnameseMenuSectionChromeState
+        @ObservedObject var coordinator: VietnameseMenuSectionChromeCoordinator
         let onSelect: (String) -> Void
 
+        private var state: VietnameseMenuSectionChromeState? {
+            coordinator.currentState
+        }
+
         private var currentSection: VietnameseMenuSectionChromeItem? {
-            state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
+            guard let state else {
+                return nil
+            }
+
+            return state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
         }
 
         var body: some View {
@@ -1284,7 +1291,7 @@ struct AppShellView: View {
                 Spacer(minLength: 0)
 
                 Menu {
-                    ForEach(state.sections) { section in
+                    ForEach(state?.sections ?? []) { section in
                         Button {
                             onSelect(section.id)
                         } label: {

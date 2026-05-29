@@ -289,6 +289,7 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
+    static let topReadableShieldHeight: CGFloat = topAdminHitTestEnvelopeHeight
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
     static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
