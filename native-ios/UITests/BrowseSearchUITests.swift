@@ -370,7 +370,7 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-tom-rang-muoi"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-ca-kho-to"].waitForExistence(timeout: 3))
     }
 
     func testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections() {
@@ -397,7 +397,7 @@ final class BrowseSearchUITests: XCTestCase {
             sectionPill: sectionPill,
             sectionID: "seafood",
             sectionTitle: "Seafood",
-            expectedRowID: "food-tom-rang-muoi"
+            expectedRowID: "food-ca-kho-to"
         )
         assertVietnameseMenuTopSectionJump(
             in: app,
@@ -412,6 +412,49 @@ final class BrowseSearchUITests: XCTestCase {
             sectionID: "soups-and-hot-pots",
             sectionTitle: "Soups & hot pots",
             expectedRowID: "food-bo-nhung-dam"
+        )
+    }
+
+    func testVietnameseMenuTopSectionPillSurvivesSequentialBreakTest() {
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
+
+        XCTAssertTrue(app.staticTexts["Food Menu"].waitForExistence(timeout: 4))
+
+        let sectionPill = app.descendants(matching: .any)["VietnameseMenu.TopSectionPill"]
+        for _ in 0..<4 where !sectionPill.exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+
+        let targets: [(id: String, title: String, rowID: String)] = [
+            ("popular", "Popular dishes", "food-pho-bo"),
+            ("starters-and-snacks", "Starters & snacks", "food-goi-cuon"),
+            ("noodles-and-bowls", "Noodles & bowls", "food-pho-bo"),
+            ("rice-plates-and-clay-pots", "Rice plates & clay pots", "food-com-tam-suon"),
+            ("banh-mi-and-buns", "Bánh mì & buns", "food-banh-mi-dac-biet"),
+            ("seafood", "Seafood", "food-ca-kho-to"),
+            ("grilled-and-braised-meats", "Grilled & braised meats", "food-thit-kho-trung"),
+            ("soups-and-hot-pots", "Soups & hot pots", "food-bo-nhung-dam"),
+            ("vegetarian-and-chay", "Vegetarian & chay", "food-pho-chay"),
+            ("sweets", "Sweets", "food-che-ba-mau"),
+        ]
+
+        let startedAt = Date()
+        for target in targets.dropFirst() {
+            assertVietnameseMenuTopSectionJump(
+                in: app,
+                sectionPill: sectionPill,
+                sectionID: target.id,
+                sectionTitle: target.title,
+                expectedRowID: target.rowID
+            )
+        }
+
+        XCTAssertLessThan(
+            Date().timeIntervalSince(startedAt),
+            90,
+            "Sequentially selecting every Food Menu section should remain responsive."
         )
     }
 
@@ -439,7 +482,7 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.seafood"].waitForExistence(timeout: 3))
-        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-tom-rang-muoi"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.buttons["VietnameseMenu.Row.food-ca-kho-to"].waitForExistence(timeout: 3))
     }
 
     func testVietnameseMenuDetailPhotoBackdropHidesAndRestoresContent() {
