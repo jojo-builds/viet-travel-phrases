@@ -1,0 +1,234 @@
+ChatGPT
+
+
+
+
+
+Pasted text.txt
+Document
+
+I’ll draft the exact five Da Nang listings from the pasted batch using the v2.2 sources and catalog checks, keeping the Codex handoff chat-only. The output will start with the batch title/listings, keep reader copy separate from compact import notes, and avoid links, citation chips, invented IDs, or visible freshness caveats.
+I’ve pulled the needed ledger/catalog rows and audio statuses: Nén, Nguyễn Văn Linh Street, and Non Nước Beach have ready name audio, while Ngũ Hành Sơn District and Nguyễn Hiển Dĩnh Theatre are planned only. Phrase cards will use reusable ready-audio categories like directions, tickets, menu/payment, photo, and ride help.
+Thought for 13m 17s
+SpeakLocal v2.2 BATCH_025 - Da Nang - 2026-05-26
+Nén Đà Nẵng / Nen Da Nang — Da Nang — Restaurant
+Reader View
+A Dinner That Slows The Night
+Nén is for the Da Nang evening when the meal is meant to hold its own place in the plan. Expect a composed Vietnamese table: herbs, ceramics, small courses, and staff rhythm rather than a quick plate between the beach and the bridge.
+
+Useful phrase cards
+“Tôi có đặt chỗ.” — I have a booking.
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Tính tiền giúp tôi.” — Please let me pay.
+Sections
+Keep The Evening Loose
+Leave room around the booking. A tasting-style meal loses its shape if you are squeezing it between a beach shower, bridge photos, and a late ride.
+
+Ask Early About Food Limits
+
+If shellfish, pork, heat, alcohol, or a dietary restriction matters, say it before the table starts moving. It is easier to adjust the evening before the first course lands.
+
+Good Company Helps
+
+Nén reads best when conversation has time to catch up with the plates. Go with someone who wants dinner to be one of the day’s memories, not the pause before the next stop.
+
+Implementation notes
+page_id: city-danang-place-nen
+target_hero_image: HeroCityDanangPlaceNen
+Canonical model: Bale Well for pre-meal confidence; Morning Glory for a controlled first restaurant meal; adapted for a higher-commitment dinner.
+Owned traveler moment: arriving for a booked evening meal after a beach-and-bridge day.
+Phrase/audio:
+time-4 / time-4 — mapped ready audio
+food-menu / food-menu — mapped ready audio
+coffee-7 / coffee-7 — mapped ready audio
+Place-name audio:
+city-danang-place-nen / audio-authored-nen-da-nang-762c6e4180 — ready name support only, not a visible phrase card
+route/reservation variants for Nén are planned/no-audio; hide until audio
+Mentioned Here candidates: none; visible copy avoids dish-level claims because no stable menu item was confirmed from the batch data.
+Related place candidates: none; no route/comparison card needed from this copy.
+Freshness risks: current menu, booking flow, hours, holiday closures, dietary accommodation, and service style need late check.
+Source notes: City library; MICHELIN listing source; legacy row described contemporary Vietnamese tasting-table setting with herbs and ceramics.
+Score: 27/30 — strong traveler moment and restrained claims; capped for current restaurant facts and menu uncertainty.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Quận Ngũ Hành Sơn / Ngu Hanh Son District — Da Nang — Neighborhood
+Reader View
+The Beach District With Hills Behind It
+Quận Ngũ Hành Sơn is the district name to keep in mind when Da Nang shifts south toward hotel edges, beach roads, cafés, Non Nước, and the limestone hills. It helps the city feel less like separate dots on a map.
+
+Useful phrase cards
+“Ở gần đây không?” — Is it near here?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Tôi có thể đi bộ tới đó được không?” — Can I walk there?
+Sections
+Hold The Hills As Your Marker
+The Marble Mountains give the area its easiest mental shape. Even when you are down near beach buildings or a café row, the limestone behind the district keeps the map from feeling vague.
+
+Short Hops Beat Long Wanders
+
+Distances can look smaller on a phone than they feel in heat. Walk the block you are on, then ride between hotel areas, the beach, and the hill-side stops.
+
+After Check-In, The Name Matters
+
+The district name earns its place when your stay is nearby. It gives ordinary trip tasks — coffee, laundry, seafood, a pharmacy, an evening walk — a clearer local label.
+
+Implementation notes
+page_id: city-danang-place-ngu-hanh-son-district
+target_hero_image: HeroCityDanangPlaceNguHanhSonDistrict
+Canonical model: Japan Town Saigon for cluster-neighborhood behavior; Chợ Lớn for broad-area anchoring.
+Owned traveler moment: checking into the south-beach side, then trying to connect cafés, hotels, beach roads, and the limestone hills.
+Phrase/audio:
+directions-2 / directions-2 — mapped ready audio
+directions-3 / directions-3 — mapped ready audio
+v500-dire-navi-can-i-walk-there / v500-dire-navi-can-i-walk-there — mapped ready audio
+Place-name audio:
+city-danang-place-ngu-hanh-son-district — planned/no-audio; hide name phrase until audio
+city-danang-place-marble-mountains / audio-authored-ngu-hanh-son-7cd09d8626 — ready name support only
+Mentioned Here candidates:
+Marble Mountains — danang-marble-mountains · render · displaySubtitle: Limestone hills that orient the south-beach side.
+Non Nuoc Beach — danang-non-nuoc-beach · render · displaySubtitle: Beach-side reference point inside the district area.
+Related place candidates:
+Marble Mountain cave walk — danang-marble-mountain-cave-walk · render/check final mapping · displaySubtitle: A more specific hill-and-cave outing.
+My Khe Beach — danang-my-khe-beach · render · displaySubtitle: Better-known beach comparison farther north.
+Freshness risks: local map naming, neighborhood boundaries, hotel-area business turnover, and transport/walking conditions need check.
+Source notes: Vietnam Tourism Da Nang; local map; legacy row described hotel edges, evening walks, cafés, and roads toward limestone hills.
+Score: 27/30 — clear neighborhood role; capped for broad-area evidence and planned place-name audio.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nhà hát Tuồng Nguyễn Hiển Dĩnh / Nguyen Hien Dinh Tuong Theatre — Da Nang — Experience
+Reader View
+A Stage Night, Not Another Photo Stop
+Nhà hát Tuồng Nguyễn Hiển Dĩnh gives Da Nang a quieter evening layer: painted faces, masks, music, curtains, and the focus of a small performance room. It is the right kind of stop when beaches and bridges have started to blur together.
+
+Useful phrase cards
+“Vé bao nhiêu?” — How much is the ticket?
+“Nó bắt đầu lúc mấy giờ?” — What time does it start?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+Sections
+The Show Comes First
+Confirm the program, start time, and ticket setup before you cross town. This page should not make the theatre sound automatic on any free night.
+
+Arrive Before The Curtain
+
+Give yourself enough time to find the doors, sit down, and settle into the room. Traditional theatre is easier when you are not sliding in late and trying to decode everything at once.
+
+Watch The Rhythm
+
+You do not need to understand every plot detail. Follow the drums, gestures, masks, pauses, and costume changes; the form carries more than a translated summary.
+
+Implementation notes
+page_id: city-danang-place-nguyen-hien-dinh-tuong-theatre
+target_hero_image: HeroCityDanangPlaceNguyenHienDinhTuongTheatre
+Canonical model: Museum of Cham Sculpture for culture-fatigue prevention; The Note Coffee for a simple sequence that makes a specific room feel usable.
+Owned traveler moment: choosing a performance night and arriving before the show instead of treating the venue like a static landmark.
+Phrase/audio:
+sight-1 / sight-1 — mapped ready audio
+v900-time-date-book-what-time-does-it-start / v900-time-date-book-what-time-does-it-start — mapped ready audio
+sight-3 / sight-3 — mapped ready audio
+Place-name audio:
+city-danang-place-nguyen-hien-dinh-tuong-theatre — planned/no-audio; hide name phrase until audio
+Mentioned Here candidates:
+Tuồng — catalogId missing · check_catalog · displaySubtitle: Traditional Vietnamese theatre form named in the venue.
+Related place candidates:
+Da Nang Fine Arts Museum — danang-fine-arts-museum · render/check final mapping · displaySubtitle: Compact culture stop for another quiet city layer.
+Museum of Cham Sculpture — danang-cham-museum · render · displaySubtitle: Stronger museum pairing for older regional art and form.
+Freshness risks: show schedule, ticketing, venue access, photo policy, and English support need same-week check.
+Source notes: Da Nang Fantasticity; venue source; legacy row described traditional theatre facade, stage curtains, warm interior light, masks, music, and cultural memory.
+Score: 27/30 — specific and usable; capped for same-week program checks and planned place-name audio.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Đường Nguyễn Văn Linh / Nguyen Van Linh Street — Da Nang — Street
+Reader View
+A Street That Makes The Map Click
+Đường Nguyễn Văn Linh gives Da Nang a ground-level line to remember: a broad city avenue, planted median, motorbikes, crossings, café edges, and movement toward the Hàn River side of town. Not for sightseeing so much as orientation.
+
+Useful phrase cards
+“Đây có phải là đường phố chính xác không?” — Is this the correct street?
+“Tôi có nên băng qua đường không?” — Should I cross the street?
+“Người lái xe nên dừng ở đâu?” — Where should the driver stop?
+Sections
+Rides Need A Clear Pin
+Use the street name for pickup, drop-off, and route checks. Show the map, confirm the road, and choose a stop where the crossing feels sane.
+
+Crossings Set The Pace
+
+Wide avenues in Da Nang can look simple until the motorbike flow starts. Pick marked crossings when you have them, move predictably, and do not rush just because locals are faster.
+
+One Block Can Be Enough
+
+You may only need a coffee edge, a shopfront, or a sign that confirms where you are. That is enough; the point is orientation, not a full afternoon walk.
+
+Implementation notes
+page_id: city-danang-place-nguyen-van-linh-street
+target_hero_image: HeroCityDanangPlaceNguyenVanLinhStreet
+Canonical model: Đường Đồng Khởi for street-spine orientation; Dragon Bridge for turning a simple city object into one practical decision.
+Owned traveler moment: using a named avenue to confirm a ride, crossing, or café-side stop.
+Phrase/audio:
+v900-dire-navi-is-this-the-correct-street / v900-dire-navi-is-this-the-correct-street — mapped ready audio
+v900-dire-navi-should-i-cross-the-street / v900-dire-navi-should-i-cross-the-street — mapped ready audio
+v900-dire-navi-where-should-the-driver-stop / v900-dire-navi-where-should-the-driver-stop — mapped ready audio
+Place-name audio:
+city-danang-place-nguyen-van-linh-street / audio-authored-duong-nguyen-van-linh-2fa0fcb186 — ready name support only
+route variants are planned/no-audio; hide until audio
+Mentioned Here candidates:
+Han River — danang-han-river · render · displaySubtitle: River-side orientation point for the street scene.
+Related place candidates:
+Dragon Bridge — danang-dragon-bridge · render · displaySubtitle: Nearby river-side landmark for orientation.
+Da Nang Airport — danang-airport · render/check final mapping · displaySubtitle: Practical route context for city movement.
+Freshness risks: current traffic flow, crossing conditions, construction, and pickup/drop-off norms need check.
+Source notes: City library; Da Nang Fantasticity; legacy row described a broad city avenue with motorbikes, planted median, shopfronts, cafés, and street signs.
+Score: 27/30 — strong scarce-evidence street framing; capped for thin street-specific evidence and crossing/traffic freshness.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Biển Non Nước / Non Nuoc Beach — Da Nang — Beach
+Reader View
+A Beach Below The Hills
+Biển Non Nước is Da Nang open sand with the Marble Mountains behind the day. Think sea air, pale light, a slower edge of the city, and enough space to make the coast feel like more than a quick photo stop.
+
+Useful phrase cards
+“Hôm nay trời có mưa không?” — Will it rain today?
+“Đi bộ có xa quá không?” — Is it too far to walk?
+“Cho tôi chai nước.” — A bottle of water, please.
+Sections
+Pair Sand With Stone
+Non Nước makes more sense when the beach and limestone hills share the same half-day. Spend time on the sand, then decide whether Marble Mountains or Non Nuoc Stone Carving Village belongs before or after.
+
+Open Space Over A Checklist
+
+The appeal is simple: walking, sea air, cloudy light, and a pause between resort roads and the wider city. Do not ask it to compete with every beach in Da Nang.
+
+Weather Sets The Mood
+
+Cloud, wind, surf, and heat can change the whole stop. Check the sky before you commit, bring water, and keep the ride back simple.
+
+Implementation notes
+page_id: city-danang-place-non-nuoc-beach
+target_hero_image: HeroCityDanangPlaceNonNuocBeach
+Canonical model: Lập An Lagoon for condition-aware water/nature framing; Vọng Cảnh Hill for a light route-pairing stop.
+Owned traveler moment: choosing a slower beach pause near the limestone hills, then deciding whether to add a nearby stone or mountain stop.
+Phrase/audio:
+v500-soci-smal-talk-will-it-rain-today / v500-soci-smal-talk-will-it-rain-today — mapped ready audio
+v500-dire-navi-is-it-too-far-to-walk / v500-dire-navi-is-it-too-far-to-walk — mapped ready audio
+store-1 / store-1 — mapped ready audio
+Place-name audio:
+city-danang-place-non-nuoc-beach / audio-authored-bien-non-nuoc-6554d5ecf2 — ready name support only
+city-danang-place-non-nuoc-stone-village / audio-authored-lang-da-non-nuoc-8642dec883 — ready name support only
+city-danang-place-marble-mountains / audio-authored-ngu-hanh-son-7cd09d8626 — ready name support only
+Mentioned Here candidates:
+Marble Mountains — danang-marble-mountains · render · displaySubtitle: Limestone hills paired naturally with the beach.
+Non Nuoc Stone Carving Village — danang-non-nuoc-stone-village · render · displaySubtitle: Nearby craft village for a sand-and-stone half-day.
+Related place candidates:
+Ngu Hanh Son District — danang-ngu-hanh-son-district · render/check final mapping · displaySubtitle: District context around the beach and hills.
+My Khe Beach — danang-my-khe-beach · render · displaySubtitle: Better-known beach comparison farther north.
+Freshness risks: weather, surf, access, beach services, nearby construction, and current swimming conditions need late check.
+Source notes: City library; Vietnam Tourism Da Nang; legacy row described quiet beach below limestone hills, white sand, soft cloudy daylight, seafood stops, and central-Vietnam day trips.
+Score: 28/30 — strong place image and route pairing; capped for condition checks and beach-service freshness.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_025`
+- `page_ids: city-danang-place-nen, city-danang-place-ngu-hanh-son-district, city-danang-place-nguyen-hien-dinh-tuong-theatre, city-danang-place-nguyen-van-linh-street, city-danang-place-non-nuoc-beach`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready reusable traveler-action audio IDs`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Nén avoids dish/menu specifics; neighborhood and street copy is intentionally restrained; theatre avoids schedule claims; beach copy avoids swimming/safety guarantees`
+- `source_freshness_risks: Nén menu, bookings, hours, dietary handling; Ngũ Hành Sơn district map/business turnover; theatre program, tickets, photo policy, access; Nguyễn Văn Linh traffic/crossing/pickup norms; Non Nước weather, surf, access, services`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+

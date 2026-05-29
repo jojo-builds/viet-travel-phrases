@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_27",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_27",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_076_100_humanized.json",
+      "cityID": "hanoi",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hanoi-place-tam-vi",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-tay-ho",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-thong-nhat-park",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-truc-bach-lake",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hanoi-place-truc-bach-lake",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-tam-vi",
+          "message": "generic non-playable quick-say title: Local Name To Hear"
+        },
+        {
+          "id": "city-hanoi-place-train-street",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: street name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: museum name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-tam-vi",
+          "summary": "Tam Vi is a slower Hanoi dinner stop: warm wood, shared northern dishes, rice on the table, and a room that feels chosen rather than squeezed between sights.",
+          "context": "This is the night to let dinner carry the plan: shared plates, rice in the center, and a room with enough calm to stay awhile.",
+          "tip": "Settle table size, dietary questions, and booking details early, then let the room and shared dishes carry the pace.",
+          "rationale": "Tam Vi gives Hanoi a quieter restaurant rhythm, where the memory is the table and evening texture more than one dramatic plate.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Northern Table Rhythm",
+              "body": "Tam Vi suits a night when dinner can be part of the itinerary: warm wood, shared plates, rice, and a slower room."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Hear",
+              "body": "Tầm Vị is the name to recognize when booking, arriving, or checking that the driver has the right restaurant."
+            },
+            {
+              "id": "place-brief",
+              "title": "Share More Than You Solo",
+              "body": "The room makes more sense with a table order than a single-bowl mindset. A few dishes, rice in the center, and an unhurried pace suit the place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Questions Before Dishes",
+              "body": "Pork, shellfish, spice, table size, and booking questions are easiest before the first dish arrives. After that, the meal can stay calm."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Before The Meal",
+              "body": "Arrive with the idea of a shared northern meal, not a quick famous stop. Warm wood, rice, table dishes, and an unhurried pace are the reason to make room for it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "One Meal Can Be The Evening",
+              "body": "The value is not rushing in for a famous name. Give the meal enough space, then let the rest of the night stay simple."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-tay-ho",
+          "summary": "Tay Ho gives Hanoi a wider lake-side frame: cafes, small shops, scooters under trees, and calmer residential edges after the Old Quarter tightens the day.",
+          "context": "Come for the wider lake-side mood, then choose one cafe street, shoreline edge, or quiet corner instead of trying to cover it all.",
+          "tip": "Pick one lake edge or cafe street first. The area feels clearer with a seat, a short walk, and a ride plan back.",
+          "rationale": "Tay Ho matters because it changes Hanoi's scale, giving the trip water, neighborhood air, and a gentler exit from the center.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Lake Air After The Center",
+              "body": "Tay Ho makes Hanoi feel wider: water glimpses, cafe fronts, small shops, tree shade, and a little more room around the day."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name",
+              "body": "Tây Hồ is the Vietnamese name to recognize for taxis, cafe plans, and anything pointing toward the West Lake side."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Edge First",
+              "body": "West Lake is too large for vague wandering. A cafe street, lake-view corner, or short walk gives the neighborhood a readable shape."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Coffee Before Wandering",
+              "body": "A drink can make the area click faster than trying to cover every lane. After that, side streets feel easier to read."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Lake-Side Base",
+              "body": "Tay Ho fits a day that needs a lake-side neighborhood rather than one monument. Pick a cafe, lane, or shoreline edge first, then let the wider area make sense around it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Return Ride Matters",
+              "body": "Tay Ho can feel close on a phone and longer on foot in heat or traffic. Decide the exit before the lake walk becomes tiring."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-thong-nhat-park",
+          "summary": "Thong Nhat Park gives Hanoi a plain open-air reset: paths, trees, lake edges, morning walkers, families, and shade after too many crossings.",
+          "context": "This is an everyday park pause: trees, lake paths, benches, morning walkers, and room to reset when the streets feel too tight.",
+          "tip": "A short loop or partial loop is enough. The park works as a reset, not as a checklist of features.",
+          "rationale": "Thong Nhat Park gives Hanoi a plain breathing-room stop, where a short shaded lap can matter more than another formal sight.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Breathing Room Around Water",
+              "body": "Thong Nhat Park is a simple Hanoi pause: paths, trees, lake edges, walkers, families, and shade when streets start feeling close."
+            },
+            {
+              "id": "quick-say",
+              "title": "Park Name To Recognize",
+              "body": "Công viên Thống Nhất is the local name to recognize for ride notes, nearby signs, and simple directions."
+            },
+            {
+              "id": "place-brief",
+              "title": "Morning Shows The Rhythm",
+              "body": "Earlier in the day, the park's shape is easiest to read: walkers, exercise groups, benches, trees, and the lake before heat builds."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Lap Is Enough",
+              "body": "Pick a path and make one loop or partial loop. The park is better as a reset than as a long mission."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Simple Reset",
+              "body": "Come here when the day needs trees, lake paths, and ordinary Hanoi movement more than another checklist stop. A short shaded lap can be enough."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Shade Is The Reward",
+              "body": "On a hot day, the practical value is simple: trees, a slower walking pace, and space to pause without buying another drink."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-train-street",
+          "summary": "Hanoi Train Street is memorable because the space is tight: rail line, walls, cafe edges, signs, and people moving carefully around a narrow corridor.",
+          "context": "Safety and access can change, so the visit is clearest from permitted edges, signs, staff direction, and cafe boundaries.",
+          "tip": "Follow barriers, staff, and local instructions first. A safe cafe edge or brief photo is better than crowding the track area.",
+          "rationale": "Hanoi Train Street needs a careful version of the famous scene: narrow rails, cafe edges, changing access, and respect for people who live there.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The View Stays On The Edge",
+              "body": "The narrow corridor is the point: rails, walls, cafe edges, signs, and careful movement around a street people live with."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name",
+              "body": "Phố đường tàu Hà Nội is the name to recognize when checking access, directions, or a permitted cafe address."
+            },
+            {
+              "id": "place-brief",
+              "title": "Access Changes, Safety Does Not",
+              "body": "Rules and access points can shift. Barriers, staff, and local instructions matter more than a planned photo."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafes Are The Frame",
+              "body": "When a permitted cafe seat is available, stay back and let the narrowness tell the story without blocking movement."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Safety Before The Photo",
+              "body": "Treat access as something to confirm on the day. If a permitted cafe or staff direction is not clear, keep the memory to a safe edge and move on."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Brief Photo Is Enough",
+              "body": "A quick photo from a safe edge carries the memory. Crowding the track area makes the street worse for residents and staff."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-truc-bach-lake",
+          "summary": "Truc Bach Lake gives Hanoi a quieter water edge: close curbs, lakeside tables, small crossings, and neighborhood views softer than the traffic around them.",
+          "context": "Keep the visit small: a short water-edge walk, one cafe pause, and enough time to notice traffic sitting close to the lake.",
+          "tip": "Arrive for the water edge first. Sit only after the light, noise, and traffic on one side feel right.",
+          "rationale": "Truc Bach adds a smaller lake mood beside West Lake and Tran Quoc, giving the north side a calmer pairing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Water First, Cafe After",
+              "body": "Truc Bach gives Hanoi a quieter edge: water near the curb, small crossings, lakeside tables, and neighborhood views."
+            },
+            {
+              "id": "quick-say",
+              "title": "Lake Name",
+              "body": "Hồ Trúc Bạch is the local name to recognize for lake-side directions, cafe plans, or a north-side walk."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Short Edge Is Enough",
+              "body": "A short lake-edge walk can carry the mood: water, shade, scooters, small tables, and the city softening around the view."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafes Belong To The Scene",
+              "body": "A lakeside cafe is not an escape from the place. It is part of how the lake works when traffic and water sit close."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Smaller Water Edge",
+              "body": "Truc Bach fits days when West Lake feels too broad. A short edge, a cafe table, and water close to the curb can carry the whole pause."
+            },
+            {
+              "id": "good-to-know",
+              "title": "West Lake Makes It Bigger",
+              "body": "Truc Bach pairs naturally with West Lake, Tran Quoc Pagoda, or a longer water-side outing when weather and crossings cooperate."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

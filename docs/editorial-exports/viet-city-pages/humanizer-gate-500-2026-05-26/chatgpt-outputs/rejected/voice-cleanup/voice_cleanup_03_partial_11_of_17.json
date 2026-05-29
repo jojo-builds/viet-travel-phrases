@@ -1,0 +1,491 @@
+{
+  "sessionID": "voice_cleanup_03",
+  "chunkReplacements": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "replacements": [
+        {
+          "pageID": "city-hanoi-place-bun-cha-huong-lien",
+          "entry": {
+            "pageID": "city-hanoi-place-bun-cha-huong-lien",
+            "summary": "Bun Cha Huong Lien is a Hanoi lunch built around grilled pork, warm broth, vermicelli, herbs, and the quick table rhythm that fame should not crowd out.",
+            "context": "The name carries attention, but the meal stays simple: order clearly, build a few bites slowly, and let the bowl stay central.",
+            "tip": "Keep the stop grounded in grilled pork, broth, herbs, and a fast lunch table; treat extras as side notes, not the reason to go.",
+            "rationale": "Huong Lien works best when the restaurant’s fame sits behind the food and the first move is clear before you sit down.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Bowl Sets The Pace",
+                "body": "Hương Liên is strongest when you sit down for one thing. Grilled pork, broth, noodles, herbs, and small add-ons should not become a complicated project."
+              },
+              {
+                "id": "quick-say",
+                "title": "Hương Liên At Lunch",
+                "body": "Bún chả Hương Liên is the wording to show or listen for. The main dish comes first, with menu and payment phrases nearby if the table moves quickly."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Bite At A Time",
+                "body": "Noodles, herbs, pork, and broth make more sense in small moves. Dip, taste, add greens, then adjust instead of turning the bowl into a pile."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Extras Stay Secondary",
+                "body": "If nem cua bể or other sides appear, keep them around the main bowl. The reason to sit down is still grilled pork, broth, noodles, and herbs."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Lunch With One Job",
+                "body": "Huong Lien fits when the plan wants a clear bun cha meal, not a broad menu search. Let the bowl, herbs, and broth carry the stop."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Fame Should Stay Smaller Than Lunch",
+                "body": "The restaurant name may bring noise, but the meal does not need to. Sit, eat while the pork and broth are warm, then move back into the city."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-cha-ca",
+          "entry": {
+            "pageID": "city-hanoi-place-cha-ca",
+            "summary": "Cha ca is Hanoi’s hot-pan fish meal, with turmeric, dill, scallions, noodles, herbs, peanuts, and sauce moving around the table through patient heat.",
+            "context": "The dish feels more like table rhythm than a simple seafood order. Build one bite before mixing the whole plate.",
+            "tip": "Sauce can be bold, especially when fermented shrimp paste appears. Smell first, add a little, and keep some fish plain if that flavor is new.",
+            "rationale": "Cha ca gives Hanoi a vivid dinner rhythm through heat, dill, fish, noodles, and shared table motion.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Hot Pan Sets The Pace",
+                "body": "Chả cá arrives with movement: fish, turmeric, dill, scallions, noodles, herbs, peanuts, and sauce. The meal happens in front of you."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chả Cá On The Menu",
+                "body": "Chả cá is the dish wording to watch for when ordering or comparing restaurants. Once the pan lands, staff rhythm usually carries the table."
+              },
+              {
+                "id": "place-brief",
+                "title": "Dill And Fish First",
+                "body": "The hot fish and dill lead. Noodles, herbs, peanuts, and sauce come around them, so one small bite teaches more than a full mix."
+              },
+              {
+                "id": "use-it-with",
+                "title": "The Sauce Deserves A Pause",
+                "body": "Some versions arrive with fermented shrimp-paste dip; others taste gentler. Try a small edge before letting the sauce take over the plate."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Shared Dinner Rhythm",
+                "body": "Cha ca fits when dinner can slow down around a hot pan. It is strongest with time for dill, fish, noodles, herbs, and sauce to move around the table."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Better Shared Than Rushed",
+                "body": "Cha ca has table motion: pan, herbs, noodles, sauce, repeat. Sharing makes that rhythm easier, but a careful solo order can still work."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-gia",
+          "entry": {
+            "pageID": "city-hanoi-place-gia",
+            "summary": "Gia gives Hanoi a polished contemporary dining pause, with a muted room, careful service rhythm, and a meal built for intention rather than casual fuel.",
+            "context": "Tone and pacing carry the Gia stop. The meal works best when the reservation, room mood, and evening plan all have space.",
+            "tip": "Treat Gia as a plan-ahead dinner, not a spontaneous street-food cue. Give the reservation, pacing, and quiet room enough space.",
+            "rationale": "Gia adds a refined restaurant option to the Hanoi set while staying calm, adult, and centered on mood and pacing.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Quieter Special Meal",
+                "body": "Gia belongs to a different Hanoi rhythm: composed room, careful pacing, and a dinner that asks for attention rather than speed."
+              },
+              {
+                "id": "quick-say",
+                "title": "Gia At The Door",
+                "body": "Gia usually stays short and simple. Say it slowly, show the address, and let the reservation note do the rest."
+              },
+              {
+                "id": "place-brief",
+                "title": "The Room Settles First",
+                "body": "The muted interior and staff rhythm are part of the meal. Arrive ready to slow down instead of treating it like a quick stop between sights."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Planned Evening",
+                "body": "Gia fits when dinner is the event, not a break from the event. The rest of the evening has more room when it stays less crowded."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Dinner As The Plan",
+                "body": "Gia fits when dinner is the plan, not fuel between plans. The strongest memory is mood, pacing, and the way the room slows the night."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Room Matters Most",
+                "body": "The room matters more than listing every course. Give the evening room to breathe, then let the pacing make the meal feel separate from the street."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        }
+      ]
+    },
+    {
+      "chunkFile": "hanoi_026_050_humanized.json",
+      "cityID": "hanoi",
+      "range": "026-050",
+      "replacements": [
+        {
+          "pageID": "city-hanoi-place-gia-lam-station",
+          "entry": {
+            "pageID": "city-hanoi-place-gia-lam-station",
+            "summary": "Gia Lam Railway Station is a quieter rail edge of Hanoi, where signs, benches, bags, and the pause before the city resumes matter more than sightseeing.",
+            "context": "This is a travel-day handoff, not a sightseeing stop. The name matters when a ticket, pickup, or ride pin points away from the main station.",
+            "tip": "Match Ga Gia Lâm against your ticket and ride pin before relaxing. Hanoi station names blur quickly when bags are involved.",
+            "rationale": "Gia Lam is strongest as a practical transfer stop, with bags, station signs, and onward streets in view.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Quieter Rail Edge",
+                "body": "Gia Lam Railway Station feels like a handoff: signs, benches, bags, and the small pause before Hanoi starts moving again."
+              },
+              {
+                "id": "place-brief",
+                "title": "Ticket, Wording, Ride Pin",
+                "body": "The calmest move is simple. Match the Vietnamese wording, your ticket, and the ride-hailing pin before following the busiest flow."
+              },
+              {
+                "id": "quick-say",
+                "title": "Ga Gia Lâm On The Ticket",
+                "body": "Ga Gia Lâm is the wording to listen for. Keep it beside the ticket screen and ride pin until the exit feels obvious."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Plain Exit Helps",
+                "body": "With bags, the best exit is boring: correct door, clear curb, ride point, then away from the station area."
+              },
+              {
+                "id": "when-to-use",
+                "title": "The First Walk Can Wait",
+                "body": "With luggage, small mistakes get heavier. Save the coffee stop or first Hanoi walk for after the bags are dropped."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Transfer Stays Plain",
+                "body": "The station is easiest when the next step is already plain: ticket, pickup, or onward ride."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-giap-bat-bus-station",
+          "entry": {
+            "pageID": "city-hanoi-place-giap-bat-bus-station",
+            "summary": "Giap Bat Bus Station is a practical Hanoi edge of awnings, signs, luggage, waiting benches, and the first move into a southern ride.",
+            "context": "This is a transfer stop for bags, route boards, and pickup decisions. It stays practical because the station is about the next move.",
+            "tip": "Before sitting down, match Bến xe Giáp Bát with the route board and keep your bag in view until the next move is clear.",
+            "rationale": "Giap Bat works best as a clear transfer scene: match the bay, wait visibly, and leave cleanly.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Bags First, City Second",
+                "body": "Giap Bat Bus Station is a practical Hanoi edge: awnings, signs, luggage, waiting benches, and the first view back into the city."
+              },
+              {
+                "id": "place-brief",
+                "title": "The Bay Matters Before The Seat",
+                "body": "Bus stations look obvious until a bay moves or a sign is easy to miss. Ask once, then wait where the route is visible."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bến Xe Giáp Bát On The Phone",
+                "body": "Bến xe Giáp Bát is the wording to show drivers or staff when you need the right side of the station."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Visible Curb Beats A Vague Pickup",
+                "body": "For a taxi or ride-hailing pickup, choose a clear door or visible curb instead of drifting through traffic with luggage."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Hanoi Returns Outside The Gate",
+                "body": "The station gives a real slice of travel-day Hanoi, but it does not need extra drama. Match the next move, exit, and let the city return outside."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Calm Transfer Is Small",
+                "body": "A calm station stop comes from doing less: match the bay, keep bags close, and pick a clear exit."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-hang-bac-street",
+          "entry": {
+            "pageID": "city-hanoi-place-hang-bac-street",
+            "summary": "Hàng Bạc gives the Old Quarter a clear walking line: jewelry signs, narrow shopfronts, scooters, crossings, and silver-shop windows close to the curb.",
+            "context": "Hàng Bạc feels like a compact walking spine, not a shopping directive. The silver-shop thread makes the place specific.",
+            "tip": "Browse before buying. The first few windows teach the rhythm before one storefront becomes a decision.",
+            "rationale": "Hàng Bạc is memorable when the silver-shop windows, narrow lane, and moving Old Quarter curb all stay in view.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Silver-Shop Thread",
+                "body": "Hàng Bạc gives the Old Quarter a clear line to follow: jewelry signs, narrow shopfronts, scooters, crossings, and small flashes of silver."
+              },
+              {
+                "id": "place-brief",
+                "title": "A Few Windows First",
+                "body": "The first few windows teach the rhythm. Look, compare, and ask lightly before turning one shopfront into a decision."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phố Hàng Bạc On Signs",
+                "body": "Phố Hàng Bạc is the wording to match on signs, maps, and route notes around the Old Quarter."
+              },
+              {
+                "id": "use-it-with",
+                "title": "The Lane Keeps Moving",
+                "body": "This is still a working Old Quarter street. Scooters, shop stools, delivery bags, and doorways matter more than a straight walking line."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Short Old Quarter Spine",
+                "body": "Hàng Bạc is strongest as part of a short Old Quarter walk, especially with nearby lanes, coffee, or a market stop."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Street Rhythm Holds",
+                "body": "Individual shops matter less than the rhythm: look, compare, step aside, and keep walking."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-hom-market",
+          "entry": {
+            "pageID": "city-hanoi-place-hom-market",
+            "summary": "Chợ Hôm feels practical before scenic: bolts of cloth, fluorescent light, bags moving through tight aisles, and shoppers who know what they came for.",
+            "context": "Chợ Hôm centers fabric-market behavior and small buying interactions, with ordinary market movement around it.",
+            "tip": "One slow pass helps before pointing at anything. The fabric area reads better once you see where people browse, cut, carry, and pay.",
+            "rationale": "Hom Market is specific when fabric, fluorescent light, tight aisles, and practical buying rhythm lead.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Fabric First, Then Aisles",
+                "body": "Chợ Hôm feels practical before scenic: bolts of cloth, fluorescent light, bags in tight aisles, and shoppers who already know the task."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Slow Pass First",
+                "body": "One slow pass helps before asking prices. The fabric area reads better once you see where people browse, cut, carry, and pay."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chợ Hôm At The Door",
+                "body": "Chợ Hôm is the wording to show for signs, drivers, and quick market questions."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small Purchases Fit The Market",
+                "body": "This is a good place for small practical buys or fabric curiosity, not a pressure test."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Texture, Not Checklist",
+                "body": "The best read is the rhythm: cloth, counters, fluorescent light, movement, and ordinary shopping."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Practical Browse Is Enough",
+                "body": "The room suits a small, practical browse better than a big shopping mission, especially if fabric is curiosity rather than a plan."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-loading-t-cafe",
+          "entry": {
+            "pageID": "city-hanoi-place-loading-t-cafe",
+            "summary": "Loading T is an Old Quarter coffee pause with a Chân Cầm address, stairs to a second-floor room, patterned tiles, vintage corners, and cinnamon-leaning egg coffee.",
+            "context": "Loading T works through its upstairs arrival and small-room pause: stairs, tile, vintage corners, and coffee first.",
+            "tip": "Choose the drink first, especially if egg coffee or a cinnamon note is the reason you came. The small room feels better once the order is settled.",
+            "rationale": "Loading T works best when the arrival, room, and drink order feel like one compact Old Quarter pause.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Upstairs Pause",
+                "body": "Loading T is an Old Quarter coffee pause with a real arrival moment: Chân Cầm address, stairs, patterned tiles, vintage corners, and cinnamon-leaning egg coffee."
+              },
+              {
+                "id": "quick-say",
+                "title": "Useful Phrases",
+                "body": "",
+                "phraseIDs": [
+                  "coffee-1",
+                  "v500-dire-navi-do-i-go-upstairs",
+                  "coffee-4",
+                  "coffee-7"
+                ]
+              },
+              {
+                "id": "place-brief",
+                "title": "Drink Before Room",
+                "body": "The drink comes before the room. Once the order is settled, the small space has room to do its quiet work."
+              },
+              {
+                "id": "use-it-with",
+                "title": "The Room Is The Pause",
+                "body": "The appeal is not a long work session. It is old-building texture, tile, collected objects, and a window back into Old Quarter movement."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Door Can Be Easy To Miss",
+                "body": "Old Quarter addresses can hide in plain sight. Look for the Chân Cầm building cue, then treat the stairs as part of the visit."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-long-bien-market",
+          "entry": {
+            "pageID": "city-hanoi-place-long-bien-market",
+            "summary": "Long Bien Market is crates, fruit, carts, quick hands, and wholesale movement near the bridge, not a polished souvenir browse after dark for travelers.",
+            "context": "Long Bien Market is a working-market scene: crates, fruit, carts, quick hands, and bridge-side movement.",
+            "tip": "Stand back before stepping in. The market has its own traffic, and the gaps can close quickly.",
+            "rationale": "Long Bien Market becomes specific through wholesale rhythm and its relationship to the bridge.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Crates Before Souvenirs",
+                "body": "Long Bien Market is not a polished browsing market. It is crates, fruit, carts, quick hands, and wholesale movement near the bridge."
+              },
+              {
+                "id": "place-brief",
+                "title": "The Flow Comes First",
+                "body": "Stand back for a minute before stepping in. People carry produce, sellers sort goods, and narrow gaps close quickly."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chợ Long Biên Near The Bridge",
+                "body": "Chợ Long Biên is the local wording. Tie it to produce, carts, bridge light, and the Red River edge."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small Cash, Small Buys",
+                "body": "If you browse, keep it simple. Ask the price, buy a small amount, and avoid slowing a working seller."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Bridge Light Nearby",
+                "body": "The bridge gives the market a stronger setting. Fruit crates and steel truss belong to the same older Hanoi edge."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Patience From The Edge",
+                "body": "The market rewards patience from the edge. Watch first, then step in only when the flow makes sense."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-manzi-art-space",
+          "entry": {
+            "pageID": "city-hanoi-place-manzi-art-space",
+            "summary": "Manzi is a compact creative stop where framed work, quiet rooms, and a café pause can sit in the same visit between louder Hanoi streets.",
+            "context": "Manzi is an art-first pause where framed work, quiet rooms, and a café table can share one compact visit.",
+            "tip": "Look at the room before deciding how long to stay. Small art spaces take their mood from the show on the walls.",
+            "rationale": "Manzi works best when the art leads and the coffee stays secondary.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Art Before Coffee Pause",
+                "body": "Manzi is a small creative stop where framed work, quiet rooms, and a café pause can sit in the same visit."
+              },
+              {
+                "id": "place-brief",
+                "title": "The Room Leads The Visit",
+                "body": "Look at the walls before deciding how long to stay. A small art space takes its mood from the show, not from a fixed route."
+              },
+              {
+                "id": "quick-say",
+                "title": "Manzi On The Map",
+                "body": "Manzi is the wording people are likely to know. Show the map pin if pronunciation feels uncertain."
+              },
+              {
+                "id": "use-it-with",
+                "title": "One Show, One Slow Drink",
+                "body": "The best rhythm is simple: see the work, choose a quiet table if available, and keep the café pause short."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Quiet Beats Long",
+                "body": "Manzi is strongest as a compact creative pause, not a whole afternoon plan."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Light Stop Still Works",
+                "body": "If the show feels small or the room is full, keep the stop gentle and move on without forcing it."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-mien-luon",
+          "entry": {
+            "pageID": "city-hanoi-place-mien-luon",
+            "summary": "Miến lươn is a Hanoi noodle order built around contrast: slippery glass noodles, eel, herbs, broth or sauce, and sometimes crisp pieces.",
+            "context": "The texture makes the decision: glass noodles, eel, herbs, broth or sauce, and sometimes crisp pieces in the same small bowl.",
+            "tip": "If the shop gives you a choice, decide whether you want the comfort of soup or the sharper texture of crisp eel.",
+            "rationale": "Miến lươn is memorable because the texture changes the bite: noodles, eel, herbs, broth or sauce.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Texture Leads The Bowl",
+                "body": "Miến lươn is built around contrast: slippery glass noodles, eel, herbs, broth or sauce, and sometimes crisp pieces."
+              },
+              {
+                "id": "place-brief",
+                "title": "Crisp Or Brothy Makes The Bowl",
+                "body": "If the shop gives you a choice, decide whether you want the comfort of soup or the sharper texture of crisp eel."
+              },
+              {
+                "id": "quick-say",
+                "title": "Miến Lươn On The Sign",
+                "body": "Miến lươn is the wording to look for. It points to eel with glass noodles, though the bowl style may lean soup, sauce, or crisp pieces."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Herbs Finish The Bowl",
+                "body": "The herbs are not decoration. Add them slowly, taste the broth or sauce, then adjust."
+              },
+              {
+                "id": "when-to-use",
+                "title": "One Bowl Is Enough",
+                "body": "This is a good single-stop food memory. Order one bowl, understand the texture, then leave room for coffee or another snack."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Bowl Has Range",
+                "body": "Different shops lean crisp, brothy, or saucy. The wording gives the starting point, not the whole bowl."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass",
+    "notes": "Targeted headings and generic non-playable quick-say titles repaired; phraseIDs and required fields preserved where present.",
+    "remainingRisks": []
+  }
+}

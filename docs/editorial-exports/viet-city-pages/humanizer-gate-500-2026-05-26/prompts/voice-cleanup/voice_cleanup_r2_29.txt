@@ -1,0 +1,218 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 3
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_29",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 3,
+    "returnedReplacementCount": 3,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_29",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_076_100_humanized.json",
+      "cityID": "hanoi",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hanoi-place-weekend-night-market",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-west-lake",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-womens-museum",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-weekend-night-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-womens-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: street name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: museum name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-weekend-night-market",
+          "summary": "Hanoi Weekend Night Market is the Old Quarter shifting after dark: stalls open, walkers thicken, food smoke rises, and small buying decisions multiply.",
+          "context": "Weekend timing, street coverage, stall mix, and pedestrian rules can change. The durable behavior is one slow lap before buying.",
+          "tip": "Take one slow lap before buying. Small snacks and light browsing keep the night open longer than one heavy decision.",
+          "rationale": "The weekend night market gives Hanoi after-dark energy a practical rhythm: one slow lap, light browsing, small snacks, and side steps in tight spots.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Slow Lap Before The Lights",
+              "body": "The market is less about one famous stall than the Old Quarter changing gears: stalls, walkers, food smoke, and warm lights."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name",
+              "body": "Chợ đêm phố cổ Hà Nội is the local name to recognize around Old Quarter night plans and directions."
+            },
+            {
+              "id": "place-brief",
+              "title": "Browse Once Before Buying",
+              "body": "One pass with your hands free lowers pressure. The first stall is rarely the only version of a snack or souvenir."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Orders Keep The Night Open",
+              "body": "Night-market food is better in rounds. Try one snack, keep moving, then decide whether the crowd still feels fun."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crowd First, Buying Later",
+              "body": "Start with one slow lap. The market makes more sense after you read the crowd, food smoke, lights, and where the street narrows."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Tight Spots Need A Side Step",
+              "body": "Warm lights, food smoke, bikes, and sudden stops can narrow the street fast. Step aside before checking your phone."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-west-lake",
+          "summary": "West Lake gives Hanoi a wider horizon: shore roads, cafe edges, temple silhouettes, long views, and a water break from tight streets.",
+          "context": "West Lake is easier when the day chooses one shoreline first: a cafe edge, temple pairing, sunset stretch, or simple ride back.",
+          "tip": "Pick one shoreline first: Tay Ho cafe streets, the temple side, or a short sunset stretch before the ride back.",
+          "rationale": "West Lake changes Hanoi's scale with long water views, cafe edges, temple silhouettes, shore roads, and a break from tight streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Water Break From Street Noise",
+              "body": "West Lake gives Hanoi a wider horizon: shore roads, cafe edges, temple silhouettes, and long views shaped by weather."
+            },
+            {
+              "id": "quick-say",
+              "title": "Lake Name",
+              "body": "Hồ Tây is the Vietnamese name to recognize for directions, cafe plans, temple pairings, or a lake-side walk."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Shoreline First",
+              "body": "The lake is bigger than it looks on a phone. Choose one edge for the day instead of chasing the whole outline."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafes Frame The Pause",
+              "body": "A drink gives the view a frame. Sit near the water, watch the scooters and walkers, then decide what comes next."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Shoreline Is Enough",
+              "body": "West Lake fits a day that needs a wider horizon. Choose one edge, one drink, or one temple pairing instead of chasing the whole lake."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Temples Change The Mood",
+              "body": "Tran Quoc Pagoda, Tay Ho streets, and smaller lake roads each give a different version of the same water."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-womens-museum",
+          "summary": "Vietnamese Women's Museum gives Hanoi a quieter interior story after street rush: clothing, family life, wartime memory, and everyday labor shown through objects.",
+          "context": "Hours, ticketing, interpretation, temporary exhibits, and photo rules can change. The museum still rewards a few rooms taken slowly.",
+          "tip": "Follow a few objects closely rather than every panel, then leave room afterward for a cafe, walk, or quiet reset.",
+          "rationale": "The museum adds a serious but approachable cultural stop that makes Hanoi feel more layered than streets and lakes alone.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Few Rooms And A Slower Pace",
+              "body": "The museum tells a quieter interior story: clothing, family life, wartime memory, everyday labor, and objects that ask for time."
+            },
+            {
+              "id": "quick-say",
+              "title": "Museum Name",
+              "body": "Bảo tàng Phụ nữ Việt Nam is the name to recognize for tickets, directions, or a culture stop near the center."
+            },
+            {
+              "id": "place-brief",
+              "title": "Objects Beat Every Label",
+              "body": "Follow what catches your eye: a garment, wedding object, work tool, wartime photo, or room arrangement."
+            },
+            {
+              "id": "use-it-with",
+              "title": "English Support May Shape It",
+              "body": "If interpretation is limited, the visit can still stay visual and slow. Materials, faces, and arrangement carry plenty."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Objects First",
+              "body": "The museum fits a day with room for a quieter story. Follow clothing, family objects, work tools, and wartime memory at a human pace."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Quiet Reset Afterward",
+              "body": "Some rooms may feel heavier than the calm entrance suggests. A cafe, walk, or simple ride afterward gives the visit space."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

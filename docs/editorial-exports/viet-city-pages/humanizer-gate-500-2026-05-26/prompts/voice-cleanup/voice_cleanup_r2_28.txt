@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_28",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_28",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_076_100_humanized.json",
+      "cityID": "hanoi",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hanoi-place-vietnam-circus",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-fine-arts-museum",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-military-history-museum",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-national-tuong-theatre",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-vietnam-circus",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-vietnam-national-tuong-theatre",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-water-puppet-theatre",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: street name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: museum name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-vietnam-circus",
+          "summary": "Vietnam Central Circus is an evening switch: theatre doors, stage light, families arriving, and Hanoi street activity outside the venue.",
+          "context": "Performance details can change, but the stable moment is the evening switch: doors, stage light, families, and Hanoi outside.",
+          "tip": "Arrive with a buffer for the entrance, tickets, seats, and the small confusion that comes with live venues.",
+          "rationale": "Vietnam Central Circus gives Hanoi a live-night switch: families at the door, stage light inside, and street noise waiting outside.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Live Night",
+              "body": "Vietnam Central Circus is an evening switch: theatre doors, stage light, families moving through the entrance, and street noise outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Rạp Xiếc Trung ương is the Vietnamese name to recognize when checking tickets, directions, or the entrance."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Buffer Changes The Night",
+              "body": "Circus nights are easier when the first move is not rushed. Give yourself time for the entrance, tickets, and seats."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Street Energy At The Door",
+              "body": "Lights, traffic, arriving families, and the shift from pavement noise to stage focus are part of the memory."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Give The Night A Buffer",
+              "body": "Check the performance plan before crossing town, then leave time for the door, tickets, and seats. The evening works better without a rushed arrival."
+            },
+            {
+              "id": "good-to-know",
+              "title": "An Uncrowded Evening",
+              "body": "Dinner, the show, and a simple ride back will usually feel better than forcing one more landmark afterward."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-vietnam-fine-arts-museum",
+          "summary": "Vietnam Fine Arts Museum rewards a deliberate visit: yellow building, shaded courtyard, quieter galleries, and a few rooms chosen well.",
+          "context": "Let the yellow building, courtyard, stairs, and a few chosen rooms set the pace before the galleries ask for closer attention.",
+          "tip": "Follow materials across a few rooms instead of every label: lacquer, silk, sculpture, folk forms, and changing light.",
+          "rationale": "The museum gives Hanoi a slower cultural layer, especially when the day has been mostly lakes, streets, food, and traffic.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Few Rooms Beat Every Label",
+              "body": "Vietnam Fine Arts Museum works better as a shorter, deliberate visit: courtyard first, then a few galleries chosen well."
+            },
+            {
+              "id": "quick-say",
+              "title": "Museum Name",
+              "body": "Bảo tàng Mỹ thuật Việt Nam is the name to recognize for tickets, directions, and nearby museum plans."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Building Slows The Day",
+              "body": "The courtyard, stairs, banners, and quieter light shift the pace before the galleries begin. That first slowdown matters."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Materials Across Rooms",
+              "body": "Rather than reading every label, follow lacquer, silk, sculpture, folk forms, and how Vietnamese art changes across rooms."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Courtyard, Then Rooms",
+              "body": "Let the courtyard and building slow the day before the galleries. Follow a few materials across rooms instead of trying to absorb every label."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Real Indoor Break",
+              "body": "It is more than shelter from heat or rain. The museum gives the city a quieter layer between street-heavy plans."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-vietnam-military-history-museum",
+          "summary": "Vietnam Military History Museum is easier when the outdoor display settles first: heavy objects in open air, the Flag Tower behind them, then quieter rooms carrying harder context.",
+          "context": "Start outside, where the Flag Tower and military display give the museum its scale before the indoor material asks for slower attention.",
+          "tip": "A focused visit works better here. Choose one period or theme, then leave space afterward for something simple.",
+          "rationale": "The museum gives Hanoi a serious history stop through outdoor scale, the Flag Tower, heavy displays, and quieter rooms that need time.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Outside First, Gallery After",
+              "body": "The museum is easier when the outdoor display settles first: heavy objects, open air, the Flag Tower behind them, then quieter rooms with harder context."
+            },
+            {
+              "id": "quick-say",
+              "title": "Museum Name",
+              "body": "Bảo tàng Lịch sử Quân sự Việt Nam is the name to recognize for tickets, directions, or a museum-day plan."
+            },
+            {
+              "id": "place-brief",
+              "title": "Outdoor Scale Comes First",
+              "body": "The Flag Tower and outdoor display give the history physical scale before smaller displays. Let that first view register before moving inside."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Inside Needs A Slower Pace",
+              "body": "The rooms can carry more weight than the exterior suggests. One period or theme is better than a forced complete history lesson."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Space After The Visit",
+              "body": "Start with the outdoor display and Flag Tower, then move inside only as far as attention allows. A quiet drink or simple ride afterward gives the stop room."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Space Afterward",
+              "body": "This stop can make the rest of the day feel heavier. A quiet drink, walk, or simple ride back fits afterward."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-vietnam-national-tuong-theatre",
+          "summary": "Vietnam National Tuong Theatre gives Hanoi a different evening register: masks, red curtain, music, stage light, and a performance form that may feel unfamiliar before it clicks.",
+          "context": "Schedule, ticketing, language support, and photo rules can change. The steadier value is expectation, room rhythm, masks, and music.",
+          "tip": "Give the performance room to stay stylized and vivid. Watch masks, gestures, music, and movement before chasing every plot detail.",
+          "rationale": "The theatre page introduces a traditional stage form with practical expectation-setting rather than flattening it into generic nightlife.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Traditional Stage",
+              "body": "Vietnam National Tuong Theatre gives Hanoi a different evening register: masks, red curtain, music, stage light, and symbolic movement."
+            },
+            {
+              "id": "quick-say",
+              "title": "Theatre Name",
+              "body": "Nhà hát Tuồng Việt Nam is the name to recognize for tickets, directions, or a cultural evening plan."
+            },
+            {
+              "id": "place-brief",
+              "title": "Stylized Is The Point",
+              "body": "Tuồng can feel formal, loud, and symbolic. Watch masks, gestures, music, and movement before worrying about every plot detail."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Before The First Cue",
+              "body": "A short buffer gives time for tickets, seats, and the first look at the room before the performance atmosphere takes over."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Focused Stage Night",
+              "body": "Check the show time before building the evening around it. Arrive early enough for tickets and seats, then watch gesture, masks, and music first."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Quieter Pairing",
+              "body": "An early dinner, the show, and a calm ride back give the performance enough room to stay strange and specific."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-water-puppet-theatre",
+          "summary": "Thang Long Water Puppet Theatre turns a Hoan Kiem evening into a warmer performance stop: dark water, live music, lacquered puppets, and small-stage timing.",
+          "context": "Show times, ticket flow, seat rules, and photo policy can change. The durable memory is theatre darkness, live music, water, and puppets.",
+          "tip": "Arrive with enough time to find the door, settle into the room, and let the music carry more than the photo plan.",
+          "rationale": "The theatre gives Hanoi performance texture that visitors can remember after the lake walk, without relying on unstable schedule details.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Evening Show With Texture",
+              "body": "The theatre gives Hoan Kiem an evening shape: dark water, live music, lacquered puppets, and small-stage timing."
+            },
+            {
+              "id": "quick-say",
+              "title": "Theatre Name",
+              "body": "Nhà hát Múa rối Thăng Long is the name to recognize when checking tickets, directions, or the theatre entrance."
+            },
+            {
+              "id": "place-brief",
+              "title": "Find The Door First",
+              "body": "The theatre sits in a busy central pocket. Arrive early enough to find the door, settle your seat, and stop rushing."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Music Carries The Pulse",
+              "body": "The puppets are the image people remember, but drums, voices, and water sounds give the show its pulse."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Show Time Buffer",
+              "body": "Check show times and house rules before you go. Arrive early enough to find the door, settle in, and let the music carry the room."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Photos Can Wait",
+              "body": "Stage rules can change, and a phone screen breaks the room quickly. Check before lifting the phone, then return to the show."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

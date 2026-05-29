@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW CITY/PLACE COPY.** Current standard: `speaklocal.place.app-detail.v2.2`. Start with `CURRENT_CITY_PAGE_STANDARD.md`. This file is retained only as historical reference.
+
 # SpeakLocal Example Entries for Vietnam Cities
 
 These sample listings demonstrate how to apply the SpeakLocal editorial playbook to real places. Each entry focuses on **traveler intelligence**: practical orientation, emotional context and concise cultural insight. When you read them, imagine you’ve tapped the listing in the app and are asking a well‑travelled friend **“What should I know about this?”**

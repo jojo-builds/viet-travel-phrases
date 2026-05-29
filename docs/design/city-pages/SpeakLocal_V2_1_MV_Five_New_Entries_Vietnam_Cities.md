@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW CITY/PLACE COPY.** Current standard: `speaklocal.place.app-detail.v2.2`. Start with `CURRENT_CITY_PAGE_STANDARD.md`. This file is retained only as historical reference.
+
 # SpeakLocal V2.1 MV Five New Entries for Vietnam Cities
 
 This file runs the V2.1 new-session test prompt against five remaining screenshot-backlog places. It uses the V2.1 playbook, the 21-entry V2 example set, and fresh source checks from May 21, 2026.

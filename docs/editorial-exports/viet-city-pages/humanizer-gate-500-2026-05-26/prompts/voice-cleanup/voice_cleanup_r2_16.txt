@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_16",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_16",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hanoi-place-bun-thang",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca",
+          "message": "heading is command-like: Check The Strong Sauce"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca-thang-long",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-cho-buoi-market",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-bun-cha-ta",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-cha-ca-thang-long",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-cho-buoi-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-bun-cha-ta",
+          "summary": "Bun Cha Ta is a small-table version of the Hanoi classic: grilled pork, cool vermicelli, herbs, and a dipping bowl that makes the meal slow down.",
+          "context": "One focused dish matters more here than a long-menu browse. The pleasure is smoke, sauce, and greens meeting at the table.",
+          "tip": "Venue status, branch details, hours, and holiday closures can change. Keep the stop grounded in pork, broth, herbs, and the table rhythm.",
+          "rationale": "Bun Cha Ta gives bun cha a concrete restaurant example while staying cautious about day-to-day operations.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Table For The Classic",
+              "body": "Bun Cha Ta is easiest when you sit down for one thing. Pork, noodles, herbs, and dipping broth carry the meal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Order Without Drama",
+              "body": "The venue name gets the table started, then the order can stay simple. One portion, more herbs, and the bill are the phrases that match the meal."
+            },
+            {
+              "id": "place-brief",
+              "title": "Build The Bite Slowly",
+              "body": "Pork and broth set the first bite; noodles and herbs come in once the balance is clear. The bowl should move between smoky, sharp, sweet, and cool."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Casual, Not Careless",
+              "body": "The room can feel quick, but the meal rewards patience. A menu pause gives the table rhythm enough time to settle."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Focused Bun Cha Stop",
+              "body": "Bun Cha Ta makes sense when the meal should be casual, smoky, and centered on one dish. The best memory is the table rhythm, not a long comparison."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Bowl Carries The Meal",
+              "body": "The dipping bowl is not sauce on the side. It is where grilled pork, pickles, herbs, and noodles turn into bun cha."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-bun-thang",
+          "summary": "Bun thang is a quieter Hanoi bowl: clear broth, thin noodles, shredded chicken, egg ribbons, herbs, and careful toppings rather than heat or smoke.",
+          "context": "This dish works as a lighter reset between grilled meats, coffee stops, and market snacks.",
+          "tip": "Recipes vary. If pork, egg, shellfish, or strong dried-shrimp flavor matters, ask before ordering.",
+          "rationale": "Bun thang shows Hanoi detail through restraint, thin layers, and broth instead of a loud signature flavor.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Bowl Between Bigger Meals",
+              "body": "Bún thang is for detail rather than force. Clear broth, thin noodles, chicken, egg, and herbs make the bowl delicate but not plain."
+            },
+            {
+              "id": "quick-say",
+              "title": "Point To The Bowl",
+              "body": "Bún thang is the dish name to keep. If you are ordering from a menu, start with the bowl and ask before assuming the ingredients are simple."
+            },
+            {
+              "id": "place-brief",
+              "title": "Look For The Layers",
+              "body": "A good bowl reads in thin strips and shreds, not one heavy topping. Notice the egg, chicken, herbs, and broth before adding anything extra."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Gentle Does Not Mean Simple",
+              "body": "Some bowls can include pork, egg, or dried-shrimp flavor. If you avoid those, ask first instead of treating it like plain chicken soup."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Lighter Bowl Moment",
+              "body": "Bun thang fits when the day needs broth and quiet detail after grilled, fried, or sweet stops. Ask about ingredients if egg, pork, or dried seafood matters."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Lighter Bowl",
+              "body": "Bun thang is a good reset after smoky or fried meals. It gives you steam and Hanoi detail without turning lunch into a project."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-cha-ca",
+          "summary": "Cha ca is Hanoi's hot-pan fish meal: turmeric, dill, scallions, noodles, herbs, peanuts, and sauce moving around the table with patient heat.",
+          "context": "This dish is more table ritual than simple seafood order. Build one bite before mixing the whole plate.",
+          "tip": "Sauce styles vary and can be strong. Smell first, add slowly, and keep some fish plain if fermented shrimp paste is new to you.",
+          "rationale": "Cha ca gives Hanoi a vivid dinner rhythm through heat, dill, fish, noodles, and shared table motion.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Hot Pan Sets The Pace",
+              "body": "Chả cá arrives with movement: fish, turmeric, dill, scallions, noodles, herbs, peanuts, and sauce. The meal happens in front of you."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name The Dish Clearly",
+              "body": "Chả cá is the dish name to recognize for ordering or comparing restaurant pages. Staff rhythm usually guides the table once the pan arrives."
+            },
+            {
+              "id": "place-brief",
+              "title": "Watch What Goes In First",
+              "body": "The hot fish and dill lead. Noodles, herbs, peanuts, and sauce come around them, so build one bite before mixing everything."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Check The Strong Sauce",
+              "body": "Some versions come with fermented shrimp-paste dip; others feel milder. Taste carefully before letting the sauce take over the plate."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Shared Dinner Rhythm",
+              "body": "Cha ca fits when dinner can slow down around a hot pan. It is strongest with enough time for dill, fish, noodles, herbs, and sauce to move around the table."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Better Shared Than Rushed",
+              "body": "Cha ca has table motion: pan, herbs, noodles, sauce, repeat. Sharing makes that rhythm easier, but a careful solo order can still work."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-cha-ca-thang-long",
+          "summary": "Cha Ca Thang Long is a restaurant page for the hot-pan cha ca meal: turmeric fish, dill, scallions, noodles, herbs, peanuts, and sauce at the center of the table.",
+          "context": "This dinner is one focused Hanoi specialty rather than a broad-menu browse.",
+          "tip": "Venue status, address, hours, service format, and sauce defaults can change. Treat the pan and table ritual as the reliable memory.",
+          "rationale": "The restaurant turns cha ca into a practical place example, with the table rhythm carrying the memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Dish, A Lot Of Table Motion",
+              "body": "Cha Ca Thang Long makes sense when you want dinner to move in front of you: hot fish, dill, scallion, noodles, herbs, peanuts, and sauce."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Table Comes First",
+              "body": "Chả cá Thăng Long is the name to recognize. The useful order is a table, one portion or set, and a clear way to pay at the end."
+            },
+            {
+              "id": "place-brief",
+              "title": "The House Rhythm Comes First",
+              "body": "The meal is about one specialty, not a broad menu. Watch how the herbs go in, then build the first bite before adjusting sauce."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Sauce Comes With A Decision",
+              "body": "The stronger dip can take over quickly. Taste before mixing it into everything, especially if fermented shrimp paste is new to you."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Planned Fish Dinner",
+              "body": "Cha Ca Thang Long fits when one Hanoi specialty can carry the evening. Arrive ready for the pan, the herbs, and the sauce decision instead of a broad menu browse."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Pan Stays Central",
+              "body": "Do not crowd the meal with too many side decisions. The heat, dill, fish, noodles, and herbs already make the table busy enough."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-cho-buoi-market",
+          "summary": "Cho Buoi feels like a neighborhood market still doing its own errands: plant pots, housewares, small stalls, snack counters, and scooters close to the lane.",
+          "context": "This is a practical local browse before it is a souvenir stop. The plant and household-goods mood gives it a domestic Hanoi texture.",
+          "tip": "Browse lightly, ask prices only when ready to pause, and treat the stall mix as something that may shift.",
+          "rationale": "Cho Buoi matters because it shows market life as everyday buying, not a visitor performance.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Errands Before Souvenirs",
+              "body": "Chợ Bưởi feels local because people are still buying useful things. Pots, housewares, snacks, bags, and scooters make the space feel domestic."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Market Name",
+              "body": "Chợ Bưởi is the name to recognize. It is enough to show on a phone or say slowly when asking whether you are near the market."
+            },
+            {
+              "id": "place-brief",
+              "title": "Plants Give The First Read",
+              "body": "The plant stalls are the easiest way into the mood. They make the market feel practical: people comparing small goods and moving through tight space."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Browse Lightly",
+              "body": "One slow pass is enough. Look at what people are actually buying, step aside for scooters, and ask a price only when you are ready."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Local-Market Browse",
+              "body": "Cho Buoi fits when a day can handle a practical market rather than a polished souvenir stop. The plant stalls and housewares give the walk its local texture."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Small Snack Is Enough",
+              "body": "If you eat here, keep it simple: one snack, one drink, or one counter with movement. This is a local-market browse, not a long food crawl."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

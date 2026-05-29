@@ -1,0 +1,780 @@
+{
+  "sessionID": "voice_cleanup_06",
+  "chunkReplacements": [
+    {
+      "chunkFile": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "replacements": [
+        {
+          "pageID": "city-hcmc-place-jade-emperor-pagoda",
+          "entry": {
+            "pageID": "city-hcmc-place-jade-emperor-pagoda",
+            "summary": "Jade Emperor Pagoda asks for a slower arrival: courtyard, incense, red details, worshippers, and layered temple rooms inside a working sacred stop.",
+            "context": "The point is not a long temple checklist. The visit is a respectful pause where incense, shade, and carved detail carry the memory.",
+            "tip": "Chùa Ngọc Hoàng is the name to recognize. A gentle entrance helps; watch the rhythm first, then let the courtyard slow the move inside.",
+            "rationale": "The pagoda gives HCMC a sacred-place stop with a distinct courtyard and incense atmosphere, without needing inflated specifics or market-style energy.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Slow Sacred Pause",
+                "body": "The visit begins before the shrine rooms. Courtyard shade, incense smoke, red detail, and worship rhythm set the pace."
+              },
+              {
+                "id": "place-brief",
+                "title": "Incense Before Detail",
+                "body": "Architecture matters here, but the first impression is usually smoke, pause, and respect. The carved rooms feel better when you do not rush them."
+              },
+              {
+                "id": "quick-say",
+                "title": "Chùa Ngọc Hoàng In The Ear",
+                "body": "Chùa Ngọc Hoàng is the Vietnamese name. It means Jade Emperor Pagoda and helps with maps, drivers, and recognition."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Quieter Central Stop",
+                "body": "This is a good counterweight to louder District 1 streets. It gives the day a quieter sacred space without needing to stretch the visit."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Respect Sets The Pace",
+                "body": "A quick photo pass misses the point. The better visit is a few slow minutes of looking, pausing, and noticing how people move through the temple."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Courtyard First",
+                "body": "The courtyard is the first read before the rooms. Incense and worship rhythm matter as much as the architecture."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-le-thanh-ton-street",
+          "entry": {
+            "pageID": "city-hcmc-place-le-thanh-ton-street",
+            "summary": "Le Thanh Ton Street is a District 1 name worth recognizing before dinner, especially around the restaurant frontage and Japan Town edges that make the block choices matter.",
+            "context": "It is a street-orientation stop more than a destination. The name helps connect taxis, maps, restaurant doors, and nearby Thái Văn Lung.",
+            "tip": "Đường Lê Thánh Tôn is the name to hear. The exact address matters, because a short street walk can still hide the right doorway.",
+            "rationale": "The street grounds a real District 1 movement pattern: restaurant frontages, crossings, scooters, and the narrower Japan Town side streets.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Dinner Street Name",
+                "body": "The name helps before the meal. It connects restaurant fronts, hotel edges, scooter crossings, and the alleys around Japan Town."
+              },
+              {
+                "id": "place-brief",
+                "title": "District 1 At Door Level",
+                "body": "This is not a landmark stop. The detail is practical: reading signs, matching addresses, and finding the right entrance at night."
+              },
+              {
+                "id": "quick-say",
+                "title": "Lê Thánh Tôn On The Pin",
+                "body": "Đường Lê Thánh Tôn is the Vietnamese street name. It helps with drivers, maps, and small address checks."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Good With Japan Town",
+                "body": "The street pairs naturally with Thái Văn Lung and the nearby Japanese dining cluster. One dinner plan makes it feel less abstract."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Address First",
+                "body": "A named street is most useful when you already have one restaurant, cafe, hotel, or pin to reach. The name holds the blocks together."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Crossings Take Patience",
+                "body": "Restaurant frontage can sit behind traffic, parked bikes, and small signs. A slow address check is better than circling the block twice."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-le-van-tam-park",
+          "entry": {
+            "pageID": "city-hcmc-place-le-van-tam-park",
+            "summary": "Le Van Tam Park is an everyday open-air reset in central HCMC: shaded paths, open lawns, scooters outside the gates, and a calmer pause between denser stops.",
+            "context": "The park works as a short reset, not a formal attraction. Trees, paths, and evening movement make the surrounding city feel less compressed.",
+            "tip": "Công viên Lê Văn Tám is the name to recognize. A short walk here makes more sense than trying to turn the park into a big sightseeing stop.",
+            "rationale": "The park gives the city a practical green pause: paths, shade, families, and the ordinary rhythm around a central gate.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Park For Breathing Room",
+                "body": "The point is simple: trees, paths, open lawn, and a break from tighter streets. It works well as a pause between errands or sights."
+              },
+              {
+                "id": "place-brief",
+                "title": "Everyday, Not Grand",
+                "body": "This is a city park, not a formal attraction. The memory is shade, walkers, families, and scooters waiting just outside the gate."
+              },
+              {
+                "id": "quick-say",
+                "title": "Lê Văn Tám At The Gate",
+                "body": "Công viên Lê Văn Tám is the Vietnamese name. It helps with drivers and maps when the English spacing varies."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Between Denser Stops",
+                "body": "The park makes sense after a museum, cafe, or long street walk when the day needs open air without adding another major stop."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Better In Cooler Light",
+                "body": "Morning or late-day light suits the park better than a harsh midday detour. Go for a calmer walk, not a checklist moment."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Gates And Traffic",
+                "body": "The gate can feel calmer than the curb; the scooter traffic outside still needs a moment."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-long-trieu",
+          "entry": {
+            "pageID": "city-hcmc-place-long-trieu",
+            "summary": "Long Trieu is a polished Chinese dining stop for a meal that feels planned: dim sum table settings, staff rhythm, and a quieter room than the street outside.",
+            "context": "The useful frame is a deliberate meal, not filler between sights. The room and table rhythm matter as much as the dishes.",
+            "tip": "Long Triều is the local spelling to recognize. Menu choices and table pacing matter here, so give the meal room in the day.",
+            "rationale": "The restaurant adds a more formal HCMC dining option, with Chinese food, dim sum cues, table service, and evening-meal energy.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Planned Chinese Meal",
+                "body": "This is the kind of stop to give space to. The table setting, service rhythm, and dim sum cues make the meal feel intentional."
+              },
+              {
+                "id": "place-brief",
+                "title": "Polished Room, Slower Pace",
+                "body": "The room matters because it changes the pace: quieter, more formal, and more table-focused than a quick street-food stop."
+              },
+              {
+                "id": "quick-say",
+                "title": "Long Triều On The Door",
+                "body": "Long Triều is the Vietnamese styling to notice. The venue name may be easier than translating the cuisine."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Dinner Holds The Night",
+                "body": "It makes most sense when dinner is one of the day's planned moments, not a rushed meal after too many stops."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Menu Time Helps",
+                "body": "A bigger menu needs a calmer read. That leaves room to ask about house dishes, portions, or dim sum before the table fills."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Not A Street-Food Mood",
+                "body": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the point."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-mariamman-temple",
+          "entry": {
+            "pageID": "city-hcmc-place-mariamman-temple",
+            "summary": "Mariamman Hindu Temple is a small central sacred stop with a colorful facade, temple detail, and a visit that needs a respectful pause more than a long detour.",
+            "context": "The temple sits inside central street life, so the contrast matters: traffic outside, worship and color inside.",
+            "tip": "Đền Mariamman is the name to recognize. The facade is easy to spot, but the visit feels better when the first move is slow.",
+            "rationale": "The temple adds a different sacred-place layer to central HCMC: Hindu worship, color, incense, and architecture on a busy street.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Sacred Stop In Traffic",
+                "body": "The contrast is immediate: a colorful Hindu temple facade on a central street, then a slower, more respectful rhythm inside."
+              },
+              {
+                "id": "place-brief",
+                "title": "Color Before Quiet",
+                "body": "The facade catches attention first. Inside, the better memory is the change of pace around worship, temple detail, and incense."
+              },
+              {
+                "id": "quick-say",
+                "title": "Đền Mariamman At The Door",
+                "body": "Đền Mariamman is the name to recognize. The English name and Vietnamese label both point to the same central temple."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Short Central Pause",
+                "body": "It fits well between nearby central stops when you want a sacred space without making the whole day temple-focused."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Respect Over Speed",
+                "body": "This is an active place of worship, not just a photo facade. A slower entrance keeps the visit from feeling too casual."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Street Outside, Shrine Inside",
+                "body": "The city noise sits close to the entrance. That edge is part of the experience: busy street first, temple rhythm second."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-municipal-theatre-square",
+          "entry": {
+            "pageID": "city-hcmc-place-municipal-theatre-square",
+            "summary": "Lam Son Square is the Opera House-facing pause where performance, city lights, hotel fronts, and evening crossings make central Saigon feel staged for a few minutes.",
+            "context": "The square works as a small orientation point around the Opera House, not a separate attraction to over-plan.",
+            "tip": "Công trường Lam Sơn is the local name. The Opera House is the easier visual landmark if a driver or friend needs context.",
+            "rationale": "The square gives HCMC a performance-adjacent landmark: theatre doors, evening streets, city light, and a place to meet or pause.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The Opera House Foreground",
+                "body": "The square is most legible as the space around the Opera House: a place for photos, meeting, crossing, and reading the evening center."
+              },
+              {
+                "id": "place-brief",
+                "title": "Performance In The Background",
+                "body": "Even without a ticket, the theatre changes the mood. Facade, lights, hotel fronts, and street movement make the corner feel more formal."
+              },
+              {
+                "id": "quick-say",
+                "title": "Lam Sơn Beside The Opera House",
+                "body": "Công trường Lam Sơn is the Vietnamese name. Pair it with the Opera House when someone needs a clearer landmark."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Meeting Point With A View",
+                "body": "It suits a short pause before dinner, a show, or a walk toward Đồng Khởi and Nguyen Hue."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Evening Makes Sense",
+                "body": "The square is stronger when the lights are on and people are gathering. In harsh daytime, it can feel more like a crossing."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Not A Standalone Plan",
+                "body": "The square is a foreground, not the whole outing. The Opera House and nearby streets carry most of the reason to be there."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-nephele",
+          "entry": {
+            "pageID": "city-hcmc-place-nephele",
+            "summary": "Nephele is a small modern Saigon restaurant stop for a planned evening meal, with wine glasses, warm lighting, and table rhythm carrying more weight than sightseeing.",
+            "context": "The place works best as a narrow evening plan: a modern room, drinks, menu choices, and enough attention for the meal.",
+            "tip": "Nephele usually stays as the venue name. The exact address matters; the dinner plan, not the name alone, guides the stop.",
+            "rationale": "The restaurant gives HCMC a quieter modern-dining option, useful when the meal itself is the evening anchor.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Small Modern Dinner",
+                "body": "The draw is not a landmark story. It is a table, warm light, wine glasses, and a meal with enough focus to slow the night."
+              },
+              {
+                "id": "place-brief",
+                "title": "Room Over Rush",
+                "body": "The setting suggests a calmer dinner: modern room, close table, drinks, and menu detail rather than quick fuel between stops."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nephele On The Booking",
+                "body": "Nephele usually stays as the venue name. Say it slowly and keep the address ready if the driver needs more than the name."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Meal As The Plan",
+                "body": "It fits when dinner is the main evening decision. That keeps the stop from feeling like another box on a busy route."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Room, Small Promise",
+                "body": "The simple frame works best: a modern restaurant table for a quieter meal, not a broad Saigon dining statement."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Address Matters",
+                "body": "Small restaurants can be harder to spot from a moving car. The saved pin and exact address matter more than a rough neighborhood memory."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-nguyen-hue",
+          "entry": {
+            "pageID": "city-hcmc-place-nguyen-hue",
+            "summary": "Nguyen Hue Walking Street is the central pedestrian spine to recognize at dusk, with City Hall views, families, cafe edges, and enough space to read the city.",
+            "context": "The street is useful as orientation: one broad central line where walkers, lights, cafes, and City Hall sit in the same frame.",
+            "tip": "Phố đi bộ Nguyễn Huệ is the name to recognize. It helps when a driver drops you near the pedestrian zone rather than at one exact door.",
+            "rationale": "The street gives HCMC a clear walking landmark, especially for first bearings around City Hall, cafe apartments, and evening crowds.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Broad Central Spine",
+                "body": "This is one of the easiest central streets to understand on foot: wide space, City Hall views, families, cafe edges, and evening light."
+              },
+              {
+                "id": "place-brief",
+                "title": "Dusk Gives It Shape",
+                "body": "The street makes more sense when people arrive to stroll, take photos, and meet. Daytime can feel more exposed and less social."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nguyễn Huệ For Drop-Offs",
+                "body": "Phố đi bộ Nguyễn Huệ is the Vietnamese name. It means Nguyen Hue Walking Street and helps with maps or drop-off points."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Good First Bearings",
+                "body": "It pairs with the Opera House, Dong Khoi, the river end, or a cafe stop when you want central Saigon to feel readable."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Stroll, Not A Mission",
+                "body": "The move is simple: arrive, walk the spine, notice the buildings, then decide whether to sit, turn toward the river, or head for dinner."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Corner Helps",
+                "body": "Cars may stop near the edge rather than inside the pedestrian area. A nearby corner can be easier than an exact middle pin."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-nguyen-trai-street",
+          "entry": {
+            "pageID": "city-hcmc-place-nguyen-trai-street",
+            "summary": "Nguyen Trai Street is a shopping-street name to know before a clothing-store or scooter-heavy walk, where the useful skill is matching addresses to the right block.",
+            "context": "The street works as an address and shopping corridor, not a single attraction. Expect movement, store fronts, scooters, and repeated crossings.",
+            "tip": "Đường Nguyễn Trãi is the Vietnamese name. The street is long enough that the district, number, and side of the road matter.",
+            "rationale": "The street gives HCMC a practical shopping-and-navigation stop, with clothing stores, scooters, and address checks shaping the experience.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Shopping Street To Pin Down",
+                "body": "Nguyen Trai is easier with one shop, address, or block in mind. The street itself is too long to treat as one stop."
+              },
+              {
+                "id": "place-brief",
+                "title": "Stores And Scooters",
+                "body": "The scene is busy and practical: clothing stores, signs, parked bikes, traffic, and crossings that slow even a short walk."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nguyễn Trãi Needs A Number",
+                "body": "Đường Nguyễn Trãi is the Vietnamese street name. The address number matters when asking, because the name alone may be too broad."
+              },
+              {
+                "id": "use-it-with",
+                "title": "One Errand, Then Nearby",
+                "body": "It makes sense for a shopping errand or a specific food stop nearby, not as a vague wandering plan across the whole street."
+              },
+              {
+                "id": "when-to-use",
+                "title": "The Address Does The Work",
+                "body": "The shop name, number, and district matter before the ride. That information matters more than memorizing the street as a destination."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Crossing Takes Time",
+                "body": "Traffic can turn a short distance into a slower move. The right side of the road matters when the shop is close but hard to reach."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-notre-dame",
+          "entry": {
+            "pageID": "city-hcmc-place-notre-dame",
+            "summary": "Notre Dame Cathedral Basilica of Saigon is a central exterior landmark to approach slowly, with brick facades, trees, scooters, and worship memory sharing the same corner.",
+            "context": "The strongest frame is exterior, facade, and setting. The cathedral still helps hold the Post Office corner and older civic core together.",
+            "tip": "Nhà thờ Đức Bà Sài Gòn is the Vietnamese name. It pairs naturally with the Central Post Office area when giving directions.",
+            "rationale": "The cathedral gives HCMC a sacred landmark with strong exterior memory: brick facade, courtyard shade, bells, trees, and scooters around the edge.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Cathedral In Street Life",
+                "body": "The first impression is the exterior: brick facade, trees, scooters, and a sacred building holding its place in central traffic."
+              },
+              {
+                "id": "place-brief",
+                "title": "Exterior Carries Plenty",
+                "body": "The cathedral still works as an orientation point beside the Post Office area and nearby central streets."
+              },
+              {
+                "id": "quick-say",
+                "title": "Đức Bà Around The Square",
+                "body": "Nhà thờ Đức Bà Sài Gòn is the Vietnamese name. It helps with drivers, maps, and recognition around the central square."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Central Pairing",
+                "body": "It naturally pairs with the Central Post Office, Dong Khoi, and a slower walk through the older civic core."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Exterior First",
+                "body": "The exterior, the square, and the Post Office corner carry the visit. The cathedral holds the block together even from outside."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Photos Are Not The Whole Stop",
+                "body": "The facade is the obvious image, but the street life around it explains why the corner stays memorable."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-opera-a-o-show",
+          "entry": {
+            "pageID": "city-hcmc-place-opera-a-o-show",
+            "summary": "A O Show at Saigon Opera House turns the Opera House from a facade into an evening plan: theatre doors, stage light, Vietnamese performance, and a ticketed pause.",
+            "context": "The useful frame is performance, not sightseeing. The building matters because the night moves from street lights into a theatre seat.",
+            "tip": "À Ố Show is the name to recognize. The show name, seat, and Opera House location belong together before heading out.",
+            "rationale": "The show gives HCMC a living-performance stop tied to the historic theatre, evening streets, and a more focused night than casual wandering.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Ticket Turns The Building On",
+                "body": "The Opera House feels different when you have a seat inside. The night shifts from facade and scooters to stage light and performance."
+              },
+              {
+                "id": "place-brief",
+                "title": "Performance Before Monument",
+                "body": "The show keeps the theatre from becoming only a photo stop. The evening rhythm is arrival, doors, seat, stage, and exit."
+              },
+              {
+                "id": "quick-say",
+                "title": "À Ố On The Ticket",
+                "body": "À Ố Show is the name to recognize. The Vietnamese accents help distinguish it from a generic opera-house search."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Structured Evening",
+                "body": "It suits a night when you want culture with a clear start point, instead of drifting between dinner, bars, and street photos."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Seat The Night Around It",
+                "body": "The ticket gives the evening its shape: early arrival, theatre doors, a settled seat, then the square on the way out."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Opera House Context",
+                "body": "The show also helps you understand Lam Son Square. The surrounding lights and crossings feel more purposeful when there is a performance to reach."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-opera-house",
+          "entry": {
+            "pageID": "city-hcmc-place-opera-house",
+            "summary": "Saigon Opera House is a central performance landmark that works from the street too: theatre doors, evening light, scooters passing, and Lam Son Square nearby.",
+            "context": "The building is both a photo landmark and a real venue. The strongest memory often comes from seeing it with evening movement around it.",
+            "tip": "Nhà hát Thành phố is the local name. It pairs with Lam Son Square or Dong Khoi when giving a route.",
+            "rationale": "The Opera House gives HCMC a compact civic landmark with performance culture, French-era architecture, evening streets, and central orientation.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Theatre Doors In The Street",
+                "body": "The building is formal, but the street around it is alive: scooters, photos, hotel fronts, and people crossing toward the square."
+              },
+              {
+                "id": "place-brief",
+                "title": "More Than A Facade",
+                "body": "It is still a working performance venue, so the doors, posters, lights, and ticketed nights keep it from feeling like a static monument."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà Hát Thành Phố Nearby",
+                "body": "Nhà hát Thành phố is the Vietnamese name. It means City Theatre and helps with drivers, maps, and nearby meeting points."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Central Evening Anchor",
+                "body": "It pairs naturally with Lam Son Square, Dong Khoi, Nguyen Hue, or a show night when the center needs one clear landmark."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Light Helps",
+                "body": "Dusk and evening suit the building because the facade, street movement, and theatre lights start to work together."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Square And Street Together",
+                "body": "The Opera House, square, and nearby streets work as one central scene rather than separate stops."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-pha-lau",
+          "entry": {
+            "pageID": "city-hcmc-place-pha-lau",
+            "summary": "Pha lau is a small Saigon bowl stop with rich stew, bread on the side, sauce, steam, and texture doing more work than the English name can.",
+            "context": "The dish works as a focused food memory: one bowl, one dipping rhythm, and enough flavor to make a sidewalk table feel specific.",
+            "tip": "Phá lấu is the name to recognize. The dish can be richer than it looks, so a small first bowl is the safer read.",
+            "rationale": "The dish gives HCMC a clear food stop with a bowl, bread, sauce, steam, texture, and a practical ordering moment.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Bowl With Bread",
+                "body": "The basic memory is simple: a bowl of phá lấu, bread for dipping, warm sauce, and a small table that turns the snack into a pause."
+              },
+              {
+                "id": "place-brief",
+                "title": "Rich, Small, Specific",
+                "body": "This is not a broad Vietnamese-food category. It is a focused stew stop where texture, sauce, and bread carry the experience."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phá Lấu At The Counter",
+                "body": "Phá lấu is the name to listen for. Say it slowly; the accents matter less in the moment than recognizing the dish."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Snack-Meal Gap",
+                "body": "It fits between lunch and dinner when you want something more filling than coffee but smaller than a full restaurant meal."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Bowl First",
+                "body": "The flavor can be rich, and the texture may be new for some visitors. A smaller first bowl keeps the choice low-pressure."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Sauce Carries The Memory",
+                "body": "The bread is not decoration. It helps you understand the sauce, the richness, and why the dish works as a street-side snack."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-pham-ngu-lao-street",
+          "entry": {
+            "pageID": "city-hcmc-place-pham-ngu-lao-street",
+            "summary": "Pham Ngu Lao Street is a backpacker-area street name to know for travel offices, buses, budget hotels, and the practical handoff between walking and leaving.",
+            "context": "The street is more useful as orientation than romance: offices, buses, scooters, crossings, and a visitor-heavy edge of central Saigon.",
+            "tip": "Phố Phạm Ngũ Lão is the name to recognize. Match it with the exact office, hotel, or pickup point before assuming the street is enough.",
+            "rationale": "The street gives HCMC a travel-logistics anchor with bus offices, budget-travel movement, and crossings near the backpacker area.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Visitor Street With Logistics",
+                "body": "The name matters when travel offices, buses, hotels, and pickup points are part of the day. It is more practical than scenic."
+              },
+              {
+                "id": "place-brief",
+                "title": "Movement Over Mood",
+                "body": "Expect scooters, crossings, signs, and people moving between offices, hostels, cafes, and buses. Orientation does the work here."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phạm Ngũ Lão For Pickup Points",
+                "body": "Phố Phạm Ngũ Lão is the Vietnamese name. It helps with drivers, maps, and travel-office directions."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Pickup Or Office First",
+                "body": "The street is easiest with one pickup point, hotel, or travel office in mind. A vague wander can feel noisy fast."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Buffer Before Departure",
+                "body": "If a bus or transfer begins here, arrive with enough time for traffic, wrong-door moments, and one last address check."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Not All Pins Are Equal",
+                "body": "Travel offices and pickup spots can sit close together. The exact name and address matter more than just reaching the street."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "chunkFile": "hcmc_076_100_humanized.json",
+      "cityID": "hcmc",
+      "range": "076-100",
+      "replacements": [
+        {
+          "pageID": "city-hcmc-place-saigon-skydeck",
+          "entry": {
+            "pageID": "city-hcmc-place-saigon-skydeck",
+            "summary": "Saigon Skydeck is a height-and-orientation stop above the river and central streets. It works when you want the city arranged below you, not another street-level landmark.",
+            "context": "The viewpoint story is simple: observation-deck glass, river bend, rooftops, central streets, and the city turning into a skyline.",
+            "tip": "Clearer weather gives the view more value. On hazy days, the stop becomes more about scale than crisp distance.",
+            "rationale": "It gives Saigon a vertical map, connecting river, rooftops, streets, and towers in one quick read.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A High Read On Saigon",
+                "body": "Saigon Skydeck gives the city a fast vertical read. From above, the river, roads, rooftops, and dense center make more sense together."
+              },
+              {
+                "id": "place-brief",
+                "title": "River Below The Glass",
+                "body": "Expect an observation-deck view over Saigon River and the central skyline. The experience is clean, elevated, and shorter than a full museum stop."
+              },
+              {
+                "id": "quick-say",
+                "title": "Skydeck In The Tower",
+                "body": "Saigon Skydeck usually stays in English. Pair the name with the high observation-deck view over the river and central streets below."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Clear Day Advantage",
+                "body": "The stop pays off most when weather lets the skyline read clearly. Haze can make the height feel softer and less precise."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short, Not Whole Afternoon",
+                "body": "It fits between central plans when you want orientation from above without building the whole day around a tower."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Pairing With The Center",
+                "body": "The view makes more sense after you have walked some of the streets below. Height is better with street memory attached."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-street-food-evening",
+          "entry": {
+            "pageID": "city-hcmc-place-street-food-evening",
+            "summary": "A Saigon street-food evening works as a route between small tables, steam, herbs, scooters, and bites, not one single restaurant plan. The night feels easier when the first order stays small.",
+            "context": "The scene is food lanes, sidewalk seats, small dishes, herbs, steam, and the movement between one bite and the next.",
+            "tip": "Small first orders keep the night flexible. Add another dish after you see portion size, spice, and seating.",
+            "rationale": "It gives Saigon's food energy a moving shape instead of asking one stall or table to carry the whole night.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Small Orders, Moving Night",
+                "body": "A Saigon street-food evening is easier when the first order stays small. The point is movement between bites, not proving everything at one table."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Table At A Time",
+                "body": "Expect small tables, steam, herbs, scooters, and quick decisions. The route matters as much as the food itself."
+              },
+              {
+                "id": "quick-say",
+                "title": "Ăn Vặt For The Snack Run",
+                "body": "Ăn vặt Sài Gòn buổi tối points to evening Saigon snacking. Ăn vặt means snack or casual bite, not a formal dinner."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Steam, Scooters, Seats",
+                "body": "It fits a night when the city itself is part of dinner: one dish, one seat, one short move, then another decision."
+              },
+              {
+                "id": "when-to-use",
+                "title": "After Dark Pacing",
+                "body": "The evening works better when hunger, heat, and noise are managed in rounds. A small plate leaves room for the next stop."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Spice And Portion Cues",
+                "body": "Asking or pointing before a large portion keeps the night easier. A quick check on heat and serving size relaxes the table before it fills."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-ton-duc-thang-museum",
+          "entry": {
+            "pageID": "city-hcmc-place-ton-duc-thang-museum",
+            "summary": "Ton Duc Thang Museum is a quieter museum stop near the waterfront, with local history, rooms, objects, and memory replacing another street-facing landmark.",
+            "context": "The role is compact culture: artifacts, display rooms, quiet light, local history, and a pause near the Saigon waterfront.",
+            "tip": "A focused visit works better than trying to read everything; pick the historical frame, then let the waterfront reset the day after.",
+            "rationale": "It gives central Saigon a local-history layer close to the river, useful when the day needs more than shopping or views.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Quiet Museum Near The Water",
+                "body": "Ton Duc Thang Museum gives the waterfront area a quieter historical stop. It is for rooms, objects, and local memory rather than another street view."
+              },
+              {
+                "id": "place-brief",
+                "title": "History In A Smaller Frame",
+                "body": "Expect a modern museum exterior near the Saigon waterfront and interior displays that slow the day down."
+              },
+              {
+                "id": "quick-say",
+                "title": "Tôn Đức Thắng On The Sign",
+                "body": "Bảo tàng Tôn Đức Thắng is the Vietnamese name. Bảo tàng means museum, followed by the historical figure's name."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Focused Short Visit",
+                "body": "The museum fits better with one historical focus than a pressure to read every room. Keep the visit compact and attentive."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Waterfront Pairing",
+                "body": "It pairs naturally with a river or central walk when you want a cultural stop near the water without a crowded landmark mood."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Museum Pace",
+                "body": "The stop rewards a slower pace. Give the rooms a little quiet, then let the nearby waterfront bring the day back outside."
+              }
+            ]
+          }
+        },
+        {
+          "pageID": "city-hcmc-place-workshop-coffee",
+          "entry": {
+            "pageID": "city-hcmc-place-workshop-coffee",
+            "summary": "The Workshop Coffee is a Saigon café pause built around specialty coffee, an old-building setting, espresso equipment, design, and a slower seat above the street.",
+            "context": "The role is café rhythm: coffee counters, iced glasses, design, soft pauses, and the old-building feel around the room.",
+            "tip": "A short coffee break is the point. The room and the cup can reset the day before heading back into central Saigon.",
+            "rationale": "It gives Saigon's café culture a more deliberate coffee stop than a quick iced drink on the sidewalk.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Coffee Pause Above The Street",
+                "body": "The Workshop Coffee is for a slower café pause: specialty coffee, an old-building room, espresso equipment, and the city waiting below."
+              },
+              {
+                "id": "place-brief",
+                "title": "Old Building, Bright Bar",
+                "body": "Expect a brighter specialty-coffee room rather than a sidewalk stool. The stop is about the cup, the counter, and the pause around it."
+              },
+              {
+                "id": "quick-say",
+                "title": "Workshop Coffee On The Pin",
+                "body": "The Workshop Coffee usually stays in English. The name is useful for searches and rides, especially with the old-building coffee-bar image."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Coffee Over A Long Work Session",
+                "body": "The stop fits a short reset more than a whole afternoon. A short rhythm works: order, sit, drink well, and slow down."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Between Heat And Meals",
+                "body": "It makes sense between market walking, lunch, and evening plans, when caffeine and a quieter room can carry the next stretch."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Specialty-Coffee Expectations",
+                "body": "This is a more polished coffee stop than a quick street glass. The tradeoff is less sidewalk chaos and more focus on the drink."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass",
+    "notes": "Targeted cleanup keeps the supplied object shape, section order, and place substance while replacing generic quick-say headings and time-sensitive wording.",
+    "remainingRisks": []
+  }
+}

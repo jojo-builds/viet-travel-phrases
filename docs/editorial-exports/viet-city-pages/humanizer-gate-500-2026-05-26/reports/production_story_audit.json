@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-05-27T08:28:59.365Z",
+  "entryCount": 500,
+  "reviewCount": 5,
+  "byCity": {
+    "danang": 4,
+    "hanoi": 1
+  },
+  "issues": [
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-xeo-ba-duong",
+      "severity": "review",
+      "message": "thin story signal (1 hit: hands)"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-central-bus-station",
+      "severity": "review",
+      "message": "thin story signal (1 hit: station)"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-co-chu-nho",
+      "severity": "review",
+      "message": "thin story signal (1 hit: noodle)"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra-wildlife-drive",
+      "severity": "review",
+      "message": "thin story signal (1 hit: beach)"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tam-vi",
+      "severity": "review",
+      "message": "thin story signal (1 hit: home-cooking)"
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_41",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_41",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hcmc-place-oc",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-opera-a-o-show",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-opera-house",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-pha-lau",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-pham-ngu-lao-street",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-hcmc-place-pham-ngu-lao-street",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-opera-a-o-show",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-opera-house",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: local name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 3x: street name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 15x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 7x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-oc",
+          "summary": "Saigon snails and seafood is a hands-on food stop built around ốc, clams, sauces, herbs, shells, and small-table decisions rather than a neat single dish.",
+          "context": "The meal is social and tactile: choosing plates, checking sauces, sharing shells, and eating slowly enough to understand the spread.",
+          "tip": "Ốc is the word to notice. It covers a broader snail-and-shellfish eating style, so point, ask, and start smaller if the menu feels wide.",
+          "rationale": "This gives HCMC a food stop with a clear ritual: shellfish, sauces, small tables, texture, and shared ordering.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Shells, Sauce, Small Tables",
+              "body": "The memory is not one dish. It is plates of ốc, clams or seafood, dipping sauces, shells, and the pace of sharing."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Meal You Navigate",
+              "body": "Menus can feel wide, so the first useful move is simple: small portions, visible plates, and sauces you can understand before ordering more."
+            },
+            {
+              "id": "quick-say",
+              "title": "Food Name Cue",
+              "body": "Ốc is the word to listen for. In Saigon, it often points to a broader snail-and-seafood table, not only one shell."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good With A Small Group",
+              "body": "This style is easier when dishes are shared. A few small plates teach more than one big order you are unsure about."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Texture Matters",
+              "body": "The food is about chew, sauce, steam, herbs, and hands-on eating. It may not suit someone who wants a tidy fork-and-knife meal."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small First Round",
+              "body": "A smaller first round keeps the table manageable. Add more only after you understand the sauce, spice, and shellfish style."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-opera-a-o-show",
+          "summary": "A O Show at Saigon Opera House turns the Opera House from a facade into an evening plan: theatre doors, stage light, Vietnamese performance, and a ticketed pause.",
+          "context": "The useful frame is performance, not sightseeing. The building matters because the night moves from street lights into a theatre seat.",
+          "tip": "À Ố Show is the name to recognize. Show time, ticket details, and the Opera House location belong together before heading out.",
+          "rationale": "The show gives HCMC a living-performance stop tied to the historic theatre, evening streets, and a more focused night than casual wandering.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Ticket Turns The Building On",
+              "body": "The Opera House feels different when you have a seat inside. The night shifts from facade and scooters to stage light and performance."
+            },
+            {
+              "id": "place-brief",
+              "title": "Performance Before Monument",
+              "body": "The show keeps the theatre from becoming only a photo stop. The value is the evening rhythm: arrival, doors, seat, stage, and exit."
+            },
+            {
+              "id": "quick-say",
+              "title": "Show Name Cue",
+              "body": "À Ố Show is the name to recognize. The Vietnamese accents help distinguish it from a generic opera-house search."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Structured Evening",
+              "body": "It suits a night when you want culture with a clear start point, instead of drifting between dinner, bars, and street photos."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ticket Details Matter",
+              "body": "Show times, seat categories, and availability can change. Those are live details; the durable part is the theatre-and-performance experience."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Opera House Context",
+              "body": "The show also helps you understand Lam Son Square. The surrounding lights and crossings feel more purposeful when there is a performance to reach."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-opera-house",
+          "summary": "Saigon Opera House is a central performance landmark that works from the street too: theatre doors, evening light, scooters passing, and Lam Son Square nearby.",
+          "context": "The building is both a photo landmark and a real venue. The strongest memory often comes from seeing it with evening movement around it.",
+          "tip": "Nhà hát Thành phố is the local name. It pairs with Lam Son Square or Dong Khoi when giving a route.",
+          "rationale": "The Opera House gives HCMC a compact civic landmark with performance culture, French-era architecture, evening streets, and central orientation.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Theatre Doors In The Street",
+              "body": "The building is formal, but the street around it is alive: scooters, photos, hotel fronts, and people crossing toward the square."
+            },
+            {
+              "id": "place-brief",
+              "title": "More Than A Facade",
+              "body": "It is still a working performance venue, so the doors, posters, lights, and ticketed nights keep it from feeling like a static monument."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Nhà hát Thành phố is the Vietnamese name. It means City Theatre and helps with drivers, maps, and nearby meeting points."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Central Evening reference point",
+              "body": "It pairs naturally with Lam Son Square, Dong Khoi, Nguyen Hue, or a show night when the center needs one clear landmark."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light Helps",
+              "body": "Dusk and evening suit the building because the facade, street movement, and theatre lights start to work together."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Square And Street Together",
+              "body": "Do not separate it too sharply from the area around it. The Opera House, square, and nearby streets are one central scene."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-pha-lau",
+          "summary": "Pha lau is a small Saigon bowl stop with rich stew, bread on the side, sauce, steam, and texture doing more work than the English name can.",
+          "context": "The dish works as a focused food memory: one bowl, one dipping rhythm, and enough flavor to make a sidewalk table feel specific.",
+          "tip": "Phá lấu is the name to recognize. The dish can be richer than it looks, so a small first bowl is the safer read.",
+          "rationale": "The dish gives HCMC a clear food stop with a bowl, bread, sauce, steam, texture, and a practical ordering moment.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Bowl With Bread",
+              "body": "The basic memory is simple: a bowl of phá lấu, bread for dipping, warm sauce, and a small table that turns the snack into a pause."
+            },
+            {
+              "id": "place-brief",
+              "title": "Rich, Small, Specific",
+              "body": "This is not a broad Vietnamese-food category. It is a focused stew stop where texture, sauce, and bread carry the experience."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name Cue",
+              "body": "Phá lấu is the name to listen for. Say it slowly; the accents matter less in the moment than recognizing the dish."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Snack-Meal Gap",
+              "body": "It fits between lunch and dinner when you want something more filling than coffee but smaller than a full restaurant meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Bowl First",
+              "body": "The flavor can be rich, and the texture may be new for some visitors. A smaller first bowl keeps the choice low-pressure."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Carries The Memory",
+              "body": "The bread is not decoration. It helps you understand the sauce, the richness, and why the dish works as a street-side snack."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-pham-ngu-lao-street",
+          "summary": "Pham Ngu Lao Street is a backpacker-area street name to know for travel offices, buses, budget hotels, and the practical handoff between walking and leaving.",
+          "context": "The street is more useful as orientation than romance: offices, buses, scooters, crossings, and a visitor-heavy edge of central Saigon.",
+          "tip": "Phố Phạm Ngũ Lão is the name to recognize. Match it with the exact office, hotel, or pickup point before assuming the street is enough.",
+          "rationale": "The street gives HCMC a travel-logistics reference point with bus offices, budget-travel movement, and crossings near the backpacker area.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A visitor Street With Logistics",
+              "body": "The name matters when travel offices, buses, hotels, and pickup points are part of the day. It is more practical than scenic."
+            },
+            {
+              "id": "place-brief",
+              "title": "Movement Over Mood",
+              "body": "Expect scooters, crossings, signs, and people moving between offices, hostels, cafes, and buses. The value is orientation."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name Cue",
+              "body": "Phố Phạm Ngũ Lão is the Vietnamese name. It helps with drivers, maps, and travel-office directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pickup Or Office First",
+              "body": "The street is easiest with one pickup point, hotel, or travel office in mind. A vague wander can feel noisy fast."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Buffer Before Departure",
+              "body": "If a bus or transfer begins here, arrive with enough time for traffic, wrong-door moments, and one last address check."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not All Pins Are Equal",
+              "body": "Travel offices and pickup spots can sit close together. The exact name and address matter more than just reaching the street."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

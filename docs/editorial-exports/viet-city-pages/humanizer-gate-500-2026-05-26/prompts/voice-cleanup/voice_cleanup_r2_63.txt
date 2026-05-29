@@ -1,0 +1,246 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 4
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_63",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 4,
+    "returnedReplacementCount": 4,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_63",
+  "chunks": [
+    {
+      "chunkFile": "hue_026_050_humanized.json",
+      "cityID": "hue",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hue-place-hon-chen-temple",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-kim-long",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-lagoon-seafood-boat",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-le-ba-dang-art-center",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-lagoon-seafood-boat",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 4x: local tomb name"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-hon-chen-temple",
+          "summary": "Hon Chen Temple brings worship and river movement together: a temple on a green slope, incense, tiled roofs, and boat traffic below on the Perfume River.",
+          "context": "The temple's setting matters as much as the building: river approach, shade, courtyards, respectful pauses, and a sacred hillside.",
+          "tip": "Điện Hòn Chén is the Vietnamese name to recognize when a boat route, temple stop, or driver uses local wording.",
+          "rationale": "It gives Hue a sacred place tied to water, with temple gates, incense, shade, and river movement in one frame.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Temple Above The River",
+              "body": "Hon Chen Temple is a sacred stop shaped by its slope and water. Incense, tiled roofs, shade, and boats below make the approach feel different."
+            },
+            {
+              "id": "place-brief",
+              "title": "Riverside, Green, Reverent",
+              "body": "Expect a temple setting rather than only a building: courtyards, gates, a green hillside, and Perfume River movement near the visit."
+            },
+            {
+              "id": "quick-say",
+              "title": "Temple Name",
+              "body": "Điện Hòn Chén is the Vietnamese name. It is the phrase to recognize in temple, boat, or route conversations."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Boat-Route Pairing",
+              "body": "It fits naturally with Perfume River planning or nearby tomb routes, especially when the day can handle a slower sacred stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respect Sets The Pace",
+              "body": "The visit depends on quiet behavior: incense, shade, courtyards, and pauses. Current festival or boat details should be checked close to the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Setting Matters",
+              "body": "The river setting is part of the memory. Without that hillside-and-water context, the temple can sound more generic than it feels."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-kim-long",
+          "summary": "Kim Long is a quieter Hue neighborhood to recognize for garden-house mood: leafy lanes, old gates, walls, morning light, and life near the river.",
+          "context": "It gives Hue a residential frame beside imperial memory, with cafes, lanes, small shops, and garden-house edges replacing landmark pressure.",
+          "tip": "Kim Long usually stays as the area name. It helps orient a calmer lane walk or garden-house route north of the center.",
+          "rationale": "The area makes Hue feel lived-in and green through lanes, old gates, walls, cafes, and morning calm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Garden-House Edges",
+              "body": "Kim Long gives Hue a calmer neighborhood register: leafy lanes, old gates, garden-house walls, small shops, and quieter morning light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Leafy Lane Rhythm",
+              "body": "Expect an area identity, not a single sight. The interest comes from walls, gates, cafes, lanes, and the softer pace near the river."
+            },
+            {
+              "id": "quick-say",
+              "title": "Area Name",
+              "body": "Kim Long usually stays as Kim Long. The name is useful for routes, garden-house references, and calmer neighborhood directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Quiet Morning Pairing",
+              "body": "It fits a light morning route or cafe pause when you want Hue beyond tombs, palaces, and market heat."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small-Scale Expectations",
+              "body": "The area is easiest when treated as a neighborhood, not a checklist. A lane, gate, wall, or coffee stop may be the whole point."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Residential Frame",
+              "body": "Kim Long's strength is atmosphere and orientation. Specific houses or cafes should be checked before building a plan around them."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-lagoon-seafood-boat",
+          "summary": "A lagoon seafood boat turns Hue's water edge into a working meal scene: small wooden boat, seafood raft, nets, bowls, and late light.",
+          "context": "This is more than transport: water light, boarding point, seafood setting, and the slower rhythm around Tam Giang-style lagoon life.",
+          "tip": "Thuyền hải sản phá Tam Giang names a Tam Giang lagoon seafood boat; confirm the exact pier, route, weather, and return before going.",
+          "rationale": "It gives Hue a water-based memory through boats, rafts, nets, bowls, and a meal close to the lagoon.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Meal On Working Water",
+              "body": "Lagoon seafood boat is about water and food together: a small boat, seafood raft, nets, bowls, and late light over the lagoon."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boat, Raft, Nets",
+              "body": "Expect a practical water setting rather than a polished cruise. Boarding points, weather, and the seafood setup shape the experience."
+            },
+            {
+              "id": "quick-say",
+              "title": "Boat Phrase",
+              "body": "Thuyền hải sản phá Tam Giang names a Tam Giang lagoon seafood boat. It is useful when asking about the experience, not a fixed operator name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lagoon Route Pairing",
+              "body": "It fits a Tam Giang or coastal-lagoon plan when there is enough time for transfer, boarding, eating, and return."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pier Details Matter",
+              "body": "Exact pier, boat length, seafood availability, and weather can change. Those details need a close-to-the-day check close to the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not Just A Ride",
+              "body": "The memorable part is the working-water setting: boat, raft, nets, bowls, and the feeling of eating close to the lagoon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-le-ba-dang-art-center",
+          "summary": "Le Ba Dang Art Center gives Hue another quiet indoor layer: gallery light, posters, street trees outside, and rooms that shift the day away from monuments.",
+          "context": "It serves as a compact cultural stop near the river-city flow, with art, memory, display rooms, and a calmer pace.",
+          "tip": "Trung tâm Nghệ thuật Lê Bá Đảng is the Vietnamese name to recognize on signs, maps, or local directions.",
+          "rationale": "The center adds an artist-focused Hue stop through gallery rooms, quiet light, display cases, and a short indoor reset.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Art-Center Pause",
+              "body": "Le Ba Dang Art Center gives Hue a quieter cultural stop: gallery rooms, posters, street trees outside, and light that slows the day down."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gallery Light Near The Street",
+              "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, quiet light, and outdoor heat relief carry the stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Lê Bá Đảng On The Sign",
+              "body": "Trung tâm Nghệ thuật Lê Bá Đảng is the Vietnamese form. It helps when signs or local directions point you toward the art center."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Indoor Culture Stop",
+              "body": "It fits after a river walk or before another outdoor site, especially when the day needs art and air-conditioning more than another monument."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short And Focused",
+              "body": "The stop is strongest with a narrow frame: a few rooms, one artist's world, and enough time to look rather than skim."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Artist-Centered Context",
+              "body": "This is not a general Hue history museum. The draw is an artist-focused layer that makes the city feel less one-note."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

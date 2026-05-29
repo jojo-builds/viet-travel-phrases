@@ -1,0 +1,315 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_34",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_34",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hcmc-place-cho-lon",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-city-hall",
+          "message": "banned visible fragment: gives saigon a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-cheo-leo-cafe",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "freshness/process-like heading: Menu Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-city-hall",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-coco-dining",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 12x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: dish name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 21x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 6x: freshness/checking heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 13x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 6x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-cheo-leo-cafe",
+          "summary": "Cheo Leo Cafe is a small old-Saigon coffee pause for metal-filter rhythm, iced sweetness, and stools close to the day’s street movement around central Saigon.",
+          "context": "The visit is about a short pause: watch the coffee land, cool down with ice, then step back into the central Saigon walk.",
+          "tip": "Keep the stop short and simple. Cheo Leo makes more sense as a coffee break between heat, markets, or errands than as a long café session.",
+          "rationale": "Metal filters, small stools, and an old coffee-shop rhythm give the place a clearer memory than another generic caffeine stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Old-Saigon Coffee Pause",
+              "body": "Cheo Leo is for the coffee rhythm: metal filters, ice, sweetness, small stools, and a slower beat before the next walk."
+            },
+            {
+              "id": "place-brief",
+              "title": "Coffee Before The Next Move",
+              "body": "The room works as a reset between heat, errands, and market edges. Order simply, watch the filter, and let the stop stay small."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Cà phê Cheo Leo is the name to listen for. The words matter most when you are finding the shop or checking the stop with a driver."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Walks And Heat",
+              "body": "The café fits after a central walk or before another meal. It gives the day a seated pause without turning coffee into the whole plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Sit Makes Sense",
+              "body": "Think of Cheo Leo as an old coffee-shop stop: metal filter, iced glass, small stool, and enough time to cool down before moving again."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Local Name, Simple Scene",
+              "body": "Cà phê Cheo Leo is easier to remember with the physical cues: filter coffee, small seating, and the pause that sits between louder parts of Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cho-lon",
+          "summary": "Chợ Lớn is too large for one casual wander, so a first visit lands better with Bình Tây Market, Thiên Hậu Temple, and one nearby trade street.",
+          "context": "Chợ Lớn gives Saigon a trade-first Chinatown layer: temples, market streets, herbs, dried goods, delivery carts, and short rides between named stops.",
+          "tip": "Morning gives the district more movement and cooler pavement. Pick a few named stops first, then use short rides instead of forcing one perfect walking loop.",
+          "rationale": "The district shows a different Saigon from the District 1 hotel core: wholesale goods, incense, temples, working streets, and everyday trade.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "District First, Street Later",
+              "body": "Chợ Lớn is not one tidy street. Start with Bình Tây Market, Thiên Hậu Temple, then one medicine, lantern, or fabric street nearby."
+            },
+            {
+              "id": "place-brief",
+              "title": "Trade Before Tourism",
+              "body": "Wholesale goods, incense coils, temple courtyards, dried ingredients, and delivery carts set the pace. Souvenir browsing is only one layer here."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "price-1",
+                "price-4",
+                "food-1",
+                "shop-5"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Has The Movement",
+              "body": "Earlier hours bring more active trade and cooler sidewalks. Later traffic can make the ride back to District 1 feel longer than the map suggests."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Half-Day, Not One Loop",
+              "body": "Chợ Lớn is easier with time and patience for short rides. Treat it as a district of markets, temples, and trade streets, not a single open boulevard."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hcmc-place-ciel",
+          "summary": "CieL is a modern dining-room choice for a considered evening meal: open kitchen, Vietnamese ingredients, and a slower table after daytime walking.",
+          "context": "CieL belongs to the planned-meal part of Saigon: menu details, staff rhythm, drinks, and the decision to make dinner part of the night.",
+          "tip": "Treat CieL as the meal you plan around, not the backup between sights. The room and pacing matter as much as the venue name.",
+          "rationale": "The open kitchen, Vietnamese ingredients, and intimate room give the restaurant a concrete reason to stay in memory beyond a generic dinner label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal With Its Own Place",
+              "body": "CieL fits an evening when dinner is part of the plan: a modern room, open kitchen, Vietnamese ingredients, and a slower table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Open Kitchen, Measured Pace",
+              "body": "The useful detail is not just the menu. Watch the kitchen rhythm, ask what the kitchen is leaning into, and let the room carry the night."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "CieL usually stays as the venue name. Say it slowly, then show the address if pronunciation or capitalization causes a blank look."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Dense Central Day",
+              "body": "The restaurant works after markets, museums, or a long District 1 walk, when you want the evening to slow down around one table."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Dinner As The Plan",
+              "body": "Plan around the meal if the room matters. CieL is less useful as a rushed fuel stop between two louder plans."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details Can Shift",
+              "body": "Keep menu expectations flexible. The stable idea is modern Vietnamese dining in an intimate room, not one fixed dish or price."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-city-hall",
+          "summary": "Ho Chi Minh City Hall is a Nguyen Hue landmark to notice from outside, especially when the lit facade turns the boulevard into a quick city-memory stop.",
+          "context": "The building gives Saigon a formal civic face: architecture, local pride, history, and nighttime light along Nguyen Hue.",
+          "tip": "Look from Nguyen Hue rather than treating it like an interior attraction. The facade, boulevard view, and evening light are the point.",
+          "rationale": "The City Hall facade gives Nguyen Hue a clear memory: a civic building, a broad walking street, and the city lit at night.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Facade For Nguyen Hue",
+              "body": "Ho Chi Minh City Hall is mainly an outside landmark. The facade gives Nguyen Hue a formal face and an easy place to pause."
+            },
+            {
+              "id": "place-brief",
+              "title": "Civic Scale, Boulevard Light",
+              "body": "The building gives the boulevard a formal edge: symmetry, city light, local pride, and a photo stop that does not need a long visit."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Trụ sở UBND Thành phố is the formal local name. It is most useful for recognition, maps, or checking that you are in the right place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Nguyen Hue At Night",
+              "body": "The stop pairs naturally with an evening walk on Nguyen Hue. The building is quick; the boulevard gives it room."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Outside View, Not An Interior Plan",
+              "body": "Picture the lit facade from Nguyen Hue. Do not build the stop around access inside unless current rules have been checked."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Landmark Memory",
+              "body": "Trụ sở UBND Thành phố is easier to remember with the boulevard scene: lights, open space, and the civic front of central Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-coco-dining",
+          "summary": "Coco Dining is a polished contemporary Vietnamese dinner choice when the room, fermentation details, warm light, and table pacing should carry the evening.",
+          "context": "Coco Dining belongs to Saigon’s planned-dinner layer: staff rhythm, drinks, house dishes, and the decision to sit somewhere intentional.",
+          "tip": "Let the meal be the main evening plan. The stable draw is contemporary Vietnamese dining with a styled room, not a guaranteed dish list.",
+          "rationale": "The dining room, fermentation jars, and warm light give the restaurant a specific reason to remember it beyond another nice dinner.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Polished Dinner Plan",
+              "body": "Coco Dining fits a night with a chosen meal: contemporary Vietnamese cooking, warm light, fermentation details, and a slower table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Room Before Checklist",
+              "body": "The room is part of the decision. Expect a styled setting and a meal paced for sitting, not a quick plate between errands."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Coco Dining stays in English. Show the name or address if needed; the place is easier to identify than to translate."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Evening Without A Rush",
+              "body": "Pair it with a light day or one central stop before dinner. It works less well when you are trying to squeeze in three more places."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Details May Change",
+              "body": "Hold the specifics lightly. The durable picture is contemporary Vietnamese dining, a warm room, and a meal that deserves its own slot."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Planned-Meal Choice",
+              "body": "Coco Dining is clearer when treated as a planned dinner, not a spontaneous refuel after heat, traffic, or sightseeing."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

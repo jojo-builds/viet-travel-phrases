@@ -1,0 +1,2549 @@
+# SpeakLocal v2.2 Batch 013-015 Recovery + 023-032 Draft Review - 2026-05-26
+
+Status: ChatGPT draft capture for Jojo/Codex voice review. Not approved for import. Not production-ready.
+
+Source run: /Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/editorial-exports/viet-city-pages/chatgpt-project-2026-05-25/batch-runs/2026-05-26-batch-013-015-recovery-023-032
+
+---
+
+SpeakLocal v2.2 BATCH_013 RECOVERY - Da Nang - 2026-05-26
+1. Bánh tráng cuốn thịt heo ở Đà Nẵng / Pork rice-paper rolls
+Reader View
+The First Roll Sets The Meal
+Bánh tráng cuốn thịt heo is a quiet table ritual: cool pork, rice paper, herbs, noodles, and a dipping bowl that makes the bite sharper than it looks. Slow down before you build the first one; the order of the roll matters more than the size of the plate.
+
+Useful phrase cards
+
+“Cho tôi một phần” — One portion, please.
+“Cho thêm rau” — More herbs, please.
+“Chỉ cho tôi được không?” — Can you show me?
+Read The Tray First
+Look for pork, rice paper, herbs, noodles, and the sauce before you start. A rushed roll turns into a loose salad; a neat one gives you pork, herbs, and sauce in the same bite.
+
+Mắm Nêm Leads The Flavor
+
+If the dipping bowl is mắm nêm, expect it to be salty, fermented, and a little funky. Touch the roll into the sauce first instead of soaking it; the flavor can take over fast.
+
+Light Meal, Strong Memory
+
+This is not heavy beach food. It sits well as a late lunch or shared table after heat: hands busy, herbs everywhere, and the city feeling calmer for ten minutes.
+
+Implementation notes
+contentContract: speaklocal.place.app-detail.v2.2
+page_id: city-danang-place-banh-trang-cuon-thit-heo
+displayName: Bánh tráng cuốn thịt heo ở Đà Nẵng
+englishName: Pork rice-paper rolls
+city: Da Nang
+category: dish
+target_hero_image: HeroCityDanangPlaceBanhTrangCuonThitHeo
+pronunciation/name support: city-danang-place-banh-trang-cuon-thit-heo · planned place-name audio · hide until ready audio
+Closest canonical anchor: Bà Lễ Well / Bale Well.
+Anchor behavior copied: make the first roll the confidence cue.
+Difference: this is a dish page, not a specific restaurant page.
+Owned traveler moment: the tray lands and the traveler builds the first roll.
+Phrase/audio status:
+food-1 · audioId: food-1 · mapped · “Cho tôi một phần”
+food-4 · audioId: food-4 · mapped · “Cho thêm rau”
+repair-show-me · audioId: repair-show-me · mapped · “Chỉ cho tôi được không?”
+Mentioned Here candidates:
+food-thit-luoc-cuon-banh-trang — Thịt luộc cuốn bánh tráng · food · render · displaySubtitle: “Boiled pork with rice paper, herbs, and dipping sauce.” · reason: closest menu-catalog match to the dish.
+mắm nêm — sauce/ingredient · check_catalog · displaySubtitle: “Fermented dipping sauce often served with roll meals.” · reason: named naturally in sauce guidance; render only if catalog item exists.
+Related place candidates:
+danang-bep-cuon — Bếp Cuốn Đà Nẵng · restaurant comparison · render/check after import map · displaySubtitle: “A calmer restaurant frame for roll-and-dip meals.”
+danang-banh-xeo — Bánh xèo ở Đà Nẵng · dish comparison · render/check after import map · displaySubtitle: “Another hands-on Da Nang table snack.”
+Freshness/source notes:
+Based on supplied Da Nang local food source notes and menu catalog row for boiled pork with rice paper rolls.
+Keep restaurant names, hours, price, and exact sauce style out of visible copy unless later verified.
+Variation risk: herbs, noodles, vegetables, and sauce may vary by shop.
+Score and QA:
+28/30 — strong table moment and mapped phrase cards; capped for native review, catalog check on mắm nêm, and no rendered screenshot review.
+Replaceability test: pass.
+Phrase card test: pass; all visible phrase cards are ready-audio reusable traveler actions.
+Mentioned Here test: pass; main food item mapped, ingredient held for catalog check.
+Duplicate body test: pass.
+Anti-cynicism test: pass.
+Screenshot review status: not_run.
+Production review gate: not_run.
+2. Bánh xèo ở Đà Nẵng / Banh xeo
+Reader View
+Eat It While The Edges Crackle
+Da Nang bánh xèo is at its best when it is still hot: a small golden pancake, herbs close by, sauce on the table, and everyone reaching before the edges soften. Treat it as a hands-on snack or shared order, not a neat plated meal.
+
+Useful phrase cards
+
+“Cho tôi một phần” — One portion, please.
+“Cho thêm rau” — More herbs, please.
+“Ít cay thôi” — Less spicy, please.
+The Pancake Is Only Half The Bite
+Bánh xèo usually needs the wrapper, herbs, and sauce to make sense. Tear a piece, add greens, dip lightly, then decide whether you want another.
+
+Small First Order
+
+One portion tells you enough: crispness, filling, heat, and how strong the sauce runs. Ordering slowly keeps the table from filling before you know the rhythm.
+
+Herbs Keep It Bright
+
+The fresh greens are not garnish. They cut the oil, cool the chili, and make each bite feel less heavy.
+
+Implementation notes
+contentContract: speaklocal.place.app-detail.v2.2
+page_id: city-danang-place-banh-xeo
+displayName: Bánh xèo ở Đà Nẵng
+englishName: Banh xeo
+city: Da Nang
+category: dish
+target_hero_image: HeroCityDanangPlaceBanhXeo
+pronunciation/name support: city-danang-place-banh-xeo · planned place-name audio · hide until ready audio
+Closest canonical anchor: Bà Lễ Well / Bale Well.
+Anchor behavior copied: turn a roll-and-dip meal into a confident first table move.
+Difference: this page explains the dish across Da Nang, not one named room.
+Owned traveler moment: the first hot bánh xèo arrives and the traveler needs to eat before it softens.
+Phrase/audio status:
+food-1 · audioId: food-1 · mapped · “Cho tôi một phần”
+food-4 · audioId: food-4 · mapped · “Cho thêm rau”
+food-not-spicy-clearer · audioId: audio-authored-it-cay-thoi-05b8e258a2 · mapped · “Ít cay thôi”
+Mentioned Here candidates:
+food-banh-xeo — Bánh xèo · food · render · displaySubtitle: “Crispy Vietnamese pancake with herbs and dipping sauce.” · reason: central dish named throughout.
+food-banh-xeo-chay — Bánh xèo chay · food · check_catalog · displaySubtitle: “Vegetarian crispy pancake.” · reason: do not render unless vegetarian variant is intentionally linked.
+Related place candidates:
+danang-banh-xeo-ba-duong — Bánh xèo Bà Dưỡng · restaurant comparison · render/check after import map · displaySubtitle: “Focused named stop for a bánh xèo meal.”
+danang-con-market — Chợ Cồn · market comparison · render/check after import map · displaySubtitle: “Food-first market for a broader Da Nang snack crawl.”
+Freshness/source notes:
+Based on supplied Vietnam food/local source notes and menu catalog rows for bánh xèo.
+Avoid exact fillings, price, shop names, and current queue claims in visible copy.
+Variation risk: wrapper style, filling, sauce, and spice level vary by venue.
+Score and QA:
+28/30 — crisp dish behavior, clear first order, mapped phrase cards; capped for native review, catalog check, and no rendered screenshot review.
+Replaceability test: pass.
+Phrase card test: pass.
+Mentioned Here test: pass.
+Duplicate body test: pass.
+Anti-cynicism test: pass.
+Screenshot review status: not_run.
+Production review gate: not_run.
+3. Bánh xèo Bà Dưỡng / Banh Xeo Ba Duong
+Reader View
+A Fast Table For Crisp Bánh Xèo
+Bánh xèo Bà Dưỡng is the focused Da Nang version of the bánh xèo meal: crisp pancakes, herbs, sauce, and a room that moves around the table. Go for the first hot plate, then settle into the table rhythm.
+
+Useful phrase cards
+
+“Cho tôi bàn cho hai người nhé” — A table for two, please.
+“Cho tôi một phần” — One portion, please.
+“Tính tiền giúp tôi” — Please let me pay.
+The First Plate Moves Quickly
+If the bánh xèo arrives fast, do not treat that as pressure. Set up herbs and rice paper, watch one roll if staff or another table shows it, then eat while the shell still cracks.
+
+Sauce Before Second Orders
+
+The dipping sauce is part of the house memory. Try it once before adding extra chili or calling for more; it decides whether the table feels rich, sharp, or too much.
+
+Simple Room, Clear Purpose
+
+This is not the kind of meal that needs a long menu study. The appeal is narrow: hot bánh xèo, hands busy, herbs refreshed, and a table that feels more local once you stop overthinking it.
+
+Implementation notes
+contentContract: speaklocal.place.app-detail.v2.2
+page_id: city-danang-place-banh-xeo-ba-duong
+displayName: Bánh xèo Bà Dưỡng
+englishName: Banh Xeo Ba Duong
+city: Da Nang
+category: restaurant
+target_hero_image: HeroCityDanangPlaceBanhXeoBaDuong
+pronunciation/name support: city-danang-place-banh-xeo-ba-duong · planned place-name audio · hide until ready audio
+Closest canonical anchor: Bà Lễ Well / Bale Well.
+Anchor behavior copied: reduce table friction by naming the first action and pacing.
+Difference: this is a Da Nang bánh xèo restaurant page, not a Hội An set-meal page.
+Owned traveler moment: entering a simple dining room and getting the first hot plate without freezing at the table.
+Phrase/audio status:
+food-need-table · audioId: food-need-table · mapped · “Cho tôi bàn cho hai người nhé”
+food-1 · audioId: food-1 · mapped · “Cho tôi một phần”
+coffee-7 · audioId: coffee-7 · mapped · “Tính tiền giúp tôi”
+Mentioned Here candidates:
+food-banh-xeo — Bánh xèo · food · render · displaySubtitle: “Crispy Vietnamese pancake with herbs and dipping sauce.” · reason: named as the restaurant’s focused dish.
+Related place candidates:
+danang-banh-xeo — Bánh xèo ở Đà Nẵng · dish relation · render/check after import map · displaySubtitle: “Dish page for understanding bánh xèo beyond one restaurant.”
+danang-bep-cuon — Bếp Cuốn Đà Nẵng · restaurant comparison · render/check after import map · displaySubtitle: “Another roll-and-dip table with a calmer restaurant frame.”
+Freshness/source notes:
+Based on supplied local food source note and legacy restaurant cue: crispy bánh xèo with herbs and dipping sauce in a simple dining room.
+Verify current opening status, hours, menu, address/branch details, and price before import.
+Visible copy avoids current operational claims.
+Score and QA:
+27/30 — strong restaurant table moment and ready phrase cards; capped for current venue verification, menu freshness, and no rendered screenshot review.
+Replaceability test: pass.
+Phrase card test: pass.
+Mentioned Here test: pass.
+Duplicate body test: pass.
+Anti-cynicism test: pass.
+Screenshot review status: not_run.
+Production review gate: not_run.
+4. Hải sản Bé Mặn / Be Man Seafood
+Reader View
+Choose From The Ice, Then Slow Down
+Bé Mặn is the kind of seafood meal where the decision starts before the plate: ice trays, table noise, sea air, and staff moving between orders. Pick clearly, ask the price before committing, then keep the cooking simple.
+
+Useful phrase cards
+
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Cái này bao nhiêu?” — How much is this?
+“Bạn gợi ý gì ở đây?” — What do you recommend here?
+The Ice Tray Is The First Menu
+Look before you sink into the meal. If seafood is being chosen by size or weight, point to the exact piece and confirm the price before it leaves your sight.
+
+Sea Breeze, Loud Tables
+
+The open-air feel is part of the reason to go. Expect a meal with movement: plates landing, shells cracking, cold drinks, and people ordering more than they planned.
+
+Simple Cooking Travels Better
+
+Grilled, steamed, or stir-fried seafood is easier to understand than a table full of sauces. Choose one clear main plate first, then add only if the table still feels hungry.
+
+Implementation notes
+contentContract: speaklocal.place.app-detail.v2.2
+page_id: city-danang-place-be-man
+displayName: Hải sản Bé Mặn
+englishName: Be Man Seafood
+city: Da Nang
+category: restaurant
+target_hero_image: HeroCityDanangPlaceBeMan
+pronunciation/name support: city-danang-place-be-man · planned place-name audio · hide until ready audio
+Closest canonical anchor: Bà Lễ Well / Bale Well.
+Anchor behavior copied: make the uncertain first exchange practical before the meal expands.
+Difference: the friction is seafood selection and price clarity, not a fixed roll set.
+Owned traveler moment: standing at the seafood display and choosing before the table fills.
+Phrase/audio status:
+food-menu · audioId: food-menu · mapped · “Cho tôi xem thực đơn được không?”
+price-1 · audioId: price-1 · mapped · “Cái này bao nhiêu?”
+social-9 · audioId: social-9 · mapped · “Bạn gợi ý gì ở đây?”
+Mentioned Here candidates:
+danang-hai-san — Hải sản ở Đà Nẵng · food/place concept · render/check after import map · displaySubtitle: “Seafood as a Da Nang beach-side meal category.” · reason: seafood is the central visible subject.
+food-lau-hai-san — Lẩu hải sản · food · check_catalog · displaySubtitle: “Seafood hot pot for a table.” · reason: do not render unless later menu evidence supports hot pot at this venue.
+Related place candidates:
+danang-nam-danh-seafood — Hải sản Năm Đảnh · restaurant comparison · render/check after import map · displaySubtitle: “Another named Da Nang seafood stop.”
+danang-hai-san — Hải sản ở Đà Nẵng · category relation · render/check after import map · displaySubtitle: “Broader seafood page for ordering context.”
+Freshness/source notes:
+Based on supplied local food and venue source notes plus legacy cue: open-air seafood restaurant tables with ice trays and sea breeze.
+Verify current venue status, address, hours, price-by-weight pattern, payment norms, and seafood availability before import.
+Visible copy avoids exact dishes, prices, hours, and current crowd claims.
+Score and QA:
+27/30 — practical seafood selection moment and strong reusable phrase cards; capped for venue freshness, price/weight verification, and no rendered screenshot review.
+Replaceability test: pass.
+Phrase card test: pass.
+Mentioned Here test: pass with conservative checks.
+Duplicate body test: pass.
+Anti-cynicism test: pass.
+Screenshot review status: not_run.
+Production review gate: not_run.
+5. Bếp Cuốn Đà Nẵng / Bep Cuon Da Nang
+Reader View
+Rolls Without The Market Jostle
+Bếp Cuốn Đà Nẵng gives the roll-and-dip meal a cleaner restaurant frame: herbs on the table, dipping bowls, wood under the plates, and enough order that a first-timer can breathe. It is a calm way into Da Nang’s cuốn habit.
+
+Useful phrase cards
+
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Cho tôi một phần” — One portion, please.
+“Chỉ cho tôi được không?” — Can you show me?
+Read The Platter Before Rolling
+Do not start with the sauce. Look at the herbs, wrappers, fillings, and dipping bowls first, then build one slower roll so the bite does not collapse halfway to your mouth.
+
+A Controlled First Meal
+
+The table gives you local textures without making you chase a market stall or decode a long seafood board. That restraint can be the pleasure after a hot day.
+
+Ask Before Changing The Sauce
+
+Roll meals live or die by the dip. Taste once, then ask for less heat, more herbs, or a little help if the table setup is not obvious.
+
+Implementation notes
+contentContract: speaklocal.place.app-detail.v2.2
+page_id: city-danang-place-bep-cuon
+displayName: Bếp Cuốn Đà Nẵng
+englishName: Bep Cuon Da Nang
+city: Da Nang
+category: restaurant
+target_hero_image: HeroCityDanangPlaceBepCuon
+pronunciation/name support: city-danang-place-bep-cuon · planned place-name audio · hide until ready audio
+Closest canonical anchor: Morning Glory Original, with Bale Well as secondary behavior.
+Anchor behavior copied: make a broad local-food restaurant readable through one controlled first meal.
+Difference: the page centers roll-and-dip table behavior rather than a broad Hội An menu.
+Owned traveler moment: the platter lands and the traveler needs one confident roll before adding more.
+Phrase/audio status:
+food-menu · audioId: food-menu · mapped · “Cho tôi xem thực đơn được không?”
+food-1 · audioId: food-1 · mapped · “Cho tôi một phần”
+repair-show-me · audioId: repair-show-me · mapped · “Chỉ cho tôi được không?”
+Mentioned Here candidates:
+food-goi-cuon — Gỏi cuốn · food · check_catalog · displaySubtitle: “Fresh rice-paper rolls with herbs and dipping sauce.” · reason: visible copy names roll-and-dip behavior, but exact venue menu item needs confirmation before rendering.
+food-thit-luoc-cuon-banh-trang — Thịt luộc cuốn bánh tráng · food · check_catalog · displaySubtitle: “Pork and rice-paper roll meal.” · reason: possible cuốn-family mapping; do not render without menu confirmation.
+Related place candidates:
+danang-banh-trang-cuon-thit-heo — Bánh tráng cuốn thịt heo ở Đà Nẵng · dish relation · render/check after import map · displaySubtitle: “Dish page for pork rice-paper rolls.”
+danang-banh-xeo-ba-duong — Bánh xèo Bà Dưỡng · restaurant comparison · render/check after import map · displaySubtitle: “A faster, focused bánh xèo table.”
+Freshness/source notes:
+Based on supplied venue/local tourism source notes plus legacy cue: Vietnamese roll platter with herbs and dipping bowls on a wooden table.
+Verify current venue status, hours, branch/address, menu items, and signature platter names before import.
+Visible copy avoids exact menu claims beyond the supplied roll-platter frame.
+Score and QA:
+27/30 — clear controlled-meal role and mapped phrase cards; capped for current venue/menu verification and conservative catalog mapping.
+Replaceability test: pass.
+Phrase card test: pass.
+Mentioned Here test: needs catalog/menu confirmation before rendering specific dishes.
+Duplicate body test: pass.
+Anti-cynicism test: pass.
+Screenshot review status: not_run.
+Production review gate: not_run.
+Codex handoff block
+- `batch_id: batch_013_recovery`
+- `page_ids: city-danang-place-banh-trang-cuon-thit-heo, city-danang-place-banh-xeo, city-danang-place-banh-xeo-ba-duong, city-danang-place-be-man, city-danang-place-bep-cuon`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none for visible phrase cards; all visible cards use ready-audio reusable traveler-action phrases`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Bep Cuon specific menu items intentionally held for catalog/menu confirmation; Be Man seafood selection copy avoids exact dishes/prices but still needs venue freshness review`
+- `source_freshness_risks: verify current venue status, hours, address/branch details, menu availability, seafood price/weight patterns, payment norms, and holiday closures before import; dish pages need only variation and catalog checks`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_014 RECOVERY - Da Nang - 2026-05-26
+Boulevard Gelato & Coffee / Boulevard Gelato & Coffee — Da Nang — Cafe
+Reader View
+A Cool Pause Between Hot Blocks
+Boulevard Gelato & Coffee fits the hour when Da Nang heat has caught up with you and lunch is still far away. Think cold glass, gelato case, pale cups, bright daylight, and a table that lets the day slow down for a few minutes.
+Useful phrase cards
+"Cho tôi một cà phê sữa đá." — One iced milk coffee, please.
+"Không đường nhé." — No sugar, please.
+"Tính tiền giúp tôi." — Please let me pay.
+Practical sections
+Order Small, Stay Present
+One drink, one scoop, or one shared sweet is enough. The better move is to cool down, look around, and leave before the pause turns into another overplanned cafe stop.
+Sweetness Is The Main Decision
+Vietnamese coffee can arrive strong and sweet; gelato adds its own sugar. Taste first, then ask for no sugar if the drink needs to stay sharper.
+
+A Reset Between Walks
+Keep it as a short break between market streets, beach errands, or an afternoon ride. When the counter is busy, keep the order simple and follow the staff rhythm.
+
+Implementation notes
+IDs: page_id: city-danang-place-boulevard-gelato-coffee · place_catalog_id: danang-boulevard-gelato-coffee · target_hero_image: HeroCityDanangPlaceBoulevardGelatoCoffee
+Phrase/audio: coffee-1 / coffee-1 / mapped; coffee-5 / coffee-5 / mapped; coffee-7 / coffee-7 / mapped. Place-name audio row city-danang-place-boulevard-gelato-coffee is planned only; hide name playback until audio exists.
+Mentioned Here candidates: Cà phê sữa đá / drink-ca-phe-sua-da / render; Gelato / catalogId null / do_not_render unless a menu item exists.
+Related place candidates: none for this draft.
+Freshness/source notes: local cafe source plus legacy row only; current hours, menu, branch status, seating, and exact drink/dessert lineup need checking before import.
+Score/QA: 26/30 — restrained draft, capped for sparse venue evidence and planned place-name audio. Replaceability pass; phrase cards pass; mention scan pass; duplicate body pass; anti-cynicism pass; screenshot and production gates not_run.
+Bún chả cá ở Đà Nẵng / Fish-cake noodle soup — Da Nang — Dish
+Reader View
+A Gentle Seafood Bowl
+Bún chả cá gives Da Nang a coastal flavor without making the meal heavy. Expect rice noodles, springy fish cakes, herbs, and usually a clean broth; add chili slowly before deciding how much heat you want.
+Useful phrase cards
+"Cho tôi tô này." — I’ll take this bowl.
+"Không cay nhé." — Not spicy, please.
+"Cho tôi muỗng với đũa." — A spoon and chopsticks, please.
+Practical sections
+Notice The Chả Cá
+The fish cake is the center: savory, bouncy, and easier to read than a whole fish on the bone. If the bowl includes fish pieces too, ask or go slowly if bones worry you.
+Season After A Few Bites
+Herbs, chili, lime, and sauce can change the bowl fast. Taste the broth first, then adjust it in small steps.
+
+A Clean First Lunch
+It fits the kind of day when you want local food but not a long seafood spread. A single bowl gives you steam, herbs, and a clear memory of Da Nang’s coast.
+
+Implementation notes
+IDs: page_id: city-danang-place-bun-cha-ca · place_catalog_id: danang-bun-cha-ca · menu_item_id: food-bun-cha-ca · target_hero_image: HeroCityDanangPlaceBunChaCa
+Phrase/audio: food-2 / food-2 / mapped; food-3 / food-3 / mapped; food-6 / food-6 / mapped. Place-name audio row city-danang-place-bun-cha-ca is planned only; hide name playback until audio exists.
+Mentioned Here candidates: Bún chả cá / food-bun-cha-ca / render.
+Related place candidates: Bún Chả Cá Hờn / danang-bun-cha-ca-hon / render as a named shop for the same bowl.
+Freshness/source notes: Da Nang local food sources plus Menu Catalog row; shop-by-shop broth, sauce, herbs, and fish-piece details can vary. No hours, prices, or vendor claims in visible copy.
+Score/QA: 28/30 — strong dish draft, capped for shop variation and planned place-name audio. Replaceability pass; phrase cards pass; mention scan pass; duplicate body pass; anti-cynicism pass; screenshot and production gates not_run.
+Bún Chả Cá Hờn / Bun Cha Ca Hon — Da Nang — Restaurant
+Reader View
+One Bowl, Fewer Decisions
+Bún Chả Cá Hờn narrows the meal in a helpful way. Sit down for the fish-cake noodle bowl: hot broth, springy chả cá, herbs, and the quick table rhythm of a neighborhood shop.
+Useful phrase cards
+"Cho tôi tô này." — I’ll take this bowl.
+"Ít cay thôi." — Less spicy, please.
+"Tính tiền giúp tôi." — Please let me pay.
+Practical sections
+Order Before Overthinking
+Point or order the bowl first, then decide how much chili, sauce, or herb you want. The meal gets easier once the first choice is made.
+Metal-Table Food, Not A Long Sit
+This is the kind of restaurant stop where steam and turnover are part of the mood. Eat while the broth is hot, keep the order focused, and let the meal stay small.
+
+Know What Chả Cá Means
+Chả cá is fish cake, not a fillet. Expect bounce and seafood savor more than delicate flakes, and go slower if bones or fish pieces appear in the bowl.
+
+Implementation notes
+IDs: page_id: city-danang-place-bun-cha-ca-hon · place_catalog_id: danang-bun-cha-ca-hon · target_hero_image: HeroCityDanangPlaceBunChaCaHon
+Phrase/audio: food-2 / food-2 / mapped; food-not-spicy-clearer / audio-authored-it-cay-thoi-05b8e258a2 / mapped; coffee-7 / coffee-7 / mapped. Place-name audio row city-danang-place-bun-cha-ca-hon is planned only; hide name playback until audio exists.
+Mentioned Here candidates: Bún chả cá / food-bun-cha-ca / render; Chả cá / catalogId null / check_catalog only if a separate item exists.
+Related place candidates: Fish-cake noodle soup / danang-bun-cha-ca / render for dish context.
+Freshness/source notes: local food source plus dish catalog context; current hours, exact address, menu details, holiday closures, and queue/service rhythm need checking before import.
+Score/QA: 27/30 — clear restaurant draft, capped for current venue facts and planned place-name audio. Replaceability pass; phrase cards pass; mention scan pass; duplicate body pass; anti-cynicism pass; screenshot and production gates not_run.
+Nhà thờ Con Gà Đà Nẵng / Da Nang Cathedral — Da Nang — Landmark
+Reader View
+Slow Down Before The Door
+Da Nang Cathedral can look like a quick pink-facade photo from the street. The better visit pauses at the courtyard first: check whether worship is happening, notice the rooster-topped name cue, then step inside only as quietly as the room allows.
+Useful phrase cards
+"Tôi chụp hình ở đây được không?" — Can I take photos here?
+"Mấy giờ đóng cửa?" — What time does it close?
+"Cảm ơn." — Thank you.
+Practical sections
+Photo From The Street First
+Get the facade view before you worry about the interior. If the doors are open, shift from camera mode to guest mode.
+The Local Name Helps
+Nhà thờ Con Gà is the name you may hear around Da Nang. Treat the Vietnamese as recognition support, especially for drivers or map checks.
+
+Keep Worship Space Clear
+This is still an active religious place, not just a backdrop. Lower your voice, avoid blocking aisles or doors, and step back if a service is in progress.
+
+Implementation notes
+IDs: page_id: city-danang-place-cathedral · place_catalog_id: danang-cathedral · target_hero_image: HeroCityDanangPlaceCathedral
+Phrase/audio: sight-3 / sight-3 / mapped; sight-4 / sight-4 / mapped; polite-2 / polite-2 / mapped. Place-name audio support is ready: city-danang-place-cathedral / audio-authored-nha-tho-con-ga-da-nang-d73e3f6db2; render as name/pronunciation support, not as a visible phrase card.
+Mentioned Here candidates: Nhà thờ Con Gà Đà Nẵng / danang-cathedral / do_not_render as self-card.
+Related place candidates: none for this draft.
+Freshness/source notes: City library and Da Nang Fantasticity labels; current access, service times, photo expectations, and temporary closures need checking before import.
+Score/QA: 28/30 — strong landmark draft, capped for access/photo-policy freshness and no rendered proof. Replaceability pass; phrase cards pass; mention scan pass; duplicate body pass; anti-cynicism pass; screenshot and production gates not_run.
+Bến xe Trung tâm Đà Nẵng / Da Nang Central Bus Station — Da Nang — Station
+Reader View
+Sort The Next Leg Before The Curb
+Da Nang Central Bus Station matters on the practical days: bags at your feet, signs overhead, tickets or ride details on your phone, and one more road out of the city. Give yourself time to match the bay, route, and vehicle before you hand over luggage.
+Useful phrase cards
+"Đây có đúng bến không?" — Is this the right platform?
+"Xe này có đi tới… không?" — Does this bus go to…?
+"Tiền xe bao nhiêu?" — How much is the fare?
+Practical sections
+Check The Bay Twice
+A city name on a sign is not enough. Confirm the bay, company, and direction before boarding, especially if several buses leave around the same time.
+Keep Names On Screen
+Save the station name, your next stop, and your hotel address in Vietnamese. Showing the screen is often cleaner than repeating tones beside engines and luggage carts.
+
+Plan The Exit Before Arrival
+Decide how you will leave the station before the bus pulls in. A pickup point, taxi queue, or ride-hailing pin is easier to sort while your phone battery and patience are still intact.
+
+Implementation notes
+IDs: page_id: city-danang-place-central-bus-station · place_catalog_id: danang-central-bus-station · target_hero_image: HeroCityDanangPlaceCentralBusStation
+Phrase/audio: transport-1 / transport-1 / mapped; transport-2 / transport-2 / mapped; transport-fare / transport-fare / mapped. Place-name audio row city-danang-place-central-bus-station is planned only; hide name playback until audio exists.
+Mentioned Here candidates: Bến xe Trung tâm Đà Nẵng / danang-central-bus-station / do_not_render as self-card.
+Related place candidates: Da Nang Railway Station / danang-railway-station / render; Da Nang Airport / danang-airport / render for transport comparison and route planning.
+Freshness/source notes: Da Nang transport and local map sources; route boards, bay assignments, ticket counters, pickup areas, operator names, and schedules need checking before import.
+Score/QA: 27/30 — useful station draft, capped for transport freshness and planned place-name audio. Replaceability pass; phrase cards pass; mention scan pass; duplicate body pass; anti-cynicism pass; screenshot and production gates not_run.
+## Codex handoff block
+
+- `batch_id: batch_014_recovery`
+- `page_ids: city-danang-place-boulevard-gelato-coffee, city-danang-place-bun-cha-ca, city-danang-place-bun-cha-ca-hon, city-danang-place-cathedral, city-danang-place-central-bus-station`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; all visible phrase cards use ready-audio reusable traveler-action phrases`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio; Cathedral name audio is ready; Boulevard, Bún chả cá, Bún Chả Cá Hờn, and Central Bus Station name rows are planned`
+- `visible_copy_risks: Boulevard venue evidence is thin; Hờn restaurant and Central Bus Station current facts need checks; no hours, prices, schedules, or current venue policies are asserted`
+- `source_freshness_risks: cafe hours/menu/status; dish/shop variation; restaurant hours/menu/address; cathedral access/service/photo expectations; bus station route boards/bays/ticket counters/pickup areas/schedules`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_015 RECOVERY - Da Nang - 2026-05-26
+1. city-danang-place-cham-museum — Museum of Cham Sculpture / Bảo tàng Điêu khắc Chăm
+Reader View
+Pick Three Rooms Before Labels
+The Museum of Cham Sculpture is easier when you give it a small route. Begin in the Mỹ Sơn, Trà Kiệu, and Đồng Dương rooms, then look for dancers, deities, animals, altars, and carved movement before you try to read every label. It gives downtown Da Nang an older, quieter weight than the bridges and beach usually show.
+
+Phrase cards
+
+Xin một vé — One ticket, please.
+Tôi chụp hình ở đây được không? — Can I take photos here?
+Mấy giờ đóng cửa? — What time does it close?
+Stone First, Labels Second
+Let the sandstone do the first explanation. The rooms make more sense after your eye has adjusted to repeated poses, jewelry, animals, and temple fragments.
+
+Follow The Repeated Shapes
+
+The museum is strongest when you notice patterns: dancers in motion, deities with steady faces, lions and makaras, altars, and pieces that once belonged to larger Cham sites. Pattern teaches faster than a long label sequence.
+
+A Slow Counterweight Downtown
+
+Come here when the waterfront starts to feel all speed and lights. The museum sits close enough to the Hàn River and Dragon Bridge to pair with a walk, but it changes the pace first.
+
+Implementation notes
+Catalog/place IDs: danang-cham-museum; hero HeroCityDanangPlaceChamMuseum.
+Phrase/audio: v500-time-date-book-one-ticket-please / v500-time-date-book-one-ticket-please / ready; sight-3 / sight-3 / ready; sight-4 / sight-4 / ready.
+Place-name audio support: city-danang-place-cham-museum / audio-authored-bao-tang-dieu-khac-cham-9a8b3b4f01 / ready; pronunciation support only, not a phrase card.
+Mentioned Here candidates: hoian-my-son-sanctuary check_catalog, named as gallery/source context; danang-han-river render; danang-dragon-bridge render; Trà Kiệu and Đồng Dương do_not_render unless catalog rows exist.
+Related place candidates: danang-han-river render for after-museum walk; danang-dragon-bridge render for nearby contrast.
+Freshness notes: recheck hours, ticketing, photo policy, gallery access, and any marked national-treasure displays before import.
+Source notes: City library; Da Nang Fantasticity; museum source; ledger legacy copy; Canonical 31 museum-fatigue pattern.
+Score: 29/30 draft. Strong first-screen behavior and concrete museum route; capped for hours/ticket/gallery checks.
+QA notes: visible copy avoids place-name phrase cards, avoids reading every label, and keeps the museum calm without overclaiming current operations.
+2. city-danang-place-che-xoa-xoa-hat-luu — Da Nang sweet soup / Chè xoa xoa hạt lựu ở Đà Nẵng
+Reader View
+Order For Texture, Not Just Sweetness
+Chè xoa xoa hạt lựu is a cold Da Nang dessert cup built around jelly, coconut milk, shaved ice, and chewy red cubes. Treat it as a short cool-down between bigger plans: a spoon, a glass, a few textures, then back into the evening.
+
+Phrase cards
+
+Cái này bao nhiêu? — How much is this?
+Làm ơn bớt đường đi — Less sugar, please.
+Ít đá thôi — Just a little ice.
+Stir Once, Then Taste
+The cup is better when you do not judge it from the first spoonful. Coconut, ice, jelly, and syrup shift as you stir, so the point is the mix of soft, cold, slippery, and chewy.
+
+Know The Red Cubes
+
+Hạt lựu means pomegranate seeds, but in this dessert world the red pieces are usually chewy starch or jelly cubes. Remembering that saves the small disappointment of expecting fruit.
+
+Keep It A Small Cool-Down
+
+This is the right kind of stop after market snacks, a river walk, or a meal that needs a sweet finish. Do not turn it into a search for one ideal cup; the pleasure is quick, cold, and local-feeling.
+
+Implementation notes
+Catalog/place IDs: danang-che-xoa-xoa-hat-luu; hero HeroCityDanangPlaceCheXoaXoaHatLuu.
+Phrase/audio: price-1 / price-1 / ready; v900-food-drin-less-sugar-please / v900-food-drin-less-sugar-please / ready; coffee-4 / coffee-4 / ready.
+Place-name audio support: city-danang-place-che-xoa-xoa-hat-luu is planned with no audio key; hide until audio.
+Mentioned Here candidates: food-che-suong-sa-hat-luu check_catalog, nearest menu-catalog item for jelly and hạt lựu texture; food-che-ba-mau do_not_render unless the copy is expanded to name it.
+Related place candidates: danang-con-market check as nearby snack-market pairing only if route data supports it; otherwise do_not_render.
+Freshness notes: verify current dessert naming, typical ingredients, and whether sugar/ice adjustments are realistic at selected counters.
+Source notes: Da Nang local food sources; local naming source; ledger legacy copy; Menu Catalog rows for chè and hạt lựu dessert texture.
+Score: 28/30 draft. Clearer and more observed than the legacy copy; capped for exact local naming and ingredient variation.
+QA notes: no one-off order phrase created for the attraction/dessert name; all visible phrase cards are reusable traveler actions.
+3. city-danang-place-co-chu-nho — Co Chu Nho / Cô Chủ Nhỏ
+Reader View
+Choose One House Dish First
+Cô Chủ Nhỏ works better as a focused casual dinner than a broad menu crawl. Look at the house dishes, ask what the staff recommends, and order one main thing before the table fills with guesses. If duck or noodles brought you here, make that the first decision.
+
+Phrase cards
+
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Bạn gợi ý gì ở đây? — What do you recommend here?
+Không cay nhé — Not spicy, please.
+Read The Menu Before Committing
+Do not treat the meal like fuel between sights. Take a minute with the menu, notice what repeats, and ask before adding sides or extra plates.
+
+Duck Or Noodles Make It Concrete
+
+A simple first order keeps the meal readable. If the table is leaning toward duck, noodles, or a house plate, choose that before adding a second dish just because the room feels busy.
+
+Finish Cleanly
+
+When staff rhythm moves quickly, keep the ending simple: ask for the bill, check the total, and leave before the meal turns into a long negotiation with the menu.
+
+Implementation notes
+Catalog/place IDs: danang-co-chu-nho; hero HeroCityDanangPlaceCoChuNho.
+Phrase/audio: food-menu / food-menu / ready; social-9 / social-9 / ready; food-3 / food-3 / ready.
+Place-name audio support: city-danang-place-co-chu-nho is planned with no audio key; hide until audio.
+Mentioned Here candidates: food-bun-mang-vit check_catalog if current menu supports duck noodle soup; food-vit-quay check_catalog if current menu supports roast duck; otherwise do_not_render.
+Related place candidates: none for first import unless Codex confirms a clean nearby walk or comparison.
+Freshness notes: verify current venue status, address, hours, current menu, MICHELIN mention status, and whether duck/noodle dishes are still a fair visible cue.
+Source notes: MICHELIN article/search source; venue source; ledger legacy copy; Menu Catalog duck rows for possible linking only.
+Score: 28/30 draft. Narrower traveler behavior than the legacy generic version; capped for sparse venue-specific facts and menu freshness.
+QA notes: visible copy stays cautious around menu claims and avoids making the restaurant sound ranked, famous, or guaranteed.
+4. city-danang-place-con-market — Con Market / Chợ Cồn
+Reader View
+Snack First, Shop Later
+Cồn Market is the Da Nang market for stools, steam, and small dishes before souvenirs. Do one slow lap, bring cash, and choose one plate or bowl before the aisles blur. It feels rougher than Hàn in the right way: more food pressure, more counter rhythm, less polish.
+
+Phrase cards
+
+Cái này bao nhiêu? — How much is this?
+Cho tôi một phần — One portion, please.
+Không cay nhé — Not spicy, please.
+One Lap Lowers The Pressure
+Walk the food area once before choosing. Watch where people are already eating, then point, ask, and order small instead of answering the first loud call.
+
+Small Plates Beat A Checklist
+
+Bánh bèo, bánh bột lọc, bún mắm, and mì Quảng are the kind of foods that make Cồn easier to understand. You do not need all of them; one or two small orders are enough for the market to make sense.
+
+A Different Rhythm Than Hàn
+
+Hàn is easier for central bearings, gifts, and a first market look. Cồn is stronger when the point is eating: hot counters, dessert cups, plastic stools, and cash-ready decisions.
+
+Morning And Afternoon Feel Different
+
+Morning gives more fresh-market texture. Afternoon is the cleaner snack move if you want the food side without trying to decode the whole building.
+
+Implementation notes
+Catalog/place IDs: danang-con-market; hero HeroCityDanangPlaceConMarket.
+Phrase/audio: price-1 / price-1 / ready; food-1 / food-1 / ready; food-3 / food-3 / ready.
+Place-name audio support: city-danang-place-con-market / audio-authored-cho-con-7a0aea6c64 / ready; pronunciation support only, not a phrase card. Nearby action phrases for Cồn are planned and should stay hidden until audio.
+Mentioned Here candidates: food-banh-beo render; food-banh-bot-loc render; food-bun-mam render; food-mi-quang-ga check_catalog; food-mi-quang-tom-thit check_catalog; danang-han-market render for comparison.
+Related place candidates: danang-han-market render as comparison; danang-che-xoa-xoa-hat-luu check if dessert crawl pairing is wanted after catalog mapping.
+Freshness notes: recheck hours, food-court layout, stall mix, cash/payment expectations, and current snack availability.
+Source notes: City library; Da Nang Fantasticity; ledger legacy copy; Canonical 31 Cồn/Hàn market contrast; Menu Catalog rows for named foods.
+Score: 29/30 draft. Strong role separation from Hàn and clear food-market behavior; capped for current stall and hours checks.
+QA notes: phrase cards are reusable and ready; no place-name audio is promoted as a traveler phrase card.
+5. city-danang-place-cong-caphe-bach-dang — Cong Caphe Bach Dang / Cộng Cà Phê Bạch Đằng
+Reader View
+Take The River Pause
+Cộng Cà Phê Bạch Đằng is a simple Da Nang pause when the day has been heat, bridges, and walking. Order something cold, look toward the river if the seats allow, and let the green, retro room slow the next decision.
+
+Phrase cards
+
+Cho tôi một cà phê sữa đá — One iced milk coffee, please.
+Không đường nhé — No sugar, please.
+Mang đi — To go.
+Cold Coffee Fits The Heat
+Cà phê sữa đá is the easy first order if you want the familiar Vietnamese iced coffee hit. Bạc xỉu is softer and milkier; coconut coffee turns the stop closer to dessert.
+
+Check The Seat Before Settling
+
+The better pause is the seat that matches your energy: river-facing if available, inside if the heat is winning, or takeaway if the room is full. Do not overstay just because the view was the idea.
+
+Keep It Tied To The Walk
+
+This branch makes the most sense as part of Bạch Đằng Street, the Hàn River edge, or a bridge-light evening. Treat the coffee as the hinge between walking and the next meal.
+
+Implementation notes
+Catalog/place IDs: danang-cong-caphe-bach-dang; hero HeroCityDanangPlaceCongCapheBachDang.
+Phrase/audio: coffee-1 / coffee-1 / ready; coffee-5 / coffee-5 / ready; coffee-6 / coffee-6 / ready.
+Place-name audio support: city-danang-place-cong-caphe-bach-dang is planned with no audio key; hide until audio. city-danang-place-bach-dang-street has ready audio for street-name support.
+Mentioned Here candidates: drink-ca-phe-sua-da render; drink-bac-xiu render; drink-ca-phe-cot-dua render; danang-bach-dang-street render; danang-han-river render.
+Related place candidates: danang-bach-dang-street render; danang-han-river render; danang-dragon-bridge check if evening bridge pairing is selected.
+Freshness notes: verify branch status, exact address, hours, seating/view claims, and current drink menu before import.
+Source notes: Venue and local map sources; ledger legacy copy; Menu Catalog coffee rows; Canonical 31 café patterns from The Note Coffee and Cà phê Giảng.
+Score: 28/30 draft. Calm and specific café pause; capped for branch/view/menu freshness.
+QA notes: visible copy avoids presenting the café as a secret or a coffee authority; catalog links are natural drink and river-walk links.
+## Codex handoff block
+
+- `batch_id: batch_015_recovery`
+- `page_ids: city-danang-place-cham-museum, city-danang-place-che-xoa-xoa-hat-luu, city-danang-place-co-chu-nho, city-danang-place-con-market, city-danang-place-cong-caphe-bach-dang`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; all visible phrase cards above use ready audio rows`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Co Chu Nho menu cues need current venue check; sweet-soup naming should be reviewed against local naming; Cong Caphe seating/view language needs branch confirmation`
+- `source_freshness_risks: museum hours/tickets/photo policy; dessert ingredient and counter availability; restaurant status/menu; Con Market hours/stall mix/payment expectations; Cong Caphe branch status/menu/seating`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_023 - Da Nang - 2026-05-26
+city-danang-place-my-an — Mỹ An / My An
+Reader View
+Read The Beach Side By Blocks
+Mỹ An is the part of Da Nang where a beach stay turns into real streets. Low-rise hotels, cafés, small shops, motorbikes, and midday shade sit close enough together that you can learn the area one block at a time.
+Useful phrase cards
+"Cho tôi tới đây" — Take me here.
+"Đi bộ mất bao lâu?" — How long does it take on foot?
+"Dừng ở đây được rồi" — You can stop here.
+Walk Before Choosing Dinner
+The area makes more sense after one unhurried pass. Notice which cafés have people inside, where the hotel edges thin out, and which lanes feel comfortable after dark.
+Beach Rhythm, Everyday Streets
+Do not expect one big sight. The appeal is smaller: a coffee before sand, a shop on the way back, a scooter-heavy corner, a night walk that makes the beach side feel lived in.
+
+Keep A Return Point
+Pick one café, hotel, or corner you can find again. Mỹ An is easy when your walk has a home base; it gets fuzzier if every lane becomes “near the beach.”
+
+Implementation notes
+IDs: page_id: city-danang-place-my-an; place_catalog_id: danang-my-an; target_hero_image: HeroCityDanangPlaceMyAn
+Canonical example: Thảo Điền and Japan Town behavior — narrow a neighborhood to a first walk, a few physical cues, and a return point.
+Phrase/audio: taxi-1 / taxi-1 mapped; directions-3 / directions-3 mapped; taxi-3 / taxi-3 mapped.
+Place-name audio: city-danang-place-my-an is planned only; keep pronunciation/name support hidden until audio is ready.
+Mentioned Here candidates: none for visible cards; copy names only the self place and broad city/beach context.
+Related place candidates: Biển Mỹ An / My An Beach — catalogId: danang-my-an-beach, render, subtitle: quieter sand edge beside the neighborhood; Khu An Thượng / An Thuong Area — catalogId: danang-an-thuong-street-area, render, subtitle: café-street cluster nearby; Chợ Bắc Mỹ An / Bac My An Market — catalogId: danang-bac-my-an-market, render, subtitle: small beach-side snack market.
+Freshness/source notes: Local map source; neighborhood evidence is thin, so visible copy avoids named businesses, hours, and fixed route claims.
+Score/QA: 27/30 — strong local-walk role with sparse-source cap. QA passes for phrase-card placement, no duplicate bodies, no forced mentions; screenshot and production review not run.
+city-danang-place-my-an-beach — Biển Mỹ An / My An Beach
+Reader View
+Ease Onto The Sand
+Biển Mỹ An is the beach-side pause for travelers staying around Mỹ An. The scene is quieter than the headline stretch: umbrellas, low-rise hotel edges, and bright open sand without making the morning complicated.
+Useful phrase cards
+"Cho tôi tới đây" — Take me here.
+"Dừng ở đây được rồi" — You can stop here.
+"Có nước suối không?" — Do you have bottled water?
+Arrive Light
+Bring only what you want to carry back through the street. This beach suits a swim, a short sit, or a slow walk before you decide what the rest of the day needs.
+Check The Water First
+Look at waves, current, and where other people are swimming before you settle in. If conditions feel off, keep it to sand, shade, and photos.
+
+Sea Air Before Seafood
+The beach can slow the pace before you choose a meal. A short walk back toward Mỹ An gives the seafood-and-café side of Da Nang a calmer frame.
+
+Implementation notes
+IDs: page_id: city-danang-place-my-an-beach; place_catalog_id: danang-my-an-beach; target_hero_image: HeroCityDanangPlaceMyAnBeach
+Canonical example: Lập An and My Khe-style condition behavior — make water, weather, and route-lightness matter without overbuilding the stop.
+Phrase/audio: taxi-1 / taxi-1 mapped; taxi-3 / taxi-3 mapped; food-5 / food-5 mapped.
+Place-name audio: city-danang-place-my-an-beach is planned only; keep pronunciation/name support hidden until audio is ready.
+Mentioned Here candidates: Mỹ An / My An — catalogId: danang-my-an, render, subtitle: beach-side neighborhood behind the sand.
+Related place candidates: Biển Mỹ Khê / My Khe Beach — catalogId: danang-my-khe-beach, render, subtitle: wider, more recognizable Da Nang beach stretch; Chợ Bắc Mỹ An / Bac My An Market — catalogId: danang-bac-my-an-market, render, subtitle: small snack stop near the beach side.
+Freshness/source notes: Vietnam Tourism Da Nang source label; visible copy avoids lifeguard, shower, rental, and exact access claims until checked.
+Score/QA: 28/30 — clean beach role and practical water-condition cue, capped for current-condition checks. QA passes for phrase cards, no duplicate bodies, and natural related candidates; screenshot and production review not run.
+city-danang-place-my-khe — Biển Mỹ Khê / My Khe Beach
+Reader View
+Go Early For The Wide Beach
+Biển Mỹ Khê gives Da Nang its open coastal scale. At sunrise, the sand feels wider, the water reads calmer, and the city skyline stays far enough back to make the morning feel clear.
+Useful phrase cards
+"Cho tôi tới đây" — Take me here.
+"Dừng ở đây được rồi" — You can stop here.
+"Điểm đón ở đâu?" — Where is the pickup point?
+Choose A Small Patch
+The shoreline can feel long, so do not try to read all of it at once. Choose a clean entry point, watch where people are swimming, and keep your things close.
+City Behind, Sea In Front
+Mỹ Khê is not remote, and that is part of the ease. You can get sea air without leaving the city, then fold back into cafés, hotels, or an evening bridge walk.
+
+Weather Changes The Mood
+Bright mornings make the beach feel generous. Wind, rain, or rough water can turn it into a walk-only stop, which is still a good reset between busier Da Nang plans.
+
+Implementation notes
+IDs: page_id: city-danang-place-my-khe; place_catalog_id: danang-my-khe-beach; target_hero_image: HeroCityDanangPlaceMyKheBeach
+Canonical example: Dragon Bridge plus Lập An behavior — one simple choice, condition-aware, with a nearby route after the main pause.
+Phrase/audio: taxi-1 / taxi-1 mapped; taxi-3 / taxi-3 mapped; directions-8 / directions-8 mapped.
+Place-name audio: city-danang-place-my-khe / audio-authored-bien-my-khe-cc07e59f70 ready; render as pronunciation/name support, not a visible phrase card.
+Mentioned Here candidates: none for visible cards; copy keeps bridge/café/hotel references generic.
+Related place candidates: Biển Mỹ An / My An Beach — catalogId: danang-my-an-beach, render, subtitle: quieter beach edge near Mỹ An; Cầu Rồng / Dragon Bridge — catalogId: danang-dragon-bridge, render, subtitle: easy evening riverfront pairing after beach time.
+Freshness/source notes: City library plus Vietnam Tourism Da Nang source labels; visible copy avoids safety-service, rental, and exact beach-condition claims.
+Score/QA: 28/30 — strong first-screen role and condition cue, capped for water/weather checks. QA passes for phrase-card placement, no duplicate bodies, and restrained related candidates; screenshot and production review not run.
+city-danang-place-my-quang-ba-mua — Mỳ Quảng Bà Mua / My Quang Ba Mua
+Reader View
+Order The Bowl Before The Table Fills
+The dish leads at Mỳ Quảng Bà Mua. Think yellow noodles, shallow broth, herbs, peanuts, rice cracker, and a table that feels better once your order is clear.
+Useful phrase cards
+"Cho tôi xem thực đơn được không?" — Can I see the menu?
+"Cho tôi một phần" — One portion, please.
+"Không cay nhé" — Not spicy, please.
+Read It As Mì Quảng
+This is not a soup-first meal. Mix the noodles through the shallow broth, break the rice cracker when you want crunch, and add lime or chili after the first bite.
+Keep The Order Plain At First
+Ask for one bowl before adding extra sides or drinks. A simple first order gives you space to notice the turmeric noodles, herbs, and house rhythm.
+
+A Meal, Not A Gap Filler
+The appeal is not only that food arrives between sights. It is a central-Vietnam bowl with enough texture to make lunch feel like part of the day.
+
+Implementation notes
+IDs: page_id: city-danang-place-my-quang-ba-mua; place_catalog_id: danang-my-quang-ba-mua; target_hero_image: HeroCityDanangPlaceMyQuangBaMua
+Canonical example: Bale Well and White Rose behavior — reduce ordering friction, then let the focused dish carry the page.
+Phrase/audio: food-menu / food-menu mapped; food-1 / food-1 mapped; food-3 / food-3 mapped.
+Place-name audio: city-danang-place-my-quang-ba-mua is planned only; keep pronunciation/name support hidden until audio is ready.
+Mentioned Here candidates: Mì Quảng ở Đà Nẵng / Mi Quang — catalogId: danang-mi-quang, render, subtitle: central Vietnam turmeric-noodle bowl with herbs and rice cracker.
+Menu/catalog notes: food-mi-quang-ga and food-mi-quang-tom-thit exist in Menu Catalog; render those only if later venue-specific copy names the variants naturally.
+Related place candidates: Mỳ Quảng Dung / My Quang Dung — catalogId: danang-my-quang-dung, render, subtitle: counter-style Mì Quảng comparison; Mì Quảng 1A / Mi Quang 1A — catalogId: danang-mi-quang-1a, render, subtitle: another Da Nang Mì Quảng stop for comparison.
+Freshness/source notes: Venue and local food source labels; verify current branch status, hours, menu variants, and holiday closures before import.
+Score/QA: 27/30 — strong ordering moment and dish specificity, capped for venue/menu freshness. QA passes for phrase cards, Mentioned Here scan, no duplicate bodies, and no unsupported current claims; screenshot and production review not run.
+city-danang-place-my-quang-dung — Mỳ Quảng Dung / My Quang Dung
+Reader View
+Choose At The Counter
+The easiest version of Mỳ Quảng Dung is simple: point, choose the bowl, then leave the flavor to herbs, lime, chili, and the cracker. The counter scene is part of the meal, not a problem to solve.
+Useful phrase cards
+"Cho tôi tô này" — I’ll take this bowl.
+"Cho thêm rau" — More herbs, please.
+"Tính tiền giúp tôi" — Please let me pay.
+Look Before You Point
+Take a moment to see what bowls are moving. A quick look at herbs, lime, and chili helps you order with less guessing.
+Add Heat Slowly
+Mì Quảng can carry spice, peanuts, and sharp lime all at once. Taste first, then add chili; it is easier to build the bowl than undo it.
+
+Keep The Stop Small
+This is a good meal to fit between bigger Da Nang plans. Eat, reset, and leave room for a walk rather than stretching a noodle counter into a long lunch.
+
+Implementation notes
+IDs: page_id: city-danang-place-my-quang-dung; place_catalog_id: danang-my-quang-dung; target_hero_image: HeroCityDanangPlaceMyQuangDung
+Canonical example: Bale Well behavior — turn counter uncertainty into one confident first move.
+Phrase/audio: food-2 / food-2 mapped; food-4 / food-4 mapped; coffee-7 / coffee-7 mapped.
+Place-name audio: city-danang-place-my-quang-dung is planned only; keep pronunciation/name support hidden until audio is ready.
+Mentioned Here candidates: Mì Quảng ở Đà Nẵng / Mi Quang — catalogId: danang-mi-quang, render, subtitle: central Vietnam turmeric-noodle bowl with herbs and rice cracker.
+Menu/catalog notes: food-mi-quang-ga and food-mi-quang-tom-thit are available for catalog QA if a later draft names those variants; current visible copy keeps the order generic.
+Related place candidates: Mỳ Quảng Bà Mua / My Quang Ba Mua — catalogId: danang-my-quang-ba-mua, render, subtitle: table-service comparison for the same dish family; Mì Quảng 1A / Mi Quang 1A — catalogId: danang-mi-quang-1a, render, subtitle: another Da Nang Mì Quảng stop for comparison.
+Freshness/source notes: Local food source label; verify current address, hours, menu, and closure/holiday pattern before import.
+Score/QA: 27/30 — clear counter-ordering moment, capped for thin venue evidence and menu freshness. QA passes for phrase cards, Mentioned Here scan, no duplicate bodies, and no forced menu variants; screenshot and production review not run.
+Codex handoff block
+- `batch_id: batch_023`
+- `page_ids: city-danang-place-my-an, city-danang-place-my-an-beach, city-danang-place-my-khe, city-danang-place-my-quang-ba-mua, city-danang-place-my-quang-dung`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready-audio reusable traveler-action phrases`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: neighborhood and beach copy is intentionally restrained because source evidence is light; restaurant copy avoids exact branch, hours, price, and menu-variant claims`
+- `source_freshness_risks: verify My An/My An Beach/My Khe access and current beach conditions; verify Ba Mua and Dung current branch status, hours, holiday closures, and menu details before import`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_024 - Da Nang - 2026-05-26
+Hải sản Năm Đảnh / Nam Danh Seafood — Da Nang — Restaurant
+Reader View
+Order In Rounds, Not All At Once
+Năm Đảnh is the kind of seafood stop where the table becomes the plan: clams, grilled fish, cold drinks, plastic stools, and a quick round of pointing before anyone fully settles. Keep the first order small enough to adjust.
+
+Useful phrase cards
+
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Cái này bao nhiêu? — How much is this?
+Tôi bị dị ứng với động vật có vỏ. — I am allergic to shellfish.
+Small Plates Keep The Night Easy
+Seafood gets easier when you treat the first order as a warm-up. Choose one clam dish, one grilled plate, or one thing the table can share, then decide what deserves a second round.
+
+Point, Confirm, Then Share
+
+Do not expect every choice to unfold like a long English menu conversation. Point clearly, confirm price or portion when it matters, and let shared plates do the work once they land.
+
+Leave Room For The Setting
+
+The memory here is not only the fish. It is the neighborhood seafood rhythm: stools close together, sauce bowls, drinks sweating on the table, and a meal that feels part of the evening rather than a break from it.
+
+Implementation notes
+Phrase/audio: food-menu / food-menu ready; price-1 / price-1 ready; v500-food-drin-i-am-allergic-to-shellfish / v500-food-drin-i-am-allergic-to-shellfish ready.
+Place-name audio: city-danang-place-nam-danh-seafood planned; hide name support until audio exists.
+Mentioned Here candidates: food-ngheu-hap-sa for clams, check_catalog; food-ca-nuong-muoi-ot for grilled fish, check_catalog.
+Related place candidates: none from visible copy.
+Freshness/source notes: Local food source and legacy row; check current hours, menu, seafood pricing style, holiday closure risk, and exact address/status before import.
+Score: 27/30 — strong table behavior and voice; capped for local-source thinness, current menu facts, and planned place-name audio.
+QA: replaceability pass; phrase-card fit pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nam House Cafe / Nam House Cafe — Da Nang — Cafe
+Reader View
+Pause For The Room As Much As The Coffee
+Nam House is strongest when the day needs shade, ice, and a room with its own patience. Plants, patterned tiles, vintage corners, and a slow glass of coffee make the pause feel chosen rather than accidental.
+
+Useful phrase cards
+
+Cho tôi một cà phê sữa đá. — One iced milk coffee please.
+Cho tôi cà phê đen đá. — I’d like an iced black coffee.
+Ít đá thôi. — Just a little ice.
+Choose The Drink Before The Seat
+Order the coffee you actually want first: cà phê sữa đá for sweet and strong, cà phê đen đá for cleaner bitterness, or bạc xỉu if you want the milk-forward version. Then look for the corner that feels easiest.
+
+Old-House Details Carry The Pause
+
+The room matters here. Patterned tile, plants, old objects, and warm corners give you something to notice while the ice melts and the street heat drops out of your shoulders.
+
+Better As A Reset Than A Camp
+
+This is a good short pause between meals, markets, and beach-side heat. Stay long enough to cool down and look around, then let the cafe remain one quiet piece of the day.
+
+Implementation notes
+Phrase/audio: coffee-1 / coffee-1 ready; coffee-2 / coffee-2 ready; coffee-4 / coffee-4 ready.
+Place-name audio: city-danang-place-nam-house planned; hide name support until audio exists.
+Mentioned Here candidates: drink-ca-phe-sua-da render; drink-ca-phe-den-da render; drink-bac-xiu render.
+Related place candidates: none from visible copy.
+Freshness/source notes: Local cafe source and legacy row; check current hours, address, seating pattern, menu availability, and temporary closures before import.
+Score: 28/30 — clear cafe ritual and catalogable drinks; capped for current venue facts and planned place-name audio.
+QA: replaceability pass; phrase-card fit pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Làng nghề nước mắm Nam Ô / Nam O fish sauce village — Da Nang — Experience
+Reader View
+Fish Sauce Starts On The Coast
+Nam Ô turns nước mắm back into a coastal craft: anchovies, salt, barrels, time, and lanes where the smell tells you what is being made. It is a better stop when you care about the flavor behind everyday Vietnamese meals, not just the bottle.
+
+Useful phrase cards
+
+Tôi chụp hình ở đây được không? — Can I take photos here?
+Tôi chỉ xem thôi. — I’m just looking.
+Cái này bao nhiêu? — How much is this?
+Barrels First, Products Second
+Look for the making before the shopping. The point is the slow change from fish and salt into sauce, and the village makes that process feel physical instead of abstract.
+
+The Smell Is Part Of The Visit
+
+This is not a polished attraction sealed away from its work. The salty, fermented air is part of understanding why Nam Ô is tied to fish sauce in the first place.
+
+Pair Flavor With Shoreline
+
+If the day already points you toward Nam Ô, add the reef only when tide and weather make the coast worth seeing. One stop gives the flavor; the other gives the shoreline.
+
+Implementation notes
+Phrase/audio: sight-3 / sight-3 ready; shop-4 / shop-4 ready; price-1 / price-1 ready.
+Place-name audio: city-danang-place-nam-o-fish-sauce-village planned; hide name support until audio exists.
+Mentioned Here candidates: Nước mắm catalogId missing, check_catalog.
+Related place candidates: danang-nam-o-reef render; display subtitle: rocky shoreline and tidal pools near the fish-sauce craft area.
+Freshness/source notes: Da Nang Fantasticity/local craft source and legacy row; check visitor access, current workshop/product availability, photo expectations, hours, and route status before import.
+Score: 27/30 — specific craft behavior and route pairing; capped for current access details, catalog gap for nước mắm, and planned place-name audio.
+QA: replaceability pass; phrase-card fit pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Rạn Nam Ô / Nam O Reef — Da Nang — Nature
+Reader View
+Go When The Tide Shows The Rocks
+Rạn Nam Ô is shoreline, not resort sand. The good version is rocks, tidal pools, fishing-village edges, and low light that gives the coast its shape before the day gets flat.
+
+Useful phrase cards
+
+Tôi chụp hình ở đây được không? — Can I take photos here?
+Tôi nên tránh những gì? — What should I avoid?
+Tôi nên mang theo những gì? — What should I bring?
+Tide Is The Difference
+The reef matters most when water level reveals texture: dark rock, shallow pools, and small edges that disappear when conditions are wrong. Check tide and weather before building the stop into the day.
+
+Walk Like It Is Working Coast
+
+Treat the shore as a local fishing edge, not a stage set. Watch your footing, keep distance from slick rocks, and give people working near the water enough room.
+
+Morning Keeps The Scene Clear
+
+The legacy image is golden morning light for a reason. Earlier light makes the pools and rocks easier to read; harsh midday can flatten the whole scene.
+
+Add It Only When The Route Fits
+
+Pair the reef with the Nam Ô fish-sauce village if you are already on this side of Da Nang. It is less convincing when squeezed into a packed beach-and-bridge day.
+
+Implementation notes
+Phrase/audio: sight-3 / sight-3 ready; v500-sigh-acti-what-should-i-avoid / v500-sigh-acti-what-should-i-avoid ready; v900-sigh-acti-what-should-i-bring / v900-sigh-acti-what-should-i-bring ready.
+Place-name audio: city-danang-place-nam-o-reef / audio-authored-ran-nam-o-f3cbae8893 ready for name support.
+Mentioned Here candidates: none beyond current page name and generic shoreline details.
+Related place candidates: danang-nam-o-fish-sauce-village render; display subtitle: coastal craft stop that pairs naturally with the Nam Ô shoreline.
+Freshness/source notes: City library/Da Nang Fantasticity and legacy row; check tide, weather, current access, safety conditions, and route/parking assumptions before import.
+Score: 28/30 — clear condition-based nature behavior and ready name audio; capped for tide/weather/access verification.
+QA: replaceability pass; phrase-card fit pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nem lụi ở Đà Nẵng / Lemongrass pork skewers — Da Nang — Dish
+Reader View
+Roll The Skewer While It’s Hot
+Nem lụi is a small table ritual: grilled pork, rice paper, herbs, and sauce moving through your hands before the skewer cools. The flavor is in the roll, not just the pork.
+
+Useful phrase cards
+
+Cho tôi một phần. — One portion please.
+Chỉ cho tôi được không? — Can you show me?
+Cái này có chứa đậu phộng không? — Does this contain peanuts?
+Watch One Roll Before Copying
+If staff or another table shows the rhythm, take the hint: pork off the skewer, herbs in, sauce controlled, rice paper wrapped tight enough to hold. The first roll does not need to be elegant.
+
+Sauce Sets The Bite
+
+The sauce can make nem lụi feel rich, sweet, nutty, or sharper depending on the shop. If peanuts matter, ask before dipping; if heat worries you, taste a little sauce first.
+
+One Order Is Enough To Learn
+
+This is a good first-round dish because it teaches the table without committing the whole meal. Order one portion, understand the roll, then decide whether to add more food around it.
+
+Implementation notes
+Phrase/audio: food-1 / food-1 ready; repair-show-me / repair-show-me ready; v500-food-drin-does-this-contain-peanuts / v500-food-drin-does-this-contain-peanuts ready.
+Place-name audio: city-danang-place-nem-lui planned; hide name support until audio exists.
+Mentioned Here candidates: Peanut sauce catalogId missing, check_catalog; Nem lụi is the current page and should not self-render as a card.
+Related place candidates: none from visible copy.
+Freshness/source notes: Central Vietnam food sources and legacy row; check dish naming, vendor/menu variation, sauce ingredients, pork/peanut assumptions, and place-name audio before import.
+Score: 27/30 — strong ordering ritual and safety phrase fit; capped for exact dish catalog gap, ingredient variation, and planned place-name audio.
+QA: replaceability pass; phrase-card fit pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+batch_id: batch_024
+page_ids: city-danang-place-nam-danh-seafood, city-danang-place-nam-house, city-danang-place-nam-o-fish-sauce-village, city-danang-place-nam-o-reef, city-danang-place-nem-lui
+ready_to_import: no
+chat_output_is_canonical: yes
+google_doc_url: optional_or_missing
+phrase_cards_needing_catalog_check: none; all visible phrase cards use ready-audio reusable traveler-action phrases
+place_name_phrases: render_only_if_ready_audio_else_hide_until_audio
+visible_copy_risks: seafood menu/pricing rhythm, cafe seating/menu drift, Nam Ô access/photo expectations, reef tide/weather/access, nem lụi sauce and vendor variation
+source_freshness_risks: current hours, closures, exact addresses, menu availability, visitor access, tide/weather, route and parking assumptions
+next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval
+
+---
+
+SpeakLocal v2.2 BATCH_025 - Da Nang - 2026-05-26
+Nén Đà Nẵng / Nen Da Nang — Da Nang — Restaurant
+Reader View
+A Dinner That Slows The Night
+Nén is for the Da Nang evening when the meal is meant to hold its own place in the plan. Expect a composed Vietnamese table: herbs, ceramics, small courses, and staff rhythm rather than a quick plate between the beach and the bridge.
+
+Useful phrase cards
+“Tôi có đặt chỗ.” — I have a booking.
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Tính tiền giúp tôi.” — Please let me pay.
+Sections
+Keep The Evening Loose
+Leave room around the booking. A tasting-style meal loses its shape if you are squeezing it between a beach shower, bridge photos, and a late ride.
+
+Ask Early About Food Limits
+
+If shellfish, pork, heat, alcohol, or a dietary restriction matters, say it before the table starts moving. It is easier to adjust the evening before the first course lands.
+
+Good Company Helps
+
+Nén reads best when conversation has time to catch up with the plates. Go with someone who wants dinner to be one of the day’s memories, not the pause before the next stop.
+
+Implementation notes
+page_id: city-danang-place-nen
+target_hero_image: HeroCityDanangPlaceNen
+Canonical model: Bale Well for pre-meal confidence; Morning Glory for a controlled first restaurant meal; adapted for a higher-commitment dinner.
+Owned traveler moment: arriving for a booked evening meal after a beach-and-bridge day.
+Phrase/audio:
+time-4 / time-4 — mapped ready audio
+food-menu / food-menu — mapped ready audio
+coffee-7 / coffee-7 — mapped ready audio
+Place-name audio:
+city-danang-place-nen / audio-authored-nen-da-nang-762c6e4180 — ready name support only, not a visible phrase card
+route/reservation variants for Nén are planned/no-audio; hide until audio
+Mentioned Here candidates: none; visible copy avoids dish-level claims because no stable menu item was confirmed from the batch data.
+Related place candidates: none; no route/comparison card needed from this copy.
+Freshness risks: current menu, booking flow, hours, holiday closures, dietary accommodation, and service style need late check.
+Source notes: City library; MICHELIN listing source; legacy row described contemporary Vietnamese tasting-table setting with herbs and ceramics.
+Score: 27/30 — strong traveler moment and restrained claims; capped for current restaurant facts and menu uncertainty.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Quận Ngũ Hành Sơn / Ngu Hanh Son District — Da Nang — Neighborhood
+Reader View
+The Beach District With Hills Behind It
+Quận Ngũ Hành Sơn is the district name to keep in mind when Da Nang shifts south toward hotel edges, beach roads, cafés, Non Nước, and the limestone hills. It helps the city feel less like separate dots on a map.
+
+Useful phrase cards
+“Ở gần đây không?” — Is it near here?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Tôi có thể đi bộ tới đó được không?” — Can I walk there?
+Sections
+Hold The Hills As Your Marker
+The Marble Mountains give the area its easiest mental shape. Even when you are down near beach buildings or a café row, the limestone behind the district keeps the map from feeling vague.
+
+Short Hops Beat Long Wanders
+
+Distances can look smaller on a phone than they feel in heat. Walk the block you are on, then ride between hotel areas, the beach, and the hill-side stops.
+
+After Check-In, The Name Matters
+
+The district name earns its place when your stay is nearby. It gives ordinary trip tasks — coffee, laundry, seafood, a pharmacy, an evening walk — a clearer local label.
+
+Implementation notes
+page_id: city-danang-place-ngu-hanh-son-district
+target_hero_image: HeroCityDanangPlaceNguHanhSonDistrict
+Canonical model: Japan Town Saigon for cluster-neighborhood behavior; Chợ Lớn for broad-area anchoring.
+Owned traveler moment: checking into the south-beach side, then trying to connect cafés, hotels, beach roads, and the limestone hills.
+Phrase/audio:
+directions-2 / directions-2 — mapped ready audio
+directions-3 / directions-3 — mapped ready audio
+v500-dire-navi-can-i-walk-there / v500-dire-navi-can-i-walk-there — mapped ready audio
+Place-name audio:
+city-danang-place-ngu-hanh-son-district — planned/no-audio; hide name phrase until audio
+city-danang-place-marble-mountains / audio-authored-ngu-hanh-son-7cd09d8626 — ready name support only
+Mentioned Here candidates:
+Marble Mountains — danang-marble-mountains · render · displaySubtitle: Limestone hills that orient the south-beach side.
+Non Nuoc Beach — danang-non-nuoc-beach · render · displaySubtitle: Beach-side reference point inside the district area.
+Related place candidates:
+Marble Mountain cave walk — danang-marble-mountain-cave-walk · render/check final mapping · displaySubtitle: A more specific hill-and-cave outing.
+My Khe Beach — danang-my-khe-beach · render · displaySubtitle: Better-known beach comparison farther north.
+Freshness risks: local map naming, neighborhood boundaries, hotel-area business turnover, and transport/walking conditions need check.
+Source notes: Vietnam Tourism Da Nang; local map; legacy row described hotel edges, evening walks, cafés, and roads toward limestone hills.
+Score: 27/30 — clear neighborhood role; capped for broad-area evidence and planned place-name audio.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nhà hát Tuồng Nguyễn Hiển Dĩnh / Nguyen Hien Dinh Tuong Theatre — Da Nang — Experience
+Reader View
+A Stage Night, Not Another Photo Stop
+Nhà hát Tuồng Nguyễn Hiển Dĩnh gives Da Nang a quieter evening layer: painted faces, masks, music, curtains, and the focus of a small performance room. It is the right kind of stop when beaches and bridges have started to blur together.
+
+Useful phrase cards
+“Vé bao nhiêu?” — How much is the ticket?
+“Nó bắt đầu lúc mấy giờ?” — What time does it start?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+Sections
+The Show Comes First
+Confirm the program, start time, and ticket setup before you cross town. This page should not make the theatre sound automatic on any free night.
+
+Arrive Before The Curtain
+
+Give yourself enough time to find the doors, sit down, and settle into the room. Traditional theatre is easier when you are not sliding in late and trying to decode everything at once.
+
+Watch The Rhythm
+
+You do not need to understand every plot detail. Follow the drums, gestures, masks, pauses, and costume changes; the form carries more than a translated summary.
+
+Implementation notes
+page_id: city-danang-place-nguyen-hien-dinh-tuong-theatre
+target_hero_image: HeroCityDanangPlaceNguyenHienDinhTuongTheatre
+Canonical model: Museum of Cham Sculpture for culture-fatigue prevention; The Note Coffee for a simple sequence that makes a specific room feel usable.
+Owned traveler moment: choosing a performance night and arriving before the show instead of treating the venue like a static landmark.
+Phrase/audio:
+sight-1 / sight-1 — mapped ready audio
+v900-time-date-book-what-time-does-it-start / v900-time-date-book-what-time-does-it-start — mapped ready audio
+sight-3 / sight-3 — mapped ready audio
+Place-name audio:
+city-danang-place-nguyen-hien-dinh-tuong-theatre — planned/no-audio; hide name phrase until audio
+Mentioned Here candidates:
+Tuồng — catalogId missing · check_catalog · displaySubtitle: Traditional Vietnamese theatre form named in the venue.
+Related place candidates:
+Da Nang Fine Arts Museum — danang-fine-arts-museum · render/check final mapping · displaySubtitle: Compact culture stop for another quiet city layer.
+Museum of Cham Sculpture — danang-cham-museum · render · displaySubtitle: Stronger museum pairing for older regional art and form.
+Freshness risks: show schedule, ticketing, venue access, photo policy, and English support need same-week check.
+Source notes: Da Nang Fantasticity; venue source; legacy row described traditional theatre facade, stage curtains, warm interior light, masks, music, and cultural memory.
+Score: 27/30 — specific and usable; capped for same-week program checks and planned place-name audio.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Đường Nguyễn Văn Linh / Nguyen Van Linh Street — Da Nang — Street
+Reader View
+A Street That Makes The Map Click
+Đường Nguyễn Văn Linh gives Da Nang a ground-level line to remember: a broad city avenue, planted median, motorbikes, crossings, café edges, and movement toward the Hàn River side of town. Not for sightseeing so much as orientation.
+
+Useful phrase cards
+“Đây có phải là đường phố chính xác không?” — Is this the correct street?
+“Tôi có nên băng qua đường không?” — Should I cross the street?
+“Người lái xe nên dừng ở đâu?” — Where should the driver stop?
+Sections
+Rides Need A Clear Pin
+Use the street name for pickup, drop-off, and route checks. Show the map, confirm the road, and choose a stop where the crossing feels sane.
+
+Crossings Set The Pace
+
+Wide avenues in Da Nang can look simple until the motorbike flow starts. Pick marked crossings when you have them, move predictably, and do not rush just because locals are faster.
+
+One Block Can Be Enough
+
+You may only need a coffee edge, a shopfront, or a sign that confirms where you are. That is enough; the point is orientation, not a full afternoon walk.
+
+Implementation notes
+page_id: city-danang-place-nguyen-van-linh-street
+target_hero_image: HeroCityDanangPlaceNguyenVanLinhStreet
+Canonical model: Đường Đồng Khởi for street-spine orientation; Dragon Bridge for turning a simple city object into one practical decision.
+Owned traveler moment: using a named avenue to confirm a ride, crossing, or café-side stop.
+Phrase/audio:
+v900-dire-navi-is-this-the-correct-street / v900-dire-navi-is-this-the-correct-street — mapped ready audio
+v900-dire-navi-should-i-cross-the-street / v900-dire-navi-should-i-cross-the-street — mapped ready audio
+v900-dire-navi-where-should-the-driver-stop / v900-dire-navi-where-should-the-driver-stop — mapped ready audio
+Place-name audio:
+city-danang-place-nguyen-van-linh-street / audio-authored-duong-nguyen-van-linh-2fa0fcb186 — ready name support only
+route variants are planned/no-audio; hide until audio
+Mentioned Here candidates:
+Han River — danang-han-river · render · displaySubtitle: River-side orientation point for the street scene.
+Related place candidates:
+Dragon Bridge — danang-dragon-bridge · render · displaySubtitle: Nearby river-side landmark for orientation.
+Da Nang Airport — danang-airport · render/check final mapping · displaySubtitle: Practical route context for city movement.
+Freshness risks: current traffic flow, crossing conditions, construction, and pickup/drop-off norms need check.
+Source notes: City library; Da Nang Fantasticity; legacy row described a broad city avenue with motorbikes, planted median, shopfronts, cafés, and street signs.
+Score: 27/30 — strong scarce-evidence street framing; capped for thin street-specific evidence and crossing/traffic freshness.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Biển Non Nước / Non Nuoc Beach — Da Nang — Beach
+Reader View
+A Beach Below The Hills
+Biển Non Nước is Da Nang open sand with the Marble Mountains behind the day. Think sea air, pale light, a slower edge of the city, and enough space to make the coast feel like more than a quick photo stop.
+
+Useful phrase cards
+“Hôm nay trời có mưa không?” — Will it rain today?
+“Đi bộ có xa quá không?” — Is it too far to walk?
+“Cho tôi chai nước.” — A bottle of water, please.
+Sections
+Pair Sand With Stone
+Non Nước makes more sense when the beach and limestone hills share the same half-day. Spend time on the sand, then decide whether Marble Mountains or Non Nuoc Stone Carving Village belongs before or after.
+
+Open Space Over A Checklist
+
+The appeal is simple: walking, sea air, cloudy light, and a pause between resort roads and the wider city. Do not ask it to compete with every beach in Da Nang.
+
+Weather Sets The Mood
+
+Cloud, wind, surf, and heat can change the whole stop. Check the sky before you commit, bring water, and keep the ride back simple.
+
+Implementation notes
+page_id: city-danang-place-non-nuoc-beach
+target_hero_image: HeroCityDanangPlaceNonNuocBeach
+Canonical model: Lập An Lagoon for condition-aware water/nature framing; Vọng Cảnh Hill for a light route-pairing stop.
+Owned traveler moment: choosing a slower beach pause near the limestone hills, then deciding whether to add a nearby stone or mountain stop.
+Phrase/audio:
+v500-soci-smal-talk-will-it-rain-today / v500-soci-smal-talk-will-it-rain-today — mapped ready audio
+v500-dire-navi-is-it-too-far-to-walk / v500-dire-navi-is-it-too-far-to-walk — mapped ready audio
+store-1 / store-1 — mapped ready audio
+Place-name audio:
+city-danang-place-non-nuoc-beach / audio-authored-bien-non-nuoc-6554d5ecf2 — ready name support only
+city-danang-place-non-nuoc-stone-village / audio-authored-lang-da-non-nuoc-8642dec883 — ready name support only
+city-danang-place-marble-mountains / audio-authored-ngu-hanh-son-7cd09d8626 — ready name support only
+Mentioned Here candidates:
+Marble Mountains — danang-marble-mountains · render · displaySubtitle: Limestone hills paired naturally with the beach.
+Non Nuoc Stone Carving Village — danang-non-nuoc-stone-village · render · displaySubtitle: Nearby craft village for a sand-and-stone half-day.
+Related place candidates:
+Ngu Hanh Son District — danang-ngu-hanh-son-district · render/check final mapping · displaySubtitle: District context around the beach and hills.
+My Khe Beach — danang-my-khe-beach · render · displaySubtitle: Better-known beach comparison farther north.
+Freshness risks: weather, surf, access, beach services, nearby construction, and current swimming conditions need late check.
+Source notes: City library; Vietnam Tourism Da Nang; legacy row described quiet beach below limestone hills, white sand, soft cloudy daylight, seafood stops, and central-Vietnam day trips.
+Score: 28/30 — strong place image and route pairing; capped for condition checks and beach-service freshness.
+QA notes: voice pass; phrase-card pass; catalog mention scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_025`
+- `page_ids: city-danang-place-nen, city-danang-place-ngu-hanh-son-district, city-danang-place-nguyen-hien-dinh-tuong-theatre, city-danang-place-nguyen-van-linh-street, city-danang-place-non-nuoc-beach`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready reusable traveler-action audio IDs`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Nén avoids dish/menu specifics; neighborhood and street copy is intentionally restrained; theatre avoids schedule claims; beach copy avoids swimming/safety guarantees`
+- `source_freshness_risks: Nén menu, bookings, hours, dietary handling; Ngũ Hành Sơn district map/business turnover; theatre program, tickets, photo policy, access; Nguyễn Văn Linh traffic/crossing/pickup norms; Non Nước weather, surf, access, services`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_026 - Da Nang - 2026-05-26
+Làng đá Non Nước / Non Nuoc Stone Carving Village — Da Nang — Village
+Reader View
+Watch The Dust Before You Shop
+Non Nuoc sits at the foot of the Marble Mountains, where stone carving feels less like a souvenir stop and more like a working lane. Look for the half-finished pieces, tool marks, and stone dust before you think about what could fit in a suitcase.
+Useful phrase cards
+
+“Tôi chỉ xem thôi.” — I’m just looking.
+“Cái này bao nhiêu?” — How much is this?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+The Village Is The Process
+Buddhas, lions, garden pieces, and polished stone are the obvious shapes. The better detail is the making: rough blocks, hands at the tools, and finished pieces waiting beside the road.
+Look First, Then Ask
+Take one slow pass before stepping into a shop. If someone is carving, ask before taking close photos, and keep the first question simple: price, material, or whether a piece can be packed safely.
+
+Best Beside The Mountains
+The stop makes most sense before or after Marble Mountains, when the stone in the cliffs and the stone in the workshops can sit together in your head. It is a short craft pause, not an all-day plan.
+
+Implementation notes
+page_id: city-danang-place-non-nuoc-stone-village
+target_hero_image: HeroCityDanangPlaceNonNuocStoneVillage
+Phrase/audio mapping: shop-4 / shop-4; price-1 / price-1; sight-3 / sight-3; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-non-nuoc-stone-village / audio-authored-lang-da-non-nuoc-8642dec883; ready; render as pronunciation/name support, not as a visible phrase card.
+Mentioned Here candidates: Marble Mountains / Ngũ Hành Sơn — landmark; catalogId: danang-marble-mountains; status: render; displaySubtitle: “Mountain-and-cave area beside the carving village.”
+Related place candidates: Non Nuoc Beach / Biển Non Nước — relationship: nearby_beach_pairing; catalogId: danang-non-nuoc-beach; status: render; displaySubtitle: “A nearby beach pause after the craft lanes.”
+Freshness notes: Workshop access, retail mix, photo expectations, and packing/shipping details need a light pre-import check.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — strong craft moment and compact first screen; capped for current workshop/photo/retail checks and final catalog/audio QA.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Ốc hút ở Đà Nẵng / Stirred snails — Da Nang — Dish
+Reader View
+Small Shells, Slow First Order
+Ốc hút is a snack built for fingers, shells, lemongrass, chili, and time. Order small first, watch how people loosen the meat, and let the table stay a little messy.
+Useful phrase cards
+
+“Cho tôi một phần.” — One portion, please.
+“Ít cay thôi.” — Less spicy, please.
+“Tính tiền giúp tôi.” — The bill, please.
+The Name Matches The Motion
+Hút means drawing out, which tells you how the dish is eaten. The snails are about texture, sauce, and heat more than a tidy fork-and-knife meal.
+Keep Heat Negotiable
+Chili can move fast here. Start with one portion, taste the sauce, and ask for less heat before adding more food to the table.
+
+A Snack With Its Own Rhythm
+Treat it as a Da Nang street-food pause: a bowl, a drink, a few napkins, and a little patience with the shells. The memory is the rhythm as much as the flavor.
+
+Implementation notes
+page_id: city-danang-place-oc-hut
+target_hero_image: HeroCityDanangPlaceOcHut
+Phrase/audio mapping: food-1 / food-1; food-not-spicy-clearer / audio-authored-it-cay-thoi-05b8e258a2; coffee-7 / coffee-7; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-oc-hut; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: none for render; copy names no catalog food item beyond the page itself.
+Related place candidates: none; avoid forcing a general seafood card without a clear catalog target.
+Freshness notes: Stall availability, current serving style, price, spice level, and exact local spelling/use need light review; menu catalog has related snail items but no exact ốc hút item selected here.
+Source notes: Da Nang local food sources; spelling/use source; legacy city-v1 row; Phrase Picker and Menu Catalog checked.
+Score: 27/30 — focused ordering moment and ready phrase cards; capped for thin dish evidence and current stall/menu variability.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Biển Phạm Văn Đồng / Pham Van Dong Beach — Da Nang — Beach
+Reader View
+Beach Air Before The Day Gets Full
+Pham Van Dong Beach gives central Da Nang an easy coastal reset: palms, sand, morning light, and the city still close behind you. The easiest read is a quick beach walk before breakfast, seafood, or another errand pulls you inland.
+Useful phrase cards
+
+“Nhà vệ sinh ở đâu?” — Where is the bathroom?
+“Điểm đón ở đâu?” — Where is the pickup point?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Morning Keeps It Simple
+Early light is kinder on the sand, and the beach feels easier before the day heats up. Walk first, then decide whether you want a longer sit.
+Shade Is Part Of The Plan
+The open beach can feel exposed. Bring water, keep an eye on your bag, and do not build the whole day around one patch of sand if the sun is sharp.
+
+Close To The City Rhythm
+Pham Van Dong makes sense when you want beach air without leaving the hotel-and-cafe side of Da Nang for long. Pair it with My Khe, a seafood stop, or the Han River later in the day.
+
+Implementation notes
+page_id: city-danang-place-pham-van-dong-beach
+target_hero_image: HeroCityDanangPlacePhamVanDongBeach
+Phrase/audio mapping: bath-1 / bath-1; directions-8 / directions-8; hotel-9 / hotel-9; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-pham-van-dong-beach; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: My Khe Beach / Biển Mỹ Khê — beach; catalogId: danang-my-khe-beach; status: render; displaySubtitle: “The better-known beach stretch nearby.” Han River / Sông Hàn — river; catalogId: danang-han-river; status: render; displaySubtitle: “A later city-waterfront walk after beach time.”
+Related place candidates: Son Tra Night Market / Chợ đêm Sơn Trà — relationship: evening_pairing; catalogId: danang-son-tra-night-market; status: check_catalog; displaySubtitle: “A night-market add-on if the evening route moves toward Dragon Bridge.”
+Freshness notes: Beach facilities, swimming conditions, lifeguard presence, access, and pickup points need current review; visible copy avoids fixed hours or safety claims.
+Source notes: Vietnam Tourism Da Nang; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — clean beach-side traveler move; capped for beach-condition and facilities freshness.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Chùa Pháp Lâm / Phap Lam Pagoda — Da Nang — Landmark
+Reader View
+A Quiet Hour Behind The Traffic
+Phap Lam Pagoda gives central Da Nang a slower register: yellow walls, courtyard shade, incense, and Buddhist imagery a short step from ordinary city noise. Keep the visit simple and respectful.
+Useful phrase cards
+
+“Tôi có thể vào được không?” — Can I come in?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+“Xin lỗi.” — Excuse me / sorry.
+Enter Softly
+Covered shoulders are the safer move, voices stay low, and worshippers should not become the subject of your photos. The place asks for a slower pace than the streets outside.
+Notice The Courtyard, Not Just The Gate
+The details are modest: temple roofs, incense smoke, shaded corners, and figures that reward a few quiet minutes. Do not rush it like a checkpoint.
+
+A Small Cultural Counterpoint
+Come between beach, bridge, market, or museum time when you want Da Nang to feel less like only waterfront. The stop is compact, so it fits better as a pause than as the center of the day.
+
+Implementation notes
+page_id: city-danang-place-phap-lam-pagoda
+target_hero_image: HeroCityDanangPlacePhapLamPagoda
+Phrase/audio mapping: v900-poli-basi-can-i-come-in / v900-poli-basi-can-i-come-in; sight-3 / sight-3; polite-5 / polite-5; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-phap-lam-pagoda; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: none for render; visible copy names no exact catalog item beyond broad city categories.
+Related place candidates: Da Nang Cathedral / Nhà thờ Con Gà Đà Nẵng — relationship: central_landmark_contrast; catalogId: danang-cathedral; status: render; displaySubtitle: “Another compact central landmark with a different religious register.” Da Nang Museum / Bảo tàng Đà Nẵng — relationship: central_culture_pairing; catalogId: danang-museum; status: check_catalog; displaySubtitle: “A nearby culture stop when the day needs more city context.”
+Freshness notes: Current access, photo expectations, dress norms, and worship activity need light review; visible copy keeps etiquette general.
+Source notes: Da Nang Fantasticity; local map; legacy city-v1 row; City Places Catalog checked.
+Score: 28/30 — calm first screen and clear etiquette move; capped for access/photo freshness and final native/cultural QA.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Phước Mỹ / Phuoc My — Da Nang — Neighborhood
+Reader View
+Blocks That Make The Beach Side Legible
+Phuoc My is one of the names that turns Da Nang’s beach side from a blur of hotels into a real area. Learn it when you are sorting cafés, side streets, apartment balconies, and the walk back from the sand.
+Useful phrase cards
+
+“Ở gần đây không?” — Is it near here?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Name The Area Before You Navigate
+Drivers, maps, and hotel pages may use ward or neighborhood names before they use the landmark you have in mind. Phuoc My helps you place yourself on the city’s east side, close to the beach but still lived in.
+Cafes, Errands, Evening Walks
+The detail here is ordinary: small shops, balconies, hotel edges, scooter crossings, and cafés that become landmarks because you pass them twice. That is the reason to recognize the name.
+
+Keep The Route Loose
+Choose one nearby café, beach access point, or dinner plan, then let the blocks connect themselves. For a broader night out, An Thuong or the riverfront may be a clearer choice.
+
+Implementation notes
+page_id: city-danang-place-phuoc-my
+target_hero_image: HeroCityDanangPlacePhuocMy
+Phrase/audio mapping: directions-2 / directions-2; directions-3 / directions-3; hotel-9 / hotel-9; all visible phrase cards use ready audio.
+Place-name audio: city-danang-place-phuoc-my; audio status planned; hide place-name audio until ready.
+Mentioned Here candidates: An Thuong Area / Khu An Thượng — neighborhood; catalogId: danang-an-thuong-street-area; status: render; displaySubtitle: “A nearby beach-side area with a clearer dining-and-wandering frame.”
+Related place candidates: My Khe Beach / Biển Mỹ Khê — relationship: beach_side_orientation; catalogId: danang-my-khe-beach; status: render; displaySubtitle: “The beach landmark many travelers use to orient nearby stays.” My An / Mỹ An — relationship: neighboring_area_contrast; catalogId: danang-my-an; status: render; displaySubtitle: “Another beach-side neighborhood name worth separating from Phuoc My.” Han River / Sông Hàn — relationship: city_orientation_contrast; catalogId: danang-han-river; status: render; displaySubtitle: “The river side of the city, useful as a contrast to beach-side blocks.”
+Freshness notes: Administrative naming, ward boundaries, map labels, and business turnover need light review; visible copy avoids naming specific venues.
+Source notes: Local map; legacy city-v1 row; City Places Catalog checked.
+Score: 27/30 — useful neighborhood orientation; capped for sparse evidence, boundary ambiguity, and current map-label review.
+QA notes: replaceability pass; phrase-card fit pass; Mentioned Here scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_026`
+- `page_ids: city-danang-place-non-nuoc-stone-village, city-danang-place-oc-hut, city-danang-place-pham-van-dong-beach, city-danang-place-phap-lam-pagoda, city-danang-place-phuoc-my`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready-audio reusable phrases, with native QA still required before import`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Non Nuoc packing/photo language; ốc hút serving-style variability; Pham Van Dong facilities and beach-condition assumptions; Phap Lam access/photo etiquette; Phuoc My map-boundary language`
+- `source_freshness_risks: workshop access, stall/menu availability, beach facilities and safety conditions, pagoda access expectations, neighborhood map/admin naming, related-card catalog IDs`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_027 - Da Nang - 2026-05-26
+Ga Đà Nẵng / Da Nang Railway Station — Da Nang — Station
+Reader View
+A Clear Handoff Before The Ride
+Ga Đà Nẵng is where the city turns back into bags, tickets, route boards, waiting benches, and the curb outside. Keep the name handy for drivers and pickups; the station is simple once the next step is clear.
+
+Useful phrase cards
+“Nhà ga xe lửa ở đâu?” — Where is the train station?
+“Chuyến tàu này có bị trễ không?” — Is this train delayed?
+“Điểm đón ở đâu?” — Where is the pickup point?
+Sections
+Boards Before The Curb
+Pause inside long enough to match your route board, platform direction, and ticket or booking. It is easier to ask from the boards than from the street with luggage in your hand.
+
+Pickup Is Its Own Step
+
+The curb can feel like the real decision point. Handle the train question first, then look for your driver, taxi, or onward road.
+
+The Name Matters At The Curb
+
+Ga Đà Nẵng is short and practical. Show it on your phone or say it slowly when someone needs to know you mean the railway station, not another transport stop.
+
+Implementation notes
+page_id: city-danang-place-railway-station
+Phrase/audio:
+v900-dire-navi-where-is-the-train-station · audio v900-dire-navi-where-is-the-train-station · ready
+v500-tran-is-this-train-delayed · audio v500-tran-is-this-train-delayed · ready
+directions-8 · audio directions-8 · ready
+Place-name audio: city-danang-place-railway-station · audio-authored-ga-da-nang-47d24faee3 · ready
+Mentioned Here candidates: none from visible copy
+Related place candidates:
+danang-central-bus-station · transport contrast · render after catalog check
+danang-airport · arrival/departure contrast · render after catalog check
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 source rewritten into v2.2.
+Freshness risks: train times, ticket counters, pickup areas, access flow, and station rules need current checks before import.
+Score: 28/30 — clear traveler handoff and strong phrase fit; capped for current transport-operation checks and no render proof.
+QA notes: replaceability pass; phrase-card pass; catalog scan pass; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Reply 1988 Cafe / Reply 1988 Cafe — Da Nang — Cafe
+Reader View
+A Retro Pause Between Walks
+Reply 1988 is the cafe to remember for a slower half-hour: iced coffee, warm wood, retro detail, and a little distance from the heat outside. The scene matters more than a long order.
+
+Useful phrase cards
+“Cho tôi một cà phê sữa đá.” — One iced milk coffee, please.
+“Ít đá thôi.” — Just a little ice.
+“Làm ơn bớt đường đi.” — Less sugar, please.
+Sections
+Choose The Drink, Then The Corner
+Pick one drink before searching for the best seat. A cà phê sữa đá gives you the familiar Da Nang cafe rhythm: cold glass, condensed milk sweetness, and time to slow the next move.
+
+Warm Wood, Short Stay
+
+The retro room is the reason to linger, but not the reason to over-plan. Let it be a short reset between walks, errands, food, or an evening plan.
+
+Keep The Stop Light
+
+If the room is full or the moment feels wrong, do not force it. Reply 1988 lands better as a pause you found naturally than as a schedule you have to defend.
+
+Implementation notes
+page_id: city-danang-place-reply-1988
+Phrase/audio:
+coffee-1 · audio coffee-1 · ready
+coffee-4 · audio coffee-4 · ready
+v900-food-drin-less-sugar-please · audio v900-food-drin-less-sugar-please · ready
+Place-name audio: city-danang-place-reply-1988 · planned · hide_until_audio
+Mentioned Here candidates:
+drink-ca-phe-sua-da · Cà phê sữa đá · render
+Related place candidates:
+danang-six-on-six · calmer leafy-cafe contrast · render after catalog check
+Source notes: Local cafe source; legacy city-v1 source rewritten around the retro cafe pause.
+Freshness risks: current address, hours, menu, seating, closure/relocation status, and photo/house rules need checks before import.
+Score: 27/30 — clean cafe moment and ready phrase cards; capped for thin venue evidence and planned place-name audio.
+QA notes: replaceability pass; phrase-card pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Six On Six Cafe / Six On Six Cafe — Da Nang — Cafe
+Reader View
+Find The Leafy Table First
+Six On Six is the cafe pause with more shade in the frame: greenery, tile, iced coffee, and a slower seat after a hot Da Nang day. Go for the room as much as the caffeine.
+
+Useful phrase cards
+“Cho tôi một cà phê sữa đá.” — One iced milk coffee, please.
+“Cho tôi cà phê đen đá.” — I’d like an iced black coffee.
+“Tôi có thể ngồi đây được không?” — Can I sit here?
+Sections
+Shade Sets The Pace
+The courtyard detail changes how you use the stop. Choose the calmer seat first, then decide whether this is a quick coffee or a longer cool-down.
+
+One Drink Before A Longer Sit
+
+Start with iced milk coffee or iced black coffee and read the room before adding more. A small cafe pause feels better when it stays flexible.
+
+Leave Room For The Next Plan
+
+Six On Six fits between beach time, a meal, or a ride back across town. Keep the plan loose enough that the cafe can be a reset, not the whole afternoon.
+
+Implementation notes
+page_id: city-danang-place-six-on-six
+Phrase/audio:
+coffee-1 · audio coffee-1 · ready
+coffee-2 · audio coffee-2 · ready
+v900-poli-basi-can-i-sit-here · audio v900-poli-basi-can-i-sit-here · ready
+Place-name audio: city-danang-place-six-on-six · planned · hide_until_audio
+Mentioned Here candidates:
+drink-ca-phe-sua-da · Cà phê sữa đá · render
+drink-ca-phe-den-da · Cà phê đen đá · render
+Related place candidates:
+danang-reply-1988 · retro-cafe contrast · render after catalog check
+danang-my-khe-beach · nearby beach-day pairing if route copy later supports it · check_catalog
+Source notes: Local cafe source; legacy city-v1 source rewritten around the leafy courtyard pause.
+Freshness risks: current address, hours, menu, seating, closure/relocation status, and crowd pattern need checks before import.
+Score: 27/30 — observed cafe use and strong ready-audio fit; capped for thin venue evidence and planned place-name audio.
+QA notes: replaceability pass; phrase-card pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bán đảo Sơn Trà / Son Tra Peninsula — Da Nang — Nature
+Reader View
+Leave The City By The Coast Road
+Bán đảo Sơn Trà is where Da Nang opens past hotels, bridges, and beach frontage. The road bends into forest, sea, weather, and wide coastal views that make the city feel bigger.
+
+Useful phrase cards
+“Hôm nay trời có mưa không?” — Will it rain today?
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Bạn có thể giúp tôi quay lại khách sạn được không?” — Can you help me get back to my hotel?
+Sections
+Choose The Road, Not Every Stop
+The peninsula can turn into a list of viewpoints fast. Pick one coastal ride or one green stop, then leave room for weather, light, and the return.
+
+Weather Changes The Visit
+
+Clear light gives you the sea-and-city frame. Rain or fog makes the ride cooler and quieter, but it can flatten the view. Do not force a long loop if visibility disappears.
+
+Pair Green With One City Edge
+
+Sơn Trà sits naturally with Mỹ Khê Beach, Linh Ứng Pagoda, Lady Buddha, or a Hàn River evening. Choose one pairing instead of turning the day into a checklist.
+
+Implementation notes
+page_id: city-danang-place-son-tra
+Phrase/audio:
+v500-soci-smal-talk-will-it-rain-today · audio v500-soci-smal-talk-will-it-rain-today · ready
+repair-5 · audio repair-5 · ready
+v500-dire-navi-can-you-help-me-get-back-to-my-hotel · audio v500-dire-navi-can-you-help-me-get-back-to-my-hotel · ready
+Place-name audio: city-danang-place-son-tra · audio-authored-ban-dao-son-tra-2364c7b9ad · ready
+Mentioned Here candidates:
+danang-my-khe-beach · Mỹ Khê Beach · render
+danang-linh-ung-pagoda · Linh Ứng Pagoda · render
+danang-lady-buddha · Lady Buddha · render
+danang-han-river · Hàn River · render
+Related place candidates:
+danang-son-tra-district · neighborhood-to-peninsula distinction · render after catalog check
+danang-son-tra-night-market · evening contrast after river/bridge plans · check_catalog
+Source notes: City library; Vietnam Tourism Da Nang; legacy city-v1 source rewritten around route, weather, and return-plan behavior.
+Freshness risks: road access, weather, viewpoint access, wildlife/forest rules, parking, and transport conditions need current checks before import.
+Score: 28/30 — strong nature-route decision and ready phrase fit; capped for condition-dependent visit and no render proof.
+QA notes: replaceability pass; phrase-card pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Quận Sơn Trà / Son Tra District — Da Nang — Neighborhood
+Reader View
+A City Base With Peninsula Edges
+Quận Sơn Trà is not one sight. It is the city side of the peninsula: coast road, hotel edges, cafes, small shops, lanes, and morning haze over green hills. The name helps beach-side Da Nang feel less anonymous.
+
+Useful phrase cards
+“Tôi chỉ xem thôi.” — I’m just looking.
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Sections
+Pick One Edge To Walk
+Choose the Mỹ Khê side, a cafe cluster, or the road pointing toward Sơn Trà instead of trying to cover the whole district. The area makes more sense in short pieces.
+
+Hotels, Cafes, Small Shops
+
+This is the practical layer behind a beach-side stay: coffee, lanes, small shopfronts, scooter traffic, and the walk back to your room after dinner.
+
+Know When It Becomes Sơn Trà
+
+The district name and the peninsula name can blur. Quận Sơn Trà is the lived-in area; Bán đảo Sơn Trà is the greener road and sea frame beyond it.
+
+Implementation notes
+page_id: city-danang-place-son-tra-district
+Phrase/audio:
+shop-4 · audio shop-4 · ready
+directions-3 · audio directions-3 · ready
+hotel-9 · audio hotel-9 · ready
+Place-name audio: city-danang-place-son-tra-district · planned · hide_until_audio
+Mentioned Here candidates:
+danang-my-khe-beach · Mỹ Khê side / beach-side context · render after catalog check
+danang-son-tra · Bán đảo Sơn Trà · render
+Related place candidates:
+danang-son-tra · district-to-peninsula distinction · render
+danang-son-tra-night-market · evening nearby planning · check_catalog
+danang-my-khe-beach · beach-side orientation · render after catalog check
+Source notes: Vietnam Tourism Da Nang; Da Nang Fantasticity; legacy city-v1 source rewritten around neighborhood orientation.
+Freshness risks: administrative naming, business turnover, hotel/cafe clusters, road access, and venue-level hours need checks before import.
+Score: 27/30 — useful broad-neighborhood framing; capped for broad evidence, business turnover, and planned place-name audio.
+QA notes: replaceability pass; phrase-card pass; Mentioned Here evaluated; duplicate-body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_027`
+- `page_ids: city-danang-place-railway-station, city-danang-place-reply-1988, city-danang-place-six-on-six, city-danang-place-son-tra, city-danang-place-son-tra-district`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none; visible phrase cards use ready-audio reusable traveler-action phrases`
+- `place_name_phrases: ready audio for city-danang-place-railway-station and city-danang-place-son-tra; hide_until_audio for city-danang-place-reply-1988, city-danang-place-six-on-six, city-danang-place-son-tra-district`
+- `visible_copy_risks: cafe venue evidence is thin; Son Tra District is broad and should stay restrained; no hours, prices, ticket rules, closures, or current policies claimed visibly`
+- `source_freshness_risks: station operations/pickup flow; cafe address/hours/menu/status; Son Tra road/weather/access; Son Tra District business turnover and administrative naming`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_028 - Da Nang - 2026-05-26
+Chợ đêm Sơn Trà / Son Tra Night Market — Da Nang — Market
+Reader View
+A Snack Loop Before The River Lights
+Chợ đêm Sơn Trà is the easy evening loop near the Dragon Bridge side of the river. Come for grill smoke, quick snacks, souvenir stalls, and a short walk toward the lights; keep the night loose rather than asking the market to carry dinner by itself.
+
+Useful phrase cards
+
+“Cái này bao nhiêu?” — How much is this?
+“Bao nhiêu một ký?” — How much per kilo?
+“Cho tôi một phần” — One portion, please.
+Read The Smoke Before Ordering
+Walk one lap before you buy. Seafood grills, snack counters, drinks, clothes, and small souvenirs can blur together fast, and the first lap gives you time to see prices, smoke, seating, and where people are actually stopping.
+
+Bridge Pairings Give It Shape
+
+The market makes more sense as part of a riverfront evening: Love Bridge, the Hàn River walk, or Dragon Bridge before or after the lights come on. If the fire show matters, check that timing close to the night itself.
+
+Cồn Does The Food Crawl Better
+
+Chợ Cồn is the stronger daytime food crawl. Sơn Trà is lighter: a convenient night-market add-on when you are already near the river and want a snack, not a full market education.
+
+Implementation notes
+page_id: city-danang-place-son-tra-night-market
+Closest canonical example: Chợ đêm Sơn Trà and Dragon Bridge — night-market add-on plus one real evening decision.
+Phrase/audio:
+price-1 / price-1 — mapped — “Cái này bao nhiêu?”
+price-2 / price-2 — mapped — “Bao nhiêu một ký?”
+food-1 / food-1 — mapped — “Cho tôi một phần”
+Place-name audio: city-danang-place-son-tra-night-market ready as name/pronunciation support only; do not render as a visible phrase card.
+Mentioned Here candidates:
+Cầu Rồng / Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “River landmark often paired with the market.”
+Cầu Tình Yêu / Love Bridge — catalogId: danang-love-bridge — render — subtitle: “Short riverfront photo stop nearby.”
+Sông Hàn / Han River — catalogId: danang-han-river — render — subtitle: “Evening walk context for the market.”
+Chợ Cồn / Con Market — catalogId: danang-con-market — render — subtitle: “Stronger food-first daytime market.”
+Related place candidates:
+Dragon Bridge fire show — catalogId: danang-dragon-bridge-fire-show — render after schedule check.
+Con Market — catalogId: danang-con-market — render as market contrast.
+Freshness notes: same-week check for market hours, active stall mix, seafood pricing norms, and Dragon Bridge show schedule.
+Source notes: City library; Vietnam Tourism Da Nang; Da Nang Fantasticity; ledger legacy copy.
+Score: 28/30 — strong role, clean pairing, mapped phrases; capped for same-week timing and stall/pricing volatility.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Chuyến đi Sơn Trà / Son Tra wildlife drive — Da Nang — Experience
+Reader View
+A Slow Peninsula Loop
+The Sơn Trà drive changes Da Nang from beach city to forest road: curves, shade, sudden sea openings, and the feeling that the city has dropped below you. Go for the ride and the lookout pauses. Wildlife is a bonus, not a promise.
+
+Useful phrase cards
+
+“Tiền xe bao nhiêu?” — How much is the fare?
+“Dừng ở đây được rồi” — You can stop here.
+“Xin hãy lái xe chậm lại” — Please drive slower.
+Set The Loop Before The Climb
+Before the road starts winding, agree on the basic route, waiting time, and return plan. Sơn Trà is easier when the driver knows whether you want one lookout, Linh Ứng Pagoda, a longer forest loop, or a simple up-and-back ride.
+
+Wildlife Stays Unscheduled
+
+If you see animals, keep distance and let the road stay quiet. The best moment may be a flash of movement in the trees, but feeding, crowding, or chasing it turns the drive into the wrong kind of attention.
+
+Weather Changes The Ride
+
+Cloud, heat, rain, and wind can all change how the road feels. Clear weather gives the sea views; mist and shade make the peninsula feel more enclosed. Either way, leave time for slow curves and a calm ride back.
+
+Implementation notes
+page_id: city-danang-place-son-tra-wildlife-drive
+Closest canonical example: Bạch Mã National Park plus Hai Van Pass ride pattern — condition-aware route, lighter commitment.
+Phrase/audio:
+transport-fare / transport-fare — mapped — “Tiền xe bao nhiêu?”
+taxi-3 / taxi-3 — mapped — “Dừng ở đây được rồi”
+v500-tran-please-drive-slower / v500-tran-please-drive-slower — mapped — “Xin hãy lái xe chậm lại”
+Place-name audio: city-danang-place-son-tra-wildlife-drive is planned/no ready audio; hide until audio. city-danang-place-son-tra is ready for Sơn Trà Peninsula name support.
+Mentioned Here candidates:
+Bán đảo Sơn Trà / Son Tra Peninsula — catalogId: danang-son-tra — render — subtitle: “Forest-road peninsula above Da Nang.”
+Chùa Linh Ứng / Linh Ung Pagoda — catalogId: danang-linh-ung-pagoda — render — subtitle: “Common route stop on Sơn Trà.”
+Related place candidates:
+Hai Van Pass ride — catalogId: danang-hai-van-pass-ride — render — subtitle: “Bigger mountain-road ride outside the city.”
+Sơn Trà Night Market — catalogId: danang-son-tra-night-market — check_catalog — subtitle: “Easy evening add-on after a peninsula day.”
+Freshness notes: check road access, weather, traffic restrictions, wildlife guidance, and driver/tour pickup details before import.
+Source notes: Vietnam Tourism Da Nang; Da Nang Fantasticity; ledger legacy copy.
+Score: 27/30 — good route behavior and safety tone; capped for condition-sensitive road access and wildlife uncertainty.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Biển Thanh Bình / Thanh Binh Beach — Da Nang — Beach
+Reader View
+A Bay Beach For A Quiet Reset
+Thanh Bình Beach is Da Nang coast without the postcard pressure: bay water, fishing boats, city buildings behind the sand, and softer morning light. Stop for a walk, sea air, and a quieter look at the city’s shoreline.
+
+Useful phrase cards
+
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Morning Keeps It Simple
+This is an easy beach to understand in the morning, when boats, cloud, and city edges give the place its texture. Bring the expectation down: a short walk can be enough.
+
+Mỹ Khê Is The Easier Comparison
+
+Mỹ Khê is the clearer classic-beach plan. Thanh Bình is smaller and more local-map than headline beach, better when you want a bay-side pause instead of a long sand-and-swim day.
+
+Choose The Ride Back Early
+
+Do not wander until the return becomes the hard part. Pick your drop-off point, notice the road out, and keep a taxi or ride-hailing plan in mind before the beach empties out.
+
+Implementation notes
+page_id: city-danang-place-thanh-binh-beach
+Closest canonical example: Vọng Cảnh Hill scarce-evidence route-stop behavior — short, restrained, condition-aware.
+Phrase/audio:
+repair-5 / repair-5 — mapped — “Chỉ trên bản đồ giúp tôi được không?”
+sight-3 / sight-3 — mapped — “Tôi chụp hình ở đây được không?”
+hotel-9 / hotel-9 — mapped — “Gọi taxi giúp tôi được không?”
+Place-name audio: city-danang-place-thanh-binh-beach is planned/no ready audio; hide until audio.
+Mentioned Here candidates:
+Biển Mỹ Khê / My Khe Beach — catalogId: danang-my-khe-beach — render — subtitle: “The easier classic Da Nang beach comparison.”
+Related place candidates:
+My Khe Beach — catalogId: danang-my-khe-beach — render — subtitle: “Bigger beach day with clearer traveler expectations.”
+Freshness notes: sparse evidence. Check current access, beach conditions, cleanliness, parking/drop-off, and safety before import.
+Source notes: Local map; ledger legacy copy.
+Score: 26/30 — honest and restrained for thin evidence; capped for local-map-only grounding and beach-condition volatility.
+QA notes: replaceability pass after narrowing to bay/city/fishing-boat texture; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+The Temptation / The Temptation — Da Nang — Restaurant
+Reader View
+A Meal That Can Hold The Evening
+The Temptation is for a Da Nang night when dinner can slow the day down. The draw is not speed or noise; it is a smaller room, careful plates, staff rhythm, and the feeling that the meal was chosen on purpose.
+
+Useful phrase cards
+
+“Tôi có thể đặt chỗ được không?” — Can I make a reservation?
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Tính tiền giúp tôi” — Please let me pay.
+Arrive Unrushed
+Do not squeeze this between a beach rinse and a late-night plan. A refined dinner needs a little room around it: time to arrive, read the menu, ask a question, and let the table settle.
+
+Read The Menu Before Committing
+
+Start with the menu, then decide how big the meal should be. If the restaurant is offering a longer format, confirm the pacing before you agree; if you only want a lighter dinner, say that early.
+
+Pace Matters More Than Speed
+
+The quieter value here is not a checklist of dishes. It is the rhythm: staff attention, table spacing, plates arriving in order, and a night that feels different from a seafood stop or market snack.
+
+Implementation notes
+page_id: city-danang-place-the-temptation
+Closest canonical example: Bale Well for ordering confidence, with restaurant voice research for a chosen-meal entry.
+Phrase/audio:
+v500-time-date-book-can-i-make-a-reservation / v500-time-date-book-can-i-make-a-reservation — mapped — “Tôi có thể đặt chỗ được không?”
+food-menu / food-menu — mapped — “Cho tôi xem thực đơn được không?”
+coffee-7 / coffee-7 — mapped — “Tính tiền giúp tôi”
+Place-name audio: city-danang-place-the-temptation is planned/no ready audio; hide until audio.
+Mentioned Here candidates: none; visible copy avoids dish claims until current menu is checked.
+Related place candidates:
+Nén Đà Nẵng — catalogId: danang-nen — render after review — subtitle: “Another planned-meal restaurant in Da Nang.”
+La Maison 1888 — catalogId: danang-la-maison-1888 — check_catalog — subtitle: “Higher-commitment refined dining comparison.”
+Freshness notes: check current open status, address, booking path, menu format, service hours, and holiday closures before import.
+Source notes: MICHELIN search source; venue source; ledger legacy copy.
+Score: 27/30 — strong meal-use frame and no unsupported dish claims; capped for current venue/menu verification.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done with no forced food cards; duplicate body pass; screenshot and production review gates not_run.
+Cầu Thuận Phước / Thuan Phuoc Bridge — Da Nang — Landmark
+Reader View
+The River Opens Here
+Cầu Thuận Phước sits where the Hàn River starts feeling coastal: long cables, a broad crossing, port edges, wind, and grey-blue light. It is better as a river-mouth view or route marker than a place to linger on foot.
+
+Useful phrase cards
+
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Dừng ở đây được rồi” — You can stop here.
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+See It From The Side First
+The bridge reads best when you can see its length, not only when you are on it. Look for a riverbank, road approach, or nearby stop where the cables, water, and north-end skyline fit in one frame.
+
+Wind Changes The Stop
+
+This is exposed coastal infrastructure, not a sheltered promenade. Wind, rain, harsh sun, or traffic can turn a quick look into a less comfortable pause, so keep the visit light unless the weather is helping.
+
+Northbound Pairings Make Sense
+
+Thuận Phước fits naturally with a northern Da Nang route: Sơn Trà, Tiên Sa, or a drive along the river mouth. Dragon Bridge is the central-night landmark; this one gives you the city opening toward the sea.
+
+Implementation notes
+page_id: city-danang-place-thuan-phuoc-bridge
+Closest canonical example: Dragon Bridge — simple landmark with one usable viewing decision.
+Phrase/audio:
+repair-5 / repair-5 — mapped — “Chỉ trên bản đồ giúp tôi được không?”
+taxi-3 / taxi-3 — mapped — “Dừng ở đây được rồi”
+sight-3 / sight-3 — mapped — “Tôi chụp hình ở đây được không?”
+Place-name audio: city-danang-place-thuan-phuoc-bridge is planned/no ready audio; hide until audio.
+Mentioned Here candidates:
+Sông Hàn / Han River — catalogId: danang-han-river — render — subtitle: “River context for the bridge.”
+Bán đảo Sơn Trà / Son Tra Peninsula — catalogId: danang-son-tra — render — subtitle: “Natural northbound pairing.”
+Cảng Tiên Sa / Tien Sa Port — catalogId: danang-tien-sa-port — render — subtitle: “Nearby port-side context.”
+Cầu Rồng / Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “Central bridge contrast.”
+Related place candidates:
+Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “Better central-night landmark comparison.”
+Han River — catalogId: danang-han-river — render — subtitle: “Broader river walk and city-view context.”
+Freshness notes: check pedestrian/photo access, traffic safety, viewing points, weather exposure, and parking/drop-off before import.
+Source notes: Da Nang Fantasticity; local map; ledger legacy copy.
+Score: 27/30 — clear river-mouth role and route pairing; capped for access/viewing-point verification.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Codex handoff block
+batch_id: batch_028
+page_ids: city-danang-place-son-tra-night-market, city-danang-place-son-tra-wildlife-drive, city-danang-place-thanh-binh-beach, city-danang-place-the-temptation, city-danang-place-thuan-phuoc-bridge
+ready_to_import: no
+chat_output_is_canonical: yes
+google_doc_url: optional_or_missing
+phrase_cards_needing_catalog_check: none for visible phrase cards; all listed visible phrase cards use ready-audio mapped IDs
+place_name_phrases: render_only_if_ready_audio_else_hide_until_audio
+visible_copy_risks: Thanh Binh evidence is sparse; The Temptation avoids dish/menu claims until current venue facts are checked; Sơn Trà wildlife wording avoids guaranteed wildlife sightings
+source_freshness_risks: Son Tra Night Market hours/stalls/seafood pricing and Dragon Bridge schedule; Son Tra road/weather/access and wildlife guidance; Thanh Binh access/beach conditions; The Temptation open status/address/menu/service hours; Thuan Phuoc viewing access/weather/traffic
+next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval
+
+---
+
+SpeakLocal v2.2 BATCH_029 - Da Nang - 2026-05-26
+Cảng Tiên Sa / Tien Sa Port — Da Nang — Port
+Reader View
+Where Da Nang Turns To Open Water
+Cảng Tiên Sa is the port name to recognize when a plan points beyond the riverfront: a ship arrival, a coastal transfer, or the Sơn Trà side of the city. Expect working water more than a stroll — gates, sea air, low hills, and the shift from street traffic to harbor rhythm.
+
+Useful phrase cards
+“Cho tôi tới đây” — Take me here
+“Điểm đón ở đâu?” — Where is the pickup point?
+“Dừng ở đây được rồi” — You can stop here
+Sections
+Arrive With The Gate, Not Just The Name
+Ports can waste time when the phone pin, gate, and pickup point do not match. Keep the Vietnamese name, booking contact, and vehicle note visible before leaving central Đà Nẵng.
+
+Working Water, Not A Promenade
+
+This is not the Hàn River walk. The feeling is more practical: harbor edges, vehicles, security points, and sea air under the Sơn Trà hills. That working-water texture is the reason the name stays useful.
+
+Keep The Next Move Close
+
+Cảng Tiên Sa makes sense when it belongs to an arrival, transfer, seafood stop, or Sơn Trà plan. For a simple water view, the Hàn River or beach side gives an easier pause.
+
+Implementation notes
+Page ID: city-danang-place-tien-sa-port
+Hero image: HeroCityDanangPlaceTienSaPort
+Place-name audio: city-danang-place-tien-sa-port · audio-authored-cang-tien-sa-00a20c3b42 · ready · render as name support, not phrase card
+Phrase/audio status:
+taxi-1 · audioId: taxi-1 · mapped
+directions-8 · audioId: directions-8 · mapped
+taxi-3 · audioId: taxi-3 · mapped
+Mentioned Here candidates:
+Sơn Trà Peninsula · catalogId: danang-son-tra · type: nature · status: render · displaySubtitle: Coastal hill-and-road context for the port side of Da Nang.
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Easier central water pause when the port is not part of the plan.
+Related place candidates:
+Hàn River · relationship: easier_water_pause · catalogId: danang-han-river · status: render
+Sơn Trà Peninsula · relationship: route_context · catalogId: danang-son-tra · status: render
+Freshness notes: Verify current port access, passenger pickup rules, gate naming, and any security restrictions before import.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row rewritten for v2.2.
+Score: 27/30 — strong practical role and restrained claims; capped for port-access freshness and sparse public-facing detail.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Đường Trần Hưng Đạo / Tran Hung Dao Street — Da Nang — Street
+Reader View
+Read The Bridges From The East Bank
+Đường Trần Hưng Đạo makes Da Nang’s river scene feel walkable. From this side, the Hàn River, Dragon Bridge, Love Bridge area, scooters, hotel fronts, and evening lights line up without asking you to turn every block into a stop.
+
+Useful phrase cards
+“Cho hỏi, đi tới đó thế nào?” — Excuse me, how do I get there?
+“Đi bộ mất bao lâu?” — How long does it take on foot?
+“Ở gần đây không?” — Is it near here?
+Sections
+Follow The River Line
+Treat the street as a line, not a checklist. Walk a manageable stretch, notice the bridge angles, then decide whether to cross, keep moving, or stop for coffee nearby.
+
+Pick Your Bridge Side
+
+Dragon Bridge looks different from each bank. Trần Hưng Đạo gives one version of the view; Bạch Đằng Street gives another. For any fire-show timing, check the schedule separately before building the evening around it.
+
+Blue Hour Gives It Shape
+
+Late afternoon into evening is when the street feels clearest: river light, scooter flow, shopfronts, and bridge lights arriving one layer at a time. Keep the route short if heat or traffic starts to wear down the walk.
+
+Implementation notes
+Page ID: city-danang-place-tran-hung-dao-street
+Hero image: HeroCityDanangPlaceTranHungDaoStreet
+Place-name audio: city-danang-place-tran-hung-dao-street · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+directions-1 · audioId: directions-1 · mapped
+directions-3 · audioId: directions-3 · mapped
+directions-2 · audioId: directions-2 · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: The waterline that organizes this side of central Da Nang.
+Dragon Bridge · catalogId: danang-dragon-bridge · type: landmark · status: render · displaySubtitle: Main bridge-view reason many travelers notice this street.
+Love Bridge · catalogId: danang-love-bridge · type: landmark · status: render · displaySubtitle: Short riverfront pause along the same east-bank area.
+Bạch Đằng Street · catalogId: danang-bach-dang-street · type: street · status: render · displaySubtitle: Opposite-bank comparison for river views and evening walking.
+Related place candidates:
+Dragon Bridge · relationship: bridge_view_pairing · catalogId: danang-dragon-bridge · status: render
+Bạch Đằng Street · relationship: opposite_bank_contrast · catalogId: danang-bach-dang-street · status: render
+Freshness notes: Verify current sidewalk access, traffic changes, and Dragon Bridge show schedule only if the page later names timing.
+Source notes: Vietnam Tourism Da Nang bridge-viewing side note; local map; legacy city-v1 row rewritten for v2.2.
+Score: 28/30 — clear street-spine behavior and natural related cards; capped for show-schedule and streetscape freshness.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Cầu Trần Thị Lý / Tran Thi Ly Bridge — Da Nang — Landmark
+Reader View
+A Quieter Bridge For The Skyline
+Cầu Trần Thị Lý gives Da Nang a calmer bridge image than the dragon side: a cable-stayed curve over the Hàn River, clean skyline, traffic in motion, and late light on the water. It is best remembered as a shape in the city, not a long stop.
+
+Useful phrase cards
+“Tôi có thể chụp ảnh ở đây được không?” — Can I take a photo here?
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Dừng ở đây được rồi” — You can stop here
+Sections
+Choose The Angle Before The Crossing
+The bridge is strongest from a river angle. Decide whether you want the silhouette, the traffic movement, or a quick crossing, then keep the visit simple.
+
+Late Light Helps The Lines
+
+The cables and skyline read better when glare drops. Pair the view with a short Hàn River walk, dinner nearby, or a slow ride past the bridge rather than stretching it into a separate outing.
+
+Different Energy Than Dragon Bridge
+
+Dragon Bridge is the event bridge. Trần Thị Lý is the city-shape bridge: cleaner, quieter, and easier to fold into a river route when you want Da Nang’s architecture without the crowd focus.
+
+Implementation notes
+Page ID: city-danang-place-tran-thi-ly-bridge
+Hero image: HeroCityDanangPlaceTranThiLyBridge
+Place-name audio: city-danang-place-tran-thi-ly-bridge · audio-authored-cau-tran-thi-ly-c3efadb5bf · ready · render as name support, not phrase card
+Phrase/audio status:
+v900-sigh-acti-can-i-take-a-photo-here · audioId: v900-sigh-acti-can-i-take-a-photo-here · mapped
+repair-5 · audioId: repair-5 · mapped
+taxi-3 · audioId: taxi-3 · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Waterline that gives the bridge its best viewing context.
+Dragon Bridge · catalogId: danang-dragon-bridge · type: landmark · status: render · displaySubtitle: Higher-energy bridge contrast for the same city river scene.
+Related place candidates:
+Hàn River · relationship: river_walk_pairing · catalogId: danang-han-river · status: render
+Dragon Bridge · relationship: bridge_contrast · catalogId: danang-dragon-bridge · status: render
+Freshness notes: Verify current viewing access, traffic or pedestrian constraints, and any nearby construction before import.
+Source notes: City library; Da Nang Fantasticity; legacy city-v1 row rewritten for v2.2.
+Score: 28/30 — specific visual role and clean comparison; capped for access/viewpoint freshness and native render proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Nhà hát Trưng Vương / Trung Vuong Theatre — Da Nang — Experience
+Reader View
+A City Night That Starts At The Doors
+Nhà hát Trưng Vương is the Da Nang name to remember when you want a stage, not another bridge. The useful image is the entry area at dusk: soft marquee glow, scooters outside, people arriving, and the beach-day city turning toward evening.
+
+Useful phrase cards
+“Vé bao nhiêu?” — How much is the ticket?
+“Nó bắt đầu lúc mấy giờ?” — What time does it start?
+“Lối vào ở đâu?” — Where is the entrance?
+Sections
+Check The Program, Then Decide
+The theatre matters most when there is a specific performance, concert, or event on the calendar. Without that, keep it as a name to recognize in the center rather than a place to tour.
+
+The Front Carries The Mood
+
+Even a short look can help the city feel less beach-only. Stage doors, evening traffic, posters, and lobby movement give Da Nang a cultural layer that a bridge photo cannot.
+
+Keep Dinner Nearby
+
+The cleanest plan is theatre plus a central dinner, coffee, or river walk. Leave room for timing changes, because show nights and event access can shift more than a normal café or market stop.
+
+Implementation notes
+Page ID: city-danang-place-trung-vuong-theatre
+Hero image: HeroCityDanangPlaceTrungVuongTheatre
+Place-name audio: city-danang-place-trung-vuong-theatre · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+sight-1 · audioId: sight-1 · mapped
+v900-time-date-book-what-time-does-it-start · audioId: v900-time-date-book-what-time-does-it-start · mapped
+v500-sigh-acti-where-is-the-entrance · audioId: v500-sigh-acti-where-is-the-entrance · mapped
+Mentioned Here candidates:
+Hàn River · catalogId: danang-han-river · type: river · status: render · displaySubtitle: Easy central walk to pair with an evening plan.
+Related place candidates:
+Nguyễn Hiển Dĩnh Tuồng Theatre · relationship: performance_venue_contrast · catalogId: danang-nguyen-hien-dinh-tuong-theatre · status: render
+Hàn River · relationship: central_evening_pairing · catalogId: danang-han-river · status: render
+Freshness notes: Verify current programming, ticketing, entrance flow, and venue access before import.
+Source notes: Da Nang Fantasticity; local map; legacy city-v1 row rewritten for v2.2.
+Score: 27/30 — good evening-use frame; capped for programming volatility and planned place-name audio.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Vincom Plaza Đà Nẵng / Vincom Plaza Da Nang — Da Nang — Market
+Reader View
+An Indoor Reset Near The River
+Vincom Plaza Đà Nẵng is the polished indoor break when heat, rain, or street movement starts to blur the day. Think storefronts, cool air, food counters, restrooms, and an easy meetup point before going back outside.
+
+Useful phrase cards
+“Tôi chỉ xem thôi” — I’m just looking
+“Trả ở đâu?” — Where do I pay?
+“Nó có ở trong trung tâm mua sắm không?” — Is it inside the mall?
+Sections
+Cool Air Changes The Pace
+A mall stop can sound ordinary until the afternoon heat or a sudden rain shower hits. This one gives the trip a controlled pause: indoor walking, simple errands, snacks, and a place to regroup.
+
+Choose A Meeting Point Before Splitting
+
+“The mall” can still be vague once everyone is inside. Pick a storefront, lobby area, or food-counter zone before separating, especially if phones are low or the group is moving at different speeds.
+
+Not A Market Replacement
+
+Vincom is smoother than Hàn or Cồn, but it will not give the same working-market read on Đà Nẵng. Keep it for errands, rain cover, snacks, or a low-friction shopping stop; go to the markets when city texture matters more.
+
+Implementation notes
+Page ID: city-danang-place-vincom-plaza
+Hero image: HeroCityDanangPlaceVincomPlaza
+Place-name audio: city-danang-place-vincom-plaza · audio planned/no key · hide_until_audio for place-name support
+Phrase/audio status:
+shop-4 · audioId: shop-4 · mapped
+shop-5 · audioId: shop-5 · mapped
+v500-dire-navi-is-it-inside-the-mall · audioId: v500-dire-navi-is-it-inside-the-mall · mapped
+Mentioned Here candidates:
+Hàn Market · catalogId: danang-han-market · type: market · status: render · displaySubtitle: Central market contrast when working texture matters.
+Cồn Market · catalogId: danang-con-market · type: market · status: render · displaySubtitle: Food-first market contrast for a more local snack route.
+Related place candidates:
+Hàn Market · relationship: market_contrast · catalogId: danang-han-market · status: render
+Cồn Market · relationship: food_market_contrast · catalogId: danang-con-market · status: render
+Freshness notes: Verify tenant mix, food-counter availability, restroom access, current hours, and any mall-renaming details before import.
+Source notes: Local map; legacy city-v1 row rewritten for v2.2. Menu Catalog read; no specific food/item render recommended from this draft.
+Score: 27/30 — clear indoor-restock role and useful market contrast; capped for tenant/hours freshness and planned place-name audio.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+batch_id: batch_029
+page_ids: city-danang-place-tien-sa-port, city-danang-place-tran-hung-dao-street, city-danang-place-tran-thi-ly-bridge, city-danang-place-trung-vuong-theatre, city-danang-place-vincom-plaza
+ready_to_import: no
+chat_output_is_canonical: yes
+google_doc_url: optional_or_missing
+phrase_cards_needing_catalog_check: none for selected visible phrase cards; all selected phrase cards are ready-audio reusable traveler-action phrases from the Native Phrase Catalog
+place_name_phrases: render_only_if_ready_audio_else_hide_until_audio; ready: Cảng Tiên Sa, Cầu Trần Thị Lý; hide_until_audio: Đường Trần Hưng Đạo, Nhà hát Trưng Vương, Vincom Plaza Đà Nẵng
+visible_copy_risks: Cảng Tiên Sa access wording may need tighter port-specific review; Trần Hưng Đạo and Trần Thị Lý depend on current viewing/access conditions; Trưng Vương depends on programming; Vincom depends on tenant and mall-access freshness
+source_freshness_risks: port gate/pickup/security rules; Dragon Bridge schedule if paired later; bridge/street construction or access changes; theatre programming/ticketing/entrance; Vincom hours, tenant mix, food counters, restroom access
+next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval
+
+---
+
+SpeakLocal v2.2 BATCH_030 - Da Nang + Hanoi - 2026-05-26
+Đường Võ Nguyên Giáp / Vo Nguyen Giap Street — Da Nang — Street
+Reader View
+The Beach Road That Gives Da Nang Shape
+Võ Nguyên Giáp is the street name to recognize before your first beach-side ride. Hotels, palms, scooters, café fronts, and long crossings line up beside Mỹ Khê, so the map starts feeling physical.
+
+Phrase cards
+"Cho tôi tới đây" — Take me here.
+"Đi bộ mất bao lâu?" — How long does it take on foot?
+"Dừng ở đây được rồi" — You can stop here.
+Practical sections
+Read It From The Beach Side
+Morning makes the street easiest to understand: beach light on one side, hotel doors and cafés on the other, scooters moving before the heat gets heavy.
+
+Cross In Deliberate Pieces
+
+Treat it like a working coastal road, not a slow promenade. Choose visible crossings, wait for a real gap, and avoid drifting into traffic while checking signs or ride-app pins.
+
+Short Stretches Beat The Whole Boulevard
+
+The name helps most when you are linking a beach hotel, a café, a seafood stop, or a ride pickup. You do not need to walk the full boulevard for it to become useful.
+
+Implementation notes
+page_id: city-danang-place-vo-nguyen-giap-street
+target_hero_image: HeroCityDanangPlaceVoNguyenGiapStreet
+Model behavior: Đồng Khởi street-spine example, adapted from historic-city walk to beach-road orientation.
+Traveler moment: first beach-side ride, then deciding where to stop and cross.
+Phrase/audio:
+phraseId: taxi-1 · audioId: taxi-1 · status: mapped
+phraseId: directions-3 · audioId: directions-3 · status: mapped
+phraseId: taxi-3 · audioId: taxi-3 · status: mapped
+Place-name audio: Đường Võ Nguyên Giáp as name/pronunciation support only; render only if ready audio exists, otherwise hide_until_audio.
+Mentioned Here candidates:
+Mỹ Khê Beach — type: beach · catalogId: danang-my-khe-beach · status: render
+displaySubtitle: Beach-side orientation point along this road.
+reason: Named naturally in the intro as the traveler’s visual edge.
+Related place candidates:
+An Thuong Area — relationship: beach_neighborhood_pairing · catalogId: danang-an-thuong-street-area · status: render
+displaySubtitle: A nearby beach-side cluster for cafés and evening walks.
+reason: Useful comparison for travelers staying near the beach edge.
+Freshness/source notes: City library; Da Nang Fantasticity; legacy city-v1 source. Street-side businesses, crossings, and pickup conditions can change; visible copy avoids hours, prices, and fixed current venue claims.
+Score: 27/30 — clear street-role draft, capped for sparse street evidence and later audio/catalog validation.
+QA notes: replaceability pass; phrase cards are reusable ready-audio actions; Mentioned Here evaluated; duplicate body pass; anti-cynicism pass; screenshot/native render not_run.
+Wonderlust / Wonderlust — Da Nang — Cafe
+Reader View
+A Bright Pause Between Heat And Dinner
+Wonderlust is a café reset: a clean counter, an iced glass, and a table where Da Nang slows down for a minute. Go when the day needs shade and caffeine, not a long agenda.
+
+Phrase cards
+"Cho tôi một cà phê sữa đá" — One iced milk coffee, please.
+"Không đường nhé" — No sugar, please.
+"Tính tiền giúp tôi" — Please let me pay.
+Practical sections
+Order Cold, Decide Sweetness Early
+Cà phê sữa đá gives you the classic sweet pull; cà phê đen đá keeps the order cleaner. If sugar or ice matters, say it before the drink is made.
+
+A Short Table Beats A Long Session
+
+The draw is the pause: bright table, iced coffee, counter, and design details. Keep it as a reset between walks, markets, beach time, or dinner.
+
+The Name Is Easy, The Pause Is The Point
+
+You do not need to translate Wonderlust. Say it slowly, show it on the map, and keep the visit simple: drink, sit, pay, move on.
+
+Implementation notes
+page_id: city-danang-place-wonderlust
+target_hero_image: HeroCityDanangPlaceWonderlust
+Model behavior: café ritual examples, especially Đinh Café and The Note Coffee, adapted from upstairs/ritual sequence to a minimalist iced-coffee pause.
+Traveler moment: stepping in from heat, ordering one cold drink, sitting briefly before the next move.
+Phrase/audio:
+phraseId: coffee-1 · audioId: coffee-1 · status: mapped
+phraseId: coffee-5 · audioId: coffee-5 · status: mapped
+phraseId: coffee-7 · audioId: coffee-7 · status: mapped
+Place-name audio: Wonderlust as name/pronunciation support only; render only if ready audio exists, otherwise hide_until_audio.
+Mentioned Here candidates:
+Cà phê sữa đá — type: drink · catalogId: drink-ca-phe-sua-da · status: render
+displaySubtitle: Vietnamese iced milk coffee for a simple café order.
+reason: Named naturally in cold-drink ordering guidance.
+Cà phê đen đá — type: drink · catalogId: drink-ca-phe-den-da · status: render
+displaySubtitle: Iced black coffee when you want less milk and sweetness.
+reason: Named as the cleaner coffee alternative.
+Related place candidates:
+43 Factory Coffee Roaster — relationship: cafe_contrast · catalogId: danang-43-factory · status: render
+displaySubtitle: A more specialty-coffee Da Nang café comparison.
+reason: Useful nearby-category contrast for café planning.
+Cộng Cà Phê Bạch Đằng — relationship: cafe_route_pairing · catalogId: danang-cong-caphe-bach-dang · status: render
+displaySubtitle: A central café stop that pairs better with river walking.
+reason: Helps Codex offer a different café mood if catalog linking fits.
+Freshness/source notes: Local cafe source; legacy city-v1 source. Verify current hours, address, menu, and operating status before import. Visible copy avoids exact menu breadth and current service claims.
+Score: 28/30 — focused café moment with mapped ready-audio phrases, capped for current venue verification.
+QA notes: replaceability pass; phrase cards are reusable ready-audio actions; drink catalog mentions evaluated; duplicate body pass; anti-cynicism pass; screenshot/native render not_run.
+Yên Retreat / Yen Retreat — Da Nang — Nature
+Reader View
+A Quiet Edge Past The Traffic
+Yên Retreat gives Da Nang a softer outdoor scene: lawn, river, simple tents, mountains, and room to hear the day slow down. Go for the air and space, with weather and the ride back already in mind.
+
+Phrase cards
+"Hôm nay trời có mưa không?" — Will it rain today?
+"Cho tôi tới đây" — Take me here.
+"Bạn có thể giúp tôi quay lại khách sạn được không?" — Can you help me get back to my hotel?
+Practical sections
+Rain Changes The Plan
+The same riverside lawn can feel calm in soft weather and messy after heavy rain. Check the sky before you commit, especially if the point is sitting outside.
+
+Keep The Visit Uncrowded
+
+This is stronger as a simple pause than a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before the rest feels forced.
+
+Confirm The Return Before You Relax
+
+Once you are away from the dense beach-and-bridge loop, transport matters. Show the place on your phone, agree on pickup or return, and keep a little margin before dark.
+
+Implementation notes
+page_id: city-danang-place-yen-retreat
+target_hero_image: HeroCityDanangPlaceYenRetreat
+Model behavior: Lập An Lagoon and Bạch Mã condition-setting examples, scaled down for a lighter riverside venue.
+Traveler moment: leaving traffic for an outdoor pause, then making weather and return transport practical.
+Phrase/audio:
+phraseId: v500-soci-smal-talk-will-it-rain-today · audioId: v500-soci-smal-talk-will-it-rain-today · status: mapped
+phraseId: taxi-1 · audioId: taxi-1 · status: mapped
+phraseId: v500-dire-navi-can-you-help-me-get-back-to-my-hotel · audioId: v500-dire-navi-can-you-help-me-get-back-to-my-hotel · status: mapped
+Place-name audio: Yên Retreat as name/pronunciation support only; render only if ready audio exists, otherwise hide_until_audio.
+Mentioned Here candidates:
+None recommended. Visible copy intentionally avoids naming a specific river or route without stronger source confirmation.
+Related place candidates:
+Mỹ Khê Beach — relationship: outdoor_mood_contrast · catalogId: danang-my-khe-beach · status: render
+displaySubtitle: The easier beach-side outdoor mood before choosing a greener edge.
+reason: Useful contrast between beach-side Da Nang and a quieter nature pause.
+Võ Nguyên Giáp Street — relationship: route_contrast · catalogId: danang-vo-nguyen-giap-street · status: render
+displaySubtitle: The beach-road rhythm to compare against this quieter stop.
+reason: Helps route planning from beach-side stays without overclaiming distance.
+Freshness/source notes: Local venue source; legacy city-v1 source. Verify current access, booking/entry expectations, hours, weather exposure, and transport practicality. Visible copy avoids fixed operations.
+Score: 27/30 — calm, useful nature-page draft, capped for venue freshness and sparse operational evidence.
+QA notes: replaceability pass; phrase cards are reusable ready-audio actions; Mentioned Here intentionally limited; duplicate body pass; anti-cynicism pass; screenshot/native render not_run.
+Quận Ba Đình / Ba Dinh District — Hanoi — Neighborhood
+Reader View
+Broad Avenues, Then Smaller Hanoi
+Ba Đình is easiest when you do not treat it as one long walk. The formal center around Ba Đình Square or the Mausoleum area gives you bearings; cafés, hotel corners, small shops, and quieter edges bring the district back to street level.
+
+Phrase cards
+"Tôi có thể đi bộ tới đó được không?" — Can I walk there?
+"Đi bộ mất bao lâu?" — How long does it take on foot?
+"Bạn có thể giúp tôi quay lại khách sạn được không?" — Can you help me get back to my hotel?
+Practical sections
+Formal Blocks Need More Time
+The roads and public spaces can feel broader than the tight-lane version of Hanoi. Leave extra minutes for crossings, fences, heat, and the parts that are not pleasant to rush.
+
+One Civic Stop, One Softer Edge
+
+Pair Ba Đình Square or the Mausoleum area with Hanoi Botanical Garden, Trúc Bạch, or a café street nearby. That keeps the district human instead of all ceremony.
+
+Evening Walks Feel Different
+
+After formal sightseeing, Ba Đình can settle into hotel lobbies, small shops, and quieter café light. It is still Hanoi, just less compressed than the tight central lanes.
+
+Implementation notes
+page_id: city-hanoi-place-ba-dinh-district
+target_hero_image: HeroCityHanoiPlaceBaDinhDistrict
+Model behavior: broad-neighborhood examples from Chợ Lớn and Quận 3, adapted to Hanoi’s formal public-space district.
+Traveler moment: choosing one formal stop, then using smaller edges so the district does not become vague.
+Phrase/audio:
+phraseId: v500-dire-navi-can-i-walk-there · audioId: v500-dire-navi-can-i-walk-there · status: mapped
+phraseId: directions-3 · audioId: directions-3 · status: mapped
+phraseId: v500-dire-navi-can-you-help-me-get-back-to-my-hotel · audioId: v500-dire-navi-can-you-help-me-get-back-to-my-hotel · status: mapped
+Place-name audio: Quận Ba Đình as name/pronunciation support only; render only if ready audio exists, otherwise hide_until_audio.
+Mentioned Here candidates:
+Ba Đình Square — type: landmark · catalogId: hanoi-ba-dinh-square · status: render
+displaySubtitle: The formal civic center inside the district.
+reason: Named naturally in the intro and route guidance.
+Ho Chi Minh Mausoleum — type: landmark · catalogId: hanoi-ho-chi-minh-mausoleum · status: render
+displaySubtitle: The official-area stop many travelers pair with Ba Đình.
+reason: Named as the Mausoleum area, not as a current-hours claim.
+Hanoi Botanical Garden — type: park · catalogId: hanoi-botanical-garden · status: render
+displaySubtitle: A softer green edge near the formal core.
+reason: Named in the civic-stop plus softer-edge section.
+Truc Bach Lake — type: nature · catalogId: hanoi-truc-bach-lake · status: render
+displaySubtitle: A quieter water-side edge for a lighter Ba Đình route.
+reason: Named as a route-softening option.
+Related place candidates:
+Ba Đình Square — relationship: civic_center_inside_district · catalogId: hanoi-ba-dinh-square · status: render
+displaySubtitle: The clearest formal stop inside Ba Đình.
+reason: Strong route pairing and direct district relation.
+Freshness/source notes: Hanoi tourism portal; legacy city-v1 source. Verify official-area access, current venue hours, garden/lake conditions, and any pedestrian restrictions before import.
+Score: 27/30 — strong broad-neighborhood behavior, capped for official-area freshness and later render proof.
+QA notes: replaceability pass; phrase cards are reusable ready-audio actions; Mentioned Here evaluated; duplicate body pass; anti-cynicism pass; screenshot/native render not_run.
+Quảng trường Ba Đình / Ba Dinh Square — Hanoi — Landmark
+Reader View
+Arrive Ready For Quiet Scale
+Ba Đình Square is Hanoi in a formal register: broad pavement, red flags, official façades, and a quieter sense of national memory. Give it a slower pace than a market or café street.
+
+Phrase cards
+"Tôi chụp hình ở đây được không?" — Can I take photos here?
+"Tôi có thể đi bộ tới đó được không?" — Can I walk there?
+"Dừng ở đây được rồi" — You can stop here.
+Practical sections
+Open Space Changes The Visit
+There is less to browse here and more to read from distance: flags, geometry, buildings, and the way people move through the square. The restraint can stay with you because it makes Hanoi feel like a capital, not only a set of old streets.
+
+Morning Light Does The Work
+
+Morning is the cleanest image if weather cooperates: flags sharper, pavement brighter, and the civic mood easier to understand before the day turns hot.
+
+Pair It Carefully
+
+Ba Đình Square fits naturally with the Mausoleum area or One Pillar Pagoda, but those nearby stops have their own rules and timing. Keep the square itself simple: look, orient, photograph only where it is allowed.
+
+Implementation notes
+page_id: city-hanoi-place-ba-dinh-square
+target_hero_image: HeroCityHanoiPlaceBaDinhSquare
+Model behavior: Dragon Bridge simple-landmark decision, adapted from where-to-stand logistics to formal-space pacing and photo restraint.
+Traveler moment: arriving at a broad civic square and slowing down enough to read it properly.
+Phrase/audio:
+phraseId: sight-3 · audioId: sight-3 · status: mapped
+phraseId: v500-dire-navi-can-i-walk-there · audioId: v500-dire-navi-can-i-walk-there · status: mapped
+phraseId: taxi-3 · audioId: taxi-3 · status: mapped
+Place-name audio: Quảng trường Ba Đình as name/pronunciation support only; render only if ready audio exists, otherwise hide_until_audio.
+Mentioned Here candidates:
+Ho Chi Minh Mausoleum — type: landmark · catalogId: hanoi-ho-chi-minh-mausoleum · status: render
+displaySubtitle: The official nearby stop often paired with the square.
+reason: Named as the Mausoleum area in pairing guidance.
+One Pillar Pagoda — type: landmark · catalogId: hanoi-one-pillar-pagoda · status: render
+displaySubtitle: A compact nearby stop after the square.
+reason: Named naturally in nearby pairing guidance.
+Ba Đình District — type: neighborhood · catalogId: hanoi-ba-dinh-district · status: render
+displaySubtitle: The broader district around the square.
+reason: Parent-area relationship for route context.
+Related place candidates:
+Ba Đình District — relationship: broader_area · catalogId: hanoi-ba-dinh-district · status: render
+displaySubtitle: Use the square as the formal center, then read the district around it.
+reason: Direct route/context relation for travelers planning the area.
+Freshness/source notes: Hanoi tourism portal; legacy city-v1 source. Verify access, photo expectations, official-area restrictions, ceremony timing, and nearby stop hours before import. Visible copy avoids fixed schedules and prices.
+Score: 28/30 — clear landmark pacing and low-risk visible copy, capped for official-area freshness and later audio/catalog validation.
+QA notes: replaceability pass; phrase cards are reusable ready-audio actions; Mentioned Here evaluated; duplicate body pass; anti-cynicism pass; screenshot/native render not_run.
+## Codex handoff block
+
+- `batch_id: batch_030`
+- `page_ids: city-danang-place-vo-nguyen-giap-street, city-danang-place-wonderlust, city-danang-place-yen-retreat, city-hanoi-place-ba-dinh-district, city-hanoi-place-ba-dinh-square`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none for visible phrase cards; all selected phrase cards use ready-audio reusable rows listed in each entry`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: sparse source depth for street and small-venue pages; official-area pages require careful access/photo wording; no hours, prices, or fixed current operations are shown`
+- `source_freshness_risks: Wonderlust hours/menu/status; Yên Retreat access/booking/weather/transport; Võ Nguyên Giáp street-side business and crossing conditions; Ba Đình official-area access, photo expectations, ceremony timing, and nearby stop hours`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_031 - Hanoi - 2026-05-26
+Bánh cuốn ở Hà Nội / Steamed rice rolls — Hanoi — dish
+Reader View
+Breakfast Before The City Speeds Up
+Bánh cuốn is one of Hanoi’s gentler morning plates: thin steamed rice sheets, pork-and-mushroom filling, fried shallot, herbs, and fish-sauce dip. It is best while the rolls are still soft and the shop is moving quickly.
+
+Useful phrase cards
+
+Cho tôi một phần — One portion, please.
+Không cay nhé — Not spicy, please.
+Tính tiền giúp tôi — Please let me pay.
+Steam Sets The Clock
+Eat soon after the plate lands. The rice sheets are delicate, and the texture is the point: soft, warm, a little slippery, with crunch from fried shallot and herbs on the side.
+
+Sauce In Small Spoonfuls
+
+The dip brings the plate together, but do not flood it at once. Spoon a little over the rolls, taste, then add more. If chili is on the table, add it slowly.
+
+A Quick Table, Then Back Out
+
+This is a small-meal rhythm, not a long brunch. A plate of bánh cuốn can give the morning a real Hanoi shape before coffee, a market walk, or the next Old Quarter errand.
+
+Implementation notes
+page_id: city-hanoi-place-banh-cuon
+target_hero_image: HeroCityHanoiPlaceBanhCuon
+Anchor: Cà phê Giảng / White Rose behavior — one focused order, small ritual, no broad food essay.
+Phrase/audio:
+food-1 / food-1 — mapped ready audio.
+food-3 / food-3 — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-banh-cuon planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Bánh cuốn — food-banh-cuon — render.
+Chả lụa — food-cha-lua — render if the card system supports side-item mentions from this copy/source context.
+Related place candidates: none.
+Freshness notes: no current shop, hour, price, or queue claim in visible copy.
+Source notes: MICHELIN Hanoi guide row; Menu Catalog row for bánh cuốn.
+Score: 28/30 — strong focused dish draft; capped for no rendered screenshot proof and pre-import source freshness check.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Hồ Bảy Mẫu / Bay Mau Lake — Hanoi — nature
+Reader View
+Water Inside The Park
+Hồ Bảy Mẫu gives Hanoi a softer middle: water, trees, walking edges, and the everyday park rhythm around Công viên Thống Nhất. Do not make it grand. Let it be a pause between streets.
+
+Useful phrase cards
+
+Lối vào ở đâu? — Where is the entrance?
+Nhà vệ sinh ở đâu? — Where is the bathroom?
+Đi bộ mất bao lâu? — How long does it take on foot?
+Walk The Edge First
+Give the lake one slow edge before deciding whether to sit, keep walking, or leave. The first lap tells you where the shade is, where people are lingering, and whether the park has the calm you wanted.
+
+Shade Is The Better View
+
+This is more about air and trees than a dramatic photo. In Hanoi heat or traffic noise, a shaded bench near water can do more for the day than another crowded stop.
+
+Pair It With Thống Nhất Park
+
+The lake makes the most sense when the park is already part of the plan. Come for a reset, a short walk, or a quieter hour before returning to denser streets.
+
+Implementation notes
+page_id: city-hanoi-place-bay-mau-lake
+target_hero_image: HeroCityHanoiPlaceBayMauLake
+Anchor: Lập An Lagoon / Vọng Cảnh Hill behavior — restrained nature copy, condition-aware, short-stop framing.
+Phrase/audio:
+v500-sigh-acti-where-is-the-entrance / v500-sigh-acti-where-is-the-entrance — mapped ready audio.
+bath-1 / bath-1 — mapped ready audio.
+directions-3 / directions-3 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bay-mau-lake planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Công viên Thống Nhất / Thong Nhat Park — hanoi-thong-nhat-park — render.
+Related place candidates:
+Hanoi Botanical Garden — hanoi-botanical-garden — render/check after same-batch target is approved.
+Freshness notes: source evidence is thin; keep pedal boats, current facilities, rules, and hours out of visible copy until checked.
+Source notes: place-name only row plus catalog neighbor Thong Nhat Park.
+Score: 27/30 — useful and restrained; capped for sparse source evidence and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bia hơi Hà Nội / Fresh beer — Hanoi — drink
+Reader View
+Sit Low, Keep It Light
+Bia hơi is Hanoi at stool height: small tables, quick pours, shared snacks, and a cold glass between one walk and the next. The drink is simple; the sidewalk pause is the memory.
+
+Useful phrase cards
+
+Bạn có bia không? — Do you have beer?
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Tính tiền giúp tôi — Please let me pay.
+Read The Corner Before Sitting
+Walk past once before choosing a table. Look for a corner that feels active but not frantic, with people actually drinking and eating rather than only calling from the curb.
+
+Snacks Carry The Pause
+
+The beer makes more sense with something small on the table. Keep the order simple, share what arrives, and let the glass be part of the street rhythm rather than the whole evening.
+
+One Glass Can Be Enough
+
+Bia hơi is light, but it is still alcohol. A single cold glass can give you the scene without dragging the day sideways.
+
+Implementation notes
+page_id: city-hanoi-place-bia-hoi
+target_hero_image: HeroCityHanoiPlaceBiaHoi
+Anchor: Bùi Viện / Hàn Market behavior — look first, sit later; social street energy without hype.
+Phrase/audio:
+v900-food-drin-do-you-have-beer / v900-food-drin-do-you-have-beer — mapped ready audio.
+food-menu / food-menu — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bia-hoi planned audio; name/pronunciation support only, hide until audio.
+Menu/catalog item:
+Bia hơi — drink-bia-hoi — render.
+Mentioned Here candidates:
+Bia hơi — drink-bia-hoi — render.
+Related place candidates: none.
+Freshness notes: no price, exact street, operating hour, or venue claim in visible copy.
+Source notes: Vietnam Travel Hanoi row; Menu Catalog row for bia hơi.
+Score: 28/30 — clear traveler behavior and tone; capped for source freshness and no screenshot proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Vườn Bách Thảo Hà Nội / Hanoi Botanical Garden — Hanoi — park
+Reader View
+Green Space Beside The Formal City
+Vườn Bách Thảo sits on Hanoi’s Ba Đình side, where broad streets and monument stops can make the city feel formal. The garden gives the day a quieter counterweight: trees, paths, benches, and local families taking the air.
+
+Useful phrase cards
+
+Lối vào ở đâu? — Where is the entrance?
+Nhà vệ sinh ở đâu? — Where is the bathroom?
+Tôi có thể đi bộ tới đó được không? — Can I walk there?
+Choose Shade Over Checklist
+There is no need to turn the garden into a task. Find shade, slow down, and let the paths do the work after heavier sightseeing.
+
+A Pause Between Bigger Stops
+
+The garden fits best between Ba Đình-area stops, when the day needs open air but not another formal visit. It can be a short walk, a bench break, or a reset before the next ride.
+
+Late Afternoon Softens It
+
+The garden’s best mood is ordinary: children moving through the paths, people sitting under trees, light dropping through leaves. Go for that, not for a headline moment.
+
+Implementation notes
+page_id: city-hanoi-place-botanical-garden
+target_hero_image: HeroCityHanoiPlaceBotanicalGarden
+Anchor: Vọng Cảnh Hill / Da Nang Fine Arts Museum behavior — calm stop with a clear route role, not inflated.
+Phrase/audio:
+v500-sigh-acti-where-is-the-entrance / v500-sigh-acti-where-is-the-entrance — mapped ready audio.
+bath-1 / bath-1 — mapped ready audio.
+v500-dire-navi-can-i-walk-there / v500-dire-navi-can-i-walk-there — mapped ready audio.
+Place-name phrase: city-hanoi-place-botanical-garden planned audio; name/pronunciation support only, hide until audio.
+Mentioned Here candidates:
+Ba Dinh District / Quận Ba Đình — hanoi-ba-dinh-district — render.
+Related place candidates:
+Bay Mau Lake — hanoi-bay-mau-lake — render/check after same-batch target is approved.
+Ba Dinh Square — hanoi-ba-dinh-square — check_catalog if “Ba Đình-area stops” should surface as a card.
+Freshness notes: current entrance, hours, ticketing, facilities, and garden rules need check before import.
+Source notes: Hanoi tourism portal row; City Places Catalog neighbor rows.
+Score: 28/30 — calm, place-specific, low-risk visible copy; capped for freshness and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bún chả Hương Liên / Bun Cha Huong Lien — Hanoi — restaurant
+Reader View
+The Bowl Sets The Pace
+Hương Liên is a good place to let bún chả become a real Hanoi meal, not just a name on a list. The table is direct: grilled pork in warm dipping broth, vermicelli, herbs, and a few small choices about chili, portions, and add-ons.
+
+Useful phrase cards
+
+Cho tôi một phần — One portion, please.
+Cho tôi xem thực đơn được không? — Can I see the menu?
+Tính tiền giúp tôi — Please let me pay.
+Build The Bite Slowly
+Do not dump everything together at once. Dip some noodles, add herbs, take a piece of pork, and learn the balance before changing the bowl.
+
+Check Add-Ons Before The Table Fills
+
+If extras are offered, slow the order down long enough to understand what is coming. The main move is still bún chả first; add more only if the table and appetite make sense.
+
+Fame Should Stay Smaller Than Lunch
+
+The name may carry noise, but the meal does not need to. Sit, order clearly, eat while the pork and broth are warm, then move back into the city.
+
+Implementation notes
+page_id: city-hanoi-place-bun-cha-huong-lien
+target_hero_image: HeroCityHanoiPlaceBunChaHuongLien
+Anchor: Bale Well / White Rose behavior — ordering confidence around one known dish and a specific table rhythm.
+Phrase/audio:
+food-1 / food-1 — mapped ready audio.
+food-menu / food-menu — mapped ready audio.
+coffee-7 / coffee-7 — mapped ready audio.
+Place-name phrase: city-hanoi-place-bun-cha-huong-lien / audio-authored-bun-cha-huong-lien-7123b3d369 ready; pronunciation/name support by default, not visible phrase card.
+Hidden/planned action phrases:
+ves-order-bun-cha-portion planned audio; do not render until ready.
+city-hanoi-go-bun-cha-huong-lien, city-hanoi-where-bun-cha-huong-lien, and related taxi/location phrases planned; hide until audio.
+Menu/catalog item:
+Bún chả — food-bun-cha — render.
+Mentioned Here candidates:
+Bún chả — food-bun-cha — render.
+Related place candidates:
+Bún chả ở Hà Nội — hanoi-bun-cha — render/check as related dish page if the app supports dish-to-restaurant pairing.
+Freshness notes: current menu, add-ons, hours, closure/holiday status, and MICHELIN listing freshness need check before import.
+Source notes: MICHELIN Hanoi guide row; Menu Catalog row for bún chả.
+Score: 28/30 — specific meal behavior with ready reusable phrases; capped for current venue facts and no rendered proof.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_031`
+- `page_ids: city-hanoi-place-banh-cuon, city-hanoi-place-bay-mau-lake, city-hanoi-place-bia-hoi, city-hanoi-place-botanical-garden, city-hanoi-place-bun-cha-huong-lien`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none for visible ready-audio cards; hidden/planned phrases include city-hanoi-place-banh-cuon, city-hanoi-place-bay-mau-lake, city-hanoi-place-bia-hoi, city-hanoi-place-botanical-garden, ves-order-bun-cha-portion, city-hanoi-go-bun-cha-huong-lien, city-hanoi-where-bun-cha-huong-lien`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: Bay Mau Lake source evidence is sparse; bia hoi and Bun Cha Huong Lien should avoid price/hour/current-service claims; Botanical Garden entrance/facility claims kept out of visible copy`
+- `source_freshness_risks: MICHELIN Hanoi guide, Vietnam Travel Hanoi, Hanoi tourism portal, restaurant menu/status, park entrance/facilities, and lake/park activity details need pre-import freshness checks`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`
+
+---
+
+SpeakLocal v2.2 BATCH_032 - Hanoi - 2026-05-26
+Bún Chả Ta / Bun Cha Ta — Hanoi — Restaurant
+Reader View
+A Small Table For The Hanoi Classic
+Bun Cha Ta is easiest when you sit down for one thing: grilled pork, cool vermicelli, herbs, and a dipping bowl that slows the meal down. The pleasure is not a long menu. It is smoke, sauce, and fresh greens meeting at a casual Hanoi table.
+
+Useful phrase cards
+Cho tôi một phần — One portion, please.
+Cho thêm rau — More herbs, please.
+Tính tiền giúp tôi — The bill, please.
+Practical sections
+Build The Bite Slowly
+Start with pork and broth, then add noodles and herbs once you know the balance. The bowl should move between sweet, smoky, sharp, and cool.
+
+Casual, Not Careless
+
+The room can feel quick, but the meal rewards a little patience. Ask for the menu if you need a beat, then let the table rhythm carry the rest.
+
+The Bowl Carries The Meal
+
+The dipping bowl is not sauce on the side; it is where the grilled pork, pickles, herbs, and noodles turn into bún chả.
+
+Implementation notes
+Phrase/audio IDs: food-1 / food-1; food-4 / food-4; coffee-7 / coffee-7; all visible cards mapped to ready audio.
+Hidden/planned phrase: ves-order-bun-cha-portion has no ready audio; keep hidden until audio exists.
+Mentioned Here candidates: Bún chả — food-bun-cha · status: render · display subtitle: “Grilled pork, vermicelli, herbs, and dipping broth.”
+Related place candidates: none.
+Freshness notes: confirm current venue status, hours, address/branch details, holiday closures, and current menu before import.
+Source notes: MICHELIN Hanoi guide; legacy Hanoi row; Menu Catalog food-bun-cha.
+Score: 28/30 — strong table moment and concrete dish behavior; capped for venue freshness and native/phrase QA.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Bún thang ở Hà Nội / Bun thang — Hanoi — Dish
+Reader View
+A Quiet Bowl Between Bigger Meals
+Bún thang is the Hanoi bowl for when you want detail instead of heat: clear broth, thin rice noodles, shredded chicken, egg ribbons, herbs, and careful toppings. It is delicate, but not plain.
+
+Useful phrase cards
+Cho tôi tô này — I’ll take this bowl.
+Cho tôi muỗng với đũa — A spoon and chopsticks, please.
+Tính tiền giúp tôi — The bill, please.
+Practical sections
+Look For The Layers
+A good bowl reads in thin strips and shreds, not one heavy topping. Notice the egg, chicken, herbs, and broth before adding anything extra.
+
+Gentle Does Not Mean Simple
+
+Bún thang can include pork sausage, egg, and dried-shrimp flavor. If you avoid pork, egg, or shellfish, ask before ordering rather than assuming it is only chicken soup.
+
+Keep It A Lighter Meal
+
+This is a good reset between grilled meats, coffee stops, and market snacks. The bowl gives you steam and Hanoi detail without turning lunch into a project.
+
+Implementation notes
+Phrase/audio IDs: food-2 / food-2; food-6 / food-6; coffee-7 / coffee-7; all visible cards mapped to ready audio.
+Hidden/planned phrase: Menu Catalog quick-say line “Cho tôi một tô bún thang” is text-only; keep hidden until audio exists.
+Mentioned Here candidates: Bún thang — food-bun-thang · status: render · display subtitle: “Hanoi chicken, egg, and pork noodle soup.”
+Related place candidates: none.
+Freshness notes: shop recipes vary; verify any named venue, hours, menu, and allergen-sensitive details before import.
+Source notes: Hanoi tourism portal; legacy Hanoi row; Menu Catalog food-bun-thang.
+Score: 28/30 — clear food moment, restrained claims, and useful ingredient caution; capped for recipe variation and native/phrase QA.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Cà phê sữa đá ở Hà Nội / Iced milk coffee — Hanoi — Drink
+Reader View
+A Cold Pause With A Slow Stir
+Cà phê sữa đá is less about chasing a famous café than learning Hanoi’s coffee pause: strong coffee, condensed milk, ice, and a few minutes at a small table while the city keeps moving.
+
+Useful phrase cards
+Cho tôi một cà phê sữa đá — One iced milk coffee, please.
+Ít đá thôi — Just a little ice.
+Mang đi — To go.
+Practical sections
+Wait Before You Stir
+The glass often arrives with coffee, milk, and ice still separate. Give it a moment, then stir until the condensed milk softens the coffee instead of burying it.
+
+Sweetness Is Part Of The Order
+
+Condensed milk is built in. If you want the sharper version, ask for cà phê đen đá another time instead of trying to turn this glass into black coffee.
+
+Small Tables Are The Point
+
+This is a short pause, not a laptop session. A low stool, a clinking glass, and a few minutes of shade can be enough.
+
+Implementation notes
+Phrase/audio IDs: coffee-1 / coffee-1; coffee-4 / coffee-4; coffee-6 / coffee-6; all visible cards mapped to ready audio.
+Mentioned Here candidates: Cà phê sữa đá — drink-ca-phe-sua-da · status: render · display subtitle: “Vietnamese iced milk coffee with condensed milk.” Cà phê đen đá — drink-ca-phe-den-da · status: render · display subtitle: “Vietnamese iced black coffee.”
+Related place candidates: none.
+Freshness notes: café-specific sweetness, ice, cup style, and takeaway norms vary; avoid rendering venue-specific claims without late check.
+Source notes: Vietnam Travel Hanoi; legacy Hanoi row; Menu Catalog drink-ca-phe-sua-da and drink-ca-phe-den-da.
+Score: 29/30 — strong ritual, ready-audio exact order phrase, and clean drink contrast; capped for native/phrase QA and café-level variation.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here pass; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Chả cá ở Hà Nội / Turmeric dill fish — Hanoi — Dish
+Reader View
+A Hot Pan Sets The Pace
+Chả cá is Hanoi’s turmeric-and-dill fish meal, built at the table with hot fish, scallions, noodles, herbs, peanuts, and sauce. It feels more like a small ritual than a simple seafood order.
+
+Useful phrase cards
+Cho tôi một phần — One portion, please.
+Cho thêm rau — More herbs, please.
+Tính tiền giúp tôi — The bill, please.
+Practical sections
+Watch What Goes In First
+The hot fish and dill lead. Noodles, herbs, peanuts, and sauce come in around them, so build one bite before mixing the whole plate.
+
+Check The Strong Sauce
+
+Some versions come with a sharper fermented shrimp-paste dip; others feel milder. Smell first, add slowly, and keep a little fish plain if you are unsure.
+
+Better Shared Than Rushed
+
+Chả cá has table motion: pan, herbs, noodles, sauce, repeat. Two people make that rhythm easier, but a careful solo order can still give you a clear Hanoi food memory.
+
+Implementation notes
+Phrase/audio IDs: food-1 / food-1; food-4 / food-4; coffee-7 / coffee-7; all visible cards mapped to ready audio.
+Hidden/planned phrase: Menu Catalog quick-say line for food-cha-ca-la-vong is text-only; keep hidden until audio exists.
+Mentioned Here candidates: Chả cá — possible catalog mapping to food-cha-ca-la-vong · status: check_catalog · display subtitle: “Hanoi-style turmeric fish with dill.”
+Related place candidates: Cha Ca Thang Long — hanoi-cha-ca-thang-long · relationship: restaurant_example · status: render · display subtitle: “A restaurant page for the hot-pan chả cá meal.”
+Freshness notes: sauce defaults, portion sizing, peanuts, and restaurant service style vary; check current venue and menu details before import.
+Source notes: Vietnam Travel Hanoi; MICHELIN Hanoi guide; legacy Hanoi row; Menu Catalog food-cha-ca-la-vong.
+Score: 28/30 — strong table-action copy and ingredient caution; capped for catalog mapping mismatch between generic chả cá and food-cha-ca-la-vong, plus native/phrase QA.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here needs catalog QA; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Chả cá Thăng Long / Cha Ca Thang Long — Hanoi — Restaurant
+Reader View
+One Dish, A Lot Of Table Motion
+Cha Ca Thang Long makes sense when you want dinner to move in front of you: turmeric fish in a hot pan, dill and scallion hitting the heat, noodles, herbs, peanuts, and sauce passing around the table.
+
+Useful phrase cards
+Cho tôi bàn cho hai người nhé — A table for two, please.
+Cho tôi một phần — One portion, please.
+Tính tiền giúp tôi — The bill, please.
+Practical sections
+The House Rhythm Comes First
+The meal is about one specialty, not a broad-menu browse. Let the pan arrive, watch how the herbs go in, then build the first bite before adjusting sauce.
+
+Sauce Comes With A Decision
+
+The stronger dip can take over quickly. Taste before mixing it into everything, especially if fermented shrimp paste is new to you.
+
+Keep The Pan Central
+
+Do not crowd the meal with too many side decisions. The heat, dill, fish, noodles, and herbs are already enough to make the table feel busy in the right way.
+
+Implementation notes
+Phrase/audio IDs: food-need-table / food-need-table; food-1 / food-1; coffee-7 / coffee-7; all visible cards mapped to ready audio.
+Hidden/planned phrase: place-specific or dish-specific order line should stay hidden unless a ready-audio row exists.
+Mentioned Here candidates: Chả cá — possible catalog mapping to food-cha-ca-la-vong · status: check_catalog · display subtitle: “Hanoi-style turmeric fish with dill.”
+Related place candidates: Turmeric dill fish — hanoi-cha-ca · relationship: dish_context · status: render · display subtitle: “The dish page behind the hot-pan restaurant meal.”
+Freshness notes: confirm current venue status, hours, address/branch details, menu/service format, holiday closures, and sauce defaults before import.
+Source notes: MICHELIN Hanoi guide; legacy Hanoi row; City Places Catalog hanoi-cha-ca-thang-long; Menu Catalog food-cha-ca-la-vong.
+Score: 28/30 — clear restaurant behavior and table rhythm; capped for current venue freshness, catalog mapping, and native/phrase QA.
+QA notes: replaceability pass; phrase cards pass; Mentioned Here needs catalog QA; duplicate body pass; anti-cynicism pass; screenshot review not_run; production review gate not_run.
+Codex handoff block
+- `batch_id: batch_032`
+- `page_ids: city-hanoi-place-bun-cha-ta, city-hanoi-place-bun-thang, city-hanoi-place-ca-phe-sua-da, city-hanoi-place-cha-ca, city-hanoi-place-cha-ca-thang-long`
+- `ready_to_import: no`
+- `chat_output_is_canonical: yes`
+- `google_doc_url: optional_or_missing`
+- `phrase_cards_needing_catalog_check: none for visible ready-audio cards; keep dish-specific text-only/planned order lines hidden until audio exists`
+- `place_name_phrases: render_only_if_ready_audio_else_hide_until_audio`
+- `visible_copy_risks: chả cá generic dish mapping should be checked against Menu Catalog item food-cha-ca-la-vong; sauce/allergen wording needs native and catalog QA`
+- `source_freshness_risks: current restaurant hours/status/branch details, holiday closures, venue menus, sauce defaults, portion defaults, and cafe-specific sweetness/ice norms require late check`
+- `next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval`

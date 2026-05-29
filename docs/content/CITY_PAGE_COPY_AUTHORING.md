@@ -1,14 +1,26 @@
 # City Page Copy Authoring
 
-Status: active editorial standard for Vietnam city and place pages
+Status: active research and voice standard for Vietnam city and place pages
 
 Companion voice research: `docs/content/CITY_PLACE_VOICE_RESEARCH.md`
+
+Current app-detail contract: `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`
+
+## Current App-Detail Contract
+
+City/place app-detail work must route through `speaklocal.place.app-detail.v2.2`. This document owns the research and voice standard; the current source/render contract lives in `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md` and its V2.2 playbook, canonical examples, generation prompt, implementation audit prompt, and schema proposal.
+
+Do not treat old city-v1, mobile-first/expanded-detail prose, fixed section IDs, or city-library section authoring as the current city/place page model. New city/place pages should be authored as app-detail experiences with an intro, playable useful phrase cards, practical sections, Mentioned Here candidates, related place candidates, and internal verification flags.
+
+Legacy city-library copy can be research input or runtime projection, but it is not current approval authority. Production approval requires a first-class v2.2 app-detail source object plus the current voice, source, render, and production review gates.
 
 ## Product Aim
 
 City pages should make a curious pre-trip visitor feel that Vietnam is specific, vivid, and worth exploring before they arrive. The page should not sound like a phrasebook explaining how to use a name, and it should not sound like copy poured into the same section mold as every other place.
 
 Write the page so the reader can picture why this place exists in the trip. If the same paragraph could be reused for another cafe, restaurant, market, museum, bridge, street, or neighborhood, it is not ready.
+
+Voice adequacy is a review gate, not a rewrite layer. The visible page must prove a concrete scene, a truthful why-here, and a useful first move in story-rich human copy, without sounding like a database row, process note, schema checklist, validator receipt, or internal QA log.
 
 ## Research First
 

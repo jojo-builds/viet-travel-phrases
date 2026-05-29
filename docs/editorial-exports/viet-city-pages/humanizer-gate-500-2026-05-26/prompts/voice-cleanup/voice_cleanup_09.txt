@@ -1,0 +1,603 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_09",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_09",
+  "chunks": [
+    {
+      "chunkFile": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hue-place-an-hien-garden-house",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hue-place-ancient-hue-gallery-cuisine",
+          "message": "generic non-playable quick-say title: Venue Name At The Door"
+        },
+        {
+          "id": "city-hue-place-ba-van-banh-loc",
+          "message": "generic non-playable quick-say title: Dish Name First"
+        },
+        {
+          "id": "city-hue-place-banh-beo",
+          "message": "generic non-playable quick-say title: Dish Name On Menus"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 14x: generic name-card heading"
+        },
+        {
+          "id": "001-025",
+          "message": "non-playable quick-say name-card pattern appears 4x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-an-hien-garden-house",
+          "summary": "An Hien Garden House is a quiet Hue pause where a gate, old trees, tiled roof, and garden-house path make domestic heritage feel close.",
+          "context": "The garden house shows Hue through old architecture, shaded paths, local pride, and the slower river-city memory carried by private homes.",
+          "tip": "Nhà vườn An Hiên is the name to recognize; picture the gate, trees, tiled roof, and calm path as one small arrival sequence.",
+          "rationale": "An Hien gives Hue a gentler heritage stop, where the point is not scale but the way house, garden, and memory sit together.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A House, Then A Garden",
+              "body": "An Hien is not a monument that announces itself loudly. The pleasure is the approach: gate, trees, tiled roof, and a slower walk into the garden-house world."
+            },
+            {
+              "id": "place-brief",
+              "title": "Domestic Hue, Not Palace Hue",
+              "body": "The stop gives a smaller kind of heritage than tombs or palaces. Architecture, shade, and family memory carry more weight than spectacle."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Listen for Nhà vườn An Hiên. It points to a garden house, so the Vietnamese name already tells you the kind of place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Pause Between Bigger Stops",
+              "body": "Place it between larger sights when the day needs quiet, trees, and a room-scale version of Hue's old-house culture."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Slow Feet, Better Read",
+              "body": "The visit lands better when you walk slowly enough to notice the gate, roofline, path, and shade before looking for a big moment."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Scale Is The Point",
+              "body": "Do not expect palace drama. The value is in proportion, old trees, and the feeling of a lived-in Hue house."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+          "summary": "Ancient Hue Gallery Cuisine suits a meal that feels folded into the Hue day: refined room, court-style plating, dark timber, and a slower table.",
+          "context": "The restaurant story here is about a chosen evening meal, with staff rhythm, drinks, table setting, and Hue dishes treated as part of the itinerary.",
+          "tip": "The English venue name is the practical name to say slowly; connect it with the dining room rather than searching for a separate local label.",
+          "rationale": "Ancient Hue Gallery Cuisine gives Hue a polished food stop when the meal itself should carry some memory, not just solve hunger.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal With A Room Around It",
+              "body": "Ancient Hue Gallery Cuisine is for a table that feels deliberate. The refined room, court-style plating, and dark timber make the meal part of the Hue plan."
+            },
+            {
+              "id": "place-brief",
+              "title": "Polished, Not Casual Snacking",
+              "body": "Expect a more composed dining rhythm than a quick bowl stop. Read the menu, settle in, and let the room slow the evening."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name At The Door",
+              "body": "Ancient Hue Gallery Cuisine usually stays as the venue name. Say it clearly and match it to the restaurant entrance or reservation note."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Heritage Day",
+              "body": "The restaurant fits after palace, tomb, or river time, when a meal can echo Hue's court-food reputation without turning into a lecture."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Table, Fewer Plans",
+              "body": "Give the meal space in the evening. It will feel crowded if squeezed between too many late stops."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details Matter",
+              "body": "Current dishes can change, so treat the menu in front of you as the source. The durable point is the formal Hue dining setting."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ba-van-banh-loc",
+          "summary": "Ba Van Banh Loc is a focused Hue dumpling stop, good for banana-leaf parcels, a simple counter moment, and one small order instead of a big meal.",
+          "context": "The shop gives Hue's food story a concrete bite through bánh lọc, table rhythm, dipping sauce, and the quick decision of how much to order.",
+          "tip": "Bánh lọc Bà Vân is the name to listen for; it helps you connect the shop to the dumpling, not just to a street address.",
+          "rationale": "Ba Van Banh Loc keeps the food stop small and specific, with banana-leaf parcels doing more for memory than a long menu would.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Dumpling Stop, Not Dinner",
+              "body": "Ba Van Banh Loc is strongest as a focused bite. Think bánh lọc, banana-leaf parcels, dipping sauce, and a counter decision rather than a full restaurant evening."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Order First",
+              "body": "A small portion lets you read the texture and sauce before committing. The shop feels easier when the first order stays modest."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name First",
+              "body": "Say Bánh lọc Bà Vân when asking for the place. The dish name is the useful reference point, especially near a dumpling counter."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Larger Meals",
+              "body": "This fits well between sightseeing and a later dinner, when one Hue snack is more useful than another heavy stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Texture Over Variety",
+              "body": "The point is the glossy dumpling and the parcel, not a broad menu. One clear dish can carry the stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Sets The Bite",
+              "body": "Taste before adding more sauce or chili. Hue snacks can feel small, but the balance is often in the dipping bowl."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-banh-beo",
+          "summary": "Banh beo is a small-saucer Hue dish to know before arrival: soft rice cakes, shrimp topping, scallion oil, sauce, and a table that fills quickly.",
+          "context": "The dish gives Hue's food story a gentle start through steam, texture, sauce, herbs, and the ritual of eating several little saucers.",
+          "tip": "Bánh bèo ở Huế is the useful phrase to recognize on a menu or food counter; the saucers make the name easier to remember.",
+          "rationale": "Banh beo brings Hue into focus through small, soft, sauce-driven bites that feel local without needing a complicated first order.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Saucers, Clear First Bite",
+              "body": "Banh beo is an easy Hue food stop because the portion is already small. The rhythm is saucer, topping, sauce, repeat."
+            },
+            {
+              "id": "place-brief",
+              "title": "Soft Texture, Bright Sauce",
+              "body": "Expect steamed rice cakes with shrimp topping, scallion oil, and dipping sauce. The dish is gentle until the sauce makes it sharper."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name On Menus",
+              "body": "Say Bánh bèo ở Huế when you need the Hue version. The name helps most when you are looking at small ceramic saucers."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snack Table Energy",
+              "body": "It fits a light food stop before a larger meal, especially when you want texture and sauce rather than a heavy bowl."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Many Small Pieces",
+              "body": "The dish feels natural when shared or ordered with other small Hue snacks. Do not expect one saucer to explain the whole meal."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Changes Everything",
+              "body": "Taste the first piece before adding more sauce or chili. The rice cake is mild; the topping and sauce carry the memory."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chunkFile": "hue_026_050_humanized.json",
+      "cityID": "hue",
+      "range": "026-050",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hue-place-de-po-cafe",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-diem-phung-thi-art-center",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hue-place-dien-tho-palace",
+          "message": "generic non-playable quick-say title: Local Name On Signs"
+        },
+        {
+          "id": "city-hue-place-duyet-thi-duong-theater",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-kodo-cafe",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hue-place-lagoon-seafood-boat",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-lang-thang-coffee",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hue-place-le-ba-dang-art-center",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 4x: local tomb name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-de-po-cafe",
+          "summary": "De Po Cafe is an upstairs pause above Hue market life: coffee, a balcony view over the aisles, and a cooler beat before stepping back into the city.",
+          "context": "The stop belongs to a market day, not a long cafe session: order, look over the aisles, then reset before heat or another walk.",
+          "tip": "A short visit makes sense; the balcony and iced coffee do the work without turning the cafe into the whole afternoon.",
+          "rationale": "It gives Hue's cafe rhythm a physical scene: upstairs air, glass coffee, market movement below, and a pause between errands or sightseeing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Upstairs Market Pause",
+              "body": "De Po Cafe makes the market feel quieter for a few minutes. Coffee, ice, balcony air, and movement below are the reason to stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Balcony Before Heat",
+              "body": "The scene is simple: an upstairs cafe, a glass on the table, market aisles below, and enough distance from the rush to choose your next move."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name Stays Simple",
+              "body": "De Po Cafe usually stays in English. The name is enough for a map or driver; the clearer memory is the balcony above the market."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Market-Day Pairing",
+              "body": "It fits before or after market browsing, especially when heat, bags, or noise make a short seated reset feel smarter than another lap."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Pause Logic",
+              "body": "This is not a long work cafe. The clean version is coffee, a view, and a small reset before the street pulls you back."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Scene Over Menu",
+              "body": "Menu details can change, so keep the expectation broad: coffee, a market-side view, and a quieter upstairs beat."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-diem-phung-thi-art-center",
+          "summary": "Diem Phung Thi Art Center gives Hue a quieter indoor layer: sculpture, white gallery rooms, warm daylight, and a pause from streets that can feel monument-heavy.",
+          "context": "It serves as a calm art stop when tombs, citadel walls, and river walks have filled the day with larger history.",
+          "tip": "The Vietnamese name, Trung tâm Nghệ thuật Điềm Phùng Thị, helps when reading signs or asking around town.",
+          "rationale": "The center adds scale to Hue's culture: not royal architecture, but rooms, objects, light, and one artist's memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Art Pause",
+              "body": "The draw is sculpture, gallery light, and a smaller cultural stop between the city's heavier monuments. It gives the day an indoor breath without needing a museum marathon."
+            },
+            {
+              "id": "place-brief",
+              "title": "White Rooms, Small Scale",
+              "body": "Expect quiet gallery rooms, white walls, warm daylight, and display cases. The stop is about close looking more than covering a long route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Trung tâm Nghệ thuật Điềm Phùng Thị is the Vietnamese name. It is useful for signs, taxis, and matching the art center to a local map."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Indoor Reset",
+              "body": "It fits well after a sunny walk or before another outdoor stop. The rooms give context without competing with Hue's larger royal sites."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Visit Is Enough",
+              "body": "The center can be strongest as a focused stop: a few rooms, one quiet look at the work, then back into the river-city day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Artist Before Landmark",
+              "body": "The narrower frame is artist-centered rather than a general Hue museum. That keeps the visit from feeling vague."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-dien-tho-palace",
+          "summary": "Dien Tho Palace gives the Imperial City a domestic scale: yellow walls, old tiles, garden trees, and courtyards where royal history feels lived-in rather than distant.",
+          "context": "Inside the citadel circuit, it helps balance grand gates with residence space, shade, and a slower courtyard rhythm.",
+          "tip": "Cung Diên Thọ is the name on local signs; it points to the palace residence rather than a separate modern attraction.",
+          "rationale": "It turns Hue history into walls, thresholds, tiled roofs, and garden pauses inside the royal enclosure.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Palace With Residence Scale",
+              "body": "Dien Tho Palace is less about spectacle than proportion. Courtyards, old walls, trees, and tiled roofs make the royal city feel more human-sized."
+            },
+            {
+              "id": "place-brief",
+              "title": "Courtyard Before Ceremony",
+              "body": "Expect yellow walls, old tiles, garden trees, stone paths, and quiet thresholds. It is a good counterpoint to larger ceremonial spaces nearby."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name On Signs",
+              "body": "Cung Diên Thọ is the Vietnamese name to recognize. Saying the full phrase helps separate this palace residence from the wider Imperial City."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Citadel Route Fit",
+              "body": "It belongs inside a slower Citadel route, especially after grand gates or halls. The shift from public ceremony to residence is the point."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Shade And Scale",
+              "body": "A slower pace helps the walls, tiles, trees, and courtyards stand out. The palace is easier to appreciate beyond headline buildings."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Residence Memory",
+              "body": "The name carries residence history, so it should not feel like a standalone monument. The quieter royal-life layer is the reason to linger."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-duyet-thi-duong-theater",
+          "summary": "Duyet Thi Duong Royal Theater brings performance into Hue's palace world: lacquered beams, a stage, low warm light, and cultural memory beyond static monuments.",
+          "context": "Inside the royal-city frame, it adds music, masks, stage light, and theater doors to the usual gates-and-courtyard rhythm.",
+          "tip": "Duyệt Thị Đường is the local name to recognize; keep current performance details separate because schedules can change.",
+          "rationale": "The theater gives Hue a living-culture angle, where architecture and performance memory sit inside the imperial setting.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Stage Inside Royal Hue",
+              "body": "Duyet Thi Duong Royal Theater is the palace world with a performance layer: stage, lacquered beams, low light, music, masks, and memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lacquer, Stage, Low Light",
+              "body": "Expect an interior rather than another courtyard walk. The draw is how the room frames royal performance culture inside the Citadel setting."
+            },
+            {
+              "id": "quick-say",
+              "title": "Theater Name",
+              "body": "Duyệt Thị Đường is the Vietnamese name. It is the phrase to match on signs, maps, or performance references."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Beyond Static Monuments",
+              "body": "It fits a day that already includes gates and halls, adding a cultural note that feels less like architecture-only sightseeing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Schedule Stays Flexible",
+              "body": "Performance times, access, and programming should be verified close to the visit. The durable reason is the theater space itself."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Room Before Show",
+              "body": "Even before any performance, the room matters: stage light, wood, lacquer, and the sense that culture here was made to be heard."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-kodo-cafe",
+          "summary": "KODO Cafe gives Hue's cafe rhythm a contemporary garden pause: greenery, light wood, calm seating, coffee, and a reset between hotter outdoor stops.",
+          "context": "It belongs to the softer cafe side of Hue, where design, shade, iced drinks, and a short rest matter more than sightseeing.",
+          "tip": "KODO Cafe usually stays in English. The name acts as a venue label, while the garden-style setting explains the stop.",
+          "rationale": "The cafe brings modern design into Hue's slower rhythm through greenery, wood, coffee counters, and a quiet pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Garden-Style Reset",
+              "body": "KODO Cafe is a contemporary pause rather than a heritage stop. Greenery, light wood, coffee, and calm seating make the break feel intentional."
+            },
+            {
+              "id": "place-brief",
+              "title": "Greenery And Light Wood",
+              "body": "Expect a modern garden-cafe scene with soft design details, iced drinks, and room to cool down between outdoor plans."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "KODO Cafe usually stays in English. The name should be enough for maps, drivers, or meeting a friend there."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Hot Stops",
+              "body": "It fits between market browsing, river walks, or heritage sites when the day needs shade, a drink, and a quieter table."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Reset, Clear Role",
+              "body": "The cafe does not need to become a long session. Its role is a clean pause before the next Hue move."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Design Over Tradition",
+              "body": "This is a modern cafe scene, not an old-house nostalgia stop. That difference keeps it from blending into other Hue coffee breaks."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-lagoon-seafood-boat",
+          "summary": "A lagoon seafood boat turns Hue's water edge into a working meal scene: small wooden boat, seafood raft, nets, bowls, and late light.",
+          "context": "This is more than transport: water light, boarding point, seafood setting, and the slower rhythm around Tam Giang-style lagoon life.",
+          "tip": "Thuyền hải sản phá Tam Giang names a Tam Giang lagoon seafood boat; confirm the exact pier, route, weather, and return before going.",
+          "rationale": "It gives Hue a water-based memory through boats, rafts, nets, bowls, and a meal close to the lagoon.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Meal On Working Water",
+              "body": "Lagoon seafood boat is about water and food together: a small boat, seafood raft, nets, bowls, and late light over the lagoon."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boat, Raft, Nets",
+              "body": "Expect a practical water setting rather than a polished cruise. Boarding points, weather, and the seafood setup shape the experience."
+            },
+            {
+              "id": "quick-say",
+              "title": "Boat Phrase",
+              "body": "Thuyền hải sản phá Tam Giang names a Tam Giang lagoon seafood boat. It is useful when asking about the experience, not a fixed operator name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lagoon Route Pairing",
+              "body": "It fits a Tam Giang or coastal-lagoon plan when there is enough time for transfer, boarding, eating, and return."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pier Details Matter",
+              "body": "Exact pier, boat length, seafood availability, and weather can change. Those details need a close-to-the-day check close to the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not Just A Ride",
+              "body": "The memorable part is the working-water setting: boat, raft, nets, bowls, and the feeling of eating close to the lagoon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-lang-thang-coffee",
+          "summary": "Lang Thang Coffee gives Kim Long a garden-cafe pause: trees, low tables, iced coffee, a quiet lane outside, and a slower beat between Hue stops.",
+          "context": "It sits in Hue's cafe rhythm, where the room, lane, shade, and coffee matter as much as the drink itself.",
+          "tip": "Lang Thang Coffee usually stays in English. The name is enough; Kim Long and the garden setting do the orientation work.",
+          "rationale": "The cafe makes a softer Hue moment: trees, low tables, quiet lane, iced glasses, and time between larger sights.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Garden Pause In Kim Long",
+              "body": "Lang Thang Coffee is a softer stop: trees, low tables, a quiet lane outside, and coffee that slows the route down."
+            },
+            {
+              "id": "place-brief",
+              "title": "Low Tables, Quiet Lane",
+              "body": "Expect an open garden-cafe scene rather than a central street rush. The Kim Long setting gives the pause much of its character."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Lang Thang Coffee usually stays in English. Pairing the name with Kim Long helps drivers or friends place it more clearly."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Garden-House Walk",
+              "body": "It fits a Kim Long wander, a river-side route, or any day that needs shade and a quiet table before returning to bigger sights."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pause, Then Move On",
+              "body": "A short drink can be enough. The lane, the trees, and the reset matter more than a long cafe agenda."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Location Carries The Mood",
+              "body": "The cafe and Kim Long context work together. Without the quieter neighborhood, the stop would feel much less specific."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-le-ba-dang-art-center",
+          "summary": "Le Ba Dang Art Center gives Hue another quiet indoor layer: gallery light, posters, street trees outside, and rooms that shift the day away from monuments.",
+          "context": "It serves as a compact cultural stop near the river-city flow, with art, memory, display rooms, and a calmer pace.",
+          "tip": "Trung tâm Nghệ thuật Lê Bá Đảng is the Vietnamese name to recognize on signs, maps, or local directions.",
+          "rationale": "The center adds an artist-focused Hue stop through gallery rooms, quiet light, display cases, and a short indoor reset.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Art-Center Pause",
+              "body": "Le Ba Dang Art Center gives Hue a quieter cultural stop: gallery rooms, posters, street trees outside, and light that slows the day down."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gallery Light Near The Street",
+              "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, quiet light, and outdoor heat relief carry the stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Trung tâm Nghệ thuật Lê Bá Đảng is the Vietnamese name. It helps when matching the art center to signs or local directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Indoor Culture Stop",
+              "body": "It fits after a river walk or before another outdoor site, especially when the day needs art and air-conditioning more than another monument."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short And Focused",
+              "body": "The stop is strongest with a narrow frame: a few rooms, one artist's world, and enough time to look rather than skim."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Artist-Centered Context",
+              "body": "This is not a general Hue history museum. The draw is an artist-focused layer that makes the city feel less one-note."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

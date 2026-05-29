@@ -1,0 +1,1123 @@
+Batch ID: hue_001_025_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+Hue-specific repair brief: remove legacy formula copy such as "works best," "not memorized as an abstract label," "local name is easier to remember," "alongside citadel-side Hue," and list-stuffed clauses. Use concrete Hue moments: arriving by train, standing at a tomb gate, market heat, ordering chè, crossing to a lagoon, finding the right boat, or using a quiet cafe pause.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hue",
+  "range": "001-025",
+  "entries": [
+    {
+      "pageID": "city-hue-place-an-cuu-market",
+      "summary": "An Cuu Market is worth browsing because it shows Hue through stalls, snacks, goods, color, and everyday buying rhythm. Expect Hue market entry area with fresh herbs, scooters, and everyday shoppers.",
+      "context": "For An Cuu Market, Hue's market story comes through snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue.",
+      "tip": "Chợ An Cựu sits inside the scene around An Cuu Market: bags, local shopping movement, market aisles, and produce colors, alongside citadel-side Hue.",
+      "rationale": "An Cuu Market brings Hue into focus through snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "An Cuu Market is worth browsing because it shows everyday Hue: bags, local shopping movement, market aisles, and produce colors, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At An Cuu Market, you get everyday shopping, snacks, gifts, bargaining, and local rhythm: Hue market entry area with fresh herbs, scooters, and everyday shoppers, with market aisles, produce colors, snack counters, and bargaining rhythm, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ An Cựu for An Cuu Market. The local name is easier to remember once it sits beside local shopping movement, market aisles, produce colors, and snack counters, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: bargaining rhythm, bags, local shopping movement, and market aisles, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "An Cuu Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue market entry area with fresh herbs, scooters, and everyday shoppers with bargaining rhythm, bags, local shopping movement, and market aisles, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chợ An Cựu feels less abstract when it sits beside snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue and the scene of An Cuu Market."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-an-dinh-palace",
+      "summary": "An Dinh Palace is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect yellow colonial-era palace facade with Hue garden and soft daylight.",
+      "context": "For An Dinh Palace, Hue's heritage landmark story comes through courtyards, stone paths, tiled roofs, and ceremonial space, alongside citadel-side Hue.",
+      "tip": "Cung An Định belongs beside old walls, gates, courtyards, and stone paths, alongside citadel-side Hue around An Dinh Palace.",
+      "rationale": "An Dinh Palace brings Hue into focus through tiled roofs, ceremonial space, old walls, and gates, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "An Dinh Palace is worth visiting because it makes history physical: courtyards, stone paths, tiled roofs, and ceremonial space, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At An Dinh Palace, you get history made physical in architecture, ceremony, and place memory: yellow colonial-era palace facade with Hue garden and soft daylight, with tiled roofs, ceremonial space, old walls, and gates, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cung An Định for An Dinh Palace. The local name is easier to remember once it sits beside ceremonial space, old walls, gates, and courtyards, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: stone paths, tiled roofs, ceremonial space, and old walls, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "An Dinh Palace works best when the name is tied to the reason for going, not memorized as an abstract label. Picture yellow colonial-era palace facade with Hue garden and soft daylight with stone paths, tiled roofs, ceremonial space, and old walls, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cung An Định feels like something heard in Hue, with Yellow colonial-era palace facade with Hue garden and soft daylight around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-an-hien-garden-house",
+      "summary": "An Hien Garden House is worth knowing in Hue because it brings architecture, views, local pride, and history in visual form into the trip. Expect Hue garden-house gate with old trees, tiled roof, and quiet path.",
+      "context": "For An Hien Garden House, Hue's landmark story comes through landmark memory, architecture, views, and local pride, alongside Hue river-city memory.",
+      "tip": "An Hien Garden House feels clearer with views, local pride, history, and city light, alongside Hue river-city memory around it.",
+      "rationale": "An Hien Garden House brings Hue into focus through views, local pride, history, and city light, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "An Hien Garden House is worth knowing because it gives Hue a specific landmark scene: history, city light, landmark memory, and architecture, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At An Hien Garden House, you get architecture, views, local pride, and history in visual form: Hue garden-house gate with old trees, tiled roof, and quiet path, with landmark memory, architecture, views, and local pride, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà vườn An Hiên for An Hien Garden House. The local name is easier to remember once it sits beside architecture, views, local pride, and history, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if An Hien Garden House gives your itinerary a clearer image: city light, landmark memory, architecture, and views, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "An Hien Garden House works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue garden-house gate with old trees, tiled roof, and quiet path with architecture, views, local pride, and history, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of An Hien Garden House feels more present when Nhà vườn An Hiên has history, city light, landmark memory, and architecture, alongside Hue river-city memory around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+      "summary": "Ancient Hue Gallery Cuisine is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect refined Hue dining room with court-style plating, dark timber, and subtle royal motifs.",
+      "context": "For Ancient Hue Gallery Cuisine, Hue's restaurant story comes through staff rhythm, drinks, evening meal energy, and tables, alongside Hue river-city memory.",
+      "tip": "Hue feels more specific when Ancient Hue Gallery Cuisine is tied to evening meal energy, tables, house dishes, and menu details, alongside Hue river-city memory.",
+      "rationale": "Ancient Hue Gallery Cuisine brings Hue into focus through evening meal energy, tables, house dishes, and menu details, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ancient Hue Gallery Cuisine is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ancient Hue Gallery Cuisine, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: refined Hue dining room with court-style plating, dark timber, and subtle royal motifs, with staff rhythm, drinks, evening meal energy, and tables, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Ancient Hue Gallery Cuisine usually stays as the venue name. Say it slowly and connect it to the scene around it: drinks, evening meal energy, tables, and house dishes, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ancient Hue Gallery Cuisine works best when the name is tied to the reason for going, not memorized as an abstract label. Picture refined Hue dining room with court-style plating, dark timber, and subtle royal motifs with tables, house dishes, menu details, and staff rhythm, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ancient Hue Gallery Cuisine lands better when the visitor already imagines house dishes, menu details, staff rhythm, and drinks, alongside Hue river-city memory around Ancient Hue Gallery Cuisine."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ancient-hue-restaurant",
+      "summary": "Ancient Hue Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Hue garden restaurant with ruong-house timber, lanterns, and set table.",
+      "context": "For Ancient Hue Restaurant, Hue's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside imperial Hue.",
+      "tip": "Ancient Hue Restaurant carries staff rhythm, drinks, evening meal energy, and tables, alongside imperial Hue into the travel plan.",
+      "rationale": "Ancient Hue Restaurant brings Hue into focus through evening meal energy, tables, house dishes, and menu details, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ancient Hue Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ancient Hue Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Hue garden restaurant with ruong-house timber, lanterns, and set table, with staff rhythm, drinks, evening meal energy, and tables, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Ancient Hue Restaurant usually stays as the venue name. Say it slowly and connect it to the scene around it: drinks, evening meal energy, tables, and house dishes, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: menu details, staff rhythm, drinks, and evening meal energy, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ancient Hue Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue garden restaurant with ruong-house timber, lanterns, and set table with menu details, staff rhythm, drinks, and evening meal energy, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The Vietnamese name for Ancient Hue Restaurant and the scene reinforce each other through evening meal energy, tables, house dishes, and menu details, alongside imperial Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ancient-space-restaurant",
+      "summary": "Ancient Space Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect ruong-house restaurant compound with tiled roof, garden path, and Hue meal setting.",
+      "context": "For Ancient Space Restaurant, Hue's restaurant story comes through evening meal energy, tables, house dishes, and menu details, alongside royal-city memory.",
+      "tip": "Không gian xưa feels tied to Ancient Space Restaurant through staff rhythm, drinks, evening meal energy, and tables, alongside royal-city memory.",
+      "rationale": "Ancient Space Restaurant brings Hue into focus through evening meal energy, tables, house dishes, and menu details, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ancient Space Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with house dishes, menu details, staff rhythm, and drinks, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ancient Space Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: ruong-house restaurant compound with tiled roof, garden path, and Hue meal setting, with evening meal energy, tables, house dishes, and menu details, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Không gian xưa for Ancient Space Restaurant. The local name is easier to remember once it sits beside tables, house dishes, menu details, and staff rhythm, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: drinks, evening meal energy, tables, and house dishes, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ancient Space Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture ruong-house restaurant compound with tiled roof, garden path, and Hue meal setting with tables, house dishes, menu details, and staff rhythm, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Không gian xưa carries the visual details around it: evening meal energy, tables, house dishes, and menu details, alongside royal-city memory, plus the local setting of Ruong-house restaurant compound with tiled roof, garden path, and Hue meal setting."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ba-van-banh-loc",
+      "summary": "Ba Van Banh Loc is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect small Hue dumpling shop counter with banana-leaf parcels and a clear shopfront.",
+      "context": "For Ba Van Banh Loc, Hue's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside citadel-side Hue.",
+      "tip": "Ba Van Banh Loc becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside citadel-side Hue.",
+      "rationale": "Ba Van Banh Loc brings Hue into focus through tables, house dishes, menu details, and staff rhythm, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ba Van Banh Loc is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ba Van Banh Loc, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: small Hue dumpling shop counter with banana-leaf parcels and a clear shopfront, with drinks, evening meal energy, tables, and house dishes, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh lọc Bà Vân for Ba Van Banh Loc. The local name is easier to remember once it sits beside staff rhythm, drinks, evening meal energy, and tables, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: house dishes, menu details, staff rhythm, and drinks, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ba Van Banh Loc works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small Hue dumpling shop counter with banana-leaf parcels and a clear shopfront with evening meal energy, tables, house dishes, and menu details, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh lọc Bà Vân keeps its setting close: Small Hue dumpling shop counter with banana-leaf parcels and a clear shopfront, surrounded by tables, house dishes, menu details, and staff rhythm, alongside citadel-side Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bach-ma-national-park",
+      "summary": "A cooler mountain day between Hue and Da Nang, with forest roads, wet steps, viewpoints, Five Lakes, Do Quyen Waterfall, and weather that can reshape the plan.",
+      "context": "A full nature day between Hue and Da Nang where weather, shoes, route choice, and return timing matter more than a long checklist.",
+      "tip": "Choose the viewpoint, Five Lakes, or waterfall before adding anything else; rain or fog can make the forest the better plan.",
+      "rationale": "The park gives central Vietnam a cooler mountain day with forest, water, and walking, away from city museums and roadside viewpoints.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Let The Weather Set The Day",
+          "body": "Bach Ma is a real nature day, not a quick viewpoint. Cooler air, forest roads, wet steps, viewpoints, Five Lakes, and Do Quyen Waterfall can make the trip feel far from the city, but weather decides how much of the mountain you actually get."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "sight-2",
+            "sight-5",
+            "store-1"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Pick One Main Goal",
+          "body": "Choose the viewpoint, Five Lakes, or the waterfall before adding anything else. The park feels better when the day has one center instead of a rushed list."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Shoes Matter More Than Ambition",
+          "body": "Wet stone, roots, and steps can slow everything down. If the mountain has had rain, grip matters more than looking ready for photos."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Confirm The Ride Back Early",
+          "body": "The park sits outside the easy city rhythm. Make the return plan before the walk takes over the afternoon."
+        },
+        {
+          "id": "good-to-know",
+          "title": "If The View Disappears",
+          "body": "Cloud can shrink the view without ruining the day. If the lookout disappears, let the forest and water carry the visit instead."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hue-place-banh-beo",
+      "summary": "Banh beo is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect tray of small ceramic saucers of bánh bèo with shrimp topping and scallion oil.",
+      "context": "For Banh beo, Hue's food story comes through flavor, herbs, sauce, and steam, alongside royal-city memory.",
+      "tip": "Bánh bèo ở Huế sits inside the scene around Banh beo: texture, small meal rituals, flavor, and herbs, alongside royal-city memory.",
+      "rationale": "Banh beo brings Hue into focus through sauce, steam, texture, and small meal rituals, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh beo is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with flavor, herbs, sauce, and steam, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh beo, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: tray of small ceramic saucers of bánh bèo with shrimp topping and scallion oil, with texture, small meal rituals, flavor, and herbs, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh bèo ở Huế for Banh beo. The local name is easier to remember once it sits beside steam, texture, small meal rituals, and flavor, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: herbs, sauce, steam, and texture, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh beo works best when the name is tied to the reason for going, not memorized as an abstract label. Picture tray of small ceramic saucers of bánh bèo with shrimp topping and scallion oil with herbs, sauce, steam, and texture, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh bèo ở Huế fits naturally with flavor, herbs, sauce, and steam, alongside royal-city memory around Banh beo."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-banh-bot-loc",
+      "summary": "Banh bot loc is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect glossy bánh bột lọc dumplings in banana leaf with shrimp visible and dipping sauce.",
+      "context": "For Banh bot loc, Hue's food story comes through sauce, steam, texture, and small meal rituals, alongside Perfume River calm.",
+      "tip": "Sauce, steam, texture, and small meal rituals, alongside Perfume River calm make Bánh bột lọc ở Huế feel connected to a real stop.",
+      "rationale": "Banh bot loc brings Hue into focus through texture, small meal rituals, flavor, and herbs, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh bot loc is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with sauce, steam, texture, and small meal rituals, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh bot loc, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: glossy bánh bột lọc dumplings in banana leaf with shrimp visible and dipping sauce, with sauce, steam, texture, and small meal rituals, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh bột lọc ở Huế for Banh bot loc. The local name is easier to remember once it sits beside herbs, sauce, steam, and texture, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh bot loc works best when the name is tied to the reason for going, not memorized as an abstract label. Picture glossy bánh bột lọc dumplings in banana leaf with shrimp visible and dipping sauce with small meal rituals, flavor, herbs, and sauce, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh bột lọc ở Huế belongs in the same image as sauce, steam, texture, and small meal rituals, alongside Perfume River calm, with Banh bot loc rooted in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-banh-khoai",
+      "summary": "Banh khoai is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect crisp yellow Hue bánh khoái with herbs, fig, starfruit, and dipping sauce.",
+      "context": "For Banh khoai, Hue's food story comes through flavor, herbs, sauce, and steam, alongside Hue river-city memory.",
+      "tip": "Banh khoai becomes more specific beside texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.",
+      "rationale": "Banh khoai brings Hue into focus through sauce, steam, texture, and small meal rituals, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh khoai is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh khoai, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: crisp yellow Hue bánh khoái with herbs, fig, starfruit, and dipping sauce, with flavor, herbs, sauce, and steam, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh khoái ở Huế for Banh khoai. The local name is easier to remember once it sits beside herbs, sauce, steam, and texture, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh khoai works best when the name is tied to the reason for going, not memorized as an abstract label. Picture crisp yellow Hue bánh khoái with herbs, fig, starfruit, and dipping sauce with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh khoái ở Huế points to Banh khoai's scene through sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-banh-nam",
+      "summary": "Banh nam is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect opened banana-leaf bánh nậm with shrimp topping, fish sauce bowl, Hue table.",
+      "context": "For Banh nam, Hue's food story comes through flavor, herbs, sauce, and steam, alongside Hue river-city memory.",
+      "tip": "Banh nam becomes more specific beside texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.",
+      "rationale": "Banh nam brings Hue into focus through texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Banh nam is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with flavor, herbs, sauce, and steam, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Banh nam, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: opened banana-leaf bánh nậm with shrimp topping, fish sauce bowl, Hue table, with sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bánh nậm ở Huế for Banh nam. The local name is easier to remember once it sits beside small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: steam, texture, small meal rituals, and flavor, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Banh nam works best when the name is tied to the reason for going, not memorized as an abstract label. Picture opened banana-leaf bánh nậm with shrimp topping, fish sauce bowl, Hue table with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bánh nậm ở Huế belongs to Opened banana-leaf bánh nậm with shrimp topping, fish sauce bowl, Hue table, especially the surrounding sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bao-quoc-pagoda",
+      "summary": "Bao Quoc Pagoda is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect old pagoda gate with lanterns, stone steps, and mature shade trees.",
+      "context": "For Bao Quoc Pagoda, Hue's sacred place story comes through tiled roofs, temple gates, shade, and respectful pauses, alongside citadel-side Hue.",
+      "tip": "Chùa Báo Quốc sits inside the scene around Bao Quoc Pagoda: shade, respectful pauses, incense, and courtyards, alongside citadel-side Hue.",
+      "rationale": "Bao Quoc Pagoda brings Hue into focus through incense, courtyards, tiled roofs, and temple gates, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bao Quoc Pagoda is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: incense, courtyards, tiled roofs, and temple gates, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bao Quoc Pagoda, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: old pagoda gate with lanterns, stone steps, and mature shade trees, with incense, courtyards, tiled roofs, and temple gates, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Báo Quốc for Bao Quoc Pagoda. The local name is easier to remember once it sits beside temple gates, shade, respectful pauses, and incense, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: courtyards, tiled roofs, temple gates, and shade, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bao Quoc Pagoda works best when the name is tied to the reason for going, not memorized as an abstract label. Picture old pagoda gate with lanterns, stone steps, and mature shade trees with temple gates, shade, respectful pauses, and incense, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chùa Báo Quốc carries the visual details around it: incense, courtyards, tiled roofs, and temple gates, alongside citadel-side Hue, plus the local setting of Old pagoda gate with lanterns, stone steps, and mature shade trees."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bao-vinh-ancient-town",
+      "summary": "Bao Vinh Ancient Town is worth recognizing because neighborhoods turn Hue from landmarks into lived-in areas. Expect narrow old street with weathered shopfronts, bicycle, and muted Hue colors.",
+      "context": "For Bao Vinh Ancient Town, Hue's neighborhood story comes through cafes, lanes, small shops, and hotel edges, alongside royal-city memory.",
+      "tip": "Phố cổ Bao Vinh sits inside the scene around Bao Vinh Ancient Town: evening walks, neighborhood identity, cafes, and lanes, alongside royal-city memory.",
+      "rationale": "Bao Vinh Ancient Town brings Hue into focus through small shops, hotel edges, evening walks, and neighborhood identity, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bao Vinh Ancient Town is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: small shops, hotel edges, evening walks, and neighborhood identity, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bao Vinh Ancient Town, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: narrow old street with weathered shopfronts, bicycle, and muted Hue colors, with evening walks, neighborhood identity, cafes, and lanes, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Phố cổ Bao Vinh for Bao Vinh Ancient Town. The local name is easier to remember once it sits beside neighborhood identity, cafes, lanes, and small shops, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: hotel edges, evening walks, neighborhood identity, and cafes, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bao Vinh Ancient Town works best when the name is tied to the reason for going, not memorized as an abstract label. Picture narrow old street with weathered shopfronts, bicycle, and muted Hue colors with lanes, small shops, hotel edges, and evening walks, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Phố cổ Bao Vinh carries Bao Vinh Ancient Town's scene through cafes, lanes, small shops, and hotel edges, alongside royal-city memory."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ben-ngu-market",
+      "summary": "Ben Ngu Market is worth browsing because it shows Hue through stalls, snacks, goods, color, and everyday buying rhythm. Expect neighborhood market with fruit, flowers, conical hats, and damp morning pavement.",
+      "context": "For Ben Ngu Market, Hue's market story comes through produce colors, snack counters, bargaining rhythm, and bags, alongside imperial Hue.",
+      "tip": "shopping movement, market aisles, produce colors, and snack counters, alongside imperial Hue give Ben Ngu Market a setting before the trip begins.",
+      "rationale": "Ben Ngu Market brings Hue into focus through produce colors, snack counters, bargaining rhythm, and bags, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ben Ngu Market is worth browsing because it shows everyday Hue: bargaining rhythm, bags, local shopping movement, and market aisles, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ben Ngu Market, you get everyday shopping, snacks, gifts, bargaining, and local rhythm: neighborhood market with fruit, flowers, conical hats, and damp morning pavement, with bargaining rhythm, bags, local shopping movement, and market aisles, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ Bến Ngự for Ben Ngu Market. The local name is easier to remember once it sits beside snack counters, bargaining rhythm, bags, and local shopping movement, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: snack counters, bargaining rhythm, bags, and local shopping movement, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ben Ngu Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture neighborhood market with fruit, flowers, conical hats, and damp morning pavement with snack counters, bargaining rhythm, bags, and local shopping movement, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chợ Bến Ngự belongs with Neighborhood market with fruit, flowers, conical hats, and damp morning pavement, giving Ben Ngu Market a specific travel scene before the trip begins."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ben-trang-cafe-bistro",
+      "summary": "Ben Trang Cafe & Bistro is worth saving for Hue's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect riverside cafe terrace by a Hue boat station, coffee cups, soft river light.",
+      "context": "For Ben Trang Cafe & Bistro, Hue's cafe story comes through soft pauses, cafe views, coffee counters, and iced glasses, alongside imperial Hue.",
+      "tip": "Bến Trắng Cafe & Bistro sits inside the scene around Ben Trang Cafe & Bistro: soft pauses, cafe views, coffee counters, and iced glasses, alongside imperial Hue.",
+      "rationale": "Ben Trang Cafe & Bistro brings Hue into focus through soft pauses, cafe views, coffee counters, and iced glasses, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ben Trang Cafe & Bistro is worth saving when you want Hue's cafe culture, not just caffeine: street stools, design details, soft pauses, and cafe views, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ben Trang Cafe & Bistro, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: riverside cafe terrace by a Hue boat station, coffee cups, soft river light, with soft pauses, cafe views, coffee counters, and iced glasses, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến Trắng Cafe & Bistro for Ben Trang Cafe & Bistro. The local name is easier to remember once it sits beside design details, soft pauses, cafe views, and coffee counters, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: iced glasses, street stools, design details, and soft pauses, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ben Trang Cafe & Bistro works best when the name is tied to the reason for going, not memorized as an abstract label. Picture riverside cafe terrace by a Hue boat station, coffee cups, soft river light with iced glasses, street stools, design details, and soft pauses, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến Trắng Cafe & Bistro carries the visual details around it: street stools, design details, soft pauses, and cafe views, alongside imperial Hue, plus the local setting of Riverside cafe terrace by a Hue boat station, coffee cups, soft river light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bun-bo-city",
+      "summary": "Bun bo Hue is the Hue noodle bowl to know first: a lemongrass-rich beef broth, round rice noodles, herbs, lime, chili, and a deeper flavor than everyday pho.",
+      "context": "Bun bo Hue matters because it carries the city's food identity in one bowl: aromatic broth, beef, herbs, spice, and a morning-to-lunch rhythm.",
+      "tip": "Bún bò Huế already includes the city name. Bún is the noodle, bò is beef, and Huế tells you this is the Hue style.",
+      "rationale": "Bun bo Hue gives Hue a food memory that is specific, warming, and easy to recognize before arrival.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bun bo Hue is worth trying because it is Hue in a bowl: lemongrass broth, beef, round noodles, herbs, lime, chili, and a stronger aromatic kick than many northern noodle soups."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "Expect a hot bowl with depth: beefy broth, lemongrass, noodles, herbs, lime, and chili on the side. It can feel hearty without being fussy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bún bò Huế for bun bo Hue. The phrase already tells you noodle, beef, and Hue, so it is one of the easiest dish names to decode."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want one dish that clearly belongs to Hue, especially for breakfast or lunch before a long heritage day."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Before you go, expect spice and aroma rather than a mild noodle soup. Ask before adding extra chili if you are easing in."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Good to know: many menus outside Hue serve this dish too, but eating it in Hue gives the name extra context."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bun-hen",
+      "summary": "Bun hen is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect bowl of bún hến with small clams, shredded herbs, peanuts, and chili oil.",
+      "context": "For Bun hen, Hue's food story comes through steam, texture, small meal rituals, and flavor, alongside Hue river-city memory.",
+      "tip": "Hue feels more specific when Bun hen is tied to small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory.",
+      "rationale": "Bun hen brings Hue into focus through small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bun hen is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bun hen, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of bún hến with small clams, shredded herbs, peanuts, and chili oil, with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bún hến ở Huế for Bun hen. The local name is easier to remember once it sits beside texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bun hen works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of bún hến with small clams, shredded herbs, peanuts, and chili oil with sauce, steam, texture, and small meal rituals, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bún hến ở Huế carries Bowl of bún hến with small clams, shredded herbs, peanuts, and chili oil forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-bun-thit-nuong",
+      "summary": "Bun thit nuong is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect Hue bún thịt nướng bowl with grilled pork, herbs, pickled vegetables, and light sauce.",
+      "context": "For Bun thit nuong, Hue's food story comes through herbs, sauce, steam, and texture, alongside royal-city memory.",
+      "tip": "Bun thit nuong stays rooted in Hue through herbs, sauce, steam, and texture, alongside royal-city memory.",
+      "rationale": "Bun thit nuong brings Hue into focus through steam, texture, small meal rituals, and flavor, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Bun thit nuong is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with herbs, sauce, steam, and texture, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Bun thit nuong, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: Hue bún thịt nướng bowl with grilled pork, herbs, pickled vegetables, and light sauce, with small meal rituals, flavor, herbs, and sauce, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bún thịt nướng ở Huế for Bun thit nuong. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Bun thit nuong works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue bún thịt nướng bowl with grilled pork, herbs, pickled vegetables, and light sauce with sauce, steam, texture, and small meal rituals, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bún thịt nướng ở Huế carries the surrounding image back to Hue bún thịt nướng bowl with grilled pork, herbs, pickled vegetables, and light sauce and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-che-hue",
+      "summary": "Hue sweet soup is worth trying in Hue for sweetness, texture, color, and a small break between bigger plans. Expect colorful glasses of Hue chè with beans, jelly, lotus seed, and crushed ice.",
+      "context": "For Hue sweet soup, Hue's sweet story comes through dessert cups, coconut milk, jelly, and shaved ice, alongside Perfume River calm.",
+      "tip": "Chè Huế feels tied to Hue sweet soup through color, evening snack counters, dessert cups, and coconut milk, alongside Perfume River calm.",
+      "rationale": "Hue sweet soup brings Hue into focus through fruit, color, evening snack counters, and dessert cups, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hue sweet soup is worth trying for the sweet side of Hue: the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters, with evening snack counters, dessert cups, coconut milk, and jelly, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hue sweet soup, you get the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters: colorful glasses of Hue chè with beans, jelly, lotus seed, and crushed ice, with fruit, color, evening snack counters, and dessert cups, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chè Huế for Hue sweet soup. The local name is easier to remember once it sits beside shaved ice, fruit, color, and evening snack counters, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the sweet, textural side of the city: shaved ice, fruit, color, and evening snack counters, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hue sweet soup works best when the name is tied to the reason for going, not memorized as an abstract label. Picture colorful glasses of Hue chè with beans, jelly, lotus seed, and crushed ice with coconut milk, jelly, shaved ice, and fruit, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chè Huế belongs in the same image as fruit, color, evening snack counters, and dessert cups, alongside Perfume River calm, with Hue sweet soup rooted in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-chu-van-an-street",
+      "summary": "Chu Van An Street is worth recognizing because a named street can make Hue feel walkable before arrival. Expect central Hue street with small restaurants, signboards, and parked scooters after rain.",
+      "context": "For Chu Van An Street, Hue's street story comes through scooters, crossings, cafe edges, and neighborhood movement, alongside Hue's river-walk rhythm.",
+      "tip": "Chu Van An Street becomes more specific beside cafe edges, neighborhood movement, street signs, and shopfronts, alongside Hue's river-walk rhythm.",
+      "rationale": "Chu Van An Street brings Hue into focus through scooters, crossings, cafe edges, and neighborhood movement, alongside Hue's river-walk rhythm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Chu Van An Street is worth recognizing because streets shape how Hue feels on the ground: street signs, shopfronts, scooters, and crossings, alongside Hue's river-walk rhythm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Chu Van An Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: central Hue street with small restaurants, signboards, and parked scooters after rain, with street signs, shopfronts, scooters, and crossings, alongside Hue's river-walk rhythm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đường Chu Văn An for Chu Van An Street. The local name is easier to remember once it sits beside shopfronts, scooters, crossings, and cafe edges, alongside Hue's river-walk rhythm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: neighborhood movement, street signs, shopfronts, and scooters, alongside Hue's river-walk rhythm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Chu Van An Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture central Hue street with small restaurants, signboards, and parked scooters after rain with crossings, cafe edges, neighborhood movement, and street signs, alongside Hue's river-walk rhythm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Đường Chu Văn An carries the visual details around it: cafe edges, neighborhood movement, street signs, and shopfronts, alongside Hue's river-walk rhythm, plus the local setting of Central Hue street with small restaurants, signboards, and parked scooters after rain."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-com-am-phu",
+      "summary": "Com am phu is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect arranged Hue rice plate with sliced egg, pork, herbs, vegetables, and small sauce bowl.",
+      "context": "For Com am phu, Hue's food story comes through flavor, herbs, sauce, and steam, alongside royal-city memory.",
+      "tip": "Cơm âm phủ ở Huế points back to Com am phu through flavor, herbs, sauce, and steam, alongside royal-city memory.",
+      "rationale": "Com am phu brings Hue into focus through texture, small meal rituals, flavor, and herbs, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Com am phu is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with flavor, herbs, sauce, and steam, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Com am phu, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: arranged Hue rice plate with sliced egg, pork, herbs, vegetables, and small sauce bowl, with flavor, herbs, sauce, and steam, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cơm âm phủ ở Huế for Com am phu. The local name is easier to remember once it sits beside herbs, sauce, steam, and texture, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Com am phu works best when the name is tied to the reason for going, not memorized as an abstract label. Picture arranged Hue rice plate with sliced egg, pork, herbs, vegetables, and small sauce bowl with steam, texture, small meal rituals, and flavor, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Com am phu, the name stays close to sauce, steam, texture, and small meal rituals, alongside royal-city memory, which makes the stop feel rooted in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-com-hen",
+      "summary": "Com hen is worth trying in Hue because it gives the trip a flavor to imagine before arrival. Expect bowl of cơm hến with baby clams, herbs, crispy toppings, and chili paste.",
+      "context": "For Com hen, Hue's food story comes through herbs, sauce, steam, and texture, alongside imperial Hue.",
+      "tip": "Com hen feels clearer with herbs, sauce, steam, and texture, alongside imperial Hue around it.",
+      "rationale": "Com hen brings Hue into focus through steam, texture, small meal rituals, and flavor, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Com hen is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with steam, texture, small meal rituals, and flavor, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Com hen, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of cơm hến with baby clams, herbs, crispy toppings, and chili paste, with small meal rituals, flavor, herbs, and sauce, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cơm hến ở Huế for Com hen. The local name is easier to remember once it sits beside flavor, herbs, sauce, and steam, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: texture, small meal rituals, flavor, and herbs, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Com hen works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of cơm hến with baby clams, herbs, crispy toppings, and chili paste with texture, small meal rituals, flavor, and herbs, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cơm hến ở Huế carries Com hen's setting through steam, texture, small meal rituals, and flavor, alongside imperial Hue in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-cyclo-citadel-loop",
+      "summary": "Citadel cyclo loop is worth knowing in Hue because it brings movement across the city as part of the discovery into the trip. Expect cyclo passing Hue Citadel wall, ride in conical hat, late afternoon light.",
+      "context": "For Citadel cyclo loop, Hue's route story comes through the route between named places, street corners, food stops, and cafe pauses, alongside Hue river-city memory.",
+      "tip": "Xích lô quanh Kinh thành belongs beside local movement, the route between named places, street corners, and food stops, alongside Hue river-city memory around Citadel cyclo loop.",
+      "rationale": "Citadel cyclo loop brings Hue into focus through the route between named places, street corners, food stops, and cafe pauses, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Citadel cyclo loop is worth knowing because it gives Hue a specific route scene: local movement, the route between named places, street corners, and food stops, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Citadel cyclo loop, you get movement across the city as part of the discovery: cyclo passing Hue Citadel wall, ride in conical hat, late afternoon light, with the route between named places, street corners, food stops, and cafe pauses, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Xích lô quanh Kinh thành for Citadel cyclo loop. The local name is easier to remember once it sits beside cafe pauses, local movement, the route between named places, and street corners, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Citadel cyclo loop gives your itinerary a clearer image: local movement, the route between named places, street corners, and food stops, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Citadel cyclo loop works best when the name is tied to the reason for going, not memorized as an abstract label. Picture cyclo passing Hue Citadel wall, ride in conical hat, late afternoon light with local movement, the route between named places, street corners, and food stops, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The Vietnamese name for Citadel cyclo loop and the scene reinforce each other through the route between named places, street corners, food stops, and cafe pauses, alongside Hue river-city memory."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-dai-nam-restaurant",
+      "summary": "Dai Nam Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect classic Hue restaurant entry area near citadel walls, wooden interior glimpsed through doors.",
+      "context": "For Dai Nam Restaurant, Hue's restaurant story comes through evening meal energy, tables, house dishes, and menu details, alongside citadel-side Hue.",
+      "tip": "Dai Nam Restaurant stays rooted in Hue through house dishes, menu details, staff rhythm, and drinks, alongside citadel-side Hue.",
+      "rationale": "Dai Nam Restaurant brings Hue into focus through evening meal energy, tables, house dishes, and menu details, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Dai Nam Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Dai Nam Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: classic Hue restaurant entry area near citadel walls, wooden interior glimpsed through doors, with staff rhythm, drinks, evening meal energy, and tables, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà hàng Đại Nam for Dai Nam Restaurant. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: tables, house dishes, menu details, and staff rhythm, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Dai Nam Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture classic Hue restaurant entry area near citadel walls, wooden interior glimpsed through doors with menu details, staff rhythm, drinks, and evening meal energy, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà hàng Đại Nam feels less abstract when it sits beside house dishes, menu details, staff rhythm, and drinks, alongside citadel-side Hue and the scene of Dai Nam Restaurant."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

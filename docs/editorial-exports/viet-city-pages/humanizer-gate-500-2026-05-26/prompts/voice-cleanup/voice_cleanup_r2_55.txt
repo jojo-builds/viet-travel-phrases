@@ -1,0 +1,341 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_55",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_55",
+  "chunks": [
+    {
+      "chunkFile": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hoian-place-phung-hung-old-house",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-precious-heritage-museum",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hoian-place-quan-thang-old-house",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hoian-place-quan-thang-old-house",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hoian-place-phung-hung-old-house",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-phung-hung-old-house",
+          "message": "freshness/process-like heading: Interior Rules Can Change"
+        },
+        {
+          "id": "city-hoian-place-phung-hung-old-house",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-pottery-workshop",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-pottery-workshop",
+          "message": "freshness/process-like heading: Activity Details Can Vary"
+        },
+        {
+          "id": "city-hoian-place-pottery-workshop",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-precious-heritage-museum",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-quan-cong-temple",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-quan-thang-old-house",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-quan-thang-old-house",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 17x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: venue name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 23x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-phung-hung-old-house",
+          "summary": "Phung Hung Old House gives Hoi An architecture a close look: old wooden balcony, yellow street corner, lanterns, tiled roof, and lived-in history.",
+          "context": "For Phung Hung Old House, one old house deserves a slower look before every heritage facade starts to blur.",
+          "tip": "Look for the wood, balcony, rooms, and street corner. One house can teach more than another fast pass through the old town.",
+          "rationale": "Phung Hung Old House turns Hoi An’s old architecture into a specific stop, not just a repeated yellow-wall backdrop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Old House In Focus",
+              "body": "Phung Hung Old House helps old-town architecture stop blurring. Wood, balcony, rooms, roofline, and street corner give the visit a single focus."
+            },
+            {
+              "id": "place-brief",
+              "title": "Wood Balcony, Yellow Corner",
+              "body": "Expect an old wooden house on a yellow street corner, with lanterns, roof details, and a closer look at Hoi An’s merchant-house texture."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nhà cổ Phùng Hưng is the Vietnamese name. It helps when asking for this specific old house rather than another heritage facade."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Heritage Pause",
+              "body": "The house works between street wandering, coffee, or nearby old-town stops. It does not need to become a long museum-style visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Details Before Another Facade",
+              "body": "Notice the balcony, wood, roof, and threshold before moving on. That keeps the stop from feeling like only another yellow wall."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Interior Rules Can Change",
+              "body": "Photo rules, rooms, or access may shift. The durable reason to remember it is the old-house fabric and street-corner setting."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-pottery-workshop",
+          "summary": "Thanh Ha pottery workshop brings Hoi An craft down to clay, wheel, hands, terracotta shelves, and the patient rhythm of making one object.",
+          "context": "For Thanh Ha pottery workshop, wet clay becoming shape is the scene that makes the village workshop setting matter.",
+          "tip": "Watch the hands before trying the wheel. The village craft context matters as much as the finished keepsake.",
+          "rationale": "Thanh Ha pottery workshop gives the craft village route a tactile stop, with clay and process carrying the memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Clay Before Souvenir",
+              "body": "Thanh Ha pottery workshop is strongest when the process comes first. Wet clay, wheel, hands, and shelves matter more than rushing to a keepsake."
+            },
+            {
+              "id": "place-brief",
+              "title": "Village Workshop Texture",
+              "body": "Expect a pottery wheel, damp clay, tools, terracotta shelves, and a workshop setting tied to Thanh Ha’s craft village identity."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Xưởng gốm Thanh Hà means Thanh Ha pottery workshop. It helps when confirming the craft stop or asking where the workshop area is."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Craft Village Route",
+              "body": "The workshop fits naturally with a Thanh Ha village visit. It gives the route a hands-on point instead of only browsing finished pottery."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Hands Make The Memory",
+              "body": "The useful part is watching or trying the making process. A small object matters more when you have seen how the clay moves."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Activity Details Can Vary",
+              "body": "Hands-on options, demonstrations, and prices may change. The safe claim is simple: clay, process, village workshop, and craft memory."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-precious-heritage-museum",
+          "summary": "Precious Heritage Museum offers a quieter gallery stop in Hoi An: photography, textiles, warm yellow walls, display rooms, and stories beyond the old streets.",
+          "context": "For Precious Heritage Museum, the useful move is choosing a few portraits, textiles, or rooms, not trying to absorb every detail.",
+          "tip": "The textiles and faces can slow you down. The museum works better with attention than with a checklist.",
+          "rationale": "Precious Heritage Museum adds cultural context through photography and dress, giving Hoi An a different indoor layer.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Faces And Textiles Slow The Visit",
+              "body": "Precious Heritage Museum works when you let photography and textiles hold attention. A few portraits can say more than a rushed pass through every room."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gallery Rooms, Warm Walls",
+              "body": "Expect a heritage photography gallery with textiles, display rooms, warm yellow walls, and quieter light than the old streets outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bảo tàng Di sản Vô giá means Precious Heritage Museum. It helps when confirming the museum name in Vietnamese."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Indoor Culture Pause",
+              "body": "The museum pairs well with heat, rain, or a slower afternoon. It gives cultural depth without sending you far from the old-town frame."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Rooms Are Enough",
+              "body": "A small focus is enough: portraits, textiles, or regional dress. The visit can stay short and still feel meaningful."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Respect The Room",
+              "body": "Photography displays and cultural dress deserve a slower pace. A quiet visit fits better when the old streets outside feel busy."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-quan-cong-temple",
+          "summary": "Quan Cong Temple is a sacred old-town stop where red gates, incense, tiled roofs, courtyards, and respectful pauses shape the visit.",
+          "context": "For Quan Cong Temple, slower body language matters more than a normal sightseeing pace.",
+          "tip": "Pause before taking photos or stepping close. The temple asks for attention, not only a quick look at red walls and incense.",
+          "rationale": "Quan Cong Temple gives Hoi An’s old town a worship layer, making the visit feel deeper than shops and lanterns alone.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Temple With A Slower Pace",
+              "body": "Quan Cong Temple asks for a different rhythm from the surrounding streets. Red gates, incense, courtyards, and tiled roofs deserve a quieter approach."
+            },
+            {
+              "id": "place-brief",
+              "title": "Incense, Gates, Courtyard",
+              "body": "Expect a sacred place, not just architecture: incense urn, temple gate, shaded areas, old-town walls, and people moving with more care."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Miếu Quan Công is the Vietnamese name. It helps when asking for the temple near Hoi An’s old streets."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quiet Break From Shops",
+              "body": "The temple works as a respectful pause between market, street, or old-house stops. It changes the old-town rhythm without taking you far."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respect Before Photos",
+              "body": "Pause first, then read the space. If photos are allowed, keep distance and avoid treating worship as decoration."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sacred Details Matter",
+              "body": "Incense, shade, gates, and courtyards are not props. The visit feels better when the visitor gives the place a little space."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-quan-thang-old-house",
+          "summary": "Quan Thang Old House gives Hoi An’s heritage houses a carved-wood focus: old yellow walls, doorway detail, soft side light, rooms, and street texture.",
+          "context": "For Quan Thang Old House, one doorway and interior deserve attention before the old-town facades start blending together.",
+          "tip": "Notice the carved wood first. The house makes more sense through detail than through a fast tick on an old-town route.",
+          "rationale": "Quan Thang Old House gives Hoi An architecture a specific interior-and-doorway memory, distinct from broader street wandering.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Carved Wood In Focus",
+              "body": "Quan Thang Old House is strongest as a detail stop. The carved doorway, old yellow walls, and soft side light give the house its memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "Old House, Close Range",
+              "body": "Expect an old Hoi An house with woodwork, threshold details, rooms, and a quieter interior feel than the street outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nhà cổ Quân Thắng is the Vietnamese name. It helps when asking for this specific old house among several heritage stops."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Streets And Houses",
+              "body": "The house fits a short old-town route with nearby streets, cafes, and other heritage buildings. A slower pace leaves room for one detail."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Doorway Before Checklist",
+              "body": "The visit works when the carved wood gets attention before the next stop pulls you away. Details carry the house better than a checklist."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Details May Shift",
+              "body": "Room access, ticketing, or photo expectations can change. The stable reason to remember it is the carved wood and old-house setting."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

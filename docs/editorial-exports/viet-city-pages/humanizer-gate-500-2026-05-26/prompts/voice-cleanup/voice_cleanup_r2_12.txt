@@ -1,0 +1,168 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 2
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_12",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 2,
+    "returnedReplacementCount": 2,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_12",
+  "chunks": [
+    {
+      "chunkFile": "danang_051_075_humanized.json",
+      "cityID": "danang",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-ngu-hanh-son-district",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 22x: name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 22x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-ngu-hanh-son-district",
+          "summary": "Ngu Hanh Son District is the south-beach Da Nang area name linking hotel edges, beach roads, cafes, Non Nuoc, and the limestone hills.",
+          "context": "A south-beach district label for orienting hotels, beach roads, cafes, Non Nuoc, and Marble Mountains, not a single attraction.",
+          "tip": "The Marble Mountains are the easiest marker. Walk small blocks in heat, then ride between hotel areas, beach roads, and hill-side stops.",
+          "rationale": "Ngu Hanh Son District turns a broad area label into practical orientation for the south-beach side of Da Nang.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Beach District With Hills Behind It",
+              "body": "Ngu Hanh Son District is the name to keep in mind when Da Nang shifts south toward hotel edges, beach roads, cafes, Non Nuoc, and the limestone hills."
+            },
+            {
+              "id": "place-brief",
+              "title": "Hold The Hills As Your Marker",
+              "body": "The Marble Mountains give the area its easiest mental shape. Even near beach buildings or a cafe stretch, the limestone behind the district keeps the map from feeling vague."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Quan Ngu Hanh Son is the district name. It is useful when hotels, beach roads, cafes, and mountain-side stops need one local label."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Short Hops Beat Long Wanders",
+              "body": "Distances can look smaller on a phone than they feel in heat. Walk the block you are on, then ride between hotel areas, the beach, and hill-side stops."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Area Name After Check-In",
+              "body": "Good when a hotel, beach road, cafe block, or Marble Mountains route needs a district label. It is orientation, not a single attraction."
+            },
+            {
+              "id": "good-to-know",
+              "title": "After Check-In, The Name Matters",
+              "body": "The district name earns its place when your stay is nearby. It gives ordinary tasks like coffee, laundry, seafood, a pharmacy, or an evening walk a clearer local label."
+            }
+          ]
+        },
+        {
+          "pageID": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+          "summary": "Nguyen Hien Dinh Tuong Theatre is a Da Nang stage-night stop for painted faces, masks, drums, curtains, and traditional performance instead of another photo stop.",
+          "context": "A stage-night stop belongs on evenings with a real performance to build around. Check the program first, then let the ride serve the show.",
+          "tip": "Confirm the program and start time before crossing town. Arrive early enough to find the doors and settle into the room.",
+          "rationale": "The theatre gives Da Nang a living performance-culture stop that contrasts with beaches, bridges, and static museums.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Stage Night, Not Another Photo Stop",
+              "body": "Nguyen Hien Dinh Tuong Theatre gives Da Nang a quieter evening layer: painted faces, masks, music, curtains, and the focus of a small performance room."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Show Comes First",
+              "body": "Treat this as a theatre plan only when a performance is actually on. Check the evening's program before crossing town."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Nha hat Tuong Nguyen Hien Dinh is the theatre name. Tuong points toward the traditional performance form, not a general modern theatre night."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Arrive Show Time Buffer",
+              "body": "Give yourself enough time to find the doors, sit down, and settle into the room. Traditional theatre is easier when you are not sliding in late."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Program Before The Ride",
+              "body": "Good when the night already has a show in view. Build the ride around the curtain time, then arrive early enough to settle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Watch The Rhythm",
+              "body": "A little margin changes the night. Arrive early, find the doors, and let the room settle before the drums, masks, and curtains take over."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

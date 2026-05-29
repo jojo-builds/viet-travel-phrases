@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW CITY/PLACE COPY.** Current standard: `speaklocal.place.app-detail.v2.2`. Start with `CURRENT_CITY_PAGE_STANDARD.md`. This file is retained only as historical reference.
+
 # SpeakLocal Five More Example Entries for Vietnam Cities
 
 These examples follow the folder's current direction: short mobile modules, evidence-backed details, calm traveler-first voice, and useful phrases tied to what someone would actually do at the place.

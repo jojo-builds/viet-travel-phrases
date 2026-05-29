@@ -1,0 +1,289 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_59",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_59",
+  "chunks": [
+    {
+      "chunkFile": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hue-place-banh-khoai",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-banh-nam",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-bao-vinh-ancient-town",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-bao-vinh-ancient-town",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-ben-ngu-market",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-bun-bo-city",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-banh-khoai",
+          "summary": "Banh khoai is Hue's crisp yellow pancake moment: herbs, fig, starfruit, dipping sauce, and a plate that asks you to build each bite.",
+          "context": "The dish brings Hue's food story into crunch, herbs, sauce, and the hands-on rhythm of pairing pancake pieces with fresh sides.",
+          "tip": "Bánh khoái ở Huế is the menu name to notice; listen for it when the table has yellow pancake, herbs, and dipping sauce.",
+          "rationale": "Banh khoai gives Hue a brighter, louder bite than the steamed snacks, with crunch and herbs carrying the first impression.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crisp Pancake, Built Bite",
+              "body": "Banh khoai is not just something to cut and eat plain. The herbs, fig, starfruit, and sauce complete the bite."
+            },
+            {
+              "id": "place-brief",
+              "title": "Crunch With Fresh Edges",
+              "body": "Expect a yellow Hue pancake with crisp edges, fresh herbs, and dipping sauce that pulls the plate together."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name Around The Pancake",
+              "body": "Say Bánh khoái ở Huế when the dish appears as the Hue-style pancake. The sound is close to the crispness of the plate."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Softer Snacks",
+              "body": "It pairs well after bánh bèo or bánh nậm because the crunch changes the pace of the table."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce And Herbs Together",
+              "body": "The dish makes sense when the pancake, herbs, fruit, and sauce stay in the same bite instead of separate tastes."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Quiet Dish",
+              "body": "Banh khoai is richer and more assertive than many Hue snacks. Share first if the meal still has more dishes coming."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-banh-nam",
+          "summary": "Banh nam is a soft Hue banana-leaf snack with shrimp topping, fish sauce, and a quiet table rhythm that feels smaller than a full meal.",
+          "context": "The dish shows Hue through leaf, steam, texture, sauce, and the careful motion of opening a parcel before eating.",
+          "tip": "Bánh nậm ở Huế is the phrase to know when the dish arrives flat in banana leaf with shrimp topping and a sauce bowl nearby.",
+          "rationale": "Banh nam gives Hue a softer food memory, less dramatic than a bowl but clear in the leaf, topping, and gentle texture.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Flat Parcel, Soft Center",
+              "body": "Banh nam is quiet by design. Open the banana leaf, look for the shrimp topping, then add sauce gently."
+            },
+            {
+              "id": "place-brief",
+              "title": "Steam And Sauce",
+              "body": "Expect a soft rice-flour layer in banana leaf with shrimp topping and fish sauce on the side. The texture is the point."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name With The Leaf",
+              "body": "Say Bánh nậm ở Huế when asking for the Hue version. The flat banana-leaf shape helps the name stick."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Gentle Table Add-On",
+              "body": "It works well with other small Hue dishes when the meal needs something soft between crunchier or spicier bites."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light Hunger Fits",
+              "body": "Banh nam is better for a snack table than for a heavy main meal. Order with that scale in mind."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Careful Sauce First",
+              "body": "Too much sauce can bury the texture. A light first pour makes the second bite easier to adjust."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-bao-vinh-ancient-town",
+          "summary": "Bao Vinh Ancient Town gives Hue a lived-in street scene: narrow old lanes, weathered shopfronts, bicycle pace, and muted colors away from monument crowds.",
+          "context": "The neighborhood story is about old commercial streets, small shops, cafes, lanes, and the way Hue feels when it is not performing as a landmark.",
+          "tip": "Phố cổ Bao Vinh is the name to know when the route points beyond central sights into an older neighborhood edge.",
+          "rationale": "Bao Vinh helps Hue feel like a place people move through daily, not only a collection of gates, tombs, and river views.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old Street, Small Expectations",
+              "body": "Bao Vinh works as a narrow neighborhood walk, not a major attraction. Weathered fronts, quiet lanes, and small shops are the point."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Lived-In Hue Edge",
+              "body": "The ancient-town idea is modest here. Look for street rhythm, old commercial texture, and the feeling of Hue beyond the main circuit."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name For The Old Street",
+              "body": "Say Phố cổ Bao Vinh when asking about the area. The phrase points to an old street quarter, not a single building."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Wandering Block",
+              "body": "Give it a compact walk rather than a whole afternoon. The area is better read slowly than stretched into a checklist."
+            },
+            {
+              "id": "when-to-use",
+              "title": "After Formal Sights",
+              "body": "Bao Vinh fits when palaces and tombs have made the day feel too official and you want a more ordinary Hue frame."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Thin Evidence, Narrow specifics",
+              "body": "Treat current shops and cafes as changeable. The durable reason to go is the older street fabric and neighborhood pace."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ben-ngu-market",
+          "summary": "Ben Ngu Market is a neighborhood Hue market stop with fruit, flowers, conical hats, damp pavement, snack counters, and a practical morning feel.",
+          "context": "The market shows everyday Hue through produce colors, bargaining rhythm, bags, quick counters, and shoppers moving through a smaller local circuit.",
+          "tip": "Chợ Bến Ngự is the name to listen for when asking directions; it belongs with the fruit, flowers, and neighborhood market scene.",
+          "rationale": "Ben Ngu Market gives Hue a simple daily-life stop, useful when a short browse and snack look beat another formal attraction.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Morning Market, Short Lap",
+              "body": "Ben Ngu makes sense as a compact market browse. Fruit, flowers, conical hats, and damp pavement give it a clear neighborhood feel."
+            },
+            {
+              "id": "place-brief",
+              "title": "Everyday Buying Rhythm",
+              "body": "Expect shoppers with a purpose, snack counters, produce color, and small exchanges rather than a staged souvenir stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name For Directions",
+              "body": "Say Chợ Bến Ngự when asking for the market. The Vietnamese name will usually be clearer than the English spelling."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Snack Before Moving On",
+              "body": "One lap and one small bite can be enough. The market works better as part of the morning than as the whole plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Nearby Errand Energy",
+              "body": "Drop in when you are already near the area and want to feel the city buying, eating, and moving."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Notes Help",
+              "body": "Bring small cash if you plan to buy. A slow lap also helps you avoid deciding at the first call."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-bun-bo-city",
+          "summary": "Bun bo Hue is the city bowl to know first: lemongrass beef broth, round noodles, herbs, lime, chili, and a deeper pull than everyday pho.",
+          "context": "Bun bo Hue carries the city's food identity in one bowl, with aromatic broth, beef, herbs, spice, and a breakfast-to-lunch rhythm.",
+          "tip": "Bún bò Huế already explains itself: bún is noodle, bò is beef, and Huế tells you the style and city behind the bowl.",
+          "rationale": "The dish gives Hue a warming, specific food memory that is easy to recognize before arrival and satisfying after a long heritage morning.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hue In One Bowl",
+              "body": "Bun bo Hue is the bowl to learn first. Lemongrass broth, beef, round noodles, herbs, lime, and chili make it unmistakably tied to the city."
+            },
+            {
+              "id": "place-brief",
+              "title": "Aromatic, Not Mild",
+              "body": "Expect deeper spice and perfume than a gentle noodle soup. The broth feels beefy, lemongrass-rich, and built for herbs."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name Already Carries Hue",
+              "body": "Say Bún bò Huế as one phrase. It names the noodle, the beef, and the city, which makes it easier to decode."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Heritage Fuel",
+              "body": "It fits before a tomb route, Citadel visit, or long walking day when a light snack will not hold."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Chili After The First Sip",
+              "body": "Taste the broth before adding more chili. The bowl may already have enough heat and aroma."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Famous Beyond Hue",
+              "body": "Many places outside Hue serve it, but eating the bowl in Hue gives the name and flavor their clearest setting."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

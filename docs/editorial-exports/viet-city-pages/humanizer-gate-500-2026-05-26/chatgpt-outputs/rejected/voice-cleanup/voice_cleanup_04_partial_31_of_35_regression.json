@@ -1,0 +1,1357 @@
+{
+  "sessionID": "voice_cleanup_04",
+  "chunkReplacements": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "replacements": [
+        {
+          "pageID": "city-hanoi-place-my-dinh-bus-station",
+          "entry": {
+            "pageID": "city-hanoi-place-my-dinh-bus-station",
+            "summary": "My Dinh Bus Station is Hanoi at its onward-road edge: bags, route boards, waiting benches, and the next leg of the north already pressing into view.",
+            "context": "This is a travel-day handoff, not sightseeing. Match the station name, ticket, bay, and ride plan before the crowd starts moving.",
+            "tip": "Give the station name, route, and pickup area one calm look before sitting down. Bags make every wrong turn feel longer.",
+            "rationale": "Bến xe Mỹ Đình should be easy to recognize when a bus, taxi, or ticket screen points away from central Hanoi.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Western Road Hub",
+                "body": "My Dinh feels like Hanoi stretching outward: buses, wide roads, route signs, benches, bags, and the low pressure of a departure day."
+              },
+              {
+                "id": "place-brief",
+                "title": "Ticket Before Bench",
+                "body": "Read the route, company name, bay, and pickup point before relaxing. A quiet station minute turns loud fast at boarding time."
+              },
+              {
+                "id": "quick-say",
+                "title": "Mỹ Đình On Tickets",
+                "body": "Bến xe Mỹ Đình is the name to show or listen for when the ride, ticket, or driver needs the station in Vietnamese."
+              },
+              {
+                "id": "use-it-with",
+                "title": "The Exit Stays Simple",
+                "body": "Keep the phone, ticket, and small bag close. Once the right bus or pickup point is clear, leave the station decision plain."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Travel-Day Margin",
+                "body": "Give this stop extra time for traffic, ticket work, and moving from the waiting area to the bus with luggage."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Ticket And Signs Lead",
+                "body": "Routes, bays, and pickup habits are best read from the ticket, posted boards, and staff direction once you are there."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-nang-cafe",
+          "entry": {
+            "pageID": "city-hanoi-place-nang-cafe",
+            "summary": "Nang Cafe belongs to Hanoi's older coffee rhythm: small tables, strong cups, ice, sweetness, and a pause that should stay short enough to feel light.",
+            "context": "Come for one classic drink, a small table, and a short pause before returning to the street.",
+            "tip": "Order the simple coffee first, then settle into the room. If the space is full, Hanoi has enough coffee nearby to keep the day moving.",
+            "rationale": "Cà phê Năng gives a concrete Hanoi coffee pause without locking the visit to branch, menu, seating, or hour claims.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Coffee As A Pause",
+                "body": "Nang Cafe is for a strong cup, a small table, and a few slower minutes between streets rather than a long work session."
+              },
+              {
+                "id": "place-brief",
+                "title": "Classic Glass First",
+                "body": "Iced milk coffee gives the sweeter Hanoi cafe feel. Iced black coffee keeps the roast sharper and the stop cleaner."
+              },
+              {
+                "id": "quick-say",
+                "title": "Năng On The Sign",
+                "body": "Cà phê Năng is the name to keep beside the coffee-street image: a small room, strong cups, ice, and street noise nearby."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Short Reset",
+                "body": "Pair it with Old Quarter walking, coffee streets, or a hot afternoon break. The stop is strongest when it gives the day a reset."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Full Room, Light Plan",
+                "body": "If seating looks tight, do not force the visit. The point is the coffee pause, not winning a specific chair."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Classic Coffee, Flexible Stop",
+                "body": "Treat this as a classic Hanoi coffee pause. Pick the room that works, order plainly, and keep the plan light."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-national-museum-history",
+          "entry": {
+            "pageID": "city-hanoi-place-national-museum-history",
+            "summary": "Vietnam National Museum of History gives Hanoi a cooler indoor layer: artifacts, quiet galleries, warm architecture outside, and enough history to slow the city down.",
+            "context": "Pick one lane through the collection instead of trying to absorb the whole country in a single visit.",
+            "tip": "Choose the era, object type, or building detail you care about first. That keeps the galleries from blurring into labels.",
+            "rationale": "Bảo tàng Lịch sử Quốc gia works as a specific Hanoi cultural stop; exhibits, tickets, and guide setup belong to the visit itself.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "History In A Cooler Room",
+                "body": "This museum gives Hanoi a quieter layer: display cases, objects, calm light, and an ochre building that already feels like part of the visit."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Lane Is Enough",
+                "body": "Pick ancient objects, architecture, or historical context before entering deeply. A focused visit is easier than trying to read every case."
+              },
+              {
+                "id": "quick-say",
+                "title": "History Museum On Signs",
+                "body": "Bảo tàng Lịch sử Quốc gia is the Vietnamese name to match against signs, tickets, or a ride screen."
+              },
+              {
+                "id": "use-it-with",
+                "title": "A Calm Cultural Pairing",
+                "body": "It fits well with the French Quarter, the Opera House area, or a coffee afterward, especially when the day needs an indoor pause."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Room Afterward",
+                "body": "Avoid stacking it tightly with another heavy museum. A short walk or drink gives the objects time to settle."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Entrance First, Galleries After",
+                "body": "Hours, tickets, photo rules, and English interpretation are best read at the entrance before you build the day around the museum."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-nem-cua-be",
+          "entry": {
+            "pageID": "city-hanoi-place-nem-cua-be",
+            "summary": "Nem cua bể is the crab spring-roll order to remember by shape and texture: square pieces, crisp edges, herbs, and dipping sauce on the side.",
+            "context": "Order one shared plate without overloading the meal. Shellfish awareness matters more here than adventurous guesswork.",
+            "tip": "Try one plate first, dip lightly, and keep herbs between bites. The roll is richer when the crisp wrapper still leads.",
+            "rationale": "This Hanoi food move is easy to remember by shape, texture, herbs, and clear shellfish risk.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Crisp, Square, Shareable",
+                "body": "Nem cua bể is easy to remember once you picture the square shape, crab filling, hot crisp edges, herbs, and dipping sauce."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Plate First",
+                "body": "Start with a shared plate and see how rich it feels. It can be satisfying fast beside noodles or another small dish."
+              },
+              {
+                "id": "quick-say",
+                "title": "Crab Rolls On Menus",
+                "body": "Nem cua bể is the dish name to notice when a menu or server points toward crab spring rolls."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Herbs Between Bites",
+                "body": "A light dip keeps the wrapper crisp. Herbs make the plate feel fresher instead of turning the whole order heavy."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Shellfish Awareness",
+                "body": "This is a crab dish, so allergy questions matter. Do not rely on an English menu guess when shellfish is a concern."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Shop Style Is Secondary",
+                "body": "Serving style and availability sit with each shop. The steady part is the square crab roll, herbs, and dipping sauce."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-ngoc-son-temple",
+          "entry": {
+            "pageID": "city-hanoi-place-ngoc-son-temple",
+            "summary": "Ngoc Son Temple begins before the doorway: red bridge, lake water, trees, incense, and a small sacred pause inside central Hanoi near Hoan Kiem.",
+            "context": "Cross from Hoàn Kiếm Lake into a quiet temple space. Keep the visit respectful, short, and tied to the lake.",
+            "tip": "Move slowly near offerings and people praying. The bridge, island, and temple work better as one scene than as separate photos.",
+            "rationale": "Đền Ngọc Sơn needs a calm, specific role: a lake crossing, sacred room, and central Hanoi pause rather than a generic landmark label.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Lake Crossing First",
+                "body": "Ngọc Sơn starts with the red bridge over Hoàn Kiếm Lake, then folds into trees, incense, low rooms, and a quieter island rhythm."
+              },
+              {
+                "id": "place-brief",
+                "title": "Temple Pace",
+                "body": "People may be praying, not sightseeing. Step aside near offerings, lower your voice, and let the small space set the pace."
+              },
+              {
+                "id": "quick-say",
+                "title": "Ngọc Sơn At The Bridge",
+                "body": "Đền Ngọc Sơn is the name to connect with the red bridge, the lake island, and the temple entrance."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Lake Walk Afterward",
+                "body": "A short Hoàn Kiếm walk afterward makes the bridge and temple feel central to the city, not like a standalone stop."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Stop, Strong Memory",
+                "body": "The visit does not need to be long. It is strongest between Old Quarter lanes, coffee, and lake walking."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Door Rhythm Matters",
+                "body": "Opening hours, tickets, and photo expectations belong to the door. Read the entrance rhythm before making the temple a fixed stop."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+          "entry": {
+            "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+            "summary": "Nguyen Huu Huan Street turns Hanoi coffee into a short walk: narrow doorways, upstairs rooms, egg-coffee signs, and scooters close to the curb.",
+            "context": "Choose one coffee room from the street instead of treating a famous cup as the whole story.",
+            "tip": "Look up before choosing. Some of the better-feeling rooms are upstairs or tucked behind doorways that are easy to miss.",
+            "rationale": "Phố Nguyễn Hữu Huân is a coffee-street scene, with Cà phê Giảng as one reference point but not the only reason to remember it.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Coffee Street Before The Cup",
+                "body": "Nguyễn Hữu Huân is a close Old Quarter coffee street: signs, narrow shopfronts, upstairs rooms, and scooters passing while cups cool."
+              },
+              {
+                "id": "place-brief",
+                "title": "Look Up At Doorways",
+                "body": "Pause before picking a cafe. A doorway, stairwell, or small upstairs room may carry more of the stop than the sidewalk sign."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nguyễn Hữu Huân On Signs",
+                "body": "Phố Nguyễn Hữu Huân is the street name to pair with egg-coffee signs, close storefronts, and Old Quarter movement."
+              },
+              {
+                "id": "use-it-with",
+                "title": "One Famous Cup, More Rooms",
+                "body": "Cà phê Giảng can be the familiar name, but the street is wider than one stop. Let the room decide the pause."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short Walk, Clear Cup",
+                "body": "This is a coffee pause, not a full afternoon. Pair it with nearby lanes, then move before traffic and caffeine blur."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Doorways Decide The Pause",
+                "body": "Cafe names and rooms move with the street. Follow the open doorway, the table you like, and the cup you came for."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-night-market-walk",
+          "entry": {
+            "pageID": "city-hanoi-place-night-market-walk",
+            "summary": "The Old Quarter night market walk slows Hanoi's pace: warm bulbs, stall tables, snack smoke, phone photos, and softer evening crowds.",
+            "context": "Make one lap before buying. Looking first keeps the night open and prevents one stall from swallowing the walk.",
+            "tip": "Walk once without buying, then decide what is worth carrying. Small gifts and snacks make more sense than heavy bags.",
+            "rationale": "Đi chợ đêm phố cổ is a night loop through Old Quarter energy, with timing and stall mix kept flexible.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Night Lap",
+                "body": "The walk is warm lights, table stalls, food smoke, phone photos, and people moving slower than the Old Quarter does at noon."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Pass Before Paying",
+                "body": "A first lap shows what repeats, what feels crowded, and what is actually worth carrying for the rest of the evening."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Old Quarter Night Phrase",
+                "body": "Đi chợ đêm phố cổ is the phrase to connect with an Old Quarter evening walk through stalls and snack smoke."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small Purchases",
+                "body": "Read the price, use small bills, and keep the buy light. The walk feels better when your hands stay free."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Exit With Energy",
+                "body": "Step back toward a quieter lane or the lake edge before the crowd makes every choice feel harder."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Evening Rhythm Comes First",
+                "body": "Market nights, pedestrian flow, and stall mix are part of the evening itself. Read the street before counting on a full run of stalls."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-noi-bai-airport",
+          "entry": {
+            "pageID": "city-hanoi-place-noi-bai-airport",
+            "summary": "Noi Bai is the first real Hanoi threshold: bags, glass doors, waiting families, phone setup, and the first ride toward the city center.",
+            "context": "Clear immigration, bags, pickup point, and hotel address before stepping into the public arrival area.",
+            "tip": "Pause with your phone and address before meeting the ride crowd. The first Hanoi conversation is easier when the destination is already visible.",
+            "rationale": "Sân bay Nội Bài should prepare calm arrival behavior while keeping terminal flow, pickup rules, and services flexible.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The First Threshold",
+                "body": "Nội Bài turns the trip into glass doors, bags, signs, waiting families, and the first ride toward Hanoi."
+              },
+              {
+                "id": "place-brief",
+                "title": "Basics Before Pickup",
+                "body": "Clear the official steps, find your bag, and pause before the public arrival area. A quiet minute saves confusion outside."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nội Bài For The Ride",
+                "body": "Sân bay Nội Bài is the airport name to show when arranging a ride or confirming arrival plans."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Pickup Point Name",
+                "body": "Ride pickups feel simple until everyone is under the same sign. Confirm the exact area before moving with luggage."
+              },
+              {
+                "id": "when-to-use",
+                "title": "First Ride Plain",
+                "body": "The road into Hanoi is not the moment for a complicated plan. Aim clearly for the hotel, Old Quarter, or first stop."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Airport Signs Lead",
+                "body": "Terminal flow, pickup zones, SIM counters, and ride rules belong to the airport floor. Follow posted signs before moving outside with bags."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+          "entry": {
+            "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+            "summary": "Nuoc Ngam Bus Station is a practical Hanoi travel handoff: route boards, counters, benches, motorbike noise, and the scramble before an onward bus.",
+            "context": "Confirm the right bay and ticket before settling. Keep the station minute operational and calm.",
+            "tip": "Check the route, bay, and departure detail before sitting down. Boarding starts to feel faster once bags and announcements enter the scene.",
+            "rationale": "Bến xe Nước Ngầm gives name recognition and station behavior while routes, bays, and operators stay flexible.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Practical Handoff",
+                "body": "Nước Ngầm is buses, route boards, ticket counters, benches, and the small scramble that belongs to an onward travel day."
+              },
+              {
+                "id": "place-brief",
+                "title": "Bay Before Bench",
+                "body": "Read the bay, route, and ticket detail before relaxing. A station can feel calm until the boarding moment arrives."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nước Ngầm On Tickets",
+                "body": "Bến xe Nước Ngầm is the Vietnamese station name to match against tickets, ride screens, and staff directions."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Bags Within Reach",
+                "body": "Keep the ticket, phone, and small bag close while people are boarding, calling, and moving through narrow gaps."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Arrival Plan Too",
+                "body": "Know how you will leave at the other end. A taxi or pickup plan matters as much as the departure bay."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Ticket And Boards Lead",
+                "body": "Routes, counters, access, and bay layout are best read from the ticket, posted boards, and staff direction at the station."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-old-quarter",
+          "entry": {
+            "pageID": "city-hanoi-place-old-quarter",
+            "summary": "The Old Quarter is close-up Hanoi: shop signs, scooters, hotel doors, coffee rooms, low stools, and trade streets packed into a tight walk.",
+            "context": "Choose one short spine through the neighborhood instead of trying to collect every lane.",
+            "tip": "Pick a lake edge, coffee street, or market corner first. A little structure makes the wandering feel better.",
+            "rationale": "Phố cổ Hà Nội should read as a walkable neighborhood with texture, crossings, and pauses, not a generic old-town label.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Close-Up Hanoi",
+                "body": "The Old Quarter is shop signs, scooters, hotel doors, low stools, coffee rooms, and streets folding into one another."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Spine",
+                "body": "A lake edge, coffee street, or market corner gives the walk a shape when the lanes begin to overlap."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phố Cổ In Conversation",
+                "body": "Phố cổ Hà Nội is the name to connect with the tight lanes, old trade streets, and central walking days."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Crossing Pause",
+                "body": "Stop at corners before crossing. Watch the traffic for a moment, then move steadily instead of turning it into drama."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Coffee Reset",
+                "body": "A short cafe pause turns the neighborhood from noise into texture. Sit briefly, then return before the route gets ambitious."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Walk Adjusts",
+                "body": "Street works, shop turnover, and pedestrian flow are part of the neighborhood. Let the walk bend instead of forcing an old map memory."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-old-quarter-walking-tour",
+          "entry": {
+            "pageID": "city-hanoi-place-old-quarter-walking-tour",
+            "summary": "An Old Quarter walking route is better as a loose line than a list: lake edge, street corner, coffee pause, snack stop, then a clean exit.",
+            "context": "Plan a route short enough to stay enjoyable. Three stops can teach more than ten names.",
+            "tip": "Pick one place to look, one place to drink or eat, and one street between them. Leave room for the route to breathe.",
+            "rationale": "Tuyến đi bộ Phố cổ should guide walking judgment without pretending to be a live itinerary or fixed route.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "One Route Beats Ten Stops",
+                "body": "A good Old Quarter route gives the neighborhood a line: lake edge, coffee pause, snack stop, and one more lane."
+              },
+              {
+                "id": "place-brief",
+                "title": "Three Stops",
+                "body": "One place to look, one place to drink or eat, and one street between them is enough for a first route."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Short-Route Phrase",
+                "body": "Tuyến đi bộ Phố cổ is the phrase to hold beside a short Old Quarter route, not a marathon."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Reset Point",
+                "body": "Build in a cafe, bench, lake edge, or quiet corner so the walk does not become one long traffic lesson."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Clean Endpoint",
+                "body": "Know where the walking stops. A clear endpoint makes the last lane easier to enjoy."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Loose Streets Work Better",
+                "body": "Roadworks, closures, and pedestrian flow belong to the day. Keep the route loose and follow the open streets in front of you."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-one-pillar-pagoda",
+          "entry": {
+            "pageID": "city-hanoi-place-one-pillar-pagoda",
+            "summary": "One Pillar Pagoda is compact enough that the shape carries the visit: raised structure, pond, courtyard, and a quieter Ba Đình pause.",
+            "context": "Look slowly at a small landmark instead of taking one quick photo and leaving.",
+            "tip": "Step back enough to see the pond and platform together. The form makes more sense when the water is part of it.",
+            "rationale": "Chùa Một Cột is a short respectful stop with a clear visual idea, not a generic temple label.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Small Pagoda, Slow Look",
+                "body": "The visit is the raised structure, pond, courtyard, and a few still minutes in a busy Ba Đình day."
+              },
+              {
+                "id": "place-brief",
+                "title": "Pond And Platform",
+                "body": "The famous shape makes more sense when you read the structure with the water below it, not only as a front-facing photo."
+              },
+              {
+                "id": "quick-say",
+                "title": "Một Cột By The Pond",
+                "body": "Chùa Một Cột is the name to connect with the one-pillar form, pond, and small courtyard."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Room For Worship",
+                "body": "Let people pass, keep voices low, and avoid turning the courtyard into a photo queue."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Ba Đình Pairing",
+                "body": "The pagoda fits naturally with nearby Ba Đình history stops when the day still has patience for quiet places."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Small Site Needs Patience",
+                "body": "Access, hours, queue flow, and photo expectations belong to the entrance. Treat it as a compact stop, not the day's main event."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-opera-house",
+          "entry": {
+            "pageID": "city-hanoi-place-opera-house",
+            "summary": "Hanoi Opera House feels most alive near evening: lit facade, scooters around the square, people on the steps, and the possibility of a real performance.",
+            "context": "Decide whether the building is a pass-by landmark or an actual show night.",
+            "tip": "Step far enough back to see the facade with the street around it. The square is part of the frame.",
+            "rationale": "Nhà hát Lớn Hà Nội holds both the French Quarter street scene and the possibility of a performance.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Evening Facade",
+                "body": "The Opera House is lamps on stone, scooters around the square, people at the steps, and ticket doors suggesting a bigger night."
+              },
+              {
+                "id": "place-brief",
+                "title": "Program Or Pass-By",
+                "body": "The building can be a quick landmark or a performance plan. Look at the program close to the date."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà Hát Lớn At The Square",
+                "body": "Nhà hát Lớn Hà Nội is the name to connect with the facade, square, and performance doors."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Street Frame",
+                "body": "Cross carefully, stand back, and let the lamps, steps, and traffic give the building its Hanoi setting."
+              },
+              {
+                "id": "when-to-use",
+                "title": "French Quarter Walk",
+                "body": "A short walk nearby turns the Opera House from one facade into part of a quieter city rhythm."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Show Night Needs Its Own Plan",
+                "body": "Programming, ticket access, photo rules, and opening conditions belong to the venue. Settle the show plan before crossing town."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-phan-dinh-phung-street",
+          "entry": {
+            "pageID": "city-hanoi-place-phan-dinh-phung-street",
+            "summary": "Phan Dinh Phung Street gives Hanoi a broader breath: tree shade, yellow villas, bicycles, and enough width to notice facades calmly.",
+            "context": "Take a short shaded walk that relieves Old Quarter compression without becoming a full itinerary.",
+            "tip": "Stay aware of traffic and gates while taking photos. The street works better as a calmer breath than a checklist.",
+            "rationale": "Phố Phan Đình Phùng gives a leafy Hanoi walk with practical photo manners and flexible street access.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Leafier Walk",
+                "body": "Phan Đình Phùng is tree shade, villa facades, bicycles, and a wider street that lets Hanoi breathe for a few blocks."
+              },
+              {
+                "id": "place-brief",
+                "title": "Shade Carries It",
+                "body": "The trees are the reason to slow down. Let the walk be calmer than the Old Quarter, not another packed route."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phan Đình Phùng In Shade",
+                "body": "Phố Phan Đình Phùng is the street name to pair with shade, yellow facades, and north-side walking."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Photo From The Side",
+                "body": "Step out of the path, watch for motorbikes, and avoid blocking gates or sidewalks while taking photos."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Ba Đình Air",
+                "body": "The street pairs naturally with Ba Đình or the Imperial Citadel area when the day needs air between heavier stops."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Sidewalks Set The Pace",
+                "body": "Sidewalk access, street works, traffic, and photo-sensitive areas are part of the walk. Stay observant and easy to adjust."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-pho-bat-dan",
+          "entry": {
+            "pageID": "city-hanoi-place-pho-bat-dan",
+            "summary": "Pho Bat Dan is a focused Old Quarter bowl: steam over beef broth, herbs at the side, a plain table, and a meal kept short before the street pulls you back out.",
+            "context": "Order the bowl before the room starts moving around you. The stop is about broth, not a long sit.",
+            "tip": "Taste the broth before adding lime, chili, or herbs. A lighter hand keeps the bowl from disappearing under condiments.",
+            "rationale": "Phở Bát Đàn is a specific pho stop centered on broth, steam, herbs, and a quick Old Quarter meal.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Steam At The Table",
+                "body": "Pho Bat Dan is steam, beef broth, herbs, a simple table, and the Old Quarter waiting outside after the bowl."
+              },
+              {
+                "id": "place-brief",
+                "title": "Bowl Before Table",
+                "body": "Know the main move before sitting: beef pho, herbs, broth, then the short pause of eating it well."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bát Đàn For Beef Pho",
+                "body": "Phở Bát Đàn is the name to connect with an Old Quarter beef pho stop."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Broth First",
+                "body": "Add herbs, lime, or chili slowly. The first spoonful tells you how much the bowl actually needs."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Short Meal",
+                "body": "Let the memory be steam, broth, and the street outside. Eat, pay, and move before overworking the stop."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Room Leads",
+                "body": "Line habits, menu, payment flow, and table rhythm belong to the room. Arrive ready to read it before ordering."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-pho-bo",
+          "entry": {
+            "pageID": "city-hanoi-place-pho-bo",
+            "summary": "Beef pho is the Hanoi bowl many visitors imagine before arrival: clear broth, flat rice noodles, sliced beef, green onion, herbs, and lime nearby.",
+            "context": "Taste the broth first, then adjust the bowl instead of turning the table into a condiment project.",
+            "tip": "If you see tái, expect rarer beef. Chín points toward cooked beef. One clear choice is enough for a first bowl.",
+            "rationale": "Phở bò ở Hà Nội is stable dish guidance, built around menu words, broth restraint, and simple table behavior.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Broth Before Add-Ins",
+                "body": "Beef pho is clear broth, flat noodles, sliced beef, green onion, herbs, and lime waiting near the bowl."
+              },
+              {
+                "id": "place-brief",
+                "title": "Taste First",
+                "body": "Take one spoonful before adding lime, chili, or extra herbs. The bowl moves quickly under condiments."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phở Bò In The Bowl",
+                "body": "Phở bò is the dish name for beef pho. In Hanoi, it is the baseline bowl for reading other noodle soups."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Beef Words",
+                "body": "Tái usually points to rarer beef. Chín points to cooked beef. You do not need every cut on the first order."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Hanoi Baseline",
+                "body": "After one good bowl, other noodle soups become easier to read: broth weight, herbs, texture, and table rhythm."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Dish First, Shop Second",
+                "body": "The dish is steady. Named restaurants are only part of the picture, so let the room, menu, and crowd guide the stop."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-pho-bo-lam",
+          "entry": {
+            "pageID": "city-hanoi-place-pho-bo-lam",
+            "summary": "Pho Bo Lam centers on the bowl: beef broth, rice noodles, herbs, and deeper chew if tendon is the texture you want in a focused Hanoi pho stop.",
+            "context": "Choose texture on purpose. Tendon reshapes the bowl, so the order is more than a menu test.",
+            "tip": "Start with broth and beef before adding too much lime or chili. The bowl already has enough going on.",
+            "rationale": "Phở Bò Lâm gets its specificity from texture and pace while guide mentions, menu, hours, and closure claims stay off the visible visit.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Beef Cuts, Simple Table",
+                "body": "Pho Bo Lam is a plain-table pho stop where broth, noodles, herbs, and beef texture lead the meal."
+              },
+              {
+                "id": "place-brief",
+                "title": "Texture On Purpose",
+                "body": "Tendon is richer and chewier than simple sliced beef. Pick it because you want that texture."
+              },
+              {
+                "id": "quick-say",
+                "title": "Bò Lâm For A Pho Stop",
+                "body": "Phở Bò Lâm is the name to keep beside beef pho, herbs, and a focused Hanoi meal."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Plain And Memorable",
+                "body": "This stop is strongest when lunch stays simple: eat the bowl, notice the shop rhythm, and move on."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Pho Comparison",
+                "body": "If trying more than one pho stop, compare broth, beef texture, herbs, and room pace without turning lunch into homework."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Room Has Final Say",
+                "body": "Hours, menu, and shop rhythm belong to the day. Read signs and the room before making the bowl a fixed plan."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-pho-ga",
+          "entry": {
+            "pageID": "city-hanoi-place-pho-ga",
+            "summary": "Chicken pho keeps the comfort of Hanoi pho but reads lighter: broth, rice noodles, shredded chicken, herbs, and lime without beef's heavier pull.",
+            "context": "Pick the gentler pho lane after richer meals or when a cleaner bowl sounds better.",
+            "tip": "Add lime slowly. Chicken broth can be delicate, and too much sharpness can flatten the bowl.",
+            "rationale": "Phở gà ở Hà Nội gives stable dish guidance with a clear contrast to beef pho and no need for a named venue.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Lighter Pho Bowl",
+                "body": "Chicken pho is broth, rice noodles, chicken, herbs, and lime with a cleaner feel than the beef version."
+              },
+              {
+                "id": "place-brief",
+                "title": "Gentler Comfort",
+                "body": "The bowl can feel restorative after several rich meals: steam, chicken, noodles, and a broth that stays quieter."
+              },
+              {
+                "id": "quick-say",
+                "title": "Phở Gà For The Lighter Bowl",
+                "body": "Phở gà is the dish name for chicken pho. It is the easier pho lane when beef feels heavy."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Lime Slowly",
+                "body": "Taste before adding lime, then herbs, then chili only if you want heat. The broth moves fast under sharpness."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Small Bowl, Clear Meal",
+                "body": "A simple bowl is enough. The pleasure is steam, chicken, and a few small adjustments at the table."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Dish First, Shop Second",
+                "body": "The dish is steady. Restaurant examples are only a starting point, so let the room, menu, and crowd guide the stop."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-pho-gia-truyen",
+          "entry": {
+            "pageID": "city-hanoi-place-pho-gia-truyen",
+            "summary": "Pho Gia Truyen is better treated as a quick broth-counter meal: steam, sliced beef, herbs, hot broth, and a room moving at meal speed.",
+            "context": "Know the bowl before the rush. The appeal is not decoration; it is the counter pace and the broth.",
+            "tip": "Decide on a straightforward pho order before the room pulls your attention. A clear first minute keeps the meal calm.",
+            "rationale": "Phở Gia Truyền gives a strong counter-meal moment through broth, pace, beef, herbs, and a room moving quickly.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Steam First, Seat Second",
+                "body": "Pho Gia Truyen is steam, sliced beef, herbs, hot broth, and a table that does not need to slow the day down."
+              },
+              {
+                "id": "place-brief",
+                "title": "Bowl Before Rush",
+                "body": "A straightforward pho order keeps the first minute calm when the room, counter, and other diners start moving."
+              },
+              {
+                "id": "quick-say",
+                "title": "Gia Truyền At The Counter",
+                "body": "Phở Gia Truyền is the name to pair with beef pho, counter rhythm, and Old Quarter meal speed."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Counter Pace",
+                "body": "Do not expect lingering. Watch the rhythm, take the bowl seriously, and let the table stay simple."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Pho Comparison",
+                "body": "Compare broth, beef texture, herbs, and room pace if trying several Hanoi pho stops."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Counter Leads",
+                "body": "Menu, hours, and shop rhythm belong to the day. Let the counter and the room confirm the stop before you commit."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-quan-thanh-temple",
+          "entry": {
+            "pageID": "city-hanoi-place-quan-thanh-temple",
+            "summary": "Quan Thanh Temple moves quickly from traffic to shade: temple gate, incense, stone, courtyard quiet, and a slower step near West Lake.",
+            "context": "Pause at the gate before treating the temple like another photo stop.",
+            "tip": "Let the courtyard soften the sound of the street before reaching for the camera. The quieter pace is part of the visit.",
+            "rationale": "Đền Quán Thánh is sacred and specific, with worship respect, lake pairing, and access left to the day.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Traffic Outside, Incense Inside",
+                "body": "Quan Thanh moves from road noise into shade, incense, stone, temple architecture, and a courtyard that asks for a slower step."
+              },
+              {
+                "id": "place-brief",
+                "title": "Gate Pause",
+                "body": "The entrance is part of the visit. Step in slowly, let your eyes adjust, and notice how the courtyard softens the street."
+              },
+              {
+                "id": "quick-say",
+                "title": "Quán Thánh Near West Lake",
+                "body": "Đền Quán Thánh is the name to connect with the temple gate, incense, and the West Lake side of Hanoi."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Camera Secondary",
+                "body": "This is an active worship space. Take photos gently, step aside, and put the phone away when the room asks for quiet."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Lake Pairing",
+                "body": "The temple sits well with a West Lake or Trúc Bạch walk, especially when the day needs a quiet pause."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Gate Sets The Visit",
+                "body": "Hours, entrance access, worship expectations, and restoration notices belong to the gate. Read it before stepping into the courtyard."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-quang-ba-flower-market",
+          "entry": {
+            "pageID": "city-hanoi-place-quang-ba-flower-market",
+            "summary": "Quang Ba Flower Market is flowers before breakfast: bundles, wet pavement, scooters, vendors moving fast, and a quieter city still waking up.",
+            "context": "Observe the working market before stepping into its flow. The flowers are moving for real customers, not only photos.",
+            "tip": "Stand aside for a minute before buying or taking photos. The market has lanes, pace, and working hands to respect.",
+            "rationale": "Chợ hoa Quảng Bá stays vivid through flowers, wet pavement, scooters, and working-market pace rather than fixed hours or prices.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Flowers Before Breakfast",
+                "body": "Quảng Bá is bundles of flowers, wet pavement, scooters, and vendors moving while much of Hanoi is still quiet."
+              },
+              {
+                "id": "place-brief",
+                "title": "Work Before Photos",
+                "body": "Stand aside before entering a stall lane. The market has its own rhythm, and the flowers are moving for real buyers."
+              },
+              {
+                "id": "quick-say",
+                "title": "Quảng Bá Before Dawn",
+                "body": "Chợ hoa Quảng Bá is the name to connect with Hanoi's early flower trade near the lake side."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small Bundle Logic",
+                "body": "If buying flowers, think about the rest of the morning. A small bundle travels better than a fragile armful."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Lake Morning",
+                "body": "The market makes sense with a West Lake-side morning, coffee afterward, or a slow ride back into the city."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Working Pace Leads",
+                "body": "Access, holiday crowds, and market rhythm belong to the morning. Go early, stay flexible, and let working hands set the pace."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-red-river",
+          "entry": {
+            "pageID": "city-hanoi-place-red-river",
+            "summary": "The Red River opens Hanoi at the waterline: Long Bien Bridge above, sandy banks below, boats, reflections, and working water stretching the city wider.",
+            "context": "Look from a safer, clearer frame before wandering toward uneven river edges.",
+            "tip": "See the river from Long Bien Bridge first. The banks, distance, and working water make more sense from that frame.",
+            "rationale": "Sông Hồng organizes the river view around safer frames, working water, and uneven bank conditions.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "City At The Waterline",
+                "body": "The Red River is working water, bridge steel, sandy banks, boats, reflections, and a wider edge to Hanoi."
+              },
+              {
+                "id": "place-brief",
+                "title": "Long Bien First",
+                "body": "Long Bien Bridge gives the river shape. From there, banks, boats, and distance read better than from a random road edge."
+              },
+              {
+                "id": "quick-say",
+                "title": "Sông Hồng From The Bridge",
+                "body": "Sông Hồng is the Vietnamese name for the Red River, useful when river views and bridge routes enter the day."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Working Banks",
+                "body": "Do not treat every open patch as a promenade. Stay aware of footing, traffic, and where local movement actually goes."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Light Over Distance",
+                "body": "The river rewards a simple plan: one bridge view, one waterline pause, then a clear way back."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Uneven Edges Need Care",
+                "body": "Public access, bank conditions, and bridge-area routing belong to the river day. Keep the view simple and avoid uncertain edges."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-st-joseph-cathedral",
+          "entry": {
+            "pageID": "city-hanoi-place-st-joseph-cathedral",
+            "summary": "St. Joseph's Cathedral sits where old lanes, scooters, cafe umbrellas, and a tall stone facade press into one central square near Hoan Kiem.",
+            "context": "Read the square before entering. The outside atmosphere is part of the stop.",
+            "tip": "Give the cathedral its own pause before turning toward coffee. The surrounding streets make distraction easy.",
+            "rationale": "Nhà thờ Lớn Hà Nội is a specific sacred landmark, with respectful visit behavior and access shaped by the day.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Old Lanes, Big Facade",
+                "body": "The cathedral gathers stone, scooters, cafe umbrellas, passing people, and old lanes into one compact square."
+              },
+              {
+                "id": "place-brief",
+                "title": "Square Before Door",
+                "body": "The outside is part of the stop: facade, street movement, people waiting, and cafes around the edges."
+              },
+              {
+                "id": "quick-say",
+                "title": "Nhà Thờ Lớn In The Square",
+                "body": "Nhà thờ Lớn Hà Nội is the Vietnamese name to connect with the cathedral square and nearby old lanes."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Worship Stays Clear",
+                "body": "If the doors are open, enter gently. Avoid blocking prayer, and let the quiet inside stay quiet."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Coffee Can Wait",
+                "body": "Nearby cafes are tempting, but the cathedral deserves ten minutes of its own before the next cup."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Worship Hours Lead",
+                "body": "Church access, service-time limits, photo expectations, and restoration notices belong to the church day. Let worship hours shape the visit."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-street-food-walk",
+          "entry": {
+            "pageID": "city-hanoi-place-street-food-walk",
+            "summary": "A Hanoi street-food walk is a meal across short stops: steam from a pot, herbs on a tray, low stools, and a grill before the next corner.",
+            "context": "Keep the route loose and the orders light enough for the evening to stay open.",
+            "tip": "Order one dish per stop when possible. A bowl, plate, or shared portion leaves room for the next smell or corner.",
+            "rationale": "Đi bộ ăn vặt Hà Nội guides food-walk behavior while routes, vendors, prices, and opening patterns stay flexible.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Meal Across Stops",
+                "body": "A street-food walk is steam, herbs, low stools, grilled smoke, and small decisions spaced across several short stops."
+              },
+              {
+                "id": "place-brief",
+                "title": "Small Orders",
+                "body": "One dish per stop keeps the night open. A bowl of pho, a plate of bánh cuốn, or shared bún chả can be enough."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Hanoi Snack-Walk Phrase",
+                "body": "Đi bộ ăn vặt Hà Nội is the phrase for a casual Hanoi food walk built from small stops."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Busy Tables",
+                "body": "A line of people finishing bowls says more than a bright sign. Watch for fresh herbs and cooks already moving."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Sweet Ending",
+                "body": "Leave room for egg coffee, fruit, or a small dessert so the walk slows down instead of ending heavy."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Loose Evenings Work Best",
+                "body": "Vendor mix, routes, prices, and opening patterns belong to the night. Order small and let the evening adjust."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-ta-hien",
+          "entry": {
+            "pageID": "city-hanoi-place-ta-hien",
+            "summary": "Ta Hien is the Old Quarter at evening volume: low stools, warm signs, food smoke, bia hơi, and groups deciding how long the night should go.",
+            "context": "Walk the block once before taking a stool. The scene is compressed, loud, and better with a small decision.",
+            "tip": "Check menus and prices before sitting. The street gets louder as the night goes on, so simple questions are easier early.",
+            "rationale": "Phố Tạ Hiện captures the social evening lane while bar, price, crowd-control, and opening claims stay flexible.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "One Lap Before A Stool",
+                "body": "Tạ Hiện is low stools, warm signs, food smoke, bia hơi, and groups deciding whether the night is one drink or several streets."
+              },
+              {
+                "id": "place-brief",
+                "title": "Earlier Evening Read",
+                "body": "Dusk makes the lane easier to read. You can compare seats, food, beer, music, and crowd level before committing."
+              },
+              {
+                "id": "quick-say",
+                "title": "Tạ Hiện At Evening Volume",
+                "body": "Phố Tạ Hiện is the street name to pair with Old Quarter nightlife, low stools, and warm evening signs."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Prices Before Bottles",
+                "body": "Menus and drink prices are worth reading before you sit. The money question is simpler before the street gets loud."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Exit Before It Drags",
+                "body": "The charm is compression. When noise stops feeling fun, step toward the lake or another Old Quarter lane."
+              },
+              {
+                "id": "good-to-know",
+                "title": "The Block Reads Best First",
+                "body": "Crowd controls, individual bars, prices, and street conditions belong to the night itself. Read the block once before sitting down."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        }
+      ]
+    },
+    {
+      "chunkFile": "hanoi_076_100_humanized.json",
+      "cityID": "hanoi",
+      "range": "076-100",
+      "replacements": [
+        {
+          "pageID": "city-hanoi-place-tam-vi",
+          "entry": {
+            "pageID": "city-hanoi-place-tam-vi",
+            "summary": "Tam Vi is a slower Hanoi dinner stop: warm wood, shared northern dishes, rice on the table, and a room that feels chosen rather than squeezed between sights.",
+            "context": "This is the night to let dinner carry the plan: shared plates, rice in the center, and a room with enough calm to stay awhile.",
+            "tip": "Settle table size, dietary questions, and booking needs early, then let the room and shared dishes carry the pace.",
+            "rationale": "Tam Vi gives Hanoi a quieter restaurant rhythm, where the memory is the table and evening texture more than one dramatic plate.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Northern Table Rhythm",
+                "body": "Tam Vi suits a night when dinner can be part of the itinerary: warm wood, shared plates, rice, and a slower room."
+              },
+              {
+                "id": "quick-say",
+                "title": "Tầm Vị At The Door",
+                "body": "Tầm Vị is the name to recognize when booking, arriving, or making sure the driver has the right restaurant."
+              },
+              {
+                "id": "place-brief",
+                "title": "Share More Than You Solo",
+                "body": "The room makes more sense with a table order than a single-bowl mindset. A few dishes, rice in the center, and an unhurried pace suit the place."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Questions Before Dishes",
+                "body": "Pork, shellfish, spice, table size, and booking questions are easiest before the first dish arrives. After that, the meal can stay calm."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Before The Meal",
+                "body": "Arrive with the idea of a shared northern meal, not a quick famous stop. Warm wood, rice, table dishes, and an unhurried pace are the reason to make room for it."
+              },
+              {
+                "id": "good-to-know",
+                "title": "One Meal Can Be The Evening",
+                "body": "This is not a rush-in famous-name stop. Give the meal enough space, then let the rest of the night stay simple."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-train-street",
+          "entry": {
+            "pageID": "city-hanoi-place-train-street",
+            "summary": "Hanoi Train Street is memorable because the space is tight: rail line, walls, cafe edges, signs, and people moving carefully around a narrow corridor.",
+            "context": "Safety and access come first. The clearest visit stays with permitted edges, signs, staff direction, and cafe boundaries.",
+            "tip": "Follow barriers, staff, and local instructions first. A safe cafe edge or brief photo is better than crowding the track area.",
+            "rationale": "Hanoi Train Street needs a careful version of the famous scene: narrow rails, cafe edges, access boundaries, and respect for people who live there.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "The View Stays On The Edge",
+                "body": "The narrow corridor is the point: rails, walls, cafe edges, signs, and careful movement around a street people live with."
+              },
+              {
+                "id": "quick-say",
+                "title": "The Rail-Street Phrase",
+                "body": "Phố đường tàu Hà Nội is the name to recognize when finding a permitted cafe address or hearing directions."
+              },
+              {
+                "id": "place-brief",
+                "title": "Permitted Edges Matter",
+                "body": "Barriers, staff, and local instructions matter more than a planned photo. The scene works best when everyone stays out of the track space."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Cafes Are The Frame",
+                "body": "When a permitted cafe seat is available, stay back and let the narrowness tell the story without blocking movement."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Safety Before The Photo",
+                "body": "Treat access as a boundary, not a puzzle. If a permitted cafe or staff direction is not clear, keep the memory to a safe edge and move on."
+              },
+              {
+                "id": "good-to-know",
+                "title": "A Brief Photo Is Enough",
+                "body": "A quick photo from a safe edge carries the memory. Crowding the track area makes the street worse for residents and staff."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-trang-tien-street",
+          "entry": {
+            "pageID": "city-hanoi-place-trang-tien-street",
+            "summary": "Trang Tien Street gives the French Quarter side a walkable line: trees, shopfronts, book edges, scooters, and crossings that ask for patience.",
+            "context": "Treat the street as a readable line through the French Quarter side: trees, crossings, shopfronts, scooters, and a possible lake-side turn.",
+            "tip": "Take one slow pass, notice crossings and shade, then decide whether a shop, cafe, or lake-side turn deserves a stop.",
+            "rationale": "Trang Tien Street makes nearby landmarks feel connected instead of scattered, especially around Hoan Kiem and the Opera House side.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "One French Quarter Line",
+                "body": "Trang Tien Street makes the old center feel walkable: trees, shopfronts, book edges, scooters, and crossings that slow the pace."
+              },
+              {
+                "id": "quick-say",
+                "title": "Tràng Tiền On Signs",
+                "body": "Phố Tràng Tiền is the name to recognize on signs, route notes, and conversations around the French Quarter side."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Slow Pass",
+                "body": "The street reads better after a careful walk. Notice shade, shop signs, curb edges, and where the pavement opens before stopping."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Crossings Set The Pace",
+                "body": "Scooters, parked bikes, and curb edges make the walk feel very Hanoi. Pause, choose a gap, and keep the move simple."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Between Lake And Quarter",
+                "body": "This street is useful when the old center needs one readable line: trees, crossings, shopfronts, scooters, and a soft route toward the French Quarter side."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Lake-Side Pairing",
+                "body": "The street fits before or after Hoan Kiem, the Opera House side, or a short French Quarter walk."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+          "entry": {
+            "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+            "summary": "Trieu Viet Vuong Coffee Street is easier when the street is the decision: signs, shade, table height, fan noise, and cafe moods to compare.",
+            "context": "Individual cafes come and go, but the street still works as a coffee walk: compare signs, shade, table height, and room mood.",
+            "tip": "Walk once before sitting. A basic iced milk coffee is enough to read the street without turning the pause into research.",
+            "rationale": "Triệu Việt Vương makes Hanoi coffee feel physical: signs, doorways, table height, fan noise, and the small choice of where to sit.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Coffee Street Before A Cafe",
+                "body": "Triệu Việt Vương is easier when the street comes first: signs, shade, table height, fan noise, and different rooms to compare."
+              },
+              {
+                "id": "quick-say",
+                "title": "Triệu Việt Vương For Coffee",
+                "body": "Phố cà phê Triệu Việt Vương is the name to recognize when asking for coffee streets or following a route."
+              },
+              {
+                "id": "place-brief",
+                "title": "One Lap Before A Chair",
+                "body": "A first pass keeps the first open doorway from becoming the default. Look for shade, table height, and the mood you want."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small Order, Better Read",
+                "body": "A basic cà phê sữa đá is enough for the first stop. The street is built for comparing moods, not proving loyalty."
+              },
+              {
+                "id": "when-to-use",
+                "title": "Mood Before Doorway",
+                "body": "Walk a little before choosing a cafe. Shade, fan noise, table height, and room energy matter more here than chasing the first open seat."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Choice Can Get Noisy",
+                "body": "Coffee streets can make choice feel endless. Pick a table, drink slowly, and move on while the pause still feels easy."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-vietnam-circus",
+          "entry": {
+            "pageID": "city-hanoi-place-vietnam-circus",
+            "summary": "Vietnam Central Circus is an evening switch: theatre doors, stage light, families arriving, and Hanoi street activity outside the venue.",
+            "context": "The stable moment is the evening switch: doors, stage light, families arriving, and Hanoi street noise waiting outside.",
+            "tip": "Arrive with a buffer for the entrance, tickets, seats, and the small confusion that comes with live venues.",
+            "rationale": "Vietnam Central Circus gives Hanoi a live-night switch: families at the door, stage light inside, and street noise waiting outside.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "A Live Night",
+                "body": "Vietnam Central Circus is an evening switch: theatre doors, stage light, families moving through the entrance, and street noise outside."
+              },
+              {
+                "id": "quick-say",
+                "title": "Rạp Xiếc At The Door",
+                "body": "Rạp Xiếc Trung ương is the Vietnamese name to recognize when using tickets, directions, or the entrance."
+              },
+              {
+                "id": "place-brief",
+                "title": "A Buffer Softens The Night",
+                "body": "Circus nights are easier when the first move is not rushed. Give yourself time for the entrance, tickets, and seats."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Street Energy At The Door",
+                "body": "Lights, traffic, arriving families, and the turn from pavement noise to stage focus are part of the memory."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Little Door Buffer",
+                "body": "Settle the performance plan before crossing town, then leave time for the door, tickets, and seats. The evening works better without a rushed arrival."
+              },
+              {
+                "id": "good-to-know",
+                "title": "An Uncrowded Evening",
+                "body": "Dinner, the show, and a simple ride back will usually feel better than forcing one more landmark afterward."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        },
+        {
+          "pageID": "city-hanoi-place-xoi-xeo",
+          "entry": {
+            "pageID": "city-hanoi-place-xoi-xeo",
+            "summary": "Xoi xeo is yellow sticky rice folded into a quick Hanoi meal: soft mung bean, fried shallots, warm grains, and breakfast that can travel.",
+            "context": "The dish is a quick breakfast decision: warm yellow sticky rice, soft mung bean, fried shallots, and toppings checked before the packet closes.",
+            "tip": "Look for steam and turnover, order small the first time, and check toppings before the packet closes.",
+            "rationale": "Xoi xeo gives Hanoi food coverage a handheld breakfast moment with texture, weight, and a clear ordering rhythm.",
+            "sections": [
+              {
+                "id": "at-glance",
+                "title": "Breakfast In One Hand",
+                "body": "Xoi xeo is yellow sticky rice with soft mung bean, fried shallots, warm grains, and a quick breakfast rhythm."
+              },
+              {
+                "id": "quick-say",
+                "title": "Xôi Xéo In The Morning",
+                "body": "Xôi xéo ở Hà Nội is the phrase to recognize when looking for the Hanoi version of this sticky-rice breakfast."
+              },
+              {
+                "id": "place-brief",
+                "title": "Steam And Turnover",
+                "body": "The dish is better when it feels recently made. Warm rice, moving toppings, and steady buying matter more than a pretty display."
+              },
+              {
+                "id": "use-it-with",
+                "title": "Small First Portion",
+                "body": "Sticky rice is heavier than it looks. A small portion gives the texture without turning breakfast into a weight for the morning."
+              },
+              {
+                "id": "when-to-use",
+                "title": "A Small Breakfast Start",
+                "body": "Order small first and watch the toppings. Warm rice, mung bean, shallots, and steady turnover matter more than turning breakfast into a heavy meal."
+              },
+              {
+                "id": "good-to-know",
+                "title": "Toppings Make The Meal",
+                "body": "Plain xoi xeo is simple and fragrant. Meat, egg, or sausage can make it fuller, so point carefully and check before paying."
+              }
+            ],
+            "sourceMode": "expanded-detail"
+          }
+        }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass",
+    "notes": "Targeted headings and flagged wording repaired; required object shape, IDs, order, and arrays are preserved.",
+    "remainingRisks": []
+  }
+}

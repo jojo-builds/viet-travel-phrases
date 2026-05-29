@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-25
+Last updated: 2026-05-28
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,49 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current City Pages Hard Reset v2.2 Evidence
+
+Current `feature/city-pages` evidence from the 2026-05-27 hard reset:
+
+- hard-reset receipt: `docs/editorial-exports/viet-city-pages/hard-reset-v2-2-2026-05-27/HARD_RESET_V2_2_FINAL_RECEIPT.md`
+- current city/page authority: `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`
+- source authority: `content-draft/viet/city-library/app-detail-v2-2/`
+- inventory: `500` in-scope city/place listings, `100` each for Da Nang, Hanoi, Ho Chi Minh City, Hoi An, and Hue
+- status: all four hard-reset gates issued `FINAL_PASS`
+
+Fresh command evidence from this pass:
+
+- V2.2 regeneration chain
+  - passed: projected `500` entries into compatibility source, regenerated authored listing resources, SQLite fixture, and practice deck
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`
+  - passed: `500` total, `500` `FINAL_PASS`, `0` revise/fail
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`
+  - passed: `0` failures; formula checks reported zero hits for the repaired banned phrases
+- `node native-ios/scripts/validate-viet-city-copy.js`
+  - passed: `5` hubs, `500` city noun pages, `500` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js`
+  - passed: `806` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`
+  - passed: `500` city places, `0` release-blocking missing-audio rows
+- `node native-ios/scripts/validate-viet-hero-image-assets.js`
+  - passed under the current non-unique hero gate
+- `node scripts/guard-native-only.js`
+  - passed
+- V2.2 Node test chain and practice deck check/test
+  - passed
+- Native UI screenshot proof
+  - passed: `SpeakLocalNativeUITests/BrowseSearchUITests/testCaptureV22CityPageProductionProof`, `1` test, `0` failures
+  - screenshot folder: `docs/design/city-pages/screenshots/v2-2-500-story-production-2026-05-27`
+  - fresh artifacts: `20` PNGs, top and scrolled states for `10` proof pages
+  - xcresult: `native-ios/artifacts/DerivedData-v2-2-hard-reset-final/Logs/Test/Test-SpeakLocalNative-2026.05.27_16-04-01-+0700.xcresult`
+- Physical iPhone Debug build/install/launch from `feature/city-pages`
+  - build passed
+  - install passed
+  - launch passed after the phone became unlockable
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
+Four-gate status from this pass: Authority / Scope `FINAL_PASS`, Editorial Voice `FINAL_PASS`, Data / Catalog / Audio `FINAL_PASS`, Native Runtime / Release `FINAL_PASS`.
 
 ## Current Main Merge Sweep Evidence
 

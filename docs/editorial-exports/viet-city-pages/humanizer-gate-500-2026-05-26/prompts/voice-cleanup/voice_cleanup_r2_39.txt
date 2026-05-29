@@ -1,0 +1,305 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_39",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_39",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hcmc-place-mien-dong-bus-station",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-mien-tay-bus-station",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-municipal-theatre-square",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-long-trieu",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hcmc-place-mariamman-temple",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "city-hcmc-place-municipal-theatre-square",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: local name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 3x: street name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 15x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 7x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-long-trieu",
+          "summary": "Long Trieu is a polished Chinese dining stop for a meal that feels planned: dim sum table settings, staff rhythm, and a quieter room than the street outside.",
+          "context": "The useful frame is a deliberate meal, not filler between sights. The room and table rhythm matter as much as the dishes.",
+          "tip": "Long Triều is the local spelling to recognize. Menu details and table pacing matter here, so give the meal room in the day.",
+          "rationale": "The restaurant adds a more formal HCMC dining option, with Chinese food, dim sum cues, table service, and evening-meal energy.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Planned Chinese Meal",
+              "body": "This is the kind of stop to give space to. The table setting, service rhythm, and dim sum cues make the meal feel intentional."
+            },
+            {
+              "id": "place-brief",
+              "title": "Polished Room, Slower Pace",
+              "body": "The room matters because it changes the pace: quieter, more formal, and more table-focused than a quick street-food stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Long Triều is the Vietnamese styling to notice. The venue name may be easier than translating the cuisine."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Dinner As The reference point",
+              "body": "It makes most sense when dinner is one of the day's planned moments, not a rushed meal after too many stops."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Time Helps",
+              "body": "A bigger menu needs a calmer read. That leaves room to ask about house dishes, portions, or dim sum before the table fills."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Street-Food Mood",
+              "body": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the point."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-mariamman-temple",
+          "summary": "Mariamman Hindu Temple is a small central sacred stop with a colorful facade, temple detail, and a visit that needs a respectful pause more than a long detour.",
+          "context": "The temple sits inside central street life, so the contrast matters: traffic outside, worship and color inside.",
+          "tip": "Đền Mariamman is the name to recognize. The facade is easy to spot, but the visit feels better when the first move is slow.",
+          "rationale": "The temple adds a different sacred-place layer to central HCMC: Hindu worship, color, incense, and architecture on a busy street.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Sacred Stop In Traffic",
+              "body": "The contrast is immediate: a colorful Hindu temple facade on a central street, then a slower, more respectful rhythm inside."
+            },
+            {
+              "id": "place-brief",
+              "title": "Color Before Quiet",
+              "body": "The facade catches attention first. Inside, the better memory is the change of pace around worship, temple detail, and incense."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Đền Mariamman is the name to recognize. The English name and Vietnamese label both point to the same central temple."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Central Pause",
+              "body": "It fits well between nearby central stops when you want a sacred space without making the whole day temple-focused."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respect Over Speed",
+              "body": "This is an active place of worship, not just a photo facade. A slower entrance keeps the visit from feeling too casual."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Street Outside, Shrine Inside",
+              "body": "The city noise sits close to the entrance. That edge is part of the experience: busy street first, temple rhythm second."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-mien-dong-bus-station",
+          "summary": "Mien Dong Bus Station is a travel-day name to recognize before an eastbound or onward bus move, where the useful details are terminal, ticket counter, route board, and pickup.",
+          "context": "The station is not sightseeing. It is a handoff point where names, tickets, signs, and rides need more attention than scenery.",
+          "tip": "Bến xe Miền Đông is the Vietnamese name. Exact terminal and operator details can matter, so match the booking, map point, and driver wording.",
+          "rationale": "The station gives HCMC a practical transport stop for bus days, especially when a visitor needs the local name before the ride.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Station Move, Not A Sight",
+              "body": "The point is getting the bus day right: station name, ticket counter, route board, pickup spot, and the ride out of the city."
+            },
+            {
+              "id": "place-brief",
+              "title": "Names Matter Here",
+              "body": "Buses, ride-hailing pins, and local directions can blur on travel days. The Vietnamese station name is often the useful reference point."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name Cue",
+              "body": "Bến xe Miền Đông means Mien Dong Bus Station. It belongs beside your booking details so a driver or staff member can match the right place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Ticket And Pickup Checks",
+              "body": "The safest first question is practical: correct station, correct company, correct departure point. Do not treat one gate or window as the whole answer."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Buffer For Confusion",
+              "body": "A station move deserves extra time because wrong pins, similar names, and traffic can turn a simple transfer into a rushed one."
+            },
+            {
+              "id": "good-to-know",
+              "title": "City Still Outside",
+              "body": "Even after you reach the station, HCMC is still part of the move: traffic, ride timing, bags, and the last check before departure."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-mien-tay-bus-station",
+          "summary": "Mien Tay Bus Station is the western bus-station name to know before Mekong-side travel days, with the useful focus on tickets, route boards, pickup points, and return timing.",
+          "context": "This is a practical travel handoff, not a place to romanticize. The name helps when drivers, operators, and maps need to line up.",
+          "tip": "Bến xe Miền Tây is the Vietnamese name. It should sit next to the bus company and departure time before you start moving across town.",
+          "rationale": "The station gives HCMC a clear westbound transport stop, especially for visitors connecting the city with regional bus routes.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Western Bus Handoff",
+              "body": "The visit is about the transfer: correct station name, operator, route board, waiting area, and the ride out toward the west."
+            },
+            {
+              "id": "place-brief",
+              "title": "Practical Before Scenic",
+              "body": "The bus day starts with logistics, not atmosphere. Station doors, signs, and staff counters matter because they reduce wrong-turn stress."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name Cue",
+              "body": "Bến xe Miền Tây means Mien Tay Bus Station. The Vietnamese name helps with drivers, maps, and ticket-window recognition."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Regional Travel Days",
+              "body": "It belongs in the plan when the city day turns into a bus day. The address, operator, and departure time should stay together."
+            },
+            {
+              "id": "when-to-use",
+              "title": "More Time Than You Think",
+              "body": "Cross-city traffic can make the station feel farther than the map suggests. A buffer helps protect the bus connection."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not The Other Station",
+              "body": "Mien Tay and Mien Dong are different names and directions. The Vietnamese name matters before booking a ride to the terminal."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-municipal-theatre-square",
+          "summary": "Lam Son Square is the Opera House-facing pause where performance, city lights, hotel fronts, and evening crossings make central Saigon feel staged for a few minutes.",
+          "context": "The square works as a small orientation point around the Opera House, not a separate attraction to over-plan.",
+          "tip": "Công trường Lam Sơn is the local name. The Opera House is the easier visual reference point if a driver or friend needs context.",
+          "rationale": "The square gives HCMC a performance-adjacent landmark: theatre doors, evening streets, city light, and a place to meet or pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Opera House Foreground",
+              "body": "The square is most legible as the space around the Opera House: a place for photos, meeting, crossing, and reading the evening center."
+            },
+            {
+              "id": "place-brief",
+              "title": "Performance In The Background",
+              "body": "Even without a ticket, the theatre changes the mood. Facade, lights, hotel fronts, and street movement make the corner feel more formal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Công trường Lam Sơn is the Vietnamese name. Pair it with the Opera House when someone needs a clearer landmark."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Meeting Point With A View",
+              "body": "It suits a short pause before dinner, a show, or a walk toward Đồng Khởi and Nguyen Hue."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Evening Makes Sense",
+              "body": "The square is stronger when the lights are on and people are gathering. In harsh daytime, it can feel more like a crossing."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Standalone Plan",
+              "body": "The square is a foreground, not the whole outing. The Opera House and nearby streets carry most of the reason to be there."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

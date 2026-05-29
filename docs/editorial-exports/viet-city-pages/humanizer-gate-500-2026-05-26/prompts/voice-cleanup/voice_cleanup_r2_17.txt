@@ -1,0 +1,299 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_17",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_17",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hanoi-place-coffee-hop",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-coffee-hop",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-cyclo-old-quarter",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-dong-da",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-dong-da",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-dinh-cafe",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-coffee-hop",
+          "summary": "A Hanoi coffee hop works when the city arrives in small pauses: one iced coffee, one richer cup, and short walks between corners near the old streets.",
+          "context": "The route is not about collecting cafes. The street between tables is part of the coffee memory.",
+          "tip": "Two or three stops is usually enough. Drink water, share sweet cups, and keep the route short enough to stay pleasant.",
+          "rationale": "Coffee hopping turns Hanoi cafe culture into a walkable rhythm without needing a famous table every time.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Three Cups Is Already A Route",
+              "body": "A coffee hop works through small pauses: a low table, an upstairs room, a cold glass, and the walk before the next stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Coffee Phrases Within Reach",
+              "body": "Cà phê sữa đá, cà phê đen đá, and the bill are the practical lines. The route feels easier when the next order is not a puzzle."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Classic, One Richer Cup",
+              "body": "A classic iced order makes the first stop easy to recognize. Egg coffee or another richer Hanoi-style cup belongs later, if the day still wants sweetness."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Walk Between Cafes",
+              "body": "Do not stack cafes like errands. Balcony signs, narrow stairs, old windows, and motorbikes below are part of the route."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Route Made Of Pauses",
+              "body": "A coffee hop fits when the walking is part of the pleasure. Two or three short tables can show more Hanoi than one long cafe stay."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Stop Before Coffee Wins",
+              "body": "Two or three stops can be plenty. The final table should still feel like a pleasure, not a caffeine dare."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+          "summary": "Cong Ca Phe on Trieu Viet Vuong is strongest as a controlled coffee pause: green chairs, retro design cues, cold drinks, and a table away from the heat.",
+          "context": "The branch is strongest as a short cafe stop: green chairs, retro cues, a cold drink, and a table away from the heat.",
+          "tip": "Order one clear cold drink, sit long enough to reset, then let the broader coffee-street mood carry the next decision.",
+          "rationale": "This recognizable Hanoi cafe brand works as a practical short stop without turning the visit into a long venue review.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Pause With A Set Look",
+              "body": "Cộng Cà Phê is useful when the city heat needs a table. The room, green chairs, and cold glasses do part of the work."
+            },
+            {
+              "id": "quick-say",
+              "title": "Say The Name Slowly",
+              "body": "Cộng Cà Phê is the name to recognize. If the street matters, pair it with Triệu Việt Vương when showing the stop on a map."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cold Coffee Carries The Stop",
+              "body": "One clear drink is stronger than a tasting flight here. A cold coffee order fits the pause best."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Notice The Room, Then Move On",
+              "body": "The design is part of the appeal, but the stop stays better when short. Sit, cool down, watch the counter rhythm, then continue."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Cooldown Table",
+              "body": "This Cong branch fits when the coffee-street plan needs a reliable-looking pause, cold drink, and recognizable room before the next walk."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Coffee Street Can Carry The Next Move",
+              "body": "Triệu Việt Vương gives the stop more context. Cộng can be the first table, not the only Hanoi coffee memory."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-cyclo-old-quarter",
+          "summary": "An Old Quarter cyclo ride lowers Hanoi's speed: shopfronts, signs, scooters, and pedestrians pass close while someone else handles the traffic pattern.",
+          "context": "This is slow sightseeing, not fast transport. Agree on the ride before rolling and finish with a walk if the streets still feel good.",
+          "tip": "Agree on fare, route length, pickup point, and stop point before the ride begins. Avoid fixed numbers unless they are confirmed on the spot.",
+          "rationale": "The cyclo ride gives the Old Quarter a seat-height perspective and a practical need for transport phrases.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Old Quarter From Seat Height",
+              "body": "A cyclo ride changes the street by slowing it down. Shop signs, parked scooters, and pedestrians pass close enough to notice."
+            },
+            {
+              "id": "quick-say",
+              "title": "Set The Ride First",
+              "body": "Simple transport lines belong before the climb in: take me here, how much is the fare, and you can stop here."
+            },
+            {
+              "id": "place-brief",
+              "title": "Agree Before Rolling",
+              "body": "The rough route, time, and fare belong before the ride begins. A short loop is easier to enjoy than a vague ride that keeps stretching."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Passenger View, Not Fast Transport",
+              "body": "This is not the quickest way across town. Phone and bag stay close while the ride stays about old-lane texture."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Slow Passenger View",
+              "body": "A cyclo ride fits when sightseeing should slow down and the route is agreed first. It is a street-level view, not a replacement for practical transport."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Finish With A Walk",
+              "body": "A short walk after the ride makes the same streets easier to read. Once you are back on the pavement, the route becomes yours again."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-dinh-cafe",
+          "summary": "Dinh Cafe is a small upstairs coffee pause near Hoan Kiem Lake, where the entrance, climb, tight room, and hot egg coffee are part of the ritual.",
+          "context": "The cafe works as a compact Hanoi moment, not a long wait. The approach matters as much as the cup.",
+          "tip": "Entrance path, hours, seating, and menu can change. If the room is full, keep the lake walk moving.",
+          "rationale": "Dinh Cafe makes egg coffee feel connected to old Hanoi through a physical arrival sequence and a small second-floor room.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Find The Stairwell Before The Cup",
+              "body": "Cà phê Đinh is about the approach as much as the drink. Find the entrance, go upstairs, then let the room explain the pause."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "coffee-1",
+                "v900-food-drin-one-hot-coffee-please",
+                "v900-food-drin-less-sugar-please",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "place-brief",
+              "title": "The Climb Is Part Of It",
+              "body": "The stairwell, small room, low tables, and lake-edge feeling separate the cup from a quick coffee counter."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Hot Egg Coffee First",
+              "body": "If this is your first comparison stop, start with hot cà phê trứng. The foam and bitterness make more sense warm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Full Room Changes The Mood",
+              "body": "This is better as a short pause than a long wait. If it is packed, nearby coffee stops can keep the day moving."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-dong-da",
+          "summary": "Dong Da gives Hanoi an ordinary scale: hotel streets, local shops, food counters, school-hour traffic, and small evenings that do not ask to be photographed.",
+          "context": "The district matters most when your hotel, meal, or walk is already nearby. Pair the name with a specific street or stop.",
+          "tip": "Dong Da is too broad for one wandering target. A small section gives the everyday edges enough room to show.",
+          "rationale": "Dong Da expands Hanoi beyond landmark districts through practical neighborhood movement and local routines.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A District For Ordinary Edges",
+              "body": "Đống Đa is broad and lived-in. It shows up through food counters, small shops, cafes, school gates, and the slower rhythm after office hours."
+            },
+            {
+              "id": "quick-say",
+              "title": "A Real Plan Gives It Shape",
+              "body": "Đống Đa is the district name. Pair it with a hotel, restaurant, cafe, or street so the area becomes practical instead of abstract."
+            },
+            {
+              "id": "place-brief",
+              "title": "Short Walks Beat Full Coverage",
+              "body": "One small section tells the story. Storefront signs, parked scooters, coffee stops, and local errands reveal more than trying to cover the district."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Evening Gives The Texture",
+              "body": "The area can feel clearest when people are coming home, buying dinner, or filling small cafes. That everyday movement is the point."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Nearby-Neighborhood Frame",
+              "body": "Dong Da fits when a hotel, cafe, meal, or errand already brings you nearby. The district is easier to understand through one small walk than a broad detour."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Modest Orientation Stop",
+              "body": "Dong Da is orientation, not a headline attraction. It frames nearby plans better than it carries a special detour."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

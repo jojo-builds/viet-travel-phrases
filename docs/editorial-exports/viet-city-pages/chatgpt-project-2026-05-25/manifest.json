@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-05-25 11:39",
+  "outputDir": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/editorial-exports/viet-city-pages/chatgpt-project-2026-05-25",
+  "counts": {
+    "cityListings": 500,
+    "readyAudioPhrases": 935,
+    "allPhrases": 935,
+    "cityPlaces": 500,
+    "menuItems": 355,
+    "canonicalExamples": 31,
+    "nativePhraseCatalogRows": 1765
+  },
+  "files": [
+    "Canonical_31_Example_Index.csv",
+    "City_Listing_Ledger.csv",
+    "City_Places_Catalog.csv",
+    "Menu_Catalog.csv",
+    "Native_Phrase_Catalog_All.csv",
+    "Phrase_Catalog_All.csv",
+    "Phrase_Picker_Ready_Audio.csv",
+    "README.md",
+    "SpeakLocal_City_Pages_v2_2_Batch_Workflow.md",
+    "SpeakLocal_City_Pages_v2_2_Copy_Ledger_and_Catalogs.xlsx",
+    "SpeakLocal_City_Pages_v2_2_New_Chat_Prompt.md",
+    "SpeakLocal_City_Pages_v2_2_Project_Instructions.txt",
+    "SpeakLocal_City_Pages_v2_2_Source_Bundle.txt",
+    "manifest.json"
+  ]
+}

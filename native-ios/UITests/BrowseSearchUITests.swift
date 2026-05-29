@@ -717,6 +717,96 @@ final class BrowseSearchUITests: XCTestCase {
         }
     }
 
+    func testCaptureV22CityPageProductionProof() {
+        let pages: [(label: String, pageID: String, title: String, heading: String, cardText: String)] = [
+            (
+                "01-danang-international-terminal",
+                "viet-family-city-danang-place-international-terminal",
+                "Nhà ga quốc tế Đà Nẵng",
+                "Land, Then Find The Ride",
+                "SIM card"
+            ),
+            (
+                "02-danang-dong-dinh-museum",
+                "viet-family-city-danang-place-dong-dinh-museum",
+                "Bảo tàng Đồng Đình",
+                "A Small Museum Under Trees",
+                "Bán đảo Sơn Trà"
+            ),
+            (
+                "03-hcmc-pasteur-street",
+                "viet-family-city-hcmc-place-pasteur-street",
+                "Đường Pasteur",
+                "One Doorway To Begin",
+                "Đến Quận 1"
+            ),
+            (
+                "04-hanoi-loading-t-cafe",
+                "viet-family-city-hanoi-place-loading-t-cafe",
+                "Loading T Cafe",
+                "Find The Upstairs Room",
+                "Cà phê trứng"
+            ),
+            (
+                "05-danang-lotte-mart",
+                "viet-family-city-danang-place-lotte-mart",
+                "Lotte Mart Đà Nẵng",
+                "Cool Aisles, Easy Errands",
+                "Sunscreen"
+            ),
+            (
+                "06-danang-3d-art-in-paradise",
+                "viet-family-city-danang-place-3d-art-in-paradise",
+                "Bảo tàng 3D Art in Paradise Đà Nẵng",
+                "Photos Before Art",
+                "Bảo tàng Mỹ thuật Đà Nẵng"
+            ),
+            (
+                "07-hanoi-bun-cha",
+                "viet-family-city-hanoi-place-bun-cha",
+                "Bún chả ở Hà Nội",
+                "Smoke First, Then The Table",
+                "Bún chả Hương Liên"
+            ),
+            (
+                "08-hcmc-ben-thanh-market",
+                "viet-family-city-hcmc-place-ben-thanh-market",
+                "Chợ Bến Thành",
+                "Start With The Clock Tower",
+                "Chợ An Đông"
+            ),
+            (
+                "09-hue-bach-ma-national-park",
+                "viet-family-city-hue-place-bach-ma-national-park",
+                "Vườn quốc gia Bạch Mã",
+                "Mountain Weather Leads",
+                "Đầm Lập An"
+            ),
+            (
+                "10-hoian-ancient-town-ticket-booth",
+                "viet-family-city-hoian-place-ancient-town-ticket-booth",
+                "Quầy vé phố cổ Hội An",
+                "The Ticket Threshold",
+                "Phố cổ Hội An"
+            ),
+        ]
+
+        for page in pages {
+            let app = launchApp(arguments: ["--detail-page", page.pageID])
+
+            XCTAssertTrue(app.staticTexts[page.title].waitForExistence(timeout: 8), "\(page.title) did not render.")
+            XCTAssertTrue(matchingStaticText(app: app, text: page.heading).waitForExistence(timeout: 4), "\(page.heading) did not render on \(page.label).")
+            XCTAssertTrue(matchingStaticText(app: app, text: "Useful Phrases").waitForExistence(timeout: 4), "Useful Phrases did not render on \(page.label).")
+            captureV22CityPageProof(app: app, name: "\(page.label)-top.png")
+
+            smallSwipeUp(app)
+            smallSwipeUp(app)
+            captureV22CityPageProof(app: app, name: "\(page.label)-scrolled.png")
+
+            app.terminate()
+        }
+    }
+
     func testBrowseDoesNotRenderNextShelvesForReturningUsers() {
         let app = launchApp(arguments: ["--browse", "--seed-returning-user-shelves"])
 
@@ -1399,6 +1489,25 @@ final class BrowseSearchUITests: XCTestCase {
 
         let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_HERO_IMAGE_PROOF_DIR"]
             ?? "/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/artifacts/TASK-VIET-HERO-IMAGE-PRODUCTION-001"
+
+        let fileURL = URL(fileURLWithPath: directory)
+            .appendingPathComponent(name)
+        try? FileManager.default.createDirectory(
+            at: fileURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true
+        )
+        try? screenshot.pngRepresentation.write(to: fileURL)
+    }
+
+    private func captureV22CityPageProof(app: XCUIApplication, name: String) {
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+
+        let directory = ProcessInfo.processInfo.environment["SPEAKLOCAL_V22_CITY_PAGE_PROOF_DIR"]
+            ?? "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-pages/docs/design/city-pages/screenshots/v2-2-500-story-production-2026-05-27"
 
         let fileURL = URL(fileURLWithPath: directory)
             .appendingPathComponent(name)

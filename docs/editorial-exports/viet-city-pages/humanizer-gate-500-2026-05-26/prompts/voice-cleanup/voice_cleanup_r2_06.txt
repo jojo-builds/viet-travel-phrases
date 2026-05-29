@@ -1,0 +1,330 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_06",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_06",
+  "chunks": [
+    {
+      "chunkFile": "danang_026_050_humanized.json",
+      "cityID": "danang",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-danang-place-han-river",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-hoa-phu-thanh",
+          "message": "heading is command-like: Check What Is Running"
+        },
+        {
+          "id": "city-danang-place-hoa-phu-thanh",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-hai-van-pass-ride",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-han-river",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-han-river",
+          "message": "freshness/process-like heading: Events Can Change The Feel"
+        },
+        {
+          "id": "city-danang-place-han-river",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-danang-place-han-river-cruise",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-han-river-cruise",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-danang-place-hoa-phu-thanh",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-hoa-phu-thanh",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-danang-place-hoa-trung-lake",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 17x: name to recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 18x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-hai-van-pass-ride",
+          "summary": "A Hải Vân Pass ride turns the Da Nang-Hue move into open road: guardrail curves, sea below, cloud near the ridge, and a pace you trust.",
+          "context": "This ride version is about format and pacing; the pass itself stays focused on the road landmark.",
+          "tip": "Choose the version that lets you relax, whether self-drive, hired rider, or private car with stops.",
+          "rationale": "The scenic route becomes practical when driver trust, pace, weather, and one good stop are settled before the climb.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Ride The Old Road Slowly",
+              "body": "A Hai Van Pass ride turns the Da Nang-Hue move into open road: guardrail curves, sea below, cloud near the ridge, and small stops."
+            },
+            {
+              "id": "place-brief",
+              "title": "Pick A Pace You Trust",
+              "body": "The ride can be a self-drive motorbike, a hired rider, or a private car with stops. Choose the version that lets you relax."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Chuyến đi đèo Hải Vân frames the pass as a ride. The movement, driver, and pace are the real plan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Weather Decides The Ride",
+              "body": "Morning cloud can feel dramatic, but rain or heavy fog changes the whole plan. Treat the view as a bonus and road conditions as the decision."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pause Before The Ridge Drops",
+              "body": "One well-timed stop does more than five rushed photos. Let the climb, high point, and descent feel different before the road flattens."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Comfort Comes Before The View",
+              "body": "Weather, traffic, road works, and rider fit can change the plan. Choose the version that feels steady before chasing the view."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-han-river",
+          "summary": "The Hàn River gives Da Nang a visible middle: bridges, reflections, open banks, evening light, and the split between city center and beach side.",
+          "context": "The river works as an orientation walk between plans, not a headline attraction that has to carry the day.",
+          "tip": "Pick one side and one stretch, ideally with a bridge, coffee stop, dinner plan, or hotel return nearby.",
+          "rationale": "The river turns broad scenery into a useful waterline route for market, bridge, seafood, and evening-light decisions.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Read Da Nang From The Waterline",
+              "body": "The river is the line that makes Da Nang easier to read: bridges, reflections, open banks, evening light, and the split between city center and beach side."
+            },
+            {
+              "id": "place-brief",
+              "title": "Evening Makes The Bridges Legible",
+              "body": "Late light is when the river does the most work. Bridges become silhouettes first, then reflections, then lit-up markers for where you are."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Sông Hàn is the local river name. It belongs with walks between Hàn Market, Dragon Bridge, dinner, and hotel routes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Walk A Stretch, Not The Whole Bank",
+              "body": "Pick one side and one section. A short walk with a nearby bridge, coffee stop, or dinner plan feels better than a forced march."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Calm Link Between Bigger Stops",
+              "body": "The river is often strongest between plans: after Hàn Market, before Dragon Bridge, or after seafood when you want air and city lights."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Events Can Change The Feel",
+              "body": "Promenade access, riverfront works, events, and bridge crowds can change the mood. Pick a short stretch and adjust when you arrive."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-han-river-cruise",
+          "summary": "A Hàn River cruise is a simple night move: small boat, bridge lights, dark water, boarding clarity, and a slower look at Da Nang from below the skyline.",
+          "context": "The cruise is about the boat sequence: confirm boarding, start time, route, and return before stepping on.",
+          "tip": "Ask where to board, when the trip starts, and what route the boat takes before the evening gets crowded.",
+          "rationale": "The cruise feels easier when boarding point, start time, route, and return are clear before the lights take over.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Board For The Lights, Not The Checklist",
+              "body": "A Han River cruise is a simple night move: small boat, bridge lights, darker water, and a slower look at the city from below the skyline."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boarding Comes First",
+              "body": "Ask where to board, when the trip starts, and what route the boat takes. The river is calmer when basics are clear first."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Du thuyền sông Hàn means a Hàn River cruise. The phrase points to the boat experience, not the general river walk."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Better Seat Is The Unhurried One",
+              "body": "Do not chase every bridge photo from the first minute. Settle in, watch the lights change, then choose when to stand or sit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light, Bridges, Then Back To Land",
+              "body": "The cruise works as one evening piece, not the whole night. Pair it with a river walk, bridge view, or late dinner plan."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Basics Before Boarding",
+              "body": "Operators, routes, boarding points, and start times can vary. Ask the basics before you buy or step onto the boat."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-hoa-phu-thanh",
+          "summary": "Hòa Phú Thành is a wet mountain-side outing outside Da Nang, with stream water, trees, simple rafting gear, and a return ride that should be clear.",
+          "context": "This is for a day that needs something active beyond beaches and bridges, with weather and activity availability part of the decision.",
+          "tip": "Confirm what is running before you leave town, and keep phone, cash, and dry clothes protected before the wet part starts.",
+          "rationale": "The attraction gives Da Nang a greener, more active day-trip option when weather, water, gear, and return transport are checked first.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Wet Mountain Day Needs A Plan",
+              "body": "Hòa Phú Thành sits on the greener side of Da Nang's trip map: stream water, trees, simple rafting gear, and a ride that should be clear."
+            },
+            {
+              "id": "place-brief",
+              "title": "Water Changes The Day",
+              "body": "Ask what activities are operating before you commit the day. A stream recreation area depends on weather, water, gear, and staff rhythm."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Khu du lịch Hòa Phú Thành is the fuller Vietnamese name. Keep it tied to the outdoor activity area rather than a generic mountain stop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Dry Things Need Their Own Place",
+              "body": "Treat the wet part as the point. Pack your phone, cash, and dry layer so you are not solving everything with wet hands."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Do Not Crowd The Evening",
+              "body": "The ride out and back matters. Leave space after the trip instead of stacking it with a tight dinner, bridge show, or airport transfer."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check What Is Running",
+              "body": "Access, activities, water conditions, gear rules, and weather can change the day. Confirm what is running before leaving town."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-hoa-trung-lake",
+          "summary": "Hòa Trung Lake is Da Nang's softer water pause: broad lake, grass, low hills, morning light, and a quiet stop that should stay small.",
+          "context": "The lake is for quiet minutes and a clean view, not a packed activity list or unsupported access promise.",
+          "tip": "Go for soft light, keep the stop short, and set the pickup point before wandering away from denser streets.",
+          "rationale": "The lake works as a small, quiet pause built around soft light, broad water, low hills, and a clear ride back.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Slow Lake Before The Day Gets Loud",
+              "body": "Hòa Trung Lake is the softer side of Da Nang: broad water, grass, low hills, and a morning pace away from beach traffic and bridge photos."
+            },
+            {
+              "id": "place-brief",
+              "title": "Morning Gives It Shape",
+              "body": "Soft light does most of the work here. Early light gives grassy banks, water, and distant hills a clearer reason to pause."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Hồ Hòa Trung names the lake. The name is worth recognizing when confirming a driver stop or matching the place to the lake on your map."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Small Stop Holds Better",
+              "body": "This is not the place to force a full outing. Take the view, walk only as far as conditions feel easy, and leave before it overasks."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pin The Ride Back",
+              "body": "Transport matters more than the lake name. Set the pickup point before wandering, especially outside the denser city streets."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Simple Route Back",
+              "body": "Road approach, parking, lake conditions, and local restrictions can change. Confirm your ride back before wandering too far."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

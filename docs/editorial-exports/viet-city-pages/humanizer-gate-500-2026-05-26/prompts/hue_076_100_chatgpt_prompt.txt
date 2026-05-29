@@ -1,0 +1,1123 @@
+Batch ID: hue_076_100_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+Hue-specific repair brief: remove legacy formula copy such as "works best," "not memorized as an abstract label," "local name is easier to remember," "alongside citadel-side Hue," and list-stuffed clauses. Use concrete Hue moments: arriving by train, standing at a tomb gate, market heat, ordering chè, crossing to a lagoon, finding the right boat, or using a quiet cafe pause.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hue",
+  "range": "076-100",
+  "entries": [
+    {
+      "pageID": "city-hue-place-royal-court-music-show",
+      "summary": "Royal court music show is worth knowing in Hue because it brings living performance culture rather than a static monument into the trip. Expect small royal court music performance with musicians, lacquer stage, and warm audience glow.",
+      "context": "For Royal court music show, Hue's performance venue story comes through theatre doors, evening streets, cultural memory, and stage light, alongside Hue river-city memory.",
+      "tip": "Biểu diễn nhã nhạc cung đình feels tied to Royal court music show through theatre doors, evening streets, cultural memory, and stage light, alongside Hue river-city memory.",
+      "rationale": "Royal court music show brings Hue into focus through cultural memory, stage light, music, and masks, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Royal court music show is worth knowing because it gives Hue a specific performance venue scene: music, masks, theatre doors, and evening streets, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Royal court music show, you get living performance culture rather than a static monument: small royal court music performance with musicians, lacquer stage, and warm audience glow, with cultural memory, stage light, music, and masks, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Biểu diễn nhã nhạc cung đình for Royal court music show. The local name is easier to remember once it sits beside stage light, music, masks, and theatre doors, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Royal court music show gives your itinerary a clearer image: stage light, music, masks, and theatre doors, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Royal court music show works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small royal court music performance with musicians, lacquer stage, and warm audience glow with stage light, music, masks, and theatre doors, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Biểu diễn nhã nhạc cung đình belongs to Small royal court music performance with musicians, lacquer stage, and warm audience glow, especially the surrounding theatre doors, evening streets, cultural memory, and stage light, alongside Hue river-city memory."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-ru-cha-mangrove",
+      "summary": "Ru Cha Mangrove Forest is worth knowing in Hue because it brings the city opening beyond buildings and traffic into the trip. Expect Mangrove walkway and water channels, tangled roots, soft green light.",
+      "context": "For Ru Cha Mangrove Forest, Hue's nature stop story comes through green edges, paths, shade, and water, alongside royal-city memory.",
+      "tip": "Rú Chá belongs beside green edges, paths, shade, and water, alongside royal-city memory around Ru Cha Mangrove Forest.",
+      "rationale": "Ru Cha Mangrove Forest brings Hue into focus through green edges, paths, shade, and water, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ru Cha Mangrove Forest is worth knowing because it gives Hue a specific nature stop scene: green edges, paths, shade, and water, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ru Cha Mangrove Forest, you get the city opening beyond buildings and traffic: Mangrove walkway and water channels, tangled roots, soft green light, with green edges, paths, shade, and water, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Rú Chá for Ru Cha Mangrove Forest. The local name is easier to remember once it sits beside quieter space beyond traffic, green edges, paths, and shade, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: quieter space beyond traffic, green edges, paths, and shade, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ru Cha Mangrove Forest works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Mangrove walkway and water channels, tangled roots, soft green light with paths, shade, water, and weather, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Ru Cha Mangrove Forest feels more present when Rú Chá has shade, water, weather, and quieter space beyond traffic, alongside royal-city memory around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-song-huong-floating-restaurant",
+      "summary": "Song Huong Floating Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Floating restaurant on the Perfume River at dusk, reflections, bridge lights in distance.",
+      "context": "For Song Huong Floating Restaurant, Hue's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside royal-city memory.",
+      "tip": "Song Huong Floating Restaurant becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside royal-city memory.",
+      "rationale": "Song Huong Floating Restaurant brings Hue into focus through tables, house dishes, menu details, and staff rhythm, alongside royal-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Song Huong Floating Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with tables, house dishes, menu details, and staff rhythm, alongside royal-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Song Huong Floating Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Floating restaurant on the Perfume River at dusk, reflections, bridge lights in distance, with menu details, staff rhythm, drinks, and evening meal energy, alongside royal-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà hàng nổi Sông Hương for Song Huong Floating Restaurant. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside royal-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside royal-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Song Huong Floating Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Floating restaurant on the Perfume River at dusk, reflections, bridge lights in distance with evening meal energy, tables, house dishes, and menu details, alongside royal-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà hàng nổi Sông Hương belongs with Floating restaurant on the Perfume River at dusk, reflections, bridge lights in distance, giving Song Huong Floating Restaurant a specific travel scene before the trip begins."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-songlab",
+      "summary": "Sống Platform - SốngLab shows Hue's contemporary culture side: dark gallery rooms, digital light, local motifs, and a modern creative space beside the city's older imperial story.",
+      "context": "For Sống Platform - SốngLab, Hue's cultural stop story comes through quiet light, memory, local history, and display cases, alongside citadel-side Hue.",
+      "tip": "Sống Platform - SốngLab becomes more specific beside local history, display cases, gallery rooms, and artifacts, alongside citadel-side Hue.",
+      "rationale": "Sống Platform - SốngLab brings Hue into focus through gallery rooms, artifacts, quiet light, and memory, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "This is Hue after the tombs and gates: a culture room where digital art, design, and local motifs make the old capital feel current as well as historic."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "Sống Platform - SốngLab matters because Hue is not only royal memory, it is also a living creative city with contemporary spaces layered into the old capital."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Sống Platform - SốngLab usually stays as the venue name. Say it slowly and connect it to the scene around it: artifacts, quiet light, memory, and local history, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: display cases, gallery rooms, artifacts, and quiet light, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Sống Platform - SốngLab works best when the name is tied to the reason for going, not memorized as an abstract label. Picture immersive digital art room with subtle Hue motifs, dark gallery with artifacts, quiet light, memory, and local history, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Sống Platform - SốngLab lands better when the visitor already imagines gallery rooms, artifacts, quiet light, and memory, alongside citadel-side Hue around Sống Platform - SốngLab."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-southern-bus-station",
+      "summary": "Hue Southern Bus Station is a city-edge arrival scene: shaded waiting areas, local signs, slower streets, and the old capital beginning to reappear beyond the road.",
+      "context": "For Hue Southern Bus Station, Hue's station story comes through waiting benches, city light, local signs, and onward roads, alongside Hue's arrival-edge streets.",
+      "tip": "Waiting benches, city light, local signs, and onward roads, alongside Hue's arrival-edge streets make Bến xe phía Nam Huế feel connected to a real stop.",
+      "rationale": "Hue Southern Bus Station brings Hue into focus through station doors, route boards, waiting benches, and city light, alongside Hue's arrival-edge streets.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "This is a threshold back into Hue, where highway movement gives way to local signs, softer light, and streets that point toward the river, citadel, and garden-house side of the city."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "Hue Southern Bus Station matters because even an entry area can carry the city's mood: slower streets, local signs, and the first return to Hue's river-city calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến xe phía Nam Huế for Hue Southern Bus Station. The local name is easier to remember once it sits beside route boards, waiting benches, city light, and local signs, alongside Hue's arrival-edge streets."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "worth it if you want arrival-edge Hue: local signs, shaded benches, onward streets, and the shift from highway movement into the old capital."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hue Southern Bus Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue station light, local signs, shaded benches, and onward streets with city light, local signs, onward roads, and station doors, alongside Hue's arrival-edge streets."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến xe phía Nam Huế belongs with Hue's softer arrival edge: shaded benches, local signs, slower streets, and the river city waiting beyond the doors."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-tam-giang-lagoon",
+      "summary": "Tam Giang Lagoon is a Huế countryside half-day that needs sunrise or sunset timing, a dock, a boat length, a round-trip plan, life-jacket questions, and same-day weather.",
+      "context": "Tam Giang works when the water is treated as a working lagoon, not a vague scenery stop: boats, traps, shrimp, oysters, clams, and villages around shallow water.",
+      "tip": "Confirm dock, ride length, return, and life jackets before boarding. If seafood is part of the plan, ask what is fresh that day.",
+      "rationale": "The lagoon is still worth it when weather and timing help because fish traps, low boats, sunset water, and village work feel different from central Huế river photos.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Go For Sunset With A Boat Plan",
+          "body": "Tam Giang Lagoon needs timing and a simple plan. Sunrise or sunset can work, but only after the dock, boat, and return are clear."
+        },
+        {
+          "id": "place-brief",
+          "title": "Working Water, Not Just A View",
+          "body": "The best detail is the lagoon as work: fish traps, shrimp, oysters, clams, low boats, and villages living around shallow water."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "transport-fare",
+            "v900-tran-where-is-the-boat-pier",
+            "sight-3",
+            "sight-5"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Light First, Weather Always",
+          "body": "Sunset can make the water and nets memorable, but rain, wind, or poor visibility can flatten the ride. Check weather the same day."
+        },
+        {
+          "id": "good-to-know",
+          "title": "A Countryside Half-Day",
+          "body": "Tam Giang works best outside the city with transport arranged. It is not a spare-hour detour between tombs unless the route is already set."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hue-place-tay-loc-market",
+      "summary": "Tay Loc Market is worth browsing because it shows Hue through stalls, snacks, goods, color, and everyday buying rhythm. Expect market aisles with vegetables, butcher counters, Citadel-side street atmosphere.",
+      "context": "For Tay Loc Market, Hue's market story comes through market aisles, produce colors, snack counters, and bargaining rhythm, alongside citadel-side Hue.",
+      "tip": "Snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue make Chợ Tây Lộc feel connected to a real stop.",
+      "rationale": "Tay Loc Market brings Hue into focus through bags, local shopping movement, market aisles, and produce colors, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Tay Loc Market is worth browsing because it shows everyday Hue: snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Tay Loc Market, you get everyday shopping, snacks, gifts, bargaining, and local rhythm: market aisles with vegetables, butcher counters, Citadel-side street atmosphere, with market aisles, produce colors, snack counters, and bargaining rhythm, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ Tây Lộc for Tay Loc Market. The local name is easier to remember once it sits beside bargaining rhythm, bags, local shopping movement, and market aisles, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you like seeing daily life through browsing, snacks, color, small goods, and local rhythm: bargaining rhythm, bags, local shopping movement, and market aisles, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Tay Loc Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture market aisles with vegetables, butcher counters, Citadel-side street atmosphere with produce colors, snack counters, bargaining rhythm, and bags, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chợ Tây Lộc lands better when the visitor already imagines snack counters, bargaining rhythm, bags, and local shopping movement, alongside citadel-side Hue around Tay Loc Market."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thai-hoa-palace",
+      "summary": "Thai Hoa Palace is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect restored palace hall with gilded interior hints, red columns, quiet gallery light.",
+      "context": "For Thai Hoa Palace, Hue's heritage landmark story comes through old walls, gates, courtyards, and stone paths, alongside imperial Hue.",
+      "tip": "Thai Hoa Palace becomes more specific beside tiled roofs, ceremonial space, old walls, and gates, alongside imperial Hue.",
+      "rationale": "Thai Hoa Palace brings Hue into focus through old walls, gates, courtyards, and stone paths, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Thai Hoa Palace is worth visiting because it makes history physical: courtyards, stone paths, tiled roofs, and ceremonial space, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Thai Hoa Palace, you get history made physical in architecture, ceremony, and place memory: restored palace hall with gilded interior hints, red columns, quiet gallery light, with courtyards, stone paths, tiled roofs, and ceremonial space, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Điện Thái Hòa for Thai Hoa Palace. The local name is easier to remember once it sits beside stone paths, tiled roofs, ceremonial space, and old walls, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: stone paths, tiled roofs, ceremonial space, and old walls, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Thai Hoa Palace works best when the name is tied to the reason for going, not memorized as an abstract label. Picture restored palace hall with gilded interior hints, red columns, quiet gallery light with ceremonial space, old walls, gates, and courtyards, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Điện Thái Hòa carries the surrounding image back to Restored palace hall with gilded interior hints, red columns, quiet gallery light and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thanh-cafe",
+      "summary": "Thanh Cafe is worth saving for Hue's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect tiled Hue cafe interior with porcelain-inlay details, iced coffee.",
+      "context": "For Thanh Cafe, Hue's cafe story comes through cafe views, coffee counters, iced glasses, and street stools, alongside Perfume River calm.",
+      "tip": "Thanh Cafe feels clearer with iced glasses, street stools, design details, and soft pauses, alongside Perfume River calm around it.",
+      "rationale": "Thanh Cafe brings Hue into focus through cafe views, coffee counters, iced glasses, and street stools, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Thanh Cafe is worth saving when you want Hue's cafe culture, not just caffeine: cafe views, coffee counters, iced glasses, and street stools, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Thanh Cafe, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: tiled Hue cafe interior with porcelain-inlay details, iced coffee, with iced glasses, street stools, design details, and soft pauses, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Thành Cafe for Thanh Cafe. The local name is easier to remember once it sits beside street stools, design details, soft pauses, and cafe views, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: coffee counters, iced glasses, street stools, and design details, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Thanh Cafe works best when the name is tied to the reason for going, not memorized as an abstract label. Picture tiled Hue cafe interior with porcelain-inlay details, iced coffee with coffee counters, iced glasses, street stools, and design details, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Thành Cafe points to Thanh Cafe's scene through cafe views, coffee counters, iced glasses, and street stools, alongside Perfume River calm."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thanh-toan-bridge",
+      "summary": "Thanh Toan Bridge is worth knowing in Hue because it brings architecture, views, local pride, and history in visual form into the trip. Expect tile-roof covered bridge over a small canal, village houses, bicycles nearby.",
+      "context": "For Thanh Toan Bridge, Hue's landmark story comes through city light, landmark memory, architecture, and views, alongside imperial Hue.",
+      "tip": "Cầu ngói Thanh Toàn belongs beside architecture, views, local pride, and history, alongside imperial Hue around Thanh Toan Bridge.",
+      "rationale": "Thanh Toan Bridge brings Hue into focus through city light, landmark memory, architecture, and views, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Thanh Toan Bridge is worth knowing because it gives Hue a specific landmark scene: city light, landmark memory, architecture, and views, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Thanh Toan Bridge, you get architecture, views, local pride, and history in visual form: tile-roof covered bridge over a small canal, village houses, bicycles nearby, with architecture, views, local pride, and history, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cầu ngói Thanh Toàn for Thanh Toan Bridge. The local name is easier to remember once it sits beside landmark memory, architecture, views, and local pride, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Thanh Toan Bridge gives your itinerary a clearer image: history, city light, landmark memory, and architecture, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Thanh Toan Bridge works best when the name is tied to the reason for going, not memorized as an abstract label. Picture tile-roof covered bridge over a small canal, village houses, bicycles nearby with landmark memory, architecture, views, and local pride, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cầu ngói Thanh Toàn feels like something heard in Hue, with Tile-roof covered bridge over a small canal, village houses, bicycles nearby around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-the-mieu-temple",
+      "summary": "The Mieu Temple is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect temple courtyard with red lacquer, tiled roofs, and bronze urns nearby.",
+      "context": "For The Mieu Temple, Hue's sacred place story comes through tiled roofs, temple gates, shade, and respectful pauses, alongside Perfume River calm.",
+      "tip": "Thế Miếu sits inside the scene around The Mieu Temple: shade, respectful pauses, incense, and courtyards, alongside Perfume River calm.",
+      "rationale": "The Mieu Temple brings Hue into focus through incense, courtyards, tiled roofs, and temple gates, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "The Mieu Temple is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: tiled roofs, temple gates, shade, and respectful pauses, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At The Mieu Temple, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: temple courtyard with red lacquer, tiled roofs, and bronze urns nearby, with incense, courtyards, tiled roofs, and temple gates, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Thế Miếu for The Mieu Temple. The local name is easier to remember once it sits beside temple gates, shade, respectful pauses, and incense, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: courtyards, tiled roofs, temple gates, and shade, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "The Mieu Temple works best when the name is tied to the reason for going, not memorized as an abstract label. Picture temple courtyard with red lacquer, tiled roofs, and bronze urns nearby with courtyards, tiled roofs, temple gates, and shade, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Thế Miếu carries The Mieu Temple's scene through tiled roofs, temple gates, shade, and respectful pauses, alongside Perfume River calm."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thien-mu",
+      "summary": "Thien Mu Pagoda is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect seven-tier pagoda above the Perfume River with frangipani trees and soft overcast sky.",
+      "context": "For Thien Mu Pagoda, Hue's sacred place story comes through respectful pauses, incense, courtyards, and tiled roofs, alongside Perfume River calm.",
+      "tip": "Thien Mu Pagoda carries temple gates, shade, respectful pauses, and incense, alongside Perfume River calm into the travel plan.",
+      "rationale": "Thien Mu Pagoda brings Hue into focus through temple gates, shade, respectful pauses, and incense, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Thien Mu Pagoda is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: courtyards, tiled roofs, temple gates, and shade, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Thien Mu Pagoda, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: seven-tier pagoda above the Perfume River with frangipani trees and soft overcast sky, with respectful pauses, incense, courtyards, and tiled roofs, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Thiên Mụ for Thien Mu Pagoda. The local name is easier to remember once it sits beside incense, courtyards, tiled roofs, and temple gates, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: shade, respectful pauses, incense, and courtyards, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Thien Mu Pagoda works best when the name is tied to the reason for going, not memorized as an abstract label. Picture seven-tier pagoda above the Perfume River with frangipani trees and soft overcast sky with tiled roofs, temple gates, shade, and respectful pauses, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name stays tied to temple gates, shade, respectful pauses, and incense, alongside Perfume River calm, giving Thien Mu Pagoda a concrete setting in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thieu-tri-tomb",
+      "summary": "Tomb of Thieu Tri is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect low royal tomb structures in open countryside with mountains faint behind it.",
+      "context": "For Tomb of Thieu Tri, Hue's heritage landmark story comes through old walls, gates, courtyards, and stone paths, alongside citadel-side Hue.",
+      "tip": "Lăng Thiệu Trị belongs beside old walls, gates, courtyards, and stone paths, alongside citadel-side Hue around Tomb of Thieu Tri.",
+      "rationale": "Tomb of Thieu Tri brings Hue into focus through old walls, gates, courtyards, and stone paths, alongside citadel-side Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Tomb of Thieu Tri is worth visiting because it makes history physical: old walls, gates, courtyards, and stone paths, alongside citadel-side Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Tomb of Thieu Tri, you get history made physical in architecture, ceremony, and place memory: low royal tomb structures in open countryside with mountains faint behind it, with old walls, gates, courtyards, and stone paths, alongside citadel-side Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Lăng Thiệu Trị for Tomb of Thieu Tri. The local name is easier to remember once it sits beside ceremonial space, old walls, gates, and courtyards, alongside citadel-side Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: stone paths, tiled roofs, ceremonial space, and old walls, alongside citadel-side Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Tomb of Thieu Tri works best when the name is tied to the reason for going, not memorized as an abstract label. Picture low royal tomb structures in open countryside with mountains faint behind it with ceremonial space, old walls, gates, and courtyards, alongside citadel-side Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Lăng Thiệu Trị feels less abstract when it sits beside old walls, gates, courtyards, and stone paths, alongside citadel-side Hue and the scene of Tomb of Thieu Tri."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thuy-bieu-village",
+      "summary": "Thuy Bieu Village is worth knowing in Hue because it brings local craft, village rhythm, and slower daily life into the trip. Expect leafy village lane with pomelo trees, bicycle, and garden walls near Hue.",
+      "context": "For Thuy Bieu Village, Hue's village story comes through garden houses, markets, incense, and the Perfume River.",
+      "tip": "Thuy Bieu Village stays rooted in Hue through central dishes, imperial gates, royal tombs, and pagodas.",
+      "rationale": "Thuy Bieu Village brings Hue into focus through garden houses, markets, incense, and the Perfume River.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Thuy Bieu Village is worth knowing because it gives Hue a specific village scene: royal tombs, pagodas, garden houses, and markets."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Thuy Bieu Village, you get local craft, village rhythm, and slower daily life: leafy village lane with pomelo trees, bicycle, and garden walls near Hue, with garden houses, markets, incense, and the Perfume River."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Làng Thủy Biều for Thuy Bieu Village. The local name is easier to remember once it sits beside pagodas, garden houses, markets, and incense."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Thuy Bieu Village gives your itinerary a clearer image: markets, incense, the Perfume River, and central dishes."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Thuy Bieu Village works best when the name is tied to the reason for going, not memorized as an abstract label. Picture leafy village lane with pomelo trees, bicycle, and garden walls near Hue with imperial gates, royal tombs, pagodas, and garden houses."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name and scene work together: Làng Thủy Biều beside Leafy village lane with pomelo trees, bicycle, and garden walls near Hue, with royal tombs, pagodas, garden houses, and markets nearby."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-thuy-xuan-incense-village",
+      "summary": "Thủy Xuân Incense Village is the Huế craft stop where bright incense fans become more than a photo: bamboo sticks, scented paste, color, and handwork line the tomb-and-hill route.",
+      "context": "Thủy Xuân fits naturally on a west-Huế outing with Vọng Cảnh Hill or the royal tombs, especially when you want a craft stop between larger imperial sites.",
+      "tip": "Ask before close photos and watch one stick being made before shopping. Morning gives softer light, more active making, and less heat.",
+      "rationale": "The village is memorable because the color has a real process behind it: scent, bamboo, paste, dyed sticks, drying racks, and family craft along the road.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Go For The Craft, Not Just The Color",
+          "body": "The incense fans are the easy photo, but the better reason to stop is the handwork. Thủy Xuân lets you watch scent, bamboo, paste, and dyed sticks become one object."
+        },
+        {
+          "id": "place-brief",
+          "title": "Watch One Stick Made",
+          "body": "Ask someone to show the rolling before you start taking close photos. If they invite you to try, the stop becomes a small craft lesson rather than a backdrop."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "sight-3",
+            "price-1",
+            "price-7",
+            "shop-4"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Morning Before The Tomb Route Gets Hot",
+          "body": "Morning brings softer light on the incense fans and a better chance of active making. The stop is still worth it when it breaks up tomb visits with color, scent, and hands at work."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Part Of West Huế",
+          "body": "Pair the village with Vọng Cảnh Hill, Tự Đức Tomb, Đồng Khánh Tomb, or another west-side stop. It works better as texture between larger sites than as a full standalone mission."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hue-place-tinh-gia-vien",
+      "summary": "Tinh Gia Vien Restaurant is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect Hue garden-house restaurant courtyard with carved wood, foliage, and small plated dishes.",
+      "context": "For Tinh Gia Vien Restaurant, Hue's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside Perfume River calm.",
+      "tip": "Menu details, staff rhythm, drinks, and evening meal energy, alongside Perfume River calm make Tịnh Gia Viên feel connected to a real stop.",
+      "rationale": "Tinh Gia Vien Restaurant brings Hue into focus through tables, house dishes, menu details, and staff rhythm, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Tinh Gia Vien Restaurant is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with tables, house dishes, menu details, and staff rhythm, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Tinh Gia Vien Restaurant, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Hue garden-house restaurant courtyard with carved wood, foliage, and small plated dishes, with tables, house dishes, menu details, and staff rhythm, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Tịnh Gia Viên for Tinh Gia Vien Restaurant. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Tinh Gia Vien Restaurant works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hue garden-house restaurant courtyard with carved wood, foliage, and small plated dishes with staff rhythm, drinks, evening meal energy, and tables, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Tịnh Gia Viên belongs to the scene, with menu details, staff rhythm, drinks, and evening meal energy, alongside Perfume River calm around it and Hue in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-toa-kham-boat-station",
+      "summary": "Toa Kham Boat Station is worth knowing in Hue because it brings the city opening onto a river route rather than a road route into the trip. Expect river steps, boat noses, skyline edges, and the change from street movement to water movement.",
+      "context": "For Toa Kham Boat Station, Hue's river landing story comes through skyline views, waterfront movement, river steps, and boarding points, alongside the old capital's station-side light.",
+      "tip": "Bến thuyền Tòa Khâm belongs beside river steps, boarding points, boats, and bridges, alongside the old capital's station-side light around Toa Kham Boat Station.",
+      "rationale": "Toa Kham Boat Station brings Hue into focus through river steps, boarding points, boats, and bridges, alongside the old capital's station-side light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Toa Kham Boat Station is worth knowing because it gives Hue a specific river landing scene: boats, bridges, skyline views, and waterfront movement, alongside the old capital's station-side light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Toa Kham Boat Station, you get the city opening onto a river route rather than a road route: river steps, boat noses, skyline edges, and the change from street movement to water movement, with skyline views, waterfront movement, river steps, and boarding points, alongside the old capital's station-side light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến thuyền Tòa Khâm for Toa Kham Boat Station. The local name is easier to remember once it sits beside boarding points, boats, bridges, and skyline views, alongside the old capital's station-side light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Toa Kham Boat Station gives your itinerary a clearer image: waterfront movement, river steps, boarding points, and boats, alongside the old capital's station-side light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Toa Kham Boat Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture river steps, boat noses, skyline edges, and the change from street movement to water movement with waterfront movement, river steps, boarding points, and boats, alongside the old capital's station-side light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name stays tied to boats, bridges, skyline views, and waterfront movement, alongside the old capital's station-side light, giving Toa Kham Boat Station a concrete setting in Hue."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-truong-tien",
+      "summary": "Truong Tien Bridge is worth knowing in Hue because it brings architecture, views, local pride, and history in visual form into the trip. Expect arched white bridge over the Perfume River at evening river light with city lights.",
+      "context": "For Truong Tien Bridge, Hue's landmark story comes through city light, landmark memory, architecture, and views, alongside Hue river-city memory.",
+      "tip": "Cầu Trường Tiền sits inside the scene around Truong Tien Bridge: city light, landmark memory, architecture, and views, alongside Hue river-city memory.",
+      "rationale": "Truong Tien Bridge brings Hue into focus through city light, landmark memory, architecture, and views, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Truong Tien Bridge is worth knowing because it gives Hue a specific landmark scene: city light, landmark memory, architecture, and views, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Truong Tien Bridge, you get architecture, views, local pride, and history in visual form: arched white bridge over the Perfume River at evening river light with city lights, with architecture, views, local pride, and history, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cầu Trường Tiền for Truong Tien Bridge. The local name is easier to remember once it sits beside history, city light, landmark memory, and architecture, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Truong Tien Bridge gives your itinerary a clearer image: views, local pride, history, and city light, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Truong Tien Bridge works best when the name is tied to the reason for going, not memorized as an abstract label. Picture arched white bridge over the Perfume River at evening river light with city lights with history, city light, landmark memory, and architecture, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Truong Tien Bridge feels more present when Cầu Trường Tiền has local pride, history, city light, and landmark memory, alongside Hue river-city memory around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-truong-tien-plaza",
+      "summary": "Trang Tien Plaza Hue is worth knowing in Hue because it brings modern shopping and a polished indoor break from heat, rain, or street movement into the trip. Expect modern shopping-center facade near a Hue street, subdued signs, scooters outside.",
+      "context": "For Trang Tien Plaza Hue, Hue's shopping stop story comes through indoor food counters, city-center corners, cool air, and easy meetups, alongside Perfume River calm.",
+      "tip": "Trang Tien Plaza Hue feels clearer with indoor food counters, city-center corners, cool air, and easy meetups, alongside Perfume River calm around it.",
+      "rationale": "Trang Tien Plaza Hue brings Hue into focus through indoor food counters, city-center corners, cool air, and easy meetups, alongside Perfume River calm.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Trang Tien Plaza Hue is worth knowing because it gives Hue a specific shopping stop scene: city-center corners, cool air, easy meetups, and storefronts, alongside Perfume River calm."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Trang Tien Plaza Hue, you get modern shopping and a polished indoor break from heat, rain, or street movement: modern shopping-center facade near a Hue street, subdued signs, scooters outside, with easy meetups, storefronts, indoor food counters, and city-center corners, alongside Perfume River calm."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Trung tâm thương mại Trường Tiền for Trang Tien Plaza Hue. The local name is easier to remember once it sits beside city-center corners, cool air, easy meetups, and storefronts, alongside Perfume River calm."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Trang Tien Plaza Hue gives your itinerary a clearer image: easy meetups, storefronts, indoor food counters, and city-center corners, alongside Perfume River calm."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Trang Tien Plaza Hue works best when the name is tied to the reason for going, not memorized as an abstract label. Picture modern shopping-center facade near a Hue street, subdued signs, scooters outside with city-center corners, cool air, easy meetups, and storefronts, alongside Perfume River calm."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Trung tâm thương mại Trường Tiền carries Trang Tien Plaza Hue's scene through cool air, easy meetups, storefronts, and indoor food counters, alongside Perfume River calm."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-tu-duc-tomb",
+      "summary": "Tomb of Tu Duc is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect mossy imperial tomb courtyard with lake edge, stone steps, and quiet pine canopy.",
+      "context": "For Tomb of Tu Duc, Hue's heritage landmark story comes through stone paths, tiled roofs, ceremonial space, and old walls, alongside Hue river-city memory.",
+      "tip": "Tomb of Tu Duc stays rooted in Hue through gates, courtyards, stone paths, and tiled roofs, alongside Hue river-city memory.",
+      "rationale": "Tomb of Tu Duc brings Hue into focus through ceremonial space, old walls, gates, and courtyards, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Tomb of Tu Duc is worth visiting because it makes history physical: ceremonial space, old walls, gates, and courtyards, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Tomb of Tu Duc, you get history made physical in architecture, ceremony, and place memory: mossy imperial tomb courtyard with lake edge, stone steps, and quiet pine canopy, with ceremonial space, old walls, gates, and courtyards, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Lăng Tự Đức for Tomb of Tu Duc. The local name is easier to remember once it sits beside old walls, gates, courtyards, and stone paths, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: tiled roofs, ceremonial space, old walls, and gates, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Tomb of Tu Duc works best when the name is tied to the reason for going, not memorized as an abstract label. Picture mossy imperial tomb courtyard with lake edge, stone steps, and quiet pine canopy with old walls, gates, courtyards, and stone paths, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name and scene work together: Lăng Tự Đức beside Mossy imperial tomb courtyard with lake edge, stone steps, and quiet pine canopy, with stone paths, tiled roofs, ceremonial space, and old walls, alongside Hue river-city memory nearby."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-tu-hieu-pagoda",
+      "summary": "Tu Hieu Pagoda is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect shaded monastery gate with moss, trees, and a calm stone path.",
+      "context": "For Tu Hieu Pagoda, Hue's sacred place story comes through tiled roofs, temple gates, shade, and respectful pauses, alongside imperial Hue.",
+      "tip": "Tiled roofs, temple gates, shade, and respectful pauses, alongside imperial Hue make Chùa Từ Hiếu feel connected to a real stop.",
+      "rationale": "Tu Hieu Pagoda brings Hue into focus through shade, respectful pauses, incense, and courtyards, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Tu Hieu Pagoda is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: tiled roofs, temple gates, shade, and respectful pauses, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Tu Hieu Pagoda, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: shaded monastery gate with moss, trees, and a calm stone path, with incense, courtyards, tiled roofs, and temple gates, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Từ Hiếu for Tu Hieu Pagoda. The local name is easier to remember once it sits beside courtyards, tiled roofs, temple gates, and shade, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: respectful pauses, incense, courtyards, and tiled roofs, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Tu Hieu Pagoda works best when the name is tied to the reason for going, not memorized as an abstract label. Picture shaded monastery gate with moss, trees, and a calm stone path with courtyards, tiled roofs, temple gates, and shade, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chùa Từ Hiếu lands better when the visitor already imagines shade, respectful pauses, incense, and courtyards, alongside imperial Hue around Tu Hieu Pagoda."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-vong-canh-hill",
+      "summary": "Vọng Cảnh Hill is a short southwest Huế viewpoint best used after a tomb stop, with pine shade, Perfume River bends, countryside, soft light, and a planned ride back.",
+      "context": "Vọng Cảnh works as a brief pause after Tự Đức, Đồng Khánh, or another southwest Huế stop, not as a dramatic standalone hill mission.",
+      "tip": "Go before sunset, check weather, and plan transport back before dark. Flat rain can turn the view into a simple breather.",
+      "rationale": "The hill is still worth it when light helps because the small scale gives Huế a quiet river-and-tomb landscape pause between structured monuments.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Go After A Tomb Stop",
+          "body": "Vọng Cảnh Hill works best as a short viewpoint after Tự Đức, Đồng Khánh, or another southwest Huế stop. Sunset can be the reason to linger."
+        },
+        {
+          "id": "place-brief",
+          "title": "Pines, River, Low Effort",
+          "body": "The hill is not high or dramatic. The reward is pine shade, Perfume River bends, countryside, and the tomb landscape nearby."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "v500-dire-navi-how-far-is-it",
+            "v500-dire-navi-can-i-walk-there",
+            "sight-3",
+            "sight-5"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Arrive Before Sunset",
+          "body": "Give yourself enough light to walk up, find the view, and leave without rushing. Soft light makes the small scale feel like a feature."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Plan The Ride Back",
+          "body": "Have a car, scooter, or ride-hailing plan. The hill is easygoing, but transport after dark should not be improvised."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hue-place-vy-da",
+      "summary": "Vy Da is worth recognizing because neighborhoods turn Hue from landmarks into lived-in areas. Expect quiet Hue neighborhood lane with river-adjacent houses and market basket detail.",
+      "context": "For Vy Da, Hue's neighborhood story comes through lanes, small shops, hotel edges, and evening walks, alongside Hue river-city memory.",
+      "tip": "Vy Da stays rooted in Hue through lanes, small shops, hotel edges, and evening walks, alongside Hue river-city memory.",
+      "rationale": "Vy Da brings Hue into focus through hotel edges, evening walks, neighborhood identity, and cafes, alongside Hue river-city memory.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Vy Da is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: neighborhood identity, cafes, lanes, and small shops, alongside Hue river-city memory."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Vy Da, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: quiet Hue neighborhood lane with river-adjacent houses and market basket detail, with neighborhood identity, cafes, lanes, and small shops, alongside Hue river-city memory."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Vỹ Dạ for Vy Da. The local name is easier to remember once it sits beside small shops, hotel edges, evening walks, and neighborhood identity, alongside Hue river-city memory."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: cafes, lanes, small shops, and hotel edges, alongside Hue river-city memory."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Vy Da works best when the name is tied to the reason for going, not memorized as an abstract label. Picture quiet Hue neighborhood lane with river-adjacent houses and market basket detail with evening walks, neighborhood identity, cafes, and lanes, alongside Hue river-city memory."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Vỹ Dạ carries Quiet Hue neighborhood lane with river-adjacent houses and market basket detail forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-walking-street",
+      "summary": "Hue Walking Street is worth recognizing because a named street can make Hue feel walkable before arrival. Expect lively evening pedestrian street in Hue, small vendors, warm signs, river nearby.",
+      "context": "For Hue Walking Street, Hue's street story comes through neighborhood movement, street signs, shopfronts, and scooters, alongside Perfume River street light.",
+      "tip": "Neighborhood movement, street signs, shopfronts, and scooters, alongside Perfume River street light give Hue Walking Street a setting before the trip begins.",
+      "rationale": "Hue Walking Street brings Hue into focus through shopfronts, scooters, crossings, and cafe edges, alongside Perfume River street light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hue Walking Street is worth recognizing because streets shape how Hue feels on the ground: shopfronts, scooters, crossings, and cafe edges, alongside Perfume River street light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hue Walking Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: lively evening pedestrian street in Hue, small vendors, warm signs, river nearby, with crossings, cafe edges, neighborhood movement, and street signs, alongside Perfume River street light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Phố đi bộ Huế for Hue Walking Street. The local name is easier to remember once it sits beside scooters, crossings, cafe edges, and neighborhood movement, alongside Perfume River street light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: street signs, shopfronts, scooters, and crossings, alongside Perfume River street light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hue Walking Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture lively evening pedestrian street in Hue, small vendors, warm signs, river nearby with cafe edges, neighborhood movement, street signs, and shopfronts, alongside Perfume River street light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Phố đi bộ Huế keeps its setting close: Lively evening pedestrian street in Hue, small vendors, warm signs, river nearby, surrounded by shopfronts, scooters, crossings, and cafe edges, alongside Perfume River street light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hue-place-y-thao-garden",
+      "summary": "Y Thao Garden is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect small garden restaurant in an old Hue house, woven mats, lanterns, and leafy courtyard.",
+      "context": "For Y Thao Garden, Hue's restaurant story comes through menu details, staff rhythm, drinks, and evening meal energy, alongside imperial Hue.",
+      "tip": "Y Thao Garden becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside imperial Hue.",
+      "rationale": "Y Thao Garden brings Hue into focus through tables, house dishes, menu details, and staff rhythm, alongside imperial Hue.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Y Thao Garden is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with tables, house dishes, menu details, and staff rhythm, alongside imperial Hue."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Y Thao Garden, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: small garden restaurant in an old Hue house, woven mats, lanterns, and leafy courtyard, with drinks, evening meal energy, tables, and house dishes, alongside imperial Hue."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Ý Thảo Garden for Y Thao Garden. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside imperial Hue."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside imperial Hue."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Y Thao Garden works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small garden restaurant in an old Hue house, woven mats, lanterns, and leafy courtyard with staff rhythm, drinks, evening meal energy, and tables, alongside imperial Hue."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ý Thảo Garden carries the surrounding image back to Small garden restaurant in an old Hue house, woven mats, lanterns, and leafy courtyard and the place around it."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

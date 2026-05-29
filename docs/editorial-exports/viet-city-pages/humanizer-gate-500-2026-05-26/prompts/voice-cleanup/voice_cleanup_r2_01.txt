@@ -1,0 +1,294 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_01",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_01",
+  "chunks": [
+    {
+      "chunkFile": "danang_001_025_humanized.json",
+      "cityID": "danang",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-danang-place-43-factory",
+          "message": "banned visible fragment: worth saving"
+        },
+        {
+          "id": "city-danang-place-an-thuong-street-area",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-asia-park",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-asia-park",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-banh-mi",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-banh-trang-cuon-thit-heo",
+          "message": "banned visible fragment: works when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-43-factory",
+          "summary": "A polished specialty-coffee pause near Da Nang's beach side, with clean design, bright counters, and a slower rhythm than the seafood-and-scooter day outside.",
+          "context": "Good when the group needs a calm cafe stop between beach time, hotel errands, riverside walks, or a long meal later.",
+          "tip": "Treat the name as the address. The practical phrases are about coffee, sugar, and paying, not translating the brand.",
+          "rationale": "43 Factory shows Da Nang's contemporary cafe layer through design, counter rhythm, and a slower pause near the beach side.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Polished Coffee Pause",
+              "body": "43 Factory is Da Nang in a quieter, design-forward mood: specialty coffee, bright interiors, and a pause that feels more deliberate than a quick roadside cup."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Coffee As The Stop",
+              "body": "This is for a deliberate cafe pause, not a grab-and-go cup. The room, plants, counters, and careful drinks are part of why the name is worth saving."
+            },
+            {
+              "id": "quick-say",
+              "title": "Coffee Counter Words",
+              "body": "Know how to order coffee, ask about sugar or ice, and handle payment while the cafe name stays in English."
+            },
+            {
+              "id": "place-brief",
+              "title": "Not A Beach Snack",
+              "body": "The value is the slower room: clean counters, careful drinks, and a reset from heat. It suits people who want coffee to be part of the day, not just caffeine."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Louder Plans",
+              "body": "It fits between seafood, hotel check-ins, market walks, or a beach-side afternoon. One good drink can reset the pace before the next outside stretch."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Brand Name Stays English",
+              "body": "43 Factory Coffee Roaster usually stays as the venue name. Say it clearly, then use simple coffee phrases for the actual exchange."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-an-thuong-street-area",
+          "summary": "A beach-side neighborhood pocket of cafes, small restaurants, hotel edges, scooters, and evening choices behind the My An side of Da Nang.",
+          "context": "Good for an easy dinner, coffee, dessert, or walk near the beach without turning the night into a cross-city plan.",
+          "tip": "Pick one kind of stop first: coffee, dinner, dessert, or a quiet drink. The area blurs when every sign gets equal attention.",
+          "rationale": "An Thuong gives the beach side a lived-in street rhythm, useful for visitors staying near My An or My Khe.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Beach Side, Street Level",
+              "body": "An Thuong is Da Nang behind the beach: cafe signs, small restaurants, scooters easing past hotel fronts, and visitors deciding what kind of evening this is."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Evening Finds The Edges",
+              "body": "This area works when the beach day needs an easy next move. Cafes, small restaurants, hotel fronts, and lit shop signs make more sense after dark."
+            },
+            {
+              "id": "quick-say",
+              "title": "Evening Stop Words",
+              "body": "Ask for coffee, dinner, dessert, directions, or a nearby shop while wandering An Thuong after dark."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Lane First",
+              "body": "Walk one short lane before choosing. Notice where the light, tables, and crowd feel comfortable, then let the first stop set the night."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Dinner Or A Drift",
+              "body": "The area makes the most sense when you are already near My An or My Khe. It is not a landmark; it is a low-friction place to decide what comes next."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Evening Gives It Shape",
+              "body": "Daytime can read as hotel edges and parked scooters. After dark, signs, terraces, and small restaurants make the neighborhood easier to understand."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-asia-park",
+          "summary": "A night-out park with bright paths, snacks, families, rides, and the Sun Wheel rising above Da Nang's modern leisure side after dark.",
+          "context": "Works when the evening is about lights, movement, and an easier family-park mood rather than a quiet walk or food-only market.",
+          "tip": "Check what is operating before you commit the evening to rides. If food matters more, compare it with a night market plan.",
+          "rationale": "Asia Park gives Da Nang a playful after-dark option, but rides, tickets, and open areas are worth checking before the group commits the evening.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Night-Out Park",
+              "body": "Asia Park belongs to Da Nang after dark: bright paths, snacks, families walking slowly, and the Sun Wheel lifting above the skyline."
+            },
+            {
+              "id": "when-to-use",
+              "title": "After-Dark Energy",
+              "body": "Asia Park makes sense when the evening wants lights, movement, snacks, and a family-park mood. Check the operating rhythm before making rides the whole plan."
+            },
+            {
+              "id": "quick-say",
+              "title": "Ticket And Ride Words",
+              "body": "Ask about tickets, rides, snacks, toilets, and whether the Sun Wheel is running before the night gets busy."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Gate Sets Expectations",
+              "body": "Make the entrance your first read. If rides are the reason, confirm the shape of the evening before the group drifts inside."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lights More Than Silence",
+              "body": "The park can work even when every ride is not the point. Lights, open paths, and a family crowd carry the mood."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From A Food Night",
+              "body": "A food-first night belongs elsewhere. Asia Park makes more sense when the park setting, skyline, and easy movement are the reason."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-banh-mi",
+          "summary": "A fast Da Nang bite of crisp bread, herbs, pickles, sauce, chili if allowed, and counter decisions that move quickly at lunch hour.",
+          "context": "Good for breakfast, a light lunch, or a hand-held stop before seafood, sightseeing, or a longer sit-down meal.",
+          "tip": "Decide filling, chili, and takeaway before the counter starts moving. That is where most ordering stress disappears.",
+          "rationale": "Banh mi gives the trip a quick flavor memory without forcing lunch to become a full stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fast Counter, Clear Choice",
+              "body": "Banh mi in Da Nang is a small fast meal: crisp bread, herbs, pickles, sauce, and a counter that may not slow down while you decide."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Counter Decision",
+              "body": "This is the fast-bite moment: crisp bread, herbs, sauce, chili choices, and a counter that moves quickly. Decide the main filling before reaching the front."
+            },
+            {
+              "id": "quick-say",
+              "title": "Banh Mi Counter Words",
+              "body": "Say the filling, chili level, takeaway choice, and price clearly before the banh mi counter moves on."
+            },
+            {
+              "id": "place-brief",
+              "title": "Filling Before Sauce",
+              "body": "Pick the big choices first: pork, chicken, egg, pate, grilled meat, chili, and sauce. A clear first order makes the counter easier."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Breakfast Or Fast Lunch",
+              "body": "It works when seafood plans are later and you need something small now. Eat soon if the crisp bread is part of the pleasure."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Classic Is Enough",
+              "body": "Banh mi thit or banh mi dac biet gives the familiar fuller mix. Chicken or fried egg can be gentler when the first order needs to stay simple."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-banh-trang-cuon-thit-heo",
+          "summary": "A quiet Da Nang table ritual of pork, rice paper, herbs, noodles, and dipping sauce, where the first neat roll sets the meal's pace.",
+          "context": "Good for a lighter shared meal after heat, when hands-on food feels more memorable than another bowl or plate.",
+          "tip": "Read the tray before rolling. Pork, herbs, noodles, rice paper, and sauce need a little order or the first bite falls apart.",
+          "rationale": "The dish makes Da Nang food feel tactile: cool herbs, soft pork, rice paper, and a sauce that can lead the whole bite.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The First Roll Sets It",
+              "body": "Banh trang cuon thit heo is a calm table ritual: cool pork, rice paper, herbs, noodles, and a dipping bowl sharper than it looks."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Hands Need Order",
+              "body": "The dish works when the table slows down for pork, rice paper, herbs, noodles, and sauce. One neat roll teaches the meal better than rushing."
+            },
+            {
+              "id": "quick-say",
+              "title": "Rolling Table Words",
+              "body": "Ask for pork, rice paper, herbs, sauce, and a quick demonstration before making the first roll."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read The Tray",
+              "body": "Look for pork, rice paper, herbs, noodles, and sauce before starting. A rushed roll becomes salad; a neat one gives every texture together."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Sauce Leads The Meal",
+              "body": "If the dip is mam nem, expect salt, funk, and force. Touch the roll into the sauce first instead of soaking it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Light But Memorable",
+              "body": "This is not heavy beach food. It suits a late lunch or shared table after heat, when everyone wants something fresh but still local."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

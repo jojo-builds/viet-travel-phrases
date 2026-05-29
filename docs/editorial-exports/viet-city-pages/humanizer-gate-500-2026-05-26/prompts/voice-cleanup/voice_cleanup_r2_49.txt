@@ -1,0 +1,288 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_49",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_49",
+  "chunks": [
+    {
+      "chunkFile": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hoian-place-cooking-class",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-countryside-bicycle-loop",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-beach",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-beach",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-estuary",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-estuary",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-pier",
+          "message": "banned visible fragment: matters when"
+        }
+      ],
+      "warnings": [],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-cooking-class",
+          "summary": "Hoi An cooking class turns the food story into hands-on time: herbs, rice paper, bowls, and a table where you make something instead of only ordering.",
+          "context": "This is the workshop side of Hoi An: ingredients, instruction, hands, tools, and a finished dish to remember.",
+          "tip": "Lớp học nấu ăn Hội An names the experience. The picture is a cooking table, not just a food tour label.",
+          "rationale": "A cooking class gives Hoi An a participatory rhythm, especially for anyone who wants a slower food memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hands In The Food Story",
+              "body": "A Hoi An cooking class changes the role of food from ordering to making. Herbs, rice paper, bowls, and instruction turn a meal into a memory with steps."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs Close To Hand",
+              "body": "The table is open-air, with herbs, rice paper, and bowls close to hand. The setting matters because your hands are part of the meal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Lớp Học Nấu Ăn",
+              "body": "Lớp học nấu ăn Hội An means Hoi An cooking class. It is the phrase to recognize when comparing class options or asking about the activity."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Slower Food Day",
+              "body": "It fits a day that can spare time for learning, not just eating. Fewer nearby plans make the class feel less rushed."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Participation Mindset",
+              "body": "The point is not a flawless dish. It is hearing instructions, touching ingredients, and leaving with one food memory that feels earned."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Class Shape Comes From The Host",
+              "body": "Some classes lean market walk, some lean kitchen table, and some include pickup. Read the offer as a rhythm, not only a dish list."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-countryside-bicycle-loop",
+          "summary": "Hoi An countryside bicycle loop moves the day out through rice fields, vegetable gardens, local lanes, and morning air instead of keeping every stop inside the old streets.",
+          "context": "This is a route of wheels, lanes, rice fields, vegetable gardens, cafe pauses, and the distance between named places.",
+          "tip": "Đạp xe vùng quê Hội An is about movement. The road between fields and village stops matters more than memorizing the phrase.",
+          "rationale": "The bicycle loop gives Hoi An a wider, slower geography without requiring a full nature day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Morning Movement Outside Town",
+              "body": "The countryside bicycle loop gives Hoi An distance and air. Rice fields, vegetable gardens, and small lanes make the day feel less built around the old-town center."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fields Between Stops",
+              "body": "The route is a bicycle path through fields and gardens in morning light. The point is the movement between places, not one single stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Đạp Xe In The Countryside",
+              "body": "Đạp xe vùng quê Hội An means cycling in the Hoi An countryside. It helps when discussing a route, bike tour, or rental plan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Soft Route Pairing",
+              "body": "It pairs naturally with a lighter old-town day, a cafe pause, or a simple lunch. Too many timed stops make the ride feel like transit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pace Mindset",
+              "body": "The ride needs room to slow down, stop, and read the landscape. A packed schedule turns the loop into exercise instead of discovery."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather And Comfort",
+              "body": "Sun, rain, and road comfort shape the experience. A named operator or mapped route helps keep the ride from becoming guesswork."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cua-dai-beach",
+          "summary": "Cua Dai Beach gives Hoi An a coastal edge: low waves, boats, open light, and a beach pause that feels different from the old-town river.",
+          "context": "This is the beach side of Hoi An: sand, sea air, boats, low waves, and a pace outside the lane-and-river circuit.",
+          "tip": "Biển Cửa Đại is the phrase to recognize for the beach. The mental picture is coast first, not yellow walls or old houses.",
+          "rationale": "Cua Dai Beach widens the Hoi An plan toward the sea while staying distinct from river walks and island trips.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Coastal Edge Of Hoi An",
+              "body": "Cua Dai Beach changes the day's texture. After narrow streets and river reflections, the beach gives open light, sea air, boats, and low waves."
+            },
+            {
+              "id": "place-brief",
+              "title": "Sand, Water, Weather",
+              "body": "The shore is a quieter coastal beach with boats and soft overcast light. The scene is simple: sand, water, weather, and the town's edge facing outward."
+            },
+            {
+              "id": "quick-say",
+              "title": "Biển Marks The Beach",
+              "body": "Biển Cửa Đại means Cua Dai Beach. Biển is the beach or sea word, so it helps separate this from the estuary or pier."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Dense Streets",
+              "body": "It fits when the old-town loop starts to feel too tight. A beach pause can reset the day without becoming a full island plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Coast Mindset",
+              "body": "The easy comparison is river versus sea. Cua Dai gives Hoi An a shoreline mood, while the Hoai River keeps the focus inside town."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Beach Comfort Leads",
+              "body": "Weather, season, and the shoreline itself shape how long you stay. Hold sand, swimming, and facilities lightly until you see the beach."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cua-dai-estuary",
+          "summary": "Cua Dai Estuary is where Hoi An opens from river toward sea, with fishing boats, sandbars, hazy light, and a working-water feeling beyond the old town.",
+          "context": "This is nature and geography rather than a beach stop: water meeting water, boats, sandbars, weather, and open edges.",
+          "tip": "Cửa Đại can point to more than one coastal thing. For the estuary, attach the name to the river meeting the sea.",
+          "rationale": "The estuary explains Hoi An's water setting without turning it into a polished attraction.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Where River Meets Sea",
+              "body": "Cua Dai Estuary gives Hoi An a geographic edge. The river opens toward the sea, with fishing boats, sandbars, and weather doing more work than architecture."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Waterline To Picture",
+              "body": "The waterline is a hazy morning scene where river, sea, boats, and sandbars meet. It is a working-water image, not a tidy old-town landmark."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Place Carefully",
+              "body": "Cửa Đại is the local name. Because it also appears in beach and pier names, attach it to the estuary context when clarity matters."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Nature Without A Long Trip",
+              "body": "It fits when the plan wants Hoi An's water geography without committing to an island day. The stop is about seeing the edge, not filling hours."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Observation Mindset",
+              "body": "The estuary makes most sense when you are reading the landscape: where boats move, where sandbars show, and how the town faces the coast."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Polished Stop",
+              "body": "Keep the plan modest here. Access, viewpoints, and activities depend on the route you can actually confirm."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cua-dai-pier",
+          "summary": "Cua Dai Pier is the Hoi An edge that turns a beach-side road into boats, crossings, and island plans. It is more about boarding and direction than lingering by the water.",
+          "context": "This is the port side of Hoi An: boarding points, Cửa Đại name confusion, open water, and the move toward islands.",
+          "tip": "Bến tàu Cửa Đại points to the pier. The phrase belongs with boarding and boats so it does not blur with beach or estuary.",
+          "rationale": "The pier makes Hoi An's water travel practical: a place to picture before a crossing, not just a coastal label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Where The Day Boards",
+              "body": "Cua Dai Pier matters when the plan turns from land to water. The scene is simple: boats, boarding edges, open water, and the question of where the next crossing begins."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boat Sounds, Coast Nearby",
+              "body": "The edge is a pier or ferry point with boat sounds and the Cửa Đại coast nearby. The setting feels functional, not scenic in the old-town sense."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bến Tàu Means Pier",
+              "body": "Bến tàu Cửa Đại means Cua Dai Pier. It separates the boarding place from Biển Cửa Đại, the beach, and the wider Cửa Đại water area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Island-Plan Pairing",
+              "body": "It fits naturally before Cham Islands or any route that needs a boat from the Cua Dai side. The phrase is most helpful at pickup or departure time."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pier Mindset",
+              "body": "The pier is a direction point: where to arrive, where to wait, and where the day changes from road to water."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Names Can Blur",
+              "body": "Cửa Đại appears in beach, estuary, and pier phrases. The words bến tàu are the clue that this one is about boats."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

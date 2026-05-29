@@ -1,0 +1,316 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_53",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_53",
+  "chunks": [
+    {
+      "chunkFile": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hoian-place-minh-an-ward",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-mot-herbal-drink",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-museum",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-museum",
+          "message": "freshness/process-like heading: Current Displays Can Change"
+        },
+        {
+          "id": "city-hoian-place-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-my-son-sanctuary",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-my-son-sanctuary",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-nguyen-hoang-night-market",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 17x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: venue name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 23x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-minh-an-ward",
+          "summary": "Minh An Ward gives old-town wandering an addressable shape: lanes, cafes, small shops, hotel edges, evening walks, and the Thu Bon River close by.",
+          "context": "For Minh An Ward, the area matters because it helps you recognize where you are staying or walking, not chase a single landmark.",
+          "tip": "The ward name helps place hotels, cafes, and old-town walks. It keeps the area from feeling like one interchangeable lantern street.",
+          "rationale": "Minh An Ward turns Hoi An from loose scenery into a lived-in area with lanes, shops, stays, and river-adjacent movement.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Name For The Old-Town Core",
+              "body": "Minh An Ward helps old-town Hoi An feel less shapeless. It gives lanes, cafes, small shops, and hotel edges a real area name."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lanes, Shops, River Edges",
+              "body": "Expect yellow-wall lanes, bicycles, paper lanterns, small storefronts, cafes, and the Thu Bon River close enough to shape evening movement."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phường Minh An is the local ward name. It helps when a hotel, cafe, or pickup point gives an address instead of a landmark."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Better Bearings After Check-In",
+              "body": "The name matters most once you are placing your stay, dinner walk, or coffee stop. It turns wandering into a small mental map."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Area, Not Attraction",
+              "body": "Minh An is not a single sight. Treat it as the neighborhood frame around old-town errands, meals, and evening walks."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Nearby Streets Still Matter",
+              "body": "Ward names help, but street names and landmarks will still guide most moves. Both are useful when asking directions."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-mot-herbal-drink",
+          "summary": "Mot herbal drink is a cold old-town pause: herbal sweetness, lemongrass, lotus-leaf garnish, iced glass, and a short reset between walks.",
+          "context": "For Mot herbal drink, the useful scene is not a long cafe sit. It is a quick counter drink on an old-town street.",
+          "tip": "Order it when heat or walking has caught up with you. The drink makes sense as a pause, not the day’s main plan.",
+          "rationale": "Mot herbal drink gives Hoi An’s drink culture a small, recognizable moment between larger plans.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cold Pause Between Walks",
+              "body": "Mot herbal drink fits the moment when old-town walking needs a reset. Think iced glass, herbal sweetness, lemongrass, and a quick return to the street."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbal, Sweet, Recognizable",
+              "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The point is refreshment and recognition, not a long cafe session."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nước Mót ở Hội An means Mot herbal drink in Hoi An. It helps when naming the drink rather than just pointing at the cup."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Heat And Dinner",
+              "body": "The drink fits between market browsing, river walking, and dinner. It gives the day a cooler middle without taking much time."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Counter Moment",
+              "body": "This is a small pause, not a full stop. Drink it, notice the flavor, and keep the old-town route moving."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sweetness Can Be The Point",
+              "body": "Do not expect a plain tea. The memory is the herbal sweetness, cold glass, and street-side rhythm around it."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-museum",
+          "summary": "Hoi An Museum gives the old town a quieter layer: yellow-wall facade, tiled roof, gallery rooms, artifacts, local history, and a break from street scenery.",
+          "context": "For Hoi An Museum, the useful move is choosing a few objects or rooms, not trying to turn a short museum visit into homework.",
+          "tip": "Pick a small focus before entering: trade, local history, or old-town life. That keeps the museum from becoming a blur.",
+          "rationale": "Hoi An Museum adds context to the streets outside, especially when the visitor needs shade, quiet, and a few reference points.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Three reference points Beat Every Case",
+              "body": "Hoi An Museum is easier with a small focus: trade, local history, or old-town life. A few objects can carry more than every label."
+            },
+            {
+              "id": "place-brief",
+              "title": "Quiet Rooms Behind The Streets",
+              "body": "Expect a yellow-wall museum facade, tiled roof, gallery rooms, artifacts, and cooler light. It is a context stop, not a headline monument."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bảo tàng Hội An means Hoi An Museum. It helps when asking for directions or spotting the name near the old town."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Shade And Context",
+              "body": "The museum pairs well with a hot afternoon or rain break. It gives the streets outside a little more depth without demanding a long visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Visits Are Fine",
+              "body": "A few displays can be enough. Leaving before museum fatigue sets in keeps the old-town story sharper."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Displays Can Change",
+              "body": "Exhibit details may shift, so avoid chasing one object. The steadier reason to go is context, quiet, and a cooler indoor pause."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-my-son-sanctuary",
+          "summary": "My Son Sanctuary makes Cham history physical outside Hoi An: brick temple towers, green valley, ceremonial space, old walls, gates, and morning haze.",
+          "context": "For My Son Sanctuary, arrival should leave enough attention for ruins, not squeeze the site into a quick photo detour.",
+          "tip": "Go with the valley and brick towers in mind. The site needs slower looking than a normal old-town stop.",
+          "rationale": "My Son Sanctuary gives the trip a wider historical frame, reaching beyond Hoi An’s streets into Cham architecture and ritual space.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Brick Towers Beyond Town",
+              "body": "My Son Sanctuary is a different kind of Hoi An-area day: Cham brick towers, green valley, old walls, and a setting that asks for slower looking."
+            },
+            {
+              "id": "place-brief",
+              "title": "History Made Physical",
+              "body": "Expect temple remains, gates, courtyards, paths, and weathered brick rather than a polished old-town facade. The place is strongest when read as architecture and ritual space."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Thánh địa Mỹ Sơn is the Vietnamese name. It helps when confirming a route, pickup, or guide for the sanctuary outside Hoi An."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Wider Heritage Day",
+              "body": "My Son pairs better with a lighter Hoi An day than with too many old-town errands. Give the ruins enough attention to feel separate."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Morning Helps The Site",
+              "body": "Soft morning light and cooler air suit the brick towers and valley. Current transport and access details still need separate checking."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not An Old-Town Landmark",
+              "body": "The sanctuary is outside Hoi An’s core. Treat it as a heritage excursion, not a quick yellow-wall stop."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-nguyen-hoang-night-market",
+          "summary": "Nguyen Hoang Night Market gives the An Hoi evening a named lane of lantern stalls, small gifts, food smoke, river edges, and warm movement.",
+          "context": "For Nguyen Hoang Night Market, the first lap sets up the choice between food, gifts, photos, or just movement through lantern light.",
+          "tip": "The first lap can absorb the lights and crowd. Small purchases and snacks feel easier after you know the rhythm.",
+          "rationale": "Nguyen Hoang Night Market makes Hoi An’s evening browse more specific by naming the market street rather than the whole night scene.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Named Night-Market Lane",
+              "body": "Nguyen Hoang Night Market gives the evening a clearer address: lantern stalls, small gifts, food smoke, warm lights, and the river nearby."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lights, Gifts, One First Lap",
+              "body": "Expect outdoor stalls and easy browsing rather than deep shopping. Walk once before buying so the crowd and lantern glow do not rush the choice."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Chợ đêm Nguyễn Hoàng is the local name. It helps when distinguishing this market lane from broader old-town night wandering."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Dinner Or Before Dessert",
+              "body": "The market works as a compact evening browse after dinner or before a drink. A small goal helps: one snack, one gift, or one walk."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crowd First, Purchase Second",
+              "body": "The first pass shows where the food, lanterns, and gift stalls cluster. Buying feels calmer after the pattern is visible."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From The Whole Night Scene",
+              "body": "The name points to a specific market area, not every lit street in Hoi An. That makes directions and meeting points easier."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

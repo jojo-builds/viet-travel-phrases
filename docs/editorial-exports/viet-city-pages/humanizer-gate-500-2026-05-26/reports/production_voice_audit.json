@@ -1,0 +1,6630 @@
+{
+  "generatedAt": "2026-05-27T08:28:59.400Z",
+  "entryCount": 500,
+  "hardCount": 935,
+  "softCount": 11,
+  "issues": [
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-3d-art-in-paradise",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-3d-art-in-paradise",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-43-factory",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-airport",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-airport",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-an-thuong-street-area",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-apec-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-asia-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ba-na-cable-car",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ba-na-hills",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ba-na-hills",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bac-my-an-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bac-my-an-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bach-dang-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ban-co-peak",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-mi",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep It Classic"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-mi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-trang-cuon-thit-heo",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Check The Tray"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-trang-cuon-thit-heo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-xeo",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Start Small"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-xeo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-banh-xeo-ba-duong",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-be-man",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bep-cuon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-boulevard-gelato-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bun-cha-ca",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Start With Fish Cake"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bun-cha-ca",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bun-cha-ca-hon",
+      "severity": "hard",
+      "field": "summary",
+      "message": "over 45 words (46)"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-bun-cha-ca-hon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cathedral",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-central-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cham-museum",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cham-museum",
+      "severity": "hard",
+      "field": "at-glance.title",
+      "message": "command-like heading: Start With The Stone"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cham-museum",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Let The Forms Repeat"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cham-museum",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Ask Before The Camera"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cham-museum",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-che-xoa-xoa-hat-luu",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-co-chu-nho",
+      "severity": "hard",
+      "field": "at-glance.title",
+      "message": "command-like heading: Choose One House Dish"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-co-chu-nho",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep The Order Focused"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-co-chu-nho",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-con-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-con-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-con-market",
+      "severity": "hard",
+      "field": "at-glance.title",
+      "message": "command-like heading: Start With Snacks"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-con-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-cong-caphe-bach-dang",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-domestic-terminal",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dong-dinh-museum",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dong-dinh-museum",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Choose Two Details"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dong-dinh-museum",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Pair It With Sơn Trà"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dong-dinh-museum",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dragon-bridge",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dragon-bridge",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dragon-bridge-fire-show",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dragon-carp-statue",
+      "severity": "hard",
+      "field": "place-brief.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-dragon-carp-statue",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-fatfish",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-fine-arts-museum",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-fine-arts-museum",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-golden-bridge",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-golden-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hai-chau-district",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hai-san",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hai-van-pass",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hai-van-pass-ride",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-han-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-han-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-han-river",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-han-river-cruise",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-helio-night-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-helio-night-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hoa-phu-thanh",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hoa-phu-thanh",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-hoa-trung-lake",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-international-terminal",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-international-terminal",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-kem-bo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-la-maison-1888",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lady-buddha",
+      "severity": "hard",
+      "field": "summary",
+      "message": "visible process/AI fragment: \"makes sense with\""
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lady-buddha",
+      "severity": "hard",
+      "field": "context",
+      "message": "visible process/AI fragment: \"makes sense with\""
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lady-buddha",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-le-duan-night-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-linh-ung-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-linh-ung-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-long-coffee",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-long-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lotte-mart",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lotte-mart",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-lotte-mart",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-love-bridge",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-love-bridge",
+      "severity": "hard",
+      "field": "tip",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-love-bridge",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-love-bridge",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-madame-lan",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-madame-lan",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-man-thai-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-marble-mountain-cave-walk",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-marble-mountains",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-mi-quang",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-mi-quang-1a",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Choose One Angle"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Keep It Short"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum-branch-2",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-museum-branch-2",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-an",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-an-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-khe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-khe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-ba-mua",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-ba-mua",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Treat It As Mi Quang"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-ba-mua",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-dung",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-dung",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Let The Counter Guide You"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-my-quang-dung",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nam-danh-seafood",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nam-house",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep The Visit Light"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nam-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nam-o-fish-sauce-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nam-o-reef",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nem-lui",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nem-lui",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nen",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ngu-hanh-son-district",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-ngu-hanh-son-district",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-nguyen-van-linh-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-non-nuoc-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-non-nuoc-stone-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-oc-hut",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-pham-van-dong-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-phap-lam-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-phap-lam-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-phuoc-my",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-railway-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-reply-1988",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Let It Stay Light"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-reply-1988",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-six-on-six",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra-district",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra-night-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra-night-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-son-tra-wildlife-drive",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-thanh-binh-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-the-temptation",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-the-temptation",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Check The Menu Before Committing"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-the-temptation",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-thuan-phuoc-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-tien-sa-port",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-tran-hung-dao-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-tran-thi-ly-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-trung-vuong-theatre",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-vincom-plaza",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-vo-nguyen-giap-street",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Start From The Beach Side"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-vo-nguyen-giap-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-wonderlust",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "danang",
+      "pageID": "city-danang-place-yen-retreat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ba-dinh-district",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ba-dinh-district",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ba-dinh-district",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"ordinary\" appears 3 times"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ba-dinh-square",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ba-dinh-square",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-banh-cuon",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-banh-cuon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bay-mau-lake",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bay-mau-lake",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep It Modest"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bay-mau-lake",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bia-hoi",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bia-hoi",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Check The Corner First"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bia-hoi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-botanical-garden",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-botanical-garden",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-botanical-garden",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha-huong-lien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha-huong-lien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha-ta",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-cha-ta",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-thang",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-thang",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-bun-thang",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ca-phe-sua-da",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ca-phe-sua-da",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cha-ca",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cha-ca",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cha-ca-thang-long",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cha-ca-thang-long",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cho-buoi-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cho-buoi-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-coffee-hop",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-coffee-hop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cyclo-old-quarter",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-cyclo-old-quarter",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dinh-cafe",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dinh-cafe",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dong-da",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dong-da",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dong-xuan",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-dong-xuan",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-egg-coffee",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-egg-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ethnology-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ethnology-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Start With The Buildings"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter-walk",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter-walk",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-french-quarter-walk",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-gia",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-gia",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-gia-lam-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-gia-lam-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-giang-cafe",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-giang-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-giang-cafe",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-giap-bat-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-giap-bat-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-bac-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-bac-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-da-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-da-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-gai-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hang-gai-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hanoi-flag-tower",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hanoi-flag-tower",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hanoi-railway-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hanoi-railway-station",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Check The Boards First"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hanoi-railway-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hibana-by-koki",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hibana-by-koki",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ho-chi-minh-mausoleum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ho-chi-minh-mausoleum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ho-chi-minh-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ho-chi-minh-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hoa-lo-prison",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hoan-kiem",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hoan-kiem",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hom-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-hom-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-imperial-citadel",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-imperial-citadel",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lam-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lam-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lamai-garden",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lamai-garden",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lenin-park",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-lenin-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-literature-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-literature-museum",
+      "severity": "hard",
+      "field": "rationale",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-literature-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-loading-t-cafe",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-loading-t-cafe",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-long-bien-bridge",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-long-bien-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-long-bien-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-long-bien-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-manzi-art-space",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-mien-luon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-mien-luon-chan-cam",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-mien-luon-chan-cam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-my-dinh-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-my-dinh-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nang-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nang-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-national-museum-history",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-national-museum-history",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nem-cua-be",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nem-cua-be",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ngoc-son-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-night-market-walk",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-night-market-walk",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-noi-bai-airport",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-noi-bai-airport",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Keep The Ride Plain"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-noi-bai-airport",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-old-quarter",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-old-quarter",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-old-quarter-walking-tour",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-old-quarter-walking-tour",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-one-pillar-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-opera-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-opera-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-phan-dinh-phung-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-phan-dinh-phung-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-bat-dan",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-bat-dan",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-bo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-bo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-bo-lam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-ga",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-ga",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-gia-truyen",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-pho-gia-truyen",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-quan-thanh-temple",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-quan-thanh-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-quang-ba-flower-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-red-river",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-red-river",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-st-joseph-cathedral",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-st-joseph-cathedral",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-street-food-walk",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-street-food-walk",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ta-hien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-ta-hien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tam-vi",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tam-vi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tay-ho",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-temple-literature",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-temple-literature",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Let The Courtyards Lead"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-temple-literature",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-the-note-coffee",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-the-note-coffee",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-thong-nhat-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-train-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-train-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tran-quoc-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tran-quoc-pagoda",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Start With The Lake"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-tran-quoc-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trang-tien-plaza",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trang-tien-plaza",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trang-tien-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trang-tien-street",
+      "severity": "hard",
+      "field": "place-brief.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trang-tien-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Start With A Small Order"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-truc-bach-lake",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-truc-bach-lake",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-turtle-tower",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-turtle-tower",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-udam",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-udam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-art-gallery",
+      "severity": "hard",
+      "field": "summary",
+      "message": "over 45 words (48)"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-art-gallery",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-circus",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-circus",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-circus",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-fine-arts-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-fine-arts-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-military-history-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-military-history-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-national-tuong-theatre",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-vietnam-national-tuong-theatre",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-water-puppet-theatre",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-water-puppet-theatre",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-weekend-night-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-weekend-night-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Choose One Shoreline"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake-loop",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake-loop",
+      "severity": "hard",
+      "field": "at-glance.title",
+      "message": "command-like heading: Let The Day Set The Length"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake-loop",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Choose One Section"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-west-lake-loop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-womens-museum",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-womens-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-womens-museum",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-xoi-xeo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-xoi-xeo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-yen-so-park",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hanoi",
+      "pageID": "city-hanoi-place-yen-so-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-akuna",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-akuna",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-an-dong-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-an-dong-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-anan-saigon",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-anan-saigon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ao-dai-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ao-dai-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bach-dang-waterbus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bach-dang-waterbus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bach-dang-wharf",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-mi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-xeo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-xeo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-xeo-46a",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-banh-xeo-46a",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "severity": "hard",
+      "field": "at-glance.title",
+      "message": "command-like heading: Start With The Clock Tower"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "severity": "hard",
+      "field": "tip",
+      "message": "visible process/AI fragment: \"the page\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "visible process/AI fragment: \"the page\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bep-me-in",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bep-me-in",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-binh-tay-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-binh-tay-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bitexco-tower",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bitexco-tower",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bo-la-lot",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bo-la-lot",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bo-la-lot",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bot-chien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bot-chien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bui-vien-street",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bui-vien-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bui-vien-street",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-bun-thit-nuong",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ca-phe-sua-da",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cafe-apartment-nguyen-hue",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cafe-hop-nguyen-hue",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-che",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cheo-leo-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "severity": "hard",
+      "field": "summary",
+      "message": "over 45 words (47)"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "severity": "hard",
+      "field": "tip",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Let The Route Stay Loose"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ciel",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ciel",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-city-hall",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-coco-dining",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-coco-dining",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-com-tam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-com-tam-ba-ghien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cong-ca-phe-dong-khoi",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cong-ca-phe-dong-khoi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cu-chi-day-trip",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cu-chi-day-trip",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cu-chi-tunnels",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cu-chi-tunnels",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cuc-gach-quan",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-cuc-gach-quan",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-district-1",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-district-3",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-district-3",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-dong-khoi-street",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-dong-khoi-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-dong-khoi-street",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-fine-arts-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-fine-arts-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-fito-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"ordinary\" appears 4 times"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-goi-cuon",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-goi-cuon",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-history-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-hu-tieu",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-independence-palace",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-independence-palace",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-jade-emperor-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-japan-town",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-japan-town",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-japan-town",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-landmark-81",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-le-thanh-ton-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-le-thanh-ton-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-le-van-tam-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-little-hanoi-egg-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-long-trieu",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-lusine-thao-dien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-mariamman-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-mien-dong-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-mien-tay-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-mien-tay-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-motorbike-food-tour",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-municipal-theatre-square",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep It Attached To The Opera House"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-municipal-theatre-square",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nephele",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nephele",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nguyen-hue",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Keep It As A Stroll"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nguyen-hue",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nguyen-trai-street",
+      "severity": "hard",
+      "field": "summary",
+      "message": "visible process/AI fragment: \"works as\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nguyen-trai-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "visible process/AI fragment: \"works as\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nguyen-trai-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nhieu-loc-canal",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-nhieu-loc-canal",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-notre-dame",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-oc",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-oc",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-opera-a-o-show",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-opera-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "severity": "hard",
+      "field": "summary",
+      "message": "visible process/AI fragment: \"works as\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "visible process/AI fragment: \"works as\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pha-lau",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pham-ngu-lao-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pham-ngu-lao-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pho-hoa-pasteur",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Let It Be The Meal"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pho-hoa-pasteur",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-pho-nam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-post-office",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-post-office",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-rex-hotel-rooftop",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "visible process/AI fragment: \"makes more sense\""
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-rex-hotel-rooftop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-russian-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-railway-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-river",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-river",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-river-boat",
+      "severity": "hard",
+      "field": "summary",
+      "message": "over 45 words (46)"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-river-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-skydeck",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-skydeck",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-saigon-square",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-southern-women-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-street-food-evening",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-takashimaya-saigon-centre",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-takashimaya-saigon-centre",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-tan-son-nhat-airport",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-tao-dan-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thao-dien",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thao-dien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thao-dien",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thien-hau-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thu-thiem-riverfront",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-thu-thiem-riverfront",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-ton-duc-thang-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-turtle-lake",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-turtle-lake",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-vincom-dong-khoi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-vinhomes-central-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-war-remnants-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-workshop-coffee",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-workshop-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hcmc",
+      "pageID": "city-hcmc-place-zoo-botanical-gardens",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-bang",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-bang",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Let Weather Decide"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-bang",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-hoi-bridge",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-hoi-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-hoi-island",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-an-hoi-island",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-ancient-town",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-ancient-town",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-ancient-town-ticket-booth",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-ancient-town-ticket-booth",
+      "severity": "hard",
+      "field": "use-it-with.title",
+      "message": "command-like heading: Choose One Direction"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-ancient-town-ticket-booth",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bach-dang-boat-pier",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bach-dang-boat-pier",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bach-dang-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bach-dang-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bale-well",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bale-well",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bale-well",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-dap-hen-xao",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-dap-hen-xao",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep It Small"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-dap-hen-xao",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-mi",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-mi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-mi-phuong",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-mi-phuong",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-mi-phuong",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-xeo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-banh-xeo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bay-mau-coconut-forest",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bay-mau-coconut-forest",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bebe-tailor",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bebe-tailor",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Treat It As An Appointment"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bebe-tailor",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-chau",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-chau",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-chau",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"rhythm\" appears 3 times"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-kim-island",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-kim-island",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-nam",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-nam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-pho",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-pho",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh-basket-boat",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh-basket-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh-coconut-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cam-thanh-coconut-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cantonese-assembly-hall",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cantonese-assembly-hall",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cao-lau-city",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cao-lau-city",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cargo-club",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cargo-club",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cham-islands",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cham-islands",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-che-bap-cam-nam",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-che-bap-cam-nam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-chuc-thanh-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-chuc-thanh-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cocobox",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cocobox",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-com-ga",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-com-ga",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Choose Heat Early"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-com-ga",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cooking-class",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cooking-class",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-countryside-bicycle-loop",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-countryside-bicycle-loop",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Leave Room To Drift"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-countryside-bicycle-loop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-beach",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-beach",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "visible process/AI fragment: \"the useful\""
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-beach",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-estuary",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-estuary",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-pier",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-cua-dai-pier",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-duc-an-old-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-duc-an-old-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-espresso-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-espresso-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-faifo-coffee",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-faifo-coffee",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Go For The Roof"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-faifo-coffee",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Start With The Roof"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-faifo-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-folk-culture-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-folk-culture-museum",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Choose A Few Objects"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-folk-culture-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-from-danang-airport",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-from-danang-airport",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-from-danang-railway-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-from-danang-railway-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-fujian-assembly-hall",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-fujian-assembly-hall",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-hainan-assembly-hall",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-hainan-assembly-hall",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-handicraft-workshop",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-handicraft-workshop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-history-culture-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-history-culture-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-hoai-river",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-hoai-river",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-japanese-bridge",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-japanese-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-kim-bong-carpentry-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-kim-bong-carpentry-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lantern-boat",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lantern-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lantern-making-class",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lantern-making-class",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lune-center",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-lune-center",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-madam-khanh",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-madam-khanh",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-madam-khanh",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mai-fish",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mai-fish",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mango-mango",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mango-mango",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Start With The River Table"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mango-mango",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-memories-land",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-memories-land",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-metiseko",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-metiseko",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mi-quang",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mi-quang",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-minh-an-ward",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-minh-an-ward",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-morning-glory",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-morning-glory",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-morning-glory",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mot-herbal-drink",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-mot-herbal-drink",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-my-son-sanctuary",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-my-son-sanctuary",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-hoang-night-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-hoang-night-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-night-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-night-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nu-eatery",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-nu-eatery",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-phin-coffee",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-phin-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-phung-hung-old-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-phung-hung-old-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-pottery-workshop",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-pottery-workshop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-precious-heritage-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-precious-heritage-museum",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Choose A Small Focus"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-precious-heritage-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-quan-cong-temple",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-quan-cong-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-quan-thang-old-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-quan-thang-old-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reach-out-tea-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reach-out-tea-house",
+      "severity": "hard",
+      "field": "tip",
+      "message": "visible process/AI fragment: \"reads as\""
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reach-out-tea-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reach-out-tea-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "visible process/AI fragment: \"reads as\""
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reaching-out-arts-crafts",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-reaching-out-arts-crafts",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-rice-fields",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-rice-fields",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-roastery",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-roastery",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-rosies-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-rosies-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-sa-huynh-culture-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-sa-huynh-culture-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-silk-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-silk-village",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Let The Cloth Lead"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-silk-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-streets-restaurant-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-streets-restaurant-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tailor-fitting",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tailor-fitting",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Leave Time To Adjust"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tailor-fitting",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tan-ky-old-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tan-ky-old-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-thanh-ha",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-thanh-ha",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-the-field",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-the-field",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-thu-bon-river",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-thu-bon-river",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tra-nhieu-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tra-nhieu-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tra-que",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tra-que",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-trade-ceramics-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-trade-ceramics-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-traditional-art-performance-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-traditional-art-performance-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tran-phu-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-tran-phu-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-trieu-chau-assembly-hall",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-trieu-chau-assembly-hall",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-u-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-vys-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-vys-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-dumplings",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-dumplings",
+      "severity": "hard",
+      "field": "when-to-use.title",
+      "message": "command-like heading: Ask About Shellfish"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-dumplings",
+      "severity": "hard",
+      "field": "good-to-know.title",
+      "message": "command-like heading: Keep It One Plate"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-dumplings",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-restaurant",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-restaurant",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-white-rose-restaurant",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-wonton",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-wonton",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-yaly-couture",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hoian",
+      "pageID": "city-hoian-place-yaly-couture",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-cuu-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-cuu-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-dinh-palace",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-dinh-palace",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-hien-garden-house",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-an-hien-garden-house",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"rhythm\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-hue-restaurant",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-hue-restaurant",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-space-restaurant",
+      "severity": "hard",
+      "field": "summary",
+      "message": "over 45 words (47)"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ancient-space-restaurant",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ba-van-banh-loc",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ba-van-banh-loc",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Start Small"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ba-van-banh-loc",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bach-ma-national-park",
+      "severity": "hard",
+      "field": "place-brief.title",
+      "message": "command-like heading: Choose One Main Goal"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bach-ma-national-park",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-beo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-beo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-beo",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"rhythm\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-bot-loc",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-bot-loc",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-khoai",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-banh-nam",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bao-quoc-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bao-quoc-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bao-vinh-ancient-town",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ben-ngu-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ben-ngu-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ben-trang-cafe-bistro",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-bo-city",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-bo-city",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-hen",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-hen",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"texture\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-hen",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"context\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-bun-thit-nuong",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-che-hue",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-che-hue",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-chu-van-an-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-com-am-phu",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-com-am-phu",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-com-hen",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-cyclo-citadel-loop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dai-nam-restaurant",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dai-nam-restaurant",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-de-po-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-de-po-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-diem-phung-thi-art-center",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-diem-phung-thi-art-center",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dien-tho-palace",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dien-tho-palace",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dong-ba",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dong-ba",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dong-ba-bun-bo",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dong-ba-bun-bo",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-dong-khanh-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-duc-duc-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-duyet-thi-duong-theater",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-duyet-thi-duong-theater",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-flag-tower",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-flag-tower",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-forbidden-purple-city",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-forbidden-purple-city",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-gia-hoi",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-gia-hoi",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"texture\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-gia-long-tomb",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-gia-long-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-hen-island",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-hen-island",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-hon-chen-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-huyen-tran-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-imperial-city",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-incense-village-workshop",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-khai-dinh-tomb",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-khai-dinh-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-khong-gian-hoai-co-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-kim-long",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-kodo-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lagoon-seafood-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lang-thang-coffee",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lap-an-lagoon",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lap-an-lagoon",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-ba-dang-art-center",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-ba-dang-art-center",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-ba-dang-memory-space",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-ba-dang-memory-space",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-loi-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-loi-street",
+      "severity": "hard",
+      "field": "place-brief.body",
+      "message": "visible process/AI fragment: \"the useful\""
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-le-loi-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-les-jardins",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lien-hoa-vegetarian",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-lien-hoa-vegetarian",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-long-an-palace",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-long-an-palace",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-mandarin-coffee-restaurant",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-me-xung",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-minh-mang-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-museum-commissioned-porcelains",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-museum-commissioned-porcelains",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nam-giao-esplanade",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ngo-mon-gate",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ngu-binh-mountain",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ngu-binh-mountain",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nguyen-dinh-chieu-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nguyen-dinh-chieu-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nha-nhac-royal-court-music",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-night-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-night-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nine-dynastic-urns",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-nine-dynastic-urns",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-northern-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-northern-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-perfume-river",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-perfume-river",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-perfume-river-dragon-boat",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-perfume-river-dragon-boat",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-pham-ngu-lao-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-phu-bai-airport",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-phu-bai-airport",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-phu-cam-church",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-phu-hau-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-phu-hau-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-railway-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-railway-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-royal-antiquities-museum",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-royal-antiquities-museum",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-royal-court-music-show",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-royal-court-music-show",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ru-cha-mangrove",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-ru-cha-mangrove",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"texture\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-song-huong-floating-restaurant",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-song-huong-floating-restaurant",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-songlab",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-songlab",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-southern-bus-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-southern-bus-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tam-giang-lagoon",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tam-giang-lagoon",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tay-loc-market",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tay-loc-market",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thai-hoa-palace",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thai-hoa-palace",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thai-hoa-palace",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"rhythm\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thanh-cafe",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thanh-cafe",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thanh-toan-bridge",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thanh-toan-bridge",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-the-mieu-temple",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thien-mu",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thien-mu",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thieu-tri-tomb",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thieu-tri-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thuy-bieu-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thuy-bieu-village",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thuy-xuan-incense-village",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thuy-xuan-incense-village",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-thuy-xuan-incense-village",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tinh-gia-vien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tinh-gia-vien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-toa-kham-boat-station",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-toa-kham-boat-station",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-truong-tien",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-truong-tien",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-truong-tien-plaza",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-truong-tien-plaza",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tu-duc-tomb",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tu-duc-tomb",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tu-hieu-pagoda",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tu-hieu-pagoda",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-tu-hieu-pagoda",
+      "severity": "soft",
+      "field": "entry",
+      "message": "repeated soft word \"rhythm\" appears 3 times"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-vong-canh-hill",
+      "severity": "hard",
+      "field": "sections",
+      "message": "missing section good-to-know"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-vong-canh-hill",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-vong-canh-hill",
+      "severity": "hard",
+      "field": "when-to-use.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-vy-da",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-vy-da",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-walking-street",
+      "severity": "hard",
+      "field": "context",
+      "message": "duplicates summary"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-walking-street",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    },
+    {
+      "cityID": "hue",
+      "pageID": "city-hue-place-y-thao-garden",
+      "severity": "hard",
+      "field": "good-to-know.body",
+      "message": "duplicates tip"
+    }
+  ]
+}

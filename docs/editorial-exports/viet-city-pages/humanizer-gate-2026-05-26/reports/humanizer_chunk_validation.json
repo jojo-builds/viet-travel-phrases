@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-05-26T09:30:18.651Z",
+  "chunks": [
+    {
+      "cityID": "danang",
+      "range": "001-025",
+      "file": "danang_001_025_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "danang",
+      "range": "026-050",
+      "file": "danang_026_050_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "danang",
+      "range": "051-075",
+      "file": "danang_051_075_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "danang",
+      "range": "076-100",
+      "file": "danang_076_100_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "hanoi",
+      "range": "001-025",
+      "file": "hanoi_001_025_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "hanoi",
+      "range": "026-050",
+      "file": "hanoi_026_050_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "hanoi",
+      "range": "051-075",
+      "file": "hanoi_051_075_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "cityID": "hanoi",
+      "range": "076-100",
+      "file": "hanoi_076_100_humanized.json",
+      "status": "pass",
+      "entries": 25,
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "totals": {
+    "entries": 200,
+    "errors": 0,
+    "warnings": 0,
+    "missingChunks": 0
+  },
+  "errors": [],
+  "warnings": []
+}

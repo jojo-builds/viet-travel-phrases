@@ -1,0 +1,628 @@
+[
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-danang-place-3d-art-in-paradise",
+    "sourcePageID": "city-danang-place-3d-art-in-paradise",
+    "displayName": "Bảo tàng 3D Art in Paradise Đà Nẵng",
+    "englishName": "3D Art in Paradise Da Nang",
+    "city": "Đà Nẵng",
+    "category": "Museum",
+    "pronunciation": "bao tang 3d art in paradise da nang",
+    "intro": {
+      "heading": "A Cool Break Built For Photos",
+      "body": "3D Art in Paradise is a bright indoor reset built around optical-illusion rooms and people stepping into the scene. The art is not meant to sit quietly on a wall; the picture lands when one person poses and another frames the angle."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Tôi chụp hình ở đây được không?",
+        "en": "Can I take photos here?",
+        "intent": "ask_photo_permission",
+        "phraseId": "sight-3",
+        "audioId": "sight-3",
+        "status": "mapped"
+      },
+      {
+        "vi": "Mấy giờ mở cửa?",
+        "en": "What time does it open?",
+        "intent": "ask_opening_time",
+        "phraseId": "time-5",
+        "audioId": "time-5",
+        "status": "mapped"
+      },
+      {
+        "vi": "Nhà vệ sinh ở đâu?",
+        "en": "Where is the bathroom?",
+        "intent": "find_bathroom",
+        "phraseId": "bath-1",
+        "audioId": "bath-1",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "place-brief",
+        "heading": "The Phone Finds The Trick",
+        "body": "The rooms usually look better through a camera than from the middle of the floor. Let one person stand in the marked spot, then adjust the frame before moving on."
+      },
+      {
+        "id": "use-it-with",
+        "heading": "Better With A Small Group",
+        "body": "Solo visits can feel thin; the point is posing and reacting together. Families, friends, and patient camera people get more out of the forced perspective."
+      },
+      {
+        "id": "good-to-know",
+        "heading": "Good When The Weather Turns",
+        "body": "Keep the expectation light: bright walls, staged scenes, and funny photos between outdoor Da Nang plans. It is a pause, not the day's main story."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Da Nang",
+        "type": "city",
+        "catalogId": "danang",
+        "sourceText": "Da Nang",
+        "displaySubtitle": "The outdoor city plans this indoor stop breaks up.",
+        "reason": "Named naturally as the outdoor-plan contrast.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-danang-place-fine-arts-museum",
+        "label": "Da Nang Fine Arts Museum",
+        "relationship": "art_stop_contrast",
+        "displaySubtitle": "A quieter art stop when you want galleries instead of camera play.",
+        "reason": "Nearby Da Nang art contrast with a confirmed catalog target.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "light",
+        "reason": "Current operating status, hours, ticket price, and temporary room closures should be checked before publication.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All phrase cards resolve to reusable ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass_no_forced_render",
+      "catalogMentionScan": "pass_with_candidates",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Promoted from ChatGPT Project Batch 001 revision doc after Jojo heading/copy critique.",
+        "Visible copy avoids schema/product wording and one-off phrase-card inflation.",
+        "Legacy runtime source maps the v2.2 intro to at-glance and phrase cards to quick-say presentation phrase-list."
+      ]
+    },
+    "score": {
+      "value": 26,
+      "max": 30,
+      "reason": "Specific indoor photo behavior and clean phrase mapping; capped for venue freshness and native render proof."
+    },
+    "sourceNotes": [
+      "Google Doc: https://docs.google.com/document/d/1v941nwLRgxOfhTbm3B5oDmw_00GknzOHB576GmJow5c",
+      "Promotion date: 2026-05-25 Asia/Ho_Chi_Minh.",
+      "Production gate still requires regenerated resources, native validation, and render proof."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hanoi-place-bun-cha",
+    "sourcePageID": "city-hanoi-place-bun-cha",
+    "displayName": "Bún chả ở Hà Nội",
+    "englishName": "Bun cha",
+    "city": "Hà Nội",
+    "category": "Food",
+    "pronunciation": "bun cha",
+    "intro": {
+      "heading": "Smoke First, Then The Table",
+      "body": "Bun cha reaches you before the bowl does: pork grilling over charcoal, warm dipping broth, rice noodles, herbs, garlic, and chili waiting on the table. It is not a pre-built noodle bowl. The meal comes together one bite at a time."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Cho tôi xem thực đơn được không?",
+        "en": "Can I see the menu?",
+        "intent": "ask_menu",
+        "phraseId": "food-menu",
+        "audioId": "food-menu",
+        "status": "mapped"
+      },
+      {
+        "vi": "Không cay nhé",
+        "en": "Not spicy please",
+        "intent": "request_not_spicy",
+        "phraseId": "food-3",
+        "audioId": "food-3",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tính tiền giúp tôi",
+        "en": "Please let me pay",
+        "intent": "ask_bill",
+        "phraseId": "coffee-7",
+        "audioId": "coffee-7",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "place-brief",
+        "heading": "Keep The Broth Close",
+        "body": "The pork sits in the dipping broth, while noodles and herbs stay separate. Add small amounts as you eat instead of trying to build one large bowl at once."
+      },
+      {
+        "id": "use-it-with",
+        "heading": "Taste Before Chili",
+        "body": "Garlic, chili, and herbs change the meal quickly. Taste the broth first, then adjust slowly so the smoky pork and sweet-sour balance stay clear."
+      },
+      {
+        "id": "good-to-know",
+        "heading": "A Fast Table Can Still Feel Calm",
+        "body": "Turnover is part of the rhythm. Order, settle in, and let the table teach the meal: dip, herbs, noodles, broth, repeat."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Bún chả",
+        "type": "food",
+        "catalogId": "food-bun-cha",
+        "sourceText": "Bun cha",
+        "displaySubtitle": "Smoky grilled pork with noodles, herbs, and dipping broth.",
+        "reason": "Exact menu item candidate; render only if the native menu bridge exposes it for location pages.",
+        "status": "check_catalog"
+      },
+      {
+        "label": "Hanoi",
+        "type": "city",
+        "catalogId": "hanoi",
+        "sourceText": "Hanoi",
+        "displaySubtitle": "The city context for the dish.",
+        "reason": "Named naturally in the intro and source row.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+        "label": "Bun Cha Huong Lien",
+        "relationship": "named_restaurant_option",
+        "displaySubtitle": "A named bun cha stop if you want a specific restaurant target.",
+        "reason": "Ledger neighbor for a named bun cha restaurant.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
+        "label": "Bun Cha Ta",
+        "relationship": "named_restaurant_option",
+        "displaySubtitle": "Another named bun cha restaurant candidate for comparison.",
+        "reason": "Ledger neighbor for a named bun cha restaurant.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "light",
+        "reason": "No venue-specific hours, prices, or ranking claims are visible.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All phrase cards resolve to reusable ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass_no_forced_render",
+      "catalogMentionScan": "pass_with_candidates",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Promoted from ChatGPT Project Batch 001 revision doc after Jojo heading/copy critique.",
+        "Visible copy avoids schema/product wording and one-off phrase-card inflation.",
+        "Legacy runtime source maps the v2.2 intro to at-glance and phrase cards to quick-say presentation phrase-list."
+      ]
+    },
+    "score": {
+      "value": 26,
+      "max": 30,
+      "reason": "Strong dish behavior and reusable phrase fit; capped for native card bridge and render proof."
+    },
+    "sourceNotes": [
+      "Google Doc: https://docs.google.com/document/d/1v941nwLRgxOfhTbm3B5oDmw_00GknzOHB576GmJow5c",
+      "Promotion date: 2026-05-25 Asia/Ho_Chi_Minh.",
+      "Production gate still requires regenerated resources, native validation, and render proof."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hcmc-place-ben-thanh-market",
+    "sourcePageID": "city-hcmc-place-ben-thanh-market",
+    "displayName": "Chợ Bến Thành",
+    "englishName": "Ben Thanh Market",
+    "city": "Sài Gòn",
+    "category": "Market",
+    "pronunciation": "chuh ben tahn",
+    "intro": {
+      "heading": "Start With The Clock Tower",
+      "body": "Ben Thanh is both a landmark and a working market scene: the clock-tower entrance, souvenir aisles, snack stalls, and practiced sales rhythm all packed into one central Saigon stop. Walk once before buying. The first lap is part of the visit."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Cái này bao nhiêu?",
+        "en": "How much is this?",
+        "intent": "ask_price",
+        "phraseId": "price-1",
+        "audioId": "price-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tổng cộng bao nhiêu?",
+        "en": "How much altogether?",
+        "intent": "ask_total_price",
+        "phraseId": "price-8",
+        "audioId": "price-8",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tính tiền giúp tôi",
+        "en": "Please let me pay",
+        "intent": "ask_bill",
+        "phraseId": "coffee-7",
+        "audioId": "coffee-7",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "place-brief",
+        "heading": "Let The First Lap Slow You Down",
+        "body": "The same kind of bag, shirt, coffee pack, or snack may appear more than once. A lap gives you prices, tone, and exits before you commit."
+      },
+      {
+        "id": "use-it-with",
+        "heading": "Snack Small, Browse Light",
+        "body": "A drink, a bowl, or one grilled item is enough to make the market feel real without turning it into a full meal. Save energy for the next street."
+      },
+      {
+        "id": "good-to-know",
+        "heading": "Meet Outside, Not Deep Inside",
+        "body": "The clock tower is easier than a stall number. If people split up, choose an outside meeting point before the aisles pull everyone in different directions."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Saigon",
+        "type": "city",
+        "catalogId": "hcmc",
+        "sourceText": "Saigon",
+        "displaySubtitle": "The central city context for the market stop.",
+        "reason": "Named naturally in the intro.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hcmc-place-an-dong-market",
+        "label": "An Dong Market",
+        "relationship": "market_contrast",
+        "displaySubtitle": "A market comparison when shopping matters more than the landmark.",
+        "reason": "Confirmed HCMC market catalog target.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-hcmc-place-binh-tay-market",
+        "label": "Binh Tay Market",
+        "relationship": "market_contrast",
+        "displaySubtitle": "A Cholon market contrast with a different city rhythm.",
+        "reason": "Confirmed HCMC market catalog target.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "light",
+        "reason": "Hours, night-market setup, prices, and vendor details can change and are not claimed in visible copy.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All phrase cards resolve to reusable ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass_no_forced_render",
+      "catalogMentionScan": "pass_with_candidates",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Promoted from ChatGPT Project Batch 001 revision doc after Jojo heading/copy critique.",
+        "Visible copy avoids schema/product wording and one-off phrase-card inflation.",
+        "Legacy runtime source maps the v2.2 intro to at-glance and phrase cards to quick-say presentation phrase-list."
+      ]
+    },
+    "score": {
+      "value": 26,
+      "max": 30,
+      "reason": "Good market behavior and reusable price phrases; capped for current market freshness and render proof."
+    },
+    "sourceNotes": [
+      "Google Doc: https://docs.google.com/document/d/1v941nwLRgxOfhTbm3B5oDmw_00GknzOHB576GmJow5c",
+      "Promotion date: 2026-05-25 Asia/Ho_Chi_Minh.",
+      "Production gate still requires regenerated resources, native validation, and render proof."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hue-place-bach-ma-national-park",
+    "sourcePageID": "city-hue-place-bach-ma-national-park",
+    "displayName": "Vườn quốc gia Bạch Mã",
+    "englishName": "Bach Ma National Park",
+    "city": "Huế",
+    "category": "Nature",
+    "pronunciation": "vuon quoc gia bach ma",
+    "intro": {
+      "heading": "Let The Weather Set The Day",
+      "body": "Bach Ma is a real nature day, not a quick viewpoint. Cooler air, forest roads, wet steps, viewpoints, Five Lakes, and Do Quyen Waterfall can make the trip feel far from the city, but weather decides how much of the mountain you actually get."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Bắt đầu ở đâu?",
+        "en": "Where do we start?",
+        "intent": "ask_start_point",
+        "phraseId": "sight-2",
+        "audioId": "sight-2",
+        "status": "mapped"
+      },
+      {
+        "vi": "Điểm gặp ở đâu?",
+        "en": "Where is the meeting point?",
+        "intent": "ask_meeting_point",
+        "phraseId": "sight-5",
+        "audioId": "sight-5",
+        "status": "mapped"
+      },
+      {
+        "vi": "Cho tôi chai nước",
+        "en": "A bottle of water please",
+        "intent": "buy_water",
+        "phraseId": "store-1",
+        "audioId": "store-1",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "place-brief",
+        "heading": "Pick One Main Goal",
+        "body": "Choose the viewpoint, Five Lakes, or the waterfall before adding anything else. The park feels better when the day has one center instead of a rushed list."
+      },
+      {
+        "id": "use-it-with",
+        "heading": "Shoes Matter More Than Ambition",
+        "body": "Wet stone, roots, and steps can slow everything down. If the mountain has had rain, grip matters more than looking ready for photos."
+      },
+      {
+        "id": "when-to-use",
+        "heading": "Confirm The Ride Back Early",
+        "body": "The park sits outside the easy city rhythm. Make the return plan before the walk takes over the afternoon."
+      },
+      {
+        "id": "good-to-know",
+        "heading": "If The View Disappears",
+        "body": "Cloud can shrink the view without ruining the day. If the lookout disappears, let the forest and water carry the visit instead."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Five Lakes",
+        "type": "nature",
+        "catalogId": null,
+        "sourceText": "Five Lakes",
+        "displaySubtitle": "A water-and-walking route inside Bach Ma if catalog support is added.",
+        "reason": "Named naturally in visible copy; no confirmed target.",
+        "status": "check_catalog"
+      },
+      {
+        "label": "Do Quyen Waterfall",
+        "type": "nature",
+        "catalogId": null,
+        "sourceText": "Do Quyen Waterfall",
+        "displaySubtitle": "A waterfall target when time and conditions allow.",
+        "reason": "Named naturally in visible copy; no confirmed target.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
+        "label": "Lap An Lagoon",
+        "relationship": "lower_effort_nature_day",
+        "displaySubtitle": "A lighter water-and-weather stop on a central Vietnam route.",
+        "reason": "Confirmed catalog target and useful lower-commitment comparison.",
+        "status": "render"
+      },
+      {
+        "catalogId": "viet-family-city-danang-place-hai-van-pass",
+        "label": "Hai Van Pass",
+        "relationship": "route_contrast",
+        "displaySubtitle": "A scenic mountain-road option when the ride matters more than hiking.",
+        "reason": "Confirmed cross-city catalog target for route comparison.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "same_week",
+        "reason": "Weather, trail condition, road access, fees, transport timing, and temporary closures can change the visit.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All phrase cards resolve to reusable ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass_no_forced_render",
+      "catalogMentionScan": "pass_with_candidates",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Promoted from ChatGPT Project Batch 001 revision doc after Jojo heading/copy critique.",
+        "Visible copy avoids schema/product wording and one-off phrase-card inflation.",
+        "Legacy runtime source maps the v2.2 intro to at-glance and phrase cards to quick-say presentation phrase-list."
+      ]
+    },
+    "score": {
+      "value": 25,
+      "max": 30,
+      "reason": "Specific condition-aware nature day and reusable phrase set; capped for same-week conditions and render proof."
+    },
+    "sourceNotes": [
+      "Google Doc: https://docs.google.com/document/d/1v941nwLRgxOfhTbm3B5oDmw_00GknzOHB576GmJow5c",
+      "Promotion date: 2026-05-25 Asia/Ho_Chi_Minh.",
+      "Production gate still requires regenerated resources, native validation, and render proof."
+    ]
+  },
+  {
+    "contentContract": "speaklocal.place.app-detail.v2.2",
+    "id": "viet-family-city-hoian-place-ancient-town-ticket-booth",
+    "sourcePageID": "city-hoian-place-ancient-town-ticket-booth",
+    "displayName": "Quầy vé phố cổ Hội An",
+    "englishName": "Hoi An Ancient Town ticket booth",
+    "city": "Hội An",
+    "category": "Attraction",
+    "pronunciation": "quay ve pho co hoi an",
+    "intro": {
+      "heading": "A Small Pause Before Old Town",
+      "body": "The ticket booth gives you a brief pause before Hoi An opens up: yellow walls, tiled roofs, old houses, assembly halls, river walks, and lantern streets pulling you in different directions."
+    },
+    "usefulPhraseCards": [
+      {
+        "vi": "Vé bao nhiêu?",
+        "en": "How much is the ticket?",
+        "intent": "ask_ticket_price",
+        "phraseId": "sight-1",
+        "audioId": "sight-1",
+        "status": "mapped"
+      },
+      {
+        "vi": "Bắt đầu ở đâu?",
+        "en": "Where do we start?",
+        "intent": "ask_start_point",
+        "phraseId": "sight-2",
+        "audioId": "sight-2",
+        "status": "mapped"
+      },
+      {
+        "vi": "Tôi chụp hình ở đây được không?",
+        "en": "Can I take photos here?",
+        "intent": "ask_photo_permission",
+        "phraseId": "sight-3",
+        "audioId": "sight-3",
+        "status": "mapped"
+      }
+    ],
+    "sections": [
+      {
+        "id": "place-brief",
+        "heading": "Check The Details At The Booth",
+        "body": "Ticket details can change. Confirm the current price, what it covers, and any site rules at the booth instead of building the day around an old post."
+      },
+      {
+        "id": "use-it-with",
+        "heading": "Choose One First Direction",
+        "body": "The old town rewards wandering, but the first few minutes are easier with one first stop: the river, an old house, an assembly hall, or a coffee counter."
+      },
+      {
+        "id": "when-to-use",
+        "heading": "Morning Reads Differently From Evening",
+        "body": "Morning gives you quieter walls, signs, and roofs. Evening brings lanterns and heavier foot traffic near the river."
+      },
+      {
+        "id": "good-to-know",
+        "heading": "Leave Space Between Stops",
+        "body": "Many heritage stops are compact. Slow down between houses, halls, coffee, and the river so the visit does not become a checklist."
+      }
+    ],
+    "mentionedHereCandidates": [
+      {
+        "label": "Hoi An Ancient Town",
+        "type": "neighborhood",
+        "catalogId": "viet-family-city-hoian-place-ancient-town",
+        "sourceText": "Hoi An",
+        "displaySubtitle": "The old-town area the booth helps orient you toward.",
+        "reason": "Exact parent target exists, but the native pass renders it once as a related place to avoid a duplicate card.",
+        "status": "check_catalog"
+      },
+      {
+        "label": "Thu Bon River",
+        "type": "river",
+        "catalogId": "hoian-thu-bon-river",
+        "sourceText": "river",
+        "displaySubtitle": "The river edge that often shapes the first walk.",
+        "reason": "Candidate appears naturally in the copy; exact runtime target still needs QA.",
+        "status": "check_catalog"
+      }
+    ],
+    "relatedPlaceCandidates": [
+      {
+        "catalogId": "viet-family-city-hoian-place-ancient-town",
+        "label": "Hoi An Ancient Town",
+        "relationship": "parent_area",
+        "displaySubtitle": "The larger old-town area beyond the ticket pause.",
+        "reason": "Confirmed parent-area catalog target.",
+        "status": "render"
+      }
+    ],
+    "verificationFlags": [
+      {
+        "type": "light",
+        "reason": "Current ticket price, covered sites, booth locations, and rules must be checked before publication.",
+        "blocking": false
+      },
+      {
+        "type": "audio_qa",
+        "reason": "All phrase cards resolve to reusable ready bundled audio in the local catalog.",
+        "blocking": false
+      }
+    ],
+    "qa": {
+      "replaceabilityTest": "pass",
+      "phraseCardTest": "pass",
+      "mentionedHereTest": "pass_with_candidates",
+      "catalogMentionScan": "pass_with_candidates",
+      "duplicateBodyTest": "pass",
+      "antiCynicismTest": "pass",
+      "notes": [
+        "Promoted from ChatGPT Project Batch 001 revision doc after Jojo heading/copy critique.",
+        "Visible copy avoids schema/product wording and one-off phrase-card inflation.",
+        "Legacy runtime source maps the v2.2 intro to at-glance and phrase cards to quick-say presentation phrase-list."
+      ]
+    },
+    "score": {
+      "value": 25,
+      "max": 30,
+      "reason": "Clear threshold/orientation role and good phrase fit; capped for ticket-rule freshness and render proof."
+    },
+    "sourceNotes": [
+      "Google Doc: https://docs.google.com/document/d/1v941nwLRgxOfhTbm3B5oDmw_00GknzOHB576GmJow5c",
+      "Promotion date: 2026-05-25 Asia/Ho_Chi_Minh.",
+      "Production gate still requires regenerated resources, native validation, and render proof."
+    ]
+  }
+]

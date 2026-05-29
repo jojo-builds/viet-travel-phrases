@@ -13,6 +13,7 @@ const validatorPath = path.join(__dirname, "validate-viet-sqlite-fixture.js");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const databasePath = path.join(root, "Resources", "LanguagePacks", "viet", "speaklocal-viet.sqlite");
 const reportPath = path.join(root, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
+const authoredPagesPath = path.join(root, "Resources", "viet-authored-listing-pages.json");
 
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
@@ -34,6 +35,10 @@ function sha256(filePath) {
 
 function sqliteValue(sql) {
   return run("sqlite3", [databasePath, sql]);
+}
+
+function sqlQuote(value) {
+  return `'${String(value).replace(/'/g, "''")}'`;
 }
 
 test("generates deterministic Viet SQLite fixture with required counts and integrity", () => {
@@ -88,6 +93,23 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag)
   );`));
   const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+  const authoredPages = JSON.parse(fs.readFileSync(authoredPagesPath, "utf8"));
+  const handwrittenCityArticlePageIDs = (authoredPages.pages ?? [])
+    .filter((page) => page.tierRole === "city-v1")
+    .filter((page) => page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed")
+    .flatMap((page) => [
+      page.id,
+      String(page.id ?? "").replace(/^viet-family-/, "viet-phrase-"),
+    ])
+    .filter(Boolean);
+  const handwrittenCityArticlePageIDSQL = handwrittenCityArticlePageIDs.length
+    ? handwrittenCityArticlePageIDs.map(sqlQuote).join(",")
+    : "''";
+  const pagesRequiringBreakdown = Number(sqliteValue(`
+    SELECT count(*)
+    FROM phrase_page
+    WHERE id NOT IN (${handwrittenCityArticlePageIDSQL});
+  `));
   const expectedCounts = {
     scenarios: report.countParity.scenarios.expected,
     clusters: report.countParity.clusters.expected,
@@ -110,7 +132,11 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
   );
   assert.ok(counts.aliases >= 163, "authored pages should be represented by canonical aliases");
   assert.ok(counts.sections >= 6000, "authored and baseline page sections should be preserved");
-  assert.strictEqual(counts.breakdownSections, expectedCounts.pages, "every canonical page should have a breakdown section");
+  assert.strictEqual(
+    counts.breakdownSections,
+    pagesRequiringBreakdown,
+    "phrase pages should have breakdown sections; handwritten city articles use place-detail sections"
+  );
   assert.ok(counts.sectionItems >= 10000, "authored, baseline, phrase, and breakdown items should be preserved");
   assert.strictEqual(counts.searchDocuments, expectedCounts.phrases, "every source phrase row should produce a search document");
   assert.ok(counts.relations > 0, "page graph relation edges should be generated");

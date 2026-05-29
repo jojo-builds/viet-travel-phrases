@@ -1,0 +1,282 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 4
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_37",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 4,
+    "returnedReplacementCount": 4,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_37",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hcmc-place-hu-tieu",
+          "message": "banned visible fragment: gives saigon a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "freshness/process-like heading: Details Need Current Checks"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "freshness/process-like heading: Practical Details Can Change"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ho-thi-ky-flower-market",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-ho-thi-ky-flower-market",
+          "message": "freshness/process-like heading: Timing Can Shift The Feel"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 12x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: dish name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 21x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 6x: freshness/checking heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 13x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 6x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-history-museum",
+          "summary": "Museum of Vietnamese History is a calmer museum stop near the botanical gardens, with artifacts, gallery rooms, quiet light, and a broader history layer.",
+          "context": "The museum gives the day an indoor cultural pause through display cases, local history, artifacts, and rooms near the garden area.",
+          "tip": "Pick a few galleries or object types instead of trying to read everything. The stop works better as a focused pause.",
+          "rationale": "The museum is useful when street movement needs context: objects, cases, rooms, and a building near a greener part of the city.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History Near The Gardens",
+              "body": "The Museum of Vietnamese History is a calmer indoor stop near the botanical gardens: artifacts, cases, gallery rooms, and quiet light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Objects Before Exhaustion",
+              "body": "A few strong rooms are enough. Let repeated objects, materials, and timelines guide the visit instead of reading every label."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh is the formal local name. It is useful for maps and drivers."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Garden-Area Pairing",
+              "body": "The museum pairs naturally with nearby garden or zoo-area plans. It gives that side of the city an indoor historical stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Visits Still Work",
+              "body": "Do not turn museum fatigue into a duty. A focused hour with a few rooms can still leave a clear memory."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Need Current Checks",
+              "body": "Hours, tickets, and interpretation can change. The durable draw is the artifact collection and quieter history setting."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+          "summary": "Ho Chi Minh City Museum is a District 1 indoor pause in a colonial-era building with garden edges, display rooms, local memory, and quieter light.",
+          "context": "The museum adds a city-history layer to central Saigon: old building, garden setting, artifacts, gallery rooms, and a break from street movement.",
+          "tip": "Go for the building and a few city-history rooms rather than a full-day museum plan. It works well as a central reset.",
+          "rationale": "The museum matters because the old building, garden, and displays make central Saigon feel layered without leaving District 1.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "City History In An Old Building",
+              "body": "Ho Chi Minh City Museum gives District 1 a quieter layer: colonial-era building, garden edges, display rooms, and local history."
+            },
+            {
+              "id": "place-brief",
+              "title": "Building First, Rooms Second",
+              "body": "The architecture and garden setting are part of the visit. Let the building slow the pace before moving through the displays."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Thành phố Hồ Chí Minh is the local name. It helps with drivers, maps, and distinguishing it from other museums."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Central Indoor Reset",
+              "body": "The museum fits between outdoor landmarks, especially when heat or rain makes another street stop less appealing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Rooms Are Fine",
+              "body": "The stop does not need to become a full history survey. A short visit can still add depth to a District 1 day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Practical Details Can Change",
+              "body": "Check hours and exhibit access late. The stable draw is the old building, garden feel, and central city-history context."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+          "summary": "Ho Thi Ky Flower Market is a street-trade stop for flower bundles, scooters, gift stalls, wet pavement, and late color in a working market lane.",
+          "context": "The market shows Saigon through flowers and trade: vendors, bundles, scooters, gifts, damp pavement, and street color rather than a polished attraction.",
+          "tip": "Go to look, buy small, or pass through with care. The market is active, so movement matters more than lingering in the way.",
+          "rationale": "The flower market is memorable because it is practical and visual at once: bundles, deliveries, vendors, scooters, and color pressed into narrow streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Flowers In A Working Lane",
+              "body": "Ho Thi Ky is a flower-trade scene: bundles, vendors, scooters, gift stalls, wet pavement, and color packed into market lanes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Trade Still Comes First",
+              "body": "This is not only a photo stop. People are buying, delivering, arranging, and moving through narrow space with flowers and supplies."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Chợ hoa Hồ Thị Kỷ is the local name. It helps with maps, drivers, and recognizing the flower-market lanes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Careful Browse",
+              "body": "Browse slowly and stay out of delivery paths. A small purchase or short look fits better than blocking the working lanes."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Color With Movement",
+              "body": "The market is strongest when you want street color tied to real trade, not a staged flower display."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Timing Can Shift The Feel",
+              "body": "Flower-market energy changes by hour and delivery rhythm. Avoid fixed expectations about crowds, stock, or how late a lane stays active."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-hu-tieu",
+          "summary": "Hu tieu is a flexible Saigon noodle bowl to learn: clear broth or dry style, pork, shrimp, herbs, sauce, and a lighter rhythm than phở.",
+          "context": "Hủ tiếu gives Saigon a noodle-shop memory through broth, texture, herbs, pork or shrimp, sauce, and quick table movement.",
+          "tip": "Decide soup or dry first if the shop offers both. Herbs and sauce can change the bowl, so adjust after tasting.",
+          "rationale": "The dish becomes specific when the bowl appears: clear broth, noodles, pork, shrimp, herbs, and the small choices at the table.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Flexible Saigon Noodle Bowl",
+              "body": "Hủ tiếu can be soupy or dry, light or full: noodles, pork, shrimp, herbs, clear broth, and sauce at the table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Broth, Noodles, Herbs",
+              "body": "The bowl is often lighter than it looks. Texture, herbs, and sauce give it shape after the first spoonful."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name",
+              "body": "Hủ tiếu is the useful name. If a shop offers versions, point or ask for nước for soup and khô for dry."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Breakfast Or Light Meal",
+              "body": "The dish works well when you want noodles without a heavy bowl. It can fit breakfast, lunch, or a simple evening meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Soup Or Dry First",
+              "body": "The main decision is style. Choose broth when you want comfort; choose dry when texture and sauce sound better."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Table Adjustments Matter",
+              "body": "Taste before adding too much sauce or chili. A good bowl changes quickly once herbs, lime, or seasoning go in."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

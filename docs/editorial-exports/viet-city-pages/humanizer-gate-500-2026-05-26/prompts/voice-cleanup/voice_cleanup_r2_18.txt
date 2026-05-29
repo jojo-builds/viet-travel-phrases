@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_18",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_18",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hanoi-place-dong-xuan",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-egg-coffee",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-ethnology-museum",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter",
+          "message": "banned visible fragment: verified"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter-walk",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter-walk",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hanoi-place-french-quarter-walk",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-ethnology-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-dong-xuan",
+          "summary": "Dong Xuan Market shows Hanoi through aisles, goods, snack counters, bags, scooters, and the working rhythm of everyday buying under one roof.",
+          "context": "The market works as a daytime browse with attention to movement, not a polished souvenir stop.",
+          "tip": "Avoid overpromising current stall mix or prices. Look first, step aside often, and ask only when ready to engage.",
+          "rationale": "Dong Xuan gives the Old Quarter a practical market stop and a clear contrast to cafe or landmark plans.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Market That Still Works",
+              "body": "Chợ Đồng Xuân is not just color and noise. It is aisles, goods, bags, snack counters, scooters outside, and people buying what they came for."
+            },
+            {
+              "id": "quick-say",
+              "title": "Say The Market Name",
+              "body": "Chợ Đồng Xuân is the name to recognize for taxis, walking directions, and the Old Quarter market edge."
+            },
+            {
+              "id": "place-brief",
+              "title": "Browse With The Flow",
+              "body": "Move slowly, but do not block the aisle. Notice where people are actually buying before you stop to ask about anything."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snacks Can Stay Small",
+              "body": "A single snack or drink may be enough. The market works through movement and texture, not a long tasting plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Working Market Stop",
+              "body": "Dong Xuan fits when you want the Old Quarter to feel practical, not only photogenic. Go for aisles, goods, snacks, and movement rather than a polished shopping mission."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bargaining Needs A Pause",
+              "body": "Price questions make sense only when the body is ready to slow down. Just-looking energy moves better with the aisle."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-egg-coffee",
+          "summary": "Egg coffee is Hanoi's creamy cafe treat: strong coffee under thick whipped egg foam, usually good as a slow small-cup pause upstairs.",
+          "context": "The drink is richer than an everyday iced coffee and often tied to older rooms, upstairs cafes, and a slower table.",
+          "tip": "One cup is usually enough. Some cafes offer iced versions, but the safe core is creamy foam over strong coffee.",
+          "rationale": "Egg coffee gives Hanoi a memorable cafe ritual that feels distinct from a normal caffeine stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Cream Over Bitter Coffee",
+              "body": "Cà phê trứng is strong coffee softened by a thick egg cream. It reads more like a small dessert than a daily iced coffee."
+            },
+            {
+              "id": "quick-say",
+              "title": "Hear The Pieces",
+              "body": "Cà phê means coffee, and trứng means egg. Once you hear the pieces, the name becomes easier to remember."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Slow Cup",
+              "body": "Egg coffee needs enough time for the room to matter. A small cup, foam cap, and old cafe mood are part of the stop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Walks Or After A Meal",
+              "body": "It fits as a sweet pause between Old Quarter walks or after a heavier lunch. The cup is rich enough to stand alone."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Rich Cafe Pause",
+              "body": "Egg coffee fits after a walk or meal when a small cup can feel like dessert. It is better as a slow table than a rushed caffeine stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Do Not Chase Too Many Versions",
+              "body": "Hot is the classic image, though iced versions exist. Creamy foam over strong coffee is enough before the drink becomes a comparison hunt."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-ethnology-museum",
+          "summary": "The Vietnam Museum of Ethnology opens Hanoi into a wider Vietnam: textiles, tools, ritual objects, stilt-house forms, and communities beyond the capital.",
+          "context": "This is a quiet culture stop for understanding Vietnam as many materials, homes, rituals, and landscapes, not one city story.",
+          "tip": "Exhibits, tickets, and hours can change. The durable value is cultural context and the indoor-outdoor museum rhythm.",
+          "rationale": "The museum adds depth to a Hanoi itinerary by widening the country's story without turning the stop into an academic detour.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Wider Vietnam, Quiet Rooms",
+              "body": "The museum makes Vietnam feel larger than one route. Galleries, craft objects, village-house forms, and ritual materials give the country more layers."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Museum Name",
+              "body": "Bảo tàng Dân tộc học is the name to recognize. It points to ethnology, culture, and the wider community story behind the collection."
+            },
+            {
+              "id": "place-brief",
+              "title": "Indoor Detail, Outdoor Forms",
+              "body": "The strongest visit moves between display cases and outdoor architecture. Textiles, tools, homes, and courtyards keep the stop from feeling like one long room."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Context Over Another Outdoor Stop",
+              "body": "Come when you want quieter understanding instead of another market, lake, or food stop. The museum gives the rest of Vietnam more shape."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Wider Vietnam Stop",
+              "body": "The museum fits when Hanoi needs context beyond the capital: homes, textiles, tools, and communities from other parts of Vietnam. Give it patience rather than squeezing it between meals."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Patient Visit",
+              "body": "This is not a quick photo stop. Give the objects enough attention for the materials and village-house forms to connect."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-french-quarter",
+          "summary": "Hanoi's French Quarter shifts the city into wider boulevards, colonial-era facades, hotel edges, cafes, trees, and slower walks away from tight old lanes.",
+          "context": "The French Quarter reads as an area mood, not a single attraction. The value is the change in scale and architecture.",
+          "tip": "Architecture language stays broad unless specific buildings are verified. The quarter pairs naturally with a walk, cafe pause, or nearby cultural stop.",
+          "rationale": "The French Quarter makes Hanoi legible through contrast: old lanes on one side, broader streets and formal facades on another.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Wider Hanoi Register",
+              "body": "The French Quarter changes the city's scale: broader streets, older facades, trees, hotel fronts, cafes, and scooters moving through a less compressed grid."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name The Area",
+              "body": "Khu phố Pháp is the local phrase to recognize. It lands better beside a walk, hotel edge, cafe, or nearby landmark."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read The Buildings From The Street",
+              "body": "The draw is not one doorway. Boulevard scale, shutters, balconies, and official-looking facades build the mood as the walk moves."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good Between Indoor Stops",
+              "body": "The area pairs well with a cafe, gallery, hotel pickup, or a short walk before dinner. It is a texture shift, not a checklist."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Change Of City Scale",
+              "body": "The French Quarter fits when the day needs broader streets, older facades, trees, and a calmer walk after dense lanes."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Do Not Force A Long Route",
+              "body": "A few blocks can be enough. The quarter works through contrast with old-lane Hanoi, not through covering every street."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-french-quarter-walk",
+          "summary": "A French Quarter walk gives Hanoi a calmer route: wide sidewalks, trees, colonial-era facades, cafe pauses, and street corners between named stops.",
+          "context": "The route works when movement across the city is part of discovery, not just transit between pins.",
+          "tip": "A short stretch with shade and a clear next stop is stronger than a fixed route promise before current access and conditions are checked.",
+          "rationale": "The walk turns the French Quarter from an area label into a physical city experience.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Walk With More Air",
+              "body": "The French Quarter walk is about space: wider sidewalks, trees, facades, hotel fronts, and corners that feel different from the Old Quarter."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Walking Phrase",
+              "body": "Đi bộ khu phố Pháp means walking the French Quarter. The phrase belongs to a short route more than a full-district mission."
+            },
+            {
+              "id": "place-brief",
+              "title": "Corners Carry The Walk",
+              "body": "Street corners, cafe pauses, and building fronts make the walk legible. You do not need a dramatic endpoint for it to feel worthwhile."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Link Two Nearby Stops",
+              "body": "The walk fits between a cafe, hotel pickup, museum, or dinner plan. It carries the day good when it moves from one real moment to another."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Link Between Stops",
+              "body": "The walk fits when two nearby plans need a pleasant connection. A shaded stretch with good corners is enough; the route does not need to cover the whole quarter."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Beats Exhaustive",
+              "body": "Heat and crossings can drain a route quickly. A shorter shaded stretch will read better than trying to cover the whole area."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

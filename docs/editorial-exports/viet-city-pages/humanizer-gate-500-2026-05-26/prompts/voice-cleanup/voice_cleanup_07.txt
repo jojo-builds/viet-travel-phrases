@@ -1,0 +1,1666 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_07",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_07",
+  "chunks": [
+    {
+      "chunkFile": "hoian_001_025_humanized.json",
+      "cityID": "hoian",
+      "range": "001-025",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hoian-place-an-bang",
+          "message": "generic non-playable quick-say title: Beach Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-an-hoi-bridge",
+          "message": "generic non-playable quick-say title: Bridge Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-ancient-town-ticket-booth",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-boat-pier",
+          "message": "freshness/process-like heading: Route Details Need The Day"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-boat-pier",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-street",
+          "message": "generic non-playable quick-say title: Street Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-banh-dap-hen-xao",
+          "message": "generic non-playable quick-say title: Dish Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-banh-mi",
+          "message": "generic non-playable quick-say title: Dish Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-banh-xeo",
+          "message": "generic non-playable quick-say title: Dish Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-bebe-tailor",
+          "message": "generic non-playable quick-say title: Venue Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-bus-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-cao-lau-city",
+          "message": "generic non-playable quick-say title: Dish Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-cargo-club",
+          "message": "generic non-playable quick-say title: Venue Name To Hear"
+        },
+        {
+          "id": "city-hoian-place-cargo-club",
+          "message": "freshness/process-like heading: Menus Need A Current Look"
+        },
+        {
+          "id": "city-hoian-place-cargo-club",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 4x: dish name to hear"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 4x: neighborhood name to hear"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 15x: map/name utility heading"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        },
+        {
+          "id": "001-025",
+          "message": "non-playable quick-say name-card pattern appears 9x"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-an-bang",
+          "summary": "An Bang Beach gives Hoi An an easy coast break: sand, basket boats, seafood shacks, and sea air after the lantern streets and old-town crowds.",
+          "context": "An Bang widens the day beyond the Ancient Town. The move is simple: leave the yellow walls for waves, sand, basket boats, and a slower seafood lunch.",
+          "tip": "Biển An Bàng is the beach name to recognize. Biển means beach or sea, so the first word tells your ear why the place belongs to the coast.",
+          "rationale": "An Bang gives Hoi An a coastal rhythm: morning swims, open light, basket boats, and a softer pause outside the old streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Coast Break Near Town",
+              "body": "An Bang is the easy sea-air pause outside the old lanes. It gives the day sand, basket boats, and a meal that can slow down without leaving the Hoi An area."
+            },
+            {
+              "id": "place-brief",
+              "title": "Sand, Boats, Seafood",
+              "body": "Expect a relaxed beach edge with gentle waves, basket boats, seafood places, sun beds, and morning light. The feel is wider and breezier than the Ancient Town."
+            },
+            {
+              "id": "quick-say",
+              "title": "Beach Name To Hear",
+              "body": "Say Biển An Bàng for An Bang Beach. Biển means beach or sea, so the name is easier to catch when drivers, signs, or menus point toward the coast."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Swim, Slow Lunch",
+              "body": "The beach fits a simple reset: a swim, sand underfoot, then seafood or a cold drink before returning to tailor shops and river streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather Shapes The Stop",
+              "body": "Think of An Bang as a change of pace, not a checklist landmark. Sandals, sun cover, and a flexible lunch plan matter more than chasing one exact hour."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From The River",
+              "body": "An Bang is not the riverside old town with lanterns. That contrast is the point: the beach name tells you when the day is moving toward open water."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-an-hoi-bridge",
+          "summary": "An Hoi Bridge is the small Hoi An crossing that turns an evening walk into a river moment between the Ancient Town, An Hoi, and the lantern-lit water.",
+          "context": "The bridge matters as a crossing, not a monument. It gives the old-town side, the An Hoi side, and the lantern-lit river one clear link.",
+          "tip": "Cầu An Hội is the name to listen for. Cầu means bridge, so the local name is tied directly to the crossing.",
+          "rationale": "An Hoi Bridge helps Hoi An make sense on foot: old streets on one side, An Hoi on the other, and the river between them.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Crossing With Evening Pull",
+              "body": "An Hoi Bridge is a simple pedestrian crossing, but it carries one of Hoi An’s clearest evening movements: old town, river light, then An Hoi."
+            },
+            {
+              "id": "place-brief",
+              "title": "Old Town To An Hoi",
+              "body": "Expect a short bridge over the river between the Ancient Town and An Hoi. In the evening, the crossing becomes part of the lantern walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bridge Name To Hear",
+              "body": "Say Cầu An Hội for An Hoi Bridge. Cầu means bridge, which makes the name useful when you are asking directions across the river."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After-Dinner River Move",
+              "body": "The bridge fits naturally after dinner, a market browse, or a slow river walk. It is less a stop than the moment the walk changes sides."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crowds Narrow The Crossing",
+              "body": "Even a short bridge can feel busy when everyone moves toward the same lantern-lit view. Keep the crossing practical, then pause once you have space."
+            },
+            {
+              "id": "good-to-know",
+              "title": "One Bridge, Two Edges",
+              "body": "Knowing the name helps separate the old-town bank from the An Hoi side, especially when meeting someone or finding your way back."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-ancient-town-ticket-booth",
+          "summary": "The Ancient Town ticket booth is a small Hoi An threshold where wandering gives way to ticket details, heritage houses, river walks, and first-stop choices.",
+          "context": "The booth matters because it slows the first old-town move. Ticket details, site rules, and the first walking direction are easier to settle in person.",
+          "tip": "Check the current ticket details at the booth, then pick one first direction: river, old house, assembly hall, or coffee stop.",
+          "rationale": "The booth turns a scattered old-town arrival into a calmer first move before the yellow streets, river edge, and heritage stops compete for attention.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Pause Before Old Town",
+              "body": "The ticket booth gives you a short breath before Hoi An opens up: yellow walls, tiled roofs, old houses, assembly halls, river walks, and lantern streets."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "sight-1",
+                "sight-2",
+                "sight-3"
+              ]
+            },
+            {
+              "id": "place-brief",
+              "title": "Ticket Details Belong Here",
+              "body": "Ticket details can change. Settle the current price, what it covers, and any site rules at the booth instead of building the day around old information."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One First Direction Is Enough",
+              "body": "The old town rewards wandering, but the first minutes feel calmer with one place in mind: the river, an old house, an assembly hall, or a coffee counter."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Morning And Evening Feel Different",
+              "body": "Morning gives you quieter walls, signs, and roofs. Evening brings lanterns and heavier foot traffic near the river."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Breathing Room Between Stops",
+              "body": "Many heritage stops are compact. Leave space between houses, halls, coffee, and the river so the visit does not become a checklist."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hoian-place-bach-dang-boat-pier",
+          "summary": "Bach Dang boat pier is the Hoi An river handoff: street movement turns into boarding points, boat noses, low steps, and water routes.",
+          "context": "The pier matters because it changes the map from streets to river. Boats, bridges, and boarding points make the waterfront feel like a route.",
+          "tip": "Bến thuyền Bạch Đằng is the pier name to recognize. Bến thuyền means boat landing, which helps when you are sorting river directions.",
+          "rationale": "Bach Dang boat pier gives Hoi An a practical water edge: where the walk pauses, the boat plan starts, and the river becomes part of the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Street Movement Turns To Water",
+              "body": "Bach Dang boat pier is where the riverside stops being only a view. Steps, boats, and boarding points make the next move feel water-based."
+            },
+            {
+              "id": "place-brief",
+              "title": "The River Has A Front Door",
+              "body": "Expect river steps, boat noses, bridge views, and the small shift from walking along the waterfront to asking where the boat is going."
+            },
+            {
+              "id": "quick-say",
+              "title": "Pier Name To Hear",
+              "body": "Say Bến thuyền Bạch Đằng for Bach Dang boat pier. Bến thuyền means boat landing, so the name helps with river pickup points."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Simple Boarding Moment",
+              "body": "The pier fits a river ride, a meeting point, or a short look at boat movement. It is practical first, scenic second."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Route Details Need The Day",
+              "body": "Boat timing and route details can change. Treat the pier as the place to confirm direction before assuming the river plan is fixed."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bach Dang Names The Edge",
+              "body": "The Bach Dang name also belongs to the riverside street, so listen for whether someone means the street, the pier, or the riverfront area."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-bach-dang-street",
+          "summary": "Bach Dang Street gives Hoi An’s riverfront a clear walking spine, with boats, yellow buildings, crossings, and blue-hour lantern reflections.",
+          "context": "The street matters because it turns the river edge into a route. It is useful for walking, orienting, and reading Hoi An from the waterline.",
+          "tip": "Đường Bạch Đằng ở Hội An is the street name to recognize. Đường means street, which helps separate it from the boat pier.",
+          "rationale": "Bach Dang Street gives the Thu Bon riverfront a name, making boats, buildings, crossings, and evening reflections easier to place in the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The River Walk Gets A Name",
+              "body": "Bach Dang Street is the named spine of the old river edge. It gives boats, yellow buildings, crossings, and lantern reflections a place on the map."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boats Beside Yellow Walls",
+              "body": "Expect a riverside street with boats, yellow buildings, and reflections near blue hour. The street is more useful as a walking edge than a single stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name To Hear",
+              "body": "Say Đường Bạch Đằng ở Hội An for Bach Dang Street. Đường means street, which helps when directions mention nearby piers or river crossings."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Easy Spine For A First Walk",
+              "body": "The street pairs well with Ancient Town wandering because it keeps the river close. Walk it when you need a clearer line through the old core."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Blue Hour Adds The Pull",
+              "body": "Late light can make the river and lantern reflections easier to notice. During busier moments, keep moving until the edge opens up."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Street, Pier, River",
+              "body": "Bach Dang can point to the street, nearby boat activity, or the wider riverfront. The context around the name matters."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-banh-dap-hen-xao",
+          "summary": "Bánh đập hến xào gives Hoi An a small texture meal: cracked rice paper, stir-fried clams, herbs, sauce, and a hands-on bite to share.",
+          "context": "The dish matters because the pleasure is physical. Crunch, clams, herbs, and sauce give a quick table moment more shape than a generic snack.",
+          "tip": "Bánh đập hến xào ở Hội An is the phrase to recognize. Bánh đập points to cracked rice paper; hến xào points to stir-fried clams.",
+          "rationale": "Cracked rice paper and clams give Hoi An a food memory built from texture first: crisp, soft, salty, herbal, and easy to share.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crunch First, Clams After",
+              "body": "Bánh đập hến xào is a texture dish before anything else: cracked rice paper, stir-fried clams, herbs, and sauce meeting in one small bite."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Small Texture Meal",
+              "body": "Expect rice crackers with stir-fried clams and herbs, usually better as a light food stop than a heavy meal. The crack matters as much as the filling."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name To Hear",
+              "body": "Say Bánh đập hến xào ở Hội An. Bánh đập points to cracked rice paper, while hến xào points to stir-fried clams."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Light Order, Big Texture",
+              "body": "The dish fits a snack route or shared table. Order it when you want something local-feeling without committing the whole meal to one bowl."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce And Herbs Matter",
+              "body": "The flavor depends on the bite you build: crisp rice paper, clams, herbs, and sauce. Slow down enough to notice the contrast."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Full Dinner Plan",
+              "body": "Think of it as a specific Hoi An food stop, not the only dinner plan. It pairs easily with other small dishes."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-banh-mi",
+          "summary": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and a counter order that happens fast.",
+          "context": "Banh mi matters in Hoi An because it turns a short break into a clear food memory. The useful decision is filling, sauce, and chili.",
+          "tip": "Bánh mì Hội An is the name to recognize. Bánh mì covers the sandwich, while the Hoi An label helps connect it to the city’s counter-food rhythm.",
+          "rationale": "Banh mi gives Hoi An a fast, portable food memory: crisp bread, herbs, sauce, heat, and one confident order before the day keeps moving.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quick Roll With Hoi An Texture",
+              "body": "Bánh mì in Hoi An is a fast food stop with real decisions: filling, herbs, sauce, chili, and whether you are eating now or taking it away."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs, Sauce, Heat",
+              "body": "Expect a crisp roll with fresh herbs, filling, sauce, and heat. The bite is quick, but the choices come before the sandwich is built."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name To Hear",
+              "body": "Say Bánh mì Hội An for Hoi An-style banh mi. The words are useful at counters, on menus, and when pointing to the sandwich you want."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Counter Meal, Not Ceremony",
+              "body": "This is a short meal for a moving day. Decide filling and chili early, then let the sandwich stay simple."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Chili Is The Early Choice",
+              "body": "Heat is easier to manage before the roll is assembled. If spice worries you, say little chili or no chili at the start."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Many Shops, Same Useful Word",
+              "body": "The specific counter may change, but bánh mì is the word to keep. It travels well across Hoi An’s food stops."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-banh-xeo",
+          "summary": "Bánh xèo Hội An is the crisp pancake snack to recognize: small golden pieces, herbs, dipping sauce, steam, and a hands-on table rhythm.",
+          "context": "Hoi An banh xeo matters because it is built around texture and assembly. Crisp edges, herbs, sauce, and small bites do the work.",
+          "tip": "Bánh xèo Hội An is the name to listen for. Bánh xèo points to the sizzling pancake; Hội An ties the dish to the city.",
+          "rationale": "Hoi An banh xeo gives the food day a small, noisy, crisp moment before the meal moves on to another dish or walk.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crisp Pancake, Herb Table",
+              "body": "Hoi An banh xeo is about crunch, herbs, sauce, and small bites. It feels more like a hands-on snack than a polished plated dish."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Pieces, Shared Hands",
+              "body": "Expect small crispy pancakes with herbs and dipping sauce. The rhythm is casual: break, dip, eat, then decide whether you want more."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name To Hear",
+              "body": "Say Bánh xèo Hội An for Hoi An banh xeo. The name is useful when menus or counters list several small dishes together."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Snack That Can Grow",
+              "body": "The dish works as a small order first. If the table wants more, add slowly instead of turning the snack into an accidental feast."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce Carries The Bite",
+              "body": "Do not rush past the dipping sauce and herbs. The pancake is crisp, but the full bite comes together at the table."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From A Breakfast Pancake",
+              "body": "Bánh xèo is savory, crisp, and eaten with herbs and sauce. Expect a central-Vietnam snack rhythm, not a sweet pancake plate."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-bebe-tailor",
+          "summary": "BeBe Tailor is a Hoi An tailoring stop where fabric walls, measuring tape, fitting rooms, and old-town shopfronts turn browsing into decisions.",
+          "context": "BeBe Tailor matters as part of Hoi An’s custom-clothing culture. The practical moment is not just looking at fabric; it is narrowing choices.",
+          "tip": "BeBe Tailor usually stays as the venue name. Say it slowly, then be ready to talk fabric, fit, pickup timing, and alterations.",
+          "rationale": "BeBe Tailor gives the tailoring stop a concrete shape: fabric, measurements, fittings, and the practical work behind a custom-made keepsake.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fabric Turns Into A Plan",
+              "body": "BeBe Tailor gives Hoi An’s tailoring culture a practical scene: fabric walls, measuring tape, fitting rooms, and decisions that move from idea to garment."
+            },
+            {
+              "id": "place-brief",
+              "title": "Measurements, Not Browsing",
+              "body": "Expect a tailor shop rhythm rather than casual souvenir browsing. Fabric, fit, measurements, and return details matter more than admiring the room."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Hear",
+              "body": "BeBe Tailor usually stays as the venue name. Keep the words tied to the tailoring task: fabric, measurements, fitting, pickup, and alterations."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Fewer Decisions Help",
+              "body": "A tailor visit gets easier when you arrive with a rough garment idea and fabric direction. Too many choices can blur quickly."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Fittings Take Attention",
+              "body": "Custom clothing usually means more than one decision. Leave mental space for fit, fabric feel, and whether alterations are needed."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Tailor Stop, Not A Shelf",
+              "body": "The value is the process as much as the finished item. Treat the shop like a working appointment, not only a place to browse."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-bus-station",
+          "summary": "Hoi An Bus Station is the practical travel-day name to know when bags, local signs, route boards, and onward roads replace lantern streets.",
+          "context": "The station matters because arrival and exit days need clear names. It helps separate the Hoi An mood from the work of moving on.",
+          "tip": "Bến xe Hội An is the local name for Hoi An Bus Station. Bến xe means bus station, which helps with drivers and route questions.",
+          "rationale": "Hoi An Bus Station gives the city a practical edge: the place where the old-town mood turns into routes, pickups, and onward roads.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Travel Day Has A Name",
+              "body": "Hoi An Bus Station is not romantic, but it is useful. On travel days, route boards, local signs, and onward roads matter more than lanterns."
+            },
+            {
+              "id": "place-brief",
+              "title": "Routes Before Atmosphere",
+              "body": "Expect a station setting shaped by pickups, local names, route questions, and the first or last view of Hoi An outside the old core."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name To Hear",
+              "body": "Say Bến xe Hội An for Hoi An Bus Station. Bến xe means bus station, which helps when asking drivers, hotels, or ticket desks."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Arrival And Exit Point",
+              "body": "The station fits the unglamorous parts of a trip: getting in, getting out, meeting a ride, or checking which route leaves from where."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Details Belong On The Day",
+              "body": "Schedules, pickup points, and routes can change. Treat the station name as a practical reference, then confirm the exact details close to travel."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not The Old Town Mood",
+              "body": "The station belongs to Hoi An, but not to its postcard side. That difference keeps expectations clean on a moving day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cao-lau-city",
+          "summary": "Cao lau is the Hoi An noodle bowl to know: thick chewy noodles, pork, greens, herbs, crisp crackers, and just enough sauce to coat it.",
+          "context": "Cao lau matters because it is tied closely to Hoi An’s food identity. It is not a soup; texture, herbs, and the dry-sauced bowl make it distinct.",
+          "tip": "Cao lầu is the name to say for the dish. You do not need to add Hoi An every time because the association is already strong.",
+          "rationale": "Cao lau gives Hoi An a food memory that is specific, easy to picture, and clearly different from pho or bun.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hoi An In One Bowl",
+              "body": "Cao lau tastes like Hoi An specifically: thick chewy noodles, pork, herbs, greens, crisp crackers, and a dry sauce instead of a big broth."
+            },
+            {
+              "id": "place-brief",
+              "title": "Chewy, Dry, Herb-Heavy",
+              "body": "Expect a compact bowl with texture doing the work: chewy noodles, fresh herbs, savory pork, crunchy pieces, and sauce that clings."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name To Hear",
+              "body": "Say Cao lầu for cao lau. The name is short enough to use on menus, at counters, or when asking what another table ordered."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lunch Between Walks",
+              "body": "Cao lau fits well between old-town walks because it feels filling without becoming a long meal. It is a bowl to sit with, not rush past."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Not A Soup Bowl",
+              "body": "Cao lau usually has very little broth. If you expect soup, the dry-sauced texture can surprise you."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Tone Marks Help",
+              "body": "Menus may spell it with tone marks as Cao lầu. Recognizing the words helps even when restaurant names change."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cargo-club",
+          "summary": "Cargo Club gives an old-town river meal a clearer shape: terrace energy, yellow walls, lantern light, menu choices, and a calmer table pause.",
+          "context": "Cargo Club matters when dinner belongs to the Hoi An route, not just fuel between sights. The river terrace frames the meal.",
+          "tip": "Cargo Club usually stays as the venue name. Keep the name tied to the old-town riverside setting, then check the menu before committing.",
+          "rationale": "Cargo Club gives Hoi An a restaurant moment shaped by table rhythm, river light, yellow walls, lanterns, and the decision to slow down.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal With River Edges",
+              "body": "Cargo Club fits when a meal should sit inside the old-town route: river terrace, yellow walls, lanterns, and a table that slows the evening."
+            },
+            {
+              "id": "place-brief",
+              "title": "Terrace Before Checklist",
+              "body": "Expect the meal to matter as a pause, not only a menu choice. The old-town riverside setting is part of why the stop registers."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Hear",
+              "body": "Cargo Club usually stays as the venue name. Say it slowly and tie it to the riverside terrace rather than translating it."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Dinner With Less Guesswork",
+              "body": "The stop fits a night when you want a more readable table after walking the old core. Keep the meal plan simple and current."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menus Need A Current Look",
+              "body": "Specific dishes and hours can change, so let the setting guide interest and check the menu before building expectations."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Old Town Meal, Not A Tour",
+              "body": "Cargo Club makes most sense as a meal woven into the Ancient Town evening, not as a standalone sightseeing stop."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chunkFile": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hoian-place-cham-islands",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-cham-islands-snorkel-boat",
+          "message": "generic non-playable quick-say title: Route Name"
+        },
+        {
+          "id": "city-hoian-place-che-bap-cam-nam",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-chuc-thanh-pagoda",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-cocobox",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hoian-place-com-ga",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-cooking-class",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-countryside-bicycle-loop",
+          "message": "generic non-playable quick-say title: Route Name"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-beach",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-cua-dai-pier",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-duc-an-old-house",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-espresso-station",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hoian-place-faifo-coffee",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hoian-place-folk-culture-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-from-danang-airport",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-fujian-assembly-hall",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-hainan-assembly-hall",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-handicraft-workshop",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-handicraft-workshop",
+          "message": "freshness/process-like heading: Activity Can Vary"
+        },
+        {
+          "id": "city-hoian-place-handicraft-workshop",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-history-culture-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-hoai-river",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-japanese-bridge",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-japanese-bridge",
+          "message": "freshness/process-like heading: Access Details Can Change"
+        },
+        {
+          "id": "city-hoian-place-japanese-bridge",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-kim-bong-carpentry-village",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-kim-bong-carpentry-village",
+          "message": "freshness/process-like heading: Current Activity Varies"
+        },
+        {
+          "id": "city-hoian-place-kim-bong-carpentry-village",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-lantern-boat",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hoian-place-lantern-boat",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 16x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: the courtyard to picture"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: venue name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 22x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 21x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-cham-islands",
+          "summary": "Cham Islands moves Hoi An out from old streets toward open water, green hills, fishing boats, and a different pace. It belongs in the plan when the day needs air, weather, and a real break from lanes.",
+          "context": "The island name belongs to the water side of Hoi An: boat planning, weather, green edges, and time away from dense streets.",
+          "tip": "Cù Lao Chàm is easier to remember as a day that depends on water and conditions, not a quick old-town add-on.",
+          "rationale": "Cham Islands gives the city a wider frame: sea, hills, boats, and the pause that comes after too many close streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Open Water After Old Streets",
+              "body": "Cham Islands is the Hoi An name that points beyond the old-town lanes. It gives the trip sea air, green hills, fishing boats, and a slower day shaped by weather."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Scene To Picture",
+              "body": "The scene is a turquoise island bay, working boats, and green slopes in clear daylight. The feeling is less about one landmark and more about the city loosening toward the sea."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "You may hear Cù Lao Chàm. The full sound matters; it is the local name many visitors use for Cham Islands."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good Day Pairing",
+              "body": "It fits when the Hoi An plan needs one bigger nature break after markets, houses, cafes, or tailor stops. The commitment is water-based, so weather should lead the decision."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Timing Mindset",
+              "body": "The name is easiest to remember when tied to the reason: open water, island hills, and a day outside the old-town rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Expectation Check",
+              "body": "This is not just another view inside Hoi An. It changes the pace of the day, so leave space around it instead of squeezing it between small stops."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+          "summary": "Cham Islands snorkel boat turns the island idea into a boarding moment: clear water ahead, green islands in view, and the day shaped by a boat plan rather than old-town walking.",
+          "context": "This belongs to Hoi An's water-travel side: boarding points, boat time, sea light, and the move from shore to island.",
+          "tip": "Tàu đi Cù Lao Chàm belongs to the crossing itself: the dock, the boat, the water, and the return plan.",
+          "rationale": "The boat gives Cham Islands a physical sequence: boarding, crossing, snorkeling, and returning, not just a dot offshore.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Crossing, Not Just Transport",
+              "body": "This stop is about the boat becoming part of the day. The clear image is boarding near shore, heading toward green islands, and letting water set the pace."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Scene To Picture",
+              "body": "The scene is a small tour boat moving over clear water toward Cham Islands. The island visit starts before arrival, with sea light, motion, and the simple focus of getting out there."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Name",
+              "body": "Tàu đi Cù Lao Chàm means a boat going to Cham Islands. The phrase helps when the plan is about the crossing, not only the island."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good Day Pairing",
+              "body": "It fits a day that can handle a longer water rhythm. A lighter old-town plan makes the return feel less like an afterthought."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Planning Mindset",
+              "body": "The snorkel boat name works when it carries the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hoi An."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather Matters",
+              "body": "Water clarity, comfort, and timing depend on conditions. A flexible plan is safer than treating the boat as a fixed old-town errand."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-che-bap-cam-nam",
+          "summary": "Cam Nam corn sweet soup gives Hoi An a small, soft food pause: corn, coconut milk, sweetness, and riverside daylight between bigger meals and walks.",
+          "context": "This is the dessert side of Hoi An: simple bowls, coconut milk, corn texture, and a snack break rather than a full meal.",
+          "tip": "Chè bắp Cẩm Nam is easier to remember as a bowl, not a dessert category: sweet corn, coconut milk, and a quick reset.",
+          "rationale": "The dish makes Cam Nam feel close to Hoi An's food rhythm without pretending it is a major restaurant stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Sweet Pause",
+              "body": "Cam Nam corn sweet soup is a quick bowl, not a big food mission. It gives sweetness and texture between walks, especially when lunch or dinner still sits ahead."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Bowl To Picture",
+              "body": "The bowl is corn sweet soup with coconut milk on a simple table in riverside daylight. The detail to remember is soft corn, light sweetness, and a pause that stays small."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Chè bắp Cẩm Nam names the Cam Nam version of corn sweet soup. The words help you recognize the dish when dessert stalls or menus are close."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snack Rhythm",
+              "body": "It fits after a walk across Cam Nam or before returning to heavier food. The bowl is a gentle pause, not a checklist dish."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ordering Mindset",
+              "body": "The moment is simple: point to the bowl, recognize the name, and enjoy something sweet without turning the stop into a full meal."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Texture First",
+              "body": "This is about corn, coconut milk, and soft texture more than dramatic flavor. That smaller expectation makes the stop easier to enjoy."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-chuc-thanh-pagoda",
+          "summary": "Chuc Thanh Pagoda gives Hoi An a quieter sacred stop: old roofs, incense, shaded courtyard space, and a pace that asks for slower steps.",
+          "context": "The pagoda belongs to Hoi An's spiritual layer: gates, tiled roofs, incense, local memory, and respectful pauses away from shopping streets.",
+          "tip": "Chùa Chúc Thánh is a name to hold quietly. Match it with covered courtyards, shade, and the slower behavior of a worship space.",
+          "rationale": "The place adds depth to Hoi An by turning architecture and worship into a calm stop rather than another exterior photo.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Sacred Stop",
+              "body": "Chuc Thanh Pagoda asks for a slower pace than old-town browsing. The visit is about worship, old rooflines, incense, and the quiet held inside a courtyard."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Courtyard To Picture",
+              "body": "The courtyard image is mossy roof tiles, frangipani trees, and age in the surfaces. The interest is in stillness as much as architecture."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Chùa Chúc Thánh is the Vietnamese name. A local may recognize that more quickly than the English-style pagoda name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-Town Contrast",
+              "body": "It fits when the day has had enough shops, cafes, and bright streets. The stop gives Hoi An a more devotional rhythm without needing a long visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respectful Pace",
+              "body": "The first move is not the camera. The courtyard, incense, and worship setting tell you how quiet to be."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sacred, Not Scenic Only",
+              "body": "The tiled roofs and trees matter, but this is still a pagoda. Dress and behavior should follow the setting rather than the photo."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cocobox",
+          "summary": "Cocobox gives Hoi An a short cafe reset: fruit, juice, coffee, design details, and a little shade when the walking loop starts to blur.",
+          "context": "This is Hoi An's cafe rhythm in a compact form: a counter, cold drinks, coffee, fruit, and a pause between old-town moves.",
+          "tip": "Cocobox is easiest to treat as a drink stop with fruit and coffee, not a meal plan.",
+          "rationale": "Cocobox helps the day slow down without leaving the old-town flow.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cool Drink Pause",
+              "body": "Cocobox fits the part of the day when heat and walking have made everything feel too close. Coffee, juice, and fruit give the old-town loop a reset."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Counter To Picture",
+              "body": "The counter is tropical juice, coffee, fruit, and a yellow-wall Hoi An feel. The stop is small, visual, and drink-led."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Cocobox usually stays as Cocobox. A slow pronunciation plus a point to coffee, juice, or the counter menu is enough."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Walks",
+              "body": "It belongs between shops, old houses, river time, or a lunch plan. The point is a clean pause rather than a long cafe session."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Heat Reset",
+              "body": "The strongest moment is practical: one cold drink, a short seat, and enough time for the next old-town stretch to feel clear again."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cafe, Not Landmark",
+              "body": "The name helps mark a pause in the day. It does not need to carry the whole Hoi An cafe story."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-com-ga",
+          "summary": "Hoi An chicken rice gives the city one clear bowl-and-plate memory: yellow rice, shredded chicken, herbs, sauce, and a quick meal that feels local without needing a long sit.",
+          "context": "This is the small-meal side of Hoi An: rice, chicken, herbs, dipping sauce, steam, and a pause between street walking.",
+          "tip": "Cơm gà Hội An is easier to order when you picture the plate first: rice, chicken, herbs, and sauce together.",
+          "rationale": "The dish makes Hoi An taste specific without turning the stop into a complicated restaurant decision.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Clear First Plate",
+              "body": "Hoi An chicken rice is the kind of meal that keeps the day moving. Yellow rice, shredded chicken, herbs, and dipping sauce make the city taste specific without a long ordering ritual."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Plate To Picture",
+              "body": "The plate is yellow chicken rice with shredded chicken, herbs, and sauce in daylight. The pleasure is direct: rice texture, chicken, fragrance, and the sharp lift of herbs."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Cơm gà Hội An is the name to recognize. Cơm gà means chicken rice; Hội An tells people the local style."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lunch Between Stops",
+              "body": "It fits between old houses, tailor errands, or river walks. The dish gives enough structure for a real meal without slowing the whole afternoon."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ordering Mindset",
+              "body": "The moment is choosing heat, sauce, or portion calmly before the plate arrives. A simple order keeps the meal from becoming stressful."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Ritual",
+              "body": "The herbs and sauce matter as much as the rice. They are part of the dish, not extras on the side."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cooking-class",
+          "summary": "Hoi An cooking class turns the food story into hands-on time: herbs, rice paper, bowls, and a table where you make something instead of only ordering.",
+          "context": "This is the workshop side of Hoi An: ingredients, instruction, hands, tools, and a finished dish to remember.",
+          "tip": "Lớp học nấu ăn Hội An names the experience. The picture is a cooking table, not just a food tour label.",
+          "rationale": "A cooking class gives Hoi An a participatory rhythm, especially for anyone who wants a slower food memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hands In The Food Story",
+              "body": "A Hoi An cooking class changes the role of food from ordering to making. Herbs, rice paper, bowls, and instruction turn a meal into a memory with steps."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Table To Picture",
+              "body": "The table is open-air, with herbs, rice paper, and bowls close to hand. The setting matters because your hands are part of the meal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Experience Name",
+              "body": "Lớp học nấu ăn Hội An means Hoi An cooking class. It is the phrase to recognize when comparing class options or asking about the activity."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Slower Food Day",
+              "body": "It fits a day that can spare time for learning, not just eating. Fewer nearby plans make the class feel less rushed."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Participation Mindset",
+              "body": "The point is not a flawless dish. It is hearing instructions, touching ingredients, and leaving with one food memory that feels earned."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Operator Details Vary",
+              "body": "Menus, market visits, pickup points, and class length can change by provider. General wording is safer until a current class listing is verified."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-countryside-bicycle-loop",
+          "summary": "Hoi An countryside bicycle loop moves the day out through rice fields, vegetable gardens, local lanes, and morning air instead of keeping every stop inside the old streets.",
+          "context": "This is a route of wheels, lanes, rice fields, vegetable gardens, cafe pauses, and the distance between named places.",
+          "tip": "Đạp xe vùng quê Hội An is about movement. The road between fields and village stops matters more than memorizing the phrase.",
+          "rationale": "The bicycle loop gives Hoi An a wider, slower geography without requiring a full nature day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Morning Movement Outside Town",
+              "body": "The countryside bicycle loop gives Hoi An distance and air. Rice fields, vegetable gardens, and small lanes make the day feel less built around the old-town center."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Route To Picture",
+              "body": "The route is a bicycle path through fields and gardens in morning light. The point is the movement between places, not one single stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Name",
+              "body": "Đạp xe vùng quê Hội An means cycling in the Hoi An countryside. It helps when discussing a route, bike tour, or rental plan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Soft Route Pairing",
+              "body": "It pairs naturally with a lighter old-town day, a cafe pause, or a simple lunch. Too many timed stops make the ride feel like transit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pace Mindset",
+              "body": "The ride needs room to slow down, stop, and read the landscape. A packed schedule turns the loop into exercise instead of discovery."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather And Comfort",
+              "body": "Sun, rain, and road comfort shape the experience. Fixed routes belong with a named operator or a route you have checked close to the day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cua-dai-beach",
+          "summary": "Cua Dai Beach gives Hoi An a coastal edge: low waves, boats, open light, and a beach pause that feels different from the old-town river.",
+          "context": "This is the beach side of Hoi An: sand, sea air, boats, low waves, and a pace outside the lane-and-river circuit.",
+          "tip": "Biển Cửa Đại is the name to recognize for the beach. The mental picture is coast first, not yellow walls or old houses.",
+          "rationale": "Cua Dai Beach widens the Hoi An plan toward the sea while staying distinct from river walks and island trips.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Coastal Edge Of Hoi An",
+              "body": "Cua Dai Beach changes the day's texture. After narrow streets and river reflections, the beach gives open light, sea air, boats, and low waves."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Shore To Picture",
+              "body": "The shore is a quieter coastal beach with boats and soft overcast light. The scene is simple: sand, water, weather, and the town's edge facing outward."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Biển Cửa Đại means Cua Dai Beach. Biển is the beach or sea word, so it helps separate this from the estuary or pier."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Dense Streets",
+              "body": "It fits when the old-town loop starts to feel too tight. A beach pause can reset the day without becoming a full island plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Coast Mindset",
+              "body": "The easy comparison is river versus sea. Cua Dai gives Hoi An a shoreline mood, while the Hoai River keeps the focus inside town."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Conditions Can Lead",
+              "body": "Beach comfort changes with weather, erosion, and season. Hold sand, swimming, and facility expectations lightly until the day is close."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cua-dai-pier",
+          "summary": "Cua Dai Pier is the Hoi An edge that turns a beach-side road into boats, crossings, and island plans. It is more about boarding and direction than lingering by the water.",
+          "context": "This is the port side of Hoi An: boarding points, Cửa Đại name confusion, open water, and the move toward islands.",
+          "tip": "Bến tàu Cửa Đại points to the pier. The name belongs with boarding and boats so it does not blur with beach or estuary.",
+          "rationale": "The pier makes Hoi An's water travel practical: a place to picture before a crossing, not just a coastal label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Where The Day Boards",
+              "body": "Cua Dai Pier matters when the plan turns from land to water. The scene is simple: boats, boarding edges, open water, and the question of where the next crossing begins."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Edge To Picture",
+              "body": "The edge is a pier or ferry point with boat sounds and the Cửa Đại coast nearby. The setting feels functional, not scenic in the old-town sense."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bến tàu Cửa Đại means Cua Dai Pier. It separates the boarding place from Biển Cửa Đại, the beach, and the wider Cửa Đại water area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Island-Plan Pairing",
+              "body": "It fits naturally before Cham Islands or any route that needs a boat from the Cua Dai side. The name is most helpful at pickup or departure time."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Boarding Mindset",
+              "body": "The pier is a direction point: where to arrive, where to wait, and where the day changes from road to water."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Names Can Blur",
+              "body": "Cửa Đại appears in beach, estuary, and pier names. The word bến tàu is the clue that this one is about boats."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-duc-an-old-house",
+          "summary": "Duc An Old House gives Hoi An history at room scale: wood shelves, warm window light, old walls, and the feeling that a house can hold more than a façade.",
+          "context": "This is a heritage-house stop: interior wood, family memory, shelves, old walls, and a quieter look at history inside the old town.",
+          "tip": "Nhà cổ Đức An is the name to recognize when the stop is about an old house, not an assembly hall or museum.",
+          "rationale": "The house turns Hoi An heritage into wood, rooms, and lived detail instead of another exterior walk.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History At Room Scale",
+              "body": "Duc An Old House makes Hoi An's history feel close. The interest is not a broad timeline; it is wood, shelves, rooms, and the quiet pressure of an old family house."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Interior To Picture",
+              "body": "The interior is antique wood, old shelves, and warm window light. The visit moves through surfaces and rooms rather than a large museum route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Nhà cổ Đức An means Duc An Old House. Nhà cổ is the clue that the place is an old house."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-Town Heritage Pairing",
+              "body": "It fits with nearby old houses, assembly halls, or a slow Ancient Town walk. Too many heritage stops together can make the rooms blur."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Interior Mindset",
+              "body": "This is a good moment to slow down indoors and notice what daily life leaves behind: shelves, beams, light, and small preserved details."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small, Not Grand",
+              "body": "The scale is part of the point. This is a compact heritage stop, not a large museum or a full historical route."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-espresso-station",
+          "summary": "The Espresso Station gives Hoi An a narrow-lane coffee pause: espresso, a small counter, shade, and a reset that feels more drink-led than sightseeing-led.",
+          "context": "This is a cafe stop in the old-town rhythm: a small bar, coffee machine, lane setting, and a shorter pause between walks.",
+          "tip": "The venue name usually stays in English. The mental picture is a small espresso bar first, then a decision about a longer cafe.",
+          "rationale": "The Espresso Station keeps the cafe moment compact, which helps it feel different from rooftop or view-first coffee stops.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee In A Narrow Lane",
+              "body": "The Espresso Station is for the moment when the old-town walk needs a cleaner coffee pause. The image is espresso, a small counter, and a lane setting rather than a long meal."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Bar To Picture",
+              "body": "The bar is small and set in a narrow Hoi An lane, with the coffee machine doing most of the explaining. The appeal is compact and drink-led."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "The Espresso Station usually stays as the venue name. Saying it slowly and pointing to coffee keeps the exchange simple."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafe Contrast",
+              "body": "It fits when Faifo feels too view-focused or a full cafe sit feels too long. This is the tighter coffee stop in the old-town flow."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Pause Mindset",
+              "body": "The right rhythm is one drink, a moment out of the lane traffic, then back into the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A View Stop",
+              "body": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar feeling and the lane around it."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-faifo-coffee",
+          "summary": "Faifo Coffee is the Hoi An cafe to remember when the drink is tied to a rooftop view over yellow roofs, lantern streets, and the old town from above.",
+          "context": "This is a view-led cafe stop: stairs, a drink, old-town roofs, yellow walls, and a short pause above the walking streets.",
+          "tip": "Faifo usually stays as the venue name. The important detail is rooftop view, not just another coffee counter.",
+          "rationale": "Faifo Coffee turns a cafe break into a quick way to see Hoi An's roofline without leaving the Ancient Town.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee With A Roofline",
+              "body": "Faifo Coffee is a cafe stop with a clear reason: the rooftop view over Hoi An's yellow walls, tiled roofs, and old-town movement."
+            },
+            {
+              "id": "place-brief",
+              "title": "The View To Picture",
+              "body": "The view is a narrow old-town cafe, stairs upward, a drink in hand, and a brief look across weathered roofs rather than a long sit-down meal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Faifo Coffee usually stays as the venue name. When explaining the plan, connect it to cà phê and looking over phố cổ, the old town."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Above The Walking Streets",
+              "body": "It fits after a dense old-town stretch, especially when a quick visual reset matters more than a quiet workspace."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Rooftop Mindset",
+              "body": "The stop makes most sense when the view is the reason. If the roof is crowded, the visit may become shorter than a normal coffee break."
+            },
+            {
+              "id": "good-to-know",
+              "title": "View First",
+              "body": "The rooftop is the hook. The coffee is part of the pause, not the only reason to climb."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-folk-culture-museum",
+          "summary": "Museum of Folk Culture gives Hoi An an indoor cultural pause: lanterns, textiles, wooden beams, and enough context to make the street scenery feel less standalone.",
+          "context": "This is a museum stop for folk life, memory, display rooms, textiles, lanterns, and a quieter break from outdoor walking.",
+          "tip": "Bảo tàng Văn hóa Dân gian is the local name. Attach it to folk culture displays rather than general history.",
+          "rationale": "The museum helps Hoi An's craft and daily-life memory sit behind the streets without asking for a long visit.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Indoor Layer Behind The Streets",
+              "body": "Museum of Folk Culture gives the old town an inside layer. Lanterns, textiles, wooden beams, and displays help the street scenery feel less like pure backdrop."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Rooms To Picture",
+              "body": "The rooms hold folk-culture exhibits with lanterns, textiles, and wood beams. The visit is quieter than the lanes outside and better in a short, attentive loop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Văn hóa Dân gian means Museum of Folk Culture. The name separates this stop from the broader history museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heat Pause",
+              "body": "It fits when outdoor walking starts to flatten the day. A museum pause can reset attention before more old-town wandering."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small-Museum Mindset",
+              "body": "A few objects, one room at a time, is enough. The point is context, not reading every label."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Interpretation May Vary",
+              "body": "Displays and English support can feel uneven. A short visit is fine if the room labels stop helping."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-from-danang-airport",
+          "summary": "Da Nang Airport for Hoi An is the arrival handoff: bags, doors, road light, river bridges, and the first stretch from flight mode toward the old town.",
+          "context": "This is an arrival route: airport doors, luggage, coastal roads, river bridges, and the shift from Da Nang into Hoi An.",
+          "tip": "Sân bay Đà Nẵng đi Hội An names the route, not a place to visit. It belongs with pickup point, road, and first approach.",
+          "rationale": "The airport route matters because Hoi An often begins before town: with luggage, a car, and the road out of Da Nang.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The First Handoff",
+              "body": "Da Nang Airport for Hoi An is where the trip stops being theoretical. Doors open, bags come out, and the first real road toward Hoi An begins."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Arrival To Picture",
+              "body": "The arrival image is airport doors giving way to roads, river bridges, fields, luggage, and the first approach toward Hoi An. The scene is practical, not scenic yet."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Phrase",
+              "body": "Sân bay Đà Nẵng đi Hội An means Da Nang Airport to Hoi An. It helps when arranging pickup or checking that the destination is understood."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pickup And Transfer Pairing",
+              "body": "It fits with arrival planning, hotel pickup, and the first car ride into town. Details such as fare, pickup zone, or timing need current confirmation."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Arrival Mindset",
+              "body": "The phrase belongs at the handoff moment: bags collected, driver or car found, and Hoi An becoming a road destination."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Route, Not Attraction",
+              "body": "This is not a sightseeing stop. The key detail is knowing the route name clearly before the first transfer."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-fujian-assembly-hall",
+          "summary": "Fujian Assembly Hall gives Hoi An a vivid courtyard stop: red and gold detail, incense, gates, tiled roofs, and a ceremonial pause inside the old town.",
+          "context": "This is a heritage and worship stop: assembly hall architecture, incense, gates, courtyards, old walls, and ceremonial space.",
+          "tip": "Hội quán Phúc Kiến is the local name. Attach it to the red-and-gold courtyard and incense, not a generic old house.",
+          "rationale": "The hall makes Hoi An's Chinese-assembly heritage concrete through color, incense, and courtyard sequence.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Ceremony In Red And Gold",
+              "body": "Fujian Assembly Hall is one of the old-town stops where the architecture does real work. Gates, courtyards, incense, and red-and-gold detail turn heritage into a physical sequence."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Courtyard To Picture",
+              "body": "The courtyard is ornate, with incense smoke, tiled roofs, and strong red-and-gold surfaces. The place feels ceremonial before it feels quiet."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Hội quán Phúc Kiến is the Vietnamese name for Fujian Assembly Hall. Hội quán signals an assembly hall, not a family house."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-Town Heritage Pairing",
+              "body": "It fits with Japanese Covered Bridge, old houses, or another assembly hall when the day is about Hoi An's built history."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Courtyard Mindset",
+              "body": "The strongest sequence is gate, courtyard, incense, then detail. A slower pace lets the layers separate instead of treating the hall as one photo."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sacred Context",
+              "body": "The color and ornament matter, but the space also carries worship and community memory. Behavior should match that."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-hainan-assembly-hall",
+          "summary": "Hainan Assembly Hall is a quieter assembly-hall stop in Hoi An, with incense coils, yellow-red surfaces, courtyard space, and a slower heritage rhythm than the louder landmarks.",
+          "context": "This is a heritage and worship stop: assembly-hall courtyard, incense, gates, old walls, and ceremonial memory inside the old town.",
+          "tip": "Hội quán Hải Nam is the name to recognize. It helps separate this hall from Fujian Assembly Hall and other old-town stops.",
+          "rationale": "The hall adds a calmer assembly-hall layer, giving Hoi An heritage more than one color and pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Assembly-Hall Pause",
+              "body": "Hainan Assembly Hall gives the old-town heritage loop a quieter register. The interest is incense, courtyard space, old walls, and a yellow-red facade without rushing the visit."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Courtyard To Picture",
+              "body": "The courtyard is calmer, with incense coils and yellow-red surfaces. The detail is ceremonial, but the mood is less loud than the busiest old-town stops."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Hội quán Hải Nam is the Vietnamese name. Hội quán marks it as an assembly hall; Hải Nam points to Hainan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Assembly-Hall Contrast",
+              "body": "It fits when the plan compares old-town halls without making each one feel the same. A light pairing with Fujian Assembly Hall is enough."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Quiet Detail Mindset",
+              "body": "This stop rewards a slower look at incense coils, facade color, and courtyard proportions rather than a quick checkmark."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Respect The Room",
+              "body": "The building can look like a heritage sight first, but it still carries worship and community memory. Quiet behavior matters."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-handicraft-workshop",
+          "summary": "Hoi An Handicraft Workshop gives the old town a making-focused pause: tools, warm light, lanterns, textiles, and the sense of craft happening at table height.",
+          "context": "This is a workshop stop: hands, tools, instruction, lanterns, textiles, and a finished object rather than another street scene.",
+          "tip": "Xưởng thủ công mỹ nghệ Hội An is the local name. Attach it to craft tables and hands, not just souvenir browsing.",
+          "rationale": "The workshop turns Hoi An's craft identity into a small, observable process.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Craft At Table Height",
+              "body": "Hoi An Handicraft Workshop is about seeing craft at a workable scale. Tools, hands, lanterns, textiles, and warm light make the old-town craft story feel less abstract."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Table To Picture",
+              "body": "The table is a lantern or textile workspace with tools and warm light. The setting is strongest when craft feels active, not just displayed."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Xưởng thủ công mỹ nghệ Hội An means Hoi An handicraft workshop. The word xưởng points toward a workshop or making space."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Craft-Day Pairing",
+              "body": "It fits with lantern streets, a market browse, or a slower old-town afternoon. The stop feels clearer when treated as a process, not only a purchase."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Making Mindset",
+              "body": "The strongest moment is small: watching hands, tools, and materials before thinking about souvenirs."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Activity Can Vary",
+              "body": "The exact craft, demonstration, or workshop activity may vary. Confirm participation and schedule details close to the day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-history-culture-museum",
+          "summary": "Museum of History and Culture gives Hoi An a compact indoor route through ceramics, trade memory, old displays, and the larger story behind the streets.",
+          "context": "This is a history-museum stop: gallery rooms, ceramics, routes, local memory, and a quieter way to frame Hoi An.",
+          "tip": "Bảo tàng Lịch sử - Văn hóa Hội An is long, but the clue is history and culture rather than folk life.",
+          "rationale": "The museum helps the old town feel less like scenery by adding trade, memory, and objects.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Short Route Through Context",
+              "body": "Museum of History and Culture gives Hoi An an indoor way to connect old streets with older trade, ceramics, routes, and memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Gallery To Picture",
+              "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. The visit is better as a short, focused loop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Lịch sử - Văn hóa Hội An means Museum of History and Culture. The name separates this from the folk culture museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heritage Pairing",
+              "body": "It fits during heat, rain, or a heritage-heavy morning when outdoor stops start to blur. One compact museum can give the day a firmer frame."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Three-Object Mindset",
+              "body": "A small museum is easier with a light rule: pick a few objects, then leave before every label starts to feel the same."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Scope Is Modest",
+              "body": "This is not a major national museum. The strength is local context in compact rooms, not a long chronological deep dive."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-hoai-river",
+          "summary": "Hoai River is the waterline that organizes Hoi An at night and by day: bridges, reflections, boats, yellow walls, and the old town turning toward the river.",
+          "context": "This is the river route: banks, bridges, reflections, evening light, boats, and the old-town waterline.",
+          "tip": "Sông Hoài is the local name. It belongs to the old-town river, not the wider coastal or island water story.",
+          "rationale": "The river gives Hoi An its walking rhythm and evening focus without needing a separate attraction label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Waterline That Organizes Town",
+              "body": "Hoai River helps Hoi An make sense. Bridges, reflections, riverbanks, boats, and evening light give the old town a direction instead of only a maze of lanes."
+            },
+            {
+              "id": "place-brief",
+              "title": "The River To Picture",
+              "body": "The river image is lantern boats on calm water beside yellow old-town buildings, especially in evening light. The scene is familiar, but it still sets the city's rhythm."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Sông Hoài means Hoai River. Sông is the river word, so it helps distinguish this from beaches, piers, and island routes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Evening Route Pairing",
+              "body": "It fits with a lantern walk, Japanese Covered Bridge, or a short old-town loop. The river is the spine that keeps the route from scattering."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Riverbank Mindset",
+              "body": "The right move is to read both sides: bridge lines, boat movement, reflections, and where the walking crowds slow down."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not Just A Backdrop",
+              "body": "The river can become a photo habit quickly. A few minutes as geography keeps it from becoming only a lantern scene."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-japanese-bridge",
+          "summary": "Japanese Covered Bridge gives Hoi An one of its clearest crossing moments: a roofed bridge, narrow water, temple memory, and old-town movement compressed into a short span.",
+          "context": "This is a bridge and sacred-place stop: tiled roof, narrow waterway, lantern reflections, local memory, and a short crossing.",
+          "tip": "Chùa Cầu is the local name. It carries both the bridge and the small temple idea inside the same phrase.",
+          "rationale": "The bridge matters because it makes Hoi An's crossing, worship, and old-town identity meet in one compact place.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Short Crossing With Memory",
+              "body": "Japanese Covered Bridge is not only a photo stop. The roof, narrow waterway, temple memory, and slow crossing make it one of Hoi An's tightest old-town moments."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Span To Picture",
+              "body": "The span is a covered bridge over a narrow waterway, with lantern reflections and old-town movement nearby. The scale is small, which is part of the focus."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Chùa Cầu is the Vietnamese name. Chùa points toward the temple side, while cầu means bridge."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Old-Town Reference Point",
+              "body": "It fits as a bearing point during an Ancient Town walk, especially when nearby streets begin to feel similar."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Crossing Mindset",
+              "body": "The bridge is easiest to remember as a crossing first: roof overhead, water below, old town on both sides."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Details Can Change",
+              "body": "Restoration, ticketing, or crowd flow can change. Check access before making the house a fixed part of the day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-kim-bong-carpentry-village",
+          "summary": "Kim Bong Carpentry Village moves Hoi An across the water toward craft, tools, carved panels, and village rhythm instead of another old-town interior in daylight.",
+          "context": "This is a craft-village stop: woodworking, tools, carved panels, village lanes, and the route away from the old town.",
+          "tip": "Làng mộc Kim Bồng ties the place to woodcraft. Làng is village; mộc points toward carpentry and wood.",
+          "rationale": "The village gives Hoi An's craft story a working village edge, not just a shop or heritage-house interior.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Woodcraft Across The Water",
+              "body": "Kim Bong Carpentry Village gives Hoi An a craft story outside the old-town lanes. Woodworking, tools, carved panels, and village rhythm make the place feel practical rather than decorative."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Workshop To Picture",
+              "body": "The workshop image is woodworking, carved panels, and tools. The scene is strongest when the craft process, not only finished souvenirs, stays in view."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Làng mộc Kim Bồng means Kim Bong Carpentry Village. Làng means village; mộc points to wood or carpentry."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Craft And Route Pairing",
+              "body": "It fits with a river crossing, bike route, or craft-focused morning. The stop is easier when the route is part of the appeal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Process Mindset",
+              "body": "The first thing to notice is how wood becomes shape: tools, hands, panels, and the quiet rhythm of work."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Activity Varies",
+              "body": "Workshop activity can vary by day and provider. Confirm demonstrations, classes, or ferry timing before planning around them."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-lantern-boat",
+          "summary": "Lantern boat ride turns Hoi An's night river into a small boarding decision: wooden boat, paper lanterns, water light, and the old town seen from low on the Hoai.",
+          "context": "This is a boat experience on the Hoai River: boarding points, night water, paper lanterns, reflections, and a short ride.",
+          "tip": "Thuyền hoa đăng Hội An names the lantern boat ride. The phrase belongs with the boat and night river, not lantern shopping.",
+          "rationale": "The ride gives Hoi An's lantern scene a physical sequence: board, sit low, float briefly, and return to the riverbank.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Night River From A Low Seat",
+              "body": "A lantern boat ride changes the familiar river scene by lowering you onto the water. Small wooden boats, paper lanterns, reflections, and shoreline noise become the whole setting."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Boat To Picture",
+              "body": "The boat image is a small wooden boat with paper lanterns on the Hoai River at night, with people moving through the banks around you."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Thuyền hoa đăng Hội An means Hoi An lantern boat. Thuyền is boat; hoa đăng points to floating or ceremonial lantern light."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Evening River Pairing",
+              "body": "It fits after a Hoai River walk or before the night market flow becomes too much. The ride should stay short and simple."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Boarding Mindset",
+              "body": "The decision happens at the riverbank: whether to board, where to sit, and how much of the evening to give the water."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Price And Route First",
+              "body": "Price, ride length, and route can vary, so those details belong in the first exchange before boarding."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

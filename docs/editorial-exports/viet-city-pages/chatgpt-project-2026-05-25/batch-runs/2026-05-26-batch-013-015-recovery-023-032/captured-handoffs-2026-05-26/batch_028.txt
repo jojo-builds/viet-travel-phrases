@@ -1,0 +1,220 @@
+ChatGPT
+
+
+
+
+
+Pasted text.txt
+Document
+
+I’ll draft the exact five Da Nang batch rows directly in chat, using the v2.2 source bundle and catalog materials for checks. The handoff will stay clean: batch title first, reader-view copy without links or citations, and compact import notes after each listing.
+I’ve confirmed the anchor and phrase-card constraints, and I’m checking workbook/catalog candidates directly where the importer is slow. Volatile hours, prices, and current access details will stay out of visible copy and belong only in freshness notes.
+Thought for 12m 1s
+SpeakLocal v2.2 BATCH_028 - Da Nang - 2026-05-26
+Chợ đêm Sơn Trà / Son Tra Night Market — Da Nang — Market
+Reader View
+A Snack Loop Before The River Lights
+Chợ đêm Sơn Trà is the easy evening loop near the Dragon Bridge side of the river. Come for grill smoke, quick snacks, souvenir stalls, and a short walk toward the lights; keep the night loose rather than asking the market to carry dinner by itself.
+
+Useful phrase cards
+
+“Cái này bao nhiêu?” — How much is this?
+“Bao nhiêu một ký?” — How much per kilo?
+“Cho tôi một phần” — One portion, please.
+Read The Smoke Before Ordering
+Walk one lap before you buy. Seafood grills, snack counters, drinks, clothes, and small souvenirs can blur together fast, and the first lap gives you time to see prices, smoke, seating, and where people are actually stopping.
+
+Bridge Pairings Give It Shape
+
+The market makes more sense as part of a riverfront evening: Love Bridge, the Hàn River walk, or Dragon Bridge before or after the lights come on. If the fire show matters, check that timing close to the night itself.
+
+Cồn Does The Food Crawl Better
+
+Chợ Cồn is the stronger daytime food crawl. Sơn Trà is lighter: a convenient night-market add-on when you are already near the river and want a snack, not a full market education.
+
+Implementation notes
+page_id: city-danang-place-son-tra-night-market
+Closest canonical example: Chợ đêm Sơn Trà and Dragon Bridge — night-market add-on plus one real evening decision.
+Phrase/audio:
+price-1 / price-1 — mapped — “Cái này bao nhiêu?”
+price-2 / price-2 — mapped — “Bao nhiêu một ký?”
+food-1 / food-1 — mapped — “Cho tôi một phần”
+Place-name audio: city-danang-place-son-tra-night-market ready as name/pronunciation support only; do not render as a visible phrase card.
+Mentioned Here candidates:
+Cầu Rồng / Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “River landmark often paired with the market.”
+Cầu Tình Yêu / Love Bridge — catalogId: danang-love-bridge — render — subtitle: “Short riverfront photo stop nearby.”
+Sông Hàn / Han River — catalogId: danang-han-river — render — subtitle: “Evening walk context for the market.”
+Chợ Cồn / Con Market — catalogId: danang-con-market — render — subtitle: “Stronger food-first daytime market.”
+Related place candidates:
+Dragon Bridge fire show — catalogId: danang-dragon-bridge-fire-show — render after schedule check.
+Con Market — catalogId: danang-con-market — render as market contrast.
+Freshness notes: same-week check for market hours, active stall mix, seafood pricing norms, and Dragon Bridge show schedule.
+Source notes: City library; Vietnam Tourism Da Nang; Da Nang Fantasticity; ledger legacy copy.
+Score: 28/30 — strong role, clean pairing, mapped phrases; capped for same-week timing and stall/pricing volatility.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Chuyến đi Sơn Trà / Son Tra wildlife drive — Da Nang — Experience
+Reader View
+A Slow Peninsula Loop
+The Sơn Trà drive changes Da Nang from beach city to forest road: curves, shade, sudden sea openings, and the feeling that the city has dropped below you. Go for the ride and the lookout pauses. Wildlife is a bonus, not a promise.
+
+Useful phrase cards
+
+“Tiền xe bao nhiêu?” — How much is the fare?
+“Dừng ở đây được rồi” — You can stop here.
+“Xin hãy lái xe chậm lại” — Please drive slower.
+Set The Loop Before The Climb
+Before the road starts winding, agree on the basic route, waiting time, and return plan. Sơn Trà is easier when the driver knows whether you want one lookout, Linh Ứng Pagoda, a longer forest loop, or a simple up-and-back ride.
+
+Wildlife Stays Unscheduled
+
+If you see animals, keep distance and let the road stay quiet. The best moment may be a flash of movement in the trees, but feeding, crowding, or chasing it turns the drive into the wrong kind of attention.
+
+Weather Changes The Ride
+
+Cloud, heat, rain, and wind can all change how the road feels. Clear weather gives the sea views; mist and shade make the peninsula feel more enclosed. Either way, leave time for slow curves and a calm ride back.
+
+Implementation notes
+page_id: city-danang-place-son-tra-wildlife-drive
+Closest canonical example: Bạch Mã National Park plus Hai Van Pass ride pattern — condition-aware route, lighter commitment.
+Phrase/audio:
+transport-fare / transport-fare — mapped — “Tiền xe bao nhiêu?”
+taxi-3 / taxi-3 — mapped — “Dừng ở đây được rồi”
+v500-tran-please-drive-slower / v500-tran-please-drive-slower — mapped — “Xin hãy lái xe chậm lại”
+Place-name audio: city-danang-place-son-tra-wildlife-drive is planned/no ready audio; hide until audio. city-danang-place-son-tra is ready for Sơn Trà Peninsula name support.
+Mentioned Here candidates:
+Bán đảo Sơn Trà / Son Tra Peninsula — catalogId: danang-son-tra — render — subtitle: “Forest-road peninsula above Da Nang.”
+Chùa Linh Ứng / Linh Ung Pagoda — catalogId: danang-linh-ung-pagoda — render — subtitle: “Common route stop on Sơn Trà.”
+Related place candidates:
+Hai Van Pass ride — catalogId: danang-hai-van-pass-ride — render — subtitle: “Bigger mountain-road ride outside the city.”
+Sơn Trà Night Market — catalogId: danang-son-tra-night-market — check_catalog — subtitle: “Easy evening add-on after a peninsula day.”
+Freshness notes: check road access, weather, traffic restrictions, wildlife guidance, and driver/tour pickup details before import.
+Source notes: Vietnam Tourism Da Nang; Da Nang Fantasticity; ledger legacy copy.
+Score: 27/30 — good route behavior and safety tone; capped for condition-sensitive road access and wildlife uncertainty.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Biển Thanh Bình / Thanh Binh Beach — Da Nang — Beach
+Reader View
+A Bay Beach For A Quiet Reset
+Thanh Bình Beach is Da Nang coast without the postcard pressure: bay water, fishing boats, city buildings behind the sand, and softer morning light. Stop for a walk, sea air, and a quieter look at the city’s shoreline.
+
+Useful phrase cards
+
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+“Gọi taxi giúp tôi được không?” — Can you call a taxi for me?
+Morning Keeps It Simple
+This is an easy beach to understand in the morning, when boats, cloud, and city edges give the place its texture. Bring the expectation down: a short walk can be enough.
+
+Mỹ Khê Is The Easier Comparison
+
+Mỹ Khê is the clearer classic-beach plan. Thanh Bình is smaller and more local-map than headline beach, better when you want a bay-side pause instead of a long sand-and-swim day.
+
+Choose The Ride Back Early
+
+Do not wander until the return becomes the hard part. Pick your drop-off point, notice the road out, and keep a taxi or ride-hailing plan in mind before the beach empties out.
+
+Implementation notes
+page_id: city-danang-place-thanh-binh-beach
+Closest canonical example: Vọng Cảnh Hill scarce-evidence route-stop behavior — short, restrained, condition-aware.
+Phrase/audio:
+repair-5 / repair-5 — mapped — “Chỉ trên bản đồ giúp tôi được không?”
+sight-3 / sight-3 — mapped — “Tôi chụp hình ở đây được không?”
+hotel-9 / hotel-9 — mapped — “Gọi taxi giúp tôi được không?”
+Place-name audio: city-danang-place-thanh-binh-beach is planned/no ready audio; hide until audio.
+Mentioned Here candidates:
+Biển Mỹ Khê / My Khe Beach — catalogId: danang-my-khe-beach — render — subtitle: “The easier classic Da Nang beach comparison.”
+Related place candidates:
+My Khe Beach — catalogId: danang-my-khe-beach — render — subtitle: “Bigger beach day with clearer traveler expectations.”
+Freshness notes: sparse evidence. Check current access, beach conditions, cleanliness, parking/drop-off, and safety before import.
+Source notes: Local map; ledger legacy copy.
+Score: 26/30 — honest and restrained for thin evidence; capped for local-map-only grounding and beach-condition volatility.
+QA notes: replaceability pass after narrowing to bay/city/fishing-boat texture; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+The Temptation / The Temptation — Da Nang — Restaurant
+Reader View
+A Meal That Can Hold The Evening
+The Temptation is for a Da Nang night when dinner can slow the day down. The draw is not speed or noise; it is a smaller room, careful plates, staff rhythm, and the feeling that the meal was chosen on purpose.
+
+Useful phrase cards
+
+“Tôi có thể đặt chỗ được không?” — Can I make a reservation?
+“Cho tôi xem thực đơn được không?” — Can I see the menu?
+“Tính tiền giúp tôi” — Please let me pay.
+Arrive Unrushed
+Do not squeeze this between a beach rinse and a late-night plan. A refined dinner needs a little room around it: time to arrive, read the menu, ask a question, and let the table settle.
+
+Read The Menu Before Committing
+
+Start with the menu, then decide how big the meal should be. If the restaurant is offering a longer format, confirm the pacing before you agree; if you only want a lighter dinner, say that early.
+
+Pace Matters More Than Speed
+
+The quieter value here is not a checklist of dishes. It is the rhythm: staff attention, table spacing, plates arriving in order, and a night that feels different from a seafood stop or market snack.
+
+Implementation notes
+page_id: city-danang-place-the-temptation
+Closest canonical example: Bale Well for ordering confidence, with restaurant voice research for a chosen-meal entry.
+Phrase/audio:
+v500-time-date-book-can-i-make-a-reservation / v500-time-date-book-can-i-make-a-reservation — mapped — “Tôi có thể đặt chỗ được không?”
+food-menu / food-menu — mapped — “Cho tôi xem thực đơn được không?”
+coffee-7 / coffee-7 — mapped — “Tính tiền giúp tôi”
+Place-name audio: city-danang-place-the-temptation is planned/no ready audio; hide until audio.
+Mentioned Here candidates: none; visible copy avoids dish claims until current menu is checked.
+Related place candidates:
+Nén Đà Nẵng — catalogId: danang-nen — render after review — subtitle: “Another planned-meal restaurant in Da Nang.”
+La Maison 1888 — catalogId: danang-la-maison-1888 — check_catalog — subtitle: “Higher-commitment refined dining comparison.”
+Freshness notes: check current open status, address, booking path, menu format, service hours, and holiday closures before import.
+Source notes: MICHELIN search source; venue source; ledger legacy copy.
+Score: 27/30 — strong meal-use frame and no unsupported dish claims; capped for current venue/menu verification.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done with no forced food cards; duplicate body pass; screenshot and production review gates not_run.
+Cầu Thuận Phước / Thuan Phuoc Bridge — Da Nang — Landmark
+Reader View
+The River Opens Here
+Cầu Thuận Phước sits where the Hàn River starts feeling coastal: long cables, a broad crossing, port edges, wind, and grey-blue light. It is better as a river-mouth view or route marker than a place to linger on foot.
+
+Useful phrase cards
+
+“Chỉ trên bản đồ giúp tôi được không?” — Can you show me on the map?
+“Dừng ở đây được rồi” — You can stop here.
+“Tôi chụp hình ở đây được không?” — Can I take photos here?
+See It From The Side First
+The bridge reads best when you can see its length, not only when you are on it. Look for a riverbank, road approach, or nearby stop where the cables, water, and north-end skyline fit in one frame.
+
+Wind Changes The Stop
+
+This is exposed coastal infrastructure, not a sheltered promenade. Wind, rain, harsh sun, or traffic can turn a quick look into a less comfortable pause, so keep the visit light unless the weather is helping.
+
+Northbound Pairings Make Sense
+
+Thuận Phước fits naturally with a northern Da Nang route: Sơn Trà, Tiên Sa, or a drive along the river mouth. Dragon Bridge is the central-night landmark; this one gives you the city opening toward the sea.
+
+Implementation notes
+page_id: city-danang-place-thuan-phuoc-bridge
+Closest canonical example: Dragon Bridge — simple landmark with one usable viewing decision.
+Phrase/audio:
+repair-5 / repair-5 — mapped — “Chỉ trên bản đồ giúp tôi được không?”
+taxi-3 / taxi-3 — mapped — “Dừng ở đây được rồi”
+sight-3 / sight-3 — mapped — “Tôi chụp hình ở đây được không?”
+Place-name audio: city-danang-place-thuan-phuoc-bridge is planned/no ready audio; hide until audio.
+Mentioned Here candidates:
+Sông Hàn / Han River — catalogId: danang-han-river — render — subtitle: “River context for the bridge.”
+Bán đảo Sơn Trà / Son Tra Peninsula — catalogId: danang-son-tra — render — subtitle: “Natural northbound pairing.”
+Cảng Tiên Sa / Tien Sa Port — catalogId: danang-tien-sa-port — render — subtitle: “Nearby port-side context.”
+Cầu Rồng / Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “Central bridge contrast.”
+Related place candidates:
+Dragon Bridge — catalogId: danang-dragon-bridge — render — subtitle: “Better central-night landmark comparison.”
+Han River — catalogId: danang-han-river — render — subtitle: “Broader river walk and city-view context.”
+Freshness notes: check pedestrian/photo access, traffic safety, viewing points, weather exposure, and parking/drop-off before import.
+Source notes: Da Nang Fantasticity; local map; ledger legacy copy.
+Score: 27/30 — clear river-mouth role and route pairing; capped for access/viewing-point verification.
+QA notes: replaceability pass; phrase cards mapped; Mentioned Here scan done; duplicate body pass; screenshot and production review gates not_run.
+Codex handoff block
+batch_id: batch_028
+page_ids: city-danang-place-son-tra-night-market, city-danang-place-son-tra-wildlife-drive, city-danang-place-thanh-binh-beach, city-danang-place-the-temptation, city-danang-place-thuan-phuoc-bridge
+ready_to_import: no
+chat_output_is_canonical: yes
+google_doc_url: optional_or_missing
+phrase_cards_needing_catalog_check: none for visible phrase cards; all listed visible phrase cards use ready-audio mapped IDs
+place_name_phrases: render_only_if_ready_audio_else_hide_until_audio
+visible_copy_risks: Thanh Binh evidence is sparse; The Temptation avoids dish/menu claims until current venue facts are checked; Sơn Trà wildlife wording avoids guaranteed wildlife sightings
+source_freshness_risks: Son Tra Night Market hours/stalls/seafood pricing and Dragon Bridge schedule; Son Tra road/weather/access and wildlife guidance; Thanh Binh access/beach conditions; The Temptation open status/address/menu/service hours; Thuan Phuoc viewing access/weather/traffic
+next_action_for_codex: create/readable review doc, map audio/catalog IDs, import only after Jojo voice approval
+

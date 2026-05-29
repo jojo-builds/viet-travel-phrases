@@ -1495,6 +1495,16 @@ enum LocationMenuPicksCatalog {
         case "viet-family-city-hcmc-place-lusine-thao-dien",
              "viet-phrase-city-hcmc-place-lusine-thao-dien":
             return lusineThaoDienPicks
+        case "viet-family-city-danang-place-international-terminal":
+            return danangInternationalTerminalMentionedPicks
+        case "viet-family-city-danang-place-dong-dinh-museum":
+            return dongDinhMuseumMentionedPicks
+        case "viet-family-city-hcmc-place-pasteur-street":
+            return pasteurStreetMentionedPicks
+        case "viet-family-city-hanoi-place-loading-t-cafe":
+            return loadingTCafeMentionedPicks
+        case "viet-family-city-danang-place-lotte-mart":
+            return lotteMartDanangMentionedPicks
         default:
             return []
         }
@@ -1558,6 +1568,131 @@ enum LocationMenuPicksCatalog {
             afterSectionID: sectionID
         )
     }
+
+    private static func authoredPagePick(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil,
+        after sectionID: String
+    ) -> LocationMenuPick {
+        LocationMenuPick(
+            id: id,
+            title: title,
+            subtitle: subtitle,
+            proof: proof,
+            imageName: imageName,
+            detailPageID: detailPageID,
+            audioText: audioText,
+            linkedMenuItemID: nil,
+            afterSectionID: sectionID
+        )
+    }
+
+    private static let danangInternationalTerminalMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "terminal-mentioned-sim",
+            title: "SIM card",
+            subtitle: "Get connected before leaving the terminal.",
+            proof: "Useful before pickup and hotel messages.",
+            imageName: "HeroCategoryAirport",
+            detailPageID: "viet-family-airport-sim",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "terminal-mentioned-atm",
+            title: "ATM",
+            subtitle: "Find cash before the ride into the city.",
+            proof: "Good to settle before stepping into the pickup flow.",
+            imageName: "HeroCategoryNumbersMoney",
+            detailPageID: "viet-family-money-find-atm",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let dongDinhMuseumMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "dong-dinh-mentioned-son-tra",
+            title: "Bán đảo Sơn Trà",
+            subtitle: "Son Tra Peninsula",
+            proof: "The wider peninsula route this stop belongs to.",
+            imageName: "HeroCityDanangPlaceSonTra",
+            detailPageID: "viet-family-city-danang-place-son-tra",
+            audioText: "Bán đảo Sơn Trà",
+            after: "good-to-know"
+        ),
+        authoredPagePick(
+            id: "dong-dinh-mentioned-lady-buddha",
+            title: "Tượng Phật Bà",
+            subtitle: "Lady Buddha",
+            proof: "The natural pairing before or after a quiet museum pause.",
+            imageName: "HeroCityDanangPlaceLadyBuddha",
+            detailPageID: "viet-family-city-danang-place-lady-buddha",
+            audioText: "Tượng Phật Bà",
+            after: "good-to-know"
+        ),
+    ]
+
+    private static let pasteurStreetMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "pasteur-mentioned-district-1",
+            title: "Đến Quận 1",
+            subtitle: "Head to District 1",
+            proof: "A District 1 line that helps errands, cafes, offices, and crossings make sense.",
+            imageName: "HeroCityHcmcPlaceDistrict1",
+            detailPageID: "viet-family-city-hcmc-go-district-1",
+            audioText: "Đến Quận 1",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let loadingTCafeMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "loading-t-mentioned-egg-coffee",
+            title: "Cà phê trứng",
+            subtitle: "Egg coffee",
+            proof: "The Hanoi drink many visitors come upstairs for.",
+            imageName: "HeroCityHanoiPlaceEggCoffee",
+            detailPageID: "viet-family-city-hanoi-place-egg-coffee",
+            audioText: "Cà phê trứng",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "loading-t-mentioned-ca-phe-sua-da",
+            title: "Cà phê sữa đá",
+            subtitle: "Iced milk coffee",
+            proof: "The familiar cold coffee order beside the room itself.",
+            imageName: "HeroCityHanoiPlaceCaPheSuaDa",
+            detailPageID: "viet-family-city-hanoi-place-ca-phe-sua-da",
+            audioText: "Cà phê sữa đá",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "loading-t-mentioned-old-quarter",
+            title: "Phố cổ Hà Nội",
+            subtitle: "Hanoi Old Quarter",
+            proof: "The surrounding walking context for a tucked-away coffee pause.",
+            imageName: "HeroCityHanoiPlaceOldQuarter",
+            detailPageID: "viet-family-city-hanoi-go-old-quarter",
+            audioText: "Phố cổ Hà Nội",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let lotteMartDanangMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "lotte-mart-mentioned-sunscreen",
+            title: "Sunscreen",
+            subtitle: "Restock before beach time or a long ride.",
+            proof: "Worth grabbing before beach time, a long walk, or a ride out of town.",
+            imageName: "HeroCityDanangPlaceLotteMart",
+            detailPageID: "viet-family-service-sunscreen",
+            after: "place-brief"
+        ),
+    ]
 
     private static let lusineThaoDienPicks: [LocationMenuPick] = [
         LocationMenuPick(
@@ -1653,7 +1788,7 @@ enum LocationMenuPicksCatalog {
             PhraseDetailSection(
                 id: "at-lusine",
                 title: "At L'Usine Thảo Điền",
-                body: "It fits this branch because L'Usine Thảo Điền is remembered as a sit-down brunch cafe, not just a coffee counter: real plates, good coffee, a calmer room, and service people mention afterward."
+                body: "This branch is remembered as a sit-down brunch cafe, not just a coffee counter: real plates, good coffee, a calmer room, and service people mention afterward."
             ),
         ]
     }
@@ -1667,7 +1802,7 @@ enum LocationMenuPicksCatalog {
         case "lusine-crispy-chicken-salad":
             return "A lighter plate with crunch for the table that wants brunch without everyone choosing eggs, noodles, or a heavier main."
         case "lusine-salt-caramel-coffee":
-            return "A sweeter coffee drink for the second-cup part of the visit. It fits the Sunday-morning side of this branch."
+            return "A sweeter coffee drink for the second-cup part of the visit. It belongs to the Sunday-morning side of this branch."
         case "lusine-avocado-toast":
             return "A familiar breakfast order that makes the branch feel easy for a first Thao Dien morning, especially beside coffee."
         default:
@@ -1684,6 +1819,190 @@ enum LocationRelatedPicksCatalog {
         }
 
         switch pageID {
+        case "viet-family-city-danang-place-international-terminal":
+            return [
+                relatedPlacePick(
+                    id: "terminal-related-airport",
+                    title: "Sân bay Đà Nẵng",
+                    subtitle: "Da Nang Airport",
+                    proof: "Use the broader airport name when terminal details are not needed.",
+                    imageName: "HeroCityDanangPlaceAirport",
+                    detailPageID: "viet-family-city-danang-place-airport",
+                    audioText: "Sân bay Đà Nẵng"
+                ),
+                relatedPlacePick(
+                    id: "terminal-related-domestic-terminal",
+                    title: "Nhà ga quốc nội Đà Nẵng",
+                    subtitle: "Da Nang Domestic Terminal",
+                    proof: "The domestic side matters for pickups, transfers, and check-in.",
+                    imageName: "HeroCityDanangPlaceDomesticTerminal",
+                    detailPageID: "viet-family-city-danang-place-domestic-terminal",
+                    audioText: "Nhà ga quốc nội Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-dong-dinh-museum":
+            return [
+                relatedPlacePick(
+                    id: "dong-dinh-related-linh-ung",
+                    title: "Chùa Linh Ứng",
+                    subtitle: "Linh Ung Pagoda",
+                    proof: "The pagoda stop most people pair with a Sơn Trà route.",
+                    imageName: "HeroCityDanangPlaceLinhUngPagoda",
+                    detailPageID: "viet-family-city-danang-place-linh-ung-pagoda",
+                    audioText: "Chùa Linh Ứng"
+                ),
+                relatedPlacePick(
+                    id: "dong-dinh-related-cham-museum",
+                    title: "Bảo tàng Điêu khắc Chăm",
+                    subtitle: "Museum of Cham Sculpture",
+                    proof: "The stronger central-city museum contrast.",
+                    imageName: "HeroCityDanangPlaceChamMuseum",
+                    detailPageID: "viet-family-city-danang-place-cham-museum",
+                    audioText: "Bảo tàng Điêu khắc Chăm"
+                ),
+            ]
+        case "viet-family-city-hcmc-place-pasteur-street":
+            return [
+                relatedPlacePick(
+                    id: "pasteur-related-dong-khoi",
+                    title: "Đường Đồng Khởi",
+                    subtitle: "Dong Khoi Street",
+                    proof: "A more polished District 1 street contrast.",
+                    imageName: "HeroCityHcmcPlaceDongKhoiStreet",
+                    detailPageID: "viet-family-city-hcmc-place-dong-khoi-street",
+                    audioText: "Đường Đồng Khởi"
+                ),
+                relatedPlacePick(
+                    id: "pasteur-related-district-3",
+                    title: "Quận 3",
+                    subtitle: "District 3",
+                    proof: "A nearby district when the walk points beyond central errands.",
+                    imageName: "HeroCityHcmcPlaceDistrict3",
+                    detailPageID: "viet-family-city-hcmc-place-district-3",
+                    audioText: "Quận 3"
+                ),
+            ]
+        case "viet-family-city-hanoi-place-loading-t-cafe":
+            return [
+                relatedPlacePick(
+                    id: "loading-t-related-dinh-cafe",
+                    title: "Cà phê Đinh",
+                    subtitle: "Dinh Cafe",
+                    proof: "Another upstairs Old Quarter coffee room.",
+                    imageName: "HeroCityHanoiPlaceDinhCafe",
+                    detailPageID: "viet-family-city-hanoi-place-dinh-cafe",
+                    audioText: "Cà phê Đinh"
+                ),
+                relatedPlacePick(
+                    id: "loading-t-related-giang-cafe",
+                    title: "Cà phê Giảng",
+                    subtitle: "Cafe Giang",
+                    proof: "The classic egg-coffee comparison.",
+                    imageName: "HeroCityHanoiPlaceGiangCafe",
+                    detailPageID: "viet-family-city-hanoi-place-giang-cafe",
+                    audioText: "Cà phê Giảng"
+                ),
+            ]
+        case "viet-family-city-danang-place-lotte-mart":
+            return [
+                relatedPlacePick(
+                    id: "lotte-mart-related-han-market",
+                    title: "Chợ Hàn",
+                    subtitle: "Han Market",
+                    proof: "The central-market contrast for texture and bargaining.",
+                    imageName: "HeroCityDanangPlaceHanMarket",
+                    detailPageID: "viet-family-city-danang-place-han-market",
+                    audioText: "Chợ Hàn"
+                ),
+                relatedPlacePick(
+                    id: "lotte-mart-related-vincom-plaza",
+                    title: "Vincom Plaza Đà Nẵng",
+                    subtitle: "Vincom Plaza Da Nang",
+                    proof: "Another indoor mall option when cool air matters.",
+                    imageName: "HeroCityDanangPlaceVincomPlaza",
+                    detailPageID: "viet-family-city-danang-place-vincom-plaza",
+                    audioText: "Vincom Plaza Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-3d-art-in-paradise":
+            return [
+                relatedPlacePick(
+                    id: "3d-art-related-fine-arts",
+                    title: "Bảo tàng Mỹ thuật Đà Nẵng",
+                    subtitle: "Da Nang Fine Arts Museum",
+                    proof: "A quieter art stop when you want galleries instead of camera play.",
+                    imageName: "HeroCityDanangPlaceFineArtsMuseum",
+                    detailPageID: "viet-family-city-danang-place-fine-arts-museum"
+                ),
+            ]
+        case "viet-family-city-hanoi-place-bun-cha":
+            return [
+                relatedPlacePick(
+                    id: "bun-cha-related-huong-lien",
+                    title: "Bún chả Hương Liên",
+                    subtitle: "Bun Cha Huong Lien",
+                    proof: "A named bun cha stop if you want a specific restaurant target.",
+                    imageName: "HeroCityHanoiPlaceBunChaHuongLien",
+                    detailPageID: "viet-family-city-hanoi-place-bun-cha-huong-lien"
+                ),
+                relatedPlacePick(
+                    id: "bun-cha-related-bun-cha-ta",
+                    title: "Bún Chả Ta",
+                    subtitle: "Bun Cha Ta",
+                    proof: "Another named bun cha restaurant candidate for comparison.",
+                    imageName: "HeroCityHanoiPlaceBunChaTa",
+                    detailPageID: "viet-family-city-hanoi-place-bun-cha-ta"
+                ),
+            ]
+        case "viet-family-city-hcmc-place-ben-thanh-market":
+            return [
+                relatedPlacePick(
+                    id: "ben-thanh-related-an-dong",
+                    title: "Chợ An Đông",
+                    subtitle: "An Dong Market",
+                    proof: "A market comparison when shopping matters more than the landmark.",
+                    imageName: "HeroCityHcmcPlaceAnDongMarket",
+                    detailPageID: "viet-family-city-hcmc-place-an-dong-market"
+                ),
+                relatedPlacePick(
+                    id: "ben-thanh-related-binh-tay",
+                    title: "Chợ Bình Tây",
+                    subtitle: "Binh Tay Market",
+                    proof: "A Cholon market contrast with a different city rhythm.",
+                    imageName: "HeroCityHcmcPlaceBinhTayMarket",
+                    detailPageID: "viet-family-city-hcmc-place-binh-tay-market"
+                ),
+            ]
+        case "viet-family-city-hoian-place-ancient-town-ticket-booth":
+            return [
+                relatedPlacePick(
+                    id: "ticket-booth-related-ancient-town",
+                    title: "Phố cổ Hội An",
+                    subtitle: "Hoi An Ancient Town",
+                    proof: "The larger old-town area beyond the ticket pause.",
+                    imageName: "HeroCityHoianPlaceAncientTown",
+                    detailPageID: "viet-family-city-hoian-place-ancient-town"
+                ),
+            ]
+        case "viet-family-city-hue-place-bach-ma-national-park":
+            return [
+                relatedPlacePick(
+                    id: "bach-ma-related-lap-an",
+                    title: "Đầm Lập An",
+                    subtitle: "Lap An Lagoon",
+                    proof: "A lighter water-and-weather stop on a central Vietnam route.",
+                    imageName: "HeroCityHuePlaceLapAnLagoon",
+                    detailPageID: "viet-family-city-hue-place-lap-an-lagoon"
+                ),
+                relatedPlacePick(
+                    id: "bach-ma-related-hai-van",
+                    title: "Đèo Hải Vân",
+                    subtitle: "Hai Van Pass",
+                    proof: "A scenic mountain-road option when the ride matters more than hiking.",
+                    imageName: "HeroCityDanangPlaceHaiVanPass",
+                    detailPageID: "viet-family-city-danang-place-hai-van-pass"
+                ),
+            ]
         case "viet-family-city-danang-place-han-market":
             return [
                 LocationMenuPick(
@@ -1705,6 +2024,28 @@ enum LocationRelatedPicksCatalog {
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
         picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+    }
+
+    private static func relatedPlacePick(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil
+    ) -> LocationMenuPick {
+        LocationMenuPick(
+            id: id,
+            title: title,
+            subtitle: subtitle,
+            proof: proof,
+            imageName: imageName,
+            detailPageID: detailPageID,
+            audioText: audioText,
+            linkedMenuItemID: nil,
+            afterSectionID: "good-to-know"
+        )
     }
 }
 

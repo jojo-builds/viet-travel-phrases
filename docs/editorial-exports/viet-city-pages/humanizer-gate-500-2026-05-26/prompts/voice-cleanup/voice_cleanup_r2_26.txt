@@ -1,0 +1,325 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_26",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_26",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-quang-ba-flower-market",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-quang-ba-flower-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-red-river",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-red-river",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-st-joseph-cathedral",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-st-joseph-cathedral",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-street-food-walk",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-street-food-walk",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-ta-hien",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-ta-hien",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 25x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 25x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 25x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-quang-ba-flower-market",
+          "summary": "Quang Ba Flower Market is flowers before breakfast: bundles, wet pavement, scooters, vendors moving fast, and a quieter city still waking up.",
+          "context": "Observe the working market before stepping into its flow. The flowers are moving for real customers, not only photos.",
+          "tip": "Stand aside for a minute before buying or taking photos. The market has lanes, pace, and working hands to respect.",
+          "rationale": "Chợ hoa Quảng Bá stays vivid through flowers, wet pavement, scooters, and working-market pace rather than fixed hours or prices.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Flowers Before Breakfast",
+              "body": "Quảng Bá is bundles of flowers, wet pavement, scooters, and vendors moving while much of Hanoi is still quiet."
+            },
+            {
+              "id": "place-brief",
+              "title": "Work Before Photos",
+              "body": "Stand aside before entering a stall lane. The market has its own rhythm, and the flowers are moving for real buyers."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Chợ hoa Quảng Bá is the name to connect with Hanoi's early flower trade near the lake side."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Bundle Logic",
+              "body": "If buying flowers, think about the rest of the morning. A small bundle travels better than a fragile armful."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Lake Morning",
+              "body": "The market makes sense with a West Lake-side morning, coffee afterward, or a slow ride back into the city."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Morning Rhythm Changes",
+              "body": "Operating rhythm, access, and holiday crowds can change. Go early, stay flexible, and let the working market set the pace."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-red-river",
+          "summary": "The Red River opens Hanoi at the waterline: Long Bien Bridge above, sandy banks below, boats, reflections, and working water stretching the city wider.",
+          "context": "Look from a safer, clearer frame before wandering toward uneven river edges.",
+          "tip": "See the river from Long Bien Bridge first. The banks, distance, and working water make more sense from that frame.",
+          "rationale": "Sông Hồng organizes the river view around safer frames, working water, and changeable bank conditions.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "City At The Waterline",
+              "body": "The Red River is working water, bridge steel, sandy banks, boats, reflections, and a wider edge to Hanoi."
+            },
+            {
+              "id": "place-brief",
+              "title": "Long Bien First",
+              "body": "Long Bien Bridge gives the river shape. From there, banks, boats, and distance read better than from a random road edge."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Sông Hồng is the Vietnamese name for the Red River, useful when river views and bridge routes enter the day."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Working Banks",
+              "body": "Do not treat every open patch as a promenade. Stay aware of footing, traffic, and where local movement actually goes."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light Over Distance",
+              "body": "The river rewards a simple plan: one bridge view, one waterline pause, then a clear way back."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Banks Are Uneven",
+              "body": "Public access, bank conditions, and bridge-area routing can change. Keep the river view simple and avoid uncertain edges."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-st-joseph-cathedral",
+          "summary": "St. Joseph's Cathedral sits where old lanes, scooters, cafe umbrellas, and a tall stone facade press into one central square near Hoan Kiem.",
+          "context": "Read the square before entering. The outside atmosphere is part of the stop.",
+          "tip": "Give the cathedral its own pause before turning toward coffee. The surrounding streets make distraction easy.",
+          "rationale": "Nhà thờ Lớn Hà Nội is a specific sacred landmark, with respectful visit behavior and access shaped by the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old Lanes, Big Facade",
+              "body": "The cathedral gathers stone, scooters, cafe umbrellas, passing people, and old lanes into one compact square."
+            },
+            {
+              "id": "place-brief",
+              "title": "Square Before Door",
+              "body": "The outside is part of the stop: facade, street movement, people waiting, and cafes around the edges."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nhà thờ Lớn Hà Nội is the Vietnamese name to connect with the cathedral square and nearby old lanes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Worship Stays Clear",
+              "body": "If the doors are open, enter gently. Avoid blocking prayer, and let the quiet inside stay quiet."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Coffee Can Wait",
+              "body": "Nearby cafes are tempting, but the cathedral deserves ten minutes of its own before the next cup."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Service Times Matter",
+              "body": "Church access, service-time limits, photo expectations, and restoration notices can change. Let worship hours shape the visit."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-street-food-walk",
+          "summary": "A Hanoi street-food walk is a meal across short stops: steam from a pot, herbs on a tray, low stools, and a grill before the next corner.",
+          "context": "Keep the route loose and the orders light enough for the evening to stay open.",
+          "tip": "Order one dish per stop when possible. A bowl, plate, or shared portion leaves room for the next smell or corner.",
+          "rationale": "Đi bộ ăn vặt Hà Nội guides food-walk behavior while routes, vendors, prices, and opening patterns stay flexible.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal Across Stops",
+              "body": "A street-food walk is steam, herbs, low stools, grilled smoke, and small decisions spaced across several short stops."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Orders",
+              "body": "One dish per stop keeps the night open. A bowl of pho, a plate of bánh cuốn, or shared bún chả can be enough."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Đi bộ ăn vặt Hà Nội is the phrase for a casual Hanoi food walk built from small stops."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Busy Tables",
+              "body": "A line of people finishing bowls says more than a bright sign. Watch for fresh herbs and cooks already moving."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sweet Ending",
+              "body": "Leave room for egg coffee, fruit, or a small dessert so the walk slows down instead of ending heavy."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Vendor Mix Changes",
+              "body": "Vendor mix, routes, prices, and opening patterns can shift. Keep the walk loose, order small, and let the evening adjust."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-ta-hien",
+          "summary": "Ta Hien is the Old Quarter at evening volume: low stools, warm signs, food smoke, bia hơi, and groups deciding how long the night should go.",
+          "context": "Walk the block once before taking a stool. The scene is compressed, loud, and better with a small decision.",
+          "tip": "Check menus and prices before sitting. The street gets louder as the night goes on, so simple questions are easier early.",
+          "rationale": "Phố Tạ Hiện captures the social evening lane while bar, price, crowd-control, and opening details stay changeable.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Lap Before A Stool",
+              "body": "Tạ Hiện is low stools, warm signs, food smoke, bia hơi, and groups deciding whether the night is one drink or several streets."
+            },
+            {
+              "id": "place-brief",
+              "title": "Earlier Evening Read",
+              "body": "Dusk makes the lane easier to read. You can compare seats, food, beer, music, and crowd level before committing."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố Tạ Hiện is the street name to pair with Old Quarter nightlife, low stools, and warm evening signs."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Prices Before Bottles",
+              "body": "Menus and drink prices are worth checking before you sit. The money question is simpler before the street gets loud."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Exit Before It Drags",
+              "body": "The charm is compression. When noise stops feeling fun, step toward the lake or another Old Quarter lane."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Night Conditions Change",
+              "body": "Crowd controls, individual bars, prices, and street conditions can change. Read the block once before sitting down."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

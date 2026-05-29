@@ -1,0 +1,1123 @@
+Batch ID: hcmc_026_050_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+HCMC-specific repair brief: remove old formula copy such as "works best when the name is tied to the reason for going," "not memorized as an abstract label," "alongside Saigon street energy/light/movement," "At X, you get...," "carries the visual details," and generic Worth it if scaffolding. Write from HCMC place evidence: arrival, ordering, crossing, waiting, cooling off indoors, choosing a street, finding the right entrance, or deciding whether a detour is worth it.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hcmc",
+  "range": "026-050",
+  "entries": [
+    {
+      "pageID": "city-hcmc-place-cheo-leo-cafe",
+      "summary": "Cheo Leo Cafe is worth saving for Saigon's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect old Saigon coffee shop with metal filters and small stools.",
+      "context": "For Cheo Leo Cafe, Saigon's cafe story comes through cafe views, coffee counters, iced glasses, and street stools, alongside Ben Thanh market energy.",
+      "tip": "Cà phê Cheo Leo feels tied to Cheo Leo Cafe through design details, soft pauses, cafe views, and coffee counters, alongside Ben Thanh market energy.",
+      "rationale": "Cheo Leo Cafe brings Saigon into focus through design details, soft pauses, cafe views, and coffee counters, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cheo Leo Cafe is worth saving when you want Saigon's cafe culture, not just caffeine: iced glasses, street stools, design details, and soft pauses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cheo Leo Cafe, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: old Saigon coffee shop with metal filters and small stools, with design details, soft pauses, cafe views, and coffee counters, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cà phê Cheo Leo for Cheo Leo Cafe. The local name is easier to remember once it sits beside street stools, design details, soft pauses, and cafe views, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: street stools, design details, soft pauses, and cafe views, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cheo Leo Cafe works best when the name is tied to the reason for going, not memorized as an abstract label. Picture old Saigon coffee shop with metal filters and small stools with soft pauses, cafe views, coffee counters, and iced glasses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cà phê Cheo Leo belongs with Old Saigon coffee shop with metal filters and small stools, giving Cheo Leo Cafe a specific travel scene before the trip begins."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cho-lon",
+      "summary": "Chợ Lớn is too large for one casual wander, so a first visit works better with Binh Tay Market, Thiên Hậu Temple, and one nearby medicine, lantern, or fabric street.",
+      "context": "Chợ Lớn gives Saigon a trade-first Chinatown layer, with temples, market streets, delivery carts, herbs, dried goods, and short rides between stops.",
+      "tip": "Go in the morning for market movement and cooler sidewalks, then use short rides instead of forcing one perfect walking loop.",
+      "rationale": "The district is still worth it because it shows a different Saigon from the District 1 hotel core: trade, temples, incense, wholesale goods, and working streets.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Start With The District First",
+          "body": "Chợ Lớn is not one tidy street. Start with Binh Tay Market, Thiên Hậu Temple, and one nearby medicine, lantern, or fabric street."
+        },
+        {
+          "id": "place-brief",
+          "title": "Trade First, Tourism Second",
+          "body": "Shutters, wholesale goods, incense coils, temple courtyards, sacks of dried ingredients, and delivery carts do more of the talking than souvenir displays."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "price-1",
+            "price-4",
+            "food-1",
+            "shop-5"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Morning Makes Sense",
+          "body": "Earlier hours bring more active trade and cooler sidewalks. Late afternoon traffic can make the return to District 1 feel longer than the map suggests."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Beyond District 1",
+          "body": "Chợ Lớn is best with half a day and patience for short rides. It is not the open boulevard version of central Saigon."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "summary": "Cho Lon walking route is worth knowing in Saigon because it brings movement across the city as part of the discovery into the trip. Expect Cho Lon walking scene with market bags, temple gate, Chinese-Vietnamese signs.",
+      "context": "For Cho Lon walking route, Saigon's route story comes through cafe pauses, local movement, the route between named places, and street corners, alongside Saigon street energy.",
+      "tip": "Cho Lon walking route carries food stops, cafe pauses, local movement, and the route between named places, alongside Saigon street energy into the travel plan.",
+      "rationale": "Cho Lon walking route brings Saigon into focus through the route between named places, street corners, food stops, and cafe pauses, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cho Lon walking route is worth knowing because it gives Saigon a specific route scene: local movement, the route between named places, street corners, and food stops, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cho Lon walking route, you get movement across the city as part of the discovery: Cho Lon walking scene with market bags, temple gate, Chinese-Vietnamese signs, with the route between named places, street corners, food stops, and cafe pauses, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đi bộ Chợ Lớn for Cho Lon walking route. The local name is easier to remember once it sits beside local movement, the route between named places, street corners, and food stops, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Cho Lon walking route gives your itinerary a clearer image: street corners, food stops, cafe pauses, and local movement, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cho Lon walking route works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Cho Lon walking scene with market bags, temple gate, Chinese-Vietnamese signs with cafe pauses, local movement, the route between named places, and street corners, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Đi bộ Chợ Lớn carries Cho Lon walking scene with market bags, temple gate, Chinese-Vietnamese signs forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ciel",
+      "summary": "CieL is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect intimate modern dining room with open kitchen and Vietnamese ingredients.",
+      "context": "For CieL, Saigon's restaurant story comes through menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy.",
+      "tip": "CieL sits inside the scene around CieL: drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy.",
+      "rationale": "CieL brings Saigon into focus through drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "CieL is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At CieL, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: intimate modern dining room with open kitchen and Vietnamese ingredients, with menu details, staff rhythm, drinks, and evening meal energy, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "CieL usually stays as the venue name. Say it slowly and connect it to the scene around it: evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "CieL works best when the name is tied to the reason for going, not memorized as an abstract label. Picture intimate modern dining room with open kitchen and Vietnamese ingredients with staff rhythm, drinks, evening meal energy, and tables, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "CieL feels less abstract when it sits beside tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy and the scene of CieL."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-city-hall",
+      "summary": "Ho Chi Minh City Hall is worth knowing in Saigon because it brings architecture, views, local pride, and history in visual form into the trip. Expect Ho Chi Minh City Hall facade at night from Nguyen Hue.",
+      "context": "For Ho Chi Minh City Hall, Saigon's landmark story comes through local pride, history, city light, and landmark memory, alongside Nguyen Hue city light.",
+      "tip": "Ho Chi Minh City Hall becomes more specific beside city light, landmark memory, architecture, and views, alongside Nguyen Hue city light.",
+      "rationale": "Ho Chi Minh City Hall brings Saigon into focus through architecture, views, local pride, and history, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ho Chi Minh City Hall is worth knowing because it gives Saigon a specific landmark scene: architecture, views, local pride, and history, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ho Chi Minh City Hall, you get architecture, views, local pride, and history in visual form: Ho Chi Minh City Hall facade at night from Nguyen Hue, with city light, landmark memory, architecture, and views, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Trụ sở UBND Thành phố for Ho Chi Minh City Hall. The local name is easier to remember once it sits beside landmark memory, architecture, views, and local pride, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Ho Chi Minh City Hall gives your itinerary a clearer image: history, city light, landmark memory, and architecture, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ho Chi Minh City Hall works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Ho Chi Minh City Hall facade at night from Nguyen Hue with views, local pride, history, and city light, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Trụ sở UBND Thành phố belongs to the real scene around Ho Chi Minh City Hall: architecture, views, local pride, and history, alongside Nguyen Hue city light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-coco-dining",
+      "summary": "Coco Dining is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect stylish contemporary Vietnamese dining room, fermentation jars, warm light.",
+      "context": "For Coco Dining, Saigon's restaurant story comes through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy.",
+      "tip": "Coco Dining feels tied to Coco Dining through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy.",
+      "rationale": "Coco Dining brings Saigon into focus through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Coco Dining is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Coco Dining, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: stylish contemporary Vietnamese dining room, fermentation jars, warm light, with house dishes, menu details, staff rhythm, and drinks, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Coco Dining usually stays as the venue name. Say it slowly and connect it to the scene around it: menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Coco Dining works best when the name is tied to the reason for going, not memorized as an abstract label. Picture stylish contemporary Vietnamese dining room, fermentation jars, warm light with tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Coco Dining carries the surrounding image back to Stylish contemporary Vietnamese dining room, fermentation jars, warm light and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-com-tam",
+      "summary": "Broken rice is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect plate of cơm tấm sườn bì chả with fish sauce, Saigon table.",
+      "context": "For Broken rice, Saigon's food story comes through small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy.",
+      "tip": "Small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy give Broken rice a setting before the trip begins.",
+      "rationale": "Broken rice brings Saigon into focus through herbs, sauce, steam, and texture, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Broken rice is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Broken rice, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: plate of cơm tấm sườn bì chả with fish sauce, Saigon table, with herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cơm tấm ở Thành phố Hồ Chí Minh for Broken rice. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Broken rice works best when the name is tied to the reason for going, not memorized as an abstract label. Picture plate of cơm tấm sườn bì chả with fish sauce, Saigon table with sauce, steam, texture, and small meal rituals, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cơm tấm ở Thành phố Hồ Chí Minh sits beside steam, texture, small meal rituals, and flavor, alongside Saigon street energy, so Broken rice feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-com-tam-ba-ghien",
+      "summary": "Com Tam Ba Ghien is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect plate of cơm tấm with grilled pork chop, egg, pickles, Saigon.",
+      "context": "For Com Tam Ba Ghien, Saigon's restaurant story comes through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon river lights.",
+      "tip": "Com Tam Ba Ghien feels clearer with house dishes, menu details, staff rhythm, and drinks, alongside Saigon river lights around it.",
+      "rationale": "Com Tam Ba Ghien brings Saigon into focus through staff rhythm, drinks, evening meal energy, and tables, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Com Tam Ba Ghien is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with staff rhythm, drinks, evening meal energy, and tables, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Com Tam Ba Ghien, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: plate of cơm tấm with grilled pork chop, egg, pickles, Saigon, with staff rhythm, drinks, evening meal energy, and tables, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cơm tấm Ba Ghiền for Com Tam Ba Ghien. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: tables, house dishes, menu details, and staff rhythm, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Com Tam Ba Ghien works best when the name is tied to the reason for going, not memorized as an abstract label. Picture plate of cơm tấm with grilled pork chop, egg, pickles, Saigon with drinks, evening meal energy, tables, and house dishes, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cơm tấm Ba Ghiền belongs to Plate of cơm tấm with grilled pork chop, egg, pickles, Saigon, especially the surrounding house dishes, menu details, staff rhythm, and drinks, alongside Saigon river lights."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cong-ca-phe-dong-khoi",
+      "summary": "Cong Ca Phe Dong Khoi is worth saving for Saigon's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect retro Vietnamese cafe corner on Dong Khoi, coconut coffee.",
+      "context": "For Cong Ca Phe Dong Khoi, Saigon's cafe story comes through street stools, design details, soft pauses, and cafe views, alongside Saigon river lights.",
+      "tip": "Cộng Cà Phê Đồng Khởi sits inside the scene around Cong Ca Phe Dong Khoi: soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon river lights.",
+      "rationale": "Cong Ca Phe Dong Khoi brings Saigon into focus through street stools, design details, soft pauses, and cafe views, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cong Ca Phe Dong Khoi is worth saving when you want Saigon's cafe culture, not just caffeine: soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cong Ca Phe Dong Khoi, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: retro Vietnamese cafe corner on Dong Khoi, coconut coffee, with coffee counters, iced glasses, street stools, and design details, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cộng Cà Phê Đồng Khởi for Cong Ca Phe Dong Khoi. The local name is easier to remember once it sits beside cafe views, coffee counters, iced glasses, and street stools, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: design details, soft pauses, cafe views, and coffee counters, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cong Ca Phe Dong Khoi works best when the name is tied to the reason for going, not memorized as an abstract label. Picture retro Vietnamese cafe corner on Dong Khoi, coconut coffee with design details, soft pauses, cafe views, and coffee counters, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cộng Cà Phê Đồng Khởi sits beside coffee counters, iced glasses, street stools, and design details, alongside Saigon river lights, so Cong Ca Phe Dong Khoi feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cu-chi-day-trip",
+      "summary": "Cu Chi day trip is worth knowing in Saigon because it brings history held in paths, preserved spaces, local memory, and the quiet of the site into the trip. Expect day-trip van arriving near Cu Chi forest entry area.",
+      "context": "For Cu Chi day trip, Saigon's historic site story comes through shaded trees, wartime history, quiet exhibits, and earth paths, alongside Ben Thanh market energy.",
+      "tip": "Cu Chi day trip stays rooted in Saigon through preserved spaces, guide stops, shaded trees, and wartime history, alongside Ben Thanh market energy.",
+      "rationale": "Cu Chi day trip brings Saigon into focus through shaded trees, wartime history, quiet exhibits, and earth paths, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cu Chi day trip is worth knowing because it gives Saigon a specific historic site scene: quiet exhibits, earth paths, preserved spaces, and guide stops, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cu Chi day trip, you get history held in paths, preserved spaces, local memory, and the quiet of the site: day-trip van arriving near Cu Chi forest entry area, with quiet exhibits, earth paths, preserved spaces, and guide stops, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đi Củ Chi trong ngày for Cu Chi day trip. The local name is easier to remember once it sits beside earth paths, preserved spaces, guide stops, and shaded trees, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Cu Chi day trip gives your itinerary a clearer image: earth paths, preserved spaces, guide stops, and shaded trees, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cu Chi day trip works best when the name is tied to the reason for going, not memorized as an abstract label. Picture day-trip van arriving near Cu Chi forest entry area with guide stops, shaded trees, wartime history, and quiet exhibits, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Đi Củ Chi trong ngày sits beside shaded trees, wartime history, quiet exhibits, and earth paths, alongside Ben Thanh market energy, so Cu Chi day trip feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cu-chi-tunnels",
+      "summary": "Cu Chi Tunnels is worth knowing in Saigon because it brings history held in paths, preserved spaces, local memory, and the quiet of the site into the trip. Expect forest entry area and tunnel display at Cu Chi.",
+      "context": "For Cu Chi Tunnels, Saigon's historic site story comes through guide stops, shaded trees, wartime history, and quiet exhibits, alongside Saigon street energy.",
+      "tip": "Guide stops, shaded trees, wartime history, and quiet exhibits, alongside Saigon street energy make Địa đạo Củ Chi feel connected to a real stop.",
+      "rationale": "Cu Chi Tunnels brings Saigon into focus through wartime history, quiet exhibits, earth paths, and preserved spaces, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cu Chi Tunnels is worth knowing because it gives Saigon a specific historic site scene: earth paths, preserved spaces, guide stops, and shaded trees, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cu Chi Tunnels, you get history held in paths, preserved spaces, local memory, and the quiet of the site: forest entry area and tunnel display at Cu Chi, with guide stops, shaded trees, wartime history, and quiet exhibits, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Địa đạo Củ Chi for Cu Chi Tunnels. The local name is easier to remember once it sits beside shaded trees, wartime history, quiet exhibits, and earth paths, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Cu Chi Tunnels gives your itinerary a clearer image: preserved spaces, guide stops, shaded trees, and wartime history, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cu Chi Tunnels works best when the name is tied to the reason for going, not memorized as an abstract label. Picture forest entry area and tunnel display at Cu Chi with shaded trees, wartime history, quiet exhibits, and earth paths, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Địa đạo Củ Chi carries Cu Chi Tunnels's scene through guide stops, shaded trees, wartime history, and quiet exhibits, alongside Saigon street energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-cuc-gach-quan",
+      "summary": "Cuc Gach Quan is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect old Saigon house restaurant interior with tiled floor and family-style dishes.",
+      "context": "For Cuc Gach Quan, Saigon's restaurant story comes through drinks, evening meal energy, tables, and house dishes, alongside Nguyen Hue city light.",
+      "tip": "Cuc Gach Quan becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside Nguyen Hue city light.",
+      "rationale": "Cuc Gach Quan brings Saigon into focus through tables, house dishes, menu details, and staff rhythm, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cuc Gach Quan is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cuc Gach Quan, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: old Saigon house restaurant interior with tiled floor and family-style dishes, with tables, house dishes, menu details, and staff rhythm, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cục Gạch Quán for Cuc Gach Quan. The local name is easier to remember once it sits beside evening meal energy, tables, house dishes, and menu details, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: staff rhythm, drinks, evening meal energy, and tables, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cuc Gach Quan works best when the name is tied to the reason for going, not memorized as an abstract label. Picture old Saigon house restaurant interior with tiled floor and family-style dishes with staff rhythm, drinks, evening meal energy, and tables, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cục Gạch Quán carries the visual details around it: menu details, staff rhythm, drinks, and evening meal energy, alongside Nguyen Hue city light, plus the local setting of Old Saigon house restaurant interior with tiled floor and family-style dishes."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-district-1",
+      "summary": "District 1 is worth recognizing because neighborhoods turn Saigon from landmarks into lived-in areas. Expect District 1 boulevard with scooters, high-rises, and colonial facade.",
+      "context": "For District 1, Saigon's neighborhood story comes through neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy.",
+      "tip": "Saigon feels more specific when District 1 is tied to neighborhood identity, cafes, lanes, and small shops, alongside Ben Thanh market energy.",
+      "rationale": "District 1 brings Saigon into focus through hotel edges, evening walks, neighborhood identity, and cafes, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "District 1 is worth recognizing because neighborhoods give hotels, cafes, shops, and evening walks a real identity: lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At District 1, you get the area identity behind cafes, streets, hotels, shops, and evening rhythm: District 1 boulevard with scooters, high-rises, and colonial facade, with lanes, small shops, hotel edges, and evening walks, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Quận 1 for District 1. The local name is easier to remember once it sits beside small shops, hotel edges, evening walks, and neighborhood identity, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the city to feel like lived-in areas, not only landmarks: cafes, lanes, small shops, and hotel edges, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "District 1 works best when the name is tied to the reason for going, not memorized as an abstract label. Picture District 1 boulevard with scooters, high-rises, and colonial facade with evening walks, neighborhood identity, cafes, and lanes, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Quận 1 keeps its setting close: District 1 boulevard with scooters, high-rises, and colonial facade, surrounded by hotel edges, evening walks, neighborhood identity, and cafes, alongside Ben Thanh market energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-district-3",
+      "summary": "Quận 3 is the central Saigon breathing route beside District 1: War Remnants Museum, Turtle Lake, Tân Định Church, Bàn Cờ Market, cafés, older buildings, and tree-lined streets.",
+      "context": "District 3 works when the first move is one chosen stop and nearby walking, not a vague plan to cover the whole district.",
+      "tip": "Choose War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market first, then walk nearby and call a car when done.",
+      "rationale": "The district is still worth it because it shows central Saigon between headline landmarks: greener streets, everyday cafés, apartment blocks, markets, and traffic that feels lived-in.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Choose One Stop, Then Walk Nearby",
+          "body": "Quận 3 is useful when you start with one stop: War Remnants Museum, Turtle Lake, Tân Định Church, or Bàn Cờ Market. Nearby streets do the rest."
+        },
+        {
+          "id": "place-brief",
+          "title": "Saigon With A Lower Volume",
+          "body": "The district sits close to District 1 but often feels greener and more lived-in: tree-lined streets, cafés, older buildings, schools, markets, temples, and apartment blocks."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "directions-1",
+            "directions-3",
+            "shop-4",
+            "taxi-3"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Match The Stop To Your Mood",
+          "body": "War Remnants Museum is serious and emotional. Turtle Lake is lighter. Bàn Cờ Market is a local food-and-market look. Tân Định Church is a quick visual stop if open."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Plan The Return",
+          "body": "District 3 does not hand over one headline moment. It is still worth it when District 1 feels compressed and a small central walking section sounds better."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
+      "summary": "Dong Khoi landmark walk is worth knowing in Saigon because it brings movement across the city as part of the discovery into the trip. Expect walking along Dong Khoi past colonial landmarks.",
+      "context": "For Dong Khoi landmark walk, Saigon's route story comes through cafe pauses, local movement, the route between named places, and street corners, alongside Nguyen Hue city light.",
+      "tip": "Đi bộ Đồng Khởi sits inside the scene around Dong Khoi landmark walk: local movement, the route between named places, street corners, and food stops, alongside Nguyen Hue city light.",
+      "rationale": "Dong Khoi landmark walk brings Saigon into focus through cafe pauses, local movement, the route between named places, and street corners, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Dong Khoi landmark walk is worth knowing because it gives Saigon a specific route scene: the route between named places, street corners, food stops, and cafe pauses, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Dong Khoi landmark walk, you get movement across the city as part of the discovery: walking along Dong Khoi past colonial landmarks, with street corners, food stops, cafe pauses, and local movement, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đi bộ Đồng Khởi for Dong Khoi landmark walk. The local name is easier to remember once it sits beside local movement, the route between named places, street corners, and food stops, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Dong Khoi landmark walk gives your itinerary a clearer image: street corners, food stops, cafe pauses, and local movement, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Dong Khoi landmark walk works best when the name is tied to the reason for going, not memorized as an abstract label. Picture walking along Dong Khoi past colonial landmarks with food stops, cafe pauses, local movement, and the route between named places, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The Vietnamese name for Dong Khoi landmark walk and the scene reinforce each other through the route between named places, street corners, food stops, and cafe pauses, alongside Nguyen Hue city light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-dong-khoi-street",
+      "summary": "Đồng Khởi is the compact District 1 spine from the cathedral and post office area toward the Opera House, old hotel facades, café windows, shops, traffic, and the Saigon River.",
+      "context": "Đồng Khởi helps District 1 make sense when you walk it as a short landmark spine rather than a quiet heritage lane.",
+      "tip": "Start near the Central Post Office and move toward the river. Morning makes the facades, hotel doors, and street shape easier to read before heat and traffic thicken.",
+      "rationale": "The street matters because it connects several first Saigon landmarks in one mental map: post office, cathedral area, Opera House, hotel facades, shops, and river edge.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Walk The Spine Toward The River",
+          "body": "Đồng Khởi is short, but it carries a lot. Start near the Central Post Office, pass the Opera House, and keep moving toward the Saigon River."
+        },
+        {
+          "id": "place-brief",
+          "title": "History With Traffic Passing",
+          "body": "This is not a quiet heritage lane. Motorbikes slide past hotel doors, sunlight hits glass storefronts, and colonial-era facades sit beside coffee chains and tour groups."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "directions-1",
+            "directions-3",
+            "v500-dire-navi-can-i-walk-there",
+            "taxi-3"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Use Landmarks As Steps",
+          "body": "Move from the post office and cathedral area to the Opera House, then toward the river. The street is still worth it because it gives District 1 a simple walking sequence."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Early Before It Thickens",
+          "body": "Morning is better if buildings matter more than shopping. Later in the day, heat and traffic can make the street feel like another central corridor."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-fine-arts-museum",
+      "summary": "Ho Chi Minh City Museum of Fine Arts is worth a stop if you want Saigon to feel more layered than the streets outside. Expect yellow Fine Arts Museum courtyard with tiled floors.",
+      "context": "For Ho Chi Minh City Museum of Fine Arts, Saigon's cultural stop story comes through display cases, gallery rooms, artifacts, and quiet light, alongside Saigon street energy.",
+      "tip": "Ho Chi Minh City Museum of Fine Arts feels clearer with artifacts, quiet light, memory, and local history, alongside Saigon street energy around it.",
+      "rationale": "Ho Chi Minh City Museum of Fine Arts brings Saigon into focus through memory, local history, display cases, and gallery rooms, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ho Chi Minh City Museum of Fine Arts is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with display cases, gallery rooms, artifacts, and quiet light, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ho Chi Minh City Museum of Fine Arts, you get rooms, objects, art, and memory inside the city's story: yellow Fine Arts Museum courtyard with tiled floors, with memory, local history, display cases, and gallery rooms, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Mỹ thuật for Ho Chi Minh City Museum of Fine Arts. The local name is easier to remember once it sits beside local history, display cases, gallery rooms, and artifacts, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: quiet light, memory, local history, and display cases, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ho Chi Minh City Museum of Fine Arts works best when the name is tied to the reason for going, not memorized as an abstract label. Picture yellow Fine Arts Museum courtyard with tiled floors with local history, display cases, gallery rooms, and artifacts, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bảo tàng Mỹ thuật carries the visual details around it: memory, local history, display cases, and gallery rooms, alongside Saigon street energy, plus the local setting of Yellow Fine Arts Museum courtyard with tiled floors."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-fito-museum",
+      "summary": "FITO Museum is worth a stop if you want Saigon to feel more layered than the streets outside. Expect traditional medicine museum interior with wooden cabinets and herbs.",
+      "context": "For FITO Museum, Saigon's cultural stop story comes through local history, display cases, gallery rooms, and artifacts, alongside Ben Thanh market energy.",
+      "tip": "Bảo tàng Y học Cổ truyền Việt Nam points back to FITO Museum through gallery rooms, artifacts, quiet light, and memory, alongside Ben Thanh market energy.",
+      "rationale": "FITO Museum brings Saigon into focus through local history, display cases, gallery rooms, and artifacts, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "FITO Museum is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with gallery rooms, artifacts, quiet light, and memory, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At FITO Museum, you get rooms, objects, art, and memory inside the city's story: traditional medicine museum interior with wooden cabinets and herbs, with local history, display cases, gallery rooms, and artifacts, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Y học Cổ truyền Việt Nam for FITO Museum. The local name is easier to remember once it sits beside memory, local history, display cases, and gallery rooms, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: artifacts, quiet light, memory, and local history, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "FITO Museum works best when the name is tied to the reason for going, not memorized as an abstract label. Picture traditional medicine museum interior with wooden cabinets and herbs with artifacts, quiet light, memory, and local history, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of FITO Museum feels more present when Bảo tàng Y học Cổ truyền Việt Nam has gallery rooms, artifacts, quiet light, and memory, alongside Ben Thanh market energy around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "summary": "Gia Dinh Park is worth knowing in Saigon because it brings everyday city life in open air without a formal attraction into the trip. Expect large Saigon park near airport with trees and walking path.",
+      "context": "For Gia Dinh Park, Saigon's park story comes through trees, family time, shade, and open lawns, alongside District 1 movement.",
+      "tip": "Saigon feels more specific when Gia Dinh Park is tied to evening light, walking paths, trees, and family time, alongside District 1 movement.",
+      "rationale": "Gia Dinh Park brings Saigon into focus through shade, open lawns, evening light, and walking paths, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Gia Dinh Park is worth knowing because it gives Saigon a specific park scene: shade, open lawns, evening light, and walking paths, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Gia Dinh Park, you get everyday city life in open air without a formal attraction: large Saigon park near airport with trees and walking path, with evening light, walking paths, trees, and family time, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Công viên Gia Định for Gia Dinh Park. The local name is easier to remember once it sits beside open lawns, evening light, walking paths, and trees, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Gia Dinh Park gives your itinerary a clearer image: family time, shade, open lawns, and evening light, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Gia Dinh Park works best when the name is tied to the reason for going, not memorized as an abstract label. Picture large Saigon park near airport with trees and walking path with family time, shade, open lawns, and evening light, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Công viên Gia Định carries Gia Dinh Park's scene through shade, open lawns, evening light, and walking paths, alongside District 1 movement."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-goi-cuon",
+      "summary": "Fresh spring rolls is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect Fresh spring rolls with herbs and peanut sauce, Saigon cafe table.",
+      "context": "For Fresh spring rolls, Saigon's food story comes through sauce, steam, texture, and small meal rituals, alongside Saigon river lights.",
+      "tip": "Gỏi cuốn ở Thành phố Hồ Chí Minh sits inside the scene around Fresh spring rolls: texture, small meal rituals, flavor, and herbs, alongside Saigon river lights.",
+      "rationale": "Fresh spring rolls brings Saigon into focus through sauce, steam, texture, and small meal rituals, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Fresh spring rolls is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with texture, small meal rituals, flavor, and herbs, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Fresh spring rolls, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: Fresh spring rolls with herbs and peanut sauce, Saigon cafe table, with flavor, herbs, sauce, and steam, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Gỏi cuốn ở Thành phố Hồ Chí Minh for Fresh spring rolls. The local name is easier to remember once it sits beside steam, texture, small meal rituals, and flavor, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: herbs, sauce, steam, and texture, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Fresh spring rolls works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Fresh spring rolls with herbs and peanut sauce, Saigon cafe table with steam, texture, small meal rituals, and flavor, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name stays tied to sauce, steam, texture, and small meal rituals, alongside Saigon river lights, giving Fresh spring rolls a concrete setting in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+      "summary": "Golden Dragon Water Puppet Theater is worth knowing in Saigon because it brings living performance culture rather than a static monument into the trip. Expect Water puppet stage with musicians and warm lights.",
+      "context": "For Golden Dragon Water Puppet Theater, Saigon's performance venue story comes through music, masks, theatre doors, and evening streets, alongside District 1 movement.",
+      "tip": "Golden Dragon Water Puppet Theater feels clearer with music, masks, theatre doors, and evening streets, alongside District 1 movement around it.",
+      "rationale": "Golden Dragon Water Puppet Theater brings Saigon into focus through theatre doors, evening streets, cultural memory, and stage light, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Golden Dragon Water Puppet Theater is worth knowing because it gives Saigon a specific performance venue scene: music, masks, theatre doors, and evening streets, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Golden Dragon Water Puppet Theater, you get living performance culture rather than a static monument: Water puppet stage with musicians and warm lights, with cultural memory, stage light, music, and masks, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà hát Múa rối nước Rồng Vàng for Golden Dragon Water Puppet Theater. The local name is easier to remember once it sits beside masks, theatre doors, evening streets, and cultural memory, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Golden Dragon Water Puppet Theater gives your itinerary a clearer image: stage light, music, masks, and theatre doors, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Golden Dragon Water Puppet Theater works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Water puppet stage with musicians and warm lights with stage light, music, masks, and theatre doors, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà hát Múa rối nước Rồng Vàng carries the surrounding image back to Water puppet stage with musicians and warm lights and the place around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-history-museum",
+      "summary": "Museum of Vietnamese History is worth a stop if you want Saigon to feel more layered than the streets outside. Expect Museum of Vietnamese History facade near botanical gardens.",
+      "context": "For Museum of Vietnamese History, Saigon's cultural stop story comes through gallery rooms, artifacts, quiet light, and memory, alongside Saigon river lights.",
+      "tip": "Museum of Vietnamese History becomes more specific beside local history, display cases, gallery rooms, and artifacts, alongside Saigon river lights.",
+      "rationale": "Museum of Vietnamese History brings Saigon into focus through local history, display cases, gallery rooms, and artifacts, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Museum of Vietnamese History is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with local history, display cases, gallery rooms, and artifacts, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Museum of Vietnamese History, you get rooms, objects, art, and memory inside the city's story: Museum of Vietnamese History facade near botanical gardens, with quiet light, memory, local history, and display cases, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Lịch sử Thành phố Hồ Chí Minh for Museum of Vietnamese History. The local name is easier to remember once it sits beside display cases, gallery rooms, artifacts, and quiet light, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: memory, local history, display cases, and gallery rooms, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Museum of Vietnamese History works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Museum of Vietnamese History facade near botanical gardens with display cases, gallery rooms, artifacts, and quiet light, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Museum of Vietnamese History, the name stays close to gallery rooms, artifacts, quiet light, and memory, alongside Saigon river lights, which makes the stop feel rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+      "summary": "Ho Chi Minh City Museum is worth a stop if you want Saigon to feel more layered than the streets outside. Expect Ho Chi Minh City Museum colonial building with garden.",
+      "context": "For Ho Chi Minh City Museum, Saigon's cultural stop story comes through artifacts, quiet light, memory, and local history, alongside District 1 movement.",
+      "tip": "Ho Chi Minh City Museum feels clearer with artifacts, quiet light, memory, and local history, alongside District 1 movement around it.",
+      "rationale": "Ho Chi Minh City Museum brings Saigon into focus through display cases, gallery rooms, artifacts, and quiet light, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ho Chi Minh City Museum is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with artifacts, quiet light, memory, and local history, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ho Chi Minh City Museum, you get rooms, objects, art, and memory inside the city's story: Ho Chi Minh City Museum colonial building with garden, with artifacts, quiet light, memory, and local history, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Thành phố Hồ Chí Minh for Ho Chi Minh City Museum. The local name is easier to remember once it sits beside local history, display cases, gallery rooms, and artifacts, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: quiet light, memory, local history, and display cases, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ho Chi Minh City Museum works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Ho Chi Minh City Museum colonial building with garden with quiet light, memory, local history, and display cases, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bảo tàng Thành phố Hồ Chí Minh belongs to the scene, with artifacts, quiet light, memory, and local history, alongside District 1 movement around it and Saigon in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+      "summary": "Ho Thi Ky Flower Market is worth knowing in Saigon because it brings the city showing itself through flowers, gifts, color, and everyday street trade into the trip. Expect Ho Thi Ky flower market with colorful bundles and late-night street color, night.",
+      "context": "For Ho Thi Ky Flower Market, Saigon's flower market story comes through wet pavement, vendors, scooters, and gift stalls, alongside Ben Thanh market energy.",
+      "tip": "Chợ hoa Hồ Thị Kỷ sits inside the scene around Ho Thi Ky Flower Market: scooters, gift stalls, flower bundles, and street color, alongside Ben Thanh market energy.",
+      "rationale": "Ho Thi Ky Flower Market brings Saigon into focus through scooters, gift stalls, flower bundles, and street color, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Ho Thi Ky Flower Market is worth knowing because it gives Saigon a specific flower market scene: wet pavement, vendors, scooters, and gift stalls, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Ho Thi Ky Flower Market, you get the city showing itself through flowers, gifts, color, and everyday street trade: Ho Thi Ky flower market with colorful bundles and late-night street color, night, with flower bundles, street color, wet pavement, and vendors, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chợ hoa Hồ Thị Kỷ for Ho Thi Ky Flower Market. The local name is easier to remember once it sits beside gift stalls, flower bundles, street color, and wet pavement, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Ho Thi Ky Flower Market gives your itinerary a clearer image: vendors, scooters, gift stalls, and flower bundles, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Ho Thi Ky Flower Market works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Ho Thi Ky flower market with colorful bundles and late-night street color, night with gift stalls, flower bundles, street color, and wet pavement, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Ho Thi Ky Flower Market, the name stays close to wet pavement, vendors, scooters, and gift stalls, alongside Ben Thanh market energy, which makes the stop feel rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-hu-tieu",
+      "summary": "Hu tieu is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect bowl of hủ tiếu with pork, shrimp, herbs, clear broth, Saigon.",
+      "context": "For Hu tieu, Saigon's food story comes through texture, small meal rituals, flavor, and herbs, alongside Saigon street energy.",
+      "tip": "Hủ tiếu ở Thành phố Hồ Chí Minh points back to Hu tieu through flavor, herbs, sauce, and steam, alongside Saigon street energy.",
+      "rationale": "Hu tieu brings Saigon into focus through sauce, steam, texture, and small meal rituals, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hu tieu is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with flavor, herbs, sauce, and steam, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hu tieu, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of hủ tiếu with pork, shrimp, herbs, clear broth, Saigon, with texture, small meal rituals, flavor, and herbs, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Hủ tiếu ở Thành phố Hồ Chí Minh for Hu tieu. The local name is easier to remember once it sits beside herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hu tieu works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of hủ tiếu with pork, shrimp, herbs, clear broth, Saigon with herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Hu tieu, the name stays close to flavor, herbs, sauce, and steam, alongside Saigon street energy, which makes the stop feel rooted in Saigon."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

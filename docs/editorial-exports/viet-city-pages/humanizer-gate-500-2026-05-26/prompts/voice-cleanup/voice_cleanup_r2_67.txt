@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_67",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_67",
+  "chunks": [
+    {
+      "chunkFile": "hue_051_075_humanized.json",
+      "cityID": "hue",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hue-place-pham-ngu-lao-street",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-perfume-river-dragon-boat",
+          "message": "freshness/process-like heading: Current Operations Matter"
+        },
+        {
+          "id": "city-hue-place-perfume-river-dragon-boat",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-phu-bai-airport",
+          "message": "freshness/process-like heading: Current Transport Details"
+        },
+        {
+          "id": "city-hue-place-phu-cam-church",
+          "message": "freshness/process-like heading: Access Can Shift"
+        },
+        {
+          "id": "city-hue-place-phu-cam-church",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-phu-hau-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 13x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 13x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-perfume-river-dragon-boat",
+          "summary": "A Perfume River dragon boat is useful only when the ride has a point: a pier, a route, a return, and enough time to enjoy the water slowly.",
+          "context": "This boat experience is Hue by water: dragon prow, boarding point, bridges, riverbanks, and the slower pace between city stops.",
+          "tip": "Thuyền rồng sông Hương is the phrase to recognize. It means dragon boat on the Perfume River, not just any boat.",
+          "rationale": "The boat turns the river into an experience, but the practical value comes from route clarity and return timing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Boat Ride With A Point",
+              "body": "The dragon prow is the easy memory, but the route matters more. A clear destination, return, and boarding point make the ride feel relaxed."
+            },
+            {
+              "id": "place-brief",
+              "title": "Water As A Slow Route",
+              "body": "The river experience is simple: low seats, water light, bridges, and banks passing slowly. It is not fast transport."
+            },
+            {
+              "id": "quick-say",
+              "title": "Boat Name",
+              "body": "Thuyền rồng sông Hương means dragon boat on the Perfume River. The phrase helps distinguish the experience from a regular transfer."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pagoda Or Sunset Plans",
+              "body": "It pairs naturally with Thiên Mụ Pagoda, sunset light, or an evening performance plan, as long as timing and return are clear."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Route Before Romance",
+              "body": "A colorful boat is not enough on its own. The ride needs a route, a price, and a return plan before it becomes a good Hue memory."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Operations Matter",
+              "body": "Boat prices, pier locations, schedules, and life-jacket practices can change. Current confirmation matters if this becomes a key part of the day."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-pham-ngu-lao-street",
+          "summary": "Pham Ngu Lao Street gives Hue a compact visitor-side strip: cafés, guesthouse signs, scooters, warm evening light, and an easy name for hotel neighborhood bearings.",
+          "context": "This street is about orientation near the visitor quarter, where cafés, guesthouses, scooters, and side-street movement help first arrivals place themselves.",
+          "tip": "Đường Phạm Ngũ Lão is the local street name. Đường tells drivers and map readers you mean the road, not a venue.",
+          "rationale": "The street helps visitors understand a practical Hue base, especially when arranging pickups, dinner walks, or a return after dark.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Visitor-Quarter Spine",
+              "body": "Pham Ngu Lao gives the visitor area a name: cafés, guesthouses, scooters, corner signs, and warm evening movement."
+            },
+            {
+              "id": "place-brief",
+              "title": "Bearings Before Wandering",
+              "body": "A known street makes the nearby lanes easier. It can help with hotel pickup points, dinner choices, and getting back after a river walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name",
+              "body": "Đường Phạm Ngũ Lão means Pham Ngu Lao Street. The first word, đường, is worth recognizing whenever addresses feel confusing."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Easy Evening Logistics",
+              "body": "It fits simple plans: meet a ride, find a cafe, walk toward dinner, or mark the hotel area before exploring nearby streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Not The Whole City",
+              "body": "The street helps with visitor logistics, but it is only one slice of Hue. Balance it with river, citadel, market, and tomb plans."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Traffic Still Moves",
+              "body": "Even visitor streets can feel busy with scooters and pickups. A slower crossing rhythm helps more than rushing after the first gap."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-phu-bai-airport",
+          "summary": "Phu Bai Airport is Hue's arrival edge: warm air, low doors, local signs, and the first road toward the Perfume River, citadel, and tomb routes.",
+          "context": "This is an arrival point in practical terms: airport doors, baggage, city signs, pickup lanes, and the shift from flight to Hue roads.",
+          "tip": "Sân bay Phú Bài is the name to recognize. Sân bay means airport, a useful phrase for rides and return plans.",
+          "rationale": "Naming the airport helps the trip begin calmly, especially when the old capital still sits a drive away from the arrival hall.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The First Hue Threshold",
+              "body": "Phu Bai is where Hue begins quietly: arrival doors, warm air, local signs, and the road that later splits toward river, citadel, or tomb routes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Airport, Then Old Capital",
+              "body": "The airport is not in the old center. Its role is the transition from flight logistics into a softer city approach."
+            },
+            {
+              "id": "quick-say",
+              "title": "Airport Name",
+              "body": "Sân bay Phú Bài means Phu Bai Airport. The phrase sân bay is useful for both arrival and return rides anywhere in Vietnam."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pickup And Return Plans",
+              "body": "It matters for hotel transfers, domestic flights, and timing the road back from Hue. The name helps avoid mixing it with Da Nang."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Current Transport Details",
+              "body": "Taxi counters, ride pickup points, and shuttle options can change. Current confirmation matters before treating any transport plan as fixed."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Gentle Arrival",
+              "body": "The first view may be practical rather than grand. Hue usually opens up on the road in, through signs, air, river direction, and slower traffic."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-phu-cam-church",
+          "summary": "Phu Cam Church adds a different sacred shape to Hue: modern cathedral lines, a hill setting, bells, worship, and quiet space beyond pagodas and palaces.",
+          "context": "This sacred stop is Hue through Catholic architecture, courtyard shade, local worship, and a modern facade rather than royal or Buddhist memory.",
+          "tip": "Nhà thờ Phủ Cam is the Vietnamese name. Nhà thờ means church, useful when asking directions or reading a map.",
+          "rationale": "The church broadens Hue's spiritual map, giving the city a Christian architectural landmark alongside temples, pagodas, and royal sites.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Different Sacred Shape",
+              "body": "Phu Cam Church stands apart from Hue's pagodas and palaces: modern cathedral lines, a hill setting, bells, and a quieter worship rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Architecture With Restraint",
+              "body": "The strong facade and sacred space matter more than dense decoration. The visit is about form, silence, and local worship."
+            },
+            {
+              "id": "quick-say",
+              "title": "Church Name",
+              "body": "Nhà thờ Phủ Cam means Phu Cam Church. The words nhà thờ are useful anywhere in Vietnam when asking about a church."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slow Sacred Stop",
+              "body": "It fits a day that already includes temples or royal sites, adding another religious layer without needing a long visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Worship Space First",
+              "body": "Mass, private prayer, and church events can affect access. Quiet behavior matters even when the visit is architectural."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Can Shift",
+              "body": "Opening, service times, and interior access can change. practical details matter before planning photos or a specific interior visit."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-phu-hau-market",
+          "summary": "Phu Hau Market is a small everyday Hue market: produce colors, snack counters, local shopping movement, and river-neighborhood light rather than a polished visitor stop.",
+          "context": "This market is about daily buying near local streets, with aisles, snacks, produce, baskets, and a quieter scale than headline markets.",
+          "tip": "Chợ Phú Hậu is the name to recognize. Chợ means market, and the district name keeps it from sounding like any market.",
+          "rationale": "The market helps Hue feel lived-in, especially for visitors who want a modest browse rather than a famous shopping stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Everyday Market Scale",
+              "body": "Phu Hau Market is a local browse: produce colors, snack counters, baskets, and daily shopping movement without the pressure of a headline stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Browse, Small specifics",
+              "body": "Practical stalls and local buying matter more than a guaranteed food crawl or souvenir mission. The draw is ordinary rhythm."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name",
+              "body": "Chợ Phú Hậu means Phu Hau Market. The word chợ is the part to remember when asking about markets across Vietnam."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Nearby, Not Cross-Town",
+              "body": "It makes most sense when you are already close, want a quick market look, or need a small snack and local street context."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Modest Plan",
+              "body": "Stall mix, snack availability, and busy hours can change. The safest plan is a short browse rather than a tightly scheduled market run."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Polite Looking Helps",
+              "body": "A slower pace and small purchases fit this kind of market. It is everyday space first, not a staged attraction."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
