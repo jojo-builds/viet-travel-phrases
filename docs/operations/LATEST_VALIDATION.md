@@ -45,6 +45,12 @@ Fresh command evidence from this pass:
   - install passed
   - launch passed
   - bundle id: `app.speaklocal.vietnam.native`
+- Physical iPhone Debug build/install from current `main`
+  - commit: `8fa4f7718` (`Record non-paywall merge sweep validation`)
+  - build passed
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 
 ## Current Menu Section Worktree Evidence
 
