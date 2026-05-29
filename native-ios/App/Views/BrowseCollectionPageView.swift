@@ -21,6 +21,10 @@ struct BrowseCollectionPageView: View {
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
 
+    private var bottomSentinelID: String {
+        "BrowseCollection.BottomSentinel.\(descriptor.route.id)"
+    }
+
     @ViewBuilder
     var body: some View {
         Group {
@@ -60,8 +64,10 @@ struct BrowseCollectionPageView: View {
                             .id(Self.scrollTopID)
 
                         collectionSections(scrollProxy: scrollProxy)
+
+                        AppBottomSentinel(id: bottomSentinelID)
                     }
-                    .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
+                    .padding(.bottom, BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: false))
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     guard scrollToTopRoute == nil || scrollToTopRoute == descriptor.route else {
@@ -71,6 +77,11 @@ struct BrowseCollectionPageView: View {
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
                 .task(id: focusRequest?.id) {
+                    if AppBottomInsetValidation.shouldScrollToBottom {
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
+                        return
+                    }
+
                     await restoreFocusIfNeeded(scrollProxy)
                 }
             }
@@ -141,6 +152,8 @@ struct BrowseCollectionPageView: View {
                         } else {
                             await restoreFocusIfNeeded(scrollProxy)
                         }
+
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -289,8 +302,10 @@ struct BrowseCollectionPageView: View {
 
             VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
                 collectionSections(scrollProxy: scrollProxy)
+
+                AppBottomSentinel(id: bottomSentinelID)
             }
-            .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+            .padding(.bottom, BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: true))
         }
         .background {
             UnevenRoundedRectangle(
@@ -481,6 +496,13 @@ enum BrowseCollectionLayout {
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
     static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
+    }
 
     static func cityFilterCardWidth(availableWidth: CGFloat) -> CGFloat {
         let visiblePeekWidth = min(cityFilterCardPeekWidth, max(28, availableWidth * 0.11))

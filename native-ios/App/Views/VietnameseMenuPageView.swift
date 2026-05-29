@@ -21,6 +21,10 @@ struct VietnameseMenuPageView: View {
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollCoordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
 
+    private var bottomSentinelID: String {
+        "VietnameseMenu.BottomSentinel.\(kind.routeID)"
+    }
+
     private var route: BrowseCollectionRoute {
         .category(kind.routeID)
     }
@@ -96,8 +100,10 @@ struct VietnameseMenuPageView: View {
 
                         sectionedMenu
                             .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+
+                        AppBottomSentinel(id: bottomSentinelID)
                     }
-                    .padding(.bottom, VietnameseMenuLayout.bottomChromeContentClearance)
+                    .padding(.bottom, VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: false))
                 }
                 .onPreferenceChange(VietnameseMenuSectionFramePreferenceKey.self) { frames in
                     updateCurrentSection(from: frames)
@@ -120,6 +126,11 @@ struct VietnameseMenuPageView: View {
                     jumpToSection(sectionJumpRequest.sectionID)
                 }
                 .task(id: pendingSectionJumpID) {
+                    if AppBottomInsetValidation.shouldScrollToBottom {
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
+                        return
+                    }
+
                     await performPendingSectionJump(scrollProxy)
                 }
             }
@@ -251,6 +262,8 @@ struct VietnameseMenuPageView: View {
                         } else {
                             await performPendingSectionJump(scrollProxy)
                         }
+
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -309,8 +322,11 @@ struct VietnameseMenuPageView: View {
 
             sectionedMenu
                 .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
-                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+
+            AppBottomSentinel(id: bottomSentinelID)
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
         }
+        .padding(.bottom, VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: true))
         .background {
             UnevenRoundedRectangle(
                 cornerRadii: RectangleCornerRadii(
@@ -848,7 +864,7 @@ enum VietnameseMenuSectionTrackingPolicy {
     static let pinnedScrollUpdateDelayNanoseconds: UInt64 = 120_000_000
 }
 
-private enum VietnameseMenuLayout {
+enum VietnameseMenuLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 20
     static let sectionTitleToRowsSpacing: CGFloat = 26
@@ -860,6 +876,13 @@ private enum VietnameseMenuLayout {
     static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
     static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
     static let glassRailRevealY: CGFloat = 72
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
+    }
 
     static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
         max(154, (containerWidth - horizontalPadding * 2 - sectionCardSpacing) / 2)

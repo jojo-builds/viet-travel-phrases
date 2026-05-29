@@ -177,13 +177,15 @@ struct SearchPageView: View {
                 recoveryContent
                     .searchFocusDismissArea(dismissSearchFromContent)
             }
+
+            AppBottomSentinel(id: "Search.BottomSentinel")
         }
         .padding(
             .top,
             usesPhotoBackdrop ? 10 : headerMode.contentTopPadding(topMastheadBleed: topMastheadBleed)
         )
         .padding(.horizontal, SearchPageLayout.horizontalPadding)
-        .padding(.bottom, SearchPageLayout.resultsBottomClearance)
+        .padding(.bottom, SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: usesPhotoBackdrop))
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 

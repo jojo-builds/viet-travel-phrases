@@ -3816,6 +3816,7 @@ struct HomeView: View {
                         }
 
                         await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: "Home.BottomSentinel")
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -3929,9 +3930,11 @@ struct HomeView: View {
 
                     recentlyViewedShelf
                         .id(HomeScrollTarget.recentlyViewed)
+
+                    AppBottomSentinel(id: "Home.BottomSentinel")
                 }
             }
-            .padding(.bottom, HomeLayout.photoBackdropBottomReadingClearance)
+            .padding(.bottom, HomeLayout.bottomContentClearance(usesPhotoBackdrop: true))
         }
         .background {
             UnevenRoundedRectangle(
@@ -4329,8 +4332,11 @@ struct SavedPagesView: View {
                 sectionedSavedItems
                     .padding(.horizontal, SavedTripLayout.horizontalPadding)
             }
+
+            AppBottomSentinel(id: "Saved.BottomSentinel")
+                .padding(.horizontal, SavedTripLayout.horizontalPadding)
         }
-        .padding(.bottom, HomeLayout.bottomChromeContentClearance)
+        .padding(.bottom, SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop))
     }
 
     private var snapshot: SavedTripSnapshot {
@@ -4595,7 +4601,7 @@ private extension View {
     }
 }
 
-private enum SavedTripLayout {
+enum SavedTripLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 22
     static let sectionTitleToRowsSpacing: CGFloat = 20
@@ -4607,6 +4613,13 @@ private enum SavedTripLayout {
     static let sectionJumpViewportAnchorY: CGFloat = 0.19
     static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
     static let glassRailRevealY: CGFloat = 72
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: HomeLayout.bottomChromeContentClearance
+        )
+    }
 
     static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
         max(132, min(164, (containerWidth - horizontalPadding * 2 - sectionCardSpacing * 1.5) / 2.35))
@@ -4958,8 +4971,15 @@ enum HomeLayout {
     static let relationshipRowHeight: CGFloat = 102
     static let relationshipGroupVerticalPadding: CGFloat = 10
     static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
-    static let photoBackdropBottomReadingClearance: CGFloat = PhrasePhotoBackdropLayout.bottomReadingClearance
+    static let photoBackdropBottomReadingClearance: CGFloat = AppBottomContentClearance.photoBackdropRoot
     static let shellScrollOffsetPublishStride: CGFloat = 4
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
+    }
 
     static func relationshipGroupHeight(for itemCount: Int) -> CGFloat {
         let visibleRows = max(1, min(itemCount, relationshipRowsPerGroup))

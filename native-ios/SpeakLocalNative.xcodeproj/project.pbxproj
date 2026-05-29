@@ -19,6 +19,7 @@
 		38B893276AD8652F98766E0F /* LanguagePacks in Resources */ = {isa = PBXBuildFile; fileRef = A83272548030E59BD55C69E3 /* LanguagePacks */; };
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
 		3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */; };
+		4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */; };
 		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
 		56BE39BA0B7382244604A4B0 /* AdminPhotoBackdropSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A680DA00D6F1528D04188 /* AdminPhotoBackdropSurfaceView.swift */; };
 		5E445B4FD180B59D157E434D /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = C29EA500445CB089DEEDA380 /* Audio */; };
@@ -51,6 +52,7 @@
 		C99E42DF398D6922C5CC8F7A /* VietnameseMenuPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89751C70F34503CB30EB9E47 /* VietnameseMenuPageView.swift */; };
 		CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */; };
 		D1B42A9A89737128320F1355 /* AudioTapReliabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895093494D9977421573612F /* AudioTapReliabilityUITests.swift */; };
+		DA2AC1CBBC748C9D343FF6B3 /* BottomInsetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DF6F83A005C0FDCE113FDF /* BottomInsetUITests.swift */; };
 		E4D0111388419D5C846F75DA /* BrowsePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */; };
 		EA5ADDE73A6232C5884B736C /* AuthoredVietListingPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0925D0CB75348A97B05D7C /* AuthoredVietListingPages.swift */; };
 		F4B3EAAF6A94C57E32148D39 /* viet-audio-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 54DB62A4A0C109CD427E5488 /* viet-audio-manifest.json */; };
@@ -81,6 +83,7 @@
 		18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModels.swift; sourceTree = "<group>"; };
 		18EA78216F5959BDB34B09C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
+		25DF6F83A005C0FDCE113FDF /* BottomInsetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInsetUITests.swift; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaNaHillsJourneyProofUITests.swift; sourceTree = "<group>"; };
 		310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSearchUITests.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		D34BE92DD2418521F1F8A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB33379C1CC334DCDDB96EFE /* PhrasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasePage.swift; sourceTree = "<group>"; };
 		EC4864105E47882DA1C4AC75 /* BrowsePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePageView.swift; sourceTree = "<group>"; };
+		EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietSearchOnlyPhraseSurfacing.swift; sourceTree = "<group>"; };
 		ED7E2D04DC4EC1F71F3CD982 /* PracticeStoryBreakdownDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStoryBreakdownDefinitions.swift; sourceTree = "<group>"; };
 		F5E1C1C1CB2172A0EEDD0100 /* GeneratedVietContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedVietContent.swift; sourceTree = "<group>"; };
 		F8A4E79814EEDFC2BC7F2750 /* PracticeNativeMVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeNativeMVPTests.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				895093494D9977421573612F /* AudioTapReliabilityUITests.swift */,
 				63A0BCBE2CC43FEC397FE722 /* BackSwipeUITests.swift */,
 				2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */,
+				25DF6F83A005C0FDCE113FDF /* BottomInsetUITests.swift */,
 				310DEDEA3D4E97A9043B8EFD /* BrowseSearchUITests.swift */,
 				B883D25427177530402A1885 /* Info.plist */,
 				9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */,
@@ -249,6 +254,7 @@
 				8BCAD3EAD2003E3D122ACEB2 /* PracticeStoryModels.swift */,
 				CFE84225C5DACBD7E06E4ED6 /* SharedBackdropImagePool.swift */,
 				4D3723F574BB0F2BBDADECC7 /* VietnameseMenuCatalog.swift */,
+				EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */,
 				8AA4EFED42A4EC46A2228814 /* VietSQLiteLanguagePackRepository.swift */,
 			);
 			path = Models;
@@ -411,6 +417,7 @@
 				D1B42A9A89737128320F1355 /* AudioTapReliabilityUITests.swift in Sources */,
 				A1BD02DD85DA578C1613D0E9 /* BaNaHillsJourneyProofUITests.swift in Sources */,
 				26351589E274CA9E560ABD21 /* BackSwipeUITests.swift in Sources */,
+				DA2AC1CBBC748C9D343FF6B3 /* BottomInsetUITests.swift in Sources */,
 				C7A7E47EADADCAA9C0C7B7D1 /* BrowseSearchUITests.swift in Sources */,
 				CDFA70A16B6D74B02494DCA7 /* PracticeUITests.swift in Sources */,
 			);
@@ -446,6 +453,7 @@
 				B5527E65B3B401A6D99AC0AD /* SharedBackdropImagePool.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
 				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
+				4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */,
 				7A3C2A4210802EBC0319FAA7 /* VietnameseMenuCatalog.swift in Sources */,
 				C99E42DF398D6922C5CC8F7A /* VietnameseMenuPageView.swift in Sources */,
 			);
