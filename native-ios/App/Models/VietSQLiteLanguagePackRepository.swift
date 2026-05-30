@@ -1997,6 +1997,10 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func heroImageName(for pageID: String) -> String? {
+#if DEBUG
+        recordHeroImageNameLookupForTesting()
+#endif
+
         if let cachedHeroImageName = cachedHeroImageName(for: pageID) {
             return cachedHeroImageName.value
         }
@@ -2245,6 +2249,12 @@ enum VietSQLitePhraseGraphRuntime {
         return canonicalPageIDLookupCount
     }
 
+    static var heroImageNameLookupCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return heroImageNameLookupCount
+    }
+
     static func setEnabledForTesting(_ enabled: Bool) {
         isEnabledOverride = enabled
         cachedRepository = nil
@@ -2278,6 +2288,7 @@ enum VietSQLitePhraseGraphRuntime {
         cachedSearchResultKeys.removeAll()
         detailPageLookupCount = 0
         canonicalPageIDLookupCount = 0
+        heroImageNameLookupCount = 0
     }
 
     private static func recordDetailPageLookupForTesting() {
@@ -2292,9 +2303,16 @@ enum VietSQLitePhraseGraphRuntime {
         cacheLock.unlock()
     }
 
+    private static func recordHeroImageNameLookupForTesting() {
+        cacheLock.lock()
+        heroImageNameLookupCount += 1
+        cacheLock.unlock()
+    }
+
     private static var isEnabledOverride: Bool?
     private static var detailPageLookupCount = 0
     private static var canonicalPageIDLookupCount = 0
+    private static var heroImageNameLookupCount = 0
 #endif
 }
 

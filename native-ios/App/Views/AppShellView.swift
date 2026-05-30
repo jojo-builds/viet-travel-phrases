@@ -1256,6 +1256,20 @@ struct AppShellView: View {
         !(source == .browse && browseHeroOverride != nil)
     }
 
+    static func detailBackdropPreheatImageNames(
+        pageID: String,
+        heroImageNameOverride: String? = nil
+    ) -> [String] {
+        let heroImageName = heroImageNameOverride
+            ?? StaticPhraseBackdropImagePolicy.heroImageName(for: pageID)
+            ?? VietnameseMenuCatalog.detailItem(withPageID: pageID)?.menuBackdropImageName
+
+        return PhrasePhotoBackdropLayout.preheatImageNames(
+            pageID: pageID,
+            heroImageName: heroImageName
+        )
+    }
+
     private static let designedXinChaoCanonicalPageID = "viet-phrase-polite-1"
     private static let designedXinChaoDirectPageIDs: Set<String> = [
         PhrasePage.xinChao.id,
@@ -1774,15 +1788,10 @@ struct AppShellView: View {
     }
 
     private func preheatDetailBackdrop(pageID: String, heroImageNameOverride: String? = nil) {
-        let heroImageName = heroImageNameOverride
-            ?? StaticPhraseBackdropImagePolicy.heroImageName(for: pageID)
-            ?? VietnameseMenuCatalog.detailItem(withPageID: pageID)?.menuBackdropImageName
-            ?? VietSQLitePhraseGraphRuntime.heroImageName(for: pageID)
-
         AdminBackdropImagePreheater.preheat(
-            PhrasePhotoBackdropLayout.preheatImageNames(
+            Self.detailBackdropPreheatImageNames(
                 pageID: pageID,
-                heroImageName: heroImageName
+                heroImageNameOverride: heroImageNameOverride
             )
         )
     }

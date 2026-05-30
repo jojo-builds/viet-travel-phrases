@@ -1039,6 +1039,29 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
+    func testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let generatedPageID = "viet-phrase-phone-1"
+        let generatedPage = try XCTUnwrap(PhraseDetailPage.page(withID: generatedPageID))
+        XCTAssertEqual(generatedPage.heroImageName, "BackdropPhrasePhoneCafeCharging")
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertTrue(
+            AppShellView.detailBackdropPreheatImageNames(pageID: generatedPageID).isEmpty,
+            "Generated SQLite-backed pages should not synchronously query SQLite for hero preheat during rapid detail navigation; the active page preheats after its already-loaded detail model supplies the hero image."
+        )
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.heroImageNameLookupCountForTesting, 0)
+
+        XCTAssertEqual(
+            AppShellView.detailBackdropPreheatImageNames(pageID: "viet-phone-hello"),
+            ["BackdropPhrasePhoneCafeCharging"],
+            "Static authored pages still have cheap known backdrop names and can keep immediate navigation preheat."
+        )
+    }
+
     func testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads() {
         XCTAssertEqual(
             AppShellView.browseDetailHeroImageOverride(for: "HeroCategoryAirport"),
