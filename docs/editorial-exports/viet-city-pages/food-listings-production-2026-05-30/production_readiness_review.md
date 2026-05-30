@@ -1114,3 +1114,101 @@ No subagents were spawned or closed in this continuation because the Codex deskt
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
 The four Saigon pages above are materially more save-worthy, and the bottom-chrome screenshot proof gap has a runtime fix plus test coverage. The global catalog still needs the remaining high-visibility food pages and support listings checked in rendered context before the whole 500-page set can honestly be called production-ready.
+
+## Continuation: Saigon Bib Gourmand Recognition Patch
+
+Eighth pass date: 2026-05-30
+
+Commit before pass: `405f834c6 Refine Saigon food listings and bottom proof`
+
+This continuation corrected two current in-app Saigon pages that already had official 2025 MICHELIN Bib Gourmand recognition but were not saying so in visible copy. The fix keeps the restaurant-specific food reason first, with MICHELIN used as a bounded save signal.
+
+### Pages Touched
+
+- `city-hcmc-place-banh-xeo-46a`: added bounded 2025 MICHELIN Bib Gourmand language and sharpened the page around the large pancake, herbs, metal trays, sauce, and wrapping ritual.
+- `city-hcmc-place-bep-me-in`: added bounded 2025 MICHELIN Bib Gourmand language and sharpened the page around shared Vietnamese comfort dishes, clay-pot cues, herbs, and a calmer central room.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claims added only where this source supported them:
+
+- `Banh Xeo 46A`: 2025 MICHELIN Bib Gourmand.
+- `Bep Me In`: 2025 MICHELIN Bib Gourmand.
+
+No new hours, prices, reservation, closure, address, or operational claims were added.
+
+### Add / Replace Candidate Backlog
+
+These are not current-source edits yet. They are official 2025 MICHELIN-recognized add candidates to consider when the catalog needs stronger restaurant representation than weak support listings:
+
+- Saigon MICHELIN Selected candidates not currently represented in the V2.2 source: `Bà Cô Lốc Cốc`, `Hoi An Sense`, `Okra FoodBar`, `ST25 by KOTO`, `The Albion by Kirk Westaway`.
+- Saigon Bib Gourmand candidates not currently represented in the V2.2 source from the visible official list section: `Bò Kho Gánh`, `Bún Bò Huế 14B`, `Chay Garden`, `Hồng Phát`, `Hum Garden`, `Mặn Mòi`, `Nhà Tú`, `Phở Chào`, `Phở Hoàng`.
+- Da Nang new Bib Gourmand candidates not currently represented in the V2.2 source: `Bánh Xèo 76`, `Bún Bò Huế Bà Thương`, `Quê Xưa`, `Shamballa`.
+- Da Nang new MICHELIN Selected candidates not currently represented in the V2.2 source: `Bún Riêu Cua 39`, `Moc`.
+
+Do not drop existing support listings from the app by default. Keep them available for utility and route planning, but do not promote them as headline foodie saves. If a high-visibility shelf or marketing surface needs a tighter restaurant set, the first replacement candidates should come from the official list above before using support-first pages such as `Boulevard Gelato & Coffee`, `Reply 1988`, `Faifo Coffee`, or setting-led Hue dinner pages.
+
+### Validation Status
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-30-hcmc-bib-gourmand-recognition/`
+
+Representative pages captured:
+
+- `viet-family-city-hcmc-place-banh-xeo-46a`
+  - `banh-xeo-46a-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand pancake-table framing.
+- `viet-family-city-hcmc-place-bep-me-in`
+  - `bep-me-in-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand comfort-table framing.
+  - `bep-me-in-bottom-clearance.jpg`: bottom-validation launch shows Mentioned Here, Compare Nearby, and Useful Phrases above the tab bar with reading space below.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-banh-xeo-46a`
+  - `--detail-page viet-family-city-hcmc-place-bep-me-in`
+  - `--detail-page viet-family-city-hcmc-place-bep-me-in --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for all three launches.
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9342 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Saigon Bib Gourmand Recognition Patch
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The current in-app Saigon Bib Gourmand misses above are fixed and rendered. The bigger catalog question remains open: several official 2025 MICHELIN add candidates are not in the 500-source set yet, and weak support listings should stay out of high-visibility foodie surfaces until those add/replace decisions are made.

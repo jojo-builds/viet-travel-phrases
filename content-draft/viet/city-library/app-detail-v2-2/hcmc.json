@@ -1186,11 +1186,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "banh xeo 46a",
-      "travelerMoment": "The place turns bánh xèo into a specific table decision: large pancake, greens, sauce, staff pace, and a meal that may need a little space.",
-      "storySpine": "This is a concrete bánh xèo address, with the large pancake and table ritual carrying the memory more than queue or hours talk.",
+      "travelerMoment": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
+      "storySpine": "46A earns the save because it makes the southern pancake ritual physical: sizzle, fold, herbs, sauce, table space, and a Bib Gourmand signal.",
       "intro": {
-        "heading": "Bánh Xèo With A Table",
-        "body": "Banh Xeo 46A is a named table for the larger restaurant version of bánh xèo, with a crispy pancake, herbs, metal trays, and a wrapping ritual that slows down a meal."
+        "heading": "Bib Gourmand Pancake Table",
+        "body": "Banh Xeo 46A is a 2025 MICHELIN Bib Gourmand table for the larger restaurant version of bánh xèo: crisp pancake, herbs, metal trays, sauce, and a wrapping ritual that slows down the meal."
       },
       "usefulPhraseCards": [
         {
@@ -1222,12 +1222,12 @@
         {
           "id": "the-plate-needs-space",
           "heading": "The Plate Needs Space",
-          "body": "Let this Saigon bite take a few minutes. The pancake, herbs, and dipping sauce need room on the table and a few minutes of attention."
+          "body": "Let the pancake take room. Herbs, dipping sauce, and metal trays need a few minutes of table attention."
         },
         {
           "id": "a-dish-specific-meal",
           "heading": "A Dish-Specific Meal",
-          "body": "Make bánh xèo the point of the meal, not just one item among many."
+          "body": "Make bánh xèo the point of the meal. The Bib Gourmand signal helps, but the crisp edge and wrapping rhythm carry the stop."
         },
         {
           "id": "ingredient-checks-matter",
@@ -1237,7 +1237,7 @@
         {
           "id": "the-pancake-is-the-point",
           "heading": "The Pancake Is The Point",
-          "body": "Remember the named bánh xèo restaurant and its large pancake focus. Leave menu, hours, and service style for the moment you plan the visit."
+          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the useful pause of building each bite."
         }
       ],
       "mentionedHereCandidates": [
@@ -1273,17 +1273,19 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger pancake-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Banh Xeo 46A now links to the dish guide and a relevant casual-table contrast."
+        "reason": "Production food pass: Banh Xeo 46A now has bounded 2025 MICHELIN Bib Gourmand positioning, stronger pancake-table desire, and a relevant casual-table contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: local named-restaurant source"
+        "Production intake source notes: local named-restaurant source",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Xèo 46A as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1529,11 +1531,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "bep me in",
-      "travelerMoment": "Bep Me In borrows the comfort of a family kitchen for a central restaurant meal: Vietnamese dishes, shared plates, and a room that feels settled after street wandering.",
-      "storySpine": "The name’s kitchen cue, family-style dishes, herbs, and clay-pot details give HCMC a softer table-meal story near the center.",
+      "travelerMoment": "Choose Bếp Mẹ Ỉn when central Saigon dinner should be a 2025 MICHELIN Bib Gourmand comfort table: shared Vietnamese dishes, clay-pot cues, herbs, and a calmer room after street walking.",
+      "storySpine": "The kitchen cue, shared plates, clay pots, and Bib Gourmand signal give central Saigon a softer table meal near the market.",
       "intro": {
-        "heading": "An Easy Vietnamese Table",
-        "body": "Bep Me In is a central Saigon restaurant pick when the group wants Vietnamese comfort dishes in a calmer room than the street, with clay pots, herbs, and table pacing."
+        "heading": "Bib Gourmand Comfort Table",
+        "body": "Bep Me In is a 2025 MICHELIN Bib Gourmand central Saigon table for Vietnamese comfort dishes, shared plates, clay-pot cues, herbs, and a calmer room than the street."
       },
       "usefulPhraseCards": [
         {
@@ -1565,22 +1567,22 @@
         {
           "id": "calm-after-central-streets",
           "heading": "After Central Streets",
-          "body": "The appeal is not speed. It is sitting down, looking over the menu, letting dishes arrive, and giving the meal a little room."
+          "body": "The appeal is the room after street movement: sit down, read the menu slowly, let dishes arrive, and give the meal space."
         },
         {
           "id": "a-first-sit-down-meal",
           "heading": "An Easy Sit-Down Meal",
-          "body": "It suits a night when the group wants familiar ordering structure but still wants Vietnamese flavors and central Saigon context."
+          "body": "It suits a night when the group wants familiar ordering structure with Vietnamese flavors and central Saigon context."
         },
         {
           "id": "order-slowly-at-the-table",
           "heading": "Order Slowly At The Table",
-          "body": "Come for an easy-to-follow Vietnamese table rather than a guaranteed dish list. Shared plates, clay-pot cues, herbs, and a settled room do the work."
+          "body": "Come for an easy-to-follow Vietnamese table rather than a single headline dish. Shared plates, clay-pot cues, herbs, and a settled room do the work."
         },
         {
           "id": "shared-plates-fit-better",
           "heading": "Shared Plates Suit The Table",
-          "body": "A restaurant like this is easier with shared plates and a slower table. Expect more than a quick bánh mì counter."
+          "body": "A Bib Gourmand note supports the save, but shared plates still decide the night. Order a few dishes and let the table settle."
         }
       ],
       "mentionedHereCandidates": [
@@ -1616,17 +1618,19 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger shared-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Bep Me In now has central market context and a casual dish-specific comparison."
+        "reason": "Production food pass: Bep Me In now has bounded 2025 MICHELIN Bib Gourmand positioning, central market context, and a casual dish-specific comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: local named-restaurant source"
+        "Production intake source notes: local named-restaurant source",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bếp Mẹ Ỉn as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
