@@ -3903,11 +3903,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "fatfish",
-      "travelerMoment": "This restaurant suits a night that should slow down gently, not just fill time between bridge photos and the ride home.",
-      "storySpine": "Fatfish belongs to a river-table decision: settle in slowly, the right table, and the evening pace matter more than menu detail.",
+      "travelerMoment": "Keep Fatfish for a slower Hàn River dinner when the group wants a calm table after bridge or riverside time, not a dish-first food mission.",
+      "storySpine": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening shape, while stronger food-led pages should lead foodie planning.",
       "intro": {
-        "heading": "A River Table When Dinner Matters",
-        "body": "Fatfish is a river-table choice for a slower Da Nang dinner: terrace light, drinks, Han River blur, and a meal that feels like part of the evening."
+        "heading": "A Slower River Table",
+        "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it for pace and setting; save the dish chase for noodles, pancakes, and soup."
       },
       "usefulPhraseCards": [
         {
@@ -3937,24 +3937,24 @@
       ],
       "sections": [
         {
-          "id": "terrace-first-if-the-air-is-kind",
-          "heading": "Terrace First, If The Air Is Kind",
-          "body": "The riverside seat is the reason to linger. If weather is heavy or the room feels easier, a simple order lets the view do less work."
+          "id": "let-the-river-set-the-pace",
+          "heading": "Let The River Set The Pace",
+          "body": "Let it be a slower table after the day has already had enough movement. Order simply, settle in, and let the river do more work than the menu."
         },
         {
-          "id": "one-round-before-the-table-fills",
-          "heading": "One Round Before The Table Fills",
-          "body": "Begin with drinks and one or two plates, then widen the order after you understand portions. It keeps the meal from becoming table management."
+          "id": "start-small",
+          "heading": "Start Small",
+          "body": "Begin with drinks and one or two plates before widening the order. This keeps the meal easy when the room is about conversation, view, and timing."
         },
         {
-          "id": "an-easy-pair-with-the-river",
-          "heading": "An Easy Pair With The River",
-          "body": "Put Fatfish before or after a Hàn River walk, especially when the day has already had enough movement."
+          "id": "pair-it-with-a-walk",
+          "heading": "Pair It With A Walk",
+          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. It is more route stop than destination meal."
         },
         {
-          "id": "the-room-sets-the-pace",
-          "heading": "The Room Sets The Pace",
-          "body": "The plan stays centered on a slow river dinner rather than a guaranteed terrace or exact menu. The table pace matters more than one detail."
+          "id": "when-food-leads",
+          "heading": "When Food Leads",
+          "body": "For a louder local seafood dinner, compare it with Bé Mặn. If the night should center on a dish, start with noodles, pancakes, or soup."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3963,8 +3963,8 @@
           "catalogId": "viet-family-city-danang-place-be-man",
           "label": "Hải sản Bé Mặn",
           "relationship": "seafood-register contrast",
-          "displaySubtitle": "A louder coastal seafood table when dinner should feel less polished and more local.",
-          "reason": "Be Man is the better seafood contrast for Fatfish than a banh xeo restaurant.",
+          "displaySubtitle": "A louder coastal seafood table when dinner should be food-led, local-feeling, and less polished.",
+          "reason": "Be Man is the better food-led seafood contrast for Fatfish's setting-led river dinner.",
           "status": "render"
         }
       ],
@@ -3979,17 +3979,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Support demotion pass on 2026-05-31: Fatfish remains useful as a Hàn River dinner route stop, but no longer carries headline food-save posture."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 27,
         "max": 30,
-        "reason": "City voice gate passed: Fatfish Restaurant & Lounge Bar has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Support demotion: Fatfish has a real riverfront pacing job, but venue/map evidence and setting-led copy do not justify a headline food-save score."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Venue and local map sources."
+        "Production intake source notes: Venue and local map sources.",
+        "2026-05-31 support cleanup: keep as a riverfront dinner route stop below stronger food-led Da Nang saves."
       ],
       "status": "FINAL_PASS",
       "review": {

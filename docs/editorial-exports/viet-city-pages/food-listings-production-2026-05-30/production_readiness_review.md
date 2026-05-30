@@ -2674,3 +2674,91 @@ This pass proves the add/drop posture can be applied without deleting useful inv
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Fatfish Support Demotion Pass
+
+Twenty-third pass date: 2026-05-31
+
+Commit before pass: `c988d7951 Demote Da Nang Mi Quang support listings`
+
+This continuation applies the same add/drop posture to `Fatfish`: keep the useful place, but stop letting it compete with more food-led Da Nang saves.
+
+### Page Revised
+
+- `city-danang-place-fatfish`: demoted from 30/30 to 27/30 support listing.
+
+Visible page direction:
+
+- The page now frames Fatfish as a slower Hàn River dinner: terrace light, drinks, an easy table after a bridge walk, and a soft landing near the water.
+- The copy no longer presents Fatfish as a headline food recommendation.
+- The related card keeps `Hải sản Bé Mặn` as the stronger food-led seafood contrast.
+
+### Demotion Decision
+
+Decision: keep, but do not lead.
+
+Fatfish still serves a real planning job for Da Nang nights along the river. It should not lead a foodie shelf over MICHELIN-backed or dish-specific pages such as `Bé Mặn`, `Bún Riêu Cua 39`, `Bánh Canh Yến`, `Mỳ Quảng Sứa Hồng Vân`, `Mì Quảng 1A`, or `Bánh xèo Bà Dưỡng`.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-fatfish-support-demotion/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-fatfish`
+  - `fatfish-first-screen.jpg`: first viewport shows the revised `A Slower River Table` framing and playable Useful Phrases immediately after the intro.
+  - `fatfish-bottom-inset.jpg`: bottom-validation launch shows the final sections and `Compare Nearby` card above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-fatfish`
+  - `--detail-page viet-family-city-danang-place-fatfish --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 509 entries imported.
+- native resource generation: PASS, 1756 families, 1774 phrases, 1767 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 509 entries, 509 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing `anchor`, ranking language, and app-internal `support save` wording before final screenshots.
+- city-copy compatibility validation: PASS, 5 hubs, 509 city noun pages, 509 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 509 city places, 815 city phrase tags, 0 release-blocking missing audio rows, 9002 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Fatfish Support Demotion
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens the hierarchy for Da Nang restaurants: a setting-led page can stay when it helps the trip, but it should carry support-score posture and point toward food-led alternatives. The next demotion pass should scan non-guide cafes, bars, and setting-led restaurants still sitting at 30/30 without a distinct food, culture, or route reason to lead.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.

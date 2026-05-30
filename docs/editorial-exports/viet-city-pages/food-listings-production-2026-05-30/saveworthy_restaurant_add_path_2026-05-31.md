@@ -135,6 +135,10 @@ The first explicit support-demotion proof pass for existing restaurants lives un
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-mi-quang-support-demotion/`
 
+The second support-demotion proof pass for an existing restaurant lives under:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-fatfish-support-demotion/`
+
 ## Acceptance Gate
 
 The page is not production-ready until it passes all of these:
