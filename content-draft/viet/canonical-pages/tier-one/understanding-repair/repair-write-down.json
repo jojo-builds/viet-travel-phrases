@@ -7,7 +7,7 @@
   "title": "Viết xuống giúp tôi",
   "englishTitle": "Please write it down",
   "pronunciation": "vee-et zoong zoop toy",
-  "summary": "Viết xuống giúp tôi means “Please write it down”.",
+  "summary": "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -173,7 +173,7 @@
     },
     {
       "id": "you-may-hear",
-      "title": "You may hear",
+      "title": "You May Hear",
       "body": "A local may answer with: I will write it here.",
       "presentation": "plain-text"
     },
