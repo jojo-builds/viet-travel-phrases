@@ -81,11 +81,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-ngu-market",
-          "label": "Chợ Bến Ngự",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "central food-market comparison",
+          "displaySubtitle": "The central market when Huế food shopping should start with bigger names and snack counters.",
+          "reason": "Dong Ba gives An Cuu a stronger first-market comparison.",
           "status": "render"
         }
       ],
@@ -99,7 +99,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -416,9 +417,9 @@
         {
           "catalogId": "viet-family-city-hue-place-ancient-hue-restaurant",
           "label": "Ancient Hue Restaurant",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "garden-house dinner comparison",
+          "displaySubtitle": "A heritage dinner room when garden-house setting should carry more of the evening.",
+          "reason": "Ancient Hue Restaurant is the closest heritage-dining comparison for Gallery Cuisine.",
           "status": "render"
         }
       ],
@@ -432,7 +433,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -525,11 +527,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-tinh-gia-vien",
+          "label": "Tịnh Gia Viên",
+          "relationship": "heritage garden dinner contrast",
+          "displaySubtitle": "A composed garden-house meal when the night should feel more ceremonial.",
+          "reason": "Tinh Gia Vien gives Ancient Hue Restaurant a stronger Hue garden-dining comparison.",
           "status": "render"
         }
       ],
@@ -543,7 +545,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -638,9 +641,9 @@
         {
           "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
           "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-house dinner comparison",
+          "displaySubtitle": "Another old-house dining stop when timber, garden path, and pacing matter.",
+          "reason": "Ancient Hue Gallery Cuisine keeps Ancient Space in the heritage-dinner lane.",
           "status": "render"
         }
       ],
@@ -654,7 +657,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -747,11 +751,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-banh-bot-loc",
+          "label": "Bánh bột lọc ở Huế",
+          "relationship": "named shop to dish guide",
+          "displaySubtitle": "The dish guide when the banana-leaf parcels need texture and ordering context.",
+          "reason": "Banh bot loc is the natural dish page for Bà Vân.",
           "status": "render"
         }
       ],
@@ -765,7 +769,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1083,11 +1088,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-ba-van-banh-loc",
+          "label": "Bánh lọc Bà Vân",
+          "relationship": "dish-to-named-parcel shop",
+          "displaySubtitle": "A named bánh lọc stop when the dish page needs a real counter.",
+          "reason": "Bà Vân turns the bánh bột lọc guide into a saveable place.",
           "status": "render"
         }
       ],
@@ -1101,7 +1106,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1232,7 +1238,7 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -1328,8 +1334,8 @@
           "catalogId": "viet-family-city-hue-place-banh-khoai",
           "label": "Bánh khoái ở Huế",
           "relationship": "Hue snack texture contrast",
-          "displaySubtitle": "A brighter, crunchier Hue snack when the table needs contrast after soft banana-leaf bites.",
-          "reason": "Banh khoai gives a clearer texture contrast than a generic same-city dish card.",
+          "displaySubtitle": "A brighter, crunchier Huế snack when the table needs contrast after soft banana-leaf bites.",
+          "reason": "Banh khoai gives banh nam a clearer texture contrast.",
           "status": "render"
         }
       ],
@@ -1344,7 +1350,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1659,11 +1666,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "central food-market comparison",
+          "displaySubtitle": "The bigger central market when snacks, souvenirs, and food names should be easier to recognize.",
+          "reason": "Dong Ba is the better first-market contrast for Ben Ngu.",
           "status": "render"
         }
       ],
@@ -1677,7 +1684,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1772,9 +1780,9 @@
         {
           "catalogId": "viet-family-city-hue-place-de-po-cafe",
           "label": "De Po Cafe",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river cafe to design-cafe contrast",
+          "displaySubtitle": "A more design-led coffee stop when the pause should feel less riverside-bistro.",
+          "reason": "De Po gives Ben Trang a clearer cafe-style contrast.",
           "status": "render"
         }
       ],
@@ -1788,7 +1796,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1911,7 +1920,7 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -2004,11 +2013,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-com-hen",
+          "label": "Cơm hến ở Huế",
+          "relationship": "clam-noodle to clam-rice choice",
+          "displaySubtitle": "The rice version when the same tiny-clam habit should become a fuller plate.",
+          "reason": "Com hen is the closest Huế food decision after bun hen.",
           "status": "render"
         }
       ],
@@ -2022,7 +2031,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2115,11 +2125,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-banh-khoai",
+          "label": "Bánh khoái ở Huế",
+          "relationship": "grilled bowl to pancake crunch",
+          "displaySubtitle": "A crunchier Huế table when herbs and sauce should move from bowl to pancake.",
+          "reason": "Banh khoai gives bun thit nuong a better texture route.",
           "status": "render"
         }
       ],
@@ -2133,7 +2143,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2449,11 +2460,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-bun-bo-city",
+          "label": "Bún bò Huế",
+          "relationship": "rice plate to signature bowl",
+          "displaySubtitle": "The city’s signature bowl when a rice-plate page should connect to a stronger first Huế meal.",
+          "reason": "Bun bo Hue gives com am phu a more recognizable food route for first-timers.",
           "status": "render"
         }
       ],
@@ -2467,7 +2478,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2560,11 +2572,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-hen-island",
+          "label": "Cồn Hến",
+          "relationship": "clam rice to island context",
+          "displaySubtitle": "The island context behind the tiny-clam rice habit.",
+          "reason": "Hen Island gives com hen a place story instead of only another dish comparison.",
           "status": "render"
         }
       ],
@@ -2578,7 +2590,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2782,11 +2795,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-tinh-gia-vien",
+          "label": "Tịnh Gia Viên",
+          "relationship": "Hue dining room contrast",
+          "displaySubtitle": "A garden-house meal when the setting should feel more composed and courtly.",
+          "reason": "Tinh Gia Vien is the stronger Hue dining comparison for Dai Nam.",
           "status": "render"
         }
       ],
@@ -2800,7 +2813,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2893,11 +2907,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-lang-thang-coffee",
+          "label": "Lang Thang Coffee",
+          "relationship": "design-cafe to old-coffee contrast",
+          "displaySubtitle": "A slower coffee room when the stop should feel more local and less polished.",
+          "reason": "Lang Thang gives De Po a useful cafe-mood contrast.",
           "status": "render"
         }
       ],
@@ -2911,7 +2925,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -3264,7 +3279,7 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -4933,11 +4948,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-mandarin-coffee-restaurant",
+          "label": "Mandarin Coffee & Restaurant",
+          "relationship": "memory cafe to photo-cafe contrast",
+          "displaySubtitle": "A cafe-restaurant stop when old-Huế mood should connect to photos and a broader menu.",
+          "reason": "Mandarin gives Không Gian Hoài Cổ a practical cafe-and-food contrast.",
           "status": "render"
         }
       ],
@@ -4951,7 +4966,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5155,11 +5171,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-de-po-cafe",
+          "label": "De Po Cafe",
+          "relationship": "modern cafe-room comparison",
+          "displaySubtitle": "A more design-led coffee room when the pause should feel cleaner and more contemporary.",
+          "reason": "De Po is a clearer modern-cafe comparison for KODO.",
           "status": "render"
         }
       ],
@@ -5173,7 +5189,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5377,11 +5394,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-de-po-cafe",
+          "label": "De Po Cafe",
+          "relationship": "old-coffee to design-cafe contrast",
+          "displaySubtitle": "A more polished coffee stop when the group wants a cleaner modern room.",
+          "reason": "De Po gives Lang Thang a useful modern-cafe contrast.",
           "status": "render"
         }
       ],
@@ -5395,7 +5412,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5929,9 +5947,9 @@
         {
           "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
           "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "villa dining to heritage dinner contrast",
+          "displaySubtitle": "A heritage-style dinner when the meal should stay closer to Huế garden-house memory.",
+          "reason": "Ancient Hue Gallery Cuisine is a stronger local-dining comparison for Les Jardins.",
           "status": "render"
         }
       ],
@@ -5945,7 +5963,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -6040,9 +6059,9 @@
         {
           "catalogId": "viet-family-city-hue-place-tinh-gia-vien",
           "label": "Tịnh Gia Viên",
-          "relationship": "same-city Hue dining contrast",
+          "relationship": "vegetarian to composed Hue dinner contrast",
           "displaySubtitle": "A garden-house meal when setting, courtyard, and composed pacing should lead.",
-          "reason": "Tinh Gia Vien is a better Hue dining comparison than a generic restaurant relation.",
+          "reason": "Tinh Gia Vien is a better Hue dining comparison for Liên Hoa.",
           "status": "render"
         }
       ],
@@ -6057,7 +6076,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -6261,11 +6281,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-thanh-cafe",
+          "label": "Thành Cafe",
+          "relationship": "photo-cafe to simple coffee stop",
+          "displaySubtitle": "A simpler cafe pause when coffee matters more than a full restaurant stop.",
+          "reason": "Thành Cafe gives Mandarin a clearer everyday-coffee contrast.",
           "status": "render"
         }
       ],
@@ -6279,7 +6299,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -7271,11 +7292,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-walking-street",
+          "label": "Phố đi bộ Huế",
+          "relationship": "night-market to walking-street route",
+          "displaySubtitle": "The walking-street context when snacks, lights, and evening flow matter more than shopping.",
+          "reason": "Walking Street gives the night market a real evening route.",
           "status": "render"
         }
       ],
@@ -7289,7 +7310,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -8154,11 +8176,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "local market to central food-market contrast",
+          "displaySubtitle": "The central market when the plan needs recognizable Huế food names and easier orientation.",
+          "reason": "Dong Ba gives Phu Hau a clearer first-market comparison.",
           "status": "render"
         }
       ],
@@ -8172,7 +8194,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -8709,11 +8732,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-perfume-river-dragon-boat",
+          "label": "Thuyền rồng sông Hương",
+          "relationship": "river meal to boat context",
+          "displaySubtitle": "The river-boat context when dinner is really about being on the Perfume River.",
+          "reason": "The dragon-boat page explains the river setting behind a floating restaurant plan.",
           "status": "render"
         }
       ],
@@ -8727,7 +8750,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -9148,11 +9172,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "neighborhood market to central food-market contrast",
+          "displaySubtitle": "The bigger central market when food counters and souvenir flow should be easier to navigate.",
+          "reason": "Dong Ba is the stronger first-time comparison for Tay Loc.",
           "status": "render"
         }
       ],
@@ -9166,7 +9190,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -9370,11 +9395,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ben-trang-cafe-bistro",
-          "label": "Bến Trắng Cafe & Bistro",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-mandarin-coffee-restaurant",
+          "label": "Mandarin Coffee & Restaurant",
+          "relationship": "simple coffee to photo-cafe contrast",
+          "displaySubtitle": "A cafe-restaurant stop when the pause should carry more local art and story.",
+          "reason": "Mandarin gives Thành Cafe a fuller coffee-and-room comparison.",
           "status": "render"
         }
       ],
@@ -9388,7 +9413,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -10476,11 +10502,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "mall-to-market contrast",
+          "displaySubtitle": "The central market counterpoint when polished shopping should become Huế food browsing.",
+          "reason": "Dong Ba clarifies the difference between mall comfort and market food energy.",
           "status": "render"
         }
       ],
@@ -10494,7 +10520,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -11137,11 +11164,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-tinh-gia-vien",
+          "label": "Tịnh Gia Viên",
+          "relationship": "garden-house dinner comparison",
+          "displaySubtitle": "Another composed garden-house meal when courtyard, pacing, and Huế food memory matter.",
+          "reason": "Tinh Gia Vien is the closest garden-dining comparison for Ý Thảo Garden.",
           "status": "render"
         }
       ],
@@ -11155,7 +11182,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {

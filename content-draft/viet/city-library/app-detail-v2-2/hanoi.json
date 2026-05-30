@@ -303,11 +303,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha",
-          "label": "Bún chả ở Hà Nội",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-xoi-xeo",
+          "label": "Xôi xéo ở Hà Nội",
+          "relationship": "breakfast texture contrast",
+          "displaySubtitle": "Another Hanoi breakfast bite when sticky rice and mung bean sound better than rice rolls.",
+          "reason": "Xoi xeo gives the banh cuon page a real morning-food decision.",
           "status": "render"
         }
       ],
@@ -321,7 +321,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-banh-cuon: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -537,9 +538,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ta-hien",
           "label": "Phố Tạ Hiện",
-          "relationship": "same-city drink/nightlife route",
-          "displaySubtitle": "The louder Old Quarter beer-street option when the group wants more night energy.",
-          "reason": "Ta Hien is the natural route comparison for bia hơi, not a generic drink card.",
+          "relationship": "Old Quarter beer route",
+          "displaySubtitle": "The louder beer-street option when the group wants more night energy.",
+          "reason": "Ta Hien gives bia hoi a clear Old Quarter path for groups who want a beer-street night.",
           "status": "render"
         }
       ],
@@ -554,7 +555,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bia-hoi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -750,9 +752,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
-          "relationship": "curated route comparison",
-          "displaySubtitle": "A named bun cha table when the meal needs a specific address.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "named bun cha table",
+          "displaySubtitle": "A real address when the dish page needs a specific bowl-and-grill stop.",
+          "reason": "Huong Lien turns the bun cha guide into a saveable meal stop.",
           "status": "render"
         }
       ],
@@ -766,7 +768,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -983,9 +986,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "bun cha table comparison",
+          "displaySubtitle": "Another named bun cha room, useful when the plan is one dish and a real address.",
+          "reason": "Huong Lien gives Bun Cha Ta a same-dish comparison for bun cha planning.",
           "status": "render"
         }
       ],
@@ -999,7 +1002,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-ta: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1087,11 +1091,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-banh-cuon",
-          "label": "Bánh cuốn ở Hà Nội",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-pho-ga",
+          "label": "Phở gà ở Hà Nội",
+          "relationship": "delicate noodle-bowl contrast",
+          "displaySubtitle": "A simpler chicken-noodle bowl when bún thang feels too elaborate for the moment.",
+          "reason": "Pho ga keeps the comparison in Hanoi noodle breakfasts and light meals.",
           "status": "render"
         }
       ],
@@ -1105,7 +1109,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-thang: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1198,11 +1203,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bia-hoi",
-          "label": "Bia hơi Hà Nội",
-          "relationship": "same-city drink comparison",
-          "displaySubtitle": "A drink in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
+          "label": "Cà phê Đinh",
+          "relationship": "iced coffee to old cafe room",
+          "displaySubtitle": "An old upstairs room when iced coffee should become a Hanoi cafe stop.",
+          "reason": "Dinh gives the iced-coffee page a specific room and lake-edge coffee context.",
           "status": "render"
         }
       ],
@@ -1216,7 +1221,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ca-phe-sua-da: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1433,9 +1439,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
-          "relationship": "same-city signature-dish comparison",
+          "relationship": "signature-dish table comparison",
           "displaySubtitle": "Another Hanoi meal where one famous dish carries the table.",
-          "reason": "Huong Lien is a better food-route comparison than a generic restaurant relation.",
+          "reason": "Huong Lien is a useful food-route comparison for another one-dish Hanoi meal.",
           "status": "render"
         }
       ],
@@ -1450,7 +1456,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cha-ca-thang-long: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1545,9 +1552,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-dong-xuan",
           "label": "Chợ Đồng Xuân",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central market comparison",
+          "displaySubtitle": "The Old Quarter market when the plan needs a bigger food-and-goods stop.",
+          "reason": "Dong Xuan gives Cho Buoi a more central market comparison for first-time orientation.",
           "status": "render"
         }
       ],
@@ -1561,7 +1568,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cho-buoi-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -1767,9 +1775,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
           "label": "Cà phê Đinh",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old Hanoi cafe contrast",
+          "displaySubtitle": "A smaller upstairs room when the coffee stop should feel older and less branded.",
+          "reason": "Dinh is the sharper Hanoi-cafe contrast for a Cộng page.",
           "status": "render"
         }
       ],
@@ -1783,7 +1791,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cong-ca-phe-trieu-viet-vuong: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -2788,9 +2797,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
-          "relationship": "same-city Michelin-starred dinner comparison",
+          "relationship": "2025 One MICHELIN Star northern dinner comparison",
           "displaySubtitle": "A 2025 One MICHELIN Star northern table with wood, rice, and shared dishes.",
-          "reason": "Tam Vi is a more relevant star-level Hanoi comparison than a generic bun cha relation.",
+          "reason": "Tam Vi is the relevant star-level Hanoi comparison for Gia.",
           "status": "render"
         }
       ],
@@ -2805,7 +2814,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-gia: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -3022,17 +3032,17 @@
         {
           "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
           "label": "Cà phê Đinh",
-          "relationship": "same-city egg-coffee comparison",
-          "displaySubtitle": "Another old Hanoi cafe mood after you understand the origin cup.",
-          "reason": "The page tells travelers to compare Hanoi cafe moods after Giảng; Đinh is a direct local cafe comparison.",
+          "relationship": "egg-coffee room comparison",
+          "displaySubtitle": "Another old Hanoi cafe room after you understand the origin cup.",
+          "reason": "Dinh keeps the next step inside Hanoi egg-coffee history.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-the-note-coffee",
           "label": "The Note Coffee",
-          "relationship": "same-city cafe mood comparison",
-          "displaySubtitle": "A very different lake-area cafe stop after the origin ritual.",
-          "reason": "The page names The Note as a different cafe mood; it has a target page in the approved inventory.",
+          "relationship": "lake-area cafe contrast",
+          "displaySubtitle": "A much more playful lake-area cafe stop after the origin ritual.",
+          "reason": "The Note gives Giang a clear mood contrast for coffee planning.",
           "status": "render"
         }
       ],
@@ -3046,7 +3056,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Voice-pattern pilot update on 2026-05-30: cafe page revised for origin ritual, room expectation, and hot-cup first move.",
-          "Save-worthy food voice pass on 2026-05-30: strengthened egg-coffee origin value, added the egg-coffee Mentioned Here candidate, and replaced generic cafe related-card copy."
+          "Save-worthy food voice pass on 2026-05-30: strengthened egg-coffee origin value, added the egg-coffee Mentioned Here candidate, and replaced generic cafe related-card copy.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -3363,11 +3374,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-dong-xuan",
+          "label": "Chợ Đồng Xuân",
+          "relationship": "Old Quarter market scale contrast",
+          "displaySubtitle": "A bigger Old Quarter market when the stop should include crowd flow, food, and goods.",
+          "reason": "Dong Xuan gives Hang Da a clear scale comparison inside the same central area.",
           "status": "render"
         }
       ],
@@ -3381,7 +3392,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hang-da-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -3809,9 +3821,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia",
           "label": "Gia",
-          "relationship": "same-city Michelin-starred dinner comparison",
-          "displaySubtitle": "A calmer contemporary Vietnamese dinner when the room should carry the evening.",
-          "reason": "Gia is a better same-city star-level comparison than the previous generic restaurant relation.",
+          "relationship": "2025 star dinner contrast",
+          "displaySubtitle": "A contemporary Vietnamese dinner when a quieter room should become the evening.",
+          "reason": "Gia is the stronger Hanoi star-level contrast for Hibana by Koki.",
           "status": "render"
         }
       ],
@@ -3826,7 +3838,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hibana-by-koki: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -4364,11 +4377,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-hang-da-market",
+          "label": "Chợ Hàng Da",
+          "relationship": "fabric-and-central-market comparison",
+          "displaySubtitle": "A central market stop when fabric browsing should connect to Old Quarter errands.",
+          "reason": "Hang Da is a better market comparison for Hom than a plant-and-pet market.",
           "status": "render"
         }
       ],
@@ -4382,7 +4395,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hom-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -4586,11 +4600,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
-          "label": "Cộng Cà Phê",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-giang-cafe",
+          "label": "Cà phê Giảng",
+          "relationship": "old cafe room comparison",
+          "displaySubtitle": "Another old Hanoi coffee room, with egg coffee carrying more of the ritual.",
+          "reason": "Giang is a useful historic-cafe comparison for Lam.",
           "status": "render"
         }
       ],
@@ -4604,7 +4618,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lam-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -4699,9 +4714,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
-          "relationship": "same-city recognized dinner contrast",
-          "displaySubtitle": "A 2025 One MICHELIN Star northern table with shared dishes and a home-table mood.",
-          "reason": "Tam Vi is a relevant recognized-dinner comparison for Lamai Garden.",
+          "relationship": "green-star to northern-table contrast",
+          "displaySubtitle": "A 2025 One MICHELIN Star northern table when dinner should feel more home-style.",
+          "reason": "Tam Vi gives Lamai Garden a recognized-dinner comparison with a different food memory.",
           "status": "render"
         }
       ],
@@ -4716,7 +4731,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lamai-garden: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5029,9 +5045,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
           "label": "Cà phê Đinh",
-          "relationship": "curated route comparison",
+          "relationship": "upstairs coffee route",
           "displaySubtitle": "A second upstairs coffee room near the lake edge.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "reason": "Dinh keeps Loading T in the old-building coffee route.",
           "status": "render"
         }
       ],
@@ -5045,7 +5061,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-loading-t-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5253,11 +5270,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-quang-ba-flower-market",
+          "label": "Chợ hoa Quảng Bá",
+          "relationship": "pre-dawn market route",
+          "displaySubtitle": "Another before-breakfast market when Hanoi is still working in the dark.",
+          "reason": "Quang Ba is the natural early-hours market comparison for Long Bien.",
           "status": "render"
         }
       ],
@@ -5271,7 +5288,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-long-bien-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -5616,7 +5634,7 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-mien-luon-chan-cam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -5821,11 +5839,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
-          "label": "Cộng Cà Phê",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-lam-cafe",
+          "label": "Cà phê Lâm",
+          "relationship": "old Hanoi coffee-room comparison",
+          "displaySubtitle": "Another compact old cafe room when the stop is about coffee rhythm, not views.",
+          "reason": "Lam is a closer old-cafe comparison for Năng than a themed coffee chain.",
           "status": "render"
         }
       ],
@@ -5839,7 +5857,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nang-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -6043,11 +6062,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-banh-cuon",
-          "label": "Bánh cuốn ở Hà Nội",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "label": "Bún chả ở Hà Nội",
+          "relationship": "fried-roll to grill table pairing",
+          "displaySubtitle": "A grilled-pork noodle table where crab rolls can feel like part of the order.",
+          "reason": "Bun cha gives nem cua be a natural meal context instead of an isolated snack card.",
           "status": "render"
         }
       ],
@@ -6061,7 +6080,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nem-cua-be: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -6376,11 +6396,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-ta-hien",
+          "label": "Phố Tạ Hiện",
+          "relationship": "Old Quarter night continuation",
+          "displaySubtitle": "The beer-street continuation when market browsing turns into the night.",
+          "reason": "Ta Hien gives the night-market page a practical next stop in the same evening zone.",
           "status": "render"
         }
       ],
@@ -6394,7 +6414,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-night-market-walk: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -7264,11 +7285,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
+          "label": "Phở Gia Truyền",
+          "relationship": "pho-counter comparison",
+          "displaySubtitle": "Another beef-pho counter when the choice is queue, broth, and room pace.",
+          "reason": "Pho Gia Truyen is the direct named-pho comparison for Pho Bat Dan.",
           "status": "render"
         }
       ],
@@ -7282,7 +7303,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bat-dan: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -7499,7 +7521,7 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "same-city pho-counter comparison",
+          "relationship": "pho-counter comparison",
           "displaySubtitle": "Another Hanoi pho counter when broth, queue, and room pace are the comparison.",
           "reason": "Pho Gia Truyen is the natural same-dish comparison for a named pho stop.",
           "status": "render"
@@ -7516,7 +7538,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bo-lam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -7610,11 +7633,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-banh-cuon",
-          "label": "Bánh cuốn ở Hà Nội",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-pho-bo",
+          "label": "Phở bò ở Hà Nội",
+          "relationship": "chicken-versus-beef pho choice",
+          "displaySubtitle": "The beef-pho guide when the decision is clearer broth or deeper beef flavor.",
+          "reason": "Pho bo gives pho ga the most useful ordering contrast.",
           "status": "render"
         }
       ],
@@ -7628,7 +7651,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-ga: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -7954,11 +7978,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-long-bien-market",
+          "label": "Chợ Long Biên",
+          "relationship": "pre-dawn market counterpart",
+          "displaySubtitle": "The produce-market counterpart when the city is moving before breakfast.",
+          "reason": "Long Bien keeps Quang Ba in the early-hours working-market route.",
           "status": "render"
         }
       ],
@@ -7972,7 +7996,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-quang-ba-flower-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -8521,7 +8546,7 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia",
           "label": "Gia",
-          "relationship": "same-city Michelin-starred dinner comparison",
+          "relationship": "2025 One MICHELIN Star dinner contrast",
           "displaySubtitle": "A contemporary Hanoi dinner when a quieter room should become the plan.",
           "reason": "Gia is the most relevant star-level Hanoi comparison for Tam Vi.",
           "status": "render"
@@ -8538,7 +8563,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tam-vi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -8849,11 +8875,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
-          "label": "Cộng Cà Phê",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-giang-cafe",
+          "label": "Cà phê Giảng",
+          "relationship": "egg-coffee origin contrast",
+          "displaySubtitle": "The older egg-coffee room when notes and views should become Hanoi coffee history.",
+          "reason": "Giang gives The Note a meaningful old-cafe counterpoint.",
           "status": "render"
         }
       ],
@@ -8867,7 +8893,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -9295,11 +9322,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-dong-xuan",
+          "label": "Chợ Đồng Xuân",
+          "relationship": "mall-to-old-market contrast",
+          "displaySubtitle": "The old-market counterpoint when polished shopping needs food, fabric, and crowd energy.",
+          "reason": "Dong Xuan clarifies what Trang Tien is not: a working market with food-and-goods flow.",
           "status": "render"
         }
       ],
@@ -9313,7 +9340,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-trang-tien-plaza: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -9862,9 +9890,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-lamai-garden",
           "label": "Lamai Garden",
-          "relationship": "same-city vegetarian/green dinner contrast",
+          "relationship": "vegetarian to green-star garden contrast",
           "displaySubtitle": "A 2025 MICHELIN Green Star garden-side dinner with herbs and a calmer room.",
-          "reason": "Lamai Garden is a more useful vegetarian/green-leaning comparison than a generic restaurant card.",
+          "reason": "Lamai Garden is a useful vegetarian-leaning recognized-dinner comparison for Uu Dam.",
           "status": "render"
         }
       ],
@@ -9879,7 +9907,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-udam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -10634,11 +10663,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cho-buoi-market",
-          "label": "Chợ Bưởi",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-ta-hien",
+          "label": "Phố Tạ Hiện",
+          "relationship": "Old Quarter night continuation",
+          "displaySubtitle": "The beer-street continuation when souvenir browsing turns into a louder night.",
+          "reason": "Ta Hien gives the weekend night market a clear next stop in the Old Quarter.",
           "status": "render"
         }
       ],
@@ -10652,7 +10681,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-weekend-night-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
@@ -11075,9 +11105,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-banh-cuon",
           "label": "Bánh cuốn ở Hà Nội",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "breakfast texture contrast",
+          "displaySubtitle": "Soft rice rolls when breakfast should be lighter, steamy, and sauce-led.",
+          "reason": "Banh cuon gives xoi xeo a real Hanoi breakfast contrast.",
           "status": "render"
         }
       ],
@@ -11091,7 +11121,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-xoi-xeo: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {

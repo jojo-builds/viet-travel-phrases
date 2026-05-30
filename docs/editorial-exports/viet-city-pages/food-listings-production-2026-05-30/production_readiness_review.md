@@ -489,3 +489,172 @@ Results:
 Status remains `REVISE_BEFORE_GLOBAL_PRODUCTION`.
 
 Da Nang and Hoi An food-surface graph debt is in much better shape, but Hanoi, Saigon, and Hue still need the same related-card specificity pass, and none of these changes have been render-reviewed in the app yet. The next real production gate is screenshot proof for representative food/place pages: intro, phrase cards, Mentioned Here, related cards, and chrome spacing.
+
+## Continuation: Hanoi / Saigon / Hue Food Graph Completion
+
+Fourth pass date: 2026-05-30
+Commit before pass: `ca3caba5e Improve Da Nang Hoi An food graph links`
+
+This continuation finished the strict food-surface related-card pass for the remaining three cities. The edit target was narrow: remove generic `same-city` / `different pace` related cards from food, cafe, market, drink, dessert, bar, and restaurant pages, then replace them with specific trip-building logic.
+
+The point was not to force every subcategory into the same structure. Dish pages now tend to point to named places or useful food contrasts. Restaurants point to comparable meal decisions. Cafes point to room, ritual, or coffee-register differences. Markets point to route, errand, or snack context. Malls and support stops stay practical instead of pretending to be headline food anchors.
+
+### Pages Touched
+
+Hanoi:
+
+- `city-hanoi-place-banh-cuon`
+- `city-hanoi-place-bia-hoi`
+- `city-hanoi-place-bun-cha`
+- `city-hanoi-place-bun-cha-ta`
+- `city-hanoi-place-bun-thang`
+- `city-hanoi-place-ca-phe-sua-da`
+- `city-hanoi-place-cha-ca-thang-long`
+- `city-hanoi-place-cho-buoi-market`
+- `city-hanoi-place-cong-ca-phe-trieu-viet-vuong`
+- `city-hanoi-place-gia`
+- `city-hanoi-place-giang-cafe`
+- `city-hanoi-place-hang-da-market`
+- `city-hanoi-place-hibana-by-koki`
+- `city-hanoi-place-hom-market`
+- `city-hanoi-place-lam-cafe`
+- `city-hanoi-place-lamai-garden`
+- `city-hanoi-place-loading-t-cafe`
+- `city-hanoi-place-long-bien-market`
+- `city-hanoi-place-nang-cafe`
+- `city-hanoi-place-nem-cua-be`
+- `city-hanoi-place-night-market-walk`
+- `city-hanoi-place-pho-bat-dan`
+- `city-hanoi-place-pho-bo-lam`
+- `city-hanoi-place-pho-ga`
+- `city-hanoi-place-quang-ba-flower-market`
+- `city-hanoi-place-tam-vi`
+- `city-hanoi-place-the-note-coffee`
+- `city-hanoi-place-trang-tien-plaza`
+- `city-hanoi-place-udam`
+- `city-hanoi-place-weekend-night-market`
+- `city-hanoi-place-xoi-xeo`
+
+Saigon:
+
+- `city-hcmc-place-42-nguyen-hue-apartment`
+- `city-hcmc-place-akuna`
+- `city-hcmc-place-an-dong-market`
+- `city-hcmc-place-anan-saigon`
+- `city-hcmc-place-banh-xeo`
+- `city-hcmc-place-bun-thit-nuong`
+- `city-hcmc-place-cafe-apartment-nguyen-hue`
+- `city-hcmc-place-che`
+- `city-hcmc-place-ciel`
+- `city-hcmc-place-coco-dining`
+- `city-hcmc-place-com-tam-ba-ghien`
+- `city-hcmc-place-cong-ca-phe-dong-khoi`
+- `city-hcmc-place-cuc-gach-quan`
+- `city-hcmc-place-goi-cuon`
+- `city-hcmc-place-hu-tieu`
+- `city-hcmc-place-little-hanoi-egg-coffee`
+- `city-hcmc-place-lusine-thao-dien`
+- `city-hcmc-place-nephele`
+- `city-hcmc-place-pho-hoa-pasteur`
+- `city-hcmc-place-russian-market`
+- `city-hcmc-place-saigon-square`
+- `city-hcmc-place-takashimaya-saigon-centre`
+- `city-hcmc-place-vincom-dong-khoi`
+
+Hue:
+
+- `city-hue-place-an-cuu-market`
+- `city-hue-place-ancient-hue-gallery-cuisine`
+- `city-hue-place-ancient-hue-restaurant`
+- `city-hue-place-ancient-space-restaurant`
+- `city-hue-place-ba-van-banh-loc`
+- `city-hue-place-banh-bot-loc`
+- `city-hue-place-banh-nam`
+- `city-hue-place-ben-ngu-market`
+- `city-hue-place-ben-trang-cafe-bistro`
+- `city-hue-place-bun-hen`
+- `city-hue-place-bun-thit-nuong`
+- `city-hue-place-com-am-phu`
+- `city-hue-place-com-hen`
+- `city-hue-place-dai-nam-restaurant`
+- `city-hue-place-de-po-cafe`
+- `city-hue-place-khong-gian-hoai-co-coffee`
+- `city-hue-place-kodo-cafe`
+- `city-hue-place-lang-thang-coffee`
+- `city-hue-place-les-jardins`
+- `city-hue-place-lien-hoa-vegetarian`
+- `city-hue-place-mandarin-coffee-restaurant`
+- `city-hue-place-night-market`
+- `city-hue-place-phu-hau-market`
+- `city-hue-place-song-huong-floating-restaurant`
+- `city-hue-place-tay-loc-market`
+- `city-hue-place-thanh-cafe`
+- `city-hue-place-truong-tien-plaza`
+- `city-hue-place-y-thao-garden`
+
+### Food Graph Metrics After This Pass
+
+Measured on food-surface categories only: `Restaurant`, `Cafe`, `Market`, `Dish`, `Dessert`, `Drink`, `Bar`.
+
+Current strict scan after this continuation:
+
+- Food-surface pages: 195.
+- Food pages with generic `same-city` / `different pace` related-card language: 0.
+- Food pages with rendered Mentioned Here candidates: 41.
+
+By city after this continuation:
+
+- Da Nang: 0 generic food related cards, 12 food Mentioned Here pages.
+- Hanoi: 0 generic food related cards, 11 food Mentioned Here pages.
+- Saigon: 0 generic food related cards, 7 food Mentioned Here pages.
+- Hoi An: 0 generic food related cards, 6 food Mentioned Here pages.
+- Hue: 0 generic food related cards, 5 food Mentioned Here pages.
+
+This is a graph-copy metric only. It does not claim every restaurant page has enough food-specific desire, enough review-backed dish detail, or rendered screenshot proof.
+
+### Notable Direction Changes
+
+- Hanoi dish pages now route through breakfast texture, named bun cha / pho counters, Old Quarter night flow, old cafe rooms, and 2025 MICHELIN-bounded dinner comparisons.
+- Saigon dish and restaurant pages now separate everyday food from planned dinners: Bánh xèo points to Bánh xèo 46A, dessert points into Hồ Thị Kỷ evening-snack context, L'Usine points to a coffee-craft contrast, and One MICHELIN Star pages compare against other planned-dinner saves.
+- Hue food pages now use stronger local logic: clam rice connects to Cồn Hến, bánh bột lọc connects to Bánh lọc Bà Vân, floating dinner connects to Perfume River boat context, and markets route through Đông Ba when first-time food orientation matters.
+- Leftover internal `anchor` wording was removed from the edited Hanoi / Saigon / Hue source files.
+- No new MICHELIN claims were added beyond the existing 2025-bounded wording. Re-check official MICHELIN sources before release if a newer Vietnam guide has been published.
+
+### Validation Run After Hanoi / Saigon / Hue Continuation
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, integrity OK, 8784 relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk
+
+Status remains `REVISE_BEFORE_GLOBAL_PRODUCTION`.
+
+The food-surface related-card graph is now much stronger across all five cities, but the full production-ready promise still requires rendered app proof and a focused page-level food-desire review. The highest remaining editorial risk is not generic related cards anymore; it is whether each restaurant, cafe, market, and dish page itself makes a foodie want to save it before the trip.
