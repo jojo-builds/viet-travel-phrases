@@ -168,6 +168,15 @@ enum AdminPhotoBackdropSurfaceLayout {
     }
 }
 
+enum AdminPhotoBackdropTaskPolicy {
+    static func shouldRunInitialPositionTask(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
+    }
+}
+
 struct AdminPhotoBackdropScrollState: Equatable {
     let displayOffset: CGFloat
     let hasPassedRevealThreshold: Bool
@@ -296,8 +305,14 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                 isImmersive = false
                                 scrollProxy.scrollTo(topAnchorID, anchor: .top)
                             }
-                            .task(id: isVisible) {
-                                guard isVisible else {
+                            .task(id: AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                                isActive: isActive,
+                                isVisible: isVisible
+                            )) {
+                                guard AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
                                     return
                                 }
 
@@ -489,7 +504,7 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         }
 
         try? await Task.sleep(nanoseconds: 80_000_000)
-        guard !Task.isCancelled, isVisible else {
+        guard !Task.isCancelled, isActive, isVisible else {
             return
         }
 

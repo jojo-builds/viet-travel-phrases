@@ -504,6 +504,27 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: true))
     }
 
+    func testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages() {
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: false,
+                isVisible: true
+            )
+        )
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: true,
+                isVisible: true
+            )
+        )
+    }
+
     func testVietnameseMenuPhotoBackdropScrollCoordinatorPublishesOnlyDisplayOffsetChanges() {
         let coordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
         var publishCount = 0
