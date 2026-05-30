@@ -1771,12 +1771,34 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(navigation.shouldRenderRootSurface(.home))
         XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
         XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
 
         navigation.goBack()
 
         XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
         XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
         XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
+    }
+
+    func testRootXinChaoSurfaceRendersOnlyWhenCurrentBackOrForwardRouteNeedsIt() {
+        var navigation = AppShellNavigationState(initialRoute: .phrasePage)
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.home))
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
+
+        navigation.goBack()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
     }
 
     func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {

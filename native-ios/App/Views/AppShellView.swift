@@ -477,34 +477,39 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
-                PhraseListingView(
-                    page: .xinChao,
-                    scrollToTopTrigger: navigation.rootScrollToTopTrigger,
-                    chromeNamespace: chromeNamespace,
-                    isSearchActive: navigation.isSearchPresented,
-                    isActive: navigation.currentRoute == .phrasePage,
-                    showsChrome: false,
-                    topChromeContentClearance: pinnedAudioSpeedScrollClearance,
-                    isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                    isPageSaved: { intentStore.isPageSaved($0) },
-                    heroMorphPageID: homePhraseHeroMorphPageID,
-                    heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
-                    onBackTapped: {},
-                    onSearchTapped: openSearch,
-                    onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                    onToggleSavedPage: { intentStore.toggleSavedPage($0) },
-                    onDetailTapped: openDetail
-                )
-                .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
-                .accessibilityHidden(navigation.currentRoute != .phrasePage)
-                .navigationPageMotion(
-                    route: .phrasePage,
-                    currentRoute: navigation.currentRoute,
-                    backPreviewRoute: navigation.backPreviewRoute,
-                    forwardPreviewRoute: navigation.forwardPreviewRoute,
-                    drag: interactiveDrag,
-                    width: pageWidth
-                )
+                if navigation.shouldRenderRootSurface(.phrasePage) {
+                    PhraseListingView(
+                        page: .xinChao,
+                        scrollToTopTrigger: navigation.rootScrollToTopTrigger,
+                        chromeNamespace: chromeNamespace,
+                        isSearchActive: navigation.isSearchPresented,
+                        isActive: navigation.currentRoute == .phrasePage,
+                        showsChrome: false,
+                        topChromeContentClearance: pinnedAudioSpeedScrollClearance,
+                        isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
+                        isPageSaved: { intentStore.isPageSaved($0) },
+                        heroMorphPageID: homePhraseHeroMorphPageID,
+                        heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
+                        onBackTapped: {},
+                        onSearchTapped: openSearch,
+                        onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
+                        onToggleSavedPage: { intentStore.toggleSavedPage($0) },
+                        onDetailTapped: openDetail
+                    )
+                    .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
+                    .accessibilityHidden(navigation.currentRoute != .phrasePage)
+                    .navigationPageMotion(
+                        route: .phrasePage,
+                        currentRoute: navigation.currentRoute,
+                        backPreviewRoute: navigation.backPreviewRoute,
+                        forwardPreviewRoute: navigation.forwardPreviewRoute,
+                        drag: interactiveDrag,
+                        width: pageWidth
+                    )
+                } else {
+                    Color.clear
+                        .accessibilityHidden(true)
+                }
 
                 browseCollectionPageStack(width: pageWidth)
 
