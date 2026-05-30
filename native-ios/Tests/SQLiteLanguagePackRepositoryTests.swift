@@ -74,6 +74,28 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertTrue(phoBo.helperPhraseIDs?.contains("menu-not-spicy") == true)
     }
 
+    func testSQLiteBackdropsGiveNeedsBackdropPhrasePagesPhotoBackdropLayout() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let expectations = [
+            ("viet-phrase-polite-1", "HeroCategoryPoliteRepair"),
+            ("viet-phrase-taxi-1", "HeroCategoryGettingAround"),
+            ("viet-phrase-problems-6", "HeroCategoryEmergency"),
+            ("viet-phrase-airport-1", "HeroCategoryAirport"),
+            ("viet-phrase-bath-1", "HeroCategoryEssentials"),
+            ("viet-phrase-sight-1", "HeroCategoryGettingAround"),
+        ]
+
+        for (pageID, expectedHeroImageName) in expectations {
+            let page = try repository.loadPhraseDetailPage(pageID: pageID)
+
+            XCTAssertEqual(page.heroImageName, expectedHeroImageName, pageID)
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: page.id, heroImageName: page.heroImageName),
+                "\(pageID) should use the shared photo-backdrop sheet interaction"
+            )
+        }
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 
