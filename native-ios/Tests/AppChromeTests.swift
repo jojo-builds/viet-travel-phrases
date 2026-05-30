@@ -3080,6 +3080,21 @@ final class AppChromeTests: XCTestCase {
                 ["lotte-mart-related-han-market", "lotte-mart-related-vincom-plaza"],
                 ["viet-family-city-danang-place-han-market", "viet-family-city-danang-place-vincom-plaza"]
             ),
+            "viet-family-city-danang-place-bep-cuon": (
+                "good-to-know",
+                ["bep-cuon-related-banh-xeo-ba-duong"],
+                ["viet-family-city-danang-place-banh-xeo-ba-duong"]
+            ),
+            "viet-family-city-danang-place-co-chu-nho": (
+                "good-to-know",
+                ["co-chu-nho-related-bep-cuon"],
+                ["viet-family-city-danang-place-bep-cuon"]
+            ),
+            "viet-family-city-danang-place-the-temptation": (
+                "good-to-know",
+                ["the-temptation-related-nen"],
+                ["viet-family-city-danang-place-nen"]
+            ),
             "viet-family-city-danang-place-3d-art-in-paradise": (
                 "good-to-know",
                 ["3d-art-related-fine-arts"],

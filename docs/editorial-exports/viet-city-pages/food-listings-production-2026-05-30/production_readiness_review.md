@@ -118,14 +118,25 @@ Official source references checked:
 - Michelin corporate 2025 release: `https://www.michelin.com/en/publications/products-and-services/the-2025-michelin-guide-hanoi`
 - Michelin Guide 2025 article: `https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-vietnam-2025`
 - Michelin Guide full-star list: `https://guide.michelin.com/sg/en/article/michelin-guide-ceremony/full-list-michelin-stars-michelin-guide-vietnam-2025`
+- Michelin Guide page for `Bếp Cuốn`: `https://guide.michelin.com/us/en/da-nang-region/da-nang_2984390/restaurant/bep-cuon`
+- Michelin Guide page for `Cô Chủ Nhỏ`: `https://guide.michelin.com/ca/en/da-nang-region/da-nang_2984390/restaurant/co-chu-nho`
+- Michelin Guide page for `The Temptation`: `https://guide.michelin.com/en/da-nang-region/da-nang_2984390/restaurant/the-temptation`
 
 Bounded claims used:
 
 - One MICHELIN Star in the 2025 guide: `Gia`, `Hibana by Koki`, `Tam Vi`, `Akuna`, `CieL`, `Coco Dining`, `Long Trieu`, plus existing `Anan Saigon` and `La Maison 1888`.
 - MICHELIN Green Star in the 2025 guide: `Nen Danang`, `Lamai Garden`.
-- Bib Gourmand source support noted where useful: `Uu Dam`, `Mien luon Chan Cam`, `Pho Bo Lam`.
+- MICHELIN Selected / Guide-listed source support noted where useful: `Bếp Cuốn`, `The Temptation`.
+- Bib Gourmand source support noted where useful: `Uu Dam`, `Mien luon Chan Cam`, `Pho Bo Lam`, `Cô Chủ Nhỏ`.
 
 Freshness note: these are 2025-guide claims. Re-check before release if a newer official Vietnam guide has been published.
+
+Da Nang continuation note, 2026-05-30:
+
+- `city-danang-place-bep-cuon` now exposes the 2025 MICHELIN Selected signal while keeping the save reason on pork, rice paper, herbs, and mam nem.
+- `city-danang-place-co-chu-nho` moved out of support-risk because the visible page now has a specific Bib Gourmand duck-specialist hook.
+- `city-danang-place-the-temptation` now says MICHELIN Guide-listed French Contemporary, without implying a star or Bib Gourmand.
+- Runtime trip-building gap found and fixed for these three pages: the V2.2 source already had related-place candidates, but the current native runtime renders `Compare Nearby` cards only through the native `LocationRelatedPicksCatalog`. Added Bếp Cuốn -> Bánh xèo Bà Dưỡng, Cô Chủ Nhỏ -> Bếp Cuốn, and The Temptation -> Nén so the edited pages actually support saving/comparing nearby meal decisions.
 
 ## Current Risk Metrics
 
@@ -143,6 +154,8 @@ The source validator now reports 500 `FINAL_PASS` records, but `FINAL_PASS` cann
 These pages are the strongest candidates for high-visibility trip-building surfaces after render proof:
 
 - `city-danang-place-banh-xeo-ba-duong`
+- `city-danang-place-bep-cuon`
+- `city-danang-place-co-chu-nho`
 - `city-danang-place-con-market`
 - `city-danang-place-mi-quang-1a`
 - `city-danang-place-nen`
@@ -164,7 +177,6 @@ These pages are the strongest candidates for high-visibility trip-building surfa
 Keep these useful, but do not make them headline trip-building recommendations yet:
 
 - `city-danang-place-boulevard-gelato-coffee`: support cool-down listing unless stronger flavor/venue evidence is added.
-- `city-danang-place-co-chu-nho`: support listing until the exact house dish or stronger reason is refreshed.
 - `city-hcmc-place-nephele`: support/fine-dining context; needs clearer food hook if used as a feature anchor.
 - `city-danang-place-bun-cha-ca-hon`: promising food page, but should receive a fuller dish-specific review before hero placement.
 
@@ -215,6 +227,7 @@ Results:
 - city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
 - SQLite fixture validation: PASS, integrity OK, 8784 relations, 0 release-blocking missing audio rows.
 - SQLite fixture test: PASS, 1 test.
+- Native related-card targeted test: PASS, `AppChromeTests/testV22CityPagesExposeNativeRelatedPlaceCards`.
 - native-only guard: PASS.
 - whitespace check: PASS.
 

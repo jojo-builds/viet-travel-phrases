@@ -1826,11 +1826,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "bep cuon da nang",
-      "travelerMoment": "Choose it when roll meals sound appealing but a market stall or seafood board feels like too much work.",
-      "storySpine": "Bep Cuon gives herbs, wrappers, and dipping bowls a controlled first-meal rhythm after heat or a long outdoor day.",
+      "travelerMoment": "Choose it when Da Nang rolls sound good but the group wants a calmer, guide-noted table instead of a stall or seafood board.",
+      "storySpine": "Bep Cuon earns the save by turning banh trang cuon thit heo into a 2025 MICHELIN Selected sit-down meal: herbs, pork, rice paper, mam nem, and one careful roll at a time.",
       "intro": {
-        "heading": "Rolls Without The Jostle",
-        "body": "A sit-down restaurant version of Da Nang's roll-and-dip habit: herbs, wrappers, dipping bowls, wood tables, and a first roll that needs patience."
+        "heading": "A Michelin-Selected Roll Table",
+        "body": "Bếp Cuốn turns Da Nang's pork-and-rice-paper roll habit into a calm sit-down meal: herbs, wrappers, mam nem, and a 2025 MICHELIN Selected nod without the stall jostle."
       },
       "usefulPhraseCards": [
         {
@@ -1860,9 +1860,9 @@
       ],
       "sections": [
         {
-          "id": "rolls-with-a-softer-landing",
-          "heading": "Rolls With A Softer Landing",
-          "body": "This suits a group that wants herbs, wrappers, fillings, and dipping bowls in a more orderly room than a market stall or seafood board."
+          "id": "build-one-good-roll",
+          "heading": "Build One Good Roll",
+          "body": "Start slowly: pork, herbs, cucumber, rice paper, then a careful touch of mam nem. The first roll teaches the table."
         },
         {
           "id": "check-before-rolling",
@@ -1870,9 +1870,9 @@
           "body": "Look at herbs, wrappers, fillings, and dipping bowls first. One slower roll keeps the bite from collapsing halfway to your mouth."
         },
         {
-          "id": "a-controlled-first-meal",
-          "heading": "A Controlled First Meal",
-          "body": "The table gives local rolls without making you chase a stall or decode a seafood board. That restraint can be the pleasure."
+          "id": "guide-note-not-the-whole-story",
+          "heading": "Guide Note, Simple Meal",
+          "body": "The MICHELIN note helps explain why it is worth remembering. The pleasure is still simple: clean herbs, salty dip, and a table that lets everyone learn the bite."
         },
         {
           "id": "sauce-decides-the-bite",
@@ -1917,12 +1917,12 @@
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Bep Cuon Da Nang has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production Michelin/food pass: Bep Cuon now shows bounded 2025 MICHELIN Selected context while keeping the roll-and-dip reason specific."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: Venue and local tourism sources.",
-        "Michelin audit note: read-only reviewer found official 2025 MICHELIN Selected support for Bếp Cuốn; keep visible copy food-first unless the exact recognition is refreshed during a later Michelin-specific import."
+        "Michelin audit note: official 2025 MICHELIN Guide support checked for Bếp Cuốn; visible recognition is bounded to 2025 MICHELIN Selected and kept secondary to the food."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2739,11 +2739,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "co chu nho",
-      "travelerMoment": "Choose it when dinner needs focus rather than a broad menu crawl, especially if duck, noodles, or a house plate brought you here.",
-      "storySpine": "Co Chu Nho is easier when the meal starts with a clear recommendation, spice level, and one focused first dish.",
+      "travelerMoment": "Choose it when the group wants a casual MICHELIN Bib Gourmand duck stop instead of another seafood or roll table.",
+      "storySpine": "Co Chu Nho gets a clearer job: a Da Nang duck specialist where porridge, salad, sliced duck, herbs, and ginger fish sauce give the meal its point.",
       "intro": {
-        "heading": "Choose One House Dish",
-        "body": "A casual Da Nang meal place where the clearest move is one house dish, a menu check, and a little staff guidance before ordering the table."
+        "heading": "Bib Gourmand Duck Stop",
+        "body": "Cô Chủ Nhỏ is a casual MICHELIN Bib Gourmand duck specialist: porridge, salad, sliced duck, herbs, and ginger fish sauce instead of another beach-city seafood meal."
       },
       "usefulPhraseCards": [
         {
@@ -2773,24 +2773,24 @@
       ],
       "sections": [
         {
-          "id": "one-main-thing",
-          "heading": "One Main Thing",
-          "body": "The meal needs one center: duck, noodles, or a house plate. Staff guidance can narrow the opening order."
+          "id": "order-around-duck",
+          "heading": "Order Around Duck",
+          "body": "Let duck set the table: porridge if you want comfort, salad if you want herbs and crunch, sliced duck if the group wants a cleaner shared plate."
         },
         {
-          "id": "menu-before-momentum",
-          "heading": "Menu Before Momentum",
-          "body": "Do not treat the meal like fuel between sights. Take a minute, notice what repeats, and check before adding extra plates."
+          "id": "the-dip-does-work",
+          "heading": "The Dip Does Work",
+          "body": "Duck here needs its side rhythm. Ginger fish sauce, herbs, and salad cut through the richness, so taste before asking for extra heat."
         },
         {
-          "id": "duck-or-noodles-first",
-          "heading": "Duck Or Noodles Lead",
-          "body": "If duck or noodles brought you here, let that guide the decision. The table settles once the main order is clear."
+          "id": "bib-gourmand-not-formal",
+          "heading": "Bib Gourmand, Not Formal",
+          "body": "The MICHELIN signal means good value and a reason to remember it in a casual room. Keep the order direct and let the duck carry the meal."
         },
         {
-          "id": "a-simple-first-order",
-          "heading": "Keep The Order Focused",
-          "body": "A focused dish beats chasing the whole menu. Start with the house recommendation, with extras only if the table still wants more."
+          "id": "when-seafood-can-wait",
+          "heading": "When Seafood Can Wait",
+          "body": "Da Nang can pull every dinner toward seafood. This is the useful detour when the table wants something local, warm, and less predictable."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2798,19 +2798,13 @@
         {
           "catalogId": "viet-family-city-danang-place-bep-cuon",
           "label": "Bếp Cuốn Đà Nẵng",
-          "relationship": "casual table comparison",
-          "displaySubtitle": "A clearer roll-and-dip table when the group wants a calmer first meal.",
-          "reason": "Bếp Cuốn is a useful casual-table comparison while Cô Chủ Nhỏ remains a support listing needing dish-hook refresh.",
+          "relationship": "casual MICHELIN meal contrast",
+          "displaySubtitle": "A 2025 MICHELIN Selected roll table when pork, herbs, rice paper, and mam nem should lead.",
+          "reason": "Bếp Cuốn is the useful casual-guide contrast: roll-and-dip instead of duck porridge, salad, and sliced duck.",
           "status": "render"
         }
       ],
-      "verificationFlags": [
-        {
-          "type": "light",
-          "reason": "Keep Cô Chủ Nhỏ as a support listing until the exact house-dish/Michelin recognition hook is refreshed from current sources.",
-          "blocking": false
-        }
-      ],
+      "verificationFlags": [],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -2827,11 +2821,12 @@
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Cô Chủ Nhỏ is marked as support-risk and no longer points to a generic related restaurant card."
+        "reason": "Production Michelin/food pass: Cô Chủ Nhỏ now has a specific duck-specialist hook and bounded MICHELIN Bib Gourmand context."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN article/search source; venue source."
+        "Production intake source notes: MICHELIN article/search source; venue source.",
+        "Michelin audit note: official MICHELIN Guide page supports Cô Chủ Nhỏ as Bib Gourmand; visible copy uses the recognition as context for a duck-specialist meal without making any star claim."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -10178,11 +10173,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "the temptation",
-      "travelerMoment": "The restaurant shows Da Nang after beach days and seafood tables: a more reserved resort-city dining side where pacing, staff care, and the room matter.",
-      "storySpine": "The dinner note stays focused on a refined evening while dishes, prices, bookings, hours, and menu details stay current at the table.",
+      "travelerMoment": "Choose it when Da Nang dinner should feel quieter and more deliberate: a MICHELIN Guide-listed French Contemporary room after beach days and seafood tables.",
+      "storySpine": "The Temptation earns its place as a guide-listed French Contemporary dinner when the night should feel quieter, more polished, and less tied to seafood.",
       "intro": {
-        "heading": "A Meal That Can Hold The Evening",
-        "body": "The Temptation is for a Da Nang evening when dinner should slow the day down: smaller room, careful pacing, staff attention, and a meal chosen on purpose."
+        "heading": "Guide-Listed French Dinner",
+        "body": "The Temptation is a MICHELIN Guide-listed French Contemporary restaurant for a quieter Da Nang night: smaller room, careful pacing, staff attention, and a meal chosen on purpose."
       },
       "usefulPhraseCards": [
         {
@@ -10217,19 +10212,19 @@
           "body": "Do not squeeze this between a beach rinse and a late-night plan. A slower dinner needs space to arrive, ask, and let the table settle."
         },
         {
-          "id": "scan-the-menu-before-committing",
-          "heading": "Check The Menu Before Committing",
-          "body": "The menu sets the size of the meal. If you only want a lighter dinner, say that early."
+          "id": "french-not-beach-casual",
+          "heading": "French, Not Beach Casual",
+          "body": "This is the contrast meal after grilled seafood, markets, and noodle stops. Expect the night to lean more polished than spontaneous."
         },
         {
-          "id": "dinner-with-room-to-breathe",
-          "heading": "Dinner With Room To Breathe",
-          "body": "Save this for a night when the meal can hold its own time. Check the menu, settle early questions, and avoid squeezing it between faster plans."
+          "id": "ask-before-the-meal-grows",
+          "heading": "Ask Before It Grows",
+          "body": "Check the menu and pacing before committing. If the group wants a lighter dinner, say that early so the meal stays comfortable."
         },
         {
           "id": "pace-matters-more-than-speed",
           "heading": "Pace Matters More Than Speed",
-          "body": "The value is not the dish list. It is the pace: staff attention, table spacing, plates arriving in order, and a night that feels different."
+          "body": "Treat the guide listing as context. The point is pace: staff attention, table spacing, and a dinner that feels different from the beach-city default."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10238,8 +10233,8 @@
           "catalogId": "viet-family-city-danang-place-nen",
           "label": "Nén Đà Nẵng",
           "relationship": "planned-dinner comparison",
-          "displaySubtitle": "A stronger planned-dinner choice when fine dining should carry the evening.",
-          "reason": "Nen is the clearer Da Nang planned-dinner reference; The Temptation stays support until stronger proof is added.",
+          "displaySubtitle": "A Vietnamese fine-dining destination when the evening should feel bigger than quiet French dinner.",
+          "reason": "Nen is the stronger Da Nang destination-dinner comparison; The Temptation now carries a guide-listed French Contemporary contrast with no star or Bib wording.",
           "status": "render"
         }
       ],
@@ -10260,11 +10255,12 @@
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: The Temptation has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production Michelin/food pass: The Temptation now has bounded MICHELIN Guide-listed French Contemporary context and a clearer save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN search source; venue source."
+        "Production intake source notes: MICHELIN search source; venue source.",
+        "Michelin audit note: official MICHELIN Guide page supports The Temptation as guide-listed French Contemporary; visible copy avoids star/Bib claims."
       ],
       "status": "FINAL_PASS",
       "review": {

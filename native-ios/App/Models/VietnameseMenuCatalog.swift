@@ -2003,6 +2003,42 @@ enum LocationRelatedPicksCatalog {
                     afterSectionID: "good-to-know"
                 ),
             ]
+        case "viet-family-city-danang-place-bep-cuon":
+            return [
+                relatedPlacePick(
+                    id: "bep-cuon-related-banh-xeo-ba-duong",
+                    title: "Bánh xèo Bà Dưỡng",
+                    subtitle: "Banh Xeo Ba Duong",
+                    proof: "A louder hands-on Da Nang table when crisp pancakes and sauce should lead.",
+                    imageName: "HeroCityDanangPlaceBanhXeoBaDuong",
+                    detailPageID: "viet-family-city-danang-place-banh-xeo-ba-duong",
+                    audioText: "Bánh xèo Bà Dưỡng"
+                ),
+            ]
+        case "viet-family-city-danang-place-co-chu-nho":
+            return [
+                relatedPlacePick(
+                    id: "co-chu-nho-related-bep-cuon",
+                    title: "Bếp Cuốn Đà Nẵng",
+                    subtitle: "Bep Cuon Da Nang",
+                    proof: "A 2025 MICHELIN Selected roll table when pork, herbs, rice paper, and mam nem should lead.",
+                    imageName: "HeroCityDanangPlaceBepCuon",
+                    detailPageID: "viet-family-city-danang-place-bep-cuon",
+                    audioText: "Bếp Cuốn Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-the-temptation":
+            return [
+                relatedPlacePick(
+                    id: "the-temptation-related-nen",
+                    title: "Nén Đà Nẵng",
+                    subtitle: "Nen Da Nang",
+                    proof: "A Vietnamese fine-dining destination when the evening should feel bigger than quiet French dinner.",
+                    imageName: "HeroCityDanangPlaceNen",
+                    detailPageID: "viet-family-city-danang-place-nen",
+                    audioText: "Nén Đà Nẵng"
+                ),
+            ]
         default:
             return []
         }
