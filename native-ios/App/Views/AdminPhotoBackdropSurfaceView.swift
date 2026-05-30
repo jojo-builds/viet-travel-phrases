@@ -120,6 +120,11 @@ enum HomeBackdropPreheatPolicy {
 }
 
 enum AdminBackdropImagePreheatPlan {
+    struct NextQueuedImage: Equatable {
+        let imageName: String
+        let remainingQueuedImageNames: [String]
+    }
+
     static func pendingImageNames(
         requestedImageNames: [String],
         reservedImageNames: Set<String>
@@ -143,6 +148,17 @@ enum AdminBackdropImagePreheatPlan {
 
         let mergedImageNames = existingQueuedImageNames + incomingImageNames
         return Array(mergedImageNames.suffix(maxCount))
+    }
+
+    static func nextQueuedImageName(from queuedImageNames: [String]) -> NextQueuedImage? {
+        guard let imageName = queuedImageNames.last else {
+            return nil
+        }
+
+        return NextQueuedImage(
+            imageName: imageName,
+            remainingQueuedImageNames: Array(queuedImageNames.dropLast())
+        )
     }
 }
 
@@ -562,12 +578,13 @@ enum AdminBackdropImagePreheater {
     private static func drainPreheatQueue() {
         while true {
             lock.lock()
-            guard !queuedImageNames.isEmpty else {
+            guard let nextQueuedImage = AdminBackdropImagePreheatPlan.nextQueuedImageName(from: queuedImageNames) else {
                 queueWorkerTask = nil
                 lock.unlock()
                 return
             }
-            let imageName = queuedImageNames.removeFirst()
+            queuedImageNames = nextQueuedImage.remainingQueuedImageNames
+            let imageName = nextQueuedImage.imageName
             lock.unlock()
 
             autoreleasepool {

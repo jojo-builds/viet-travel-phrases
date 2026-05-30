@@ -107,6 +107,22 @@ final class AppChromeTests: XCTestCase {
         ])
     }
 
+    func testAdminBackdropPreheatPlanDrainsNewestQueuedWorkFirst() {
+        let next = AdminBackdropImagePreheatPlan.nextQueuedImageName(
+            from: [
+                "HeroCityHuePlacePerfumeRiver",
+                "BackdropPhrasePhoneSimSetup",
+                "BackdropPhrasePhoneAirportCharging",
+            ]
+        )
+
+        XCTAssertEqual(next?.imageName, "BackdropPhrasePhoneAirportCharging")
+        XCTAssertEqual(next?.remainingQueuedImageNames, [
+            "HeroCityHuePlacePerfumeRiver",
+            "BackdropPhrasePhoneSimSetup",
+        ])
+    }
+
     func testPracticeMatchSnapshotCacheTracksInFlightLoads() {
         let key = PracticeMatchSnapshotCacheKey(
             practicePageIDs: ["viet-thank-you"],
