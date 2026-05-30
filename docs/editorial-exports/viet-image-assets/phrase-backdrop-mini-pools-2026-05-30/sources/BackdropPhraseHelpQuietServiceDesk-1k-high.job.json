@@ -1,0 +1,21 @@
+[
+  {
+    "id": "34477e8f-ff7a-438b-885d-ceb9ebb26514",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38ecHrKXVn9clw0Nl9IQC7UnMcD/hf_20260530_063416_34477e8f-ff7a-438b-885d-ceb9ebb26514.png",
+    "created_at": 1780122856.189004,
+    "params": {
+      "width": 752,
+      "height": 1344,
+      "prompt": "Scene: calm travel assistance desk with blank notepad, pen, water glass, small plant, and softly blurred lobby background. Object-focused composition; put the notepad, pen, water glass, and plant clearly in the upper-middle safe zone. No signs, no emergency symbols, no uniforms, no drama; designed for help and problem-solving phrases. Photorealistic vertical 9:16 editorial travel photograph for SpeakLocal, a premium native iPhone phrasebook for travelers in Vietnam. The image will sit behind a white scrollable app sheet. Place the primary visual subject in the upper-middle safe zone, roughly 18% to 48% down from the top of the frame, so it remains visible when the content card is pulled down. Do not leave the top quarter as empty ceiling, blank wall, or plain sky. Keep the lower third calmer because it may sit behind the content card. Natural daylight or believable warm ambient light, real camera feel, premium travel-documentary style, not CGI, not illustration, not glossy stock. Vietnam-forward but not tourist-cliche; use practical traveler context, local material texture, tile, wood, glass, street light, greenery, luggage, tableware, or counters as appropriate. Strictly avoid readable text, signage, labels, logos, brand marks, license plates, watermarks, fake app UI, fake menus, distorted hands, distorted faces, extra fingers, injury, blood, panic, or emergency drama.",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "1k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

@@ -1048,6 +1048,14 @@ enum PhrasePhotoBackdropLayout {
     static let topChromeContentThresholdPadding: CGFloat = 12
     static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
+    private static let phraseBackdropDefaultFocusFraction: CGFloat = 0.14
+    private static let phraseBackdropFocusFractions: [String: CGFloat] = [
+        "BackdropPhrasePhoneCafeCharging": 0.22,
+        "BackdropPhrasePhoneSimSetup": 0.22,
+        "BackdropPhrasePhoneAccessoryCounter": 0.20,
+        "BackdropPhrasePhoneAirportCharging": 0.22,
+        "BackdropPhraseTransportStreetMap": 0.20,
+    ]
 
     static func bottomReadingClearance(pageID: String, heroImageName: String?) -> CGFloat {
         if supportsCityListingPage(pageID: pageID, heroImageName: heroImageName) {
@@ -1080,7 +1088,8 @@ enum PhrasePhotoBackdropLayout {
             return false
         }
 
-        return !pageID.hasPrefix("viet-menu-") && heroImageName.hasPrefix("HeroCategory")
+        return !pageID.hasPrefix("viet-menu-")
+            && (heroImageName.hasPrefix("HeroCategory") || heroImageName.hasPrefix("BackdropPhrase"))
     }
 
     static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
@@ -1109,7 +1118,13 @@ enum PhrasePhotoBackdropLayout {
         pageID: String,
         heroImageName: String?
     ) -> CGFloat {
-        0
+        guard let heroImageName, heroImageName.hasPrefix("BackdropPhrase") else {
+            return 0
+        }
+
+        let height = max(size.height, 1)
+        let focusFraction = phraseBackdropFocusFractions[heroImageName] ?? phraseBackdropDefaultFocusFraction
+        return min(max(height * focusFraction, 120), 260)
     }
 
     struct Metrics {

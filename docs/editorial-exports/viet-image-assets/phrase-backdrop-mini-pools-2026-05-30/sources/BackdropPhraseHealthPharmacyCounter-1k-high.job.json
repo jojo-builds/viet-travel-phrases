@@ -1,0 +1,21 @@
+[
+  {
+    "id": "19c397b9-ca02-4f93-b8f0-9a16e2fffd2a",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38ecHrKXVn9clw0Nl9IQC7UnMcD/hf_20260530_061549_19c397b9-ca02-4f93-b8f0-9a16e2fffd2a.png",
+    "created_at": 1780121749.685806,
+    "params": {
+      "width": 752,
+      "height": 1344,
+      "prompt": "Scene: calm Vietnamese pharmacy counter with medicine boxes deliberately turned away or blurred, small basket, thermometer, and soft green-white interior light. No readable medicine names, no patients, no injury; reassuring and practical. Photorealistic vertical 9:16 editorial travel photograph for SpeakLocal, a premium native iPhone phrasebook for travelers in Vietnam. The image will sit behind a white scrollable app sheet, so keep the useful subject in the upper-middle half with calm lower-frame texture. Natural daylight or believable warm ambient light, real camera feel, premium travel-documentary style, not CGI, not illustration, not glossy stock. Vietnam-forward but not tourist-cliche; use practical traveler context, local material texture, tile, wood, glass, street light, greenery, luggage, tableware, or counters as appropriate. Strictly avoid readable text, signage, labels, logos, brand marks, license plates, watermarks, fake app UI, fake menus, distorted hands, distorted faces, extra fingers, injury, blood, panic, or emergency drama.",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "1k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

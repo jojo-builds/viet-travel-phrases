@@ -77,12 +77,16 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
     func testSQLiteBackdropsGiveNeedsBackdropPhrasePagesPhotoBackdropLayout() throws {
         let repository = try VietSQLiteLanguagePackRepository.bundled()
         let expectations = [
-            ("viet-phrase-polite-1", "HeroCategoryPoliteRepair"),
-            ("viet-phrase-taxi-1", "HeroCategoryGettingAround"),
-            ("viet-phrase-problems-6", "HeroCategoryEmergency"),
-            ("viet-phrase-airport-1", "HeroCategoryAirport"),
-            ("viet-phrase-bath-1", "HeroCategoryEssentials"),
-            ("viet-phrase-sight-1", "HeroCategoryGettingAround"),
+            ("viet-phrase-polite-1", "BackdropPhraseHelpQuietServiceDesk"),
+            ("viet-phrase-taxi-1", "BackdropPhraseTransportAirportCurb"),
+            ("viet-phrase-problems-6", "BackdropPhraseHelpHotelDesk"),
+            ("viet-phrase-airport-1", "BackdropPhrasePhoneAirportCharging"),
+            ("viet-phrase-bath-1", "BackdropPhraseEssentialsWaterCounter"),
+            ("viet-phrase-sight-1", "BackdropPhraseSightTicketBooth"),
+            ("viet-phrase-phone-1", "BackdropPhrasePhoneCafeCharging"),
+            ("viet-phrase-food-menu", "BackdropPhraseFoodOrderCounter"),
+            ("viet-phrase-price-1", "BackdropPhraseMarketPayment"),
+            ("viet-phrase-hotel-1", "BackdropPhraseHelpHotelDesk"),
         ]
 
         for (pageID, expectedHeroImageName) in expectations {
@@ -94,6 +98,25 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
                 "\(pageID) should use the shared photo-backdrop sheet interaction"
             )
         }
+
+        XCTAssertGreaterThanOrEqual(
+            PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                for: CGSize(width: 393, height: 852),
+                pageID: "viet-phrase-phone-1",
+                heroImageName: "BackdropPhrasePhoneSimSetup"
+            ),
+            180,
+            "low tabletop phrase photos should shift the subject band into the visible resting area"
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                for: CGSize(width: 393, height: 852),
+                pageID: "viet-phrase-airport-1",
+                heroImageName: "HeroCategoryAirport"
+            ),
+            0,
+            "existing category mastheads keep their original crop"
+        )
     }
 
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {

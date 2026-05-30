@@ -62,6 +62,8 @@ function main() {
   const expectedAssets = new Map(needsRows.map((row) => [row.canonicalPageID, row.recommendedAsset]));
   const placementRows = backdrops.placements ?? [];
   const placementPageIDs = sorted(new Set(placementRows.map((row) => row.pageID)));
+  const semanticPools = backdrops.semanticPools ?? {};
+  const declaredSemanticAssets = new Set(Object.values(semanticPools).flat());
 
   assert(expectedPageIDs.length === 952, `expected 952 needs-backdrop rows, found ${expectedPageIDs.length}`);
   assert(backdrops.version === 1, "phrase backdrop catalog version must be 1");
@@ -74,9 +76,21 @@ function main() {
   const missingAssets = [];
   for (const row of placementRows) {
     assert(row.pageID, "backdrop placement is missing pageID");
-    assert(row.assetName === expectedAssets.get(row.pageID), `${row.pageID} asset must match audit recommendedAsset`);
-    assert(row.source === "category-fallback", `${row.pageID} should use category-fallback in v1`);
-    assert(row.assetName?.startsWith("HeroCategory"), `${row.pageID} must use a HeroCategory asset`);
+    assert(row.fallbackAssetName === expectedAssets.get(row.pageID), `${row.pageID} fallbackAssetName must match audit recommendedAsset`);
+    assert(
+      row.source === "category-fallback" || row.source === "semantic-mini-pool",
+      `${row.pageID} has invalid source ${row.source}`
+    );
+    if (row.source === "category-fallback") {
+      assert(row.assetName === expectedAssets.get(row.pageID), `${row.pageID} category fallback asset must match audit recommendedAsset`);
+      assert(row.assetName?.startsWith("HeroCategory"), `${row.pageID} category fallback must use a HeroCategory asset`);
+    } else {
+      assert(row.assetName?.startsWith("BackdropPhrase"), `${row.pageID} semantic pool must use a BackdropPhrase asset`);
+      assert(row.semanticPool, `${row.pageID} semantic pool placement is missing semanticPool`);
+      assert(Array.isArray(semanticPools[row.semanticPool]), `${row.pageID} uses undeclared semanticPool ${row.semanticPool}`);
+      assert(declaredSemanticAssets.has(row.assetName), `${row.pageID} semantic asset is not declared in semanticPools: ${row.assetName}`);
+      assert(semanticPools[row.semanticPool].includes(row.assetName), `${row.pageID} asset ${row.assetName} is not declared for semanticPool ${row.semanticPool}`);
+    }
     if (!assetExists(row.assetName)) {
       missingAssets.push(`${row.pageID}:${row.assetName}`);
     }
@@ -94,8 +108,9 @@ function main() {
 
   const sqliteByID = new Map(sqliteRows.map((row) => [row.id, row.hero_image_name]));
   const mismatchedSQLite = [];
+  const expectedPlacementAssets = new Map(placementRows.map((row) => [row.pageID, row.assetName]));
   for (const pageID of expectedPageIDs) {
-    const expectedAsset = expectedAssets.get(pageID);
+    const expectedAsset = expectedPlacementAssets.get(pageID);
     if (sqliteByID.get(pageID) !== expectedAsset) {
       mismatchedSQLite.push(`${pageID}:${sqliteByID.get(pageID) ?? "NULL"}!=${expectedAsset}`);
     }
@@ -103,14 +118,22 @@ function main() {
   assert(mismatchedSQLite.length === 0, `SQLite hero_image_name mismatches: ${mismatchedSQLite.slice(0, 12).join(", ")}`);
 
   const counts = {};
+  const sourceCounts = {};
+  const semanticPoolCounts = {};
   for (const row of placementRows) {
     counts[row.assetName] = (counts[row.assetName] ?? 0) + 1;
+    sourceCounts[row.source] = (sourceCounts[row.source] ?? 0) + 1;
+    if (row.semanticPool) {
+      semanticPoolCounts[row.semanticPool] = (semanticPoolCounts[row.semanticPool] ?? 0) + 1;
+    }
   }
 
   console.log(JSON.stringify({
     ok: true,
     needsBackdropRows: expectedPageIDs.length,
     placements: placementRows.length,
+    sources: Object.fromEntries(Object.entries(sourceCounts).sort((a, b) => a[0].localeCompare(b[0]))),
+    semanticPools: Object.fromEntries(Object.entries(semanticPoolCounts).sort((a, b) => a[0].localeCompare(b[0]))),
     assets: Object.fromEntries(Object.entries(counts).sort((a, b) => a[0].localeCompare(b[0]))),
   }, null, 2));
 }

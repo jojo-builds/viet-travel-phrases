@@ -261,6 +261,7 @@ struct AppShellView: View {
         .overlay {
             if hidesPhotoBackdropChrome, let photoBackdropImmersiveImageContext {
                 PhotoBackdropImmersiveImageCover(context: photoBackdropImmersiveImageContext)
+                    .ignoresSafeArea()
             }
         }
         .overlay(alignment: .bottom) {
@@ -3376,7 +3377,10 @@ private struct PhotoBackdropImmersiveImageCover: View {
     var body: some View {
         GeometryReader { geometry in
             let viewportSize = context.viewportSize
-            let frameHeight = max(context.imageFrameHeight, geometry.size.height)
+            let frameHeight = max(
+                context.imageFrameHeight,
+                geometry.size.height + context.verticalFocusOffset
+            )
 
             Image(context.imageName)
                 .resizable()
