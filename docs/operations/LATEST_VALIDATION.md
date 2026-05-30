@@ -42,6 +42,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 26: browse city/category thumbnail selection still asked UIKit whether generated bundled hero/backdrop image names existed before SwiftUI rendered them; generated `Hero*` and `Backdrop*` browse assets now render directly while unknown/manual image names keep the old fallback existence check, avoiding extra `UIImage(named:)` probes during rapid page browsing
 - root cause 27: inactive menu and standard browse collection pages could still run delayed section-tracking, section-jump settle, focus-restore, or bottom-inset tasks while mounted for hidden/back-preview navigation states; those deferred collection tasks now require active-route state, while active collection pages keep their scroll, focus, and section-jump behavior
 - root cause 28: inactive listing, browse collection, and menu photo-backdrop pages could still publish scroll-geometry state, and inactive menu pages could still process section-frame/rail preferences while mounted only as hidden/back-preview surfaces; scroll-geometry and menu section preference tracking now require active-route state, preserving active page behavior while preventing extra state churn during rapid navigation
+- root cause 29: generic detail navigation synchronously asked the SQLite phrase graph for a generated page's hero image name just to preheat a backdrop before the actual detail page loaded, duplicating database work on every new SQLite-backed listing tap; navigation preheat now uses only already-known cheap image names such as static authored backdrops, menu backdrops, or browse category overrides, while generated pages still preheat from the active page after its already-loaded detail model supplies the hero image
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -80,6 +81,22 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testBrowseImageAssetPolicyTrustsGeneratedAssetsWithoutExistenceProbe`
   - `AppChromeTests/testInactiveCollectionPagesSkipDeferredScrollTasks`
   - `AppChromeTests/testInactivePagesSkipScrollGeometryAndPreferenceTracking`
+  - `AppChromeTests/testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages`
+- XcodeBuildMCP simulator focused detail-navigation hero-preheat set on iPhone 17 Pro
+  - failed before implementation because `AppShellView.detailBackdropPreheatImageNames(pageID:heroImageNameOverride:)` and `VietSQLitePhraseGraphRuntime.heroImageNameLookupCountForTesting` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-22-19-924Z_pid15747_dc3d7592.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-24-47-367Z_pid15747_7d06b02b.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with detail-navigation hero-preheat SQLite bypass on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered generated detail navigation skipping SQLite hero-name lookup for preheat, static authored preheat preservation, phrase/category/menu backdrop preheat policies, bounded SQLite/search/detail caches, inactive listing/browse/menu scroll-geometry gating, inactive collection deferred-task gating, generated browse asset probe bypasses, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-25-25-867Z_pid15747_7ad03d56.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `1a6248f58`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused inactive scroll-geometry/preference-tracking set on iPhone 17 Pro
   - failed before implementation because `PhraseArticleTaskPolicy`, `BrowseCollectionTaskPolicy`, and `VietnameseMenuTaskPolicy` had no policy seam for inactive scroll-geometry or menu section-preference callbacks
   - passed after implementation: `1` test, `0` failures
