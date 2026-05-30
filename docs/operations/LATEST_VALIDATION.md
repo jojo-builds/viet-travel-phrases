@@ -136,6 +136,12 @@ Fresh command evidence from this pass:
   - launch was blocked because the phone was locked
   - signing scan stayed clean; personal signing remained local and was not written to repo files
   - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `8ce390df0`
+  - build passed from a dedicated `Debug-iphoneos` product
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
 
 ## Current Main Non-Paywall Merge Sweep Evidence
 
