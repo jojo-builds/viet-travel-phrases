@@ -97,7 +97,7 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
-- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `3deb4ffc67`
+- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `65cd3ea9d`
   - build passed
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
