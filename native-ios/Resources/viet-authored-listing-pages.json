@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 806,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-27T09:01:33.202Z"
+    "generatedAt": "2026-05-30T05:21:11.575Z"
   },
   "pages": [
     {
@@ -22,7 +22,7 @@
       "title": "Xin chào",
       "englishTitle": "Hello",
       "pronunciation": "sin chow",
-      "summary": "Hello (universal greeting)",
+      "summary": "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
       "iconName": "star.fill",
       "tintName": "red",
       "categoryIDs": [
@@ -34,7 +34,7 @@
         {
           "id": "at-glance",
           "title": "Meaning",
-          "body": "Hello (universal greeting)",
+          "body": "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
           "presentation": "plain-text",
           "phrases": [],
           "breakdown": []
@@ -68,8 +68,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Good to know",
-          "body": "If you are unsure, do not freeze. Start with Xin chào, smile, and let the rest of the sentence carry the practical need.",
+          "title": "Good To Know",
+          "body": "If someone answers with a warmer chào plus a relationship word, you can mirror the energy without copying every word exactly.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []
@@ -1516,7 +1516,7 @@
       "title": "Nói chậm chút được không?",
       "englishTitle": "Can you speak a little slower?",
       "pronunciation": "noy chuhm choot dook khong",
-      "summary": "Nói chậm chút được không? means “Can you speak a little slower?”",
+      "summary": "Ask someone to slow down without making the exchange feel tense.",
       "iconName": "questionmark.bubble.fill",
       "tintName": "blue",
       "categoryIDs": [
@@ -1524,6 +1524,14 @@
       ],
       "audioKey": "problems-3",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Ask someone to slow down without making the exchange feel tense.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -1618,7 +1626,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+          "body": "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []
@@ -1955,7 +1963,7 @@
       "title": "Viết xuống giúp tôi",
       "englishTitle": "Please write it down",
       "pronunciation": "vee-et zoong zoop toy",
-      "summary": "Viết xuống giúp tôi means “Please write it down”.",
+      "summary": "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
       "iconName": "questionmark.bubble.fill",
       "tintName": "blue",
       "categoryIDs": [
@@ -1963,6 +1971,14 @@
       ],
       "audioKey": "repair-2",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -11642,7 +11658,7 @@
       "title": "Cái này bao nhiêu?",
       "englishTitle": "How much is this?",
       "pronunciation": "gai nai bao nyew",
-      "summary": "Cái này bao nhiêu? means “How much is this?”",
+      "summary": "Ask the price while pointing, then confirm the number before paying.",
       "iconName": "creditcard.fill",
       "tintName": "green",
       "categoryIDs": [
@@ -11650,6 +11666,14 @@
       ],
       "audioKey": "price-1",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Ask the price while pointing, then confirm the number before paying.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -11744,7 +11768,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
+          "body": "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []
@@ -12325,7 +12349,7 @@
       "title": "Bớt chút được không?",
       "englishTitle": "Can you lower it a little?",
       "pronunciation": "but choot dook khong",
-      "summary": "Bớt chút được không? means “Can you lower it a little?”",
+      "summary": "Use this short market phrase only where bargaining is normal.",
       "iconName": "creditcard.fill",
       "tintName": "green",
       "categoryIDs": [
@@ -12333,6 +12357,14 @@
       ],
       "audioKey": "price-4",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this short market phrase only where bargaining is normal.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -28439,7 +28471,7 @@
       "title": "Đây là thị thực của tôi",
       "englishTitle": "Here is my visa",
       "pronunciation": "Day la thi thuc cua toi",
-      "summary": "Đây là thị thực của tôi means “Here is my visa”.",
+      "summary": "Use this when immigration, airline, or visa staff need to see your visa document.",
       "iconName": "airplane.arrival",
       "tintName": "blue",
       "categoryIDs": [
@@ -28447,6 +28479,14 @@
       ],
       "audioKey": "v500-airp-bord-arri-here-is-my-visa",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this when immigration, airline, or visa staff need to see your visa document.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -29069,7 +29109,7 @@
       "title": "Tôi cảm thấy chóng mặt",
       "englishTitle": "I feel dizzy",
       "pronunciation": "toy gahm thay chong mat",
-      "summary": "Tôi cảm thấy chóng mặt means “I feel dizzy”.",
+      "summary": "Use this when dizziness is the symptom you need help for.",
       "iconName": "cross.case.fill",
       "tintName": "red",
       "categoryIDs": [
@@ -29077,6 +29117,14 @@
       ],
       "audioKey": "v500-heal-phar-i-feel-dizzy",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this when dizziness is the symptom you need help for.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -30067,7 +30115,7 @@
       "title": "Giảm giá chút được không?",
       "englishTitle": "Can you lower the price?",
       "pronunciation": "zam zah choot dook khong",
-      "summary": "Giảm giá chút được không? means “Can you lower the price?”",
+      "summary": "Use this when bargaining is normal and you want to ask for a small discount.",
       "iconName": "bag.fill",
       "tintName": "purple",
       "categoryIDs": [
@@ -30075,6 +30123,14 @@
       ],
       "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this when bargaining is normal and you want to ask for a small discount.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -30471,7 +30527,7 @@
       "title": "Tôi có thể mua SIM ở đâu?",
       "englishTitle": "Where can I get a local SIM card?",
       "pronunciation": "toy koh theh moo-ah sim uh dow",
-      "summary": "Tôi có thể mua SIM ở đâu? means “Where can I get a local SIM card?”",
+      "summary": "Ask this when you need to find a counter or shop that sells SIM cards for mobile data.",
       "iconName": "wifi",
       "tintName": "blue",
       "categoryIDs": [
@@ -30479,6 +30535,14 @@
       ],
       "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Ask this when you need to find a counter or shop that sells SIM cards for mobile data.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -31577,7 +31641,7 @@
       "title": "Tôi có đặt tour",
       "englishTitle": "I have a tour booking",
       "pronunciation": "toy koh dat tour",
-      "summary": "Tôi có đặt tour means “I have a tour booking”.",
+      "summary": "Use this when staff need to find an existing tour reservation, not sell you a new ticket.",
       "iconName": "camera.fill",
       "tintName": "purple",
       "categoryIDs": [
@@ -31585,6 +31649,14 @@
       ],
       "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this when staff need to find an existing tour reservation, not sell you a new ticket.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -32078,7 +32150,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+          "body": "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []
@@ -33794,7 +33866,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
+          "body": "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []

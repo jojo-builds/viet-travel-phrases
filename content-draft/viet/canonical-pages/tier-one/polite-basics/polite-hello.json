@@ -7,7 +7,7 @@
   "title": "Xin chào",
   "englishTitle": "Hello",
   "pronunciation": "sin chow",
-  "summary": "Hello (universal greeting)",
+  "summary": "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
   "iconName": "star.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,14 +18,14 @@
   "sections": [
     {
       "id": "at-glance",
-      "title": "At a glance",
-      "body": "Use Xin chào as the safe first hello in shops, hotels, tours, and simple requests. It lets you start warmly without guessing a relationship word.",
+      "title": "Start Safe, Then Warm Up",
+      "body": "Xin chào is the clean first hello when you walk into a shop, hotel, tour desk, or small request. It buys you a polite opening before you decide whether anh, chị, cô, chú, or a simpler chào fits better.",
       "presentation": "plain-text"
     },
     {
       "id": "quick-say",
-      "title": "Quick say",
-      "body": "Use Xin chào when you want one safe greeting. Use Chào in relaxed moments, especially with someone you already know or when you add a relationship word.",
+      "title": "The First Hello",
+      "body": "Start with Xin chào when the relationship is unclear. Drop to Chào when the moment is relaxed, or add the right relationship word when the person in front of you is obvious.",
       "phrases": [
         {
           "id": "polite-1",
@@ -53,7 +53,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Xin gives the greeting a polite shape, chào carries the hello, and the full phrase is the safest default when you do not know the relationship word yet.",
+      "body": "Xin gives the greeting its polite shape. Chào carries the hello. Together they keep the opening respectful without forcing you to guess age, role, or closeness too early.",
       "breakdown": [
         {
           "id": "xin",
@@ -78,14 +78,14 @@
     },
     {
       "id": "when-to-use",
-      "title": "Where it helps",
-      "body": "Use Xin chào for first contact: a shop, front desk, guide, or polite request. In warmer moments, Chào plus the right relationship word sounds more local.",
+      "title": "Where It Helps",
+      "body": "Use it at first contact: front desk, shop counter, guide pickup, cafe order, or polite question. If the exchange becomes warmer, the next phrase can carry the relationship word.",
       "presentation": "plain-text"
     },
     {
       "id": "situational-greetings",
-      "title": "Situational greetings",
-      "body": "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
+      "title": "When The Room Gives You More",
+      "body": "These greetings fit once the setting is clearer: a familiar person, a respectful older adult, a phone call, or a time-of-day exchange.",
       "presentation": "horizontal-phrase-cards",
       "phrases": [
         {
@@ -142,8 +142,8 @@
     },
     {
       "id": "local-greetings",
-      "title": "How locals actually greet",
-      "body": "Pick the relationship word when the person's role is clear; stay with Xin chào when unsure. These words show age, respect, and social distance.",
+      "title": "Relationship Words Matter",
+      "body": "Vietnamese greetings often show age, respect, and social distance. Stay with Xin chào when unsure; choose anh, chị, em, cô, chú, ông, or bà only when the role feels clear enough.",
       "phrases": [
         {
           "id": "xin-chao-anh",
@@ -220,8 +220,8 @@
     },
     {
       "id": "common-follow-ups",
-      "title": "Common follow-ups",
-      "body": "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
+      "title": "If The Hello Continues",
+      "body": "After hello, the next beat is usually practical or social: checking in, asking where to go, or moving into the actual request.",
       "phrases": [
         {
           "id": "smalltalk-7",
@@ -258,20 +258,20 @@
     },
     {
       "id": "cultural-note",
-      "title": "Cultural note",
-      "body": "You do not need to guess perfectly. A calm Xin chào works almost everywhere; adding anh, chị, em, cô, chú, ông, or bà can sound warmer.",
+      "title": "You Do Not Need The Perfect Word",
+      "body": "A calm Xin chào is better than freezing while you calculate the perfect relationship term. Smile, keep the greeting simple, then let the next phrase do the work.",
       "presentation": "tip-callout"
     },
     {
       "id": "good-to-know",
-      "title": "Good to know",
-      "body": "If you are unsure, do not freeze. Start with Xin chào, smile, and let the rest of the sentence carry the practical need.",
+      "title": "Good To Know",
+      "body": "If someone answers with a warmer chào plus a relationship word, you can mirror the energy without copying every word exactly.",
       "presentation": "tip-callout"
     },
     {
       "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "title": "Keep The Exchange Moving",
+      "body": "Use these when the hello has opened the door and you need the next small move.",
       "phrases": [
         {
           "id": "polite-2",

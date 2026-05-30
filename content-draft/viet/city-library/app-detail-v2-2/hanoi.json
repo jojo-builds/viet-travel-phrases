@@ -2888,8 +2888,8 @@
       "travelerMoment": "Giảng carries the egg-coffee origin story more than any normal cafe stop. The narrow approach, close tables, and hot cup make the drink feel rooted.",
       "storySpine": "Giảng stands out through a physical ritual: narrow entrance, close tables, hot egg coffee, and a short dessert-like stop.",
       "intro": {
-        "heading": "The First Cup Hot",
-        "body": "Cà phê Giảng is a compact Hanoi egg-coffee ritual: a narrow Old Quarter entrance, close tables, and a small hot cup that drinks like dessert."
+        "heading": "Start With The Hot Egg Coffee",
+        "body": "Cà phê Giảng is the Hanoi egg-coffee origin stop: a narrow Old Quarter entrance, close tables, and a small hot cup where thick sweet foam sits over dark coffee."
       },
       "usefulPhraseCards": [
         {
@@ -2919,19 +2919,19 @@
       ],
       "sections": [
         {
-          "id": "narrow-door-close-tables",
-          "heading": "Narrow Door, Close Tables",
-          "body": "Expect an old-school room more than a lounge. Tight seating and quick turnover are part of the visit, so the order can stay simple."
+          "id": "find-the-room-first",
+          "heading": "Find The Room First",
+          "body": "Expect tight tables, quick movement, and an old-school cafe rhythm where a simple order helps."
         },
         {
-          "id": "the-texture-is-the-point",
-          "heading": "The Texture Is The Point",
-          "body": "Hot egg coffee lets the thick cream show clearly: warm, sweet, foamy, and balanced against dark coffee underneath."
+          "id": "hot-shows-the-texture",
+          "heading": "Hot Shows The Texture",
+          "body": "Order the hot egg coffee first if you want the house idea clearly. Warm foam, sweet richness, and bitter coffee separate better before ice changes the drink."
         },
         {
-          "id": "compare-later",
-          "heading": "Compare Later",
-          "body": "Nguyễn Hữu Huân is a natural coffee street. Giảng is the origin-heavy stop; Đinh or The Note can wait for another lake-side moment."
+          "id": "compare-lake-cafes-later",
+          "heading": "Compare Lake Cafes Later",
+          "body": "Giảng is the origin-heavy stop on Nguyễn Hữu Huân. Save The Note, Đinh, or Cộng for a different cafe mood after you understand this cup."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2954,14 +2954,13 @@
         "duplicateBodyTest": "pass",
         "antiCynicismTest": "pass",
         "notes": [
-          "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Voice-pattern pilot update on 2026-05-30: cafe page revised for origin ritual, room expectation, and hot-cup first move."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Gold calibration: origin cafe ritual with narrow-room scene, hot cup first move, and useful ordering phrase cards."
+        "reason": "Voice-pattern pilot: cafe page connects drink ritual, place texture, and first ordering move without becoming a review blurb."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

@@ -6731,8 +6731,8 @@
       "travelerMoment": "Morning Glory puts Hội An food into a more settled restaurant room, where central-coast dishes, ingredient questions, and old-town proximity can make a first meal manageable.",
       "storySpine": "The restaurant gives busy Ancient Town a more manageable first dinner, especially when the menu feels wide and the group needs a simple starting point.",
       "intro": {
-        "heading": "One Hội An Dish To Start",
-        "body": "Morning Glory Original is a controlled Hội An meal near the old streets, helpful when one local dish and a few ingredient questions keep dinner manageable."
+        "heading": "Start With One Hội An Dish",
+        "body": "Morning Glory Original is a controlled first Hội An meal near the old streets: broad local dishes, an easier restaurant frame, and enough ingredient questions to make the next smaller food stop less confusing."
       },
       "usefulPhraseCards": [
         {
@@ -6762,19 +6762,19 @@
       ],
       "sections": [
         {
-          "id": "street-food-in-a-restaurant-frame",
-          "heading": "Street Food In A Restaurant Room",
-          "body": "The room is organized, but the idea is still daily Vietnamese food: market snacks, home dishes, street-food logic, and family recipes in one place."
+          "id": "restaurant-frame-street-food-logic",
+          "heading": "Restaurant Frame, Street-Food Logic",
+          "body": "The room is organized, but the menu still points toward market snacks, home dishes, herbs, rice paper, seafood, and central-coast flavors. Treat it as orientation before smaller specialty counters."
         },
         {
-          "id": "calm-after-busy-streets",
-          "heading": "After Busy Streets",
-          "body": "The restaurant helps if Ancient Town is crowded and dinner needs to be manageable. Earlier dinner keeps the room from turning into a queue."
+          "id": "choose-one-main-dish",
+          "heading": "Choose One Main Dish",
+          "body": "Pick one Hội An or central-Vietnam dish first, then add around it. Cao lầu, white rose, bánh xèo, or a simple vegetable dish gives the table a direction."
         },
         {
-          "id": "a-launchpad-not-the-whole-story",
-          "heading": "A Launchpad Into The Story",
-          "body": "After one controlled meal, smaller counters and specialty dishes become easier to understand. Morning Glory should not carry every Hội An food expectation."
+          "id": "before-the-smaller-counters",
+          "heading": "Before The Smaller Counters",
+          "body": "After one calmer meal, the specialty counters around town become easier to read. You know what herbs, sauces, rice paper, and shrimp questions are doing on the table."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6797,14 +6797,13 @@
         "duplicateBodyTest": "pass",
         "antiCynicismTest": "pass",
         "notes": [
-          "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Voice-pattern pilot update on 2026-05-30: restaurant page revised for first-meal orientation, main-dish decision, and bridge to smaller counters."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Gold calibration: controlled first meal near Ancient Town without making it carry all Hoi An food expectations."
+        "reason": "Voice-pattern pilot: restaurant page gives a specific first-meal job and menu-reading behavior without using a fixed template."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
