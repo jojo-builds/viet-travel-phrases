@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T19:27:59.576Z",
+    "generatedAt": "2026-05-30T19:41:57.925Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 811,
+    "cityLibraryPageCount": 812,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2253,
-    "missingAudioCount": 686
+    "requiredAudioCount": 2254,
+    "missingAudioCount": 687
   },
   "required": [
     {
@@ -11793,6 +11793,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-rieu-cua-39-074258d216",
+      "text": "Bún Riêu Cua 39",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-cathedral",
       "sectionID": "hero",
       "kind": "hero",
@@ -18560,6 +18568,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-bun-cha-ca-hon-38a7c8337d",
       "text": "Bún Chả Cá Hờn",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-rieu-cua-39-074258d216",
+      "text": "Bún Riêu Cua 39",
       "resolved": false
     },
     {

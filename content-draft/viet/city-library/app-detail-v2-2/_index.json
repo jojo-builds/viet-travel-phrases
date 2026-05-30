@@ -20,19 +20,19 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 505,
+    "entries": 506,
     "byCity": {
-      "danang": 100,
+      "danang": 101,
       "hanoi": 101,
       "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 505,
+    "finalPass": 506,
     "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 505,
+    "renderableRelatedPlaceCandidates": 506,
     "renderableMentionedHereCandidates": 44,
     "verificationFlags": 1
   },
@@ -173,6 +173,13 @@
     {
       "id": "viet-family-city-danang-place-bun-cha-ca-hon",
       "pageID": "city-danang-place-bun-cha-ca-hon",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "pageID": "city-danang-place-bun-rieu-cua-39",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"

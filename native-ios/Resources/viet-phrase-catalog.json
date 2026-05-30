@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1770,
+    "phraseCount": 1771,
     "basePhraseCount": 935,
-    "cityPhraseCount": 811,
+    "cityPhraseCount": 812,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1752,
+    "familyCount": 1753,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -11711,6 +11711,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-bun-cha-ca-hon"
+      ]
+    },
+    {
+      "id": "city-danang-place-bun-rieu-cua-39",
+      "pageID": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "scenarioID": "city-guides",
+      "familyTitle": "Bun Rieu Cua 39 pronunciation",
+      "summary": "Save Bún Riêu Cua 39 when Da Nang needs a different noodle bowl: crab-tomato broth, rice vermicelli, tofu, herbs, and condiments added after the first taste.",
+      "primaryPhraseID": "city-danang-place-bun-rieu-cua-39",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-bun-rieu-cua-39"
       ]
     },
     {
@@ -58578,6 +58590,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-bun-rieu-cua-39",
+      "familyID": "city-danang-place-bun-rieu-cua-39",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Bun Rieu Cua 39",
+      "targetText": "Bún Riêu Cua 39",
+      "canonicalTargetText": "Bún Riêu Cua 39",
+      "pronunciation": "bun rieu cua 39",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Bún Riêu Cua 39 when Da Nang needs a different noodle bowl: crab-tomato broth, rice vermicelli, tofu, herbs, and condiments added after the first taste.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "Bun Rieu Cua 39",
+        "Bún Riêu Cua 39"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-bun-rieu-cua-39; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-bun-rieu-cua-39",
+      "placeName": "Bun Rieu Cua 39",
+      "placeVietnameseName": "Bún Riêu Cua 39",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

@@ -2295,6 +2295,128 @@
     },
     {
       "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "pageID": "city-danang-place-bun-rieu-cua-39",
+      "sourcePageID": "city-danang-place-bun-rieu-cua-39",
+      "displayName": "Bún Riêu Cua 39",
+      "englishName": "Bun Rieu Cua 39",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "pronunciation": "bun rieu cua ba muoi chin",
+      "travelerMoment": "Save Bún Riêu Cua 39 when Da Nang needs a different noodle bowl: crab-tomato broth, rice vermicelli, tofu, herbs, and condiments added after the first taste.",
+      "storySpine": "Bún Riêu Cua 39 broadens the Da Nang noodle set beyond mì Quảng and fish-cake soup with a 2025 MICHELIN Selected crab-tomato bowl.",
+      "intro": {
+        "heading": "Crab-Tomato Broth, Bright Bowl",
+        "body": "Bún Riêu Cua 39 is a 2025 MICHELIN Selected Da Nang noodle stop for crab-tomato vermicelli soup: red broth, tofu, herbs, and a sharper finish than phở."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-the-broth-lead",
+          "heading": "Let The Broth Lead",
+          "body": "Taste the red broth before changing the bowl. Shrimp paste, chili, herbs, and table condiments can pull it brighter, saltier, or funkier fast."
+        },
+        {
+          "id": "know-the-bowl-shape",
+          "heading": "Know The Bowl Shape",
+          "body": "Expect thin rice vermicelli, crab mixture, tofu, tomato broth, and herbs. The bowl should feel tangier and more rustic than a clean beef broth."
+        },
+        {
+          "id": "let-39-help-the-name-stick",
+          "heading": "Let 39 Help The Name Stick",
+          "body": "The number makes the place easier to spot on a map, receipt, or search result. Keep the first order simple if the room is moving quickly."
+        },
+        {
+          "id": "different-noodle-mood",
+          "heading": "Different Noodle Mood",
+          "body": "Pair it mentally with Hờn or Mì Quảng 1A: not better, just a brighter crab-tomato stop when another Da Nang bowl should lead."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-danang-place-bun-cha-ca-hon",
+          "label": "Bún Chả Cá Hờn",
+          "relationship": "same-city noodle contrast",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand fish-cake bowl when broth and herbs should lead another way.",
+          "reason": "Hờn is the useful Da Nang noodle contrast: fish-cake soup beside a crab-tomato bún riêu bowl.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-danang-place-mi-quang-1a",
+          "label": "Mì Quảng 1A",
+          "relationship": "regional noodle contrast",
+          "displaySubtitle": "A 2025 MICHELIN Selected mì Quảng table for a drier, turmeric-noodle lunch.",
+          "reason": "Mi Quang 1A keeps the comparison inside Da Nang noodle meals without pretending the bowls do the same job.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Da Nang 101-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "No city-level bún riêu dish page exists yet, so Mentioned Here is intentionally empty rather than forced.",
+          "Official 2025 MICHELIN PDF support checked locally: Bún Riêu Cua 39 appears in the Da Nang MICHELIN Selected section as Noodles."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Production Da Nang additive pilot: bounded 2025 MICHELIN Selected context, distinct crab-tomato noodle reason, mapped phrase cards, and renderable related-place comparisons."
+      },
+      "sourceNotes": [
+        "Added as the first additive Da Nang restaurant pilot after the 500-page hard reset; script assumptions now allow Da Nang 101.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Riêu Cua 39 in the Da Nang MICHELIN Selected section as Noodles.",
+        "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "hard_reset_v2_2_source_voice_gate_passed",
+        "v2_2GateSources": [],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Additive food listing pass: source, phrase mapping, related-card intent, and MICHELIN support reviewed before projection."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
       "id": "viet-family-city-danang-place-cathedral",
       "pageID": "city-danang-place-cathedral",
       "sourcePageID": "city-danang-place-cathedral",

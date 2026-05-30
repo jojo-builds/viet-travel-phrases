@@ -1148,7 +1148,7 @@ These are not current-source edits yet. They are official 2025 MICHELIN-recogniz
 - Saigon MICHELIN Selected candidates not currently represented in the V2.2 source: `Bà Cô Lốc Cốc`, `Hoi An Sense`, `Okra FoodBar`, `ST25 by KOTO`, `The Albion by Kirk Westaway`.
 - Saigon Bib Gourmand candidates not currently represented in the V2.2 source from the visible official list section: `Chay Garden`, `Hồng Phát`, `Hum Garden`, `Nhà Tú`, `Phở Chào`, `Phở Hoàng`.
 - Da Nang new Bib Gourmand candidates not currently represented in the V2.2 source: `Bánh Xèo 76`, `Bún Bò Huế Bà Thương`, `Quê Xưa`, `Shamballa`.
-- Da Nang new MICHELIN Selected candidates not currently represented in the V2.2 source: `Bún Riêu Cua 39`, `Moc`.
+- Da Nang new MICHELIN Selected candidates not currently represented in the V2.2 source: `Moc`.
 
 Do not drop existing support listings from the app by default. Keep them available for utility and route planning, but do not promote them as headline foodie saves. If a high-visibility shelf or marketing surface needs a tighter restaurant set, the first replacement candidates should come from the official list above before using support-first pages such as `Boulevard Gelato & Coffee`, `Reply 1988`, `Faifo Coffee`, or setting-led Hue dinner pages.
 
@@ -1157,6 +1157,7 @@ Bò Kho Gánh moved out of this backlog in the fourteenth pass and now exists as
 Bún Bò Huế 14B moved out of this backlog in the fifteenth pass and now exists as `city-hcmc-place-bun-bo-hue-14b`.
 Phở Lệ moved out of the high-priority pho add list in the sixteenth pass and now exists as `city-hcmc-place-pho-le-district-5`.
 Bánh Cuốn Bà Hoành moved out of the high-priority Hanoi breakfast add list in the seventeenth pass and now exists as `city-hanoi-place-banh-cuon-ba-hoanh`.
+Bún Riêu Cua 39 moved out of the high-priority Da Nang noodle add list in the eighteenth pass and now exists as `city-danang-place-bun-rieu-cua-39`.
 
 ### Validation Status
 
@@ -2138,6 +2139,113 @@ Results:
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
 The additive path is now proven across four Saigon food pages and one Hanoi breakfast page. The next MICHELIN-backed adds should keep answering why this place, why this dish, and why save it before the trip, rather than expanding every guide-listed restaurant.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only.
+
+## Continuation: Bún Riêu Cua 39 Additive Da Nang Pilot
+
+Eighteenth pass date: 2026-05-31
+
+Commit before pass: `894fce9f6 Add Banh Cuon Ba Hoanh Hanoi food listing`
+
+This continuation implements the first additive Da Nang food pilot after four Saigon additions and one Hanoi breakfast addition. The product choice remains additive expansion: Saigon carries 104 noun/place rows, Hanoi carries 101, Da Nang now carries 101, and the full city-place runtime carries 506 rows total.
+
+### Page Added
+
+- `city-danang-place-bun-rieu-cua-39`: added as a first-class V2.2 app-detail source object and projected into the legacy-compatible native resources.
+
+Visible page direction:
+
+- frames Bún Riêu Cua 39 as a distinct Da Nang crab-tomato noodle save;
+- uses bounded 2025 MICHELIN Selected language supported by the official 2025 source;
+- uses bowl-specific cues: red crab-tomato broth, rice vermicelli, tofu, herbs, shrimp paste, chili, and table condiments;
+- keeps hours, address, booking, closure, and fragile operations out of bundled copy.
+
+### Contract Widening
+
+The additive contract now has a first Da Nang expansion row:
+
+- `native-ios/scripts/import-city-noun-intake.js`: city expected-row contract now allows HCMC to carry 104 rows, Hanoi to carry 101, and Da Nang to carry 101 while Hội An and Hue remain at 100.
+- `native-ios/scripts/import-viet-city-handwritten-copy.js`: expected handwritten-copy count follows the approved noun source pages instead of a hardcoded 100-per-city value.
+- `native-ios/scripts/validate-viet-city-copy.js`: city production validation now expects 506 noun/place pages, with HCMC at 104, Hanoi at 101, and Da Nang at 101.
+
+This keeps the growing food catalog explicit in validation instead of hiding new restaurants as loose JSON extras.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claim added only where this source supported it:
+
+- `Bún Riêu Cua 39`: 2025 MICHELIN Selected, Da Nang, Noodles.
+
+The live MICHELIN restaurant page was not used as the runtime source of truth, so the visible app copy avoids hours, exact address, booking, closure, and narrow operational claims.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-rieu-cua-39-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-bun-rieu-cua-39`
+  - `bun-rieu-cua-39-first-screen.jpg`: first viewport shows the new Bún Riêu Cua 39 page, compact wrapped title, 2025 MICHELIN Selected framing, and crab-tomato noodle intro.
+  - `bun-rieu-cua-39-bottom-inset.jpg`: bottom-validation launch shows related Da Nang noodle cards and playable Useful Phrases above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-bun-rieu-cua-39`
+  - `--detail-page viet-family-city-danang-place-bun-rieu-cua-39 --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 101 places, Da Nang 101 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 506 entries imported.
+- native resource generation: PASS, 1753 families, 1771 phrases, 1764 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 506 entries, 506 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 506 city noun pages, 506 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 506 city places, 812 city phrase tags, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bún Riêu Cua 39 Additive Pilot
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The additive path is now proven across Saigon, Hanoi, and Da Nang. The next adds should keep widening specific food desire only when the page adds a new dish memory or a clearly better save reason, not just because a restaurant appears in the guide list.
 
 ### Agent Lifecycle Note
 

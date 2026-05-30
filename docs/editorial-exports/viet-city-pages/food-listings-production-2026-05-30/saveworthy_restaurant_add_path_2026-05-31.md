@@ -13,9 +13,9 @@ That means a new restaurant page needs one of two explicit product choices:
 - swap a weaker current HCMC row out of the 100-page inventory; or
 - expand the inventory contract and update the scripts, reports, generated resources, render proof, and validation expectations that currently assume 100 pages per city.
 
-For the additive pilots so far, Jojo chose the expansion path. The runtime shape was widened deliberately: HCMC now carries 104 noun/place rows, Hanoi carries 101, and Da Nang, Hội An, and Hue remain at 100 each, for 505 total city places.
+For the additive pilots so far, Jojo chose the expansion path. The runtime shape was widened deliberately: HCMC now carries 104 noun/place rows, Hanoi carries 101, Da Nang carries 101, and Hội An and Hue remain at 100 each, for 506 total city places.
 
-That makes Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, and Bánh Cuốn Bà Hoành the current test set for whether stronger foodie pages make the app feel more save-worthy without forcing a premature drop decision.
+That makes Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, and Bún Riêu Cua 39 the current test set for whether stronger foodie pages make the app feel more save-worthy without forcing a premature drop decision.
 
 ## Implemented Pilot
 
@@ -98,8 +98,8 @@ The product question is not "is the old row bad?" It is "does this exact row sti
 
 For future swap mode:
 
-1. Choose the outgoing HCMC row and record why it is demoted, not deleted from history.
-2. Update `docs/city-production/agent-inputs/hcmc-nouns.md` while preserving exactly 100 rows.
+1. Choose the outgoing city row and record why it is demoted, not deleted from history.
+2. Update the matching `docs/city-production/agent-inputs/<city>-nouns.md` file while preserving the approved city count.
 3. Run the city noun intake path or make an equivalent audited source update to `content-draft/viet/city-library/v1.json`.
 4. Add the first-class V2.2 source object in `content-draft/viet/city-library/app-detail-v2-2/hcmc.json`.
 5. Update `content-draft/viet/city-library/app-detail-v2-2/_index.json`.
@@ -111,7 +111,7 @@ For future swap mode:
 
 Expansion mode was treated as a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
 
-Expansion mode has now been proven five times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, and Bánh Cuốn Bà Hoành. The implemented changes widened the importer and validators to expect HCMC 104 + Hanoi 101 / total 505, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
+Expansion mode has now been proven six times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, and Bún Riêu Cua 39. The implemented changes widened the importer and validators to expect HCMC 104 + Hanoi 101 + Da Nang 101 / total 506, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-man-moi-additive/`
 
@@ -123,11 +123,13 @@ Expansion mode has now been proven five times for Mặn Mòi, Bò Kho Gánh, Bú
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-banh-cuon-ba-hoanh-additive/`
 
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-rieu-cua-39-additive/`
+
 ## Acceptance Gate
 
 The page is not production-ready until it passes all of these:
 
-- The visible copy answers why this restaurant, why Saigon, and why save it before the trip.
+- The visible copy answers why this restaurant, why its city, and why save it before the trip.
 - MICHELIN language is date-bounded and source-supported.
 - No fragile hours, prices, booking, address, closure, or menu-item claims are bundled without fresh verification.
 - Useful phrase cards are playable.

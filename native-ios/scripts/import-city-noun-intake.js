@@ -13,7 +13,7 @@ const expectedCities = ["hcmc", "hanoi", "danang", "hoian", "hue"];
 const expectedRowsByCity = new Map(Object.entries({
   hcmc: 104,
   hanoi: 101,
-  danang: 100,
+  danang: 101,
   hoian: 100,
   hue: 100,
 }));
