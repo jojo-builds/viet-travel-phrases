@@ -4330,8 +4330,8 @@
       "travelerMoment": "Hàn is the first-bearings market for gifts and an easy central food look. Cồn remains the clearer snack-market comparison.",
       "storySpine": "The market makes central Da Nang concrete fast: food smells, fabric stalls, dried seafood, bargaining, and river-side errands in one short stop.",
       "intro": {
-        "heading": "A Market For First Bearings",
-        "body": "Hàn Market gives a practical first look at central Da Nang: fish-sauce jars, dried seafood, fabric stalls, rattan bags, and breakfast bowls under one roof."
+        "heading": "Do One Slow Lap First",
+        "body": "Hàn Market is the central Da Nang market for first bearings: dried seafood, fish-sauce jars, fabric stalls, rattan bags, breakfast bowls, and enough price questions to practice before the day gets busy."
       },
       "usefulPhraseCards": [
         {
@@ -4361,19 +4361,19 @@
       ],
       "sections": [
         {
-          "id": "one-slow-lap",
-          "heading": "One Slow Lap",
-          "body": "The food area is easier after one slow circle. Notice where people are eating, then settle on mì Quảng, bánh bèo, or a small bánh xèo."
+          "id": "one-lap-before-buying",
+          "heading": "One Lap Before Buying",
+          "body": "Walk the food and goods areas once before choosing. The room makes more sense after you see where people are eating, bargaining, and carrying purchases."
         },
         {
-          "id": "food-early-gifts-later",
-          "heading": "Food Early, Gifts Later",
-          "body": "Morning is better for breakfast energy and fresh-market texture. Fabric, dried food, and souvenir browsing can feel easier after the first rush."
+          "id": "eat-early-shop-later",
+          "heading": "Eat Early, Shop Later",
+          "body": "Morning gives the market more food energy. Sit for mì Quảng, bánh bèo, or a small bánh xèo first, then browse fabric, dried food, and gifts with less pressure."
         },
         {
-          "id": "han-for-bearings-con-for-snacks",
+          "id": "han-vs-con-market",
           "heading": "Hàn For Bearings, Cồn For Snacks",
-          "body": "Hàn is the easier central market for gifts and orientation. Cồn is for small dishes, stools, steam, and cash-ready snacking."
+          "body": "Hàn is easier for a first central-market read and practical gifts. Cồn is rougher, louder, and better for small dishes, stools, steam, and cash-ready snacking."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4396,14 +4396,13 @@
         "duplicateBodyTest": "pass",
         "antiCynicismTest": "pass",
         "notes": [
-          "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Voice-pattern pilot update on 2026-05-30: market page revised for first-lap behavior, food/gift split, and clear Hàn vs Cồn decision value."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Gold calibration: first-bearings market with concrete food/gift choices and clear comparison to Con Market."
+        "reason": "Voice-pattern pilot: market page proves scene, why-here, first move, and comparison without a reusable section formula."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

@@ -7,7 +7,7 @@
   "title": "Cái này bao nhiêu?",
   "englishTitle": "How much is this?",
   "pronunciation": "gai nai bao nyew",
-  "summary": "Cái này bao nhiêu? means “How much is this?”",
+  "summary": "Ask the price while pointing, then confirm the number before paying.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cái này bao nhiêu? when you need \"How much is this\". Use this while pointing at an item. Use the rows below to pick the warmer, safer, or more direct version.",
+      "body": "Cái này bao nhiêu? is the market-counter question for one visible thing: a bag, snack, shirt, ride item, or menu photo. Point first so the answer can be short, typed, or shown on a calculator.",
       "presentation": "plain-text"
     },
     {
@@ -56,7 +56,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cái này bao nhiêu? as your first sentence for \"How much is this\". Use this while pointing at an item. Pause after the phrase and listen for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Use Cái này bao nhiêu? before the transaction starts. Keep the item visible, then listen for a spoken number or watch for a typed price.",
       "phrases": [
         {
           "id": "price-1",
@@ -74,7 +74,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
       "phrases": [
         {
           "id": "money-how-much-common",
@@ -92,13 +92,13 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"How much is this\", Cái này bao nhiêu? makes the next step easier to answer. Repeat or show the number before paying if the amount matters.",
+      "body": "Price confusion gets awkward after the item is packed or the ride has started. Ask early, repeat or show the number back, and keep the final amount visible before paying.",
       "presentation": "plain-text"
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Payment & numbers, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Cái này bao nhiêu? once, pause, and watch for the reply. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
       "phrases": [
         {
           "id": "price-2",
@@ -136,7 +136,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while pointing at an item. It fits prices, quantities, payment, and ATM moments, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
+      "body": "Use it in markets, snack stalls, small shops, taxis, laundry counters, or anywhere the thing is visible. For several items, move to a total-price phrase.",
       "phrases": [
         {
           "id": "price-5",
@@ -174,13 +174,13 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
+      "body": "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
       "presentation": "tip-callout"
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "If the answer is a number, ask them to type it or show it on a calculator.",
+      "body": "If the answer comes too fast, hand over your phone calculator or point to theirs. Numbers are easier to trust when both people can see them.",
       "phrases": [
         {
           "id": "airport-4",
@@ -207,14 +207,14 @@
     },
     {
       "id": "you-may-hear",
-      "title": "You may hear",
-      "body": "A local may answer with: Forty thousand, cash only.",
+      "title": "You May Hear",
+      "body": "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
       "presentation": "plain-text"
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
       "phrases": [
         {
           "id": "price-2",
