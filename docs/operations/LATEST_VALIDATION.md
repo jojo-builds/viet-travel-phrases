@@ -195,6 +195,10 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Latest physical iPhone launch check from `feature/admin-photo-backdrop-polish` commit `719783c1a`
+  - simulator focused thermal/navigation set passed with long-history detail render suffixing; rendering now inspects only the active page, or active plus immediate back-preview page, instead of filtering the full detail history
+  - physical phone launch check reported the phone was locked, so build/install/launch proof for this exact commit remains pending
+  - remaining proof gap: unlock the phone, keep it awake, rerun the corrected worktree installer, then continue the hands-on thermal retest while rapidly opening listing pages
 - Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `b5cff54fd`
   - simulator focused thermal set passed with the resolved detail-page cache; repeated same-page resolution now stays at `1` SQLite detail resolver entry instead of rising to `13`
   - build passed from the feature worktree
