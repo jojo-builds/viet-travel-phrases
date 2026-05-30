@@ -2364,6 +2364,110 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Phở Minh Additive HCMC Pilot
+
+Twenty-ninth pass date: 2026-05-31
+
+Commit before pass: `95d4fd220 Add MOC Da Nang seafood listing`
+
+This continuation adds `Phở Minh` as a distinct Saigon phở page. The reason to add it is not another phở slot; the page earns the slot because it gives the HCMC set a quieter old-alley Pasteur Street breakfast role that differs from both `Phở Lệ` and `Phở Hòa Pasteur`.
+
+### Page Added
+
+- `city-hcmc-place-pho-minh`: new first-class V2.2 HCMC restaurant page.
+
+Visible page direction:
+
+- The page frames Phở Minh as a 2025 MICHELIN Bib Gourmand phở shop tucked down a Pasteur Street alley, with a shop story dating to 1945.
+- It uses beef cuts, herbs, broth, and pâté chaud as the concrete food cues, while avoiding fragile hours, prices, booking, address, closure, and availability claims in visible copy.
+- It renders `Phở Sài Gòn` and `Đường Pasteur` as Mentioned Here cards.
+- It renders `Phở Lệ`, `Phở Hòa Pasteur`, and `Đường Pasteur` as Compare Nearby cards, so the user can build a small Saigon phở plan instead of saving a disconnected pin.
+- `Phở Lệ`, `Phở Hòa Pasteur`, and the southern-phở dish page now point back to Phở Minh where that comparison helps.
+
+### Add Decision
+
+Decision: add, because it creates a new trip moment inside an already crowded phở set.
+
+Phở Lệ carries the fuller District 5 Bib Gourmand bowl. Phở Hòa Pasteur remains the familiar central shop. Phở Minh adds the old-alley breakfast room: smaller, earlier-feeling, tied to Pasteur Street, and specific enough for a foodie to save before arrival.
+
+Source support:
+
+- Current MICHELIN venue page for `Phở Minh` lists it as Bib Gourmand, Ho Chi Minh City, Noodles.
+- The same MICHELIN page supports the stable visible facts used in the app copy: narrow alley off Pasteur Street, 1945 origin, traditional beef noodle soup, cut choices, and pâté chaud.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hcmc-nouns.md`: added row `hcmc-pho-minh`.
+- `content-draft/viet/city-library/app-detail-v2-2/hcmc.json`: added the authored V2.2 source object and related cards from existing phở pages.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 514 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 105, Hanoi 103, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-pho-minh-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-pho-minh`
+  - `pho-minh-first-screen.jpg`: first viewport shows the title, pronunciation line, `An Alley Pho Breakfast` intro, and playable Useful Phrases.
+  - `pho-minh-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here and Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-pho-minh`
+  - `--detail-page viet-family-city-hcmc-place-pho-minh --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 105 places, Hanoi 103 places, Da Nang 106 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 514 entries imported.
+- native resource generation: PASS, 1761 families, 1779 phrases, 1772 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 514 entries, 514 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 514 city noun pages, 514 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 514 city places, 820 city phrase tags, 0 release-blocking missing audio rows, 9041 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Phở Minh Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens Saigon phở coverage, but it also makes further Saigon phở additions harder to justify. `Phở Hương Bình` should not be added unless the source evidence can prove a different table role from Phở Lệ, Phở Hòa Pasteur, and Phở Minh.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: MỘC Quán Seafood Additive Da Nang Pilot
 
 Twenty-eighth pass date: 2026-05-31

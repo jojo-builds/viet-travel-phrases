@@ -12,7 +12,7 @@ const reviewReportPath = path.join(repoRoot, "docs", "content-audits", "viet-cit
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
 const expectedPagesByCity = new Map(Object.entries({
-  hcmc: 104,
+  hcmc: 105,
   hanoi: 103,
   danang: 106,
   hoian: 100,

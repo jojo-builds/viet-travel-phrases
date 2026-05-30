@@ -2535,6 +2535,14 @@
           "status": "render"
         },
         {
+          "catalogId": "viet-family-city-hcmc-place-pho-minh",
+          "label": "Phở Minh",
+          "relationship": "same-city pho comparison",
+          "displaySubtitle": "An old Pasteur-alley phở room when breakfast should feel quieter and more deliberate.",
+          "reason": "Pho Minh adds a different Saigon pho role from Pho Le: old alley, morning room, beef cuts, and pate chaud.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-bun-bo-hue-14b",
           "label": "Bún Bò Huế 14B",
           "relationship": "same-city noodle bowl comparison",
@@ -2565,6 +2573,157 @@
       "sourceNotes": [
         "Added as the fourth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 104.",
         "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Lệ (District 5) in the Ho Chi Minh City Bib Gourmand section as Noodles.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hcmc-place-pho-minh",
+      "pageID": "city-hcmc-place-pho-minh",
+      "sourcePageID": "city-hcmc-place-pho-minh",
+      "displayName": "Phở Minh",
+      "englishName": "Pho Minh",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "pronunciation": "pho minh",
+      "travelerMoment": "Save Phở Minh for an early Saigon phở morning when the place should feel tucked away: a small Pasteur Street alley, beef cuts, broth, herbs, and a pâté chaud side if the table is stretching breakfast.",
+      "storySpine": "Phở Minh adds old-Saigon texture to the phở set: the shop dates to 1945, sits down a narrow alley off Pasteur Street, and turns breakfast into a quieter room rather than a famous-shop checklist.",
+      "intro": {
+        "heading": "An Alley Pho Breakfast",
+        "body": "Phở Minh is a 2025 MICHELIN Bib Gourmand phở shop tucked down a small Pasteur Street alley, serving beef phở in a room that feels older and calmer than the boulevard outside."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi tô này",
+          "en": "I'll take this bowl",
+          "intent": "food-this-bowl",
+          "phraseId": "food-2",
+          "audioId": "food-2",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "find-the-alley-first",
+          "heading": "Find The Alley First",
+          "body": "The save starts before the bowl. Pasteur Street gets you close; the smaller alley entrance is the detail that makes the stop feel chosen."
+        },
+        {
+          "id": "beef-cuts-set-the-order",
+          "heading": "Let The Beef Cuts Decide",
+          "body": "The bowl can lean simple or richer depending on the cut. Read the room, point clearly, and keep the herbs close."
+        },
+        {
+          "id": "pate-chaud-makes-it-morning",
+          "heading": "Pâté Chaud Makes It Morning",
+          "body": "If the table is stretching breakfast, the pastry side is part of the reason this stop feels different from a quick bowl elsewhere."
+        },
+        {
+          "id": "three-saigon-pho-roles",
+          "heading": "Three Saigon Pho Roles",
+          "body": "Phở Lệ is the District 5 Bib Gourmand bowl. Phở Hòa Pasteur is the classic central room. Phở Minh is the quieter old-alley breakfast."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở Sài Gòn ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-pho-nam",
+          "sourceText": "phở",
+          "displaySubtitle": "The southern-phở guide behind this Pasteur-alley bowl.",
+          "reason": "The page centers a named Saigon pho shop and should connect to the broader southern pho guide.",
+          "status": "render"
+        },
+        {
+          "label": "Đường Pasteur",
+          "type": "street",
+          "catalogId": "viet-family-city-hcmc-place-pasteur-street",
+          "sourceText": "Pasteur Street",
+          "displaySubtitle": "The street name that gets you close before the alley does the rest.",
+          "reason": "Pho Minh is positioned through Pasteur Street, so the street page should be available as a natural mention.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
+          "label": "Phở Lệ",
+          "relationship": "same-city pho comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when phở should feel fuller and busier.",
+          "reason": "Pho Le gives Pho Minh a deliberately different same-city pho comparison: District 5 and generous bowl versus Pasteur alley breakfast.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+          "label": "Phở Hòa Pasteur",
+          "relationship": "same-street pho comparison",
+          "displaySubtitle": "A classic central Pasteur Street phở stop when the room should be easier to find.",
+          "reason": "Pho Hoa Pasteur is the obvious same-street comparison; Pho Minh keeps the older alley role.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-pasteur-street",
+          "label": "Đường Pasteur",
+          "relationship": "street orientation",
+          "displaySubtitle": "The street to recognize before looking for the smaller alley entrance.",
+          "reason": "Pasteur Street is useful orientation for travelers using the Pho Minh save in the city.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive HCMC 105-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official MICHELIN live guide support checked on 2026-05-31: Phở Minh appears as a Bib Gourmand Ho Chi Minh City phở restaurant.",
+          "Visible copy uses stable source facts only: 1945 origin, Pasteur-alley setting, beef phở, and pâté chaud. It avoids hours, prices, address, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Pho Minh has bounded MICHELIN Bib Gourmand recognition, a distinct old-alley breakfast role, mapped phrase cards, and useful pho/Pasteur comparisons."
+      },
+      "sourceNotes": [
+        "Added as the fifth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 105.",
+        "Official MICHELIN Guide live venue page lists Phở Minh as Bib Gourmand, Ho Chi Minh City, Phở.",
+        "Official MICHELIN page evidence used for stable visible details: dating to 1945, narrow alley off Pasteur Street, beef pho, and pâté chaud.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -9096,6 +9255,14 @@
           "status": "render"
         },
         {
+          "catalogId": "viet-family-city-hcmc-place-pho-minh",
+          "label": "Phở Minh",
+          "relationship": "same-street pho comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Pasteur-alley breakfast when phở should feel quieter and older.",
+          "reason": "Pho Minh gives Pho Hoa Pasteur a same-street comparison with an old-alley breakfast role.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-hu-tieu",
           "label": "Hủ tiếu ở Thành phố Hồ Chí Minh",
           "relationship": "pho-to-hu-tieu noodle decision",
@@ -9218,6 +9385,14 @@
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A busy Pasteur Street shop when southern phở should become one concrete meal.",
           "reason": "The southern pho page should route to a named Saigon pho shop.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-pho-minh",
+          "label": "Phở Minh",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "An older Pasteur-alley breakfast when southern phở should feel more tucked away.",
+          "reason": "Pho Minh turns the southern pho dish page into a second, more old-alley Saigon save.",
           "status": "render"
         }
       ],

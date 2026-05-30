@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1778,
+    "phraseCount": 1779,
     "basePhraseCount": 935,
-    "cityPhraseCount": 819,
+    "cityPhraseCount": 820,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1760,
+    "familyCount": 1761,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -16511,6 +16511,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hcmc-place-pho-le-district-5"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-minh",
+      "pageID": "viet-family-city-hcmc-place-pho-minh",
+      "scenarioID": "city-guides",
+      "familyTitle": "Pho Minh pronunciation",
+      "summary": "Save Phở Minh for an early Saigon phở morning when the place should feel tucked away: a small Pasteur Street alley, beef cuts, broth, herbs, and a pâté chaud side if the table is stretching breakfast.",
+      "primaryPhraseID": "city-hcmc-place-pho-minh",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hcmc-place-pho-minh"
       ]
     },
     {
@@ -76264,6 +76276,51 @@
       "placeID": "hcmc-pho-le-district-5",
       "placeName": "Pho Le District 5",
       "placeVietnameseName": "Phở Lệ",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 2,
+      "sourceIDs": [
+        "vt-hcmc",
+        "vt-hcmc-official",
+        "michelin-vietnam"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-minh",
+      "familyID": "city-hcmc-place-pho-minh",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Pho Minh",
+      "targetText": "Phở Minh",
+      "canonicalTargetText": "Phở Minh",
+      "pronunciation": "pho minh",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Phở Minh for an early Saigon phở morning when the place should feel tucked away: a small Pasteur Street alley, beef cuts, broth, herbs, and a pâté chaud side if the table is stretching breakfast.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Saigon / Ho Chi Minh City",
+        "Saigon",
+        "Thành phố Hồ Chí Minh",
+        "Pho Minh",
+        "Phở Minh"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏙️",
+      "notes": "city-library-v1; city=hcmc; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hcmc-pho-minh; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hcmc",
+      "cityName": "Saigon / Ho Chi Minh City",
+      "cityShortTitle": "Saigon",
+      "cityVietnameseName": "Thành phố Hồ Chí Minh",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hcmc-pho-minh",
+      "placeName": "Pho Minh",
+      "placeVietnameseName": "Phở Minh",
       "cityLibraryKind": "place",
       "cityLibraryPageKind": "restaurant",
       "placeKind": "restaurant",

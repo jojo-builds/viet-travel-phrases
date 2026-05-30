@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 819,
+    "cityLibraryPageCount": 820,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T21:59:08.157Z"
+    "generatedAt": "2026-05-30T22:11:00.523Z"
   },
   "pages": [
     {
@@ -255177,6 +255177,179 @@
           "food-4"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-pho-le-district-5"
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-minh",
+      "familyID": "city-hcmc-place-pho-minh",
+      "phraseID": "city-hcmc-place-pho-minh",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Phở Minh",
+      "englishTitle": "Pho Minh",
+      "pronunciation": "pho minh",
+      "summary": "Save Phở Minh for an early Saigon phở morning when the place should feel tucked away: a small Pasteur Street alley, beef cuts, broth, herbs, and a pâté chaud side if the table is stretching breakfast.",
+      "heroImageName": "HeroCityHcmcPlacePhoMinh",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-pho-minh-aeaa526364",
+      "cityMetadata": {
+        "cityID": "hcmc",
+        "cityName": "Saigon / Ho Chi Minh City",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hcmc-pho-minh",
+        "placeName": "Pho Minh",
+        "sourceIDs": [
+          "vt-hcmc",
+          "vt-hcmc-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Phở Minh adds old-Saigon texture to the phở set: the shop dates to 1945, sits down a narrow alley off Pasteur Street, and turns breakfast into a quieter room rather than a famous-shop checklist.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHcmcPlacePhoMinh"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "An Alley Pho Breakfast",
+          "body": "Phở Minh is a 2025 MICHELIN Bib Gourmand phở shop tucked down a small Pasteur Street alley, serving beef phở in a room that feels older and calmer than the boulevard outside.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Find The Alley First",
+          "body": "The save starts before the bowl. Pasteur Street gets you close; the smaller alley entrance is the detail that makes the stop feel chosen.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Let The Beef Cuts Decide",
+          "body": "The bowl can lean simple or richer depending on the cut. Read the room, point clearly, and keep the herbs close.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Pâté Chaud Makes It Morning",
+          "body": "If the table is stretching breakfast, the pastry side is part of the reason this stop feels different from a quick bowl elsewhere.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Three Saigon Pho Roles",
+          "body": "Phở Lệ is the District 5 Bib Gourmand bowl. Phở Hòa Pasteur is the classic central room. Phở Minh is the quieter old-alley breakfast.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hcmc-place-pho-minh",
+          "vietnamese": "Phở Minh",
+          "english": "Pho Minh",
+          "pronunciation": "pho minh",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-pho-minh-aeaa526364"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hcmc-place-pho-minh",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-2",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hcmc-place-pho-minh",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-2",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hcmc-place-pho-minh"
       }
     },
     {
