@@ -674,6 +674,38 @@
       }
     },
     {
+      "id": "city-danang-place-bep-hen",
+      "cityID": "danang",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:danang",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+        "aboutExcerpt": "Bếp Hên is a 2025 MICHELIN Selected Da Nang restaurant for a warmer home-style meal: handwritten-menu energy, garlicky prawns, beef, greens, and shared plates in a smaller room.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Garlicky prawns give the page a real food reason beyond the guide signal. Let that kind of flavor lead the order, then add quieter plates around it.",
+        "timingExcerpt": "The room should feel personal before it feels formal. Save it when Da Nang needs a dinner memory that is smaller, warmer, and away from big group-venue energy.",
+        "goodToKnowExcerpt": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
+      }
+    },
+    {
       "id": "city-danang-place-boulevard-gelato-coffee",
       "cityID": "danang",
       "pageKind": "restaurant",

@@ -710,6 +710,27 @@
       }
     },
     {
+      "id": "danang-bep-hen",
+      "cityID": "danang",
+      "vietnameseName": "Bếp Hên",
+      "englishName": "Bep Hen",
+      "kind": "restaurant",
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
+      ],
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "productionIntake": {
+        "sourceFile": "danang-nouns.md",
+        "originalPlaceKind": "restaurant",
+        "sourceNotes": "Current MICHELIN venue page; 2025 MICHELIN Guide Vietnam coverage treats Bếp Hên as MICHELIN Selected in Da Nang.",
+        "imagePromptNote": "Photorealistic owned asset: warm Vietnamese home-style restaurant table with garlicky prawns, beef, greens, shared plates, and a small-room mood, no signage or logos.",
+        "targetHeroImageName": "HeroCityDanangPlaceBepHen"
+      }
+    },
+    {
       "id": "danang-boulevard-gelato-coffee",
       "cityID": "danang",
       "vietnameseName": "Boulevard Gelato & Coffee",
@@ -11420,7 +11441,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -11523,7 +11544,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -11627,7 +11648,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -11729,7 +11750,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -11833,7 +11854,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -11937,7 +11958,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12039,7 +12060,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12186,7 +12207,7 @@
         "claimRisk": "stable-traveler-context",
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12327,7 +12348,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12426,7 +12447,7 @@
         "claimRisk": "stable-traveler-context",
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12540,7 +12561,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12644,7 +12665,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12751,7 +12772,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12858,7 +12879,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -12965,7 +12986,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13068,7 +13089,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13171,7 +13192,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13274,7 +13295,111 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
+          "reviewer": "city-owner:danang",
+          "checklistStatus": "reviewed"
+        },
+        "audienceRewrite": {
+          "reviewID": "viet-city-handwritten-copy-2026-05-18",
+          "standard": "handwritten-per-listing-traveler-excitement",
+          "source": "content-draft/viet/city-library/handwritten-copy/danang.json"
+        },
+        "sourceMode": "expanded-detail"
+      }
+    },
+    {
+      "id": "city-danang-place-bep-hen",
+      "kind": "place",
+      "cityID": "danang",
+      "subcategoryID": "food-coffee",
+      "placeID": "danang-bep-hen",
+      "difficulty": "beginner",
+      "spokenChunks": 2,
+      "targetText": "Bếp Hên",
+      "englishText": "Bep Hen",
+      "pronunciation": "bep hen",
+      "context": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+      "tip": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates.",
+      "rationale": "Bếp Hên earns the slot because it adds a warm house-kitchen register to Da Nang's food set: a room, a table, and dishes that feel cooked by someone rather than chosen from a big venue menu.",
+      "chunks": [
+        [
+          "Bếp",
+          "restaurant name"
+        ],
+        [
+          "Bếp Hên",
+          "Bep Hen"
+        ]
+      ],
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
+      ],
+      "status": "approved",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "heroImageName": "HeroCityDanang",
+      "contentRole": "fine-dining",
+      "productionIntake": {
+        "sourceFile": "danang-nouns.md",
+        "intakeVietnameseName": "Bếp Hên",
+        "sourceNotes": "Current MICHELIN venue page; 2025 MICHELIN Guide Vietnam coverage treats Bếp Hên as MICHELIN Selected in Da Nang.",
+        "imagePromptNote": "Photorealistic owned asset: warm Vietnamese home-style restaurant table with garlicky prawns, beef, greens, shared plates, and a small-room mood, no signage or logos.",
+        "targetHeroImageName": "HeroCityDanangPlaceBepHen"
+      },
+      "editorialImport": {
+        "patchID": "viet-city-handwritten-copy-2026-05-18",
+        "summary": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+        "sourceNotes": "Current MICHELIN venue page; 2025 MICHELIN Guide Vietnam coverage treats Bếp Hên as MICHELIN Selected in Da Nang.",
+        "imagePromptNote": "Photorealistic owned asset: warm Vietnamese home-style restaurant table with garlicky prawns, beef, greens, shared plates, and a small-room mood, no signage or logos.",
+        "targetHeroImageName": "HeroCityDanangPlaceBepHen",
+        "sections": [
+          {
+            "id": "at-glance",
+            "title": "A Small House Dinner",
+            "body": "Bếp Hên is a 2025 MICHELIN Selected Da Nang restaurant for a warmer home-style meal: handwritten-menu energy, garlicky prawns, beef, greens, and shared plates in a smaller room."
+          },
+          {
+            "id": "quick-say",
+            "title": "Useful Phrases",
+            "body": "",
+            "phraseIDs": [
+              "food-menu",
+              "food-1",
+              "food-3"
+            ]
+          },
+          {
+            "id": "place-brief",
+            "title": "Read The Menu Slowly",
+            "body": "This is the kind of place where one good menu question matters. Choose a seafood dish, a meat dish, and greens before the table gets too wide."
+          },
+          {
+            "id": "use-it-with",
+            "title": "Garlic Leads First",
+            "body": "Garlicky prawns give the page a real food reason beyond the guide signal. Let that kind of flavor lead the order, then add quieter plates around it."
+          },
+          {
+            "id": "when-to-use",
+            "title": "Home-Style Over Polished",
+            "body": "The room should feel personal before it feels formal. Save it when Da Nang needs a dinner memory that is smaller, warmer, and away from big group-venue energy."
+          },
+          {
+            "id": "good-to-know",
+            "title": "Beside Madame Lân",
+            "body": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
+          }
+        ],
+        "approvedAt": "2026-05-18T00:00:00+07:00",
+        "approvedBy": "codex-city-handwritten-copy:danang",
+        "reviewStatus": "handwritten-reviewed",
+        "claimRisk": "stable-traveler-context",
+        "heroImageName": "HeroCityDanangPlaceBepHen",
+        "replaceGeneratedSections": true,
+        "reviewEvidence": {
+          "reviewID": "viet-city-copy-production-2026-05-17",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13372,7 +13497,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13479,7 +13604,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13583,7 +13708,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13686,7 +13811,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13790,7 +13915,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13894,7 +14019,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -13996,7 +14121,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14095,7 +14220,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14202,7 +14327,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14306,7 +14431,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14405,7 +14530,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14508,7 +14633,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14610,7 +14735,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14707,7 +14832,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14815,7 +14940,7 @@
         "claimRisk": "stable-traveler-context",
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -14927,7 +15052,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15030,7 +15155,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15129,7 +15254,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15226,7 +15351,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15330,7 +15455,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15432,7 +15557,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15539,7 +15664,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15641,7 +15766,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15743,7 +15868,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15848,7 +15973,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -15952,7 +16077,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16054,7 +16179,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16154,7 +16279,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16256,7 +16381,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16358,7 +16483,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16455,7 +16580,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16562,7 +16687,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16666,7 +16791,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16768,7 +16893,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16870,7 +16995,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -16974,7 +17099,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17077,7 +17202,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17174,7 +17299,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17273,7 +17398,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17376,7 +17501,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17480,7 +17605,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17582,7 +17707,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17722,7 +17847,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17839,7 +17964,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -17942,7 +18067,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18039,7 +18164,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18141,7 +18266,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18243,7 +18368,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18345,7 +18470,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18449,7 +18574,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18552,7 +18677,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18655,7 +18780,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18759,7 +18884,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18862,7 +18987,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -18965,7 +19090,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19067,7 +19192,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19172,7 +19297,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19279,7 +19404,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19385,7 +19510,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19487,7 +19612,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19589,7 +19714,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19688,7 +19813,7 @@
         "claimRisk": "stable-traveler-context",
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19802,7 +19927,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -19906,7 +20031,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20013,7 +20138,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20115,7 +20240,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20217,7 +20342,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20319,7 +20444,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20423,7 +20548,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20521,7 +20646,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20624,7 +20749,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20756,7 +20881,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20868,7 +20993,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -20967,7 +21092,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21069,7 +21194,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21172,7 +21297,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21276,7 +21401,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21378,7 +21503,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21482,7 +21607,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21584,7 +21709,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21688,7 +21813,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21790,7 +21915,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -21892,7 +22017,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -22024,7 +22149,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -22133,7 +22258,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -22235,7 +22360,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:danang",
           "checklistStatus": "reviewed"
         },
@@ -24199,7 +24324,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24303,7 +24428,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24411,7 +24536,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24515,7 +24640,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24617,7 +24742,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24720,7 +24845,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24817,7 +24942,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -24920,7 +25045,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25055,7 +25180,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25169,7 +25294,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25271,7 +25396,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25378,7 +25503,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25486,7 +25611,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25592,7 +25717,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25694,7 +25819,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25796,7 +25921,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -25900,7 +26025,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26002,7 +26127,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26101,7 +26226,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26203,7 +26328,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26307,7 +26432,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26414,7 +26539,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26518,7 +26643,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26620,7 +26745,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26717,7 +26842,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26818,7 +26943,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -26920,7 +27045,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27026,7 +27151,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27128,7 +27253,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27232,7 +27357,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27334,7 +27459,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27438,7 +27563,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27540,7 +27665,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27642,7 +27767,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27746,7 +27871,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27850,7 +27975,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -27952,7 +28077,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28056,7 +28181,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28160,7 +28285,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28262,7 +28387,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28366,7 +28491,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28469,7 +28594,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28573,7 +28698,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28675,7 +28800,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28777,7 +28902,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28875,7 +29000,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -28979,7 +29104,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29083,7 +29208,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29181,7 +29306,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29289,7 +29414,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29393,7 +29518,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29495,7 +29620,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29598,7 +29723,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29700,7 +29825,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29808,7 +29933,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -29910,7 +30035,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30013,7 +30138,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30115,7 +30240,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30220,7 +30345,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30322,7 +30447,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30426,7 +30551,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30528,7 +30653,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30631,7 +30756,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30735,7 +30860,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30839,7 +30964,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -30943,7 +31068,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31077,7 +31202,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31195,7 +31320,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31299,7 +31424,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31406,7 +31531,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31510,7 +31635,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31614,7 +31739,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31718,7 +31843,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31820,7 +31945,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -31922,7 +32047,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32026,7 +32151,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32129,7 +32254,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32234,7 +32359,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32340,7 +32465,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32444,7 +32569,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32548,7 +32673,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32646,7 +32771,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32748,7 +32873,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32852,7 +32977,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -32956,7 +33081,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33058,7 +33183,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33160,7 +33285,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33262,7 +33387,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33366,7 +33491,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33468,7 +33593,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33572,7 +33697,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33674,7 +33799,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33771,7 +33896,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33873,7 +33998,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -33975,7 +34100,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34077,7 +34202,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34181,7 +34306,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34283,7 +34408,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34387,7 +34512,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34489,7 +34614,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34587,7 +34712,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34694,7 +34819,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -34796,7 +34921,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hanoi",
           "checklistStatus": "reviewed"
         },
@@ -37534,7 +37659,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -37635,7 +37760,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -37737,7 +37862,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -37843,7 +37968,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -37945,7 +38070,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38047,7 +38172,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38151,7 +38276,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38257,7 +38382,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38361,7 +38486,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38467,7 +38592,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38571,7 +38696,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38670,7 +38795,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38772,7 +38897,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38875,7 +39000,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -38979,7 +39104,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39083,7 +39208,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39187,7 +39312,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39293,7 +39418,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39400,7 +39525,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39500,7 +39625,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39604,7 +39729,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39710,7 +39835,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39818,7 +39943,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -39921,7 +40046,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40023,7 +40148,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40127,7 +40252,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40234,7 +40359,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40337,7 +40462,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40436,7 +40561,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40538,7 +40663,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40639,7 +40764,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40741,7 +40866,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40845,7 +40970,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -40951,7 +41076,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41055,7 +41180,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41158,7 +41283,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41260,7 +41385,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41363,7 +41488,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41466,7 +41591,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41570,7 +41695,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41667,7 +41792,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41769,7 +41894,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41869,7 +41994,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -41973,7 +42098,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42075,7 +42200,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42177,7 +42302,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42283,7 +42408,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42386,7 +42511,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42488,7 +42613,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42590,7 +42715,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42694,7 +42819,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42800,7 +42925,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -42905,7 +43030,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43009,7 +43134,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43106,7 +43231,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43210,7 +43335,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43314,7 +43439,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43416,7 +43541,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43519,7 +43644,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43623,7 +43748,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43726,7 +43851,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43830,7 +43955,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -43932,7 +44057,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44034,7 +44159,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44136,7 +44261,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44238,7 +44363,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44341,7 +44466,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44436,7 +44561,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44540,7 +44665,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44644,7 +44769,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44746,7 +44871,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44850,7 +44975,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -44956,7 +45081,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45059,7 +45184,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45163,7 +45288,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45262,7 +45387,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45368,7 +45493,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45473,7 +45598,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45578,7 +45703,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45682,7 +45807,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45788,7 +45913,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45893,7 +46018,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -45995,7 +46120,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46097,7 +46222,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46199,7 +46324,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46303,7 +46428,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46405,7 +46530,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46508,7 +46633,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46610,7 +46735,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46712,7 +46837,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46814,7 +46939,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -46917,7 +47042,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47021,7 +47146,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47125,7 +47250,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47224,7 +47349,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47326,7 +47451,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47428,7 +47553,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47530,7 +47655,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47634,7 +47759,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47736,7 +47861,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47838,7 +47963,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -47942,7 +48067,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -48045,7 +48170,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -48149,7 +48274,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hcmc",
           "checklistStatus": "reviewed"
         },
@@ -50231,7 +50356,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50333,7 +50458,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50437,7 +50562,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50541,7 +50666,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50643,7 +50768,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50745,7 +50870,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50851,7 +50976,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -50949,7 +51074,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51056,7 +51181,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51159,7 +51284,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51259,7 +51384,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51362,7 +51487,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51466,7 +51591,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51568,7 +51693,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51670,7 +51795,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51774,7 +51899,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51876,7 +52001,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -51980,7 +52105,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52082,7 +52207,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52184,7 +52309,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52286,7 +52411,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52391,7 +52516,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52493,7 +52618,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52598,7 +52723,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52696,7 +52821,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52800,7 +52925,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -52902,7 +53027,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53010,7 +53135,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53112,7 +53237,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53211,7 +53336,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53314,7 +53439,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53418,7 +53543,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53521,7 +53646,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53626,7 +53751,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53728,7 +53853,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53830,7 +53955,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -53932,7 +54057,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54035,7 +54160,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54135,7 +54260,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54237,7 +54362,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54339,7 +54464,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54441,7 +54566,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54545,7 +54670,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54647,7 +54772,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54749,7 +54874,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54851,7 +54976,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -54955,7 +55080,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55059,7 +55184,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55163,7 +55288,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55265,7 +55390,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55368,7 +55493,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55471,7 +55596,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55569,7 +55694,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55672,7 +55797,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55775,7 +55900,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55879,7 +56004,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -55983,7 +56108,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56081,7 +56206,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56184,7 +56309,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56286,7 +56411,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56392,7 +56517,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56499,7 +56624,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56601,7 +56726,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56705,7 +56830,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56809,7 +56934,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -56911,7 +57036,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57013,7 +57138,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57117,7 +57242,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57220,7 +57345,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57323,7 +57448,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57425,7 +57550,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57527,7 +57652,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57632,7 +57757,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57736,7 +57861,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57838,7 +57963,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -57943,7 +58068,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58045,7 +58170,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58147,7 +58272,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58250,7 +58375,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58353,7 +58478,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58455,7 +58580,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58557,7 +58682,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58660,7 +58785,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58762,7 +58887,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58867,7 +58992,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -58971,7 +59096,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59074,7 +59199,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59178,7 +59303,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59280,7 +59405,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59384,7 +59509,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59486,7 +59611,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59588,7 +59713,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59692,7 +59817,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59794,7 +59919,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -59897,7 +60022,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -60000,7 +60125,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -60107,7 +60232,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -60205,7 +60330,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -60308,7 +60433,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -60410,7 +60535,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hoian",
           "checklistStatus": "reviewed"
         },
@@ -62681,7 +62806,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -62785,7 +62910,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -62887,7 +63012,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -62990,7 +63115,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63093,7 +63218,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63191,7 +63316,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63294,7 +63419,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63396,7 +63521,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63503,7 +63628,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63610,7 +63735,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63717,7 +63842,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63824,7 +63949,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -63926,7 +64051,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64030,7 +64155,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64132,7 +64257,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64235,7 +64360,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64369,7 +64494,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64486,7 +64611,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64593,7 +64718,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64696,7 +64821,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64798,7 +64923,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -64905,7 +65030,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65012,7 +65137,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65114,7 +65239,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65213,7 +65338,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65316,7 +65441,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65418,7 +65543,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65520,7 +65645,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65624,7 +65749,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65731,7 +65856,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65835,7 +65960,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -65937,7 +66062,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66039,7 +66164,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66141,7 +66266,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66243,7 +66368,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66345,7 +66470,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66449,7 +66574,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66553,7 +66678,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66655,7 +66780,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66759,7 +66884,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66863,7 +66988,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -66965,7 +67090,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67070,7 +67195,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67173,7 +67298,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67275,7 +67400,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67378,7 +67503,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67480,7 +67605,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67584,7 +67709,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67681,7 +67806,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67783,7 +67908,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67885,7 +68010,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -67989,7 +68114,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68090,7 +68215,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68193,7 +68318,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68295,7 +68420,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68398,7 +68523,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68505,7 +68630,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68609,7 +68734,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68711,7 +68836,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68813,7 +68938,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -68915,7 +69040,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69017,7 +69142,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69121,7 +69246,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69223,7 +69348,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69327,7 +69452,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69429,7 +69554,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69531,7 +69656,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69630,7 +69755,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69732,7 +69857,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69835,7 +69960,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -69939,7 +70064,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70043,7 +70168,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70145,7 +70270,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70249,7 +70374,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70353,7 +70478,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70455,7 +70580,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70558,7 +70683,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70656,7 +70781,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70758,7 +70883,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70860,7 +70985,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -70957,7 +71082,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71059,7 +71184,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71161,7 +71286,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71264,7 +71389,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71368,7 +71493,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71470,7 +71595,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71574,7 +71699,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71676,7 +71801,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71778,7 +71903,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71877,7 +72002,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -71980,7 +72105,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72082,7 +72207,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72186,7 +72311,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72288,7 +72413,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72392,7 +72517,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72496,7 +72621,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72595,7 +72720,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72697,7 +72822,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72801,7 +72926,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },
@@ -72904,7 +73029,7 @@
         "replaceGeneratedSections": true,
         "reviewEvidence": {
           "reviewID": "viet-city-copy-production-2026-05-17",
-          "scope": "511 city noun pages plus 5 city hubs",
+          "scope": "512 city noun pages plus 5 city hubs",
           "reviewer": "city-owner:hue",
           "checklistStatus": "reviewed"
         },

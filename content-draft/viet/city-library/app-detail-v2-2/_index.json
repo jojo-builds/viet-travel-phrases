@@ -20,19 +20,19 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 511,
+    "entries": 512,
     "byCity": {
-      "danang": 104,
+      "danang": 105,
       "hanoi": 103,
       "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 511,
+    "finalPass": 512,
     "priorV2_2GateEvidence": 10,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 511,
+    "renderableRelatedPlaceCandidates": 512,
     "renderableMentionedHereCandidates": 48,
     "verificationFlags": 1
   },
@@ -152,6 +152,13 @@
     {
       "id": "viet-family-city-danang-place-bep-cuon",
       "pageID": "city-danang-place-bep-cuon",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bep-hen",
+      "pageID": "city-danang-place-bep-hen",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"

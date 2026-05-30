@@ -2364,6 +2364,108 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Bếp Hên Additive Da Nang Pilot
+
+Twenty-seventh pass date: 2026-05-31
+
+Commit before pass: `96d1a35f1 Add Bun Cha Ca 109 Da Nang food listing`
+
+This continuation adds `Bếp Hên` to address the product concern that the food expansion was getting noodle-heavy. The page earns the slot through a different reason: a warmer home-style Da Nang dinner, smaller-room feeling, handwritten-menu energy, garlicky prawns, beef, greens, and shared plates.
+
+### Page Added
+
+- `city-danang-place-bep-hen`: new first-class V2.2 Da Nang restaurant page.
+
+Visible page direction:
+
+- The page frames Bếp Hên as a 2025 MICHELIN Selected home-style dinner save rather than another noodle or guide-list duplicate.
+- It renders `Madame Lân` and `Bếp Cuốn Đà Nẵng` as Compare Nearby cards, separating a small house-style table from a broader courtyard table and a focused roll-and-dip meal.
+- `Madame Lân` now also renders Bếp Hên as a related dinner contrast.
+
+### Add Decision
+
+Decision: add, because it changes the emotional mix of the Da Nang restaurant set.
+
+Bếp Hên is stronger than adding another similar bowl at this moment. It gives foodies a reason to save a place before the trip that is about room, table, and house dishes, while still carrying MICHELIN support.
+
+Source support:
+
+- Current MICHELIN venue page for `Bếp Hên` describes the owner's mum in the kitchen, a handwritten menu, fried garlic prawn, and stir-fried beef cues.
+- 2025 MICHELIN Guide Vietnam coverage supports `Bếp Hên` as a MICHELIN Selected Da Nang restaurant.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/danang-nouns.md`: added row `danang-bep-hen`.
+- `content-draft/viet/city-library/app-detail-v2-2/danang.json`: added the authored V2.2 source object and a Madame Lân related card.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 512 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 104, Hanoi 103, Da Nang 105, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bep-hen-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-bep-hen`
+  - `bep-hen-first-screen.jpg`: first viewport shows the title, pronunciation line, `A Small House Dinner` intro, and Useful Phrases start.
+  - `bep-hen-bottom-inset.jpg`: bottom-validation launch shows `Beside Madame Lân` plus `Madame Lân` and `Bếp Cuốn Đà Nẵng` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-bep-hen`
+  - `--detail-page viet-family-city-danang-place-bep-hen --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 103 places, Da Nang 105 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 512 entries imported.
+- native resource generation: PASS, 1759 families, 1777 phrases, 1770 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 512 entries, 512 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing the initial `anchor` wording before final generation.
+- city-copy compatibility validation: PASS, 5 hubs, 512 city noun pages, 512 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 512 city places, 818 city phrase tags, 0 release-blocking missing audio rows, 9023 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bếp Hên Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass improves the restaurant mix rather than only expanding dish coverage. The next pass should keep comparing remaining MICHELIN-backed candidates against the current inventory and should prefer pages that add a new food emotion, table role, or trip-planning contrast over another duplicate dish slot.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Bún Chả Cá 109 Additive Da Nang Pilot
 
 Twenty-sixth pass date: 2026-05-31

@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1776,
+    "phraseCount": 1777,
     "basePhraseCount": 935,
-    "cityPhraseCount": 817,
+    "cityPhraseCount": 818,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1758,
+    "familyCount": 1759,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -11687,6 +11687,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-bep-cuon"
+      ]
+    },
+    {
+      "id": "city-danang-place-bep-hen",
+      "pageID": "viet-family-city-danang-place-bep-hen",
+      "scenarioID": "city-guides",
+      "familyTitle": "Bep Hen pronunciation",
+      "summary": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+      "primaryPhraseID": "city-danang-place-bep-hen",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-bep-hen"
       ]
     },
     {
@@ -58566,6 +58578,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-bep-hen",
+      "familyID": "city-danang-place-bep-hen",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Bep Hen",
+      "targetText": "Bếp Hên",
+      "canonicalTargetText": "Bếp Hên",
+      "pronunciation": "bep hen",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "Bep Hen",
+        "Bếp Hên"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-bep-hen; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-bep-hen",
+      "placeName": "Bep Hen",
+      "placeVietnameseName": "Bếp Hên",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 2,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 104,
+    "entries": 105,
     "needsVoiceGate": 0,
-    "finalPass": 104,
+    "finalPass": 105,
     "priorV2_2GateEvidence": 0
   },
   "entries": [
@@ -1940,6 +1940,128 @@
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
         "finalPassDate": "2026-05-27"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-danang-place-bep-hen",
+      "pageID": "city-danang-place-bep-hen",
+      "sourcePageID": "city-danang-place-bep-hen",
+      "displayName": "Bếp Hên",
+      "englishName": "Bep Hen",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "pronunciation": "bep hen",
+      "travelerMoment": "Save Bếp Hên when Da Nang dinner should feel smaller and more personal: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
+      "storySpine": "Bếp Hên earns the slot because it adds a warm house-kitchen register to Da Nang's food set: a room, a table, and dishes that feel cooked by someone rather than chosen from a big venue menu.",
+      "intro": {
+        "heading": "A Small House Dinner",
+        "body": "Bếp Hên is a 2025 MICHELIN Selected Da Nang restaurant for a warmer home-style meal: handwritten-menu energy, garlicky prawns, beef, greens, and shared plates in a smaller room."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "read-the-menu-slowly",
+          "heading": "Read The Menu Slowly",
+          "body": "This is the kind of place where one good menu question matters. Choose a seafood dish, a meat dish, and greens before the table gets too wide."
+        },
+        {
+          "id": "garlic-leads-first",
+          "heading": "Garlic Leads First",
+          "body": "Garlicky prawns give the page a real food reason beyond the guide signal. Let that kind of flavor lead the order, then add quieter plates around it."
+        },
+        {
+          "id": "home-style-over-polished",
+          "heading": "Home-Style Over Polished",
+          "body": "The room should feel personal before it feels formal. Save it when Da Nang needs a dinner memory that is smaller, warmer, and away from big group-venue energy."
+        },
+        {
+          "id": "beside-madame-lan",
+          "heading": "Beside Madame Lân",
+          "body": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-danang-place-madame-lan",
+          "label": "Madame Lân",
+          "relationship": "broader Vietnamese-table contrast",
+          "displaySubtitle": "A larger 2025 MICHELIN Selected courtyard table when the group needs more range.",
+          "reason": "Madame Lân gives Bếp Hên the larger-room contrast for travelers choosing a Da Nang dinner tone.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-danang-place-bep-cuon",
+          "label": "Bếp Cuốn Đà Nẵng",
+          "relationship": "hands-on table contrast",
+          "displaySubtitle": "A 2025 MICHELIN Selected roll-and-dip meal when herbs, pork, wrappers, and sauce should lead.",
+          "reason": "Bếp Cuốn separates a focused roll meal from Bếp Hên's home-style shared dishes.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Da Nang 105-page pilot on 2026-05-31: added to reduce noodle-heavy expansion and give the catalog a warmer home-style restaurant save.",
+          "Official MICHELIN support checked on 2026-05-31: current MICHELIN venue page and 2025 Vietnam coverage support Bếp Hên as a guide-recognized Da Nang restaurant.",
+          "Distinctness from Madame Lân is smaller-room, home-style shared dishes; distinctness from Bếp Cuốn is broader house-kitchen dinner rather than a focused roll-and-dip meal."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Production Da Nang additive pilot: bounded MICHELIN context, specific home-style dinner reason, mapped phrase cards, and renderable dinner comparisons."
+      },
+      "sourceNotes": [
+        "Added as the fifth additive Da Nang restaurant pilot after the 500-page hard reset; script assumptions now allow Da Nang 105.",
+        "Official MICHELIN venue page describes the owner's mum in the kitchen, a handwritten menu, fried garlic prawn, and stir-fried beef cues.",
+        "Visible copy avoids hours, address, booking, closure, price, and narrow operational claims."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "hard_reset_v2_2_source_voice_gate_passed",
+        "v2_2GateSources": [],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Additive food listing pass: source, phrase mapping, related-card intent, and MICHELIN support reviewed before projection."
+        ],
+        "finalPassDate": "2026-05-31"
       }
     },
     {
@@ -6581,6 +6703,14 @@
           "relationship": "group-dinner contrast",
           "displaySubtitle": "A 2025 MICHELIN Selected roll-and-dip table with a narrower food job than Madame Lân.",
           "reason": "Bếp Cuốn helps distinguish a broad polished dinner from a focused roll meal.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-danang-place-bep-hen",
+          "label": "Bếp Hên",
+          "relationship": "home-style dinner contrast",
+          "displaySubtitle": "A 2025 MICHELIN Selected home-style table when the meal should feel smaller and more personal.",
+          "reason": "Bếp Hên gives Madame Lân a warmer, smaller-room contrast inside Da Nang's MICHELIN-backed dinner set.",
           "status": "render"
         }
       ],
