@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1769,
+    "phraseCount": 1770,
     "basePhraseCount": 935,
-    "cityPhraseCount": 810,
+    "cityPhraseCount": 811,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1751,
+    "familyCount": 1752,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -13355,6 +13355,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hanoi-place-banh-cuon"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "pageID": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+      "scenarioID": "city-guides",
+      "familyTitle": "Banh Cuon Ba Hoanh pronunciation",
+      "summary": "Save Bánh Cuốn Bà Hoành for a Hanoi morning when breakfast should be soft, steamy, and specific: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+      "primaryPhraseID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hanoi-place-banh-cuon-ba-hoanh"
       ]
     },
     {
@@ -64553,6 +64565,50 @@
       "placeKind": "dish",
       "contentRole": "dish",
       "spokenChunks": 5,
+      "sourceIDs": [
+        "vt-hanoi",
+        "vt-hanoi-official",
+        "michelin-vietnam"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "familyID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Banh Cuon Ba Hoanh",
+      "targetText": "Bánh Cuốn Bà Hoành",
+      "canonicalTargetText": "Bánh Cuốn Bà Hoành",
+      "pronunciation": "banh cuon ba hoanh",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Bánh Cuốn Bà Hoành for a Hanoi morning when breakfast should be soft, steamy, and specific: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hanoi",
+        "Hà Nội",
+        "Banh Cuon Ba Hoanh",
+        "Bánh Cuốn Bà Hoành"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌿",
+      "notes": "city-library-v1; city=hanoi; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hanoi-banh-cuon-ba-hoanh; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hanoi",
+      "cityName": "Hanoi",
+      "cityShortTitle": "Hanoi",
+      "cityVietnameseName": "Hà Nội",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hanoi-banh-cuon-ba-hoanh",
+      "placeName": "Banh Cuon Ba Hoanh",
+      "placeVietnameseName": "Bánh Cuốn Bà Hoành",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
       "sourceIDs": [
         "vt-hanoi",
         "vt-hanoi-official",

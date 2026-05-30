@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 100,
+    "entries": 101,
     "needsVoiceGate": 0,
-    "finalPass": 100,
+    "finalPass": 101,
     "priorV2_2GateEvidence": 0
   },
   "entries": [
@@ -346,6 +346,139 @@
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
         "finalPassDate": "2026-05-27"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+      "pageID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "sourcePageID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "displayName": "Bánh Cuốn Bà Hoành",
+      "englishName": "Banh Cuon Ba Hoanh",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "pronunciation": "banh cuon ba hoanh",
+      "travelerMoment": "Save Bánh Cuốn Bà Hoành for a Hanoi morning when breakfast should be soft, steamy, and specific: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+      "storySpine": "Bánh Cuốn Bà Hoành gives the existing Hanoi bánh cuốn habit a named MICHELIN Selected breakfast table, so the catalog has both the dish and a place worth remembering.",
+      "intro": {
+        "heading": "Selected For Morning Steam",
+        "body": "Bánh Cuốn Bà Hoành is a 2025 MICHELIN Selected Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "v900-food-drin-what-do-you-recommend",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "steam-first",
+          "heading": "Steam First",
+          "body": "Look for warm sheets and a quick plate rhythm. The dish is gentle, but fresh steam is the pull."
+        },
+        {
+          "id": "let-sauce-stay-bright",
+          "heading": "Let Sauce Stay Bright",
+          "body": "Dipping sauce should wake the rolls, not flood them. Herbs, fried shallot, and a light spoonful keep the plate clean."
+        },
+        {
+          "id": "a-named-breakfast-table",
+          "heading": "A Named Breakfast Table",
+          "body": "Bánh cuốn is a city-wide breakfast habit. Bà Hoành gives it a named morning table when the plan needs something soft and fast before coffee."
+        },
+        {
+          "id": "recognition-supports-the-roll",
+          "heading": "Recognition Supports The Roll",
+          "body": "The 2025 MICHELIN Selected signal supports the save because the meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh cuốn ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon",
+          "sourceText": "bánh cuốn",
+          "displaySubtitle": "The Hanoi breakfast dish behind this named steam-table stop.",
+          "reason": "The page centers bánh cuốn and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-xoi-xeo",
+          "label": "Xôi xéo",
+          "relationship": "same-city breakfast contrast",
+          "displaySubtitle": "A sticky-rice breakfast when the morning should be warmer, denser, and handheld.",
+          "reason": "Xoi xeo gives Banh Cuon Ba Hoanh a real Hanoi breakfast contrast.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
+          "label": "Phở Gia Truyền",
+          "relationship": "same-city morning bowl comparison",
+          "displaySubtitle": "A named Hanoi phở stop when breakfast should be brothier and heavier.",
+          "reason": "Pho Gia Truyen gives Banh Cuon Ba Hoanh a different Hanoi morning-food choice.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hanoi 101-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Bánh Cuốn Bà Hoành appears in the Hanoi MICHELIN Selected section as Street Food.",
+          "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Banh Cuon Ba Hoanh has bounded 2025 MICHELIN Selected recognition, a specific Hanoi breakfast save reason, mapped phrase cards, and useful breakfast comparisons."
+      },
+      "sourceNotes": [
+        "Added as the first additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 101.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Hoành in the Hanoi MICHELIN Selected section as Street Food.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
       }
     },
     {

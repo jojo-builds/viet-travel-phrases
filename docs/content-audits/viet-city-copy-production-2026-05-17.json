@@ -3652,6 +3652,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Bánh Cuốn Bà Hoành for a Hanoi morning when breakfast should be soft, steamy, and specific: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+        "aboutExcerpt": "Bánh Cuốn Bà Hoành is a 2025 MICHELIN Selected Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Dipping sauce should wake the rolls, not flood them. Herbs, fried shallot, and a light spoonful keep the plate clean.",
+        "timingExcerpt": "Bánh cuốn is a city-wide breakfast habit. Bà Hoành gives it a named morning table when the plan needs something soft and fast before coffee.",
+        "goodToKnowExcerpt": "The 2025 MICHELIN Selected signal supports the save because the meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce."
+      }
+    },
+    {
       "id": "city-hanoi-place-bay-mau-lake",
       "cityID": "hanoi",
       "pageKind": "place",

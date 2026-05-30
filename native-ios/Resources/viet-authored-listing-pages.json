@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 810,
+    "cityLibraryPageCount": 811,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T19:19:53.209Z"
+    "generatedAt": "2026-05-30T19:27:59.576Z"
   },
   "pages": [
     {
@@ -209820,6 +209820,237 @@
           "v900-food-drin-what-do-you-recommend"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-banh-cuon"
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+      "familyID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "phraseID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bánh Cuốn Bà Hoành",
+      "englishTitle": "Banh Cuon Ba Hoanh",
+      "pronunciation": "banh cuon ba hoanh",
+      "summary": "Save Bánh Cuốn Bà Hoành for a Hanoi morning when breakfast should be soft, steamy, and specific: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+      "heroImageName": "HeroCityHanoiPlaceBanhCuonBaHoanh",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-banh-cuon-ba-hoanh-7fd9c72f80",
+      "cityMetadata": {
+        "cityID": "hanoi",
+        "cityName": "Hanoi",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hanoi-banh-cuon-ba-hoanh",
+        "placeName": "Banh Cuon Ba Hoanh",
+        "sourceIDs": [
+          "vt-hanoi",
+          "vt-hanoi-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Bánh Cuốn Bà Hoành gives the existing Hanoi bánh cuốn habit a named MICHELIN Selected breakfast table, so the catalog has both the dish and a place worth remembering.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHanoiPlaceBanhCuonBaHoanh"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Selected For Morning Steam",
+          "body": "Bánh Cuốn Bà Hoành is a 2025 MICHELIN Selected Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "place-brief",
+          "title": "Steam First",
+          "body": "Look for warm sheets and a quick plate rhythm. The dish is gentle, but fresh steam is the pull.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Let Sauce Stay Bright",
+          "body": "Dipping sauce should wake the rolls, not flood them. Herbs, fried shallot, and a light spoonful keep the plate clean.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "A Named Breakfast Table",
+          "body": "Bánh cuốn is a city-wide breakfast habit. Bà Hoành gives it a named morning table when the plan needs something soft and fast before coffee.",
+          "phrases": [
+            {
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
+            },
+            {
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
+            },
+            {
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
+            },
+            {
+              "id": "store-7",
+              "vietnamese": "Cho tôi hóa đơn",
+              "english": "Please give me the receipt",
+              "pronunciation": "cho toy hwa dun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-receipt",
+              "audioKey": "store-7"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Recognition Supports The Roll",
+          "body": "The 2025 MICHELIN Selected signal supports the save because the meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hanoi-place-banh-cuon-ba-hoanh",
+          "vietnamese": "Bánh Cuốn Bà Hoành",
+          "english": "Banh Cuon Ba Hoanh",
+          "pronunciation": "banh cuon ba hoanh",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-banh-cuon-ba-hoanh-7fd9c72f80"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hanoi-place-banh-cuon-ba-hoanh",
+        "scenarioStepGroups": [
+          {
+            "stepID": "when-to-use",
+            "title": "A Named Breakfast Table",
+            "sourceSectionID": "when-to-use",
+            "primaryPhraseIDs": [
+              "coffee-7"
+            ],
+            "supportPhraseIDs": [
+              "store-6",
+              "taxi-7",
+              "store-7"
+            ]
+          },
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "v900-food-drin-what-do-you-recommend"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hanoi-place-banh-cuon-ba-hoanh",
+          "coffee-7",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "store-6",
+          "taxi-7",
+          "store-7",
+          "food-1",
+          "v900-food-drin-what-do-you-recommend"
+        ],
+        "practiceSourcePageID": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh"
       }
     },
     {

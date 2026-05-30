@@ -29,8 +29,9 @@ The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN S
 - Saigon: `Bò Kho Gánh` — added as `city-hcmc-place-bo-kho-ganh` after the second save-worthy restaurant add pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a specific bò kho bowl save, with bread/noodle/sauce meal cues and no fragile logistics.
 - Saigon: `Bún Bò Huế 14B` — added as `city-hcmc-place-bun-bo-hue-14b` after the third save-worthy restaurant add pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a Saigon Hue-style bowl save, with lemongrass broth, beef, tendon, herbs, chili, lime, and round-noodle cues.
 - Saigon: `Phở Lệ` — added as `city-hcmc-place-pho-le-district-5` after the fourth save-worthy restaurant add pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a District 5 southern-phở save, with broth, rice noodles, herbs, bean sprouts, lime, and table-sauce cues.
+- Hanoi: `Bánh Cuốn Bà Hoành` — added as `city-hanoi-place-banh-cuon-ba-hoanh` after the first additive Hanoi food pass. The visible page uses 2025 MICHELIN Selected language to support a named breakfast/table save, with steamed rice sheets, savory filling, fried shallot, herbs, and dipping-sauce cues.
 
-The city inventory contract is now 504 noun/place pages total: HCMC carries 104 rows, while Hanoi, Da Nang, Hội An, and Hue remain at 100 rows each.
+The city inventory contract is now 505 noun/place pages total: HCMC carries 104 rows, Hanoi carries 101 rows, and Da Nang, Hội An, and Hue remain at 100 rows each.
 
 ## Current Pages That Should Stay But Not Always Lead
 
@@ -50,7 +51,7 @@ These are the strongest missing or under-covered MICHELIN-backed candidates to a
 - Hanoi: `Phở 10 Lý Quốc Sư` — 2025 Bib Gourmand and a more obvious tourist-planning pho name than some current supporting pho pages.
 - Hanoi: `Phở Gà Nguyệt` — 2025 Bib Gourmand; adds chicken-pho specificity instead of another beef-pho page.
 - Hanoi: `Bún Chả Đắc Kim` or `Tuyết Bún Chả 34` — 2025 MICHELIN Selected / Bib Gourmand support. Add only if each page can say a distinct thing from Bún Chả Ta and Hương Liên.
-- Hanoi: `Bánh Cuốn Bà Hoành` or `Bánh Cuốn Bà Xuân` — 2025 MICHELIN Selected; strong dish-specific breakfast/morning page candidates.
+- Hanoi: `Bánh Cuốn Bà Xuân` — 2025 MICHELIN Selected; still a possible breakfast/morning comparison now that Bánh Cuốn Bà Hoành has landed.
 - Da Nang: `Bún Chả Cá 109` or `Mỳ Quảng Sứa Hồng Vân` — 2025 Bib Gourmand; strong local bowl candidates if we want deeper Da Nang noodle coverage beyond Hờn and Mì Quảng 1A.
 - Da Nang: `Bánh Canh Yến` and `Bún Riêu Cua 39` — 2025 MICHELIN Selected; useful because they broaden Da Nang beyond pancakes, seafood, and mì Quảng.
 - Da Nang: `Bếp Hên` or `Moc` — 2025 MICHELIN Selected; add only if source research finds a specific table, dish, or room reason strong enough for a save.
@@ -68,7 +69,7 @@ Do add MICHELIN-backed places when they improve one of these jobs:
 
 Do not add every MICHELIN Selected restaurant as inventory. The app should feel curated, not like a copied guide list.
 
-The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, and Phở Lệ Saigon pilots.
+The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, and Bánh Cuốn Bà Hoành additive pilots.
 
 ## Current Patch Note
 
@@ -81,3 +82,5 @@ The expansion packets widened the contract explicitly instead of adding loose ex
 `city-hcmc-place-bun-bo-hue-14b` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the third additive Saigon restaurant pilot.
 
 `city-hcmc-place-pho-le-district-5` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the fourth additive Saigon restaurant pilot.
+
+`city-hanoi-place-banh-cuon-ba-hoanh` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the first additive Hanoi food pilot.
