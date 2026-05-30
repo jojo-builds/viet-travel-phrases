@@ -2364,6 +2364,108 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Bún Chả Cá 109 Additive Da Nang Pilot
+
+Twenty-sixth pass date: 2026-05-31
+
+Commit before pass: `ec43f89a0 Add Pho 10 Ly Quoc Su Hanoi food listing`
+
+This continuation adds `Bún Chả Cá 109` after rechecking the remaining MICHELIN-backed candidates against the existing catalog. The point is not to add another generic fish-cake noodle shop; the page earns the slot through a distinct food reason: house-made fried and steamed fish cakes, seafood broth depth, herbs, and a pineapple-tomato edge.
+
+### Page Added
+
+- `city-danang-place-bun-cha-ca-109`: new first-class V2.2 Da Nang restaurant page.
+
+Visible page direction:
+
+- The page frames Bún Chả Cá 109 as a 2025 MICHELIN Bib Gourmand fish-cake noodle bowl with texture first.
+- It links Mentioned Here to `Bún chả cá ở Đà Nẵng`, so the named shop has dish-level context.
+- It renders `Bún Chả Cá Hờn` and `Bánh Canh Yến` as Compare Nearby cards, separating same-dish comparison from a different Da Nang noodle-texture choice.
+
+### Add Decision
+
+Decision: add, because it now has a clearer difference from Hờn.
+
+The previous audit held Bún Chả Cá 109 as conditional because it needed a sharper distinction from `Bún Chả Cá Hờn`. The current page gives it that distinction: Hờn remains the cleaner fish-cake soup comparison, while 109 is the more texture-led fish-cake and seafood-broth save.
+
+Source support:
+
+- Official MICHELIN Guide Vietnam 2025 PDF lists `Bún Chả Cá 109` in the Da Nang Bib Gourmand section as noodles.
+- Current MICHELIN venue page for `Bún Chả Cá 109` describes house-made fried and steamed fish cakes, tuna, mackerel, crab, and pineapple-tomato broth.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/danang-nouns.md`: added row `danang-bun-cha-ca-109`.
+- `content-draft/viet/city-library/app-detail-v2-2/danang.json`: added the authored V2.2 source object and a dish-page related card.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 511 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 104, Hanoi 103, Da Nang 104, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-cha-ca-109-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-bun-cha-ca-109`
+  - `bun-cha-ca-109-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `House-Made Fish-Cake Texture` intro, and Useful Phrases start.
+  - `bun-cha-ca-109-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Bún Chả Cá Hờn` and `Bánh Canh Yến` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-bun-cha-ca-109`
+  - `--detail-page viet-family-city-danang-place-bun-cha-ca-109 --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 103 places, Da Nang 104 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 511 entries imported.
+- native resource generation: PASS, 1758 families, 1776 phrases, 1769 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 511 entries, 511 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after removing negation-style copy from the new 109 page.
+- city-copy compatibility validation: PASS, 5 hubs, 511 city noun pages, 511 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 511 city places, 817 city phrase tags, 0 release-blocking missing audio rows, 9017 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bún Chả Cá 109 Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens Da Nang fish-cake soup coverage with a differentiated second named bowl. The next candidate should probably shift away from another duplicate noodle category unless the source evidence gives it a clearly different food job.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Bánh Canh Yến Additive Da Nang Pilot
 
 Twentieth pass date: 2026-05-31

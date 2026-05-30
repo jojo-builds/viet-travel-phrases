@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1775,
+    "phraseCount": 1776,
     "basePhraseCount": 935,
-    "cityPhraseCount": 816,
+    "cityPhraseCount": 817,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1757,
+    "familyCount": 1758,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -11711,6 +11711,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-bun-cha-ca"
+      ]
+    },
+    {
+      "id": "city-danang-place-bun-cha-ca-109",
+      "pageID": "viet-family-city-danang-place-bun-cha-ca-109",
+      "scenarioID": "city-guides",
+      "familyTitle": "Bun Cha Ca 109 pronunciation",
+      "summary": "Bún Chả Cá 109 gives Da Nang fish-cake noodle soup a more texture-led save: house-made fried and steamed fish cakes, tuna, mackerel, crab, herbs, and a pineapple-tomato broth.",
+      "primaryPhraseID": "city-danang-place-bun-cha-ca-109",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-bun-cha-ca-109"
       ]
     },
     {
@@ -58639,6 +58651,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-bun-cha-ca-109",
+      "familyID": "city-danang-place-bun-cha-ca-109",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Bun Cha Ca 109",
+      "targetText": "Bún Chả Cá 109",
+      "canonicalTargetText": "Bún Chả Cá 109",
+      "pronunciation": "bun cha ca 109",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Bún Chả Cá 109 gives Da Nang fish-cake noodle soup a more texture-led save: house-made fried and steamed fish cakes, tuna, mackerel, crab, herbs, and a pineapple-tomato broth.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "Bun Cha Ca 109",
+        "Bún Chả Cá 109"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-bun-cha-ca-109; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-bun-cha-ca-109",
+      "placeName": "Bun Cha Ca 109",
+      "placeVietnameseName": "Bún Chả Cá 109",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

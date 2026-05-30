@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 816,
+    "cityLibraryPageCount": 817,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T21:18:33.262Z"
+    "generatedAt": "2026-05-30T21:34:12.069Z"
   },
   "pages": [
     {
@@ -183933,6 +183933,179 @@
           "food-3"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-bun-cha-ca"
+      }
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-cha-ca-109",
+      "familyID": "city-danang-place-bun-cha-ca-109",
+      "phraseID": "city-danang-place-bun-cha-ca-109",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bún Chả Cá 109",
+      "englishTitle": "Bun Cha Ca 109",
+      "pronunciation": "bun cha ca 109",
+      "summary": "Bún Chả Cá 109 gives Da Nang fish-cake noodle soup a more texture-led save: house-made fried and steamed fish cakes, tuna, mackerel, crab, herbs, and a pineapple-tomato broth.",
+      "heroImageName": "HeroCityDanangPlaceBunChaCa109",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-bun-cha-ca-109-c338ad5d29",
+      "cityMetadata": {
+        "cityID": "danang",
+        "cityName": "Da Nang",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "danang-bun-cha-ca-109",
+        "placeName": "Bun Cha Ca 109",
+        "sourceIDs": [
+          "vt-danang",
+          "vt-danang-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "The bowl matters because it makes a familiar Da Nang dish feel handmade rather than generic: fish cake texture first, then seafood broth, herbs, and a short table rhythm.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityDanangPlaceBunChaCa109"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "House-Made Fish-Cake Texture",
+          "body": "Bún Chả Cá 109 is a 2025 MICHELIN Bib Gourmand Da Nang bowl for house-made fried and steamed fish cakes, seafood broth, herbs, and a bright pineapple-tomato edge.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Fish Cake Has Texture",
+          "body": "The reason to remember 109 goes past the soup name. Fried and steamed fish cakes give the bowl bounce, chew, and savory edges.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Broth Has Fruit And Sea",
+          "body": "Pineapple and tomato keep the broth bright while tuna, mackerel, and crab give it depth. Taste before adding chili.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "One Bowl Can Lead",
+          "body": "This focused noodle-shop meal keeps seafood in one bowl. Let fish cake, broth, herbs, and noodles carry the table.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Beside Hờn",
+          "body": "Put 109 beside Hờn if Da Nang turns into a fish-cake soup comparison. Hờn keeps the bowl clean; 109 leans harder into house-made fish-cake texture.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-danang-place-bun-cha-ca-109",
+          "vietnamese": "Bún Chả Cá 109",
+          "english": "Bun Cha Ca 109",
+          "pronunciation": "bun cha ca 109",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-bun-cha-ca-109-c338ad5d29"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-danang-place-bun-cha-ca-109",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "food-3"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-danang-place-bun-cha-ca-109",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "food-3"
+        ],
+        "practiceSourcePageID": "viet-family-city-danang-place-bun-cha-ca-109"
       }
     },
     {

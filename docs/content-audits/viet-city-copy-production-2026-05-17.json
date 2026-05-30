@@ -744,6 +744,38 @@
       }
     },
     {
+      "id": "city-danang-place-bun-cha-ca-109",
+      "cityID": "danang",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:danang",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Bún Chả Cá 109 gives Da Nang fish-cake noodle soup a more texture-led save: house-made fried and steamed fish cakes, tuna, mackerel, crab, herbs, and a pineapple-tomato broth.",
+        "aboutExcerpt": "Bún Chả Cá 109 is a 2025 MICHELIN Bib Gourmand Da Nang bowl for house-made fried and steamed fish cakes, seafood broth, herbs, and a bright pineapple-tomato edge.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Pineapple and tomato keep the broth bright while tuna, mackerel, and crab give it depth. Taste before adding chili.",
+        "timingExcerpt": "This focused noodle-shop meal keeps seafood in one bowl. Let fish cake, broth, herbs, and noodles carry the table.",
+        "goodToKnowExcerpt": "Put 109 beside Hờn if Da Nang turns into a fish-cake soup comparison. Hờn keeps the bowl clean; 109 leans harder into house-made fish-cake texture."
+      }
+    },
+    {
       "id": "city-danang-place-bun-cha-ca-hon",
       "cityID": "danang",
       "pageKind": "restaurant",
