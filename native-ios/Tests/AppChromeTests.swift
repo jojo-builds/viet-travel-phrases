@@ -2349,6 +2349,44 @@ final class AppChromeTests: XCTestCase {
         ])
     }
 
+    func testRenderedDetailPagesDoNotScanEntireLongHistory() {
+        let pageIDs = [
+            "viet-phrase-hello-chao-anh",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
+            "viet-phrase-hello-chao-ong",
+            "viet-phrase-hello-chao-ba",
+            "viet-phrase-hello-chao-chu",
+            "viet-phrase-hello-chao-co",
+        ]
+        var navigation = AppShellNavigationState()
+
+        for pageID in pageIDs {
+            XCTAssertNotNil(navigation.openDetail(pageID), pageID)
+        }
+
+        AppShellNavigationState.resetRenderedDetailPageCandidateChecksForTesting()
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: false), [
+            "viet-phrase-hello-chao-co",
+        ])
+        XCTAssertEqual(
+            AppShellNavigationState.renderedDetailPageCandidateChecksForTesting,
+            1,
+            "Rapid detail navigation can leave a long browser history, but rendering should only inspect the active page when no back-swipe preview is in progress."
+        )
+
+        AppShellNavigationState.resetRenderedDetailPageCandidateChecksForTesting()
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: true), [
+            "viet-phrase-hello-chao-chu",
+            "viet-phrase-hello-chao-co",
+        ])
+        XCTAssertEqual(
+            AppShellNavigationState.renderedDetailPageCandidateChecksForTesting,
+            2,
+            "Back-swipe preview needs only the immediate previous page plus the active page, not the whole detail history."
+        )
+    }
+
     func testHiddenBackBrowseCollectionCanStayUnmountedUntilBackSwipePreview() {
         var navigation = AppShellNavigationState()
         navigation.openBrowseCollection(.category("food"))

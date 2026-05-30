@@ -2415,6 +2415,18 @@ struct AppShellNavigationState: Equatable {
     var detailScrollToTopTrigger = 0
     var detailScrollToTopRoute: AppRoute?
 
+#if DEBUG
+    private(set) static var renderedDetailPageCandidateChecksForTesting = 0
+
+    static func resetRenderedDetailPageCandidateChecksForTesting() {
+        renderedDetailPageCandidateChecksForTesting = 0
+    }
+
+    private static func recordRenderedDetailPageCandidateCheckForTesting() {
+        renderedDetailPageCandidateChecksForTesting += 1
+    }
+#endif
+
     init(initialRoute: AppRoute = .home) {
         rootRoute = .home
         browseCollectionPath = []
@@ -2591,10 +2603,17 @@ struct AppShellNavigationState: Equatable {
         let retainedCount = includeBackPreview ? 2 : 1
         let lowerBound = max(detailPath.count - retainedCount, 0)
 
-        return detailPath.enumerated()
-            .filter { offset, _ in offset >= lowerBound }
-            .map { offset, pageID in
-                RenderedDetailPage(stackIndex: offset, pageID: pageID)
+        guard lowerBound < detailPath.endIndex else {
+            return []
+        }
+
+        return detailPath[lowerBound..<detailPath.endIndex]
+            .enumerated()
+            .map { relativeOffset, pageID in
+#if DEBUG
+                Self.recordRenderedDetailPageCandidateCheckForTesting()
+#endif
+                return RenderedDetailPage(stackIndex: lowerBound + relativeOffset, pageID: pageID)
             }
     }
 

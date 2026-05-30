@@ -32,11 +32,13 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 16: related phrase rows/cards checked whether a destination was a self-link by canonicalizing both the destination and current page from SwiftUI body-derived properties; repeated sheet redraws could re-enter the SQLite canonical path for the same pair, so row navigation now uses a bounded pair-decision cache while preserving self-link suppression and related-page navigation
 - root cause 17: the app-shell check for whether a detail route should render the special designed `Xin chào` article canonicalized the current page ID from the render path for every normal listing; the shell now answers direct/canonical `Xin chào` IDs cheaply and caches fallback alias decisions, so normal listing redraws do not repeatedly enter the SQLite canonical resolver just to reject the special route
 - root cause 18: SwiftUI detail redraws resolved the same canonical `PhraseDetailPage` by re-entering `VietSQLitePhraseGraphRuntime.detailPage(withID:)` every time; the runtime cache avoided full reloads, but the shell still paid the resolver/lock path repeatedly, so `PhraseDetailPage.page(withID:)` now keeps a bounded resolved-page cache above the SQLite runtime while preserving generated, menu, location-menu, and static fallback behavior
+- root cause 19: the detail-page render stack kept only the active page, or the active plus immediate back-preview page, but computed that small render set by filtering the entire detail history on every SwiftUI refresh; rapid listing taps can leave a long browser-style history, so render selection now slices only the visible suffix while preserving back/forward navigation history
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
 - focused failing tests were added before the fixes and then passed after implementation:
+  - `AppChromeTests/testRenderedDetailPagesDoNotScanEntireLongHistory`
   - `AppChromeTests/testMenuDetailNavigationBypassesSQLiteCanonicalLookup`
   - `AppChromeTests/testPhraseRowNavigationCachesRepeatedCanonicalPairChecks`
   - `AppChromeTests/testMenuDetailPagesBypassSQLitePhraseGraphLookup`
@@ -104,6 +106,14 @@ Fresh command evidence from this pass:
   - failed before implementation: `AppChromeTests/testCanonicalDetailPagesReuseResolvedPageWithoutRepeatedSQLiteLookup` showed repeated same-page resolution pushed SQLite detail resolver count from `1` to `13`
   - passed after implementation: `1` test, `0` failures
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-52-47-725Z_pid15747_abfc4edf.xcresult`
+- xcodebuild simulator focused long detail-history render set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testRenderedDetailPagesDoNotScanEntireLongHistory` showed the detail renderer inspecting all `7` history entries to render only `1` active page or `2` active/back-preview pages
+  - passed after implementation: `1` test, `0` failures; active-page rendering now checks `1` candidate and back-preview rendering checks `2`
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-28-00-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with long-history suffix rendering on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered long-history detail render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-29-52-+0700.xcresult`
 - XcodeBuildMCP simulator focused thermal set with resolved detail-page cache on iPhone 17 Pro
   - passed: `23` tests, `0` failures
   - covered resolved canonical detail-page reuse, menu-owned detail lookup bypass, menu route canonical bypass, designed `Xin chào` route check, phrase-row canonical pair caching, hidden detail/collection mounting, root-surface gating, listing/category/menu backdrop preheat policies, bounded/newest-first image preheat work, indexed menu item lookup, SQLite hero-image lightweight lookup, default SQLite runtime behavior, and legacy ID canonicalization
