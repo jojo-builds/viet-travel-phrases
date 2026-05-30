@@ -1753,6 +1753,32 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.showsStaticBackButton)
     }
 
+    func testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem() {
+        var navigation = AppShellNavigationState()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+
+        navigation.goBack()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+    }
+
     func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {
         var navigation = AppShellNavigationState()
 

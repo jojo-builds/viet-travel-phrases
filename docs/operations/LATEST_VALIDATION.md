@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-29
+Last updated: 2026-05-30
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -17,6 +17,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 1: opening each new listing recorded recent-page history through a broad `@Published` field on `LocalUserIntentStore`, invalidating offscreen Home/Browse/Saved surfaces while the user was only navigating detail pages
 - root cause 2: listing photo backdrops used the plain SwiftUI asset image path, so newly generated portrait backdrops could decode/prepare on the render path instead of sharing the bounded prepared-image cache used by root photo backdrops
 - root cause 3: city listing sheets recomputed "Mentioned Here" and "Compare Nearby" pick arrays repeatedly inside section rendering, including alias normalization and menu-item scans for page bodies that can be re-evaluated during navigation/scrolling
+- root cause 4: Home stayed fully mounted behind deeper detail navigation even when it was not the current/back/forward route surface, so its large shelf tree could rebuild while the user was tapping through listing pages
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -27,15 +28,22 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero`
   - `AppChromeTests/testLocationMenuPicksCacheCanonicalCityLookups`
   - `AppChromeTests/testLocationRelatedPicksCacheCanonicalCityLookups`
+  - `AppChromeTests/testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- XcodeBuildMCP simulator focused second-layer thermal set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered inactive Home render gating, local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, Home recently-viewed canonicalization, static `Xin chào` photo-card layout, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-12-53-413Z_pid15747_3411df8e.xcresult`
 - XcodeBuildMCP simulator focused thermal/content set on iPhone 17 Pro
   - passed: `17` tests, `0` failures
   - covered local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, V2.2 mentioned/related cards, and lightweight SQLite hero lookup
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T12-44-09-205Z_pid15747_1987ab03.xcresult`
 - XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
+  - current `Xin chào` card-over-photo smoke passed for `--detail-page viet-polite-hello`
   - phrase backdrop smoke passed for `--detail-page viet-phrase-phone-1`
   - city/listing backdrop smoke passed for `--detail-page viet-family-city-danang-place-international-terminal`
   - screenshots captured at:
+    - `docs/task-results/listing-thermal-audit-2026-05-30/xin-chao-current-card-smoke.jpg`
     - `docs/task-results/listing-thermal-audit-2026-05-30/phrase-phone-backdrop-smoke.jpg`
     - `docs/task-results/listing-thermal-audit-2026-05-30/city-terminal-backdrop-smoke.jpg`
 - `git diff --check`

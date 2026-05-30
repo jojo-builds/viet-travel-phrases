@@ -369,6 +369,7 @@ struct AppShellView: View {
                     backdropActivationToken: homeBackdropState.activationToken,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
                     isActive: navigation.currentRoute == .home,
+                    isVisible: navigation.shouldRenderRootSurface(.home),
                     isSearchActive: navigation.isSearchPresented,
                     currentScrollTarget: $homeCurrentScrollTarget,
                     currentScrollOffsetY: $homeCurrentScrollOffsetY,
@@ -965,6 +966,7 @@ struct AppShellView: View {
                 backdropActivationToken: homeBackdropState.activationToken,
                 scrollToTopTrigger: 0,
                 isActive: false,
+                isVisible: true,
                 isSearchActive: navigation.isSearchPresented,
                 currentScrollTarget: .constant(nil),
                 currentScrollOffsetY: .constant(0),
@@ -2524,6 +2526,12 @@ struct AppShellNavigationState: Equatable {
         renderedDetailPages.map(\.pageID)
     }
 
+    func shouldRenderRootSurface(_ route: AppRoute) -> Bool {
+        [currentRoute, backPreviewRoute, forwardPreviewRoute]
+            .compactMap { $0 }
+            .contains(route)
+    }
+
     var renderedBrowseCollections: [RenderedBrowseCollection] {
         let lowerBound = max(browseCollectionPath.count - 2, 0)
 
@@ -3718,6 +3726,7 @@ struct HomeView: View {
     let backdropActivationToken: Int
     let scrollToTopTrigger: Int
     let isActive: Bool
+    let isVisible: Bool
     let isSearchActive: Bool
     var onSearchTapped: () -> Void
     var onOpenDetail: (String, HomeScrollTarget) -> Void
@@ -3732,6 +3741,7 @@ struct HomeView: View {
         backdropActivationToken: Int = 0,
         scrollToTopTrigger: Int = 0,
         isActive: Bool = true,
+        isVisible: Bool = true,
         isSearchActive: Bool = false,
         currentScrollTarget: Binding<HomeScrollTarget?>,
         currentScrollOffsetY: Binding<CGFloat>,
@@ -3751,6 +3761,7 @@ struct HomeView: View {
         self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.isActive = isActive
+        self.isVisible = isVisible
         self.isSearchActive = isSearchActive
         self.onSearchTapped = onSearchTapped
         self.onOpenDetail = onOpenDetail
@@ -3761,142 +3772,154 @@ struct HomeView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
-            let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-            let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
-                sheetTop: sheetTop,
-                safeAreaTop: geometry.safeAreaInsets.top,
-                topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
-            )
+        Group {
+            if isVisible {
+                GeometryReader { geometry in
+                    let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+                    let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+                    let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
+                        sheetTop: sheetTop,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+                    )
 
-            ZStack(alignment: .top) {
-                photoBackdropImage(geometry: geometry)
+                    ZStack(alignment: .top) {
+                        photoBackdropImage(geometry: geometry)
 
-                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+                        photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
 
-                ScrollViewReader { scrollProxy in
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(spacing: 0) {
-                            Color.clear
-                                .frame(height: metrics.initialAnchorOffset)
-                                .accessibilityHidden(true)
+                        ScrollViewReader { scrollProxy in
+                            ScrollView(.vertical, showsIndicators: false) {
+                                VStack(spacing: 0) {
+                                    Color.clear
+                                        .frame(height: metrics.initialAnchorOffset)
+                                        .accessibilityHidden(true)
 
-                            Color.clear
-                                .frame(height: 1)
-                                .id(HomeScrollTarget.top)
-                                .accessibilityHidden(true)
+                                    Color.clear
+                                        .frame(height: 1)
+                                        .id(HomeScrollTarget.top)
+                                        .accessibilityHidden(true)
 
-                            Color.clear
-                                .frame(height: max(metrics.initialContentTop - 1, 0))
-                                .accessibilityHidden(true)
+                                    Color.clear
+                                        .frame(height: max(metrics.initialContentTop - 1, 0))
+                                        .accessibilityHidden(true)
 
-                            homeContentSheet
-                        }
-                    }
-                    .scrollPosition($scrollPosition)
-                    .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
-                        HomePhotoBackdropScrollState(
-                            rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
-                            metrics: metrics
-                        )
-                    }) { _, scrollState in
-                        if currentScrollOffsetY != scrollState.restorationOffset {
-                            currentScrollOffsetY = scrollState.restorationOffset
-                        }
+                                    homeContentSheet
+                                }
+                            }
+                            .scrollPosition($scrollPosition)
+                            .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
+                                HomePhotoBackdropScrollState(
+                                    rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                                    metrics: metrics
+                                )
+                            }) { _, scrollState in
+                                if currentScrollOffsetY != scrollState.restorationOffset {
+                                    currentScrollOffsetY = scrollState.restorationOffset
+                                }
 
-                        if photoBackdropScrollOffset != scrollState.displayOffset {
-                            photoBackdropScrollOffset = scrollState.displayOffset
-                        }
+                                if photoBackdropScrollOffset != scrollState.displayOffset {
+                                    photoBackdropScrollOffset = scrollState.displayOffset
+                                }
 
-                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
-                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                        isPhotoBackdropImmersive = false
+                                    }
+                                }
+                            }
+                            .onAppear {
+                                guard isActive else { return }
+                                restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                            }
+                            .onChange(of: isActive) { _, isActive in
+                                if isActive {
+                                    restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                                } else if isPhotoBackdropImmersive {
+                                    isPhotoBackdropImmersive = false
+                                }
+                            }
+                            .onChange(of: scrollToTopTrigger) { _, _ in
+                                scrollRestorationTarget = nil
+                                currentScrollTarget = .top
                                 isPhotoBackdropImmersive = false
+                                scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+                            }
+                            .task(id: isActive) {
+                                guard isActive, isVisible, scrollRestorationTarget == nil else {
+                                    return
+                                }
+
+                                await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                                await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: "Home.BottomSentinel")
                             }
                         }
+                        .ignoresSafeArea(edges: .top)
                     }
-                    .onAppear {
-                        guard isActive else { return }
-                        restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
-                    }
-                    .onChange(of: isActive) { _, isActive in
-                        if isActive {
-                            restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
-                        } else if isPhotoBackdropImmersive {
-                            isPhotoBackdropImmersive = false
+                    .contentShape(Rectangle())
+                    .simultaneousGesture(
+                        SpatialTapGesture().onEnded { value in
+                            togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
                         }
-                    }
-                    .onChange(of: scrollToTopTrigger) { _, _ in
-                        scrollRestorationTarget = nil
-                        currentScrollTarget = .top
-                        isPhotoBackdropImmersive = false
-                        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
-                    }
-                    .task(id: isActive) {
-                        guard isActive, scrollRestorationTarget == nil else {
-                            return
-                        }
-
-                        await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
-                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: "Home.BottomSentinel")
-                    }
-                }
-                .ignoresSafeArea(edges: .top)
-            }
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                SpatialTapGesture().onEnded { value in
-                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
-                }
-            )
-            .preference(
-                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
-                value: isActive && isPhotoBackdropImmersive
-                    ? PhrasePhotoBackdropImmersiveImageContext(
-                        pageID: "home",
-                        imageName: backdropImageName,
-                        viewportSize: geometry.size,
-                        safeAreaTop: geometry.safeAreaInsets.top,
-                        safeAreaBottom: geometry.safeAreaInsets.bottom,
-                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
-                            for: geometry.size,
-                            safeAreaInsets: geometry.safeAreaInsets,
-                            pageID: "home",
-                            heroImageName: backdropImageName
-                        ),
-                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
-                            for: geometry.size,
-                            pageID: "home",
-                            heroImageName: backdropImageName
-                        )
                     )
-                    : nil
-            )
-            .preference(
-                key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
-                value: isActive && !isPhotoBackdropImmersive ? topChromeStyle : .light
-            )
+                    .preference(
+                        key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                        value: isActive && isVisible && isPhotoBackdropImmersive
+                            ? PhrasePhotoBackdropImmersiveImageContext(
+                                pageID: "home",
+                                imageName: backdropImageName,
+                                viewportSize: geometry.size,
+                                safeAreaTop: geometry.safeAreaInsets.top,
+                                safeAreaBottom: geometry.safeAreaInsets.bottom,
+                                imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                                    for: geometry.size,
+                                    safeAreaInsets: geometry.safeAreaInsets,
+                                    pageID: "home",
+                                    heroImageName: backdropImageName
+                                ),
+                                verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                                    for: geometry.size,
+                                    pageID: "home",
+                                    heroImageName: backdropImageName
+                                )
+                            )
+                            : nil
+                    )
+                    .preference(
+                        key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+                        value: isActive && isVisible && !isPhotoBackdropImmersive ? topChromeStyle : .light
+                    )
+                }
+            } else {
+                Color.clear
+                    .accessibilityHidden(true)
+            }
         }
         .ignoresSafeArea(edges: .bottom)
-        .statusBarHidden(isActive && isPhotoBackdropImmersive)
-        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .statusBarHidden(isActive && isVisible && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isVisible && isPhotoBackdropImmersive ? .hidden : .automatic)
         .preference(
             key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
-            value: isActive && isPhotoBackdropImmersive
+            value: isActive && isVisible && isPhotoBackdropImmersive
         )
         .preference(
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
-            value: isActive && !isPhotoBackdropImmersive
+            value: isActive && isVisible && !isPhotoBackdropImmersive
         )
         .accessibilityIdentifier("HomeView")
         .task(id: backdropActivationToken) {
-            guard isActive else {
+            guard isActive, isVisible else {
                 return
             }
 
             AdminBackdropImagePreheater.preheat(
                 HomeBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
             )
+        }
+        .onChange(of: isVisible) { _, visible in
+            if !visible {
+                isPhotoBackdropImmersive = false
+            }
         }
     }
 
