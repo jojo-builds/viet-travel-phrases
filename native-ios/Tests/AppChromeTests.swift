@@ -1151,6 +1151,44 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-city-danang-place-international-terminal"))
+        let articlePage = detailPage.articleTemplate
+
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        PhraseArticleLocationPickGroups.resetBuildCountForTesting()
+
+        let view = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(PhraseArticleLocationPickGroups.buildCountForTesting, 1)
+        XCTAssertEqual(LocationMenuPicksCatalog.sectionFilterCountForTesting, 0)
+        XCTAssertEqual(LocationRelatedPicksCatalog.sectionFilterCountForTesting, 0)
+
+        _ = view.body
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseArticleLocationPickGroups.buildCountForTesting,
+            1,
+            "SwiftUI redraws should reuse grouped Mentioned Here and Compare Nearby cards instead of regrouping them from the article body."
+        )
+        XCTAssertEqual(
+            LocationMenuPicksCatalog.sectionFilterCountForTesting,
+            0,
+            "Article rendering should not repeatedly ask the menu-pick catalog to filter by section ID from the SwiftUI body."
+        )
+        XCTAssertEqual(
+            LocationRelatedPicksCatalog.sectionFilterCountForTesting,
+            0,
+            "Article rendering should not repeatedly ask the related-pick catalog to filter by section ID from the SwiftUI body."
+        )
+    }
+
     func testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }

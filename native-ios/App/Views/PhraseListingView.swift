@@ -20,6 +20,74 @@ enum PhraseArticleMorphPolicy {
     }
 }
 
+struct PhraseArticleLocationPickGroups {
+    private let menuPicksBySectionID: [String: [LocationMenuPick]]
+    private let trailingMenuPicks: [LocationMenuPick]
+    private let relatedPicksBySectionID: [String: [LocationMenuPick]]
+
+    init(pageID: String) {
+#if DEBUG
+        Self.recordBuildForTesting()
+#endif
+        let menuGroups = Self.groupedPicks(LocationMenuPicksCatalog.picks(forPageID: pageID))
+        let relatedGroups = Self.groupedPicks(LocationRelatedPicksCatalog.picks(forPageID: pageID))
+
+        self.menuPicksBySectionID = menuGroups.bySectionID
+        self.trailingMenuPicks = menuGroups.trailing
+        self.relatedPicksBySectionID = relatedGroups.bySectionID
+    }
+
+    func menuPicks(after sectionID: String) -> [LocationMenuPick] {
+        menuPicksBySectionID[sectionID] ?? []
+    }
+
+    func relatedPicks(after sectionID: String) -> [LocationMenuPick] {
+        relatedPicksBySectionID[sectionID] ?? []
+    }
+
+    var trailingPicks: [LocationMenuPick] {
+        trailingMenuPicks
+    }
+
+    private static func groupedPicks(_ picks: [LocationMenuPick]) -> (bySectionID: [String: [LocationMenuPick]], trailing: [LocationMenuPick]) {
+        var bySectionID: [String: [LocationMenuPick]] = [:]
+        var trailing: [LocationMenuPick] = []
+
+        for pick in picks {
+            if let sectionID = pick.afterSectionID {
+                bySectionID[sectionID, default: []].append(pick)
+            } else {
+                trailing.append(pick)
+            }
+        }
+
+        return (bySectionID, trailing)
+    }
+
+#if DEBUG
+    private static let buildCountLock = NSLock()
+    private static var buildCount = 0
+
+    static var buildCountForTesting: Int {
+        buildCountLock.lock()
+        defer { buildCountLock.unlock() }
+        return buildCount
+    }
+
+    static func resetBuildCountForTesting() {
+        buildCountLock.lock()
+        buildCount = 0
+        buildCountLock.unlock()
+    }
+
+    private static func recordBuildForTesting() {
+        buildCountLock.lock()
+        buildCount += 1
+        buildCountLock.unlock()
+    }
+#endif
+}
+
 struct PhraseListingView: View {
     let page: PhrasePage
     let chromeRoute: AppRoute
@@ -129,6 +197,7 @@ struct PhraseArticleTemplateView: View {
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     private let visibleSections: [PhraseArticleSection]
+    private let locationPickGroups: PhraseArticleLocationPickGroups
     private let morphPageID: String
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
@@ -183,6 +252,7 @@ struct PhraseArticleTemplateView: View {
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.visibleSections = Self.visibleSections(for: page)
+        self.locationPickGroups = PhraseArticleLocationPickGroups(pageID: page.id)
         self.morphPageID = PhraseArticleMorphPolicy.resolvedPageID(
             pageID: page.id,
             heroMorphPageID: heroMorphPageID,
@@ -744,15 +814,15 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var trailingLocationMenuPicks: [LocationMenuPick] {
-        LocationMenuPicksCatalog.trailingPicks(forPageID: page.id)
+        locationPickGroups.trailingPicks
     }
 
     private func locationMenuPicks(after sectionID: String) -> [LocationMenuPick] {
-        LocationMenuPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
+        locationPickGroups.menuPicks(after: sectionID)
     }
 
     private func locationRelatedPicks(after sectionID: String) -> [LocationMenuPick] {
-        LocationRelatedPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
+        locationPickGroups.relatedPicks(after: sectionID)
     }
 
     private var usesCompactPhraseHero: Bool {

@@ -1458,6 +1458,7 @@ enum LocationMenuPicksCatalog {
 
 #if DEBUG
     private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
 
     static func resetCacheForTesting() {
         cacheLock.lock()
@@ -1465,6 +1466,7 @@ enum LocationMenuPicksCatalog {
         cachedPicksByPageID.removeAll()
         cachedPageIDs.removeAll()
         buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
     }
 
     static var cacheLimitForTesting: Int {
@@ -1482,6 +1484,12 @@ enum LocationMenuPicksCatalog {
         cacheLock.lock()
         defer { cacheLock.unlock() }
         return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
     }
 #endif
 
@@ -1589,11 +1597,21 @@ enum LocationMenuPicksCatalog {
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
     }
 
     static func trailingPicks(forPageID pageID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == nil }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == nil }
     }
 
     static func pick(withDetailPageID pageID: String) -> LocationMenuPick? {
@@ -1905,6 +1923,7 @@ enum LocationRelatedPicksCatalog {
 
 #if DEBUG
     private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
 
     static func resetCacheForTesting() {
         cacheLock.lock()
@@ -1912,6 +1931,7 @@ enum LocationRelatedPicksCatalog {
         cachedPicksByPageID.removeAll()
         cachedPageIDs.removeAll()
         buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
     }
 
     static var cacheLimitForTesting: Int {
@@ -1929,6 +1949,12 @@ enum LocationRelatedPicksCatalog {
         cacheLock.lock()
         defer { cacheLock.unlock() }
         return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
     }
 #endif
 
@@ -2195,7 +2221,12 @@ enum LocationRelatedPicksCatalog {
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
     }
 
     private static func relatedPlacePick(
