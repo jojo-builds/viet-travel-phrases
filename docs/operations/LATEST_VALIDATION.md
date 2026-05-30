@@ -43,6 +43,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 27: inactive menu and standard browse collection pages could still run delayed section-tracking, section-jump settle, focus-restore, or bottom-inset tasks while mounted for hidden/back-preview navigation states; those deferred collection tasks now require active-route state, while active collection pages keep their scroll, focus, and section-jump behavior
 - root cause 28: inactive listing, browse collection, and menu photo-backdrop pages could still publish scroll-geometry state, and inactive menu pages could still process section-frame/rail preferences while mounted only as hidden/back-preview surfaces; scroll-geometry and menu section preference tracking now require active-route state, preserving active page behavior while preventing extra state churn during rapid navigation
 - root cause 29: generic detail navigation synchronously asked the SQLite phrase graph for a generated page's hero image name just to preheat a backdrop before the actual detail page loaded, duplicating database work on every new SQLite-backed listing tap; navigation preheat now uses only already-known cheap image names such as static authored backdrops, menu backdrops, or browse category overrides, while generated pages still preheat from the active page after its already-loaded detail model supplies the hero image
+- root cause 30: `PhraseDetailView` rebuilt each detail page's `PhraseArticlePage` adapter from `body`, remapping sections and playback metadata on SwiftUI refreshes for the same page; the view now builds that adapter once during initialization and reuses it across redraws, preserving article layout while removing repeated per-refresh transformation work
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -82,6 +83,27 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testInactiveCollectionPagesSkipDeferredScrollTasks`
   - `AppChromeTests/testInactivePagesSkipScrollGeometryAndPreferenceTracking`
   - `AppChromeTests/testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages`
+  - `AppChromeTests/testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance`
+- local hygiene checks after the detail article-adapter fix:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseDetailView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused detail article-adapter set on iPhone 17 Pro
+  - failed before implementation because `PhraseDetailPage.resetArticleTemplateBuildCountForTesting` and `PhraseDetailPage.articleTemplateBuildCountForTesting` did not exist
+  - passed after implementation as part of the focused performance/backdrop set below
+  - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-33-39-105Z_pid15747_28b1eae4.log`
+- XcodeBuildMCP simulator focused performance/backdrop set with article-adapter reuse on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered generated detail navigation skipping SQLite hero-name lookup for preheat, inactive standard article task gating, phrase photo-backdrop preheat eligibility, and detail article-adapter reuse across repeated body refreshes
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-40-52-245Z_pid15747_d6976ca6.xcresult`
+- XcodeBuildMCP broader `AppChromeTests` sweep on iPhone 17 Pro
+  - not clean: `208` tests passed and `4` tests failed
+  - failures are content/fixture expectation drift unrelated to the detail article-adapter code path: entity template row hiding, V2.2 production heading/phrase-card expectations, handwritten menu source copy expectations, and one generic menu guide-copy audit row
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-40-24-498Z_pid15747_8a700f42.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `39fcfe557`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused detail-navigation hero-preheat set on iPhone 17 Pro
   - failed before implementation because `AppShellView.detailBackdropPreheatImageNames(pageID:heroImageNameOverride:)` and `VietSQLitePhraseGraphRuntime.heroImageNameLookupCountForTesting` did not exist
   - passed after implementation: `1` test, `0` failures
