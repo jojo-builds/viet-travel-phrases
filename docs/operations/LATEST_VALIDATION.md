@@ -158,6 +158,12 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `48e664d74`
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean before and after the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: hands-on thermal retest while rapidly opening listing pages on the physical iPhone
 - Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `ae598fb8a`
   - simulator build/run smoke passed for `--detail-page viet-polite-hello`; current branch shows the `Xin chào` pull-down sheet over the `BackdropPhraseGreetingCafeDoorway` image instead of the old static Ha Long masthead layout
   - build passed from the feature worktree
