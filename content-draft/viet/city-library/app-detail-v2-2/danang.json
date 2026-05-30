@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 100,
+    "entries": 102,
     "needsVoiceGate": 0,
-    "finalPass": 100,
+    "finalPass": 102,
     "priorV2_2GateEvidence": 0
   },
   "entries": [
@@ -2398,6 +2398,128 @@
       "sourceNotes": [
         "Added as the first additive Da Nang restaurant pilot after the 500-page hard reset; script assumptions now allow Da Nang 101.",
         "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Riêu Cua 39 in the Da Nang MICHELIN Selected section as Noodles.",
+        "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "hard_reset_v2_2_source_voice_gate_passed",
+        "v2_2GateSources": [],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Additive food listing pass: source, phrase mapping, related-card intent, and MICHELIN support reviewed before projection."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-danang-place-banh-canh-yen",
+      "pageID": "city-danang-place-banh-canh-yen",
+      "sourcePageID": "city-danang-place-banh-canh-yen",
+      "displayName": "Bánh Canh Yến",
+      "englishName": "Banh Canh Yen",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "pronunciation": "banh canh yen",
+      "travelerMoment": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
+      "storySpine": "Bánh Canh Yến matters because it adds a 2025 MICHELIN Selected street-food bowl to Da Nang's noodle map without repeating the city's existing mì Quảng and bún chả cá pages.",
+      "intro": {
+        "heading": "Thick Noodles, Hot Broth",
+        "body": "Bánh Canh Yến is a 2025 MICHELIN Selected Da Nang street-food stop for bánh canh: thick noodles, hot broth, toppings, herbs, and chili at the table."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "v900-food-drin-what-do-you-recommend",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "texture-is-the-point",
+          "heading": "Texture Is The Point",
+          "body": "Bánh canh is about the thick noodle as much as the broth. Let the first spoonful show the chew before adding chili or extra herbs."
+        },
+        {
+          "id": "ask-before-choosing",
+          "heading": "Ask Before Choosing",
+          "body": "If the toppings are not obvious, ask what they recommend. The useful move is one bowl first, then adjust once the table rhythm is clear."
+        },
+        {
+          "id": "texture-changes-the-meal",
+          "heading": "Texture Changes The Meal",
+          "body": "Place it beside Da Nang's other bowls because the texture changes the meal. Mì Quảng is drier; bún riêu is brighter; bánh canh is thicker and warmer."
+        },
+        {
+          "id": "keep-the-claim-small",
+          "heading": "Let The Bowl Carry It",
+          "body": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-danang-place-bun-rieu-cua-39",
+          "label": "Bún Riêu Cua 39",
+          "relationship": "same-city noodle contrast",
+          "displaySubtitle": "A 2025 MICHELIN Selected crab-tomato bowl when the meal should turn brighter.",
+          "reason": "Bun Rieu Cua 39 gives a nearby noodle contrast without repeating the thick-noodle role.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-danang-place-bun-cha-ca-hon",
+          "label": "Bún Chả Cá Hờn",
+          "relationship": "same-city noodle contrast",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand fish-cake soup stop for another Da Nang bowl.",
+          "reason": "Hon is the strongest fish-cake soup comparison now that Banh Canh Yen covers thick noodles.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Da Nang 102-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "No city-level bánh canh dish page exists yet, so Mentioned Here is intentionally empty rather than forced.",
+          "Official 2025 MICHELIN PDF support checked locally: Bánh Canh Yến appears in the Da Nang MICHELIN Selected section as Street Food."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Production Da Nang additive pilot: bounded 2025 MICHELIN Selected context, distinct thick-noodle soup reason, mapped phrase cards, and renderable related-place comparisons."
+      },
+      "sourceNotes": [
+        "Added as the second additive Da Nang restaurant pilot after the 500-page hard reset; script assumptions now allow Da Nang 102.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Canh Yến in the Da Nang MICHELIN Selected section as Street Food.",
         "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
       ],
       "status": "FINAL_PASS",

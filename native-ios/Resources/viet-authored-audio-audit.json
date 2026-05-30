@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T20:07:15.125Z",
+    "generatedAt": "2026-05-30T20:17:55.189Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 813,
+    "cityLibraryPageCount": 814,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2255,
-    "missingAudioCount": 688
+    "requiredAudioCount": 2256,
+    "missingAudioCount": 689
   },
   "required": [
     {
@@ -11713,6 +11713,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-danang-place-banh-canh-yen",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-banh-canh-yen-c40091492f",
+      "text": "Bánh Canh Yến",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-banh-mi",
       "sectionID": "hero",
       "kind": "hero",
@@ -18496,6 +18504,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cho-bac-my-an-9fa3d7ba23",
       "text": "Chợ Bắc Mỹ An",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-banh-canh-yen",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-banh-canh-yen-c40091492f",
+      "text": "Bánh Canh Yến",
       "resolved": false
     },
     {

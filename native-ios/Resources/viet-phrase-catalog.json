@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1772,
+    "phraseCount": 1773,
     "basePhraseCount": 935,
-    "cityPhraseCount": 813,
+    "cityPhraseCount": 814,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1754,
+    "familyCount": 1755,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -11603,6 +11603,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-ban-co-peak"
+      ]
+    },
+    {
+      "id": "city-danang-place-banh-canh-yen",
+      "pageID": "viet-family-city-danang-place-banh-canh-yen",
+      "scenarioID": "city-guides",
+      "familyTitle": "Banh Canh Yen pronunciation",
+      "summary": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
+      "primaryPhraseID": "city-danang-place-banh-canh-yen",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-banh-canh-yen"
       ]
     },
     {
@@ -58216,6 +58228,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-banh-canh-yen",
+      "familyID": "city-danang-place-banh-canh-yen",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Banh Canh Yen",
+      "targetText": "Bánh Canh Yến",
+      "canonicalTargetText": "Bánh Canh Yến",
+      "pronunciation": "banh canh yen",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "Banh Canh Yen",
+        "Bánh Canh Yến"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-banh-canh-yen; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-banh-canh-yen",
+      "placeName": "Banh Canh Yen",
+      "placeVietnameseName": "Bánh Canh Yến",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 3,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

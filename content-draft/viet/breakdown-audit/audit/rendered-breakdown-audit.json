@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T20:07:15.778Z",
+  "generatedAt": "2026-05-30T20:17:55.872Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1765,
+    "pages": 1766,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 358,
-    "generatedAt": "2026-05-30T20:07:15.778Z"
+    "missing": 359,
+    "generatedAt": "2026-05-30T20:17:55.872Z"
   },
   "pages": [
     {
@@ -92577,6 +92577,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-danang-place-banh-canh-yen",
+      "phraseText": "Bánh Canh Yến",
+      "englishTitle": "Banh Canh Yen",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-danang-place-banh-mi",

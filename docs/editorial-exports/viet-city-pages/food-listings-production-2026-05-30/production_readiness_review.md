@@ -1161,6 +1161,7 @@ Phở Lệ moved out of the high-priority pho add list in the sixteenth pass and
 Bánh Cuốn Bà Hoành moved out of the high-priority Hanoi breakfast add list in the seventeenth pass and now exists as `city-hanoi-place-banh-cuon-ba-hoanh`.
 Bún Riêu Cua 39 moved out of the high-priority Da Nang noodle add list in the eighteenth pass and now exists as `city-danang-place-bun-rieu-cua-39`.
 Phở Gà Nguyệt moved out of the high-priority Hanoi chicken-pho add list in the nineteenth pass and now exists as `city-hanoi-place-pho-ga-nguyet`.
+Bánh Canh Yến moved out of the high-priority Da Nang thick-noodle add list in the twentieth pass and now exists as `city-danang-place-banh-canh-yen`.
 
 ### Validation Status
 
@@ -2358,6 +2359,113 @@ Results:
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
 The additive path is now proven across seven stronger food pages, including the first named chicken-pho page. The next adds should stay selective: only add a restaurant when it creates a new food memory, a stronger comparison, or a clearer reason to remember the place before the trip.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Bánh Canh Yến Additive Da Nang Pilot
+
+Twentieth pass date: 2026-05-31
+
+Commit before pass: `927332603 Add Pho Ga Nguyet Hanoi food listing`
+
+This continuation implements the second additive Da Nang food pilot and adds a thick-noodle soup page rather than another duplicate pho, bún chả, or fish-cake soup page. The product choice remains additive expansion: Saigon carries 104 noun/place rows, Hanoi carries 102, Da Nang now carries 102, and the full city-place runtime carries 508 rows total.
+
+### Page Added
+
+- `city-danang-place-banh-canh-yen`: added as a first-class V2.2 app-detail source object and projected into the legacy-compatible native resources.
+
+Visible page direction:
+
+- frames Bánh Canh Yến as a distinct Da Nang thick-noodle soup stop, not another generic noodle listing;
+- uses bounded 2025 MICHELIN Selected language supported by the official 2025 source;
+- uses bowl and texture cues: thick slippery noodles, hot broth, toppings, herbs, chili, and a short street-food meal;
+- keeps the MICHELIN signal as support while the food texture carries the reason to remember it;
+- keeps hours, address, booking, closure, and fragile operations out of bundled copy.
+
+### Contract Widening
+
+The additive contract now has a second Da Nang expansion row:
+
+- `native-ios/scripts/import-city-noun-intake.js`: city expected-row contract now allows HCMC to carry 104 rows, Hanoi to carry 102, and Da Nang to carry 102 while Hội An and Hue remain at 100.
+- `native-ios/scripts/validate-viet-city-copy.js`: city production validation now expects 508 noun/place pages, with HCMC at 104, Hanoi at 102, and Da Nang at 102.
+
+This keeps the growing food catalog explicit in validation instead of hiding the add as a loose JSON extra.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claim added only where this source supported it:
+
+- `Bánh Canh Yến`: 2025 MICHELIN Selected, Da Nang, Street Food.
+
+The live MICHELIN restaurant page was not used as the runtime source of truth, so the visible app copy avoids hours, exact address, booking, closure, and narrow operational claims.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-banh-canh-yen-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-banh-canh-yen`
+  - `banh-canh-yen-first-screen.jpg`: first viewport shows the new Bánh Canh Yến page, 2025 MICHELIN Selected thick-noodle intro, and playable Useful Phrases immediately after the intro.
+  - `banh-canh-yen-bottom-inset.jpg`: bottom-validation launch shows Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-banh-canh-yen`
+  - `--detail-page viet-family-city-danang-place-banh-canh-yen --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 102 places, Da Nang 102 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 508 entries imported.
+- native resource generation: PASS, 1755 families, 1773 phrases, 1766 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 508 entries, 508 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing one repeated `belongs` construction in the new page.
+- city-copy compatibility validation: PASS, 5 hubs, 508 city noun pages, 508 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 508 city places, 814 city phrase tags, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bánh Canh Yến Additive Pilot
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The additive path is now proven across eight stronger food pages. This pass also confirms the direction Jojo asked for: food-specific desire should win over filling every MICHELIN slot. Bánh Canh Yến was chosen because it adds a new bowl texture to Da Nang, while other candidates such as another bún chả or beef-pho shop risk duplicating pages the app already carries.
 
 ### Agent Lifecycle Note
 
