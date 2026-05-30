@@ -44,6 +44,8 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 28: inactive listing, browse collection, and menu photo-backdrop pages could still publish scroll-geometry state, and inactive menu pages could still process section-frame/rail preferences while mounted only as hidden/back-preview surfaces; scroll-geometry and menu section preference tracking now require active-route state, preserving active page behavior while preventing extra state churn during rapid navigation
 - root cause 29: generic detail navigation synchronously asked the SQLite phrase graph for a generated page's hero image name just to preheat a backdrop before the actual detail page loaded, duplicating database work on every new SQLite-backed listing tap; navigation preheat now uses only already-known cheap image names such as static authored backdrops, menu backdrops, or browse category overrides, while generated pages still preheat from the active page after its already-loaded detail model supplies the hero image
 - root cause 30: `PhraseDetailView` rebuilt each detail page's `PhraseArticlePage` adapter from `body`, remapping sections and playback metadata on SwiftUI refreshes for the same page; the view now builds that adapter once during initialization and reuses it across redraws, preserving article layout while removing repeated per-refresh transformation work
+- root cause 31: `PhraseArticleTemplateView` still derived visible article sections from `body`, re-filtering sections and re-running duplicate-hero text normalization during repeated SwiftUI redraws for the same page; the view now derives the visible section list once per page instance and reuses it across redraws
+- root cause 32: saved/practice membership checks canonicalized page IDs even when their ID lists were empty or when the caller already supplied the exact canonical ID; those render-path checks now use empty/direct-ID fast paths before entering the SQLite canonical resolver, preserving alias support while avoiding unnecessary lookup work during detail redraws
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -84,6 +86,30 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testInactivePagesSkipScrollGeometryAndPreferenceTracking`
   - `AppChromeTests/testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages`
   - `AppChromeTests/testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleTemplateBuildsVisibleSectionsOncePerPageInstance`
+  - `LocalUserIntentStoreTests/testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs`
+- local hygiene checks after the detail redraw and saved-membership fixes:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused visible-section derivation set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleTemplateView.resetVisibleSectionsBuildCountForTesting` and `PhraseArticleTemplateView.visibleSectionsBuildCountForTesting` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-53-27-063Z_pid15747_85228af8.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-56-07-091Z_pid15747_12de26f1.xcresult`
+- XcodeBuildMCP simulator focused saved-membership canonical-lookup set on iPhone 17 Pro
+  - failed before implementation: `LocalUserIntentStoreTests/testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs` observed one SQLite canonical lookup for an empty Saved list and one for an already-canonical saved ID
+  - passed after implementation as part of the focused regression set below
+  - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-59-31-334Z_pid15747_1f513330.xcresult`
+- XcodeBuildMCP simulator focused detail redraw/saved-membership regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered visible-section derivation reuse, article-adapter reuse, generated detail preheat SQLite bypass, phrase photo-backdrop preheat eligibility, saved-membership empty/direct-canonical lookup fast paths, saved toggle invalidation, saved/practice persistence, and saved menu-item behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-01-34-500Z_pid15747_2b4c72b0.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `c4e597907`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - local hygiene checks after the detail article-adapter fix:
   - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseDetailView.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
