@@ -805,11 +805,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "boon cha huong lien",
-      "travelerMoment": "Hương Liên matters because bún chả here feels like an everyday Hanoi lunch made famous without losing its table pace: pork, broth, herbs, and quick service.",
-      "storySpine": "Let fame stay smaller than the food and the table flow at Huong Lien.",
+      "travelerMoment": "Save Hương Liên when bún chả should be a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
+      "storySpine": "Hương Liên earns the save by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
       "intro": {
-        "heading": "The Bowl Sets The Pace",
-        "body": "Bun Cha Huong Lien is for letting bun cha become a real Hanoi meal: grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly."
+        "heading": "Selected For The Bun Cha",
+        "body": "Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly."
       },
       "usefulPhraseCards": [
         {
@@ -855,8 +855,8 @@
         },
         {
           "id": "fame-should-stay-smaller-than-lunch",
-          "heading": "Fame Should Stay Smaller Than Lunch",
-          "body": "The restaurant name may bring noise, but the meal does not need to. Sit, eat while the pork and broth are warm, then move back into the city."
+          "heading": "Recognition, Then Lunch",
+          "body": "The MICHELIN Selected note helps explain the save, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm."
         }
       ],
       "mentionedHereCandidates": [
@@ -875,7 +875,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "Another named bún chả stop when the same dish needs a different room.",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bún chả room when the same dish needs a different table.",
           "reason": "Bun Cha Ta is a useful same-dish room comparison for Huong Lien.",
           "status": "render"
         }
@@ -891,17 +891,19 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-huong-lien: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 PDF support added while keeping the bún chả lunch reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Bún chả Hương Liên has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production MICHELIN patch: Bún chả Hương Liên now carries bounded 2025 MICHELIN Selected context and a clear bún chả lunch reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Hanoi guide",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Chả Hương Liên (Hai Ba Trung) as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -927,11 +929,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "bun cha ta",
-      "travelerMoment": "Bún Chả Ta puts you at the Old Quarter version of the dish: close tables, smoke, herbs, and a meal that fits between lanes rather than away from them.",
-      "storySpine": "Bun Cha Ta is a concrete Old Quarter table for bun cha: smoke, herbs, dipping broth, and a small room close to the lanes.",
+      "travelerMoment": "Save Bún Chả Ta when the Old Quarter meal should be a 2025 MICHELIN Bib Gourmand bún chả table: grilled pork, dipping broth, herbs, vermicelli, and close-room pace.",
+      "storySpine": "Bun Cha Ta gives the Old Quarter a recognized bún chả table: smoke, herbs, dipping broth, grilled pork, and a small room close to the lanes.",
       "intro": {
-        "heading": "A Small Table For The Classic",
-        "body": "Bun Cha Ta is a small-table version of the Hanoi classic: grilled pork, cool vermicelli, herbs, and a dipping bowl that makes the meal slow down."
+        "heading": "A Bib Gourmand Bun Cha Table",
+        "body": "Bun Cha Ta is a 2025 MICHELIN Bib Gourmand bún chả stop in the Old Quarter: grilled pork, cool vermicelli, herbs, and a dipping bowl that slows the meal down."
       },
       "usefulPhraseCards": [
         {
@@ -972,8 +974,8 @@
         },
         {
           "id": "a-focused-bun-cha-stop",
-          "heading": "A Focused Bun Cha Stop",
-          "body": "Bun Cha Ta suits a casual, smoky meal centered on one dish. The table pace matters more than a long comparison."
+          "heading": "Bib Gourmand, One Dish",
+          "body": "The Bib Gourmand signal works because the table is direct. Let one dish carry the meal: smoke, broth, herbs, noodles, and pork."
         },
         {
           "id": "the-bowl-carries-the-meal",
@@ -981,13 +983,23 @@
           "body": "The dipping bowl is not sauce on the side. It is where grilled pork, pickles, herbs, and noodles turn into bun cha."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "bún chả",
+          "displaySubtitle": "The smoky Hanoi dish behind the Bun Cha Ta table.",
+          "reason": "The page centers bún chả and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "bun cha table comparison",
-          "displaySubtitle": "Another named bun cha room, useful when the plan is one dish and a real address.",
+          "displaySubtitle": "A 2025 MICHELIN Selected bún chả room when fame, broth, herbs, and pork share the table.",
           "reason": "Huong Lien gives Bun Cha Ta a same-dish comparison for bun cha planning.",
           "status": "render"
         }
@@ -1003,17 +1015,19 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-ta: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter bún chả reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Bún Chả Ta has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production MICHELIN patch: Bún Chả Ta now carries bounded 2025 MICHELIN Bib Gourmand context, dish-level Mentioned Here, and a clear Old Quarter bún chả save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Hanoi guide",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bun Cha Ta (Nguyen Huu Huan Street) as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1370,11 +1384,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "cha ca thang long",
-      "travelerMoment": "Thăng Long keeps chả cá tied to Hanoi by focusing the room around one hot-pan ritual: fish, dill, noodles, herbs, peanuts, and the sauce choice.",
-      "storySpine": "The restaurant turns cha ca into a practical place example, with the table sequence carrying the memory.",
+      "travelerMoment": "Save Thăng Long when Hanoi dinner should be a 2025 MICHELIN Bib Gourmand chả cá table: turmeric fish, dill, noodles, herbs, peanuts, and the sauce choice.",
+      "storySpine": "Thăng Long turns chả cá into a recognized Hanoi table ritual, with heat, dill, fish, noodles, sauce, and shared bite-building carrying the memory.",
       "intro": {
-        "heading": "One Dish, A Lot Of Table Motion",
-        "body": "Cha Ca Thang Long is the hot-pan cha ca meal in one focused room: turmeric fish, dill, scallions, noodles, herbs, peanuts, and sauce at the center of the table."
+        "heading": "A Bib Gourmand Hot Pan",
+        "body": "Cha Ca Thang Long is a 2025 MICHELIN Bib Gourmand hot-pan meal: turmeric fish, dill, scallions, noodles, herbs, peanuts, and sauce at the center of the table."
       },
       "usefulPhraseCards": [
         {
@@ -1415,8 +1429,8 @@
         },
         {
           "id": "a-planned-fish-dinner",
-          "heading": "A Planned Fish Dinner",
-          "body": "Cha Ca Thang Long is for one Hanoi specialty carrying the evening. Arrive ready for the pan, the herbs, and the sauce decision instead of a broad menu browse."
+          "heading": "Recognition Around One Pan",
+          "body": "The Bib Gourmand signal belongs to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision."
         },
         {
           "id": "the-pan-stays-central",
@@ -1440,7 +1454,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "signature-dish table comparison",
-          "displaySubtitle": "Another Hanoi meal where one famous dish carries the table.",
+          "displaySubtitle": "A 2025 MICHELIN Selected bún chả table when another famous Hanoi dish should carry lunch.",
           "reason": "Huong Lien is a useful food-route comparison for another one-dish Hanoi meal.",
           "status": "render"
         }
@@ -1457,17 +1471,19 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cha-ca-thang-long: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the chả cá hot-pan reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Cha Ca Thang Long now links to the dish guide and a specific signature-dish comparison."
+        "reason": "Production MICHELIN patch: Cha Ca Thang Long now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer hot-pan dinner save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Hanoi guide",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Chả Cá Thăng Long (6B Duong Thanh Street) as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7691,11 +7707,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho gia truyen",
-      "travelerMoment": "Phở Gia Truyền keeps the quick Old Quarter bowl tradition alive, where broth, steam, sliced beef, and counter pace matter more than decoration.",
-      "storySpine": "Phở Gia Truyền carries a strong counter-meal moment through broth, pace, beef, herbs, and a room moving quickly.",
+      "travelerMoment": "Save Phở Gia Truyền when the Old Quarter bowl should be a 2025 MICHELIN Bib Gourmand counter stop: broth, steam, sliced beef, herbs, and quick room pace.",
+      "storySpine": "Phở Gia Truyền carries the recognized Hanoi counter-meal memory through broth, steam, beef, herbs, and a room moving quickly.",
       "intro": {
-        "heading": "Steam First, Seat Second",
-        "body": "Pho Gia Truyen is a quick broth-counter meal: steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
+        "heading": "A Bib Gourmand Pho Counter",
+        "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
       },
       "usefulPhraseCards": [
         {
@@ -7731,8 +7747,8 @@
         },
         {
           "id": "counter-pace",
-          "heading": "Counter Pace",
-          "body": "Keep it to the quick bowl. The broth, table, and room pace carry the visit."
+          "heading": "Bib Gourmand, Counter Pace",
+          "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit."
         },
         {
           "id": "pho-comparison",
@@ -7761,7 +7777,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
           "relationship": "same-dish counter comparison",
-          "displaySubtitle": "Another pho counter when broth, queue, and beef cuts are the comparison.",
+          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand pho counter when broth, queue, and beef cuts are the comparison.",
           "reason": "Pho Bo Lam is a same-dish comparison for Pho Gia Truyen.",
           "status": "render"
         }
@@ -7777,17 +7793,19 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-gia-truyen: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-counter reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Phở Gia Truyền has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production MICHELIN patch: Phở Gia Truyền now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer broth-counter save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Hanoi guide",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Gia Truyền (Hoan Kiem) as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {

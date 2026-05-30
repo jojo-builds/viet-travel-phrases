@@ -1312,3 +1312,103 @@ These five current in-app Da Nang recognition misses are fixed and rendered. The
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. The prior Codex desktop agent lifecycle step froze twice, so this pass stayed single-threaded and relied on repo evidence, official source checks, validators, and simulator proof.
+
+## Continuation: Hanoi MICHELIN Recognition Patch
+
+Tenth pass date: 2026-05-31
+
+Commit before pass: `b7ac77bbc Patch Da Nang Michelin Selected food copy`
+
+This continuation corrected four existing Hanoi pages that already had official 2025 MICHELIN support in source notes or nearby evidence, but whose visible copy did not yet give food-focused travelers the recognition signal. The work stayed inside existing V2.2 source records.
+
+### Pages Touched
+
+- `city-hanoi-place-bun-cha-huong-lien`: added bounded 2025 MICHELIN Selected language while keeping the save reason on grilled pork, warm broth, herbs, vermicelli, quick service, and a famous bún chả lunch room.
+- `city-hanoi-place-bun-cha-ta`: added bounded 2025 MICHELIN Bib Gourmand language, made the Old Quarter bún chả reason first, and added a rendered `Mentioned Here` card to the dish-level bún chả guide.
+- `city-hanoi-place-cha-ca-thang-long`: added bounded 2025 MICHELIN Bib Gourmand language while keeping the save reason on the hot-pan chả cá ritual: turmeric fish, dill, noodles, herbs, peanuts, and sauce.
+- `city-hanoi-place-pho-gia-truyen`: added bounded 2025 MICHELIN Bib Gourmand language while keeping the save reason on broth steam, sliced beef, herbs, and Old Quarter counter pace.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claims added only where this source supported them:
+
+- `Bún Chả Hương Liên (Hai Ba Trung)`: 2025 MICHELIN Selected.
+- `Bun Cha Ta (Nguyen Huu Huan Street)`: 2025 MICHELIN Bib Gourmand.
+- `Chả Cá Thăng Long (6B Duong Thanh Street)`: 2025 MICHELIN Bib Gourmand.
+- `Phở Gia Truyền (Hoan Kiem)`: 2025 MICHELIN Bib Gourmand.
+
+No new hours, prices, reservation, closure, address, queue, or operational claims were added.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hanoi-michelin-recognition/`
+
+Representative pages captured:
+
+- `viet-family-city-hanoi-place-bun-cha-ta`
+  - `bun-cha-ta-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand bún chả framing.
+  - `bun-cha-ta-bottom-clearance.jpg`: bottom-validation launch shows Mentioned Here, Compare Nearby, and Useful Phrases above the tab bar with reading space below.
+- `viet-family-city-hanoi-place-bun-cha-huong-lien`
+  - `bun-cha-huong-lien-top.jpg`: first viewport shows the revised 2025 MICHELIN Selected bún chả lunch framing.
+- `viet-family-city-hanoi-place-pho-gia-truyen`
+  - `pho-gia-truyen-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand pho-counter framing.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-ta`
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-huong-lien`
+  - `--detail-page viet-family-city-hanoi-place-pho-gia-truyen`
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-ta --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for all four launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9343 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Hanoi MICHELIN Recognition Patch
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+These four current in-app Hanoi recognition misses are fixed and rendered. The next production-ready work should continue the official-recognition coverage audit and then address add/replace decisions for official 2025 MICHELIN restaurants missing from the current V2.2 source set. Before release, re-check official MICHELIN sources because the 2025 claims are date-bounded.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. The desktop agent lifecycle path has frozen repeatedly, so this pass used a local evidence-review split instead: source coverage audit, voice gate, validation gate, and native render gate.
