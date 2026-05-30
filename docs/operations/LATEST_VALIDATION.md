@@ -38,6 +38,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 22: browse category/card taps preheated category hero backdrops in `openDetailFromBrowse` and then immediately reached the generic detail preheat path with the same browse hero override; category masthead browse opens now keep the hero override but skip that duplicate generic shell preheat, while non-category browse opens and all non-browse detail opens keep their existing fallback preheat behavior
 - root cause 23: browse category/card taps stored contextual hero image overrides in an unbounded app-shell `@State` dictionary; rapidly opening many category listing pages could retain one override per distinct page even though rendering is limited to the active/immediate preview pages, so the shell now keeps those overrides in a bounded recent-page cache while preserving category masthead overrides for recent back/forward navigation
 - root cause 24: inactive but visible root/admin photo-backdrop preview surfaces could still run delayed startup scroll and bottom-inset validation work while mounted for navigation previews; that delayed work now requires the surface to be both active and visible, while immediate visual positioning for visible previews is preserved
+- root cause 25: browse city/category thumbnail rendering still asked UIKit for image dimensions from the SwiftUI body for every focused thumbnail image, even though only two assets need custom crop focus; normal thumbnails now skip that `UIImage(named:)` size probe and render directly, preserving the two custom crops while avoiding extra asset lookup/decode pressure during rapid browsing
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -72,6 +73,17 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testBrowseDetailGenericPreheatSkipsOnlyAfterCategoryOverride`
   - `AppChromeTests/testBrowseDetailHeroOverrideCacheStaysBoundedDuringRapidCategoryBrowsing`
   - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages`
+  - `AppChromeTests/testBrowseFocusedAssetImagesReadSizesOnlyForCustomFocusAssets`
+- xcodebuild simulator focused browse thumbnail size-probe set on iPhone 17 Pro
+  - failed before implementation because `BrowseFocusedAssetImagePolicy` did not exist and normal thumbnails had no policy seam to skip UIKit size reads
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-16-41-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-17-53-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with browse thumbnail size-probe gating on iPhone 17 Pro
+  - passed: `26` tests, `0` failures
+  - covered normal browse thumbnails skipping UIKit image-size reads, active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, static designed `Xin chào` photo-backdrop eligibility, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-18-54-+0700.xcresult`
 - xcodebuild simulator focused admin/root photo-backdrop delayed-task set on iPhone 17 Pro
   - failed before implementation because `AdminPhotoBackdropTaskPolicy` did not exist
   - passed after implementation: `1` test, `0` failures

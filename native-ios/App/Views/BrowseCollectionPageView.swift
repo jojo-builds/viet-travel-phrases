@@ -1207,6 +1207,21 @@ private struct BrowseCityNounRow: View {
     }
 }
 
+enum BrowseFocusedAssetImagePolicy {
+    static func shouldReadImageSize(for imageName: String) -> Bool {
+        focusedImages[imageName] != nil
+    }
+
+    static func focusPoint(for imageName: String) -> UnitPoint {
+        focusedImages[imageName] ?? .center
+    }
+
+    private static let focusedImages: [String: UnitPoint] = [
+        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
+        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
+    ]
+}
+
 private struct BrowseFocusedAssetImage: View {
     let imageName: String
 
@@ -1214,7 +1229,9 @@ private struct BrowseFocusedAssetImage: View {
         GeometryReader { proxy in
             let containerSize = proxy.size
 
-            if let imageSize = BrowseImageAssetCache.size(for: imageName) {
+            if
+                BrowseFocusedAssetImagePolicy.shouldReadImageSize(for: imageName),
+                let imageSize = BrowseImageAssetCache.size(for: imageName) {
                 let scale = max(
                     containerSize.width / imageSize.width,
                     containerSize.height / imageSize.height
@@ -1224,7 +1241,7 @@ private struct BrowseFocusedAssetImage: View {
                     height: imageSize.height * scale
                 )
                 let offset = Self.offset(
-                    focus: Self.focusPoint(for: imageName),
+                    focus: BrowseFocusedAssetImagePolicy.focusPoint(for: imageName),
                     scaledSize: scaledSize,
                     containerSize: containerSize
                 )
@@ -1261,15 +1278,6 @@ private struct BrowseFocusedAssetImage: View {
             height: min(max(rawY, -maxY), maxY)
         )
     }
-
-    private static func focusPoint(for imageName: String) -> UnitPoint {
-        focusedImages[imageName] ?? .center
-    }
-
-    private static let focusedImages: [String: UnitPoint] = [
-        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
-        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
-    ]
 }
 
 private struct BrowseCityFilterPill: View {

@@ -1064,6 +1064,23 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseFocusedAssetImagesReadSizesOnlyForCustomFocusAssets() {
+        XCTAssertTrue(
+            BrowseFocusedAssetImagePolicy.shouldReadImageSize(
+                for: "HeroCityDanangPlaceBaNaHills"
+            )
+        )
+        XCTAssertFalse(
+            BrowseFocusedAssetImagePolicy.shouldReadImageSize(
+                for: "HeroCityHanoiPlaceEggCoffee"
+            )
+        )
+        XCTAssertEqual(
+            BrowseFocusedAssetImagePolicy.focusPoint(for: "HeroCityHanoiPlaceEggCoffee"),
+            UnitPoint.center
+        )
+    }
+
     func testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
         XCTAssertEqual(
             VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
