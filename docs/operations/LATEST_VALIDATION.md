@@ -91,7 +91,12 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
-- Follow-up iPhone reinstall for the hidden-detail mount reduction later passed build and install, but launch was blocked by the iPhone lock screen. Later reinstall attempts for the root `Xin chào` surface-gating patch and the browse/category/menu hidden-work patch reached different boundaries: one timed out waiting for the physical iPhone destination, and one built successfully but install failed when the device connection was interrupted. The latest 2026-05-30 serialized-preheat attempt built successfully and acquired a device install tunnel, but the install step stopped producing output and was terminated after waiting so the desktop session would not keep a stuck device command alive. The newest thermal patches currently have simulator proof and device build proof, but still need device install/launch and hands-on thermal retest once the phone is unlocked/attached or reachable on the local network.
+- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `3deb4ffc67`
+  - build passed
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+  - remaining proof gap: hands-on thermal retest while rapidly opening listing pages on the physical iPhone
 
 ## Current Main Non-Paywall Merge Sweep Evidence
 
