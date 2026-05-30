@@ -84,6 +84,11 @@ Fresh command evidence from this pass:
   - passed: `26` tests, `0` failures
   - covered normal browse thumbnails skipping UIKit image-size reads, active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, static designed `Xin chào` photo-backdrop eligibility, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
   - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-18-54-+0700.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `01682364a`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - xcodebuild simulator focused admin/root photo-backdrop delayed-task set on iPhone 17 Pro
   - failed before implementation because `AdminPhotoBackdropTaskPolicy` did not exist
   - passed after implementation: `1` test, `0` failures
