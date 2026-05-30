@@ -224,7 +224,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide"
+        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide",
+        "Official Michelin corporate 2025 release lists Akuna among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -362,11 +363,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "anan sai gon",
-      "travelerMoment": "The restaurant is an evening meal decision rather than a casual snack stop. Think contemporary Vietnamese cooking and a deliberate room, not broad market romance.",
-      "storySpine": "It brings a polished Saigon dinner into view, distinct from street bites, markets, and quick counters.",
+      "travelerMoment": "Save Anan Saigon when Saigon dinner should be the centerpiece: a 2025 One MICHELIN Star restaurant near central market streets, built for a planned contemporary Vietnamese meal.",
+      "storySpine": "Anan gives the trip a modern Saigon food memory, where Vietnamese ingredients, small plates, drinks, and a polished room sit beside the city’s market energy.",
       "intro": {
-        "heading": "A Planned Vietnamese Dinner",
-        "body": "Anan Saigon is a contemporary Vietnamese restaurant to remember for a planned meal near central market streets, where small plates, herbs, and a polished room give the night a clear food centerpiece."
+        "heading": "A Michelin-Starred Saigon Dinner",
+        "body": "Anan Saigon is the Saigon dinner save when one meal should center the night: a 2025 One MICHELIN Star restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention."
       },
       "usefulPhraseCards": [
         {
@@ -396,24 +397,24 @@
       ],
       "sections": [
         {
-          "id": "market-side-energy-restaurant-pace",
-          "heading": "Market-Side Energy, Restaurant Pace",
-          "body": "The contrast does the work: central Saigon movement nearby, then a table where courses, drinks, and a deliberate room slow the night down."
+          "id": "why-this-one",
+          "heading": "Why This One",
+          "body": "The appeal is the contrast: market-side Saigon outside, then a polished room where Vietnamese ingredients, small plates, drinks, and service pace turn dinner into the main plan."
         },
         {
-          "id": "a-food-focused-evening",
-          "heading": "A Food-Focused Evening",
-          "body": "It suits a night when dinner is not filler between sights. Leave space before and after, especially if the meal is the main plan."
+          "id": "plan-dinner-as-the-event",
+          "heading": "Dinner Is The Event",
+          "body": "Save it for a night with space around the booking. It lands weaker as a last-minute hunger fix between bars, markets, and one more ride."
         },
         {
-          "id": "give-dinner-its-own-slot",
-          "heading": "Give Dinner Its Own Slot",
-          "body": "The evening can center on a polished meal with room to order slowly. Booking details stay in planning, not in the memory of the place."
+          "id": "ask-before-ordering",
+          "heading": "Ask Before Ordering",
+          "body": "Recommendation, allergy, spice, and menu questions belong early. A planned meal is easier when the first exchange sets the table’s limits."
         },
         {
-          "id": "not-a-street-food-substitute",
-          "heading": "Plan It Like Dinner",
-          "body": "Treat the restaurant as a planned dinner, with table pace instead of snack pace. The safer memory is the room, the pacing, and contemporary Vietnamese cooking."
+          "id": "pair-with-a-market-day",
+          "heading": "Pair It With Market Energy",
+          "body": "This dinner belongs beside Bến Thành, a bánh mì counter, or a street-food walk so Saigon food feels broad: quick counters by day, one composed dinner by night."
         }
       ],
       "mentionedHereCandidates": [],
@@ -421,9 +422,17 @@
         {
           "catalogId": "viet-family-city-hcmc-place-akuna",
           "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "Another Saigon planned-dinner save with Vietnamese ingredients and a slower room.",
+          "reason": "Akuna is another 2025 One MICHELIN Star HCMC restaurant in the approved inventory and helps compare planned dinner saves.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-ben-thanh-market",
+          "label": "Chợ Bến Thành",
+          "relationship": "market-to-dinner route pairing",
+          "displaySubtitle": "Central market energy to pair with a polished Saigon dinner night.",
+          "reason": "The Anan copy anchors the restaurant near central market streets; Ben Thanh is a useful nearby market context page.",
           "status": "render"
         }
       ],
@@ -438,17 +447,19 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 One MICHELIN Star copy and clearer dinner-as-trip-center positioning."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Planned Vietnamese Dinner gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Save-worthy food voice pass: page now states why to save it, what makes it distinct, and which related food/place card should be opened next."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: existing-city-library; MICHELIN Vietnam 2025"
+        "Production intake source notes: existing-city-library; MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release lists Ănăn Saigon among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -3233,7 +3244,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release names CieL as a new One MICHELIN Star recipient in Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -3457,7 +3469,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release names Coco Dining as promoted to One MICHELIN Star in Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {

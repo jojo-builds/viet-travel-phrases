@@ -118,17 +118,17 @@ const familyCopyOverrides = {
     exploreNext: "Use these when slower speech is still not enough and you need writing, meaning, repetition, or English help.",
   },
   "money-how-much": {
-    summary: "Ask the price while pointing, then confirm the number before paying.",
-    atGlance: "Cái này bao nhiêu? is the market-counter question for one visible thing: a bag, snack, shirt, ride item, or menu photo. Point first so the answer can be short, typed, or shown on a calculator.",
-    standard: "Use Cái này bao nhiêu? before the transaction starts. Keep the item visible, then listen for a spoken number or watch for a typed price.",
-    when: "Use it in markets, snack stalls, small shops, taxis, laundry counters, or anywhere the thing is visible. For several items, move to a total-price phrase.",
-    why: "Price confusion gets awkward after the item is packed or the ride has started. Ask early, repeat or show the number back, and keep the final amount visible before paying.",
+    summary: "Save this for markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+    atGlance: "Cái này bao nhiêu? is the pointing phrase for one visible thing: a mango, shirt, coffee, seafood tray, menu photo, or ride add-on. The phrase is small, but it protects the moment before money gets awkward.",
+    standard: "Point first, say Cái này bao nhiêu?, then wait for the number to be spoken, typed, or shown on a calculator. Keep the item visible until the price is clear.",
+    when: "Markets, snack stalls, small shops, beach seafood, laundry counters, and informal rides are where this earns its place. For several items, move to a total-price phrase before paying.",
+    why: "The useful part is timing. Ask before the bag is packed, the plate is weighed, or the ride has started, then repeat or show the number back so both sides see the same price.",
     watch: "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
     tip: "If the answer comes too fast, hand over your phone calculator or point to theirs. Numbers are easier to trust when both people can see them.",
     travelerInsight: "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
     variation: "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
     youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
-    exploreNext: "Use these when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+    exploreNext: "These are the next saves when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
   },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
@@ -3580,6 +3580,15 @@ function preservesHandwrittenCityEditorial(page) {
     && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
 }
 
+const preservedPhraseEditorialFamilyIDs = new Set([
+  "money-how-much",
+]);
+
+function preservesHandwrittenPhraseEditorial(page) {
+  return page.tierRole === "tier1"
+    && preservedPhraseEditorialFamilyIDs.has(page.familyID);
+}
+
 function authoredCitySectionBody(page, sectionID) {
   const body = cleanTravelerBody((page.sections || []).find((section) => section.id === sectionID)?.body || "");
   if (!body) return "";
@@ -4279,6 +4288,25 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
   }
 
+  if (profile === "phrase" && phraseRole === "traveler_says" && preservesHandwrittenPhraseEditorial(page)) {
+    const keepIDs = new Set([
+      "at-glance",
+      "standard-way",
+      "breakdown",
+      "natural-variations",
+      "why-it-matters",
+      "traveler-insight",
+      "when-to-use",
+      "good-to-know",
+      "local-tip",
+      "you-may-hear",
+      "explore-next",
+    ]);
+    if (!keepIDs.has(section.id)) return false;
+    if (section.id === "breakdown") return hasBreakdown;
+    return hasRows || String(section.body ?? "").trim().length > 0;
+  }
+
   if (profile === "phrase" && phraseRole === "traveler_says" && isHeroRepeatSectionForGeneratedPage(section, page)) {
     return false;
   }
@@ -4329,7 +4357,7 @@ const sectionOrderByProfile = {
   restaurant: ["at-glance", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "quick-say", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
-  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
+  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
 };
 
 function phraseDedupKey(option) {
@@ -4683,12 +4711,13 @@ function sanitizeAuthoredPage(page) {
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
   const preserveCityEditorial = preservesHandwrittenCityEditorial(page);
+  const preservePhraseEditorial = preservesHandwrittenPhraseEditorial(page);
   const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
-    title: preserveCityEditorial
+    title: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.title || "")
       : cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
-    body: preserveCityEditorial
+    body: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.body || "")
       : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
@@ -4717,7 +4746,7 @@ function sanitizeAuthoredPage(page) {
 
   return {
     ...page,
-    summary: preserveCityEditorial
+    summary: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(page.summary || "")
       : profile === "derived-place-phrase"
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")

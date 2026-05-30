@@ -4327,11 +4327,11 @@
       "city": "Đà Nẵng",
       "category": "Market",
       "pronunciation": "chuh han",
-      "travelerMoment": "Hàn is the first-bearings market for gifts and an easy central food look. Cồn remains the clearer snack-market comparison.",
-      "storySpine": "The market makes central Da Nang concrete fast: food smells, fabric stalls, dried seafood, bargaining, and river-side errands in one short stop.",
+      "travelerMoment": "Save Hàn Market when a first Da Nang market needs to feel easy: one central lap for gifts, dried food, breakfast bowls, and price practice before deeper snack hunting.",
+      "storySpine": "Hàn matters because it makes central Da Nang concrete in one stop: river-side errands, dried seafood, fabric, bargaining, and food counters close enough for a cautious first market meal.",
       "intro": {
-        "heading": "Do One Slow Lap First",
-        "body": "Hàn Market is the central Da Nang market for first bearings: dried seafood, fish-sauce jars, fabric stalls, rattan bags, breakfast bowls, and enough price questions to practice before the day gets busy."
+        "heading": "The Easy First Market Save",
+        "body": "Hàn Market is the central Da Nang market to save when you want one readable first lap: dried seafood, fish-sauce jars, fabric stalls, rattan bags, breakfast bowls, and price questions before the day gets busy."
       },
       "usefulPhraseCards": [
         {
@@ -4363,27 +4363,60 @@
         {
           "id": "one-lap-before-buying",
           "heading": "One Lap Before Buying",
-          "body": "Walk the food and goods areas once before choosing. The room makes more sense after you see where people are eating, bargaining, and carrying purchases."
+          "body": "Walk the food and goods areas once before choosing. You will see where people are eating, which stalls are gift-focused, and where the bargaining rhythm feels comfortable."
         },
         {
           "id": "eat-early-shop-later",
-          "heading": "Eat Early, Shop Later",
-          "body": "Morning gives the market more food energy. Sit for mì Quảng, bánh bèo, or a small bánh xèo first, then browse fabric, dried food, and gifts with less pressure."
+          "heading": "Breakfast Makes It Matter",
+          "body": "The market has the most energy when food is still awake. Sit for mì Quảng, bánh bèo, or a small bánh xèo first, then browse fabric, dried food, and gifts with less pressure."
         },
         {
           "id": "han-vs-con-market",
           "heading": "Hàn For Bearings, Cồn For Snacks",
-          "body": "Hàn is easier for a first central-market read and practical gifts. Cồn is rougher, louder, and better for small dishes, stools, steam, and cash-ready snacking."
+          "body": "Hàn is the calmer first-market save. Cồn is the louder food-market save for stools, steam, dessert cups, and cash-ready snacking once you want more texture."
+        },
+        {
+          "id": "save-if",
+          "heading": "Save It For The First Morning",
+          "body": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Mì Quảng ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-mi-quang",
+          "sourceText": "mì Quảng",
+          "displaySubtitle": "The regional noodle bowl to recognize before ordering around Da Nang.",
+          "reason": "The Hàn Market copy names mì Quảng as a first food move; the dish page exists and helps food discovery.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh xèo ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-banh-xeo",
+          "sourceText": "bánh xèo",
+          "displaySubtitle": "Crisp pancake, herbs, wrapper, and sauce as a hands-on table cue.",
+          "reason": "The Hàn Market copy names bánh xèo as a small market food; the dish page exists and is useful for food planning.",
+          "status": "render"
+        },
+        {
+          "label": "Chợ Cồn",
+          "type": "place",
+          "catalogId": "viet-family-city-danang-place-con-market",
+          "sourceText": "Cồn",
+          "displaySubtitle": "The louder Da Nang market save when snacks matter more than easy browsing.",
+          "reason": "The page explicitly compares Hàn and Cồn; the related food-market page exists.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-bac-my-an-market",
-          "label": "Chợ Bắc Mỹ An",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-con-market",
+          "label": "Chợ Cồn",
+          "relationship": "same-city food-market comparison",
+          "displaySubtitle": "Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
+          "reason": "Hàn is the calmer first-market save; Cồn is the stronger food-market comparison for travelers building a food route.",
           "status": "render"
         }
       ],
@@ -4396,13 +4429,14 @@
         "duplicateBodyTest": "pass",
         "antiCynicismTest": "pass",
         "notes": [
-          "Voice-pattern pilot update on 2026-05-30: market page revised for first-lap behavior, food/gift split, and clear Hàn vs Cồn decision value."
+          "Voice-pattern pilot update on 2026-05-30: market page revised for first-lap behavior, food/gift split, and clear Hàn vs Cồn decision value.",
+          "Save-worthy food voice pass on 2026-05-30: reframed Hàn as an easy first-market save, added dish/place Mentioned Here candidates, and replaced generic related-card copy with Cồn Market food-route value."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Voice-pattern pilot: market page proves scene, why-here, first move, and comparison without a reusable section formula."
+        "reason": "Save-worthy food voice pass: page now states why to save it, what makes it distinct, and which related food/place card should be opened next."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -5206,11 +5240,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "la maison 1888",
-      "travelerMoment": "This restaurant is a special dinner room built from mood, service pace, table questions, and a plan made before arrival.",
-      "storySpine": "La Maison 1888 is an occasion-dinner choice, where pacing, questions, booking basics, and the room matter more than prestige.",
+      "travelerMoment": "Save La Maison 1888 for a Da Nang night when dinner is the plan: a 2025 One MICHELIN Star occasion meal with room, service pace, and a reservation-led evening.",
+      "storySpine": "The restaurant gives Da Nang a polished destination-dinner register, distinct from beach seafood, market snacks, and river-night wandering.",
       "intro": {
-        "heading": "Dinner As The Plan",
-        "body": "La Maison 1888 is a Da Nang occasion meal: white tablecloths, colonial-style room mood, careful service, and a night that should not be squeezed between errands."
+        "heading": "A Michelin-Starred Dinner Save",
+        "body": "La Maison 1888 is the Da Nang dinner to save when the meal should become the night: a 2025 One MICHELIN Star restaurant with a formal room, careful service pace, and no need to stack plans afterward."
       },
       "usefulPhraseCards": [
         {
@@ -5240,34 +5274,34 @@
       ],
       "sections": [
         {
-          "id": "arrive-ready-to-slow-down",
-          "heading": "Arrive Ready To Slow Down",
-          "body": "Do not squeeze this meal between the beach and a bridge walk. Leave room for menus, drinks, breathing space, and the table cadence."
+          "id": "why-this-dinner",
+          "heading": "Why This Dinner",
+          "body": "Choose it for a slower room rather than quick beach food. It gives Da Nang an occasion-meal slot: slower pacing, staff guidance, a dressed room, and a table that can carry the evening."
         },
         {
-          "id": "early-questions-travel-better",
-          "heading": "Early Questions Travel Better",
-          "body": "If ingredients, wine, allergies, or portion size matter, early questions help. A polished room is easier when the first questions happen before courses arrive."
+          "id": "plan-around-the-room",
+          "heading": "Plan Around The Room",
+          "body": "Leave space before and after the booking. A polished meal loses its point if it is squeezed between a beach rinse, bridge photos, and a late ride."
         },
         {
-          "id": "a-softer-end-to-the-night",
-          "heading": "A Softer End To The Night",
-          "body": "The room does the heavy lifting. After dinner, a short ride, a low-key drink, or the hotel return will feel better than stacking plans."
+          "id": "ask-early",
+          "heading": "Ask Early",
+          "body": "Ingredient, wine, allergy, or portion questions travel better before courses begin. The first useful phrase is often menu or recommendation language, not the restaurant name."
         },
         {
-          "id": "occasion-meal-slow-pace",
-          "heading": "Occasion Meal, Slow Pace",
-          "body": "Treat this as a reservation-led occasion meal rather than a casual drop-in. The slower room, service pace, and group budget should all fit the night."
+          "id": "not-the-only-food-save",
+          "heading": "Balance It With Street Food",
+          "body": "Save this beside a market, mì Quảng, or seafood stop so the trip has both registers: Da Nang as everyday eating and Da Nang as a planned dinner."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-nen",
+          "label": "Nén Đà Nẵng",
+          "relationship": "same-city Michelin-recognized dinner comparison",
+          "displaySubtitle": "A slower Da Nang tasting-style dinner with herbs, ceramics, and staff guidance.",
+          "reason": "Nén gives another planned-dinner comparison for travelers building a higher-end Da Nang food night.",
           "status": "render"
         }
       ],
@@ -5281,17 +5315,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 One MICHELIN Star copy and clarified why this dinner deserves a saved trip slot."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: La Maison 1888 has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Save-worthy food voice pass: page now states why to save it, what makes it distinct, and which related food/place card should be opened next."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Da Nang Fantasticity MICHELIN article; MICHELIN or venue source."
+        "Production intake source notes: Da Nang Fantasticity MICHELIN article; MICHELIN or venue source.",
+        "Official Michelin corporate 2025 release lists La Maison 1888 among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {

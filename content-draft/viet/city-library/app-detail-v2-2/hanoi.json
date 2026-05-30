@@ -2748,7 +2748,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide",
+        "Official Michelin corporate 2025 release lists Gia among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2885,11 +2886,11 @@
       "city": "Hà Nội",
       "category": "Cafe",
       "pronunciation": "kah feh giang",
-      "travelerMoment": "Giảng carries the egg-coffee origin story more than any normal cafe stop. The narrow approach, close tables, and hot cup make the drink feel rooted.",
-      "storySpine": "Giảng stands out through a physical ritual: narrow entrance, close tables, hot egg coffee, and a short dessert-like stop.",
+      "travelerMoment": "Save Giảng when Hanoi coffee should feel like a ritual, not just caffeine: the original egg-coffee stop, a narrow Old Quarter entrance, and one hot cup worth slowing down for.",
+      "storySpine": "Giảng matters because egg coffee becomes physical here: the entrance, tight room, hot cup, sweet foam, bitter coffee, and origin story all point to the same Hanoi habit.",
       "intro": {
-        "heading": "Start With The Hot Egg Coffee",
-        "body": "Cà phê Giảng is the Hanoi egg-coffee origin stop: a narrow Old Quarter entrance, close tables, and a small hot cup where thick sweet foam sits over dark coffee."
+        "heading": "The Egg-Coffee Origin Save",
+        "body": "Cà phê Giảng is the Hanoi cafe to save when egg coffee should feel rooted: a narrow Old Quarter entrance, close tables, and a small hot cup where thick sweet foam sits over dark coffee."
       },
       "usefulPhraseCards": [
         {
@@ -2921,7 +2922,7 @@
         {
           "id": "find-the-room-first",
           "heading": "Find The Room First",
-          "body": "Expect tight tables, quick movement, and an old-school cafe rhythm where a simple order helps."
+          "body": "Part of the memory is getting inside: the narrow approach, tight tables, quick movement, and old-school cafe rhythm before the cup arrives."
         },
         {
           "id": "hot-shows-the-texture",
@@ -2930,18 +2931,41 @@
         },
         {
           "id": "compare-lake-cafes-later",
-          "heading": "Compare Lake Cafes Later",
-          "body": "Giảng is the origin-heavy stop on Nguyễn Hữu Huân. Save The Note, Đinh, or Cộng for a different cafe mood after you understand this cup."
+          "heading": "Compare After This Cup",
+          "body": "Giảng is the origin-heavy stop on Nguyễn Hữu Huân. Đinh, The Note, or Cộng can be saved afterward for a different Hanoi cafe mood."
+        },
+        {
+          "id": "save-if",
+          "heading": "Save It For A Small Pause",
+          "body": "This is a short, specific stop: one cup, a little sweetness, and a Hanoi coffee story you can actually taste before moving back into the Old Quarter."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Cà phê trứng ở Hà Nội",
+          "type": "drink",
+          "catalogId": "viet-family-city-hanoi-place-egg-coffee",
+          "sourceText": "egg coffee",
+          "displaySubtitle": "Hanoi’s creamy small-cup coffee treat with thick whipped egg foam.",
+          "reason": "The Giảng page centers egg coffee; the drink page exists and should be reachable from the cafe page.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
-          "label": "Cộng Cà Phê",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-dinh-cafe",
+          "label": "Cà phê Đinh",
+          "relationship": "same-city egg-coffee comparison",
+          "displaySubtitle": "Another old Hanoi cafe mood after you understand the origin cup.",
+          "reason": "The page tells travelers to compare Hanoi cafe moods after Giảng; Đinh is a direct local cafe comparison.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-the-note-coffee",
+          "label": "The Note Coffee",
+          "relationship": "same-city cafe mood comparison",
+          "displaySubtitle": "A very different lake-area cafe stop after the origin ritual.",
+          "reason": "The page names The Note as a different cafe mood; it has a target page in the approved inventory.",
           "status": "render"
         }
       ],
@@ -2954,13 +2978,14 @@
         "duplicateBodyTest": "pass",
         "antiCynicismTest": "pass",
         "notes": [
-          "Voice-pattern pilot update on 2026-05-30: cafe page revised for origin ritual, room expectation, and hot-cup first move."
+          "Voice-pattern pilot update on 2026-05-30: cafe page revised for origin ritual, room expectation, and hot-cup first move.",
+          "Save-worthy food voice pass on 2026-05-30: strengthened egg-coffee origin value, added the egg-coffee Mentioned Here candidate, and replaced generic cafe related-card copy."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Voice-pattern pilot: cafe page connects drink ritual, place texture, and first ordering move without becoming a review blurb."
+        "reason": "Save-worthy food voice pass: page now states why to save it, what makes it distinct, and which related food/place card should be opened next."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3743,7 +3768,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release lists Hibana by Koki among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8404,7 +8430,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release lists Tầm Vị among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
