@@ -113,6 +113,51 @@ enum AppShellPracticeOverlayChromePolicy {
     }
 }
 
+struct AppShellBrowseDetailHeroOverrideCache: Equatable {
+    private static let cacheLimit = 96
+    private var overridesByPageID: [String: String] = [:]
+    private var pageIDs: [String] = []
+
+    subscript(pageID: String) -> String? {
+        overridesByPageID[pageID]
+    }
+
+    mutating func set(_ heroImageName: String?, for pageID: String) {
+        guard let heroImageName else {
+            remove(for: pageID)
+            return
+        }
+
+        overridesByPageID[pageID] = heroImageName
+        touch(pageID)
+
+        while pageIDs.count > Self.cacheLimit {
+            let oldestPageID = pageIDs.removeFirst()
+            overridesByPageID.removeValue(forKey: oldestPageID)
+        }
+    }
+
+    mutating func remove(for pageID: String) {
+        overridesByPageID.removeValue(forKey: pageID)
+        pageIDs.removeAll { $0 == pageID }
+    }
+
+    private mutating func touch(_ pageID: String) {
+        pageIDs.removeAll { $0 == pageID }
+        pageIDs.append(pageID)
+    }
+
+#if DEBUG
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    var countForTesting: Int {
+        overridesByPageID.count
+    }
+#endif
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
@@ -147,7 +192,7 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
-    @State private var browseDetailHeroImageOverrides: [String: String] = [:]
+    @State private var browseDetailHeroImageOverrides = AppShellBrowseDetailHeroOverrideCache()
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
@@ -1695,7 +1740,7 @@ struct AppShellView: View {
 
     private func openDetailFromBrowse(_ id: String, heroImageName: String? = nil) {
         let heroImageOverride = Self.browseDetailHeroImageOverride(for: heroImageName)
-        browseDetailHeroImageOverrides[id] = heroImageOverride
+        browseDetailHeroImageOverrides.set(heroImageOverride, for: id)
 
         preheatDetailBackdrop(pageID: id, heroImageNameOverride: heroImageName)
         openDetail(id, source: .browse)
@@ -1711,7 +1756,7 @@ struct AppShellView: View {
 
     private func openDetail(_ id: String, source: UserIntentSource) {
         if source != .browse {
-            browseDetailHeroImageOverrides[id] = nil
+            browseDetailHeroImageOverrides.remove(for: id)
         }
 
         let browseHeroOverride = browseDetailHeroImageOverrides[id]

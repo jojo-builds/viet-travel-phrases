@@ -1003,6 +1003,23 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseDetailHeroOverrideCacheStaysBoundedDuringRapidCategoryBrowsing() {
+        var cache = AppShellBrowseDetailHeroOverrideCache()
+        let cacheLimit = AppShellBrowseDetailHeroOverrideCache.cacheLimitForTesting
+
+        for index in 0..<(cacheLimit + 16) {
+            cache.set("HeroCategoryAirport", for: "viet-family-airport-\(index)")
+        }
+
+        XCTAssertEqual(cache.countForTesting, cacheLimit)
+        XCTAssertNil(cache["viet-family-airport-0"])
+        XCTAssertEqual(cache["viet-family-airport-\(cacheLimit + 15)"], "HeroCategoryAirport")
+
+        cache.set(nil, for: "viet-family-airport-\(cacheLimit + 15)")
+        XCTAssertNil(cache["viet-family-airport-\(cacheLimit + 15)"])
+        XCTAssertEqual(cache.countForTesting, cacheLimit - 1)
+    }
+
     func testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
         XCTAssertEqual(
             BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
