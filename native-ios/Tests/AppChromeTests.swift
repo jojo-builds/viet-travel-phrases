@@ -765,6 +765,32 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: true))
     }
 
+    func testInactivePagesSkipScrollGeometryAndPreferenceTracking() {
+        XCTAssertFalse(
+            PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive listing photo backdrops should not publish scroll-offset state while mounted only as previews."
+        )
+        XCTAssertTrue(PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive browse collection photo backdrops should not update backing geometry state."
+        )
+        XCTAssertTrue(BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive menu photo backdrops should not publish scroll coordinator changes."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: false),
+            "Inactive menu pages should not sort section-frame preferences or publish rail state."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: true))
+    }
+
     func testVietnameseMenuSectionChromeCoordinatorSeparatesPinnedChangesFromLabelChanges() {
         let coordinator = VietnameseMenuSectionChromeCoordinator()
         let popular = VietnameseMenuSectionChromeItem(

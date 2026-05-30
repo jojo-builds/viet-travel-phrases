@@ -142,6 +142,10 @@ struct VietnameseMenuPageView: View {
                     updateCurrentSection(from: frames)
                 }
                 .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                    guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                        return
+                    }
+
                     sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
@@ -260,6 +264,10 @@ struct VietnameseMenuPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         let hasPassedRevealThreshold = photoBackdropScrollCoordinator.apply(scrollState)
 
                         if isPhotoBackdropImmersive, hasPassedRevealThreshold {
@@ -272,6 +280,10 @@ struct VietnameseMenuPageView: View {
                         updateCurrentSection(from: frames)
                     }
                     .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                            return
+                        }
+
                         sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                     }
                     .onChange(of: scrollToTopTrigger) { _, _ in
@@ -583,7 +595,9 @@ struct VietnameseMenuPageView: View {
     }
 
     private func updateCurrentSection(from frames: [VietnameseMenuSectionFrame]) {
-        guard !isResolvingSectionJump, !isSettlingProgrammaticSectionJump else {
+        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive),
+              !isResolvingSectionJump,
+              !isSettlingProgrammaticSectionJump else {
             return
         }
 
@@ -931,6 +945,14 @@ enum VietnameseMenuTaskPolicy {
     }
 
     static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplySectionPreferenceTracking(isActive: Bool) -> Bool {
         isActive
     }
 }

@@ -148,6 +148,10 @@ struct BrowseCollectionPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         if photoBackdropScrollOffset != scrollState.displayOffset {
                             photoBackdropScrollOffset = scrollState.displayOffset
                         }
@@ -1260,6 +1264,10 @@ enum BrowseFocusedAssetImagePolicy {
 
 enum BrowseCollectionTaskPolicy {
     static func shouldRunStandardFocusTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
         isActive
     }
 }

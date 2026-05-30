@@ -326,6 +326,10 @@ struct PhraseArticleTemplateView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         if photoBackdropScrollOffset != scrollState.displayOffset {
                             photoBackdropScrollOffset = scrollState.displayOffset
                         }
@@ -1247,6 +1251,10 @@ enum PhrasePhotoBackdropLayout {
 
 enum PhraseArticleTaskPolicy {
     static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
         isActive
     }
 }
