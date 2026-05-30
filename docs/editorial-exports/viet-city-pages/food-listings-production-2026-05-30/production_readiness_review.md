@@ -1412,3 +1412,103 @@ These four current in-app Hanoi recognition misses are fixed and rendered. The n
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. The desktop agent lifecycle path has frozen repeatedly, so this pass used a local evidence-review split instead: source coverage audit, voice gate, validation gate, and native render gate.
+
+## Continuation: Da Nang Bib / Selected Recognition Patch
+
+Eleventh pass date: 2026-05-31
+
+Commit before pass: `beba3b9f8 Patch Hanoi Michelin recognition food copy`
+
+This continuation corrected three existing Da Nang pages with official 2025 MICHELIN support. The visible copy now gives food-focused travelers the recognition signal without turning the pages into generic award blurbs.
+
+### Pages Touched
+
+- `city-danang-place-bun-cha-ca-hon`: added bounded 2025 MICHELIN Bib Gourmand language, corrected the Hờn spelling in visible copy, and kept the save reason on the fish-cake noodle bowl: broth, herbs, spice after tasting, and a short breakfast-table rhythm.
+- `city-danang-place-co-chu-nho`: date-bounded the Bib Gourmand language to 2025 and kept the save reason on the duck-specialist meal: porridge, salad, sliced duck, herbs, and ginger fish sauce.
+- `city-danang-place-the-temptation`: upgraded vague guide-listed language to bounded 2025 MICHELIN Selected language, kept the reason on a quieter French Contemporary dinner, and softened one command-like section line after screenshot review.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claims added only where this source supported them:
+
+- `Bún Chả Cá Hờn`: 2025 MICHELIN Bib Gourmand.
+- `Cô Chủ Nhỏ`: 2025 MICHELIN Bib Gourmand.
+- `The Temptation`: 2025 MICHELIN Selected.
+
+No new hours, prices, reservation, closure, address, queue, or operational claims were added.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-danang-bib-selected-recognition/`
+
+Representative pages captured:
+
+- `viet-family-city-danang-place-bun-cha-ca-hon`
+  - `bun-cha-ca-hon-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand fish-cake noodle framing.
+  - `bun-cha-ca-hon-bottom-clearance.jpg`: bottom-validation launch shows Mentioned Here, Compare Nearby, and Useful Phrases above the tab bar with reading space below.
+- `viet-family-city-danang-place-co-chu-nho`
+  - `co-chu-nho-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand duck-specialist framing.
+- `viet-family-city-danang-place-the-temptation`
+  - `the-temptation-top.jpg`: first viewport shows the revised 2025 MICHELIN Selected French Contemporary framing and the softened early section copy.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-bun-cha-ca-hon`
+  - `--detail-page viet-family-city-danang-place-co-chu-nho`
+  - `--detail-page viet-family-city-danang-place-the-temptation`
+  - `--detail-page viet-family-city-danang-place-bun-cha-ca-hon --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9343 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+Validation note: one parallel run of `validate-viet-sqlite-fixture.js` failed while `generate-viet-sqlite-fixture.test.js` was simultaneously touching the same generated database. The same validator passed immediately when rerun sequentially, so future proof runs should keep those two SQLite checks sequential.
+
+### Remaining Risk After Da Nang Bib / Selected Recognition Patch
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+These three current in-app Da Nang recognition misses are fixed and rendered. The next production-ready work should continue the official-recognition coverage audit and then address add/replace decisions for official 2025 MICHELIN restaurants missing from the current V2.2 source set. Before release, re-check official MICHELIN sources because the 2025 claims are date-bounded and the 2026 guide cycle is approaching.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. The prior desktop agent lifecycle step froze twice, so this pass stayed local: official-source check, item-level copy review, validators, and simulator render proof.

@@ -2179,11 +2179,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "bun cha ca hon",
-      "travelerMoment": "Go when you want bun cha ca at a specific shop with a simple table plan: one bowl, broth first, spice after tasting.",
-      "storySpine": "Hớn gives the citywide dish a concrete breakfast table, with the first bowl and the day's opening meal doing most of the work.",
+      "travelerMoment": "Save Hờn when bún chả cá should be a 2025 MICHELIN Bib Gourmand Da Nang bowl: fish cake, broth, noodles, herbs, and spice after tasting.",
+      "storySpine": "Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "intro": {
-        "heading": "A Focused Fish-Cake Bowl",
-        "body": "A named Da Nang stop for fish-cake noodle soup, better approached as a focused bowl rather than a broad restaurant crawl before the day moves."
+        "heading": "A Bib Gourmand Fish-Cake Bowl",
+        "body": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear."
       },
       "usefulPhraseCards": [
         {
@@ -2215,7 +2215,7 @@
         {
           "id": "named-bowl-stop",
           "heading": "Named Bowl Stop",
-          "body": "Hon gives the citywide dish a specific place to sit down with it. The first bowl can carry the visit; chili, herbs, or extras can wait until after tasting."
+          "body": "Hờn gives the citywide dish a specific place to sit down with it. The first bowl can carry the visit; chili, herbs, or extras can wait until after tasting."
         },
         {
           "id": "taste-before-adjusting",
@@ -2229,8 +2229,8 @@
         },
         {
           "id": "before-crossing-town",
-          "heading": "Before Crossing Town",
-          "body": "For a named shop, check the location and opening window before building the day around it. The bowl matters more than a long menu."
+          "heading": "Recognition Around One Bowl",
+          "body": "The Bib Gourmand signal belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
         }
       ],
       "mentionedHereCandidates": [
@@ -2249,7 +2249,7 @@
           "catalogId": "viet-family-city-danang-place-mi-quang-1a",
           "label": "Mì Quảng 1A",
           "relationship": "noodle-shop contrast",
-          "displaySubtitle": "A focused mì Quảng table when the day calls for a different Da Nang bowl.",
+          "displaySubtitle": "A 2025 MICHELIN Selected mì Quảng table when the day calls for a different Da Nang bowl.",
           "reason": "Mi Quang 1A is a more relevant noodle-shop comparison than a broad restaurant card.",
           "status": "render"
         }
@@ -2265,17 +2265,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the fish-cake noodle bowl reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Hờn now links to the bún chả cá guide and a specific noodle-shop contrast."
+        "reason": "Production MICHELIN patch: Hờn now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer fish-cake noodle save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food source."
+        "Production intake source notes: Local food source.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Chả Cá Hờn as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2743,11 +2745,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "co chu nho",
-      "travelerMoment": "Choose it when the group wants a casual MICHELIN Bib Gourmand duck stop instead of another seafood or roll table.",
+      "travelerMoment": "Choose it when the group wants a casual 2025 MICHELIN Bib Gourmand duck stop instead of another seafood or roll table.",
       "storySpine": "Co Chu Nho gets a clearer job: a Da Nang duck specialist where porridge, salad, sliced duck, herbs, and ginger fish sauce give the meal its point.",
       "intro": {
         "heading": "Bib Gourmand Duck Stop",
-        "body": "Cô Chủ Nhỏ is a casual MICHELIN Bib Gourmand duck specialist: porridge, salad, sliced duck, herbs, and ginger fish sauce instead of another beach-city seafood meal."
+        "body": "Cô Chủ Nhỏ is a casual 2025 MICHELIN Bib Gourmand duck specialist: porridge, salad, sliced duck, herbs, and ginger fish sauce instead of another beach-city seafood meal."
       },
       "usefulPhraseCards": [
         {
@@ -2788,8 +2790,8 @@
         },
         {
           "id": "bib-gourmand-not-formal",
-          "heading": "Bib Gourmand, Not Formal",
-          "body": "The MICHELIN signal means good value and a reason to remember it in a casual room. Keep the order direct and let the duck carry the meal."
+          "heading": "Bib Gourmand, Casual Room",
+          "body": "The 2025 Bib Gourmand signal gives the save a clear reason, but the room stays casual. Keep the order direct and let the duck carry the meal."
         },
         {
           "id": "when-seafood-can-wait",
@@ -2819,18 +2821,20 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: visible copy now date-bounds the official 2025 support while keeping the duck-specialist reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production Michelin/food pass: Cô Chủ Nhỏ now has a specific duck-specialist hook and bounded MICHELIN Bib Gourmand context."
+        "reason": "Production MICHELIN patch: Cô Chủ Nhỏ now carries bounded 2025 MICHELIN Bib Gourmand context and keeps the duck-specialist hook."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: MICHELIN article/search source; venue source.",
-        "Michelin audit note: official MICHELIN Guide page supports Cô Chủ Nhỏ as Bib Gourmand; visible copy uses the recognition as context for a duck-specialist meal without making any star claim."
+        "Michelin audit note: official MICHELIN Guide page supports Cô Chủ Nhỏ as Bib Gourmand; visible copy uses the recognition as context for a duck-specialist meal without making any star claim.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Cô Chủ Nhỏ as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -10183,11 +10187,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "the temptation",
-      "travelerMoment": "Choose it when Da Nang dinner should feel quieter and more deliberate: a MICHELIN Guide-listed French Contemporary room after beach days and seafood tables.",
-      "storySpine": "The Temptation earns its place as a guide-listed French Contemporary dinner when the night should feel quieter, more polished, and less tied to seafood.",
+      "travelerMoment": "Choose it when Da Nang dinner should feel quieter and more deliberate: a 2025 MICHELIN Selected French Contemporary room after beach days and seafood tables.",
+      "storySpine": "The Temptation earns its place as a MICHELIN Selected French Contemporary dinner when the night should feel quieter, more polished, and less tied to seafood.",
       "intro": {
-        "heading": "Guide-Listed French Dinner",
-        "body": "The Temptation is a MICHELIN Guide-listed French Contemporary restaurant for a quieter Da Nang night: smaller room, careful pacing, staff attention, and a meal chosen on purpose."
+        "heading": "A Selected French Dinner",
+        "body": "The Temptation is a 2025 MICHELIN Selected French Contemporary restaurant for a quieter Da Nang night: smaller room, careful pacing, staff attention, and a meal chosen on purpose."
       },
       "usefulPhraseCards": [
         {
@@ -10219,11 +10223,11 @@
         {
           "id": "arrive-unrushed",
           "heading": "Arrive Unrushed",
-          "body": "Do not squeeze this between a beach rinse and a late-night plan. A slower dinner needs space to arrive, ask, and let the table settle."
+          "body": "Give this dinner room between a beach rinse and a late-night plan. A slower table needs space to arrive, ask, and settle in."
         },
         {
           "id": "french-not-beach-casual",
-          "heading": "French, Not Beach Casual",
+          "heading": "French After Seafood",
           "body": "This is the contrast meal after grilled seafood, markets, and noodle stops. Expect the night to lean more polished than spontaneous."
         },
         {
@@ -10234,7 +10238,7 @@
         {
           "id": "pace-matters-more-than-speed",
           "heading": "Pace Matters More Than Speed",
-          "body": "Treat the guide listing as context. The point is pace: staff attention, table spacing, and a dinner that feels different from the beach-city default."
+          "body": "Treat the MICHELIN Selected note as context. The point is pace: staff attention, table spacing, and a dinner that feels different from the beach-city default."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10243,8 +10247,8 @@
           "catalogId": "viet-family-city-danang-place-nen",
           "label": "Nén Đà Nẵng",
           "relationship": "planned-dinner comparison",
-          "displaySubtitle": "A Vietnamese fine-dining destination when the evening should feel bigger than quiet French dinner.",
-          "reason": "Nen is the stronger Da Nang destination-dinner comparison; The Temptation now carries a guide-listed French Contemporary contrast with no star or Bib wording.",
+          "displaySubtitle": "A 2025 MICHELIN Green Star Vietnamese dinner when the evening should feel more ingredient-led.",
+          "reason": "Nen gives The Temptation a planned-dinner comparison: Vietnamese Green Star ingredient focus versus French Contemporary pace.",
           "status": "render"
         }
       ],
@@ -10259,18 +10263,20 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 PDF support added while keeping the quiet French Contemporary dinner reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production Michelin/food pass: The Temptation now has bounded MICHELIN Guide-listed French Contemporary context and a clearer save reason."
+        "reason": "Production MICHELIN patch: The Temptation now carries bounded 2025 MICHELIN Selected context and a clearer French Contemporary dinner reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: MICHELIN search source; venue source.",
-        "Michelin audit note: official MICHELIN Guide page supports The Temptation as guide-listed French Contemporary; visible copy avoids star/Bib claims."
+        "Michelin audit note: official MICHELIN Guide page supports The Temptation as guide-listed French Contemporary; visible copy avoids star/Bib claims.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists The Temptation as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
