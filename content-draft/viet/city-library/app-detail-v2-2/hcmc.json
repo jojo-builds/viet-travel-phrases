@@ -7286,11 +7286,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "nephele",
-      "travelerMoment": "Nephele is a modern Saigon dinner support save: a quieter guide-listed room, wine attention, menu pacing, and an evening that should not be squeezed between quick stops.",
-      "storySpine": "Its current reason is guide-listed modern dining and sommelier attention rather than a single iconic Vietnamese dish.",
+      "travelerMoment": "Save Nephele when Saigon dinner should be quieter and wine-led: a 2025 MICHELIN Selected Asian Contemporary room where menu pacing and staff guidance carry the night.",
+      "storySpine": "Nephele earns a support save through MICHELIN Selected modern dining and sommelier attention: wine, staff pacing, and a meal chosen for calm instead of street-food speed.",
       "intro": {
-        "heading": "Small, Guide-Listed Dinner",
-        "body": "Nephele is a 2025 MICHELIN Guide-listed Saigon dinner for a quieter room, wine attention, and a menu you read slowly, rather than a quick bowl between stops."
+        "heading": "A Selected Wine-Led Dinner",
+        "body": "Nephele is a 2025 MICHELIN Selected Saigon dinner for a quieter room, wine attention, Asian Contemporary pacing, and a menu you read slowly."
       },
       "usefulPhraseCards": [
         {
@@ -7321,18 +7321,18 @@
       "sections": [
         {
           "id": "wine-is-the-clue",
-          "heading": "Wine Is The Clue",
-          "body": "The guide attention points away from street-food speed. Save it for drinks, staff pacing, and menu explanation as part of the meal."
+          "heading": "Wine Leads The Pace",
+          "body": "The MICHELIN Selected signal sits around the room's slower rhythm: drinks, staff guidance, and courses that need attention."
         },
         {
           "id": "support-not-first-pick",
-          "heading": "Not The First Dinner Save",
-          "body": "Save Nephele for a quieter wine-led meal. If the night needs a clearer signature-food reason, CieL, Coco Dining, or Akuna should lead."
+          "heading": "A Calmer Dinner Room",
+          "body": "This is the calmer table after markets, museums, or traffic. Compare CieL, Coco Dining, or Akuna when the night calls for a One Star room."
         },
         {
           "id": "make-it-the-evening",
-          "heading": "Make It The Evening",
-          "body": "Let the meal carry the plan, with the address ready before you ride over. It needs evening space rather than an efficient in-between slot."
+          "heading": "Give It The Evening",
+          "body": "Arrive with the address ready and let the table set the pace. Let the meal be the plan itself rather than a slot between stops."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7341,8 +7341,8 @@
           "catalogId": "viet-family-city-hcmc-place-coco-dining",
           "label": "Coco Dining",
           "relationship": "modern-dinner comparison",
-          "displaySubtitle": "A clearer One MICHELIN Star dinner when the meal should justify the save.",
-          "reason": "Coco Dining gives Nephele a clearer comparison for planned Saigon dining.",
+          "displaySubtitle": "A 2025 One MICHELIN Star dinner when the meal should feel more ingredient-led.",
+          "reason": "Coco Dining gives Nephele a clearer comparison for planned Saigon dining: One Star ingredient focus versus a quieter Selected wine-led room.",
           "status": "render"
         }
       ],
@@ -7360,18 +7360,20 @@
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Food-desire review on 2026-05-30: downgraded to support/deemphasize for high-visibility placement until a clearer dish-level hook is sourced."
+          "Food-desire review on 2026-05-30: downgraded to support/deemphasize for high-visibility placement until a clearer dish-level hook is sourced.",
+          "MICHELIN Selected recognition patch on 2026-05-31: visible copy now uses bounded 2025 MICHELIN Selected language while keeping Nephele as a support save."
         ]
       },
       "score": {
         "value": 27,
         "max": 30,
-        "reason": "Food-desire review: MICHELIN-selected modern-dinner support listing; needs a clearer dish hook before high-visibility placement."
+        "reason": "Production MICHELIN patch: Nephele now carries bounded 2025 MICHELIN Selected context and stays a quieter wine-led support save."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: MICHELIN Vietnam 2025",
-        "2026-05-30 source refresh: 2025 MICHELIN Guide release lists Nephele as newly selected and names Paul Vo for the Sommelier Award; no star claim made."
+        "2026-05-30 source refresh: 2025 MICHELIN Guide release lists Nephele as newly selected and names Paul Vo for the Sommelier Award; no star claim made.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Nephele as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {

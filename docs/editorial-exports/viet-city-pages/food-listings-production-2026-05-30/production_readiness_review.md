@@ -1512,3 +1512,104 @@ These three current in-app Da Nang recognition misses are fixed and rendered. Th
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. The prior desktop agent lifecycle step froze twice, so this pass stayed local: official-source check, item-level copy review, validators, and simulator render proof.
+
+## Continuation: Nephele Selected Coverage + MICHELIN Add-Candidate Audit
+
+Twelfth pass date: 2026-05-31
+
+Commit before pass: `8fe19efb7 Patch Da Nang Bib Selected recognition copy`
+
+This continuation fixed the remaining in-catalog recognition mismatch found in the Saigon restaurant set and added an explicit add/replace audit for future MICHELIN-backed expansion.
+
+### Pages Touched
+
+- `city-hcmc-place-nephele`: changed vague `guide-listed` language to bounded 2025 MICHELIN Selected language, kept Nephele as a support save rather than a top foodie anchor, and rewrote the visible sections around a quieter wine-led Saigon dinner.
+
+### Coverage Audit Added
+
+Audit file:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md`
+
+The audit records:
+
+- current in-catalog One MICHELIN Star and Green Star coverage;
+- current non-MICHELIN pages that should stay but not always lead;
+- highest-priority missing Bib Gourmand / MICHELIN Selected add candidates;
+- add/drop posture: add places when they improve dish desire, route comparison, or a weak support page; do not import the MICHELIN list wholesale.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claim added only where this source supported it:
+
+- `Nephele`: 2025 MICHELIN Selected.
+
+No new hours, prices, reservation, closure, address, queue, or operational claims were added.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-nephele-selected-coverage/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-nephele`
+  - `nephele-top.jpg`: first viewport shows the revised 2025 MICHELIN Selected wine-led dinner framing.
+  - `nephele-bottom-clearance.jpg`: bottom-validation launch shows the related Coco Dining card and Useful Phrases above the tab bar with reading space below.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-nephele`
+  - `--detail-page viet-family-city-hcmc-place-nephele --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9343 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Nephele Selected Coverage
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The current in-catalog star, green-star, and known recognition mismatch coverage is stronger now, but the catalog still needs an add/replace pass for missing Bib Gourmand and MICHELIN Selected places that would improve food desire. The highest-priority next candidates are captured in `michelin_2025_coverage_audit.md`.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass kept the same local evidence-review split: official-source check, add-candidate audit, item-level copy review, validators, and simulator render proof.
