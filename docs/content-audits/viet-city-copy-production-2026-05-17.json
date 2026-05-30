@@ -7607,6 +7607,38 @@
       }
     },
     {
+      "id": "city-hcmc-place-bo-kho-ganh",
+      "cityID": "hcmc",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hcmc",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Bò Kho Gánh for the Saigon meal where one bowl should lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
+        "aboutExcerpt": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Bread turns the bowl into a dipping meal; noodles make it feel fuller. Decide the shape early so the first order stays simple.",
+        "timingExcerpt": "The Bib Gourmand signal supports the save because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember.",
+        "goodToKnowExcerpt": "Condiments can move the broth quickly. Taste first, then add heat or sauce in small moves."
+      }
+    },
+    {
       "id": "city-hcmc-place-bo-la-lot",
       "cityID": "hcmc",
       "pageKind": "dish",

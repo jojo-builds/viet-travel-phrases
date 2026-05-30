@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T18:35:56.836Z",
+  "generatedAt": "2026-05-30T18:49:48.092Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1759,
+    "pages": 1760,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 352,
-    "generatedAt": "2026-05-30T18:35:56.836Z"
+    "missing": 353,
+    "generatedAt": "2026-05-30T18:49:48.092Z"
   },
   "pages": [
     {
@@ -105863,6 +105863,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "phraseText": "Bò Kho Gánh",
+      "englishTitle": "Bo Kho Ganh",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-hcmc-place-bo-la-lot",

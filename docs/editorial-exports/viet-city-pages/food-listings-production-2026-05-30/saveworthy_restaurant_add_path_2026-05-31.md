@@ -111,9 +111,11 @@ For future swap mode:
 
 Expansion mode was treated as a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
 
-Expansion mode has now been proven once for Mặn Mòi. The implemented changes widened the importer and validators to expect HCMC 101 / total 501, added the V2.2 source object, regenerated native resources, and recorded render proof under:
+Expansion mode has now been proven twice for Mặn Mòi and Bò Kho Gánh. The implemented changes widened the importer and validators to expect HCMC 102 / total 502, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-man-moi-additive/`
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bo-kho-ganh-additive/`
 
 ## Acceptance Gate
 

@@ -20,19 +20,19 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 501,
+    "entries": 502,
     "byCity": {
       "danang": 100,
       "hanoi": 100,
-      "hcmc": 101,
+      "hcmc": 102,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 501,
+    "finalPass": 502,
     "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 501,
+    "renderableRelatedPlaceCandidates": 502,
     "renderableMentionedHereCandidates": 42,
     "verificationFlags": 1
   },
@@ -1545,6 +1545,13 @@
     {
       "id": "viet-family-city-hcmc-place-bitexco-tower",
       "pageID": "city-hcmc-place-bitexco-tower",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "pageID": "city-hcmc-place-bo-kho-ganh",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"

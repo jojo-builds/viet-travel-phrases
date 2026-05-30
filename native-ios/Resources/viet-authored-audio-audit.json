@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T18:35:56.127Z",
+    "generatedAt": "2026-05-30T18:49:47.456Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 807,
+    "cityLibraryPageCount": 808,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2249,
-    "missingAudioCount": 682
+    "requiredAudioCount": 2250,
+    "missingAudioCount": 683
   },
   "required": [
     {
@@ -14585,6 +14585,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bo-kho-ganh-8ac95feb1b",
+      "text": "Bò Kho Gánh",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-bo-la-lot",
       "sectionID": "hero",
       "kind": "hero",
@@ -20728,6 +20736,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-bep-me-in-d91765ab8f",
       "text": "Bếp Mẹ Ỉn",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bo-kho-ganh-8ac95feb1b",
+      "text": "Bò Kho Gánh",
       "resolved": false
     },
     {

@@ -11,7 +11,7 @@ const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifes
 
 const expectedCities = ["hcmc", "hanoi", "danang", "hoian", "hue"];
 const expectedRowsByCity = new Map(Object.entries({
-  hcmc: 101,
+  hcmc: 102,
   hanoi: 100,
   danang: 100,
   hoian: 100,

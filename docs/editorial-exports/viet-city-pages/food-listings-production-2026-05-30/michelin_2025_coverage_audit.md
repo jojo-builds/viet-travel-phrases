@@ -23,11 +23,12 @@ The current app also carries the 2025 MICHELIN Green Star restaurants already re
 
 The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN Selected coverage, especially places that add dish-specific desire rather than another polished dinner room.
 
-## Added In The First Additive Pilot
+## Added In Additive Pilots
 
 - Saigon: `Mặn Mòi` — added as `city-hcmc-place-man-moi` after the first save-worthy restaurant add pass. The visible page uses 2025 MICHELIN Bib Gourmand language and the 2025 Service Award signal as support for a shared Vietnamese-table dinner save, not as copied guide-list inventory.
+- Saigon: `Bò Kho Gánh` — added as `city-hcmc-place-bo-kho-ganh` after the second save-worthy restaurant add pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a specific bò kho bowl save, with bread/noodle/sauce meal cues and no fragile logistics.
 
-The city inventory contract is now 501 noun/place pages total: HCMC carries 101 rows, while Hanoi, Da Nang, Hội An, and Hue remain at 100 rows each.
+The city inventory contract is now 502 noun/place pages total: HCMC carries 102 rows, while Hanoi, Da Nang, Hội An, and Hue remain at 100 rows each.
 
 ## Current Pages That Should Stay But Not Always Lead
 
@@ -43,7 +44,6 @@ Some current food pages are useful even without MICHELIN recognition because the
 
 These are the strongest missing or under-covered MICHELIN-backed candidates to add next if the catalog expands.
 
-- Saigon: `Bò Kho Gánh` — 2025 Bib Gourmand street-food dish with clear food desire and a gap-filling bò kho place role.
 - Saigon: `Bún Bò Huế 14B` — 2025 Bib Gourmand; useful because the app has Hue dish coverage, but this gives Saigon a recognized bowl.
 - Saigon: `Phở Lệ`, `Phở Minh`, or `Phở Hương Bình` — 2025 Bib Gourmand pho options. Choose one or two based on route and dish distinction rather than adding every pho shop.
 - Hanoi: `Phở 10 Lý Quốc Sư` — 2025 Bib Gourmand and a more obvious tourist-planning pho name than some current supporting pho pages.
@@ -67,10 +67,12 @@ Do add MICHELIN-backed places when they improve one of these jobs:
 
 Do not add every MICHELIN Selected restaurant as inventory. The app should feel curated, not like a copied guide list.
 
-The first expansion packet widened the contract explicitly instead of adding a loose extra JSON row. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi Saigon pilot.
+The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi and Bò Kho Gánh Saigon pilots.
 
 ## Current Patch Note
 
 `city-hcmc-place-nephele` should remain a support save, but the visible copy should say the accurate 2025 MICHELIN Selected signal. It should not keep the vague `guide-listed` wording now that the official 2025 PDF gives the stronger category.
 
 `city-hcmc-place-man-moi` is no longer only a candidate. It is now part of the V2.2 source set and generated native runtime as the first additive Saigon restaurant pilot.
+
+`city-hcmc-place-bo-kho-ganh` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the second additive Saigon restaurant pilot.

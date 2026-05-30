@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 807,
+    "cityLibraryPageCount": 808,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T18:35:56.127Z"
+    "generatedAt": "2026-05-30T18:49:47.456Z"
   },
   "pages": [
     {
@@ -245339,6 +245339,237 @@
           "sight-3"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-bitexco-tower"
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "familyID": "city-hcmc-place-bo-kho-ganh",
+      "phraseID": "city-hcmc-place-bo-kho-ganh",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bò Kho Gánh",
+      "englishTitle": "Bo Kho Ganh",
+      "pronunciation": "bo kho ganh",
+      "summary": "Save Bò Kho Gánh for the Saigon meal where one bowl should lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
+      "heroImageName": "HeroCityHcmcPlaceBoKhoGanh",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-bo-kho-ganh-8ac95feb1b",
+      "cityMetadata": {
+        "cityID": "hcmc",
+        "cityName": "Saigon / Ho Chi Minh City",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hcmc-bo-kho-ganh",
+        "placeName": "Bo Kho Ganh",
+        "sourceIDs": [
+          "vt-hcmc",
+          "vt-hcmc-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Bò Kho Gánh fills a missing Saigon bò kho lane with recognized street-food comfort: broth, beef, bread or noodles, and a dish name worth remembering instead of another broad restaurant save.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHcmcPlaceBoKhoGanh"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "A Bib Gourmand Beef-Stew Bowl",
+          "body": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "place-brief",
+          "title": "Let The Bowl Lead",
+          "body": "Come here when the plan can be one dish over a menu tour. Broth, beef, bread or noodles, herbs, and sauce give the stop enough shape.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Choose The Meal Shape",
+          "body": "Bread turns the bowl into a dipping meal; noodles make it feel fuller. Decide the shape early so the first order stays simple.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Street Food With A Save Reason",
+          "body": "The Bib Gourmand signal supports the save because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember.",
+          "phrases": [
+            {
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
+            },
+            {
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
+            },
+            {
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
+            },
+            {
+              "id": "store-7",
+              "vietnamese": "Cho tôi hóa đơn",
+              "english": "Please give me the receipt",
+              "pronunciation": "cho toy hwa dun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-receipt",
+              "audioKey": "store-7"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Sauce Changes The Bowl",
+          "body": "Condiments can move the broth quickly. Taste first, then add heat or sauce in small moves.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hcmc-place-bo-kho-ganh",
+          "vietnamese": "Bò Kho Gánh",
+          "english": "Bo Kho Ganh",
+          "pronunciation": "bo kho ganh",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-bo-kho-ganh-8ac95feb1b"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hcmc-place-bo-kho-ganh",
+        "scenarioStepGroups": [
+          {
+            "stepID": "when-to-use",
+            "title": "Street Food With A Save Reason",
+            "sourceSectionID": "when-to-use",
+            "primaryPhraseIDs": [
+              "coffee-7"
+            ],
+            "supportPhraseIDs": [
+              "store-6",
+              "taxi-7",
+              "store-7"
+            ]
+          },
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-2",
+              "food-3"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hcmc-place-bo-kho-ganh",
+          "coffee-7",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "store-6",
+          "taxi-7",
+          "store-7",
+          "food-2",
+          "food-3"
+        ],
+        "practiceSourcePageID": "viet-family-city-hcmc-place-bo-kho-ganh"
       }
     },
     {

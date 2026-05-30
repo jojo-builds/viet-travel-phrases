@@ -1873,6 +1873,129 @@
     },
     {
       "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "pageID": "city-hcmc-place-bo-kho-ganh",
+      "sourcePageID": "city-hcmc-place-bo-kho-ganh",
+      "displayName": "Bò Kho Gánh",
+      "englishName": "Bo Kho Ganh",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "pronunciation": "bo kho ganh",
+      "travelerMoment": "Save Bò Kho Gánh for the Saigon meal where one bowl should lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
+      "storySpine": "Bò Kho Gánh fills a missing Saigon bò kho lane with recognized street-food comfort: broth, beef, bread or noodles, and a dish name worth remembering instead of another broad restaurant save.",
+      "intro": {
+        "heading": "A Bib Gourmand Beef-Stew Bowl",
+        "body": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi tô này",
+          "en": "I'll take this bowl",
+          "intent": "food-this-bowl",
+          "phraseId": "food-2",
+          "audioId": "food-2",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-the-bowl-lead",
+          "heading": "Let The Bowl Lead",
+          "body": "Come here when the plan can be one dish over a menu tour. Broth, beef, bread or noodles, herbs, and sauce give the stop enough shape."
+        },
+        {
+          "id": "choose-the-meal-shape",
+          "heading": "Choose The Meal Shape",
+          "body": "Bread turns the bowl into a dipping meal; noodles make it feel fuller. Decide the shape early so the first order stays simple."
+        },
+        {
+          "id": "street-food-with-a-save-reason",
+          "heading": "Street Food With A Save Reason",
+          "body": "The Bib Gourmand signal supports the save because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember."
+        },
+        {
+          "id": "sauce-changes-the-bowl",
+          "heading": "Sauce Changes The Bowl",
+          "body": "Condiments can move the broth quickly. Taste first, then add heat or sauce in small moves."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-pha-lau",
+          "label": "Phá lấu ở Thành phố Hồ Chí Minh",
+          "relationship": "rich street-side bowl comparison",
+          "displaySubtitle": "Another Saigon stew-like stop when bread, sauce, and a small bowl should lead the snack.",
+          "reason": "Pha lau is the closest Saigon rich-bowl comparison for Bo Kho Ganh.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-com-tam-ba-ghien",
+          "label": "Cơm tấm Ba Ghiền",
+          "relationship": "Bib Gourmand street-food meal comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand broken-rice plate when lunch should be direct and pork-chop led.",
+          "reason": "Com Tam Ba Ghien gives Bo Kho Ganh another recognized Saigon street-food meal comparison.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive HCMC 102-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Bò Kho Gánh appears in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+          "The live MICHELIN restaurant page returned a CloudFront/WAF challenge in this environment, so visible copy avoids hours, address, booking, and fragile menu-detail claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Bo Kho Ganh has bounded 2025 MICHELIN Bib Gourmand recognition, a specific bò kho save reason, mapped phrase cards, and useful same-city street-food comparisons."
+      },
+      "sourceNotes": [
+        "Added as the second additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 102.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bò Kho Gánh in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
       "id": "viet-family-city-hcmc-place-bo-la-lot",
       "pageID": "city-hcmc-place-bo-la-lot",
       "sourcePageID": "city-hcmc-place-bo-la-lot",
