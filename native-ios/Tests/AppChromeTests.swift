@@ -227,6 +227,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, 88)
     }
 
+    func testBottomInsetValidationUsesPostClearanceScrollTarget() {
+        let sentinelID = "PhraseArticle.BottomSentinel.viet-phrase-city-danang-place-dragon-bridge"
+
+        XCTAssertEqual(
+            AppBottomInsetValidation.scrollTargetID(for: sentinelID),
+            "\(sentinelID).ScrollTarget"
+        )
+    }
+
     func testTopAdminControlsUseCompactAlignedMetrics() {
         XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
         XCTAssertLessThanOrEqual(AppChromeLayout.topAdminControlSize, 48)

@@ -997,3 +997,120 @@ Results:
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
 These four pages are cleaner and more save-worthy than before, and the source-to-native path is proven for one representative page. The full catalog still needs the remaining high-visibility food pages, support restaurants, cafes, drink pages, markets, and category-specific related-card choices checked in rendered app context before the 500-page set can be called production-ready.
+
+## Continuation: Saigon Bib / Everyday Counter Food-Desire Refinement
+
+Seventh pass date: 2026-05-30
+
+Commit before pass: `2f4b819c9 Refine Hanoi Michelin food listing copy`
+
+This continuation focused on four Saigon food pages where the graph links were better than the visible food desire. The goal was to make each page answer Jojo's question directly: why this place, why save it, and why choose it over the many other places Vietnam offers?
+
+### Pages Touched
+
+- `city-hcmc-place-banh-mi-huynh-hoa`: sharpened the page around a named Saigon banh mi counter, stacked fillings, chili choices, takeaway pace, and queue confidence. No current MICHELIN claim was added.
+- `city-hcmc-place-com-tam-ba-ghien`: added bounded 2025 MICHELIN Bib Gourmand language and made the save reason the pork chop, broken rice, egg, pickles, fish sauce, and fast shop pace.
+- `city-hcmc-place-cuc-gach-quan`: added bounded 2025 MICHELIN Bib Gourmand language and made the page about an old-house, family-style Saigon dinner instead of a generic nice restaurant.
+- `city-hcmc-place-pho-hoa-pasteur`: sharpened the southern pho shop experience: broth, beef, herbs, bean sprouts, lime, sauces, busy room, and Pasteur Street context. No current MICHELIN claim was added.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claims added only where this source supported them:
+
+- `Com Tam Ba Ghien`: 2025 MICHELIN Bib Gourmand.
+- `Cuc Gach Quan`: 2025 MICHELIN Bib Gourmand.
+
+No new hours, prices, reservation, closure, address, or operational claims were added.
+
+### Bottom Chrome Finding And Fix
+
+Fresh render proof found a real screenshot-gate problem: automated bottom validation stopped at the readable sentinel before the bottom clearance, so the scrolled screenshot could still show a related card under the tab bar.
+
+Root cause:
+
+- `AppBottomSentinel` marked the last readable content.
+- Phrase pages then added bottom clearance after that sentinel with padding.
+- `AppBottomInsetValidation.scrollToBottom` scrolled to the sentinel, not to the post-clearance position.
+
+Runtime fix:
+
+- Added `AppBottomClearanceScrollTarget`, a hidden post-clearance scroll target.
+- Phrase article pages now keep the readable sentinel above the chrome and place the validation target after the clearance.
+- The validation helper first scrolls to the sentinel, then to the post-clearance target when present.
+- This keeps existing bottom-inset UI tests meaningful while making screenshot proof land at the actual safe bottom position.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-30-hcmc-bib-everyday/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-com-tam-ba-ghien`
+  - `com-tam-ba-ghien-top.jpg`: first viewport shows the revised 2025 MICHELIN Bib Gourmand pork-chop framing.
+  - `com-tam-ba-ghien-bottom-clearance.jpg`: post-fix bottom validation shows Compare Nearby and Useful Phrases above the tab bar with reading space below.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hook: `--detail-page viet-family-city-hcmc-place-com-tam-ba-ghien`
+- Bottom-clearance launch hook: `--detail-page viet-family-city-hcmc-place-com-tam-ba-ghien --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both launches
+
+### Validation Run After Saigon Refinement
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Focused native XCTest:
+
+```sh
+SpeakLocalNativeTests/AppChromeTests/testBottomInsetValidationUsesPostClearanceScrollTarget
+SpeakLocalNativeTests/AppChromeTests/testCityPlacePhotoBackdropDetailPagesHaveExtraBottomScrollClearance
+SpeakLocalNativeUITests/BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9342 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+- focused native XCTest: PASS, 2 unit tests and 1 representative UI test.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation because the Codex desktop thread-limit / agent-close path froze twice before. This pass stayed single-process and used local repo evidence, official source checks, simulator proof, and focused tests.
+
+### Remaining Risk After Saigon Refinement
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The four Saigon pages above are materially more save-worthy, and the bottom-chrome screenshot proof gap has a runtime fix plus test coverage. The global catalog still needs the remaining high-visibility food pages and support listings checked in rendered context before the whole 500-page set can honestly be called production-ready.

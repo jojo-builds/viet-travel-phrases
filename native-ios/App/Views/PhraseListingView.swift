@@ -245,10 +245,13 @@ struct PhraseArticleTemplateView: View {
                             }
 
                             AppBottomSentinel(id: bottomSentinelID)
+                            AppBottomClearanceScrollTarget(
+                                sentinelID: bottomSentinelID,
+                                height: articleBottomChromeContentClearance
+                            )
                         }
                         .padding(.horizontal, PhrasePageStyle.horizontalPadding)
                         .padding(.top, articleSectionsTopPadding + topChromeContentClearance)
-                        .padding(.bottom, articleBottomChromeContentClearance)
                         .opacity(holdsArticleContentForHomeMorph ? 0 : 1)
                         .offset(y: holdsArticleContentForHomeMorph ? 18 : 0)
                         .allowsHitTesting(!holdsArticleContentForHomeMorph)
@@ -568,10 +571,13 @@ struct PhraseArticleTemplateView: View {
                 }
 
                 AppBottomSentinel(id: bottomSentinelID)
+                AppBottomClearanceScrollTarget(
+                    sentinelID: bottomSentinelID,
+                    height: articleBottomChromeContentClearance
+                )
             }
             .padding(.horizontal, PhrasePageStyle.horizontalPadding)
             .padding(.top, articleSectionsTopPadding)
-            .padding(.bottom, articleBottomChromeContentClearance)
         }
         .background {
             UnevenRoundedRectangle(

@@ -949,11 +949,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "banh mi huynh hoa",
-      "travelerMoment": "The place carries HCMC’s famous bánh mì counter pace: counter movement, fillings, bread, and the small pressure of ordering before the line reaches you.",
-      "storySpine": "Huynh Hoa is a named bánh mì counter with queue energy, stacked fillings, and a focused order that moves quickly.",
+      "travelerMoment": "Choose Huỳnh Hoa when Saigon bánh mì should become a specific counter: crisp bread, stacked fillings, chili choices, takeaway pace, and a line that wants a quick order.",
+      "storySpine": "Huynh Hoa earns the save because it turns a common sandwich into a named Saigon stop: bread, richness, pickles, herbs, chili, and queue momentum.",
       "intro": {
         "heading": "A Named Sandwich Counter",
-        "body": "Banh Mi Huynh Hoa is a focused Saigon sandwich counter, built around crusty baguettes and stacked fillings, made for a decisive order rather than a long sit-down meal."
+        "body": "Banh Mi Huynh Hoa is the Saigon counter to save when bánh mì should feel specific: crusty bread, stacked fillings, herbs, chili, and a fast order that turns into lunch."
       },
       "usefulPhraseCards": [
         {
@@ -985,22 +985,22 @@
         {
           "id": "the-order-moves-fast",
           "heading": "The Order Moves Fast",
-          "body": "The pace is street-shop quick, not slow-table lingering. Filling and chili decisions happen early, then the line keeps moving."
+          "body": "The pace is counter-quick and built for movement. Decide chili and takeaway before the sandwich starts moving."
         },
         {
           "id": "a-quick-meal-stop",
           "heading": "A Quick Meal",
-          "body": "It suits a central day when one filling sandwich can cover lunch without turning the schedule into a restaurant hunt."
+          "body": "One rich sandwich can cover lunch without turning the day into a restaurant hunt. Keep it as a focused stop, then keep walking."
         },
         {
           "id": "counter-confidence-helps",
           "heading": "Counter Confidence Helps",
-          "body": "The visit is easiest when you decide on chili, takeaway, and a classic filling before it is your turn."
+          "body": "Pointing works, but a simple phrase helps when the line is moving. Order one, set the chili level, and let the counter do the rest."
         },
         {
           "id": "the-sandwich-stays-central",
           "heading": "The Sandwich Stays Central",
-          "body": "Remember it for the counter and the famous overloaded sandwich: bread, fillings, richness, and a fast decision at the front."
+          "body": "Remember it for the counter more than a long sit-down story: bread bite, filling, sauce, herbs, and the small pressure of ordering well."
         }
       ],
       "mentionedHereCandidates": [
@@ -1036,13 +1036,14 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
+          "Saigon food-desire continuation on 2026-05-30: visible copy now treats Huỳnh Hoa as a named bánh mì counter with stronger sandwich and ordering detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Named Sandwich Counter gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Huynh Hoa now has a concrete named-counter reason, stronger bánh mì desire, and a dish-to-market trip-building path."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3683,11 +3684,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "com tam ba ghien",
-      "travelerMoment": "The restaurant fits around one order: cơm tấm with grilled pork, egg, pickles, fish sauce, and a busy local-meal pace.",
-      "storySpine": "Ba Ghien gives the dish a named stop: a large pork chop, broken rice, sauce, pickles, and the momentum of a focused meal.",
+      "travelerMoment": "Choose Ba Ghiền when Saigon cơm tấm should be one focused 2025 MICHELIN Bib Gourmand plate: grilled pork chop, broken rice, egg, pickles, fish sauce, and shop pace.",
+      "storySpine": "Ba Ghiền gives broken rice a named stop because the plate is direct: pork chop first, rice underneath, sauce and pickles doing the lift.",
       "intro": {
         "heading": "The Pork Chop Is The Point",
-        "body": "Com Tam Ba Ghien is a focused broken-rice counter for a big grilled pork chop, egg, pickles, and a meal that beats a long menu debate."
+        "body": "Com Tam Ba Ghien is a 2025 MICHELIN Bib Gourmand broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate."
       },
       "usefulPhraseCards": [
         {
@@ -3719,17 +3720,17 @@
         {
           "id": "one-focused-meal",
           "heading": "One Focused Meal",
-          "body": "This is focused cơm tấm: grilled pork, broken rice, and a filling plate are the reason."
+          "body": "This is focused cơm tấm: pork chop, broken rice, egg, pickles, and fish sauce. The plate is the reason."
         },
         {
           "id": "lunch-with-momentum",
           "heading": "Lunch With Momentum",
-          "body": "The meal suits a day when you want a clear local plate before moving on. Order, eat, and let the meal stay direct."
+          "body": "The Bib Gourmand signal belongs to a quick, satisfying plate rather than a formal dinner. Order, eat, and let the meal stay direct."
         },
         {
           "id": "add-ons-decided-early",
           "heading": "Add-Ons Decided Early",
-          "body": "Pick the pork chop, then decide egg or extra pieces. A quick decision keeps the order from becoming a counter-side puzzle."
+          "body": "Pick the pork chop, then decide egg or extra pieces. A quick choice keeps the order from becoming a counter-side puzzle."
         },
         {
           "id": "sauce-on-your-terms",
@@ -3771,17 +3772,19 @@
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger pork-chop plate detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "The Pork Chop Is The Point gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Ba Ghien now has bounded 2025 MICHELIN Bib Gourmand positioning, specific pork-chop desire, and an everyday-meal comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: local named-restaurant source"
+        "Production intake source notes: local named-restaurant source",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Cơm Tấm Ba Ghiền as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4145,11 +4148,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "cuc gach quan",
-      "travelerMoment": "The restaurant works around old-house rooms and table pacing: shared dishes, old Saigon interiors, staff movement, and a dinner that slows down.",
-      "storySpine": "Tiled floors, family-style dishes, and an old-house interior give Cuc Gach Quan a clearer place than a generic Vietnamese dinner.",
+      "travelerMoment": "Save Cục Gạch Quán when Saigon dinner should slow down around a 2025 MICHELIN Bib Gourmand old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
+      "storySpine": "Cục Gạch Quán matters because the food and room move together: family-style Vietnamese dishes inside an old-house setting instead of another quick central meal.",
       "intro": {
         "heading": "Old House, Shared Table",
-        "body": "Cuc Gach Quan is an old-house restaurant choice for a slower Vietnamese meal, tiled floors, family-style dishes, and a room set apart from traffic."
+        "body": "Cuc Gach Quan is a 2025 MICHELIN Bib Gourmand old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic."
       },
       "usefulPhraseCards": [
         {
@@ -4181,22 +4184,22 @@
         {
           "id": "the-room-carries-the-meal",
           "heading": "The Room Carries The Meal",
-          "body": "The old house matters here. Shared dishes, worn details, and an unhurried table make the meal land differently from a quick central restaurant."
+          "body": "The old house matters here. Shared dishes, worn details, and an unhurried table make the meal land differently from a quick central counter."
         },
         {
           "id": "a-slower-dinner-slot",
           "heading": "A Slower Dinner Slot",
-          "body": "Choose the restaurant on a night when you want to sit, share dishes, and let dinner be the main plan."
+          "body": "Choose it on a night when you want to sit, pass plates, and let dinner be the plan. It is weaker as a rushed stop between sights."
         },
         {
           "id": "family-style-expectations",
           "heading": "Family-Style Expectations",
-          "body": "Shared plates suit the room more than one rushed solo bowl. The meal lands when the table has time to settle."
+          "body": "Shared plates suit the room more than one rushed solo bowl. Ask for a recommendation if the menu feels wide."
         },
         {
           "id": "old-house-shared-pace",
           "heading": "Old House, Shared Pace",
-          "body": "Hold exact dish expectations lightly. Remember the old-house rooms, family-style meal, and softer dinner mood."
+          "body": "Remember the old-house rooms, family-style meal, and softer dinner mood. The Bib Gourmand note supports the save, but the table still has to fit the night."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4222,17 +4225,19 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger old-house shared-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Old House, Shared Table gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Cuc Gach Quan now has bounded 2025 MICHELIN Bib Gourmand positioning, old-house shared-table specificity, and a grounded home-style comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Cuc Gach Quan named-restaurant source"
+        "Production intake source notes: Cuc Gach Quan named-restaurant source",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Cục Gạch Quán as Bib Gourmand."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8508,11 +8513,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "pho hoa pasteur",
-      "travelerMoment": "This is a meal stop with a loud room, fast tables, bowls, herbs, drinks, and Pasteur Street outside.",
-      "storySpine": "The place gives Saigon food memory through one recognizable bowl and a dining room that feels busy without needing decoration.",
+      "travelerMoment": "Choose Phở Hòa Pasteur when Saigon phở should become a real shop stop: beef broth, herbs, bean sprouts, lime, sauces, a busy room, and Pasteur Street outside.",
+      "storySpine": "Phở Hòa Pasteur earns the save by making southern phở physical: table herbs, steam, sauce choices, fast bowls, and a shop that feels awake.",
       "intro": {
         "heading": "One Bowl On Pasteur",
-        "body": "Phở Hòa Pasteur is a busy Pasteur Street pho shop where the bowl can become the meal plan. Expect southern-style herbs, steam, and shop pace."
+        "body": "Phở Hòa Pasteur is the Pasteur Street pho shop to save when one southern-style bowl should carry lunch: broth, beef, herbs, bean sprouts, lime, sauces, and shop pace."
       },
       "usefulPhraseCards": [
         {
@@ -8544,12 +8549,12 @@
         {
           "id": "the-shop-is-part-of-it",
           "heading": "The Shop Is Part Of It",
-          "body": "Expect a busy Saigon pho shop with tables turning, bowls landing fast, and the meal tied to Pasteur Street."
+          "body": "Expect a busy Saigon pho shop with tables turning, bowls landing fast, and herbs close to the broth."
         },
         {
           "id": "a-meal-not-a-detour",
           "heading": "Let It Be The Meal",
-          "body": "It suits a central Saigon day when a proper bowl beats one more snack. The bowl earns space by being direct."
+          "body": "It suits a central Saigon day when a proper bowl beats one more snack. Taste the broth before turning the table extras loose."
         },
         {
           "id": "a-strong-lunch-slot",
@@ -8559,7 +8564,7 @@
         {
           "id": "southern-pho-expectations",
           "heading": "Southern Pho Expectations",
-          "body": "Southern-style pho usually brings herbs, bean sprouts, lime, and sauces close to the bowl. A slow add-in approach helps if you want to taste the broth before extras."
+          "body": "Southern-style phở usually brings herbs, bean sprouts, lime, and sauces close to the bowl. Add slowly if you want the broth to stay in charge."
         }
       ],
       "mentionedHereCandidates": [
@@ -8596,13 +8601,14 @@
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Saigon food-desire continuation on 2026-05-30: visible copy now has stronger southern-phở table detail without adding unsupported current MICHELIN recognition."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "One Bowl On Pasteur gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Pho Hoa Pasteur now has stronger southern-phở desire, specific table-extras guidance, and a noodle-path comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
