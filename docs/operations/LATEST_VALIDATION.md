@@ -34,6 +34,8 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 18: SwiftUI detail redraws resolved the same canonical `PhraseDetailPage` by re-entering `VietSQLitePhraseGraphRuntime.detailPage(withID:)` every time; the runtime cache avoided full reloads, but the shell still paid the resolver/lock path repeatedly, so `PhraseDetailPage.page(withID:)` now keeps a bounded resolved-page cache above the SQLite runtime while preserving generated, menu, location-menu, and static fallback behavior
 - root cause 19: the detail-page render stack kept only the active page, or the active plus immediate back-preview page, but computed that small render set by filtering the entire detail history on every SwiftUI refresh; rapid listing taps can leave a long browser-style history, so render selection now slices only the visible suffix while preserving back/forward navigation history
 - root cause 20: city listing "Mentioned Here" and "Compare Nearby" catalogs cached empty pick arrays for every eligible city page ID, so rapidly tapping through many city-backed listing pages could grow both static caches for pages with no cards; both catalogs now keep a bounded recent-page cache while preserving alias sharing and all existing cards
+- root cause 21: inactive standard phrase article pages could still run their startup scroll/bottom-inset `.task` while mounted for hidden navigation states; the task is now gated by active-route state so inactive detail pages do not run delayed scroll work during rapid listing navigation
+- root cause 22: browse category/card taps preheated category hero backdrops in `openDetailFromBrowse` and then immediately reached the generic detail preheat path with the same browse hero override; category masthead browse opens now keep the hero override but skip that duplicate generic shell preheat, while non-category browse opens and all non-browse detail opens keep their existing fallback preheat behavior
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -63,6 +65,25 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `AppChromeTests/testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+  - `AppChromeTests/testPhraseArticleStandardScrollTaskRunsOnlyForActivePages`
+  - `AppChromeTests/testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads`
+  - `AppChromeTests/testBrowseDetailGenericPreheatSkipsOnlyAfterCategoryOverride`
+- xcodebuild simulator focused inactive phrase-article task set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleTaskPolicy` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-12-54-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-13-42-+0700.xcresult`
+- xcodebuild simulator focused browse detail preheat policy set on iPhone 17 Pro
+  - failed before implementation because `AppShellView` had no browse hero override or generic-preheat policy seam
+  - passed after implementation: `2` tests, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-35-41-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-36-57-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with inactive-task gating and duplicate browse-preheat avoidance on iPhone 17 Pro
+  - passed: `27` tests, `0` failures
+  - covered inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, V2.2 Mentioned Here/related cards, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-37-56-+0700.xcresult`
 - xcodebuild simulator focused canonical recent-page reuse set on iPhone 17 Pro
   - passed: `2` tests, `0` failures
   - covered returning the canonical detail ID from navigation and recording an already-canonical recent page without re-running the page canonicalization path

@@ -265,7 +265,11 @@ struct PhraseArticleTemplateView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .task {
+                .task(id: isActive) {
+                    guard PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: isActive) else {
+                        return
+                    }
+
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
                     await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                 }
@@ -1238,6 +1242,12 @@ enum PhrasePhotoBackdropLayout {
         sheetTop: CGFloat
     ) -> CGFloat {
         max(bottomChromeBackingFrameHeight(viewportHeight: viewportHeight, safeAreaBottom: safeAreaBottom) - sheetTop, 0)
+    }
+}
+
+enum PhraseArticleTaskPolicy {
+    static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
     }
 }
 

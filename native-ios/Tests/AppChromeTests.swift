@@ -499,6 +499,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
     }
 
+    func testPhraseArticleStandardScrollTaskRunsOnlyForActivePages() {
+        XCTAssertFalse(PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: false))
+        XCTAssertTrue(PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: true))
+    }
+
     func testVietnameseMenuPhotoBackdropScrollCoordinatorPublishesOnlyDisplayOffsetChanges() {
         let coordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
         var publishCount = 0
@@ -965,6 +970,37 @@ final class AppChromeTests: XCTestCase {
             ).isEmpty
         )
         XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
+    func testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads() {
+        XCTAssertEqual(
+            AppShellView.browseDetailHeroImageOverride(for: "HeroCategoryAirport"),
+            "HeroCategoryAirport"
+        )
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: "BackdropPhrasePhoneCafeCharging"))
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: "HeroVietnamMasthead"))
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: nil))
+    }
+
+    func testBrowseDetailGenericPreheatSkipsOnlyAfterCategoryOverride() {
+        XCTAssertFalse(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .browse,
+                browseHeroOverride: "HeroCategoryAirport"
+            )
+        )
+        XCTAssertTrue(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .browse,
+                browseHeroOverride: nil
+            )
+        )
+        XCTAssertTrue(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .home,
+                browseHeroOverride: "HeroCategoryAirport"
+            )
+        )
     }
 
     func testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {

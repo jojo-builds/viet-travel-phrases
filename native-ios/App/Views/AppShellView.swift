@@ -1196,6 +1196,21 @@ struct AppShellView: View {
         return shouldRender
     }
 
+    static func browseDetailHeroImageOverride(for heroImageName: String?) -> String? {
+        guard let heroImageName, heroImageName.hasPrefix("HeroCategory") else {
+            return nil
+        }
+
+        return heroImageName
+    }
+
+    static func shouldPreheatGenericDetailBackdrop(
+        source: UserIntentSource,
+        browseHeroOverride: String?
+    ) -> Bool {
+        !(source == .browse && browseHeroOverride != nil)
+    }
+
     private static let designedXinChaoCanonicalPageID = "viet-phrase-polite-1"
     private static let designedXinChaoDirectPageIDs: Set<String> = [
         PhrasePage.xinChao.id,
@@ -1679,11 +1694,8 @@ struct AppShellView: View {
     }
 
     private func openDetailFromBrowse(_ id: String, heroImageName: String? = nil) {
-        if let heroImageName, heroImageName.hasPrefix("HeroCategory") {
-            browseDetailHeroImageOverrides[id] = heroImageName
-        } else {
-            browseDetailHeroImageOverrides[id] = nil
-        }
+        let heroImageOverride = Self.browseDetailHeroImageOverride(for: heroImageName)
+        browseDetailHeroImageOverrides[id] = heroImageOverride
 
         preheatDetailBackdrop(pageID: id, heroImageNameOverride: heroImageName)
         openDetail(id, source: .browse)
@@ -1702,7 +1714,10 @@ struct AppShellView: View {
             browseDetailHeroImageOverrides[id] = nil
         }
 
-        preheatDetailBackdrop(pageID: id, heroImageNameOverride: browseDetailHeroImageOverrides[id])
+        let browseHeroOverride = browseDetailHeroImageOverrides[id]
+        if Self.shouldPreheatGenericDetailBackdrop(source: source, browseHeroOverride: browseHeroOverride) {
+            preheatDetailBackdrop(pageID: id, heroImageNameOverride: browseHeroOverride)
+        }
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
         let recentPageID = withAnimation(.snappy(duration: 0.34)) {
