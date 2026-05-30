@@ -137,6 +137,17 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         }
     }
 
+    func testRuntimeHeroImageLookupDoesNotLoadFullDetailPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.heroImageName(for: "viet-phrase-phone-1"),
+            "BackdropPhrasePhoneCafeCharging"
+        )
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting, 0)
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 

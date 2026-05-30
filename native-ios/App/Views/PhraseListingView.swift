@@ -195,6 +195,9 @@ struct PhraseArticleTemplateView: View {
 
                         LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                             ForEach(visibleSections) { section in
+                                let mentionedPicks = locationMenuPicks(after: section.id)
+                                let relatedPicks = locationRelatedPicks(after: section.id)
+
                                 ArticleSectionView(
                                     section: section,
                                     currentPageID: page.id,
@@ -202,22 +205,22 @@ struct PhraseArticleTemplateView: View {
                                 )
                                 .id(section.id)
 
-                                if !locationMenuPicks(after: section.id).isEmpty {
+                                if !mentionedPicks.isEmpty {
                                     LocationMenuPicksSection(
                                         title: "Mentioned Here",
                                         leadIn: nil,
-                                        picks: locationMenuPicks(after: section.id),
+                                        picks: mentionedPicks,
                                         isPageSaved: isPageSaved,
                                         onToggleSavedPage: onToggleSavedPage,
                                         onOpenDetail: onDetailTapped
                                     )
                                 }
 
-                                if !locationRelatedPicks(after: section.id).isEmpty {
+                                if !relatedPicks.isEmpty {
                                     LocationMenuPicksSection(
                                         title: "Compare Nearby",
                                         leadIn: nil,
-                                        picks: locationRelatedPicks(after: section.id),
+                                        picks: relatedPicks,
                                         isPageSaved: isPageSaved,
                                         onToggleSavedPage: onToggleSavedPage,
                                         onOpenDetail: onDetailTapped
@@ -391,6 +394,18 @@ struct PhraseArticleTemplateView: View {
                     )
                     : nil
             )
+            .task(id: isActive ? imageName : "") {
+                guard isActive else {
+                    return
+                }
+
+                AdminBackdropImagePreheater.preheat(
+                    PhrasePhotoBackdropLayout.preheatImageNames(
+                        pageID: page.id,
+                        heroImageName: imageName
+                    )
+                )
+            }
         }
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
@@ -419,8 +434,7 @@ struct PhraseArticleTemplateView: View {
             heroImageName: imageName
         )
 
-        return Image(imageName)
-            .resizable()
+        return AdminBackdropPreparedImage(name: imageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -518,6 +532,9 @@ struct PhraseArticleTemplateView: View {
 
             LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                 ForEach(visibleSections) { section in
+                    let mentionedPicks = locationMenuPicks(after: section.id)
+                    let relatedPicks = locationRelatedPicks(after: section.id)
+
                     ArticleSectionView(
                         section: section,
                         currentPageID: page.id,
@@ -525,22 +542,22 @@ struct PhraseArticleTemplateView: View {
                     )
                     .id(section.id)
 
-                    if !locationMenuPicks(after: section.id).isEmpty {
+                    if !mentionedPicks.isEmpty {
                         LocationMenuPicksSection(
                             title: "Mentioned Here",
                             leadIn: nil,
-                            picks: locationMenuPicks(after: section.id),
+                            picks: mentionedPicks,
                             isPageSaved: isPageSaved,
                             onToggleSavedPage: onToggleSavedPage,
                             onOpenDetail: onDetailTapped
                         )
                     }
 
-                    if !locationRelatedPicks(after: section.id).isEmpty {
+                    if !relatedPicks.isEmpty {
                         LocationMenuPicksSection(
                             title: "Compare Nearby",
                             leadIn: nil,
-                            picks: locationRelatedPicks(after: section.id),
+                            picks: relatedPicks,
                             isPageSaved: isPageSaved,
                             onToggleSavedPage: onToggleSavedPage,
                             onOpenDetail: onDetailTapped
@@ -1096,6 +1113,14 @@ enum PhrasePhotoBackdropLayout {
         supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsCategoryListingPage(pageID: pageID, heroImageName: heroImageName)
+    }
+
+    static func preheatImageNames(pageID: String, heroImageName: String?) -> [String] {
+        guard let heroImageName, supportsListingPage(pageID: pageID, heroImageName: heroImageName) else {
+            return []
+        }
+
+        return [heroImageName]
     }
 
     static func backdropFrameHeight(

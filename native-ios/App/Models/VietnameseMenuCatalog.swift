@@ -1445,12 +1445,66 @@ struct LocationMenuPick: Identifiable, Equatable {
 }
 
 enum LocationMenuPicksCatalog {
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        buildCountsByPageID.removeAll()
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+#endif
+
     static func picks(forPageID pageID: String) -> [LocationMenuPick] {
-        if pageID.hasPrefix("viet-phrase-city-") {
-            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
-            return picks(forPageID: familyPageID)
+        guard mayHavePicks(for: pageID) else {
+            return []
         }
 
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        cachedPicksByPageID[lookupPageID] = picks
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
         switch pageID {
         case "viet-family-city-danang-place-bac-my-an-market":
             return menuItemPicks(["food-kem-bo"], after: "at-glance")
@@ -1798,12 +1852,66 @@ enum LocationMenuPicksCatalog {
 }
 
 enum LocationRelatedPicksCatalog {
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        buildCountsByPageID.removeAll()
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+#endif
+
     static func picks(forPageID pageID: String) -> [LocationMenuPick] {
-        if pageID.hasPrefix("viet-phrase-city-") {
-            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
-            return picks(forPageID: familyPageID)
+        guard mayHavePicks(for: pageID) else {
+            return []
         }
 
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        cachedPicksByPageID[lookupPageID] = picks
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
         switch pageID {
         case "viet-family-city-danang-place-international-terminal":
             return [

@@ -842,6 +842,36 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
+    func testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero() {
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-phrase-phone-1",
+                heroImageName: "BackdropPhrasePhoneCafeCharging"
+            ),
+            ["BackdropPhrasePhoneCafeCharging"]
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-city-danang-place-airport",
+                heroImageName: "HeroCityDanangPlaceAirport"
+            ),
+            ["HeroCityDanangPlaceAirport"]
+        )
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: "HeroCompactPhraseMasthead"
+            ).isEmpty
+        )
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: nil
+            ).isEmpty
+        )
+        XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
     func testSQLiteRuntimeCachesStayBoundedDuringSearchAndDetailBrowsing() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
@@ -2817,6 +2847,9 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testCalibratedCityMenuPicksResolveInlineAndStayCapped() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
         let expected: [String: (sectionID: String, itemIDs: [String])] = [
             "viet-family-city-danang-place-bac-my-an-market": ("at-glance", ["food-kem-bo"]),
             "viet-family-city-danang-place-con-market": ("place-brief", ["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"]),
@@ -2872,6 +2905,20 @@ final class AppChromeTests: XCTestCase {
         ] {
             XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty, "\(pageID) should not force food rows")
         }
+    }
+
+    func testLocationMenuPicksCacheCanonicalCityLookups() {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-danang-place-international-terminal"
+        let aliasPageID = "viet-phrase-city-danang-place-international-terminal"
+
+        XCTAssertEqual(LocationMenuPicksCatalog.buildCountForTesting(pageID: pageID), 0)
+
+        XCTAssertFalse(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty)
+        XCTAssertFalse(LocationMenuPicksCatalog.picks(forPageID: aliasPageID).isEmpty)
+        XCTAssertEqual(LocationMenuPicksCatalog.buildCountForTesting(pageID: pageID), 1)
     }
 
     func testHanMarketRelatedPlacePickLinksToConMarket() throws {
@@ -3054,6 +3101,9 @@ final class AppChromeTests: XCTestCase {
     }
 
     func testV22CityPagesExposeNativeRelatedPlaceCards() throws {
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
         let expected: [String: (sectionID: String, cardIDs: [String], detailPageIDs: [String])] = [
             "viet-family-city-danang-place-international-terminal": (
                 "good-to-know",
@@ -3124,6 +3174,20 @@ final class AppChromeTests: XCTestCase {
                 XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
             }
         }
+    }
+
+    func testLocationRelatedPicksCacheCanonicalCityLookups() {
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-danang-place-international-terminal"
+        let aliasPageID = "viet-phrase-city-danang-place-international-terminal"
+
+        XCTAssertEqual(LocationRelatedPicksCatalog.buildCountForTesting(pageID: pageID), 0)
+
+        XCTAssertFalse(LocationRelatedPicksCatalog.picks(forPageID: pageID).isEmpty)
+        XCTAssertFalse(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).isEmpty)
+        XCTAssertEqual(LocationRelatedPicksCatalog.buildCountForTesting(pageID: pageID), 1)
     }
 
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
@@ -3820,6 +3884,34 @@ final class LocalUserIntentStoreTests: XCTestCase {
 
         XCTAssertEqual(store.recentPageIDs, ["viet-phrase-hello-chao-anh", "viet-phrase-polite-2"])
         XCTAssertEqual(store.recentPages.first?.source, .article)
+    }
+
+    func testRecordingRecentPageDoesNotPublishStoreWideInvalidation() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        var invalidationCount = 0
+        let cancellable = store.objectWillChange.sink {
+            invalidationCount += 1
+        }
+
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .home)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-hello-chao-anh"])
+        XCTAssertEqual(invalidationCount, 0)
+        cancellable.cancel()
+    }
+
+    func testSavedPageToggleStillPublishesStoreChanges() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        var invalidationCount = 0
+        let cancellable = store.objectWillChange.sink {
+            invalidationCount += 1
+        }
+
+        store.toggleSavedPage("viet-thank-you")
+
+        XCTAssertEqual(store.savedPageIDs, ["viet-phrase-polite-2"])
+        XCTAssertEqual(invalidationCount, 1)
+        cancellable.cancel()
     }
 
     func testSavedAndPracticeIDsPersistPrivatelyInUserDefaults() {

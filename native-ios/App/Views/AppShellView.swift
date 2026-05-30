@@ -1570,6 +1570,8 @@ struct AppShellView: View {
             homePhraseHeroContentHoldPageID = morphPageID
         }
 
+        preheatDetailBackdrop(pageID: id)
+
         withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
             navigation.openDetail(id)
         }
@@ -1612,6 +1614,7 @@ struct AppShellView: View {
             browseDetailHeroImageOverrides[id] = nil
         }
 
+        preheatDetailBackdrop(pageID: id, heroImageNameOverride: heroImageName)
         openDetail(id, source: .browse)
     }
 
@@ -1628,12 +1631,27 @@ struct AppShellView: View {
             browseDetailHeroImageOverrides[id] = nil
         }
 
+        preheatDetailBackdrop(pageID: id, heroImageNameOverride: browseDetailHeroImageOverrides[id])
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
         intentStore.recordOpenedPage(id, source: source)
+    }
+
+    private func preheatDetailBackdrop(pageID: String, heroImageNameOverride: String? = nil) {
+        let heroImageName = heroImageNameOverride
+            ?? StaticPhraseBackdropImagePolicy.heroImageName(for: pageID)
+            ?? VietnameseMenuCatalog.detailItem(withPageID: pageID)?.menuBackdropImageName
+            ?? VietSQLitePhraseGraphRuntime.heroImageName(for: pageID)
+
+        AdminBackdropImagePreheater.preheat(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: pageID,
+                heroImageName: heroImageName
+            )
+        )
     }
 
     private func openDetailFromSearch(_ id: String) {

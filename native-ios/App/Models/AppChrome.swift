@@ -88,7 +88,7 @@ struct RecentPhrasePage: Codable, Equatable, Identifiable {
 }
 
 final class LocalUserIntentStore: ObservableObject {
-    @Published private(set) var recentPages: [RecentPhrasePage]
+    private(set) var recentPages: [RecentPhrasePage]
     @Published private(set) var savedPageIDs: [String]
     @Published private(set) var practicePageIDs: [String]
 

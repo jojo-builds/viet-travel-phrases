@@ -10,6 +10,48 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Admin Photo Backdrop Thermal Evidence
+
+Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listing-navigation thermal pass:
+
+- root cause 1: opening each new listing recorded recent-page history through a broad `@Published` field on `LocalUserIntentStore`, invalidating offscreen Home/Browse/Saved surfaces while the user was only navigating detail pages
+- root cause 2: listing photo backdrops used the plain SwiftUI asset image path, so newly generated portrait backdrops could decode/prepare on the render path instead of sharing the bounded prepared-image cache used by root photo backdrops
+- root cause 3: city listing sheets recomputed "Mentioned Here" and "Compare Nearby" pick arrays repeatedly inside section rendering, including alias normalization and menu-item scans for page bodies that can be re-evaluated during navigation/scrolling
+- preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
+
+Fresh command evidence from this pass:
+
+- focused failing tests were added before the fixes and then passed after implementation:
+  - `LocalUserIntentStoreTests/testRecordingRecentPageDoesNotPublishStoreWideInvalidation`
+  - `LocalUserIntentStoreTests/testSavedPageToggleStillPublishesStoreChanges`
+  - `AppChromeTests/testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero`
+  - `AppChromeTests/testLocationMenuPicksCacheCanonicalCityLookups`
+  - `AppChromeTests/testLocationRelatedPicksCacheCanonicalCityLookups`
+  - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- XcodeBuildMCP simulator focused thermal/content set on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, V2.2 mentioned/related cards, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T12-44-09-205Z_pid15747_1987ab03.xcresult`
+- XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
+  - phrase backdrop smoke passed for `--detail-page viet-phrase-phone-1`
+  - city/listing backdrop smoke passed for `--detail-page viet-family-city-danang-place-international-terminal`
+  - screenshots captured at:
+    - `docs/task-results/listing-thermal-audit-2026-05-30/phrase-phone-backdrop-smoke.jpg`
+    - `docs/task-results/listing-thermal-audit-2026-05-30/city-terminal-backdrop-smoke.jpg`
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- broader XcodeBuildMCP simulator `AppChromeTests` + `SQLiteLanguagePackRepositoryTests`
+  - compiled and ran `208` tests
+  - passed: `203`
+  - failed: `5` pre-existing content-expectation/copy-audit tests outside the thermal files, including V2.2 city copy expectation drift and Vietnamese menu guide-copy audit drift
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish`
+  - build passed
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+
 ## Current Main Non-Paywall Merge Sweep Evidence
 
 Current `main` evidence from the 2026-05-29 orchestrator merge sweep:

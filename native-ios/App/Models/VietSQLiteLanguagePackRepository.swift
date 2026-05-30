@@ -1042,6 +1042,26 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
+    func heroImageName(forPageIDOrAlias pageID: String) throws -> String? {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        SELECT hero_image_name
+        FROM phrase_page
+        WHERE id = ?
+        LIMIT 1;
+        """
+
+        return try withPreparedStatement(sql) { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+
+            guard sqlite3_step(statement) == SQLITE_ROW else {
+                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageID)
+            }
+
+            return Self.optionalStringColumn(statement, index: 0)
+        }
+    }
+
     func relatedPages(forPageID pageID: String, limit: Int = 8) throws -> [PhraseLink] {
         let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
         let sql = """
@@ -1859,6 +1879,7 @@ enum VietSQLitePhraseGraphRuntime {
     static let disabledLaunchArgument = "--disable-sqlite-phrase-graph"
     static let disabledEnvironmentVariable = "SPEAKLOCAL_DISABLE_SQLITE_GRAPH"
     private static let canonicalPageIDCacheLimit = 512
+    private static let heroImageNameCacheLimit = 512
     private static let detailPageCacheLimit = 96
     private static let searchResultCacheLimit = 32
     private static let cacheLock = NSLock()
@@ -1967,6 +1988,20 @@ enum VietSQLitePhraseGraphRuntime {
         return page
     }
 
+    static func heroImageName(for pageID: String) -> String? {
+        if let cachedHeroImageName = cachedHeroImageName(for: pageID) {
+            return cachedHeroImageName.value
+        }
+
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        let heroImageName = try? repository.heroImageName(forPageIDOrAlias: pageID)
+        storeCachedHeroImageName(heroImageName, for: pageID)
+        return heroImageName
+    }
+
     static func canOpenPage(_ pageID: String) -> Bool {
         canonicalPageID(for: pageID) != nil
     }
@@ -2047,6 +2082,31 @@ enum VietSQLitePhraseGraphRuntime {
         )
     }
 
+    private static func cachedHeroImageName(for key: String) -> CachedOptionalString? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let imageName = cachedHeroImageNamesByID[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedHeroImageNameKeys)
+        return imageName
+    }
+
+    private static func storeCachedHeroImageName(_ imageName: String?, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedHeroImageNamesByID[key] = CachedOptionalString(imageName)
+        touchCacheKey(key, in: &cachedHeroImageNameKeys)
+        trimCache(
+            keys: &cachedHeroImageNameKeys,
+            limit: heroImageNameCacheLimit,
+            removeValue: { cachedHeroImageNamesByID.removeValue(forKey: $0) }
+        )
+    }
+
     private static func cachedDetailPage(for key: String) -> PhraseDetailPage? {
         cacheLock.lock()
         defer { cacheLock.unlock() }
@@ -2109,9 +2169,33 @@ enum VietSQLitePhraseGraphRuntime {
         }
     }
 
+    private enum CachedOptionalString {
+        case found(String)
+        case missing
+
+        init(_ value: String?) {
+            if let value {
+                self = .found(value)
+            } else {
+                self = .missing
+            }
+        }
+
+        var value: String? {
+            switch self {
+            case .found(let value):
+                return value
+            case .missing:
+                return nil
+            }
+        }
+    }
+
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
     private static var cachedCanonicalPageIDsByAlias: [String: CachedCanonicalPageID] = [:]
     private static var cachedCanonicalPageIDKeys: [String] = []
+    private static var cachedHeroImageNamesByID: [String: CachedOptionalString] = [:]
+    private static var cachedHeroImageNameKeys: [String] = []
     private static var cachedDetailPagesByID: [String: PhraseDetailPage] = [:]
     private static var cachedDetailPageKeys: [String] = []
     private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
@@ -2164,6 +2248,8 @@ enum VietSQLitePhraseGraphRuntime {
         defer { cacheLock.unlock() }
         cachedCanonicalPageIDsByAlias.removeAll()
         cachedCanonicalPageIDKeys.removeAll()
+        cachedHeroImageNamesByID.removeAll()
+        cachedHeroImageNameKeys.removeAll()
         cachedDetailPagesByID.removeAll()
         cachedDetailPageKeys.removeAll()
         cachedSearchResultsByKey.removeAll()
