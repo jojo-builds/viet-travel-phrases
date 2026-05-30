@@ -2364,6 +2364,109 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Bún Chả Đắc Kim Additive Hanoi Pilot
+
+Thirtieth pass date: 2026-05-31
+
+Commit before pass: `b7968d080 Add Pho Minh HCMC food listing`
+
+This continuation adds `Bún Chả Đắc Kim` as a food-specific Hanoi bún chả page. The point is not to add every bún chả shop; the page earns the slot because the official MICHELIN venue page gives enough concrete food evidence to make the save feel different from Hương Liên and Bún Chả Ta.
+
+### Page Added
+
+- `city-hanoi-place-bun-cha-dac-kim`: new first-class V2.2 Hanoi restaurant page.
+
+Visible page direction:
+
+- The page frames Đắc Kim as a MICHELIN Guide Hàng Mành bún chả stop where the sauce, pickled green mango, smoky pork, and pork patties lead the desire.
+- It links Mentioned Here to `Bún chả ở Hà Nội`, so the named restaurant sits behind the broader dish guide.
+- It renders `Bún chả Hương Liên`, `Bún Chả Ta`, and `Tuyến đi bộ Phố cổ` as Compare Nearby cards, separating famous-room, Bib Gourmand dipping-bowl, and Hàng Mành sauce-and-pork lunch roles.
+- The dish-level bún chả page plus the current Hương Liên and Bún Chả Ta pages now route toward Đắc Kim where that comparison helps.
+
+### Add Decision
+
+Decision: add, because it makes the Hanoi bún chả set more food-specific.
+
+Hương Liên remains the famous MICHELIN Selected room. Bún Chả Ta remains the 2025 Bib Gourmand Old Quarter table. Đắc Kim adds a sharper Hàng Mành lunch reason: sweet fish-sauce dip, pickled green mango, smoky shredded pork, plump patties, noodles, and herbs.
+
+Source support:
+
+- Current MICHELIN venue page for `Bún Chả Đắc Kim` lists it as a Hanoi street-food restaurant in the MICHELIN Guide.
+- The same MICHELIN page supports the stable visible food details used in the app copy: sweet fish-sauce dip, pickled green mango, vermicelli, smoky pork, and plump pork patties.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hanoi-nouns.md`: added row `hanoi-bun-cha-dac-kim`.
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json`: added the authored V2.2 source object and bún chả comparison cards.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 515 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 105, Hanoi 104, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-cha-dac-kim-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-bun-cha-dac-kim`
+  - `bun-cha-dac-kim-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Sauce, Smoke, Mango` intro, and playable Useful Phrases.
+  - `bun-cha-dac-kim-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus Hương Liên, Bún Chả Ta, and Old Quarter walk Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-dac-kim`
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-dac-kim --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 105 places, Hanoi 104 places, Da Nang 106 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 515 entries imported.
+- native resource generation: PASS, 1762 families, 1780 phrases, 1773 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 515 entries, 515 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 515 city noun pages, 515 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 515 city places, 821 city phrase tags, 0 release-blocking missing audio rows, 9051 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bún Chả Đắc Kim Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens Hanoi bún chả coverage, but it also raises the bar for adding `Tuyết Bún Chả 34`. That page should only be added if current source evidence proves a different role from Hương Liên, Bún Chả Ta, and Đắc Kim.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Phở Minh Additive HCMC Pilot
 
 Twenty-ninth pass date: 2026-05-31

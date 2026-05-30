@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1779,
+    "phraseCount": 1780,
     "basePhraseCount": 935,
-    "cityPhraseCount": 820,
+    "cityPhraseCount": 821,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1761,
+    "familyCount": 1762,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -13487,6 +13487,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hanoi-place-bun-cha"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-bun-cha-dac-kim",
+      "pageID": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "scenarioID": "city-guides",
+      "familyTitle": "Bun Cha Dac Kim pronunciation",
+      "summary": "Save Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
+      "primaryPhraseID": "city-hanoi-place-bun-cha-dac-kim",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hanoi-place-bun-cha-dac-kim"
       ]
     },
     {
@@ -65154,6 +65166,50 @@
       "placeKind": "dish",
       "contentRole": "dish",
       "spokenChunks": 5,
+      "sourceIDs": [
+        "vt-hanoi",
+        "vt-hanoi-official",
+        "michelin-vietnam"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-bun-cha-dac-kim",
+      "familyID": "city-hanoi-place-bun-cha-dac-kim",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Bun Cha Dac Kim",
+      "targetText": "Bún Chả Đắc Kim",
+      "canonicalTargetText": "Bún Chả Đắc Kim",
+      "pronunciation": "bun cha dac kim",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hanoi",
+        "Hà Nội",
+        "Bun Cha Dac Kim",
+        "Bún Chả Đắc Kim"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌿",
+      "notes": "city-library-v1; city=hanoi; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hanoi-bun-cha-dac-kim; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hanoi",
+      "cityName": "Hanoi",
+      "cityShortTitle": "Hanoi",
+      "cityVietnameseName": "Hà Nội",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hanoi-bun-cha-dac-kim",
+      "placeName": "Bun Cha Dac Kim",
+      "placeVietnameseName": "Bún Chả Đắc Kim",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
       "sourceIDs": [
         "vt-hanoi",
         "vt-hanoi-official",

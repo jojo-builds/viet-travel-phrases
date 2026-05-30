@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T22:11:00.523Z",
+    "generatedAt": "2026-05-30T22:22:20.330Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 820,
+    "cityLibraryPageCount": 821,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2262,
-    "missingAudioCount": 695
+    "requiredAudioCount": 2263,
+    "missingAudioCount": 696
   },
   "required": [
     {
@@ -13129,6 +13129,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-cha-dac-kim-0e89c0e056",
+      "text": "Bún Chả Đắc Kim",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-bun-cha-ta",
       "sectionID": "hero",
       "kind": "hero",
@@ -19680,6 +19688,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-bun-cha-o-ha-noi-66cb5aa2a2",
       "text": "Bún chả ở Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-cha-dac-kim-0e89c0e056",
+      "text": "Bún Chả Đắc Kim",
       "resolved": false
     },
     {

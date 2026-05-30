@@ -889,6 +889,14 @@
           "displaySubtitle": "A real address when the dish page needs a specific bowl-and-grill stop.",
           "reason": "Huong Lien turns the bun cha guide into a saveable meal stop.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+          "label": "Bún Chả Đắc Kim",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork should lead lunch.",
+          "reason": "Dac Kim turns the dish page into a more food-specific Old Quarter lunch save.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -1010,6 +1018,14 @@
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bún chả room when the same dish needs a different table.",
           "reason": "Bun Cha Ta is a useful same-dish room comparison for Huong Lien.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+          "label": "Bún Chả Đắc Kim",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Hàng Mành bún chả stop where pickled green mango sharpens the sauce.",
+          "reason": "Dac Kim gives Huong Lien a sharper sauce-and-pork comparison inside the same dish family.",
           "status": "render"
         }
       ],
@@ -1135,6 +1151,14 @@
           "displaySubtitle": "A 2025 MICHELIN Selected bún chả room when fame, broth, herbs, and pork share the table.",
           "reason": "Huong Lien gives Bun Cha Ta a same-dish comparison for bun cha planning.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+          "label": "Bún Chả Đắc Kim",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Hàng Mành lunch when smoky pork, patties, and mango-lifted sauce should lead.",
+          "reason": "Dac Kim gives Bun Cha Ta a more sauce-specific Old Quarter bún chả comparison.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -1174,6 +1198,148 @@
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
         "finalPassDate": "2026-05-27"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "pageID": "city-hanoi-place-bun-cha-dac-kim",
+      "sourcePageID": "city-hanoi-place-bun-cha-dac-kim",
+      "displayName": "Bún Chả Đắc Kim",
+      "englishName": "Bun Cha Dac Kim",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "pronunciation": "bun cha dac kim",
+      "travelerMoment": "Save Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
+      "storySpine": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter table: the MICHELIN Guide recognition supports the save, but the real memory is the balance of smoke, sweetness, acidity, pork, and herbs.",
+      "intro": {
+        "heading": "Sauce, Smoke, Mango",
+        "body": "Bún Chả Đắc Kim is a MICHELIN Guide Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-the-dip-lead",
+          "heading": "Let The Dip Lead",
+          "body": "The nước chấm is not background sauce. It pulls sweetness, acidity, mango, pork, noodles, and herbs into the same bite."
+        },
+        {
+          "id": "patties-and-shreds",
+          "heading": "Patties And Shreds",
+          "body": "Look for both textures: smoky shredded pork and rounder patties. The contrast is the reason this table feels more specific than a generic bún chả stop."
+        },
+        {
+          "id": "build-one-bowl-slowly",
+          "heading": "Build One Bowl Slowly",
+          "body": "Start with pork and broth, then add noodles and herbs. Give the green mango time to brighten the bowl before changing it with chili or garlic."
+        },
+        {
+          "id": "where-it-sits-in-hanoi",
+          "heading": "Where It Sits In Hanoi",
+          "body": "Hương Liên carries the famous-room save. Bún Chả Ta carries a Bib Gourmand Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "bún chả",
+          "displaySubtitle": "The smoky Hanoi dish behind the Đắc Kim table.",
+          "reason": "The page centers bún chả and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+          "label": "Bún chả Hương Liên",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A famous MICHELIN Selected room when bún chả should feel quick and recognizable.",
+          "reason": "Huong Lien gives Dac Kim a familiar same-dish comparison.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
+          "label": "Bún Chả Ta",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Bib Gourmand Old Quarter table when the dipping bowl should stay central.",
+          "reason": "Bun Cha Ta gives Dac Kim another recognized bún chả comparison.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-old-quarter-walking-tour",
+          "label": "Tuyến đi bộ Phố cổ",
+          "relationship": "route pairing",
+          "displaySubtitle": "An Old Quarter walk when lunch should sit inside a loose route.",
+          "reason": "Dac Kim is useful for Old Quarter route-building without making fragile address claims.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hanoi 104-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official MICHELIN venue page support checked on 2026-05-31: Bún Chả Đắc Kim appears as a Hanoi MICHELIN Guide restaurant on Hàng Mành Street.",
+          "Visible copy uses stable source facts only: bún chả, sweet fish-sauce dip, pickled green mango, smoky pork, pork patties, vermicelli, and herbs. It avoids hours, prices, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Bun Cha Dac Kim has MICHELIN Guide recognition, a distinct sauce-and-pork Hàng Mành lunch role, mapped phrase cards, and useful bún chả comparisons."
+      },
+      "sourceNotes": [
+        "Added as the fourth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 104.",
+        "Official MICHELIN Guide venue page lists Bún Chả Đắc Kim (Hang Manh Street), Hanoi, as a street-food restaurant in the MICHELIN Guide.",
+        "Official MICHELIN page evidence used for stable visible details: sweet fish-sauce nước chấm with finely sliced pickled green mango, vermicelli noodles, shredded smoky pork, plump pork patties, sweetness, and acidity.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
       }
     },
     {

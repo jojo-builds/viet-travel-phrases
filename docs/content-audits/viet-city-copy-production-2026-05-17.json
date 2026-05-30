@@ -4016,6 +4016,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-bun-cha-dac-kim",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
+        "aboutExcerpt": "Bún Chả Đắc Kim is a MICHELIN Guide Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Look for both textures: smoky shredded pork and rounder patties. The contrast is the reason this table feels more specific than a generic bún chả stop.",
+        "timingExcerpt": "Start with pork and broth, then add noodles and herbs. Give the green mango time to brighten the bowl before changing it with chili or garlic.",
+        "goodToKnowExcerpt": "Hương Liên carries the famous-room save. Bún Chả Ta carries a Bib Gourmand Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
+      }
+    },
+    {
       "id": "city-hanoi-place-bun-cha-huong-lien",
       "cityID": "hanoi",
       "pageKind": "restaurant",

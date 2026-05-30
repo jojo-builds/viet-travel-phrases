@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 820,
+    "cityLibraryPageCount": 821,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T22:11:00.523Z"
+    "generatedAt": "2026-05-30T22:22:20.330Z"
   },
   "pages": [
     {
@@ -210447,6 +210447,179 @@
           "v900-food-drin-what-do-you-recommend"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-bun-cha"
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "familyID": "city-hanoi-place-bun-cha-dac-kim",
+      "phraseID": "city-hanoi-place-bun-cha-dac-kim",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bún Chả Đắc Kim",
+      "englishTitle": "Bun Cha Dac Kim",
+      "pronunciation": "bun cha dac kim",
+      "summary": "Save Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
+      "heroImageName": "HeroCityHanoiPlaceBunChaDacKim",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-bun-cha-dac-kim-0e89c0e056",
+      "cityMetadata": {
+        "cityID": "hanoi",
+        "cityName": "Hanoi",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hanoi-bun-cha-dac-kim",
+        "placeName": "Bun Cha Dac Kim",
+        "sourceIDs": [
+          "vt-hanoi",
+          "vt-hanoi-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter table: the MICHELIN Guide recognition supports the save, but the real memory is the balance of smoke, sweetness, acidity, pork, and herbs.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHanoiPlaceBunChaDacKim"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Sauce, Smoke, Mango",
+          "body": "Bún Chả Đắc Kim is a MICHELIN Guide Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Let The Dip Lead",
+          "body": "The nước chấm is not background sauce. It pulls sweetness, acidity, mango, pork, noodles, and herbs into the same bite.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Patties And Shreds",
+          "body": "Look for both textures: smoky shredded pork and rounder patties. The contrast is the reason this table feels more specific than a generic bún chả stop.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Build One Bowl Slowly",
+          "body": "Start with pork and broth, then add noodles and herbs. Give the green mango time to brighten the bowl before changing it with chili or garlic.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Where It Sits In Hanoi",
+          "body": "Hương Liên carries the famous-room save. Bún Chả Ta carries a Bib Gourmand Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hanoi-place-bun-cha-dac-kim",
+          "vietnamese": "Bún Chả Đắc Kim",
+          "english": "Bun Cha Dac Kim",
+          "pronunciation": "bun cha dac kim",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-bun-cha-dac-kim-0e89c0e056"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hanoi-place-bun-cha-dac-kim",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hanoi-place-bun-cha-dac-kim",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hanoi-place-bun-cha-dac-kim"
       }
     },
     {

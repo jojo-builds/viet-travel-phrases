@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T22:11:01.291Z",
+  "generatedAt": "2026-05-30T22:22:21.022Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1772,
+    "pages": 1773,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 365,
-    "generatedAt": "2026-05-30T22:11:01.291Z"
+    "missing": 366,
+    "generatedAt": "2026-05-30T22:22:21.022Z"
   },
   "pages": [
     {
@@ -98350,6 +98350,18 @@
       "pageID": "viet-family-city-hanoi-place-bun-cha",
       "phraseText": "Bún chả ở Hà Nội",
       "englishTitle": "Bun cha",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "phraseText": "Bún Chả Đắc Kim",
+      "englishTitle": "Bun Cha Dac Kim",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"
