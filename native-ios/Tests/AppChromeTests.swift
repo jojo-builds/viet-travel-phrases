@@ -652,6 +652,15 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testVietnameseMenuDetailLookupsUseIndexedItems() {
+        XCTAssertEqual(VietnameseMenuCatalog.indexedItemCountForTesting, VietnameseMenuCatalog.allItems.count)
+
+        for item in VietnameseMenuCatalog.allItems {
+            XCTAssertEqual(VietnameseMenuCatalog.item(withID: item.itemID)?.detailPageID, item.detailPageID)
+            XCTAssertEqual(VietnameseMenuCatalog.detailItem(withPageID: item.detailPageID)?.itemID, item.itemID)
+        }
+    }
+
     func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
         XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
         XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)

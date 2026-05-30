@@ -242,6 +242,9 @@ enum VietnameseMenuCatalog {
     static let allItems: [VietnameseMenuItem] = payload.items
     static let helperPhrases: [VietnameseMenuHelperPhraseDefinition] = payload.helperPhrases ?? []
     private static let helperPhrasesByID = Dictionary(uniqueKeysWithValues: helperPhrases.map { ($0.id, $0) })
+    private static let itemsByID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.itemID, $0) })
+    private static let itemsByDetailPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.detailPageID, $0) })
+    static var indexedItemCountForTesting: Int { itemsByID.count }
 
     static func kind(for route: BrowseCollectionRoute) -> VietnameseMenuKind? {
         guard case .category(let id) = route else {
@@ -253,6 +256,10 @@ enum VietnameseMenuCatalog {
 
     static func items(for kind: VietnameseMenuKind) -> [VietnameseMenuItem] {
         allItems.filter { $0.kind == kind }
+    }
+
+    static func item(withID itemID: String) -> VietnameseMenuItem? {
+        itemsByID[itemID]
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
@@ -325,8 +332,7 @@ enum VietnameseMenuCatalog {
             return nil
         }
 
-        let itemID = String(pageID.dropFirst("viet-menu-".count))
-        return allItems.first { $0.itemID == itemID }
+        return itemsByDetailPageID[pageID]
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
@@ -1428,7 +1434,7 @@ struct LocationMenuPick: Identifiable, Equatable {
             return nil
         }
 
-        return VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID }
+        return VietnameseMenuCatalog.item(withID: linkedMenuItemID)
     }
 
     var audioKey: String? {
@@ -1593,7 +1599,7 @@ enum LocationMenuPicksCatalog {
     }
 
     private static func menuItemPick(itemID: String, after sectionID: String) -> LocationMenuPick? {
-        guard let item = VietnameseMenuCatalog.allItems.first(where: { $0.itemID == itemID }) else {
+        guard let item = VietnameseMenuCatalog.item(withID: itemID) else {
             return nil
         }
 
