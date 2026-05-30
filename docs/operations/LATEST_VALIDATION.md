@@ -90,6 +90,11 @@ Fresh command evidence from this pass:
   - passed: `14` tests, `0` failures
   - covered inactive listing/browse/menu photo-backdrop scroll-geometry gating, inactive menu section-preference gating, inactive collection deferred-task gating, active+visible admin/root backdrop delayed-task gating, inactive standard article task gating, generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, visible-only browse collection mounting, bounded category browse hero overrides, bounded city pick caches, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-04-23-090Z_pid15747_89c97878.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `71c706b4b`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused inactive collection deferred-task set on iPhone 17 Pro
   - failed before implementation because `VietnameseMenuTaskPolicy` and `BrowseCollectionTaskPolicy` did not exist, and the affected tasks were keyed without an active-route gate
   - passed after implementation: `1` test, `0` failures
