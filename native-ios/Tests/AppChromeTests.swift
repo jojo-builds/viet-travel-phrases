@@ -661,6 +661,18 @@ final class AppChromeTests: XCTestCase {
         }
     }
 
+    func testMenuDetailPagesBypassSQLitePhraseGraphLookup() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let menuPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+        let locationMenuPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-lusine-thao-dien-eggs-benedict"))
+
+        XCTAssertEqual(menuPage.title, "Phở bò")
+        XCTAssertEqual(locationMenuPage.title, "Eggs Benedict")
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting, 0)
+    }
+
     func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
         XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
         XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)

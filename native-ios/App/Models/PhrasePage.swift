@@ -1146,6 +1146,16 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
+        if id.hasPrefix("viet-menu-") {
+            if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
+                return menuPage
+            }
+
+            if let locationMenuPage = LocationMenuPicksCatalog.detailPage(withID: id) {
+                return locationMenuPage
+            }
+        }
+
         if let sqlitePage = VietSQLitePhraseGraphRuntime.detailPage(withID: id) {
             return sqlitePage
         }
