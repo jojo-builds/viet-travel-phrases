@@ -18,6 +18,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 2: listing photo backdrops used the plain SwiftUI asset image path, so newly generated portrait backdrops could decode/prepare on the render path instead of sharing the bounded prepared-image cache used by root photo backdrops
 - root cause 3: city listing sheets recomputed "Mentioned Here" and "Compare Nearby" pick arrays repeatedly inside section rendering, including alias normalization and menu-item scans for page bodies that can be re-evaluated during navigation/scrolling
 - root cause 4: Home stayed fully mounted behind deeper detail navigation even when it was not the current/back/forward route surface, so its large shelf tree could rebuild while the user was tapping through listing pages
+- root cause 5: the previous detail page stayed mounted at opacity `0` between back-swipe gestures, so tapping through new listing pages could still keep one full offscreen listing sheet alive just to be ready for a possible back preview
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -29,7 +30,12 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testLocationMenuPicksCacheCanonicalCityLookups`
   - `AppChromeTests/testLocationRelatedPicksCacheCanonicalCityLookups`
   - `AppChromeTests/testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem`
+  - `AppChromeTests/testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- XcodeBuildMCP simulator focused hidden-detail thermal set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered current-only detail mounting between gestures, back/forward presentation behavior, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-26-40-467Z_pid15747_c28f5fef.xcresult`
 - XcodeBuildMCP simulator focused second-layer thermal set on iPhone 17 Pro
   - passed: `10` tests, `0` failures
   - covered inactive Home render gating, local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, Home recently-viewed canonicalization, static `Xin chào` photo-card layout, and lightweight SQLite hero lookup
@@ -59,6 +65,7 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Follow-up iPhone reinstall for the hidden-detail mount reduction is still needed; two attempts after the simulator pass reported the paired iPhone as unavailable, so this latest patch currently has simulator proof but not physical-device proof
 
 ## Current Main Non-Paywall Merge Sweep Evidence
 

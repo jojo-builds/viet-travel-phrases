@@ -2121,6 +2121,21 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-ba")])
     }
 
+    func testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+        navigation.openDetail("viet-phrase-hello-chao-em")
+
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: false), [
+            "viet-phrase-hello-chao-em",
+        ])
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: true), [
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
+        ])
+    }
+
     func testRenderedDetailPagesKeepVisitIdentityForRevisitedPhrase() {
         var navigation = AppShellNavigationState()
         navigation.openDetail("viet-phrase-hello-chao-anh")

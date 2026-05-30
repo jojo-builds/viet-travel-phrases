@@ -853,7 +853,12 @@ struct AppShellView: View {
 
     @ViewBuilder
     private func detailPageStack(width: CGFloat) -> some View {
-        ForEach(Array(navigation.renderedDetailPages.enumerated()), id: \.element.id) { index, renderedPage in
+        let includeBackPreview = interactiveDrag?.direction == .back
+
+        ForEach(
+            Array(navigation.renderedDetailPages(includeBackPreview: includeBackPreview).enumerated()),
+            id: \.element.id
+        ) { index, renderedPage in
             let route = AppRoute.detailPage(renderedPage.pageID)
             let isActive = route == navigation.currentRoute
 
@@ -2513,7 +2518,12 @@ struct AppShellNavigationState: Equatable {
     }
 
     var renderedDetailPages: [RenderedDetailPage] {
-        let lowerBound = max(detailPath.count - 2, 0)
+        renderedDetailPages(includeBackPreview: true)
+    }
+
+    func renderedDetailPages(includeBackPreview: Bool) -> [RenderedDetailPage] {
+        let retainedCount = includeBackPreview ? 2 : 1
+        let lowerBound = max(detailPath.count - retainedCount, 0)
 
         return detailPath.enumerated()
             .filter { offset, _ in offset >= lowerBound }
@@ -2524,6 +2534,10 @@ struct AppShellNavigationState: Equatable {
 
     var renderedDetailPageIDs: [String] {
         renderedDetailPages.map(\.pageID)
+    }
+
+    func renderedDetailPageIDs(includeBackPreview: Bool) -> [String] {
+        renderedDetailPages(includeBackPreview: includeBackPreview).map(\.pageID)
     }
 
     func shouldRenderRootSurface(_ route: AppRoute) -> Bool {
