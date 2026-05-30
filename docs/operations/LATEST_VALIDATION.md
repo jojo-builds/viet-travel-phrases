@@ -113,6 +113,12 @@ Fresh command evidence from this pass:
   - passed: `8` tests, `0` failures
   - covered per-page grouping for Mentioned/Related cards, visible-section derivation reuse, detail article-adapter reuse, menu/related pick cache canonicalization, bounded rapid city-browsing caches, Han Market related-card routing, and V2.2 related-place card exposure
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-39-42-358Z_pid15747_02d47361.xcresult`
+- Corrected physical iPhone Debug build/install explicitly from worktree root `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/admin-photo-backdrop-polish` at branch HEAD `3ea7487f0` with app-code commit `7a7f0dcbe`
+  - this corrected the phone-build root after Jojo observed the old static `Xin chào` screen; the phone helper defaults to the canonical app-family checkout unless `SPEAKLOCAL_REPO_ROOT` is set
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `7a7f0dcbe`
   - build passed
   - install passed
