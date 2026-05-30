@@ -673,6 +673,25 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting, 0)
     }
 
+    func testCanonicalDetailPagesReuseResolvedPageWithoutRepeatedSQLiteLookup() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let pageID = "viet-phrase-hello-chao-anh"
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID))
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertEqual(PhraseDetailPage.page(withID: pageID)?.id, page.id)
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "SwiftUI detail redraws should reuse the resolved page instead of re-entering the SQLite detail resolver for the same canonical page."
+        )
+    }
+
     func testMenuDetailNavigationBypassesSQLiteCanonicalLookup() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }

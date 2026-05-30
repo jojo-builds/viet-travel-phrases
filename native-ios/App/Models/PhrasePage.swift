@@ -1170,6 +1170,22 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
+        if let cachedPage = cachedResolvedPage(for: id) {
+            return cachedPage
+        }
+
+        guard let page = resolvePage(withID: id) else {
+            return nil
+        }
+
+        storeResolvedPage(page, for: id)
+        if page.id != id {
+            storeResolvedPage(page, for: page.id)
+        }
+        return page
+    }
+
+    private static func resolvePage(withID id: String) -> PhraseDetailPage? {
         if id.hasPrefix("viet-menu-") {
             if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
                 return menuPage
@@ -1194,6 +1210,51 @@ extension PhraseDetailPage {
 
         return pagesByID[id]
     }
+
+    private static let resolvedPageCacheLimit = 128
+    private static let resolvedPageCacheLock = NSLock()
+    private static var resolvedPagesByID: [String: PhraseDetailPage] = [:]
+    private static var resolvedPageIDs: [String] = []
+
+    private static func cachedResolvedPage(for id: String) -> PhraseDetailPage? {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        guard let page = resolvedPagesByID[id] else {
+            return nil
+        }
+
+        touchResolvedPageID(id)
+        return page
+    }
+
+    private static func storeResolvedPage(_ page: PhraseDetailPage, for id: String) {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        resolvedPagesByID[id] = page
+        touchResolvedPageID(id)
+
+        while resolvedPageIDs.count > resolvedPageCacheLimit {
+            let oldestID = resolvedPageIDs.removeFirst()
+            resolvedPagesByID.removeValue(forKey: oldestID)
+        }
+    }
+
+    private static func touchResolvedPageID(_ id: String) {
+        resolvedPageIDs.removeAll { $0 == id }
+        resolvedPageIDs.append(id)
+    }
+
+#if DEBUG
+    static func resetResolvedPageCacheForTesting() {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        resolvedPagesByID.removeAll()
+        resolvedPageIDs.removeAll()
+    }
+#endif
 
     static func hasAuthoredPage(withID id: String) -> Bool {
         pagesByID[id] != nil

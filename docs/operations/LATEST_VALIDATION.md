@@ -31,6 +31,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 15: menu-owned `viet-menu-*` routes still asked the SQLite phrase graph to canonicalize page IDs during navigation before the app recognized those pages as Vietnamese menu or location-menu pages; menu-owned route IDs now canonicalize through the menu catalogs first, eliminating SQLite canonical misses for rapid menu-listing taps
 - root cause 16: related phrase rows/cards checked whether a destination was a self-link by canonicalizing both the destination and current page from SwiftUI body-derived properties; repeated sheet redraws could re-enter the SQLite canonical path for the same pair, so row navigation now uses a bounded pair-decision cache while preserving self-link suppression and related-page navigation
 - root cause 17: the app-shell check for whether a detail route should render the special designed `Xin chào` article canonicalized the current page ID from the render path for every normal listing; the shell now answers direct/canonical `Xin chào` IDs cheaply and caches fallback alias decisions, so normal listing redraws do not repeatedly enter the SQLite canonical resolver just to reject the special route
+- root cause 18: SwiftUI detail redraws resolved the same canonical `PhraseDetailPage` by re-entering `VietSQLitePhraseGraphRuntime.detailPage(withID:)` every time; the runtime cache avoided full reloads, but the shell still paid the resolver/lock path repeatedly, so `PhraseDetailPage.page(withID:)` now keeps a bounded resolved-page cache above the SQLite runtime while preserving generated, menu, location-menu, and static fallback behavior
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -99,6 +100,22 @@ Fresh command evidence from this pass:
   - passed after implementation: `4` tests, `0` failures
   - covered the designed `Xin chào` direct/canonical route check, normal listing rejection without repeated canonical resolver calls, static designed phrase pages using photo-backdrop layout, and listing backdrop preheat eligibility
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-31-40-871Z_pid15747_4c6eec00.xcresult`
+- XcodeBuildMCP simulator focused canonical detail-page resolved-cache set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testCanonicalDetailPagesReuseResolvedPageWithoutRepeatedSQLiteLookup` showed repeated same-page resolution pushed SQLite detail resolver count from `1` to `13`
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-52-47-725Z_pid15747_abfc4edf.xcresult`
+- XcodeBuildMCP simulator focused thermal set with resolved detail-page cache on iPhone 17 Pro
+  - passed: `23` tests, `0` failures
+  - covered resolved canonical detail-page reuse, menu-owned detail lookup bypass, menu route canonical bypass, designed `Xin chào` route check, phrase-row canonical pair caching, hidden detail/collection mounting, root-surface gating, listing/category/menu backdrop preheat policies, bounded/newest-first image preheat work, indexed menu item lookup, SQLite hero-image lightweight lookup, default SQLite runtime behavior, and legacy ID canonicalization
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-53-51-679Z_pid15747_ee0f3668.xcresult`
+- XcodeBuildMCP simulator local-intent thermal set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered batched recent-page disk persistence, recording already-canonical recent pages, suppressing broad invalidation while recording recents, and preserving saved-page invalidation
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-54-16-891Z_pid15747_72f59336.xcresult`
+- XcodeBuildMCP simulator fixture/runtime compatibility set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered SQLite-disabled static authored pages, default SQLite runtime detail resolution, and legacy-home-ID canonicalization after adding the resolved-page cache
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-55-05-780Z_pid15747_ec4e8893.xcresult`
 - XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
   - current `Xin chào` deep-link smoke passed for `--detail-page viet-phrase-polite-1`
   - current Home featured `Xin chào` tap smoke passed from the Home card

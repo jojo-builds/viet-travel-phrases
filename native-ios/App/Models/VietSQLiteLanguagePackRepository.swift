@@ -2251,6 +2251,7 @@ enum VietSQLitePhraseGraphRuntime {
         clearCachesForTesting()
         cachedVietnameseMenuPayload = nil
         hasReportedRepositoryOpenFailure = false
+        PhraseDetailPage.resetResolvedPageCacheForTesting()
         PhraseCatalog.resetCacheForTesting()
     }
 
@@ -2260,6 +2261,7 @@ enum VietSQLitePhraseGraphRuntime {
         clearCachesForTesting()
         cachedVietnameseMenuPayload = nil
         hasReportedRepositoryOpenFailure = false
+        PhraseDetailPage.resetResolvedPageCacheForTesting()
         PhraseCatalog.resetCacheForTesting()
     }
 
