@@ -13,11 +13,13 @@ That means a new restaurant page needs one of two explicit product choices:
 - swap a weaker current HCMC row out of the 100-page inventory; or
 - expand the inventory contract and update the scripts, reports, generated resources, render proof, and validation expectations that currently assume 100 pages per city.
 
-For a first pilot, use a swap. It keeps the runtime shape stable and lets the team test whether a stronger foodie page makes the app feel more save-worthy before widening the city inventory.
+For the first pilot, Jojo chose the additive path. The runtime shape was widened deliberately: HCMC now carries 101 noun/place rows while the other four cities remain at 100 each, for 501 total city places.
 
-## Recommended Pilot
+That makes Mặn Mòi the test case for whether a stronger foodie page makes the app feel more save-worthy without forcing a premature drop decision.
 
-First add candidate: `Mặn Mòi` in Saigon.
+## Implemented Pilot
+
+First add: `Mặn Mòi` in Saigon.
 
 Why this one first:
 
@@ -80,7 +82,7 @@ Related candidates:
 - `viet-family-city-hcmc-place-bep-me-in` as the central Bib Gourmand comfort-table comparison.
 - `viet-family-city-hcmc-place-anan-saigon` only if the copy needs a contrast with a more creative Saigon dinner.
 
-## Swap Candidates To Review
+## Future Swap Candidates To Review
 
 Do not automatically remove `Phở Hòa Pasteur`; it still has a recognizable southern-phở job. Do not remove transit, market, or landmark rows to make room for a restaurant.
 
@@ -90,11 +92,11 @@ Review these types first:
 - duplicate experience rows where a place page and route page cover nearly the same traveler job;
 - support shopping or mall rows that matter less than a stronger restaurant in a food-led launch slice.
 
-The product question is not "is the old row bad?" It is "does this exact row deserve one of the first 100 Saigon saves more than Mặn Mòi?"
+The product question is not "is the old row bad?" It is "does this exact row still deserve a Saigon save slot once the food catalog gets more opinionated?"
 
 ## Implementation Checklist
 
-For swap mode:
+For future swap mode:
 
 1. Choose the outgoing HCMC row and record why it is demoted, not deleted from history.
 2. Update `docs/city-production/agent-inputs/hcmc-nouns.md` while preserving exactly 100 rows.
@@ -107,7 +109,11 @@ For swap mode:
 9. Render the new page top and bottom-clearance views in the `SpeakLocal City Listings` simulator.
 10. Add a receipt to the food-listings production review with source, validation, and screenshot paths.
 
-Expansion mode is a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
+Expansion mode was treated as a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
+
+Expansion mode has now been proven once for Mặn Mòi. The implemented changes widened the importer and validators to expect HCMC 101 / total 501, added the V2.2 source object, regenerated native resources, and recorded render proof under:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-man-moi-additive/`
 
 ## Acceptance Gate
 

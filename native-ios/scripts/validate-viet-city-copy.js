@@ -11,8 +11,14 @@ const audioManifestPath = path.join(repoRoot, "native-ios", "Resources", "viet-a
 const reviewReportPath = path.join(repoRoot, "docs", "content-audits", "viet-city-copy-production-2026-05-17.json");
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
-const expectedPagesPerCity = 100;
-const expectedNounPageCount = expectedCityIDs.length * expectedPagesPerCity;
+const expectedPagesByCity = new Map(Object.entries({
+  hcmc: 101,
+  hanoi: 100,
+  danang: 100,
+  hoian: 100,
+  hue: 100,
+}));
+const expectedNounPageCount = [...expectedPagesByCity.values()].reduce((sum, count) => sum + count, 0);
 const reviewStatus = "handwritten-reviewed";
 const reviewID = "viet-city-copy-production-2026-05-17";
 const legacyTemplateSectionTitles = new Set([
@@ -646,8 +652,9 @@ function main() {
 
   for (const cityID of expectedCityIDs) {
     const count = countsByCity.get(cityID) ?? 0;
-    if (count !== expectedPagesPerCity) {
-      fail(`${cityID} expected ${expectedPagesPerCity} city noun pages, found ${count}`);
+    const expectedPages = expectedPagesByCity.get(cityID);
+    if (expectedPages !== undefined && count !== expectedPages) {
+      fail(`${cityID} expected ${expectedPages} city noun pages, found ${count}`);
     }
   }
 

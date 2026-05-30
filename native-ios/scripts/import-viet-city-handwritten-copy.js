@@ -9,7 +9,6 @@ const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-libra
 const reviewReportPath = path.join(repoRoot, "docs", "content-audits", "viet-city-copy-production-2026-05-17.json");
 
 const expectedCityIDs = ["hcmc", "hanoi", "danang", "hoian", "hue"];
-const expectedPagesPerCity = 100;
 const reviewID = "viet-city-copy-production-2026-05-17";
 const importID = "viet-city-handwritten-copy-2026-05-18";
 const requiredSectionIDs = [
@@ -248,13 +247,9 @@ function main() {
       .filter((page) => page.cityID === cityID)
       .map((page) => page.id)
       .sort();
-    if (expectedPageIDs.length !== expectedPagesPerCity) {
-      fail(`${cityID} expected ${expectedPagesPerCity} source pages, found ${expectedPageIDs.length}`);
-    }
-
     const { filePath, file } = loadAuthoredCityFile(cityID);
-    if (file.entries.length !== expectedPagesPerCity) {
-      fail(`${path.relative(repoRoot, filePath)} expected ${expectedPagesPerCity} entries, found ${file.entries.length}`);
+    if (file.entries.length !== expectedPageIDs.length) {
+      fail(`${path.relative(repoRoot, filePath)} expected ${expectedPageIDs.length} entries, found ${file.entries.length}`);
     }
 
     const seen = new Set();
@@ -300,7 +295,7 @@ function main() {
         replaceGeneratedSections: true,
         reviewEvidence: {
           reviewID,
-          scope: "500 city noun pages plus 5 city hubs",
+          scope: `${nounPages.length} city noun pages plus 5 city hubs`,
           reviewer: `city-owner:${cityID}`,
           checklistStatus: "reviewed",
         },

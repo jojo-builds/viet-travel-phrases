@@ -20,21 +20,21 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 500,
+    "entries": 501,
     "byCity": {
       "danang": 100,
       "hanoi": 100,
-      "hcmc": 100,
+      "hcmc": 101,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 500,
-    "priorV2_2GateEvidence": 0,
+    "finalPass": 501,
+    "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 500,
-    "renderableMentionedHereCandidates": 0,
-    "verificationFlags": 0
+    "renderableRelatedPlaceCandidates": 501,
+    "renderableMentionedHereCandidates": 42,
+    "verificationFlags": 1
   },
   "entries": [
     {
@@ -1846,6 +1846,13 @@
     {
       "id": "viet-family-city-hcmc-place-lusine-thao-dien",
       "pageID": "city-hcmc-place-lusine-thao-dien",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-man-moi",
+      "pageID": "city-hcmc-place-man-moi",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"

@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 100,
+    "entries": 101,
     "needsVoiceGate": 0,
-    "finalPass": 100,
+    "finalPass": 101,
     "fail": 0,
     "priorV2_2GateEvidence": 0
   },
@@ -6714,6 +6714,129 @@
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
         "finalPassDate": "2026-05-27"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hcmc-place-man-moi",
+      "pageID": "city-hcmc-place-man-moi",
+      "sourcePageID": "city-hcmc-place-man-moi",
+      "displayName": "Mặn Mòi",
+      "englishName": "Man Moi",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "pronunciation": "man moi",
+      "travelerMoment": "Save Mặn Mòi for a Saigon dinner where the point is a steady Vietnamese table: shared dishes, rice, sauces, attentive service, and a room that can hold the evening without turning formal.",
+      "storySpine": "Mặn Mòi gives Saigon a recognized Vietnamese-table dinner save: 2025 MICHELIN Bib Gourmand, plus the 2025 Service Award signal, with the food and room still carrying the reason to go.",
+      "intro": {
+        "heading": "A Service-Aware Vietnamese Table",
+        "body": "Mặn Mòi is a 2025 MICHELIN Bib Gourmand Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-dinner-slow-down",
+          "heading": "Let Dinner Slow Down",
+          "body": "Choose it for a night when the group wants to sit, pass dishes, and let the meal become the plan. It should feel calmer than a snack stop and less ceremonial than a tasting menu."
+        },
+        {
+          "id": "order-around-the-table",
+          "heading": "Order Around The Table",
+          "body": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal. A simple menu question keeps the first move easy if the room is busy."
+        },
+        {
+          "id": "why-this-saigon-table-matters",
+          "heading": "Why This Saigon Table Matters",
+          "body": "Saigon food coverage needs this middle lane: not street-food speed, not polished counter theatre, but a Vietnamese restaurant dinner that is easy to picture saving before the trip."
+        },
+        {
+          "id": "recognition-supports-the-save",
+          "heading": "Recognition Supports The Save",
+          "body": "The 2025 Bib Gourmand and Service Award signals support the choice. The actual reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-cuc-gach-quan",
+          "label": "Cục Gạch Quán",
+          "relationship": "shared Vietnamese table comparison",
+          "displaySubtitle": "An old-house shared-table dinner when the room should feel slower and more domestic.",
+          "reason": "Cuc Gach Quan is the clearest same-city shared-table comparison for Man Moi.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-bep-me-in",
+          "label": "Bếp Mẹ Ỉn",
+          "relationship": "central Bib Gourmand comfort-table comparison",
+          "displaySubtitle": "A central 2025 MICHELIN Bib Gourmand comfort table near Ben Thanh energy.",
+          "reason": "Bep Me In gives Man Moi a more casual central Bib Gourmand comparison.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive HCMC 101-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Mặn Mòi appears in the Bib Gourmand HCMC section, and the 2025 Service Award recipient is from Mặn Mòi.",
+          "Phrase cards reuse existing bundled food audio; no one-off restaurant-name phrase is required for production readiness."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Man Moi has bounded 2025 MICHELIN recognition, a specific Vietnamese-table save reason, mapped phrase cards, and useful same-city dinner comparisons."
+      },
+      "sourceNotes": [
+        "Added as the first additive HCMC restaurant pilot after the 500-page hard reset; prior fixed 100-per-city script assumptions were widened for HCMC 101.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Mặn Mòi (Thu Duc City) as Bib Gourmand and names the 2025 Service Award recipient from Mặn Mòi.",
+        "No hours, prices, booking, address, closure, or fragile menu-item claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/saveworthy_restaurant_add_path_2026-05-31.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
       }
     },
     {

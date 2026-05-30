@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T17:28:53.517Z",
+  "generatedAt": "2026-05-30T18:35:56.836Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1758,
+    "pages": 1759,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 351,
-    "generatedAt": "2026-05-30T17:28:53.517Z"
+    "missing": 352,
+    "generatedAt": "2026-05-30T18:35:56.836Z"
   },
   "pages": [
     {
@@ -106552,6 +106552,18 @@
       "pageID": "viet-family-city-hcmc-place-lusine-thao-dien",
       "phraseText": "L'Usine Thảo Điền",
       "englishTitle": "L'Usine Thao Dien",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-man-moi",
+      "phraseText": "Mặn Mòi",
+      "englishTitle": "Man Moi",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"

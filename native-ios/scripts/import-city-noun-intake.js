@@ -10,6 +10,13 @@ const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-libra
 const audioManifestPath = path.join(nativeRoot, "Resources", "viet-audio-manifest.json");
 
 const expectedCities = ["hcmc", "hanoi", "danang", "hoian", "hue"];
+const expectedRowsByCity = new Map(Object.entries({
+  hcmc: 101,
+  hanoi: 100,
+  danang: 100,
+  hoian: 100,
+  hue: 100,
+}));
 const cityFallbackHero = {
   danang: "HeroCityDanang",
   hanoi: "HeroCityHanoi",
@@ -513,8 +520,9 @@ function updateCityLibrary(library, rowsByCity, audioManifest) {
 
   for (const cityID of expectedCities) {
     const rows = rowsByCity.get(cityID) ?? [];
-    if (rows.length !== 100) {
-      throw new Error(`${cityID} must have exactly 100 intake rows; found ${rows.length}`);
+    const expectedRows = expectedRowsByCity.get(cityID);
+    if (expectedRows !== undefined && rows.length !== expectedRows) {
+      throw new Error(`${cityID} must have exactly ${expectedRows} intake rows; found ${rows.length}`);
     }
 
     for (const row of rows) {

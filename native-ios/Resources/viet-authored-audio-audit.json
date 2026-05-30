@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T17:28:52.650Z",
+    "generatedAt": "2026-05-30T18:35:56.127Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 806,
+    "cityLibraryPageCount": 807,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2248,
-    "missingAudioCount": 681
+    "requiredAudioCount": 2249,
+    "missingAudioCount": 682
   },
   "required": [
     {
@@ -14881,6 +14881,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-man-moi",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-man-moi-48010685ea",
+      "text": "Mặn Mòi",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-mariamman-temple",
       "sectionID": "hero",
       "kind": "hero",
@@ -20984,6 +20992,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-l-usine-thao-dien-35e487f149",
       "text": "L'Usine Thảo Điền",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-man-moi",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-man-moi-48010685ea",
+      "text": "Mặn Mòi",
       "resolved": false
     },
     {
