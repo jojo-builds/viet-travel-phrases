@@ -2850,3 +2850,105 @@ This pass makes the Saigon phở hierarchy clearer: Phở Hòa is still a useful
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Phở 10 Lý Quốc Sư Additive Hanoi Pilot
+
+Twenty-fifth pass date: 2026-05-31
+
+Commit before pass: `8a0ad3c1e Demote Pho Hoa Pasteur support listing`
+
+This continuation adds a stronger Hanoi phở save rather than another support demotion. `Phở 10 Lý Quốc Sư` was already identified in the MICHELIN coverage audit as a missing high-priority candidate: a 2025 Bib Gourmand name that many visitors search before Hanoi.
+
+### Page Added
+
+- `city-hanoi-place-pho-10-ly-quoc-su`: new first-class V2.2 Hanoi restaurant page.
+
+Visible page direction:
+
+- The page frames Phở 10 Lý Quốc Sư as the obvious Hoan Kiem beef-pho save: clear broth, rice noodles, sliced beef, herbs, lime, and a quick counter meal near the Old Quarter.
+- It links Mentioned Here to `Phở bò ở Hà Nội` so the named place has dish-level context.
+- It renders `Phở Gia Truyền` and `Phở Bò Lâm` as Compare Nearby cards, so the page helps build a small Hanoi phở plan without claiming to be the only answer.
+
+### Add Decision
+
+Decision: add, and let it lead as a recognizable Hanoi phở save.
+
+The page fills a real product gap: it gives a visitor a current, recognizable, MICHELIN-backed Hoan Kiem phở name that is easier to save before a trip than a generic beef-pho row alone. The visible copy keeps the award claim bounded to 2025 MICHELIN Bib Gourmand and avoids hours, address, booking, closure, or price claims.
+
+Source support:
+
+- Official MICHELIN Guide Vietnam 2025 PDF lists `Phở 10 Lý Quốc Sư (Hoan Kiem)` in the Hanoi Bib Gourmand section as noodles.
+- Current MICHELIN venue page for `Phở 10 Lý Quốc Sư` carries Bib Gourmand status.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hanoi-nouns.md`: added row `103`.
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json`: added the authored V2.2 source object and a beef-pho dish-page related card.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 510 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 104, Hanoi 103, Da Nang 103, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-pho-10-ly-quoc-su-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-pho-10-ly-quoc-su`
+  - `pho-10-ly-quoc-su-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `The Obvious Pho Save` intro, and Useful Phrases start.
+  - `pho-10-ly-quoc-su-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Phở Gia Truyền` and `Phở Bò Lâm` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-pho-10-ly-quoc-su`
+  - `--detail-page viet-family-city-hanoi-place-pho-10-ly-quoc-su --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 103 places, Da Nang 103 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 510 entries imported.
+- native resource generation: PASS, 1757 families, 1775 phrases, 1768 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 510 entries, 510 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 510 city noun pages, 510 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS after rerunning generation and validation serially, 510 city places, 816 city phrase tags, 0 release-blocking missing audio rows, 9010 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Phở 10 Lý Quốc Sư Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens Hanoi phở coverage, but it does not settle every Hanoi restaurant hierarchy question. The next additive or support pass should compare remaining bún chả and bánh cuốn candidates against the current Hanoi set before adding more phở.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.

@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 815,
+    "cityLibraryPageCount": 816,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T21:04:45.499Z"
+    "generatedAt": "2026-05-30T21:18:33.262Z"
   },
   "pages": [
     {
@@ -219723,6 +219723,179 @@
           "v500-dire-navi-can-i-walk-there"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-phan-dinh-phung-street"
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "familyID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "phraseID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Phở 10 Lý Quốc Sư",
+      "englishTitle": "Pho 10 Ly Quoc Su",
+      "pronunciation": "pho 10 ly quoc su",
+      "summary": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a fast counter meal near the Old Quarter.",
+      "heroImageName": "HeroCityHanoiPlacePho10LyQuocSu",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-pho-10-ly-quoc-su-ef2898fcea",
+      "cityMetadata": {
+        "cityID": "hanoi",
+        "cityName": "Hanoi",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hanoi-pho-10-ly-quoc-su",
+        "placeName": "Pho 10 Ly Quoc Su",
+        "sourceIDs": [
+          "vt-hanoi",
+          "vt-hanoi-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Many visitors already search the name before arrival, and the bowl is specific enough to save beside other Hanoi pho counters rather than another loose pho mention.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHanoiPlacePho10LyQuocSu"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "The Obvious Pho Save",
+          "body": "Phở 10 Lý Quốc Sư is the 2025 MICHELIN Bib Gourmand pho name many people already notice before Hanoi. The Hoan Kiem branch keeps the job clear: beef pho, hot broth, herbs, lime, and a quick bowl.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Order A Bowl First",
+          "body": "Start with the bowl before add-ins. Taste the broth, then decide on lime, chili, herbs, or sauce.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Hoan Kiem Name",
+          "body": "The Lý Quốc Sư name is easy to remember near the Old Quarter and cathedral area. Show the full name when a driver or map search needs the exact branch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Beef Pho Baseline",
+          "body": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room pace are the point.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Compare Without Chasing",
+          "body": "Place it beside Phở Gia Truyền, Phở Bò Lâm, or the dish guide if the trip turns into a pho map. One good bowl is enough if the day has other plans.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hanoi-place-pho-10-ly-quoc-su",
+          "vietnamese": "Phở 10 Lý Quốc Sư",
+          "english": "Pho 10 Ly Quoc Su",
+          "pronunciation": "pho 10 ly quoc su",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-pho-10-ly-quoc-su-ef2898fcea"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hanoi-place-pho-10-ly-quoc-su",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "v900-food-drin-what-do-you-recommend"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hanoi-place-pho-10-ly-quoc-su",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "v900-food-drin-what-do-you-recommend"
+        ],
+        "practiceSourcePageID": "viet-family-city-hanoi-place-pho-10-ly-quoc-su"
       }
     },
     {

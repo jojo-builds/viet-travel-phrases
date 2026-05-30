@@ -32,10 +32,11 @@ The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN S
 - Hanoi: `Bánh Cuốn Bà Hoành` — added as `city-hanoi-place-banh-cuon-ba-hoanh` after the first additive Hanoi food pass. The visible page uses 2025 MICHELIN Selected language to support a named breakfast/table save, with steamed rice sheets, savory filling, fried shallot, herbs, and dipping-sauce cues.
 - Da Nang: `Bún Riêu Cua 39` — added as `city-danang-place-bun-rieu-cua-39` after the first additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a crab-tomato noodle save, with red broth, rice vermicelli, tofu, herbs, and condiment cues.
 - Hanoi: `Phở Gà Nguyệt` — added as `city-hanoi-place-pho-ga-nguyet` after the second additive Hanoi food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a named chicken-pho counterpoint to the existing beef-pho pages, with clear broth, tender chicken, rice noodles, herbs, lime, and counter-meal cues.
+- Hanoi: `Phở 10 Lý Quốc Sư` — added as `city-hanoi-place-pho-10-ly-quoc-su` after the third additive Hanoi food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a recognizable Hoan Kiem beef-pho save, with clear broth, rice noodles, sliced beef, herbs, lime, and quick counter-meal cues.
 - Da Nang: `Bánh Canh Yến` — added as `city-danang-place-banh-canh-yen` after the second additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a thick-noodle soup save, with hot broth, slippery noodles, toppings, herbs, chili, and street-food texture cues.
 - Da Nang: `Mỳ Quảng Sứa Hồng Vân` — added as `city-danang-place-my-quang-sua-hong-van` after the third additive Da Nang food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a more specific mì Quảng save, with orange-red shrimp broth, yellow noodles, herbs, rice cracker, toppings, and optional jellyfish texture.
 
-The city inventory contract is now 509 noun/place pages total: HCMC carries 104 rows, Hanoi carries 102 rows, Da Nang carries 103 rows, and Hội An and Hue remain at 100 rows each.
+The city inventory contract is now 510 noun/place pages total: HCMC carries 104 rows, Hanoi carries 103 rows, Da Nang carries 103 rows, and Hội An and Hue remain at 100 rows each.
 
 ## Current Pages That Should Stay But Not Always Lead
 
@@ -52,7 +53,6 @@ Some current food pages are useful even without MICHELIN recognition because the
 These are the strongest missing or under-covered MICHELIN-backed candidates to add next if the catalog expands.
 
 - Saigon: `Phở Minh` or `Phở Hương Bình` — remaining 2025 Bib Gourmand pho options. Add only if the page can say something meaningfully different from Phở Lệ and Phở Hòa Pasteur.
-- Hanoi: `Phở 10 Lý Quốc Sư` — 2025 Bib Gourmand and a more obvious tourist-planning pho name than some current supporting pho pages.
 - Hanoi: `Bún Chả Đắc Kim` or `Tuyết Bún Chả 34` — 2025 MICHELIN Selected / Bib Gourmand support. Add only if each page can say a distinct thing from Bún Chả Ta and Hương Liên.
 - Hanoi: `Bánh Cuốn Bà Xuân` — 2025 MICHELIN Selected; still a possible breakfast/morning comparison now that Bánh Cuốn Bà Hoành has landed.
 - Da Nang: `Bún Chả Cá 109` — 2025 Bib Gourmand; add only if the page can say something meaningfully different from Bún Chả Cá Hờn.
@@ -90,6 +90,8 @@ The expansion packets widened the contract explicitly instead of adding loose ex
 `city-danang-place-bun-rieu-cua-39` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the first additive Da Nang food pilot.
 
 `city-hanoi-place-pho-ga-nguyet` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the second additive Hanoi food pilot.
+
+`city-hanoi-place-pho-10-ly-quoc-su` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the third additive Hanoi food pilot.
 
 `city-danang-place-banh-canh-yen` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the second additive Da Nang food pilot.
 

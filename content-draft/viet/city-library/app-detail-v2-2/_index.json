@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 509,
+    "entries": 510,
     "byCity": {
       "danang": 103,
-      "hanoi": 102,
+      "hanoi": 103,
       "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 509,
-    "priorV2_2GateEvidence": 6,
+    "finalPass": 510,
+    "priorV2_2GateEvidence": 10,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 509,
-    "renderableMentionedHereCandidates": 46,
+    "renderableRelatedPlaceCandidates": 510,
+    "renderableMentionedHereCandidates": 47,
     "verificationFlags": 1
   },
   "entries": [
@@ -1242,15 +1242,22 @@
       "status": "FINAL_PASS"
     },
     {
-      "id": "viet-family-city-hanoi-place-pho-gia-truyen",
-      "pageID": "city-hanoi-place-pho-gia-truyen",
+      "id": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "pageID": "city-hanoi-place-pho-ga-nguyet",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"
     },
     {
-      "id": "viet-family-city-hanoi-place-pho-ga-nguyet",
-      "pageID": "city-hanoi-place-pho-ga-nguyet",
+      "id": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "pageID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-gia-truyen",
+      "pageID": "city-hanoi-place-pho-gia-truyen",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"

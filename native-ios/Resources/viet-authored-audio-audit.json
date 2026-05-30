@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T21:04:45.499Z",
+    "generatedAt": "2026-05-30T21:18:33.262Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 815,
+    "cityLibraryPageCount": 816,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2257,
-    "missingAudioCount": 690
+    "requiredAudioCount": 2258,
+    "missingAudioCount": 691
   },
   "required": [
     {
@@ -13481,6 +13481,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-10-ly-quoc-su-ef2898fcea",
+      "text": "Phở 10 Lý Quốc Sư",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-pho-bo",
       "sectionID": "hero",
       "kind": "hero",
@@ -19936,6 +19944,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-chua-mot-cot-d841a22f60",
       "text": "Chùa Một Cột",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-10-ly-quoc-su-ef2898fcea",
+      "text": "Phở 10 Lý Quốc Sư",
       "resolved": false
     },
     {

@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1774,
+    "phraseCount": 1775,
     "basePhraseCount": 935,
-    "cityPhraseCount": 815,
+    "cityPhraseCount": 816,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1756,
+    "familyCount": 1757,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -14135,6 +14135,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hanoi-place-phan-dinh-phung-street"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-pho-10-ly-quoc-su",
+      "pageID": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "scenarioID": "city-guides",
+      "familyTitle": "Pho 10 Ly Quoc Su pronunciation",
+      "summary": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a fast counter meal near the Old Quarter.",
+      "primaryPhraseID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hanoi-place-pho-10-ly-quoc-su"
       ]
     },
     {
@@ -67425,6 +67437,50 @@
       "sourceIDs": [
         "vt-hanoi",
         "vt-hanoi-official"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-pho-10-ly-quoc-su",
+      "familyID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Pho 10 Ly Quoc Su",
+      "targetText": "Phở 10 Lý Quốc Sư",
+      "canonicalTargetText": "Phở 10 Lý Quốc Sư",
+      "pronunciation": "pho 10 ly quoc su",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a fast counter meal near the Old Quarter.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hanoi",
+        "Hà Nội",
+        "Pho 10 Ly Quoc Su",
+        "Phở 10 Lý Quốc Sư"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌿",
+      "notes": "city-library-v1; city=hanoi; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hanoi-pho-10-ly-quoc-su; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hanoi",
+      "cityName": "Hanoi",
+      "cityShortTitle": "Hanoi",
+      "cityVietnameseName": "Hà Nội",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hanoi-pho-10-ly-quoc-su",
+      "placeName": "Pho 10 Ly Quoc Su",
+      "placeVietnameseName": "Phở 10 Lý Quốc Sư",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 5,
+      "sourceIDs": [
+        "vt-hanoi",
+        "vt-hanoi-official",
+        "michelin-vietnam"
       ]
     },
     {

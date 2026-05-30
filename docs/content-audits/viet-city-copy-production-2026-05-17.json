@@ -5915,6 +5915,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-pho-10-ly-quoc-su",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a fast counter meal near the Old Quarter.",
+        "aboutExcerpt": "Phở 10 Lý Quốc Sư is the 2025 MICHELIN Bib Gourmand pho name many people already notice before Hanoi. The Hoan Kiem branch keeps the job clear: beef pho, hot broth, herbs, lime, and a quick bowl.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The Lý Quốc Sư name is easy to remember near the Old Quarter and cathedral area. Show the full name when a driver or map search needs the exact branch.",
+        "timingExcerpt": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room pace are the point.",
+        "goodToKnowExcerpt": "Place it beside Phở Gia Truyền, Phở Bò Lâm, or the dish guide if the trip turns into a pho map. One good bowl is enough if the day has other plans."
+      }
+    },
+    {
       "id": "city-hanoi-place-pho-bat-dan",
       "cityID": "hanoi",
       "pageKind": "restaurant",
