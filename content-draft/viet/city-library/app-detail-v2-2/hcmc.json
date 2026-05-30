@@ -9021,11 +9021,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "pho hoa pasteur",
-      "travelerMoment": "Choose Phở Hòa Pasteur when Saigon phở should become a real shop stop: beef broth, herbs, bean sprouts, lime, sauces, a busy room, and Pasteur Street outside.",
-      "storySpine": "Phở Hòa Pasteur earns the save by making southern phở physical: table herbs, steam, sauce choices, fast bowls, and a shop that feels awake.",
+      "travelerMoment": "Choose Phở Hòa Pasteur when the day needs a central, familiar Saigon phở shop: beef broth, herbs, bean sprouts, lime, sauces, a busy room, and Pasteur Street outside.",
+      "storySpine": "Phở Hòa Pasteur still matters as the central Pasteur Street phở stop, while Phở Lệ now carries the Bib Gourmand District 5 comparison for a more deliberate phở trip.",
       "intro": {
         "heading": "One Bowl On Pasteur",
-        "body": "Phở Hòa Pasteur is the Pasteur Street pho shop to save when one southern-style bowl should carry lunch: broth, beef, herbs, bean sprouts, lime, sauces, and shop pace."
+        "body": "Phở Hòa Pasteur is the central Pasteur Street phở stop for a familiar southern-style bowl: beef broth, herbs, bean sprouts, lime, sauces, and the fast rhythm of a busy shop."
       },
       "usefulPhraseCards": [
         {
@@ -9065,9 +9065,9 @@
           "body": "It suits a central Saigon day when a proper bowl beats one more snack. Taste the broth before turning the table extras loose."
         },
         {
-          "id": "a-strong-lunch-slot",
-          "heading": "A Strong Lunch Slot",
-          "body": "Midday or early evening gives the bowl a clear place in the day. Let the shop be the meal plan, then continue outward."
+          "id": "beside-the-district-5-bowl",
+          "heading": "Beside The District 5 Bowl",
+          "body": "Phở Hòa is the easy central shop to recognize. Phở Lệ adds the 2025 Bib Gourmand District 5 bowl when the plan can stretch farther from the center."
         },
         {
           "id": "southern-pho-expectations",
@@ -9087,6 +9087,14 @@
         }
       ],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
+          "label": "Phở Lệ",
+          "relationship": "same-city pho comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when phở should feel more deliberately chosen.",
+          "reason": "Pho Le now carries the MICHELIN-backed District 5 phở comparison beside Pho Hoa Pasteur's central shop role.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-hu-tieu",
           "label": "Hủ tiếu ở Thành phố Hồ Chí Minh",
@@ -9110,17 +9118,19 @@
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Saigon food-desire continuation on 2026-05-30: visible copy now has stronger southern-phở table detail without adding unsupported current MICHELIN recognition."
+          "Saigon food-desire continuation on 2026-05-30: visible copy now has stronger southern-phở table detail without adding unsupported current MICHELIN recognition.",
+          "Support demotion pass on 2026-05-31: Phở Hòa Pasteur remains the central Pasteur Street phở stop, but Phở Lệ now carries the Bib Gourmand District 5 food-led comparison."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "Production food pass: Pho Hoa Pasteur now has stronger southern-phở desire, specific table-extras guidance, and a noodle-path comparison."
+        "reason": "Support demotion: Pho Hoa Pasteur remains useful and dish-specific, but its central-shop role should sit below the MICHELIN-backed Phở Lệ phở save."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: existing-city-library; Visit HCMC portal"
+        "Production intake source notes: existing-city-library; Visit HCMC portal",
+        "2026-05-31 support cleanup: keep as a recognizable central southern-phở stop beside Phở Lệ, not as the MICHELIN phở answer."
       ],
       "status": "FINAL_PASS",
       "review": {

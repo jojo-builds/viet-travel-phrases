@@ -42,7 +42,7 @@ The city inventory contract is now 509 noun/place pages total: HCMC carries 104 
 Some current food pages are useful even without MICHELIN recognition because they anchor a dish, neighborhood, or traveler situation. Keep them, but avoid treating every one as a top foodie recommendation.
 
 - `city-hcmc-place-banh-mi-huynh-hoa`: keep as a famous bánh mì counter and practical Saigon lunch save.
-- `city-hcmc-place-pho-hoa-pasteur`: keep as a recognizable southern-style pho stop, but do not present it as the MICHELIN pho answer.
+- `city-hcmc-place-pho-hoa-pasteur`: keep as a recognizable southern-style pho stop, but do not present it as the MICHELIN pho answer. The 2026-05-31 support cleanup demoted it below `Phở Lệ` while preserving its central Pasteur Street bowl job.
 - `city-danang-place-fatfish`: keep as a riverside support dinner, not as a flagship food save. The 2026-05-31 support cleanup demoted it below stronger food-led Da Nang pages while preserving its Hàn River route-stop job.
 - `city-danang-place-my-quang-ba-mua` and `city-danang-place-my-quang-dung`: keep as support mì Quảng pages only. The 2026-05-31 support cleanup demoted them below the MICHELIN-backed mì Quảng pages and rewired both toward `Mỳ Quảng Sứa Hồng Vân` and `Mì Quảng 1A`.
 - Hue and Hội An restaurant pages remain outside current MICHELIN Vietnam city coverage, so their production-readiness should be judged through local significance, dish specificity, and render proof rather than award coverage.

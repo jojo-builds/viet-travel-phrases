@@ -2762,3 +2762,91 @@ This pass strengthens the hierarchy for Da Nang restaurants: a setting-led page 
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Phở Hòa Pasteur Support Demotion Pass
+
+Twenty-fourth pass date: 2026-05-31
+
+Commit before pass: `70c76c31d Demote Fatfish Da Nang support listing`
+
+This continuation applies the support hierarchy to Saigon phở. `Phở Hòa Pasteur` remains useful and specific, but it should no longer read as the top phở recommendation now that `Phở Lệ` carries the MICHELIN-backed District 5 comparison.
+
+### Page Revised
+
+- `city-hcmc-place-pho-hoa-pasteur`: demoted from 30/30 to 28/30 support listing.
+
+Visible page direction:
+
+- The page now frames Phở Hòa Pasteur as the central Pasteur Street southern-phở stop: broth, beef, herbs, bean sprouts, lime, sauces, and the fast rhythm of a busy shop.
+- A new section, `Beside The District 5 Bowl`, explains the role split between central Phở Hòa and Bib Gourmand Phở Lệ.
+- The related cards now render both `Phở Lệ` and `Hủ tiếu ở Thành phố Hồ Chí Minh`, so the page supports a phở choice and a broader Saigon noodle choice.
+
+### Demotion Decision
+
+Decision: keep, but do not lead.
+
+Phở Hòa Pasteur still deserves to be in the app because it is recognizable, central, and dish-specific. It should not be the app's strongest phở signal while `Phở Lệ` carries a bounded 2025 MICHELIN Bib Gourmand reason to save a phở meal before the trip.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-pho-hoa-pasteur-support-demotion/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-pho-hoa-pasteur`
+  - `pho-hoa-pasteur-first-screen.jpg`: first viewport shows the revised `One Bowl On Pasteur` framing and the Useful Phrases section beginning immediately after the intro.
+  - `pho-hoa-pasteur-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Phở Lệ` and `Hủ tiếu` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-pho-hoa-pasteur`
+  - `--detail-page viet-family-city-hcmc-place-pho-hoa-pasteur --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 509 entries imported.
+- native resource generation: PASS, 1756 families, 1774 phrases, 1767 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 509 entries, 509 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing negation-style heading language before final screenshots.
+- city-copy compatibility validation: PASS, 5 hubs, 509 city noun pages, 509 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 509 city places, 815 city phrase tags, 0 release-blocking missing audio rows, 9003 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Phở Hòa Pasteur Support Demotion
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass makes the Saigon phở hierarchy clearer: Phở Hòa is still a useful central bowl, while Phở Lệ carries the stronger recognition-backed save. The next restaurant support pass should keep scanning 30/30 non-guide pages that are useful but less compelling than newer MICHELIN-backed or dish-specific additions.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
