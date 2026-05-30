@@ -582,11 +582,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "khong gian xua",
-      "travelerMoment": "Ancient Space draws on Hue's old-house dining habit, with garden paths and rooflines making the approach part of the meal.",
-      "storySpine": "At Ancient Space Restaurant, the old-house compound sets the mood for dinner as much as the dishes: garden path, tiled roof, timber, and time at the table.",
+      "travelerMoment": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
+      "storySpine": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
       "intro": {
-        "heading": "Old Space Before Dinner",
-        "body": "Ancient Space Restaurant starts at the entrance: ruong-house compound, tiled roof, garden path, and a Hue old-house mood that sets dinner."
+        "heading": "Ruong House, Shared Table",
+        "body": "Ancient Space Restaurant is a Hue support save for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner."
       },
       "usefulPhraseCards": [
         {
@@ -616,24 +616,19 @@
       ],
       "sections": [
         {
-          "id": "a-slower-table-choice",
-          "heading": "A Slower Table Choice",
-          "body": "This is built more for a settled dinner than a fast meal. The table, room, and staff pace deserve time."
+          "id": "house-frames-meal",
+          "heading": "The House Frames The Meal",
+          "body": "Old timber, tiled roof, courtyard scale, and a table for shared dishes are part of the reason to go."
         },
         {
-          "id": "heritage-mood-without-another-site",
-          "heading": "Heritage Mood Without A Ticket",
-          "body": "After tombs or palaces, the restaurant keeps the day in a Hue register without adding a formal attraction."
+          "id": "order-around-hue",
+          "heading": "Order Around Hue",
+          "body": "The group can get a traditional menu in one place. Let lighter street-food pages carry the sharper snack hunt."
         },
         {
-          "id": "dinner-as-the-evening-center",
-          "heading": "Dinner As The Evening Center",
-          "body": "Make this the main dinner plan rather than a quick extra booking between other reservations."
-        },
-        {
-          "id": "setting-leads-the-meal",
-          "heading": "The Room Leads The Meal",
-          "body": "The ruong-house compound, garden path, tiled roof, and meal rhythm make the visit memorable before the food arrives."
+          "id": "support-listing",
+          "heading": "Support Listing",
+          "body": "Treat it as a heritage-dinner option; a later review should add dish evidence before feature placement."
         }
       ],
       "mentionedHereCandidates": [],
@@ -658,17 +653,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Food-desire review on 2026-05-30: clarified as heritage-dinner support listing; setting plus Hue-menu range, a secondary food recommendation."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 27,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Food-desire review: heritage-dinner support listing; ruong-house and Hue menu role are clear, with dish evidence still needed before feature placement."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: References: Hue tourism portal restaurants."
+        "Production intake source notes: References: Hue tourism portal restaurants.",
+        "2026-05-30 source refresh: Khám Phá Huế and the restaurant menu page describe Ancient Space/Không Gian Xưa as a ruong-house restaurant with cơm niêu, món Huế, and court-cuisine positioning."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2738,11 +2735,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "nha hang dai nam",
-      "travelerMoment": "Dai Nam fits the Citadel-side meal pattern, where old-city proximity, wooden interiors, and settled table service make lunch feel placed.",
-      "storySpine": "Dai Nam Restaurant gives a heritage-day route a grounded meal option when staying near Citadel walls feels easier than crossing town.",
+      "travelerMoment": "Dai Nam is a Citadel-side meal save when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
+      "storySpine": "It belongs to the old-city route because the menu points toward traditional Hue cakes and a heritage-side table rather than a random tourist stop.",
       "intro": {
-        "heading": "A Classic Meal Near The Walls",
-        "body": "Dai Nam Restaurant is a classic Hue meal address near Citadel-side context, with a settled table, wooden interior glimpsed through doors, and an old-city mood."
+        "heading": "Hue Cakes Near The Citadel",
+        "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support save: a classic wooden room, easy wallside location, and familiar Hue specialties."
       },
       "usefulPhraseCards": [
         {
@@ -2772,24 +2769,19 @@
       ],
       "sections": [
         {
-          "id": "table-before-menu-rush",
-          "heading": "Table Before Menu Rush",
-          "body": "Settle before ordering widely. A classic room can soften the meal when the day has been full of gates and walls."
+          "id": "hue-cakes-matter",
+          "heading": "Hue Cakes Matter",
+          "body": "The current source points to traditional Hue cakes rather than one signature showpiece. Save it when the table needs a nearby, grounded meal."
         },
         {
-          "id": "after-a-citadel-block",
-          "heading": "After A Citadel Block",
-          "body": "The restaurant pairs naturally with a heritage-heavy route, especially when crossing town for dinner sounds like too much."
+          "id": "after-the-walls",
+          "heading": "After The Walls",
+          "body": "Its value is practical: near the Imperial City after a heavy heritage block, with enough local shape to avoid a random tourist meal."
         },
         {
-          "id": "menu-leads",
-          "heading": "Menu Leads",
-          "body": "The menu in front of you should decide the meal. The classic room and Citadel-side usefulness make the restaurant easy to place."
-        },
-        {
-          "id": "a-grounded-hue-meal",
-          "heading": "A Grounded Hue Meal",
-          "body": "Avoid treating it as a grand dining statement. The value is an easy-to-place Hue restaurant in the right part of the day."
+          "id": "route-support",
+          "heading": "Route Support",
+          "body": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2799,7 +2791,7 @@
           "label": "Tịnh Gia Viên",
           "relationship": "Hue dining room contrast",
           "displaySubtitle": "A garden-house meal when the setting should feel more composed and courtly.",
-          "reason": "Tinh Gia Vien is the stronger Hue dining comparison for Dai Nam.",
+          "reason": "Tinh Gia Vien is the clearer Hue dining comparison for Dai Nam.",
           "status": "render"
         }
       ],
@@ -2814,17 +2806,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Food-desire review on 2026-05-30: downgraded to support/deemphasize for feature placement; route-useful support listing."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 27,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Food-desire review: Citadel-side Hue-cakes support listing; useful route role as a secondary food recommendation."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: References: Hue tourism portal restaurants."
+        "Production intake source notes: References: Hue tourism portal restaurants.",
+        "2026-05-30 source refresh: Khám Phá Huế describes Dai Nam near the Imperial City with traditional Hue cakes, royal-cuisine cues, and a classical wooden setting."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -5888,11 +5882,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "les jardins de la carambole",
-      "travelerMoment": "Les Jardins leans into Hue's slower old-house dinner mood, where garden tables and colonial-style rooms let the evening breathe.",
-      "storySpine": "Some Hue meals matter because they slow the itinerary down; this one suits that calmer dinner slot rather than a hurried snack stop.",
+      "travelerMoment": "Les Jardins is a Citadel-near French-Vietnamese garden meal when the day needs table spacing, wine, composed plates, and a calmer lunch or dinner after heritage walking.",
+      "storySpine": "Its reason is the French-Vietnamese Hue restaurant pattern: a Citadel-side yellow villa, garden entry, and a menu that mixes French technique with Hue flavors.",
       "intro": {
-        "heading": "A Dinner With Breathing Room",
-        "body": "Les Jardins de la Carambole gives Hue dinner a slower setting: a colonial-style room, garden tables, and a meal that can sit between river calm and old-city wandering."
+        "heading": "French-Vietnamese Near The Walls",
+        "body": "Les Jardins de la Carambole is a Citadel-near French-Vietnamese garden restaurant for banana-blossom salad, lemongrass-and-chili skewers, wine, and quiet table spacing."
       },
       "usefulPhraseCards": [
         {
@@ -5922,24 +5916,19 @@
       ],
       "sections": [
         {
-          "id": "old-house-restaurant-feel",
-          "heading": "Old-House Restaurant Feel",
-          "body": "The experience is built around setting and service rhythm, more than a quick local bite. The colonial-style exterior and garden mood are part of the memory."
+          "id": "not-street-food",
+          "heading": "Not Street Food",
+          "body": "The menu is the contrast: French technique beside Hue flavors, with salads, beef, fish, and composed plates instead of bowl-shop speed."
         },
         {
-          "id": "evening-after-the-river",
-          "heading": "Evening After The River",
-          "body": "Place it after a Perfume River walk, hotel reset, or Citadel-heavy day when dinner needs to feel settled, not scrambled."
+          "id": "after-the-citadel",
+          "heading": "After The Citadel",
+          "body": "The location near the Imperial City gives it a practical role after walls, temples, and heat, especially for lunch that should feel calmer."
         },
         {
-          "id": "garden-dinner-loose-plans",
-          "heading": "Garden Dinner, Loose Plans",
-          "body": "The garden dinner should carry the choice more than a fixed dish list. A saved written name matters more than old menu memory."
-        },
-        {
-          "id": "a-polished-stop",
-          "heading": "A Polished Stop",
-          "body": "Expect a calmer room than street food: staff pacing, a garden mood, and a meal that may feel more arranged than improvised."
+          "id": "feature-with-caution",
+          "heading": "Feature With Caution",
+          "body": "It can be a polished Hue meal; street-food pages should lead when the user is chasing Hue specialties."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5949,7 +5938,7 @@
           "label": "Ancient Hue Gallery Cuisine",
           "relationship": "villa dining to heritage dinner contrast",
           "displaySubtitle": "A heritage-style dinner when the meal should stay closer to Huế garden-house memory.",
-          "reason": "Ancient Hue Gallery Cuisine is a stronger local-dining comparison for Les Jardins.",
+          "reason": "Ancient Hue Gallery Cuisine is a more local-dining comparison for Les Jardins.",
           "status": "render"
         }
       ],
@@ -5964,17 +5953,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Food-desire review on 2026-05-30: strengthened with source-backed French-Vietnamese and dish cues; remains a support/secondary feature for food-first placement."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Food-desire review: polished French-Vietnamese Citadel meal with some dish specificity; keep below named Hue food stops for foodie-first shelves."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: References: existing city library; Hue tourism portal restaurants."
+        "Production intake source notes: References: existing city library; Hue tourism portal restaurants.",
+        "2026-05-30 source refresh: Hue restaurant guides describe Les Jardins as a Citadel-near French-Vietnamese garden restaurant with banana-flower salad, lemongrass/chili grilled items, beef, fish, and composed plates."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8675,11 +8666,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "nha hang noi song huong",
-      "travelerMoment": "The floating restaurant ties dinner to the Perfume River, letting bridge light, dusk reflections, water edges, and table pacing carry the meal.",
-      "storySpine": "The setting matters as much as the menu: dusk water, nearby bridge lights, and table pace make the meal part of the route.",
+      "travelerMoment": "Save Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
+      "storySpine": "Hue’s river becomes part of the meal here: floating table, bridge light, seafood, and local dishes along the city-center waterline.",
       "intro": {
-        "heading": "Dinner With River Edges",
-        "body": "Song Huong Floating Restaurant turns dinner into a river moment: tables on the Perfume River, dusk reflections, bridge lights, and a meal that feels placed."
+        "heading": "Dinner On The Perfume River",
+        "body": "Song Huong Floating Restaurant is the Perfume River dinner save: a floating room near Trường Tiền Bridge, seafood and Hue-style dishes, and dusk water carrying the reason to go."
       },
       "usefulPhraseCards": [
         {
@@ -8709,24 +8700,19 @@
       ],
       "sections": [
         {
-          "id": "floating-not-just-riverside",
-          "heading": "Floating On The River",
-          "body": "Expect a floating restaurant scene rather than a normal dining room. Staff cadence, water, and lights form the evening."
+          "id": "river-first-menu-second",
+          "heading": "River First, Menu Second",
+          "body": "This is a river-view dinner rather than a hidden foodie counter. Save it when eating on the river is the point and let the order stay simple."
         },
         {
-          "id": "a-meal-that-carries-the-day",
-          "heading": "A Meal That Carries The Day",
-          "body": "It suits dinner that can slow the itinerary down, especially after tombs, markets, or a long walk by the river."
+          "id": "bridge-light-helps",
+          "heading": "Bridge Light Helps",
+          "body": "The table lands when the view is doing work: water below, bridge nearby, and the city settling after a long heritage day."
         },
         {
-          "id": "dusk-carries-the-meal",
-          "heading": "Dusk Carries The Meal",
-          "body": "The image that stays is dusk: water below, bridge lights in the distance, and Hue settling around the river."
-        },
-        {
-          "id": "setting-first",
-          "heading": "Setting First",
-          "body": "Remember the floating setting first: dusk water, nearby bridge lights, and a table paced around the river view."
+          "id": "deemphasize-for-foodies",
+          "heading": "Deemphasize For Foodies",
+          "body": "For a Hue food day, route the user to Đông Ba, bún bò, or bánh lọc first. The meal stays setting-led."
         }
       ],
       "mentionedHereCandidates": [],
@@ -8751,17 +8737,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Food-desire review on 2026-05-30: clarified as setting-led support dinner, a setting-led food-specific support listing."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Food-desire review: setting-led river dinner with seafood/Hue-dish support; useful save as a food-specific support listing."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: References: Hue tourism portal restaurants."
+        "Production intake source notes: References: Hue tourism portal restaurants.",
+        "2026-05-30 source refresh: Hue tourism pages describe Song Huong Floating Restaurant as a floating restaurant on the Perfume River near Truong Tien Bridge, serving seafood and Hue-style dishes."
       ],
       "status": "FINAL_PASS",
       "review": {

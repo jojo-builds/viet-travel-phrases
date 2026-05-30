@@ -2738,11 +2738,11 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "cargo club",
-      "travelerMoment": "Cargo Club is part of the old-town river-meal pattern: terrace light, yellow walls, menu decisions, and a table that keeps dinner attached to the waterfront walk.",
-      "storySpine": "Cargo Club brings a restaurant moment set by table pace, river light, yellow walls, lanterns, and the decision to slow down.",
+      "travelerMoment": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
+      "storySpine": "It belongs to Hội An’s trading-street restaurant pattern: an old-town shophouse, Thu Bon river view, bakery counter, and broad menu in the same orbit as Ms Vy food stops.",
       "intro": {
-        "heading": "A Meal With River Edges",
-        "body": "Cargo Club gives an old-town river meal a clearer plan: terrace energy, yellow walls, lantern light, menu choices, and a steadier table."
+        "heading": "River Terrace, Cakes, Dinner",
+        "body": "Cargo Club is the Hội An riverfront restaurant-and-patisserie save: terrace tables, Vietnamese and Western plates, cakes, and a Thu Bon view when the Ancient Town walk needs a real pause."
       },
       "usefulPhraseCards": [
         {
@@ -2772,24 +2772,19 @@
       ],
       "sections": [
         {
-          "id": "terrace-holds-the-meal",
-          "heading": "Terrace Holds The Meal",
-          "body": "Expect the meal to matter because the river is beside it. The old-town waterline is part of why it registers."
+          "id": "terrace-then-dessert",
+          "heading": "Terrace, Then Dessert",
+          "body": "The reason is not one rare dish. It is the mix of river terrace, bakery case, coffee or cake, and an easy meal beside Nguyễn Thái Học."
         },
         {
-          "id": "dinner-with-less-guesswork",
-          "heading": "Dinner With Less Guesswork",
-          "body": "Choose it for a night when you want a manageable table after walking the old core. A simple meal plan keeps attention on what you see."
+          "id": "ms-vy-orbit",
+          "heading": "In The Ms Vy Orbit",
+          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it when a broader table matters more than chasing one dish."
         },
         {
-          "id": "terrace-first-menu-second",
-          "heading": "Terrace Before Menu",
-          "body": "The river is the reason to sit here. Notice the menu at the table, then decide how much of the evening belongs by the water."
-        },
-        {
-          "id": "old-town-meal-not-a-tour",
-          "heading": "Old Town Meal With River Edges",
-          "body": "Cargo Club makes sense as a meal woven into the Ancient Town evening, rather than standalone sightseeing."
+          "id": "not-the-food-quest",
+          "heading": "Not The Food Quest",
+          "body": "For a foodie-first save, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2797,9 +2792,17 @@
         {
           "catalogId": "viet-family-city-hoian-place-morning-glory",
           "label": "Morning Glory Hội An",
-          "relationship": "restaurant support comparison",
-          "displaySubtitle": "A stronger central Vietnamese table when the meal should feel more tied to Hội An food.",
-          "reason": "Morning Glory is a more food-specific comparison for Cargo Club than Bale Well.",
+          "relationship": "Hội An food comparison",
+          "displaySubtitle": "A sharper Central Vietnamese table when the food itself should lead the save.",
+          "reason": "Morning Glory is the clearer food-first comparison for Cargo Club.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hoian-place-vys-market",
+          "label": "Vy's Market Restaurant",
+          "relationship": "same restaurant orbit",
+          "displaySubtitle": "A more food-market-style choice from the same Hội An restaurant world.",
+          "reason": "Vys Market is useful as a broader food-exploration comparison for Cargo Club.",
           "status": "render"
         }
       ],
@@ -2814,17 +2817,19 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Food-desire review on 2026-05-30: strengthened as restaurant-and-patisserie support listing with river terrace and dessert role; not promoted above sharper Hội An food stops."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 29,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Food-desire review: strong support restaurant/patisserie with river terrace and dessert reason; less sharply food-led than Morning Glory or White Rose for food-first placement."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local venue references; no schedule, menu, or quality claims."
+        "Production intake source notes: Local venue references; no schedule, menu, or quality claims.",
+        "2026-05-30 source refresh: Quang Nam tourism and restaurant listings describe Cargo Club as a 107-109 Nguyen Thai Hoc restaurant/patisserie with Thu Bon terrace, Vietnamese/Western dishes, desserts, pastries, and drinks."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4311,11 +4316,11 @@
       "city": "Hội An",
       "category": "Cafe",
       "pronunciation": "faifo coffee",
-      "travelerMoment": "Faifo Coffee turns Hội An's roofline into the point: a drink, stairs, yellow walls below, and the old port town seen from above rather than inside the crowd.",
-      "storySpine": "Faifo Coffee turns a cafe break into a quick way to see Hội An's roofline without leaving the Ancient Town.",
+      "travelerMoment": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
+      "storySpine": "It earns the save because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
       "intro": {
-        "heading": "Coffee With A Roofline",
-        "body": "Faifo Coffee is the Hội An cafe to remember when the drink is tied to a rooftop view over yellow roofs, lantern streets, and the old town from above."
+        "heading": "Rooftop First, Coffee Second",
+        "body": "Faifo Coffee is a rooftop-view cafe first and a coffee stop second: climb for yellow rooflines, then choose coconut, egg, or classic Vietnamese coffee if the terrace is not crowded."
       },
       "usefulPhraseCards": [
         {
@@ -4345,24 +4350,19 @@
       ],
       "sections": [
         {
-          "id": "stairs-drink-roofs",
-          "heading": "Stairs, Drink, Roofs",
-          "body": "The view is a narrow old-town cafe, stairs upward, a drink in hand, and a brief look across weathered roofs rather than a long sit-down meal."
+          "id": "rooftop-before-coffee",
+          "heading": "Rooftop Before Coffee",
+          "body": "The saved reason is the roofline. If the terrace is crowded, the visit can shrink to one drink and a quick look."
         },
         {
-          "id": "above-the-walking-streets",
-          "heading": "Above The Walking Streets",
-          "body": "Go after a dense old-town stretch, especially when a quick view from above matters more than settling in to work."
+          "id": "order-vietnamese",
+          "heading": "Order Vietnamese",
+          "body": "Coconut coffee, egg coffee, or a plain milk coffee gives the stop more local shape than treating it as only a photo perch."
         },
         {
-          "id": "go-for-the-roof",
-          "heading": "Go For The Roof",
-          "body": "The visit makes sense when the view is the reason. If the roof is crowded, it may become shorter than a normal coffee break."
-        },
-        {
-          "id": "view-first",
-          "heading": "Start With The Roof",
-          "body": "The rooftop is the hook. The coffee shares the climb with the view."
+          "id": "coffee-first-alternative",
+          "heading": "Coffee-First Alternative",
+          "body": "If the drink matters more than the view, The Espresso Station is the better related save."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4370,9 +4370,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-espresso-station",
           "label": "The Espresso Station",
-          "relationship": "coffee-quality contrast",
-          "displaySubtitle": "A coffee-first room when the drink matters more than the rooftop photo.",
-          "reason": "Espresso Station is a better coffee-quality contrast for Faifo.",
+          "relationship": "coffee-first alternative",
+          "displaySubtitle": "A sharper coffee-room save when the drink matters more than the rooftop view.",
+          "reason": "The Espresso Station gives Faifo a direct coffee-first comparison.",
           "status": "render"
         }
       ],
@@ -4387,17 +4387,19 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Food-desire review on 2026-05-30: clarified as view-led support cafe, with Vietnamese coffee options added from current cafe-guide sources."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Food-desire review: view-led cafe support listing; specific enough to save, but the rooftop matters more than the drink."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Existing city-library; Hoi An local references."
+        "Production intake source notes: Existing city-library; Hoi An local references.",
+        "2026-05-30 source refresh: Hoi An cafe guides describe Faifo as a 130 Tran Phu rooftop cafe with Old Town roof views and Vietnamese coffee options including coconut, egg, and classic milk coffee."
       ],
       "status": "FINAL_PASS",
       "review": {

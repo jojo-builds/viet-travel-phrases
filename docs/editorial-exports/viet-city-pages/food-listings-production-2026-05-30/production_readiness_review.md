@@ -658,3 +658,90 @@ Results:
 Status remains `REVISE_BEFORE_GLOBAL_PRODUCTION`.
 
 The food-surface related-card graph is now much stronger across all five cities, but the full production-ready promise still requires rendered app proof and a focused page-level food-desire review. The highest remaining editorial risk is not generic related cards anymore; it is whether each restaurant, cafe, market, and dish page itself makes a foodie want to save it before the trip.
+
+## Continuation: Food-Desire Support/Demotion Pass
+
+Third pass date: 2026-05-30
+Commit before pass: `2aedd7e88 Complete Viet food graph specificity pass`
+
+This continuation answered the remaining taste question directly: some pages should become more specific, and some should stop pretending to be headline food saves. The work did not force one template across restaurants, cafes, drinks, markets, and support stops. It gave each weak page a clearer role:
+
+- lead food recommendations should make the food itself worth saving;
+- support listings should explain the exact trip job they serve;
+- thin restaurant/cafe pages should be demoted in score/review notes until better source evidence exists.
+
+### Pages Touched
+
+Changed weak food/place entries: 9.
+
+- `city-danang-place-boulevard-gelato-coffee`: demoted to 27/30 support cool-down listing; visible copy now frames gelato/coffee as a short heat reset between stronger Da Nang food plans.
+- `city-danang-place-reply-1988`: demoted to 28/30 support cafe; added retro-room, egg/salt coffee, tiramisu, cheesecake, and Hai Chau context.
+- `city-hcmc-place-nephele`: demoted to 27/30 support modern-dinner listing; visible copy now says 2025 MICHELIN Guide-listed and sommelier/wine-led without making a star claim.
+- `city-hoian-place-cargo-club`: adjusted to 29/30 restaurant-and-patisserie support listing; added river terrace, cakes, broad menu, and Ms Vy restaurant-world context.
+- `city-hoian-place-faifo-coffee`: demoted to 28/30 view-led cafe support listing; clarified rooftop first, coffee second, with coconut/egg/milk coffee options.
+- `city-hue-place-ancient-space-restaurant`: demoted to 27/30 heritage-dinner support listing; added ruong-house, com nieu, Hue dishes, and court-cuisine positioning.
+- `city-hue-place-dai-nam-restaurant`: demoted to 27/30 Citadel-side Hue-cakes support listing; added traditional Hue cakes and route role.
+- `city-hue-place-les-jardins`: adjusted to 28/30 polished French-Vietnamese Citadel meal; added banana-flower salad / lemongrass-and-chili cue and kept it below Hue street-food-first pages.
+- `city-hue-place-song-huong-floating-restaurant`: adjusted to 28/30 setting-led river dinner; added Perfume River, Truong Tien Bridge, seafood, and Hue-style dishes.
+
+### Source Refresh Notes
+
+The new visible claims were kept bounded and source-backed. Sources checked included:
+
+- MICHELIN Guide 2025 Vietnam release for Nephele as newly selected and Paul Vo's Sommelier Award.
+- Taste Vietnam / Hoi An Creative City for Cargo Club as part of Ms Vy's restaurant group.
+- Hoi An cafe guides for Faifo Coffee's 130 Tran Phu rooftop/coffee context.
+- Restaurant and Hue tourism pages for Les Jardins, Ancient Space, Dai Nam, and Song Huong Floating Restaurant.
+- Da Nang cafe listings for Reply 1988's address, retro/K-drama room, egg/salt coffee, tiramisu, and cheesecake context.
+
+No new unbounded hours, prices, closure, reservation, or current operations claims were added.
+
+### Phrase-Page Finding
+
+`Cái này bao nhiêu?` is not thin in source. The canonical phrase page at `content-draft/viet/canonical-pages/tier-one/money-numbers-prices/money-how-much.json` already has a deep page: at-glance, breakdown, standard phrase, variation, why-it-matters, traveler insight, when-to-use, good-to-know, local tip, you-may-hear, and explore-next.
+
+If the app only shows a small amount of content for that phrase, the likely issue is render/surface behavior rather than source depth. This pass did not patch that phrase page because the source itself is already richer than the selected phrase text suggested.
+
+### Validation Run After Food-Desire Pass
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, integrity OK, 8784 relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Food-Desire Pass
+
+Status remains `REVISE_BEFORE_GLOBAL_PRODUCTION`.
+
+This pass made the weakest reviewed restaurants/cafes more honest and save-worthy, but it still does not prove the full catalog is production-ready. Remaining gates:
+
+- render-proof these changed pages in the native app;
+- continue the same food-desire scoring across remaining cafes, malls, support markets, and room-led restaurants;
+- make high-visibility surfaces consume the support/lead distinction instead of treating all `FINAL_PASS` pages equally;
+- investigate why `Cái này bao nhiêu?` may appear thin in the app if Jojo's observed surface was the full detail page, not just a quick phrase card.

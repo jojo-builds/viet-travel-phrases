@@ -1948,11 +1948,11 @@
       "city": "Đà Nẵng",
       "category": "Cafe",
       "pronunciation": "boulevard gelato coffee",
-      "travelerMoment": "Save it for dessert or coffee when the day does not need a long restaurant stop.",
-      "storySpine": "Boulevard Gelato & Coffee adds a gentle cafe interval to the day, better treated as a simple cold drink or gelato stop.",
+      "travelerMoment": "Boulevard Gelato & Coffee is a small reset when the day needs gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions.",
+      "storySpine": "Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
       "intro": {
-        "heading": "Coffee With A Sweet Exit",
-        "body": "A bright cafe-and-gelato stop for coffee, sweetness, cool air, and a lighter break between Da Nang meals or walks when the heat builds."
+        "heading": "Gelato Between Bigger Plans",
+        "body": "Boulevard Gelato & Coffee is a small Da Nang reset: gelato, coffee, and cool air between market heat, beach plans, and a bigger dinner."
       },
       "usefulPhraseCards": [
         {
@@ -1982,24 +1982,19 @@
       ],
       "sections": [
         {
-          "id": "cool-break-between-plans",
-          "heading": "Cool Break Between Plans",
-          "body": "Make it a small cool-down: coffee, gelato, daylight, and a seat before the day asks for another meal, walk, or ride."
+          "id": "keep-it-small",
+          "heading": "Keep It Small",
+          "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan."
         },
         {
-          "id": "not-just-caffeine",
-          "heading": "Not Just Caffeine",
-          "body": "The stop stays small between meals, heat, and walking. A drink or gelato cup can carry the moment without making it larger."
+          "id": "heat-break-role",
+          "heading": "Heat-Break Role",
+          "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage."
         },
         {
-          "id": "between-bigger-meals",
-          "heading": "Between Bigger Meals",
-          "body": "Place it after a market, before dinner, or when the group needs something cool and easy. One coffee and one gelato can be enough."
-        },
-        {
-          "id": "brand-name-stays-english",
-          "heading": "Brand Name Stays English",
-          "body": "The venue name usually stays in English. Coffee and payment phrases fit the exchange better than trying to translate the sign."
+          "id": "coffee-is-secondary",
+          "heading": "Coffee Is Secondary",
+          "body": "If coffee craft is the goal, 43 Factory is the sharper save. Boulevard is better for sweetness, cool air, and a short reset."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2016,7 +2011,7 @@
       "verificationFlags": [
         {
           "type": "light",
-          "reason": "Keep Boulevard as a support cool-down listing, not a featured food listing, unless a future source pass adds stronger flavor or venue evidence.",
+          "reason": "Keep Boulevard in a support cool-down lane; future source review should add clearer flavor or venue evidence before feature placement.",
           "blocking": false
         }
       ],
@@ -2030,17 +2025,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "Food-desire review on 2026-05-30: classified as support/deemphasize for high-visibility trip-building; useful, but not a lead recommendation."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 27,
         "max": 30,
-        "reason": "Production food pass: Boulevard is explicitly treated as a support cool-down listing with a specific coffee-craft comparison."
+        "reason": "Food-desire review: support cool-down listing; useful between named Da Nang food recommendations, but it needs clearer venue/flavor evidence before headline placement."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local cafe source."
+        "Production intake source notes: Local cafe source.",
+        "2026-05-30 food-desire review: support cool-down listing; no clearer current flavor or venue evidence added in this pass."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9409,11 +9406,11 @@
       "city": "Đà Nẵng",
       "category": "Cafe",
       "pronunciation": "reply 1988 cafe",
-      "travelerMoment": "The cafe is a short break; do not make it carry the day.",
-      "storySpine": "Reply 1988 keeps the cafe mood specific through retro details, a compact drink stop, and a short break from beach-side movement.",
+      "travelerMoment": "Reply 1988 is a retro downtown cafe pause: one sweet coffee, one dessert, warm light, and a short sit near Hải Châu rather than a destination meal.",
+      "storySpine": "The place is chosen for its K-drama-inspired retro room and dessert-coffee stop, not because it represents Da Nang food culture by itself.",
       "intro": {
-        "heading": "A Retro Break Between Walks",
-        "body": "Reply 1988 Cafe is a retro cafe for iced coffee, warm wood, design detail, and a slower half-hour between Da Nang walks, meals, and heat."
+        "heading": "Retro Coffee, Light Stop",
+        "body": "Reply 1988 Cafe is a K-drama-inspired Da Nang cafe for a retro room, salted or egg coffee, tiramisu or cheesecake, and a light pause near Hải Châu."
       },
       "usefulPhraseCards": [
         {
@@ -9443,24 +9440,19 @@
       ],
       "sections": [
         {
-          "id": "drink-first-corner-second",
-          "heading": "Drink, Then Corner",
-          "body": "Notice one drink before hunting for the right seat. A cold coffee gives you the familiar Da Nang cafe scene: glass, sweetness, and time to slow the next move."
+          "id": "retro-is-the-hook",
+          "heading": "Retro Is The Hook",
+          "body": "Brown wood, warm light, and photo corners do the work. The drink should be simple enough that the room stays the reason."
         },
         {
-          "id": "warm-wood-short-stay",
-          "heading": "Warm Wood, Short Stay",
-          "body": "The retro room is the reason to linger, but do not over-plan around it. It can be a break between walks, errands, food, or an evening plan."
+          "id": "pick-one-sweet-thing",
+          "heading": "Pick One Sweet Thing",
+          "body": "Egg coffee, salt coffee, tiramisu, or cheesecake gives the stop more texture than a generic iced drink."
         },
         {
-          "id": "found-cafe-break",
-          "heading": "Found Cafe Break",
-          "body": "Reply 1988 suits a day that already needs shade, coffee, and a slower chair. Keep the plan loose if the room is crowded."
-        },
-        {
-          "id": "a-light-stop-works-better",
-          "heading": "Let It Stay Light",
-          "body": "If the room is full or the timing is off, do not force it. Let the cafe stay a break you found naturally."
+          "id": "support-not-headline",
+          "heading": "Support, Not Headline",
+          "body": "Keep it as a nice cafe break around downtown plans. Da Nang’s lead food saves still belong to mì Quảng, seafood, and local coffee counters."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9470,7 +9462,7 @@
           "label": "Cà phê Long",
           "relationship": "deemphasized cafe contrast",
           "displaySubtitle": "A local coffee counter with more Da Nang specificity than the retro-cafe mood.",
-          "reason": "Long Coffee is a stronger coffee reference; Reply 1988 remains support/deemphasize.",
+          "reason": "Long Coffee is the more local coffee reference; Reply 1988 remains support/deemphasize.",
           "status": "render"
         }
       ],
@@ -9485,17 +9477,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Food-desire review on 2026-05-30: classified as support cafe; strengthened with source-backed sweet coffee/dessert details instead of generic retro mood."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "City voice gate passed: Reply 1988 Cafe has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Food-desire review: support cafe with a clear retro-room and sweet-coffee reason; keep below lead Da Nang food recommendations."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local cafe source."
+        "Production intake source notes: Local cafe source.",
+        "2026-05-30 source refresh: Da Nang cafe listings describe Reply 1988 as K-drama/retro themed with egg coffee, salt coffee, tiramisu, cheesecake, and downtown Hải Châu address."
       ],
       "status": "FINAL_PASS",
       "review": {

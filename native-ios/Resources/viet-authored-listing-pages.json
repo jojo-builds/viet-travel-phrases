@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 806,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T11:48:06.234Z"
+    "generatedAt": "2026-05-30T12:08:57.672Z"
   },
   "pages": [
     {
@@ -183645,7 +183645,7 @@
       "title": "Boulevard Gelato & Coffee",
       "englishTitle": "Boulevard Gelato & Coffee",
       "pronunciation": "boulevard gelato coffee",
-      "summary": "Save it for dessert or coffee when the day does not need a long restaurant stop. Boulevard Gelato & Coffee adds a gentle cafe interval to the day, better treated as a simple cold drink or gelato stop.",
+      "summary": "Boulevard Gelato & Coffee is a small reset when the day needs gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions.",
       "heroImageName": "HeroCityDanangPlaceBoulevardGelatoCoffee",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -183676,7 +183676,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "Boulevard Gelato & Coffee adds a gentle cafe interval to the day, better treated as a simple cold drink or gelato stop.",
+        "rationale": "Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -183686,32 +183686,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Coffee With A Sweet Exit",
-          "body": "A bright cafe-and-gelato stop for coffee, sweetness, cool air, and a lighter break between Da Nang meals or walks when the heat builds.",
+          "title": "Gelato Between Bigger Plans",
+          "body": "Boulevard Gelato & Coffee is a small Da Nang reset: gelato, coffee, and cool air between market heat, beach plans, and a bigger dinner.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Cool Break Between Plans",
-          "body": "Make it a small cool-down: coffee, gelato, daylight, and a seat before the day asks for another meal, walk, or ride.",
+          "title": "Keep It Small",
+          "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Not Just Caffeine",
-          "body": "The stop stays small between meals, heat, and walking. A drink or gelato cup can carry the moment without making it larger.",
+          "title": "Heat-Break Role",
+          "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Between Bigger Meals",
-          "body": "Place it after a market, before dinner, or when the group needs something cool and easy. One coffee and one gelato can be enough.",
+          "title": "Coffee Is Secondary",
+          "body": "If coffee craft is the goal, 43 Factory is the sharper save. Boulevard is better for sweetness, cool air, and a short reset.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -183754,14 +183754,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Brand Name Stays English",
-          "body": "The venue name usually stays in English. Coffee and payment phrases fit the exchange better than trying to translate the sign.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -183827,7 +183819,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Between Bigger Meals",
+            "title": "Coffee Is Secondary",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -195710,7 +195702,7 @@
       "title": "Reply 1988 Cafe",
       "englishTitle": "Reply 1988 Cafe",
       "pronunciation": "reply 1988 cafe",
-      "summary": "The cafe is a short break; do not make it carry the day. Reply 1988 keeps the cafe mood specific through retro details, a compact drink stop, and a short break from beach-side movement.",
+      "summary": "Reply 1988 is a retro downtown cafe pause: one sweet coffee, one dessert, warm light, and a short sit near Hải Châu rather than a destination meal.",
       "heroImageName": "HeroCityDanangPlaceReply1988",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -195741,7 +195733,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "Reply 1988 keeps the cafe mood specific through retro details, a compact drink stop, and a short break from beach-side movement.",
+        "rationale": "The place is chosen for its K-drama-inspired retro room and dessert-coffee stop, not because it represents Da Nang food culture by itself.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -195751,32 +195743,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Retro Break Between Walks",
-          "body": "Reply 1988 Cafe is a retro cafe for iced coffee, warm wood, design detail, and a slower half-hour between Da Nang walks, meals, and heat.",
+          "title": "Retro Coffee, Light Stop",
+          "body": "Reply 1988 Cafe is a K-drama-inspired Da Nang cafe for a retro room, salted or egg coffee, tiramisu or cheesecake, and a light pause near Hải Châu.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Drink, Then Corner",
-          "body": "Notice one drink before hunting for the right seat. A cold coffee gives you the familiar Da Nang cafe scene: glass, sweetness, and time to slow the next move.",
+          "title": "Retro Is The Hook",
+          "body": "Brown wood, warm light, and photo corners do the work. The drink should be simple enough that the room stays the reason.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Warm Wood, Short Stay",
-          "body": "The retro room is the reason to linger, but do not over-plan around it. It can be a break between walks, errands, food, or an evening plan.",
+          "title": "Pick One Sweet Thing",
+          "body": "Egg coffee, salt coffee, tiramisu, or cheesecake gives the stop more texture than a generic iced drink.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Found Cafe Break",
-          "body": "Reply 1988 suits a day that already needs shade, coffee, and a slower chair. Keep the plan loose if the room is crowded.",
+          "title": "Support, Not Headline",
+          "body": "Keep it as a nice cafe break around downtown plans. Da Nang’s lead food saves still belong to mì Quảng, seafood, and local coffee counters.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -195819,14 +195811,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Let It Stay Light",
-          "body": "If the room is full or the timing is off, do not force it. Let the cafe stay a break you found naturally.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -195892,7 +195876,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Found Cafe Break",
+            "title": "Support, Not Headline",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -254259,7 +254243,7 @@
       "title": "Nephele",
       "englishTitle": "Nephele",
       "pronunciation": "nephele",
-      "summary": "The narrow focus is a modern Saigon restaurant room: drinks, table pacing, and a meal that asks for attention rather than street-side speed.",
+      "summary": "Nephele is a modern Saigon dinner support save: a quieter guide-listed room, wine attention, menu pacing, and an evening that should not be squeezed between quick stops.",
       "heroImageName": "HeroCityHcmcPlaceNephele",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -254291,7 +254275,7 @@
           "vt-hcmc-official",
           "michelin-vietnam"
         ],
-        "rationale": "Nephele is a lower-volume modern-dining option for a meal that becomes the evening landmark.",
+        "rationale": "Its current reason is guide-listed modern dining and sommelier attention rather than a single iconic Vietnamese dish.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -254301,32 +254285,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Small Modern Dinner",
-          "body": "Nephele sits in Saigon’s lower-volume modern-dining side, where wine glasses, warm lighting, and table pace carry more weight than sightseeing.",
+          "title": "Small, Guide-Listed Dinner",
+          "body": "Nephele is a 2025 MICHELIN Guide-listed Saigon dinner for a quieter room, wine attention, and a menu you read slowly, rather than a quick bowl between stops.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Room Over Rush",
-          "body": "The room points to a lower-volume dinner: close table, drinks, and menu detail rather than quick fuel between plans.",
+          "title": "Wine Is The Clue",
+          "body": "The guide attention points away from street-food speed. Save it for drinks, staff pacing, and menu explanation as part of the meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "A Meal As The Plan",
-          "body": "Dinner is the main evening decision here. That keeps the meal from becoming one more box on a busy route.",
+          "title": "Support, Not First Pick",
+          "body": "The source pack does not yet give a clear signature dish, so place Nephele behind named Saigon dinner saves like CieL, Coco Dining, or Akuna.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "A Focused Dinner Claim",
-          "body": "The idea is simple: a modern restaurant table for a slower meal, with no need to make it speak for all of Saigon.",
+          "title": "Make It The Evening",
+          "body": "Let the meal carry the plan, with the address ready before you ride over. It needs evening space rather than an efficient in-between slot.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -254369,14 +254353,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Address Matters",
-          "body": "Small restaurants can be harder to spot from a moving car. The saved pin and exact address matter more than a rough neighborhood memory.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -254442,7 +254418,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "A Focused Dinner Claim",
+            "title": "Make It The Evening",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -275971,7 +275947,7 @@
       "title": "Cargo Club",
       "englishTitle": "Cargo Club",
       "pronunciation": "cargo club",
-      "summary": "Cargo Club is part of the old-town river-meal pattern: terrace light, yellow walls, menu decisions, and a table that keeps dinner attached to the waterfront walk.",
+      "summary": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
       "heroImageName": "HeroCityHoianPlaceCargoClub",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -276002,7 +275978,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Cargo Club brings a restaurant moment set by table pace, river light, yellow walls, lanterns, and the decision to slow down.",
+        "rationale": "It belongs to Hội An’s trading-street restaurant pattern: an old-town shophouse, Thu Bon river view, bakery counter, and broad menu in the same orbit as Ms Vy food stops.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -276012,32 +275988,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Meal With River Edges",
-          "body": "Cargo Club gives an old-town river meal a clearer plan: terrace energy, yellow walls, lantern light, menu choices, and a steadier table.",
+          "title": "River Terrace, Cakes, Dinner",
+          "body": "Cargo Club is the Hội An riverfront restaurant-and-patisserie save: terrace tables, Vietnamese and Western plates, cakes, and a Thu Bon view when the Ancient Town walk needs a real pause.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Terrace Holds The Meal",
-          "body": "Expect the meal to matter because the river is beside it. The old-town waterline is part of why it registers.",
+          "title": "Terrace, Then Dessert",
+          "body": "The reason is not one rare dish. It is the mix of river terrace, bakery case, coffee or cake, and an easy meal beside Nguyễn Thái Học.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Dinner With Less Guesswork",
-          "body": "Choose it for a night when you want a manageable table after walking the old core. A simple meal plan keeps attention on what you see.",
+          "title": "In The Ms Vy Orbit",
+          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it when a broader table matters more than chasing one dish.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Terrace Before Menu",
-          "body": "The river is the reason to sit here. Notice the menu at the table, then decide how much of the evening belongs by the water.",
+          "title": "Not The Food Quest",
+          "body": "For a foodie-first save, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -276080,14 +276056,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Old Town Meal With River Edges",
-          "body": "Cargo Club makes sense as a meal woven into the Ancient Town evening, rather than standalone sightseeing.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -276153,7 +276121,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Terrace Before Menu",
+            "title": "Not The Food Quest",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -278565,7 +278533,7 @@
       "title": "Faifo Coffee",
       "englishTitle": "Faifo Coffee",
       "pronunciation": "faifo coffee",
-      "summary": "Faifo Coffee turns Hội An's roofline into the point: a drink, stairs, yellow walls below, and the old port town seen from above rather than inside the crowd.",
+      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
       "heroImageName": "HeroCityHoianPlaceFaifoCoffee",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -278596,7 +278564,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Faifo Coffee turns a cafe break into a quick way to see Hội An's roofline without leaving the Ancient Town.",
+        "rationale": "It earns the save because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -278606,32 +278574,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Coffee With A Roofline",
-          "body": "Faifo Coffee is the Hội An cafe to remember when the drink is tied to a rooftop view over yellow roofs, lantern streets, and the old town from above.",
+          "title": "Rooftop First, Coffee Second",
+          "body": "Faifo Coffee is a rooftop-view cafe first and a coffee stop second: climb for yellow rooflines, then choose coconut, egg, or classic Vietnamese coffee if the terrace is not crowded.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Stairs, Drink, Roofs",
-          "body": "The view is a narrow old-town cafe, stairs upward, a drink in hand, and a brief look across weathered roofs rather than a long sit-down meal.",
+          "title": "Rooftop Before Coffee",
+          "body": "The saved reason is the roofline. If the terrace is crowded, the visit can shrink to one drink and a quick look.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Above The Walking Streets",
-          "body": "Go after a dense old-town stretch, especially when a quick view from above matters more than settling in to work.",
+          "title": "Order Vietnamese",
+          "body": "Coconut coffee, egg coffee, or a plain milk coffee gives the stop more local shape than treating it as only a photo perch.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Go For The Roof",
-          "body": "The visit makes sense when the view is the reason. If the roof is crowded, it may become shorter than a normal coffee break.",
+          "title": "Coffee-First Alternative",
+          "body": "If the drink matters more than the view, The Espresso Station is the better related save.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -278674,14 +278642,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Start With The Roof",
-          "body": "The rooftop is the hook. The coffee shares the climb with the view.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -278747,7 +278707,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Go For The Roof",
+            "title": "Coffee-First Alternative",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -303221,7 +303181,7 @@
       "title": "Không gian xưa",
       "englishTitle": "Ancient Space Restaurant",
       "pronunciation": "khong gian xua",
-      "summary": "Ancient Space draws on Hue's old-house dining habit, with garden paths and rooflines making the approach part of the meal. At Ancient Space Restaurant, the old-house compound sets the mood for dinner as much as the dishes: garden path, tiled roof, timber, and time at the table.",
+      "summary": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
       "heroImageName": "HeroCityHuePlaceAncientSpaceRestaurant",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -303252,7 +303212,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "At Ancient Space Restaurant, the old-house compound sets the mood for dinner as much as the dishes: garden path, tiled roof, timber, and time at the table.",
+        "rationale": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -303262,32 +303222,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Old Space Before Dinner",
-          "body": "Ancient Space Restaurant starts at the entrance: ruong-house compound, tiled roof, garden path, and a Hue old-house mood that sets dinner.",
+          "title": "Ruong House, Shared Table",
+          "body": "Ancient Space Restaurant is a Hue support save for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "A Slower Table Choice",
-          "body": "This is built more for a settled dinner than a fast meal. The table, room, and staff pace deserve time.",
+          "title": "The House Frames The Meal",
+          "body": "Old timber, tiled roof, courtyard scale, and a table for shared dishes are part of the reason to go.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Heritage Mood Without A Ticket",
-          "body": "After tombs or palaces, the restaurant keeps the day in a Hue register without adding a formal attraction.",
+          "title": "Order Around Hue",
+          "body": "The group can get a traditional menu in one place. Let lighter street-food pages carry the sharper snack hunt.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Dinner As The Evening Center",
-          "body": "Make this the main dinner plan rather than a quick extra booking between other reservations.",
+          "title": "Support Listing",
+          "body": "Treat it as a heritage-dinner option; a later review should add dish evidence before feature placement.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -303330,14 +303290,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "The Room Leads The Meal",
-          "body": "The ruong-house compound, garden path, tiled roof, and meal rhythm make the visit memorable before the food arrives.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -303403,7 +303355,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Dinner As The Evening Center",
+            "title": "Support Listing",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -306679,7 +306631,7 @@
       "title": "Nhà hàng Đại Nam",
       "englishTitle": "Dai Nam Restaurant",
       "pronunciation": "nha hang dai nam",
-      "summary": "Dai Nam fits the Citadel-side meal pattern, where old-city proximity, wooden interiors, and settled table service make lunch feel placed.",
+      "summary": "Dai Nam is a Citadel-side meal save when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
       "heroImageName": "HeroCityHuePlaceDaiNamRestaurant",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -306710,7 +306662,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "Dai Nam Restaurant gives a heritage-day route a grounded meal option when staying near Citadel walls feels easier than crossing town.",
+        "rationale": "It belongs to the old-city route because the menu points toward traditional Hue cakes and a heritage-side table rather than a random tourist stop.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -306720,32 +306672,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Classic Meal Near The Walls",
-          "body": "Dai Nam Restaurant is a classic Hue meal address near Citadel-side context, with a settled table, wooden interior glimpsed through doors, and an old-city mood.",
+          "title": "Hue Cakes Near The Citadel",
+          "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support save: a classic wooden room, easy wallside location, and familiar Hue specialties.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Table Before Menu Rush",
-          "body": "Settle before ordering widely. A classic room can soften the meal when the day has been full of gates and walls.",
+          "title": "Hue Cakes Matter",
+          "body": "The current source points to traditional Hue cakes rather than one signature showpiece. Save it when the table needs a nearby, grounded meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "After A Citadel Block",
-          "body": "The restaurant pairs naturally with a heritage-heavy route, especially when crossing town for dinner sounds like too much.",
+          "title": "After The Walls",
+          "body": "Its value is practical: near the Imperial City after a heavy heritage block, with enough local shape to avoid a random tourist meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Menu Leads",
-          "body": "The menu in front of you should decide the meal. The classic room and Citadel-side usefulness make the restaurant easy to place.",
+          "title": "Route Support",
+          "body": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -306788,14 +306740,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "A Grounded Hue Meal",
-          "body": "Avoid treating it as a grand dining statement. The value is an easy-to-place Hue restaurant in the right part of the day.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -306861,7 +306805,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Menu Leads",
+            "title": "Route Support",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -311776,7 +311720,7 @@
       "title": "Les Jardins de la Carambole",
       "englishTitle": "Les Jardins de la Carambole",
       "pronunciation": "les jardins de la carambole",
-      "summary": "Les Jardins leans into Hue's slower old-house dinner mood, where garden tables and colonial-style rooms let the evening breathe. Some Hue meals matter because they slow the itinerary down; this one suits that calmer dinner slot rather than a hurried snack stop.",
+      "summary": "Les Jardins is a Citadel-near French-Vietnamese garden meal when the day needs table spacing, wine, composed plates, and a calmer lunch or dinner after heritage walking.",
       "heroImageName": "HeroCityHuePlaceLesJardins",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -311808,7 +311752,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "Some Hue meals matter because they slow the itinerary down; this one suits that calmer dinner slot rather than a hurried snack stop.",
+        "rationale": "Its reason is the French-Vietnamese Hue restaurant pattern: a Citadel-side yellow villa, garden entry, and a menu that mixes French technique with Hue flavors.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -311818,32 +311762,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Dinner With Breathing Room",
-          "body": "Les Jardins de la Carambole gives Hue dinner a slower setting: a colonial-style room, garden tables, and a meal that can sit between river calm and old-city wandering.",
+          "title": "French-Vietnamese Near The Walls",
+          "body": "Les Jardins de la Carambole is a Citadel-near French-Vietnamese garden restaurant for banana-blossom salad, lemongrass-and-chili skewers, wine, and quiet table spacing.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Old-House Restaurant Feel",
-          "body": "The experience is built around setting and service rhythm, more than a quick local bite. The colonial-style exterior and garden mood are part of the memory.",
+          "title": "Not Street Food",
+          "body": "The menu is the contrast: French technique beside Hue flavors, with salads, beef, fish, and composed plates instead of bowl-shop speed.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Evening After The River",
-          "body": "Place it after a Perfume River walk, hotel reset, or Citadel-heavy day when dinner needs to feel settled, not scrambled.",
+          "title": "After The Citadel",
+          "body": "The location near the Imperial City gives it a practical role after walls, temples, and heat, especially for lunch that should feel calmer.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Garden Dinner, Loose Plans",
-          "body": "The garden dinner should carry the choice more than a fixed dish list. A saved written name matters more than old menu memory.",
+          "title": "Feature With Caution",
+          "body": "It can be a polished Hue meal; street-food pages should lead when the user is chasing Hue specialties.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -311886,14 +311830,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "A Polished Stop",
-          "body": "Expect a calmer room than street food: staff pacing, a garden mood, and a meal that may feel more arranged than improvised.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -311959,7 +311895,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Garden Dinner, Loose Plans",
+            "title": "Feature With Caution",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -316222,7 +316158,7 @@
       "title": "Nhà hàng nổi Sông Hương",
       "englishTitle": "Song Huong Floating Restaurant",
       "pronunciation": "nha hang noi song huong",
-      "summary": "The floating restaurant ties dinner to the Perfume River, letting bridge light, dusk reflections, water edges, and table pacing carry the meal.",
+      "summary": "Save Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
       "heroImageName": "HeroCityHuePlaceSongHuongFloatingRestaurant",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -316253,7 +316189,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "The setting matters as much as the menu: dusk water, nearby bridge lights, and table pace make the meal part of the route.",
+        "rationale": "Hue’s river becomes part of the meal here: floating table, bridge light, seafood, and local dishes along the city-center waterline.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -316263,32 +316199,32 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Dinner With River Edges",
-          "body": "Song Huong Floating Restaurant turns dinner into a river moment: tables on the Perfume River, dusk reflections, bridge lights, and a meal that feels placed.",
+          "title": "Dinner On The Perfume River",
+          "body": "Song Huong Floating Restaurant is the Perfume River dinner save: a floating room near Trường Tiền Bridge, seafood and Hue-style dishes, and dusk water carrying the reason to go.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "place-brief",
-          "title": "Floating On The River",
-          "body": "Expect a floating restaurant scene rather than a normal dining room. Staff cadence, water, and lights form the evening.",
+          "title": "River First, Menu Second",
+          "body": "This is a river-view dinner rather than a hidden foodie counter. Save it when eating on the river is the point and let the order stay simple.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "A Meal That Carries The Day",
-          "body": "It suits dinner that can slow the itinerary down, especially after tombs, markets, or a long walk by the river.",
+          "title": "Bridge Light Helps",
+          "body": "The table lands when the view is doing work: water below, bridge nearby, and the city settling after a long heritage day.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Dusk Carries The Meal",
-          "body": "The image that stays is dusk: water below, bridge lights in the distance, and Hue settling around the river.",
+          "title": "Deemphasize For Foodies",
+          "body": "For a Hue food day, route the user to Đông Ba, bún bò, or bánh lọc first. The meal stays setting-led.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -316331,14 +316267,6 @@
               "audioKey": "store-7"
             }
           ],
-          "breakdown": [],
-          "presentation": "plain-text"
-        },
-        {
-          "id": "good-to-know",
-          "title": "Setting First",
-          "body": "Remember the floating setting first: dusk water, nearby bridge lights, and a table paced around the river view.",
-          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -316404,7 +316332,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Dusk Carries The Meal",
+            "title": "Deemphasize For Foodies",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
