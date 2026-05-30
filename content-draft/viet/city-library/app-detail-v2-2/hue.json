@@ -1190,14 +1190,33 @@
           "body": "Banh khoai is richer and more assertive than many Hue snacks. Share early if the meal still has more dishes coming."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh bèo ở Huế",
+          "type": "dish",
+          "catalogId": "viet-family-city-hue-place-banh-beo",
+          "sourceText": "bánh bèo",
+          "displaySubtitle": "A softer Hue snack to compare with bánh khoái crunch.",
+          "reason": "The copy compares bánh khoái after softer snacks such as bánh bèo.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh nậm ở Huế",
+          "type": "dish",
+          "catalogId": "viet-family-city-hue-place-banh-nam",
+          "sourceText": "bánh nậm",
+          "displaySubtitle": "Another softer Hue snack before a richer pancake plate.",
+          "reason": "The copy compares bánh khoái after softer Hue snacks.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hue-place-banh-beo",
           "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city Hue snack contrast",
+          "displaySubtitle": "A softer steamed-rice-cake table before the crunch of bánh khoái.",
+          "reason": "Banh beo is the useful texture contrast for banh khoai.",
           "status": "render"
         }
       ],
@@ -1211,13 +1230,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: concrete Hue food scene, specific texture or table move, and mapped reusable phrase cards."
+        "reason": "Production food pass: Banh khoai now links its texture contrast to Hue snack pages."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1857,14 +1877,24 @@
           "body": "Many places outside Hue serve it, but eating the bowl in Hue gives the name and flavor their clearest local context."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún bò chợ Đông Ba ở Huế",
+          "type": "dish",
+          "catalogId": "viet-family-city-hue-place-dong-ba-bun-bo",
+          "sourceText": "Bún bò Huế",
+          "displaySubtitle": "A market-linked bowl when Dong Ba context matters.",
+          "reason": "The city dish page should route to the more place-specific Dong Ba bowl page.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba-bun-bo",
+          "label": "Bún bò chợ Đông Ba ở Huế",
+          "relationship": "city-bowl to market-bowl link",
+          "displaySubtitle": "A Dong Ba-linked version when the bowl should sit inside a market day.",
+          "reason": "Dong Ba bun bo is the natural named/contextual follow-on for the broader dish page.",
           "status": "render"
         }
       ],
@@ -1878,13 +1908,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: concrete Hue food scene, specific texture or table move, and mapped reusable phrase cards."
+        "reason": "Production food pass: Bun bo Hue now connects the city dish to the Dong Ba market-bowl page."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3189,14 +3220,33 @@
           "body": "Dong Ba is one of Hue's easiest places to connect food, gifts, and everyday shopping without adding a separate market trip."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún bò Huế",
+          "type": "dish",
+          "catalogId": "viet-family-city-hue-place-bun-bo-city",
+          "sourceText": "food counters",
+          "displaySubtitle": "The city bowl to recognize before or after a central market lap.",
+          "reason": "Dong Ba is a central market page and naturally supports bún bò discovery.",
+          "status": "render"
+        },
+        {
+          "label": "Mè xửng ở Huế",
+          "type": "dessert",
+          "catalogId": "viet-family-city-hue-place-me-xung",
+          "sourceText": "sesame candy",
+          "displaySubtitle": "Hue sesame candy, useful for gift browsing and market recognition.",
+          "reason": "The Dong Ba copy names sesame candy.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-bun-bo-city",
+          "label": "Bún bò Huế",
+          "relationship": "market-to-city-bowl link",
+          "displaySubtitle": "The city bowl to save when the market lap turns into a meal.",
+          "reason": "Bun bo Hue is a stronger food-route link for Dong Ba than a generic market comparison.",
           "status": "render"
         }
       ],
@@ -3210,13 +3260,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: concrete Hue market scene, clear first lap or buying move, and mapped reusable phrase cards."
+        "reason": "Production food pass: Dong Ba now links its market role to Hue bowl and gift-food cards."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -5964,11 +6015,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-tinh-gia-vien",
+          "label": "Tịnh Gia Viên",
+          "relationship": "same-city Hue dining contrast",
+          "displaySubtitle": "A garden-house meal when setting, courtyard, and composed pacing should lead.",
+          "reason": "Tinh Gia Vien is a better Hue dining comparison than a generic restaurant relation.",
           "status": "render"
         }
       ],
@@ -5982,13 +6033,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Production food pass: Lien Hoa now has a specific Hue dining contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -10056,11 +10108,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
-          "label": "Ancient Hue Gallery Cuisine",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-lien-hoa-vegetarian",
+          "label": "Nhà hàng chay Liên Hoa",
+          "relationship": "same-city Hue dining contrast",
+          "displaySubtitle": "A chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
+          "reason": "Lien Hoa gives a Hue-specific food-culture contrast to Tinh Gia Vien’s garden-house setting.",
           "status": "render"
         }
       ],
@@ -10074,13 +10126,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: concrete Hue dining scene, truthful room or food spine, and mapped reusable phrase cards."
+        "reason": "Production food pass: Tinh Gia Vien now has a specific Hue dining contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

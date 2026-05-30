@@ -468,11 +468,11 @@
       "city": "Hà Nội",
       "category": "Drink",
       "pronunciation": "bia hoi ha noi",
-      "travelerMoment": "Bia hơi is Hanoi's sidewalk social habit: fresh beer, low stools, shared snacks, and a corner turning into a short public living room.",
-      "storySpine": "Bia hoi shows Hanoi's casual social side without needing a big night out or a polished bar.",
+      "travelerMoment": "Bia hơi belongs to Hanoi as a short sidewalk ritual: low stools, light fresh beer, snack plates, quick rounds, and a corner that should stay casual.",
+      "storySpine": "The drink matters because it turns a Hanoi corner into a social pause, not because the beer itself is rare.",
       "intro": {
-        "heading": "Low Stools, Light Glasses",
-        "body": "Bia hoi is Hanoi at stool height: light fresh beer, quick pours, shared snacks, and a sidewalk stop between one walk and the next."
+        "heading": "Low Stools, Quick Rounds",
+        "body": "Bia hoi is Hanoi at stool height: light fresh beer, quick pours, shared snacks, and a sidewalk corner meant for a short social pause."
       },
       "usefulPhraseCards": [
         {
@@ -502,34 +502,44 @@
       ],
       "sections": [
         {
-          "id": "notice-the-corner-first",
+          "id": "check-the-corner-first",
           "heading": "Check The Corner First",
           "body": "Walk past once before sitting. Look for a table that feels active but not frantic, with people actually eating and drinking."
         },
         {
           "id": "snacks-carry-the-table",
           "heading": "Snacks Carry The Table",
-          "body": "The glass lands with something small on the table. A snack lets the corner scene settle."
+          "body": "The glass makes more sense with something small on the table. Peanuts, grilled snacks, or a simple plate let the corner scene settle."
         },
         {
-          "id": "a-sidewalk-stop",
-          "heading": "A Sidewalk Stop",
-          "body": "Bia hoi is easiest between plans, when the group wants a light glass, a snack, and a little street life without making the evening formal."
+          "id": "ta-hien-is-louder",
+          "heading": "Tạ Hiện Is Louder",
+          "body": "Tạ Hiện is the easier name to recognize, but a quieter corner can make the ritual feel less like nightlife and more like Hanoi street life."
         },
         {
-          "id": "one-glass-is-enough",
-          "heading": "One Glass Is Enough",
-          "body": "Bia hoi is light, but it is still alcohol. A single cold glass can give you the scene without bending the whole day around it."
+          "id": "one-glass-can-be-enough",
+          "heading": "One Glass Can Be Enough",
+          "body": "Bia hoi is light, but it is still alcohol. One cold glass can give you the scene without bending the whole day around it."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phố Tạ Hiện",
+          "type": "street",
+          "catalogId": "viet-family-city-hanoi-place-ta-hien",
+          "sourceText": "Tạ Hiện",
+          "displaySubtitle": "The louder Old Quarter beer-street version of the same social ritual.",
+          "reason": "The bia hơi copy names Tạ Hiện as the recognizable louder version.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-ca-phe-sua-da",
-          "label": "Cà phê sữa đá ở Hà Nội",
-          "relationship": "same-city drink comparison",
-          "displaySubtitle": "A drink in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-ta-hien",
+          "label": "Phố Tạ Hiện",
+          "relationship": "same-city drink/nightlife route",
+          "displaySubtitle": "The louder Old Quarter beer-street option when the group wants more night energy.",
+          "reason": "Ta Hien is the natural route comparison for bia hơi, not a generic drink card.",
           "status": "render"
         }
       ],
@@ -543,13 +553,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bia-hoi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Bia hơi Hà Nội has a concrete drink scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: bia hơi now carries a specific Hanoi sidewalk ritual and a Tạ Hiện route link."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1395,14 +1406,24 @@
           "body": "Keep the side decisions light. The heat, dill, fish, noodles, and herbs already make the table busy enough."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Chả cá ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-cha-ca",
+          "sourceText": "cha ca",
+          "displaySubtitle": "The Hanoi fish-and-dill dish behind the Thang Long table.",
+          "reason": "The page centers cha ca and should link to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city signature-dish comparison",
+          "displaySubtitle": "Another Hanoi meal where one famous dish carries the table.",
+          "reason": "Huong Lien is a better food-route comparison than a generic restaurant relation.",
           "status": "render"
         }
       ],
@@ -1416,13 +1437,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cha-ca-thang-long: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Chả cá Thăng Long has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Cha Ca Thang Long now links to the dish guide and a specific signature-dish comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2663,11 +2685,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "gia",
-      "travelerMoment": "Gia shows contemporary Hanoi dining: a composed room and careful pacing beside a city better known for street meals and old specialties.",
-      "storySpine": "Gia adds a refined Hanoi dinner option where the meal is the planned evening rather than a street-food detour.",
+      "travelerMoment": "Save Gia when Hanoi dinner should be a 2025 One MICHELIN Star evening, with a composed room and contemporary Vietnamese pacing rather than street-food speed.",
+      "storySpine": "Gia adds a refined Hanoi dinner option where Vietnamese ingredients and a quiet room make the meal the planned evening.",
       "intro": {
-        "heading": "A Calmer Special Meal",
-        "body": "Gia turns a Hanoi dinner into a polished contemporary night: muted room, careful service pace, and a meal built for intention rather than casual fuel."
+        "heading": "A Michelin-Starred Hanoi Evening",
+        "body": "Gia is the Hanoi dinner save for a 2025 One MICHELIN Star meal: a calmer room, contemporary Vietnamese pacing, and a night planned around the table rather than another quick stop."
       },
       "usefulPhraseCards": [
         {
@@ -2697,34 +2719,53 @@
       ],
       "sections": [
         {
-          "id": "the-room-settles-first",
+          "id": "room-settles-first",
           "heading": "The Room Settles First",
-          "body": "The muted interior and staff pacing are part of the meal. Arrive ready to slow down instead of treating dinner like a quick stop between sights."
-        },
-        {
-          "id": "a-planned-evening",
-          "heading": "A Planned Evening",
-          "body": "Gia is the night when dinner is the event. The rest of the evening has more room when it stays less crowded."
-        },
-        {
-          "id": "a-dinner-with-intention",
-          "heading": "A Dinner With Intention",
-          "body": "Gia is dinner as the plan, not fuel between plans. The clearest memory is mood, pacing, and a room that feels chosen."
+          "body": "The muted interior and staff pacing are part of the meal. Arrive ready to slow down instead of treating dinner like fuel between sights."
         },
         {
           "id": "book-around-the-room",
-          "heading": "Book Around The Room",
-          "body": "Fine dining needs room around the meal. A simple evening leaves the table enough attention."
+          "heading": "Leave Space Around Dinner",
+          "body": "Fine dining needs room around it. Keep the rest of the evening simple so the table has enough attention."
+        },
+        {
+          "id": "ingredients-before-status",
+          "heading": "Ingredients Before Status",
+          "body": "The star helps explain why to save it, but the memory still has to come from the plates, pacing, and Vietnamese ingredients in front of you."
+        },
+        {
+          "id": "hanoi-has-two-registers",
+          "heading": "Hanoi Has Two Registers",
+          "body": "Save this beside bún chả, egg coffee, or chả cá so the trip keeps both sides of Hanoi: street-level classics and one composed dinner."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "bun cha",
+          "displaySubtitle": "The smoky Hanoi classic to save beside a refined dinner.",
+          "reason": "The Gia copy contrasts a composed dinner with Hanoi street-level classics.",
+          "status": "render"
+        },
+        {
+          "label": "Chả cá ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-cha-ca",
+          "sourceText": "cha ca",
+          "displaySubtitle": "The fish-and-dill Hanoi specialty for a different dinner register.",
+          "reason": "The Gia copy names cha ca as a food-register contrast.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-tam-vi",
+          "label": "Tầm Vị",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A 2025 One MICHELIN Star northern table with wood, rice, and shared dishes.",
+          "reason": "Tam Vi is a more relevant star-level Hanoi comparison than a generic bun cha relation.",
           "status": "render"
         }
       ],
@@ -2738,13 +2779,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-gia: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Gia has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Gia now has bounded 2025 One MICHELIN Star positioning and a specific Hanoi dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3683,11 +3725,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "hibana by koki",
-      "travelerMoment": "Hibana shows another Hanoi register: a polished counter meal under the city's hotel-and-fine-dining side, far from the low-stool pace outside.",
-      "storySpine": "Hibana is memorable through its room and pace more than any single plate.",
+      "travelerMoment": "Save Hibana by Koki when Hanoi dinner should be a 2025 One MICHELIN Star teppanyaki-style occasion, with counter attention, staff pacing, and a quieter evening built around the meal.",
+      "storySpine": "Hibana adds a Japanese fine-dining register inside Hanoi, where the counter and pacing matter as much as the dishes.",
       "intro": {
-        "heading": "Counter Seats Make The Meal",
-        "body": "Hibana by Koki is a polished Hanoi dinner where the counter matters: grill heat, chef hands, measured pacing, and small watched moments."
+        "heading": "A Michelin-Starred Counter Night",
+        "body": "Hibana by Koki is the Hanoi save for a 2025 One MICHELIN Star counter-style dinner: slower pacing, close-up cooking, and an evening that should not be squeezed between too many plans."
       },
       "usefulPhraseCards": [
         {
@@ -3740,11 +3782,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-gia",
+          "label": "Gia",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A calmer contemporary Vietnamese dinner when the room should carry the evening.",
+          "reason": "Gia is a better same-city star-level comparison than the previous generic restaurant relation.",
           "status": "render"
         }
       ],
@@ -3758,13 +3800,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hibana-by-koki: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Hibana by Koki has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Hibana now has bounded 2025 One MICHELIN Star positioning and a specific star-level Hanoi comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -4572,11 +4615,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "lamai garden",
-      "travelerMoment": "Lamai Garden adds a softer contemporary meal to Hanoi's food map, with herbs, warm light, and garden pacing balancing louder street-food days.",
-      "storySpine": "Lamai Garden is specific through its garden room and pace rather than dish detail.",
+      "travelerMoment": "Lamai Garden is a 2025 MICHELIN Green Star dinner to consider when Hanoi needs a calmer garden-side meal with herbs, warm light, and a slower table.",
+      "storySpine": "The Green Star matters because the garden-side room and food choices can make dinner feel more deliberate after street-heavy hours.",
       "intro": {
-        "heading": "Dinner With A Garden Edge",
-        "body": "Lamai Garden softens the Hanoi dinner pace with a path, herbs, warm interior light, and contemporary Vietnamese cooking for a calmer night."
+        "heading": "A Green-Star Garden Dinner",
+        "body": "Lamai Garden is the Hanoi save for a 2025 MICHELIN Green Star dinner: garden-side calm, herbs, warm interior light, and a table that slows the night down."
       },
       "usefulPhraseCards": [
         {
@@ -4629,11 +4672,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-tam-vi",
+          "label": "Tầm Vị",
+          "relationship": "same-city recognized dinner contrast",
+          "displaySubtitle": "A 2025 One MICHELIN Star northern table with shared dishes and a home-table mood.",
+          "reason": "Tam Vi is a relevant recognized-dinner comparison for Lamai Garden.",
           "status": "render"
         }
       ],
@@ -4647,17 +4690,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lamai-garden: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Lamai Garden has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Lamai Garden now has bounded 2025 MICHELIN Green Star positioning and a specific Hanoi dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Official Michelin corporate 2025 release lists Lamai Garden among Vietnam MICHELIN Green Star restaurants."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -5462,8 +5507,8 @@
       "travelerMoment": "Chân Cầm puts miến lươn at a specific Old Quarter address, where eel, glass noodles, herbs, and steam become a focused small-shop meal.",
       "storySpine": "Let the bowl, not the schedule around it, set the pace at Mien Luon Chan Cam.",
       "intro": {
-        "heading": "The Bowl Sets The Pace",
-        "body": "Mien Luon Chan Cam is a focused Hanoi noodle meal: eel, glass noodles, herbs, steam, and a small-shop pace at the table for lunch."
+        "heading": "A Bib Gourmand Eel-Noodle Bowl",
+        "body": "Mien Luon Chan Cam is a focused Hanoi noodle stop with 2025 Bib Gourmand source support: eel, glass noodles, herbs, steam, and a quick small-shop lunch pace."
       },
       "usefulPhraseCards": [
         {
@@ -5513,14 +5558,24 @@
           "body": "Order, eat, pay, and carry the eel-noodle bite into the next street."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Miến lươn ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-mien-luon",
+          "sourceText": "eel, glass noodles",
+          "displaySubtitle": "The eel-and-glass-noodle dish behind this named shop.",
+          "reason": "The restaurant page centers miến lươn and should link to the dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
+          "label": "Phở Bò Lâm",
+          "relationship": "same-city noodle-shop contrast",
+          "displaySubtitle": "A beef-pho counter when broth and cuts matter more than eel noodles.",
+          "reason": "Pho Bo Lam is a useful Bib-supported noodle-shop contrast.",
           "status": "render"
         }
       ],
@@ -5534,17 +5589,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-mien-luon-chan-cam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Miến lươn Chân Cầm has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Mien Luon Chan Cam now links to the dish guide and a specific noodle-shop contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Miến lươn Chân Cầm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7349,8 +7406,8 @@
       "travelerMoment": "Pho Bo Lam centers Hanoi pho around chew as much as broth, especially when tendon turns the bowl into a more deliberate order.",
       "storySpine": "Pho Bo Lam gets its specificity from chew, broth, beef, and counter pace rather than guide-list status.",
       "intro": {
-        "heading": "Beef Cuts, Simple Table",
-        "body": "Pho Bo Lam centers on the bowl: beef broth, rice noodles, herbs, and deeper chew if tendon is what you want in a focused Hanoi pho stop."
+        "heading": "A Bib Gourmand Pho Stop",
+        "body": "Pho Bo Lam is a focused Hanoi beef-pho meal with 2025 Bib Gourmand source support: beef broth, rice noodles, herbs, and deeper chew if tendon is what you want."
       },
       "usefulPhraseCards": [
         {
@@ -7387,7 +7444,7 @@
         {
           "id": "plain-and-memorable",
           "heading": "Plain And Memorable",
-          "body": "This stop makes sense when lunch stays simple: eat the bowl, notice the shop pace, and move on."
+          "body": "This table makes sense when lunch stays simple: eat the bowl, notice the shop pace, and move on."
         },
         {
           "id": "pho-comparison",
@@ -7400,14 +7457,24 @@
           "body": "Check the signs, queue, and room before making the bowl the fixed plan. Beef pho needs a counter that feels alive."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở bò ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-pho-bo",
+          "sourceText": "beef-pho",
+          "displaySubtitle": "The Hanoi beef-pho guide behind this named counter.",
+          "reason": "The page centers beef pho and should link to the dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
+          "label": "Phở Gia Truyền",
+          "relationship": "same-city pho-counter comparison",
+          "displaySubtitle": "Another Hanoi pho counter when broth, queue, and room pace are the comparison.",
+          "reason": "Pho Gia Truyen is the natural same-dish comparison for a named pho stop.",
           "status": "render"
         }
       ],
@@ -7421,17 +7488,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bo-lam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Phở Bò Lâm has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Pho Bo Lam now links to the dish guide and a specific pho-counter comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide"
+        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide",
+        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Phở Bò Lâm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8345,11 +8414,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "tam vi",
-      "travelerMoment": "Tầm Vị draws on Hanoi's northern home-cooking memory, where shared dishes, rice, wood, and a calmer room make dinner feel rooted rather than showy.",
-      "storySpine": "Tam Vi brings a gentler Hanoi restaurant pace, where the memory is the shared table and evening detail more than one dramatic plate.",
+      "travelerMoment": "Save Tam Vi when Hanoi dinner should feel rooted and recognized: a 2025 One MICHELIN Star northern table with shared dishes, rice, wood, and an unhurried room.",
+      "storySpine": "Tam Vi carries Hanoi home-cooking memory into a restaurant room, where shared dishes and rice matter more than one showy plate.",
       "intro": {
-        "heading": "A Northern Table Pace",
-        "body": "Tam Vi is a slower Hanoi dinner stop: warm wood, shared northern dishes, rice on the table, and a room that feels chosen rather than squeezed between sights."
+        "heading": "A Michelin-Starred Northern Table",
+        "body": "Tam Vi is the Hanoi save for a 2025 One MICHELIN Star northern meal: warm wood, shared dishes, rice at the center, and a room that feels chosen rather than squeezed between sights."
       },
       "usefulPhraseCards": [
         {
@@ -8389,24 +8458,34 @@
           "body": "Settle pork, shellfish, spice, table size, and booking questions before the first dish arrives. After that, the meal can stay relaxed."
         },
         {
-          "id": "before-the-meal",
-          "heading": "Before The Meal",
-          "body": "Arrive with the idea of a shared northern meal rather than a quick famous stop. Warm wood, rice, table dishes, and an unhurried pace are the reason to make room for it."
+          "id": "northern-home-table",
+          "heading": "Northern Home-Table Mood",
+          "body": "The star gives it a reason to notice, but the memory is gentler: wood, rice, familiar northern dishes, and a table that rewards slowing down."
         },
         {
-          "id": "one-meal-can-be-the-evening",
+          "id": "one-meal-can-be-evening",
           "heading": "One Meal Can Be The Evening",
-          "body": "The value is not rushing in for a famous name. The meal needs enough space, and the rest of the night can stay simple."
+          "body": "Do not rush in for the famous name alone. Give the meal enough space, then keep the rest of the night simple."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "northern dishes",
+          "displaySubtitle": "A smoky street-level Hanoi contrast beside Tam Vi’s calmer table.",
+          "reason": "Bun cha is the clearest Hanoi dish contrast for a northern restaurant page.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-gia",
+          "label": "Gia",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A contemporary Hanoi dinner when a quieter room should become the plan.",
+          "reason": "Gia is the most relevant star-level Hanoi comparison for Tam Vi.",
           "status": "render"
         }
       ],
@@ -8420,13 +8499,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tam-vi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Tầm Vị has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Tam Vi now has bounded 2025 One MICHELIN Star positioning and a specific Hanoi dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -9678,8 +9758,8 @@
       "travelerMoment": "Ưu Đàm gives Hanoi a calmer vegetarian lane, where herbs, mushrooms, tofu, rice, and warm bowls offer relief from meat-heavy street meals.",
       "storySpine": "Uu Dam broadens Hanoi food coverage with a vegetarian restaurant moment that does not depend on a fixed dish list.",
       "intro": {
-        "heading": "A Calm Vegetarian Table",
-        "body": "Uu Dam is a calm vegetarian table in Hanoi: herbs, bowls, sauces, a slower room, and a meal chosen on purpose after street-heavy hours."
+        "heading": "A Recognized Vegetarian Table",
+        "body": "Uu Dam is a calm Hanoi vegetarian table with 2025 Bib Gourmand source support: herbs, bowls, sauces, a slower room, and a meal chosen on purpose after street-heavy hours."
       },
       "usefulPhraseCards": [
         {
@@ -9729,14 +9809,24 @@
           "body": "Place it after a dense walking day. The room can slow the evening without adding a sight before or after."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "street-heavy hours",
+          "displaySubtitle": "A smoky street-level contrast when the trip needs classic Hanoi before or after vegetarian calm.",
+          "reason": "The page contrasts vegetarian calm with street-heavy Hanoi food.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
-          "label": "Bún chả Hương Liên",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hanoi-place-lamai-garden",
+          "label": "Lamai Garden",
+          "relationship": "same-city vegetarian/green dinner contrast",
+          "displaySubtitle": "A 2025 MICHELIN Green Star garden-side dinner with herbs and a calmer room.",
+          "reason": "Lamai Garden is a more useful vegetarian/green-leaning comparison than a generic restaurant card.",
           "status": "render"
         }
       ],
@@ -9750,17 +9840,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-udam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate: Ưu Đàm has a concrete restaurant scene, truthful Hanoi story spine, useful first move, and mapped phrase cards."
+        "reason": "Production food pass: Uu Dam now has bounded 2025 Bib Gourmand support and a specific vegetarian dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: MICHELIN Vietnam 2025",
+        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Ưu Đàm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {

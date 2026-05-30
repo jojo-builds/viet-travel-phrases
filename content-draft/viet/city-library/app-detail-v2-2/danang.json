@@ -1568,11 +1568,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "banh xeo ba duong",
-      "travelerMoment": "Choose it when the group wants a named banh xeo meal and needs confidence for the first table exchange.",
-      "storySpine": "Ba Duong gives the dish a concrete restaurant table: crisp pancakes, herbs, sauce, and a meal that moves fast.",
+      "travelerMoment": "Choose Ba Duong when the group wants Da Nang banh xeo as the meal, not a snack: hot pancakes, herbs, rice paper, sauce, and a first roll that moves quickly.",
+      "storySpine": "Ba Duong makes a central-coast dish feel physical: crackly edges, wet herbs, hands at the table, and sauce deciding the bite.",
       "intro": {
-        "heading": "A Fast Banh Xeo Table",
-        "body": "A focused Da Nang banh xeo room where hot plates, herbs, sauce, and quick table motion matter more than a long menu study with friends."
+        "heading": "Hot Pancake, Fast Hands",
+        "body": "Banh Xeo Ba Duong is the Da Nang save for a hands-on pancake meal: hot banh xeo, herbs, rice paper, sauce, and a room that moves before you have overthought the menu."
       },
       "usefulPhraseCards": [
         {
@@ -1602,34 +1602,53 @@
       ],
       "sections": [
         {
-          "id": "a-focused-table",
-          "heading": "A Focused Table",
-          "body": "Come for the narrow focus: hot banh xeo, herbs, sauce, and a room built around that plate. The first order should stay simple."
+          "id": "watch-the-first-roll",
+          "heading": "Watch The First Roll",
+          "body": "Let the table show you the rhythm. Pancake, herbs, wrapper, sauce, and one neat bite make the meal click faster than reading the whole menu."
         },
         {
-          "id": "hot-plate-first",
-          "heading": "Hot Plate First",
-          "body": "If the banh xeo arrives fast, that is not pressure. Set up herbs and rice paper, watch one roll, and eat while the shell still cracks."
+          "id": "eat-while-it-cracks",
+          "heading": "Eat While It Cracks",
+          "body": "Banh xeo makes the most sense while the edge still has snap. Set up the herbs first, then keep the order simple enough to stay hot."
         },
         {
-          "id": "sauce-before-more",
-          "heading": "Sauce Before More",
-          "body": "The dipping sauce carries the house memory. Try it once before adding chili or calling for another plate."
+          "id": "sauce-carries-the-memory",
+          "heading": "Sauce Carries The Memory",
+          "body": "Taste the dipping sauce once before adding chili. The house flavor lives there as much as in the pancake."
         },
         {
-          "id": "simple-room-clear-purpose",
-          "heading": "Simple Room, Clear Purpose",
-          "body": "This meal does not need a long menu study. The appeal is narrow: hot banh xeo, busy hands, fresh herbs, and a table that settles once you stop overthinking."
+          "id": "save-for-a-shared-table",
+          "heading": "Save For A Shared Table",
+          "body": "The meal opens up with two or more people. The fun is the shared motion: passing herbs, folding wrappers, and comparing the first messy bite."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh xèo ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-banh-xeo",
+          "sourceText": "banh xeo",
+          "displaySubtitle": "The crisp pancake dish behind the Ba Duong table.",
+          "reason": "The page centers banh xeo and should link to the dish-level guide.",
+          "status": "render"
+        },
+        {
+          "label": "Nem lụi ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-nem-lui",
+          "sourceText": "herbs, wrapper, sauce",
+          "displaySubtitle": "Another central-style roll-and-dip food memory in Da Nang.",
+          "reason": "The copy frames roll-and-dip behavior; nem lui is a natural nearby food link.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-danang-place-be-man",
           "label": "Hải sản Bé Mặn",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city hands-on dinner contrast",
+          "displaySubtitle": "Beach-side seafood where ice trays, price questions, and group ordering lead.",
+          "reason": "Be Man contrasts Ba Duong with another hands-on Da Nang dinner that requires a clear first ordering move.",
           "status": "render"
         }
       ],
@@ -1643,13 +1662,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Banh Xeo Ba Duong has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Ba Duong now has stronger food desire, dish links, and a specific related dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1733,14 +1753,24 @@
           "body": "A clear grilled, steamed, or stir-fried main is easier than a table crowded with sauces. One main plate gives the meal a clean start."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Hải sản ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-hai-san",
+          "sourceText": "seafood",
+          "displaySubtitle": "Da Nang seafood ordering guide for displays, price, and cooking style.",
+          "reason": "The page is built around seafood display ordering; the dish-level seafood page exists.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
           "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city hands-on dinner contrast",
+          "displaySubtitle": "A hot pancake table when herbs, wrappers, and sauce should lead dinner.",
+          "reason": "Ba Duong is the right contrast when a hands-on Da Nang dinner should be crisp pancake rather than seafood display.",
           "status": "render"
         }
       ],
@@ -1754,13 +1784,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Be Man Seafood has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: seafood display page now links to the seafood guide and a specific hands-on dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1844,14 +1875,24 @@
           "body": "Roll meals live or die by the dip. Taste once, then the order can cover more herbs, less heat, or help if the setup is not obvious."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh tráng cuốn thịt heo ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-banh-trang-cuon-thit-heo",
+          "sourceText": "roll-and-dip habit",
+          "displaySubtitle": "The pork, herbs, wrapper, and sauce habit behind this calmer table.",
+          "reason": "Bếp Cuốn is framed around Da Nang roll-and-dip behavior; the dish guide is the natural catalog link.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
           "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "hands-on Da Nang dinner contrast",
+          "displaySubtitle": "A hotter, louder pancake table when crisp edges and sauce should lead.",
+          "reason": "Ba Duong is the useful contrast when the visitor wants a more intense hands-on table than Bếp Cuốn.",
           "status": "render"
         }
       ],
@@ -1875,7 +1916,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Venue and local tourism sources."
+        "Production intake source notes: Venue and local tourism sources.",
+        "Michelin audit note: read-only reviewer found official 2025 MICHELIN Selected support for Bếp Cuốn; keep visible copy food-first unless the exact recognition is refreshed during a later Michelin-specific import."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1961,12 +2003,18 @@
           "catalogId": "viet-family-city-danang-place-43-factory",
           "label": "43 Factory Coffee Roaster",
           "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "displaySubtitle": "A more coffee-focused stop when espresso and roastery detail matter more than a sweet break.",
+          "reason": "43 Factory gives Boulevard a clearer support-page comparison: coffee craft instead of gelato/cool-down utility.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        {
+          "type": "light",
+          "reason": "Keep Boulevard as a support cool-down listing, not a food-feature anchor, unless a future source pass adds stronger flavor or venue evidence.",
+          "blocking": false
+        }
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -1976,13 +2024,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Boulevard Gelato & Coffee has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Boulevard is explicitly treated as a support cool-down listing with a specific coffee-craft comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2177,14 +2226,24 @@
           "body": "For a named shop, check the location and opening window before building the day around it. The bowl matters more than a long menu."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bún chả cá ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-bun-cha-ca",
+          "sourceText": "bun cha ca",
+          "displaySubtitle": "The fish-cake noodle bowl behind this named shop.",
+          "reason": "The Hờn page is a named-place example for the broader bún chả cá dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-mi-quang-1a",
+          "label": "Mì Quảng 1A",
+          "relationship": "same-city noodle-shop contrast",
+          "displaySubtitle": "A focused mì Quảng table when the day calls for a different Da Nang bowl.",
+          "reason": "Mi Quang 1A is a more relevant noodle-shop comparison than a generic restaurant card.",
           "status": "render"
         }
       ],
@@ -2198,13 +2257,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Bun Cha Ca Hon has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Hờn now links to the bún chả cá guide and a specific noodle-shop contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2732,15 +2792,21 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-bep-cuon",
+          "label": "Bếp Cuốn Đà Nẵng",
+          "relationship": "same-city casual table comparison",
+          "displaySubtitle": "A clearer roll-and-dip table when the group wants a calmer first meal.",
+          "reason": "Bếp Cuốn is a useful casual-table comparison while Cô Chủ Nhỏ remains a support listing needing dish-hook refresh.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        {
+          "type": "light",
+          "reason": "Keep Cô Chủ Nhỏ as a support listing until the exact house-dish/Michelin recognition hook is refreshed from current sources.",
+          "blocking": false
+        }
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -2750,13 +2816,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Co Chu Nho has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Cô Chủ Nhỏ is marked as support-risk and no longer points to a generic related restaurant card."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2835,14 +2902,42 @@
           "body": "Hàn is easier for central bearings and gifts. Cồn leans toward eating: hot counters, dessert cups, plastic stools, and cash-ready decisions."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Mì Quảng ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-mi-quang",
+          "sourceText": "mì Quảng",
+          "displaySubtitle": "The regional noodle bowl to recognize at Da Nang market counters.",
+          "reason": "The Cồn copy names mì Quảng as one of the small market orders.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh xèo ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-banh-xeo",
+          "sourceText": "bánh bèo, bánh bột lọc, bún mắm",
+          "displaySubtitle": "A hands-on Da Nang dish to save beside market snacks.",
+          "reason": "The Cồn copy frames small plates and Da Nang market eating; banh xeo is a nearby food guide in the catalog.",
+          "status": "render"
+        },
+        {
+          "label": "Chợ Hàn",
+          "type": "place",
+          "catalogId": "viet-family-city-danang-place-han-market",
+          "sourceText": "Hàn",
+          "displaySubtitle": "The calmer first-market save for bearings, gifts, and an easier lap.",
+          "reason": "The page explicitly contrasts Cồn with Hàn, and Hàn has a renderable V2.2 page.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-bac-my-an-market",
-          "label": "Chợ Bắc Mỹ An",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-han-market",
+          "label": "Chợ Hàn",
+          "relationship": "central-market contrast",
+          "displaySubtitle": "The easier first market for bearings and gifts before a deeper food run.",
+          "reason": "Hàn is the direct comparison named in the Cồn copy and helps visitors choose the right market job.",
           "status": "render"
         }
       ],
@@ -2856,13 +2951,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Gold calibration: food-first market contrast with specific snacks, first lap, and cash-ready decisions."
+        "reason": "Production food pass: Cồn now links its food pull and market contrast instead of a generic related market card."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -6066,14 +6162,24 @@
           "body": "It suits a group with different confidence levels: people who want Vietnamese food, someone who wants a clearer menu, and anyone tired of negotiating every detail."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh xèo ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-banh-xeo",
+          "sourceText": "shared plates",
+          "displaySubtitle": "A hands-on Da Nang dish to consider when the group wants more table texture.",
+          "reason": "Madame Lân is a broad-table page; bánh xèo is a useful next food move when the visitor wants a narrower dish stop.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-bep-cuon",
+          "label": "Bếp Cuốn Đà Nẵng",
+          "relationship": "group-dinner contrast",
+          "displaySubtitle": "A roll-and-dip table with a narrower food job than Madame Lân.",
+          "reason": "Bếp Cuốn helps distinguish a broad polished dinner from a focused roll meal.",
           "status": "render"
         }
       ],
@@ -6087,13 +6193,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Madame Lan has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Madame Lân now has a narrower food-route comparison and a dish link for next-step planning."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -6621,14 +6728,24 @@
           "body": "This kind of noodle stop slots into a day with river light, beach time, or a museum already on it. It gives local flavor without turning lunch into a long sit."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Mì Quảng ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-mi-quang",
+          "sourceText": "Mi Quang",
+          "displaySubtitle": "The Da Nang noodle bowl behind this focused lunch stop.",
+          "reason": "The restaurant page centers mi Quang and should link to the dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-my-quang-ba-mua",
+          "label": "Mỳ Quảng Bà Mua",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "Another named mì Quảng stop when the trip needs a second bowl comparison.",
+          "reason": "Ba Mua is a same-city mì Quảng comparison, more relevant than a generic restaurant card.",
           "status": "render"
         }
       ],
@@ -6642,13 +6759,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Mi Quang 1A has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Mi Quang 1A now behaves as a named dish stop with a specific same-dish comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -8007,11 +8125,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "nen da nang",
-      "travelerMoment": "Nen is a slower dinner plan; leave room for the booking, table pace, staff guidance, and any food limits.",
-      "storySpine": "Nen adds a higher-commitment dinner stop to Da Nang through pacing, room for conversation, and a composed table pace.",
+      "travelerMoment": "Save Nen when Da Nang dinner should be slower and more ingredient-led: a 2025 MICHELIN Green Star restaurant where the meal needs time around it.",
+      "storySpine": "Nen gives Da Nang a sustainability-minded dining memory, connecting Vietnamese ingredients, farm detail, staff guidance, and a composed table pace.",
       "intro": {
-        "heading": "A Dinner That Slows The Night",
-        "body": "Nen Da Nang is a composed dinner stop where herbs, ceramics, small courses, staff guidance, and time matter more than a quick plate."
+        "heading": "A Green-Star Dinner Save",
+        "body": "Nen Da Nang is the slower dinner save for ingredient stories, herbs, ceramics, staff guidance, and a 2025 MICHELIN Green Star reason to make the meal its own evening."
       },
       "usefulPhraseCards": [
         {
@@ -8041,9 +8159,14 @@
       ],
       "sections": [
         {
+          "id": "ingredient-story-first",
+          "heading": "Ingredient Story First",
+          "body": "The draw is not speed. Let local produce, herbs, small courses, and staff explanation shape the night before comparing it to street food."
+        },
+        {
           "id": "space-around-the-booking",
           "heading": "Space Around The Booking",
-          "body": "Leave room around the booking. A tasting-style meal loses focus if you are squeezing it between a beach shower, bridge photos, and a late ride."
+          "body": "Leave room around the reservation. A tasting-style meal loses focus if it is squeezed between a beach rinse, bridge photos, and a late ride."
         },
         {
           "id": "food-limits-before-courses",
@@ -8051,24 +8174,29 @@
           "body": "If shellfish, pork, heat, alcohol, or a dietary restriction matters, say it before the table starts moving. It is easier to adjust early."
         },
         {
-          "id": "dinner-with-intention",
-          "heading": "Dinner With Intention",
-          "body": "Choose it when the meal itself is the evening plan. Leave room for a slower table pace, careful dishes, and staff guidance rather than squeezing it between stops."
-        },
-        {
-          "id": "dinner-needs-time",
-          "heading": "Dinner Needs Time",
-          "body": "Nen lands well when conversation has time to catch up with the plates. Go with someone who wants dinner to be one of the day's memories."
+          "id": "balance-with-everyday-da-nang",
+          "heading": "Balance With Everyday Da Nang",
+          "body": "Save it beside mì Quảng, seafood, or Cồn Market so the food plan has both registers: a careful dinner and the city’s everyday eating."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Mì Quảng ở Đà Nẵng",
+          "type": "dish",
+          "catalogId": "viet-family-city-danang-place-mi-quang",
+          "sourceText": "mì Quảng",
+          "displaySubtitle": "The everyday Da Nang bowl to save beside a composed dinner.",
+          "reason": "The Nen copy contrasts the dinner with everyday Da Nang food, and mi Quang is a natural local anchor.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
-          "label": "Bánh xèo Bà Dưỡng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Đà Nẵng with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-danang-place-la-maison-1888",
+          "label": "La Maison 1888",
+          "relationship": "same-city recognized dinner comparison",
+          "displaySubtitle": "A 2025 One MICHELIN Star occasion meal when dinner should become the night.",
+          "reason": "La Maison 1888 is the stronger same-city high-end dinner comparison for Nen.",
           "status": "render"
         }
       ],
@@ -8082,17 +8210,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Nen Da Nang has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production food pass: Nen now has bounded 2025 MICHELIN Green Star positioning, ingredient desire, and a specific high-end dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: City library; MICHELIN search/listing source."
+        "Production intake source notes: City library; MICHELIN search/listing source.",
+        "Official Michelin corporate 2025 release lists Nén Danang among the two MICHELIN Green Star restaurants in Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {

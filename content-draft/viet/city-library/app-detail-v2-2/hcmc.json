@@ -138,11 +138,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "akuna",
-      "travelerMoment": "Akuna sits in the city’s contemporary dining story: Vietnamese ingredients, a booked-meal pace, and a room that lowers the volume after daytime heat.",
-      "storySpine": "It adds a newer HCMC food memory: not street speed, but a controlled table or counter where Vietnamese ingredients carry the evening.",
+      "travelerMoment": "Save Akuna when Saigon dinner should be a 2025 One MICHELIN Star evening: Vietnamese ingredients, counter detail, and a room that lowers the volume after daytime heat.",
+      "storySpine": "Akuna gives Saigon a contemporary fine-dining memory where Vietnamese ingredients carry the evening in a controlled room.",
       "intro": {
-        "heading": "Dinner As The Plan",
-        "body": "Akuna is part of Saigon’s newer fine-dining side, where Vietnamese ingredients, counter detail, and a room built for pacing turn one evening meal into the plan."
+        "heading": "A Michelin-Starred Saigon Counter",
+        "body": "Akuna is the Saigon save for a 2025 One MICHELIN Star planned dinner: Vietnamese ingredients, counter detail, staff pacing, and a room that pulls the night away from street noise."
       },
       "usefulPhraseCards": [
         {
@@ -174,7 +174,7 @@
         {
           "id": "counter-detail-slower-pace",
           "heading": "Counter Detail, Slower Pace",
-          "body": "The picture is close-up: plates arriving in sequence, staff guiding the room, drinks considered, and a Saigon interior that pulls the night away from street noise."
+          "body": "The picture is close-up: plates arriving in sequence, staff guiding the room, drinks considered, and a Saigon interior held apart from daytime heat."
         },
         {
           "id": "a-grown-up-evening-slot",
@@ -182,24 +182,34 @@
           "body": "Choose it after a lighter day, when a long meal will not steal energy from museums, markets, or an early departure."
         },
         {
-          "id": "room-for-the-meal",
-          "heading": "Room For The Meal",
-          "body": "Plan it when conversation, pacing, and ingredients matter. It is weaker as a last-minute hunger fix."
+          "id": "ingredients-before-star-chasing",
+          "heading": "Ingredients Before Star Chasing",
+          "body": "The Michelin star explains why to save it. The meal still needs to earn the night through Vietnamese ingredients, pacing, and attention at the table."
         },
         {
-          "id": "meal-with-time-around-it",
-          "heading": "Meal With Time Around It",
-          "body": "Akuna needs time around the meal. Check exact menu and booking details separately; the room and pacing carry the evening."
+          "id": "compare-the-dinner-registers",
+          "heading": "Compare Dinner Registers",
+          "body": "Pair it mentally with Anan or Coco if you want a planned-dinner shortlist, then balance the trip with markets and street food."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Chợ Bến Thành",
+          "type": "place",
+          "catalogId": "viet-family-city-hcmc-place-ben-thanh-market",
+          "sourceText": "markets",
+          "displaySubtitle": "Central market energy to balance a polished Saigon dinner.",
+          "reason": "The page contrasts planned dining with market and street-food energy.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hcmc-place-anan-saigon",
           "label": "Anăn Sài Gòn",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A market-side 2025 One MICHELIN Star dinner with contemporary Vietnamese cooking.",
+          "reason": "Anan is the direct star-level HCMC comparison for Akuna.",
           "status": "render"
         }
       ],
@@ -214,13 +224,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Dinner As The Plan gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Akuna now has bounded 2025 One MICHELIN Star positioning and a specific Saigon dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1211,14 +1222,24 @@
           "body": "Remember the named bánh xèo restaurant and its large pancake focus. Leave menu, hours, and service style for the moment you plan the visit."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh xèo ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-banh-xeo",
+          "sourceText": "bánh xèo",
+          "displaySubtitle": "The Saigon bánh xèo dish guide behind this named restaurant.",
+          "reason": "The page centers bánh xèo and should link to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-bep-me-in",
+          "label": "Bếp Mẹ Ỉn",
+          "relationship": "same-city casual-table contrast",
+          "displaySubtitle": "An easier central Vietnamese table when the group wants range instead of one pancake.",
+          "reason": "Bep Me In is a useful central-table contrast for Banh Xeo 46A.",
           "status": "render"
         }
       ],
@@ -1233,13 +1254,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Bánh Xèo With A Table gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Banh Xeo 46A now links to the dish guide and a relevant casual-table contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -1542,14 +1564,24 @@
           "body": "A restaurant like this is easier with shared plates and a slower table. Expect more than a quick bánh mì counter."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Chợ Bến Thành",
+          "type": "place",
+          "catalogId": "viet-family-city-hcmc-place-ben-thanh-market",
+          "sourceText": "central Saigon",
+          "displaySubtitle": "Central market energy near this easier sit-down meal.",
+          "reason": "Bep Me In is framed as a central Saigon sit-down table; Ben Thanh is the useful nearby food/market context.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-banh-xeo-46a",
+          "label": "Bánh xèo 46A",
+          "relationship": "same-city dish-specific table contrast",
+          "displaySubtitle": "A named bánh xèo table when one crisp pancake should lead the meal.",
+          "reason": "Banh Xeo 46A is a better contrast than a fine-dining card for a casual Vietnamese table.",
           "status": "render"
         }
       ],
@@ -1564,13 +1596,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Readable Vietnamese Table gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Bep Me In now has central market context and a casual dish-specific comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2881,14 +2914,24 @@
           "body": "Cà phê Cheo Leo is easier to remember with the physical cues: filter coffee, small seating, and the short sit between louder parts of Saigon."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Cà phê sữa đá Sài Gòn ở Thành phố Hồ Chí Minh",
+          "type": "drink",
+          "catalogId": "viet-family-city-hcmc-place-ca-phe-sua-da",
+          "sourceText": "iced sweetness",
+          "displaySubtitle": "The Saigon iced milk coffee guide behind this old-cafe stop.",
+          "reason": "The Cheo Leo page centers iced sweet coffee and old-cafe ritual.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-workshop-coffee",
+          "label": "The Workshop Coffee",
+          "relationship": "same-city coffee-register contrast",
+          "displaySubtitle": "A polished specialty-coffee room when espresso craft matters more than old-cafe ritual.",
+          "reason": "Workshop is a useful modern-coffee contrast for Cheo Leo.",
           "status": "render"
         }
       ],
@@ -2903,13 +2946,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Small Old-Saigon Coffee Stop gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Cheo Leo now links to iced coffee and a specific modern-coffee contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3158,11 +3202,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "ciel",
-      "travelerMoment": "CieL sits in the planned-meal part of Saigon: kitchen pace, staff pace, drinks, and the city’s habit of making dinner part of the night.",
-      "storySpine": "The open kitchen, Vietnamese ingredients, and intimate room give the restaurant a concrete reason to stay in memory beyond a generic dinner label.",
+      "travelerMoment": "Save CieL when Saigon dinner should be a 2025 One MICHELIN Star newcomer: open kitchen, Vietnamese ingredients, staff pace, and an intimate room after daytime walking.",
+      "storySpine": "CieL gives Saigon a newer open-kitchen dining memory, where the room and Vietnamese ingredients matter beyond a generic nice dinner.",
       "intro": {
-        "heading": "A Meal With Its Own Place",
-        "body": "CieL is part of Saigon's newer dining-room story: open kitchen, Vietnamese ingredients, careful pacing, and a slower table after daytime walking."
+        "heading": "A New Star In Saigon",
+        "body": "CieL is the Saigon save for a 2025 One MICHELIN Star newcomer: open kitchen, Vietnamese ingredients, careful pacing, and a slower table after markets or museums."
       },
       "usefulPhraseCards": [
         {
@@ -3215,11 +3259,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-coco-dining",
+          "label": "Coco Dining",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A promoted 2025 One MICHELIN Star dinner with warm light and table pacing.",
+          "reason": "Coco Dining is a relevant same-city 2025 star comparison for CieL.",
           "status": "render"
         }
       ],
@@ -3234,13 +3278,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Meal With Its Own Place gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: CieL now has bounded 2025 One MICHELIN Star positioning and a specific 2025 star comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3383,11 +3428,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "coco dining",
-      "travelerMoment": "Coco Dining sits in Saigon’s planned-dinner side: staff pace, drinks, warm light, fermentation details, and the decision to sit somewhere intentional.",
-      "storySpine": "The dining room, fermentation jars, and warm light give the restaurant a specific Saigon dinner memory beyond another nice meal.",
+      "travelerMoment": "Save Coco Dining when Saigon dinner should be a 2025 One MICHELIN Star evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
+      "storySpine": "Coco Dining gives Saigon a polished contemporary dinner memory, with fermentation detail and warm room light making the meal feel planned.",
       "intro": {
-        "heading": "A Polished Dinner Plan",
-        "body": "Coco Dining is part of Saigon’s contemporary dinner side, where Vietnamese cooking, fermentation details, warm light, and table pacing can carry the evening."
+        "heading": "A Promoted Star Dinner",
+        "body": "Coco Dining is the Saigon save for a 2025 One MICHELIN Star dinner: Vietnamese cooking, fermentation details, warm light, and a table paced to carry the evening."
       },
       "usefulPhraseCards": [
         {
@@ -3417,9 +3462,9 @@
       ],
       "sections": [
         {
-          "id": "room-before-checklist",
-          "heading": "Room Before Checklist",
-          "body": "The room is part of the decision. Expect warm light, styled tables, and a meal paced for sitting, with no rush between errands."
+          "id": "fermentation-and-warm-light",
+          "heading": "Fermentation And Warm Light",
+          "body": "The room is part of the desire: styled tables, drinks, fermentation detail, and a meal that should not feel like a rush between errands."
         },
         {
           "id": "evening-without-a-rush",
@@ -3427,24 +3472,24 @@
           "body": "Pair it with a light day or one central errand before dinner. It is weaker when you are trying to squeeze in three more places."
         },
         {
-          "id": "room-and-pacing-first",
-          "heading": "Room And Pacing Before Plans",
-          "body": "Hold exact dishes lightly. The picture to keep is contemporary Vietnamese dining, a warm room, and a meal that deserves its own slot."
+          "id": "star-signal",
+          "heading": "What The Star Signals",
+          "body": "The star gives the shortlist context. The reason to remember it is the warm room, Vietnamese cooking, and meal-length pacing."
         },
         {
-          "id": "a-planned-meal-choice",
+          "id": "planned-meal-choice",
           "heading": "A Planned-Meal Choice",
-          "body": "Coco Dining is clearer as a planned dinner after heat, traffic, or sightseeing."
+          "body": "Coco Dining is clearer as a planned dinner after heat, traffic, or sightseeing, not as a last-minute hunger fix."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-ciel",
+          "label": "CieL",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A 2025 One MICHELIN Star newcomer with open-kitchen intimacy.",
+          "reason": "CieL is the relevant new-star comparison for Coco Dining.",
           "status": "render"
         }
       ],
@@ -3459,13 +3504,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Polished Dinner Plan gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Coco Dining now has bounded 2025 One MICHELIN Star positioning and a specific new-star comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -6395,11 +6441,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "long trieu",
-      "travelerMoment": "The meal is deliberate, not filler between sights. The room and table pace matter as much as the dishes.",
-      "storySpine": "The restaurant adds a more formal Chinese dining memory in a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
+      "travelerMoment": "Save Long Trieu when Saigon dinner should be a 2025 One MICHELIN Star Chinese meal: polished room, dim sum cues, staff pacing, and a formal table mood.",
+      "storySpine": "Long Trieu adds a polished Chinese dining register to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
       "intro": {
-        "heading": "A Planned Chinese Meal",
-        "body": "Long Trieu gives HCMC’s Chinese dining side a polished table: dim sum cues, staff pacing, and a room held apart from the street outside."
+        "heading": "A Michelin-Starred Chinese Table",
+        "body": "Long Trieu is the Saigon save for a 2025 One MICHELIN Star Chinese meal: dim sum cues, staff pacing, and a polished room held apart from the street outside."
       },
       "usefulPhraseCards": [
         {
@@ -6431,12 +6477,12 @@
         {
           "id": "polished-room-slower-pace",
           "heading": "Polished Room, Slower Pace",
-          "body": "The room changes the pace: more formal and table-focused than a quick street-food meal."
+          "body": "The room changes the register: formal, table-focused, and slower than a quick street-food meal."
         },
         {
-          "id": "dinner-as-the-evening-plan",
+          "id": "dinner-as-evening-plan",
           "heading": "Dinner As The Evening Plan",
-          "body": "It lands well when dinner is one of the day's planned moments, with no rush after too many plans."
+          "body": "It lands cleanly when dinner is one of the day’s planned moments, with no rush after too many stops."
         },
         {
           "id": "menu-time-helps",
@@ -6444,7 +6490,7 @@
           "body": "A bigger menu rewards a slower look. Leave room for house dishes, portions, and dim sum before the table fills."
         },
         {
-          "id": "not-a-street-food-mood",
+          "id": "formal-table-mood",
           "heading": "A Formal Table Mood",
           "body": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the point."
         }
@@ -6454,9 +6500,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-akuna",
           "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "same-city Michelin-starred dinner comparison",
+          "displaySubtitle": "A Vietnamese-ingredient star dinner with counter detail and slower pacing.",
+          "reason": "Akuna gives a star-level but different cuisine/register comparison for Long Trieu.",
           "status": "render"
         }
       ],
@@ -6471,17 +6517,19 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Planned Chinese Meal gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Long Trieu now has bounded 2025 One MICHELIN Star positioning and a specific star-level comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide"
+        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide",
+        "Official Michelin corporate 2025 release lists Long Trieu among retaining One MICHELIN Star recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7236,11 +7284,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-coco-dining",
+          "label": "Coco Dining",
+          "relationship": "same-city modern dinner comparison",
+          "displaySubtitle": "A warmer, more polished Saigon dinner when the meal should carry the night.",
+          "reason": "Coco Dining is a more specific modern-dinner comparison for Nephele than a generic Akuna relation.",
           "status": "render"
         }
       ],
@@ -7255,13 +7303,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Small Modern Dinner gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Nephele now has a specific modern-dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -11037,11 +11086,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-cheo-leo-cafe",
+          "label": "Cà phê Cheo Leo",
+          "relationship": "same-city coffee-register contrast",
+          "displaySubtitle": "An old-Saigon coffee room when metal-filter ritual matters more than specialty polish.",
+          "reason": "Cheo Leo is the right old-cafe contrast for Workshop Coffee.",
           "status": "render"
         }
       ],
@@ -11056,13 +11105,14 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "A Coffee Break Above The Street gives a concrete scene, truthful story spine, and clear first move."
+        "reason": "Production food pass: Workshop Coffee now has a specific old-cafe contrast instead of a generic related cafe."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

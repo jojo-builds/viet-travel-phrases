@@ -857,14 +857,33 @@
           "body": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh xèo Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-banh-xeo",
+          "sourceText": "banh xeo",
+          "displaySubtitle": "The crisp pancake piece inside Bale Well’s shared set.",
+          "reason": "The Bale Well page names banh xeo as part of the meal.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh mì Phượng",
+          "type": "place",
+          "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
+          "sourceText": "Old Core",
+          "displaySubtitle": "A fast counter contrast when Hội An food should be quick instead of hands-on.",
+          "reason": "Banh Mi Phuong is a nearby food contrast for Bale Well.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
-          "label": "Bánh mì Phượng",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "first-dinner orientation contrast",
+          "displaySubtitle": "A calmer first dinner for reading Hội An dishes before smaller specialty stops.",
+          "reason": "Morning Glory is the appropriate orientation contrast for Bale Well’s hands-on set meal.",
           "status": "render"
         }
       ],
@@ -878,13 +897,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Gold calibration: shared-table restaurant sequence, set-menu clarity, and Hoi An-specific hand work."
+        "reason": "Production food pass: Bale Well now links its set meal to dish/place cards and a first-dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -2647,11 +2667,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "dish-to-orientation restaurant link",
+          "displaySubtitle": "A first dinner table where cao lầu can help make the wider Hội An menu readable.",
+          "reason": "Morning Glory is a useful place-level bridge from the cao lầu dish page.",
           "status": "render"
         }
       ],
@@ -2665,13 +2685,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production food pass: Cao lau now routes to a place-level orientation table instead of a generic dish card."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -3431,11 +3452,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
+          "label": "Bánh mì Phượng",
+          "relationship": "same-city quick-meal contrast",
+          "displaySubtitle": "A famous counter when the day wants bread, fillings, and chili instead of chicken rice.",
+          "reason": "Banh Mi Phuong is a useful quick-meal contrast for com ga.",
           "status": "render"
         }
       ],
@@ -3449,13 +3470,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production food pass: Com ga now has a specific quick-meal contrast instead of a generic dish relation."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -10689,8 +10711,8 @@
       "travelerMoment": "Vy's Market Restaurant turns Hội An food variety into an organized indoor counter scene, echoing market browsing without asking the whole group to chase every stall.",
       "storySpine": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "intro": {
-        "heading": "Food-Hall Variety Indoors",
-        "body": "Vy's Market Restaurant turns a Hội An meal into an indoor food-hall style room: counters, bowls, herbs, and variety without chasing every specialty outside."
+        "heading": "A Food Hall For First Bearings",
+        "body": "Vys Market Restaurant gives Hội An food a controlled first lap: counters, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
       },
       "usefulPhraseCards": [
         {
@@ -10725,14 +10747,14 @@
           "body": "Start with a slow look at the counters before choosing. Variety is helpful only if it does not become panic."
         },
         {
-          "id": "when-a-market-feels-like-too-much",
-          "heading": "When A Market Is Too Much",
-          "body": "Choose it on a night when you want local flavors with seating, lighting, and less stall pressure than an outdoor market."
+          "id": "try-one-local-center",
+          "heading": "Try One Local Center",
+          "body": "Let cao lầu, white rose dumplings, or a small bánh xèo lead the first round. One local center makes the rest easier to read."
         },
         {
-          "id": "one-round-first",
-          "heading": "One Round To Start",
-          "body": "Start with one small dish. Add more once the portions and flavors are clear."
+          "id": "when-a-market-is-too-much",
+          "heading": "When A Market Is Too Much",
+          "body": "Choose it on a night when you want local flavors with seating, lighting, and less stall pressure than an outdoor market."
         },
         {
           "id": "organized-variety-leads",
@@ -10740,14 +10762,42 @@
           "body": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Cao lầu ở Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-cao-lau-city",
+          "sourceText": "cao lầu",
+          "displaySubtitle": "The chewy Hội An noodle bowl to use as a first food center.",
+          "reason": "Vys Market copy names cao lầu as a first local center.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh bao bánh vạc ở Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-white-rose-dumplings",
+          "sourceText": "white rose dumplings",
+          "displaySubtitle": "The delicate dumpling to recognize inside an organized Hội An food hall.",
+          "reason": "Vys Market copy names white rose dumplings.",
+          "status": "render"
+        },
+        {
+          "label": "Bánh xèo Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-banh-xeo",
+          "sourceText": "bánh xèo",
+          "displaySubtitle": "A crisp pancake option when the table wants hands-on texture.",
+          "reason": "Vys Market copy names bánh xèo as one possible local center.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "first-dinner orientation comparison",
+          "displaySubtitle": "A calmer table for learning central-coast dishes before smaller specialty stops.",
+          "reason": "Morning Glory is the clearest orientation comparison for Vys Market.",
           "status": "render"
         }
       ],
@@ -10761,13 +10811,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production food pass: Vys Market now has explicit Hội An dish desire, Mentioned Here links, and a specific orientation comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -10959,14 +11010,24 @@
           "body": "The restaurant sits outside the densest lantern-street loop. Choose it for a focused dish break rather than a full evening plan."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh bao bánh vạc ở Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-white-rose-dumplings",
+          "sourceText": "bánh bao bánh vạc",
+          "displaySubtitle": "The delicate Hội An dumpling behind this focused restaurant stop.",
+          "reason": "The page centers white rose dumplings and should link to the dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hoian-place-bale-well",
           "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "hands-on Hội An food contrast",
+          "displaySubtitle": "A shared set meal with pork skewers, bánh xèo, herbs, rice paper, and sauce.",
+          "reason": "Bale Well is the clearest hands-on Hội An food contrast to White Rose Restaurant.",
           "status": "render"
         }
       ],
@@ -10980,13 +11041,14 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production food pass: White Rose now links to its dish guide and a specific hands-on food contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
