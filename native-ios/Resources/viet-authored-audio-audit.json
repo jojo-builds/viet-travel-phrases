@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T19:41:57.925Z",
+    "generatedAt": "2026-05-30T20:07:15.125Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 812,
+    "cityLibraryPageCount": 813,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2254,
-    "missingAudioCount": 687
+    "requiredAudioCount": 2255,
+    "missingAudioCount": 688
   },
   "required": [
     {
@@ -13497,6 +13497,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-ga-nguyet-d874e826e1",
+      "text": "Phở Gà Nguyệt",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-pho-gia-truyen",
       "sectionID": "hero",
       "kind": "hero",
@@ -19928,6 +19936,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-pho-ga-o-ha-noi-0e185d8411",
       "text": "Phở gà ở Hà Nội",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-ga-nguyet-d874e826e1",
+      "text": "Phở Gà Nguyệt",
       "resolved": false
     },
     {

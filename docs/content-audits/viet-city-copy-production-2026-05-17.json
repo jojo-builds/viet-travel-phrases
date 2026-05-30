@@ -5991,6 +5991,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-pho-ga-nguyet",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà rather than beef.",
+        "aboutExcerpt": "This 2025 MICHELIN Bib Gourmand counter keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The bowl is lighter than beef pho without feeling minor. Chicken, rice noodles, green onion, and herbs do the work.",
+        "timingExcerpt": "Phở gà names the dish cleanly, so the first order can stay simple. Add-ins can wait until the bowl is in front of you.",
+        "goodToKnowExcerpt": "Put it beside a beef-pho counter if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
+      }
+    },
+    {
       "id": "city-hanoi-place-pho-gia-truyen",
       "cityID": "hanoi",
       "pageKind": "restaurant",

@@ -2928,62 +2928,62 @@ final class AppChromeTests: XCTestCase {
         let expected: [(pageID: String, heading: String, bodySnippet: String, phraseIDs: [String])] = [
             (
                 "viet-family-city-danang-place-international-terminal",
-                "Land, Then Solve The Ride",
-                "short practical sequence",
-                ["airport-1", "airport-2", "airport-3", "airport-5"]
+                "Land, Then Find The Ride",
+                "first practical hour",
+                ["airport-1", "airport-2", "airport-3"]
             ),
             (
                 "viet-family-city-danang-place-dong-dinh-museum",
                 "A Small Museum Under Trees",
-                "stone paths",
-                ["sight-1", "sight-3", "sight-4", "hotel-9"]
+                "paths under trees",
+                ["sight-1", "sight-3", "sight-4"]
             ),
             (
                 "viet-family-city-hcmc-place-pasteur-street",
-                "One Doorway First",
-                "next blocks readable",
-                ["directions-2", "directions-3", "repair-show-me", "taxi-3"]
+                "One Doorway To Begin",
+                "one real doorway",
+                ["directions-1", "directions-3", "v500-dire-navi-can-i-walk-there"]
             ),
             (
                 "viet-family-city-hanoi-place-loading-t-cafe",
                 "Find The Upstairs Room",
                 "cinnamon-leaning egg coffee",
-                ["coffee-1", "v500-dire-navi-do-i-go-upstairs", "coffee-4", "coffee-7"]
+                ["coffee-1", "v900-food-drin-one-hot-coffee-please", "v900-food-drin-less-sugar-please"]
             ),
             (
                 "viet-family-city-danang-place-lotte-mart",
-                "A Cool-Aisle Reset",
-                "backup shirt matter",
-                ["price-1", "shop-5", "store-2", "store-7"]
+                "Cool Aisles, Easy Errands",
+                "cool indoor errand stop",
+                ["price-1", "shop-5", "store-2"]
             ),
             (
                 "viet-family-city-danang-place-3d-art-in-paradise",
                 "Photos Before Art",
-                "forced perspective",
+                "optical-illusion rooms",
                 ["sight-3", "time-5", "bath-1"]
             ),
             (
                 "viet-family-city-hanoi-place-bun-cha",
                 "Smoke First, Then The Table",
-                "pork over charcoal",
-                ["food-menu", "food-3", "coffee-7"]
+                "charcoal pork",
+                ["food-menu", "food-1", "v900-food-drin-what-do-you-recommend"]
             ),
             (
                 "viet-family-city-hcmc-place-ben-thanh-market",
-                "The Clock Tower First",
-                "practiced sales rhythm",
-                ["price-1", "price-8", "coffee-7"]
+                "Start With The Clock Tower",
+                "snack stalls",
+                ["price-1", "price-4", "shop-4"]
             ),
             (
                 "viet-family-city-hue-place-bach-ma-national-park",
-                "Mountain Weather Comes First",
-                "rain or fog",
+                "Mountain Weather Leads",
+                "weather that can rewrite",
                 ["sight-2", "sight-5", "store-1"]
             ),
             (
                 "viet-family-city-hoian-place-ancient-town-ticket-booth",
-                "A Small Pause Before Old Town",
-                "yellow walls",
+                "The Ticket Threshold",
+                "wandering turns into tickets",
                 ["sight-1", "sight-2", "sight-3"]
             ),
         ]

@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1771,
+    "phraseCount": 1772,
     "basePhraseCount": 935,
-    "cityPhraseCount": 812,
+    "cityPhraseCount": 813,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1753,
+    "familyCount": 1754,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -14159,6 +14159,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hanoi-place-pho-ga"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-pho-ga-nguyet",
+      "pageID": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "scenarioID": "city-guides",
+      "familyTitle": "Pho Ga Nguyet pronunciation",
+      "summary": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà rather than beef.",
+      "primaryPhraseID": "city-hanoi-place-pho-ga-nguyet",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hanoi-place-pho-ga-nguyet"
       ]
     },
     {
@@ -67475,6 +67487,50 @@
       "sourceIDs": [
         "vt-hanoi",
         "vt-hanoi-official"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-pho-ga-nguyet",
+      "familyID": "city-hanoi-place-pho-ga-nguyet",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Pho Ga Nguyet",
+      "targetText": "Phở Gà Nguyệt",
+      "canonicalTargetText": "Phở Gà Nguyệt",
+      "pronunciation": "pho ga nguyet",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà rather than beef.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hanoi",
+        "Hà Nội",
+        "Pho Ga Nguyet",
+        "Phở Gà Nguyệt"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌿",
+      "notes": "city-library-v1; city=hanoi; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hanoi-pho-ga-nguyet; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hanoi",
+      "cityName": "Hanoi",
+      "cityShortTitle": "Hanoi",
+      "cityVietnameseName": "Hà Nội",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hanoi-pho-ga-nguyet",
+      "placeName": "Pho Ga Nguyet",
+      "placeVietnameseName": "Phở Gà Nguyệt",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 3,
+      "sourceIDs": [
+        "vt-hanoi",
+        "vt-hanoi-official",
+        "michelin-vietnam"
       ]
     },
     {

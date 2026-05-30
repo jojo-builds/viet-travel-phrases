@@ -3846,6 +3846,9 @@ function curatedNameSectionPhrases(page, section, profile) {
     const self = selfPhraseOptionForPage(page);
     return self ? [self] : existing.slice(0, 1);
   }
+  if (profile === "restaurant" && preservesHandwrittenCityEditorial(page)) {
+    return compactPhraseOptions(existing, 6);
+  }
   if (/bà nà hills/i.test(`${page.title || ""} ${page.englishTitle || ""}`) && section.id === "journey-flow") {
     return [];
   }
@@ -4354,7 +4357,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 const sectionOrderByProfile = {
   place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "place-brief", "use-it-with", "when-to-use", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
-  restaurant: ["at-glance", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "quick-say", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
+  restaurant: ["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
   phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],

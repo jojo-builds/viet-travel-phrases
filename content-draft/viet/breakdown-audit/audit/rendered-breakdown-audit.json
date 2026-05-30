@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T19:41:58.614Z",
+  "generatedAt": "2026-05-30T20:07:15.778Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1764,
+    "pages": 1765,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 357,
-    "generatedAt": "2026-05-30T19:41:58.614Z"
+    "missing": 358,
+    "generatedAt": "2026-05-30T20:07:15.778Z"
   },
   "pages": [
     {
@@ -99346,6 +99346,18 @@
       "pageID": "viet-family-city-hanoi-place-pho-ga",
       "phraseText": "Phở gà ở Hà Nội",
       "englishTitle": "Chicken pho",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "phraseText": "Phở Gà Nguyệt",
+      "englishTitle": "Pho Ga Nguyet",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"

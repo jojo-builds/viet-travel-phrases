@@ -215,6 +215,7 @@ node native-ios/scripts/validate-viet-sqlite-fixture.js
 node native-ios/scripts/generate-viet-sqlite-fixture.test.js
 node scripts/guard-native-only.js
 git diff --check
+xcodebuild test -only-testing:SpeakLocalNativeTests/AppChromeTests/testV22CityPagesExposeProductionHeadingsAndPhraseCards
 ```
 
 Results:
@@ -230,6 +231,7 @@ Results:
 - Native related-card targeted test: PASS, `AppChromeTests/testV22CityPagesExposeNativeRelatedPlaceCards`.
 - native-only guard: PASS.
 - whitespace check: PASS.
+- focused native V2.2 heading/phrase-card test: PASS, 1 test.
 
 Issue caught during validation:
 
@@ -1158,6 +1160,7 @@ Bún Bò Huế 14B moved out of this backlog in the fifteenth pass and now exist
 Phở Lệ moved out of the high-priority pho add list in the sixteenth pass and now exists as `city-hcmc-place-pho-le-district-5`.
 Bánh Cuốn Bà Hoành moved out of the high-priority Hanoi breakfast add list in the seventeenth pass and now exists as `city-hanoi-place-banh-cuon-ba-hoanh`.
 Bún Riêu Cua 39 moved out of the high-priority Da Nang noodle add list in the eighteenth pass and now exists as `city-danang-place-bun-rieu-cua-39`.
+Phở Gà Nguyệt moved out of the high-priority Hanoi chicken-pho add list in the nineteenth pass and now exists as `city-hanoi-place-pho-ga-nguyet`.
 
 ### Validation Status
 
@@ -2250,3 +2253,112 @@ The additive path is now proven across Saigon, Hanoi, and Da Nang. The next adds
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only.
+
+## Continuation: Phở Gà Nguyệt Additive Hanoi Pilot
+
+Nineteenth pass date: 2026-05-31
+
+Commit before pass: `13ee69d68 Add Bun Rieu Cua 39 Da Nang food listing`
+
+This continuation implements the second additive Hanoi food pilot and the first named chicken-pho restaurant add. The product choice remains additive expansion: Saigon carries 104 noun/place rows, Hanoi now carries 102, Da Nang carries 101, and the full city-place runtime carries 507 rows total.
+
+### Page Added
+
+- `city-hanoi-place-pho-ga-nguyet`: added as a first-class V2.2 app-detail source object and projected into the legacy-compatible native resources.
+
+Visible page direction:
+
+- frames Phở Gà Nguyệt as Hanoi's named chicken-pho counterpoint beside the existing beef-pho pages;
+- uses bounded 2025 MICHELIN Bib Gourmand language supported by the official 2025 source;
+- uses bowl and room cues: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà;
+- avoids telling the reader to save the place in visible copy, and lets the specific dish role carry the save reason;
+- keeps hours, address, booking, closure, and fragile operations out of bundled copy.
+
+### Contract Widening
+
+The additive contract now has a second Hanoi expansion row:
+
+- `native-ios/scripts/import-city-noun-intake.js`: city expected-row contract now allows HCMC to carry 104 rows, Hanoi to carry 102, and Da Nang to carry 101 while Hội An and Hue remain at 100.
+- `native-ios/scripts/validate-viet-city-copy.js`: city production validation now expects 507 noun/place pages, with HCMC at 104, Hanoi at 102, and Da Nang at 101.
+- `native-ios/scripts/generate-authored-tier-one-pages.js`: restaurant section ordering now keeps `quick-say` immediately after `at-glance`, matching the V2.2 render contract that phrase cards should appear after the intro.
+- `native-ios/scripts/generate-authored-tier-one-pages.js`: V2.2 authored city sections no longer receive generic generated support phrases when the source did not ask for them.
+
+This keeps the growing food catalog explicit in validation and fixes the shared restaurant render order instead of hiding phrase cards below the practical sections or injecting unrelated payment phrases into authored food modules.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claim added only where this source supported it:
+
+- `Phở Gà Nguyệt`: 2025 MICHELIN Bib Gourmand, Hanoi, Street Food.
+
+The live MICHELIN restaurant page was not used as the runtime source of truth, so the visible app copy avoids hours, exact address, booking, closure, and narrow operational claims.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-pho-ga-nguyet-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-pho-ga-nguyet`
+  - `pho-ga-nguyet-first-screen.jpg`: first viewport shows the new Phở Gà Nguyệt page, 2025 MICHELIN Bib Gourmand chicken-pho intro, and playable Useful Phrases immediately after the intro.
+  - `pho-ga-nguyet-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here and Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-pho-ga-nguyet`
+  - `--detail-page viet-family-city-hanoi-place-pho-ga-nguyet --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 102 places, Da Nang 101 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 507 entries imported.
+- native resource generation: PASS, 1754 families, 1772 phrases, 1765 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 507 entries, 507 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 507 city noun pages, 507 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 507 city places, 813 city phrase tags, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Phở Gà Nguyệt Additive Pilot
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The additive path is now proven across seven stronger food pages, including the first named chicken-pho page. The next adds should stay selective: only add a restaurant when it creates a new food memory, a stronger comparison, or a clearer reason to remember the place before the trip.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.

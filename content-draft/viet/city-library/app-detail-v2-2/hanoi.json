@@ -7832,6 +7832,138 @@
     },
     {
       "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "pageID": "city-hanoi-place-pho-ga-nguyet",
+      "sourcePageID": "city-hanoi-place-pho-ga-nguyet",
+      "displayName": "Phở Gà Nguyệt",
+      "englishName": "Pho Ga Nguyet",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "pronunciation": "pho ga nguyet",
+      "travelerMoment": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà rather than beef.",
+      "storySpine": "Phở Gà Nguyệt matters because Hanoi pho is not only beef; this 2025 MICHELIN Bib Gourmand stop gives chicken pho its own named place in the city's pho set.",
+      "intro": {
+        "heading": "Chicken Pho With Its Own Weight",
+        "body": "This 2025 MICHELIN Bib Gourmand counter keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "v900-food-drin-what-do-you-recommend",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "start-with-clear-broth",
+          "heading": "Start With Clear Broth",
+          "body": "Taste the broth before lime or chili. Chicken pho can lose its softness quickly once the bowl turns sharp."
+        },
+        {
+          "id": "chicken-changes-the-pace",
+          "heading": "Chicken Changes The Pace",
+          "body": "The bowl is lighter than beef pho without feeling minor. Chicken, rice noodles, green onion, and herbs do the work."
+        },
+        {
+          "id": "order-the-bowl-directly",
+          "heading": "Ask For Phở Gà",
+          "body": "Phở gà names the dish cleanly, so the first order can stay simple. Add-ins can wait until the bowl is in front of you."
+        },
+        {
+          "id": "compare-across-pho",
+          "heading": "Compare Across Pho",
+          "body": "Put it beside a beef-pho counter if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở gà ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-pho-ga",
+          "sourceText": "chicken pho",
+          "displaySubtitle": "The chicken-pho guide behind this named Hanoi bowl.",
+          "reason": "The page centers phở gà and should link to the dish-level chicken-pho guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
+          "label": "Phở Bò Lâm",
+          "relationship": "chicken-versus-beef pho comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-pho stop when richer cuts should lead.",
+          "reason": "Pho Bo Lam is the strongest beef-pho contrast for a chicken-pho page.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
+          "label": "Phở Gia Truyền",
+          "relationship": "pho-counter comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter beef-pho counter for broth and room pace.",
+          "reason": "Pho Gia Truyen gives the named-pho counter comparison without duplicating the chicken-pho role.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hanoi 102-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Phở Gà Nguyệt appears in the Hanoi Bib Gourmand section as Street Food.",
+          "Mentioned Here intentionally links to the existing chicken-pho dish page so the named restaurant has dish-level context."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Production Hanoi additive pilot: bounded 2025 MICHELIN Bib Gourmand context, distinct chicken-pho reason, mapped phrase cards, and renderable dish/pho comparisons."
+      },
+      "sourceNotes": [
+        "Added as the second additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 102.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Gà Nguyệt in the Hanoi Bib Gourmand section as Street Food.",
+        "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "hard_reset_v2_2_source_voice_gate_passed",
+        "v2_2GateSources": [],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Additive food listing pass: source, phrase mapping, related-card intent, Mentioned Here, and MICHELIN support reviewed before projection."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
       "id": "viet-family-city-hanoi-place-pho-gia-truyen",
       "pageID": "city-hanoi-place-pho-gia-truyen",
       "sourcePageID": "city-hanoi-place-pho-gia-truyen",
