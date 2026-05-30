@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PhraseDetailView: View {
     let page: PhraseDetailPage
+    private let articlePage: PhraseArticlePage
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let scrollToTopRoute: AppRoute?
@@ -43,6 +44,7 @@ struct PhraseDetailView: View {
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
+        self.articlePage = page.articleTemplate
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.scrollToTopRoute = scrollToTopRoute
@@ -66,7 +68,7 @@ struct PhraseDetailView: View {
     @ViewBuilder
     var body: some View {
         PhraseArticleTemplateView(
-            page: page.articleTemplate,
+            page: articlePage,
             chromeRoute: .detailPage(page.id),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,

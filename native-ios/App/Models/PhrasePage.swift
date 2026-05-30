@@ -100,6 +100,29 @@ struct PhraseDetailPage: Identifiable, Equatable {
     var practiceCTALabel: String? = nil
     var showsCatalogExplore: Bool = true
 
+#if DEBUG
+    private static let articleTemplateBuildCountLock = NSLock()
+    private static var articleTemplateBuildCount = 0
+
+    static var articleTemplateBuildCountForTesting: Int {
+        articleTemplateBuildCountLock.lock()
+        defer { articleTemplateBuildCountLock.unlock() }
+        return articleTemplateBuildCount
+    }
+
+    static func resetArticleTemplateBuildCountForTesting() {
+        articleTemplateBuildCountLock.lock()
+        articleTemplateBuildCount = 0
+        articleTemplateBuildCountLock.unlock()
+    }
+
+    static func recordArticleTemplateBuildForTesting() {
+        articleTemplateBuildCountLock.lock()
+        articleTemplateBuildCount += 1
+        articleTemplateBuildCountLock.unlock()
+    }
+#endif
+
     var playbackAudioKey: String? {
         let manifest = AudioAssetManifest.main
 
@@ -1261,7 +1284,11 @@ extension PhraseDetailPage {
     }
 
     var articleTemplate: PhraseArticlePage {
-        PhraseArticlePage(
+#if DEBUG
+        Self.recordArticleTemplateBuildForTesting()
+#endif
+
+        return PhraseArticlePage(
             id: id,
             destination: "SpeakLocal Vietnam",
             title: title,

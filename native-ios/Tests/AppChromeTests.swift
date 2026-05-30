@@ -1062,6 +1062,32 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        PhraseDetailPage.resetArticleTemplateBuildCountForTesting()
+
+        let view = PhraseDetailView(
+            page: page,
+            onBackTapped: {},
+            onSearchTapped: {},
+            onDetailTapped: { _ in }
+        )
+
+        XCTAssertEqual(PhraseDetailPage.articleTemplateBuildCountForTesting, 1)
+
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseDetailPage.articleTemplateBuildCountForTesting,
+            1,
+            "SwiftUI body refreshes should reuse the page article adapter instead of remapping all detail sections and playback metadata every redraw."
+        )
+    }
+
     func testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads() {
         XCTAssertEqual(
             AppShellView.browseDetailHeroImageOverride(for: "HeroCategoryAirport"),
