@@ -62,6 +62,8 @@ Do add MICHELIN-backed places when they improve one of these jobs:
 
 Do not add every MICHELIN Selected restaurant as inventory. The app should feel curated, not like a copied guide list.
 
+The current city inventory is fixed at 100 noun/place pages per city in the importer and validators, so a missing restaurant should not be added as a loose extra JSON row. Use `saveworthy_restaurant_add_path_2026-05-31.md` for the first safe add/swap packet; it recommends `Mặn Mòi` as the Saigon pilot and records the required source, runtime, hero, validation, and render gates.
+
 ## Current Patch Note
 
 `city-hcmc-place-nephele` should remain a support save, but the visible copy should say the accurate 2025 MICHELIN Selected signal. It should not keep the vague `guide-listed` wording now that the official 2025 PDF gives the stronger category.
