@@ -1081,6 +1081,55 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBrowseImageAssetPolicyTrustsGeneratedAssetsWithoutExistenceProbe() {
+        var existenceProbeCount = 0
+        let missingProbe: (String) -> Bool = { _ in
+            existenceProbeCount += 1
+            return false
+        }
+
+        let trustedGeneratedImageNames = [
+            "HeroCityDanangPlaceGoldenBridge",
+            "HeroCategoryAirport",
+            "HeroMenuFoodPhoBo",
+            "HeroCompactPhraseMasthead",
+            "BackdropPhraseGreetingCafeDoorway",
+            "BackdropMenuPhoBo",
+        ]
+
+        for imageName in trustedGeneratedImageNames {
+            XCTAssertEqual(
+                BrowseImageAssetPolicy.resolvedImageName(imageName, exists: missingProbe),
+                imageName,
+                "\(imageName) should render directly instead of loading UIImage just to validate existence"
+            )
+        }
+
+        XCTAssertEqual(existenceProbeCount, 0)
+
+        XCTAssertNil(
+            BrowseImageAssetPolicy.resolvedImageName("ManualExperimentMissing", exists: missingProbe)
+        )
+        XCTAssertEqual(existenceProbeCount, 1)
+
+        XCTAssertEqual(
+            BrowseImageAssetPolicy.resolvedImageName("ManualExperimentPresent") { _ in
+                existenceProbeCount += 1
+                return true
+            },
+            "ManualExperimentPresent"
+        )
+        XCTAssertEqual(existenceProbeCount, 2)
+
+        XCTAssertNil(
+            BrowseImageAssetPolicy.resolvedImageName(nil) { _ in
+                existenceProbeCount += 1
+                return true
+            }
+        )
+        XCTAssertEqual(existenceProbeCount, 2)
+    }
+
     func testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
         XCTAssertEqual(
             VietnameseMenuPhotoBackdropPolicy.preheatImageNames(

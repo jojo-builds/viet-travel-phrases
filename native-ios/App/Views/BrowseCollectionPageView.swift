@@ -553,12 +553,42 @@ private enum BrowseCategorySubcategoryScrollID {
 
 private extension BrowseSearchPhraseItem {
     var resolvedImageName: String? {
-        guard let imageName, BrowseImageAssetCache.exists(imageName) else {
+        BrowseImageAssetPolicy.resolvedImageName(imageName, exists: BrowseImageAssetCache.exists)
+    }
+}
+
+enum BrowseImageAssetPolicy {
+    static func resolvedImageName(_ imageName: String?, exists: (String) -> Bool) -> String? {
+        guard let imageName else {
             return nil
         }
 
-        return imageName
+        if trustsBundledGeneratedAssetName(imageName) {
+            return imageName
+        }
+
+        return exists(imageName) ? imageName : nil
     }
+
+    private static func trustsBundledGeneratedAssetName(_ imageName: String) -> Bool {
+        trustedGeneratedAssetPrefixes.contains { imageName.hasPrefix($0) }
+            || trustedGeneratedAssetNames.contains(imageName)
+    }
+
+    private static let trustedGeneratedAssetPrefixes = [
+        "HeroCategory",
+        "HeroCity",
+        "HeroMenu",
+        "HeroVietnam",
+        "BackdropMenu",
+        "BackdropPhrase",
+        "BackdropVietnamese",
+    ]
+
+    private static let trustedGeneratedAssetNames: Set<String> = [
+        "HeroCompactPhraseMasthead",
+        "HeroXinChao",
+    ]
 }
 
 private enum BrowseImageAssetCache {
@@ -728,7 +758,7 @@ private struct BrowseCollectionSubcategoryCard: View {
 
     private var imageName: String? {
         subcategory.imageName
-            ?? subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+            ?? subcategory.items.lazy.compactMap(\.resolvedImageName).first
             ?? fallbackImageName
     }
 
@@ -986,12 +1016,14 @@ private struct BrowseCityFilterSection: View {
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
-        if let preferredImageName = Self.preferredFilterImageNames[filter.id],
-           BrowseImageAssetCache.exists(preferredImageName) {
+        if let preferredImageName = BrowseImageAssetPolicy.resolvedImageName(
+            Self.preferredFilterImageNames[filter.id],
+            exists: BrowseImageAssetCache.exists
+        ) {
             return preferredImageName
         }
 
-        return filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+        return filter.items.lazy.compactMap(\.resolvedImageName).first
     }
 
     private static func filterScrollID(_ filterID: String) -> String {
