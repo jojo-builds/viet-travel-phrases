@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1768,
+    "phraseCount": 1769,
     "basePhraseCount": 935,
-    "cityPhraseCount": 809,
+    "cityPhraseCount": 810,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1750,
+    "familyCount": 1751,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -16391,6 +16391,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hcmc-place-pho-hoa-pasteur"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-le-district-5",
+      "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
+      "scenarioID": "city-guides",
+      "familyTitle": "Pho Le District 5 pronunciation",
+      "summary": "Save Phở Lệ for the Saigon phở meal that should feel chosen, generous, and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+      "primaryPhraseID": "city-hcmc-place-pho-le-district-5",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hcmc-place-pho-le-district-5"
       ]
     },
     {
@@ -75712,6 +75724,51 @@
       "sourceIDs": [
         "vt-hcmc",
         "vt-hcmc-official"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-le-district-5",
+      "familyID": "city-hcmc-place-pho-le-district-5",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Pho Le District 5",
+      "targetText": "Phở Lệ",
+      "canonicalTargetText": "Phở Lệ",
+      "pronunciation": "pho le district 5",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Phở Lệ for the Saigon phở meal that should feel chosen, generous, and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Saigon / Ho Chi Minh City",
+        "Saigon",
+        "Thành phố Hồ Chí Minh",
+        "Pho Le District 5",
+        "Phở Lệ"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏙️",
+      "notes": "city-library-v1; city=hcmc; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hcmc-pho-le-district-5; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hcmc",
+      "cityName": "Saigon / Ho Chi Minh City",
+      "cityShortTitle": "Saigon",
+      "cityVietnameseName": "Thành phố Hồ Chí Minh",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hcmc-pho-le-district-5",
+      "placeName": "Pho Le District 5",
+      "placeVietnameseName": "Phở Lệ",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 2,
+      "sourceIDs": [
+        "vt-hcmc",
+        "vt-hcmc-official",
+        "michelin-vietnam"
       ]
     },
     {

@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 809,
+    "cityLibraryPageCount": 810,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T19:00:11.904Z"
+    "generatedAt": "2026-05-30T19:19:53.209Z"
   },
   "pages": [
     {
@@ -257043,6 +257043,237 @@
           "food-3"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-pho-hoa-pasteur"
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-le-district-5",
+      "familyID": "city-hcmc-place-pho-le-district-5",
+      "phraseID": "city-hcmc-place-pho-le-district-5",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Phở Lệ",
+      "englishTitle": "Pho Le District 5",
+      "pronunciation": "pho le district 5",
+      "summary": "Save Phở Lệ for the Saigon phở meal that should feel chosen, generous, and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+      "heroImageName": "HeroCityHcmcPlacePhoLeDistrict5",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-pho-le-236e106099",
+      "cityMetadata": {
+        "cityID": "hcmc",
+        "cityName": "Saigon / Ho Chi Minh City",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hcmc-pho-le-district-5",
+        "placeName": "Pho Le District 5",
+        "sourceIDs": [
+          "vt-hcmc",
+          "vt-hcmc-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Phở Lệ gives Saigon a recognized phở choice outside the central Pasteur Street pattern, so the catalog has both a classic shop stop and a Bib Gourmand District 5 bowl.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHcmcPlacePhoLeDistrict5"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "A Bib Gourmand District 5 Bowl",
+          "body": "Phở Lệ is a 2025 MICHELIN Bib Gourmand District 5 noodle stop for southern-style phở: beef broth, rice noodles, herbs, bean sprouts, lime, and sauces at the table.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "place-brief",
+          "title": "Let The Bowl Be Generous",
+          "body": "This is the fuller Saigon phở lane: broth, rice noodles, beef, herbs, bean sprouts, lime, and sauces within easy reach.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Taste Before Adding",
+          "body": "Add table extras slowly. Lime, herbs, and sauce can make the bowl yours without burying the broth.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Beside Pasteur, Not Instead",
+          "body": "Phở Hòa Pasteur covers a classic central stop. Phở Lệ adds a recognized District 5 bowl, so the two saves do not have to do the same job.",
+          "phrases": [
+            {
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
+            },
+            {
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
+            },
+            {
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
+            },
+            {
+              "id": "store-7",
+              "vietnamese": "Cho tôi hóa đơn",
+              "english": "Please give me the receipt",
+              "pronunciation": "cho toy hwa dun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-receipt",
+              "audioKey": "store-7"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Recognition Supports The Choice",
+          "body": "The 2025 Bib Gourmand signal supports the save because the meal has a clear shape: a named District 5 phở bowl with broth, herbs, lime, and table sauce.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hcmc-place-pho-le-district-5",
+          "vietnamese": "Phở Lệ",
+          "english": "Pho Le District 5",
+          "pronunciation": "pho le district 5",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-pho-le-236e106099"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hcmc-place-pho-le-district-5",
+        "scenarioStepGroups": [
+          {
+            "stepID": "when-to-use",
+            "title": "Beside Pasteur, Not Instead",
+            "sourceSectionID": "when-to-use",
+            "primaryPhraseIDs": [
+              "coffee-7"
+            ],
+            "supportPhraseIDs": [
+              "store-6",
+              "taxi-7",
+              "store-7"
+            ]
+          },
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-2",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hcmc-place-pho-le-district-5",
+          "coffee-7",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "store-6",
+          "taxi-7",
+          "store-7",
+          "food-2",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hcmc-place-pho-le-district-5"
       }
     },
     {

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T19:00:11.904Z",
+    "generatedAt": "2026-05-30T19:19:53.209Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 809,
+    "cityLibraryPageCount": 810,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2251,
-    "missingAudioCount": 684
+    "requiredAudioCount": 2252,
+    "missingAudioCount": 685
   },
   "required": [
     {
@@ -15001,6 +15001,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-le-236e106099",
+      "text": "Phở Lệ",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-pho-nam",
       "sectionID": "hero",
       "kind": "hero",
@@ -21112,6 +21120,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-pha-lau-o-thanh-pho-ho-chi-minh-37a27e4ef6",
       "text": "Phá lấu ở Thành phố Hồ Chí Minh",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-le-236e106099",
+      "text": "Phở Lệ",
       "resolved": false
     },
     {

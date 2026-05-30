@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 503,
+    "entries": 504,
     "byCity": {
       "danang": 100,
       "hanoi": 100,
-      "hcmc": 103,
+      "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 503,
+    "finalPass": 504,
     "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 503,
-    "renderableMentionedHereCandidates": 42,
+    "renderableRelatedPlaceCandidates": 504,
+    "renderableMentionedHereCandidates": 43,
     "verificationFlags": 1
   },
   "entries": [
@@ -1580,6 +1580,13 @@
     {
       "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
       "pageID": "city-hcmc-place-bun-bo-hue-14b",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-le-district-5",
+      "pageID": "city-hcmc-place-pho-le-district-5",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"

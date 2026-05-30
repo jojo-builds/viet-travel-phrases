@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 101,
+    "entries": 104,
     "needsVoiceGate": 0,
-    "finalPass": 101,
+    "finalPass": 104,
     "fail": 0,
     "priorV2_2GateEvidence": 0
   },
@@ -2432,6 +2432,139 @@
       "sourceNotes": [
         "Added as the third additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 103.",
         "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Bò Huế 14B in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hcmc-place-pho-le-district-5",
+      "pageID": "city-hcmc-place-pho-le-district-5",
+      "sourcePageID": "city-hcmc-place-pho-le-district-5",
+      "displayName": "Phở Lệ",
+      "englishName": "Pho Le District 5",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "pronunciation": "pho le",
+      "travelerMoment": "Save Phở Lệ for the Saigon phở meal that should feel chosen, generous, and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+      "storySpine": "Phở Lệ gives Saigon a recognized phở choice outside the central Pasteur Street pattern, so the catalog has both a classic shop stop and a Bib Gourmand District 5 bowl.",
+      "intro": {
+        "heading": "A Bib Gourmand District 5 Bowl",
+        "body": "Phở Lệ is a 2025 MICHELIN Bib Gourmand District 5 noodle stop for southern-style phở: beef broth, rice noodles, herbs, bean sprouts, lime, and sauces at the table."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi tô này",
+          "en": "I'll take this bowl",
+          "intent": "food-this-bowl",
+          "phraseId": "food-2",
+          "audioId": "food-2",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-the-bowl-be-generous",
+          "heading": "Let The Bowl Be Generous",
+          "body": "This is the fuller Saigon phở lane: broth, rice noodles, beef, herbs, bean sprouts, lime, and sauces within easy reach."
+        },
+        {
+          "id": "taste-before-adding",
+          "heading": "Taste Before Adding",
+          "body": "Add table extras slowly. Lime, herbs, and sauce can make the bowl yours without burying the broth."
+        },
+        {
+          "id": "beside-pasteur-not-instead",
+          "heading": "Beside Pasteur, Not Instead",
+          "body": "Phở Hòa Pasteur covers a classic central stop. Phở Lệ adds a recognized District 5 bowl, so the two saves do not have to do the same job."
+        },
+        {
+          "id": "recognition-supports-the-choice",
+          "heading": "Recognition Supports The Choice",
+          "body": "The 2025 Bib Gourmand signal supports the save because the meal has a clear shape: a named District 5 phở bowl with broth, herbs, lime, and table sauce."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở Sài Gòn ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-pho-nam",
+          "sourceText": "phở",
+          "displaySubtitle": "The southern-phở guide behind this District 5 bowl.",
+          "reason": "The page centers a named Saigon pho shop and should connect to the broader southern pho guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+          "label": "Phở Hòa Pasteur",
+          "relationship": "same-city pho comparison",
+          "displaySubtitle": "A classic central Saigon phở stop when the plan is Pasteur Street rather than District 5.",
+          "reason": "Pho Hoa Pasteur is the current central Saigon pho comparison for Pho Le District 5.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+          "label": "Bún Bò Huế 14B",
+          "relationship": "same-city noodle bowl comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hue-style bowl when the noodle mood should be spicier.",
+          "reason": "Bun Bo Hue 14B gives Pho Le District 5 another recognized Saigon noodle-bowl comparison.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive HCMC 104-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Phở Lệ (District 5) appears in the Ho Chi Minh City Bib Gourmand section as Noodles.",
+          "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Pho Le District 5 has bounded 2025 MICHELIN Bib Gourmand recognition, a specific southern-pho save reason, mapped phrase cards, and useful pho/noodle comparisons."
+      },
+      "sourceNotes": [
+        "Added as the fourth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 104.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Lệ (District 5) in the Ho Chi Minh City Bib Gourmand section as Noodles.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",

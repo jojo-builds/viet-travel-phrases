@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T19:00:12.538Z",
+  "generatedAt": "2026-05-30T19:19:53.990Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1761,
+    "pages": 1762,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 354,
-    "generatedAt": "2026-05-30T19:00:12.538Z"
+    "missing": 355,
+    "generatedAt": "2026-05-30T19:19:53.990Z"
   },
   "pages": [
     {
@@ -106925,6 +106925,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
+      "phraseText": "Phở Lệ",
+      "englishTitle": "Pho Le District 5",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-hcmc-place-pho-nam",

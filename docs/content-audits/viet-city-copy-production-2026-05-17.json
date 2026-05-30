@@ -9803,6 +9803,38 @@
       }
     },
     {
+      "id": "city-hcmc-place-pho-le-district-5",
+      "cityID": "hcmc",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hcmc",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Phở Lệ for the Saigon phở meal that should feel chosen, generous, and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+        "aboutExcerpt": "Phở Lệ is a 2025 MICHELIN Bib Gourmand District 5 noodle stop for southern-style phở: beef broth, rice noodles, herbs, bean sprouts, lime, and sauces at the table.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Add table extras slowly. Lime, herbs, and sauce can make the bowl yours without burying the broth.",
+        "timingExcerpt": "Phở Hòa Pasteur covers a classic central stop. Phở Lệ adds a recognized District 5 bowl, so the two saves do not have to do the same job.",
+        "goodToKnowExcerpt": "The 2025 Bib Gourmand signal supports the save because the meal has a clear shape: a named District 5 phở bowl with broth, herbs, lime, and table sauce."
+      }
+    },
+    {
       "id": "city-hcmc-place-pho-nam",
       "cityID": "hcmc",
       "pageKind": "dish",
