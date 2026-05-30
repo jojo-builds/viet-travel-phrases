@@ -1562,6 +1562,24 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
     }
 
+    func testDesignedXinChaoCheckAvoidsRepeatedCanonicalLookupForNormalListings() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "App-shell detail rendering should not repeatedly enter SQLite canonical lookup just to reject non-Xin-chào pages."
+        )
+    }
+
     func testSearchLaunchArgumentOpensSearchPage() {
         XCTAssertEqual(
             AppShellView.initialRoute(for: ["SpeakLocalNative", "--search"]),

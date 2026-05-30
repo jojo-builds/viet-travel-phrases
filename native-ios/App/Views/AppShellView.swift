@@ -1178,10 +1178,56 @@ struct AppShellView: View {
     }
 
     static func shouldRenderDesignedXinChaoPage(for pageID: String) -> Bool {
-        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
-        let canonicalXinChaoID = PhraseCatalog.canonicalPageID(forOpenablePageID: PhrasePage.xinChao.id) ?? PhrasePage.xinChao.id
+        if designedXinChaoDirectPageIDs.contains(pageID) {
+            return true
+        }
 
-        return pageID == PhrasePage.xinChao.id || canonicalPageID == canonicalXinChaoID
+        if pageID.hasPrefix("viet-phrase-") || pageID.hasPrefix("viet-menu-") {
+            return false
+        }
+
+        if let cachedDecision = designedXinChaoDecision(for: pageID) {
+            return cachedDecision
+        }
+
+        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        let shouldRender = canonicalPageID == designedXinChaoCanonicalPageID
+        storeDesignedXinChaoDecision(shouldRender, for: pageID)
+        return shouldRender
+    }
+
+    private static let designedXinChaoCanonicalPageID = "viet-phrase-polite-1"
+    private static let designedXinChaoDirectPageIDs: Set<String> = [
+        PhrasePage.xinChao.id,
+        designedXinChaoCanonicalPageID,
+    ]
+    private static let designedXinChaoDecisionCacheLimit = 128
+    private static let designedXinChaoDecisionCacheLock = NSLock()
+    private static var designedXinChaoDecisionsByPageID: [String: Bool] = [:]
+    private static var designedXinChaoDecisionPageIDs: [String] = []
+
+    private static func designedXinChaoDecision(for pageID: String) -> Bool? {
+        designedXinChaoDecisionCacheLock.lock()
+        defer { designedXinChaoDecisionCacheLock.unlock() }
+
+        return designedXinChaoDecisionsByPageID[pageID]
+    }
+
+    private static func storeDesignedXinChaoDecision(_ shouldRender: Bool, for pageID: String) {
+        designedXinChaoDecisionCacheLock.lock()
+        defer { designedXinChaoDecisionCacheLock.unlock() }
+
+        guard designedXinChaoDecisionsByPageID[pageID] == nil else {
+            return
+        }
+
+        designedXinChaoDecisionsByPageID[pageID] = shouldRender
+        designedXinChaoDecisionPageIDs.append(pageID)
+
+        while designedXinChaoDecisionPageIDs.count > designedXinChaoDecisionCacheLimit {
+            let oldestPageID = designedXinChaoDecisionPageIDs.removeFirst()
+            designedXinChaoDecisionsByPageID.removeValue(forKey: oldestPageID)
+        }
     }
 
     private var isPreviewingForwardPage: Bool {
