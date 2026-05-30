@@ -578,6 +578,31 @@ enum PhraseCatalog {
     }
 }
 
+enum StaticPhraseBackdropImagePolicy {
+    static func heroImageName(for pageID: String) -> String? {
+        if pageID.hasPrefix("viet-hello-") {
+            return "BackdropPhraseGreetingCafeDoorway"
+        }
+
+        switch pageID {
+        case PhrasePage.xinChao.id,
+            "viet-respectful-hello",
+            "viet-local-greetings",
+            "viet-time-greetings",
+            "viet-how-are-you",
+            "viet-where-going",
+            "viet-nice-to-meet-you":
+            return "BackdropPhraseGreetingCafeDoorway"
+        case "viet-phone-hello":
+            return "BackdropPhrasePhoneCafeCharging"
+        case "viet-thank-you", "viet-excuse-sorry", "viet-goodbye":
+            return "BackdropPhraseHelpQuietServiceDesk"
+        default:
+            return nil
+        }
+    }
+}
+
 extension PhrasePage {
     var articleTemplate: PhraseArticlePage {
         PhraseArticlePage(
@@ -589,6 +614,7 @@ extension PhrasePage {
             summary: intentSummary,
             iconName: "star.fill",
             tintName: .red,
+            heroImageName: StaticPhraseBackdropImagePolicy.heroImageName(for: id),
             playbackAudioKey: quickSay.first?.playbackAudioKey,
             sections: [
                 PhraseArticleSection(
@@ -1149,7 +1175,7 @@ extension PhraseDetailPage {
             summary: summary,
             iconName: iconName,
             tintName: tintName,
-            heroImageName: heroImageName,
+            heroImageName: heroImageName ?? StaticPhraseBackdropImagePolicy.heroImageName(for: id),
             playbackAudioKey: playbackAudioKey,
             sections: sections.map(\.articleSection),
             practiceCTALabel: practiceCTALabel,

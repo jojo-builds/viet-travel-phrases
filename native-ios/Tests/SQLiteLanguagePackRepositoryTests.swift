@@ -119,6 +119,24 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         )
     }
 
+    func testStaticDesignedPhrasePagesUsePhotoBackdropLayout() throws {
+        let staticDetailPagesByID = Dictionary(uniqueKeysWithValues: PhraseDetailPage.all.map { ($0.id, $0) })
+        let expectations = [
+            (PhrasePage.xinChao.articleTemplate, "BackdropPhraseGreetingCafeDoorway"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-respectful-hello"]).articleTemplate, "BackdropPhraseGreetingCafeDoorway"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-phone-hello"]).articleTemplate, "BackdropPhrasePhoneCafeCharging"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-thank-you"]).articleTemplate, "BackdropPhraseHelpQuietServiceDesk"),
+        ]
+
+        for (page, expectedHeroImageName) in expectations {
+            XCTAssertEqual(page.heroImageName, expectedHeroImageName, page.id)
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: page.id, heroImageName: page.heroImageName),
+                "\(page.id) should use the shared photo-backdrop sheet interaction"
+            )
+        }
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 
