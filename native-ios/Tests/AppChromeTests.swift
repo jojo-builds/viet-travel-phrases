@@ -4052,6 +4052,23 @@ final class LocalUserIntentStoreTests: XCTestCase {
         cancellable.cancel()
     }
 
+    func testRecentPagesPersistAfterExplicitFlushInsteadOfEveryTap() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .home)
+        store.recordOpenedPage("viet-thank-you", source: .search)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-polite-2", "viet-phrase-hello-chao-anh"])
+        XCTAssertTrue(LocalUserIntentStore(defaults: defaults).recentPageIDs.isEmpty)
+
+        store.flushRecentPages()
+
+        XCTAssertEqual(
+            LocalUserIntentStore(defaults: defaults).recentPageIDs,
+            ["viet-phrase-polite-2", "viet-phrase-hello-chao-anh"]
+        )
+    }
+
     func testSavedPageToggleStillPublishesStoreChanges() {
         let store = LocalUserIntentStore(defaults: defaults)
         var invalidationCount = 0

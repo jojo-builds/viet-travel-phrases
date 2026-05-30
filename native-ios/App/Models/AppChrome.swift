@@ -95,6 +95,7 @@ final class LocalUserIntentStore: ObservableObject {
     private let defaults: UserDefaults
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
+    private var recentPagesPersistTask: Task<Void, Never>?
 
     private enum Key {
         static let recentPages = "SpeakLocal.LocalIntent.recentPages.v1"
@@ -143,6 +144,10 @@ final class LocalUserIntentStore: ObservableObject {
         }
     }
 
+    deinit {
+        recentPagesPersistTask?.cancel()
+    }
+
     var recentPageIDs: [String] {
         recentPages.map(\.pageID)
     }
@@ -164,6 +169,12 @@ final class LocalUserIntentStore: ObservableObject {
             at: 0
         )
         recentPages = Array(pages.prefix(Self.maxRecentPages))
+        scheduleRecentPagesPersist()
+    }
+
+    func flushRecentPages() {
+        recentPagesPersistTask?.cancel()
+        recentPagesPersistTask = nil
         persist(recentPages, key: Key.recentPages)
     }
 
@@ -218,6 +229,29 @@ final class LocalUserIntentStore: ObservableObject {
 
     private func persist<T: Encodable>(_ value: T, key: String) {
         guard let data = try? encoder.encode(value) else {
+            return
+        }
+
+        defaults.set(data, forKey: key)
+    }
+
+    private func scheduleRecentPagesPersist() {
+        recentPagesPersistTask?.cancel()
+
+        let snapshot = recentPages
+        let defaults = defaults
+        recentPagesPersistTask = Task.detached(priority: .utility) {
+            try? await Task.sleep(nanoseconds: Self.recentPagesPersistDelayNanoseconds)
+            guard !Task.isCancelled else {
+                return
+            }
+
+            Self.persist(snapshot, key: Key.recentPages, defaults: defaults)
+        }
+    }
+
+    private static func persist<T: Encodable>(_ value: T, key: String, defaults: UserDefaults) {
+        guard let data = try? JSONEncoder().encode(value) else {
             return
         }
 
@@ -287,6 +321,7 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private static let maxRecentPages = 12
+    private static let recentPagesPersistDelayNanoseconds: UInt64 = 700_000_000
 
 #if DEBUG
     private static let returningUserShelfSeedRecentPages: [RecentPhrasePage] = [

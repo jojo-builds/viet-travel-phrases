@@ -161,6 +161,7 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
@@ -271,6 +272,11 @@ struct AppShellView: View {
                     onSelect: handleBottomAdminTabTap
                 )
                 .zIndex(AppChromeLayout.bottomAdminHitTestLayerZIndex)
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase != .active {
+                intentStore.flushRecentPages()
             }
         }
     }

@@ -23,11 +23,13 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 7: browse/category/menu collection pages stayed mounted at opacity `0` behind listing detail pages even when they were not visible and not needed for the current back-swipe preview; those collection pages include large section trees, photo backdrops, scroll geometry, and menu section tracking
 - root cause 8: category/city/menu photo backdrop pages still rendered their large static backdrop through plain SwiftUI `Image(...)` instead of the prepared-image cache used by root and listing backdrops, so opening those collection pages could still decode/prepare large assets on the render path
 - root cause 9: the shared backdrop preheater retained only a few prepared images, but the preparation work itself was unbounded; rapid listing taps could enqueue many large-image `preparingForDisplay()` jobs in parallel for pages the user had already left
+- root cause 10: recent-page tracking stopped publishing broad SwiftUI invalidations, but still JSON-encoded and wrote the recent-page array to `UserDefaults` immediately on every detail tap; rapid listing browsing now updates the in-memory shelf immediately and batches the disk write until the burst settles or the app leaves the active scene phase
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
 - focused failing tests were added before the fixes and then passed after implementation:
+  - `LocalUserIntentStoreTests/testRecentPagesPersistAfterExplicitFlushInsteadOfEveryTap`
   - `AppChromeTests/testAdminBackdropPreheatPlanKeepsLatestQueuedWorkBounded`
   - `LocalUserIntentStoreTests/testRecordingRecentPageDoesNotPublishStoreWideInvalidation`
   - `LocalUserIntentStoreTests/testSavedPageToggleStillPublishesStoreChanges`
@@ -42,6 +44,10 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `AppChromeTests/testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- XcodeBuildMCP simulator focused recent-page batched-persist thermal set on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered batched recent-page disk persistence, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T14-49-34-348Z_pid15747_b555ea44.xcresult`
 - XcodeBuildMCP simulator focused serialized-preheat thermal set on iPhone 17 Pro
   - passed: `16` tests, `0` failures
   - covered bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
