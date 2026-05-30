@@ -1573,11 +1573,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "banh xeo ba duong",
-      "travelerMoment": "Choose Ba Duong when the group wants Da Nang banh xeo as the meal, not a snack: hot pancakes, herbs, rice paper, sauce, and a first roll that moves quickly.",
-      "storySpine": "Ba Duong makes a central-coast dish feel physical: crackly edges, wet herbs, hands at the table, and sauce deciding the bite.",
+      "travelerMoment": "Choose Ba Duong when the group wants a 2025 MICHELIN Selected Da Nang banh xeo meal: hot pancakes, herbs, rice paper, sauce, and a first roll that moves quickly.",
+      "storySpine": "Ba Duong makes the central-coast pancake feel physical and save-worthy: crackly edges, wet herbs, hands at the table, sauce deciding the bite, and a bounded MICHELIN Selected nod.",
       "intro": {
         "heading": "Hot Pancake, Fast Hands",
-        "body": "Banh Xeo Ba Duong is the Da Nang save for a hands-on pancake meal: hot banh xeo, herbs, rice paper, sauce, and a room that moves before you have overthought the menu."
+        "body": "Banh Xeo Ba Duong is a 2025 MICHELIN Selected Da Nang pancake save: hot banh xeo, herbs, rice paper, sauce, and a room that moves before you have overthought the menu."
       },
       "usefulPhraseCards": [
         {
@@ -1623,8 +1623,8 @@
         },
         {
           "id": "save-for-a-shared-table",
-          "heading": "Save For A Shared Table",
-          "body": "The meal opens up with two or more people. The fun is the shared motion: passing herbs, folding wrappers, and comparing the first messy bite."
+          "heading": "Selected For The Pancake",
+          "body": "The MICHELIN Selected nod helps explain why this place deserves a saved slot. The reason is still tactile: crisp edge, wet herbs, sauce, and the first roll landing hot."
         }
       ],
       "mentionedHereCandidates": [
@@ -1652,7 +1652,7 @@
           "catalogId": "viet-family-city-danang-place-be-man",
           "label": "Hải sản Bé Mặn",
           "relationship": "same-city hands-on dinner contrast",
-          "displaySubtitle": "Beach-side seafood where ice trays, price questions, and group ordering lead.",
+          "displaySubtitle": "A 2025 MICHELIN Selected seafood table where trays, price questions, and group ordering lead.",
           "reason": "Be Man contrasts Ba Duong with another hands-on Da Nang dinner that requires a clear first ordering move.",
           "status": "render"
         }
@@ -1668,17 +1668,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 release support added while keeping the pancake/table reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Ba Duong now has stronger food desire, dish links, and a specific related dinner contrast."
+        "reason": "Production MICHELIN patch: Ba Duong now carries bounded 2025 MICHELIN Selected context without losing the crisp-pancake save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food source."
+        "Production intake source notes: Local food source.",
+        "Official Michelin corporate 2025 release lists Bánh Xèo Bà Dưỡng as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1704,11 +1706,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "hai san be man",
-      "travelerMoment": "Choose it for a group seafood dinner when everyone is ready for a louder room and a little ordering negotiation.",
-      "storySpine": "Be Man makes most sense once diners understand the first decision is selection, not just sitting down.",
+      "travelerMoment": "Choose it for a 2025 MICHELIN Selected seafood dinner when everyone is ready for a louder room, trays of seafood, and a little ordering negotiation.",
+      "storySpine": "Be Man makes most sense once diners understand the first decision is selection, not just sitting down: tanks, trays, price, cooking style, and a recognized Da Nang seafood-table ritual.",
       "intro": {
         "heading": "Ice Tray Before Plate",
-        "body": "A beach-side seafood meal where ice trays, sea air, table noise, and clear price questions come before the first plate arrives hot."
+        "body": "Be Man is a 2025 MICHELIN Selected seafood table where ice trays, sea air, table noise, and clear price questions come before the first plate arrives hot."
       },
       "usefulPhraseCards": [
         {
@@ -1749,8 +1751,8 @@
         },
         {
           "id": "loud-tables-cold-drinks",
-          "heading": "Loud Tables, Cold Drinks",
-          "body": "The open-air feel is part of the meal: plates landing, shells cracking, drinks arriving, and people ordering more than they planned."
+          "heading": "Selected, Still Loud",
+          "body": "The recognition does not make it formal. The open-air feel is still plates landing, shells cracking, drinks arriving, and people ordering more than they planned."
         },
         {
           "id": "simple-cooking-travels-better",
@@ -1774,7 +1776,7 @@
           "catalogId": "viet-family-city-danang-place-banh-xeo-ba-duong",
           "label": "Bánh xèo Bà Dưỡng",
           "relationship": "same-city hands-on dinner contrast",
-          "displaySubtitle": "A hot pancake table when herbs, wrappers, and sauce should lead dinner.",
+          "displaySubtitle": "A 2025 MICHELIN Selected pancake table when herbs, wrappers, and sauce should lead dinner.",
           "reason": "Ba Duong is the right contrast when a hands-on Da Nang dinner should be crisp pancake rather than seafood display.",
           "status": "render"
         }
@@ -1790,17 +1792,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 release support added while keeping the seafood-display reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: seafood display page now links to the seafood guide and a specific hands-on dinner contrast."
+        "reason": "Production MICHELIN patch: Be Man now carries bounded 2025 MICHELIN Selected context and keeps the display-ordering job clear."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food and venue sources."
+        "Production intake source notes: Local food and venue sources.",
+        "Official Michelin corporate 2025 release lists Bé Mặn as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6114,11 +6118,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "madame lan",
-      "travelerMoment": "A slower dinner fit than a quick bite between river plans. The order stays flexible and the room, table pace, and menu in front of you guide the meal.",
-      "storySpine": "Madame Lan brings courtyard light, shared plates, and Han River evening context into one unhurried dinner stop.",
+      "travelerMoment": "Save Madame Lan when Da Nang dinner should feel polished but easy: a 2025 MICHELIN Selected Vietnamese table with courtyard light, shared plates, and room for the group.",
+      "storySpine": "Madame Lan earns its save as a recognized broad-table dinner: courtyard light, Vietnamese shared plates, Han River evening context, and a clear menu for mixed-confidence groups.",
       "intro": {
         "heading": "Dinner With A Room Around It",
-        "body": "Madame Lan is a polished Da Nang dinner stop for courtyard light, shared plates, a clearer menu, and a meal that can hold its own place in the night."
+        "body": "Madame Lan is a 2025 MICHELIN Selected Vietnamese dinner stop for courtyard light, shared plates, a clearer menu, and a meal that can hold its own place in the night."
       },
       "usefulPhraseCards": [
         {
@@ -6159,8 +6163,8 @@
         },
         {
           "id": "dinner-with-a-little-space",
-          "heading": "Dinner With A Little Space",
-          "body": "A good fit when the meal needs to feel slower than a quick bite between river plans. The order stays flexible, and the table pace can carry the night."
+          "heading": "Selected, Still Easy",
+          "body": "The MICHELIN Selected nod gives it a reason to remember before the trip. The actual pleasure is simpler: space, pacing, shared dishes, and a table that does not feel rushed."
         },
         {
           "id": "when-the-group-needs-range",
@@ -6184,7 +6188,7 @@
           "catalogId": "viet-family-city-danang-place-bep-cuon",
           "label": "Bếp Cuốn Đà Nẵng",
           "relationship": "group-dinner contrast",
-          "displaySubtitle": "A roll-and-dip table with a narrower food job than Madame Lân.",
+          "displaySubtitle": "A 2025 MICHELIN Selected roll-and-dip table with a narrower food job than Madame Lân.",
           "reason": "Bếp Cuốn helps distinguish a broad polished dinner from a focused roll meal.",
           "status": "render"
         }
@@ -6200,17 +6204,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 release support added while keeping the courtyard/group-dinner reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Madame Lân now has a narrower food-route comparison and a dish link for next-step planning."
+        "reason": "Production MICHELIN patch: Madame Lân now carries bounded 2025 MICHELIN Selected context and a clearer polished-group-dinner save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Da Nang tourism and venue sources."
+        "Production intake source notes: Da Nang tourism and venue sources.",
+        "Official Michelin corporate 2025 release lists Madame Lân as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6681,11 +6687,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "mi quang 1a",
-      "travelerMoment": "A small noodle-shop stop feels clearest when the meal stays simple. The bowl, herbs, cracker, and quick table motion carry lunch.",
-      "storySpine": "Mi Quang 1A turns a known dish into a practical restaurant stop through bowl choice, herbs, cracker, and a short lunch pace.",
+      "travelerMoment": "Save Mi Quang 1A when lunch should stay with one recognized Da Nang bowl: noodles, herbs, cracker, and a quick table pace.",
+      "storySpine": "Mi Quang 1A turns a regional dish into a 2025 MICHELIN Selected noodle stop through bowl choice, herbs, cracker, and a short lunch pace.",
       "intro": {
         "heading": "A Fast Table For A Focused Bowl",
-        "body": "Mi Quang 1A is a focused Da Nang noodle stop for the regional bowl: yellow noodles, herbs, rice cracker, and a narrow lunch that stays about mì Quảng."
+        "body": "Mi Quang 1A is a 2025 MICHELIN Selected Da Nang noodle stop for the regional bowl: yellow noodles, herbs, rice cracker, and a narrow lunch that stays about mì Quảng."
       },
       "usefulPhraseCards": [
         {
@@ -6726,8 +6732,8 @@
         },
         {
           "id": "noodle-stop-not-big-dinner",
-          "heading": "Noodle Stop, Not Big Dinner",
-          "body": "Choose it when the plan is a focused bowl rather than a broad dinner. Mi Quang comes first; sides can wait until the table feels clear."
+          "heading": "Selected For One Bowl",
+          "body": "The MICHELIN Selected signal is a memory hook here, not ceremony. Come for one focused bowl; mì Quảng comes first, and sides can wait."
         },
         {
           "id": "short-meal-clear-memory",
@@ -6767,17 +6773,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 release support added while keeping the focused-bowl reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Mi Quang 1A now behaves as a named dish stop with a specific same-dish comparison."
+        "reason": "Production MICHELIN patch: Mi Quang 1A now carries bounded 2025 MICHELIN Selected context without turning a quick noodle stop into a formal meal."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food source."
+        "Production intake source notes: Local food source.",
+        "Official Michelin corporate 2025 release lists Mì Quảng 1A as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7599,11 +7607,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "hai san nam danh",
-      "travelerMoment": "A seafood-table note built around rounds, shared plates, and practical ordering rather than fixed prices or menu details.",
-      "storySpine": "Nam Danh Seafood adds a casual seafood-table stop built around shared rounds, pointing clearly, and letting the table carry the meal.",
+      "travelerMoment": "Save Nam Danh when Da Nang seafood should feel local, recognized, and casual: a 2025 MICHELIN Selected table built around rounds, shared plates, and practical ordering.",
+      "storySpine": "Nam Danh Seafood earns its save as a casual MICHELIN Selected seafood table: shared rounds, pointing clearly, neighborhood energy, and letting the table carry the meal.",
       "intro": {
         "heading": "Order In Rounds",
-        "body": "Nam Danh Seafood is a neighborhood seafood table where clams, grilled fish, cold drinks, plastic stools, and shared rounds make the meal."
+        "body": "Nam Danh Seafood is a 2025 MICHELIN Selected neighborhood seafood table where clams, grilled fish, cold drinks, plastic stools, and shared rounds make the meal."
       },
       "usefulPhraseCards": [
         {
@@ -7644,8 +7652,8 @@
         },
         {
           "id": "rounds-at-the-table",
-          "heading": "Rounds At The Table",
-          "body": "Seafood feels easier in small rounds. Begin with one or two plates, let the table settle, then add more instead of over-ordering."
+          "heading": "Selected, Not Precious",
+          "body": "The MICHELIN Selected nod gives the save a clearer reason, but the room still feels casual. Begin with one or two plates, let the table settle, then add more."
         },
         {
           "id": "the-table-carries-the-meal",
@@ -7669,7 +7677,7 @@
           "catalogId": "viet-family-city-danang-place-be-man",
           "label": "Hải sản Bé Mặn",
           "relationship": "seafood table comparison",
-          "displaySubtitle": "Another named seafood table when tanks, trays, and price-by-weight are the comparison.",
+          "displaySubtitle": "Another 2025 MICHELIN Selected seafood table when tanks, trays, and price-by-weight are the comparison.",
           "reason": "Be Man is the right same-subtype comparison for Nam Danh Seafood.",
           "status": "render"
         }
@@ -7685,17 +7693,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 release support added while keeping the casual shared-seafood reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "City voice gate passed: Nam Danh Seafood has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Production MICHELIN patch: Nam Danh Seafood now carries bounded 2025 MICHELIN Selected context while staying a casual round-by-round seafood save."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food source."
+        "Production intake source notes: Local food source.",
+        "Official Michelin corporate 2025 release lists Năm Đảnh as MICHELIN Selected."
       ],
       "status": "FINAL_PASS",
       "review": {

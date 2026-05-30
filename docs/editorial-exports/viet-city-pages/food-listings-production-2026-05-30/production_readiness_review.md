@@ -1212,3 +1212,103 @@ Results:
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
 The current in-app Saigon Bib Gourmand misses above are fixed and rendered. The bigger catalog question remains open: several official 2025 MICHELIN add candidates are not in the 500-source set yet, and weak support listings should stay out of high-visibility foodie surfaces until those add/replace decisions are made.
+
+## Continuation: Da Nang MICHELIN Selected Recognition Patch
+
+Ninth pass date: 2026-05-31
+
+Commit before pass: `578c8d37b Patch Saigon Bib Gourmand food copy`
+
+This continuation corrected five existing Da Nang pages that official 2025 MICHELIN materials list as MICHELIN Selected, but whose visible copy did not yet use that recognition as a bounded save signal. The edit stayed inside existing V2.2 source records; no new place inventory was added in this pass.
+
+### Pages Touched
+
+- `city-danang-place-banh-xeo-ba-duong`: added bounded 2025 MICHELIN Selected language while keeping the save reason on hot banh xeo, herbs, rice paper, sauce, and the shared first roll.
+- `city-danang-place-be-man`: added bounded 2025 MICHELIN Selected language while keeping the save reason on seafood display ordering, tray decisions, price questions, and a loud group table.
+- `city-danang-place-madame-lan`: added bounded 2025 MICHELIN Selected language while keeping the save reason on courtyard light, shared Vietnamese dishes, a clearer menu, and group-dinner ease.
+- `city-danang-place-mi-quang-1a`: added bounded 2025 MICHELIN Selected language while keeping the save reason on one focused regional noodle bowl.
+- `city-danang-place-nam-danh-seafood`: added bounded 2025 MICHELIN Selected language while keeping the save reason on casual seafood rounds, shared plates, stools, and table energy.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claims added only where this source supported them:
+
+- `Bánh Xèo Bà Dưỡng`: 2025 MICHELIN Selected.
+- `Bé Mặn`: 2025 MICHELIN Selected.
+- `Madame Lân`: 2025 MICHELIN Selected.
+- `Mì Quảng 1A`: 2025 MICHELIN Selected.
+- `Năm Đảnh`: 2025 MICHELIN Selected.
+
+No new hours, prices, reservation, closure, address, or operational claims were added.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-danang-michelin-selected/`
+
+Representative pages captured:
+
+- `viet-family-city-danang-place-mi-quang-1a`
+  - `mi-quang-1a-top.jpg`: first viewport shows the revised 2025 MICHELIN Selected noodle-stop framing.
+- `viet-family-city-danang-place-be-man`
+  - `be-man-top.jpg`: first viewport shows the revised 2025 MICHELIN Selected seafood-display framing.
+- `viet-family-city-danang-place-nam-danh-seafood`
+  - `nam-danh-bottom-clearance.jpg`: bottom-validation launch shows Mentioned Here, Compare Nearby, and Useful Phrases above the tab bar with reading space below.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-mi-quang-1a`
+  - `--detail-page viet-family-city-danang-place-be-man`
+  - `--detail-page viet-family-city-danang-place-nam-danh-seafood --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for all three launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing three flagged phrases introduced by the patch.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9342 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Da Nang MICHELIN Selected Patch
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+These five current in-app Da Nang recognition misses are fixed and rendered. The broader catalog still needs add/replace decisions for official 2025 MICHELIN-recognized restaurants that are not in the current V2.2 source set, plus continued rendered review before weak support pages are promoted as foodie saves.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. The prior Codex desktop agent lifecycle step froze twice, so this pass stayed single-threaded and relied on repo evidence, official source checks, validators, and simulator proof.
