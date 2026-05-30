@@ -7743,11 +7743,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "my quang ba mua",
-      "travelerMoment": "A named mi Quang stop where the bowl matters more than a long restaurant plan. Arrive for noodles, herbs, cracker, and a clear first order.",
-      "storySpine": "Mỳ Quảng Bà Mua connects a named restaurant to the broader mì Quảng dish through ordering flow and the first bowl.",
+      "travelerMoment": "Mỳ Quảng Bà Mua should sit as the easy branch-style mì Quảng backup: useful when the group wants a clearer table, fast ordering, and a familiar named stop.",
+      "storySpine": "Bà Mua keeps a smaller job in the mì Quảng set: accessible regional noodles, an easy name to show, and a clearer table when convenience matters.",
       "intro": {
-        "heading": "Order The Bowl Before The Table Fills",
-        "body": "My Quang Ba Mua is a Da Nang mi Quang stop where yellow noodles, shallow broth, herbs, peanuts, and rice cracker carry the meal at the table."
+        "heading": "The Easy Backup Bowl",
+        "body": "Mỳ Quảng Bà Mua is the easier branch-style mì Quảng stop: yellow noodles, shallow broth, herbs, rice cracker, and a clearer table when the group wants less friction."
       },
       "usefulPhraseCards": [
         {
@@ -7777,24 +7777,24 @@
       ],
       "sections": [
         {
-          "id": "know-it-as-mi-quang",
-          "heading": "Treat It As Mi Quang",
-          "body": "Think noodles before soup. Mix them through the shallow broth, break the rice cracker for crunch, and add lime or chili after one bite."
+          "id": "keep-it-simple",
+          "heading": "Keep It Simple",
+          "body": "This is the low-friction bowl, rather than a trophy meal. Start with one mì Quảng and let the table decide if sides are needed."
         },
         {
-          "id": "one-bowl-before-extras",
-          "heading": "One Bowl Before Extras",
-          "body": "A simple order can cover one bowl before extra sides or drinks. That gives you space to notice the turmeric noodles, herbs, and house pace."
+          "id": "know-what-to-look-for",
+          "heading": "Know What To Look For",
+          "body": "The shallow broth, turmeric noodles, herbs, peanuts, and cracker are still the point. Taste before adding chili or lime."
         },
         {
-          "id": "bowl-first-extras-later",
-          "heading": "Bowl Before Extras",
-          "body": "Choose it when the group wants a named mì Quảng meal without making lunch complicated. Begin with the bowl, taste, then decide on chili, lime, and sides."
+          "id": "when-it-earns-the-save",
+          "heading": "When It Earns The Save",
+          "body": "It earns a place when convenience matters: a named stop, a clear first order, and enough local flavor for a casual lunch."
         },
         {
-          "id": "a-meal-not-a-gap-filler",
-          "heading": "Lunch With Its Own Reason",
-          "body": "The appeal goes beyond food between sights. It is a central-Vietnam bowl with herbs, crunch, and shallow broth that make lunch part of the day."
+          "id": "compare-before-you-choose",
+          "heading": "Compare Before You Choose",
+          "body": "For a more distinctive bowl, look to the MICHELIN-backed mì Quảng stops first. Keep Bà Mua for the easier table and clearer first order."
         }
       ],
       "mentionedHereCandidates": [
@@ -7803,18 +7803,26 @@
           "type": "dish",
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "Mỳ Quảng",
-          "displaySubtitle": "The Da Nang noodle guide behind this named bowl.",
+          "displaySubtitle": "The regional bowl this easier branch-style stop is built around.",
           "reason": "The page centers my quang and should link to the dish-level guide.",
           "status": "render"
         }
       ],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-danang-place-my-quang-sua-hong-van",
+          "label": "Mỳ Quảng Sứa Hồng Vân",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand mì Quảng stop with a sharper seafood-texture hook.",
+          "reason": "Sứa Hồng Vân is now the stronger save when the user wants a more distinctive mì Quảng bowl.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-danang-place-mi-quang-1a",
           "label": "Mì Quảng 1A",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "Another named mì Quảng stop when noodles, herbs, and broth depth are the comparison.",
-          "reason": "Mi Quang 1A is the most useful same-dish comparison for My Quang Ba Mua.",
+          "displaySubtitle": "A 2025 MICHELIN Selected mì Quảng stop for a cleaner one-bowl comparison.",
+          "reason": "Mi Quang 1A is the tighter same-dish comparison for users choosing one mì Quảng stop.",
           "status": "render"
         }
       ],
@@ -7829,17 +7837,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Mì Quảng support cleanup on 2026-05-31: demoted from headline food-save posture after Mì Quảng Sứa Hồng Vân added a stronger MICHELIN-backed mì Quảng page."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "City voice gate passed: My Quang Ba Mua has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Support-listing pass: Bà Mua remains useful as an easy branch-style mì Quảng table, but the stronger foodie saves now live with Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Venue and local food sources."
+        "Production intake source notes: Venue and local food sources.",
+        "Support cleanup note: keep for browse, route, and low-friction ordering; do not treat as a headline foodie save while stronger MICHELIN-backed mì Quảng pages exist."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7850,9 +7860,10 @@
         "v2_2GateSources": [],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
-          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Support cleanup pass: visible copy now positions Bà Mua as an easy backup bowl rather than the primary mì Quảng recommendation."
         ],
-        "finalPassDate": "2026-05-27"
+        "finalPassDate": "2026-05-31"
       }
     },
     {
@@ -7865,11 +7876,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "my quang dung",
-      "travelerMoment": "A counter-oriented mi Quang stop where watching the bowls move makes ordering easier. Point clearly, taste first, and build flavor slowly.",
-      "storySpine": "My Quang Dung is a compact mi Quang counter built around pointing, tasting, herbs, chili, and a lunch that stays easy.",
+      "travelerMoment": "Mỳ Quảng Dung should stay as a compact counter fallback: useful for pointing, tasting, and getting a simple bowl when the day does not need a destination lunch.",
+      "storySpine": "Dung keeps a small ordering-practice role inside the mì Quảng set, while the more memorable food desire comes from Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân.",
       "intro": {
-        "heading": "Counter, Then Bowl",
-        "body": "My Quang Dung is a counter-style mì Quảng place where pointing, choosing the bowl, and adding herbs or chili slowly make the meal easier."
+        "heading": "A Small Counter Bowl",
+        "body": "Mỳ Quảng Dung is a compact mì Quảng counter for pointing, tasting, and getting a simple bowl without turning lunch into a plan."
       },
       "usefulPhraseCards": [
         {
@@ -7899,24 +7910,24 @@
       ],
       "sections": [
         {
-          "id": "look-before-you-point",
-          "heading": "Look Before You Point",
-          "body": "Take a moment to see what bowls are moving. Herbs, lime, and chili on the counter can make the order less like guessing."
+          "id": "watch-the-bowls-move",
+          "heading": "Watch The Bowls Move",
+          "body": "Take a moment to see what other tables are eating. The moving bowls can make a simple order easier than reading every option."
         },
         {
-          "id": "add-heat-slowly",
-          "heading": "Add Heat Slowly",
-          "body": "Mì Quảng can carry spice, peanuts, and sharp lime all at once. Taste before adding chili; it is easier to build the bowl than undo it."
+          "id": "build-flavor-slowly",
+          "heading": "Build Flavor Slowly",
+          "body": "Mì Quảng can carry spice, peanuts, and sharp lime at once. Taste before adding chili, then adjust the bowl slowly."
         },
         {
-          "id": "counter-first",
-          "heading": "Let The Counter Guide You",
-          "body": "Choose it when pointing and watching other bowls is easier than decoding a long menu. Taste before adding chili, lime, peanuts, or extra sauce."
+          "id": "why-it-stays-in-the-catalog",
+          "heading": "Why It Stays In The Catalog",
+          "body": "It earns its slot when the day needs a simple counter bowl and a name to show. The value is navigation, ordering, and a quick lunch."
         },
         {
-          "id": "a-small-stop-is-enough",
-          "heading": "A Quick Bowl",
-          "body": "This meal can sit between bigger Da Nang plans. Eat, settle, and leave room for a walk rather than stretching a noodle counter into a long lunch."
+          "id": "when-to-choose-another-one",
+          "heading": "When To Choose Another One",
+          "body": "Choose Sứa Hồng Vân when the bowl should feel more memorable. Choose 1A when a recognized one-bowl stop is the goal."
         }
       ],
       "mentionedHereCandidates": [
@@ -7925,18 +7936,26 @@
           "type": "dish",
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "Mỳ Quảng",
-          "displaySubtitle": "The Da Nang noodle guide behind this quieter bowl.",
+          "displaySubtitle": "The regional bowl behind this compact counter stop.",
           "reason": "The page centers my quang and should link to the dish-level guide.",
           "status": "render"
         }
       ],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-danang-place-my-quang-sua-hong-van",
+          "label": "Mỳ Quảng Sứa Hồng Vân",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand mì Quảng stop when texture should lead.",
+          "reason": "Sứa Hồng Vân is the stronger same-dish save when users want a memorable bowl.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-danang-place-mi-quang-1a",
           "label": "Mì Quảng 1A",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "Another named mì Quảng stop when the bowl needs a more central comparison.",
-          "reason": "Mi Quang 1A gives My Quang Dung a same-dish comparison.",
+          "displaySubtitle": "A 2025 MICHELIN Selected mì Quảng stop for a cleaner one-bowl comparison.",
+          "reason": "Mi Quang 1A gives Dung a recognized one-bowl comparison.",
           "status": "render"
         }
       ],
@@ -7951,17 +7970,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "Mì Quảng support cleanup on 2026-05-31: demoted from headline food-save posture after Mì Quảng Sứa Hồng Vân added a stronger MICHELIN-backed mì Quảng page."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 27,
         "max": 30,
-        "reason": "City voice gate passed: My Quang Dung has a concrete scene, truthful Da Nang spine, first move, and mapped phrase cards."
+        "reason": "Support-listing pass: Dung remains useful for counter ordering and route flexibility, but should not lead over the stronger MICHELIN-backed mì Quảng pages."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food source."
+        "Production intake source notes: Local food source.",
+        "Support cleanup note: keep for browse, route, and simple counter ordering; do not treat as a headline foodie save while stronger MICHELIN-backed mì Quảng pages exist."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7972,9 +7993,10 @@
         "v2_2GateSources": [],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
-          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
+          "Support cleanup pass: visible copy now positions Dung as a compact counter fallback rather than a primary mì Quảng recommendation."
         ],
-        "finalPassDate": "2026-05-27"
+        "finalPassDate": "2026-05-31"
       }
     },
     {

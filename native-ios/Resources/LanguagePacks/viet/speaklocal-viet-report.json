@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:20bb6ce16d04dfb7",
-    "generatedAt": "source-hash:20bb6ce16d04dfb7"
+    "contentVersion": "viet-sqlite-fixture:9d9711aa57ca49f3",
+    "generatedAt": "source-hash:9d9711aa57ca49f3"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "c8aa573e374c1536b5bbb376c58f193049f6f2f828e48868cf22d149660cceb6"
+      "sha256": "10d12b127446356ddcf28e0faa3392050f8702b2ab18676bf92041227c6131c3"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "138cd593b45960867738547c368023b70f7492eb9dd230e543b6f552d634cc33"
+      "sha256": "4f888c100559f0e5d33e16a03222a8c21b44d81e03d708675ada7bd6365ee548"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -34,7 +34,7 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "9f7c04d139f172531367dd125a66e5bf9124387becd006b40b0d1d3a7ef8096f"
+      "sha256": "a860b39056979b0f44f15519fc4915a3b80cae4c82c60a408edc8b0dfdc136c6"
     },
     "searchOnlySurfacing": {
       "path": "content-draft/viet/search-only-surfacing-v1.json",
@@ -45,7 +45,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "9ec6fe072e2c000c769b86fecb5e142c60acdb6951791af79a61794d462c3911",
+    "databaseSha256": "9d075c2a79ff2147a05b1e56a5d85423907f787db4db20c87adb20fbffdca267",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -96,7 +96,7 @@
     "sections": 7139,
     "sectionItems": 15413,
     "breakdownTokens": 6900,
-    "relations": 9000,
+    "relations": 9002,
     "searchDocuments": 1774,
     "audioAssets": 4318,
     "audioUsages": 14250,
@@ -295,7 +295,7 @@
     ]
   },
   "graph": {
-    "relationCount": 9000,
+    "relationCount": 9002,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -307,7 +307,7 @@
       },
       {
         "relationType": "compare-nearby",
-        "count": 521
+        "count": 523
       },
       {
         "relationType": "mentioned-here",
@@ -358,7 +358,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:e99af4e6ed3415e9",
@@ -372,7 +372,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:764b6155e5c22492",
@@ -386,7 +386,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:6d67f52835b5221a",
@@ -400,7 +400,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:f8876c196e5ef6ba",
@@ -414,7 +414,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:a1feb27d5406fe82",
@@ -428,7 +428,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:403773227918538e",
@@ -442,7 +442,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:c53f053b84a3f347",
@@ -456,7 +456,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:818232de24b38677",
@@ -470,7 +470,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:cbdd59522fc81b64",
@@ -484,7 +484,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:e6570e4fdfc03b4c",
@@ -498,7 +498,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:9092d3a9a7f5ef69",
@@ -512,7 +512,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:5c43895521dadcd2",
@@ -526,7 +526,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:4a0e5d7c25084e30",
@@ -540,7 +540,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:3ace51e6cb6ffe22",
@@ -554,7 +554,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:227ff23e02e88d38",
@@ -568,7 +568,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:9b68d931ca7603da",
@@ -582,7 +582,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:32704d7e2d6643fc",
@@ -596,7 +596,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:6c6278be26fbcec4",
@@ -610,7 +610,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       },
       {
         "id": "missing-audio:planned:73af4abe3b4d4425",
@@ -624,7 +624,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:20bb6ce16d04dfb7"
+        "created_at": "source-hash:9d9711aa57ca49f3"
       }
     ]
   },

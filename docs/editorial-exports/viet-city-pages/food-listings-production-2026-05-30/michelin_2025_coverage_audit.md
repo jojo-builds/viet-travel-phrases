@@ -44,7 +44,7 @@ Some current food pages are useful even without MICHELIN recognition because the
 - `city-hcmc-place-banh-mi-huynh-hoa`: keep as a famous bánh mì counter and practical Saigon lunch save.
 - `city-hcmc-place-pho-hoa-pasteur`: keep as a recognizable southern-style pho stop, but do not present it as the MICHELIN pho answer.
 - `city-danang-place-fatfish`: keep as a riverside support dinner, not as a flagship food save.
-- `city-danang-place-my-quang-ba-mua` and `city-danang-place-my-quang-dung`: keep only if they serve a browse/route job beside the stronger MICHELIN-linked mì Quảng pages.
+- `city-danang-place-my-quang-ba-mua` and `city-danang-place-my-quang-dung`: keep as support mì Quảng pages only. The 2026-05-31 support cleanup demoted them below the MICHELIN-backed mì Quảng pages and rewired both toward `Mỳ Quảng Sứa Hồng Vân` and `Mì Quảng 1A`.
 - Hue and Hội An restaurant pages remain outside current MICHELIN Vietnam city coverage, so their production-readiness should be judged through local significance, dish specificity, and render proof rather than award coverage.
 
 ## Highest-Priority Add Candidates
@@ -94,3 +94,5 @@ The expansion packets widened the contract explicitly instead of adding loose ex
 `city-danang-place-banh-canh-yen` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the second additive Da Nang food pilot.
 
 `city-danang-place-my-quang-sua-hong-van` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the third additive Da Nang food pilot.
+
+`city-danang-place-my-quang-ba-mua` and `city-danang-place-my-quang-dung` now have explicit support-listing posture. They should remain in browse/route inventory, but not lead a high-visibility foodie shelf while `city-danang-place-mi-quang-1a` and `city-danang-place-my-quang-sua-hong-van` carry the stronger mì Quảng saves.

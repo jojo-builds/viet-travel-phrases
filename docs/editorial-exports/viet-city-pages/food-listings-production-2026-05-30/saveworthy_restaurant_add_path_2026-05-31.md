@@ -131,6 +131,10 @@ Expansion mode has now been proven nine times for Mặn Mòi, Bò Kho Gánh, Bú
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-my-quang-sua-hong-van-additive/`
 
+The first explicit support-demotion proof pass for existing restaurants lives under:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-mi-quang-support-demotion/`
+
 ## Acceptance Gate
 
 The page is not production-ready until it passes all of these:

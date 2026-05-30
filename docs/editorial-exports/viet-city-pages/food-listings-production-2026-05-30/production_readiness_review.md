@@ -2579,3 +2579,98 @@ The additive path is now proven across nine stronger food pages. This pass confi
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Mì Quảng Support Demotion Pass
+
+Twenty-second pass date: 2026-05-31
+
+Commit before pass: `1565a0c3e Add My Quang Sua Hong Van Da Nang food listing`
+
+This continuation addresses Jojo's drop/demote concern directly. The goal was not to remove useful Da Nang mì Quảng pages, but to stop older support pages from competing with stronger MICHELIN-backed mì Quảng saves.
+
+### Pages Revised
+
+- `city-danang-place-my-quang-ba-mua`: demoted from 30/30 to 28/30 support listing.
+- `city-danang-place-my-quang-dung`: demoted from 30/30 to 27/30 support listing.
+
+Visible page direction:
+
+- `Mỳ Quảng Bà Mua` now reads as the easier branch-style backup: a clearer table, a named stop, yellow noodles, shallow broth, herbs, rice cracker, and low-friction ordering.
+- `Mỳ Quảng Dung` now reads as the compact counter fallback: point, watch bowls move, taste first, and get a simple bowl without turning lunch into a destination plan.
+- Both pages keep the city-level `Mì Quảng ở Đà Nẵng` card in Mentioned Here.
+- Both pages now compare against `Mỳ Quảng Sứa Hồng Vân` and `Mì Quảng 1A`, making the stronger food saves visible instead of hiding the hierarchy.
+
+### Demotion Decision
+
+Decision: keep, but do not lead.
+
+These pages still serve browse, route, and ordering jobs. They should not anchor a high-visibility foodie shelf while `Mỳ Quảng Sứa Hồng Vân` and `Mì Quảng 1A` carry stronger MICHELIN-backed reasons to save a mì Quảng stop before the trip.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-mi-quang-support-demotion/`
+
+Representative pages captured:
+
+- `viet-family-city-danang-place-my-quang-ba-mua`
+  - `ba-mua-first-screen.jpg`: first viewport shows the new `The Easy Backup Bowl` support framing and playable Useful Phrases immediately after the intro.
+  - `ba-mua-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here and Compare Nearby cards above the bottom chrome.
+- `viet-family-city-danang-place-my-quang-dung`
+  - `dung-first-screen.jpg`: first viewport shows the new `A Small Counter Bowl` support framing and playable Useful Phrases immediately after the intro.
+  - `dung-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here and Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-my-quang-ba-mua`
+  - `--detail-page viet-family-city-danang-place-my-quang-ba-mua --validate-bottom-inset-scroll-to-bottom`
+  - `--detail-page viet-family-city-danang-place-my-quang-dung`
+  - `--detail-page viet-family-city-danang-place-my-quang-dung --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for all four scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 509 entries imported.
+- native resource generation: PASS, 1756 families, 1774 phrases, 1767 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 509 entries, 509 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing template-like `Use this` and internal `belongs because` wording before projection.
+- city-copy compatibility validation: PASS, 5 hubs, 509 city noun pages, 509 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 509 city places, 815 city phrase tags, 0 release-blocking missing audio rows, 9002 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Mì Quảng Support Demotion
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass proves the add/drop posture can be applied without deleting useful inventory: weaker support restaurants can stay, but their copy, scores, and related cards should make the hierarchy clear. The next demotion pass should look for other older restaurant/cafe pages still carrying 30/30 headline posture without an equally strong reason to lead.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
