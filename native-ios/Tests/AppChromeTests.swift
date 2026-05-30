@@ -872,6 +872,45 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
+    func testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
+        XCTAssertEqual(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: false,
+                mastheadImageName: "HeroCategoryFood"
+            ),
+            ["HeroCategoryFood"]
+        )
+        XCTAssertEqual(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: true,
+                mastheadImageName: "HeroCityDanangPlaceAirport"
+            ),
+            ["HeroCityDanangPlaceAirport"]
+        )
+        XCTAssertTrue(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: false,
+                mastheadImageName: "HeroCompactPhraseMasthead"
+            ).isEmpty
+        )
+    }
+
+    func testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
+        XCTAssertEqual(
+            VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: "BackdropMenuPho",
+                fallbackHeroImageName: "HeroCategoryFood"
+            ),
+            ["BackdropMenuPho"]
+        )
+        XCTAssertTrue(
+            VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: nil,
+                fallbackHeroImageName: "HeroCategoryFood"
+            ).isEmpty
+        )
+    }
+
     func testSQLiteRuntimeCachesStayBoundedDuringSearchAndDetailBrowsing() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
@@ -2155,6 +2194,36 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: true), [
             "viet-phrase-hello-chao-chi",
             "viet-phrase-hello-chao-em",
+        ])
+    }
+
+    func testHiddenBackBrowseCollectionCanStayUnmountedUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openBrowseCollection(.category("food"))
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [
+            .category("food"),
+        ])
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [])
+    }
+
+    func testBrowseCollectionsKeepOnlyVisibleRouteUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openBrowseCollection(.category("food"))
+        navigation.openBrowseCollection(.category("shopping"))
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [
+            .category("shopping"),
+        ])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [
+            .category("food"),
+            .category("shopping"),
         ])
     }
 

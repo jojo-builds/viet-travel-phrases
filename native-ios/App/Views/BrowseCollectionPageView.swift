@@ -3,6 +3,26 @@ import SwiftUI
 import UIKit
 #endif
 
+enum BrowseCollectionPhotoBackdropPolicy {
+    static func usesPhotoBackdrop(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> Bool {
+        hasCityHub || mastheadImageName.hasPrefix("HeroCategory")
+    }
+
+    static func preheatImageNames(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> [String] {
+        guard usesPhotoBackdrop(hasCityHub: hasCityHub, mastheadImageName: mastheadImageName) else {
+            return []
+        }
+
+        return [mastheadImageName]
+    }
+}
+
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
     let scrollToTopTrigger: Int
@@ -191,6 +211,18 @@ struct BrowseCollectionPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? descriptor.mastheadImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheat(
+                BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                    hasCityHub: descriptor.cityHub != nil,
+                    mastheadImageName: descriptor.mastheadImageName
+                )
+            )
+        }
     }
 
     @ViewBuilder
@@ -327,8 +359,7 @@ struct BrowseCollectionPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(descriptor.mastheadImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: descriptor.mastheadImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -382,7 +413,10 @@ struct BrowseCollectionPageView: View {
     private static let photoBackdropInitialID = "BrowseCollectionPhotoBackdropInitial"
 
     private var usesPhotoBackdropLayout: Bool {
-        descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
+        BrowseCollectionPhotoBackdropPolicy.usesPhotoBackdrop(
+            hasCityHub: descriptor.cityHub != nil,
+            mastheadImageName: descriptor.mastheadImageName
+        )
     }
 
     @MainActor

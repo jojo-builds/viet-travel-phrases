@@ -1,5 +1,30 @@
 import SwiftUI
 
+enum VietnameseMenuPhotoBackdropPolicy {
+    static func imageName(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> String {
+        photoBackdropImageName ?? fallbackHeroImageName
+    }
+
+    static func preheatImageNames(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> [String] {
+        guard let photoBackdropImageName else {
+            return []
+        }
+
+        return [
+            imageName(
+                photoBackdropImageName: photoBackdropImageName,
+                fallbackHeroImageName: fallbackHeroImageName
+            ),
+        ]
+    }
+}
+
 struct VietnameseMenuPageView: View {
     let kind: VietnameseMenuKind
     let scrollToTopTrigger: Int
@@ -279,7 +304,7 @@ struct VietnameseMenuPageView: View {
                 value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
                     ? PhrasePhotoBackdropImmersiveImageContext(
                         pageID: route.id,
-                        imageName: photoBackdropImageName ?? kind.heroImageName,
+                        imageName: activePhotoBackdropImageName,
                         viewportSize: geometry.size,
                         safeAreaTop: geometry.safeAreaInsets.top,
                         safeAreaBottom: geometry.safeAreaInsets.bottom,
@@ -301,6 +326,18 @@ struct VietnameseMenuPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? activePhotoBackdropImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheat(
+                VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                    photoBackdropImageName: photoBackdropImageName,
+                    fallbackHeroImageName: kind.heroImageName
+                )
+            )
+        }
     }
 
     private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
@@ -348,8 +385,7 @@ struct VietnameseMenuPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(photoBackdropImageName ?? kind.heroImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: activePhotoBackdropImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -476,6 +512,13 @@ struct VietnameseMenuPageView: View {
 
     private var photoBackdropImageName: String? {
         kind.photoBackdropImageName
+    }
+
+    private var activePhotoBackdropImageName: String {
+        VietnameseMenuPhotoBackdropPolicy.imageName(
+            photoBackdropImageName: photoBackdropImageName,
+            fallbackHeroImageName: kind.heroImageName
+        )
     }
 
     private var usesPhotoBackdropLayout: Bool {

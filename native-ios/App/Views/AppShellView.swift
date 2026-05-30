@@ -696,7 +696,12 @@ struct AppShellView: View {
 
     @ViewBuilder
     private func browseCollectionPageStack(width: CGFloat) -> some View {
-        ForEach(Array(navigation.renderedBrowseCollections.enumerated()), id: \.element.id) { index, renderedCollection in
+        let includeBackPreview = interactiveDrag?.direction == .back
+
+        ForEach(
+            Array(navigation.renderedBrowseCollections(includeBackPreview: includeBackPreview).enumerated()),
+            id: \.element.id
+        ) { index, renderedCollection in
             let route = AppRoute.browseCollection(renderedCollection.route)
             let isActive = route == navigation.currentRoute
 
@@ -2552,13 +2557,29 @@ struct AppShellNavigationState: Equatable {
     }
 
     var renderedBrowseCollections: [RenderedBrowseCollection] {
-        let lowerBound = max(browseCollectionPath.count - 2, 0)
+        renderedBrowseCollections(includeBackPreview: true)
+    }
+
+    func renderedBrowseCollections(includeBackPreview: Bool) -> [RenderedBrowseCollection] {
+        var routesToRender = Set<BrowseCollectionRoute>()
+
+        if case .browseCollection(let route) = currentRoute {
+            routesToRender.insert(route)
+        }
+
+        if includeBackPreview, case .browseCollection(let route)? = backPreviewRoute {
+            routesToRender.insert(route)
+        }
 
         return browseCollectionPath.enumerated()
-            .filter { offset, _ in offset >= lowerBound }
+            .filter { _, route in routesToRender.contains(route) }
             .map { offset, route in
                 RenderedBrowseCollection(stackIndex: offset, route: route)
             }
+    }
+
+    func renderedBrowseCollectionRoutes(includeBackPreview: Bool) -> [BrowseCollectionRoute] {
+        renderedBrowseCollections(includeBackPreview: includeBackPreview).map(\.route)
     }
 
     var canNavigateBackWithSwipe: Bool {

@@ -20,6 +20,8 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 4: Home stayed fully mounted behind deeper detail navigation even when it was not the current/back/forward route surface, so its large shelf tree could rebuild while the user was tapping through listing pages
 - root cause 5: the previous detail page stayed mounted at opacity `0` between back-swipe gestures, so tapping through new listing pages could still keep one full offscreen listing sheet alive just to be ready for a possible back preview
 - root cause 6: the root `Xin chào` article surface stayed mounted in the shell even when it was no longer current or the immediate back/forward preview route
+- root cause 7: browse/category/menu collection pages stayed mounted at opacity `0` behind listing detail pages even when they were not visible and not needed for the current back-swipe preview; those collection pages include large section trees, photo backdrops, scroll geometry, and menu section tracking
+- root cause 8: category/city/menu photo backdrop pages still rendered their large static backdrop through plain SwiftUI `Image(...)` instead of the prepared-image cache used by root and listing backdrops, so opening those collection pages could still decode/prepare large assets on the render path
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -33,7 +35,19 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem`
   - `AppChromeTests/testRootXinChaoSurfaceRendersOnlyWhenCurrentBackOrForwardRouteNeedsIt`
   - `AppChromeTests/testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview`
+  - `AppChromeTests/testHiddenBackBrowseCollectionCanStayUnmountedUntilBackSwipePreview`
+  - `AppChromeTests/testBrowseCollectionsKeepOnlyVisibleRouteUntilBackSwipePreview`
+  - `AppChromeTests/testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
+  - `AppChromeTests/testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- XcodeBuildMCP simulator focused collection/menu prepared-image thermal set on iPhone 17 Pro
+  - passed: `14` tests, `0` failures
+  - covered category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T14-09-15-196Z_pid15747_321127fc.xcresult`
+- XcodeBuildMCP simulator focused browse-collection hidden-work thermal set on iPhone 17 Pro
+  - passed: `12` tests, `0` failures
+  - covered current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-59-55-976Z_pid15747_c6bc3e88.xcresult`
 - XcodeBuildMCP simulator focused root-surface thermal set on iPhone 17 Pro
   - passed: `10` tests, `0` failures
   - covered root `Xin chào` surface gating, inactive Home render gating, current-only detail mounting between gestures, back/forward presentation behavior, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
@@ -71,7 +85,7 @@ Fresh command evidence from this pass:
   - install passed for bundle id `app.speaklocal.vietnam.native`
   - launch passed
   - signing scan stayed clean; personal signing remained local and was not written to repo files
-- Follow-up iPhone reinstall for the hidden-detail mount reduction later passed build and install, but launch was blocked by the iPhone lock screen. A later reinstall attempt for the root `Xin chào` surface-gating patch timed out waiting for the physical iPhone destination; that patch currently has simulator proof but still needs device build/install/launch once the phone is unlocked/attached or reachable on the local network.
+- Follow-up iPhone reinstall for the hidden-detail mount reduction later passed build and install, but launch was blocked by the iPhone lock screen. Later reinstall attempts for the root `Xin chào` surface-gating patch and the browse/category/menu hidden-work patch reached different boundaries: one timed out waiting for the physical iPhone destination, and the latest 2026-05-30 attempt built successfully but install failed when the device connection was interrupted. A retry immediately afterward reported no available paired iPhone. The newest thermal patches currently have simulator proof and device build proof, but still need device install/launch and hands-on thermal retest once the phone is unlocked/attached or reachable on the local network.
 
 ## Current Main Non-Paywall Merge Sweep Evidence
 
