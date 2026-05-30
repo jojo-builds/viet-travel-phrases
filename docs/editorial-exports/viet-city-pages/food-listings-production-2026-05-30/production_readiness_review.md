@@ -907,3 +907,93 @@ Results:
 This removes the largest app/runtime mismatch behind the save-worthy-place concern: source-authored related and mentioned candidates now have a generic render path instead of relying on one-off Swift switch cases.
 
 Status should still remain below `GLOBAL_PRODUCTION_READY` until the next sweep confirms actual rendered screenshots across the remaining high-visibility food pages and checks that weaker support restaurants/cafes are not promoted as feature anchors.
+
+## Continuation: Hanoi MICHELIN Bib / Green Food-Desire Refinement
+
+Sixth pass date: 2026-05-30
+
+Commit before pass: `2ede5a09d Render V2.2 candidate cards from SQLite`
+
+This continuation tightened four Hanoi pages where the visible copy was still leaning on reviewer/source phrasing instead of giving the traveler a concrete food reason to save the place.
+
+### Pages Touched
+
+- `city-hanoi-place-lamai-garden`: kept the 2025 MICHELIN Green Star claim, but moved the save reason toward garden calm, farm-minded ingredients, herbs, and ordering judgment.
+- `city-hanoi-place-mien-luon-chan-cam`: replaced "source support" phrasing with a 2025 MICHELIN Bib Gourmand eel/glass-noodle lunch hook.
+- `city-hanoi-place-pho-bo-lam`: replaced "source support" phrasing with a 2025 MICHELIN Bib Gourmand beef-pho, tendon, broth, and counter-pace hook.
+- `city-hanoi-place-udam`: replaced "source support" phrasing with a 2025 MICHELIN Bib Gourmand vegetarian-table hook built around herbs, mushrooms, tofu, rice, and sauces.
+
+### Source Handling
+
+Official 2025 MICHELIN references checked for bounded recognition language:
+
+- `https://guide.michelin.com/us/en/article/michelin-guide-ceremony/michelin-guide-vietnam-2025`
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+No new hours, prices, closure, reservation, or operational claims were added.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-30-hanoi-michelin-bib-green/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-pho-bo-lam`: first viewport shows the revised "A Bib Gourmand Pho Stop" intro, beef-cut/tendon copy, early sections, and native chrome without visible overlap.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hook: `--detail-page viet-family-city-hanoi-place-pho-bo-lam`
+- Build/run: PASS
+
+### Validation Run After Hanoi MICHELIN Refinement
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Focused native XCTest:
+
+```sh
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesExposeNativeMentionedHereCards
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesExposeNativeRelatedPlaceCards
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesRenderSQLiteRelatedCandidates
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesRenderSQLiteMentionedHereCandidates
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 9342 relations, 0 release-blocking missing audio rows.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+- focused native XCTest: PASS, 4 tests.
+
+### Remaining Risk After Hanoi MICHELIN Refinement
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+These four pages are cleaner and more save-worthy than before, and the source-to-native path is proven for one representative page. The full catalog still needs the remaining high-visibility food pages, support restaurants, cafes, drink pages, markets, and category-specific related-card choices checked in rendered app context before the 500-page set can be called production-ready.
