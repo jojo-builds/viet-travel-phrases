@@ -228,3 +228,122 @@ Issue caught during validation:
 Status for this batch: `REVISE_BEFORE_GLOBAL_PRODUCTION`
 
 The first 38 food/place entries are materially better and should proceed to runtime projection and render proof. The full catalog still needs a systematic related-card, Mentioned Here, and save-worthiness pass before it can honestly be called production-ready.
+
+## Continuation: Food Graph Pass
+
+Second pass date: 2026-05-30
+Commit before pass: `923cf63c8 Improve Viet food listing production pass`
+
+This continuation focused on trip-building links, not new restaurant prose. The goal was to stop food pages from behaving like generic same-city inventory and make the graph answer clearer questions:
+
+- Which dish page leads to a real named place?
+- Which named place should point back to the dish guide?
+- Which market leads to a useful nearby meal or route?
+- Which snack/drink page should become a room, counter, or evening path?
+- Which fine-dining page should stay in the planned-dinner lane instead of absorbing everyday food pages?
+
+### Pages Touched
+
+HCMC / Saigon:
+
+- `city-hcmc-place-banh-mi-huynh-hoa`
+- `city-hcmc-place-com-tam-ba-ghien`
+- `city-hcmc-place-pho-hoa-pasteur`
+- `city-hcmc-place-banh-mi`
+- `city-hcmc-place-com-tam`
+- `city-hcmc-place-pho-nam`
+- `city-hcmc-place-hu-tieu`
+- `city-hcmc-place-oc`
+- `city-hcmc-place-bot-chien`
+- `city-hcmc-place-pha-lau`
+- `city-hcmc-place-bo-la-lot`
+- `city-hcmc-place-ca-phe-sua-da`
+- `city-hcmc-place-cafe-vot-pham-ngoc-thach`
+- `city-hcmc-place-ben-thanh-market`
+- `city-hcmc-place-binh-tay-market`
+- `city-hcmc-place-ho-thi-ky-flower-market`
+- `city-hcmc-place-long-trieu`
+
+Hanoi:
+
+- `city-hanoi-place-cha-ca`
+- `city-hanoi-place-pho-bo`
+- `city-hanoi-place-pho-gia-truyen`
+- `city-hanoi-place-mien-luon`
+- `city-hanoi-place-bun-cha-huong-lien`
+- `city-hanoi-place-egg-coffee`
+- `city-hanoi-place-dinh-cafe`
+- `city-hanoi-place-dong-xuan`
+
+Hue:
+
+- `city-hue-place-dong-ba-bun-bo`
+- `city-hue-place-banh-beo`
+- `city-hue-place-banh-nam`
+- `city-hue-place-che-hue`
+- `city-hue-place-me-xung`
+
+### Food Graph Metrics
+
+Measured on food-surface categories only: `Restaurant`, `Cafe`, `Market`, `Dish`, `Dessert`, `Drink`, `Bar`.
+
+Before this continuation:
+
+- Food-surface pages: 195.
+- Food pages with generic related-card language: 152.
+- Food pages with rendered Mentioned Here candidates: 28.
+
+After this continuation:
+
+- Food-surface pages: 195.
+- Food pages with generic related-card language: 123.
+- Food pages with rendered Mentioned Here candidates: 36.
+
+By city after this continuation:
+
+- Da Nang: 28 generic food related cards, 9 food Mentioned Here pages.
+- Hanoi: 22 generic food related cards, 11 food Mentioned Here pages.
+- Saigon: 15 generic food related cards, 7 food Mentioned Here pages.
+- Hoi An: 32 generic food related cards, 4 food Mentioned Here pages.
+- Hue: 26 generic food related cards, 5 food Mentioned Here pages.
+
+### Notable Direction Changes
+
+- Removed the `Akuna` fine-dining default from everyday Saigon food pages such as Bánh mì Huỳnh Hoa, Cơm tấm Ba Ghiền, and Phở Hòa Pasteur.
+- Connected Saigon dish pages to concrete named places: bánh mì to Bánh mì Huỳnh Hoa, cơm tấm to Cơm tấm Ba Ghiền, phở to Phở Hòa Pasteur.
+- Connected Saigon snack pages to the evening street-food route instead of generic bánh mì comparisons.
+- Connected Hanoi dish/drink pages to specific rooms: chả cá to Chả cá Thăng Long, phở bò to Phở Bò Lâm, egg coffee to Giảng Cafe.
+- Connected Hue food pages by setting and texture: Đông Ba market bun bo to Đông Ba and broader bún bò Huế, soft rice snacks to bánh khoái contrast, chè to mè xửng as a portable sweet.
+
+### Validation Run After Continuation
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, integrity OK, 8784 relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+
+### Remaining Risk
+
+This pass materially improves the graph, especially Saigon, but the full food catalog still is not globally production-ready. The next highest-value regions are Da Nang and Hoi An, where food-surface generic related-card counts remain high.

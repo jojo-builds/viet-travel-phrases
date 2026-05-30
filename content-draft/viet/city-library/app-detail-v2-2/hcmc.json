@@ -889,11 +889,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-xeo",
-          "label": "Bánh xèo ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-banh-mi-huynh-hoa",
+          "label": "Bánh mì Huỳnh Hoa",
+          "relationship": "dish-to-counter follow-through",
+          "displaySubtitle": "A named counter when the quick sandwich should become a specific stop.",
+          "reason": "The dish page should route to a concrete banh mi counter for saving.",
           "status": "render"
         }
       ],
@@ -908,7 +908,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -998,14 +999,24 @@
           "body": "Remember it for the counter and the famous overloaded sandwich: bread, fillings, richness, and a fast decision at the front."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-banh-mi",
+          "sourceText": "sandwich",
+          "displaySubtitle": "The Saigon sandwich guide behind this famous counter.",
+          "reason": "The page centers a named banh mi counter and should link to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-ben-thanh-market",
+          "label": "Chợ Bến Thành",
+          "relationship": "nearby central food-market follow-up",
+          "displaySubtitle": "A central market when a quick sandwich should turn into a first Saigon food wander.",
+          "reason": "Ben Thanh is a better first-food-wander continuation than a fine-dining comparison for Banh Mi Huynh Hoa.",
           "status": "render"
         }
       ],
@@ -1020,7 +1031,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1343,11 +1355,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-an-dong-market",
-          "label": "Chợ An Đông",
-          "relationship": "curated route comparison",
-          "displaySubtitle": "A market comparison when shopping matters more than the landmark.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-bep-me-in",
+          "label": "Bếp Mẹ Ỉn",
+          "relationship": "nearby sit-down food follow-up",
+          "displaySubtitle": "A nearby sit-down table after market aisles and snack counters.",
+          "reason": "Bep Me In gives the central market day a practical meal continuation.",
           "status": "render"
         }
       ],
@@ -1362,7 +1374,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1690,11 +1703,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-an-dong-market",
-          "label": "Chợ An Đông",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-cho-lon",
+          "label": "Chợ Lớn",
+          "relationship": "neighborhood context",
+          "displaySubtitle": "The west-side neighborhood context that makes this market feel like a real detour.",
+          "reason": "Binh Tay belongs to the Cho Lon route more than to a generic market comparison.",
           "status": "render"
         }
       ],
@@ -1709,7 +1722,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1914,11 +1928,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-oc",
+          "label": "Ốc Sài Gòn ở Thành phố Hồ Chí Minh",
+          "relationship": "hands-on shared-table comparison",
+          "displaySubtitle": "Another hands-on Saigon table when herbs, sauce, and shared ordering are the point.",
+          "reason": "Bo la lot and oc share hands-on table behavior and sauce/herb decisions.",
           "status": "render"
         }
       ],
@@ -1933,7 +1947,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -2026,11 +2041,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-street-food-evening",
+          "label": "Ăn vặt Sài Gòn buổi tối",
+          "relationship": "evening snack route",
+          "displaySubtitle": "A broader night-snack path when one griddle plate should lead to more small bites.",
+          "reason": "Bot chien is a snack-page route into the evening street-food cluster.",
           "status": "render"
         }
       ],
@@ -2045,7 +2060,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -2357,11 +2373,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-cheo-leo-cafe",
+          "label": "Cà phê Cheo Leo",
+          "relationship": "drink-to-old-cafe follow-through",
+          "displaySubtitle": "An old-Saigon coffee room when iced milk coffee should become a place.",
+          "reason": "Cheo Leo makes the coffee-drink page saveable as a room and ritual.",
           "status": "render"
         }
       ],
@@ -2376,7 +2392,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -2693,11 +2710,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-cheo-leo-cafe",
+          "label": "Cà phê Cheo Leo",
+          "relationship": "old-coffee ritual comparison",
+          "displaySubtitle": "Another older coffee ritual when filter, glass, and short sit matter more than cafe design.",
+          "reason": "Cheo Leo is a better old-coffee ritual comparison than a generic cafe apartment.",
           "status": "render"
         }
       ],
@@ -2712,7 +2729,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3599,11 +3617,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-com-tam-ba-ghien",
+          "label": "Cơm tấm Ba Ghiền",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A focused broken-rice stop when the pork chop should be the meal plan.",
+          "reason": "The dish page should route to a concrete com tam place for saving.",
           "status": "render"
         }
       ],
@@ -3618,7 +3636,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3708,14 +3727,24 @@
           "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Cơm tấm ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-com-tam",
+          "sourceText": "broken-rice",
+          "displaySubtitle": "The broken-rice guide behind the Ba Ghiền pork-chop plate.",
+          "reason": "The page centers com tam and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+          "label": "Phở Hòa Pasteur",
+          "relationship": "same-city everyday meal comparison",
+          "displaySubtitle": "Another named Saigon meal stop when one classic plate or bowl should carry lunch.",
+          "reason": "Pho Hoa Pasteur is a useful everyday lunch comparison for Com Tam Ba Ghien, unlike a star-dinner default.",
           "status": "render"
         }
       ],
@@ -3730,7 +3759,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -5495,11 +5525,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-an-dong-market",
-          "label": "Chợ An Đông",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-street-food-evening",
+          "label": "Ăn vặt Sài Gòn buổi tối",
+          "relationship": "night-street follow-up",
+          "displaySubtitle": "A night-street follow-up when flower lanes should turn into small food stops.",
+          "reason": "Ho Thi Ky is stronger as an evening street-color and snack route than a shopping taxonomy card.",
           "status": "render"
         }
       ],
@@ -5514,7 +5544,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -5607,11 +5638,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-pho-nam",
+          "label": "Phở Sài Gòn ở Thành phố Hồ Chí Minh",
+          "relationship": "same-city noodle comparison",
+          "displaySubtitle": "The familiar southern bowl to compare before choosing hủ tiếu’s lighter noodle style.",
+          "reason": "Pho nam is the useful noodle comparison for hu tieu.",
           "status": "render"
         }
       ],
@@ -5626,7 +5657,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6498,11 +6530,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city Michelin-starred dinner comparison",
-          "displaySubtitle": "A Vietnamese-ingredient star dinner with counter detail and slower pacing.",
-          "reason": "Akuna gives a star-level but different cuisine/register comparison for Long Trieu.",
+          "catalogId": "viet-family-city-hcmc-place-cho-lon",
+          "label": "Chợ Lớn",
+          "relationship": "Chinese-Vietnamese city context",
+          "displaySubtitle": "The Chinese-Vietnamese neighborhood context behind Saigon’s formal Chinese dining lane.",
+          "reason": "Cho Lon balances the star restaurant with the wider Chinese-Vietnamese food memory of the city.",
           "status": "render"
         }
       ],
@@ -6518,7 +6550,8 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -7845,11 +7878,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-street-food-evening",
+          "label": "Ăn vặt Sài Gòn buổi tối",
+          "relationship": "evening street-food route",
+          "displaySubtitle": "A night-food route when shells, sauces, and small plates should build into an evening.",
+          "reason": "Oc belongs in a Saigon evening-food route rather than a generic sandwich comparison.",
           "status": "render"
         }
       ],
@@ -7864,7 +7897,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8291,11 +8325,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-street-food-evening",
+          "label": "Ăn vặt Sài Gòn buổi tối",
+          "relationship": "evening snack route",
+          "displaySubtitle": "A small-bowl stop that fits naturally into a Saigon snack evening.",
+          "reason": "Pha lau is better connected to snack-evening behavior than to a generic banh mi comparison.",
           "status": "render"
         }
       ],
@@ -8310,7 +8344,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8512,14 +8547,24 @@
           "body": "Southern-style pho usually brings herbs, bean sprouts, lime, and sauces close to the bowl. A slow add-in approach helps if you want to taste the broth before extras."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở Sài Gòn ở Thành phố Hồ Chí Minh",
+          "type": "dish",
+          "catalogId": "viet-family-city-hcmc-place-pho-nam",
+          "sourceText": "pho",
+          "displaySubtitle": "The southern-pho guide behind this Pasteur Street bowl.",
+          "reason": "The page centers a named pho shop and should connect to the broader southern pho guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-akuna",
-          "label": "Akuna",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-hu-tieu",
+          "label": "Hủ tiếu ở Thành phố Hồ Chí Minh",
+          "relationship": "same-city noodle decision",
+          "displaySubtitle": "A lighter Saigon noodle path when you want broth or dry noodles instead of phở.",
+          "reason": "Hu tieu is the useful noodle comparison after a Pho Hoa page.",
           "status": "render"
         }
       ],
@@ -8534,7 +8579,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8627,11 +8673,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-banh-mi",
-          "label": "Bánh mì ở Thành phố Hồ Chí Minh",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+          "label": "Phở Hòa Pasteur",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A busy Pasteur Street shop when southern phở should become one concrete meal.",
+          "reason": "The southern pho page should route to a named Saigon pho shop.",
           "status": "render"
         }
       ],
@@ -8646,7 +8692,8 @@
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {

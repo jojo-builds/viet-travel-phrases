@@ -971,11 +971,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-bot-loc",
-          "label": "Bánh bột lọc ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-banh-khoai",
+          "label": "Bánh khoái ở Huế",
+          "relationship": "Hue snack texture contrast",
+          "displaySubtitle": "A crisp Hue pancake contrast after softer saucer snacks.",
+          "reason": "Banh khoai gives a clear texture contrast for banh beo.",
           "status": "render"
         }
       ],
@@ -989,7 +989,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1324,11 +1325,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-banh-khoai",
+          "label": "Bánh khoái ở Huế",
+          "relationship": "Hue snack texture contrast",
+          "displaySubtitle": "A brighter, crunchier Hue snack when the table needs contrast after soft banana-leaf bites.",
+          "reason": "Banh khoai gives a clearer texture contrast than a generic same-city dish card.",
           "status": "render"
         }
       ],
@@ -1342,7 +1343,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -2226,9 +2228,9 @@
         {
           "catalogId": "viet-family-city-hue-place-me-xung",
           "label": "Mè xửng ở Huế",
-          "relationship": "same-city dessert comparison",
-          "displaySubtitle": "A dessert in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "Hue sweet texture contrast",
+          "displaySubtitle": "A portable Hue sweet for gift browsing and tea-table memory after a cold chè stop.",
+          "reason": "Me xung is the right dessert contrast because it changes form, timing, and use.",
           "status": "render"
         }
       ],
@@ -2242,7 +2244,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3351,14 +3354,33 @@
           "body": "The market matters. Without the stalls around it, the phrase loses the part that makes the bowl specific to Hue."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Chợ Đông Ba",
+          "type": "market",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "sourceText": "Dong Ba Market",
+          "displaySubtitle": "The market setting that makes this bowl specific.",
+          "reason": "The page centers bun bo at Dong Ba and should link to the market page.",
+          "status": "render"
+        },
+        {
+          "label": "Bún bò Huế",
+          "type": "dish",
+          "catalogId": "viet-family-city-hue-place-bun-bo-city",
+          "sourceText": "Bún bò",
+          "displaySubtitle": "The broader Hue bowl guide behind the market version.",
+          "reason": "The page should connect the market bowl to the broader bun bo Hue dish guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-banh-beo",
-          "label": "Bánh bèo ở Huế",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "market setting context",
+          "displaySubtitle": "The market setting that turns this bowl into a Dong Ba food memory.",
+          "reason": "Dong Ba is the setting context for this bun bo page.",
           "status": "render"
         }
       ],
@@ -3372,7 +3394,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6346,14 +6369,24 @@
           "body": "Buy a modest first box before packing more for home; sweetness and chew differ by shop."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Chợ Đông Ba",
+          "type": "market",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "sourceText": "gift",
+          "displaySubtitle": "The central market context where sesame candy becomes a small gift stop.",
+          "reason": "Me xung works as a Hue gift sweet and should connect to Dong Ba Market.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-che-hue",
-          "label": "Chè Huế",
-          "relationship": "same-city dessert comparison",
-          "displaySubtitle": "A dessert in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hue-place-dong-ba",
+          "label": "Chợ Đông Ba",
+          "relationship": "central market gift context",
+          "displaySubtitle": "The central market context where sesame candy becomes a small gift stop.",
+          "reason": "Dong Ba is a useful gift-browsing context for me xung.",
           "status": "render"
         }
       ],
@@ -6367,7 +6400,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
