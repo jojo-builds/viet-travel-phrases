@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T21:49:54.108Z",
+    "generatedAt": "2026-05-30T21:59:08.157Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 818,
+    "cityLibraryPageCount": 819,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2260,
-    "missingAudioCount": 693
+    "requiredAudioCount": 2261,
+    "missingAudioCount": 694
   },
   "required": [
     {
@@ -12121,6 +12121,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-moc-quan-seafood",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-moc-quan-seafood-64cd60bac6",
+      "text": "MỘC Quán Seafood",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-museum",
       "sectionID": "hero",
       "kind": "hero",
@@ -18872,6 +18880,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-mi-quang-1a-8af2ad413c",
       "text": "Mì Quảng 1A",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-moc-quan-seafood",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-moc-quan-seafood-64cd60bac6",
+      "text": "MỘC Quán Seafood",
       "resolved": false
     },
     {

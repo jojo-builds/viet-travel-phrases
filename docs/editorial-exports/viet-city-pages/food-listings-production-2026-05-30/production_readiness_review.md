@@ -2364,6 +2364,109 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: MỘC Quán Seafood Additive Da Nang Pilot
+
+Twenty-eighth pass date: 2026-05-31
+
+Commit before pass: `1e05f0274 Add Bep Hen Da Nang food listing`
+
+This continuation adds `MỘC Quán Seafood` as a guided seafood-table page. The point is not to copy another seafood name into the catalog; the page earns the slot because it gives Da Nang seafood a clearer table role than the existing louder display-table pages.
+
+### Page Added
+
+- `city-danang-place-moc-quan-seafood`: new first-class V2.2 Da Nang restaurant page.
+
+Visible page direction:
+
+- The page frames MỘC as a 2025 MICHELIN Selected seafood table for choosing from tanks, getting help with shellfish, and letting lobster in garlic butter lead the meal.
+- It links Mentioned Here to `Hải sản ở Đà Nẵng`, so the named restaurant sits behind the broader seafood-ordering guide.
+- It renders `Hải sản Bé Mặn` and `Hải sản Năm Đảnh` as Compare Nearby cards, separating guided seafood from louder display ordering and casual neighborhood rounds.
+- The dish-level seafood guide now renders MỘC as a related named seafood table.
+
+### Add Decision
+
+Decision: add, because it improves the seafood hierarchy.
+
+MỘC is different from Bé Mặn and Năm Đảnh. Bé Mặn remains the louder display-table save; Năm Đảnh remains the neighborhood rounds save. MỘC gives the app a guided seafood-choice save where tanks, shellfish help, and a richer lobster-garlic-butter cue can make the table feel easier to imagine and save before the trip.
+
+Source support:
+
+- Current MICHELIN venue page for `Moc` describes tanks, staff wearing gloves to help with shellfish, and lobster in garlic butter.
+- 2025 MICHELIN Guide Vietnam coverage supports `Moc` as a MICHELIN Selected Da Nang restaurant.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/danang-nouns.md`: added row `danang-moc-quan-seafood`.
+- `content-draft/viet/city-library/app-detail-v2-2/danang.json`: added the authored V2.2 source object and a dish-guide related card.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 513 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 104, Hanoi 103, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-moc-quan-seafood-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-moc-quan-seafood`
+  - `moc-quan-seafood-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Guided Seafood From The Tanks` intro, and Useful Phrases start.
+  - `moc-quan-seafood-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Hải sản Bé Mặn` and `Hải sản Năm Đảnh` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-moc-quan-seafood`
+  - `--detail-page viet-family-city-danang-place-moc-quan-seafood --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 103 places, Da Nang 106 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 513 entries imported.
+- native resource generation: PASS, 1760 families, 1778 phrases, 1771 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 513 entries, 513 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing the initial `belongs when` wording before final generation.
+- city-copy compatibility validation: PASS, 5 hubs, 513 city noun pages, 513 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 513 city places, 819 city phrase tags, 0 release-blocking missing audio rows, 9030 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After MỘC Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens the Da Nang seafood hierarchy, but it also raises the bar for further Da Nang additions. The next Da Nang restaurant should not be added simply because it is guide-listed; it needs a new food emotion, table role, or trip-building comparison beyond the current guide-backed set.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Bếp Hên Additive Da Nang Pilot
 
 Twenty-seventh pass date: 2026-05-31

@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 818,
+    "cityLibraryPageCount": 819,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T21:49:54.108Z"
+    "generatedAt": "2026-05-30T21:59:08.157Z"
   },
   "pages": [
     {
@@ -191411,6 +191411,179 @@
           "food-3"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-mi-quang-1a"
+      }
+    },
+    {
+      "id": "viet-family-city-danang-place-moc-quan-seafood",
+      "familyID": "city-danang-place-moc-quan-seafood",
+      "phraseID": "city-danang-place-moc-quan-seafood",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "MỘC Quán Seafood",
+      "englishTitle": "MOC Seafood",
+      "pronunciation": "moc quan seafood",
+      "summary": "Save MỘC when Da Nang seafood should feel guided rather than chaotic: tanks nearby, shellfish help at the table, lobster in garlic butter, and a room built for choosing well.",
+      "heroImageName": "HeroCityDanangPlaceMocQuanSeafood",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-moc-quan-seafood-64cd60bac6",
+      "cityMetadata": {
+        "cityID": "danang",
+        "cityName": "Da Nang",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "danang-moc-quan-seafood",
+        "placeName": "MOC Seafood",
+        "sourceIDs": [
+          "vt-danang",
+          "vt-danang-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "MỘC earns the seafood slot because it adds a cleaner decision point between raw seafood choice and the finished plate, giving visitors a guided way into Da Nang's coastal dinner ritual.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityDanangPlaceMocQuanSeafood"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Guided Seafood From The Tanks",
+          "body": "MỘC Quán Seafood is a 2025 MICHELIN Selected Da Nang table for choosing seafood from tanks, getting help with shellfish, and letting lobster in garlic butter carry the meal.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Choose Before The Plate",
+          "body": "The useful moment happens before cooking: tank, size, style, and price. Slow that down and the table gets easier.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Garlic Butter Has A Job",
+          "body": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Use it as the centerpiece, then keep the rest of the order cleaner.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Help With Shellfish",
+          "body": "Choose this when seafood feels exciting and slightly technical. If staff help with shells, let that make the meal calmer instead of rushing through the order.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Beside Bé Mặn",
+          "body": "Bé Mặn is louder and more display-driven. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-danang-place-moc-quan-seafood",
+          "vietnamese": "MỘC Quán Seafood",
+          "english": "MOC Seafood",
+          "pronunciation": "moc quan seafood",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-moc-quan-seafood-64cd60bac6"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-danang-place-moc-quan-seafood",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "food-3"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-danang-place-moc-quan-seafood",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "food-3"
+        ],
+        "practiceSourcePageID": "viet-family-city-danang-place-moc-quan-seafood"
       }
     },
     {

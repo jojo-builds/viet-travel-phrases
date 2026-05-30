@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1777,
+    "phraseCount": 1778,
     "basePhraseCount": 935,
-    "cityPhraseCount": 818,
+    "cityPhraseCount": 819,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1759,
+    "familyCount": 1760,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -12239,6 +12239,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-mi-quang-1a"
+      ]
+    },
+    {
+      "id": "city-danang-place-moc-quan-seafood",
+      "pageID": "viet-family-city-danang-place-moc-quan-seafood",
+      "scenarioID": "city-guides",
+      "familyTitle": "MOC Seafood pronunciation",
+      "summary": "Save MỘC when Da Nang seafood should feel guided rather than chaotic: tanks nearby, shellfish help at the table, lobster in garlic butter, and a room built for choosing well.",
+      "primaryPhraseID": "city-danang-place-moc-quan-seafood",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-moc-quan-seafood"
       ]
     },
     {
@@ -60559,6 +60571,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-moc-quan-seafood",
+      "familyID": "city-danang-place-moc-quan-seafood",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "MOC Seafood",
+      "targetText": "MỘC Quán Seafood",
+      "canonicalTargetText": "MỘC Quán Seafood",
+      "pronunciation": "moc quan seafood",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save MỘC when Da Nang seafood should feel guided rather than chaotic: tanks nearby, shellfish help at the table, lobster in garlic butter, and a room built for choosing well.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "MOC Seafood",
+        "MỘC Quán Seafood"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-moc-quan-seafood; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-moc-quan-seafood",
+      "placeName": "MOC Seafood",
+      "placeVietnameseName": "MỘC Quán Seafood",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 3,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

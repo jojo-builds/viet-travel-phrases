@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 512,
+    "entries": 513,
     "byCity": {
-      "danang": 105,
+      "danang": 106,
       "hanoi": 103,
       "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 512,
+    "finalPass": 513,
     "priorV2_2GateEvidence": 10,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 512,
-    "renderableMentionedHereCandidates": 48,
+    "renderableRelatedPlaceCandidates": 513,
+    "renderableMentionedHereCandidates": 49,
     "verificationFlags": 1
   },
   "entries": [
@@ -159,6 +159,13 @@
     {
       "id": "viet-family-city-danang-place-bep-hen",
       "pageID": "city-danang-place-bep-hen",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-moc-quan-seafood",
+      "pageID": "city-danang-place-moc-quan-seafood",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"

@@ -13,9 +13,9 @@ That means a new restaurant page needs one of two explicit product choices:
 - swap a weaker current HCMC row out of the 100-page inventory; or
 - expand the inventory contract and update the scripts, reports, generated resources, render proof, and validation expectations that currently assume 100 pages per city.
 
-For the additive pilots so far, Jojo chose the expansion path. The runtime shape was widened deliberately: HCMC now carries 104 noun/place rows, Hanoi carries 103, Da Nang carries 105, and Hội An and Hue remain at 100 each, for 512 total city places.
+For the additive pilots so far, Jojo chose the expansion path. The runtime shape was widened deliberately: HCMC now carries 104 noun/place rows, Hanoi carries 103, Da Nang carries 106, and Hội An and Hue remain at 100 each, for 513 total city places.
 
-That makes Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, and Bếp Hên the current test set for whether stronger foodie pages make the app feel more save-worthy without forcing a premature drop decision.
+That makes Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, and MỘC Quán Seafood the current test set for whether stronger foodie pages make the app feel more save-worthy without forcing a premature drop decision.
 
 ## Implemented Pilot
 
@@ -111,7 +111,7 @@ For future swap mode:
 
 Expansion mode was treated as a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
 
-Expansion mode has now been proven twelve times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, and Bếp Hên. The implemented changes widened the importer and validators to expect HCMC 104 + Hanoi 103 + Da Nang 105 / total 512, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
+Expansion mode has now been proven thirteen times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Bánh Cuốn Bà Hoành, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, and MỘC Quán Seafood. The implemented changes widened the importer and validators to expect HCMC 104 + Hanoi 103 + Da Nang 106 / total 513, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-man-moi-additive/`
 
@@ -136,6 +136,8 @@ Expansion mode has now been proven twelve times for Mặn Mòi, Bò Kho Gánh, B
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-cha-ca-109-additive/`
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bep-hen-additive/`
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-moc-quan-seafood-additive/`
 
 The first explicit support-demotion proof pass for existing restaurants lives under:
 
