@@ -46,6 +46,8 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 30: `PhraseDetailView` rebuilt each detail page's `PhraseArticlePage` adapter from `body`, remapping sections and playback metadata on SwiftUI refreshes for the same page; the view now builds that adapter once during initialization and reuses it across redraws, preserving article layout while removing repeated per-refresh transformation work
 - root cause 31: `PhraseArticleTemplateView` still derived visible article sections from `body`, re-filtering sections and re-running duplicate-hero text normalization during repeated SwiftUI redraws for the same page; the view now derives the visible section list once per page instance and reuses it across redraws
 - root cause 32: saved/practice membership checks canonicalized page IDs even when their ID lists were empty or when the caller already supplied the exact canonical ID; those render-path checks now use empty/direct-ID fast paths before entering the SQLite canonical resolver, preserving alias support while avoiding unnecessary lookup work during detail redraws
+- root cause 33: `PhraseArticleTemplateView` still canonicalized a home-hero morph identity from detail render paths even when no home morph was active; morph identity now returns the raw page ID when both morph IDs are nil and resolves once per view only when morph state exists
+- root cause 34: inactive Home/root/admin photo-backdrop preview surfaces could still publish scroll-geometry state while mounted as navigation previews; those callbacks now require active and visible state, matching the existing delayed-task and listing/browse/menu scroll-geometry gates
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -88,9 +90,39 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance`
   - `AppChromeTests/testPhraseArticleTemplateBuildsVisibleSectionsOncePerPageInstance`
   - `LocalUserIntentStoreTests/testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs`
+  - `AppChromeTests/testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive`
+  - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages` was extended to cover inactive scroll-geometry gating
 - local hygiene checks after the detail redraw and saved-membership fixes:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the inactive root backdrop redraw fixes:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Views/AppShellView.swift native-ios/App/Views/AdminPhotoBackdropSurfaceView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused morph-policy set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleMorphPolicy` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-09-52-706Z_pid15747_f442da87.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-10-55-774Z_pid15747_5e8cce2a.xcresult`
+- XcodeBuildMCP simulator focused inactive root/admin scroll-geometry set on iPhone 17 Pro
+  - failed before implementation because `AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry` and `HomePhotoBackdropTaskPolicy` did not exist
+  - passed after implementation as part of the focused regression set below
+  - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-13-25-315Z_pid15747_06d3d2e7.log`
+- XcodeBuildMCP simulator focused inactive root backdrop redraw regression set on iPhone 17 Pro
+  - passed: `7` tests, `0` failures
+  - covered inactive admin/root backdrop delayed-task and scroll-geometry gating, no-morph detail identity fast path, visible-section derivation reuse, article-adapter reuse, generated detail preheat SQLite bypass, phrase photo-backdrop preheat eligibility, inactive listing/browse/menu scroll-geometry gating, and Home backdrop activation behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-17-12-997Z_pid15747_d0a9e12f.xcresult`
+- XcodeBuildMCP simulator visual build/run for `Xin chào` on iPhone 17 Pro from app-code commit `6bc2f3bcc`
+  - build passed
+  - launch passed with `--detail-page viet-polite-hello`
+  - screenshot confirmed the current branch opens `Xin chào` with the rounded pull-down content sheet over the photo backdrop
+  - build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/build_run_sim_2026-05-30T23-24-11-471Z_pid15747_8e5815bc.log`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `6bc2f3bcc`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - a follow-up force-launch with existing-process termination was also blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused visible-section derivation set on iPhone 17 Pro
   - failed before implementation because `PhraseArticleTemplateView.resetVisibleSectionsBuildCountForTesting` and `PhraseArticleTemplateView.visibleSectionsBuildCountForTesting` did not exist
   - passed after implementation: `1` test, `0` failures
