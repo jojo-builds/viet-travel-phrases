@@ -2819,9 +2819,54 @@ enum PhraseRowNavigation {
             return nil
         }
 
+        let cacheKey = CacheKey(detailPageID: detailPageID, currentPageID: currentPageID)
+        if let cachedDestination = cachedDestination(for: cacheKey) {
+            return cachedDestination.value
+        }
+
         let canonicalDestination = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) ?? detailPageID
         let canonicalCurrent = PhraseCatalog.canonicalPageID(forOpenablePageID: currentPageID) ?? currentPageID
-        return canonicalDestination == canonicalCurrent ? nil : detailPageID
+        let destination = canonicalDestination == canonicalCurrent ? nil : detailPageID
+        storeCachedDestination(CachedDestination(value: destination), for: cacheKey)
+        return destination
+    }
+
+    private struct CacheKey: Hashable {
+        let detailPageID: String
+        let currentPageID: String
+    }
+
+    private struct CachedDestination {
+        let value: String?
+    }
+
+    private static let cacheLimit = 256
+    private static let cacheLock = NSLock()
+    private static var cachedDestinationsByKey: [CacheKey: CachedDestination] = [:]
+    private static var cachedDestinationKeys: [CacheKey] = []
+
+    private static func cachedDestination(for key: CacheKey) -> CachedDestination? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        return cachedDestinationsByKey[key]
+    }
+
+    private static func storeCachedDestination(_ destination: CachedDestination, for key: CacheKey) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard cachedDestinationsByKey[key] == nil else {
+            return
+        }
+
+        cachedDestinationsByKey[key] = destination
+        cachedDestinationKeys.append(key)
+
+        while cachedDestinationKeys.count > cacheLimit {
+            let oldestKey = cachedDestinationKeys.removeFirst()
+            cachedDestinationsByKey.removeValue(forKey: oldestKey)
+        }
     }
 }
 

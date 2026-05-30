@@ -29,12 +29,14 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 13: Vietnamese menu detail pages resolved `viet-menu-*` IDs by repeatedly scanning the full menu item array across navigation, backdrop preheat, detail-page construction, and linked location menu rows; menu items are now indexed by item ID and detail page ID so rapid menu-listing taps reuse constant-time lookups without removing any menu/page functionality
 - root cause 14: the generic detail-page resolver asked the SQLite phrase graph to resolve `viet-menu-*` pages before falling back to the menu and location-menu catalogs; rapid menu-listing taps now route menu-owned detail pages directly through the menu/location-menu catalogs and bypass the extra SQLite phrase-detail lookup
 - root cause 15: menu-owned `viet-menu-*` routes still asked the SQLite phrase graph to canonicalize page IDs during navigation before the app recognized those pages as Vietnamese menu or location-menu pages; menu-owned route IDs now canonicalize through the menu catalogs first, eliminating SQLite canonical misses for rapid menu-listing taps
+- root cause 16: related phrase rows/cards checked whether a destination was a self-link by canonicalizing both the destination and current page from SwiftUI body-derived properties; repeated sheet redraws could re-enter the SQLite canonical path for the same pair, so row navigation now uses a bounded pair-decision cache while preserving self-link suppression and related-page navigation
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
 - focused failing tests were added before the fixes and then passed after implementation:
   - `AppChromeTests/testMenuDetailNavigationBypassesSQLiteCanonicalLookup`
+  - `AppChromeTests/testPhraseRowNavigationCachesRepeatedCanonicalPairChecks`
   - `AppChromeTests/testMenuDetailPagesBypassSQLitePhraseGraphLookup`
   - `AppChromeTests/testVietnameseMenuDetailLookupsUseIndexedItems`
   - `AppChromeTests/testForwardDetailNavigationReturnsCanonicalIDForRecentRecording`
@@ -87,6 +89,18 @@ Fresh command evidence from this pass:
   - passed: `24` tests, `0` failures
   - covered menu-owned route navigation bypassing the SQLite canonical resolver, menu-owned detail pages bypassing the SQLite phrase-detail resolver, indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
   - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_00-39-38-+0700.xcresult`
+- xcodebuild simulator focused phrase-row navigation cache set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testPhraseRowNavigationCachesRepeatedCanonicalPairChecks` showed repeated row body checks pushed SQLite canonical lookup count from `2` to `26`
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-08-55-+0700.xcresult`
+- xcodebuild simulator focused thermal set with phrase-row navigation cache on iPhone 17 Pro
+  - passed: `22` tests, `0` failures
+  - covered repeated phrase-row canonical pair caching, phrase-row self-link suppression, menu-owned route navigation bypassing the SQLite canonical resolver, menu-owned detail pages bypassing the SQLite phrase-detail resolver, indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-10-06-+0700.xcresult`
+- xcodebuild simulator focused local-intent thermal set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered batched recent-page disk persistence, recording already-canonical recent pages, suppressing broad invalidation while recording recents, and preserving saved-page invalidation
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-11-09-+0700.xcresult`
 - XcodeBuildMCP simulator focused recent-page batched-persist thermal set on iPhone 17 Pro
   - passed: `17` tests, `0` failures
   - covered batched recent-page disk persistence, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup

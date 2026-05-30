@@ -1775,6 +1775,36 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseRowNavigationCachesRepeatedCanonicalPairChecks() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            PhraseRowNavigation.destinationPageID(
+                for: "viet-hello-chi",
+                currentPageID: "viet-phrase-hello-chao-anh"
+            ),
+            "viet-hello-chi"
+        )
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertEqual(
+                PhraseRowNavigation.destinationPageID(
+                    for: "viet-hello-chi",
+                    currentPageID: "viet-phrase-hello-chao-anh"
+                ),
+                "viet-hello-chi"
+            )
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "SwiftUI row body refreshes should reuse the canonical pair decision instead of re-entering SQLite canonical lookup."
+        )
+    }
+
     func testForwardDetailNavigationRequestsTopScroll() {
         var navigation = AppShellNavigationState()
 
