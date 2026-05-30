@@ -1088,6 +1088,29 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseArticleTemplateBuildsVisibleSectionsOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        let articlePage = detailPage.articleTemplate
+        PhraseArticleTemplateView.resetVisibleSectionsBuildCountForTesting()
+
+        let view = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(PhraseArticleTemplateView.visibleSectionsBuildCountForTesting, 1)
+
+        _ = view.body
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseArticleTemplateView.visibleSectionsBuildCountForTesting,
+            1,
+            "SwiftUI redraws should reuse the visible section list instead of re-filtering and re-normalizing the article sections every time the page body refreshes."
+        )
+    }
+
     func testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads() {
         XCTAssertEqual(
             AppShellView.browseDetailHeroImageOverride(for: "HeroCategoryAirport"),
@@ -4522,6 +4545,26 @@ final class LocalUserIntentStoreTests: XCTestCase {
         XCTAssertEqual(store.savedPageIDs, ["viet-phrase-polite-2"])
         XCTAssertEqual(invalidationCount, 1)
         cancellable.cancel()
+    }
+
+    func testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertFalse(store.isPageSaved("viet-phrase-phone-1"))
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting, 0)
+
+        store.toggleSavedPage("viet-thank-you")
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertTrue(store.isPageSaved("viet-phrase-polite-2"))
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Saved membership checks should use the direct canonical ID fast path before entering the SQLite canonical resolver."
+        )
     }
 
     func testSavedAndPracticeIDsPersistPrivatelyInUserDefaults() {

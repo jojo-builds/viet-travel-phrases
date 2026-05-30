@@ -271,6 +271,14 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private func containsCanonicalID(_ ids: [String], pageID: String) -> Bool {
+        guard !ids.isEmpty else {
+            return false
+        }
+
+        if ids.contains(pageID) {
+            return true
+        }
+
         guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
             return false
         }

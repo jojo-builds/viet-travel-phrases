@@ -114,6 +114,7 @@ struct PhraseArticleTemplateView: View {
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
+    private let visibleSections: [PhraseArticleSection]
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -166,6 +167,7 @@ struct PhraseArticleTemplateView: View {
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
+        self.visibleSections = Self.visibleSections(for: page)
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -819,16 +821,38 @@ struct PhraseArticleTemplateView: View {
     private static let photoBackdropInitialID = "PhraseArticleTemplateViewPhotoBackdropInitial"
     private static let photoBackdropContentID = "PhraseArticleTemplateViewPhotoBackdropContent"
 
-    private var visibleSections: [PhraseArticleSection] {
-        Self.visibleSections(for: page)
-    }
-
     static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
-        page.sections.filter { section in
+#if DEBUG
+        recordVisibleSectionsBuildForTesting()
+#endif
+        return page.sections.filter { section in
             guard !isHeroRepeatSection(section, page: page) else { return false }
             return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
         }
     }
+
+#if DEBUG
+    private static let visibleSectionsBuildCountLock = NSLock()
+    private static var visibleSectionsBuildCount = 0
+
+    static var visibleSectionsBuildCountForTesting: Int {
+        visibleSectionsBuildCountLock.lock()
+        defer { visibleSectionsBuildCountLock.unlock() }
+        return visibleSectionsBuildCount
+    }
+
+    static func resetVisibleSectionsBuildCountForTesting() {
+        visibleSectionsBuildCountLock.lock()
+        visibleSectionsBuildCount = 0
+        visibleSectionsBuildCountLock.unlock()
+    }
+
+    private static func recordVisibleSectionsBuildForTesting() {
+        visibleSectionsBuildCountLock.lock()
+        visibleSectionsBuildCount += 1
+        visibleSectionsBuildCountLock.unlock()
+    }
+#endif
 
     private static func isHeroRepeatSection(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
         isSelfOnlyHeroPhraseRepeat(section, page: page)
