@@ -130,6 +130,20 @@ enum AdminBackdropImagePreheatPlan {
             seenImageNames.insert(imageName).inserted && !reservedImageNames.contains(imageName)
         }
     }
+
+    static func queuedImageNames(
+        existingQueuedImageNames: [String],
+        incomingImageNames: [String],
+        maxQueuedImageCount: Int
+    ) -> [String] {
+        let maxCount = max(maxQueuedImageCount, 0)
+        guard maxCount > 0 else {
+            return []
+        }
+
+        let mergedImageNames = existingQueuedImageNames + incomingImageNames
+        return Array(mergedImageNames.suffix(maxCount))
+    }
 }
 
 enum AdminPhotoBackdropSurfaceLayout {
@@ -500,10 +514,13 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
 enum AdminBackdropImagePreheater {
     #if canImport(UIKit)
     private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
+    private static let maxQueuedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
     private static var preheatedImageOrder = [String]()
+    private static var queuedImageNames = [String]()
+    private static var queueWorkerTask: Task<Void, Never>?
 
     static func preheat(_ imageNames: [String]) {
         lock.lock()
@@ -517,30 +534,66 @@ enum AdminBackdropImagePreheater {
         }
 
         pendingImageNames.forEach { preheatedImageNames.insert($0) }
-        lock.unlock()
+        let previousQueuedImageNames = queuedImageNames
+        queuedImageNames = AdminBackdropImagePreheatPlan.queuedImageNames(
+            existingQueuedImageNames: queuedImageNames,
+            incomingImageNames: pendingImageNames,
+            maxQueuedImageCount: maxQueuedImageCount
+        )
+        releaseDroppedQueuedReservations(
+            previousQueuedImageNames + pendingImageNames,
+            retainedQueuedImageNames: queuedImageNames
+        )
 
-        Task.detached(priority: .utility) {
-            for imageName in pendingImageNames {
-                autoreleasepool {
-                    let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
-                    lock.lock()
-                    if let preparedImage {
-                        preheatedImages[imageName] = preparedImage
-                        preheatedImageOrder.append(imageName)
-                        trimPreheatedImagesIfNeeded()
-                    } else {
-                        releasePendingReservation(imageName)
-                    }
-                    lock.unlock()
-                }
+        if queueWorkerTask == nil {
+            queueWorkerTask = Task.detached(priority: .utility) {
+                drainPreheatQueue()
             }
         }
+        lock.unlock()
     }
 
     static func preparedImage(named imageName: String) -> UIImage? {
         lock.lock()
         defer { lock.unlock() }
         return preheatedImages[imageName]
+    }
+
+    private static func drainPreheatQueue() {
+        while true {
+            lock.lock()
+            guard !queuedImageNames.isEmpty else {
+                queueWorkerTask = nil
+                lock.unlock()
+                return
+            }
+            let imageName = queuedImageNames.removeFirst()
+            lock.unlock()
+
+            autoreleasepool {
+                let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
+                lock.lock()
+                if let preparedImage {
+                    preheatedImages[imageName] = preparedImage
+                    preheatedImageOrder.append(imageName)
+                    trimPreheatedImagesIfNeeded()
+                } else {
+                    releasePendingReservation(imageName)
+                }
+                lock.unlock()
+            }
+        }
+    }
+
+    private static func releaseDroppedQueuedReservations(
+        _ candidateImageNames: [String],
+        retainedQueuedImageNames: [String]
+    ) {
+        let retainedQueuedImageNames = Set(retainedQueuedImageNames)
+
+        for imageName in candidateImageNames where !retainedQueuedImageNames.contains(imageName) {
+            releasePendingReservation(imageName)
+        }
     }
 
     private static func releasePendingReservation(_ imageName: String) {
