@@ -86,6 +86,11 @@ Fresh command evidence from this pass:
   - passed: `11` tests, `0` failures
   - covered generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, duplicate browse category preheat avoidance, bounded city pick caches, listing photo-backdrop preheat policy, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-39-44-450Z_pid15747_796c827f.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `950ffc04b`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - xcodebuild simulator focused browse thumbnail size-probe set on iPhone 17 Pro
   - failed before implementation because `BrowseFocusedAssetImagePolicy` did not exist and normal thumbnails had no policy seam to skip UIKit size reads
   - passed after implementation: `1` test, `0` failures
