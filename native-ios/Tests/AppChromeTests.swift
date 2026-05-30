@@ -3243,6 +3243,34 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(LocationMenuPicksCatalog.buildCountForTesting(pageID: pageID), 1)
     }
 
+    func testLocationPickCachesStayBoundedDuringRapidCityBrowsing() {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
+        let pageCount = max(
+            LocationMenuPicksCatalog.cacheLimitForTesting,
+            LocationRelatedPicksCatalog.cacheLimitForTesting
+        ) + 12
+
+        for index in 0..<pageCount {
+            let pageID = "viet-phrase-city-thermal-cache-\(index)"
+
+            XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty)
+            XCTAssertTrue(LocationRelatedPicksCatalog.picks(forPageID: pageID).isEmpty)
+        }
+
+        XCTAssertLessThanOrEqual(
+            LocationMenuPicksCatalog.cachedPageCountForTesting,
+            LocationMenuPicksCatalog.cacheLimitForTesting
+        )
+        XCTAssertLessThanOrEqual(
+            LocationRelatedPicksCatalog.cachedPageCountForTesting,
+            LocationRelatedPicksCatalog.cacheLimitForTesting
+        )
+    }
+
     func testHanMarketRelatedPlacePickLinksToConMarket() throws {
         let pageID = "viet-family-city-danang-place-han-market"
         let aliasPageID = "viet-phrase-city-danang-place-han-market"

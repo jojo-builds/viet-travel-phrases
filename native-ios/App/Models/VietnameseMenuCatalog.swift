@@ -1451,8 +1451,10 @@ struct LocationMenuPick: Identifiable, Equatable {
 }
 
 enum LocationMenuPicksCatalog {
+    private static let cacheLimit = 96
     private static let cacheLock = NSLock()
     private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
 
 #if DEBUG
     private static var buildCountsByPageID: [String: Int] = [:]
@@ -1461,7 +1463,18 @@ enum LocationMenuPicksCatalog {
         cacheLock.lock()
         defer { cacheLock.unlock() }
         cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
         buildCountsByPageID.removeAll()
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
     }
 
     static func buildCountForTesting(pageID: String) -> Int {
@@ -1481,6 +1494,7 @@ enum LocationMenuPicksCatalog {
 
         cacheLock.lock()
         if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
             cacheLock.unlock()
             return cachedPicks
         }
@@ -1489,13 +1503,31 @@ enum LocationMenuPicksCatalog {
         let picks = uncachedPicks(forPageID: lookupPageID)
 
         cacheLock.lock()
-        cachedPicksByPageID[lookupPageID] = picks
+        storeCachedPicks(picks, for: lookupPageID)
 #if DEBUG
         buildCountsByPageID[lookupPageID, default: 0] += 1
 #endif
         cacheLock.unlock()
 
         return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
     }
 
     private static func canonicalLookupPageID(for pageID: String) -> String {
@@ -1866,8 +1898,10 @@ enum LocationMenuPicksCatalog {
 }
 
 enum LocationRelatedPicksCatalog {
+    private static let cacheLimit = 96
     private static let cacheLock = NSLock()
     private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
 
 #if DEBUG
     private static var buildCountsByPageID: [String: Int] = [:]
@@ -1876,7 +1910,18 @@ enum LocationRelatedPicksCatalog {
         cacheLock.lock()
         defer { cacheLock.unlock() }
         cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
         buildCountsByPageID.removeAll()
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
     }
 
     static func buildCountForTesting(pageID: String) -> Int {
@@ -1896,6 +1941,7 @@ enum LocationRelatedPicksCatalog {
 
         cacheLock.lock()
         if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
             cacheLock.unlock()
             return cachedPicks
         }
@@ -1904,13 +1950,31 @@ enum LocationRelatedPicksCatalog {
         let picks = uncachedPicks(forPageID: lookupPageID)
 
         cacheLock.lock()
-        cachedPicksByPageID[lookupPageID] = picks
+        storeCachedPicks(picks, for: lookupPageID)
 #if DEBUG
         buildCountsByPageID[lookupPageID, default: 0] += 1
 #endif
         cacheLock.unlock()
 
         return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
     }
 
     private static func canonicalLookupPageID(for pageID: String) -> String {

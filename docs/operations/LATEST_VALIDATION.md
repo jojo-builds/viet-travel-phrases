@@ -33,6 +33,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 17: the app-shell check for whether a detail route should render the special designed `Xin chào` article canonicalized the current page ID from the render path for every normal listing; the shell now answers direct/canonical `Xin chào` IDs cheaply and caches fallback alias decisions, so normal listing redraws do not repeatedly enter the SQLite canonical resolver just to reject the special route
 - root cause 18: SwiftUI detail redraws resolved the same canonical `PhraseDetailPage` by re-entering `VietSQLitePhraseGraphRuntime.detailPage(withID:)` every time; the runtime cache avoided full reloads, but the shell still paid the resolver/lock path repeatedly, so `PhraseDetailPage.page(withID:)` now keeps a bounded resolved-page cache above the SQLite runtime while preserving generated, menu, location-menu, and static fallback behavior
 - root cause 19: the detail-page render stack kept only the active page, or the active plus immediate back-preview page, but computed that small render set by filtering the entire detail history on every SwiftUI refresh; rapid listing taps can leave a long browser-style history, so render selection now slices only the visible suffix while preserving back/forward navigation history
+- root cause 20: city listing "Mentioned Here" and "Compare Nearby" catalogs cached empty pick arrays for every eligible city page ID, so rapidly tapping through many city-backed listing pages could grow both static caches for pages with no cards; both catalogs now keep a bounded recent-page cache while preserving alias sharing and all existing cards
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -53,6 +54,7 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero`
   - `AppChromeTests/testLocationMenuPicksCacheCanonicalCityLookups`
   - `AppChromeTests/testLocationRelatedPicksCacheCanonicalCityLookups`
+  - `AppChromeTests/testLocationPickCachesStayBoundedDuringRapidCityBrowsing`
   - `AppChromeTests/testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem`
   - `AppChromeTests/testRootXinChaoSurfaceRendersOnlyWhenCurrentBackOrForwardRouteNeedsIt`
   - `AppChromeTests/testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview`
@@ -114,6 +116,20 @@ Fresh command evidence from this pass:
   - passed: `17` tests, `0` failures
   - covered long-history detail render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
   - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-29-52-+0700.xcresult`
+- xcodebuild simulator focused city-pick cache-growth set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testLocationPickCachesStayBoundedDuringRapidCityBrowsing` showed both city pick caches growing to `108` entries while the intended cap was `96`
+  - passed after implementation: `6` tests, `0` failures
+  - covered bounded city menu/related pick caches, canonical city alias sharing, existing V2.2 Mentioned Here cards, and existing V2.2 Compare Nearby cards
+  - failed result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-52-12-+0700.xcresult`
+  - passed result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-53-55-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with bounded city-pick caches on iPhone 17 Pro
+  - passed: `22` tests, `0` failures
+  - covered bounded city pick caches, city-card alias behavior, long-history detail render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-54-54-+0700.xcresult`
+- repo hygiene after bounded city-pick cache fix
+  - `git diff --check`: passed
+  - `node scripts/guard-native-only.js`: passed
+  - signing scan found no repo-visible personal signing values; only generic project `CODE_SIGN_IDENTITY = "iPhone Developer"` entries remain
 - XcodeBuildMCP simulator focused thermal set with resolved detail-page cache on iPhone 17 Pro
   - passed: `23` tests, `0` failures
   - covered resolved canonical detail-page reuse, menu-owned detail lookup bypass, menu route canonical bypass, designed `Xin chào` route check, phrase-row canonical pair caching, hidden detail/collection mounting, root-surface gating, listing/category/menu backdrop preheat policies, bounded/newest-first image preheat work, indexed menu item lookup, SQLite hero-image lightweight lookup, default SQLite runtime behavior, and legacy ID canonicalization
