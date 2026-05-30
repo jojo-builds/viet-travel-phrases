@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T18:49:48.092Z",
+  "generatedAt": "2026-05-30T19:00:12.538Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1760,
+    "pages": 1761,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 353,
-    "generatedAt": "2026-05-30T18:49:48.092Z"
+    "missing": 354,
+    "generatedAt": "2026-05-30T19:00:12.538Z"
   },
   "pages": [
     {
@@ -105929,6 +105929,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "phraseText": "Bún Bò Huế 14B",
+      "englishTitle": "Bun Bo Hue 14B",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-hcmc-place-bun-thit-nuong",

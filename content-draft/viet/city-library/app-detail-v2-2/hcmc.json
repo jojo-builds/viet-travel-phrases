@@ -2329,6 +2329,129 @@
     },
     {
       "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "pageID": "city-hcmc-place-bun-bo-hue-14b",
+      "sourcePageID": "city-hcmc-place-bun-bo-hue-14b",
+      "displayName": "Bún Bò Huế 14B",
+      "englishName": "Bun Bo Hue 14B",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "pronunciation": "bun bo hue muoi bon be",
+      "travelerMoment": "Save Bún Bò Huế 14B for the Saigon meal where the bowl should be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+      "storySpine": "Bún Bò Huế 14B gives Saigon a recognized bowl for a Hue-born dish, so the catalog has more than the Hue origin page: it has a named Saigon place where the broth, noodles, herbs, and chili become the plan.",
+      "intro": {
+        "heading": "A Bib Gourmand Hue-Style Bowl",
+        "body": "Bún Bò Huế 14B is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi tô này",
+          "en": "I'll take this bowl",
+          "intent": "food-this-bowl",
+          "phraseId": "food-2",
+          "audioId": "food-2",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "expect-heat-and-depth",
+          "heading": "Expect Heat And Depth",
+          "body": "This is the deeper, spicier noodle lane beside everyday phở. Lemongrass broth, chili, beef, tendon, herbs, and lime give the bowl its pull."
+        },
+        {
+          "id": "order-the-bowl-clearly",
+          "heading": "Order The Bowl Clearly",
+          "body": "Point to the bowl, then decide how much heat you want. A less-spicy phrase matters here because chili can move fast."
+        },
+        {
+          "id": "saigon-save-for-a-hue-dish",
+          "heading": "A Saigon Save For A Hue Dish",
+          "body": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south."
+        },
+        {
+          "id": "recognition-supports-the-bowl",
+          "heading": "Recognition Supports The Bowl",
+          "body": "The 2025 Bib Gourmand signal supports the save because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing."
+        }
+      ],
+      "mentionedHereCandidates": [],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hue-place-bun-bo-city",
+          "label": "Bún bò Huế",
+          "relationship": "home-city dish comparison",
+          "displaySubtitle": "The Hue version when you want the bowl in its home-city context first.",
+          "reason": "The Hue dish page explains the home-city bowl that Bun Bo Hue 14B brings into a Saigon save.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hcmc-place-bo-kho-ganh",
+          "label": "Bò Kho Gánh",
+          "relationship": "same-city Bib Gourmand bowl comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-stew bowl when Saigon lunch should be rich but less chile-led.",
+          "reason": "Bo Kho Ganh gives Bun Bo Hue 14B another recognized Saigon bowl comparison.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive HCMC 103-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked locally: Bún Bò Huế 14B appears in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+          "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Bun Bo Hue 14B has bounded 2025 MICHELIN Bib Gourmand recognition, a specific spicy noodle-bowl save reason, mapped phrase cards, and useful Hue/Saigon bowl comparisons."
+      },
+      "sourceNotes": [
+        "Added as the third additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 103.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Bò Huế 14B in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
       "id": "viet-family-city-hcmc-place-bun-thit-nuong",
       "pageID": "city-hcmc-place-bun-thit-nuong",
       "sourcePageID": "city-hcmc-place-bun-thit-nuong",

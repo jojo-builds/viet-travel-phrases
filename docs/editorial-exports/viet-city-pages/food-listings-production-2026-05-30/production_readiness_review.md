@@ -1146,7 +1146,7 @@ No new hours, prices, reservation, closure, address, or operational claims were 
 These are not current-source edits yet. They are official 2025 MICHELIN-recognized add candidates to consider when the catalog needs stronger restaurant representation than weak support listings:
 
 - Saigon MICHELIN Selected candidates not currently represented in the V2.2 source: `Bà Cô Lốc Cốc`, `Hoi An Sense`, `Okra FoodBar`, `ST25 by KOTO`, `The Albion by Kirk Westaway`.
-- Saigon Bib Gourmand candidates not currently represented in the V2.2 source from the visible official list section: `Bún Bò Huế 14B`, `Chay Garden`, `Hồng Phát`, `Hum Garden`, `Nhà Tú`, `Phở Chào`, `Phở Hoàng`.
+- Saigon Bib Gourmand candidates not currently represented in the V2.2 source from the visible official list section: `Chay Garden`, `Hồng Phát`, `Hum Garden`, `Nhà Tú`, `Phở Chào`, `Phở Hoàng`.
 - Da Nang new Bib Gourmand candidates not currently represented in the V2.2 source: `Bánh Xèo 76`, `Bún Bò Huế Bà Thương`, `Quê Xưa`, `Shamballa`.
 - Da Nang new MICHELIN Selected candidates not currently represented in the V2.2 source: `Bún Riêu Cua 39`, `Moc`.
 
@@ -1154,6 +1154,7 @@ Do not drop existing support listings from the app by default. Keep them availab
 
 Mặn Mòi moved out of this backlog in the thirteenth pass and now exists as `city-hcmc-place-man-moi`.
 Bò Kho Gánh moved out of this backlog in the fourteenth pass and now exists as `city-hcmc-place-bo-kho-ganh`.
+Bún Bò Huế 14B moved out of this backlog in the fifteenth pass and now exists as `city-hcmc-place-bun-bo-hue-14b`.
 
 ### Validation Status
 
@@ -1813,7 +1814,114 @@ Results:
 
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
-The additive path is now proven for two stronger Saigon food pages. The next MICHELIN-backed adds should stay selective: `Bún Bò Huế 14B`, one or two truly distinct pho shops, or a Hanoi/Da Nang dish-specific page only when the copy can answer why this place, why this dish, and why save it.
+The additive path was proven for two stronger Saigon food pages at this point. `Bún Bò Huế 14B` became the next scoped add candidate and moved into the fifteenth-pass continuation below.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only.
+
+## Continuation: Bún Bò Huế 14B Additive Saigon Pilot
+
+Fifteenth pass date: 2026-05-31
+
+Commit before pass: `82a70d35a Add Bo Kho Ganh Saigon food listing`
+
+This continuation implements the next dish-specific MICHELIN-backed add candidate from the audit. The product choice remains additive expansion: Saigon now carries 103 noun/place rows and the full city-place runtime carries 503 rows total.
+
+### Page Added
+
+- `city-hcmc-place-bun-bo-hue-14b`: added as a first-class V2.2 app-detail source object and projected into the legacy-compatible native resources.
+
+Visible page direction:
+
+- frames Bún Bò Huế 14B as a specific Saigon save for a Hue-style spicy bowl rather than a generic restaurant pin;
+- uses bounded 2025 MICHELIN Bib Gourmand language supported by the official 2025 source;
+- uses bowl-shape cues: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles;
+- keeps hours, address, booking, closure, and fragile operations out of bundled copy.
+
+### Contract Widening
+
+The additive contract now has a third proved row:
+
+- `native-ios/scripts/import-city-noun-intake.js`: city expected-row contract now allows HCMC to carry 103 rows while the other cities remain at 100.
+- `native-ios/scripts/import-viet-city-handwritten-copy.js`: expected handwritten-copy count follows the approved noun source pages instead of a hardcoded 100-per-city value.
+- `native-ios/scripts/validate-viet-city-copy.js`: city production validation now expects 503 noun/place pages, with HCMC at 103.
+
+This keeps the growing food catalog explicit in validation instead of hiding new restaurants as loose JSON extras.
+
+### Source Handling
+
+Official 2025 MICHELIN reference checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+
+Claim added only where this source supported it:
+
+- `Bún Bò Huế 14B`: 2025 MICHELIN Bib Gourmand, Ho Chi Minh City, Street Food.
+
+The live MICHELIN restaurant page was not used as the runtime source of truth, so the visible app copy avoids hours, exact address, booking, closure, and narrow operational claims.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-bun-bo-hue-14b-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-bun-bo-hue-14b`
+  - `bun-bo-hue-14b-first-screen.jpg`: first viewport shows the new Bún Bò Huế 14B page, pronunciation row, 2025 MICHELIN Bib Gourmand framing, and Hue-style bowl intro.
+  - `bun-bo-hue-14b-bottom-inset.jpg`: bottom-validation launch shows related food cards and playable Useful Phrases above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-bun-bo-hue-14b`
+  - `--detail-page viet-family-city-hcmc-place-bun-bo-hue-14b --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 103 places, other cities 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 503 entries imported.
+- native resource generation: PASS, 1750 families, 1768 phrases, 1761 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 503 entries, 503 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 503 city noun pages, 503 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 503 city places, 809 city phrase tags, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bún Bò Huế 14B Additive Pilot
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The additive path is now proven for three stronger Saigon food pages. The next MICHELIN-backed adds should stay selective: one or two truly distinct pho shops, a Hanoi breakfast/noodle page, or a Da Nang dish-specific page only when the copy can answer why this place, why this dish, and why save it.
 
 ### Agent Lifecycle Note
 

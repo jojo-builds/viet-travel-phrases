@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1767,
+    "phraseCount": 1768,
     "basePhraseCount": 935,
-    "cityPhraseCount": 808,
+    "cityPhraseCount": 809,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1749,
+    "familyCount": 1750,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -15683,6 +15683,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hcmc-place-bui-vien-street"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-bun-bo-hue-14b",
+      "pageID": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "scenarioID": "city-guides",
+      "familyTitle": "Bun Bo Hue 14B pronunciation",
+      "summary": "Save Bún Bò Huế 14B for the Saigon meal where the bowl should be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+      "primaryPhraseID": "city-hcmc-place-bun-bo-hue-14b",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hcmc-place-bun-bo-hue-14b"
       ]
     },
     {
@@ -73102,6 +73114,51 @@
       "sourceIDs": [
         "vt-hcmc",
         "vt-hcmc-official"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-bun-bo-hue-14b",
+      "familyID": "city-hcmc-place-bun-bo-hue-14b",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Bun Bo Hue 14B",
+      "targetText": "Bún Bò Huế 14B",
+      "canonicalTargetText": "Bún Bò Huế 14B",
+      "pronunciation": "bun bo hue 14b",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Bún Bò Huế 14B for the Saigon meal where the bowl should be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Saigon / Ho Chi Minh City",
+        "Saigon",
+        "Thành phố Hồ Chí Minh",
+        "Bun Bo Hue 14B",
+        "Bún Bò Huế 14B"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏙️",
+      "notes": "city-library-v1; city=hcmc; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hcmc-bun-bo-hue-14b; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hcmc",
+      "cityName": "Saigon / Ho Chi Minh City",
+      "cityShortTitle": "Saigon",
+      "cityVietnameseName": "Thành phố Hồ Chí Minh",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hcmc-bun-bo-hue-14b",
+      "placeName": "Bun Bo Hue 14B",
+      "placeVietnameseName": "Bún Bò Huế 14B",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
+      "sourceIDs": [
+        "vt-hcmc",
+        "vt-hcmc-official",
+        "michelin-vietnam"
       ]
     },
     {

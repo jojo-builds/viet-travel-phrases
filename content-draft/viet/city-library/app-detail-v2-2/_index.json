@@ -20,19 +20,19 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 502,
+    "entries": 503,
     "byCity": {
       "danang": 100,
       "hanoi": 100,
-      "hcmc": 102,
+      "hcmc": 103,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 502,
+    "finalPass": 503,
     "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 502,
+    "renderableRelatedPlaceCandidates": 503,
     "renderableMentionedHereCandidates": 42,
     "verificationFlags": 1
   },
@@ -1573,6 +1573,13 @@
     {
       "id": "viet-family-city-hcmc-place-bui-vien-street",
       "pageID": "city-hcmc-place-bui-vien-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "pageID": "city-hcmc-place-bun-bo-hue-14b",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"

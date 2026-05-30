@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 808,
+    "cityLibraryPageCount": 809,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T18:49:47.456Z"
+    "generatedAt": "2026-05-30T19:00:11.904Z"
   },
   "pages": [
     {
@@ -246077,6 +246077,237 @@
           "v500-dire-navi-can-i-walk-there"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-bui-vien-street"
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "familyID": "city-hcmc-place-bun-bo-hue-14b",
+      "phraseID": "city-hcmc-place-bun-bo-hue-14b",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bún Bò Huế 14B",
+      "englishTitle": "Bun Bo Hue 14B",
+      "pronunciation": "bun bo hue 14b",
+      "summary": "Save Bún Bò Huế 14B for the Saigon meal where the bowl should be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+      "heroImageName": "HeroCityHcmcPlaceBunBoHue14b",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-bun-bo-hue-14b-2a8e8f3a8f",
+      "cityMetadata": {
+        "cityID": "hcmc",
+        "cityName": "Saigon / Ho Chi Minh City",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hcmc-bun-bo-hue-14b",
+        "placeName": "Bun Bo Hue 14B",
+        "sourceIDs": [
+          "vt-hcmc",
+          "vt-hcmc-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Bún Bò Huế 14B gives Saigon a recognized bowl for a Hue-born dish, so the catalog has more than the Hue origin page: it has a named Saigon place where the broth, noodles, herbs, and chili become the plan.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHcmcPlaceBunBoHue14b"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "A Bib Gourmand Hue-Style Bowl",
+          "body": "Bún Bò Huế 14B is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "place-brief",
+          "title": "Expect Heat And Depth",
+          "body": "This is the deeper, spicier noodle lane beside everyday phở. Lemongrass broth, chili, beef, tendon, herbs, and lime give the bowl its pull.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Order The Bowl Clearly",
+          "body": "Point to the bowl, then decide how much heat you want. A less-spicy phrase matters here because chili can move fast.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "A Saigon Save For A Hue Dish",
+          "body": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south.",
+          "phrases": [
+            {
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
+            },
+            {
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
+            },
+            {
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
+            },
+            {
+              "id": "store-7",
+              "vietnamese": "Cho tôi hóa đơn",
+              "english": "Please give me the receipt",
+              "pronunciation": "cho toy hwa dun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-service-receipt",
+              "audioKey": "store-7"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Recognition Supports The Bowl",
+          "body": "The 2025 Bib Gourmand signal supports the save because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hcmc-place-bun-bo-hue-14b",
+          "vietnamese": "Bún Bò Huế 14B",
+          "english": "Bun Bo Hue 14B",
+          "pronunciation": "bun bo hue 14b",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-bun-bo-hue-14b-2a8e8f3a8f"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hcmc-place-bun-bo-hue-14b",
+        "scenarioStepGroups": [
+          {
+            "stepID": "when-to-use",
+            "title": "A Saigon Save For A Hue Dish",
+            "sourceSectionID": "when-to-use",
+            "primaryPhraseIDs": [
+              "coffee-7"
+            ],
+            "supportPhraseIDs": [
+              "store-6",
+              "taxi-7",
+              "store-7"
+            ]
+          },
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-2",
+              "food-3"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hcmc-place-bun-bo-hue-14b",
+          "coffee-7",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "store-6",
+          "taxi-7",
+          "store-7",
+          "food-2",
+          "food-3"
+        ],
+        "practiceSourcePageID": "viet-family-city-hcmc-place-bun-bo-hue-14b"
       }
     },
     {

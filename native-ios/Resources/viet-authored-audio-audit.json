@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T18:49:47.456Z",
+    "generatedAt": "2026-05-30T19:00:11.904Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 808,
+    "cityLibraryPageCount": 809,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2250,
-    "missingAudioCount": 683
+    "requiredAudioCount": 2251,
+    "missingAudioCount": 684
   },
   "required": [
     {
@@ -14609,6 +14609,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-bo-hue-14b-2a8e8f3a8f",
+      "text": "Bún Bò Huế 14B",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-bun-thit-nuong",
       "sectionID": "hero",
       "kind": "hero",
@@ -20760,6 +20768,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-bot-chien-o-thanh-pho-ho-chi-minh-3e269a670e",
       "text": "Bột chiên ở Thành phố Hồ Chí Minh",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-bun-bo-hue-14b-2a8e8f3a8f",
+      "text": "Bún Bò Huế 14B",
       "resolved": false
     },
     {

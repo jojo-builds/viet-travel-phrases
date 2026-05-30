@@ -7744,6 +7744,38 @@
       }
     },
     {
+      "id": "city-hcmc-place-bun-bo-hue-14b",
+      "cityID": "hcmc",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hcmc",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Bún Bò Huế 14B for the Saigon meal where the bowl should be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+        "aboutExcerpt": "Bún Bò Huế 14B is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Point to the bowl, then decide how much heat you want. A less-spicy phrase matters here because chili can move fast.",
+        "timingExcerpt": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south.",
+        "goodToKnowExcerpt": "The 2025 Bib Gourmand signal supports the save because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing."
+      }
+    },
+    {
       "id": "city-hcmc-place-bun-thit-nuong",
       "cityID": "hcmc",
       "pageKind": "dish",
