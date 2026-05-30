@@ -410,6 +410,10 @@ enum PhraseCatalog {
     }
 
     static func isOpenablePageID(_ pageID: String) -> Bool {
+        if menuOwnedCanonicalPageID(for: pageID) != nil {
+            return true
+        }
+
         if VietSQLitePhraseGraphRuntime.canOpenPage(pageID) {
             return true
         }
@@ -421,6 +425,10 @@ enum PhraseCatalog {
     }
 
     static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
+        if let menuCanonicalPageID = menuOwnedCanonicalPageID(for: pageID) {
+            return menuCanonicalPageID
+        }
+
         if let sqliteCanonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
             return sqliteCanonicalPageID
         }
@@ -439,6 +447,22 @@ enum PhraseCatalog {
     static func catalogItem(forOpenablePageID pageID: String) -> PhraseCatalogItem? {
         let canonicalPageID = canonicalPageID(forOpenablePageID: pageID) ?? pageID
         return cache.itemsByPageID[canonicalPageID]
+    }
+
+    private static func menuOwnedCanonicalPageID(for pageID: String) -> String? {
+        guard pageID.hasPrefix("viet-menu-") else {
+            return nil
+        }
+
+        if VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil {
+            return pageID
+        }
+
+        if LocationMenuPicksCatalog.hasDetailPage(withID: pageID) {
+            return pageID
+        }
+
+        return nil
     }
 
     private static var cache = Cache()

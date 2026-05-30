@@ -1568,6 +1568,14 @@ enum LocationMenuPicksCatalog {
         allPicks.first { $0.detailPageID == pageID }
     }
 
+    static func hasDetailPage(withID pageID: String) -> Bool {
+        guard let pick = pick(withDetailPageID: pageID) else {
+            return false
+        }
+
+        return pick.linkedMenuItemID == nil
+    }
+
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
         guard let pick = pick(withDetailPageID: pageID), pick.linkedMenuItemID == nil else {
             return nil

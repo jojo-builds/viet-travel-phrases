@@ -673,6 +673,25 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting, 0)
     }
 
+    func testMenuDetailNavigationBypassesSQLiteCanonicalLookup() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        var navigation = AppShellNavigationState()
+
+        let menuRecentPageID = navigation.openDetail("viet-menu-food-pho-bo")
+        let locationMenuRecentPageID = navigation.openDetail("viet-menu-lusine-thao-dien-eggs-benedict")
+
+        XCTAssertEqual(menuRecentPageID, "viet-menu-food-pho-bo")
+        XCTAssertEqual(locationMenuRecentPageID, "viet-menu-lusine-thao-dien-eggs-benedict")
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-menu-lusine-thao-dien-eggs-benedict"))
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Menu-owned detail navigation should not ask the SQLite phrase graph to canonicalize pages it cannot own."
+        )
+    }
+
     func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
         XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
         XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)

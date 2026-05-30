@@ -1913,6 +1913,10 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func canonicalPageID(for pageIDOrAlias: String) -> String? {
+#if DEBUG
+        recordCanonicalPageIDLookupForTesting()
+#endif
+
         if let cachedResult = cachedCanonicalPageID(for: pageIDOrAlias) {
             return cachedResult
         }
@@ -2235,6 +2239,12 @@ enum VietSQLitePhraseGraphRuntime {
         return detailPageLookupCount
     }
 
+    static var canonicalPageIDLookupCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return canonicalPageIDLookupCount
+    }
+
     static func setEnabledForTesting(_ enabled: Bool) {
         isEnabledOverride = enabled
         cachedRepository = nil
@@ -2265,6 +2275,7 @@ enum VietSQLitePhraseGraphRuntime {
         cachedSearchResultsByKey.removeAll()
         cachedSearchResultKeys.removeAll()
         detailPageLookupCount = 0
+        canonicalPageIDLookupCount = 0
     }
 
     private static func recordDetailPageLookupForTesting() {
@@ -2273,8 +2284,15 @@ enum VietSQLitePhraseGraphRuntime {
         cacheLock.unlock()
     }
 
+    private static func recordCanonicalPageIDLookupForTesting() {
+        cacheLock.lock()
+        canonicalPageIDLookupCount += 1
+        cacheLock.unlock()
+    }
+
     private static var isEnabledOverride: Bool?
     private static var detailPageLookupCount = 0
+    private static var canonicalPageIDLookupCount = 0
 #endif
 }
 
