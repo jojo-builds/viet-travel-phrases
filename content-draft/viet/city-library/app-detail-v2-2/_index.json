@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 508,
+    "entries": 509,
     "byCity": {
-      "danang": 102,
+      "danang": 103,
       "hanoi": 102,
       "hcmc": 104,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 508,
+    "finalPass": 509,
     "priorV2_2GateEvidence": 6,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 508,
-    "renderableMentionedHereCandidates": 45,
+    "renderableRelatedPlaceCandidates": 509,
+    "renderableMentionedHereCandidates": 46,
     "verificationFlags": 1
   },
   "entries": [
@@ -467,6 +467,13 @@
     {
       "id": "viet-family-city-danang-place-mi-quang-1a",
       "pageID": "city-danang-place-mi-quang-1a",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "pageID": "city-danang-place-my-quang-sua-hong-van",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"

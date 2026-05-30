@@ -2470,3 +2470,112 @@ The additive path is now proven across eight stronger food pages. This pass also
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Mỳ Quảng Sứa Hồng Vân Additive Da Nang Pilot
+
+Twenty-first pass date: 2026-05-31
+
+Commit before pass: `fdf00d7dc Add Banh Canh Yen Da Nang food listing`
+
+This continuation implements the third additive Da Nang food pilot and adds a more specific mì Quảng page rather than another generic noodle or seafood page. The product choice remains additive expansion: Saigon carries 104 noun/place rows, Hanoi carries 102, Da Nang now carries 103, and the full city-place runtime carries 509 rows total.
+
+### Page Added
+
+- `city-danang-place-my-quang-sua-hong-van`: added as a first-class V2.2 app-detail source object and projected into the legacy-compatible native resources.
+
+Visible page direction:
+
+- frames Mỳ Quảng Sứa Hồng Vân as a sharper Da Nang mì Quảng save, not another support restaurant;
+- uses bounded 2025 MICHELIN Bib Gourmand language supported by the official 2025 PDF and current MICHELIN venue page;
+- uses food-specific cues: orange-red shrimp broth, yellow noodles, herbs, rice cracker, pork, shrimp, quail egg, and optional jellyfish texture;
+- renders the city-level mì Quảng dish page in Mentioned Here;
+- compares nearby against Mì Quảng 1A and Bánh Canh Yến so the page has a clear role inside Da Nang's noodle set;
+- keeps hours, address, booking, closure, and fragile operations out of bundled copy.
+
+### Contract Widening
+
+The additive contract now has a third Da Nang expansion row:
+
+- `native-ios/scripts/import-city-noun-intake.js`: city expected-row contract now allows HCMC to carry 104 rows, Hanoi to carry 102, and Da Nang to carry 103 while Hội An and Hue remain at 100.
+- `native-ios/scripts/validate-viet-city-copy.js`: city production validation now expects 509 noun/place pages, with HCMC at 104, Hanoi at 102, and Da Nang at 103.
+
+This keeps the growing food catalog explicit in validation instead of hiding the add as a loose JSON extra.
+
+### Source Handling
+
+Official MICHELIN references checked for bounded recognition language:
+
+- `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+- `https://guide.michelin.com/gb/en/da-nang-region/da-nang_2984390/restaurant/my-quang-sua-hong-van`
+
+Claim added only where these sources supported it:
+
+- `Mỳ Quảng Sứa Hồng Vân`: 2025 MICHELIN Bib Gourmand, Da Nang, Street Food.
+
+The current MICHELIN restaurant page was used to confirm live guide status and dish specificity, but the visible app copy avoids hours, exact address, booking, closure, and narrow operational claims.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-my-quang-sua-hong-van-additive/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-my-quang-sua-hong-van`
+  - `my-quang-sua-hong-van-first-screen.jpg`: first viewport shows the new Mỳ Quảng Sứa Hồng Vân page, 2025 MICHELIN Bib Gourmand mì Quảng intro, and playable Useful Phrases immediately after the intro.
+  - `my-quang-sua-hong-van-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here and Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-my-quang-sua-hong-van`
+  - `--detail-page viet-family-city-danang-place-my-quang-sua-hong-van --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for both scoped launches.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- city noun intake: PASS, Saigon 104 places, Hanoi 102 places, Da Nang 103 places, Hội An/Hue 100 each.
+- V2.2 projection and handwritten-copy import: PASS, 509 entries imported.
+- native resource generation: PASS, 1756 families, 1774 phrases, 1767 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 509 entries, 509 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing `this is not` and `layered` wording in the new page.
+- city-copy compatibility validation: PASS, 5 hubs, 509 city noun pages, 509 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 509 city places, 815 city phrase tags, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Mỳ Quảng Sứa Hồng Vân Additive Pilot
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The additive path is now proven across nine stronger food pages. This pass confirms the food-specific-desire direction again: Mỳ Quảng Sứa Hồng Vân was chosen because it makes a familiar Da Nang dish more vivid through shrimp-broth color and jellyfish texture, while remaining candidates such as Bún Chả Cá 109 need a sharper difference from existing fish-cake soup coverage before they deserve another slot.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.

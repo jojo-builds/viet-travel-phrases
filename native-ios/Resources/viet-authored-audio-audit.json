@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T20:17:55.189Z",
+    "generatedAt": "2026-05-30T20:30:13.938Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 814,
+    "cityLibraryPageCount": 815,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2256,
-    "missingAudioCount": 689
+    "requiredAudioCount": 2257,
+    "missingAudioCount": 690
   },
   "required": [
     {
@@ -12161,6 +12161,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-my-quang-sua-hong-van-e36e0d23e4",
+      "text": "Mỳ Quảng Sứa Hồng Vân",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-danang-place-nam-danh-seafood",
       "sectionID": "hero",
       "kind": "hero",
@@ -18872,6 +18880,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-my-quang-dung-b91de2295d",
       "text": "Mỳ Quảng Dung",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-my-quang-sua-hong-van-e36e0d23e4",
+      "text": "Mỳ Quảng Sứa Hồng Vân",
       "resolved": false
     },
     {

@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1773,
+    "phraseCount": 1774,
     "basePhraseCount": 935,
-    "cityPhraseCount": 814,
+    "cityPhraseCount": 815,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1755,
+    "familyCount": 1756,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -12299,6 +12299,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-danang-place-my-quang-dung"
+      ]
+    },
+    {
+      "id": "city-danang-place-my-quang-sua-hong-van",
+      "pageID": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "scenarioID": "city-guides",
+      "familyTitle": "My Quang Sua Hong Van pronunciation",
+      "summary": "Mỳ Quảng Sứa Hồng Vân is the Da Nang mì Quảng save when the bowl should feel more specific: orange-red shrimp broth, yellow noodles, herbs, rice cracker, pork, shrimp, quail egg, and optional jellyfish crunch.",
+      "primaryPhraseID": "city-danang-place-my-quang-sua-hong-van",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-danang-place-my-quang-sua-hong-van"
       ]
     },
     {
@@ -60724,6 +60736,50 @@
       "sourceIDs": [
         "vt-danang",
         "vt-danang-official"
+      ]
+    },
+    {
+      "id": "city-danang-place-my-quang-sua-hong-van",
+      "familyID": "city-danang-place-my-quang-sua-hong-van",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "My Quang Sua Hong Van",
+      "targetText": "Mỳ Quảng Sứa Hồng Vân",
+      "canonicalTargetText": "Mỳ Quảng Sứa Hồng Vân",
+      "pronunciation": "my quang sua hong van",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Mỳ Quảng Sứa Hồng Vân is the Da Nang mì Quảng save when the bowl should feel more specific: orange-red shrimp broth, yellow noodles, herbs, rice cracker, pork, shrimp, quail egg, and optional jellyfish crunch.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Da Nang",
+        "Đà Nẵng",
+        "My Quang Sua Hong Van",
+        "Mỳ Quảng Sứa Hồng Vân"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌊",
+      "notes": "city-library-v1; city=danang; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=danang-my-quang-sua-hong-van; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "danang",
+      "cityName": "Da Nang",
+      "cityShortTitle": "Da Nang",
+      "cityVietnameseName": "Đà Nẵng",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "danang-my-quang-sua-hong-van",
+      "placeName": "My Quang Sua Hong Van",
+      "placeVietnameseName": "Mỳ Quảng Sứa Hồng Vân",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 5,
+      "sourceIDs": [
+        "vt-danang",
+        "vt-danang-official",
+        "michelin-vietnam"
       ]
     },
     {

@@ -2456,6 +2456,38 @@
       }
     },
     {
+      "id": "city-danang-place-my-quang-sua-hong-van",
+      "cityID": "danang",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:danang",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Mỳ Quảng Sứa Hồng Vân is the Da Nang mì Quảng save when the bowl should feel more specific: orange-red shrimp broth, yellow noodles, herbs, rice cracker, pork, shrimp, quail egg, and optional jellyfish crunch.",
+        "aboutExcerpt": "Mỳ Quảng Sứa Hồng Vân is a 2025 MICHELIN Bib Gourmand Da Nang street-food stop for mì Quảng with orange-red shrimp broth, yellow noodles, toppings, herbs, rice cracker, and optional jellyfish.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Taste the orange-red shrimp broth before adding chili or lime. Then fold in herbs and cracker so the bowl keeps its soft noodles and sharp crunch.",
+        "timingExcerpt": "If the menu is not obvious, ask what they recommend before naming a topping. One focused bowl beats over-ordering because mì Quảng already has plenty going on.",
+        "goodToKnowExcerpt": "The Bib Gourmand signal supports the save, but the draw is more concrete: Da Nang's signature bowl with a seafood-texture twist."
+      }
+    },
+    {
       "id": "city-danang-place-nam-danh-seafood",
       "cityID": "danang",
       "pageKind": "restaurant",

@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 814,
+    "cityLibraryPageCount": 815,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T20:17:55.189Z"
+    "generatedAt": "2026-05-30T20:30:13.938Z"
   },
   "pages": [
     {
@@ -192256,6 +192256,179 @@
           "food-3"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-my-quang-dung"
+      }
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "familyID": "city-danang-place-my-quang-sua-hong-van",
+      "phraseID": "city-danang-place-my-quang-sua-hong-van",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Mỳ Quảng Sứa Hồng Vân",
+      "englishTitle": "My Quang Sua Hong Van",
+      "pronunciation": "my quang sua hong van",
+      "summary": "Mỳ Quảng Sứa Hồng Vân is the Da Nang mì Quảng save when the bowl should feel more specific: orange-red shrimp broth, yellow noodles, herbs, rice cracker, pork, shrimp, quail egg, and optional jellyfish crunch.",
+      "heroImageName": "HeroCityDanangPlaceMyQuangSuaHongVan",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-my-quang-sua-hong-van-e36e0d23e4",
+      "cityMetadata": {
+        "cityID": "danang",
+        "cityName": "Da Nang",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "danang-my-quang-sua-hong-van",
+        "placeName": "My Quang Sua Hong Van",
+        "sourceIDs": [
+          "vt-danang",
+          "vt-danang-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "It matters because it turns the city's signature dish into a 2025 MICHELIN Bib Gourmand street-food stop with a texture detail worth remembering by name.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityDanangPlaceMyQuangSuaHongVan"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Shrimp Broth, Jellyfish Crunch",
+          "body": "Mỳ Quảng Sứa Hồng Vân is a 2025 MICHELIN Bib Gourmand Da Nang street-food stop for mì Quảng with orange-red shrimp broth, yellow noodles, toppings, herbs, rice cracker, and optional jellyfish.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Make It A Named Bowl",
+          "body": "The full name matters here because the bowl has a specific texture signal. The jellyfish option gives it a detail worth remembering.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Broth First, Crunch After",
+          "body": "Taste the orange-red shrimp broth before adding chili or lime. Then fold in herbs and cracker so the bowl keeps its soft noodles and sharp crunch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Ask What To Choose",
+          "body": "If the menu is not obvious, ask what they recommend before naming a topping. One focused bowl beats over-ordering because mì Quảng already has plenty going on.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Let The Detail Lead",
+          "body": "The Bib Gourmand signal supports the save, but the draw is more concrete: Da Nang's signature bowl with a seafood-texture twist.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-danang-place-my-quang-sua-hong-van",
+          "vietnamese": "Mỳ Quảng Sứa Hồng Vân",
+          "english": "My Quang Sua Hong Van",
+          "pronunciation": "my quang sua hong van",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-my-quang-sua-hong-van-e36e0d23e4"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-danang-place-my-quang-sua-hong-van",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "v900-food-drin-what-do-you-recommend"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-danang-place-my-quang-sua-hong-van",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "v900-food-drin-what-do-you-recommend"
+        ],
+        "practiceSourcePageID": "viet-family-city-danang-place-my-quang-sua-hong-van"
       }
     },
     {

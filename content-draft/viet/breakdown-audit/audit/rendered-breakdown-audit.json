@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-30T20:17:55.872Z",
+  "generatedAt": "2026-05-30T20:30:14.581Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1766,
+    "pages": 1767,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 359,
-    "generatedAt": "2026-05-30T20:17:55.872Z"
+    "missing": 360,
+    "generatedAt": "2026-05-30T20:30:14.581Z"
   },
   "pages": [
     {
@@ -93500,6 +93500,18 @@
       "pageID": "viet-family-city-danang-place-my-quang-dung",
       "phraseText": "Mỳ Quảng Dung",
       "englishTitle": "My Quang Dung",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "phraseText": "Mỳ Quảng Sứa Hồng Vân",
+      "englishTitle": "My Quang Sua Hong Van",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"
