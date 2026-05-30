@@ -1108,6 +1108,46 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
+    func locationRelationPicks(forPageID pageID: String, relationType: String) throws -> [LocationMenuPick] {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let afterSectionID = try preferredLocationPicksSectionID(forPageID: canonicalPageID)
+        let sql = """
+        SELECT
+          r.id,
+          pp.id,
+          pp.title,
+          pp.english_title,
+          COALESCE(NULLIF(r.display_label, ''), r.reason, ''),
+          COALESCE(NULLIF(pp.hero_image_name, ''), 'HeroCompactPhraseMasthead'),
+          p.target_text
+        FROM phrase_relation r
+        JOIN phrase_page pp ON pp.id = r.target_id
+        JOIN phrase p ON p.id = pp.phrase_id
+        WHERE r.source_kind = 'phrase_page'
+          AND r.target_kind = 'phrase_page'
+          AND r.source_id = ?
+          AND r.relation_type = ?
+        ORDER BY r.sort_order, pp.title COLLATE NOCASE ASC;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+            try self.bindText(relationType, to: 2, in: statement, sql: sql)
+        }) { statement in
+            LocationMenuPick(
+                id: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 2),
+                subtitle: Self.stringColumn(statement, index: 3),
+                proof: Self.stringColumn(statement, index: 4),
+                imageName: Self.stringColumn(statement, index: 5),
+                detailPageID: Self.stringColumn(statement, index: 1),
+                audioText: Self.stringColumn(statement, index: 6),
+                linkedMenuItemID: nil,
+                afterSectionID: afterSectionID
+            )
+        }
+    }
+
     func visibleAudioUsages(forPageID pageID: String) throws -> [VietSQLiteVisibleAudioUsage] {
         let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
         let sql = """
@@ -1173,6 +1213,30 @@ final class VietSQLiteLanguagePackRepository {
         "restaurant",
         "dish",
     ]
+
+    private func preferredLocationPicksSectionID(forPageID pageID: String) throws -> String? {
+        let sql = """
+        SELECT section_key
+        FROM page_section
+        WHERE page_id = ?
+        ORDER BY
+          CASE section_key
+            WHEN 'good-to-know' THEN 0
+            WHEN 'use-it-with' THEN 1
+            WHEN 'place-brief' THEN 2
+            WHEN 'at-glance' THEN 3
+            ELSE 4
+          END,
+          sort_order DESC
+        LIMIT 1;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(pageID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            Self.stringColumn(statement, index: 0)
+        }.first
+    }
 
     private func loadSections(
         forPageID pageID: String,
@@ -1861,6 +1925,7 @@ enum VietSQLitePhraseGraphRuntime {
     private static let canonicalPageIDCacheLimit = 512
     private static let detailPageCacheLimit = 96
     private static let searchResultCacheLimit = 32
+    private static let locationRelationPicksCacheLimit = 512
     private static let cacheLock = NSLock()
 
     static var isEnabled: Bool {
@@ -1967,6 +2032,24 @@ enum VietSQLitePhraseGraphRuntime {
         return page
     }
 
+    static func locationRelationPicks(forPageID pageID: String, relationType: String) -> [LocationMenuPick] {
+        let cacheKey = "\(relationType)|\(pageID)"
+        if let cachedPicks = cachedLocationRelationPicks(for: cacheKey) {
+            return cachedPicks
+        }
+
+        guard isEnabled, let repository = repository() else {
+            return []
+        }
+
+        let picks = (try? repository.locationRelationPicks(
+            forPageID: pageID,
+            relationType: relationType
+        )) ?? []
+        storeCachedLocationRelationPicks(picks, for: cacheKey)
+        return picks
+    }
+
     static func canOpenPage(_ pageID: String) -> Bool {
         canonicalPageID(for: pageID) != nil
     }
@@ -2047,6 +2130,31 @@ enum VietSQLitePhraseGraphRuntime {
         )
     }
 
+    private static func cachedLocationRelationPicks(for key: String) -> [LocationMenuPick]? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let picks = cachedLocationRelationPicksByKey[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedLocationRelationPickKeys)
+        return picks
+    }
+
+    private static func storeCachedLocationRelationPicks(_ picks: [LocationMenuPick], for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedLocationRelationPicksByKey[key] = picks
+        touchCacheKey(key, in: &cachedLocationRelationPickKeys)
+        trimCache(
+            keys: &cachedLocationRelationPickKeys,
+            limit: locationRelationPicksCacheLimit,
+            removeValue: { cachedLocationRelationPicksByKey.removeValue(forKey: $0) }
+        )
+    }
+
     private static func cachedDetailPage(for key: String) -> PhraseDetailPage? {
         cacheLock.lock()
         defer { cacheLock.unlock() }
@@ -2116,6 +2224,8 @@ enum VietSQLitePhraseGraphRuntime {
     private static var cachedDetailPageKeys: [String] = []
     private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
     private static var cachedSearchResultKeys: [String] = []
+    private static var cachedLocationRelationPicksByKey: [String: [LocationMenuPick]] = [:]
+    private static var cachedLocationRelationPickKeys: [String] = []
     private static var cachedVietnameseMenuPayload: VietnameseMenuPayload?
     private static var hasReportedRepositoryOpenFailure = false
 
@@ -2168,6 +2278,8 @@ enum VietSQLitePhraseGraphRuntime {
         cachedDetailPageKeys.removeAll()
         cachedSearchResultsByKey.removeAll()
         cachedSearchResultKeys.removeAll()
+        cachedLocationRelationPicksByKey.removeAll()
+        cachedLocationRelationPickKeys.removeAll()
     }
 
     private static var isEnabledOverride: Bool?

@@ -833,3 +833,77 @@ Results:
 ### Remaining Risk After Render-Proof Fix
 
 Status improves for the reviewed support pages, but the full 500-page catalog should still stay below `GLOBAL_PRODUCTION_READY` until the remaining cafe, market, mall, and room-led restaurant pages get the same rendered proof sweep. `Cái này bao nhiêu?` is confirmed rendered as a deep detail page; if it felt thin, the likely problem is that the user was seeing a compact phrase card or only the first viewport.
+
+## Continuation: Dynamic V2.2 Candidate Card Rendering
+
+Fifth pass date: 2026-05-30
+
+This pass found a structural render gap: first-class V2.2 source had renderable `relatedPlaceCandidates` for all 500 city/place pages, but the native app only rendered 14 hardcoded `Compare Nearby` cases. That meant many source-approved save/trip-building links were invisible in the shipped detail pages.
+
+### Runtime Fix
+
+- Projected V2.2 `relatedPlaceCandidates` with `status: "render"` into SQLite `phrase_relation` rows as `compare-nearby`.
+- Projected V2.2 `mentionedHereCandidates` with `status: "render"` into SQLite `phrase_relation` rows as `mentioned-here`.
+- Updated native `LocationRelatedPicksCatalog` and `LocationMenuPicksCatalog` to merge existing hand-picked cards with SQLite-authored candidate cards.
+- Added de-duplication by canonical detail page ID so old hand-picked cards and source-authored cards do not render twice.
+- Kept user-facing card copy on `displaySubtitle`; internal `reason` remains non-visible.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-30-dynamic-candidate-cards/`
+
+Representative page captured:
+
+- `viet-family-city-danang-place-banh-xeo-ba-duong`: shows V2.2-authored `Mentioned Here` cards for `Bánh xèo ở Đà Nẵng` and `Nem lụi ở Đà Nẵng`, plus a `Compare Nearby` card for `Hải sản Bé Mặn`, with save buttons visible.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hook: `--detail-page viet-family-city-danang-place-banh-xeo-ba-duong`
+- Build/run: PASS
+
+### Validation Run After Dynamic Candidate Rendering
+
+Commands:
+
+```sh
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Focused native XCTest:
+
+```sh
+SpeakLocalNativeTests/AppChromeTests/testCalibratedCityMenuPicksResolveInlineAndStayCapped
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesExposeNativeMentionedHereCards
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesExposeNativeRelatedPlaceCards
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesRenderSQLiteRelatedCandidates
+SpeakLocalNativeTests/AppChromeTests/testV22CityPagesRenderSQLiteMentionedHereCandidates
+```
+
+Results:
+
+- SQLite fixture generation: PASS, integrity OK.
+- SQLite relation inventory now includes 503 `compare-nearby` rows and 55 `mentioned-here` rows.
+- SQLite fixture validation: PASS, 9342 total relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- native-only guard: PASS.
+- whitespace check: PASS.
+- focused native XCTest: PASS, 5 tests.
+
+### Remaining Risk After Dynamic Candidate Rendering
+
+This removes the largest app/runtime mismatch behind the save-worthy-place concern: source-authored related and mentioned candidates now have a generic render path instead of relying on one-off Swift switch cases.
+
+Status should still remain below `GLOBAL_PRODUCTION_READY` until the next sweep confirms actual rendered screenshots across the remaining high-visibility food pages and checks that weaker support restaurants/cafes are not promoted as feature anchors.

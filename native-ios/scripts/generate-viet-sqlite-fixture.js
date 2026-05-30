@@ -14,6 +14,7 @@ const menuCopyPath = path.join(nativeRoot, "Resources", "vietnamese-menu-copy.js
 const xcodeProjectPath = path.join(nativeRoot, "project.yml");
 const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
+const cityAppDetailV22Dir = path.join(repoRoot, "content-draft", "viet", "city-library", "app-detail-v2-2");
 const searchOnlySurfacingPath = path.join(repoRoot, "content-draft", "viet", "search-only-surfacing-v1.json");
 const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const outputDir = path.join(nativeRoot, "Resources", "LanguagePacks", "viet");
@@ -236,17 +237,34 @@ function sortByID(rows) {
   return [...rows].sort((a, b) => String(a.id).localeCompare(String(b.id)));
 }
 
+function readCityAppDetailV22Sources() {
+  if (!fs.existsSync(cityAppDetailV22Dir)) return [];
+
+  return fs.readdirSync(cityAppDetailV22Dir)
+    .filter((fileName) => fileName.endsWith(".json") && !fileName.startsWith("_"))
+    .sort((a, b) => a.localeCompare(b))
+    .map((fileName) => {
+      const filePath = path.join(cityAppDetailV22Dir, fileName);
+      return {
+        filePath,
+        entries: readJSON(filePath).entries ?? [],
+      };
+    });
+}
+
 function main() {
   const catalog = readJSON(catalogPath);
   const authoredBundle = readJSON(authoredPagesPath);
   const audioManifest = readJSON(audioManifestPath);
   const menuPayload = readJSON(menuCopyPath);
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : null;
+  const cityAppDetailV22Sources = readCityAppDetailV22Sources();
   const searchOnlySurfacing = readJSON(searchOnlySurfacingPath);
   const xcodeProject = fs.readFileSync(xcodeProjectPath, "utf8");
   const schema = fs.readFileSync(schemaPath, "utf8");
+  const cityAppDetailV22InputPaths = cityAppDetailV22Sources.map((source) => source.filePath);
   const inputHash = sha256(
-    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, searchOnlySurfacingPath, ...(cityLibrary ? [cityLibraryPath] : [])]
+    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, searchOnlySurfacingPath, ...(cityLibrary ? [cityLibraryPath] : []), ...cityAppDetailV22InputPaths]
       .map((filePath) => `${relative(filePath)}\n${sha256(fs.readFileSync(filePath))}`)
       .join("\n")
   );
@@ -1396,6 +1414,83 @@ function main() {
     });
   }
 
+  function canonicalPageIDForAuthoredPageID(pageID) {
+    if (!pageID) return null;
+    if (pageID.startsWith("viet-phrase-") && pageRows.some((row) => row.id === pageID)) {
+      return pageID;
+    }
+
+    const alias = aliases.get(pageID);
+    if (alias?.canonical_page_id) return alias.canonical_page_id;
+
+    const authoredPage = authoredPageByID.get(pageID);
+    if (authoredPage?.phraseID) return canonicalPageIDForPhrase(authoredPage.phraseID);
+
+    if (pageID.startsWith("city-")) return canonicalPageIDForPhrase(pageID);
+
+    return null;
+  }
+
+  function addPageRelationByPageID({ sourcePageID, targetPageID, relationType, reason, displayLabel, sortOrder, sourcePath }) {
+    const sourceCanonicalPageID = canonicalPageIDForAuthoredPageID(sourcePageID);
+    const targetCanonicalPageID = canonicalPageIDForAuthoredPageID(targetPageID);
+    if (!sourceCanonicalPageID || !targetCanonicalPageID || sourceCanonicalPageID === targetCanonicalPageID) return false;
+
+    const key = `${sourceCanonicalPageID}\u0000${targetCanonicalPageID}\u0000${relationType}`;
+    if (relationKeys.has(key)) return false;
+    relationKeys.add(key);
+
+    relationRows.push({
+      id: `relation:${stableID([sourceCanonicalPageID, targetCanonicalPageID, relationType])}`,
+      language_pack_id: languagePackID,
+      source_kind: "phrase_page",
+      source_id: sourceCanonicalPageID,
+      target_kind: "phrase_page",
+      target_id: targetCanonicalPageID,
+      relation_type: relationType,
+      reason: reason || displayLabel || relationType,
+      display_label: displayLabel || reason || relationType,
+      sort_order: sortOrder,
+      source_path: sourcePath,
+    });
+    return true;
+  }
+
+  function addCityAppDetailV22CandidateRelations() {
+    for (const source of cityAppDetailV22Sources) {
+      const sourcePath = relative(source.filePath);
+      source.entries.forEach((entry, entryIndex) => {
+        (entry.mentionedHereCandidates ?? [])
+          .filter((candidate) => candidate.status === "render")
+          .forEach((candidate, candidateIndex) => {
+            addPageRelationByPageID({
+              sourcePageID: entry.id,
+              targetPageID: candidate.catalogId,
+              relationType: "mentioned-here",
+              reason: candidate.reason,
+              displayLabel: candidate.displaySubtitle,
+              sortOrder: entryIndex * 10 + candidateIndex,
+              sourcePath,
+            });
+          });
+
+        (entry.relatedPlaceCandidates ?? [])
+          .filter((candidate) => candidate.status === "render")
+          .forEach((candidate, candidateIndex) => {
+            addPageRelationByPageID({
+              sourcePageID: entry.id,
+              targetPageID: candidate.catalogId,
+              relationType: "compare-nearby",
+              reason: candidate.reason,
+              displayLabel: candidate.displaySubtitle,
+              sortOrder: entryIndex * 10 + candidateIndex,
+              sourcePath,
+            });
+          });
+      });
+    }
+  }
+
   function addSearchOnlySurfacingSections() {
     const surfacingSourcePath = relative(searchOnlySurfacingPath);
     const pagePhraseIDByPageID = new Map(pageRows.map((row) => [row.id, row.phrase_id]));
@@ -1468,6 +1563,7 @@ function main() {
   }
 
   addSearchOnlySurfacingSections();
+  addCityAppDetailV22CandidateRelations();
 
   for (const page of authoredPages) {
     const canonicalPageID = canonicalPageIDForPhrase(page.phraseID);
