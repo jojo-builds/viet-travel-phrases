@@ -993,11 +993,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-mi",
-          "label": "Bánh mì Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-market",
+          "label": "Chợ Hội An",
+          "relationship": "dish-to-market setting",
+          "displaySubtitle": "The market setting where small dishes, river-town snacks, and quick ordering make more sense.",
+          "reason": "Hoi An Market is a better setting route for banh dap hen xao than a banh mi contrast.",
           "status": "render"
         }
       ],
@@ -1011,7 +1011,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1105,11 +1106,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
+          "label": "Bánh mì Phượng",
+          "relationship": "dish-to-counter follow-through",
+          "displaySubtitle": "A named counter when Hội An bánh mì should become one specific stop.",
+          "reason": "Banh Mi Phuong gives the dish page a concrete counter route.",
           "status": "render"
         }
       ],
@@ -1123,7 +1124,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1209,14 +1211,24 @@
           "body": "Phan Châu Trinh is close to the Ancient Town walk. Order, eat nearby, and move on rather than making the fame the whole plan."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh mì Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-banh-mi",
+          "sourceText": "banh mi",
+          "displaySubtitle": "The Hội An sandwich guide behind this famous counter.",
+          "reason": "The page centers banh mi and should link to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-madam-khanh",
+          "label": "Madam Khánh",
+          "relationship": "same-dish counter comparison",
+          "displaySubtitle": "Another named bánh mì counter when the quick sandwich should become a comparison, not a random restaurant.",
+          "reason": "Madam Khanh is a stronger same-dish comparison than Bale Well for Banh Mi Phuong.",
           "status": "render"
         }
       ],
@@ -1230,7 +1242,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1323,11 +1336,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-bale-well",
+          "label": "Giếng Bà Lễ",
+          "relationship": "dish-to-table follow-through",
+          "displaySubtitle": "A hands-on Hội An table when pancakes, skewers, herbs, and rice paper should become the meal.",
+          "reason": "Bale Well is the concrete table route for Hoi An banh xeo.",
           "status": "render"
         }
       ],
@@ -1341,7 +1354,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -1547,11 +1561,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-market",
-          "label": "Chợ Hội An",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-tailor-fitting",
+          "label": "Thử đồ may đo Hội An",
+          "relationship": "tailor workflow follow-up",
+          "displaySubtitle": "The fitting-step page when browsing fabric should turn into an actual tailoring plan.",
+          "reason": "Tailor fitting is a better workflow link for BeBe than a food market card.",
           "status": "render"
         }
       ],
@@ -1565,7 +1579,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -2686,7 +2701,7 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -2780,11 +2795,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "restaurant support comparison",
+          "displaySubtitle": "A stronger central Vietnamese table when the meal should feel more tied to Hội An food.",
+          "reason": "Morning Glory is a more food-specific comparison for Cargo Club than Bale Well.",
           "status": "render"
         }
       ],
@@ -2798,7 +2813,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3116,11 +3132,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-bang",
-          "label": "Biển An Bàng",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-market",
+          "label": "Chợ Hội An",
+          "relationship": "sweet-to-market route",
+          "displaySubtitle": "A central market browse when corn sweetness should sit inside a wider snack plan.",
+          "reason": "Hoi An Market gives che bap a better food context than a beach card.",
           "status": "render"
         }
       ],
@@ -3134,7 +3150,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3342,9 +3359,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-espresso-station",
           "label": "The Espresso Station",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "cafe-register contrast",
+          "displaySubtitle": "A coffee-first room when the drink should lead more than the smoothie-and-shop mood.",
+          "reason": "The Espresso Station is a useful coffee-register contrast for Cocobox.",
           "status": "render"
         }
       ],
@@ -3358,7 +3375,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -3471,7 +3489,7 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -4237,11 +4255,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-faifo-coffee",
+          "label": "Faifo Coffee",
+          "relationship": "coffee-view contrast",
+          "displaySubtitle": "A rooftop coffee stop when the cup should come with old-town rooflines.",
+          "reason": "Faifo gives Espresso Station a view-led cafe contrast.",
           "status": "render"
         }
       ],
@@ -4255,7 +4273,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -4349,11 +4368,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-espresso-station",
+          "label": "The Espresso Station",
+          "relationship": "coffee-quality contrast",
+          "displaySubtitle": "A coffee-first room when the drink matters more than the rooftop photo.",
+          "reason": "Espresso Station is a better coffee-quality contrast for Faifo.",
           "status": "render"
         }
       ],
@@ -4367,7 +4386,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -5909,14 +5929,24 @@
           "body": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh mì Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-banh-mi",
+          "sourceText": "banh mi",
+          "displaySubtitle": "The Hội An sandwich guide behind this counter.",
+          "reason": "The page centers banh mi and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
+          "label": "Bánh mì Phượng",
+          "relationship": "same-dish counter comparison",
+          "displaySubtitle": "Another famous bánh mì counter when the sandwich itself is the comparison.",
+          "reason": "Banh Mi Phuong is the right same-dish comparison for Madam Khanh.",
           "status": "render"
         }
       ],
@@ -5930,7 +5960,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6023,11 +6054,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "central Vietnamese table comparison",
+          "displaySubtitle": "A stronger central Vietnamese table when local dishes should lead the meal.",
+          "reason": "Morning Glory is a more useful food comparison for Mai Fish than Bale Well.",
           "status": "render"
         }
       ],
@@ -6041,7 +6072,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6135,11 +6167,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-vys-market",
+          "label": "Vy's Market Restaurant",
+          "relationship": "food-hall contrast",
+          "displaySubtitle": "A more food-specific Hội An table when tasting several local dishes matters more than riverfront mood.",
+          "reason": "Vys Market is a better food-led contrast for Mango Mango.",
           "status": "render"
         }
       ],
@@ -6153,7 +6185,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6247,11 +6280,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bebe-tailor",
-          "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-vys-market",
+          "label": "Vy's Market Restaurant",
+          "relationship": "market-to-sit-down food follow-up",
+          "displaySubtitle": "A sit-down food hall after the market when local dishes need more order and less aisle noise.",
+          "reason": "Vys Market gives Hoi An Market a clear meal continuation.",
           "status": "render"
         }
       ],
@@ -6265,7 +6298,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6473,9 +6507,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bebe-tailor",
           "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "style-and-tailoring comparison",
+          "displaySubtitle": "A tailoring stop when fabric browsing should become a fitted piece.",
+          "reason": "BeBe Tailor is a better retail/tailoring comparison for Metiseko than a broad market card.",
           "status": "render"
         }
       ],
@@ -6489,7 +6523,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6583,11 +6618,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-cao-lau-city",
+          "label": "Cao lầu ở Hội An",
+          "relationship": "central-Vietnam noodle comparison",
+          "displaySubtitle": "The Hội An noodle to compare when turmeric broth gives way to cao lầu chew.",
+          "reason": "Cao lau is the useful noodle comparison for Hoi An mi quang.",
           "status": "render"
         }
       ],
@@ -6601,7 +6636,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -6956,11 +6992,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-bang",
-          "label": "Biển An Bàng",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-night-market",
+          "label": "Chợ đêm Hội An",
+          "relationship": "drink-to-evening-walk route",
+          "displaySubtitle": "An evening market walk when the herbal drink should become part of the old-town flow.",
+          "reason": "Hoi An Night Market is a better route continuation for Mot than An Bang Beach.",
           "status": "render"
         }
       ],
@@ -6974,7 +7010,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -7292,11 +7329,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bebe-tailor",
-          "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-night-market",
+          "label": "Chợ đêm Hội An",
+          "relationship": "same-evening market context",
+          "displaySubtitle": "The broader night-market page when lantern stalls and river walking are the main plan.",
+          "reason": "The broader night-market page is the right context for Nguyen Hoang Night Market.",
           "status": "render"
         }
       ],
@@ -7310,7 +7347,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -7628,11 +7666,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bebe-tailor",
-          "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-mot-herbal-drink",
+          "label": "Nước Mót ở Hội An",
+          "relationship": "night-walk drink follow-up",
+          "displaySubtitle": "A cooling herbal-drink stop when the lantern walk needs a small pause.",
+          "reason": "Mot is a useful drink follow-up from Hoi An Night Market.",
           "status": "render"
         }
       ],
@@ -7646,7 +7684,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -7740,11 +7779,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "small-restaurant to local-table contrast",
+          "displaySubtitle": "A broader local-dish table when the meal should feel more classically Hội An.",
+          "reason": "Morning Glory is a more food-specific contrast for Nu Eatery than Bale Well.",
           "status": "render"
         }
       ],
@@ -7758,7 +7797,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -7852,11 +7892,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-espresso-station",
+          "label": "The Espresso Station",
+          "relationship": "coffee-register contrast",
+          "displaySubtitle": "A more espresso-focused room when the caffeine stop should be about the cup.",
+          "reason": "Espresso Station gives Phin Coffee a clear coffee-register contrast.",
           "status": "render"
         }
       ],
@@ -7870,7 +7910,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8524,11 +8565,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-mot-herbal-drink",
+          "label": "Nước Mót ở Hội An",
+          "relationship": "quiet-drink contrast",
+          "displaySubtitle": "A street-side herbal drink when the pause should be quicker and more public.",
+          "reason": "Mot gives Reaching Out a useful drink-ritual contrast.",
           "status": "render"
         }
       ],
@@ -8542,7 +8583,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8860,11 +8902,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-espresso-station",
+          "label": "The Espresso Station",
+          "relationship": "coffee-quality comparison",
+          "displaySubtitle": "A smaller coffee-first room when the drink should matter more than the chain footprint.",
+          "reason": "Espresso Station is the stronger independent coffee comparison for Hoi An Roastery.",
           "status": "render"
         }
       ],
@@ -8878,7 +8920,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -8972,11 +9015,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-u-cafe",
+          "label": "U Cafe Hội An",
+          "relationship": "calmer cafe support comparison",
+          "displaySubtitle": "A quieter riverside cafe when the pause should feel slower and more tucked away.",
+          "reason": "U Cafe is a more useful calm-cafe comparison for Rosies than Cocobox.",
           "status": "render"
         }
       ],
@@ -8990,7 +9033,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -9197,11 +9241,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bebe-tailor",
-          "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-tailor-fitting",
+          "label": "Thử đồ may đo Hội An",
+          "relationship": "silk-to-tailoring workflow",
+          "displaySubtitle": "The fitting-step page when silk history should connect to an actual made-to-measure plan.",
+          "reason": "Tailor fitting is a better workflow continuation for Silk Village than a broad tailor card.",
           "status": "render"
         }
       ],
@@ -9215,7 +9259,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -9309,11 +9354,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-vys-market",
+          "label": "Vy's Market Restaurant",
+          "relationship": "food-training to food-hall comparison",
+          "displaySubtitle": "A broader food-hall table when tasting several Hội An dishes is the goal.",
+          "reason": "Vys Market is a clearer food comparison than a generic cafe for STREETS.",
           "status": "render"
         }
       ],
@@ -9327,7 +9372,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -9423,9 +9469,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bebe-tailor",
           "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "tailor workflow shop",
+          "displaySubtitle": "A named tailor when the fitting-step needs a concrete shop context.",
+          "reason": "BeBe Tailor gives the tailor-fitting page a concrete shop context.",
           "status": "render"
         }
       ],
@@ -9439,7 +9485,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -9757,11 +9804,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bale-well",
-          "label": "Giếng Bà Lễ",
-          "relationship": "same-city restaurant comparison",
-          "displaySubtitle": "A restaurant in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-tra-que-village",
+          "label": "Làng rau Trà Quế",
+          "relationship": "field-to-farm route",
+          "displaySubtitle": "A herb-village route when the meal should connect back to Hội An’s garden landscape.",
+          "reason": "Tra Que Village gives The Field a stronger landscape/food route than Bale Well.",
           "status": "render"
         }
       ],
@@ -9775,7 +9822,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -10653,11 +10701,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-cocobox",
-          "label": "Cocobox",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-reach-out-tea-house",
+          "label": "Reaching Out Tea House",
+          "relationship": "quiet-cafe comparison",
+          "displaySubtitle": "A quieter old-town tea pause when stillness matters more than riverside ease.",
+          "reason": "Reaching Out is a useful quiet-pause comparison for U Cafe.",
           "status": "render"
         }
       ],
@@ -10671,7 +10719,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -10812,7 +10861,7 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-anchor role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
       "score": {
@@ -10906,11 +10955,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-white-rose-restaurant",
+          "label": "Nhà hàng White Rose",
+          "relationship": "dish-to-source restaurant",
+          "displaySubtitle": "The source restaurant when white rose dumplings should become one specific stop.",
+          "reason": "White Rose Restaurant is the concrete place route for the dumpling dish page.",
           "status": "render"
         }
       ],
@@ -10924,7 +10973,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -11136,11 +11186,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-banh-dap-hen-xao",
-          "label": "Bánh đập hến xào ở Hội An",
-          "relationship": "same-city dish comparison",
-          "displaySubtitle": "A dish in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-vys-market",
+          "label": "Vy's Market Restaurant",
+          "relationship": "dish-to-food-hall follow-through",
+          "displaySubtitle": "A food-hall table when Hội An snacks should become a wider tasting stop.",
+          "reason": "Vys Market is a better dish-to-place follow-through for wonton than a generic dish contrast.",
           "status": "render"
         }
       ],
@@ -11154,7 +11204,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {
@@ -11248,11 +11299,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-bebe-tailor",
-          "label": "BeBe Tailor",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "catalogId": "viet-family-city-hoian-place-tailor-fitting",
+          "label": "Thử đồ may đo Hội An",
+          "relationship": "tailor workflow follow-up",
+          "displaySubtitle": "The fitting-step page when a couture shop visit should become a practical tailoring plan.",
+          "reason": "Tailor fitting is a better workflow continuation for Yaly Couture than a broad shop card.",
           "status": "render"
         }
       ],
@@ -11266,7 +11317,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
       "score": {

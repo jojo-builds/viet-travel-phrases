@@ -347,3 +347,145 @@ Results:
 ### Remaining Risk
 
 This pass materially improves the graph, especially Saigon, but the full food catalog still is not globally production-ready. The next highest-value regions are Da Nang and Hoi An, where food-surface generic related-card counts remain high.
+
+## Continuation: Da Nang / Hoi An Food Graph Pass
+
+Third pass date: 2026-05-30
+Commit before pass: `aa0db27f9 Improve Viet food graph links`
+
+This continuation focused on the two cities that still felt least save-worthy after the first graph pass. The goal was not to make every page loud; it was to make the food, cafe, market, drink, dessert, and tailor-adjacent cards explain a real trip-building move instead of pointing to a generic same-city comparison.
+
+### Pages Touched
+
+Da Nang:
+
+- `city-danang-place-43-factory`
+- `city-danang-place-bac-my-an-market`
+- `city-danang-place-banh-mi`
+- `city-danang-place-banh-trang-cuon-thit-heo`
+- `city-danang-place-banh-xeo`
+- `city-danang-place-bun-cha-ca`
+- `city-danang-place-che-xoa-xoa-hat-luu`
+- `city-danang-place-cong-caphe-bach-dang`
+- `city-danang-place-fatfish`
+- `city-danang-place-hai-san`
+- `city-danang-place-helio-night-market`
+- `city-danang-place-kem-bo`
+- `city-danang-place-la-maison-1888`
+- `city-danang-place-le-duan-night-market`
+- `city-danang-place-long-coffee`
+- `city-danang-place-lotte-mart`
+- `city-danang-place-mi-quang`
+- `city-danang-place-my-quang-ba-mua`
+- `city-danang-place-my-quang-dung`
+- `city-danang-place-nam-danh-seafood`
+- `city-danang-place-nam-house`
+- `city-danang-place-nem-lui`
+- `city-danang-place-nen`
+- `city-danang-place-oc-hut`
+- `city-danang-place-reply-1988`
+- `city-danang-place-six-on-six`
+- `city-danang-place-son-tra-night-market`
+- `city-danang-place-the-temptation`
+- `city-danang-place-vincom-plaza`
+- `city-danang-place-wonderlust`
+
+Hoi An:
+
+- `city-hoian-place-banh-dap-hen-xao`
+- `city-hoian-place-banh-mi`
+- `city-hoian-place-banh-mi-phuong`
+- `city-hoian-place-banh-xeo`
+- `city-hoian-place-bebe-tailor`
+- `city-hoian-place-cargo-club`
+- `city-hoian-place-che-bap-cam-nam`
+- `city-hoian-place-cocobox`
+- `city-hoian-place-espresso-station`
+- `city-hoian-place-faifo-coffee`
+- `city-hoian-place-hoi-an-market`
+- `city-hoian-place-madam-khanh`
+- `city-hoian-place-mai-fish`
+- `city-hoian-place-mango-mango`
+- `city-hoian-place-metiseko`
+- `city-hoian-place-mi-quang`
+- `city-hoian-place-mot-herbal-drink`
+- `city-hoian-place-nguyen-hoang-night-market`
+- `city-hoian-place-night-market`
+- `city-hoian-place-nu-eatery`
+- `city-hoian-place-phin-coffee`
+- `city-hoian-place-reach-out-tea-house`
+- `city-hoian-place-rosies-cafe`
+- `city-hoian-place-silk-village`
+- `city-hoian-place-streets-restaurant`
+- `city-hoian-place-tailor-fitting`
+- `city-hoian-place-the-field`
+- `city-hoian-place-u-cafe`
+- `city-hoian-place-white-rose-dumplings`
+- `city-hoian-place-wonton`
+- `city-hoian-place-yaly-couture`
+
+### Food Graph Metrics After This Pass
+
+Measured on food-surface categories only: `Restaurant`, `Cafe`, `Market`, `Dish`, `Dessert`, `Drink`, `Bar`.
+
+Current strict scan after this continuation:
+
+- Food-surface pages: 195.
+- Food pages with generic `same-city` / `different pace` related-card language: 82.
+- Food pages with rendered Mentioned Here candidates: 41.
+
+By city after this continuation:
+
+- Da Nang: 0 generic food related cards, 12 food Mentioned Here pages.
+- Hoi An: 0 generic food related cards, 6 food Mentioned Here pages.
+- Hanoi: 31 generic food related cards, 11 food Mentioned Here pages.
+- Saigon: 23 generic food related cards, 7 food Mentioned Here pages.
+- Hue: 28 generic food related cards, 5 food Mentioned Here pages.
+
+The current strict scan supersedes the rough by-city debt counts above for next-work prioritization. It intentionally checks only food-surface related-card copy in `relationship`, `displaySubtitle`, and `reason`, not QA notes or non-food place pages.
+
+### Notable Direction Changes
+
+- Da Nang food pages now route through specific food decisions: mì Quảng places, seafood tables, avocado ice cream, night markets, coffee-register contrasts, and planned dinners.
+- Hội An food and shopping-adjacent pages now connect dish-to-place, cafe-to-cafe, market-to-dish, tailor-to-fitting, and evening-drink paths instead of broad same-city cards.
+- Remaining `anchor` wording was removed from the edited Da Nang/Hoi An source files.
+- Da Nang and Hoi An now pass the food-surface generic-card scan at 0; this does not mean every non-food place page is editorially finished.
+
+### Validation Run After Da Nang / Hoi An Continuation
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, integrity OK, 8784 relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk
+
+Status remains `REVISE_BEFORE_GLOBAL_PRODUCTION`.
+
+Da Nang and Hoi An food-surface graph debt is in much better shape, but Hanoi, Saigon, and Hue still need the same related-card specificity pass, and none of these changes have been render-reviewed in the app yet. The next real production gate is screenshot proof for representative food/place pages: intro, phrase cards, Mentioned Here, related cards, and chrome spacing.
