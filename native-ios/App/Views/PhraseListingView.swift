@@ -6,6 +6,20 @@ enum PhraseArticleInitialScrollTarget: String {
     case catalogExplore = "catalog-explore"
 }
 
+enum PhraseArticleMorphPolicy {
+    static func resolvedPageID(
+        pageID: String,
+        heroMorphPageID: String?,
+        heroMorphContentHoldPageID: String?
+    ) -> String {
+        guard heroMorphPageID != nil || heroMorphContentHoldPageID != nil else {
+            return pageID
+        }
+
+        return PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+    }
+}
+
 struct PhraseListingView: View {
     let page: PhrasePage
     let chromeRoute: AppRoute
@@ -115,6 +129,7 @@ struct PhraseArticleTemplateView: View {
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     private let visibleSections: [PhraseArticleSection]
+    private let morphPageID: String
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -168,6 +183,11 @@ struct PhraseArticleTemplateView: View {
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.visibleSections = Self.visibleSections(for: page)
+        self.morphPageID = PhraseArticleMorphPolicy.resolvedPageID(
+            pageID: page.id,
+            heroMorphPageID: heroMorphPageID,
+            heroMorphContentHoldPageID: heroMorphContentHoldPageID
+        )
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -810,10 +830,6 @@ struct PhraseArticleTemplateView: View {
 
     private var holdsArticleContentForHomeMorph: Bool {
         heroMorphContentHoldPageID == morphPageID
-    }
-
-    private var morphPageID: String {
-        PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
     }
 
     private static let scrollTopID = "PhraseArticleTemplateViewTop"

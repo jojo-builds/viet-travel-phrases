@@ -175,6 +175,13 @@ enum AdminPhotoBackdropTaskPolicy {
     ) -> Bool {
         isActive && isVisible
     }
+
+    static func shouldApplyScrollGeometry(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
+    }
 }
 
 struct AdminPhotoBackdropScrollState: Equatable {
@@ -276,6 +283,13 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                     metrics: metrics
                                 )
                             }) { _, scrollState in
+                                guard AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
+                                    return
+                                }
+
                                 if scrollOffset != scrollState.displayOffset {
                                     scrollOffset = scrollState.displayOffset
                                 }

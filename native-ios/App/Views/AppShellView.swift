@@ -46,6 +46,15 @@ private struct HomePhotoBackdropScrollState: Equatable {
     }
 }
 
+enum HomePhotoBackdropTaskPolicy {
+    static func shouldApplyScrollGeometry(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
+    }
+}
+
 enum HomeBackdropActivationPolicy {
     static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
         AdminRootPhotoBackdropActivationPolicy.targetSurface(
@@ -4001,6 +4010,13 @@ struct HomeView: View {
                                     metrics: metrics
                                 )
                             }) { _, scrollState in
+                                guard HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
+                                    return
+                                }
+
                                 if currentScrollOffsetY != scrollState.restorationOffset {
                                     currentScrollOffsetY = scrollState.restorationOffset
                                 }

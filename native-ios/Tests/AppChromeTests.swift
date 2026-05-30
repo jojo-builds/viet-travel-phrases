@@ -523,6 +523,46 @@ final class AppChromeTests: XCTestCase {
                 isVisible: true
             )
         )
+
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: false,
+                isVisible: true
+            ),
+            "Inactive root/admin backdrop preview surfaces should not publish scroll geometry while mounted for navigation previews."
+        )
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: true
+            )
+        )
+
+        XCTAssertFalse(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: false,
+                isVisible: true
+            ),
+            "Inactive Home backdrop preview surfaces should not publish restoration or backing offsets."
+        )
+        XCTAssertFalse(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: true
+            )
+        )
     }
 
     func testVietnameseMenuPhotoBackdropScrollCoordinatorPublishesOnlyDisplayOffsetChanges() {
@@ -1108,6 +1148,25 @@ final class AppChromeTests: XCTestCase {
             PhraseArticleTemplateView.visibleSectionsBuildCountForTesting,
             1,
             "SwiftUI redraws should reuse the visible section list instead of re-filtering and re-normalizing the article sections every time the page body refreshes."
+        )
+    }
+
+    func testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            PhraseArticleMorphPolicy.resolvedPageID(
+                pageID: "viet-phrase-phone-1",
+                heroMorphPageID: nil,
+                heroMorphContentHoldPageID: nil
+            ),
+            "viet-phrase-phone-1"
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Normal listing redraws should not canonicalize a morph identity when no home hero morph is active."
         )
     }
 
