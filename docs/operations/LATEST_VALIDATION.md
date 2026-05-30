@@ -25,11 +25,14 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 9: the shared backdrop preheater retained only a few prepared images, but the preparation work itself was unbounded; rapid listing taps could enqueue many large-image `preparingForDisplay()` jobs in parallel for pages the user had already left
 - root cause 10: recent-page tracking stopped publishing broad SwiftUI invalidations, but still JSON-encoded and wrote the recent-page array to `UserDefaults` immediately on every detail tap; rapid listing browsing now updates the in-memory shelf immediately and batches the disk write until the burst settles or the app leaves the active scene phase
 - root cause 11: the shared backdrop preheater kept the latest queued image names but drained them oldest-first, so rapid listing taps could still spend image-preparation work on stale pages before the newest visible page; the queue now drains newest-first while preserving the bounded latest-work policy
+- root cause 12: opening a detail page canonicalized the same page ID once for navigation and again for recently viewed tracking; detail navigation now returns the already-resolved canonical phrase ID so recent-page recording can reuse it instead of repeating the lookup/cache path on every rapid listing tap
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
 - focused failing tests were added before the fixes and then passed after implementation:
+  - `AppChromeTests/testForwardDetailNavigationReturnsCanonicalIDForRecentRecording`
+  - `LocalUserIntentStoreTests/testRecentPagesCanRecordAlreadyCanonicalPageID`
   - `LocalUserIntentStoreTests/testRecentPagesPersistAfterExplicitFlushInsteadOfEveryTap`
   - `AppChromeTests/testAdminBackdropPreheatPlanKeepsLatestQueuedWorkBounded`
   - `AppChromeTests/testAdminBackdropPreheatPlanDrainsNewestQueuedWorkFirst`
@@ -46,6 +49,14 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `AppChromeTests/testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
   - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+- xcodebuild simulator focused canonical recent-page reuse set on iPhone 17 Pro
+  - passed: `2` tests, `0` failures
+  - covered returning the canonical detail ID from navigation and recording an already-canonical recent page without re-running the page canonicalization path
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-12-44-+0700.xcresult`
+- xcodebuild simulator focused thermal set with canonical recent-page reuse on iPhone 17 Pro
+  - passed: `20` tests, `0` failures
+  - covered canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-13-36-+0700.xcresult`
 - XcodeBuildMCP simulator focused recent-page batched-persist thermal set on iPhone 17 Pro
   - passed: `17` tests, `0` failures
   - covered batched recent-page disk persistence, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup

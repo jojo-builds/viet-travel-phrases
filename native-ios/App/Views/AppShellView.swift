@@ -1595,10 +1595,12 @@ struct AppShellView: View {
 
         preheatDetailBackdrop(pageID: id)
 
-        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+        let recentPageID = withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
             navigation.openDetail(id)
         }
-        intentStore.recordOpenedPage(id, source: .home)
+        if let recentPageID {
+            intentStore.recordOpenedCanonicalPage(recentPageID, source: .home)
+        }
         revealHomePhraseHeroContent(after: resetID)
         clearHomePhraseHeroLaunch(after: resetID)
     }
@@ -1657,10 +1659,12 @@ struct AppShellView: View {
         preheatDetailBackdrop(pageID: id, heroImageNameOverride: browseDetailHeroImageOverrides[id])
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        let recentPageID = withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
-        intentStore.recordOpenedPage(id, source: source)
+        if let recentPageID {
+            intentStore.recordOpenedCanonicalPage(recentPageID, source: source)
+        }
     }
 
     private func preheatDetailBackdrop(pageID: String, heroImageNameOverride: String? = nil) {
@@ -2641,14 +2645,16 @@ struct AppShellNavigationState: Equatable {
         isSearchPresented = snapshot.isSearchPresented
     }
 
-    mutating func openDetail(_ id: String) {
-        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+    @discardableResult
+    mutating func openDetail(_ id: String) -> String? {
+        let phraseCatalogCanonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+        let canonicalPageID = phraseCatalogCanonicalPageID
             ?? (VietnameseMenuCatalog.detailItem(withPageID: id) == nil ? nil : id)
 
         if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
                 rootScrollToTopTrigger += 1
-                return
+                return phraseCatalogCanonicalPageID
             }
 
             recordSearchRouteForBackHistoryIfNeeded()
@@ -2658,11 +2664,11 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .phrasePage
             forwardStack.removeAll()
             rootScrollToTopTrigger += 1
-            return
+            return phraseCatalogCanonicalPageID
         }
 
         guard let canonicalPageID else {
-            return
+            return nil
         }
 
         guard detailPath.last != canonicalPageID else {
@@ -2672,7 +2678,7 @@ struct AppShellNavigationState: Equatable {
                 detailScrollToTopRoute = .detailPage(canonicalPageID)
                 detailScrollToTopTrigger += 1
             }
-            return
+            return phraseCatalogCanonicalPageID
         }
 
         recordSearchRouteForBackHistoryIfNeeded()
@@ -2681,6 +2687,7 @@ struct AppShellNavigationState: Equatable {
         detailPath.append(canonicalPageID)
         detailScrollToTopRoute = .detailPage(canonicalPageID)
         detailScrollToTopTrigger += 1
+        return phraseCatalogCanonicalPageID
     }
 
     mutating func openHome() {

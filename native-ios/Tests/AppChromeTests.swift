@@ -1749,6 +1749,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 2)
     }
 
+    func testForwardDetailNavigationReturnsCanonicalIDForRecentRecording() {
+        var navigation = AppShellNavigationState()
+
+        let recentPageID = navigation.openDetail("viet-thank-you")
+
+        XCTAssertEqual(recentPageID, "viet-phrase-polite-2")
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-polite-2"])
+    }
+
     func testOpeningRootFromCatalogUsesSQLiteCanonicalDetailRoute() {
         var navigation = AppShellNavigationState(initialRoute: .detailPage("viet-phrase-hello-chao-anh"))
 
@@ -4083,6 +4092,14 @@ final class LocalUserIntentStoreTests: XCTestCase {
             LocalUserIntentStore(defaults: defaults).recentPageIDs,
             ["viet-phrase-polite-2", "viet-phrase-hello-chao-anh"]
         )
+    }
+
+    func testRecentPagesCanRecordAlreadyCanonicalPageID() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.recordOpenedCanonicalPage("viet-phrase-polite-2", source: .browse)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-polite-2"])
     }
 
     func testSavedPageToggleStillPublishesStoreChanges() {

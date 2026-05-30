@@ -161,6 +161,10 @@ final class LocalUserIntentStore: ObservableObject {
             return
         }
 
+        recordOpenedCanonicalPage(canonicalPageID, source: source)
+    }
+
+    func recordOpenedCanonicalPage(_ canonicalPageID: String, source: UserIntentSource) {
         var pages = recentPages.filter { page in
             page.pageID != canonicalPageID
         }
