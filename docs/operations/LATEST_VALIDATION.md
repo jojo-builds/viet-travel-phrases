@@ -88,6 +88,11 @@ Fresh command evidence from this pass:
   - passed: `13` tests, `0` failures
   - covered inactive menu/standard browse collection task gating, active+visible admin/root backdrop delayed-task gating, inactive standard article task gating, generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, visible-only browse collection mounting, bounded category browse hero overrides, bounded city pick caches, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-54-16-872Z_pid15747_3099a719.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `67bf033f7`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused browse generated-image existence-probe set on iPhone 17 Pro
   - failed before implementation because `BrowseImageAssetPolicy` did not exist and browse rows always had to call through the `BrowseImageAssetCache.exists` seam for generated image names
   - passed after implementation: `1` test, `0` failures
