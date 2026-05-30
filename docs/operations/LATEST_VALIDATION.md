@@ -82,6 +82,11 @@ Fresh command evidence from this pass:
   - passed: `25` tests, `0` failures
   - covered active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, static designed `Xin chào` photo-backdrop eligibility, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
   - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-02-38-+0700.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `1889ce305`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - xcodebuild simulator focused inactive phrase-article task set on iPhone 17 Pro
   - failed before implementation because `PhraseArticleTaskPolicy` did not exist
   - passed after implementation: `1` test, `0` failures
