@@ -101,10 +101,18 @@ struct VietnameseMenuPageView: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
         )
-        .task(id: pendingScrollSectionUpdate) {
+        .task(id: "\(isActive)-\(pendingScrollSectionUpdate.map { "\($0.sectionID)-\($0.revision)" } ?? "none")") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
             await commitPendingScrollSectionUpdateIfNeeded()
         }
-        .task(id: sectionJumpSettleID) {
+        .task(id: "\(isActive)-\(sectionJumpSettleID)") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
             await clearProgrammaticSectionJumpSettleIfNeeded()
         }
         .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
@@ -150,7 +158,11 @@ struct VietnameseMenuPageView: View {
 
                     jumpToSection(sectionJumpRequest.sectionID)
                 }
-                .task(id: pendingSectionJumpID) {
+                .task(id: "\(isActive)-\(pendingSectionJumpID)") {
+                    guard VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: isActive) else {
+                        return
+                    }
+
                     if AppBottomInsetValidation.shouldScrollToBottom {
                         await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                         return
@@ -587,12 +599,15 @@ struct VietnameseMenuPageView: View {
 
     @MainActor
     private func clearProgrammaticSectionJumpSettleIfNeeded() async {
-        guard sectionJumpSettleID > 0, isSettlingProgrammaticSectionJump else {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              sectionJumpSettleID > 0,
+              isSettlingProgrammaticSectionJump else {
             return
         }
 
         try? await Task.sleep(nanoseconds: VietnameseMenuSectionJumpPolicy.settleNanoseconds)
-        guard !Task.isCancelled else {
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
             return
         }
 
@@ -601,12 +616,15 @@ struct VietnameseMenuPageView: View {
 
     @MainActor
     private func commitPendingScrollSectionUpdateIfNeeded() async {
-        guard let pendingScrollSectionUpdate else {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              let pendingScrollSectionUpdate else {
             return
         }
 
         try? await Task.sleep(nanoseconds: VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds)
-        guard !Task.isCancelled, !isResolvingSectionJump else {
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              !isResolvingSectionJump else {
             return
         }
 
@@ -905,6 +923,16 @@ enum VietnameseMenuSectionJumpPolicy {
 
 enum VietnameseMenuSectionTrackingPolicy {
     static let pinnedScrollUpdateDelayNanoseconds: UInt64 = 120_000_000
+}
+
+enum VietnameseMenuTaskPolicy {
+    static func shouldRunDeferredSectionTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
 }
 
 enum VietnameseMenuLayout {

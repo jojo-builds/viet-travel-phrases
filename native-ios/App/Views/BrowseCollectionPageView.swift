@@ -96,7 +96,11 @@ struct BrowseCollectionPageView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .task(id: focusRequest?.id) {
+                .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
+                    guard BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: isActive) else {
+                        return
+                    }
+
                     if AppBottomInsetValidation.shouldScrollToBottom {
                         await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                         return
@@ -1252,6 +1256,12 @@ enum BrowseFocusedAssetImagePolicy {
         "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
         "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
     ]
+}
+
+enum BrowseCollectionTaskPolicy {
+    static func shouldRunStandardFocusTask(isActive: Bool) -> Bool {
+        isActive
+    }
 }
 
 private struct BrowseFocusedAssetImage: View {

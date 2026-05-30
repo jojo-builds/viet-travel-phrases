@@ -40,6 +40,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 24: inactive but visible root/admin photo-backdrop preview surfaces could still run delayed startup scroll and bottom-inset validation work while mounted for navigation previews; that delayed work now requires the surface to be both active and visible, while immediate visual positioning for visible previews is preserved
 - root cause 25: browse city/category thumbnail rendering still asked UIKit for image dimensions from the SwiftUI body for every focused thumbnail image, even though only two assets need custom crop focus; normal thumbnails now skip that `UIImage(named:)` size probe and render directly, preserving the two custom crops while avoiding extra asset lookup/decode pressure during rapid browsing
 - root cause 26: browse city/category thumbnail selection still asked UIKit whether generated bundled hero/backdrop image names existed before SwiftUI rendered them; generated `Hero*` and `Backdrop*` browse assets now render directly while unknown/manual image names keep the old fallback existence check, avoiding extra `UIImage(named:)` probes during rapid page browsing
+- root cause 27: inactive menu and standard browse collection pages could still run delayed section-tracking, section-jump settle, focus-restore, or bottom-inset tasks while mounted for hidden/back-preview navigation states; those deferred collection tasks now require active-route state, while active collection pages keep their scroll, focus, and section-jump behavior
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -76,6 +77,17 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages`
   - `AppChromeTests/testBrowseFocusedAssetImagesReadSizesOnlyForCustomFocusAssets`
   - `AppChromeTests/testBrowseImageAssetPolicyTrustsGeneratedAssetsWithoutExistenceProbe`
+  - `AppChromeTests/testInactiveCollectionPagesSkipDeferredScrollTasks`
+- XcodeBuildMCP simulator focused inactive collection deferred-task set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuTaskPolicy` and `BrowseCollectionTaskPolicy` did not exist, and the affected tasks were keyed without an active-route gate
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T21-51-57-118Z_pid15747_0abb7eb3.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-53-15-492Z_pid15747_ea811de1.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with inactive collection task gating on iPhone 17 Pro
+  - passed: `13` tests, `0` failures
+  - covered inactive menu/standard browse collection task gating, active+visible admin/root backdrop delayed-task gating, inactive standard article task gating, generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, visible-only browse collection mounting, bounded category browse hero overrides, bounded city pick caches, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-54-16-872Z_pid15747_3099a719.xcresult`
 - XcodeBuildMCP simulator focused browse generated-image existence-probe set on iPhone 17 Pro
   - failed before implementation because `BrowseImageAssetPolicy` did not exist and browse rows always had to call through the `BrowseImageAssetCache.exists` seam for generated image names
   - passed after implementation: `1` test, `0` failures

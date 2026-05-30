@@ -745,6 +745,26 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds, 120_000_000)
     }
 
+    func testInactiveCollectionPagesSkipDeferredScrollTasks() {
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: false),
+            "Hidden or preview-only menu pages should not keep delayed section-tracking work alive."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: false),
+            "Inactive standard menu pages should not run startup bottom-inset or section-jump work."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: true))
+
+        XCTAssertFalse(
+            BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: false),
+            "Inactive standard browse collection pages should not restore focus or run bottom-inset validation."
+        )
+        XCTAssertTrue(BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: true))
+    }
+
     func testVietnameseMenuSectionChromeCoordinatorSeparatesPinnedChangesFromLabelChanges() {
         let coordinator = VietnameseMenuSectionChromeCoordinator()
         let popular = VietnameseMenuSectionChromeItem(
