@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 806,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T12:08:57.672Z"
+    "generatedAt": "2026-05-30T12:26:20.091Z"
   },
   "pages": [
     {
@@ -254301,8 +254301,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Support, Not First Pick",
-          "body": "The source pack does not yet give a clear signature dish, so place Nephele behind named Saigon dinner saves like CieL, Coco Dining, or Akuna.",
+          "title": "Not The First Dinner Save",
+          "body": "Save Nephele for a quieter wine-led meal. If the night needs a clearer signature-food reason, CieL, Coco Dining, or Akuna should lead.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -303246,8 +303246,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Support Listing",
-          "body": "Treat it as a heritage-dinner option; a later review should add dish evidence before feature placement.",
+          "title": "Heritage Dinner Role",
+          "body": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -303355,7 +303355,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Support Listing",
+            "title": "Heritage Dinner Role",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"
@@ -306681,7 +306681,7 @@
         {
           "id": "place-brief",
           "title": "Hue Cakes Matter",
-          "body": "The current source points to traditional Hue cakes rather than one signature showpiece. Save it when the table needs a nearby, grounded meal.",
+          "body": "Traditional Hue cakes give the table a local reason to stop here. Save it when the group needs a nearby, grounded meal after the walls.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311786,8 +311786,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Feature With Caution",
-          "body": "It can be a polished Hue meal; street-food pages should lead when the user is chasing Hue specialties.",
+          "title": "Keep It Secondary",
+          "body": "It can be a polished Hue meal. If the day is chasing local specialties, let bún bò, bánh lọc, or Đông Ba Market lead first.",
           "phrases": [
             {
               "id": "coffee-7",
@@ -311895,7 +311895,7 @@
         "scenarioStepGroups": [
           {
             "stepID": "when-to-use",
-            "title": "Feature With Caution",
+            "title": "Keep It Secondary",
             "sourceSectionID": "when-to-use",
             "primaryPhraseIDs": [
               "coffee-7"

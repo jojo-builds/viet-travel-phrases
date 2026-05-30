@@ -232,7 +232,7 @@
       "pageID": "city-hue-place-ancient-space-restaurant",
       "summary": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
       "context": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
-      "tip": "Treat it as a heritage-dinner option; a later review should add dish evidence before feature placement.",
+      "tip": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason.",
       "rationale": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
       "sections": [
         {
@@ -262,8 +262,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Support Listing",
-          "body": "Treat it as a heritage-dinner option; a later review should add dish evidence before feature placement."
+          "title": "Heritage Dinner Role",
+          "body": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1103,7 +1103,7 @@
         {
           "id": "place-brief",
           "title": "Hue Cakes Matter",
-          "body": "The current source points to traditional Hue cakes rather than one signature showpiece. Save it when the table needs a nearby, grounded meal."
+          "body": "Traditional Hue cakes give the table a local reason to stop here. Save it when the group needs a nearby, grounded meal after the walls."
         },
         {
           "id": "use-it-with",
@@ -2332,7 +2332,7 @@
       "pageID": "city-hue-place-les-jardins",
       "summary": "Les Jardins is a Citadel-near French-Vietnamese garden meal when the day needs table spacing, wine, composed plates, and a calmer lunch or dinner after heritage walking.",
       "context": "Les Jardins is a Citadel-near French-Vietnamese garden meal when the day needs table spacing, wine, composed plates, and a calmer lunch or dinner after heritage walking.",
-      "tip": "It can be a polished Hue meal; street-food pages should lead when the user is chasing Hue specialties.",
+      "tip": "It can be a polished Hue meal. If the day is chasing local specialties, let bún bò, bánh lọc, or Đông Ba Market lead first.",
       "rationale": "Its reason is the French-Vietnamese Hue restaurant pattern: a Citadel-side yellow villa, garden entry, and a menu that mixes French technique with Hue flavors.",
       "sections": [
         {
@@ -2362,8 +2362,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Feature With Caution",
-          "body": "It can be a polished Hue meal; street-food pages should lead when the user is chasing Hue specialties."
+          "title": "Keep It Secondary",
+          "body": "It can be a polished Hue meal. If the day is chasing local specialties, let bún bò, bánh lọc, or Đông Ba Market lead first."
         }
       ],
       "sourceMode": "expanded-detail"

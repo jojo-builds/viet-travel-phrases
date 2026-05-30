@@ -745,3 +745,78 @@ This pass made the weakest reviewed restaurants/cafes more honest and save-worth
 - continue the same food-desire scoring across remaining cafes, malls, support markets, and room-led restaurants;
 - make high-visibility surfaces consume the support/lead distinction instead of treating all `FINAL_PASS` pages equally;
 - investigate why `Cái này bao nhiêu?` may appear thin in the app if Jojo's observed surface was the full detail page, not just a quick phrase card.
+
+## Continuation: Native Render Proof and Internal-Language Fix
+
+Fourth pass date: 2026-05-30
+
+Fresh native screenshots exposed a real V2.2 gate miss: a few support/demotion notes were still written in reviewer language and could render to users. The visible leaks were fixed in first-class V2.2 source and regenerated into handwritten copy, city V1 projection, native listing resources, and the SQLite fixture.
+
+### Visible Copy Fixes
+
+- `city-hcmc-place-nephele`: replaced "source pack" copy with a traveler-facing dinner-choice note.
+- `city-hue-place-ancient-space-restaurant`: replaced "later review / feature placement" copy with a heritage-dinner role note.
+- `city-hue-place-dai-nam-restaurant`: replaced "current source" copy with a plain Hue-cakes stop reason.
+- `city-hue-place-les-jardins`: replaced "Feature With Caution" with "Keep It Secondary" and a food-day routing note.
+
+Targeted internal-language scan after regeneration returned no visible `body`, `heading`, `tip`, `summary`, or `context` matches for the blocked phrases: `source pack`, `later review`, `feature placement`, `current source`, `Feature With Caution`, or `Support Listing`.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-30/`
+
+Representative pages captured, top and scrolled:
+
+- `viet-family-money-how-much`
+- `viet-family-city-danang-place-reply-1988`
+- `viet-family-city-hcmc-place-nephele`
+- `viet-family-city-hue-place-ancient-space-restaurant`
+- `viet-family-city-hoian-place-cargo-club`
+- `viet-family-city-hoian-place-faifo-coffee`
+- `viet-family-city-hue-place-song-huong-floating-restaurant`
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hook: `--detail-page <pageID>`
+- Build/run: PASS for `viet-family-city-hcmc-place-nephele` after the internal-language fix.
+
+### Validation Run After Render-Proof Fix
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 500 entries, 500 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- V2.2 projection and handwritten-copy import: PASS, 500 entries imported.
+- native resource generation: PASS, 1747 families, 1765 phrases, 1758 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- city-copy compatibility validation: PASS, 5 hubs, 500 city noun pages, 500 unique target heroes.
+- SQLite fixture validation: PASS, 8784 relations, 0 release-blocking missing audio rows.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Render-Proof Fix
+
+Status improves for the reviewed support pages, but the full 500-page catalog should still stay below `GLOBAL_PRODUCTION_READY` until the remaining cafe, market, mall, and room-led restaurant pages get the same rendered proof sweep. `Cái này bao nhiêu?` is confirmed rendered as a deep detail page; if it felt thin, the likely problem is that the user was seeing a compact phrase card or only the first viewport.
