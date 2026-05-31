@@ -4187,3 +4187,91 @@ This pass repairs one high-visibility city batch, but it does not claim the same
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
+## Continuation: HCMC U.S.-Voice Save-Language Repair
+
+Twenty-eighth pass date: 2026-05-31
+
+Commit before pass: `62f041a25 Repair Da Nang food listing save language`
+
+This continuation applies the same user-facing voice correction to Saigon/HCMC pages. The goal is to keep Michelin and food-desire signals visible while removing app-visible language that tells the user to "save" something.
+
+### Pages Repaired
+
+- HCMC V2.2 source visible fields were swept for literal `save` / `saved` / `saving` language across traveler moments, story spines, intros, section headings/bodies, Mentioned Here subtitles, and related-card subtitles.
+- The previous inventory showed 18 HCMC page hits / 40 visible-field hits. The post-repair visible-field scan is 0 page hits / 0 visible-field hits.
+- Representative repaired pages include `city-hcmc-place-anan-saigon`, `city-hcmc-place-akuna`, `city-hcmc-place-ciel`, `city-hcmc-place-coco-dining`, `city-hcmc-place-long-trieu`, `city-hcmc-place-banh-xeo-46a`, `city-hcmc-place-bo-kho-ganh`, `city-hcmc-place-bun-bo-hue-14b`, `city-hcmc-place-pho-le-district-5`, `city-hcmc-place-pho-minh`, `city-hcmc-place-pho-huong-binh`, `city-hcmc-place-cuc-gach-quan`, `city-hcmc-place-man-moi`, and `city-hcmc-place-nephele`.
+- No new Michelin claims were added in this pass. Existing 2025 MICHELIN Star, Bib Gourmand, Selected, and Service Award references were preserved while the surrounding copy was changed from command language to natural planning/choice language.
+
+### Runtime Shape
+
+- No inventory count change: total stays 520 city noun/place pages, with HCMC at 106.
+- `content-draft/viet/city-library/app-detail-v2-2/hcmc.json` remains the source authority.
+- Native projections, authored listing resources, and SQLite fixture were regenerated from source.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hcmc-us-voice-repair/`
+
+Representative pages captured:
+
+- `viet-family-city-hcmc-place-anan-saigon`
+  - `anan-saigon-first-screen.jpg`: first viewport shows the Michelin-star dinner intro without visible save-command language.
+  - `anan-saigon-sections.jpg`: middle sections show the revised `Give it a night...` phrasing and food-plan context.
+  - `anan-saigon-bottom-inset.jpg`: Compare Nearby cards render above the bottom chrome.
+- `viet-family-city-hcmc-place-bo-kho-ganh`
+  - `bo-kho-ganh-first-screen.jpg`: first viewport shows the Bib Gourmand beef-stew bowl intro and Useful Phrases start.
+  - `bo-kho-ganh-bottom-inset.jpg`: Compare Nearby cards render above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-anan-saigon`
+  - `--detail-page viet-family-city-hcmc-place-bo-kho-ganh`
+- Build/run: PASS for the scoped build launch; scoped relaunch and screenshots succeeded.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 520 entries imported.
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- HCMC visible save-language scan: PASS, 0 visible-field hits.
+- generated authored listing resource scan for HCMC save-language: PASS, 0 hits.
+- whitespace check: PASS.
+
+### Remaining Risk After HCMC U.S.-Voice Repair
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass repairs the highest-count remaining city batch after Da Nang, but it does not claim the same save-language cleanup across Hà Nội, Hội An, or Huế. The same shared render/chrome debt remains: while scrolling, the sticky audio controls can cover the very top line of page content. Bottom inset and related-card rendering are good in the captured HCMC pages, but sticky audio overlap should be fixed before calling the affected pages fully production-ready.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
