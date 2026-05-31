@@ -1370,6 +1370,8 @@ final class AppChromeTests: XCTestCase {
         let articlePage = detailPage.articleTemplate
 
         AudioAssetManifest.resetLookupCountsForTesting()
+        PhraseOption.resetPlaybackAudioResolutionCacheForTesting()
+        BreakdownToken.resetPlaybackAudioResolutionCacheForTesting()
         PhraseArticlePlaybackAudioResolver.resetBuildCountForTesting()
 
         let resolvedPage = PhraseArticlePlaybackAudioResolver.resolvedPage(for: articlePage)
@@ -1408,6 +1410,52 @@ final class AppChromeTests: XCTestCase {
             PhraseArticlePlaybackAudioResolver.buildCountForTesting,
             1,
             "PhraseArticleTemplateView should prepare row playback audio once per page instance."
+        )
+    }
+
+    func testPhraseRowPlaybackAudioResolutionCachesAcrossPageInstances() {
+        PhraseOption.resetPlaybackAudioResolutionCacheForTesting()
+        BreakdownToken.resetPlaybackAudioResolutionCacheForTesting()
+        defer { PhraseOption.resetPlaybackAudioResolutionCacheForTesting() }
+        defer { BreakdownToken.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let option = PhraseOption(
+            id: "polite-1",
+            vietnamese: "Xin chào",
+            english: "Hello",
+            pronunciation: "sin chow",
+            symbolName: "speaker.wave.2.fill",
+            tintName: .red,
+            audioKey: "polite-1"
+        )
+        let token = BreakdownToken(
+            id: "chao",
+            vietnamese: "chào",
+            english: "greet / hello",
+            audioKey: "breakdown-chao"
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        _ = option.resolvingPlaybackAudioKey().playbackAudioKey
+        _ = token.resolvingPlaybackAudioKey().playbackAudioKey
+
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first row/token resolution should consult the audio manifest."
+        )
+        let lookupCountAfterFirstResolution = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = option.resolvingPlaybackAudioKey().playbackAudioKey
+            _ = token.resolvingPlaybackAudioKey().playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstResolution,
+            "Shared phrase rows and breakdown tokens can appear across many listing pages; repeated page instances should reuse cached playback decisions instead of re-entering AudioAssetManifest for the same row metadata."
         )
     }
 

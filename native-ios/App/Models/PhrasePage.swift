@@ -85,17 +85,24 @@ struct PhraseOption: Identifiable, Equatable {
     }
 
     private static func resolvePlaybackAudioKey(id: String, vietnamese: String, audioKey: String?) -> String? {
+        let cacheKey = PlaybackAudioCacheKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+        if let cachedAudioKey = cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
         let manifest = AudioAssetManifest.main
+        let resolvedAudioKey: String?
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
-            return audioKey
+            resolvedAudioKey = audioKey
+        } else if manifest?.hasPlayableEntry(for: id, matchingText: vietnamese) == true {
+            resolvedAudioKey = id
+        } else {
+            resolvedAudioKey = manifest?.audioKey(forExactText: vietnamese)
         }
 
-        if manifest?.hasPlayableEntry(for: id, matchingText: vietnamese) == true {
-            return id
-        }
-
-        return manifest?.audioKey(forExactText: vietnamese)
+        storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(resolvedAudioKey), for: cacheKey)
+        return resolvedAudioKey
     }
 
     static func == (lhs: PhraseOption, rhs: PhraseOption) -> Bool {
@@ -108,6 +115,58 @@ struct PhraseOption: Identifiable, Equatable {
             && lhs.detailPageID == rhs.detailPageID
             && lhs.audioKey == rhs.audioKey
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let id: String
+        let vietnamese: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        return playbackAudioKeysByKey[key]
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard playbackAudioKeysByKey[key] == nil else {
+            return
+        }
+
+        playbackAudioKeysByKey[key] = audioKey
+        playbackAudioCacheKeys.append(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct BreakdownToken: Identifiable, Equatable {
@@ -130,12 +189,13 @@ struct BreakdownToken: Identifiable, Equatable {
             return resolvedPlaybackAudioKey
         }
 
-        return Self.resolvePlaybackAudioKey(vietnamese: vietnamese, audioKey: audioKey)
+        return Self.resolvePlaybackAudioKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
     }
 
     func resolvingPlaybackAudioKey() -> BreakdownToken {
         var resolved = self
         resolved.resolvedPlaybackAudioKey = Self.resolvePlaybackAudioKey(
+            id: id,
             vietnamese: vietnamese,
             audioKey: audioKey
         )
@@ -143,14 +203,23 @@ struct BreakdownToken: Identifiable, Equatable {
         return resolved
     }
 
-    private static func resolvePlaybackAudioKey(vietnamese: String, audioKey: String?) -> String? {
-        let manifest = AudioAssetManifest.main
-
-        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
-            return audioKey
+    private static func resolvePlaybackAudioKey(id: String, vietnamese: String, audioKey: String?) -> String? {
+        let cacheKey = PlaybackAudioCacheKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+        if let cachedAudioKey = cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
         }
 
-        return manifest?.audioKey(forExactText: vietnamese)
+        let manifest = AudioAssetManifest.main
+        let resolvedAudioKey: String?
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
+            resolvedAudioKey = audioKey
+        } else {
+            resolvedAudioKey = manifest?.audioKey(forExactText: vietnamese)
+        }
+
+        storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(resolvedAudioKey), for: cacheKey)
+        return resolvedAudioKey
     }
 
     static func == (lhs: BreakdownToken, rhs: BreakdownToken) -> Bool {
@@ -159,6 +228,58 @@ struct BreakdownToken: Identifiable, Equatable {
             && lhs.english == rhs.english
             && lhs.audioKey == rhs.audioKey
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let id: String
+        let vietnamese: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        return playbackAudioKeysByKey[key]
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard playbackAudioKeysByKey[key] == nil else {
+            return
+        }
+
+        playbackAudioKeysByKey[key] = audioKey
+        playbackAudioCacheKeys.append(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct PhraseLink: Identifiable, Equatable {
