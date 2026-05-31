@@ -96,6 +96,8 @@ final class LocalUserIntentStore: ObservableObject {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
     private var recentPagesPersistTask: Task<Void, Never>?
+    private var savedMembershipCache = MembershipLookupCache()
+    private var practiceMembershipCache = MembershipLookupCache()
 
     private enum Key {
         static let recentPages = "SpeakLocal.LocalIntent.recentPages.v1"
@@ -183,20 +185,22 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     func isPageSaved(_ pageID: String) -> Bool {
-        containsCanonicalID(savedPageIDs, pageID: pageID)
+        containsCanonicalID(savedPageIDs, pageID: pageID, cache: &savedMembershipCache)
     }
 
     func isPageInPractice(_ pageID: String) -> Bool {
-        containsCanonicalID(practicePageIDs, pageID: pageID)
+        containsCanonicalID(practicePageIDs, pageID: pageID, cache: &practiceMembershipCache)
     }
 
     func toggleSavedPage(_ pageID: String) {
         savedPageIDs = toggledCanonicalIDs(savedPageIDs, pageID: pageID)
+        savedMembershipCache.removeAll()
         persist(savedPageIDs, key: Key.savedPageIDs)
     }
 
     func togglePracticePage(_ pageID: String) {
         practicePageIDs = toggledCanonicalIDs(practicePageIDs, pageID: pageID)
+        practiceMembershipCache.removeAll()
         persist(practicePageIDs, key: Key.practicePageIDs)
     }
 
@@ -211,6 +215,7 @@ final class LocalUserIntentStore: ObservableObject {
         }
 
         practicePageIDs = merged
+        practiceMembershipCache.removeAll()
         persist(practicePageIDs, key: Key.practicePageIDs)
     }
 
@@ -270,20 +275,32 @@ final class LocalUserIntentStore: ObservableObject {
         return try? JSONDecoder().decode(type, from: data)
     }
 
-    private func containsCanonicalID(_ ids: [String], pageID: String) -> Bool {
+    private func containsCanonicalID(
+        _ ids: [String],
+        pageID: String,
+        cache: inout MembershipLookupCache
+    ) -> Bool {
         guard !ids.isEmpty else {
             return false
         }
 
+        if let cachedResult = cache.value(for: pageID) {
+            return cachedResult
+        }
+
         if ids.contains(pageID) {
+            cache.store(true, for: pageID)
             return true
         }
 
         guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
+            cache.store(false, for: pageID)
             return false
         }
 
-        return ids.contains(canonicalPageID)
+        let containsCanonicalID = ids.contains(canonicalPageID)
+        cache.store(containsCanonicalID, for: pageID)
+        return containsCanonicalID
     }
 
     private static func canonicalizedRecentPages(_ pages: [RecentPhrasePage]) -> [RecentPhrasePage] {
@@ -334,6 +351,41 @@ final class LocalUserIntentStore: ObservableObject {
 
     private static let maxRecentPages = 12
     private static let recentPagesPersistDelayNanoseconds: UInt64 = 700_000_000
+
+    private struct MembershipLookupCache {
+        private static let limit = 256
+        private var resultsByPageID: [String: Bool] = [:]
+        private var pageIDs: [String] = []
+
+        mutating func value(for pageID: String) -> Bool? {
+            guard let result = resultsByPageID[pageID] else {
+                return nil
+            }
+
+            touch(pageID)
+            return result
+        }
+
+        mutating func store(_ result: Bool, for pageID: String) {
+            resultsByPageID[pageID] = result
+            touch(pageID)
+
+            while pageIDs.count > Self.limit {
+                let oldestPageID = pageIDs.removeFirst()
+                resultsByPageID.removeValue(forKey: oldestPageID)
+            }
+        }
+
+        mutating func removeAll() {
+            resultsByPageID.removeAll()
+            pageIDs.removeAll()
+        }
+
+        private mutating func touch(_ pageID: String) {
+            pageIDs.removeAll { $0 == pageID }
+            pageIDs.append(pageID)
+        }
+    }
 
 #if DEBUG
     private static let returningUserShelfSeedRecentPages: [RecentPhrasePage] = [

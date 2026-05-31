@@ -575,13 +575,22 @@ enum AdminBackdropImagePreheater {
         case focusedOnCurrentRequest
     }
 
+    typealias ImagePreparer = (String) -> UIImage?
+
     private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let maxQueuedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
+    private static let defaultImagePreparer: ImagePreparer = { imageName in
+        UIImage(named: imageName)?.preparingForDisplay()
+    }
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
     private static var preheatedImageOrder = [String]()
     private static var queuedImageNames = [String]()
+    private static var focusedPreheatGeneration = 0
+    private static var focusedRequestImageNames = Set<String>()
+    private static var focusedGenerationByImageName = [String: Int]()
+    private static var imagePreparer: ImagePreparer = defaultImagePreparer
     private static var queueWorkerTask: Task<Void, Never>?
 
     static func preheat(_ imageNames: [String]) {
@@ -614,13 +623,18 @@ enum AdminBackdropImagePreheater {
                 maxQueuedImageCount: maxQueuedImageCount
             )
         case .focusedOnCurrentRequest:
+            focusedPreheatGeneration += 1
             let requestedImageNames = Set(imageNames)
+            focusedRequestImageNames = requestedImageNames
             let retainedRequestedQueue = queuedImageNames.filter { requestedImageNames.contains($0) }
             queuedImageNames = AdminBackdropImagePreheatPlan.focusedQueuedImageNames(
                 existingQueuedImageNames: queuedImageNames,
                 incomingImageNames: retainedRequestedQueue + pendingImageNames,
                 maxQueuedImageCount: maxQueuedImageCount
             )
+            for imageName in queuedImageNames where requestedImageNames.contains(imageName) {
+                focusedGenerationByImageName[imageName] = focusedPreheatGeneration
+            }
         }
 
         releaseDroppedQueuedReservations(
@@ -657,12 +671,15 @@ enum AdminBackdropImagePreheater {
             }
             queuedImageNames = nextQueuedImage.remainingQueuedImageNames
             let imageName = nextQueuedImage.imageName
+            let focusedGeneration = focusedGenerationByImageName[imageName]
+            let imagePreparer = imagePreparer
             lock.unlock()
 
             autoreleasepool {
-                let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
+                let preparedImage = imagePreparer(imageName)
                 lock.lock()
-                if let preparedImage {
+                if let preparedImage,
+                   shouldCommitPreparedImage(imageName, focusedGeneration: focusedGeneration) {
                     preheatedImages[imageName] = preparedImage
                     preheatedImageOrder.append(imageName)
                     trimPreheatedImagesIfNeeded()
@@ -685,9 +702,19 @@ enum AdminBackdropImagePreheater {
         }
     }
 
+    private static func shouldCommitPreparedImage(_ imageName: String, focusedGeneration: Int?) -> Bool {
+        guard let focusedGeneration else {
+            return true
+        }
+
+        return focusedGeneration == focusedPreheatGeneration
+            || focusedRequestImageNames.contains(imageName)
+    }
+
     private static func releasePendingReservation(_ imageName: String) {
         if preheatedImages[imageName] == nil {
             preheatedImageNames.remove(imageName)
+            focusedGenerationByImageName.removeValue(forKey: imageName)
         }
     }
 
@@ -696,8 +723,26 @@ enum AdminBackdropImagePreheater {
             let evictedImageName = preheatedImageOrder.removeFirst()
             preheatedImages[evictedImageName] = nil
             preheatedImageNames.remove(evictedImageName)
+            focusedGenerationByImageName.removeValue(forKey: evictedImageName)
         }
     }
+
+#if DEBUG
+    static func resetForTesting(imagePreparer: ImagePreparer? = nil) {
+        lock.lock()
+        queueWorkerTask?.cancel()
+        queueWorkerTask = nil
+        preheatedImageNames.removeAll()
+        preheatedImages.removeAll()
+        preheatedImageOrder.removeAll()
+        queuedImageNames.removeAll()
+        focusedPreheatGeneration = 0
+        focusedRequestImageNames.removeAll()
+        focusedGenerationByImageName.removeAll()
+        Self.imagePreparer = imagePreparer ?? defaultImagePreparer
+        lock.unlock()
+    }
+#endif
     #else
     static func preheat(_ imageNames: [String]) {}
     static func preheatFocused(_ imageNames: [String]) {}

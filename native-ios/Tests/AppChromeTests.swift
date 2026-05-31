@@ -141,6 +141,52 @@ final class AppChromeTests: XCTestCase {
         ])
     }
 
+    func testFocusedBackdropPreheaterRejectsStaleInFlightHeroWork() {
+        let staleImageName = "StaleFocusedBackdrop"
+        let currentImageName = "CurrentFocusedBackdrop"
+        let stalePreparationStarted = expectation(description: "stale preparation started")
+        let releaseStalePreparation = DispatchSemaphore(value: 0)
+        let preparedImage = UIGraphicsImageRenderer(size: CGSize(width: 4, height: 4)).image { context in
+            UIColor.red.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: 4, height: 4))
+        }
+
+        AdminBackdropImagePreheater.resetForTesting(imagePreparer: { imageName in
+            if imageName == staleImageName {
+                stalePreparationStarted.fulfill()
+                _ = releaseStalePreparation.wait(timeout: .now() + 2)
+                return preparedImage
+            }
+
+            if imageName == currentImageName {
+                return preparedImage
+            }
+
+            return nil
+        })
+        defer { AdminBackdropImagePreheater.resetForTesting() }
+
+        AdminBackdropImagePreheater.preheatFocused([staleImageName])
+        wait(for: [stalePreparationStarted], timeout: 1)
+
+        AdminBackdropImagePreheater.preheatFocused([currentImageName])
+        releaseStalePreparation.signal()
+
+        let deadline = Date().addingTimeInterval(2)
+        while AdminBackdropImagePreheater.preparedImage(named: currentImageName) == nil, Date() < deadline {
+            Thread.sleep(forTimeInterval: 0.01)
+        }
+
+        XCTAssertNil(
+            AdminBackdropImagePreheater.preparedImage(named: staleImageName),
+            "Focused preheat should reject stale in-flight full-screen hero work once a newer focused request replaces it."
+        )
+        XCTAssertNotNil(
+            AdminBackdropImagePreheater.preparedImage(named: currentImageName),
+            "Focused preheat should still commit the newest active hero image."
+        )
+    }
+
     func testPracticeMatchSnapshotCacheTracksInFlightLoads() {
         let key = PracticeMatchSnapshotCacheKey(
             practicePageIDs: ["viet-thank-you"],
@@ -1344,6 +1390,41 @@ final class AppChromeTests: XCTestCase {
             PhraseArticlePlaybackAudioResolver.buildCountForTesting,
             1,
             "PhraseArticleTemplateView should prepare row playback audio once per page instance."
+        )
+    }
+
+    func testPhraseCatalogItemsCachePlaybackAudioAcrossRepeatedRowRendering() throws {
+        PhraseCatalogItem.resetPlaybackAudioResolutionCacheForTesting()
+        defer { PhraseCatalogItem.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let item = PhraseCatalogItem(
+            pageID: PhrasePage.xinChao.id,
+            title: PhrasePage.xinChao.title,
+            subtitle: PhrasePage.xinChao.englishTitle,
+            categoryID: "greetings",
+            symbolName: "hand.wave.fill",
+            tintName: .red
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        XCTAssertNotNil(item.playbackAudioKey)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first catalog row audio read may resolve through the manifest."
+        )
+
+        let lookupCountAfterFirstRead = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = item.playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstRead,
+            "Catalog and Explore rows should reuse cached playback audio decisions instead of re-entering AudioAssetManifest on every SwiftUI row render."
         )
     }
 
@@ -4819,6 +4900,29 @@ final class LocalUserIntentStoreTests: XCTestCase {
             VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
             0,
             "Saved membership checks should use the direct canonical ID fast path before entering the SQLite canonical resolver."
+        )
+    }
+
+    func testSavedMembershipCachesRepeatedUnsavedMissesWhenSavedListIsNonEmpty() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        store.toggleSavedPage("viet-thank-you")
+        let picks = LocationRelatedPicksCatalog.picks(forPageID: "viet-family-city-danang-place-international-terminal")
+
+        XCTAssertFalse(picks.isEmpty)
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        for _ in 0..<10 {
+            for pick in picks {
+                XCTAssertFalse(store.isPageSaved(pick.detailPageID))
+            }
+        }
+
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            picks.count,
+            "Repeated saved-state misses from visible location/card rows should reuse membership decisions instead of canonicalizing the same unsaved page IDs on every redraw."
         )
     }
 

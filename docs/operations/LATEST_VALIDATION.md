@@ -53,6 +53,9 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 37: location-card rows reused grouped pick buckets, but each row could still resolve linked-menu audio from `AudioAssetManifest` while rendering; the location-pick grouping step now prepares pick audio keys once per page instance so "Mentioned Here", "Compare Nearby", and trailing place/menu cards read stored keys
 - root cause 38: listing/category/menu photo-backdrop pages queued hero-image preparation work for pages the user had already left; root/home still keep their small lookahead queue, but single-current-page detail, browse collection, and menu backdrops now use focused preheat mode so rapid page taps drop stale queued full-screen hero decodes and keep the newest active hero work
 - root cause 39: location-card rows prepared linked-menu audio keys, but still looked up the linked menu item from SwiftUI row rendering just to tint the speaker button; location-pick grouping now prepares the audio tint alongside the audio key, so rows read stored playback presentation metadata instead of re-entering the menu catalog
+- root cause 40: catalog and Explore rows still resolved playable audio from `PhraseCatalogItem.playbackAudioKey` during row rendering; catalog items now use a bounded playback-audio decision cache so repeated Browse/Home/Explore redraws reuse the same manifest result without re-entering `AudioAssetManifest`
+- root cause 41: focused photo-backdrop preheat dropped stale queued work, but an already-popped full-screen hero image could still finish preparing and commit after the user had opened a newer page; focused preheat now tags in-flight work with the current request generation and rejects stale completed images while still committing the newest active hero
+- root cause 42: saved/practice membership checks skipped empty lists and direct saved hits, but repeated unsaved misses with a non-empty saved list still canonicalized the same visible location/card page IDs on every redraw; `LocalUserIntentStore` now keeps bounded per-store membership caches and invalidates them when saved/practice IDs change
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -102,6 +105,31 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance`
   - `AppChromeTests/testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork`
   - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioTintOncePerPageInstance`
+  - `AppChromeTests/testPhraseCatalogItemsCachePlaybackAudioAcrossRepeatedRowRendering`
+  - `AppChromeTests/testFocusedBackdropPreheaterRejectsStaleInFlightHeroWork`
+  - `LocalUserIntentStoreTests/testSavedMembershipCachesRepeatedUnsavedMissesWhenSavedListIsNonEmpty`
+- XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
+  - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-14-33-491Z_pid15747_ff4552d3.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-15-32-220Z_pid15747_b1be77e4.xcresult`
+- XcodeBuildMCP simulator focused in-flight backdrop preheat set on iPhone 17 Pro
+  - failed before implementation because `AdminBackdropImagePreheater` had no reset/injected-preparer test seam and no stale in-flight focused-work rejection
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-19-08-177Z_pid15747_e122555d.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-21-38-490Z_pid15747_262eaa93.xcresult`
+- XcodeBuildMCP simulator focused saved-membership miss cache set on iPhone 17 Pro
+  - failed before implementation because two visible unsaved related-card IDs caused `20` canonical lookups over ten redraw-style saved-state passes
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-24-06-049Z_pid15747_240fbfc5.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-26-50-631Z_pid15747_cafb31ac.xcresult`
+- XcodeBuildMCP simulator focused thermal-regression set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered catalog row audio caching, article row audio preparation, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, bounded/latest/newest-first preheat policy, saved direct fast path, saved unsaved-miss caching, saved publish behavior, and saved menu-item persistence
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-27-44-484Z_pid15747_bc3d3df8.xcresult`
 - XcodeBuildMCP simulator focused location-pick audio-tint preparation set on iPhone 17 Pro
   - failed before implementation because `VietnameseMenuCatalog` had no item lookup counter and `LocationMenuPick` had no prepared `audioTintName`
   - passed after implementation: `1` test, `0` failures

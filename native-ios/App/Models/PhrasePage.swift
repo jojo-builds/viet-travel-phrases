@@ -439,20 +439,29 @@ struct PhraseCatalogItem: Identifiable, Equatable {
     var id: String { pageID }
     var categoryID: String { categoryIDs.first ?? "greetings" }
     var playbackAudioKey: String? {
+        let cacheKey = PlaybackAudioCacheKey(pageID: pageID, title: title, audioKey: audioKey)
+        if let cachedAudioKey = Self.cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
         let manifest = AudioAssetManifest.main
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: title) == true {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
             return audioKey
         }
 
         if let exactTitleAudioKey = manifest?.audioKey(forExactText: title) {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(exactTitleAudioKey), for: cacheKey)
             return exactTitleAudioKey
         }
 
         if let audioKey, manifest?.url(for: audioKey) != nil {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
             return audioKey
         }
 
+        Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(nil), for: cacheKey)
         return nil
     }
 
@@ -493,6 +502,70 @@ struct PhraseCatalogItem: Identifiable, Equatable {
         self.tintName = tintName
         self.audioKey = audioKey
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let pageID: String
+        let title: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard let cachedAudioKey = playbackAudioKeysByKey[key] else {
+            return nil
+        }
+
+        touchPlaybackAudioCacheKey(key)
+        return cachedAudioKey
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        playbackAudioKeysByKey[key] = audioKey
+        touchPlaybackAudioCacheKey(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+    private static func touchPlaybackAudioCacheKey(_ key: PlaybackAudioCacheKey) {
+        playbackAudioCacheKeys.removeAll { $0 == key }
+        playbackAudioCacheKeys.append(key)
+    }
+
+#if DEBUG
+    static var playbackAudioResolutionCacheCountForTesting: Int {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+        return playbackAudioKeysByKey.count
+    }
+
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct PhraseCatalogSection: Identifiable, Equatable {
