@@ -118,6 +118,11 @@ Fresh command evidence from this pass:
   - passed: `9` tests, `0` failures
   - covered per-article row playback-audio preparation, visible-section derivation reuse, detail article-adapter reuse, location-pick grouping, Tier 1 visible audio keys, designed phrase exact-text audio fallback, `Xin chào` row audio reuse, all phrase option audio resolution, and bundled-file validation for resolved phrase option audio
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-06-11-757Z_pid15747_cbf2144b.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `6dd111d13`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused location-pick grouping set on iPhone 17 Pro
   - failed before implementation because `PhraseArticleLocationPickGroups` and catalog section-filter counters did not exist
   - passed after implementation: `1` test, `0` failures
